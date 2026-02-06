@@ -1,0 +1,1849 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete bilingual Dynatrace documentation with AI assistant">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs/en/analyze-explore-automate/dashboards-and-notebooks/open-with/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Drilldowns and navigation - Dynatrace Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#drilldowns-and-navigation" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace Documentation" class="md-header__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Drilldowns and navigation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ru/getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇷🇺 Русский
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ai/gemini/" class="md-tabs__link">
+          
+  
+  
+  🤖 AI Assistant
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace Documentation" class="md-nav__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    Dynatrace Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Platform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇷🇺 Русский
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇷🇺 Русский
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI Assistant
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/notebooklm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="drilldowns-and-navigation">Drilldowns and navigation<a class="headerlink" href="#drilldowns-and-navigation" title="Permanent link">&para;</a></h1>
+<h1 id="drilldowns-and-navigation_1">Drilldowns and navigation<a class="headerlink" href="#drilldowns-and-navigation_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>1-min read</li>
+<li>Updated on Jan 26, 2026</li>
+</ul>
+<p>This document explains how to create and use drilldown links based on intents or URLs in <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> or <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>. Drilldown links allow you to navigate across dashboards, notebooks, Dynatrace apps, or external systems while preserving context.</p>
+<p>The following options simplify workflows by enabling deeper analysis with just a few clicks, making it easy to investigate issues or explore related data directly from visualizations. In the following, we will leverage and go through use cases to explain the concepts and show how to set things up.</p>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<p>You can drill into related data within Dynatrace or in external systems by passing relevant context. Depending on your use case, you can choose to pass context automatically (using <strong>Open with</strong> based on <a href="https://dt-url.net/intents">intentsï»¿</a>) or manually (via custom links to dashboards or external systems).</p>
+<h3 id="automatic-context-passing-explore-details-in-dynatrace-apps">Automatic context passing: explore details in Dynatrace apps<a class="headerlink" href="#automatic-context-passing-explore-details-in-dynatrace-apps" title="Permanent link">&para;</a></h3>
+<p>Use <strong>automated context passing</strong> to investigate data quickly, without needing manual configuration.</p>
+<p>For example:</p>
+<ul>
+<li>Investigate log lines to identify patterns.</li>
+<li>Examine traces or spans to pinpoint issues.</li>
+<li>View detailed host information.</li>
+</ul>
+<p><strong>Options for automated context passing</strong>:</p>
+<ul>
+<li><a href="#open-with">Open with</a> opens the selected item in another Dynatrace app.</li>
+<li><a href="#suggested-app-links">Suggested apps</a> are suggested Dynatrace app links added to the menu automatically based on the item you selected.</li>
+</ul>
+<h3 id="manual-context-passing-link-to-external-systems-or-dashboards">Manual context passing: Link to external systems or dashboards<a class="headerlink" href="#manual-context-passing-link-to-external-systems-or-dashboards" title="Permanent link">&para;</a></h3>
+<p>Use <strong>manual context passing</strong> if you need to link to external tools or manually configure dashboard or notebook drilldowns.</p>
+<p>For example:</p>
+<ul>
+<li><strong>Link to external systems</strong>: Integrate with tools like ServiceNow, Jira, or GitHub by passing relevant IDsâsuch as a ServiceNow incident or Jira issue IDâinto the link.</li>
+<li><strong>Link to another dashboard or notebook</strong>: Link an overview dashboard (for example, one showing multiple services) to a detailed one that focuses on a single service or application.</li>
+</ul>
+<p><strong>Options for manual context passing</strong>:</p>
+<ul>
+<li><a href="#visualization-custom-ui-based-link">Link from the visualization menu via custom UI-based links</a></li>
+<li><a href="#table-markdown-column">Link from a table via a markdown column</a></li>
+</ul>
+<p>URL format determines whether to open a new tab</p>
+<p>When using these options to link to another dashboard or notebook, the URL format you choose determines whether to open the target in a new tab:</p>
+<ul>
+<li>To open the target in a new tab, use:<br />
+<code>https://&lt;your-environment&gt;/ui/[dashboards|notebooks]/...</code><br />
+  (be sure to replace <code>&lt;your-environment&gt;</code>)</li>
+<li>To open the target in the same tab, start your link with:<br />
+<code>/ui/[dashboards|notebooks]/...</code><br />
+  (without <code>https://&lt;your-environment&gt;</code>)</li>
+</ul>
+<h2 id="open-with">Open with<a class="headerlink" href="#open-with" title="Permanent link">&para;</a></h2>
+<p>To navigate between apps in the Dynatrace platform, you can use <strong>Open with</strong> while preserving context, such as the selected timeframe, entities, or filters. When you select <strong>Open with</strong>, a window displays a list of actions you can perform in other apps. The available actions depend on whether the target app can work with the data (fields) provided by the source app and which apps are installed in your environment.</p>
+<p>You can use <strong>Open with</strong> at different levels, such as for a section in a notebook, a tile in a dashboard, or even a specific data point or its underlying fields. The further down you goâfrom tile to data point, or from data point to its underlying fieldsâthe more specific the context becomes, meaning fewer fields are passed to the target app.</p>
+<p>For example, if you select a row in a table that contains a <code>dt.smartscape.host</code> field (<code>host ID</code>), and then select <strong>Open with</strong>, you will see a <strong>Go to Host</strong> option. This is because the target app, the <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> app, can handle the <code>dt.smartscape.host</code> field.</p>
+<p>If you're developing Dynatrace apps, see <a href="https://dt-url.net/intents">Intentsï»¿</a> for everything you need to know about passing the user flow from one app to another.</p>
+<h3 id="general-usage">General usage<a class="headerlink" href="#general-usage" title="Permanent link">&para;</a></h3>
+<p>To use <strong>Open with</strong> with a tile or section</p>
+<ol>
+<li>In your dashboard or notebook, select the tiles or sections you want to use in another app. You can select multiple items simultaneously if needed.</li>
+<li>Open the  menu and select  <strong>Open with</strong>.</li>
+<li>In the <strong>Open with</strong> window, choose an action provided by an app to navigate to while preserving context.</li>
+</ol>
+<p>The app opens, processing the context (fields) passed from the tiles or sections. What happens next depends on the action and how the app uses the data.</p>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<p>The following are just a few common ways people use <strong>Open with</strong> to pass information between Dynatrace apps.</p>
+<p>Notebook to dashboard</p>
+<p>To copy a notebook section to a dashboard (as a dashboard tile)</p>
+<ol>
+<li>In the notebook, select the notebook section that you want to copy to a dashboard.</li>
+<li>Open the  menu and select <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Add to dashboard</strong>.</li>
+<li>
+<p>In <strong>Select destination</strong>:</p>
+</li>
+<li>
+<p>If you want to create a new dashboard with the selected notebook section as a tile, select <strong>New dashboard</strong>.</p>
+</li>
+<li>If you want to add the selected notebook section as another tile in an existing dashboard, select the existing dashboard from the list and then select <strong>Confirm</strong>.</li>
+</ol>
+<p>The dashboard opens with the selected section copied into it as a dashboard tile.</p>
+<p>To copy a notebook section to a different app (not <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>), open the  menu and select  <strong>Open with</strong>, and then select the target app.</p>
+<p>Dashboard to notebook</p>
+<p>To copy a dashboard tile to a notebook (as a notebook section)</p>
+<ol>
+<li>In the dashboard, select the tile that you want to copy to a notebook.</li>
+<li>Open the  menu and select <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Add to notebook</strong>.</li>
+<li>
+<p>In <strong>Select destination</strong>:</p>
+</li>
+<li>
+<p>If you want to create a new notebook with the selected dashboard tile as a section, select <strong>New notebook</strong>.</p>
+</li>
+<li>If you want to add the selected dashboard tile as another section in an existing notebook, select the existing notebook from the list and then select <strong>Confirm</strong>.</li>
+</ol>
+<p>The notebook opens with the selected tile copied into it as a notebook section.</p>
+<p>To copy a dashboard tile to a different app (not <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>), open the  menu and select  <strong>Open with</strong>, and then select the target app.</p>
+<p>Dashboard Grail query to workflow</p>
+<p>To copy a Grail query from a dashboard to <a href="/docs/analyze-explore-automate/workflows" title="Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."><img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong></a> as a task in a workflow</p>
+<ol>
+<li>In the dashboard, select the query tile that you want to copy to a workflow.</li>
+<li>Select  &gt;  <strong>Open with</strong>.</li>
+<li>In the <strong>Open with</strong> window, select the <strong>Automate DQL Query</strong> <img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong> option.</li>
+</ol>
+<p><img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong> opens with the selected query added as a workflow task.
+4. Edit the workflow as needed.</p>
+<h2 id="suggested-app-links">Suggested app links<a class="headerlink" href="#suggested-app-links" title="Permanent link">&para;</a></h2>
+<p>Suggested app links are an extension of <a href="#open-with">Open with</a> added to streamline your workflow. Based on the data of your tiles/sections and the data point or fields in your selection, Dynatrace automatically identifies the most relevant action and app combination and adds it directly to the respective menu.</p>
+<p>For example, when there is a host ID field in the data, you will see the <strong>Go to Host</strong> option above the <strong>Open with</strong> in the menu.</p>
+<h2 id="link-from-visualization-via-custom-links">Link from visualization via custom links<a class="headerlink" href="#link-from-visualization-via-custom-links" title="Permanent link">&para;</a></h2>
+<p>The <strong>Add Link</strong> feature allows you to create links in the UI directly from your visualizations and navigate to external systems, dashboards, notebooks, or other resources. With it you can:</p>
+<ul>
+<li>Add links from the <strong>visualization menu</strong>, enabling quick setup without leaving the visualization.</li>
+<li>
+<p>Manage links in the <strong>Links section</strong> of the visualization tab, where you can:</p>
+</li>
+<li>
+<p>Add new links.</p>
+</li>
+<li>Edit or remove existing links.</li>
+<li>Reorder links, with changes reflected in the visualization menu.</li>
+</ul>
+<h3 id="add-and-manage-links">Add and manage links<a class="headerlink" href="#add-and-manage-links" title="Permanent link">&para;</a></h3>
+<p>The  <strong>Add Link</strong> feature allows you to create links directly from your visualizations. These links can navigate to external systems, other Dynatrace apps, or resources, enabling seamless context passing for faster troubleshooting and analysis.</p>
+<h4 id="add-a-link">Add a link<a class="headerlink" href="#add-a-link" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open the  <strong>Links</strong> section in the visualization tab of your selected visualization.</li>
+<li>Select  to open <strong>Add link</strong>.</li>
+<li>
+<p>Configure the link:</p>
+</li>
+<li>
+<p><strong>Name</strong>: Enter a descriptive name such as "Go to Host" to display in the menu.</p>
+</li>
+<li><strong>Icon</strong>: Select an icon such as "Logs" to represent the link in the menu.</li>
+<li><strong>URL</strong>: Use <a href="#dynamic-placeholders">dynamic placeholders</a> to insert data fields or variables. For example, select  <strong>Insert placeholder</strong> and add the <code>:name</code> placeholder to the your URL like <code>https://myhost/host={{:name}}</code></li>
+<li>Use the <strong>Preview</strong> section at the bottom to see how placeholders will be replaced with actual data and to test your link.</li>
+<li>Select <strong>Add link</strong> to save. The link will now appear in the visualization's tooltip menu.</li>
+</ol>
+<h4 id="manage-links">Manage links<a class="headerlink" href="#manage-links" title="Permanent link">&para;</a></h4>
+<p>Use the <strong>Links</strong> section to manage and organize your links:</p>
+<ul>
+<li><strong>Edit</strong>: To update an existing link, select it (or select  <strong>Edit</strong> in the  menu) or simply select the name.</li>
+<li><strong>Duplicate</strong>: To copy an existing link, select  <strong>Duplicate</strong> in the  menu.</li>
+<li><strong>Remove</strong>: To delete a link, select it and choose  <strong>Delete</strong> in the  menu.</li>
+<li><strong>Reorder</strong>: Adjust the display order of links by dragging  their definitions up or down in the list in the  <strong>Links</strong> section.</li>
+</ul>
+<h3 id="use-dynamic-placeholders">Use dynamic placeholders<a class="headerlink" href="#use-dynamic-placeholders" title="Permanent link">&para;</a></h3>
+<p>Dynamic placeholders allow you to create links that adapt to the data in your visualization. They dynamically populate URLs with context-aware data, such as time ranges, metric values, or entities like hosts.</p>
+<p>Depending on your use case, you can use one of three types of placeholders:</p>
+<ol>
+<li>
+<p><strong>Data point</strong> placeholders dynamically resolve values based on the specific data point being clicked. These placeholders are especially useful in time-based or segmented visualizations. The following placeholders are available out of the box:</p>
+</li>
+<li>
+<p><code>:name</code>: The name of the data point (for example, the series name in a line chart, typically displayed in the legend).</p>
+</li>
+<li><code>:value</code>: The value of the data point (for example, the value at the point clicked on a line chart).</li>
+<li><code>:from</code>: The start timestamp of the time slot the value represents (for time-based visualizations).</li>
+<li><code>:to</code>: The end timestamp of the time slot the value represents.</li>
+</ol>
+<p><strong>Example:</strong>
+   In a line chart segmented by host, selecting on a specific data point could resolve the <code>:name</code> placeholder to the host name and the <code>:value</code> placeholder to the metric value at that point in time.
+2. <strong>Existing variables</strong> let you reference existing variables defined in your dashboard.</p>
+<p><strong>Example:</strong><br />
+   Use <code>$variableName</code> to pass a user-selected value into the link.
+3. <strong>Existing fields</strong> allow you to reference the full set of data returned in the visualizationâs result. Unlike Data point placeholders, which represent a single point of data, Existing Fields provide access to the entire dataset (for example, all points in a series or all column values in a table).</p>
+<p><strong>Example:</strong><br />
+   If a metric query returns an array of values, you can use a field placeholder to reference the entire array.</p>
+<p>To use placeholders in your links:</p>
+<p>Start typing <code>{{</code> when editing a <strong>URL</strong> to display a menu of placeholder suggestions:</p>
+<ul>
+<li><code>{{</code>: Displays all available placeholders.</li>
+<li><code>{{$</code>: Displays existing variables.</li>
+<li><code>{{:</code>: Displays all data point placholders.</li>
+</ul>
+<p>Alternatively, select  <strong>Insert placeholder</strong> to choose placeholders from a dropdown menu.</p>
+<h3 id="encoding-links-and-placeholder-values">Encoding links and placeholder values<a class="headerlink" href="#encoding-links-and-placeholder-values" title="Permanent link">&para;</a></h3>
+<p>To prevent errors, encoding ensures your URLs work correctly when they include special characters, such as spaces, ampersands, or reserved characters.
+Neither the static parts of your links nor the dynamic placeholders are encoded automatically, so you need to handle encoding manually to avoid issues.</p>
+<h4 id="static-parts-of-the-url">Static parts of the URL<a class="headerlink" href="#static-parts-of-the-url" title="Permanent link">&para;</a></h4>
+<p>Static parts of the URL must be manually encoded if they include special characters. For example, replace spaces with <code>%20</code>, ampersands <code>&amp;</code> with <code>%26</code>, and other reserved characters as needed.</p>
+<p>Use a free tool like <a href="https://www.url-encode-decode.com/">URL Encoder/Decoderï»¿</a> to encode your static URLs before pasting them into the URL field.</p>
+<h4 id="dynamic-placeholders">Dynamic placeholders<a class="headerlink" href="#dynamic-placeholders" title="Permanent link">&para;</a></h4>
+<p>Dynamic placeholders are not automatically encoded. If your placeholder values may contain special characters, you can use Dynatrace Query Language (DQL) functions to encode them properly. Commonly used DQL functions include:</p>
+<ul>
+<li><code>encodeUrl()</code>: Encodes the entire URL.</li>
+<li><code>escape()</code>: Escapes reserved characters.</li>
+<li><code>replaceString()</code>: Replaces specific characters (for example, converting <code>+</code> to <code>%20</code>).</li>
+</ul>
+<p><strong>Example:</strong> Encoding a log field to ensure itâs URL-safe:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch logs
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| summarize occurences=count(), by:{content}
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>| fieldsAdd contentEncoded = replaceString(escape(encodeUrl(content)), &quot;+&quot;, &quot;%20&quot;)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>| fields contentEncoded, occurences
+</code></pre></div>
+<h3 id="supported-visualizations-and-link-behavior">Supported visualizations and link behavior<a class="headerlink" href="#supported-visualizations-and-link-behavior" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Table</strong></p>
+</li>
+<li>
+<p>Links are visible for each column, enabling interaction with individual data points while leveraging others. For example, selecting a link in the <code>Status</code> column might use another field's value when navigating.</p>
+</li>
+<li>
+<p><strong>Unsupported visualizations</strong></p>
+</li>
+<li>
+<p>Map visualizations such as <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth" title="Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks.">Choropleth</a>, <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot" title="Create and edit dot map visualizations on your Dynatrace dashboards and notebooks.">Dot</a>, <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection" title="Create and edit connection map visualizations on your Dynatrace dashboards and notebooks.">Connection</a>, and <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble" title="Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.">Bubble</a></p>
+</li>
+<li><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value" title="Create and edit single value visualizations on your Dynatrace dashboards and notebooks.">Single value</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge" title="Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.">Gauge chart</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar" title="Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.">Meter bar chart</a></li>
+<li>
+<p><strong>All other visualizations</strong></p>
+</li>
+<li>
+<p>For visualizations with data splits (for example, line charts by host), links dynamically adjust based on the data series. For example, using the placeholder <code>{{:name}}</code> in a line chart segmented by host will replace the placeholder with the respective host name for each series (line).</p>
+</li>
+</ul>
+<h2 id="link-from-table-via-a-markdown-column">Link from table via a markdown column<a class="headerlink" href="#link-from-table-via-a-markdown-column" title="Permanent link">&para;</a></h2>
+<p>Tables in Dynatrace provide a powerful way to display data and include clickable links for seamless navigation. Links in tables can be added in three levels of complexity:</p>
+<ol>
+<li><a href="#table-auto-detected-links">Basic: auto-detected raw links</a>: automatically display raw URLs as clickable links.</li>
+<li><a href="#table-user-friendly-links">Intermediate: links with a display name</a>: Use markdown column formatting to rename links for better readability.</li>
+<li><a href="#table-intent-based-links">Advanced: intent-based links</a>: Use Dynatrace Query Language (DQL) to dynamically create <a href="https://dt-url.net/intents">intentï»¿</a>-based links with encoded parameters for advanced navigation to other apps in Dynatrace.</li>
+</ol>
+<p>The following steps walk you through these levels of complexity using a single example that builds progressively.</p>
+<h3 id="basic-auto-detected-raw-links">Basic: auto-detected, raw links<a class="headerlink" href="#basic-auto-detected-raw-links" title="Permanent link">&para;</a></h3>
+<p>Dynatrace automatically detects URLs in table cells and renders them as clickable links when the column type of the cell is set to <strong>Markdown</strong>.</p>
+<p>To enable link detection:</p>
+<ol>
+<li>Start with a <strong>Table Visualization</strong> in Dynatrace.</li>
+<li>Go to the <strong>Visual</strong> tab.</li>
+<li>In the <strong>Columns</strong> section, select  <strong>Column type</strong> to add a new column type. Select the column with the raw links and set the column type to <strong>Markdown</strong>.</li>
+</ol>
+<p><strong>Example:</strong>
+   Hereâs a simple dataset with URLs that you can try on the <a href="https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.dashboards/dashboard/35295fb4-3d3d-4919-994d-3f8869cab1b7#from=2026-01-21T14%3A19%3A00.000Z&amp;to=2026-01-21T16%3A20%3A00.000Z&amp;tileIds=27">Dynatrace playgroundï»¿</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>data record(website=&quot;Dynatrace main page&quot;, link=&quot;http://www.dynatrace.com&quot;),
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>record(website=&quot;Dynatrace community&quot;, link=&quot;https://community.dynatrace.com/&quot;)
+</code></pre></div>
+<h3 id="intermediate-links-with-a-display-name">Intermediate: links with a display name<a class="headerlink" href="#intermediate-links-with-a-display-name" title="Permanent link">&para;</a></h3>
+<p>To make links more user-friendly, you can provide a display name (for example, "Dynatrace main page") using Markdown formatting. This replaces raw URLs with descriptive labels that are easier for users to read and understand.</p>
+<p>To provide user-friendly links:</p>
+<ol>
+<li>
+<p>Adjust your DQL to create a new column that formats links in Markdown syntax.</p>
+</li>
+<li>
+<p>Use the <code>fieldsAdd</code> function to generate a composite field, for example, <code>markdownLink</code>, in the format <code>[Display Name](URL)</code>.</p>
+</li>
+<li>Use the DQL <code>concat()</code> function to easily construct such a field (see the following example).</li>
+<li>Go to the <strong>Visual</strong> tab.</li>
+<li>In the <strong>Columns</strong> section, select  <strong>Column type</strong> to add a new column type. Select the column with the raw links and set the column type to <strong>Markdown</strong>. For example, <code>markdownLink</code>.</li>
+</ol>
+<p><strong>Example:</strong>:
+   Hereâs a the dataset with URLs and the markdown notation that you can try on the <a href="https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.dashboards/dashboard/35295fb4-3d3d-4919-994d-3f8869cab1b7#from=2026-01-21T14%3A19%3A00.000Z&amp;to=2026-01-21T16%3A20%3A00.000Z&amp;tileIds=27">Dynatrace playgroundï»¿</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>data record(website=&quot;Dynatrace main page&quot;, link=&quot;http://www.dynatrace.com&quot;),
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>record(website=&quot;Dynatrace community&quot;, link=&quot;https://community.dynatrace.com/&quot;)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>| fieldsAdd markdownLink = concat(&quot;[&quot;, website, &quot;](&quot;, link, &quot;)&quot;)
+</code></pre></div>
+<h3 id="advanced-intent-based-links">Advanced: intent-based links<a class="headerlink" href="#advanced-intent-based-links" title="Permanent link">&para;</a></h3>
+<p>Intent-based links take link creation to the next level by dynamically passing context (such as error codes, timeframes, or other filters) to other Dynatrace applications for advanced workflows. This is done using <strong>Dynatrace Query Language (DQL)</strong> and proper URL encoding to handle special characters.</p>
+<p>In this section, weâll walk through generating dynamic intent-based links step by step using DQL. The resulting links will include:</p>
+<ul>
+<li>A <strong>user-friendly display name</strong>, constructed in Markdown format.</li>
+<li><strong>Dynamic parameters</strong>, such as error codes and timeframes, to tailor the link for downstream navigation.</li>
+<li>Proper <strong>encoding of special characters</strong> in URL query parameters.</li>
+</ul>
+<p>To create intent-based links</p>
+<ol>
+<li><strong>Fetch the base data</strong></li>
+</ol>
+<p>Use DQL to fetch the relevant dataset and filter content as needed. For example, you can retrieve logs matching specific error codes:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>fetch logs
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>| filter matchesPhrase(content, &quot;failed to complete the order: rpc error: code&quot;) and status == &quot;ERROR&quot;
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>| parse content, &quot;&quot;&quot;DATA &#39;desc = &#39; LD:errorCode &#39;    &#39;&quot;&quot;&quot;
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>| summarize total = count(), by:{errorCode}
+</code></pre></div>
+2. <strong>Add the base URL of the target app</strong></p>
+<p>Define the base URL of the Dynatrace app youâre linking to. In this case, weâre linking logs to the <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong> app:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>| fieldsAdd LogAppURL = &quot;/ui/apps/dynatrace.logs/#&quot;
+</code></pre></div>
+3. <strong>Encode the query components</strong></p>
+<p>To create a proper intent-based link, use the encodeUrl() function to encode each part of the URL. Break the query into components for clarity.</p>
+<ol>
+<li>
+<p>Query filter: Filter the logs matching specific error codes:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>| fieldsAdd QueryPart1 = &quot;&quot;&quot;{&quot;version&quot;:0,&quot;data&quot;:{&quot;queryConfig&quot;:{&quot;query&quot;:&quot;fetch logs\n| filter matchesPhrase(content,\&quot;\&quot;\&quot;&quot;&quot;&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| fieldsAdd QueryPart1 = encodeUrl(QueryPart1)
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>| fieldsAdd QueryPart1 = replaceString(QueryPart1, &quot;+&quot;, &quot;%20&quot;)
+</code></pre></div>
+   2. Dynamic field value: Encode the error codes dynamically:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>| fieldsAdd QueryPart2 = escape(errorCode)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| fieldsAdd QueryPart2 = encodeUrl(QueryPart2)
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>| fieldsAdd QueryPart2 = replaceString(QueryPart2, &quot;+&quot;, &quot;%20&quot;)
+</code></pre></div>
+   3. Timeframe: Encode the dashboardâs timeframe:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>| fieldsAdd QueryTimeFrame = &quot;&quot;&quot;\&quot;\&quot;\&quot;) &quot;,&quot;timeframe&quot;:{&quot;from&quot;:$dt_timeframe_from,&quot;to&quot;:$dt_timeframe_to},&quot;filter&quot;:{&quot;version&quot;:&quot;12.2.4&quot;,&quot;subQueries&quot;:[{&quot;id&quot;:&quot;A&quot;,&quot;isEnabled&quot;:true,&quot;datatype&quot;:&quot;logs&quot;,&quot;filter&quot;:&quot;&quot;}],&quot;globalCommands&quot;:{&quot;sort&quot;:{&quot;field&quot;:&quot;timestamp&quot;,&quot;direction&quot;:&quot;desc&quot;}}},&quot;segments&quot;:[],&quot;showDqlEditor&quot;:true},&quot;tableConfig&quot;:{&quot;visibleColumns&quot;:[&quot;timestamp&quot;,&quot;status&quot;,&quot;content&quot;],&quot;columnAttributes&quot;:{&quot;columnWidths&quot;:{},&quot;lineWraps&quot;:{},&quot;tableLineWrap&quot;:false},&quot;columnOrder&quot;:[&quot;timestamp&quot;,&quot;status&quot;,&quot;content&quot;]}}}&quot;&quot;&quot;
+</code></pre></div>
+   4. Create the final link. Combine the base URL, the query components, and Markdown formatting into a user-friendly link:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>| fieldsAdd errorCodeLink = concat(&quot;[&quot;, errorCode, &quot;](&quot;, LogAppURL, QueryPart1, QueryPart2, QueryTimeFrame, &quot;)&quot;)
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>| fields errorCodeLink, total
+</code></pre></div>
+</li>
+</ol>
+<p>Try the full example on the <a href="https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.dashboards/dashboard/35295fb4-3d3d-4919-994d-3f8869cab1b7#from=2026-01-21T14%3A19%3A00.000Z&amp;to=2026-01-21T16%3A20%3A00.000Z&amp;tileIds=22">Dynatrace playgroundï»¿</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dynatrace Documentation Mirror
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/gemini-chat.js"></script>
+      
+    
+  </body>
+</html>

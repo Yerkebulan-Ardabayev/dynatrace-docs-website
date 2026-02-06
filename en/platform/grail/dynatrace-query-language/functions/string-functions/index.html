@@ -1,0 +1,3420 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete bilingual Dynatrace documentation with AI assistant">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs/en/platform/grail/dynatrace-query-language/functions/string-functions/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>String functions - Dynatrace Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#string-functions" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Documentation" class="md-header__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              String functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../ru/getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇷🇺 Русский
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../ai/gemini/" class="md-tabs__link">
+          
+  
+  
+  🤖 AI Assistant
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Documentation" class="md-nav__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    Dynatrace Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Platform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇷🇺 Русский
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇷🇺 Русский
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI Assistant
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/notebooklm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="string-functions">String functions<a class="headerlink" href="#string-functions" title="Permanent link">&para;</a></h1>
+<h1 id="string-functions_1">String functions<a class="headerlink" href="#string-functions_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>Updated on Dec 09, 2025</li>
+</ul>
+<p>String functions allow you to create expressions that manipulate text strings in a variety of ways.</p>
+<p>Case sensitivity</p>
+<p>All string matching functions are case-sensitive per default. If otherwise required, the <code>caseSensitive</code> parameter provides the ability to change the behavior.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>...
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| fieldsAdd str_found = contains(content, &quot;FlushCommand&quot;, caseSensitive:false)
+</code></pre></div>
+<h2 id="concat">concat<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h2>
+<p>Concatenates the expressions into a single string.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
+<p><code>concat(expression, â¦)</code></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>double, long, string</p>
+<p>A numeric or string expressions that should be concatenated with others.</p>
+<p>Required</p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
+<h5 id="example-1">Example 1<a class="headerlink" href="#example-1" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>data record(a = &quot;DQL&quot;, b = &quot;is awesome!&quot;)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| fieldsAdd concat(a, &quot; &quot;, b)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>a</p>
+<p>b</p>
+<p>concat(a, " ", b)</p>
+<p><code>DQL</code></p>
+<p><code>is awesome!</code></p>
+<p><code>DQL is awesome!</code></p>
+<h2 id="contains">contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h2>
+<p>Searches the string expression for a substring. Returns <code>true</code> if the substring was found, <code>false</code> otherwise.</p>
+<h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
+<p><code>contains(expression, substring [, caseSensitive])</code></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The field or expression to check.</p>
+<p>Required</p>
+<p>substring</p>
+<p>string</p>
+<p>The substring that should be contained.</p>
+<p>Required</p>
+<p>caseSensitive</p>
+<p>boolean</p>
+<p>Whether the search should be done in a case-sensitive way. The default value is <code>true</code>.</p>
+<p>Optional</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>boolean</code>.</p>
+<h4 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_1">Example 1<a class="headerlink" href="#example-1_1" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>| fieldsAdd contains(content, &quot;DQL&quot;),
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>contains(content, &quot;dql&quot;, caseSensitive: false),
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>contains(content, &quot;Query&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>contains(content, "DQL")</p>
+<p>contains(content, "dql", caseSensitive:FALSE)</p>
+<p>contains(content, "Query")</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>true</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>false</code></p>
+<p><code>false</code></p>
+<p><code>true</code></p>
+<h2 id="decodeurl">decodeUrl<a class="headerlink" href="#decodeurl" title="Permanent link">&para;</a></h2>
+<p>Returns a URL-decoded string.</p>
+<h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
+<p><code>decodeUrl(expression)</code></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression that will be decoded.</p>
+<p>Required</p>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_2">Examples<a class="headerlink" href="#examples_2" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_2">Example 1<a class="headerlink" href="#example-1_2" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>data record(content = &quot;https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail&quot;),
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>record(content = &quot;https://www.dynatrace.com/platform/grail&quot;)
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>| fieldsAdd decodeUrl(content)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>decodeUrl(content)</p>
+<p><code>https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail</code></p>
+<p><code>https://www.dynatrace.com/platform/grail</code></p>
+<p><code>https://www.dynatrace.com/platform/grail</code></p>
+<p><code>https://www.dynatrace.com/platform/grail</code></p>
+<h2 id="encodeurl">encodeUrl<a class="headerlink" href="#encodeurl" title="Permanent link">&para;</a></h2>
+<p>Encodes a URL string by replacing characters that aren't numbers or letters with percentage symbols and hexadecimal numbers.</p>
+<h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
+<p><code>encodeUrl(expression)</code></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression that will be encoded.</p>
+<p>Required</p>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_3">Examples<a class="headerlink" href="#examples_3" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_3">Example 1<a class="headerlink" href="#example-1_3" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>data record(content = &quot;https://www.dynatrace.com/platform/grail&quot;)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>| fieldsAdd encodeUrl(content)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>encodeUrl(content)</p>
+<p><code>https://www.dynatrace.com/platform/grail</code></p>
+<p><code>https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail</code></p>
+<h2 id="endswith">endsWith<a class="headerlink" href="#endswith" title="Permanent link">&para;</a></h2>
+<p>Checks if a string expression ends with a suffix. Returns <code>true</code> if does, <code>false</code> otherwise.</p>
+<h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
+<p><code>endsWith(expression, suffix [, caseSensitive])</code></p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression that will be checked.</p>
+<p>Required</p>
+<p>suffix</p>
+<p>string</p>
+<p>The suffix string with which the expression should end.</p>
+<p>Required</p>
+<p>caseSensitive</p>
+<p>boolean</p>
+<p>Whether the check should be done in a case-sensitive way.</p>
+<p>Optional</p>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>boolean</code>.</p>
+<h4 id="examples_4">Examples<a class="headerlink" href="#examples_4" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_4">Example 1<a class="headerlink" href="#example-1_4" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>| fieldsAdd endsWith(content, &quot;awesome!&quot;),
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>endsWith(content, &quot;AWESOME!&quot;, caseSensitive: false),
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>endsWith(content, &quot;Language&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>endsWith(content, "awesome!")</p>
+<p>endsWith(content, "AWESOME!", caseSensitive:FALSE)</p>
+<p>endsWith(content, "Language")</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>true</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>false</code></p>
+<p><code>false</code></p>
+<p><code>true</code></p>
+<h2 id="escape">escape<a class="headerlink" href="#escape" title="Permanent link">&para;</a></h2>
+<p>Returns an escaped string.</p>
+<p>Escaping rules</p>
+<ol>
+<li>Single and double quotes are escaped. Backticks are not escaped.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>"</code></p>
+<p><code>\"</code></p>
+<p><code>'</code></p>
+<p><code>\'</code></p>
+<ol>
+<li>Backslashes are escaped.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>\</code></p>
+<p><code>\\</code></p>
+<ol>
+<li>ASCII characters backspace, form feed, new line, carriage return, horizontal tabs are escaped.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>&lt;backspace&gt;</code></p>
+<p><code>\b</code></p>
+<p><code>&lt;form feed&gt;</code></p>
+<p><code>\f</code></p>
+<p><code>&lt;new line&gt;</code></p>
+<p><code>\n</code></p>
+<p><code>&lt;carriage return&gt;</code></p>
+<p><code>\r</code></p>
+<p><code>&lt;horizontal tab&gt;</code></p>
+<p><code>\t</code></p>
+<ol>
+<li>ASCII characters within the range 0x20 - 0x7e (printable ASCII characters), that are not covered by any of the above rules, stay as they are.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>a</code></p>
+<p><code>a</code></p>
+<p><code>1</code></p>
+<p><code>1</code></p>
+<ol>
+<li>
+<p>All other ASCII characters are represented as <code>\xhh</code>. This applies to the following characters</p>
+</li>
+<li>
+<p>characters within the range 0x00 - 0x07</p>
+</li>
+<li>character 0x0b (vertical tab)</li>
+<li>characters within the range 0x0e - 0x1f</li>
+<li>character 0x7f</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>&lt;vertical tab&gt;</code></p>
+<p><code>\x0b</code></p>
+<ol>
+<li>All characters in extended ASCII space (0x80-0xff) and Unicode characters outside of the ASCII space are represented as <code>\uhhhh</code>.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>Ã¶</code></p>
+<p><code>\u00f6</code></p>
+<h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
+<p><code>escape(expression)</code></p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string expression</p>
+<p>The string expression that will be escaped.</p>
+<p>Required</p>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_5">Examples<a class="headerlink" href="#examples_5" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_5">Example 1<a class="headerlink" href="#example-1_5" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>data record(content = &quot;&quot;&quot;&quot;foo@bar.com&quot;&quot;&quot;)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| fieldsAdd escape(content)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<table>
+<thead>
+<tr>
+<th>content</th>
+<th>escape(content)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"foo@bar.com</code></td>
+<td><code>\"foo@bar.com</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="getcharacter">getCharacter<a class="headerlink" href="#getcharacter" title="Permanent link">&para;</a></h2>
+<p>Returns the character at a given position from a string expression. Negative values for the position parameter are counted from the end of the string. If a position refers to a position outside the string, the function returns NULL.</p>
+<h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
+<p><code>getCharacter(expression, position)</code></p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>Required</p>
+<p>position</p>
+<p>long</p>
+<p>The position at which to get the character.</p>
+<p>Required</p>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_6">Examples<a class="headerlink" href="#examples_6" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_6">Example 1<a class="headerlink" href="#example-1_6" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>| fieldsAdd getCharacter(content, 1),
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>getCharacter(content, 17),
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>getCharacter(content, -1)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>getCharacter(content, 1)</p>
+<p>getCharacter(content, 17)</p>
+<p>getCharacter(content, -1)</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>Q</code></p>
+<p><em>null</em></p>
+<p><code>!</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>y</code></p>
+<p><code>a</code></p>
+<p><code>e</code></p>
+<h2 id="indexof">indexOf<a class="headerlink" href="#indexof" title="Permanent link">&para;</a></h2>
+<p>Returns the index of the first occurrence of a substring in a string expression.
+Starts to search forward from a given index. Negative values for the <code>from</code> parameter are counted from the end of the string.
+The default value for <code>from</code> is <code>0</code> (the search from the start of the string).
+The search is case-sensitive.
+If the defined substring is not found, the function returns <code>-1</code>.</p>
+<h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
+<p><code>indexOf(expression, substring [, from])</code></p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression in which the substring is searched for.</p>
+<p>Required</p>
+<p>substring</p>
+<p>string</p>
+<p>The substring expression to search for in the expression.</p>
+<p>Required</p>
+<p>from</p>
+<p>long</p>
+<p>The index from which to start the forward search for the first occurrence of the substring within the expression. Negative values are counted from the end of the string.</p>
+<p>Optional</p>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>long</code>.</p>
+<h4 id="examples_7">Examples<a class="headerlink" href="#examples_7" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_7">Example 1<a class="headerlink" href="#example-1_7" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>| fieldsAdd indexOf(content, &quot;a&quot;),
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>indexOf(content, &quot;a&quot;, from: 10),
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>indexOf(content, &quot;Query&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>indexOf(content, "a")</p>
+<p>indexOf(content, "a", from:10)</p>
+<p>indexOf(content, "Query")</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>7</code></p>
+<p><code>-1</code></p>
+<p><code>-1</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>3</code></p>
+<p><code>17</code></p>
+<p><code>10</code></p>
+<h2 id="jsonfield">jsonField<a class="headerlink" href="#jsonfield" title="Permanent link">&para;</a></h2>
+<p>Parses a JSON string and extracts one value selected by its name.</p>
+<h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
+<p><code>jsonField(expression, fieldName [, seek])</code></p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The JSON string that should be parsed.</p>
+<p>Required</p>
+<p>fieldName</p>
+<p>string</p>
+<p>The string literal with the key to be extracted.</p>
+<p>Required</p>
+<p>seek</p>
+<p>boolean</p>
+<p>Flag indicating if the function should search for the first valid JSON object in the expression. The default value is <code>false</code>.</p>
+<p>Optional</p>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>long</code>, <code>double</code>, <code>boolean</code>, <code>string</code>, <code>array</code> or <code>record</code>.</p>
+<h4 id="examples_8">Examples<a class="headerlink" href="#examples_8" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_8">Example 1<a class="headerlink" href="#example-1_8" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>data record(content = &quot;&quot;&quot;{
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>&quot;name&quot;:&quot;John&quot;,
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>&quot;children&quot;:[&quot;Mallory&quot;, &quot;Mary&quot;],
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>&quot;address&quot;:{&quot;city&quot;:&quot;Boston&quot;, &quot;zip&quot;:&quot;02210&quot;}
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>}&quot;&quot;&quot;)
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>| fieldsAdd jsonField(content, &quot;name&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>jsonField(content, "name")</p>
+<p><code>{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}</code></p>
+<p><code>John</code></p>
+<h5 id="example-2">Example 2<a class="headerlink" href="#example-2" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>data record(content = &quot;&quot;&quot;JSON: {&quot;name&quot;: &quot;John&quot;} ...&quot;&quot;&quot;)
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>| fieldsAdd jsonField(content, &quot;name&quot;, seek:false)
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>| fieldsAdd jsonField(content, &quot;name&quot;, seek:true)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>jsonField(content, "name", seek:FALSE)</p>
+<p>jsonField(content, "name", seek:TRUE)</p>
+<p><code>JSON: {"name": "John"} ...</code></p>
+<p><code>null</code></p>
+<p><code>John</code></p>
+<h2 id="jsonpath">jsonPath<a class="headerlink" href="#jsonpath" title="Permanent link">&para;</a></h2>
+<p>Parses a JSON string and extracts one value selected by a JSONPath expression.</p>
+<h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
+<p><code>jsonPath(expression, jsonPath [, seek])</code></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The JSON string that should be parsed.</p>
+<p>Required</p>
+<p>jsonPath</p>
+<p>string</p>
+<p>The string literal with the JSONPath expression of the value to be extracted.</p>
+<p>Required</p>
+<p>seek</p>
+<p>boolean</p>
+<p>Flag indicating if the function should search for the first valid JSON object in the expression. The default value is <code>false</code>.</p>
+<p>Optional</p>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>long</code>, <code>double</code>, <code>boolean</code>, <code>string</code>, <code>array</code> or <code>record</code>.</p>
+<h4 id="examples_9">Examples<a class="headerlink" href="#examples_9" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_9">Example 1<a class="headerlink" href="#example-1_9" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>data record(content = &quot;&quot;&quot;{
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>&quot;name&quot;:&quot;John&quot;,
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>&quot;children&quot;:[&quot;Mallory&quot;, &quot;Mary&quot;],
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>&quot;address&quot;:{&quot;city&quot;:&quot;Boston&quot;, &quot;zip&quot;:&quot;02210&quot;}
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>}&quot;&quot;&quot;)
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>| fieldsAdd jsonPath(content, &quot;$.children[0]&quot;)
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>| fieldsAdd jsonPath(content, &quot;$.address.city&quot;)
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>| fieldsAdd jsonPath(content, &quot;$[&#39;address&#39;][&#39;zip&#39;]&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>jsonPath(content, "$.children[0]")</p>
+<p>jsonPath(content, "$.address.city")</p>
+<p>jsonPath(content, "$['address']['zip']")</p>
+<p><code>{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}</code></p>
+<p><code>Mallory</code></p>
+<p><code>Boston</code></p>
+<p><code>02210</code></p>
+<h5 id="example-2_1">Example 2<a class="headerlink" href="#example-2_1" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>data record(content = &quot;&quot;&quot;JSON: {&quot;name&quot;: &quot;John&quot;} ...&quot;&quot;&quot;)
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>| fieldsAdd jsonPath(content, &quot;$.name&quot;, seek:false)
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>| fieldsAdd jsonPath(content, &quot;$.name&quot;, seek:true)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>jsonPath(content, "$.name", seek:FALSE)</p>
+<p>jsonPath(content, "$.name", seek:TRUE)</p>
+<p><code>JSON: {"name": "John"} ...</code></p>
+<p><code>null</code></p>
+<p><code>John</code></p>
+<h2 id="lastindexof">lastIndexOf<a class="headerlink" href="#lastindexof" title="Permanent link">&para;</a></h2>
+<p>Returns the index of the last occurrence of a substring in a string expression. Starts to search backward from a given index. Negative values for the from parameter are counted from the end of the string. The default value for from is -1 (search from the end of the string). The search is case-sensitive. If the substring is not found, the function returns <code>-1</code>.</p>
+<h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
+<p><code>lastIndexOf(expression, substring [, from])</code></p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression in which the substring is searched for.</p>
+<p>Required</p>
+<p>substring</p>
+<p>string</p>
+<p>The substring expression to search for in the expression.</p>
+<p>Required</p>
+<p>from</p>
+<p>long</p>
+<p>Optional</p>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>long</code>.</p>
+<h4 id="examples_10">Examples<a class="headerlink" href="#examples_10" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_10">Example 1<a class="headerlink" href="#example-1_10" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>| fieldsAdd lastIndexOf(content, &quot;a&quot;),
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>lastIndexOf(content, &quot;a&quot;, from: 10),
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>lastIndexOf(content, &quot;Query&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>lastIndexOf(content, "a")</p>
+<p>lastIndexOf(content, "a", from:10)</p>
+<p>lastIndexOf(content, "Query")</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>7</code></p>
+<p><code>7</code></p>
+<p><code>-1</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>21</code></p>
+<p><code>6</code></p>
+<p><code>10</code></p>
+<h2 id="levenshteindistance">levenshteinDistance<a class="headerlink" href="#levenshteindistance" title="Permanent link">&para;</a></h2>
+<p>Computes the Levenshtein distance between two input strings.</p>
+<h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
+<p><code>levenshteinDistance(expression, expression)</code></p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>first expression</p>
+<p>string</p>
+<p>The first string expression to compute the Levenshtein distance from.</p>
+<p>Required</p>
+<p>second</p>
+<p>string</p>
+<p>The second string expression to compute the Levenshtein distance from.</p>
+<p>Required</p>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>long</code>.</p>
+<h4 id="examples_11">Examples<a class="headerlink" href="#examples_11" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_11">Example 1<a class="headerlink" href="#example-1_11" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>data record(a = &quot;DQL is awesome!&quot;, b = &quot;Grail is awesome!&quot;),
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>record(a = &quot;Dynatrace Query Language&quot;, b = &quot;DQL&quot;),
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>record(a = &quot;Dynatrace Query Language&quot;, b = &quot;dynatrace query language&quot;)
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>| fieldsAdd levenshteinDistance(a, b)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>a</p>
+<p>b</p>
+<p>levenshteinDistance(a, b)</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>Grail is awesome!</code></p>
+<p><code>5</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>DQL</code></p>
+<p><code>21</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>dynatrace query language</code></p>
+<p><code>3</code></p>
+<h2 id="like">like<a class="headerlink" href="#like" title="Permanent link">&para;</a></h2>
+<p>Tests if a string expression matches a pattern. If the pattern does not contain percent signs, <code>like()</code> acts as the <code>==</code> operator (equality check). A percent character in the pattern <code>(%)</code> matches any sequence of zero or more characters. An underscore in the pattern <code>(\_)</code> matches a single character.</p>
+<h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
+<p><code>like(expression, pattern)</code></p>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>Required</p>
+<p>pattern</p>
+<p>string</p>
+<p>Required</p>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>boolean</code>.</p>
+<h4 id="examples_12">Examples<a class="headerlink" href="#examples_12" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_12">Example 1<a class="headerlink" href="#example-1_12" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>| fieldsAdd like(content, &quot;%DQL%&quot;),
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>like(content, &quot;D%L%&quot;),
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>like(content, &quot;D_L%&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>like(content, "%DQL%")</p>
+<p>like(content, "D%L%")</p>
+<p>like(content, "D_L%")</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>true</code></p>
+<p><code>true</code></p>
+<p><code>true</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>false</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<h2 id="lower">lower<a class="headerlink" href="#lower" title="Permanent link">&para;</a></h2>
+<p>Converts a string to lowercase.</p>
+<h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
+<p><code>lower(expression)</code></p>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression to convert to lowercase.</p>
+<p>Required</p>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_13">Examples<a class="headerlink" href="#examples_13" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_13">Example 1<a class="headerlink" href="#example-1_13" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>| fieldsAdd lower(content)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>lower(content)</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>dql is awesome!</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>dynatrace query language</code></p>
+<h2 id="matchespattern">matchesPattern<a class="headerlink" href="#matchespattern" title="Permanent link">&para;</a></h2>
+<p>Tests if a string expression matches the DPL pattern and returns <code>true</code> if it does, otherwise, returns <code>false</code>.</p>
+<h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
+<p><code>matchesPattern(expression, pattern)</code></p>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>A field or string expression to test.</p>
+<p>Required</p>
+<p>pattern</p>
+<p>string</p>
+<p>The matching pattern.</p>
+<p>Required</p>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>boolean</code>.</p>
+<h4 id="examples_14">Examples<a class="headerlink" href="#examples_14" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_14">Example 1<a class="headerlink" href="#example-1_14" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>data record(content = &quot;2023-11-01 12:52:12 : 766&quot;),
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>record(content = &quot;2023-11-01 12:53:00:123&quot;),
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>record(content = &quot;2023-11-01 12:55:59 : 192.168.0.1&quot;)
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>| fieldsAdd matchesPattern(content, &quot;TIME &#39; : &#39; LONG&quot;),
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>matchesPattern(content, &quot;TIME &#39; : &#39; IP&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<table>
+<thead>
+<tr>
+<th>content</th>
+<th>matchesPattern(content, "TIME ' : ' LONG")</th>
+<th>matchesPattern(content, "TIME ' : ' IP")</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2023-11-01 12:52:12 : 766</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>2023-11-01 12:53:00:123</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>2023-11-01 12:55:59 : 192.168.0.1</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="matchesphrase">matchesPhrase<a class="headerlink" href="#matchesphrase" title="Permanent link">&para;</a></h2>
+<p>Matches a phrase against the input string expression using token matchers.</p>
+<h4 id="syntax_15">Syntax<a class="headerlink" href="#syntax_15" title="Permanent link">&para;</a></h4>
+<p><code>matchesPhrase(expression, phrase [, caseSensitive])</code></p>
+<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string, array</p>
+<p>The expression (string or array of strings) that should be checked.</p>
+<p>Required</p>
+<p>phrase</p>
+<p>string</p>
+<p>The phrase to search for.</p>
+<p>Required</p>
+<p>caseSensitive</p>
+<p>boolean</p>
+<p>Whether the match should be done case-sensitive. Default: <code>false</code>.</p>
+<p>Optional</p>
+<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>boolean</code>.</p>
+<h4 id="examples_15">Examples<a class="headerlink" href="#examples_15" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_15">Example 1<a class="headerlink" href="#example-1_15" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>record(content = &quot;Dynatrace Query Language&quot;),
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>record(content = array(&quot;DQL&quot;, &quot;is&quot;, &quot;awesome&quot;, &quot;!&quot;, &quot;Dynatrace Query Language&quot;))
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>| fieldsAdd matchesPhrase(content, &quot;DQL&quot;),
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>matchesPhrase(content, &quot;Dyna&quot;),
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>matchesPhrase(content, &quot;query&quot;),
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>matchesPhrase(content, &quot;query&quot;, caseSensitive: true)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>matchesPhrase(content, "DQL")</p>
+<p>matchesPhrase(content, "Dyna")</p>
+<p>matchesPhrase(content, "query")</p>
+<p>matchesPhrase(content, "query", caseSensitive:TRUE)</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<p><code>false</code></p>
+<p><code>false</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>false</code></p>
+<p><code>false</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<p><code>[DQL, is, awesome, !, Dynatrace Query Language]</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<h2 id="matchesvalue">matchesValue<a class="headerlink" href="#matchesvalue" title="Permanent link">&para;</a></h2>
+<p>Searches records for a specific value in a given attribute. Returns <code>true</code> or <code>false</code>.</p>
+<h4 id="syntax_16">Syntax<a class="headerlink" href="#syntax_16" title="Permanent link">&para;</a></h4>
+<p><code>matchesValue(expression, value, â¦ [, caseSensitive])</code></p>
+<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string, array</p>
+<p>The expression (string or array of strings) that should be checked.</p>
+<p>Required</p>
+<p>value</p>
+<p>string, array</p>
+<p>The value to search for using patterns (supports an array of patterns or a list of patterns).</p>
+<p>Required</p>
+<p>caseSensitive</p>
+<p>boolean</p>
+<p>Whether the match should be done case-sensitive. Default: <code>false</code>.</p>
+<p>Optional</p>
+<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>boolean</code>.</p>
+<h4 id="examples_16">Examples<a class="headerlink" href="#examples_16" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_16">Example 1<a class="headerlink" href="#example-1_16" title="Permanent link">&para;</a></h5>
+<p>Values are matched case-insensitive by default:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>data record(content = &quot;User &#39;kÃ¤Ã¤rmanÃ¼&#39; failed to login from 192.168.0.1&quot;)
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>| fieldsAdd matchesValue(content, &quot;User*&quot;),
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>matchesValue(content, &quot;user*&quot;),
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>matchesValue(content, &quot;user*&quot;, caseSensitive: true)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>matchesValue(content, "User*")</p>
+<p>matchesValue(content, "user*")</p>
+<p>matchesValue(content, "user*", caseSensitive:TRUE)</p>
+<p><code>User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1</code></p>
+<p><code>true</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<h5 id="example-2_2">Example 2<a class="headerlink" href="#example-2_2" title="Permanent link">&para;</a></h5>
+<p>Values are matched from the beginning. To match parts of the value, use <code>*</code> as wildcard symbol:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>data record(content = &quot;User &#39;kÃ¤Ã¤rmanÃ¼&#39; failed to login from 192.168.0.1&quot;)
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>| fieldsAdd matchesValue(content, &quot;192.168.0.1&quot;),
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>matchesValue(content, &quot;*192.168.0.1&quot;),
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>matchesValue(content, &quot;*failed to log*&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>matchesValue(content, "192.168.0.1")</p>
+<p>matchesValue(content, "*192.168.0.1")</p>
+<p>matchesValue(content, "*failed to log*")</p>
+<p><code>User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1</code></p>
+<p><code>false</code></p>
+<p><code>true</code></p>
+<p><code>true</code></p>
+<h5 id="example-3">Example 3<a class="headerlink" href="#example-3" title="Permanent link">&para;</a></h5>
+<p>Only ASCII characters are matched case-insensitive:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>data record(content = &quot;Ãsterreich&quot;)
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>| fieldsAdd matchesValue(content, &quot;Ã¶sterreich&quot;),
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>matchesValue(content, &quot;Ãsterreich&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>matchesValue(content, "Ã¶sterreich")</p>
+<p>matchesValue(content, "Ãsterreich")</p>
+<p><code>Ãsterreich</code></p>
+<p><code>false</code></p>
+<p><code>true</code></p>
+<h5 id="example-4">Example 4<a class="headerlink" href="#example-4" title="Permanent link">&para;</a></h5>
+<p>The function handles values of arrays in "any-match" manner.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>data record(technologies = array(&quot;Java11&quot;, &quot;java17&quot;))
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>| fieldsAdd matchesValue(technologies, &quot;Java11&quot;),
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>matchesValue(technologies, &quot;java&quot;),
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>matchesValue(technologies, &quot;java*&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>technologies</p>
+<p>matchesValue(technologies, "Java11")</p>
+<p>matchesValue(technologies, "java")</p>
+<p>matchesValue(technologies, "java*")</p>
+<p><code>[Java11, java17]</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<p><code>true</code></p>
+<h4 id="multi-pattern-comparison">Multi-pattern comparison<a class="headerlink" href="#multi-pattern-comparison" title="Permanent link">&para;</a></h4>
+<p>The <code>matchesValue()</code> function supports matching against multiple patterns. You can use it by either providing an array or a list of patterns with the <code>value</code> parameter. Only strings are supported as patterns. Other datatypes don't produce a match and are ignored. The <code>matchesValue()</code> function returns true if any of the patterns matches. In case none of the patterns produce a match, <code>false</code> is returned.</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>data record(content = array(&quot;DQL&quot;, &quot;is&quot;, &quot;awesome&quot;, &quot;!&quot;))
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>| fieldsAdd matchesValue(content, array(&quot;Grail&quot;, &quot;dql&quot;)),
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>matchesValue(content, {&quot;Grail&quot;, &quot;dql&quot;}),
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>matchesValue(content, {&quot;Grail&quot;, &quot;dq*&quot;}),
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>matchesValue(content, {&quot;Grail&quot;, &quot;dq*&quot;}, caseSensitive: true)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>matchesValue(content, array("Grail", "dql"))</p>
+<p>matchesValue(content, {"Grail", "dql"})</p>
+<p>matchesValue(content, {"Grail", "dq*"})</p>
+<p>matchesValue(caseSensitive:TRUE, content, {"Grail", "dq*"})</p>
+<p><code>DQL, is, awesome, !</code></p>
+<p><code>true</code></p>
+<p><code>true</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<h2 id="parse">parse<a class="headerlink" href="#parse" title="Permanent link">&para;</a></h2>
+<p>Extracts a single value from a string as specified in the pattern or a record if there are multiple named matchers.</p>
+<h4 id="syntax_17">Syntax<a class="headerlink" href="#syntax_17" title="Permanent link">&para;</a></h4>
+<p><code>parse(expression, pattern)</code></p>
+<h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>A field or string expression to parse.</p>
+<p>Required</p>
+<p>pattern</p>
+<p>string</p>
+<p>The parse pattern. Must conform with patterns (see <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL</a>).</p>
+<p>Required</p>
+<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
+<p>The <code>parse</code> function returns a single value, which can be either of primitive type or a record. The result is of primitive type in case of a single named matcher in the DPL pattern. If there are multiple named matchers in the pattern, then the result is a record containing fields corresponding to the names of the matchers.
+Fields created from the output of the <code>parse</code> function by default get the name of the named matcher in the DPL pattern. In case of multiple named matchers in the pattern, the default field name is <code>parsed_record</code>. You can also define alternative field names using an alias expression.</p>
+<h4 id="examples_17">Examples<a class="headerlink" href="#examples_17" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_17">Example 1<a class="headerlink" href="#example-1_17" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>data record(src = &quot;1 2&quot;),
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>record(src = &quot;45 46 47 48&quot;)
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>| fieldsAdd parse(src, &quot;LONG:result&quot;),
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>value = parse(src, &quot;LONG:result&quot;),
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>parse(src, &quot;LONG:field1 &#39; &#39; LONG:field2&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<table>
+<thead>
+<tr>
+<th>src</th>
+<th>result</th>
+<th>value</th>
+<th>parsed_record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1 2</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><strong>field1</strong>: <code>1</code> <strong>field2</strong>: <code>2</code></td>
+</tr>
+<tr>
+<td><code>45 46 47 48</code></td>
+<td><code>45</code></td>
+<td><code>45</code></td>
+<td><strong>field1</strong>: <code>45</code> <strong>field2</strong>: <code>46</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="parseall">parseAll<a class="headerlink" href="#parseall" title="Permanent link">&para;</a></h2>
+<p>Extracts several values from a string as specified in the pattern.
+Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#parse" title="A list of DQL string functions."><code>parse</code></a> function, <code>parseAll</code> returns an array all the time. The array can be empty if no patterns matched. A single element can be primitive type or a record.</p>
+<h4 id="syntax_18">Syntax<a class="headerlink" href="#syntax_18" title="Permanent link">&para;</a></h4>
+<p><code>parseAll(expression, pattern)</code></p>
+<h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>A field or string expression to parse.</p>
+<p>Required</p>
+<p>pattern</p>
+<p>string</p>
+<p>The parse pattern. Must conform with <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL patterns</a>.</p>
+<p>Required</p>
+<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>array</code>.</p>
+<h4 id="examples_18">Examples<a class="headerlink" href="#examples_18" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_18">Example 1<a class="headerlink" href="#example-1_18" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>data record(src = &quot;1 2&quot;),
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>record(src = &quot;45 46 47 48&quot;)
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>| fieldsAdd parseAll(src, &quot;LONG:result&quot;),
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>value = parseAll(src, &quot;LONG:result&quot;),
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>parseAll(src, &quot;LONG:field1 &#39; &#39; LONG:field2&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<table>
+<thead>
+<tr>
+<th>src</th>
+<th>result</th>
+<th>value</th>
+<th>parsed_records</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1 2</code></td>
+<td><code>[1, 2]</code></td>
+<td><code>[1, 2]</code></td>
+<td>[<strong>field1:</strong> <code>1</code> <strong>field2</strong> <code>2</code>]</td>
+</tr>
+<tr>
+<td><code>45 46 47 48</code></td>
+<td><code>[45, 46, 47, 48]</code></td>
+<td><code>[45, 46, 47, 48]</code></td>
+<td>[<strong>field1:</strong> <code>45</code> <strong>field2</strong> <code>46</code>, <strong>field1:</strong> <code>47</code> <strong>field2</strong> <code>48</code>]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="punctuation">punctuation<a class="headerlink" href="#punctuation" title="Permanent link">&para;</a></h2>
+<p>Extracts punctuation characters out of an input string.</p>
+<h4 id="syntax_19">Syntax<a class="headerlink" href="#syntax_19" title="Permanent link">&para;</a></h4>
+<p><code>punctuation(expression, [, count] [, withSpace])</code></p>
+<h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression from which the punctuation characters are extracted.</p>
+<p>Required</p>
+<p>count</p>
+<p>positive integer</p>
+<p>The maximum number of returned punctuation characters. Default: <code>32</code>.</p>
+<p>Optional</p>
+<p>withSpace</p>
+<p>boolean</p>
+<p>Whether space characters should be included. Default: <code>false</code>.</p>
+<p>Optional</p>
+<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_19">Examples<a class="headerlink" href="#examples_19" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_19">Example 1<a class="headerlink" href="#example-1_19" title="Permanent link">&para;</a></h5>
+<p>In this example, we extract the punctuation characters from each input string.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>record(content = &quot;Dynatrace Query Language&quot;),
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>record(content = &quot;${placeholder}&quot;)
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>| fieldsAdd punctuation(content),
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>punctuation(content, count: 2),
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>punctuation(content, count: 2, withSpace: true)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>punctuation(content)</p>
+<p>punctuation(content, count:2)</p>
+<p>punctuation(content, count:2, withSpace:TRUE)</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>!</code></p>
+<p><code>!</code></p>
+<p><code>__</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><em>empty string</em></p>
+<p><em>empty string</em></p>
+<p><code>__</code></p>
+<p><code>${placeholder}</code></p>
+<p><code>${}</code></p>
+<p><code>${</code></p>
+<p><code>${</code></p>
+<h2 id="replacepattern">replacePattern<a class="headerlink" href="#replacepattern" title="Permanent link">&para;</a></h2>
+<p>Replaces each substring of a string that matches the DPL pattern with the given string. The pattern must be defined as a constant string expression. For additional details about pattern syntax, see the <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL documentation</a>.</p>
+<h4 id="syntax_20">Syntax<a class="headerlink" href="#syntax_20" title="Permanent link">&para;</a></h4>
+<p><code>replacePattern(expression, pattern, replacement)</code></p>
+<h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>A field or string expression to replace.</p>
+<p>Required</p>
+<p>pattern</p>
+<p>string</p>
+<p>The replacing pattern.</p>
+<p>Required</p>
+<p>replacement</p>
+<p>string</p>
+<p>The string that should replace the found substrings.</p>
+<p>Required</p>
+<h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_20">Examples<a class="headerlink" href="#examples_20" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_20">Example 1<a class="headerlink" href="#example-1_20" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>data record(content = &quot;DQL 2019-08-01 09:30:00&quot;),
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>record(content = &quot;Dynatrace Query L4nguage&quot;)
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>| fieldsAdd replacePattern(content, &quot;TIME&quot;, &quot;is awesome!&quot;),
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>replacePattern(content, &quot;LONG&quot;, &quot;a&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<table>
+<thead>
+<tr>
+<th>content</th>
+<th>replacePattern(content, "TIME", "is awsome!")</th>
+<th>replacePattern(content, "LONG", "a")</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DQL 2019-08-01 09:30:00</code></td>
+<td><code>DQL is awesome!</code></td>
+<td><code>DQL aaa a:a:a</code></td>
+</tr>
+<tr>
+<td><code>Dynatrace Query L4nguage</code></td>
+<td><code>Dynatrace Query L4nguage</code></td>
+<td><code>Dynatrace Query Language</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="replacestring">replaceString<a class="headerlink" href="#replacestring" title="Permanent link">&para;</a></h2>
+<p>Replaces each substring of a string with a given string. This function replaces only exactly matched substrings from the original string to the replacement. Matching is case-sensitive and doesn't use any wildcards. All found patterns will be replaced if they do not intersect. For instance, replacing <code>abcabca</code> in a string with <code>abca</code> pattern produces only one replacement. Only the first occurrence at the beginning of the string will be replaced.</p>
+<h4 id="syntax_21">Syntax<a class="headerlink" href="#syntax_21" title="Permanent link">&para;</a></h4>
+<p><code>replaceString(expression, substring, replacement)</code></p>
+<h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The field or expression where substrings should be replaced.</p>
+<p>Required</p>
+<p>substring</p>
+<p>string</p>
+<p>The substring that should be replaced.</p>
+<p>Required</p>
+<p>replacement</p>
+<p>string</p>
+<p>The string that should replace the found substrings.</p>
+<p>Required</p>
+<h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_21">Examples<a class="headerlink" href="#examples_21" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_21">Example 1<a class="headerlink" href="#example-1_21" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>record(content = &quot;Dynatrace Query Language&quot;),
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>record(content = &quot;abcabca&quot;)
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>| fieldsAdd replaceString(content, &quot;awesome&quot;, &quot;simple&quot;),
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>replaceString(content, &quot;abca&quot;, &quot;xyz&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>replaceString(content, "awesome", "simple")</p>
+<p>replaceString(content, "abca", "xyz")</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>DQL is simple!</code></p>
+<p><code>DQL is awesome!</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>abcabca</code></p>
+<p><code>abcabca</code></p>
+<p><code>xyzbca</code></p>
+<h2 id="splitbypattern">splitByPattern<a class="headerlink" href="#splitbypattern" title="Permanent link">&para;</a></h2>
+<p>Splits a string into an array at each occurrence of the DPL pattern.</p>
+<h4 id="syntax_22">Syntax<a class="headerlink" href="#syntax_22" title="Permanent link">&para;</a></h4>
+<p><code>splitByPattern(expression, pattern)</code></p>
+<h4 id="parameters_22">Parameters<a class="headerlink" href="#parameters_22" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>A field or string expression to split.</p>
+<p>Required</p>
+<p>pattern</p>
+<p>string</p>
+<p>The splitting pattern. Must conform with <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL patterns</a>.</p>
+<p>Required</p>
+<h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>array</code>.</p>
+<h4 id="examples_22">Examples<a class="headerlink" href="#examples_22" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_22">Example 1<a class="headerlink" href="#example-1_22" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>data record(content = &quot;one $1 two $4 three&quot;),
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>record(content = &quot;foo $1000 bar&quot;),
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>record(content = &quot;no separator&quot;),
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>record(content = &quot;&quot;)
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>| fieldsAdd splitByPattern(content, &quot; &#39; $&#39; LONG &#39; &#39; &quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<table>
+<thead>
+<tr>
+<th>content</th>
+<th>splitByPattern(content, " ' $' LONG ' ' ")</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>one $1 two $4 three</code></td>
+<td><code>[one, two, three]</code></td>
+</tr>
+<tr>
+<td><code>foo $1000 bar</code></td>
+<td><code>[foo, bar]</code></td>
+</tr>
+<tr>
+<td><code>no separator</code></td>
+<td><code>[no separator]</code></td>
+</tr>
+<tr>
+<td><em>empty string</em></td>
+<td><code>[]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="splitstring">splitString<a class="headerlink" href="#splitstring" title="Permanent link">&para;</a></h2>
+<p>Splits a string according to the parameters set.<br />
+Retrieves an array of substrings of the specified expression that are adjacent to occurrences of the given pattern.<br />
+Parameters are interpreted literally. For example, splitting <code>www.dynatrace.org</code> by <code>.</code> results in <code>www</code> and <code>dynatrace</code> and <code>org</code>.<br />
+Using an empty string as a pattern splits the string into one-byte substrings. For example, a split of four characters becomes an array of four strings having one byte each (splitting the <code>"1234"</code> expression results in <code>array("1", "2", "3", "4")</code>).</p>
+<p>The non-ASCII characters are represented by multiple bytes. Splitting a string containing such characters by <code>""</code> breaks these bytes apart into separate invalid strings.</p>
+<p>If the pattern is not found in the expression, it returns an array that contains only the input expression.</p>
+<p>If the expression starts with one or more occurrences of the pattern, an empty string will be added for each occurrence. For example, <code>splitString("abc", "a")</code> results in <code>"", "bc"</code>. Analogically, empty strings are added if the pattern is found at the end of the expression.</p>
+<p>An empty string is also added for adjacent occurrences of the pattern that do not border the start or end of the string. For example, <code>splitString("abbc", "b")</code> results in <code>"a", "", "c"</code>.</p>
+<p>If the pattern is empty, it splits the expression into one-byte substrings. For example, <code>splitString("abc", "")</code> results in <code>"a", "b", "c"</code>.</p>
+<h4 id="syntax_23">Syntax<a class="headerlink" href="#syntax_23" title="Permanent link">&para;</a></h4>
+<p><code>splitString(expression, pattern)</code></p>
+<h4 id="parameters_23">Parameters<a class="headerlink" href="#parameters_23" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression to split up into an array.</p>
+<p>Required</p>
+<p>pattern</p>
+<p>string</p>
+<p>The pattern to split the string expression at, or the empty string to split into one-byte strings.</p>
+<p>Required</p>
+<h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>array</code>.</p>
+<h4 id="examples_23">Examples<a class="headerlink" href="#examples_23" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_23">Example 1<a class="headerlink" href="#example-1_23" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>| fieldsAdd splitString(content, &quot; &quot;),
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>splitString(content, &quot;is&quot;),
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>
+<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>
+<a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a>
+<a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>splitString(content, &quot;&quot;),
+<a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>
+<a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>
+<a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a>
+<a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>splitString(content, &quot;XYZ&quot;)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>splitString(content, " ")</p>
+<p>splitString(content, "is")</p>
+<p>splitString(content, "")</p>
+<p>splitString(content, "XYZ")</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>[DQL, is, awesome!]</code></p>
+<p><code>[DQL , awesome!]</code></p>
+<p><code>[D, Q, L, , i, s, , a, w, e, s, o, m, e, !]</code></p>
+<p><code>[DQL is awesome!]</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>[Dynatrace, Query, Language]</code></p>
+<p><code>[Dynatrace Query Language]</code></p>
+<p><code>[D, y, n, a, t, r, a, c, e, , Q, u, e, r, y, , L, a, n, g, u, a, g, e]</code></p>
+<p><code>[Dynatrace Query Language]</code></p>
+<h2 id="startswith">startsWith<a class="headerlink" href="#startswith" title="Permanent link">&para;</a></h2>
+<p>Checks if a string expression starts with a prefix. Returns <code>true</code> if does, <code>false</code> otherwise.</p>
+<h4 id="syntax_24">Syntax<a class="headerlink" href="#syntax_24" title="Permanent link">&para;</a></h4>
+<p><code>startsWith(expression, prefix [, caseSensitive])</code></p>
+<h4 id="parameters_24">Parameters<a class="headerlink" href="#parameters_24" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression that will be checked.</p>
+<p>Required</p>
+<p>prefix</p>
+<p>string</p>
+<p>The prefix string with which the expression should start.</p>
+<p>Required</p>
+<p>caseSensitive</p>
+<p>boolean</p>
+<p>Whether the check should be done in a case-sensitive way.</p>
+<p>Optional</p>
+<h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>boolean</code>.</p>
+<h4 id="examples_24">Examples<a class="headerlink" href="#examples_24" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_24">Example 1<a class="headerlink" href="#example-1_24" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>| fieldsAdd startsWith(content, &quot;D&quot;),
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>startsWith(content, &quot;dql&quot;, caseSensitive: false)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>startsWith(content, "D")</p>
+<p>startsWith(content, "dql", caseSensitive:FALSE)</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>true</code></p>
+<p><code>true</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>true</code></p>
+<p><code>false</code></p>
+<h2 id="stringlength">stringLength<a class="headerlink" href="#stringlength" title="Permanent link">&para;</a></h2>
+<p>Returns the length of a string expression. Length is defined as the number of UTF-16 code units, which is often the same as the number of characters in the string. In some cases, the number of characters is smaller than the number of UTF-16 code units, for example when Combining Diacritical Marks are used, or if characters outside the Basic Multilingual Plane (BMP), such as Emoji, are present.</p>
+<p>If your use case requires consistent length for the same characters, consider ingesting strings after Unicode normalization.</p>
+<p>No specific normalization form is guaranteed for Dynatrace-provided strings.</p>
+<h4 id="syntax_25">Syntax<a class="headerlink" href="#syntax_25" title="Permanent link">&para;</a></h4>
+<p><code>stringLength(expression)</code></p>
+<h4 id="parameters_25">Parameters<a class="headerlink" href="#parameters_25" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression to get the number of UTF-16 code units for.</p>
+<p>Required</p>
+<h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>long</code>.</p>
+<h4 id="examples_25">Examples<a class="headerlink" href="#examples_25" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_25">Example 1<a class="headerlink" href="#example-1_25" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>record(content = &quot;Dynatrace Query Language&quot;),
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>record(content = &quot;ðâð¦º&quot;)
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>| fieldsAdd stringLength(content)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>stringLength(content)</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>15</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>24</code></p>
+<p><code>ðâð¦º</code></p>
+<p><code>5</code></p>
+<h2 id="substring">substring<a class="headerlink" href="#substring" title="Permanent link">&para;</a></h2>
+<p>Gets a code unit range using a start index (inclusive) and an end index (exclusive).</p>
+<p>Returns an empty string if from <code>&gt;=</code> to.</p>
+<p><code>Indexes &gt;=0</code> are relative to the start of the string and address consecutive characters from left to right, starting from the index position.</p>
+<p><code>Indexes &lt;=-1</code> are relative to the last character of the string and are used to address characters from the right side of an expression, for example, <code>-2</code> is the penultimate character.</p>
+<p><code>Positive indexes</code> beyond the bounds of the string are assigned to the string length.</p>
+<p><code>Negative indexes</code> beyond the bounds of the string are equal to <code>0</code>. For example, in the <code>321</code> string, the index <code>-4</code> is beyond the bounds of the string therefore it equals <code>0</code>. However, the index <code>-2</code> is located within the bounds of that string and extracts <code>21</code> if used as a <code>from</code> the index.</p>
+<p>The returned substring never starts or ends with an incomplete UTF-16 surrogate pair. Instead of that, it starts or ends with a question mark. This safeguards against the creation of invalid Unicode strings.</p>
+<h4 id="syntax_26">Syntax<a class="headerlink" href="#syntax_26" title="Permanent link">&para;</a></h4>
+<p><code>substring(expression [, from] [, to])</code></p>
+<h4 id="parameters_26">Parameters<a class="headerlink" href="#parameters_26" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression to get a substring of.</p>
+<p>Required</p>
+<p>from</p>
+<p>long</p>
+<p>Index of first code unit to include in sub-string, inclusive, relative to start of <code>expression</code> if positive, relative to end if negative. Clamped at string bounds.</p>
+<p>Optional</p>
+<p>to</p>
+<p>long</p>
+<p>Index of last code unit to include in sub-string, exclusive, relative to start of <code>expression</code> if positive, relative to end if negative. Clamped at string bounds.</p>
+<p>Optional</p>
+<h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_26">Examples<a class="headerlink" href="#examples_26" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_26">Example 1<a class="headerlink" href="#example-1_26" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>| fieldsAdd substring(content, from: 4),
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>substring(content, from: -2),
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a>
+<a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>
+<a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a>
+<a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a>substring(content, from: 4, to: 9),
+<a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a>
+<a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a>
+<a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a>
+<a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a>substring(content, from: -42, to: 42)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>substring(content, from:4)</p>
+<p>substring(content, from:-2)</p>
+<p>substring(content, from:4, to:9)</p>
+<p>substring(content, from:-42, to:42)</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>is awesome!</code></p>
+<p><code>e!</code></p>
+<p><code>is aw</code></p>
+<p><code>DQL is awesome!</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>trace Query Language</code></p>
+<p><code>ge</code></p>
+<p><code>trace</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<h2 id="trim">trim<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h2>
+<p>Removes leading and trailing whitespaces. Any code point &lt;= ASCII 32 in decimal is considered a whitespace, where ASCII 32 is a blank space.</p>
+<h4 id="syntax_27">Syntax<a class="headerlink" href="#syntax_27" title="Permanent link">&para;</a></h4>
+<p><code>trim(expression)</code></p>
+<h4 id="parameters_27">Parameters<a class="headerlink" href="#parameters_27" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression to remove leading and trailing white-space from.</p>
+<p>Required</p>
+<h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_27">Examples<a class="headerlink" href="#examples_27" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_27">Example 1<a class="headerlink" href="#example-1_27" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>data record(content = &quot; DQL is awesome!&quot;),
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>record(content = &quot; Dynatrace Query Language &quot;)
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>| fieldsAdd trim(content)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>trim(content)</p>
+<p><code>" DQL is awesome!"</code></p>
+<p><code>DQL is awesome!</code></p>
+<p><code>" Dynatrace Query Language "</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<h2 id="unescape">unescape<a class="headerlink" href="#unescape" title="Permanent link">&para;</a></h2>
+<p>Returns an unescaped string.</p>
+<p>Unescaping rules</p>
+<ol>
+<li>Single quotes, double quotes and backticks are unescaped.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>\"</code></p>
+<p><code>"</code></p>
+<p><code>\'</code></p>
+<p><code>'</code></p>
+<p><code>\`</code></p>
+<p><code>`</code></p>
+<ol>
+<li>Backslashes are unescaped.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>\\</code></p>
+<p><code>\</code></p>
+<ol>
+<li>ASCII characters bell, backspace, form feed, new line, carriage return, horizontal tab and vertical tab are unescaped.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>\a</code></p>
+<p><code>&lt;bell&gt;</code></p>
+<p><code>\b</code></p>
+<p><code>&lt;backspace&gt;</code></p>
+<p><code>\f</code></p>
+<p><code>&lt;form feed&gt;</code></p>
+<p><code>\n</code></p>
+<p><code>&lt;new line&gt;</code></p>
+<p><code>\r</code></p>
+<p><code>&lt;carriage return&gt;</code></p>
+<p><code>\t</code></p>
+<p><code>&lt;horizontal tab&gt;</code></p>
+<p><code>\v</code></p>
+<p><code>&lt;vertical tab&gt;</code></p>
+<ol>
+<li><code>\xhh</code> within standard ASCII space (0x00 - 0x7f) is replaced by the related character.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>\x40</code></p>
+<p><code>@</code></p>
+<p><code>\x64</code></p>
+<p><code>d</code></p>
+<ol>
+<li><code>\xhh</code> within extended ASCII space (0x80 - 0xff) is interpreted as <code>\u00hh</code> and replaced by the related Unicode character.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>\xff</code></p>
+<p><code>Ã¿</code></p>
+<ol>
+<li><code>\uhhhh</code> is replaced by the related Unicode character.</li>
+</ol>
+<p>Input</p>
+<p>Output</p>
+<p><code>\u002e</code></p>
+<p><code>.</code></p>
+<p><code>\u0064</code></p>
+<p><code>d</code></p>
+<h4 id="syntax_28">Syntax<a class="headerlink" href="#syntax_28" title="Permanent link">&para;</a></h4>
+<p><code>unescape(expression)</code></p>
+<h4 id="parameters_28">Parameters<a class="headerlink" href="#parameters_28" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string expression</p>
+<p>The string expression that will be unescaped.</p>
+<p>Required</p>
+<h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_28">Examples<a class="headerlink" href="#examples_28" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_28">Example 1<a class="headerlink" href="#example-1_28" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>data record(content = &quot;&quot;&quot;&quot;foo\x40bar\u002ecom&quot;&quot;&quot;)
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>| fieldsAdd unescape(content)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<table>
+<thead>
+<tr>
+<th>content</th>
+<th>unescape(content)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"foo\x40bar\u002ecom</code></td>
+<td><code>"foo@bar.com</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="unescapehtml">unescapeHtml<a class="headerlink" href="#unescapehtml" title="Permanent link">&para;</a></h2>
+<p>Unescapes HTML in a string by replacing ASCII characters with HTML syntax.</p>
+<h4 id="syntax_29">Syntax<a class="headerlink" href="#syntax_29" title="Permanent link">&para;</a></h4>
+<p><code>unescapeHtml(expression)</code></p>
+<h4 id="parameters_29">Parameters<a class="headerlink" href="#parameters_29" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression that will be unescaped.</p>
+<p>Required</p>
+<h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_29">Examples<a class="headerlink" href="#examples_29" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_29">Example 1<a class="headerlink" href="#example-1_29" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>data record(content = &quot;DQL is &amp;lt;bold&amp;gt;awesome&amp;lt;/bold&amp;gt;!&quot;),
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>record(content = &quot;&amp;lt;a href=&amp;quot;https://www.dynatrace.com/platform/grail&amp;quot;&amp;gt;Dynatrace Query Language&amp;lt;/a&amp;gt;&quot;)
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a>
+<a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a>| fieldsAdd unescapeHtml(content)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>unescapeHtml(content)</p>
+<p><code>DQL is &amp;lt;bold&amp;gt;awesome&amp;lt;/bold&amp;gt;!</code></p>
+<p><code>DQL is &lt;bold&gt;awesome&lt;/bold&gt;!</code></p>
+<p><code>&amp;lt;a href=&amp;quot;https://www.dynatrace.com/platform/grail&amp;quot;&amp;gt;Dynatrace Query Language&amp;lt;/a&amp;gt;</code></p>
+<p><code>&lt;a href="https://www.dynatrace.com/platform/grail"&gt;Dynatrace Query Language&lt;/a&gt;</code></p>
+<h2 id="upper">upper<a class="headerlink" href="#upper" title="Permanent link">&para;</a></h2>
+<p>Converts a string to uppercase.</p>
+<h4 id="syntax_30">Syntax<a class="headerlink" href="#syntax_30" title="Permanent link">&para;</a></h4>
+<p><code>upper(expression)</code></p>
+<h4 id="parameters_30">Parameters<a class="headerlink" href="#parameters_30" title="Permanent link">&para;</a></h4>
+<p>Parameter</p>
+<p>Type</p>
+<p>Description</p>
+<p>Required</p>
+<p>expression</p>
+<p>string</p>
+<p>The string expression to convert to uppercase.</p>
+<p>Required</p>
+<h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
+<p>The data type of the returned value is <code>string</code>.</p>
+<h4 id="examples_30">Examples<a class="headerlink" href="#examples_30" title="Permanent link">&para;</a></h4>
+<h5 id="example-1_30">Example 1<a class="headerlink" href="#example-1_30" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>data record(content = &quot;DQL is awesome!&quot;),
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>record(content = &quot;Dynatrace Query Language&quot;)
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>| fieldsAdd upper(content)
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Query result:</p>
+<p>content</p>
+<p>upper(content)</p>
+<p><code>DQL is awesome!</code></p>
+<p><code>DQL IS AWESOME!</code></p>
+<p><code>Dynatrace Query Language</code></p>
+<p><code>DYNATRACE QUERY LANGUAGE</code></p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
+<li><a href="/docs/platform/grail/dynatrace-query-language/dql-guide" title="Find out how DQL works and what are DQL key concepts.">Use DQL queries</a></li>
+<li><a href="/docs/platform/grail/dynatrace-query-language/dql-comparison" title="See how DQL compares to other query languages.">DQL compared to SQL and more</a></li>
+<li><a href="/docs/platform/grail/dynatrace-query-language/dql-reference" title="Dynatrace Query Language syntax reference.">DQL language reference</a></li>
+<li><a href="/docs/platform/grail/dynatrace-query-language/commands" title="A list of DQL commands.">DQL commands</a></li>
+<li><a href="/docs/platform/grail/dynatrace-query-language/operators" title="A list of DQL Operators.">DQL operators</a></li>
+<li><a href="/docs/platform/grail/dynatrace-query-language/data-types" title="A list of DQL data types.">DQL data types</a></li>
+<li><a href="/docs/platform/grail/dynatrace-query-language/dql-best-practices" title="Best practices for using Dynatrace Query Language.">DQL best practices</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dynatrace Documentation Mirror
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["announce.dismiss", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/gemini-chat.js"></script>
+      
+    
+  </body>
+</html>

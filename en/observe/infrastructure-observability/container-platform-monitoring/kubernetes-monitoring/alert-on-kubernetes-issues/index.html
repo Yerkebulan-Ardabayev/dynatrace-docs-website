@@ -1,0 +1,2533 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete bilingual Dynatrace documentation with AI assistant">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs/en/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Alert on common Kubernetes/OpenShift issues - Dynatrace Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#alert-on-common-kubernetesopenshift-issues" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Documentation" class="md-header__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Alert on common Kubernetes/OpenShift issues
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../ru/getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇷🇺 Русский
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../ai/gemini/" class="md-tabs__link">
+          
+  
+  
+  🤖 AI Assistant
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Documentation" class="md-nav__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    Dynatrace Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Platform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇷🇺 Русский
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇷🇺 Русский
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI Assistant
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/notebooklm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="alert-on-common-kubernetesopenshift-issues">Alert on common Kubernetes/OpenShift issues<a class="headerlink" href="#alert-on-common-kubernetesopenshift-issues" title="Permanent link">&para;</a></h1>
+<h1 id="alert-on-common-kubernetesopenshift-issues_1">Alert on common Kubernetes/OpenShift issues<a class="headerlink" href="#alert-on-common-kubernetesopenshift-issues_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>18-min read</li>
+<li>Updated on Feb 21, 2025</li>
+</ul>
+<p>Dynatrace version 1.254+</p>
+<p>ActiveGate version 1.253+</p>
+<p>To <a href="https://dt-url.net/zg034mg">alert on common Kubernetes platform issuesï»¿</a>, follow the instructions below.</p>
+<h2 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h2>
+<p>There are three ways to configure alerts for common Kubernetes/OpenShift issues.</p>
+<p>Configuring an alert on a different level is only intended to simplify the configuration of multiple entities at once. It does not change the behavior of an alert.</p>
+<p>For example, enabling a workload CPU usage saturation alert will still evaluate and raise problems for each Kubernetes workload separately, even if it has been configured on the Kubernetes cluster level.</p>
+<p>For further details on the settings hierarchy, see <a href="/docs/manage/settings/settings-20#scope-and-hierarchy-of-settings" title="Introduction to the Settings 2.0 framework">Settings documentation</a>.</p>
+<p>Per tenant level</p>
+<p>Per cluster level</p>
+<p>Per namespace level</p>
+<ul>
+<li>Settings apply to all clusters, nodes, namespaces, or workloads in the Kubernetes/OpenShift tenant.</li>
+<li>To configure settings, go to <strong>Settings</strong> &gt; <strong>Anomaly detection</strong> and select any page under the <strong>Kubernetes</strong> section.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><img alt="Kubernetes anomaly detection settings tenant" src="https://dt-cdn.net/images/k8s-anomaly-settings-tenant-899-e99e56395b.png" /></p>
+<ul>
+<li>Settings apply to a selected cluster, or to nodes, namespaces, and workloads from a selected cluster.</li>
+<li>To configure settings, go to the settings of a selected Kubernetes cluster and select any page under <strong>Anomaly detection</strong>.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><img alt="Kubernetes anomaly detection settings cluster" src="https://dt-cdn.net/images/k8s-anomaly-settings-cluster-948-0650f7b0a9.png" /></p>
+<ul>
+<li>Settings apply to selected namespaces or workloads.</li>
+<li>To configure settings, go to the settings of a selected namespace and select any page under <strong>Anomaly detection</strong>.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><img alt="Kubernetes anomaly detection settings namespace" src="https://dt-cdn.net/images/k8s-anomaly-settings-namespace-899-1870ebd4ea.png" /></p>
+<h2 id="view-alerts">View alerts<a class="headerlink" href="#view-alerts" title="Permanent link">&para;</a></h2>
+<p>Manually closed problems will show up again after 60 days if their root cause remains unresolved.</p>
+<p>You can view alerts</p>
+<ul>
+<li>On the <strong>Problems</strong> page.</li>
+</ul>
+<p><strong>Example problem:</strong></p>
+<p><img alt="k8s-alert-view-in-problems" src="https://dt-cdn.net/images/image-12-1416-df0a0171a6.png" />
+* In the <strong>Events</strong> section of a cluster details page.</p>
+<p><strong>Example event:</strong></p>
+<p><img alt="k8s-alert-view-in-events" src="https://dt-cdn.net/images/image-13-799-41970d77a3.png" /></p>
+<p>Select the event to navigate to Data Explorer for more information about the metric that generated the event.</p>
+<h2 id="available-alerts">Available alerts<a class="headerlink" href="#available-alerts" title="Permanent link">&para;</a></h2>
+<p>See below for a list of available alerts.</p>
+<h3 id="cluster-alerts">Cluster alerts<a class="headerlink" href="#cluster-alerts" title="Permanent link">&para;</a></h3>
+<p>Alert name</p>
+<p>Dynatrace version</p>
+<p>Problem type</p>
+<p>Problem title</p>
+<p>Problem description</p>
+<p>De-alerts after</p>
+<p>Calculation</p>
+<p>Supported in</p>
+<p><a href="#detect-cluster-cpu-request-saturation">Detect cluster CPU-request saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>CPU-request saturation on cluster</p>
+<p>CPU-request saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Node CPU requests / Node CPU allocatable</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-cluster-memory-request-saturation">Detect cluster memory-request saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>Memory-request saturation on cluster</p>
+<p>Memory-request saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Node memory requests / Node memory allocatable</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-cluster-pod-saturation">Detect cluster pod-saturation</a></p>
+<p>1.258</p>
+<p>Resource</p>
+<p>Pod saturation on cluster</p>
+<p>Cluster pod-saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of ready pods / Sum of allocatable pods</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-cluster-readiness-issues">Detect cluster readiness issues</a></p>
+<p>1.254</p>
+<p>Availability</p>
+<p>Cluster not ready</p>
+<p>Readyz endpoint indicates that this cluster is not ready.</p>
+<p>10 minutes</p>
+<p>Cluster readyz metric</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-monitoring-issues">Detect monitoring issues</a></p>
+<p>1.258</p>
+<p>Availability</p>
+<p>Monitoring not available</p>
+<p>Dynatrace API monitoring is not available.</p>
+<p>10 minutes</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p>Cluster metric and DQL expressions</p>
+<h4 id="detect-cluster-cpu-request-saturation">Detect cluster CPU-request saturation<a class="headerlink" href="#detect-cluster-cpu-request-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.node.requests_cpu:splitBy():sum/builtin:kubernetes.node.cpu_allocatable:splitBy():sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.container.requests_cpu, rollup: avg), o2=sum(dt.kubernetes.node.cpu_allocatable, rollup: avg)}, by: {}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-cluster-memory-request-saturation">Detect cluster memory-request saturation<a class="headerlink" href="#detect-cluster-memory-request-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.node.requests_memory:splitBy():sum/builtin:kubernetes.node.memory_allocatable:splitBy():sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.container.requests_memory, rollup: avg), o2=sum(dt.kubernetes.node.memory_allocatable, rollup: avg)}, by: {}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-cluster-pod-saturation">Detect cluster pod-saturation<a class="headerlink" href="#detect-cluster-pod-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>(builtin:kubernetes.node.pods:filter(and(eq(pod_condition,Ready))):splitBy():sum/builtin:kubernetes.node.pods_allocatable:splitBy():sum):default(0.0)*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries o1=sum(dt.kubernetes.pods, rollup: avg), nonempty:true, filter: {((pod_condition=="Ready"))}, by: {}| join [timeseries operand=sum(dt.kubernetes.node.pods_allocatable, rollup: avg), nonempty:true, by: {}], on: {interval}, fields: {o2=operand}| fieldsAdd result=if(isNull(o1[]/o2[]), 0.0, else: o1[]/o2[])* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-cluster-readiness-issues">Detect cluster readiness issues<a class="headerlink" href="#detect-cluster-readiness-issues" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.cluster.readyz:splitBy():sum</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.cluster.readyz, rollup: avg)}, by: {}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-monitoring-issues">Detect monitoring issues<a class="headerlink" href="#detect-monitoring-issues" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>(no metric expression)</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>(no DQL)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Default alerts for new tenants</p>
+<p>Alert</p>
+<p>Setting</p>
+<p>Value</p>
+<p>Readiness Issues</p>
+<p>sample period in minutes</p>
+<p>3</p>
+<p>Readiness Issues</p>
+<p>observation period in minutes</p>
+<p>5</p>
+<p>Monitoring Issues</p>
+<p>sample period in minutes</p>
+<p>15</p>
+<p>Monitoring Issues</p>
+<p>observation period in minutes</p>
+<p>30</p>
+<h3 id="namespace-alerts">Namespace alerts<a class="headerlink" href="#namespace-alerts" title="Permanent link">&para;</a></h3>
+<p>Alert name</p>
+<p>Dynatrace version</p>
+<p>Problem type</p>
+<p>Problem title</p>
+<p>Problem description</p>
+<p>De-alerts after</p>
+<p>Calculation</p>
+<p>Supported in</p>
+<p><a href="#detect-namespace-cpu-limit-quota-saturation">Detect namespace CPU-limit quota saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>CPU-limit quota saturation</p>
+<p>CPU-limit quota saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of resource quota CPU used / Sum of resource quota CPU limits</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-namespace-cpu-request-quota-saturation">Detect namespace CPU-request quota saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>CPU-request quota saturation</p>
+<p>CPU-request quota saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of resource quota CPU used / Sum of resource quota CPU requests</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-namespace-memory-limit-quota-saturation">Detect namespace memory-limit quota saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>Memory-limit quota saturation</p>
+<p>Memory-limit quota saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of resource quota memory used / Sum of resource quota memory limits</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-namespace-memory-request-quota-saturation">Detect namespace memory-request quota saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>Memory-request quota saturation</p>
+<p>Memory-request quota saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of resource quota memory used / Sum of resource quota memory requests</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-namespace-pod-quota-saturation">Detect namespace pod quota saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>Pod quota saturation</p>
+<p>Pod quota saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of resource quota pods used / Sum of resource quota pods limit</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p>Namespace metric and DQL expressions</p>
+<h4 id="detect-namespace-cpu-limit-quota-saturation">Detect namespace CPU-limit quota saturation<a class="headerlink" href="#detect-namespace-cpu-limit-quota-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.resourcequota.limits_cpu_used:splitBy(k8s.namespace.name):sum/builtin:kubernetes.resourcequota.limits_cpu:splitBy(k8s.namespace.name):sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.resourcequota.limits_cpu_used, rollup: avg), o2=sum(dt.kubernetes.resourcequota.limits_cpu, rollup: avg)}, by: {k8s.namespace.name}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-namespace-cpu-request-quota-saturation">Detect namespace CPU-request quota saturation<a class="headerlink" href="#detect-namespace-cpu-request-quota-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.resourcequota.requests_cpu_used:splitBy(k8s.namespace.name):sum/builtin:kubernetes.resourcequota.requests_cpu:splitBy(k8s.namespace.name):sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.resourcequota.requests_cpu_used, rollup: avg), o2=sum(dt.kubernetes.resourcequota.requests_cpu, rollup: avg)}, by: {k8s.namespace.name}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-namespace-memory-limit-quota-saturation">Detect namespace memory-limit quota saturation<a class="headerlink" href="#detect-namespace-memory-limit-quota-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.resourcequota.limits_memory_used:splitBy(k8s.namespace.name):sum/builtin:kubernetes.resourcequota.limits_memory:splitBy(k8s.namespace.name):sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.resourcequota.limits_memory_used, rollup: avg), o2=sum(dt.kubernetes.resourcequota.limits_memory, rollup: avg)}, by: {k8s.namespace.name}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-namespace-memory-request-quota-saturation">Detect namespace memory-request quota saturation<a class="headerlink" href="#detect-namespace-memory-request-quota-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.resourcequota.requests_memory_used:splitBy(k8s.namespace.name):sum/builtin:kubernetes.resourcequota.requests_memory:splitBy(k8s.namespace.name):sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.resourcequota.requests_memory_used, rollup: avg), o2=sum(dt.kubernetes.resourcequota.requests_memory, rollup: avg)}, by: {k8s.namespace.name}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-namespace-pod-quota-saturation">Detect namespace pod quota saturation<a class="headerlink" href="#detect-namespace-pod-quota-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.resourcequota.pods_used:splitBy(k8s.namespace.name):sum/builtin:kubernetes.resourcequota.pods:splitBy(k8s.namespace.name):sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.resourcequota.pods_used, rollup: avg), o2=sum(dt.kubernetes.resourcequota.pods, rollup: avg)}, by: {k8s.namespace.name}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="node-alerts">Node alerts<a class="headerlink" href="#node-alerts" title="Permanent link">&para;</a></h3>
+<p>Alert name</p>
+<p>Dynatrace version</p>
+<p>Problem type</p>
+<p>Problem title</p>
+<p>Problem description</p>
+<p>De-alerts after</p>
+<p>Calculation</p>
+<p>Supported in</p>
+<p><a href="#detect-node-cpu-request-saturation">Detect node CPU-request saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>CPU-request saturation on node</p>
+<p>CPU-request saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of node CPU requests / Sum of node CPU allocatable</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-node-memory-request-saturation">Detect node memory-request saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>Memory-request saturation on node</p>
+<p>Memory-request saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of node memory requests / Sum of node memory allocatable</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-node-pod-saturation">Detect node pod-saturation</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>Pod saturation on node</p>
+<p>Pod saturation exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of running pods on node / Node pod limit</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-node-readiness-issues">Detect node readiness issues</a></p>
+<p>1.254</p>
+<p>Availability</p>
+<p>Node not ready</p>
+<p>Node is not ready.</p>
+<p>10 minutes</p>
+<p>Node condition metric filtered by 'not ready'</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-problematic-node-conditions">Detect problematic node conditions</a></p>
+<p>1.264</p>
+<p>Error</p>
+<p>Problematic node condition</p>
+<p>Node has one or more problematic conditions out of the following: <code>ContainerRuntimeProblem</code>, <code>ContainerRuntimeUnhealthy</code>, <code>CorruptDockerOverlay2</code>, <code>DiskPressure</code>, <code>FilesystemCorruptionProblem</code>, <code>FrequentContainerdRestart</code>, <code>FrequentDockerRestart</code>, <code>FrequentGcfsSnapshotterRestart</code>, <code>FrequentGcfsdRestart</code>, <code>FrequentKubeletRestart</code>, <code>FrequentUnregisterNetDevice</code>, <code>GcfsSnapshotterMissingLayer</code>, <code>GcfsSnapshotterUnhealthy</code>, <code>GcfsdUnhealthy</code>, <code>KernelDeadlock</code>, <code>KubeletProblem</code>, <code>KubeletUnhealthy</code>, <code>MemoryPressure</code>, <code>NetworkUnavailable</code>, <code>OutOfDisk</code>, <code>PIDPressure</code>, <code>ReadonlyFilesystem</code></p>
+<p>10 minutes</p>
+<p>Nodes condition metric</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p>Node metric and DQL expressions</p>
+<h4 id="detect-node-cpu-request-saturation">Detect node CPU-request saturation<a class="headerlink" href="#detect-node-cpu-request-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.node.requests_cpu:splitBy(dt.kubernetes.node.system_uuid,k8s.node.name):sum/builtin:kubernetes.node.cpu_allocatable:splitBy(dt.kubernetes.node.system_uuid,k8s.node.name):sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.container.requests_cpu, rollup: avg), o2=sum(dt.kubernetes.node.cpu_allocatable, rollup: avg)}, by: {dt.kubernetes.node.system_uuid,k8s.node.name}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-node-memory-request-saturation">Detect node memory-request saturation<a class="headerlink" href="#detect-node-memory-request-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.node.requests_memory:splitBy(dt.kubernetes.node.system_uuid,k8s.node.name):sum/builtin:kubernetes.node.memory_allocatable:splitBy(dt.kubernetes.node.system_uuid,k8s.node.name):sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.container.requests_memory, rollup: avg), o2=sum(dt.kubernetes.node.memory_allocatable, rollup: avg)}, by: {dt.kubernetes.node.system_uuid,k8s.node.name}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-node-pod-saturation">Detect node pod-saturation<a class="headerlink" href="#detect-node-pod-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.node.pods:filter(and(eq(pod_phase,Running))):splitBy(dt.kubernetes.node.system_uuid,k8s.node.name):sum/builtin:kubernetes.node.pods_allocatable:splitBy(dt.kubernetes.node.system_uuid,k8s.node.name):sum*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries o1=sum(dt.kubernetes.pods, rollup: avg), nonempty:true, filter: {((pod_phase=="Running"))}, by: {dt.kubernetes.node.system_uuid,k8s.node.name}| join [timeseries operand=sum(dt.kubernetes.node.pods_allocatable, rollup: avg), nonempty:true, by: {dt.kubernetes.node.system_uuid,k8s.node.name}], on: {interval}, fields: {o2=operand}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-node-readiness-issues">Detect node readiness issues<a class="headerlink" href="#detect-node-readiness-issues" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.node.conditions:filter(and(eq(node_condition,Ready),ne(condition_status,True))):splitBy(dt.kubernetes.node.system_uuid,k8s.node.name):sum</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.node.conditions, rollup: avg)}, filter: {((node_condition=="Ready")AND(condition_status!=true))}, by: {dt.kubernetes.node.system_uuid,k8s.node.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-problematic-node-conditions">Detect problematic node conditions<a class="headerlink" href="#detect-problematic-node-conditions" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.node.conditions:filter(and(or(eq(node_condition,ContainerRuntimeProblem),eq(node_condition,ContainerRuntimeUnhealthy),eq(node_condition,CorruptDockerOverlay2),eq(node_condition,DiskPressure),eq(node_condition,FilesystemCorruptionProblem),eq(node_condition,FrequentContainerdRestart),eq(node_condition,FrequentDockerRestart),eq(node_condition,FrequentGcfsSnapshotterRestart),eq(node_condition,FrequentGcfsdRestart),eq(node_condition,FrequentKubeletRestart),eq(node_condition,FrequentUnregisterNetDevice),eq(node_condition,GcfsSnapshotterMissingLayer),eq(node_condition,GcfsSnapshotterUnhealthy),eq(node_condition,GcfsdUnhealthy),eq(node_condition,KernelDeadlock),eq(node_condition,KubeletProblem),eq(node_condition,KubeletUnhealthy),eq(node_condition,MemoryPressure),eq(node_condition,NetworkUnavailable),eq(node_condition,OutOfDisk),eq(node_condition,PIDPressure),eq(node_condition,ReadonlyFilesystem)),eq(condition_status,True))):splitBy(dt.kubernetes.node.system_uuid,k8s.node.name):sum</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.node.conditions, rollup: avg)}, filter: {(((node_condition=="ContainerRuntimeProblem")OR(node_condition=="ContainerRuntimeUnhealthy")OR(node_condition=="CorruptDockerOverlay2")OR(node_condition=="DiskPressure")OR(node_condition=="FilesystemCorruptionProblem")OR(node_condition=="FrequentContainerdRestart")OR(node_condition=="FrequentDockerRestart")OR(node_condition=="FrequentGcfsSnapshotterRestart")OR(node_condition=="FrequentGcfsdRestart")OR(node_condition=="FrequentKubeletRestart")OR(node_condition=="FrequentUnregisterNetDevice")OR(node_condition=="GcfsSnapshotterMissingLayer")OR(node_condition=="GcfsSnapshotterUnhealthy")OR(node_condition=="GcfsdUnhealthy")OR(node_condition=="KernelDeadlock")OR(node_condition=="KubeletProblem")OR(node_condition=="KubeletUnhealthy")OR(node_condition=="MemoryPressure")OR(node_condition=="NetworkUnavailable")OR(node_condition=="OutOfDisk")OR(node_condition=="PIDPressure")OR(node_condition=="ReadonlyFilesystem"))AND(condition_status==true))}, by: {dt.kubernetes.node.system_uuid,k8s.node.name}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Default alerts for new tenants</p>
+<p>Alert</p>
+<p>Setting</p>
+<p>Value</p>
+<p>Readiness Issues</p>
+<p>Readiness Issues</p>
+<p>sample period in minutes</p>
+<p>3</p>
+<p>observation period in minutes</p>
+<p>5</p>
+<p>Node Problematic Condition</p>
+<p>Node Problematic Condition</p>
+<p>sample period in minutes</p>
+<p>3</p>
+<p>observation period in minutes</p>
+<p>5</p>
+<h3 id="persistent-volume-claims-alerts">Persistent volume claims alerts<a class="headerlink" href="#persistent-volume-claims-alerts" title="Permanent link">&para;</a></h3>
+<p>Alert name</p>
+<p>Dynatrace version</p>
+<p>Problem type</p>
+<p>Problem title</p>
+<p>Problem description</p>
+<p>De-alerts after</p>
+<p>Calculation</p>
+<p>Supported in</p>
+<p><a href="#detect-low-disk-space">Detect low disk space (%)</a></p>
+<p>1.262</p>
+<p>Resource</p>
+<p>Kubernetes PVC: Low disk space %</p>
+<p>Available disk space for a persistent volume claim is below the threshold.</p>
+<p>10 minutes</p>
+<p>Volume stats available bytes / Volume stats capacity bytes</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-low-disk-space-mb">Detect low disk space (MiB)</a></p>
+<p>1.262</p>
+<p>Resource</p>
+<p>Kubernetes PVC: Low disk space</p>
+<p>Available disk space for a persistent volume claim is below the threshold.</p>
+<p>10 minutes</p>
+<p>Kubelet volume stats available bytes metric</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p>Persistent volume claims metric and DQL expressions</p>
+<h4 id="detect-low-disk-space">Detect low disk space (%)<a class="headerlink" href="#detect-low-disk-space" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.persistentvolumeclaim.available:splitBy(k8s.namespace.name,k8s.persistent_volume_claim.name):avg/builtin:kubernetes.persistentvolumeclaim.capacity:splitBy(k8s.namespace.name,k8s.persistent_volume_claim.name):avg*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=avg(dt.kubernetes.persistentvolumeclaim.available), o2=avg(dt.kubernetes.persistentvolumeclaim.capacity)}, by: {k8s.namespace.name,k8s.persistent_volume_claim.name}| fieldsAdd result=o1[]/o2[]* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-low-disk-space-mib">Detect low disk space (MiB)<a class="headerlink" href="#detect-low-disk-space-mib" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.persistentvolumeclaim.available:splitBy(k8s.namespace.name,k8s.persistent_volume_claim.name):avg</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {avg(dt.kubernetes.persistentvolumeclaim.available)}, by: {k8s.namespace.name,k8s.persistent_volume_claim.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="workload-alerts">Workload alerts<a class="headerlink" href="#workload-alerts" title="Permanent link">&para;</a></h3>
+<p>Alert name</p>
+<p>Dynatrace version</p>
+<p>Problem type</p>
+<p>Problem title</p>
+<p>Problem description</p>
+<p>De-alerts after</p>
+<p>Calculation</p>
+<p>Supported in</p>
+<p><a href="#detect-cpu-usage-saturation">Detect CPU usage saturation</a></p>
+<p>1.264</p>
+<p>Resource</p>
+<p>CPU usage close to limits</p>
+<p>The CPU usage exceeds the threshold in terms of the defined CPU limit.</p>
+<p>10 minutes</p>
+<p>Sum of workload CPU usage / Sum of workload CPU limits</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-container-restarts">Detect container restarts</a></p>
+<p>1.254</p>
+<p>Error</p>
+<p>Container restarts</p>
+<p>Observed container restarts exceed the specified threshold.</p>
+<p>15 minutes</p>
+<p>Container restarts metric</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-high-cpu-throttling">Detect high CPU throttling</a></p>
+<p>1.264</p>
+<p>Resource</p>
+<p>High CPU throttling</p>
+<p>The CPU throttling to limits ratio exceeds the specified threshold.</p>
+<p>10 minutes</p>
+<p>Sum of workload CPU throttled / Sum of workload CPU limits</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-job-failure-events">Detect job failure events</a></p>
+<p>1.268</p>
+<p>Error</p>
+<p>Job failure event</p>
+<p>Events with reason 'BackoffLimitExceeded', 'DeadlineExceeded', or 'PodFailurePolicy' have been detected.</p>
+<p>60 minutes</p>
+<p>Event metric filtered by reason and workload kind</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-memory-usage-saturation">Detect memory usage saturation</a></p>
+<p>1.264</p>
+<p>Resource</p>
+<p>Memory usage close to limits</p>
+<p>The memory usage (working set memory) exceeds the threshold in terms of the defined memory limit.</p>
+<p>10 minutes</p>
+<p>Sum of workload working set memory / Sum of workload memory limits</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-out-of-memory-kills">Detect out-of-memory kills</a></p>
+<p>1.268</p>
+<p>Error</p>
+<p>Out-of-memory kills</p>
+<p>Out-of-memory kills have been observed for pods of this workload.</p>
+<p>15 minutes</p>
+<p>Out-of-memory kills metric</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-pod-backoff-events">Detect pod backoff events</a></p>
+<p>1.268</p>
+<p>Error</p>
+<p>Backoff event</p>
+<p>Events with reason 'BackOff' have been detected for pods of this workload. Check for pods with status 'ImagePullBackOff' or 'CrashLoopBackOff'.</p>
+<p>15 minutes</p>
+<p>Event metric filtered by reason</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-pod-eviction-events">Detect pod eviction events</a></p>
+<p>1.268</p>
+<p>Error</p>
+<p>Pod eviction event</p>
+<p>Events with reason 'Evicted' have been detected for pods of this workload.</p>
+<p>60 minutes</p>
+<p>Event metric filtered by reason</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-pod-preemption-events">Detect pod preemption events</a></p>
+<p>1.268</p>
+<p>Error</p>
+<p>Preemption event</p>
+<p>Events with reasons 'Preempted' or 'Preempting' have been detected for pods of this workload.</p>
+<p>60 minutes</p>
+<p>Event metric filtered by reason</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-pods-stuck-in-pending">Detect pods stuck in pending</a></p>
+<p>1.254</p>
+<p>Resource</p>
+<p>Pods stuck in pending</p>
+<p>Workload has pending pods.</p>
+<p>10 minutes</p>
+<p>Pods metric filtered by phase 'Pending'</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-pods-stuck-in-terminating">Detect pods stuck in terminating</a></p>
+<p>1.260</p>
+<p>Resource</p>
+<p>Pods stuck in terminating</p>
+<p>Workload has pods stuck in terminating.</p>
+<p>10 minutes</p>
+<p>Pods metric filtered by status 'Terminating'</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-stuck-deployments">Detect stuck deployments</a></p>
+<p>1.260</p>
+<p>Error</p>
+<p>Deployment stuck</p>
+<p>Deployment is stuck and therefore is no longer progressing.</p>
+<p>10 minutes</p>
+<p>Workload condition metric filtered by 'not progressing'</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-workloads-with-non-ready-pods">Detect workloads with non-ready pods</a></p>
+<p>1.258</p>
+<p>Error</p>
+<p>Not all pods ready</p>
+<p>Workload has pods that are not ready.</p>
+<p>10 minutes</p>
+<p>Sum of all pending or running pods â Sum of ready pending or running pods. Pods of Jobs and CronJob are excluded.</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p><a href="#detect-workloads-without-ready-pods">Detect workloads without ready pods</a></p>
+<p>1.254</p>
+<p>Error</p>
+<p>No pod ready</p>
+<p>Workload does not have any ready pods.</p>
+<p>10 minutes</p>
+<p>Sum of all pending or running pods â Sum of non-ready pending or running pods. Pods of Jobs and CronJob are excluded.</p>
+<p>Kubernetes Classic, Kubernetes app</p>
+<p>Workload metric and DQL expressions</p>
+<h4 id="detect-cpu-usage-saturation">Detect CPU usage saturation<a class="headerlink" href="#detect-cpu-usage-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>(builtin:kubernetes.workload.cpu_usage:splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum/builtin:kubernetes.workload.limits_cpu:splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum):default(0.0)*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.container.cpu_usage, rollup: avg), o2=sum(dt.kubernetes.container.limits_cpu, rollup: avg)}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}| fieldsAdd result=if(isNull(o1[]/o2[]), 0.0, else: o1[]/o2[])* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-container-restarts">Detect container restarts<a class="headerlink" href="#detect-container-restarts" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.container.restarts:splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum:default(0.0)</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.container.restarts, default:0.0, rollup: avg)}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-high-cpu-throttling">Detect high CPU throttling<a class="headerlink" href="#detect-high-cpu-throttling" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>(builtin:kubernetes.workload.cpu_throttled:splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum/builtin:kubernetes.workload.limits_cpu:splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum):default(0.0)*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.container.cpu_throttled, rollup: avg), o2=sum(dt.kubernetes.container.limits_cpu, rollup: avg)}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}| fieldsAdd result=if(isNull(o1[]/o2[]), 0.0, else: o1[]/o2[])* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-job-failure-events">Detect job failure events<a class="headerlink" href="#detect-job-failure-events" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.events:filter(and(or(eq(k8s.event.reason,BackoffLimitExceeded),eq(k8s.event.reason,DeadlineExceeded),eq(k8s.event.reason,PodFailurePolicy)),or(eq(k8s.workload.kind,job),eq(k8s.workload.kind,cronjob)))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum:default(0.0)</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.events, default:0.0, rollup: avg)}, filter: {(((k8s.event.reason=="BackoffLimitExceeded")OR(k8s.event.reason=="DeadlineExceeded")OR(k8s.event.reason=="PodFailurePolicy"))AND((k8s.workload.kind=="job")OR(k8s.workload.kind=="cronjob")))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-memory-usage-saturation">Detect memory usage saturation<a class="headerlink" href="#detect-memory-usage-saturation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>(builtin:kubernetes.workload.memory_working_set:splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum/builtin:kubernetes.workload.limits_memory:splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum):default(0.0)*100.0</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {o1=sum(dt.kubernetes.container.memory_working_set, rollup: avg), o2=sum(dt.kubernetes.container.limits_memory, rollup: avg)}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}| fieldsAdd result=if(isNull(o1[]/o2[]), 0.0, else: o1[]/o2[])* 100.0| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-out-of-memory-kills">Detect out-of-memory kills<a class="headerlink" href="#detect-out-of-memory-kills" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.container.oom_kills:splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum:default(0.0)</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.container.oom_kills, default:0.0, rollup: avg)}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-pod-backoff-events">Detect pod backoff events<a class="headerlink" href="#detect-pod-backoff-events" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.events:filter(and(eq(k8s.event.reason,BackOff))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum:default(0.0)</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.events, default:0.0, rollup: avg)}, filter: {((k8s.event.reason=="BackOff"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-pod-eviction-events">Detect pod eviction events<a class="headerlink" href="#detect-pod-eviction-events" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.events:filter(and(eq(k8s.event.reason,Evicted))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum:default(0.0)</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.events, default:0.0, rollup: avg)}, filter: {((k8s.event.reason=="Evicted"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-pod-preemption-events">Detect pod preemption events<a class="headerlink" href="#detect-pod-preemption-events" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.events:filter(or(eq(k8s.event.reason,Preempted),eq(k8s.event.reason,Preempting))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum:default(0.0)</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.events, default:0.0, rollup: avg)}, filter: {((k8s.event.reason=="Preempted")OR(k8s.event.reason=="Preempting"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-pods-stuck-in-pending">Detect pods stuck in pending<a class="headerlink" href="#detect-pods-stuck-in-pending" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.pods:filter(and(eq(pod_phase,Pending))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.pods, rollup: avg)}, filter: {((pod_phase=="Pending"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-pods-stuck-in-terminating">Detect pods stuck in terminating<a class="headerlink" href="#detect-pods-stuck-in-terminating" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.pods:filter(and(eq(pod_status,Terminating))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.pods, rollup: avg)}, filter: {((pod_status=="Terminating"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-stuck-deployments">Detect stuck deployments<a class="headerlink" href="#detect-stuck-deployments" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.workload.conditions:filter(and(eq(workload_condition,Progressing),eq(condition_status,False))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries {sum(dt.kubernetes.workload.conditions, rollup: avg)}, filter: {((workload_condition=="Progressing")AND(condition_status==false))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-workloads-with-non-ready-pods">Detect workloads with non-ready pods<a class="headerlink" href="#detect-workloads-with-non-ready-pods" title="Permanent link">&para;</a></h4>
+<p>The following expression returns the number of pending and running pods in the non-ready condition. Pods of Jobs and CronJobs are excluded.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.pods:filter(and(ne(pod_phase,Failed),ne(pod_phase,Succeeded),ne(k8s.workload.kind,job),ne(k8s.workload.kind,cronjob),ne(pod_status,Terminating))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum-builtin:kubernetes.pods:filter(and(ne(pod_phase,Failed),ne(pod_phase,Succeeded),ne(k8s.workload.kind,job),ne(k8s.workload.kind,cronjob),eq(pod_condition,Ready),ne(pod_status,Terminating))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum:default(0.0)</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries o1=sum(dt.kubernetes.pods, rollup: avg), filter: {((pod_phase!="Failed")AND(pod_phase!="Succeeded")AND(k8s.workload.kind!="job")AND(k8s.workload.kind!="cronjob")AND(pod_status!="Terminating"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}| join [timeseries operand=sum(dt.kubernetes.pods, default:0.0, rollup: avg), nonempty:true, filter: {((pod_phase!="Failed")AND(pod_phase!="Succeeded")AND(k8s.workload.kind!="job")AND(k8s.workload.kind!="cronjob")AND(pod_condition=="Ready")AND(pod_status!="Terminating"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}], on: {interval}, fields: {o2=operand}| fieldsAdd result=o1[]-o2[]| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="detect-workloads-without-ready-pods">Detect workloads without ready pods<a class="headerlink" href="#detect-workloads-without-ready-pods" title="Permanent link">&para;</a></h4>
+<p>The following expression returns the number of pending and running pods in the ready condition. Pods of Jobs and CronJobs are excluded.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric expression</td>
+<td><code>builtin:kubernetes.pods:filter(and(ne(pod_phase,Failed),ne(pod_phase,Succeeded),ne(k8s.workload.kind,job),ne(k8s.workload.kind,cronjob))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum-builtin:kubernetes.pods:filter(and(ne(pod_phase,Failed),ne(pod_phase,Succeeded),ne(k8s.workload.kind,job),ne(k8s.workload.kind,cronjob),ne(pod_condition,Ready))):splitBy(k8s.namespace.name,k8s.workload.kind,k8s.workload.name):sum:default(0.0)</code></td>
+</tr>
+<tr>
+<td>DQL</td>
+<td><code>timeseries o1=sum(dt.kubernetes.pods, rollup: avg), filter: {((pod_phase!="Failed")AND(pod_phase!="Succeeded")AND(k8s.workload.kind!="job")AND(k8s.workload.kind!="cronjob"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}| join [timeseries operand=sum(dt.kubernetes.pods, default:0.0, rollup: avg), nonempty:true, filter: {((pod_phase!="Failed")AND(pod_phase!="Succeeded")AND(k8s.workload.kind!="job")AND(k8s.workload.kind!="cronjob")AND(pod_condition!="Ready"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}], on: {interval}, fields: {o2=operand}| fieldsAdd result=o1[]-o2[]| fieldsRemove {o1,o2}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Default alerts for new tenants</p>
+<p>Alert</p>
+<p>Setting</p>
+<p>Value</p>
+<p>Container Restarts</p>
+<p>threshold</p>
+<p>1</p>
+<p>Container Restarts</p>
+<p>sample period in minutes</p>
+<p>3</p>
+<p>Container Restarts</p>
+<p>observation period in minutes</p>
+<p>5</p>
+<p>Deployment Stuck</p>
+<p>sample period in minutes</p>
+<p>3</p>
+<p>Deployment Stuck</p>
+<p>observation period in minutes</p>
+<p>5</p>
+<p>Pending Pods</p>
+<p>threshold</p>
+<p>1</p>
+<p>Pending Pods</p>
+<p>sample period in minutes</p>
+<p>10</p>
+<p>Pending Pods</p>
+<p>observation period in minutes</p>
+<p>15</p>
+<p>Pod Stuck In Terminating</p>
+<p>sample period in minutes</p>
+<p>10</p>
+<p>Pod Stuck In Terminating</p>
+<p>observation period in minutes</p>
+<p>15</p>
+<p>Workload Without Ready Pods</p>
+<p>sample period in minutes</p>
+<p>10</p>
+<p>Workload Without Ready Pods</p>
+<p>observation period in minutes</p>
+<p>15</p>
+<p>Oom Kills</p>
+<p>alert</p>
+<p>always</p>
+<p>Job Failure Events</p>
+<p>alert</p>
+<p>always</p>
+<p>Pod Backoff Events</p>
+<p>alert</p>
+<p>always</p>
+<p>Pod Eviction Events</p>
+<p>alert</p>
+<p>always</p>
+<p>Pod Preemption Events</p>
+<p>alert</p>
+<p>always</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Set up Dynatrace on Kubernetes</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dynatrace Documentation Mirror
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["announce.dismiss", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/gemini-chat.js"></script>
+      
+    
+  </body>
+</html>

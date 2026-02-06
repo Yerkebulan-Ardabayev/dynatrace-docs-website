@@ -1,0 +1,2234 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete bilingual Dynatrace documentation with AI assistant">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs/en/analyze-explore-automate/dashboards-and-notebooks/explore-data/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Explore data - Dynatrace Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#explore-data" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace Documentation" class="md-header__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Explore data
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ru/getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇷🇺 Русский
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ai/gemini/" class="md-tabs__link">
+          
+  
+  
+  🤖 AI Assistant
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace Documentation" class="md-nav__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    Dynatrace Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Platform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇷🇺 Русский
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇷🇺 Русский
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI Assistant
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/notebooklm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="explore-data">Explore data<a class="headerlink" href="#explore-data" title="Permanent link">&para;</a></h1>
+<h1 id="explore-data_1">Explore data<a class="headerlink" href="#explore-data_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>15-min read</li>
+<li>Updated on Jan 28, 2026</li>
+</ul>
+<p>Dynatrace Dashboards and Notebooks offer the following options for exploring your data:</p>
+<ul>
+<li>Use <a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI</a> and natural language to access data stored in Grail.</li>
+<li>Get started with our Explore interface for data types such as logs, metrics, and events.</li>
+<li>Advance with DQL to leverage the full power of Grail.</li>
+</ul>
+<h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
+<p>To explore data such as logs, metrics, or business events with our point-and-click interface</p>
+<ol>
+<li>In your document, open the  <strong>Add</strong> menu and select one of the following options, depending on what you want to explore.</li>
+</ol>
+<p>For this example, select  <strong>Logs</strong>, but there are other options.</p>
+<p>List options</p>
+<p>Option</p>
+<p>Description</p>
+<p><strong>Prompt</strong></p>
+<p>Enter a <a href="#copilot">plain-text query</a> to get AI-powered insights from Grail.</p>
+<p><strong>Logs</strong></p>
+<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-logs" title="Explore your data with our point-and-click interface.">Explore logs</a> via the UI. We use this option in the example that follows.</p>
+<p><strong>Metrics</strong></p>
+<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-metrics" title="Explore your data with our point-and-click interface.">Explore metrics</a> via the UI.</p>
+<p><strong>Events</strong></p>
+<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-events" title="Explore your data with our point-and-click interface.">Explore events</a> via the UI.</p>
+<p><strong>Problems</strong></p>
+<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-problems" title="Explore your data with our point-and-click interface.">Explore problems</a> via the UI.</p>
+<p><strong>Traces</strong></p>
+<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-traces" title="Explore your data with our point-and-click interface.">Explore traces</a> via the UI.</p>
+<p><strong>Business Events</strong></p>
+<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-business-events" title="Explore your data with our point-and-click interface.">Explore business events</a> via the UI.</p>
+<p><strong>Security events</strong></p>
+<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-security-events" title="Explore your data with our point-and-click interface.">Explore events</a> via the UI.</p>
+<p>The layouts differ slightly between Dashboards and Notebooks to suit the different contexts, but the functionality is the same.
+2. Use the displayed elements to define your exploration.</p>
+<p>In this example, we focus on <strong>Logs</strong>. By default, the filter field and a default limit of 20 is added.</p>
+<ul>
+<li>Click into the filter field and, for example, select <strong>content</strong> as a field from the list of suggested fields.</li>
+<li>
+<p>Add an operator and a search string right after.</p>
+<ul>
+<li>Only operators relevant to the data type are suggested.</li>
+<li>Read more on <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field" title="The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.">how the filter field works</a> in the dedicated documentation.</li>
+</ul>
+<p>Operator</p>
+<p>Description</p>
+<p><code>=</code></p>
+<p>equals</p>
+<p><code>!=</code></p>
+<p>doesn't equal</p>
+<p><code>&lt;</code></p>
+<p>less than</p>
+<p><code>&lt;=</code></p>
+<p>less than or equal to</p>
+<p><code>&gt;</code></p>
+<p>greater than</p>
+<p><code>&gt;=</code></p>
+<p>greater than or equal to</p>
+<p><code>= *</code></p>
+<p>is any value</p>
+<p><code>!= *</code></p>
+<p>isn't any value</p>
+<p><code>in</code></p>
+<p>matches one or more values in a list of values</p>
+<p><code>not in</code></p>
+<p>doesnât match any value in a list of values</p>
+<p>Note: Combining <code>=</code> with a wildcard in before <code>*</code>, after, or both, before your search term will resolve to a starts with, ends with, or contains filter respectively.
+   * The  on the bottom of the definition opens a menu of additional commands you can add.
+   * Select any <img alt="remove filter" src="https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg" title="remove filter" /> in the definition to remove the element that comes before the <img alt="remove filter" src="https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg" title="remove filter" />. If you remove an element and then change your mind, you can use  to select it from the menu and add it back to your definition.
+3. Select <strong>Run</strong> to test it and see your results.</p>
+</li>
+</ul>
+<p>When you need to cover more complex use cases, you can <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#create-a-dql-query" title="Explore your data with our point-and-click interface.">create a DQL query</a> from it.</p>
+<p>The result of this step is equivalent to opening the  menu, selecting  <strong>DQL</strong>, and writing a DQL query without this web UI assistance.
+Then you can edit the DQL directly as needed, and you're free to delete the exploration version if you no longer need it.</p>
+<ul>
+<li>In <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>*, open the  menu and select  </em>*Create DQL tile</strong></li>
+<li>In <strong><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks<strong><em>*, open the  menu and select  </em>*Create DQL section</strong></li>
+</ul>
+<h2 id="transition-to-smartscape-fields">Transition to Smartscape fields<a class="headerlink" href="#transition-to-smartscape-fields" title="Permanent link">&para;</a></h2>
+<p>As part of ongoing improvements to the Dynatrace platform, the <code>dt.entity.*</code> fields are now deprecated. To ensure consistency and accuracy in your queries and data exploration, we recommend transitioning to the equivalent <code>dt.smartscape.*</code> fields.</p>
+<h3 id="what-this-means-for-you">What this means for you<a class="headerlink" href="#what-this-means-for-you" title="Permanent link">&para;</a></h3>
+<p>Dynatrace automatically uses the new Smartscape notation whenever possible to enhance your experience.</p>
+<p>If you encounter the following message:</p>
+<p>"The <code>dt.entity.*</code> fields are deprecated. Please use <code>dt.smartscape.*</code> fields instead."</p>
+<p>this indicates that the <code>dt.entity.*</code> fields will eventually be removed.</p>
+<h3 id="what-you-should-do">What you should do<a class="headerlink" href="#what-you-should-do" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Update your queries to replace <code>dt.entity.*</code> fields with the corresponding <code>dt.smartscape.*</code> fields.</li>
+<li>Review your dashboards and notebooks to ensure compatibility with the new Smartscape fields.</li>
+</ul>
+<h3 id="learn-more">Learn more<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h3>
+<p>For more information about the benefits of Smartscape nodes and how they work, see <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.">Smartscape on Grail</a>.</p>
+<h2 id="prompt">Prompt<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
+<p>You can create a notebook section or dashboard tile using <a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI</a> to translate your natural language questions into DQL queries.</p>
+<h3 id="generative-ai-in-your-dashboard">Generative AI in your dashboard<a class="headerlink" href="#generative-ai-in-your-dashboard" title="Permanent link">&para;</a></h3>
+<p>To create a dashboard tile using Dynatrace Intelligence generative AI</p>
+<ol>
+<li>Go to <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time."><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong></a> and open or create a dashboard you can edit.</li>
+<li>
+<p>Open the  <strong>Add</strong> menu and select  <strong>Prompt</strong>.</p>
+</li>
+<li>
+<p>A new Dynatrace Intelligence generative AI dashboard tile is created</p>
+</li>
+<li>
+<p>A panel on the right displays:</p>
+<ul>
+<li>An empty tile title field you can customize</li>
+<li>A prompt box followed by some examples you can select to try</li>
+<li>A <strong>Run</strong> button</li>
+<li>Optional At the top of the prompt definition panel, enter a tile title.</li>
+<li>In the prompt box, type a prompt. Try <code>average cpu usage percentage by host</code> or see the examples displayed in the web UI for inspiration.</li>
+<li>Optional If your prompt doesn't specify a timeframe, you can still specify it for the dashboard in your dashboard header (default is <strong>Last 2 hours</strong>) or the <strong>Custom timeframe</strong> settings (for a tile-specific timeframe).</li>
+<li>Select <strong>Run</strong>. Generative AI creates and runs the query for you.</li>
+<li>Review the results.</li>
+</ul>
+</li>
+<li>
+<p>To review the query, expand <strong>DQL</strong>  under the prompt box.</p>
+</li>
+<li>
+<p>Optional You can't edit the query directly in Dynatrace Intelligence generative AI, but you have two options for reusing it:</p>
+<ul>
+<li>Copy the query and paste it elsewhere manually.</li>
+<li>Open the  menu in the tile header and select <strong>Create DQL tile</strong> to create a DQL tile from this query.</li>
+<li>
+<p>You can edit your original prompt and run it to update the query and results.<br />
+ If you refresh your dashboard, the Dashboards app will first check if any prompts have been edited.</p>
+</li>
+<li>
+<p>If a prompt has been edited, the DQL will first be regenerated and then run.</p>
+</li>
+<li>If no prompts have been edited, the existing generated DQL will simply be run.</li>
+<li>Optional Select the <strong>Visual</strong> tab to change the visualization (refer to the <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.">visualization-specific documentation</a> for more information).</li>
+</ul>
+</li>
+</ol>
+<h3 id="generative-ai-in-your-notebook">Generative AI in your notebook<a class="headerlink" href="#generative-ai-in-your-notebook" title="Permanent link">&para;</a></h3>
+<p>To create a notebook section using Dynatrace Intelligence generative AI</p>
+<ol>
+<li>Go to <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and open or create a notebook you can edit.</li>
+<li>Open the  <strong>Add</strong> menu and select  <strong>Prompt</strong>. A new Generative AI notebook section is created with an empty prompt box.</li>
+<li>In the prompt box, type a prompt. Try <code>average cpu usage percentage by host</code> or see the examples displayed in the web UI for inspiration.</li>
+<li>Optional If your prompt doesn't specify the timeframe, you can still specify it in your section header. The default is <strong>Last 2 hours</strong>.</li>
+<li>Select <strong>Run</strong>. Generative AI creates and runs the query for you.</li>
+</ol>
+<p>Optional If you want to see the generated query before running it, open the  menu next to the <strong>Run</strong> button and select <strong>Generate DQL only</strong>.
+6. Review the results.</p>
+<ul>
+<li>You can review the query by expanding <strong>DQL</strong>  on the right.</li>
+<li>
+<p>Optional You can't edit the query directly in Dynatrace Intelligence generative AI, but you have two options for reusing it:</p>
+<ul>
+<li>Copy the query and paste it elsewhere manually.</li>
+<li>Open the  menu in the section header and select <strong>Create DQL section</strong> to create a DQL section from this query.</li>
+<li>
+<p>You can edit your original prompt, regenerate the query, and run it to update the results.<br />
+ If you select <strong>Rerun sections</strong>, the Notebooks app will first check if any prompts have been edited.</p>
+</li>
+<li>
+<p>If a prompt has been edited, the DQL will first be regenerated and then run.</p>
+</li>
+<li>If no prompts have been edited, the existing generated DQL will simply be run.</li>
+<li>Optional Select the  <strong>Options</strong> in the section header to change the visualization (refer to the <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.">visualization-specific documentation</a> for more information).</li>
+</ul>
+</li>
+</ul>
+<p>Automatically select visualization</p>
+<p>To have Dynatrace automatically select a visualization for your query, turn on <strong>Auto select</strong> in the upper-right corner of your visualization settings pane.</p>
+<ul>
+<li>If you manually select a different visualization, the <strong>Auto select</strong> switch will turn off.</li>
+<li>To have Dynatrace once again automatically select a visualization, turn <strong>Auto select</strong> back on.</li>
+</ul>
+<h2 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">&para;</a></h2>
+<p>This exploration functionality is the same in <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* and </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks<strong><em>*. We use </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** in this example.</p>
+<ol>
+<li>Open <strong><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks<strong><em>* and select  </em>*Notebook</strong> in the app header to create a new document.</li>
+<li>In the empty document, open the  <strong>Add</strong> menu and select  <strong>Logs</strong>.</li>
+<li>Inspect the results (initially, results are automatically fetched).</li>
+</ol>
+<p>Done. You have fetched the first 20 log lines with just a few clicks.</p>
+<p><img alt="Explore logs example: default results" src="https://dt-cdn.net/images/explore-logs-default-1346-80e91aedb3.png" /></p>
+<p>To make it more useful, now click in the  box to get filter suggestions.</p>
+<p><img alt="Explore logs example: select filter" src="https://dt-cdn.net/images/explore-logs-filter-suggestions-642-20e57a42a9.png" /></p>
+<p>Filter suggestions are available for any field apart from content.</p>
+<h3 id="filter-by-logsource">Filter by log.source<a class="headerlink" href="#filter-by-logsource" title="Permanent link">&para;</a></h3>
+<p>Starting from the previous example, let's add a <strong>log.source</strong> filter to return only those logs where the <strong>log.source</strong> field contains a certain string.</p>
+<p>To do this, we need to specify</p>
+<ul>
+<li>A field, in this case <strong>log.source</strong>, in the filter</li>
+<li>A desired operator, such as <code>=</code></li>
+<li>
+<p>A filter value (a string that needs to occur somewhere in the <strong>log.source</strong> field)</p>
+</li>
+<li>
+<p>Insert your cursor in the filter field and start typing <strong>log.source</strong>, or search for it via the search at the top of the suggestions, and select it.</p>
+</li>
+<li>Add <code>=</code> as an operator by either selecting it from the suggestions from the auto complete or by typing it.</li>
+<li>Enter the string you want to search for.</li>
+</ul>
+<p>For this example, enter <code>oneagent</code> to get all logs where the <strong>log.source</strong> field contains <code>oneagent</code>.
+4. Add <code>*</code> a wildcard before and after your filter term such that the results are restricted to logs where the <strong>log.source</strong> field contains <code>oneagent</code> instead of only considering exact matches.
+5. Select <strong>Run</strong> and inspect the results.</p>
+<p><img alt="Explore logs example: filter by log.source = oneagent" src="https://dt-cdn.net/images/explore-logs-filter-log-source-oneagent-931-9d5b0bc8ab.png" /></p>
+<h3 id="filter-by-content">Filter by content<a class="headerlink" href="#filter-by-content" title="Permanent link">&para;</a></h3>
+<p>Starting from the previous example, let's add a <strong>content</strong> filter to focus on logs where the content contains the string <code>crash</code> (and, because we are starting from the previous settings, where the <strong>log.source</strong> field contains <code>oneagent</code>).</p>
+<ol>
+<li>Insert your cursor in the filter field immediately after the previously added <strong>log.source</strong> filter and either select <strong>content</strong> from the suggested fields or type it in.</li>
+<li>Add <code>=</code> as an operator by either selecting it from the suggestions from the auto complete or by typing it.</li>
+<li>Enter the string you want to search for.</li>
+</ol>
+<p>If you are using Dashboards, you can also reference existing <a href="#dashboard-component-variable">variables</a> by entering a <code>$</code> sign and selecting the desired variable. In this example, we are looking for logs that contain the string <code>crash</code> somewhere in the content, so enter <code>crash</code>.
+4. Add <code>*</code> a wildcard before and after your filter term such that the results are restricted to logs where the <strong>content</strong> field contains <code>crash</code> instead of only considering exact matches.
+5. Select <strong>Run</strong> and inspect the results.</p>
+<p>Now the results are restricted to logs where the <strong>log.source</strong> field contains <code>oneagent</code> and the content contains the string <code>crash</code>. If you want to search for all occurrences where either one or the other filter applies, add an <code>OR</code> between the two filters.</p>
+<p><img alt="Explore logs example: filter by log.source = oneagent, content = crash" src="https://dt-cdn.net/images/explore-logs-filter-log-source-oneagent-content-crash-931-641a63c295.png" /></p>
+<h3 id="filter-by-status">Filter by status<a class="headerlink" href="#filter-by-status" title="Permanent link">&para;</a></h3>
+<p>Starting from the previous example, let's add a <strong>status</strong> filter to focus on logs that contain status strings (and, because we're building on the previous settings, where the <strong>log.source</strong> field contains <code>oneagent</code> and the content contains the string <code>crash</code>).</p>
+<ol>
+<li>Insert your cursor in the filter field immediately after the previously added <strong>content</strong> filter and either select <code>status</code> from the suggested fields or type it in.</li>
+<li>Add <code>in</code> as an operator by either selecting it from the suggestions or by typing it.</li>
+<li>Enter all statuses you want to filter by. Either use the value suggestions provided or type them in, separated by commas.</li>
+<li>Select <strong>Run</strong> and inspect the results.</li>
+</ol>
+<p><img alt="Explore logs example: filter by log.source = oneagent, content = crash, status in ERROR" src="https://dt-cdn.net/images/explore-logs-filter-log-source-oneagent-content-crash-status-in-error-927-70de369da4.png" /></p>
+<h3 id="summarize">Summarize<a class="headerlink" href="#summarize" title="Permanent link">&para;</a></h3>
+<p>To summarize your results</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Summarize</strong>.</li>
+<li>Specify how you want to summarize the results.</li>
+</ol>
+<p>You can choose between aggregation options and you can select the field by which the results are aggregated.</p>
+<h3 id="convert-to-time-series">Convert to time series<a class="headerlink" href="#convert-to-time-series" title="Permanent link">&para;</a></h3>
+<p>You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.</p>
+<p>To convert log-based events to a time series format</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Convert to time series</strong>.</li>
+<li>After you select <strong>Convert to time series</strong>, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.</li>
+</ol>
+<h3 id="bucketize">Bucketize<a class="headerlink" href="#bucketize" title="Permanent link">&para;</a></h3>
+<p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu for the metric and select <strong>Bucketize</strong>.</li>
+<li>Select the field for which you want to create the buckets.</li>
+<li>Set the <strong>Bucketize</strong> value.</li>
+</ol>
+<h3 id="sort">Sort<a class="headerlink" href="#sort" title="Permanent link">&para;</a></h3>
+<p>To sort your results</p>
+<ol>
+<li>Select  <strong>Sort</strong>.</li>
+<li>
+<p>After you select <strong>Sort</strong>, use the <strong>Sort by</strong> menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.</p>
+</li>
+<li>
+<p><code>value.A</code>  is selected by default</p>
+</li>
+<li>Sort applies to all metrics included in the query</li>
+</ol>
+<h3 id="limit">Limit<a class="headerlink" href="#limit" title="Permanent link">&para;</a></h3>
+<p>To change the limit of your results, change the value of <strong>Limit</strong> to the maximum number of records you want to return.</p>
+<p>If the <strong>Limit</strong> setting is not displayed,  <strong>Limit</strong> and then set the value.</p>
+<h2 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h2>
+<h3 id="add">Add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
+<p>This exploration functionality is the same in <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* and </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks<strong><em>*. We use </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** in these examples.</p>
+<ol>
+<li>Open <strong><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks<strong><em>* and select  </em>*Notebook</strong> in the app header to create a new notebook.</li>
+<li>In the empty notebook, open the  <strong>Add</strong> menu and select  <strong>Metrics</strong>.</li>
+<li>Use the metric selector to select the metric you want to explore.</li>
+</ol>
+<p><img alt="Explore metrics example: select metric" src="https://dt-cdn.net/images/explore-metrics-select-metric-634-4c1cdd4968.png" /></p>
+<p>For example, if you want to explore a metric for Kubernetes workloads, you can search for the string or use the menu to find what you want.</p>
+<p>How to search for a string and select a matching metric</p>
+<p>In this example, we searched for <code>cpu usage</code> and selected the best match.</p>
+<p><img alt="Explore metrics example: search for metric" src="https://dt-cdn.net/images/explore-metrics-search-and-select-781-73de6eb5e5.png" /></p>
+<p>How to use the menu to select a metric</p>
+<p>In this example, we used the menu to find <strong>All</strong> &gt; <strong>Infrastructure</strong> &gt; <strong>CPU</strong> and then selected the best match.</p>
+<p><img alt="Explore metrics example: browse for metric" src="https://dt-cdn.net/images/explore-metrics-browse-and-select-764-2af4333626.png" /></p>
+<p>Additional options are displayed after you select a metric.</p>
+<p><img alt="Explore metrics example: additional options after you select a metric" src="https://dt-cdn.net/images/explore-metrics-additional-options-after-metric-select-644-2f478d73c6.png" />
+4. Select <strong>Run</strong> to see what we have so far.</p>
+<p>Without making any additional settings, we get this line chart of the metric average over time.</p>
+<p><img alt="Explore metrics example: default chart after selecting metric" src="https://dt-cdn.net/images/explore-metrics-default-chart-after-metric-select-716-75bf621760.png" /></p>
+<h4 id="additional-metric-specific-options">Additional metric-specific options<a class="headerlink" href="#additional-metric-specific-options" title="Permanent link">&para;</a></h4>
+<p>To see additional options for a metric, use the metric-specific menus.</p>
+<p>Metric-specific commands:</p>
+<ul>
+<li><a href="#metric-filter">Filters</a></li>
+<li><a href="#metric-split-by">Split by</a></li>
+<li><a href="#metric-compare-to-previous-period">Compare to previous period</a></li>
+<li><a href="#metric-default-value">Default value</a></li>
+<li><a href="#metric-rate">Rate</a></li>
+<li><a href="#metric-reduce-to-single-value">Reduce to single value</a></li>
+<li><a href="#metric-hide">Hide</a></li>
+<li><a href="#metric-duplicate">Duplicate</a></li>
+<li><a href="#metric-delete">Delete</a></li>
+<li><a href="#metric-alias">Alias</a></li>
+<li><a href="#metric-bucketize">Bucketize</a></li>
+</ul>
+<p>Global commands:</p>
+<ul>
+<li><a href="#metric-sort">Sort</a></li>
+<li><a href="#metric-limit">Limit</a></li>
+<li><a href="#metric-interval">Interval</a></li>
+</ul>
+<p><img alt="Command scope in explore data" src="https://dt-cdn.net/images/command-scopes-705-b0be07d3b6.png" /></p>
+<h3 id="add-another-metric-or-expression">Add another metric or expression<a class="headerlink" href="#add-another-metric-or-expression" title="Permanent link">&para;</a></h3>
+<ul>
+<li>To add another metric, select the global  menu and then <strong>Metric</strong>.</li>
+<li>To add an <a href="#expressions">expression</a>, select the global  menu and then <strong>Expression</strong>.</li>
+</ul>
+<h3 id="hide-or-show">Hide or show<a class="headerlink" href="#hide-or-show" title="Permanent link">&para;</a></h3>
+<p>If you still aren't finished and you want to keep configurations for potential latter adjustments, you can hide or show selected metrics or expressions.</p>
+<ul>
+<li>To hide a metric or expression from the result, select the  menu for that metric or expression and then select <strong>Hide</strong>. This removes the metric from the underlying DQL query.</li>
+<li>To show it again, select the  menu for that metric or expression and then select <strong>Show</strong>.</li>
+</ul>
+<h3 id="duplicate">Duplicate<a class="headerlink" href="#duplicate" title="Permanent link">&para;</a></h3>
+<p>To make a copy of a metric or expression that you have already added, select the  menu for that metric or expression and then select <strong>Duplicate</strong>. Edit the copy as needed.</p>
+<h3 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
+<p>To remove a metric or expression from your query, select the  menu for that metric or expression and then select <strong>Delete</strong>.</p>
+<h3 id="filter">Filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h3>
+<p>Starting from the previous example, let's add a <strong>host.name</strong> filter to focus on specific hosts, where the <strong>host.name</strong> field contains a certain host name.</p>
+<ol>
+<li>Select the metric-specific  menu and then select <strong>Filters</strong>.</li>
+<li>Insert your cursor in the filter field and either select <strong>host.name</strong> from the suggested fields or type it in.</li>
+<li>Add <code>=</code> as an operator by either selecting it from the auto-complete suggestions or by typing it in.</li>
+<li>Enter a host name you want to filter by or use one of the value suggestions provided.</li>
+<li>Select <strong>Run</strong> and inspect the results.</li>
+</ol>
+<p><img alt="Explore metrics example: Filter by host" src="https://dt-cdn.net/images/explore-metrics-filter-by-host-913-d93a73935d.png" /></p>
+<p>Note: As an alternative to using auto-enriched fields such as <strong>host.name</strong> or <strong>k8s.pod.name</strong>, names and tags are automatically offered as additional filter values for each entity contained in your data. For example, if your data contains the entity <strong>dt.entity.host</strong>, the two additional fields <strong>dt.entity.host.name</strong> and <strong>dt.entity.host.tags</strong> are offered in the field suggestions for you to use as a filter.</p>
+<h3 id="split-by-aggregate">Split by (Aggregate)<a class="headerlink" href="#split-by-aggregate" title="Permanent link">&para;</a></h3>
+<p>If <strong>Split by</strong> isn't displayed</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu for the metric and then select <strong>Split by</strong>.</li>
+<li>Use the <strong>Split by</strong> menu to make your aggregation selection.</li>
+</ol>
+<p>To see the same metric by host, we can aggregate on (<strong>Split by</strong>) <code>dt.entity.host</code> and then select <strong>Run</strong> again.</p>
+<p><img alt="Explore metrics example: select Split by" src="https://dt-cdn.net/images/explore-metrics-split-by-select-917-6ced2b5191.png" /></p>
+<p>Now we get a separate line per host.</p>
+<p><img alt="Explore metrics example: Split by dt.entity.host" src="https://dt-cdn.net/images/explore-metrics-split-by-select-dt-entity-host-921-02cdc26859.png" /></p>
+<h3 id="limit-results">Limit results<a class="headerlink" href="#limit-results" title="Permanent link">&para;</a></h3>
+<p>To focus our exploration, we can set a limit on the results returned. If you add multiple metrics to your query, the limit applies to all of them.</p>
+<ol>
+<li>Select  <strong>Limit</strong> to add a <strong>Limit</strong>.</li>
+<li>Set <strong>Limit</strong> to the maximum number of records we want to return. In this case, we set the limit to 5, and then we ran it again to see the following results.</li>
+</ol>
+<h3 id="compare-to-previous-period">Compare to previous period<a class="headerlink" href="#compare-to-previous-period" title="Permanent link">&para;</a></h3>
+<p>To shift the metric to a previous period and add it for comparison</p>
+<ol>
+<li>Select the metric-specific  menu and then select <strong>Compare to previous period</strong>.</li>
+<li>Under <strong>Compare to previous period</strong>, enter the number and select the unit (seconds, minutes, hours, or days) for the relative time shift.</li>
+</ol>
+<h3 id="default-value">Default value<a class="headerlink" href="#default-value" title="Permanent link">&para;</a></h3>
+<p>To replace null values in your time series data with a default value</p>
+<ol>
+<li>Select the metric-specific  menu and then select <strong>Default value</strong>.</li>
+<li>Under <strong>Default value</strong>, enter a positive or negative numerical integer value that is used to replace null values.</li>
+</ol>
+<h3 id="rate">Rate<a class="headerlink" href="#rate" title="Permanent link">&para;</a></h3>
+<p>To visualize the rate at which a metric is changing</p>
+<ol>
+<li>Select the metric-specific  menu and then select <strong>Rate</strong>.</li>
+<li>Use the <strong>Rate</strong> menu to select a rate: <strong>Per Second</strong>, <strong>Per Minute</strong>, <strong>Per Hour</strong>, or <strong>Per Day</strong>.</li>
+</ol>
+<h3 id="reduce-to-single-value">Reduce to single value<a class="headerlink" href="#reduce-to-single-value" title="Permanent link">&para;</a></h3>
+<p>To make your results suitable for certain visualizations such as <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value" title="Create and edit single value visualizations on your Dynatrace dashboards and notebooks.">Single value</a>, <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table" title="Create and edit table visualizations on your Dynatrace dashboards and notebooks.">Table</a>, or <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical" title="Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.">Categorical bar chart</a></p>
+<ol>
+<li>Select the metric-specific  menu and then select <strong>Reduce to single value</strong>.</li>
+<li>Use the <strong>Reduce to single value</strong> menu to select the value.</li>
+</ol>
+<p>This reduces the time series data to a single scalar value over the selected timeframe and adds this as a new column called <strong>value</strong> that can then be used to properly map the results to your visualization.</p>
+<h3 id="alias">Alias<a class="headerlink" href="#alias" title="Permanent link">&para;</a></h3>
+<p>You might want to rename (add an alias to) a metric to make it more readable.</p>
+<ul>
+<li>Adding an alias gives the metric a more convenient alternate name for you to use in the current dashboard tile or notebook section. Instead of the raw metric name, the alias is displayed in your query definition and in the resulting dashboard tile or notebook section.</li>
+<li>Adding an alias doesn't affect the actual name or value of the metric, and it doesn't change how others see the metric. It doesn't even change the metric name in other dashboard tiles or notebook sections in the current document.</li>
+</ul>
+<p>To add an alias for metric</p>
+<ol>
+<li>Select the metric in your query definition. This makes the name of the metric editable.</li>
+</ol>
+<p><img alt="Explore metrics example: select metric to add alias" src="https://dt-cdn.net/images/explore-metrics-alias-select-638-cf2121f944.png" />
+2. Type an alias and press Enter.</p>
+<p>In this example, we added the metric <code>avg(dt.host.cpu.usage)</code> to our query, and now we want to give it a simpler alternative name, such as <code>Average host CPU usage</code>, to display instead of <code>avg(dt.host.cpu.usage)</code> in your notebook section or dashboard tile.</p>
+<p>Technical details</p>
+<p>Expand <strong>DQL</strong> in your query definition to see how your alias is handled in DQL.</p>
+<h3 id="bucketize_1">Bucketize<a class="headerlink" href="#bucketize_1" title="Permanent link">&para;</a></h3>
+<p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu for the metric and select <strong>Bucketize</strong>.</li>
+<li>Set the <strong>Bucketize</strong> value.</li>
+</ol>
+<h3 id="interval">Interval<a class="headerlink" href="#interval" title="Permanent link">&para;</a></h3>
+<p>The interval defines the time granularity for metrics, determining how data is grouped and aggregated over time. It is expressed as a duration of each time slot (for example, 1h, 5m) for aggregating data points.</p>
+<p>If you add multiple metrics to your query, the interval applies to all of them, ensuring consistency in data granularity across all metrics.</p>
+<ol>
+<li>Select  <strong>Interval</strong> to add an <strong>Interval</strong> selector to your query.</li>
+<li>Select an interval.</li>
+</ol>
+<p>For details on how an interval is used in DQL, see <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL metric commands">timeseries</a>.</p>
+<h3 id="expressions">Expressions<a class="headerlink" href="#expressions" title="Permanent link">&para;</a></h3>
+<p>Add expressions to apply arithmetic based on your selected metrics.</p>
+<ol>
+<li>Add the metrics you want to base your expression on.</li>
+</ol>
+<p>For example, to calculate the total capacity of all your disks, we can select:</p>
+<ul>
+<li><strong>dt.host.disk.used</strong> as our first metric, <code>A</code></li>
+<li><strong>dt.host.disk.avail</strong> as our second metric, <code>B</code>.</li>
+<li>Select the global  <strong>Source</strong> menu and then select <strong>Expression</strong>.</li>
+<li>
+<p>Define your expression by combining references from</p>
+</li>
+<li>
+<p>Defined metrics such as <code>A</code>, <code>B</code>, and <code>C</code></p>
+</li>
+<li>Supported mathematical and logical <a href="/docs/platform/grail/dynatrace-query-language/operators" title="A list of DQL Operators.">operators</a> such as <code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>, <code>(</code>, and <code>)</code></li>
+</ul>
+<p>For example, to calculate the total disk capacity, we simply add both metrics together using <code>A+B</code>
+4. Select <strong>Run</strong> and inspect the results.</p>
+<p><img alt="Explore metrics example: expression" src="https://dt-cdn.net/images/explore-metrics-example-expression-662-b59f306f98.png" /></p>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p>This exploration functionality is the same as described for logs.</p>
+<p>To start exploring events</p>
+<ol>
+<li>Open <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* or </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** and select  in an empty notebook or the document header of a dashboard.</li>
+<li>Select  <strong>Events</strong> to add a section or tile based on it.</li>
+<li>Inspect the results (if no results are initially displayed, select  <strong>Run</strong>).</li>
+</ol>
+<p>Done. You have fetched the first 20 events with just a few clicks.</p>
+<p>To make it more useful, now click in the  box to get filter suggestions.</p>
+<p>Filter suggestions are available for any field apart from content.</p>
+<p><img alt="Explore events example: Notebooks, no filters" src="https://dt-cdn.net/images/explore-events-example-default-notebooks-1618-71dfb794ff.png" /></p>
+<h3 id="summarize_1">Summarize<a class="headerlink" href="#summarize_1" title="Permanent link">&para;</a></h3>
+<p>To summarize your results</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Summarize</strong>.</li>
+<li>Specify how you want to summarize the results.</li>
+</ol>
+<p>You can choose between aggregation options and you can select the field by which the results are aggregated.</p>
+<h3 id="convert-to-time-series_1">Convert to time series<a class="headerlink" href="#convert-to-time-series_1" title="Permanent link">&para;</a></h3>
+<p>You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.</p>
+<p>To convert log-based events to a time series format</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Convert to time series</strong>.</li>
+<li>After you select <strong>Convert to time series</strong>, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.</li>
+</ol>
+<h3 id="bucketize_2">Bucketize<a class="headerlink" href="#bucketize_2" title="Permanent link">&para;</a></h3>
+<p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu for the metric and select <strong>Bucketize</strong>.</li>
+<li>Select the field for which you want to create the buckets.</li>
+<li>Set the <strong>Bucketize</strong> value.</li>
+</ol>
+<h3 id="sort_1">Sort<a class="headerlink" href="#sort_1" title="Permanent link">&para;</a></h3>
+<p>To sort your results</p>
+<ol>
+<li>Select  <strong>Sort</strong>.</li>
+<li>
+<p>After you select <strong>Sort</strong>, use the <strong>Sort by</strong> menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.</p>
+</li>
+<li>
+<p><code>value.A</code>  is selected by default</p>
+</li>
+<li>Sort applies to all metrics included in the query</li>
+</ol>
+<h3 id="limit_1">Limit<a class="headerlink" href="#limit_1" title="Permanent link">&para;</a></h3>
+<p>To change the limit of your results, change the value of <strong>Limit</strong> to the maximum number of records you want to return.</p>
+<p>If the <strong>Limit</strong> setting is not displayed,  <strong>Limit</strong> and then set the value.</p>
+<h2 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h2>
+<p>A <code>problem</code> in Dynatrace represents an anomaly from a normal behavior or state, such as a slow service response or user-login process. Whenever a problem is detected, Dynatrace raises a specific problem event indicating such an anomaly. Every problem update is exported to Grail. Use the <strong>Problems</strong> explorer to query Grail for problems matching your search filters.</p>
+<ol>
+<li>Open <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* or </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** and select  in an empty notebook or the document header of a dashboard.</li>
+<li>Select  <strong>Problems</strong> to add a section or tile based on it.</li>
+</ol>
+<p>If you run it like that, with <strong>Limit</strong> set to <code>20</code> (the default), you get the first 20 results of fetching problem records from Grail.</p>
+<p>DQL equivalent</p>
+<p>In DQL, this is the equivalent of:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch dt.davis.problems
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| limit 20
+</code></pre></div>
+3. Inspect the results (if no results are initially displayed, select  <strong>Run</strong>).</p>
+<p>Done. You have fetched the first 20 problems with just a few clicks.</p>
+<p>To make it more useful, now click in the  box to get filter suggestions.</p>
+<p>Filter suggestions are available for any field apart from content.</p>
+<p><img alt="Explore problems example: Notebooks, no filters" src="https://dt-cdn.net/images/explore-problems-example-default-notebooks-1627-5a6b1b8abb.png" /></p>
+<h3 id="summarize_2">Summarize<a class="headerlink" href="#summarize_2" title="Permanent link">&para;</a></h3>
+<p>To summarize your results</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Summarize</strong>.</li>
+<li>Specify how you want to summarize the results.</li>
+</ol>
+<p>You can choose between aggregation options and you can select the field by which the results are aggregated.</p>
+<h3 id="convert-to-time-series_2">Convert to time series<a class="headerlink" href="#convert-to-time-series_2" title="Permanent link">&para;</a></h3>
+<p>You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.</p>
+<p>To convert log-based events to a time series format</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Convert to time series</strong>.</li>
+<li>After you select <strong>Convert to time series</strong>, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.</li>
+</ol>
+<h3 id="bucketize_3">Bucketize<a class="headerlink" href="#bucketize_3" title="Permanent link">&para;</a></h3>
+<p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Bucketize</strong>.</li>
+<li>Select the field for which you want to create the buckets.</li>
+<li>Set the <strong>Bucketize</strong> value.</li>
+</ol>
+<h3 id="sort_2">Sort<a class="headerlink" href="#sort_2" title="Permanent link">&para;</a></h3>
+<p>To sort your results</p>
+<ol>
+<li>Select  <strong>Sort</strong>.</li>
+<li>
+<p>After you select <strong>Sort</strong>, use the <strong>Sort by</strong> menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.</p>
+</li>
+<li>
+<p><code>value.A</code>  is selected by default</p>
+</li>
+<li>Sort applies to all metrics included in the query</li>
+</ol>
+<h3 id="limit_2">Limit<a class="headerlink" href="#limit_2" title="Permanent link">&para;</a></h3>
+<p>To change the limit of your results, change the value of <strong>Limit</strong> to the maximum number of records you want to return.</p>
+<p>If the <strong>Limit</strong> setting is not displayed,  <strong>Limit</strong> and then set the value.</p>
+<h2 id="traces">Traces<a class="headerlink" href="#traces" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* or </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** and select  in an empty notebook or the document header of a dashboard.</li>
+<li>Select  <strong>Traces</strong> to add a section or tile based on it.</li>
+</ol>
+<p>If you run it like that, with <strong>Limit</strong> set to <code>20</code> (the default), you get the first 20 results of fetching spans from Grail.</p>
+<p>DQL equivalent</p>
+<p>In DQL, this is the equivalent of:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fetch spans
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| limit 20
+</code></pre></div>
+3. Inspect the results (if no results are initially displayed, select  <strong>Run</strong>).</p>
+<p>Done. You have fetched the first 20 spans with just a few clicks.</p>
+<p>To make it more useful, now click in the  box to get filter suggestions.</p>
+<p>Filter suggestions are available for any field apart from content.</p>
+<p><img alt="Explore traces example: Notebooks, no filters" src="https://dt-cdn.net/images/explore-traces-example-default-notebooks-1614-9e75005b4e.png" /></p>
+<h3 id="summarize_3">Summarize<a class="headerlink" href="#summarize_3" title="Permanent link">&para;</a></h3>
+<p>To summarize your results</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Summarize</strong>.</li>
+<li>Specify how you want to summarize the results.</li>
+</ol>
+<p>You can choose between aggregation options and you can select the field by which the results are aggregated.</p>
+<h3 id="convert-to-time-series_3">Convert to time series<a class="headerlink" href="#convert-to-time-series_3" title="Permanent link">&para;</a></h3>
+<p>You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.</p>
+<p>To convert log-based events to a time series format</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Convert to time series</strong>.</li>
+<li>After you select <strong>Convert to time series</strong>, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.</li>
+</ol>
+<h3 id="bucketize_4">Bucketize<a class="headerlink" href="#bucketize_4" title="Permanent link">&para;</a></h3>
+<p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Bucketize</strong>.</li>
+<li>Select the field for which you want to create the buckets.</li>
+<li>Set the <strong>Bucketize</strong> value.</li>
+</ol>
+<h3 id="sort_3">Sort<a class="headerlink" href="#sort_3" title="Permanent link">&para;</a></h3>
+<p>To sort your results</p>
+<ol>
+<li>Select  <strong>Sort</strong>.</li>
+<li>
+<p>After you select <strong>Sort</strong>, use the <strong>Sort by</strong> menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.</p>
+</li>
+<li>
+<p><code>value.A</code>  is selected by default</p>
+</li>
+<li>Sort applies to all metrics included in the query</li>
+</ol>
+<h3 id="limit_3">Limit<a class="headerlink" href="#limit_3" title="Permanent link">&para;</a></h3>
+<p>To change the limit of your results, change the value of <strong>Limit</strong> to the maximum number of records you want to return.</p>
+<p>If the <strong>Limit</strong> setting is not displayed,  <strong>Limit</strong> and then set the value.</p>
+<h2 id="business-events">Business events<a class="headerlink" href="#business-events" title="Permanent link">&para;</a></h2>
+<p>This exploration functionality is the same as described for logs.</p>
+<p>To start exploring business events</p>
+<ol>
+<li>Open <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* or </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** and select  in an empty notebook or the document header of a dashboard.</li>
+<li>Select  <strong>Business Events</strong> to add a section or tile based on it.</li>
+<li>Inspect the results (if no results are initially displayed, select  <strong>Run</strong>).</li>
+</ol>
+<p>Done. You have fetched the first 20 business events with just a few clicks.</p>
+<p>To make it more useful, now click in the  box to get filter suggestions.</p>
+<p>Filter suggestions are available for any field apart from content.</p>
+<p><img alt="Explore business events example: Notebooks, no filters" src="https://dt-cdn.net/images/explore-business-events-example-default-notebooks-1620-fa7dd14bad.png" /></p>
+<h3 id="filter-by-eventprovider">Filter by event.provider<a class="headerlink" href="#filter-by-eventprovider" title="Permanent link">&para;</a></h3>
+<p>Let's add an <strong>event.provider</strong> filter to return only those business events where the <strong>event.provider</strong> field contains a certain string.</p>
+<p>To do this, we need to specify</p>
+<ul>
+<li>The field you want to filter by</li>
+<li>The operator that decides how the filter is applied</li>
+<li>
+<p>The filter value (a string that needs to occur somewhere in the <strong>event.provider</strong> field)</p>
+</li>
+<li>
+<p>Insert your cursor in the filter field and either select <strong>event.provider</strong> from the suggested fields or type it in.</p>
+</li>
+<li>Add <code>=</code> as an operator by either selecting it from the suggestions or by typing it in.</li>
+<li>Enter an event provider you want to filter by.</li>
+<li>Select <strong>Run</strong> and inspect the results.</li>
+</ul>
+<p>Now the results are restricted to logs where the <strong>event.provider</strong> field contains our filter value.</p>
+<h3 id="filter-by-eventtype">Filter by event.type<a class="headerlink" href="#filter-by-eventtype" title="Permanent link">&para;</a></h3>
+<p>Now let's further refine exploration by specifying an event type.</p>
+<ol>
+<li>Insert your cursor in the filter field immediately after our previously added <strong>event.provider</strong> filter and either select <strong>event.type</strong> from the suggested fields or type it in.</li>
+<li>Add <code>=</code> as an operator by either selecting it from the suggestions or by typing it in.</li>
+<li>Enter the event type you want to filter by.</li>
+<li>Select <strong>Run</strong> and inspect the results.</li>
+</ol>
+<p>Now the results are restricted to business events where the <strong>event.provider</strong> and <strong>event.type</strong> match our filter values.</p>
+<h3 id="summarize_4">Summarize<a class="headerlink" href="#summarize_4" title="Permanent link">&para;</a></h3>
+<p>To summarize your results</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Summarize</strong>.</li>
+<li>Specify how you want to summarize the results.</li>
+</ol>
+<p>You can choose between aggregation options and you can select the field by which the results are aggregated.</p>
+<h3 id="convert-to-time-series_4">Convert to time series<a class="headerlink" href="#convert-to-time-series_4" title="Permanent link">&para;</a></h3>
+<p>You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.</p>
+<p>To convert log-based events to a time series format</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Convert to time series</strong>.</li>
+<li>After you select <strong>Convert to time series</strong>, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.</li>
+</ol>
+<h3 id="bucketize_5">Bucketize<a class="headerlink" href="#bucketize_5" title="Permanent link">&para;</a></h3>
+<p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Bucketize</strong>.</li>
+<li>Select the field for which you want to create the buckets.</li>
+<li>Set the <strong>Bucketize</strong> value.</li>
+</ol>
+<h3 id="sort_4">Sort<a class="headerlink" href="#sort_4" title="Permanent link">&para;</a></h3>
+<p>To sort your results</p>
+<ol>
+<li>Select  <strong>Sort</strong>.</li>
+<li>
+<p>After you select <strong>Sort</strong>, use the <strong>Sort by</strong> menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.</p>
+</li>
+<li>
+<p><code>value.A</code>  is selected by default</p>
+</li>
+<li>Sort applies to all metrics included in the query</li>
+</ol>
+<h3 id="limit_4">Limit<a class="headerlink" href="#limit_4" title="Permanent link">&para;</a></h3>
+<p>To change the limit of your results, change the value of <strong>Limit</strong> to the maximum number of records you want to return.</p>
+<p>If the <strong>Limit</strong> setting is not displayed,  <strong>Limit</strong> and then set the value.</p>
+<h2 id="security-events">Security events<a class="headerlink" href="#security-events" title="Permanent link">&para;</a></h2>
+<p>This exploration functionality is the same as described for logs.</p>
+<p>To start exploring security events</p>
+<ol>
+<li>Open <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* or </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** and select  in an empty notebook or the document header of a dashboard.</li>
+<li>Select  <strong>Security events</strong> to add a section or tile based on it.</li>
+<li>Inspect the results (if no results are initially displayed, select  <strong>Run</strong>).</li>
+</ol>
+<p>Done. You have fetched the first 20 security events with just a few clicks.</p>
+<p>To make it more useful, now click in the  box to get filter suggestions.</p>
+<p>Filter suggestions are available for any field apart from content.</p>
+<p><img alt="Explore security events example: Notebooks, no filters" src="https://dt-cdn.net/images/explore-security-events-example-default-notebooks-1615-e3f261347b.png" /></p>
+<h3 id="summarize_5">Summarize<a class="headerlink" href="#summarize_5" title="Permanent link">&para;</a></h3>
+<p>To summarize your results</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Summarize</strong>.</li>
+<li>Specify how you want to summarize the results.</li>
+</ol>
+<p>You can choose between aggregation options and you can select the field by which the results are aggregated.</p>
+<h3 id="convert-to-time-series_5">Convert to time series<a class="headerlink" href="#convert-to-time-series_5" title="Permanent link">&para;</a></h3>
+<p>You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.</p>
+<p>To convert log-based events to a time series format</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Convert to time series</strong>.</li>
+<li>After you select <strong>Convert to time series</strong>, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.</li>
+</ol>
+<h3 id="bucketize_6">Bucketize<a class="headerlink" href="#bucketize_6" title="Permanent link">&para;</a></h3>
+<p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
+<ol>
+<li>Open the  <strong>Command</strong> menu and select <strong>Bucketize</strong>.</li>
+<li>Select the field for which you want to create the buckets.</li>
+<li>Set the <strong>Bucketize</strong> value.</li>
+</ol>
+<h3 id="sort_5">Sort<a class="headerlink" href="#sort_5" title="Permanent link">&para;</a></h3>
+<p>To sort your results</p>
+<ol>
+<li>Select  <strong>Sort</strong>.</li>
+<li>
+<p>After you select <strong>Sort</strong>, use the <strong>Sort by</strong> menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.</p>
+</li>
+<li>
+<p><code>value.A</code>  is selected by default</p>
+</li>
+<li>Sort applies to all metrics included in the query</li>
+</ol>
+<h3 id="limit_5">Limit<a class="headerlink" href="#limit_5" title="Permanent link">&para;</a></h3>
+<p>To change the limit of your results, change the value of <strong>Limit</strong> to the maximum number of records you want to return.</p>
+<p>If the <strong>Limit</strong> setting is not displayed,  <strong>Limit</strong> and then set the value.</p>
+<h2 id="query-grail">Query Grail<a class="headerlink" href="#query-grail" title="Permanent link">&para;</a></h2>
+<p>When you're exploring data, you're automatically creating a <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">DQL</a> query that you can view, copy, and use as the basis of more complex queries.</p>
+<h3 id="show-dql">Show DQL<a class="headerlink" href="#show-dql" title="Permanent link">&para;</a></h3>
+<p>To see the DQL that is created automatically during your exploration with the point-and-click interface, select <strong>DQL</strong>. This shows you the DQL that you can  copy and use elsewhere.</p>
+<p><img alt="Example: show DQL in an Explore tile" src="https://dt-cdn.net/images/explore-logs-show-dql-closed-636-58a6cfcf79.png" /></p>
+<p><img alt="Example: show DQL in an Explore tile: expanded" src="https://dt-cdn.net/images/explore-logs-show-dql-open-633-3242ed63eb.png" /></p>
+<h3 id="create-a-dql-query">Create a DQL query<a class="headerlink" href="#create-a-dql-query" title="Permanent link">&para;</a></h3>
+<p>When you're satisfied with the results but want to advance with more complex DQL commands, you can easily create a standard notebook section or dashboard tile based on it.</p>
+<ol>
+<li>Open the  menu and select  <strong>Create DQL section</strong> or  <strong>Create DQL tile</strong></li>
+<li>Edit the resulting query section or tile as needed.</li>
+<li>If you no longer need the UI-constructed version, you can delete it and just use the duplicate notebook section or dashboard tile with the DQL query.</li>
+</ol>
+<p>The result of this step is equivalent to</p>
+<ol>
+<li>Open the  menu and select  <strong>DQL</strong>.</li>
+<li>Write a DQL query (without UI assistance) to do everything you did in the previous examples.</li>
+</ol>
+<p>That's what makes this a great tool for beginners and experts.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dynatrace Documentation Mirror
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/gemini-chat.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2128 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete bilingual Dynatrace documentation with AI assistant">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs/en/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Azure Logs - Dynatrace Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-logs" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace Documentation" class="md-header__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure Logs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../ru/getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇷🇺 Русский
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../ai/gemini/" class="md-tabs__link">
+          
+  
+  
+  🤖 AI Assistant
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace Documentation" class="md-nav__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    Dynatrace Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Platform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇷🇺 Русский
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇷🇺 Русский
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ru/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ru/managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ru/managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ru/managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ru/observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ru/platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI Assistant
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/notebooklm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="azure-logs">Azure Logs<a class="headerlink" href="#azure-logs" title="Permanent link">&para;</a></h1>
+<h1 id="azure-logs_1">Azure Logs<a class="headerlink" href="#azure-logs_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>17-min read</li>
+<li>Updated on Oct 17, 2025</li>
+</ul>
+<p>DDU consumption for Log Monitoring</p>
+<p>DDU pricing applies to cloud Log Monitoring. See <a href="/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption" title="Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.">DDUs for Log Monitoring</a> for details.</p>
+<p>Azure log forwarding allows you to stream Azure logs from Azure Event Hubs into Dynatrace logs via an Azure Function App instance. It supports Azure resource logs, activity logs, and Entra ID sign-in logs.</p>
+<h2 id="resources-to-be-deployed">Resources to be deployed<a class="headerlink" href="#resources-to-be-deployed" title="Permanent link">&para;</a></h2>
+<p>Azure log forwarding is performed directly through Cluster API. If you don't want to use direct ingest through the Cluster API, you have to use an existing ActiveGate for log ingestion.</p>
+<p>Deployment of Azure log forwarder results in creating the following resources:</p>
+<ul>
+<li>Storage account (<code>Microsoft.Storage/storageAccounts</code>)</li>
+<li>Storage Account Blob Service (<code>Microsoft.Storage/storageAccounts/blobServices</code>)</li>
+<li>Azure App Service plan (<code>Microsoft.Web/serverfarms</code>)</li>
+<li>Azure Function App (<code>Microsoft.Web/sites</code>)</li>
+</ul>
+<p>Azure log forwarder uses Linux based Azure function by default. Windows based function is not supported.</p>
+<p>For details about the resources created, see the <a href="https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/blob/master/deployment/dynatrace-azure-forwarder.json">Azure Resource Manager file on GitHubï»¿</a></p>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<p>Logs older than 24 hours are rejected (considered too old by the Dynatrace log ingest endpoint), so we recommend that you don't set a retention time of more than 24 hours for Azure Event Hubs.</p>
+<p>The Azure log forwarder supports a maximum 70 MB per minute (~4 GB per hour) in the default configuration. The throughput is measured with Event Hubs metric <code>Outgoing Bytes</code> of the Event Hubs instance attached to the function. See <a href="#scalingguide">Scaling guide</a> for scaling instructions.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>See below the list of requirements for setting up Azure log forwarding. Some are needed before you start deployment, others during the deployment process.</p>
+<h3 id="dynatrace">Dynatrace<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h3>
+<p>If you're using an earlier version of Dynatrace, see <a href="#alternative">Alternative deployments</a> for instructions.</p>
+<ul>
+<li>
+<p>Dynatrace version 1.217+</p>
+</li>
+<li>
+<p><a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api" title="Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.">Enable generic log ingestion</a></p>
+</li>
+<li>
+<p><a href="/docs/analyze-explore-automate/logs" title="Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.">Enable log monitoring (latest version)</a></p>
+</li>
+<li>
+<p><a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token" title="Learn the concept of an access token and its scopes.">Create an API token</a> and enable the <strong>Ingest logs</strong> permission. The API token applies to both versions.</p>
+</li>
+</ul>
+<h3 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In each Azure location from where you want to pull logs <a href="https://dt-url.net/8w03rs3">Create a resource group &amp; Set up an Azure Event Hubs instanceï»¿</a>.</li>
+</ol>
+<p>To be able to send logs,</p>
+<ul>
+<li>The Event Hubs instances and the resource group in which the deployment will run need to be in the same region.</li>
+<li>make sure that in Event Hubs Namespace &gt; Public access &gt; Public network access, the <strong>Disabled</strong> option button is NOT selected. Otherwise, the logs won't be sent to Dynatrace.</li>
+<li>Create an authorization rule with the <strong>listen</strong> permission for the Event Hubs instance that is configured for receiving logs:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>az eventhubs eventhub authorization-rule create --resource-group &lt;your_resource_group&gt; --namespace-name &lt;your_event_hub_namespace&gt; --eventhub-name &lt;your_event_hub_instance&gt; --name &lt;authorization_rule_name&gt; --rights Listen
+</code></pre></div>
+3. Get an Event Hubs connection string for the authorization rule created above:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>az eventhubs eventhub authorization-rule keys list --resource-group &lt;your_resource_group&gt; --namespace-name &lt;your_event_hub_namespace&gt; --eventhub-name &lt;your_event_hub_instance&gt; --name &lt;your_authorization_rule_name&gt;
+</code></pre></div>
+4. Configure the <a href="https://dt-url.net/se83r02">diagnostic settingsï»¿</a> to stream both resource-related and Entra ID sign-in logs to the Azure Event Hub instances.</p>
+<h3 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h3>
+<p>You can run Azure log forwarding deployment using Azure Portal Cloud Shell (Bash) or from any machine with <a href="https://dt-url.net/cf63rl6">Azure CLIï»¿</a> and Bash shell (Linux or Windows WSL).</p>
+<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Set the following environment variables, making sure to replace the placeholders (<code>&lt;...&gt;</code>) with your own values.</p>
+</li>
+<li>
+<p>For <code>DEPLOYMENT_NAME</code>, enter your deployment name between 3 and 20 characters long. You can use lowercase letters and numbers.</p>
+<p><strong>Note:</strong> The name needs to be globally uniqueâit is appended to the created Azure resources.</p>
+</li>
+<li>
+<p>For <code>TARGET_URL</code>, enter your environment URL: <code>https://&lt;your_environment_ID&gt;.live.dynatrace.com</code>. To learn how to determine your environment ID for the SaaS deployment, see <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">environment ID</a>.</p>
+</li>
+<li>
+<p>For <code>TARGET_API_TOKEN</code>, enter your API token. See <a href="#dynatrace">Dynatrace requirements</a> for details.</p>
+</li>
+<li>For <code>RESOURCE_GROUP</code>, enter the name of the Azure resource group in which deployment will run. See <a href="#azure">Azure requirements</a> for details.</li>
+<li>For <code>EVENT_HUB_CONNECTION_STRING</code>, enter the connection string for the Azure Event Hubs instances configured for receiving logs. See <a href="#azure">Azure requirements</a> for details.</li>
+</ol>
+<p>Optional You can enable <a href="#sfm">self-monitoring</a> and/or <a href="#filter">log filtering</a> during or after deployment.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>DEPLOYMENT_NAME=&lt;your_deployment_name&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>TARGET_URL=&lt;your_environment_URL&gt;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>TARGET_API_TOKEN=&lt;your_API_token&gt;
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>RESOURCE_GROUP=&lt;your_resource_group&gt;
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>EVENT_HUB_CONNECTION_STRING=&quot;&lt;your_Event_Hub_connection_string&gt;&quot;
+</code></pre></div>
+<ol>
+<li>Download the <code>azure-log-forwarder-function</code> script and deploy the infrastructure.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>wget -q https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases/latest/download/dynatrace-azure-logs.sh -O dynatrace-azure-logs.sh &amp;&amp; chmod +x ./dynatrace-azure-logs.sh \
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&amp;&amp; ./dynatrace-azure-logs.sh --deployment-name $DEPLOYMENT_NAME --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --resource-group $RESOURCE_GROUP --event-hub-connection-string $EVENT_HUB_CONNECTION_STRING  --require-valid-certificate true
+</code></pre></div>
+<h2 id="view-azure-logs">View Azure logs<a class="headerlink" href="#view-azure-logs" title="Permanent link">&para;</a></h2>
+<p>After deploying the script, you can view and analyze Azure logs in Dynatrace:
+Go to <strong>Logs</strong> (previous Dynatrace) or <img alt="Logs and Events" src="https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png" title="Logs and Events" /> <strong>Logs &amp; Events Classic</strong> and, in the attributes filter, search for <strong>Azure</strong>.</p>
+<ul>
+<li>If you see logs coming in, you managed to deploy Azure log forwarder successfully.</li>
+<li>If there are no logs within 10 minutes checkout the <strong>Verification</strong> guide section of the page.</li>
+</ul>
+<p>You can use <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">DQL</a> to filter for Azure logs.
+As an example, you could add the following line to a DQL query:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>fetch logs
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>| filter matchesValue(dt.openpipeline.source, &quot;/api/v2/logs/ingest&quot;) AND matchesValue(cloud.provider, &quot;Azure&quot;)
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>| sort timestamp desc
+</code></pre></div>
+<p>If you already have multiple integrations, you can additionally use the values <code>cloud.log_forwarder</code> and <code>dt.auth.origin</code> to further refine your filters.</p>
+<h2 id="self-monitoring-optional">Self-monitoring Optional<a class="headerlink" href="#self-monitoring-optional" title="Permanent link">&para;</a></h2>
+<p>Self-monitoring allows a quick diagnosis to see if your function processes and sends logs to Dynatrace properly.</p>
+<h3 id="enable-self-monitoring">Enable self-monitoring<a class="headerlink" href="#enable-self-monitoring" title="Permanent link">&para;</a></h3>
+<p>To enable self-monitoring, you have two options:</p>
+<ul>
+<li><strong>During deployment:</strong> Set the <a href="#par"><code>--enable-self-monitoring</code> parameter</a> (or the <a href="#var"><code>SFM_ENABLED</code> environment variable</a>) to <code>true</code>.</li>
+<li><strong>After deployment:</strong> In Azure Portal, go to the configuration of your deployed Function App instance and set <code>SELF_MONITORING_ENABLED</code> to <code>true</code>.</li>
+</ul>
+<p>Enable managed identity</p>
+<p>After enabling self-monitoring, you need to enable <a href="https://dt-url.net/qj23rie">managed identityï»¿</a> for
+your Function App instance created during deployment, and configure it to allow pushing metrics to the resource.</p>
+<p>To set up managed identity</p>
+<ol>
+<li>In Azure Portal, go to the <strong>Settings</strong> of your Function App instance created during deployment, and select <strong>Identity</strong>.</li>
+<li>Select <strong>Yes</strong> to <strong>Enable system assigned managed identity</strong>.</li>
+<li>Go to your resource group where Function App is deployed and select <strong>Access control (IAM)</strong>.</li>
+<li>Select <strong>Add</strong> to add a role assignment.</li>
+<li>Set the <strong>Monitoring Metrics Publisher</strong> role.</li>
+<li>Select <strong>Save</strong> to save your configuration.</li>
+</ol>
+<h3 id="self-monitoring-metrics">Self-monitoring metrics<a class="headerlink" href="#self-monitoring-metrics" title="Permanent link">&para;</a></h3>
+<p>Once you enable self-monitoring, you can view the following metrics in your <code>dynatrace_logs_self_monitoring</code> namespace of the newly deployed Function App instance.</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Description</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>all_requests</code></td>
+<td>All requests sent to Dynatrace.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dynatrace_connectivity_failures</code></td>
+<td>Reported when any Dynatrace connectivity issues occurred.</td>
+<td><code>connectivity_status</code></td>
+</tr>
+<tr>
+<td><code>parsing_errors</code></td>
+<td>Reported when any parsing errors occurred during log processing.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>processing_time</code></td>
+<td>Time needed to process all logs.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sending_time</code></td>
+<td>Time needed to send all requests.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>too_long_content_size</code></td>
+<td>Reported when content of log is too long. The content will be trimmed.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>too_old_records</code></td>
+<td>Reported when logs received from Event Hubs are too old.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="log-filtering-optional">Log filtering Optional<a class="headerlink" href="#log-filtering-optional" title="Permanent link">&para;</a></h2>
+<p>To reduce the number of logs that are sent to Dynatrace, you can apply filters.<br />
+To apply filters you have two options:</p>
+<ul>
+<li>
+<p><strong>During deployment:</strong> Set the <code>FILTER_CONFIG</code> environment variable in Azure Portal Cloud Shell (Bash) before running the deployment script.</p>
+</li>
+<li>
+<p>Add the <code>FILTER_CONFIG</code> environment variable to the list of environment variables needed for the deployment script.</p>
+<p>Be sure to replace placeholders with your values. See <a href="#options">Filter options</a> for details.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>FILTER_CONFIG=&quot;FILTER.GLOBAL.MIN_LOG_LEVEL=&lt;log_level&gt;;FILTER.GLOBAL.CONTAINS_PATTERN=&lt;pattern&gt;;FILTER.RESOURCE_TYPE.MIN_LOG_LEVEL.&lt;resource_type&gt;=&lt;log_level&gt;;FILTER.RESOURCE_TYPE.CONTAINS_PATTERN.&lt;resource_type&gt;=&lt;pattern&gt;;FILTER.RESOURCE_ID.MIN_LOG_LEVEL.&lt;resource_id&gt;=&lt;log_level&gt;;FILTER.RESOURCE_ID.CONTAINS_PATTERN.&lt;resource_id&gt;=&lt;pattern&gt;&quot;
+</code></pre></div>
+  2. Set the environment variables.
+  3. Download the <code>azure-log-forwarder-function</code> script and deploy the infrastructure.
+* <strong>After deployment:</strong> Add <code>FILTER_CONFIG</code> in Azure Portal.</p>
+</li>
+<li>
+<p>In Azure Portal, go to <strong>Environment variables</strong> of your deployed Function App instance.</p>
+</li>
+<li>
+<p>In <strong>App settings</strong>, search and select <strong>FILTER_CONFIG</strong>.</p>
+<p><strong>FILTER_CONFIG</strong> will appear in Azure after running the deployment script.
+  3. Select <strong>Edit</strong> to add a <strong>Value</strong> for your filter.</p>
+<p>Example edit</p>
+<p><img alt="Edit" src="https://dt-cdn.net/images/image-36-3759-7bc37dfe3c.png" /></p>
+<p>Alternatively, you can select <strong>Advanced edit</strong> to enter your value in the JSON.</p>
+<p>Example advanced edit</p>
+<p><img alt="Advanced" src="https://dt-cdn.net/images/image-37-3804-dffe41ec79.png" />
+  4. Select <strong>OK</strong>.
+  5. Restart your Function App instance.</p>
+</li>
+</ul>
+<h3 id="filter-options">Filter options<a class="headerlink" href="#filter-options" title="Permanent link">&para;</a></h3>
+<p><code>FILTER_CONFIG</code> is a key-value pair variable. You can set two types of filters (<code>MIN_LOG_LEVEL</code> and/or <code>CONTAINS_PATTERN</code>) for three filter groups (<code>GLOBAL</code>, <code>RESOURCE_TYPE</code>, and/or <code>RESOURCE_ID</code>).</p>
+<h4 id="filter-type-min_log_level">Filter type: <code>MIN_LOG_LEVEL</code><a class="headerlink" href="#filter-type-min_log_level" title="Permanent link">&para;</a></h4>
+<p>This filter type allows you to filter out logs with unwanted levels. Possible log levels are:</p>
+<ul>
+<li><strong>Critical</strong> (or <code>1</code>)</li>
+<li><strong>Error</strong> (or <code>2</code>)</li>
+<li><strong>Warning</strong> (or <code>3</code>)</li>
+<li><strong>Informational</strong> (or <code>4</code>)</li>
+</ul>
+<p>Example:<br />
+<code>FILTER_CONFIG="FILTER.GLOBAL.MIN_LOG_LEVEL=Warning"</code><br />
+In the example above, <strong>Informational</strong> logs will be skipped, and only <strong>Warning</strong>, <strong>Error</strong>, and <strong>Critical</strong> logs will be sent to Dynatrace.</p>
+<p>Syntax options are:</p>
+<ul>
+<li><code>FILTER.GLOBAL.MIN_LOG_LEVEL=&lt;log_level&gt;</code></li>
+<li><code>FILTER.RESOURCE_TYPE.MIN_LOG_LEVEL.&lt;resource_type&gt;=&lt;log_level&gt;</code></li>
+<li><code>FILTER.RESOURCE_ID.MIN_LOG_LEVEL.&lt;resource_id&gt;=&lt;log_level&gt;</code></li>
+</ul>
+<p>You can have one global-level filter and additional filters for a particular resource type/ID.</p>
+<p>Example:<br />
+<code>FILTER_CONFIG="FILTER.GLOBAL.MIN_LOG_LEVEL=Error;FILTER.RESOURCE_TYPE.MIN_LOG_LEVEL.MICROSOFT.WEB/SITES=Informational"</code><br />
+In the example above, all logs from instances with resource type <code>MICROSOFT.WEB/SITES</code> will be sent to Dynatrace, while for all other resources, <strong>Informational</strong> and <strong>Warning</strong> logs will be filtered out.</p>
+<h4 id="filter-type-contains_pattern">Filter type: <code>CONTAINS_PATTERN</code><a class="headerlink" href="#filter-type-contains_pattern" title="Permanent link">&para;</a></h4>
+<p>This filter type allows you to collect logs containing a particular text. We use fnmatch that provides support for Unix shellâstyle wildcards. See <a href="https://docs.python.org/3/library/fnmatch.html">Unix filename pattern matchingï»¿</a> for details.</p>
+<p>Syntax options are:</p>
+<ul>
+<li><code>FILTER.GLOBAL.CONTAINS_PATTERN=&lt;log_pattern&gt;</code></li>
+<li><code>FILTER.RESOURCE_TYPE.CONTAINS_PATTERN.&lt;resource_type&gt;=&lt;log_pattern&gt;</code></li>
+<li><code>FILTER.RESOURCE_ID.CONTAINS_PATTERN.&lt;resource_id&gt;=&lt;log_pattern&gt;</code></li>
+</ul>
+<h4 id="filter-group-global">Filter group: <code>GLOBAL</code><a class="headerlink" href="#filter-group-global" title="Permanent link">&para;</a></h4>
+<p>This filter is set for all logs.</p>
+<h4 id="filter-group-resource_type">Filter group: <code>RESOURCE_TYPE</code><a class="headerlink" href="#filter-group-resource_type" title="Permanent link">&para;</a></h4>
+<p>This filter is used only for logs coming from resources of the given Azure resource type, such as <code>Microsoft.Compute/virtualMachines</code>.</p>
+<p>You can find the resource type in Azure Portal, in your resource's <strong>Properties</strong>.</p>
+<p>If the <strong>Type</strong> field doesn't appear in <strong>Properties</strong>, you can extract it from the resource ID string.</p>
+<p>Resource ID string syntax:<br />
+<code>/subscriptions/&lt;subscriptionId&gt;/resourceGroups/&lt;resourceGroupName&gt;/providers/&lt;resourceType&gt;/&lt;resourceName&gt;</code><br />
+The resource type will be the part between <code>/providers/</code> and <code>/resourceName/</code>.</p>
+<h4 id="filter-group-resource_id">Filter group: <code>RESOURCE_ID</code><a class="headerlink" href="#filter-group-resource_id" title="Permanent link">&para;</a></h4>
+<p>This filter is used only for logs coming from the given resource that is identified by the Azure resource ID.</p>
+<p>You can look for the resource type in Azure Portal, in your resource's <strong>Properties</strong>.</p>
+<h3 id="filter-rules">Filter rules<a class="headerlink" href="#filter-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If you set two filter types for the same group, both conditions need to be met, so the second filter will have to match the first filter.</li>
+</ul>
+<p>For example, if you set <code>MIN_LOG_LEVEL</code> to <strong>Warning</strong> and <code>CONTAINS_PATTERN</code> to <code>&lt;some_important_message&gt;</code>, you will get only <strong>Warning</strong> logs containing <code>&lt;some_important_message&gt;</code>, and all other warning logs that don't contain that specific message will be filtered out.
+* If you set one filter type for one group, and another filter type for another group, the two conditions do not overlap.</p>
+<p>For example, if you set <code>MIN_LOG_LEVEL</code> to <strong>Warning</strong> for <code>GLOBAL</code>, and <code>CONTAINS_PATTERN</code> to <code>&lt;some_important_message&gt;</code> for <code>RESOURCE_TYPE</code>, you will get all <strong>Warning</strong>, <strong>Error</strong>, and <strong>Critical</strong> logs from <code>GLOBAL</code>, and all logs containing <code>&lt;some_important_message&gt;</code> from <code>RESOURCE_TYPE</code>.
+* If you set more than one pair of filter types (<code>MIN_LOG_LEVEL</code> and <code>CONTAINS_PATTERN</code>) for the same group (global or resource type/ID), only the last pair of filter types will apply; all the others will be ignored.</p>
+<h2 id="update-azure-log-forwarding">Update Azure log forwarding<a class="headerlink" href="#update-azure-log-forwarding" title="Permanent link">&para;</a></h2>
+<p>To update Azure log forwarding</p>
+<ol>
+<li>You need a package that contains the source code of Azure log forwarderâdownload the latest Dynatrace version.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>wget https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases/latest/download/dynatrace-azure-log-forwarder.zip
+</code></pre></div>
+2. Deploy the new version, making sure to replace the placeholders with the required values.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>az webapp deployment source config-zip -g &lt;your_resource_group_name&gt; -n &lt;application_name&gt; --src &lt;zip_file_path&gt;
+</code></pre></div>
+<p>Some Azure log forwarder releases include changes that require full reinstallation. For more details, refer to the <a href="https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases">GitHub releases pageï»¿</a>.</p>
+<h2 id="alternative-deployments">Alternative deployments<a class="headerlink" href="#alternative-deployments" title="Permanent link">&para;</a></h2>
+<h3 id="use-existing-activegate">Use existing ActiveGate<a class="headerlink" href="#use-existing-activegate" title="Permanent link">&para;</a></h3>
+<p>If you don't want to use direct ingest through the Cluster API, you have to use an existing ActiveGate for log ingestion.</p>
+<p>See below for instructions.</p>
+<h4 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h4>
+<p>Dynatrace version 1.217+</p>
+<ul>
+<li><a href="#dynatrace">Dynatrace requirements</a> listed above</li>
+<li><a href="#azure">Azure requirements</a> listed above</li>
+<li><a href="#cli">CLI requirements</a> listed above</li>
+</ul>
+<h4 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Set the following environment variables, making sure to replace the placeholders (<code>&lt;...&gt;</code>) with your own values.</p>
+</li>
+<li>
+<p>For <code>DEPLOYMENT_NAME</code>, enter your deployment name (lowercase only).</p>
+</li>
+<li>For <code>TARGET_URL</code>, enter the API URL of your ActiveGate endpoint: <code>https://&lt;your_activegate_IP_or_hostname&gt;:9999/e/&lt;your_environment_ID&gt;</code>. To learn how to determine your environment ID, see <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">environment ID</a>.</li>
+<li>For <code>TARGET_API_TOKEN</code>, enter your API token. For details, see the prerequisites above.</li>
+<li>For <code>RESOURCE_GROUP</code>, enter the name of the Azure resource group in which deployment will run. See <a href="#azure">Azure requirements</a> for details.</li>
+<li>For <code>EVENT_HUB_CONNECTION_STRING</code>, enter the connection string for the Azure Event Hubs instances configured for receiving logs. See <a href="#azure">Azure requirements</a> for details.</li>
+<li>For <code>USE_EXISTING_ACTIVE_GATE</code>, enter <code>true</code>.</li>
+<li>Optional For <code>REQUIRE_VALID_CERTIFICATE</code>, enter <code>true</code> or <code>false</code>. This parameter tells the log forwarder to verify the SSL certificate of your ActiveGate. By default, certificates are validated.</li>
+</ol>
+<p>Optional You can enable <a href="#sfm">self-monitoring</a> and/or <a href="#filter">log filtering</a> during or after deployment.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>DEPLOYMENT_NAME=&lt;your_deployment_name&gt;
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>TARGET_URL=&lt;your_environment_URL&gt;
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>TARGET_API_TOKEN=&lt;your_API_token&gt;
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>RESOURCE_GROUP=&lt;your_resource_group&gt;
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>EVENT_HUB_CONNECTION_STRING=&quot;&lt;your_Event_Hub_connection_string&gt;&quot;
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>USE_EXISTING_ACTIVE_GATE=true
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>REQUIRE_VALID_CERTIFICATE=true
+</code></pre></div>
+2. Download the <code>azure-log-forwarder-function</code> script and deploy the infrastructure.</p>
+<p>Be sure to check whether you want to set other optional parameters as well. All parameters between brackets (<code>[...]</code>) are optional. For details, see <a href="#table">Deploy table</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>wget -q https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases/latest/download/dynatrace-azure-logs.sh -O dynatrace-azure-logs.sh &amp;&amp; chmod +x ./dynatrace-azure-logs.sh \
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>&amp;&amp; ./dynatrace-azure-logs.sh --deployment-name $DEPLOYMENT_NAME --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --resource-group $RESOURCE_GROUP --event-hub-connection-string $EVENT_HUB_CONNECTION_STRING --require-valid-certificate $REQUIRE_VALID_CERTIFICATE
+</code></pre></div>
+<h3 id="use-a-user-assigned-managed-identity">Use a user-assigned managed identity<a class="headerlink" href="#use-a-user-assigned-managed-identity" title="Permanent link">&para;</a></h3>
+<p>There are two managed identity types: system-assigned and user-assigned. By default, a system-assigned managed identity is used. If you prefer to use a user-assigned managed identity, see below for instructions.</p>
+<h4 id="prerequisites_2">Prerequisites<a class="headerlink" href="#prerequisites_2" title="Permanent link">&para;</a></h4>
+<p>Dynatrace version 1.217+</p>
+<ul>
+<li><a href="#dynatrace">Dynatrace requirements</a> listed above</li>
+<li><a href="#azure">Azure requirements</a> listed above</li>
+<li><a href="#cli">CLI requirements</a> listed above</li>
+</ul>
+<p>In addition to the <a href="#azure">Azure requirements</a> listed above, you should also create a user-assigned managed identity in Azure Portal.</p>
+<p>Add Event Hubs roles in the user-assigned managed identity. For the event hub trigger binding, you need to assign corresponding built-in roles. The built-in roles are <strong>Azure Event Hubs Data Receiver</strong> and <strong>Azure Event Hubs Data Owner</strong>.</p>
+<h4 id="configuration_1">Configuration<a class="headerlink" href="#configuration_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Set the following environment variables, making sure to replace the placeholders (<code>&lt;...&gt;</code>) with your own values.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>DEPLOYMENT_NAME=&lt;your_deployment_name&gt;
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>TARGET_URL=&lt;your_environment_URL&gt;
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>TARGET_API_TOKEN=&lt;your_API_token&gt;
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>RESOURCE_GROUP=&lt;your_resource_group&gt;
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>EVENT_HUB_NAME=&lt;your_Event_Hub_name&gt;
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>REQUIRE_VALID_CERTIFICATE=true
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>ENABLE_USER_ASSIGNED_MANAGED_IDENTITY=true
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>EVENT_HUB_CONNECTION_CLIENT_ID=&lt;your_user_assigned_MI_client_id&gt;
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>MANAGED_IDENTITY_RESOURCE_NAME=&lt;your_user_assigned_MI_resource_name&gt;
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>EVENT_HUB_CONNECTION_FULLY_QUALIFIED_NAMESPACE=&quot;&lt;your_eventhub_namespace_host_name&gt;&quot;
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>CONSUMER_GROUP =&quot;&lt;Your_custom_default_consumer_group_name&gt;&quot;
+</code></pre></div>
+<ul>
+<li>
+<p>For <code>DEPLOYMENT_NAME</code>, enter your deployment name (lowercase only).</p>
+</li>
+<li>
+<p>For <code>TARGET_URL</code>, enter your environment URL: <code>https://&lt;your_environment_ID&gt;.live.dynatrace.com</code>. To learn how to determine your environment ID for a SaaS deployment, see <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">environment ID</a>.</p>
+</li>
+<li>
+<p>For <code>TARGET_API_TOKEN</code>, enter your API token. For details, see the prerequisites above.</p>
+</li>
+<li>For <code>RESOURCE_GROUP</code>, enter the name of the Azure resource group in which deployment will run. See <a href="#azure">Azure requirements</a> for details.</li>
+<li>For <code>EVENT_HUB_NAME</code>, enter the name of the Azure Event Hubs instances configured for receiving logs. See <a href="#azure">Azure requirements</a> for details.</li>
+<li>Optional For <code>REQUIRE_VALID_CERTIFICATE</code>, enter <code>true</code> or <code>false</code>. This parameter tells the log forwarder to verify the SSL certificate of your ActiveGate. By default, certificates are validated.</li>
+<li>For <code>ENABLE_USER_ASSIGNED_MANAGED_IDENTITY</code>, enter <code>true</code>. This parameter is used to determine if a user-assigned managed identity is used instead of system assigned.</li>
+<li>For <code>EVENT_HUB_CONNECTION_CLIENT_ID</code>, enter the <code>Client ID</code> of the created managed identity.</li>
+<li>For <code>MANAGED_IDENTITY_RESOURCE_NAME</code>, enter the resource name of the created managed identity.</li>
+<li>
+<p>For <code>EVENT_HUB_CONNECTION_FULLY_QUALIFIED_NAMESPACE</code>, enter:</p>
+</li>
+<li>
+<p>The <code>Host name</code> of the Event Hubs namespace.</p>
+</li>
+<li>The custom name of the default consumer group.</li>
+</ul>
+<p>Optional You can enable <a href="#sfm">self-monitoring</a> and/or <a href="#filter">log filtering</a> during or after deployment.</p>
+<ol>
+<li>Download the <code>azure-log-forwarder-function</code> script and deploy the infrastructure.</li>
+</ol>
+<p>Be sure to check whether you want to set other optional parameters as well. All parameters between brackets (<code>[...]</code>) are optional. For details, see <a href="#table">Deploy table</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>wget -q https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases/latest/download/dynatrace-azure-logs.sh -O dynatrace-azure-logs.sh &amp;&amp; chmod +x ./dynatrace-azure-logs.sh \
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>&amp;&amp; ./dynatrace-azure-logs.sh --deployment-name $DEPLOYMENT_NAME --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --resource-group $RESOURCE_GROUP --event-hub-name $EVENT_HUB_NAME --require-valid-certificate $REQUIRE_VALID_CERTIFICATE --enable-user-assigned-managed-identity $ENABLE_USER_ASSIGNED_MANAGED_IDENTITY --eventhub-connection-client-id $EVENT_HUB_CONNECTION_CLIENT_ID --managed-identity-resource-name $MANAGED_IDENTITY_RESOURCE_NAME --eventhub-connection-fully-qualified-namespace $EVENT_HUB_CONNECTION_FULLY_QUALIFIED_NAMESPACE --custom-consumer-group $CONSUMER_GROUP
+</code></pre></div>
+<h3 id="deploy-table">Deploy table<a class="headerlink" href="#deploy-table" title="Permanent link">&para;</a></h3>
+<p>For a complete list of parameters, see the deploy table below.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Command-line parameter</strong></th>
+<th><strong>Environment variable</strong></th>
+<th><strong>Description</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--deployment-name</code></td>
+<td><code>DEPLOYMENT_NAME</code></td>
+<td>Required Your deployment name. Lowercase only.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--target-url</code></td>
+<td><code>TARGET_URL</code></td>
+<td>Required Your Dynatrace environment where you want to set up generic log ingestion.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--target-api-token</code></td>
+<td><code>TARGET_API_TOKEN</code></td>
+<td>Required Your API token.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--resource-group</code></td>
+<td><code>RESOURCE_GROUP</code></td>
+<td>Required Name of the Azure resource group in which the deployment will run.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--event-hub-connection-string</code></td>
+<td><code>EVENT_HUB_CONNECTION_STRING</code></td>
+<td>Required The connection string for the Azure Event Hubs instance configured for receiving logs. (Azure Event Hubs name that is configured for receiving logs.)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--event-hub-name</code></td>
+<td><code>EVENT_HUB_NAME</code></td>
+<td>Optional Optional by default. If a user-assigned managed identity is your method of authentication, then Required.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--require-valid-certificate</code></td>
+<td><code>REQUIRE_VALID_CERTIFICATE</code></td>
+<td>Optional If set to <code>true</code>, the log forwarder verifies the SSL certificate of your ActiveGate. By default, certificates are validated.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--enable-self-monitoring</code></td>
+<td><code>SFM_ENABLED</code></td>
+<td>Optional If set to <code>true</code>, Dynatrace sends custom metrics to Azure. See <a href="#sfm">Enable self-monitoring</a> for details. By default, custom metrics aren't sent to Azure.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--filter-config</code></td>
+<td><code>FILTER_CONFIG</code></td>
+<td>Optional Apply filters to reduce the number of logs sent to Dynatrace. See <a href="#filter">Log filtering</a> for details.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--tags</code></td>
+<td><code>TAGS</code></td>
+<td>Optional Apply Azure tags to newly created resources in comma-separated key:value pair format (for example, <code>"tag:value,tag2:value2"</code>). The following characters are not supported in a tag key: <code>,:&lt;&gt;%&amp;\?/</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--enable-user-assigned-managed-identity</code></td>
+<td><code>ENABLE_USER_ASSIGNED_MANAGED_IDENTITY</code></td>
+<td>Optional If set to <code>true</code>, options <code>--eventhub-connection-client-id</code>, <code>--managed-identity-resource-name</code>, <code>--eventhub-connection-fully-qualified-namespace</code>, <code>--event-hub-name</code> are Required. Enables usage of a user-assigned managed identity instead of a system-assigned managed identity.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--custom-consumer-group</code></td>
+<td><code>CONSUMER_GROUP</code></td>
+<td>Optional If provided, this value will be used as the name of a default consumer group. Leave empty to apply the default Azure value.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--eventhub-connection-client-id</code></td>
+<td><code>EVENT_HUB_CONNECTION_CLIENT_ID</code></td>
+<td>Optional <code>Client ID</code> of the created managed identity. Example value: <code>d8916c27-4c4r-482o-895b-doe0b48c76f7</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--managed-identity-resource-name</code></td>
+<td><code>MANAGED_IDENTITY_RESOURCE_NAME</code></td>
+<td>Optional Resource name of the created managed identity. Example value: <code>test-managed-identity</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--eventhub-connection-fully-qualified-namespace</code></td>
+<td><code>EVENT_HUB_CONNECTION_FULLY_QUALIFIED_NAMESPACE</code></td>
+<td>Optional <code>Host name</code> of the Azure Event Hubs namespace. Example value: <code>sample-eventhub-namespace.servicebus.windows.net</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h2>
+<p>To verify if the deployment was successful, in Dynatrace, go to <strong>Logs</strong> (previous Dynatrace) or <img alt="Logs and Events" src="https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png" title="Logs and Events" /> <strong>Logs &amp; Events Classic</strong> and confirm that the following log line is present:</p>
+<p><img alt="Log line" src="https://dt-cdn.net/images/screenshot-2022-08-11-at-11-49-52-928-5957a24948.png" /></p>
+<p>In around 10 minutes, further logs should start coming in. If no logs are coming in, make sure that:</p>
+<ul>
+<li>The Event Hubs instances and the resource group in which the deployment will run are in the same region</li>
+<li>You carefully followed the steps to <a href="https://dt-url.net/se83r02">Configure diagnostic settingsï»¿</a></li>
+</ul>
+<p>Furthermore, you can read Azure Function logs in which the Azure-log-forwarder is running. <a href="https://learn.microsoft.com/en-us/azure/azure-functions/streaming-logs">Enable streaming execution logs in Azure Functionsï»¿</a></p>
+<p>SNAT port exhaustion: Azure Functions have a limited number of ports that can be opened at a time (128). The number of instances, the number of worker processes, and the number of concurrent calls are the factors that contribute to the open connections. If the limit is reached, see the <a href="#scalingguide">scaling guide</a> below.</p>
+<h2 id="check-your-version">Check your version<a class="headerlink" href="#check-your-version" title="Permanent link">&para;</a></h2>
+<p>To check the version of the currently deployed Azure log forwarder</p>
+<ol>
+<li>Open Azure Portal and go to <strong>Subscriptions</strong>.</li>
+<li>Select your subscription.</li>
+<li>Go to <strong>Resource groups</strong>.</li>
+<li>Choose the resource group that contains the function.</li>
+<li>Choose your deployed function app.</li>
+<li>Select <strong>log_ingest</strong> on the <strong>Functions</strong> tab.</li>
+<li>Select <strong>Code + Test</strong> from the <strong>Developer</strong> menu on the left.</li>
+<li>Select the dropdown file selector (<code>main.py</code> is selected by default).</li>
+<li>Choose <code>version.txt</code>.</li>
+<li>Open the file to check your currently deployed version.</li>
+</ol>
+<h2 id="scaling-guide">Scaling guide<a class="headerlink" href="#scaling-guide" title="Permanent link">&para;</a></h2>
+<p>The recommended way of scaling up the default throughput of 70 MB/min is to upgrade the App Service plan, increase the number of App Service instances respectively, increase <code>FUNCTIONS_WORKER_PROCESS_COUNT</code> (default is 1), increase <code>NUMBER_OF_CONCURRENT_SEND_CALLS</code> (default is 2). You can add <code>FUNCTIONS_WORKER_PROCESS_COUNT</code> and <code>NUMBER_OF_CONCURRENT_SEND_CALLS</code> as <strong>New application setting</strong> in Azure Portal (<strong>Azure function</strong> &gt; <strong>Configuration</strong> &gt; <strong>New application setting</strong>).</p>
+<p>Please note that the performance of the log forwarder may vary depending on the log content (size/ processing complexity).</p>
+<table>
+<thead>
+<tr>
+<th><strong>Maximum throughput</strong></th>
+<th><strong>App Service Plan</strong></th>
+<th><strong>Number of instances</strong></th>
+<th><strong>Configuration</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>up to <code>70 MB/minute</code> (up to 4 GB/hour)</td>
+<td><code>S1</code></td>
+<td><code>1</code></td>
+<td>no configuration</td>
+</tr>
+<tr>
+<td>up to <code>580 MB/minute</code> (up to 32 GB/hour)</td>
+<td><code>P1V3</code></td>
+<td><code>1</code></td>
+<td>FUNCTIONS_WORKER_PROCESS_COUNT: 4, NUMBER_OF_CONCURRENT_SEND_CALLS: 5</td>
+</tr>
+<tr>
+<td>up to <code>1 GB/minute</code> (up to 60 GB/hour)</td>
+<td><code>P2V3</code></td>
+<td><code>1</code></td>
+<td>FUNCTIONS_WORKER_PROCESS_COUNT: 8, NUMBER_OF_CONCURRENT_SEND_CALLS: 5</td>
+</tr>
+<tr>
+<td>up to <code>2.3 GB/minute</code> (up to 138 GB/hour)</td>
+<td><code>P2V3</code></td>
+<td><code>3</code></td>
+<td>FUNCTIONS_WORKER_PROCESS_COUNT: 8, NUMBER_OF_CONCURRENT_SEND_CALLS: 5</td>
+</tr>
+</tbody>
+</table>
+<p>As a last resort, scale horizontally: deploy more integrations and distribute the logs' load into different Event Hubs instances.</p>
+<h2 id="uninstall-azure-log-forwarding">Uninstall Azure log forwarding<a class="headerlink" href="#uninstall-azure-log-forwarding" title="Permanent link">&para;</a></h2>
+<p>To uninstall the Dynatrace Azure log forwarder</p>
+<ol>
+<li>In Azure Portal, go to the resource group used for installation.</li>
+<li>Filter resources by tag.</li>
+</ol>
+<p>The deployment script tags all created resources with <code>LogsForwarderDeployment = &lt;your_deployment_name&gt;</code>.
+3. Delete the resources.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations" title="Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.">Microsoft Azure Integrations</a></li>
+<li><a href="https://community.dynatrace.com/t5/Troubleshooting/Azure-Log-Forwarder-Troubleshooting/ta-p/243797">Azure Log Forwarder Troubleshootingï»¿</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dynatrace Documentation Mirror
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["announce.dismiss", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/gemini-chat.js"></script>
+      
+    
+  </body>
+</html>

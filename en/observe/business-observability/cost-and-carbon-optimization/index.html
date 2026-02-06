@@ -1,0 +1,1862 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete bilingual Dynatrace documentation with AI assistant">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs/en/observe/business-observability/cost-and-carbon-optimization/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Cost & Carbon Optimization - Dynatrace Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cost-carbon-optimization" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace Documentation" class="md-header__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cost & Carbon Optimization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ru/getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇷🇺 Русский
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ai/gemini/" class="md-tabs__link">
+          
+  
+  
+  🤖 AI Assistant
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace Documentation" class="md-nav__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    Dynatrace Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Platform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇷🇺 Русский
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇷🇺 Русский
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI Assistant
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/notebooklm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cost-carbon-optimization">Cost &amp; Carbon Optimization<a class="headerlink" href="#cost-carbon-optimization" title="Permanent link">&para;</a></h1>
+<h1 id="cost-carbon-optimization_1">Cost &amp; Carbon Optimization<a class="headerlink" href="#cost-carbon-optimization_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>App</li>
+<li>8-min read</li>
+<li>Updated on Dec 21, 2025</li>
+</ul>
+<p>About the app</p>
+<ul>
+<li>Calculates your IT carbon footprint at the data center, host, and Kubernetes infrastructure levels for multi hybrid-cloud infrastructure.</li>
+<li>Calculates your IT cost based on public price list from cloud vendors for each region and at host level.</li>
+<li>Translates utilization metricsâincluding CPU, memory, disk, and network I/Oâinto energy consumption in kWh and CO2 equivalents (CO2e).</li>
+<li>Reports energy consumption, carbon dioxide emissions, and list price costs in a single interfaceâwith drill-downs into physical hosts and Kubernetes infrastructure.</li>
+<li>Identifies opportunities to reduce costs and carbon emissions.</li>
+</ul>
+<p>Prerequisites</p>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
+<p>The following table describes the required permissions.</p>
+<p>Permission</p>
+<p>Description</p>
+<p>app-engine:apps:run</p>
+<p>Run the Cost &amp; Carbon Optimization app</p>
+<p>state:app-states:delete</p>
+<p>Delete workflow execution metadata</p>
+<p>app-engine:functions:run</p>
+<p>Run the Cost &amp; Carbon Optimization data calculation and ingest</p>
+<p>storage:events:write</p>
+<p>Store Cost &amp; Carbon Optimization events in GRAIL</p>
+<p>storage:entities:read</p>
+<p>Read entities from GRAIL</p>
+<p>state:app-states:read</p>
+<p>Read configuration and workflow metadata from app-states</p>
+<p>state:app-states:write</p>
+<p>Writes configuration and workflow metadata to app-states</p>
+<p>automation:workflows:read</p>
+<p>Read Cost &amp; Carbon Optimization data ingest automation related data</p>
+<p>automation:workflows:write</p>
+<p>Creates/edits the Cost &amp; Carbon Optimization data ingest automation</p>
+<p>storage:bizevents:read</p>
+<p>Read Cost &amp; Carbon Optimization events from GRAIL</p>
+<p>10</p>
+<p>rows per page</p>
+<p>Page</p>
+<p>1</p>
+<p>of 1</p>
+<h3 id="grant-permissions-to-workflows">Grant permissions to Workflows<a class="headerlink" href="#grant-permissions-to-workflows" title="Permanent link">&para;</a></h3>
+<p>Check if <a href="/docs/analyze-explore-automate/workflows" title="Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.">Workflows</a> has the required permissions to run automations: open <img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong>, select <strong>Settings</strong> &gt; <strong>Authorization settings</strong> in the upper-right corner, and ensure that the following settings are enabled.</p>
+<ul>
+<li><code>app-engine:apps:run</code></li>
+<li><code>app-engine:functions:run</code></li>
+<li><code>app-settings:objects:read</code></li>
+<li><code>app-settings:objects:write</code></li>
+<li><code>automation:workflows:read</code></li>
+<li><code>automation:workflows:write</code></li>
+<li><code>environment-api:entities:read</code></li>
+<li><code>iam:bindings:read</code></li>
+<li><code>state:app-states:read</code></li>
+<li><code>state:app-states:write</code></li>
+<li><code>state:app-states:delete</code></li>
+<li><code>storage:bizevents:read</code></li>
+<li><code>storage:buckets:read</code></li>
+<li><code>storage:entities:read</code></li>
+<li><code>storage:events:write</code></li>
+<li><code>storage:metrics:read</code></li>
+</ul>
+<p>For more information, see <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Manage user permissions with IAM policies</a> and <a href="/docs/analyze-explore-automate/workflows/running" title="Run and monitor workflows created in Dynatrace Workflows.">Workflow authorization settings</a>.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Make sure the app is <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">installed in your environment</a>.</p>
+<p>For carbon emissions calculation</p>
+<p>Carbon dioxide emissions and energy consumption are calculated for hosts that are set up and monitored with OneAgent. Energy calculations are based on observed infrastructure metrics.</p>
+<ol>
+<li>In <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong>, go to the <strong>Hosts</strong> tab.</li>
+<li>Check that you have at least one host instrumented.</li>
+</ol>
+<p>For public pricing costs calculations</p>
+<ul>
+<li>The data generation of carbon emissions must be active to allow generating public pricing cloud costs. You can activate it in the app's  settings.</li>
+<li>You need instrumented hosts with OneAgent and cloud vendor monitoring configured.
+  The calculation of public price list costs requires the collection of metadata from a host as the cloud provider, cloud region, and the type of instance configured in the cloud vendor. This information is provided by configuring the cloud vendor monitoring for the hosts to be monitored with OneAgent. For more information, see <a href="/docs/ingest-from" title="Learn how to install and configure ActiveGate and OneAgent on various platforms.">Ingest data</a>.</li>
+<li>Enable <strong>External requests</strong> to the cloud vendors where the hosts are running to collect public price lists into Grail.</li>
+</ul>
+<p>External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.</p>
+<ol>
+<li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>General</strong> &gt; <strong>External requests</strong>.</li>
+<li>Select  <strong>New host pattern</strong>.</li>
+<li>Add the domain names.</li>
+<li>Select <strong>Add</strong>.</li>
+</ol>
+<p>This way you can granularly control the web services your functions can connect to.</p>
+<p>You need to add the following domain names</p>
+<ul>
+<li>For AWS, add <code>*.amazonaws.com</code></li>
+<li>For Azure, add <code>azure.microsoft.com</code></li>
+<li>For Google Cloud, add <code>cloudbilling.googleapis.com</code></li>
+</ul>
+<p>Get started</p>
+<p>Concepts</p>
+<p>Use cases</p>
+<p>Dynatrace <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> enables you to calculate and monitor your IT cost (public list price) and carbon footprint.</p>
+<p>It tracks, reports, and helps you optimize the costs from your cloud infrastructure and reduce your carbon emissions resulting from your cloud and on-premises infrastructure electricity consumption.</p>
+<h2 id="landing-page">Landing page<a class="headerlink" href="#landing-page" title="Permanent link">&para;</a></h2>
+<p>The <strong>Overview</strong> tab provides an at-a-glance view of your IT carbon footprint.</p>
+<p><img alt="Cost &amp; Carbon Optimization overview page summarizes carbon emissions, energy consumption, cloud costs, and optimization targets." src="https://cdn.hub.central.dynatrace.com/hub/overview-page.png" /></p>
+<p>1 of 1Cost &amp; Carbon Optimization overview page summarizes carbon emissions, energy consumption, cloud costs, and optimization targets.</p>
+<ul>
+<li>The <strong>Carbon &amp; Energy Footprint</strong> summary reports total CO2e emissions for the selected and preceding timeframes for quick interval-based comparisons.</li>
+<li>Wasted energy summary is also reported with the selected and preceding timeframe.</li>
+<li>
+<p>Publicly listed <strong>cloud costs</strong> report the sum of cloud costs for Dynatrace-monitored hosts for the user-selected timeframe, using publicly available list prices from each cloud provider. Costs are displayed for the selected and preceding timeframes.</p>
+</li>
+<li>
+<p><strong>Optimization recommendations</strong> reports idle hosts and underutilized hosts with their cost and wasted energy measured.</p>
+</li>
+</ul>
+<p>To adjust thresholds influencing these calculations to your needs, navigate to the upper-right corner and select  to open the app's settings.
+* The <strong>Accumulated carbon footprint over time</strong> chart shows the accumulated carbon footprint and energy consumption over time.
+* With the <strong>Carbon versus business KPI</strong> chart, you can <a href="#business-health">compare carbon emissions over time with a business key performance indicator (KPI) of your choice</a>, derived from any of your captured business events.
+* If cloud costs are calculated, two more charts display <strong>Accumulated cloud cost over time</strong> and <strong>Cloud cost versus business KPI</strong> defined.
+* Carbon/energy data is measured for all hosts monitored by Dynatrace OneAgent, or by Dynatrace Kubernetes monitoring.</p>
+<h2 id="hosts">Hosts<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h2>
+<p>This tab allows you to view energy, carbon emissions, costs, and utilization information for OneAgent-monitored hosts.</p>
+<p><img alt="Host page displays host-level carbon, energy, cloud costs and optimization status" src="https://dt-cdn.net/images/hosts-page-1920-f2f5c2e743.png" /></p>
+<ul>
+<li>The table includes all hosts with carbon/cost information for the user-selected timeframe, and displays metadata, energy consumption, CO2 equivalent, and cloud costs (cloud hosts only).</li>
+<li>Use the information from this table to identify and optimize hosts with low utilization and high energy consumption, high carbon emissions, and high costs.</li>
+<li>The table allows you to search for specific hosts, filter by data center, or filter by optimization state (<code>Idling</code>, <code>Scaling</code>, <code>Normal</code>âthresholds are defined in the app's  settings).</li>
+<li>Expand a host to see if average CPU, memory and network traffic utilization for the user-selected timeframe.</li>
+<li>The page includes an intent that allows you to query the underlying data using DQL in a notebook or dashboard and combine the carbon and energy data with other information in Dynatrace. This can be useful to customize optimization information using DQL. Tabular information can be downloaded to a CSV file by selecting the download link.</li>
+<li>This view includes only hosts that are monitored by Dynatrace OneAgent. Kubernetes infrastructure is shown in the <strong>Kubernetes</strong> tab. Cloud hosts not monitored by Dynatrace OneAgent are not displayed here.</li>
+</ul>
+<h2 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
+<p><img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> works only for Kubernetes monitoring on Grail; classic Kubernetes monitoring is not supported.</p>
+<p>This tab allows you to view energy, carbon emissions, and utilization information for Kubernetes infrastructure monitored by Dynatrace.</p>
+<p><img alt="Kubernetes clusters GA" src="https://dt-cdn.net/images/kubernetes-clusters-ga-1920-e487b9d40c.png" /><img alt="Kubernetes Namespaces GA" src="https://dt-cdn.net/images/kubernetes-namespaces-ga-1920-43a911839b.png" /></p>
+<p>1 of 2</p>
+<p>Use the <strong>Kubernetes</strong> view to explore the energy consumption and carbon emissions of Kubernetes clusters, namespaces, and nodes by selecting the relevant link at the top of the page. Each view provides you with:</p>
+<ul>
+<li>A textual summary of carbon emissions and energy consumption</li>
+<li>Charts of the carbon emissions and energy consumption over the user-selected timeframe.</li>
+<li>A table of carbon emissions, energy consumption, and the relevant metadata for each Kubernetes entity.</li>
+</ul>
+<p>Clusters</p>
+<p>Namespaces</p>
+<p>Provides a breakdown of carbon emissions and energy consumption for each monitored cluster, with an average count of nodes, namespaces, and workloads seen during the user-selected timeframe.</p>
+<p>You can filter the table by cluster deployment type (for example, EKS, AKS, GKE) and search for a specific cluster names.</p>
+<p>See <a href="#average-actual-value">Average vs. actual values</a> for additional information on the use of average and actual counts.</p>
+<p>This table provides a breakdown of carbon emissions and energy consumption for each namespace, with an average count of pods and workloads seen during the user-selected timeframe.</p>
+<p>You can filter the table by cluster name and search for specific namespaces.</p>
+<p>See <a href="#average-actual-value">Average vs. actual values</a> for additional information on the use of average and actual counts.</p>
+<p>The <strong>Clusters</strong> and <strong>Namespaces</strong> views</p>
+<ul>
+<li>Provide contextual navigation to the Kubernetes entity in <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong> by selecting the cluster, namespace, or node link in the table.</li>
+<li>List the average CPU and memory allocatable to help understand each entity's hardware resources.</li>
+<li>Include an intent that allows you to query the underlying data using DQL in a notebook or dashboard and combine the carbon and energy data with other information in Dynatrace. Tabular information can be downloaded to a CSV file by selecting the download link.</li>
+<li>The % metric change is also shown in each view, enabling you to quickly determine whether the scope or emissions of a Kubernetes entity have increased/decreased for the selected timeframe.</li>
+</ul>
+<p>Use this information to</p>
+<ul>
+<li>Identify Kubernetes clusters and namespaces with the highest energy consumption and carbon emissions, and correlate this with Dynatrace <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong> information on CPU and memory slack to identify the most costly and underutilized Kubernetes resources.
+  Leverage this information with your application teams to reconsider optimizing their requests/limits to reduce slack and optimize carbon and costs.</li>
+</ul>
+<p>One-click navigation between <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> and <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong> allows you to quickly drill down into more information about the Kubernetes resources to inspect resource requests and limits, quotas, or idle workloads/jobs that reserve resources but run infrequently.
+* Track energy and carbon at the Kubernetes cluster and namespace over time and identify anomalies that need further investigation to understand what changed in the environment and whether the change was intentional and warranted. A large spike (increase) in energy and carbon could be a normal side effect of increased usage, but it could signal an issue or change with automatic scaling or resource provisioning.
+  Examples: Changes to the type of node instances being used, or an unnecessary increase in associated storage.
+* Measure and compare carbon emissions from single-use servers to Kubernetes infrastructure to ensure that migration efforts are meeting the desired sustainability goals.
+  Organizations may even consider gamifying this and challenging their engineering teams to develop solutions that delight end-users and the environment.</p>
+<h3 id="average-vs-actual-values">Average vs. actual values<a class="headerlink" href="#average-vs-actual-values" title="Permanent link">&para;</a></h3>
+<p>Kubernetes is a dynamic environment, and the number of nodes and pods changes continuously.</p>
+<p>When reporting on carbon and energy over longer timeframes, counts can be derived using the average count of nodes, pods, and other entities observed during the user-selected timeframe, or a more in-depth query can be made to the Kubernetes data in Grail to get actual distinct counts of each entity.</p>
+<p>In a large Kubernetes environment, an actual count of distinct entities can take several seconds, whereas the average count typically takes milliseconds, and is sufficient for most use cases.</p>
+<p>This selector may account for differences between <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> and <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong>.</p>
+<p>The query time for the actual data is dependent on the size of your Kubernetes infrastructure and the timeframe being analyzed.</p>
+<ul>
+<li>Using actual data over a 7-day period could take minutes, not seconds.</li>
+<li>Querying namespace actual data is significantly heavier than clusters or nodes, and we recommend using a short timeframe (1-2d) when using actual data within the <strong>Namespaces</strong> tab.</li>
+</ul>
+<p>When using the deployment mode <strong>Kubernetes platform monitoring + Application observability</strong>, nodes and namespaces can be excluded from monitoring using the <code>namespaceSelector</code> (and <code>nodeSelector</code>).</p>
+<p>As <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> only reports on the energy/carbon of namespaces/nodes that are monitored, energy and carbon emissions shown may be lower than expected when infrastructure is excluded from monitoring. Excluded namespaces will be displayed in the <strong>Namespaces</strong> table but will show no carbon/energy measurements.</p>
+<p>In addition, internal workloads (such as <code>coredns</code>, <code>traefik</code>, and more) may be running that are not monitored by Dynatrace and energy/carbon data will not be included in the measurements.</p>
+<h2 id="learning-modules">Learning modules<a class="headerlink" href="#learning-modules" title="Permanent link">&para;</a></h2>
+<p>Go through the following process to learn using <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong>:</p>
+<p>[01Set up Cost &amp; Carbon Optimization</p>
+<ul>
+<li>How-to guide</li>
+<li>
+<p>Install and set up Cost &amp; Carbon Optimization.](/docs/observe/business-observability/cost-and-carbon-optimization/install-cost-and-carbon-optimization)[02Advanced analytics with Notebooks</p>
+</li>
+<li>
+<p>Reference</p>
+</li>
+<li>Use Notebooks to analyze your carbon footprint data.](/docs/observe/business-observability/cost-and-carbon-optimization/advanced-analytics-with-notebooks)</li>
+</ul>
+<h3 id="methodology-to-estimate-electricity-consumption">Methodology to estimate electricity consumption<a class="headerlink" href="#methodology-to-estimate-electricity-consumption" title="Permanent link">&para;</a></h3>
+<p>Electricity consumption and carbon dioxide emission are calculated based on guidelines from the Sustainable Digital Infrastructure Alliance (<a href="https://dt-url.net/rga3uql">SDIAï»¿</a>) with some contributions from the <a href="https://dt-url.net/0ic3u5z">Cloud Carbon Footprintï»¿</a> project and internal research from Dynatrace. All of the methodology is aligned with the <a href="https://dt-url.net/1re3uzm">GHG Protocolï»¿</a>.</p>
+<p>Energy is estimated based on the utilization metrics captured by Dynatrace OneAgent (in all modes for hosts) for CPU, memory, storage IO, and network. This estimation is performed every hour for each instrumented host through an automation.</p>
+<p>The formula to estimate energy draw includes several parameters from external data sources and some assumptions.</p>
+<p>The deviation from the measured power cannot be reliably determined due to the large variety of devices in the market and lack of statistical analysis.</p>
+<h3 id="external-data-sources">External data sources<a class="headerlink" href="#external-data-sources" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Random Access Memory energy usage data source</p>
+</li>
+<li>
+<p><a href="https://dt-url.net/yt03uaw">How much power does memory use?ï»¿</a></p>
+</li>
+<li>
+<p>CPU architecture sources (TDP, core, thread count) used in calculations</p>
+</li>
+<li>
+<p><a href="https://dt-url.net/ld23uvj">Intel Product Specificationsï»¿</a></p>
+</li>
+<li><a href="https://dt-url.net/nj83uae">AMD Processor Specificationsï»¿</a></li>
+<li>CPUs not officially listed are manually added through research, and the sources vary</li>
+<li>
+<p>Storage energy usage</p>
+</li>
+<li>
+<p>United States Data Center Energy Usage Reportâ<a href="https://dt-url.net/jl63u1r">Energy Technologies Areaï»¿</a></p>
+</li>
+<li>
+<p>Networking energy usage</p>
+</li>
+<li>
+<p>Methodologyâ<a href="https://dt-url.net/cw83ura">Cloud Carbon Footprintï»¿</a></p>
+</li>
+</ul>
+<h3 id="assumptions-for-electricity-consumption">Assumptions for electricity consumption<a class="headerlink" href="#assumptions-for-electricity-consumption" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>CPU energy measurement:</p>
+</li>
+<li>
+<p>Over a long period of time, a CPU running at 100% utilization will consume its TDP in power draw.</p>
+</li>
+<li>The base power draw of a CPU is 1/3 of its TDP
+    It is known that true idle for CPUs is much lower, but CPU utilization hovers around a constant 10-20% for server applications, so true idle can never be reached.</li>
+<li>One cloud vCPU equals one CPU thread</li>
+<li>
+<p>Memory energy measurement:</p>
+</li>
+<li>
+<p>Random Access Memory uses a constant of 3 W of power per 8 GB regardless of utilization.</p>
+</li>
+<li>
+<p>Storage energy measurement:</p>
+</li>
+<li>
+<p>The power draw of a terabye of SSD storage is 1.2 W</p>
+</li>
+<li>All storage is assumed to be on an SSD</li>
+<li>Storage power draw is constant</li>
+<li>Cloud storage is replicated twice (or more)</li>
+<li>
+<p>Network energy measurement:</p>
+</li>
+<li>
+<p>1 GB of networking (upload or download) consumes 1 W if sent outside of the local network.</p>
+</li>
+<li>1 GB of networking (upload or download) consumes 0.12 W if remaining within a local network.</li>
+</ul>
+<h3 id="power-usage-effectiveness-pue">Power Usage Effectiveness (PUE)<a class="headerlink" href="#power-usage-effectiveness-pue" title="Permanent link">&para;</a></h3>
+<p>The final result of the formula includes the energy consumed by hardware and cooling. Cooling is included in a standard metric, Power Usage Effectiveness (PUEânot displayed directly in <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> but available in the raw data generated). This metric, used to measure the energy efficiency of a data center, is a ratio between the total power consumption of a data centerâincluding cooling, lighting, and support equipment energy useâand the power consumed by the IT infrastructure. It describes how much energy IT equipment uses compared to other electrical devices.</p>
+<p>The Power Usage Effectiveness varies depending on a data center, but its predefined values for the main cloud providers are publicly available. The ones used in the calculation are:</p>
+<ul>
+<li>AWS and Azureâ<a href="https://dt-url.net/cw83ura">MethodologyâCloud Carbon Footprintï»¿</a></li>
+<li>Googleâ<a href="https://dt-url.net/t5g3uwt">EfficiencyâData Centersï»¿</a></li>
+<li>Rest of the worldâ<a href="https://dt-url.net/0ai3utu">Global PUEsï»¿</a></li>
+</ul>
+<h3 id="wasted-energy-calculation">Wasted energy calculation<a class="headerlink" href="#wasted-energy-calculation" title="Permanent link">&para;</a></h3>
+<p>Wasted Energy calculation is based on the assumption that every CPU cycle that is not utilized wastes about 1/3*TDP (Thermal Design Power). The proportion of unutilized CPU cycles is roughly 100% - CPU usage %. With those assumptions, the Wasted Energy (WE) is calculated as WE = Wp * 1/3 * TDP, where Wp is 0 for 100% CPU utilization and 1 when the CPU utilization is equal to the idle threshold.</p>
+<h3 id="carbon-emissions-calculation">Carbon emissions calculation<a class="headerlink" href="#carbon-emissions-calculation" title="Permanent link">&para;</a></h3>
+<p>Carbon emissions are estimated in CO2 equivalent grams. The calculation is multiplying carbon intensity factors by total energy consumed calculated with previous methodology.</p>
+<h3 id="assumptions-for-carbon-emissions">Assumptions for carbon emissions<a class="headerlink" href="#assumptions-for-carbon-emissions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A data centerâs carbon intensity is equal to the average carbon intensity of the country where it is located. This means that for large countries the national differences are not considered.</li>
+<li>Carbon intensity values used on calculations are an annual average.</li>
+</ul>
+<h3 id="carbon-intensity-data-sources">Carbon intensity data sources<a class="headerlink" href="#carbon-intensity-data-sources" title="Permanent link">&para;</a></h3>
+<ul>
+<li>European Union (EU)â<a href="https://dt-url.net/lm23uco">Greenhouse gas emission intensity of electricity generationï»¿</a></li>
+<li>Rest of the worldâ<a href="https://dt-url.net/1103ubu">Carbon intensity of electricity generationï»¿</a></li>
+</ul>
+<h3 id="public-price-list-costs-calculation">Public price list costs calculation<a class="headerlink" href="#public-price-list-costs-calculation" title="Permanent link">&para;</a></h3>
+<p><img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> can collect public price list data from cloud providers available data on a daily basis, limited to the regions where OneAgents are deployed and cloud extensions are configured.</p>
+<p>Every hour, the same workflow that generates the data for energy and emissions also calculates the hourly cost of a host based on the public price list matched with its cloud vendor, region, and instance type.</p>
+<p>Both business events follow the Dynatrace Semantic Dictionary schema.</p>
+<h3 id="data-centers-and-hosts">Data centers and hosts<a class="headerlink" href="#data-centers-and-hosts" title="Permanent link">&para;</a></h3>
+<p>The <strong>Data center emissions</strong> table on the landing page shows costs, energy, and CO2e consumption per data center. Select a data center name to view details of its hosts.</p>
+<p>The <strong>Hosts</strong> tab details cost, energy, and CO2e consumption per host. You can narrow your search using filters. For example, you can view underutilized hosts in a specific data center or top CO2e emitters.</p>
+<p>Expand a hostname to see key infrastructure metrics: <strong>CPU in use</strong>, <strong>Memory in use</strong>, and <strong>Receiving network traffic</strong>. Select a host name to view the host details page in <a href="/docs/observe/infrastructure-observability/infrastructure-and-operations" title="Monitor host and data center health to detect issues and improve infrastructure performance."><img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong></a>.</p>
+<p><img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> is automatically connected to Dynatrace SmartscapeÂ® topology modeling, so it's easy to see the host details or use <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> for ad hoc analysis with DQL.</p>
+<h3 id="measure-the-energy-of-dynatrace-kubernetes-platform-monitoring">Measure the energy of Dynatrace Kubernetes platform monitoring<a class="headerlink" href="#measure-the-energy-of-dynatrace-kubernetes-platform-monitoring" title="Permanent link">&para;</a></h3>
+<p>Use <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> to measure energy and carbon emissions of your Kubernetes infrastructure.</p>
+<p><img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> calculates the energy consumed (in Watt-hours) and carbon emissions (in grams of carbon dioxide emissions) of Kubernetes clusters and namespaces, and nodes, monitored by Dynatrace. All Dynatrace Kubernetes monitoring modes are supported, and data is calculated hourly and stored as <a href="/docs/semantic-dictionary/model/business-analytics#carbon-kubernetes-cluster-events" title="Get to know the Semantic Dictionary models related to Business Observability.">carbon Kubernetes events</a>.</p>
+<p>Organizations using Kubernetes today, or looking to migrate workloads to Kubernetes, should consider using <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> in addition to the Dynatrace Kubernetes monitoring for the following reasons:</p>
+<p>Energy use is a direct driver of cost
+:   Cloud infrastructure costs are largely driven by energy consumption. CPU, memory, storage, and networking all consume power, and cloud providers factor this into pricing. By measuring energy usage, you're essentially tracking the underlying metric that influences cost.</p>
+<p>Carbon footprint adds environmental context
+:   Carbon footprint translates energy consumption into environmental impact. This is especially valuable for organizations with sustainability goals or ESG (Environmental, Social, and Governance) reporting requirements.</p>
+<p>Optimization opportunities align
+:   Inefficient clusters, namespaces, and nodes that consume more energy (and thus emit more carbon) are often the ones driving up cloud costs. Identifying high-carbon workloads can highlight areas for cost and environmental optimization.</p>
+<p>The app will generate carbon Kubernetes bizevents in addition to regular carbon bizevents when the <strong>Enable energy and emission data generation</strong> option is enabled within the app's  settings.</p>
+<p>You can report on Kubernetes infrastructure energy and carbon emissions using custom DQL and dashboards.</p>
+<h3 id="cluster-calculations">Cluster calculations<a class="headerlink" href="#cluster-calculations" title="Permanent link">&para;</a></h3>
+<p>Each Kubernetes node within the cluster is identified as a host, and <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> uses the host processor, and utilization information to calculate energy and carbon every hour using the <strong>Cost &amp; Carbon Optimization Calculation</strong> workflow. The carbon and energy metrics of all nodes are summed and stored as a bizevent using: <code>type="carbon.measurement.k8s.cluster"</code>.</p>
+<h3 id="namespace-calculations">Namespace calculations<a class="headerlink" href="#namespace-calculations" title="Permanent link">&para;</a></h3>
+<p>Namespace carbon and energy values are derived by determining the % utilization of each namespace across the Kubernetes nodes it runs on, proportionally allocating energy and carbon from each node to the namespace. The carbon and energy metrics of all nodes are summed and stored as a bizevent using: <code>type="carbon.measurement.k8s.namespace"</code>.</p>
+<p>Bear in mind the following:</p>
+<ul>
+<li>CPU processor information is only available when using <strong>Kubernetes platform monitoring + Full-Stack observability</strong>. Other monitoring modes provide only instance type. Dynatrace maintains a lookup table of cloud instance type to CPU and will fall back to a Dynatrace-derived Kubernetes median value of 240w TDP and 64 threads.</li>
+<li>For AWS Fargate, energy calculations assume a Graviton1 processor type (TDP 110w, 16 threads).</li>
+</ul>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Cost reporting and allocation</li>
+<li>Carbon reporting and allocation</li>
+<li>Carbon reduction</li>
+<li>Usage optimization</li>
+<li>Kubernetes infrastructure carbon optimization</li>
+<li>Cost anomaly management</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>"An error occurred while loading the data. Please make sure you have the required user permissions."</p>
+<p>This popup error message will list the permissions needed to use <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong>.</p>
+<p>Ensure that a Dynatrace IAM administrator adds these policies to your user/group.</p>
+<p>"Try adjusting the timeframe or columns"</p>
+<ul>
+<li>There's no data to display, potentially due to the timeframe selected, or due to carbon data not being generated correctly.</li>
+<li>If you enabled <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong> recently, please wait for up to 1-2 hours for the workflow to execute and start generating carbon data.</li>
+<li>You can check whether carbon or carbon Kubernetes data is being generated by running the following DQL in a notebook. Select the  icon on the page, right above any table in the <strong>Hosts</strong> or <strong>Kubernetes</strong> tabs, to <strong>Open with</strong> the underlying DQL in a notebook:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch bizevents
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>filter event.type == &quot;carbon.measurement&quot; or event.type == &quot;carbon.measurement.k8s.cluster&quot;
+</code></pre></div>
+<p>Run in Playground
+* Ensure that the Cost &amp; Carbon Optimization workflow has the required authorization settings to function.</p>
+<p>Open <img alt="Cost &amp; Carbon Optimization" src="https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp" title="Cost &amp; Carbon Optimization" /> <strong>Cost &amp; Carbon Optimization</strong>  settings page. If this is the problem, an error message with missing authorization settings will be displayed theres.
+* Ensure that the Cost &amp; Carbon Optimization workflow is scheduled to run every hour, that all steps within the workflow are enabled (not disabled), and that no errors are generated by the workflow.</p>
+<p>Review any workflow errors for further troubleshooting or contact our customer support.</p>
+<p>"We encountered an unexpected issue. Please try again later."</p>
+<ul>
+<li>A platform issue is preventing the app from executing queries to report on carbon Kubernetes data.</li>
+</ul>
+<p>The issue may be temporary and will resolve itself shortly, or please reach out to our customer support.
+* Kubernetes monitoring may not be set up or functioning correctly.</p>
+<p>Please check <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong> to ensure that your Kubernetes infrastructure is being monitored correctly.</p>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h3>
+<p>Track and reduce your site infrastructure's carbon footprint.](https://www.dynatrace.com/hub/detail/carbon-impact/?internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross)</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.dynatrace.com/news/blog/analyze-energy-consumption-and-carbon-emissions-in-hybrid-cloud-infrastructure/">Analyze energy consumption and carbon emissions in hybrid cloud infrastructureï»¿</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dynatrace Documentation Mirror
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/gemini-chat.js"></script>
+      
+    
+  </body>
+</html>

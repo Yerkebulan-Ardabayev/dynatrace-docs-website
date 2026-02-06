@@ -1,0 +1,2704 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete bilingual Dynatrace documentation with AI assistant">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs/en/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dashboards - Dynatrace Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dashboards" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace Documentation" class="md-header__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dashboards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ru/getting-started/" class="md-tabs__link">
+          
+  
+  
+  🇷🇺 Русский
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ai/gemini/" class="md-tabs__link">
+          
+  
+  
+  🤖 AI Assistant
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace Documentation" class="md-nav__button md-logo" aria-label="Dynatrace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    Dynatrace Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Platform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇷🇺 Русский
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇷🇺 Русский
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/managed/configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/observe/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/platform/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI Assistant
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/notebooklm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dashboards">Dashboards<a class="headerlink" href="#dashboards" title="Permanent link">&para;</a></h1>
+<h1 id="dashboards_1">Dashboards<a class="headerlink" href="#dashboards_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>App</li>
+<li>10-min read</li>
+<li>Updated on Jan 28, 2026</li>
+</ul>
+<p>Prerequisites</p>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
+<p>The following table describes the required permissions.</p>
+<p>Permission</p>
+<p>Description</p>
+<p>app-engine:functions:run</p>
+<p>Allows the user to run functions</p>
+<p>app-engine:apps:run</p>
+<p>Allows the user to run functions</p>
+<p>app-engine:edge-connects:read</p>
+<p>Allows the user to read EdgeConnect configuration via functions</p>
+<p>document:environment-shares:read</p>
+<p>Allows the user to access shared dashboards</p>
+<p>document:direct-shares:read</p>
+<p>Allows the user to access shared dashboards</p>
+<p>state:user-app-states:write</p>
+<p>Allows the app to persist view settings like the selected timeframe or variable values</p>
+<p>state:user-app-states:read</p>
+<p>Allows the app to read view settings like the selected timeframe or variable values</p>
+<p>state:user-app-states:delete</p>
+<p>Allows the app to delete view settings like the selected timeframe or variable values</p>
+<p>davis:analyzers:read</p>
+<p>Allows the user to read configuration of Davis analyzers</p>
+<p>davis:analyzers:execute</p>
+<p>Allows the user to run Davis analyzers</p>
+<p>10</p>
+<p>rows per page</p>
+<p>Page</p>
+<p>1</p>
+<p>of 1</p>
+<p>Get started</p>
+<p>Concepts</p>
+<p>Use cases</p>
+<p>With <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, you can create powerful, data-driven documents for custom analytics.</p>
+<p><img alt="Get real-time insights by transforming complex data into dynamic, interactive dashboards." src="https://dt-cdn.net/hub/00_General.png" /><img alt="Start fast using our ready-made dashboards, designed for your everyday needs." src="https://dt-cdn.net/hub/01_Ready_made.png" /><img alt="Build your dashboard effortlessly with only a few clicks." src="https://dt-cdn.net/hub/02_Explore.png" /><img alt="Customize any visualization with ease." src="https://dt-cdn.net/hub/03_Customize.png" /><img alt="Experience dynamic and interactive dashboards with versatile variable filtering." src="https://dt-cdn.net/hub/04_Variables.png" /><img alt="Share your insights with others in seconds." src="https://dt-cdn.net/hub/05_Share.png" /></p>
+<p>1 of 6Get real-time insights by transforming complex data into dynamic, interactive dashboards.</p>
+<h2 id="dashboard-tiles">Dashboard tiles<a class="headerlink" href="#dashboard-tiles" title="Permanent link">&para;</a></h2>
+<p>In <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, a dashboard can consist of multiple tiles:</p>
+<ul>
+<li><a href="#explore">Explore</a>: explore data such as your logs, metrics, and business events with our point-and-click interface.</li>
+<li><a href="#query">Query</a>: displays data queried via Grail.</li>
+<li><a href="#code">Code</a>: display data returned by code executed via Dynatrace functions.</li>
+<li><a href="#markdown">Markdown</a>: static content edited in markdown.</li>
+</ul>
+<h3 id="explore-tile">Explore tile<a class="headerlink" href="#explore-tile" title="Permanent link">&para;</a></h3>
+<p>You can use the Explore options to explore your logs, metrics, business events, and more with our point-and-click interface. With zero knowledge of DQL or coding, you can create and start using dashboard tiles in minutes.</p>
+<p>For more information, we have a whole <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data" title="Explore your data with our point-and-click interface.">Explore data</a> page that shows you how to create Explore tiles.</p>
+<h3 id="query-tile">Query tile<a class="headerlink" href="#query-tile" title="Permanent link">&para;</a></h3>
+<p>The query tiles allow you to easily query data from Grail and <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.">visualize</a> the result in different ways.</p>
+<p>A query tile consists of a query input where you can write a DQL query. In the query input, use <strong>Ctrl</strong>+<strong>Space</strong> to trigger autocompletion at any time.</p>
+<p>You can control the timeframe for the query via the timeframe dropdown list. If the timeframe is defined in the query itself, the dropdown list is disabled.</p>
+<h3 id="code-tile">Code tile<a class="headerlink" href="#code-tile" title="Permanent link">&para;</a></h3>
+<p>The code section enables you to fetch data for your dashboard using Dynatrace functions.</p>
+<h3 id="markdown-tile">Markdown tile<a class="headerlink" href="#markdown-tile" title="Permanent link">&para;</a></h3>
+<p>A markdown section can be anything from a minor note about something on the dashboard to a whole page of formatted information with links and pictures.</p>
+<ul>
+<li>Easy to edit</li>
+<li>Attractive to look at</li>
+</ul>
+<p>To insert queries from your dashboard with autocomplete, use <strong>Ctrl</strong>+<strong>Space</strong>.</p>
+<p>You can link to other places in your dashboard and elsewhere.</p>
+<p>Markdown link syntax</p>
+<p>A link in Markdown is a label and link of the form <code>[label](address)</code>, where:</p>
+<ul>
+<li>The <code>label</code> is freeform text to display on the link in your Markdown tile or section</li>
+<li>The <code>address</code> specifies what to open when someone selects the link, such as a website or a Dynatrace app</li>
+</ul>
+<p>Link to</p>
+<p>Syntax and examples</p>
+<p>Website</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[My label](https://www.example.com/)
+</code></pre></div>
+<p>Notebooks app</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebooks)
+</code></pre></div>
+<p>Specific notebook</p>
+<p><strong>Syntax</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[label](/ui/apps/dynatrace.notebooks/notebook/&lt;notebookid&gt;)
+</code></pre></div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
+</code></pre></div>
+<p>To get the address</p>
+<ol>
+<li>Display the target notebook.</li>
+<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
+<li>Paste it into your Markdown as the address of a link.</li>
+</ol>
+<p>Specific notebook section</p>
+<p><strong>Syntax</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[label](/ui/apps/dynatrace.notebooks/notebook/&lt;notebookid&gt;#&lt;sectionid&gt;)
+</code></pre></div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
+</code></pre></div>
+<p>To get the address</p>
+<ol>
+<li>Display the target notebook.</li>
+<li>Select the target section of the notebook.</li>
+<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
+<li>Paste it into your Markdown as the address of a link.</li>
+</ol>
+<p>Dashboards app</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[My label](/ui/apps/dynatrace.dashboards/)
+</code></pre></div>
+<p>Specific dashboard</p>
+<p><strong>Syntax</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[label](/ui/apps/dynatrace.dashboards/&lt;dashboardid&gt;)
+</code></pre></div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
+</code></pre></div>
+<p>To get the address</p>
+<ol>
+<li>Display the target dashboard.</li>
+<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
+<li>Paste it into your Markdown as the address of a link.</li>
+</ol>
+<p>Specific dashboard tile</p>
+<p><strong>Syntax</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[label](/ui/apps/dynatrace.dashboards/dashboard/&lt;dashboardid&gt;#tileIds=n)
+</code></pre></div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&amp;to=now%28%29&amp;tileIds=6)
+</code></pre></div>
+<p>To include a specific tile ID in the link</p>
+<ol>
+<li>Display the target dashboard.</li>
+<li>Select the target tile in the target dashboard.</li>
+<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
+<li>Paste it into your Markdown as the address of a link.</li>
+</ol>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<p>Dashboards enables you to:</p>
+<ul>
+<li>Use readymade dashboards to monitor your system status in real-time.</li>
+<li>Create custom dashboards effortlessly with an easy-to-use editor or Davis CoPilotâ¢.</li>
+<li>Drill down into your data through seamless integration with other Dynatrace Apps.</li>
+<li>Utilize the power of Davis AI for spotting anomalies and forecasting directly on your charts.</li>
+<li>Search for any data type across the platform and combine them even with external data in a single view.</li>
+<li>Configure variable filters to monitor different resources within a single dashboard.</li>
+</ul>
+<p>These procedures describe the basics of using <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> and get you started on the way to customizing and creating your own dashboards.</p>
+<h2 id="use-dashboards">Use dashboards<a class="headerlink" href="#use-dashboards" title="Permanent link">&para;</a></h2>
+<h3 id="use-shortcuts">Use shortcuts<a class="headerlink" href="#use-shortcuts" title="Permanent link">&para;</a></h3>
+<p>Keyboard shortcuts help you work faster in <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</p>
+<p>To list keyboard shortcuts, in <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, open the  menu and select  <strong>Keyboard shortcuts</strong> or use keyboard shortcut <strong>Shift</strong>+<strong>?</strong></p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Keyboard shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>General</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Multiselect tiles</td>
+<td>Select a tile, press <strong>Space</strong> to get a double border around the tile, use arrow keys to go to another tile, and then press <strong>Space</strong> again to select multiple tiles</td>
+</tr>
+<tr>
+<td>Select all tiles</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>A</strong></td>
+</tr>
+<tr>
+<td>Delete selected tiles</td>
+<td><strong>Del</strong></td>
+</tr>
+<tr>
+<td>Copy selected tiles to clipboard</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>C</strong></td>
+</tr>
+<tr>
+<td>Paste tiles from clipboard</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>V</strong></td>
+</tr>
+<tr>
+<td>Add tile</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Shift</strong>+<strong>Enter</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Code tiles</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Add code</td>
+<td><strong>Shift</strong>+<strong>C</strong></td>
+</tr>
+<tr>
+<td>Execute code</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Data tiles</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Add query</td>
+<td><strong>Shift</strong>+<strong>D</strong></td>
+</tr>
+<tr>
+<td>Run query</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Markdown tiles</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Add markdown</td>
+<td><strong>Shift</strong>+<strong>M</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Service-Level Objective tiles</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Add Service-Level Objective</td>
+<td><strong>Shift</strong>+<strong>S</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Variables</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Add variable</td>
+<td><strong>Shift</strong>+<strong>V</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="list-dashboards">List dashboards<a class="headerlink" href="#list-dashboards" title="Permanent link">&para;</a></h3>
+<h4 id="list-all-dashboards">List all dashboards<a class="headerlink" href="#list-all-dashboards" title="Permanent link">&para;</a></h4>
+<p>To list dashboards</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>In the <strong>Dashboards</strong> panel, the <strong>Last opened by you</strong> section lists recently accessed dashboards.</li>
+<li>Hover over a dashboard name and select  for a menu of available commands for that dashboard. In this example, we would display the menu for a dashboard called <code>my dashboard 3</code>.</li>
+</ol>
+<p><img alt="Dashboards: Last opened by you: dashboard-specific menu" src="https://dt-cdn.net/images/dashboards-last-opened-by-you-dashboard-specific-menu-269-08e78a134c.png" /></p>
+<p>The commands you see in the menu depend on your permissions for that dashboard. For example, you can't rename someone else's dashboard unless they have given you edit permissions for that dashboard. (But you <em>can</em> make a copy of a shared dashboard and then edit your copy.)</p>
+<ul>
+<li><strong>Rename</strong> enables editing for the dashboard name</li>
+<li><strong>Duplicate</strong> makes a copy of the dashboard</li>
+<li><strong>Download</strong> writes the dashboard to a JSON file that you can import</li>
+<li><strong>Change owner</strong> assigns dashboard ownership to a new owner</li>
+<li><strong>Move to trash</strong> moves the dashboard to the trash can</li>
+</ul>
+<p>This icon  after a dashboard name means someone shared that dashboard with you.
+4. To display a table of all dashboards to which you have accessâyour own dashboards and all dashboards that people have shared with youâselect  <strong>All dashboards</strong>.</p>
+<ul>
+<li>To sort the table, select the <strong>Name</strong>, <strong>Created</strong>, or <strong>Last modified</strong> header.</li>
+<li>
+<p>To filter the table:</p>
+<ul>
+<li>You can enter a search string in the  filter bar at the top of the table.</li>
+<li>You can select <strong>Owned by anyone</strong>, <strong>Owned by me</strong>, or <strong>Shared with me</strong> in the list at the top of the table.</li>
+<li>To create a new dashboard, select  <strong>Dashboard</strong> in the upper-left corner.</li>
+<li>To upload a dashboard, select  <strong>Upload</strong> in the upper-left corner.</li>
+<li>To delete a dashboard, select  <strong>Move to trash</strong>. If there's no  icon for a dashboard, it means you have permission to view that shared dashboard but not to delete it.</li>
+<li>
+<p>To list deleted dashboards, select the <strong>Deleted</strong> tab of the <strong>Dashboards</strong> page.</p>
+</li>
+<li>
+<p>To restore a deleted dashboard, select  <strong>Restore</strong>.</p>
+</li>
+<li>To permanently delete a dashboard, select  <strong>Delete permanently</strong>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="list-my-dashboards">List my dashboards<a class="headerlink" href="#list-my-dashboards" title="Permanent link">&para;</a></h4>
+<p>To list all dashboards you own</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>In the <strong>Dashboards</strong> panel, select  <strong>All dashboards</strong>.</li>
+<li>At the top of the <strong>Dashboards</strong> table, select <strong>Owned by me</strong>.</li>
+</ol>
+<h4 id="list-dashboards-shared-with-me">List dashboards shared with me<a class="headerlink" href="#list-dashboards-shared-with-me" title="Permanent link">&para;</a></h4>
+<p>To list all dashboards shared with you</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>In the <strong>Dashboards</strong> panel, select  <strong>All dashboards</strong>.</li>
+<li>At the top of the <strong>Dashboards</strong> table, select <strong>Shared with me</strong>.</li>
+</ol>
+<h4 id="list-ready-made-dashboards">List ready-made dashboards<a class="headerlink" href="#list-ready-made-dashboards" title="Permanent link">&para;</a></h4>
+<p>To list all ready-made dashboards</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>In the <strong>Dashboards</strong> panel, select  <strong>Ready-made dashboards</strong>.</li>
+</ol>
+<p>Alternatively, you can select  <strong>All dashboards</strong> and then change the filter at the top of the table from <strong>All dashboards</strong> to <strong>Ready-made</strong>.</p>
+<p>What's special about ready-made documents</p>
+<ul>
+<li>Created and automatically distributed by Dynatrace as examples and templates.</li>
+<li>Read-only: you can edit them for use during your session, and you can save a copy with your changes, but you can't save your changes to the original document.</li>
+<li>This icon  in a table of documents indicates that it's a ready-made document.</li>
+</ul>
+<h3 id="display-a-dashboard">Display a dashboard<a class="headerlink" href="#display-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>To display a dashboard</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>Select the name of the dashboard. In this example, we open <code>my dashboard 2</code>.</li>
+</ol>
+<p><img alt="Open a dashboard" src="https://dt-cdn.net/images/open-my-dashboard-2-264-194755db23.png" /></p>
+<h3 id="interact-with-a-tile">Interact with a tile<a class="headerlink" href="#interact-with-a-tile" title="Permanent link">&para;</a></h3>
+<p>If you see something on a dashboard that you want to zoom in on, you can maximize it and have a closer look, and then minimize it again when you're done.</p>
+<p>When you maximize a tile, it is temporarily zoomed to the maximum size of the display so you can see the details of the selected tile.</p>
+<p>To maximize a tile</p>
+<ol>
+<li>Hover over the tile to display the tile-specific commands.</li>
+<li>Select  <strong>Maximize</strong>.</li>
+</ol>
+<p>To return to the normal dashboard view, select <strong>Minimize</strong> in the upper-right corner.</p>
+<h3 id="refresh-a-dashboard">Refresh a dashboard<a class="headerlink" href="#refresh-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>When you open a dashboard for the first time, the refresh rate is set to <code>Off</code> (no automatic refresh).</p>
+<h4 id="manual-refresh">Manual refresh<a class="headerlink" href="#manual-refresh" title="Permanent link">&para;</a></h4>
+<p>To refresh the current dashboard manually, in the upper-right corner of the dashboard, select  (in the   pair).</p>
+<h4 id="automatic-refresh">Automatic refresh<a class="headerlink" href="#automatic-refresh" title="Permanent link">&para;</a></h4>
+<p>To refresh the current dashboard automatically, in the upper-right corner of the dashboard, select  (in the   pair) and select a refresh rate.</p>
+<ul>
+<li><code>Off</code> turns off automatic refresh</li>
+<li>Other settings will refresh the dashboard at the specified interval</li>
+</ul>
+<p>If you change the refresh rate, that rate is remembered the next time you open the dashboard.</p>
+<p>A frequent refresh rate can keep you literally up to the minute, but a complex dashboard may take some time to recalculate each time it is refreshed. Choose a refresh rate that suits your needs and the complexity of the dashboard.</p>
+<h3 id="edit-read-only-dashboards">Edit read-only dashboards<a class="headerlink" href="#edit-read-only-dashboards" title="Permanent link">&para;</a></h3>
+<p>When you open a document (dashboard or notebook) for which you don't have write permission, you can still edit the document during your session. After you're finished, you have two options:</p>
+<ul>
+<li>Save your changes to a new document</li>
+<li>Discard your changes</li>
+</ul>
+<p>Example:</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, list the ready-made dashboards, and select the <strong>Getting started</strong> dashboard.</li>
+</ol>
+<p>It says  <strong>Ready-made</strong> in the upper-left corner, next to the document name.
+2. Select the Pie chart tile and then select  <strong>Edit</strong>.
+3. Change the visualization from Pie to Donut.</p>
+<p>Now you are offered two buttons: <strong>Save as new</strong> and <strong>Discard changes</strong>.
+4. Use the updated dashboard as needed. You have full edit access for this session.
+5. When you're finished, select what to do with your changes:</p>
+<ul>
+<li><strong>Save as new</strong>âsaves your changes in a new copy of the edited dashboard.</li>
+<li><strong>Discard changes</strong>âdiscards your changes and returns you to the unedited read-only dashboard.</li>
+</ul>
+<h3 id="select-the-timeframe">Select the timeframe<a class="headerlink" href="#select-the-timeframe" title="Permanent link">&para;</a></h3>
+<p>To review or change settings that apply to an entire dashboard</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>In the upper-right corner of the dashboard, select  <strong>Settings</strong>.</li>
+</ol>
+<p>The <strong>Settings</strong> panel is displayed.
+3. Review or change settings as needed.</p>
+<p>Custom timeframe</p>
+<p>To set a default timeframe for a dashboard</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>In the upper-right corner of the dashboard, select  <strong>Settings</strong>.</li>
+<li>Turn on <strong>Custom timeframe</strong>.</li>
+<li>
+<p>Select the default timeframe for the selected dashboard.</p>
+<p>Changing this setting does not immediately update the timeframe of the current dashboard. The change is applied only to a new session with the dashboard (either for a different user, or for the same user returning to the dashboard for another session).</p>
+</li>
+</ol>
+<p>For details about the dashboard timeframes, see <a href="#dashboard-timeframe">Select the timeframe</a>.</p>
+<p>Default segment</p>
+<p>To review or change the dashboard default segment</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>In the upper-right corner of the dashboard, select  <strong>Settings</strong>.</li>
+<li>Turn on <strong>Default segment</strong>.</li>
+<li>
+<p>Select the default segment for the selected dashboard.</p>
+<p>Changing this setting does not immediately update the segment of the current dashboard. The change is applied only to a new session with the dashboard (either for a different user, or for the same user returning to the dashboard for another session).</p>
+</li>
+</ol>
+<p>For details about dashboard segments, see <a href="#segment">Select segments</a>.</p>
+<p>{$} Variables</p>
+<p>To review or change dashboard variables</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>
+<p>In the upper-right corner of the dashboard, select  <strong>Settings</strong>.</p>
+<p>The <strong>Settings</strong> panel is displayed.
+   3. Select <strong>Variables</strong>.</p>
+</li>
+</ol>
+<p>For details about dashboard variables, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">Add a variable to a dashboard</a>.</p>
+<p>The timeframe describes the <em>when</em> of the data on the dashboard.</p>
+<ul>
+<li>When you open a dashboard for the first time, the standard global timeframe (<strong>Last 2 hours</strong>) is applied.</li>
+<li>If you change the global timeframe setting for your dashboard, that timeframe is applied the next time you open the dashboard. However, there are exceptions as described below.</li>
+<li>You can <a href="#timeframe-dashboard">set a dashboard-specific default timeframe</a> that is applied each subsequent time you open the dashboard.</li>
+<li>You can <a href="#timeframe-tile">set a tile-specific timeframe</a>. This setting overrides the global timeframe.</li>
+<li>When you open a dashboard via a link, if a timeframe is included in the link, the link timeframe is applied and the default dashboard timeframe is ignored.</li>
+</ul>
+<h4 id="change-global-timeframe">Change global timeframe<a class="headerlink" href="#change-global-timeframe" title="Permanent link">&para;</a></h4>
+<p>To change the global timeframe</p>
+<ol>
+<li>In the upper-right corner of the dashboard, open the timeframe selector menu (the default is <strong>Last 2 hours</strong> ).</li>
+<li>
+<p>Select a new timeframe.</p>
+</li>
+<li>
+<p>To select a standard timeframe, choose one of the standard <strong>Relative timeframes</strong></p>
+</li>
+<li>
+<p>To define a custom timeframe, define the timeframe in the <strong>Custom timeframe</strong> panel and select <strong>Apply</strong>.</p>
+<ul>
+<li>Use the calendar buttons <img alt="Calendar" src="https://dt-cdn.net/images/dashboards-app-dashboard-timeframe-calendar-b05d935595.svg" title="Calendar" /> to select calendar dates</li>
+<li>Edit the resulting <strong>From</strong> and <strong>To</strong> settings to fine-tune the range</li>
+</ul>
+</li>
+</ol>
+<p>When you change the global timeframe:</p>
+<ul>
+<li>The new timeframe is displayed in the upper-right corner of the dashboard.</li>
+<li>The dashboard contents are recalculated and displayed according to the new timeframe. This overrides the default dashboard timeframe.</li>
+<li>This does not affect any tile-specific timeframe overrides. Tile-specific timeframes take precedence over any global timeframe settings.</li>
+</ul>
+<h4 id="default-dashboard-timeframe">Default dashboard timeframe<a class="headerlink" href="#default-dashboard-timeframe" title="Permanent link">&para;</a></h4>
+<p>To set a default timeframe for a dashboard</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>In the upper-right corner of the dashboard, select  <strong>Settings</strong>.</li>
+<li>Turn on <strong>Custom timeframe</strong>.</li>
+<li>Select the default timeframe for the selected dashboard.</li>
+</ol>
+<p>Changing this setting does not immediately update the timeframe of the current dashboard. The change is applied only to a new session with the dashboard (either for a different user, or for the same user returning to the dashboard for another session).</p>
+<h4 id="tile-specific-timeframe-override">Tile-specific timeframe override<a class="headerlink" href="#tile-specific-timeframe-override" title="Permanent link">&para;</a></h4>
+<p>To specify a custom timeframe in a dashboard tile</p>
+<ol>
+<li>Edit the tile.</li>
+<li>In the edit panel, turn on <strong>Custom timeframe</strong>.</li>
+<li>Select the timeframe to apply to the selected tile.</li>
+</ol>
+<p>This timeframe overrides the dashboard timeframe set in the upper-right corner of the dashboard. Using this method, a dashboard can have multiple tiles, where each tile has its own timeframe.</p>
+<p>You can also specify a custom timeframe in a data tile's DQL query. If you use this method (with a timeframe specified in the query), the above UI setting is disabled and the timeframe specified in the query is used.</p>
+<p>Example timeframe specification in DQL:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>fetch [recordtype], from:now() - 2h
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>| ....
+</code></pre></div>
+<p>For details on specifying a timeframe in DQL, see <a href="/docs/platform/grail/dynatrace-query-language/dql-guide#specifytimeframe" title="Find out how DQL works and what are DQL key concepts.">Specify timeframe</a> in the DQL documentation.</p>
+<h3 id="select-segments">Select segments<a class="headerlink" href="#select-segments" title="Permanent link">&para;</a></h3>
+<p>To filter data, you can specify segments at two levels: dashboard and tile. Tile-level segment selections override dashboard-level segment selections.</p>
+<p>Should I use segments or variables?</p>
+<h4 id="segments">Segments<a class="headerlink" href="#segments" title="Permanent link">&para;</a></h4>
+<p>Use segments when you want to reuse them across dashboards. For example, use segments for recurring filters such as for your Kubernetes clusters, namespaces, workloads, or pods. Segments automatically apply on top of the queries of your tiles/sections, so you donât need to reference them within.</p>
+<h4 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h4>
+<p>If you need more control over how a filter is applied, however, you might want to use variables.</p>
+<ul>
+<li>Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (<strong>AND</strong>, <strong>OR</strong>) and you can control which operator is used for your filter (such as <code>equals</code>, <code>contains</code>, <code>startsWith</code>, and <code>endsWith</code>).</li>
+<li>
+<p>Additionally, use variables when you need fine-grained control over how filters are interdependent.</p>
+</li>
+<li>
+<p>For details on segments, see <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a></p>
+</li>
+<li>For a <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>-specific segments use case, see <a href="/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data" title="Learn how to analyze monitoring data more efficiently by using segments in Dashboards.">Analyze monitoring data with segments</a></li>
+</ul>
+<h4 id="dashboard-level-segments">Dashboard-level segments<a class="headerlink" href="#dashboard-level-segments" title="Permanent link">&para;</a></h4>
+<p>To select dashboard-level segments</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>Open the segment selector  at the top of the dashboard and, in <strong>Filter by segments</strong>, select a segment.<br />
+   If the segment requires an additional value selection, select it now.</li>
+<li>To add another segment, select  <strong>Segment</strong>. Repeat this step for each segment you want to add.</li>
+<li>
+<p>Select <strong>Apply</strong> to apply the selection and filter data on the dashboard.</p>
+</li>
+<li>
+<p>The segment selector  now displays the name of the selected segment or, if you select more than one segment, the number of selected segments.</p>
+</li>
+<li>To change your segment selection, select  again, make your changes, and select <strong>Apply</strong>.</li>
+<li>To manage segments in general (list, create, view, edit, delete), select  and then select the <strong>Manage segments</strong> link.</li>
+</ol>
+<h4 id="tile-level-segments">Tile-level segments<a class="headerlink" href="#tile-level-segments" title="Permanent link">&para;</a></h4>
+<p>To select tile-level segments</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>Select the tile and then select  in the tile controls to edit the tile.</li>
+<li>In the edit panel, turn on <strong>Custom segments</strong>.</li>
+<li>In the <strong>Custom segments</strong> list, select a segment.<br />
+   If the segment requires an additional value selection, select it now.</li>
+<li>To add another segment, select  <strong>Segment</strong>. Repeat this step for each segment you want to add for the selected tile.</li>
+<li>
+<p>Select <strong>Apply</strong> to apply the selection and filter data on the tile.</p>
+</li>
+<li>
+<p>The segment selector  now displays the name of the selected segment or, if you select more than one segment, the number of selected segments.</p>
+</li>
+<li>To change your segment selection, select  again, make your changes, and select <strong>Apply</strong>.</li>
+<li>To manage segments in general (list, create, view, edit, delete), select  and then select the <strong>Manage segments</strong> link.</li>
+</ol>
+<h3 id="dashboard-settings">Dashboard settings<a class="headerlink" href="#dashboard-settings" title="Permanent link">&para;</a></h3>
+<p>To review or change settings that apply to an entire dashboard</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>In the upper-right corner of the dashboard, select  <strong>Settings</strong>.</li>
+</ol>
+<p>The <strong>Settings</strong> panel is displayed.
+3. Review or change settings as needed.</p>
+<p>Custom timeframe</p>
+<p>To set a default timeframe for a dashboard</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>In the upper-right corner of the dashboard, select  <strong>Settings</strong>.</li>
+<li>Turn on <strong>Custom timeframe</strong>.</li>
+<li>
+<p>Select the default timeframe for the selected dashboard.</p>
+<p>Changing this setting does not immediately update the timeframe of the current dashboard. The change is applied only to a new session with the dashboard (either for a different user, or for the same user returning to the dashboard for another session).</p>
+</li>
+</ol>
+<p>For details about the dashboard timeframes, see <a href="#dashboard-timeframe">Select the timeframe</a>.</p>
+<p>Default segment</p>
+<p>To review or change the dashboard default segment</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>In the upper-right corner of the dashboard, select  <strong>Settings</strong>.</li>
+<li>Turn on <strong>Default segment</strong>.</li>
+<li>
+<p>Select the default segment for the selected dashboard.</p>
+<p>Changing this setting does not immediately update the segment of the current dashboard. The change is applied only to a new session with the dashboard (either for a different user, or for the same user returning to the dashboard for another session).</p>
+</li>
+</ol>
+<p>For details about dashboard segments, see <a href="#segment">Select segments</a>.</p>
+<p>{$} Variables</p>
+<p>To review or change dashboard variables</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>
+<p>In the upper-right corner of the dashboard, select  <strong>Settings</strong>.</p>
+<p>The <strong>Settings</strong> panel is displayed.
+   3. Select <strong>Variables</strong>.</p>
+</li>
+</ol>
+<p>For details about dashboard variables, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">Add a variable to a dashboard</a>.</p>
+<h3 id="run-a-code-tile">Run a code tile<a class="headerlink" href="#run-a-code-tile" title="Permanent link">&para;</a></h3>
+<p>When you open a document from another user, you may see the following message:</p>
+<p><code>This dashboard contains custom code. It is read-only until you review the code and select âAccept and runâ.</code></p>
+<p>When you run a code tile or section written by another person, Dynatrace executes the other person's JavaScript using your user account and your permissions. This is a powerful feature, but it needs to be used correctly and responsibly. The JavaScript code can access external APIs on your behalf (using your account and permissions).</p>
+<p>To review code</p>
+<ol>
+<li>Select <strong>Review all code</strong>.</li>
+</ol>
+<p>The <strong>Review code</strong> page displays each code tile's code in a separate box.
+2. Review the code and decide whether you want to run it.</p>
+<p>If you want to run the code, you can approve it just this time or permanently.</p>
+<ul>
+<li>To run the code just this time, select <strong>Accept and run</strong>. The next time you open this document, you will be asked once again to review the code before running it.</li>
+<li>To permanently accept the code in this document, select <strong>Always trust code in this document</strong> and then select <strong>Accept and run</strong>.</li>
+</ul>
+<h3 id="download-result">Download result<a class="headerlink" href="#download-result" title="Permanent link">&para;</a></h3>
+<p>To download (export) the result of the current dashboard tile or notebook section to a local file</p>
+<ol>
+<li>Select the tile or section.</li>
+<li>On the command bar, open the  menu and select  <strong>Download result</strong> &gt; [format].</li>
+</ol>
+<p>The format options available depend on the visualization.</p>
+<ul>
+<li><strong>CSV</strong>: The result is downloaded to a local comma-separated values (*.csv) file. This option includes table formatting such as visible columns and unit formatting.</li>
+<li><strong>CSV (raw)</strong>: The result is downloaded to a local comma-separated values (*.csv) file. This option includes the complete unformatted data.</li>
+<li><strong>JSON</strong>: The result is downloaded to a local JSON (*.json) file.</li>
+</ul>
+<p>Some visualizations offer no option to download the result.</p>
+<h4 id="possible-issue-with-importing-csv-into-excel">Possible issue with importing CSV into Excel<a class="headerlink" href="#possible-issue-with-importing-csv-into-excel" title="Permanent link">&para;</a></h4>
+<p>When you export results to a CSV fileâwhether <strong>CSV</strong> or <strong>CSV (raw)</strong>âwith line breaks in any result column/field, and then open the file with Microsoft Excel or try to convert the file into a table using Excel option <strong>Data</strong> &gt; <strong>Text to Columns</strong>, you may encounter an issue in which the line breaks are incorrectly rendered in Excel. This is caused by an Excel limitation.</p>
+<p>To avoid this issue, use Excel option <strong>Data</strong> &gt; <strong>From Text/CSV</strong>.</p>
+<h2 id="manage-dashboards">Manage dashboards<a class="headerlink" href="#manage-dashboards" title="Permanent link">&para;</a></h2>
+<h3 id="add-dashboard-to-dock">Add dashboard to Dock<a class="headerlink" href="#add-dashboard-to-dock" title="Permanent link">&para;</a></h3>
+<p>To add a dashboard to the Dock for easy access</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>Open the  menu next to the dashboard name (in the upper-left corner of the dashboard).</li>
+<li>Select  <strong>Add to dock</strong>.</li>
+</ol>
+<p>If you change the name of the dashboard, it's automatically updated on the Dock.</p>
+<p>To remove a dashboard from the Dock</p>
+<ol>
+<li>Hover over the dashboard name in the Dock.</li>
+<li>Select  <strong>Unpin from dock</strong>.</li>
+</ol>
+<h3 id="rename-a-dashboard">Rename a dashboard<a class="headerlink" href="#rename-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>To rename a dashboard from the <strong>Dashboards</strong> panel</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+</ol>
+<p>The <strong>Last opened by you</strong> section lists your most recently accessed dashboards.
+2. Hover over the name of the dashboard you want to rename and select  &gt;  <strong>Rename</strong>. If the rename option isn't available, you don't have edit rights to that dashboard.</p>
+<h3 id="duplicate-a-dashboard">Duplicate a dashboard<a class="headerlink" href="#duplicate-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>To duplicate a dashboard from the <strong>Dashboards</strong> panel</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+</ol>
+<p>The <strong>Last opened by you</strong> section lists your most recently accessed dashboards.
+2. Hover over the name of the dashboard you want to duplicate and select  &gt;  <strong>Make a copy</strong>.</p>
+<p>To make a copy of the current dashboard</p>
+<ol>
+<li>At the top of the dashboard, open the dashboard menu  next to the dashboard name.</li>
+<li>Select  <strong>Duplicate</strong> from the menu.</li>
+</ol>
+<p>A copy is created with the name <strong>Copy of</strong> + the name of the current dashboard. The copy is now listed in the <strong>Dashboards</strong> panel.</p>
+<h3 id="share-a-dashboard">Share a dashboard<a class="headerlink" href="#share-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>If you own a dashboard or notebook, you can share it.</p>
+<p>There are three ways to share a document with other Dynatrace users in your company:</p>
+<ul>
+<li><strong>Access for all (view-only)</strong>: Give view-only access to everyone in your Dynatrace environment.</li>
+<li><strong>Share access</strong>: Create and maintain a list of users and user groups with access the document.</li>
+<li><strong>Share links</strong>: Create links (URLs) pointing to your document and distribute the links through the channels of your choice (email, for example).</li>
+</ul>
+<p>These methods are not mutually exclusive. For example, you can maintain a focused list of users for ongoing access to the document (maybe everyone in a certain group edits the document regularly) and you can create and distribute view-only links for a wider audience as needed.</p>
+<p>In any case, you control whether people can edit the document or only view it.</p>
+<p>For details on sharing documents, see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/share" title="Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.">Share documents</a>.</p>
+<h3 id="manage-dashboard-versions">Manage dashboard versions<a class="headerlink" href="#manage-dashboard-versions" title="Permanent link">&para;</a></h3>
+<p>Dashboard versions are saved automatically.</p>
+<ul>
+<li>You can access the 50 most recent versions of your dashboard.</li>
+<li>Each dashboard version is available for up to 30 days.</li>
+</ul>
+<p>To view and manage dashboard versions</p>
+<ol>
+<li>Display your dashboard.</li>
+<li>In the upper-right corner of your dashboard, select <img alt="History" src="https://dt-cdn.net/images/history-icon-dc67cc1e2c.svg" title="History" />.</li>
+</ol>
+<p>This displays a menu of the most recent versions of the current dashboard.</p>
+<ul>
+<li>Date</li>
+<li>Time</li>
+<li>Name of the person who created that version</li>
+<li>
+<p>From any version entry in the <strong>Versions</strong> menu, you can select version-specific actions.</p>
+</li>
+<li>
+<p><img alt="Preview" src="https://dt-cdn.net/images/icon-preview-1-138a2e67eb.svg" title="Preview" /> <strong>Preview</strong> displays a preview of the selected version.</p>
+</li>
+<li><strong>Restore</strong> switches your dashboard to the selected version.</li>
+<li><strong>Make a copy</strong> creates a new dashboard from the selected version and displays the new dashboard. The original dashboard remains unchanged.</li>
+<li><strong>Download</strong> saves a JSON file of the selected version of the dashboard to your local machine.</li>
+<li><strong>Preview in new tab</strong> displays a preview of the selected version on a new browser tab.</li>
+<li><strong>Delete this version</strong> deletes the selected version.</li>
+<li>To list and manage all versions of the dashboard in a separate window, go to the bottom of the <strong>Versions</strong> menu and select <strong>Show all</strong>.</li>
+</ul>
+<p>For details, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/document-version" title="View and manage versions of documents created in Dynatrace Notebooks and Dashboards.">Manage document versions</a>.</p>
+<h3 id="change-dashboard-owner">Change dashboard owner<a class="headerlink" href="#change-dashboard-owner" title="Permanent link">&para;</a></h3>
+<p>When you create a document (dashboard or notebook), you are the owner. To give ownership of the document to another Dynatrace user</p>
+<ol>
+<li>Open the  document menu and select  <strong>Change owner</strong>.</li>
+<li>Find and select a new owner, and then select <strong>Change owner</strong>.</li>
+</ol>
+<p>When you change the document owner, you immediately lose access to the document.</p>
+<ul>
+<li>Be sure you are ready to transfer ownership before you select this command.</li>
+<li>You can regain access to the document only if the new owner gives you permission.</li>
+<li>After the transfer is complete, the new owner will receive email about the document ownership transfer.</li>
+</ul>
+<h3 id="download-a-dashboard">Download a dashboard<a class="headerlink" href="#download-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>To download (export) the currently displayed dashboard as JSON</p>
+<ol>
+<li>At the top of the dashboard, open the  menu to the right of the dashboard name.</li>
+<li>Select  <strong>Download</strong> from the menu.</li>
+</ol>
+<p>The definition of the current dashboard is downloaded to a local JSON file.</p>
+<p>To download (export) a dashboard from the <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> side panel</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>In <strong>Last opened by you</strong>, hover over the name of the dashboard you want to export and select  <strong>Download</strong> from the  menu. The dashboard is downloaded to a local JSON file that you can upload.</li>
+</ol>
+<p>If your dashboard isn't listed in <strong>Last opened by you</strong>, select  <strong>All dashboards</strong> to display a table of all dashboards that you can access (your dashboards or dashboards shared with you). From there, you can find the dashboard and select  <strong>Download</strong> from the  menu.</p>
+<h3 id="upload-a-dashboard">Upload a dashboard<a class="headerlink" href="#upload-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>To upload (import) the JSON definition of a dashboard from the <strong>Dashboards</strong> side panel</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>In the <strong>Dashboards</strong> panel on the left, select  <strong>Upload</strong>.</li>
+<li>Find and open the dashboard JSON definition file.</li>
+</ol>
+<p>To upload (import) the JSON definition of a dashboard from the <strong>Dashboards</strong> table</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>In the <strong>Dashboards</strong> panel on the left, select  <strong>All dashboards</strong>.</li>
+</ol>
+<p>A <strong>Dashboards</strong> table displays all dashboards by <strong>Name</strong> and <strong>Last modified</strong> date.
+3. In the upper-left corner of the page, select  <strong>Upload</strong>.
+4. Find and open the dashboard JSON definition file.</p>
+<p>An uploaded dashboard is:</p>
+<ul>
+<li>Opened in Dynatrace.</li>
+</ul>
+<p>If you see a message about running custom code when you upload a dashboard, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code#run-code-warnings" title="Add code to your Dynatrace dashboards.">Run code warnings</a> for more information.
+* Added to your <strong>Last opened by you</strong> list.
+* Added to the <strong>Dashboards</strong> page with <strong>Last modified</strong> set to the upload date and time.</p>
+<h3 id="delete-a-dashboard">Delete a dashboard<a class="headerlink" href="#delete-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>To delete any dashboard on the <strong>Dashboards</strong> page</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>In the <strong>Dashboards</strong> panel on the left, select  <strong>All dashboards</strong>.</li>
+</ol>
+<p>A table displays all dashboards by <strong>Name</strong> and <strong>Last modified</strong> date.
+3. On the <strong>Dashboards</strong> page, select  <strong>Move to trash</strong> for the dashboard you want to delete.</p>
+<h3 id="dashboards-via-api-best-practices">Dashboards via API: best practices<a class="headerlink" href="#dashboards-via-api-best-practices" title="Permanent link">&para;</a></h3>
+<p>When creating or managing dashboards via API, these best practices can make your life easier.</p>
+<ul>
+<li>To get a solid start, create the dashboard in the <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> app and then <a href="#dashboards-download">download</a> the dashboard configuration file.</li>
+<li>To verify changes made via API, <a href="#dashboards-upload">upload</a> the file to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>. Does everything still look as expected?</li>
+<li>Be careful with layout changes, as empty vertical spaces cause tiles to shift upwards automatically on document load and cause the <strong>Discard changes</strong> button to appear.</li>
+<li>To examine changes in detail, select <strong>Save as new</strong> to download the document and compare it with the original version.</li>
+<li>Don't set the <code>version</code> property of the config to an arbitrary value. It's an internal property needed for migration purposes.</li>
+</ul>
+<h2 id="create-and-edit-dashboards">Create and edit dashboards<a class="headerlink" href="#create-and-edit-dashboards" title="Permanent link">&para;</a></h2>
+<h3 id="create-a-dashboard">Create a dashboard<a class="headerlink" href="#create-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>The fastest and easiest way to explore your data is with our new <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data" title="Explore your data with our point-and-click interface.">Explore</a> tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!</p>
+<p>To create a new dashboard</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>Select  <strong>Dashboard</strong>.</li>
+</ol>
+<p>After you create an empty dashboard, you need to add tiles to it.</p>
+<ul>
+<li>Query Grail</li>
+<li>Add code</li>
+<li>Add Markdown</li>
+<li>Add a variable</li>
+<li>Add a snippet</li>
+</ul>
+<h3 id="query-grail">Query Grail<a class="headerlink" href="#query-grail" title="Permanent link">&para;</a></h3>
+<p>To Query Grail</p>
+<ol>
+<li>In the upper-right of the dashboard, select  <strong>Add</strong> &gt;  <strong>DQL</strong>.</li>
+</ol>
+<p>Keyboard shortcut: <strong>Shift</strong>+<strong>D</strong></p>
+<p><img alt="Dashboards: Add tile button (Plus)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" /></p>
+<p>A configuration side panel opens on the right to display two tabs:</p>
+<ul>
+<li><strong>Data</strong></li>
+<li><strong>Visual</strong></li>
+<li>On the <strong>Data</strong> tab, use the <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language (DQL)</a> to define your query.</li>
+<li>Select <strong>Run</strong> to execute the query.</li>
+<li>
+<p>On the <strong>Visual</strong> tab, choose a <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.">visualization</a> format for your results.</p>
+</li>
+<li>
+<p>means the visualization type is unavailable for your query.</p>
+</li>
+<li>Under the <strong>Visualization</strong> selector, expand the options sections to adjust visualization settings as needed.</li>
+<li>Close the side panel when you're done.</li>
+</ul>
+<p>If you want to return to these settings, select your tile to display them.</p>
+<p>For details, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data" title="Add data to your Dynatrace dashboards.">Add data to a dashboard</a>.</p>
+<h3 id="add-code">Add code<a class="headerlink" href="#add-code" title="Permanent link">&para;</a></h3>
+<p>To add code to a dashboard</p>
+<ol>
+<li>In the upper-right of the dashboard, select  <strong>Add</strong> &gt;  <strong>Code</strong>.</li>
+</ol>
+<p>Keyboard shortcut: <strong>Shift</strong>+<strong>C</strong></p>
+<p><img alt="Dashboards: Add tile button (Plus)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" /></p>
+<p>An empty tile is added to the dashboard and an <strong>Options</strong> side panel opens on the right.
+2. Optional In <strong>Tile title</strong>, enter a title to display at the top of your tile.
+3. In the numbered <strong>Code</strong> box, enter custom JavaScript to fetch external data from any available API. Use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Fetch APIï»¿</a> to fetch data from external APIs.</p>
+<p>To make sure your requests aren't blocked, ask your administrator to allow your external data sources by adding them to the <strong>External requests</strong>.</p>
+<p>External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.</p>
+<ol>
+<li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>General</strong> &gt; <strong>External requests</strong>.</li>
+<li>Select  <strong>New host pattern</strong>.</li>
+<li>Add the domain names.</li>
+<li>Select <strong>Add</strong>.</li>
+</ol>
+<p>This way you can granularly control the web services your functions can connect to.</p>
+<p>Don't include the address prefix. For example, if the address is <code>https://some.service.org</code>, just add <code>some.service.org</code>.</p>
+<p>For details, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code" title="Add code to your Dynatrace dashboards.">Add code to a dashboard</a>.</p>
+<h3 id="add-markdown">Add markdown<a class="headerlink" href="#add-markdown" title="Permanent link">&para;</a></h3>
+<p>To add a markdown tile to a dashboard</p>
+<ol>
+<li>In the upper-right of the dashboard, open the  <strong>Add</strong> menu and select  <strong>Add markdown</strong>.</li>
+</ol>
+<p>Keyboard shortcut: <strong>Shift</strong>+<strong>M</strong></p>
+<p><img alt="Dashboards: Add tile button (Plus)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" /></p>
+<p>An <strong>Options</strong> side panel opens on the right.
+2. In the <strong>Options</strong> side panel, enter your text.</p>
+<ul>
+<li>Use Markdown to format your text and add links and images.</li>
+<li>The tile is updated as you edit.</li>
+<li>While you're editing text, press Ctrl+Space to see options.</li>
+<li>Close the <strong>Options</strong> side panel when you're done.</li>
+</ul>
+<p>For details, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown" title="Add Markdown-formatted annotations to your Dynatrace dashboards.">Add Markdown to dashboard</a>.</p>
+<h3 id="add-variable">Add variable<a class="headerlink" href="#add-variable" title="Permanent link">&para;</a></h3>
+<p>Use variables to filter your dashboards, to act as variable values in code tiles, and as placeholders in tile titles and Markdown tile text.</p>
+<p>To add a variable to a dashboard</p>
+<ol>
+<li>In the dashboard header, open the  menu and select  <strong>Variables</strong>.
+   Keyboard shortcut: <strong>Shift</strong>+<strong>V</strong></li>
+</ol>
+<p>Keyboard shortcut: <strong>Shift</strong>+<strong>V</strong></p>
+<p><img alt="Dashboards: Add tile button (Plus)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" /></p>
+<p>The <strong>Variable</strong> panel is displayed.
+2. Define the variable.</p>
+<ul>
+<li>
+<p><strong>Name</strong>: the name of the variable.</p>
+<ul>
+<li>Only alpha-numerical values are allowed</li>
+<li>Do not start a variable name with <code>dt_</code></li>
+<li>
+<p><strong>Type</strong>: can be one of the following:</p>
+</li>
+<li>
+<p><strong>DQL</strong>: the value is returned from a query you enter when you define the variable.</p>
+</li>
+<li>
+<p>Select <strong>Run</strong> to test your query.</p>
+</li>
+<li><strong>Code</strong>: the value is returned from code you enter when you define the variable.</li>
+<li>
+<p><strong>List</strong>: a comma-separated values (CSV) list of values.</p>
+</li>
+<li>
+<p>To define possible values, enter them (separated by commas) in the box under <strong>Data</strong>.</p>
+</li>
+<li>To define a default value, select one from the <strong>Default value</strong> list.</li>
+<li>To allow multiple values to be selected at the same time, turn on <strong>Multi-select</strong>.</li>
+<li><strong>Free Text</strong>: free text. You can enter a <strong>Default value</strong>.
+   Your changes are saved automatically.</li>
+<li>Set <strong>Display settings</strong>.</li>
+</ul>
+</li>
+<li>
+<p>If the variable dropdown should be displayed on the dashboard, turn on <strong>Display as filter on dashboard</strong>.<br />
+     Turn it off when you want it hidden, such as when the variable is used as a static value across tiles but should not be displayed to the dashboard user.</p>
+</li>
+<li>If users should be able to select multiple values at the same time within the variable dropdown, turn on <strong>Multi-select</strong>.<br />
+     Turn it off when you want to use only single values of the variable dropdown.</li>
+<li>Select a <strong>Default value</strong> for the variable dropdown. If you don't enter anything in this field, the first available value is selected.</li>
+<li>When you're finished, select <strong>&lt; Variable</strong> at the top to go to the <strong>Variables</strong> panel, or select  to dismiss the <strong>Variables</strong> panel.</li>
+</ul>
+<p>Variables in dashboards can be defined to depend on other variables.</p>
+<ul>
+<li>The value of a variable is recalculated if its definition refers to another variable and the other variable's value changes.</li>
+</ul>
+<p>For example, if the value of variable A changes, the value of any variable whose definition refers to variable A is recalculated.
+* Loops are not allowed.</p>
+<p>For example, if the value of variable A depends on the value of variable B, the value of variable B can't depend on the value of variable A.</p>
+<p>For details, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">Add a variable to a dashboard</a>.</p>
+<h3 id="add-snippet">Add snippet<a class="headerlink" href="#add-snippet" title="Permanent link">&para;</a></h3>
+<p>To get started based on a snippet</p>
+<ol>
+<li>In the upper-right of the dashboard, select  <strong>Add</strong> to open the <strong>Add</strong> menu.</li>
+</ol>
+<p>Keyboard shortcut: <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Shift</strong>+<strong>Enter</strong></p>
+<p><img alt="Dashboards: Add tile button (Plus)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" />
+2. Scroll down to the <strong>Start with a snippet</strong> section and choose one of the snippets. In this example, we select the  <strong>Fetch logs</strong> snippet, which is displayed in a preview panel.</p>
+<p><img alt="Example: select the &quot;Fetch logs&quot; snippet." src="https://dt-cdn.net/images/add-snippet-menu-example-fetch-logs-754-d4435c09eb.png" />
+3. After you select a snippet, the edit panel displays the snippet you added.</p>
+<p><img alt="Example: &quot;Fetch logs&quot; snippet added." src="https://dt-cdn.net/images/add-snippet-menu-example-fetch-logs-result-1436-77cc9fa8f1.png" />
+4. Edit the query or code (depending on the snippet type you selected) and the visualization settings as needed.
+5. Select <strong>Run</strong> to see results.
+6. Close the side panel when you're done.</p>
+<p>For details, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet" title="Start with a snippet">Add a snippet to a dashboard</a>.</p>
+<h3 id="analyze-data-with-ai">Analyze data with AI<a class="headerlink" href="#analyze-data-with-ai" title="Permanent link">&para;</a></h3>
+<p>To analyze data using Dynatrace Intelligence Data Analyzers</p>
+<ol>
+<li>Explore a timeseries.</li>
+</ol>
+<p>Example</p>
+<p>In your document (dashboard or notebook)</p>
+<ol>
+<li>
+<p>Select  to add a new section or tile, and then select <strong>Metrics</strong> to explore metrics.</p>
+<p><img alt="Example: select Add &gt; Metrics" src="https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png" />
+   2. In <strong>Select metric</strong>, select <strong>Infrastructure</strong> &gt; <strong>CPU</strong> &gt; <strong>CPU usage %</strong>.</p>
+<p><img alt="Example: select metric &quot;CPU usage %&quot;" src="https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png" />
+   3. Set <strong>Split by</strong> to <code>host.name</code>.</p>
+<p><img alt="Example: set &quot;Split by&quot; to host.name" src="https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png" />
+   4. Set <strong>Limit</strong> to the maximum number of series to analyze. Dynatrace Intelligence Data Analyzer currently supports analysis up to 1000 series.</p>
+</li>
+</ol>
+<p>You should get something like this:</p>
+<p><img alt="Example: complete query" src="https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png" />
+2. Run the query.
+3. In the options panel on the right, scroll down and expand  <strong>Davis AI</strong>.</p>
+<p>Show me</p>
+<p><img alt="An example of selecting the Analyze and alert settings in the Dashboards app." src="https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png" /></p>
+<p><img alt="The initial panel for the Analyze and alert settings in the Dashboards app." src="https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png" />
+4. On the <strong>Davis AI</strong> panel, set <strong>Analyzers</strong> to the analyzer you want to use, and then configure the analyzer.</p>
+<ul>
+<li>For an overview of anomaly detection, see <a href="/docs/dynatrace-intelligence/anomaly-detection" title="How Dynatrace detects anomalies in your environment.">Anomaly detection</a></li>
+<li>
+<p>For details on anomaly detection settings, see <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="How to set up an alert for missing measurements.">Anomaly detection configuration</a></p>
+</li>
+<li>
+<p>For details on forecast analyzer settings, <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Learn how Dynatrace Intelligence predictive AI generates forecasts.">Dynatrace Intelligence predictive AI analysis</a></p>
+</li>
+</ul>
+<p>Anomaly Detection: Auto adaptive threshold anomaly detection</p>
+<ul>
+<li><strong>Number of signal fluctuations</strong>âhow many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting.</li>
+<li><strong>Alert condition</strong>âyour selection depends on whether you want to know when the metric is above, below, or outside (above or below) the normal range.</li>
+</ul>
+<p>For details, see <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="How to set up an alert for missing measurements.">Anomaly detection configuration</a>.</p>
+<p>Anomaly Detection: Seasonal baseline anomaly detection</p>
+<ul>
+<li><strong>Tolerance</strong>âthe higher the tolerance, the broader the confidence band, leading to fewer triggered events.</li>
+<li><strong>Alert condition</strong>âyour selection depends on whether you want to know when the metric is above, below, or outside (above or below) the normal range.</li>
+</ul>
+<p>For details, see <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="How to set up an alert for missing measurements.">Anomaly detection configuration</a>.</p>
+<p>Anomaly Detection: Static threshold anomaly detection</p>
+<ul>
+<li><strong>Threshold</strong>âa hard limit that a metric should not violate.</li>
+<li><strong>Unit</strong>âthe unit of the value.</li>
+<li><strong>Alert condition</strong>âyour selection depends on whether you want to know when the metric is above or below the threshold value.</li>
+<li><strong>Suggest threshold</strong>âDavis AI can help you to find the right threshold based on historical data.</li>
+</ul>
+<p>For details, see <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="How to set up an alert for missing measurements.">Anomaly detection configuration</a>.</p>
+<p>Prediction: Forecast</p>
+<ul>
+<li><strong>Data points to predict</strong>âthe total steps the time series is forecasted. More steps generally results in less reliable forecasts and longer analyzer runtimes.</li>
+<li><strong>Forecast offset</strong>âan offset for the start of the forecast. For example, if the offset is set to <code>2</code>, the last two data points are ignored and a forecast for these points is returned as well.</li>
+</ul>
+<p>For details, see <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Learn how Dynatrace Intelligence predictive AI generates forecasts.">Dynatrace Intelligence predictive AI analysis</a>.</p>
+<p>Advanced settings (for anomaly detection)</p>
+<p>You can use the default values or turn on <strong>Show advanced properties</strong> to fine-tune these settings.</p>
+<ul>
+<li><strong>Alert on missing data</strong>âalert if no data is detected within the sliding window.</li>
+<li><strong>Violating samples</strong>ânumber of samples in the sliding window that must violate to trigger an event.</li>
+<li><strong>Sliding window</strong>ânumber of samples that form the sliding window.</li>
+<li><strong>Dealerting samples</strong>ânumber of samples in the sliding window that must go back to normal to close the event.</li>
+<li>By default, the analyzer is not enabled. To enable it, turn on the switch at the top of the edit panel (switch from <strong>AI data analysis is not active</strong> to <strong>AI data analysis is active</strong>).</li>
+<li>To view the results, select the <strong>Davis AI analysis</strong> visualization and expand the <strong>Davis AI analysis chart</strong> section to review or change the visualization-specific settings:</li>
+</ul>
+<p>Show me</p>
+<p><img alt="Example of selecting &quot;AI analysis&quot; visualization and displaying visualization-specific settings in the Notebooks app." src="https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png" /></p>
+<p>The <strong>Davis AI analysis</strong> visualization has two sections: chart and visualization. You can use the <strong>Visible sections</strong> setting to display either or both of them.</p>
+<ul>
+<li><strong>All</strong>âshow a chart and a table. The chart reflects your table selections.</li>
+<li><strong>Table</strong>âshow only a table. You can sort columns that display a sort icon  in the header. Select the column header to toggle the sort order up  or down .</li>
+<li><strong>Chart</strong>âshow only a chart. Use the table to select entries you want to show on the chart.</li>
+</ul>
+<h4 id="example-anomalous-cpu-usage-percent">Example: anomalous CPU usage percent<a class="headerlink" href="#example-anomalous-cpu-usage-percent" title="Permanent link">&para;</a></h4>
+<p>To detect when CPU usage percent exceeds 70 percent, in your document (dashboard or notebook)</p>
+<ol>
+<li>Select  to add a new section or tile, and then select <strong>Metrics</strong> to explore metrics.</li>
+</ol>
+<p>Show me</p>
+<p><img alt="Example: select Add &gt; Metrics" src="https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png" />
+2. In <strong>Select metric</strong>, select <strong>Infrastructure</strong> &gt; <strong>CPU</strong> &gt; <strong>CPU usage %</strong>.</p>
+<p>Show me</p>
+<p><img alt="Example: select metric &quot;CPU usage %&quot;" src="https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png" />
+3. Set <strong>Split by</strong> to <code>host.name</code>.</p>
+<p>Show me</p>
+<p><img alt="Example: set &quot;Split by&quot; to host.name" src="https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png" />
+4. Set <strong>Limit</strong> to the maximum number of series to analyze. Davis analyzer currently supports analysis up to 1000 series.</p>
+<p>Show me</p>
+<p><img alt="Example: complete query" src="https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png" />
+5. Select <strong>Run</strong>.
+6. In the edit panel, expand  <strong>Davis AI</strong>.</p>
+<p>Show me</p>
+<p><img alt="An example of selecting the Analyze and alert settings in the Dashboards app." src="https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png" /></p>
+<p><img alt="The initial panel for the Analyze and alert settings in the Dashboards app." src="https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png" />
+7. In the <strong>Analyzers</strong> list, select <strong>Static threshold anomaly detection</strong>.</p>
+<p>Show me</p>
+<p><img alt="Selecting the &quot;Static threshold anomaly detection&quot; analyzer in the Analyze and alert settings of the Dashboards app." src="https://dt-cdn.net/images/dashboards-analyze-and-alert-select-static-threshold-anomaly-detection-752-45026264f0.png" />
+8. Set <strong>Threshold</strong> to <code>70</code> (enter a value) and <strong>Alert condition</strong> to <strong>Alert if metric is above</strong> (default).</p>
+<p>Show me</p>
+<p><img alt="Configuring settings for the &quot;Static threshold anomaly detection&quot; analyzer in the Dashboards app." src="https://dt-cdn.net/images/dashboards-static-threshold-anomaly-detection-settings-748-4d20c8220e.png" />
+9. Activate the analyzer: at the top of the edit panel, switch from <strong>AI data analysis is not active</strong> to <strong>AI data analysis is active</strong>.
+10. To view the results, select the <strong>Davis AI analysis</strong> visualization. Expand the <strong>Davis AI analysis chart</strong> section to see visualization-specifc settings.</p>
+<div class="highlight"><pre><span></span><code>Show me
+
+![Example of selecting &quot;AI analysis&quot; visualization and displaying visualization-specific settings in the Notebooks app.](https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png)
+</code></pre></div>
+<ol>
+<li>In the <strong>Davis AI analysis chart</strong> section, set <strong>Visible sections</strong> to <strong>All</strong>.</li>
+<li>
+<p>Review the results.</p>
+<p>In this example, we selected the hosts that exceeded the threshold.</p>
+<ul>
+<li>The chart shows a line for the selected metric (<code>CPU usage %</code>) for each selected host.</li>
+<li>A red bar across the top of the visualization indicates where the threshold for that metric was exceeded.</li>
+<li>The table under the chart has those hosts selected.</li>
+</ul>
+<p><img alt="Example analyzer results with &quot;AI analysis&quot; visualization in the Notebooks app." src="https://dt-cdn.net/images/notebooks-ai-analysis-chart-1920-5ac0e1f854.png" /></p>
+</li>
+</ol>
+<h3 id="change-variable-values">Change variable values<a class="headerlink" href="#change-variable-values" title="Permanent link">&para;</a></h3>
+<p>If a dashboard has one or more variables, they are listed by name along the upper-left of the dashboard, under the dashboard name. When you change variable values, the dashboard contents are recalculated and displayed according to the new values.</p>
+<p>To change the value of a variable</p>
+<ol>
+<li>In the upper-left of the dashboard, locate the variable name.</li>
+<li>
+<p>Use the menu or edit box under the variable name to change the value.</p>
+</li>
+<li>
+<p>If the variable allows just one selection (value) at a time, select the value that you want to apply to the dashboard.</p>
+</li>
+<li>If the variable allows multiple selections (values) at a time, select the checkbox for each value you want to apply to the dashboard. The menu name for that variable shows how many values are selected.</li>
+<li>For a Free Text variable, you can edit the text in the box under the variable name.</li>
+</ol>
+<h3 id="copy-to-another-document">Copy to another document<a class="headerlink" href="#copy-to-another-document" title="Permanent link">&para;</a></h3>
+<p>You can copy a dashboard tile to another document (such as a different dashboard or a notebook).</p>
+<p>For example, an easy way to start a new notebook is to copy reusable tiles from existing dashboards to a new notebook and then edit the copied sections as part of the new notebook.</p>
+<p>To copy a dashboard tile to a notebook (as a notebook section)</p>
+<ol>
+<li>In the dashboard, select the tile that you want to copy to a notebook.</li>
+<li>Open the  menu and select <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Add to notebook</strong>.</li>
+<li>
+<p>In <strong>Select destination</strong>:</p>
+</li>
+<li>
+<p>If you want to create a new notebook with the selected dashboard tile as a section, select <strong>New notebook</strong>.</p>
+</li>
+<li>If you want to add the selected dashboard tile as another section in an existing notebook, select the existing notebook from the list and then select <strong>Confirm</strong>.</li>
+</ol>
+<p>The notebook opens with the selected tile copied into it as a notebook section.</p>
+<p>To copy a dashboard tile to a different app (not <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>), open the  menu and select  <strong>Open with</strong>, and then select the target app.</p>
+<p>For details, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/open-with" title="Drill down from Dashboards and Notebooks using links based on intents or URLs.">Drilldowns and navigation</a>.</p>
+<h3 id="edit-a-tile">Edit a tile<a class="headerlink" href="#edit-a-tile" title="Permanent link">&para;</a></h3>
+<p>To edit a tile</p>
+<ol>
+<li>Select the tile to display the tile-specific commands.</li>
+<li>Select  <strong>Edit</strong>.</li>
+</ol>
+<p>An <strong>Options</strong> panel opens on the right to display the tile or section configuration.
+3. Select and drag the expander control left or right as needed to resize the <strong>Options</strong> panel for a better look at the code.</p>
+<p><img alt="Resize options panel" src="https://dt-cdn.net/images/options-panel-resize-155-a8c92d2683.png" /></p>
+<h3 id="add-or-edit-a-tile-title">Add or edit a tile title<a class="headerlink" href="#add-or-edit-a-tile-title" title="Permanent link">&para;</a></h3>
+<p>You can add a title to any dashboard tile (except for a Markdown tile).</p>
+<p>Regardless of the title setting, a title bar is automatically created as needed to display tile indicators such as for a warning or to indicate a custom tile timeframe.</p>
+<ol>
+<li>
+<p>Select the tile and  edit it.</p>
+</li>
+<li>
+<p>The title is displayed in the box at the top of the tile edit panel.</p>
+</li>
+<li>If the tile has no title, the box displays <code>Untitled tile</code>.</li>
+<li>Edit the title. Your edits are displayed as you type.</li>
+</ol>
+<p>A title can include emojis (such as ð and ð and â¤ï¸) and variables.</p>
+<p><strong>Example:</strong></p>
+<ol>
+<li>In your dashboard, define <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">variables</a> called <code>Status</code> and <code>Emoji</code>.</li>
+<li>Set the title to <code>Current $Emoji status is $Status</code>.</li>
+<li>Set variable <code>Status</code> to <code>Good</code>.</li>
+<li>Set variable <code>Emoji</code> to <code>ð</code>.</li>
+</ol>
+<p>The title will be displayed as <code>Current ð status is Good</code>, and it will update automatically when the variable values change.</p>
+<p>To remove a tile title, select the tile and  edit it, and then clear the title box.</p>
+<h3 id="configure-a-tile-visualization">Configure a tile visualization<a class="headerlink" href="#configure-a-tile-visualization" title="Permanent link">&para;</a></h3>
+<p>Each visualization has visualization-specific settings.</p>
+<p>To edit a tile visualization, see the <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.">visualization instructions</a>.</p>
+<h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h2>
+<h3 id="resize-a-tile">Resize a tile<a class="headerlink" href="#resize-a-tile" title="Permanent link">&para;</a></h3>
+<p>To resize a tile</p>
+<ol>
+<li>Hover over the tile.</li>
+<li>Select and drag  in the lower-right corner of the tile to change the dimensions of the tile.</li>
+</ol>
+<p>To help you select a specific size, the tile size is displayed on the tile command bar.</p>
+<h3 id="move-a-tile">Move a tile<a class="headerlink" href="#move-a-tile" title="Permanent link">&para;</a></h3>
+<p>You can move one tile at a time or select and move multiple tiles simultaneously.</p>
+<p>To move a tile, drag the tile to a new position.</p>
+<ul>
+<li>If the tile has a title, select and drag  the title bar to move the tile.</li>
+<li>If the tile has no title, select the tile to display the tile-specific commands, and then select and drag  on the tile command bar to drag the selected tile to a new location.</li>
+</ul>
+<p>To help you align tiles, a background grid is displayed when you're moving a tile.</p>
+<p>To move multiple tiles simultaneously</p>
+<ol>
+<li>Select one tile.</li>
+<li>
+<p>Ctrl-click additional tiles that you want to move.</p>
+</li>
+<li>
+<p>Each selected tile is highlighted.</p>
+</li>
+<li>The total number of selected tiles is displayed on the tile command bar.</li>
+<li>Select and drag  <strong>Move</strong> to drag all of the selected tiles to a new location.</li>
+</ol>
+<h3 id="copy-and-paste-a-tile">Copy and paste a tile<a class="headerlink" href="#copy-and-paste-a-tile" title="Permanent link">&para;</a></h3>
+<p>You can copy and paste tiles to the same dashboard or another dashboard.</p>
+<p>To copy and paste one tile</p>
+<ol>
+<li>Select the tile to display the tile-specific commands.</li>
+<li>On the tile command bar, select  <strong>Copy to clipboard</strong>.</li>
+</ol>
+<p>The selected tile is copied to your clipboard.
+3. Paste the tile (Ctrl-V).</p>
+<ul>
+<li>You can paste the copied tile to the current dashboard, in which case it's the equivalent of  <strong>Duplicate</strong>.</li>
+<li>You can switch to another dashboard and paste the copied tile there.</li>
+</ul>
+<p>To copy and paste multiple tiles simultaneously</p>
+<ol>
+<li>Click one tile to select it.</li>
+<li>
+<p>Ctrl-click additional tiles that you want to copy and paste.</p>
+</li>
+<li>
+<p>Each selected tile is highlighted.</p>
+</li>
+<li>The total number of selected tiles is displayed on the tile command bar.</li>
+<li>On the tile command bar, select  <strong>Copy to clipboard</strong>.</li>
+</ol>
+<p>The selected tiles are copied to your clipboard.
+4. Paste the tiles (Ctrl-V) to the same dashboard or switch to another dashboard and paste them there.</p>
+<h3 id="duplicate-a-tile">Duplicate a tile<a class="headerlink" href="#duplicate-a-tile" title="Permanent link">&para;</a></h3>
+<p>You can duplicate one tile at a time or duplicate multiple tiles simultaneously.</p>
+<p>To duplicate one tile</p>
+<ol>
+<li>Select the tile to display the tile-specific commands.</li>
+<li>Select  <strong>Duplicate</strong>.</li>
+</ol>
+<p>A copy of the tile is created on the current dashboard.</p>
+<p>To duplicate multiple tiles simultaneously</p>
+<ol>
+<li>Click one tile to select it.</li>
+<li>
+<p>Ctrl-click additional tiles that you want to duplicate.</p>
+</li>
+<li>
+<p>Each selected tile is highlighted.</p>
+</li>
+<li>The total number of selected tiles is displayed on the tile command bar.</li>
+<li>On the tile command bar, select  <strong>Duplicate</strong>.</li>
+</ol>
+<p>The selected tiles are duplicated on the current dashboard.</p>
+<h3 id="split-tile-space-to-insert-new-tile">Split tile space to insert new tile<a class="headerlink" href="#split-tile-space-to-insert-new-tile" title="Permanent link">&para;</a></h3>
+<p>When laying out a dashboard, you can split the space that a tile uses on the grid, and insert a second tile next to the first tile within the same space.</p>
+<ul>
+<li>The first tile is unaffected other than that it now uses half the width or height it used before you split the space.</li>
+<li>The second (new) tile uses the other half of that layout space.</li>
+<li>This is available only when you select a single tile that is big enough to split. It's not available when you select multiple tiles, or if the size of the selected tile is too small to split.</li>
+</ul>
+<p>For example, let's select a tile and add another tile to its right, so that the two tiles share the space originally used by the first tile.</p>
+<ol>
+<li>Select the tile.</li>
+<li>Hover over the tile to see the  split controlsâleft, right, and bottomâto indicate where you split that space and insert a new tile.</li>
+</ol>
+<p><img alt="Split a dashboard tile to insert another tile within the same space" src="https://dt-cdn.net/images/split-tiles-01-1515-c796df2c96.png" />
+3. In this example, select the  control on the right. It opens a menu similar to the  menu you would otherwise use to add a tile to the dashboard.
+4. Select the tile type you want to add.
+5. Edit the definition of the new tile and close the edit panel to see the changed layout.</p>
+<ul>
+<li>The original tile is unchanged except that it now uses only the left half of the space it used before.</li>
+<li>The new tile uses the right half of that space.</li>
+<li>You can still adjust the tile sizes and positions manually.</li>
+</ul>
+<h3 id="delete-a-tile">Delete a tile<a class="headerlink" href="#delete-a-tile" title="Permanent link">&para;</a></h3>
+<p>You can delete one tile at a time or select and delete multiple tiles simultaneously.</p>
+<p>To delete one tile</p>
+<ol>
+<li>Select the tile to display the tile-specific commands.</li>
+<li>On the tile command bar, select  <strong>More actions</strong> &gt;  <strong>Delete</strong>.</li>
+<li>In the <strong>Are you sure you want to delete this tile?</strong> message, select <strong>Cancel</strong> or <strong>Delete</strong>.</li>
+</ol>
+<p>To delete multiple tiles simultaneously</p>
+<ol>
+<li>Click one tile to select it.</li>
+<li>
+<p>Ctrl-click additional tiles that you want to delete.</p>
+</li>
+<li>
+<p>Each selected tile is highlighted.</p>
+</li>
+<li>The total number of selected tiles is displayed on the tile command bar.</li>
+<li>On the tile command bar, select  <strong>Delete</strong>.</li>
+<li>In the <strong>Are you sure you want to delete this tile?</strong> message, select <strong>Cancel</strong> or <strong>Delete</strong>.</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dynatrace Documentation Mirror
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/gemini-chat.js"></script>
+      
+    
+  </body>
+</html>
