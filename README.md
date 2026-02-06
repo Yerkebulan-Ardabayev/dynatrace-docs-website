@@ -1,17 +1,15 @@
-# Dynatrace Documentation Website 🚀
+# Сайт документации Dynatrace 🚀
 
-Complete bilingual (English/Russian) Dynatrace documentation with AI assistant integration.
+Полная двуязычная (английский/русский) документация Dynatrace с интеграцией AI-ассистента.
 
-## 🌟 Features
+## 🌟 Особенности
 
-- **📚 Complete Documentation** - Full mirror of official Dynatrace docs
-- **🌍 Bilingual** - English (original) + Russian (auto-translated)
-- **🤖 AI Assistant** - Built-in Gemini AI chat + NotebookLM integration
-- **📱 Mobile-Friendly** - Beautiful Material Design theme
-- **🔍 Powerful Search** - Search across all documentation
-- **🔄 Auto-Updates** - Daily synchronization at 02:00 (UTC+5)
-- **📁 Organized Structure** - Managed docs in separate section
-- **⚡ Fast & Modern** - Instant loading with MkDocs Material
+- **📚 Полная документация** - Полное зеркало официальной документации Dynatrace
+- **🌍 Двуязычный** - Английский + Русский с автоматическим переводом
+- **🤖 AI Ассистент** - Интеграция Gemini для мгновенных ответов
+- **🔄 Автообновление** - Ежедневное автоматическое обновление (02:00 UTC+5)
+- **🎨 Современный дизайн** - Material for MkDocs с темной/светлой темой
+- **⚡ Быстрый** - Мгновенная загрузка и поиск по всей документации
 
 ## 🌐 Live Website
 
