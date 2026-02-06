@@ -1,0 +1,30 @@
+# Cache and temporary files
+.cache/
+*.pyc
+__pycache__/
+.translation_cache.json
+temp_docs/
+
+# MkDocs build output
+site/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
