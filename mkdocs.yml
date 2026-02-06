@@ -93,7 +93,7 @@ extra_css:
   - assets/stylesheets/extra.css
 
 extra_javascript:
-  - assets/javascripts/gemini-chat.js
+  - assets/javascripts/groq-chat.js  # Groq Llama 3.1 70B - супер быстро!
 
 # Navigation
 nav:
