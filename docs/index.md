@@ -1,55 +1,55 @@
-# 📚 Dynatrace Documentation
+# 📚 Документация Dynatrace
 
-Welcome to the complete Dynatrace documentation - **bilingual** (English/Russian), **AI-powered**, and **always up-to-date**!
+Добро пожаловать в полную документацию Dynatrace - **двуязычная** (английский/русский), **AI-powered**, и **всегда актуальная**!
 
 <div class="grid cards" markdown>
 
--   :material-book-open-variant:{ .lg .middle } __Complete Documentation__
+-   :material-book-open-variant:{ .lg .middle } __Полная документация__
 
     ---
 
-    Full mirror of official Dynatrace documentation, automatically updated daily at 02:00 (UTC+5)
+    Полное зеркало официальной документации Dynatrace, автоматически обновляется ежедневно в 02:00 (UTC+5)
 
-    [:octicons-arrow-right-24: Browse English docs](en/getting-started.md)
+    [:octicons-arrow-right-24: Английская документация](en/getting-started.md)
     [:octicons-arrow-right-24: Русская документация](ru/getting-started.md)
 
 -   :material-cog:{ .lg .middle } __Dynatrace Managed__
 
     ---
 
-    Dedicated section for Dynatrace Managed deployment and configuration
+    Специальный раздел для развертывания и настройки Dynatrace Managed
 
     [:octicons-arrow-right-24: Managed (English)](en/managed/index.md)
     [:octicons-arrow-right-24: Managed (Русский)](ru/managed/index.md)
 
--   :robot:{ .lg .middle } __AI Assistant__
+-   :robot:{ .lg .middle } __AI Ассистент__
 
     ---
 
-    Get instant answers to your questions with AI-powered search
+    Получайте мгновенные ответы на ваши вопросы с AI-поиском
 
-    [:octicons-arrow-right-24: Quick Chat (Gemini)](ai/gemini.md)
-    [:octicons-arrow-right-24: Deep Analysis (NotebookLM)](ai/notebooklm.md)
+    [:octicons-arrow-right-24: Быстрый чат (Gemini)](ai/gemini.md)
+    [:octicons-arrow-right-24: Глубокий анализ (NotebookLM)](ai/notebooklm.md)
 
--   :material-lightning-bolt:{ .lg .middle } __Always Current__
+-   :material-lightning-bolt:{ .lg .middle } __Всегда актуально__
 
     ---
 
-    Documentation automatically updates every day to match the official Dynatrace docs
+    Документация автоматически обновляется каждый день в соответствии с официальной документацией Dynatrace
 
-    [:octicons-arrow-right-24: Latest Updates](whats-new.md)
+    [:octicons-arrow-right-24: Последние обновления](whats-new.md)
 
 </div>
 
-## 🌍 Languages
+## 🌍 Языки
 
-This documentation is available in two languages:
+Эта документация доступна на двух языках:
 
 === "🇬🇧 English"
 
     Complete official documentation in English - 100% accurate
 
-    [Get Started :octicons-arrow-right-24:](en/getting-started.md)
+    [Get Started :octicons-arrow-right-24:](en/ting-started.md)
 
 === "🇷🇺 Русский"
 
@@ -57,76 +57,74 @@ This documentation is available in two languages:
 
     [Начать работу :octicons-arrow-right-24:](ru/getting-started.md)
 
-## 🎯 Quick Links
+## 🎯 Быстрые ссылки
 
-### For New Users
+### Для новых пользователей
 
-- [What is Dynatrace?](en/discover-dynatrace/what-is-dynatrace.md)
-- [Getting Started Guide](en/getting-started.md)
-- [Installation](en/ingest-from/dynatrace-oneagent/installation-and-operation.md)
+- [Что такое Dynatrace?](en/discover-dynatrace/what-is-dynatrace.md)
+- [Руководство по началу работы](en/getting-started.md)
+- [Установка](en/ingest-from/dynatrace-oneagent/installation-and-operation.md)
 
-### Popular Topics
+### Популярные темы
 
-- [OneAgent Features](en/ingest-from/dynatrace-oneagent/oneagent-features.md)
-- [Distributed Tracing](en/observe/application-observability/distributed-tracing.md)
-- [Dynatrace Query Language (DQL)](en/platform/grail/dynatrace-query-language.md)
-- [Kubernetes Monitoring](en/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app.md)
+- [Возможности OneAgent](en/ingest-from/dynatrace-oneagent/oneagent-features.md)
+- [Распределенная трассировка](en/observe/application-observability/distributed-tracing.md)
+- [Язык запросов Dynatrace (DQL)](en/platform/grail/dynatrace-query-language.md)
+- [Мониторинг Kubernetes](en/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app.md)
 
 ### Dynatrace Managed
 
-- [Managed Overview](en/managed/index.md)
-- [Installation Guide](en/managed/installation.md)
-- [Configuration](en/managed/configuration.md)
+- [Обзор Managed](en/managed/index.md)
 
-## 🔍 Search
+## 🔍 Поиск
 
-Use the search bar at the top to find anything in the documentation instantly. Search works across **both English and Russian** content!
+Используйте строку поиска вверху, чтобы мгновенно найти что угодно в документации. Поиск работает как в **английском, так и в русском** контенте!
 
-## 🤖 AI-Powered Help
+## 🤖 AI-помощь
 
-Need quick answers? Try our AI assistants:
+Нужны быстрые ответы? Попробуйте наших AI-ассистентов:
 
-- **Quick Chat** - Instant answers using Gemini AI
-- **Deep Analysis** - Comprehensive analysis using NotebookLM
+- **Быстрый чат** - Мгновенные ответы с использованием Gemini AI
+- **Глубокий анализ** - Комплексный анализ с использованием NotebookLM
 
-Click the chat button in the bottom-right corner!
+Кликните на кнопку чата в правом нижнем углу!
 
-## 📱 Mobile Friendly
+## 📱 Мобильная версия
 
-This documentation works perfectly on all devices:
+Эта документация отлично работает на всех устройствах:
 
-- 💻 Desktop computers
-- 📱 Smartphones
-- 📱 Tablets
+- 💻 Настольные компьютеры
+- 📱 Смартфоны
+- 📱 Планшеты
 
-## 🔄 Auto-Updates
+## 🔄 Автообновления
 
-This documentation is automatically synchronized with official Dynatrace docs:
+Эта документация автоматически синхронизируется с официальной документацией Dynatrace:
 
-- ⏰ **Daily updates** at 02:00 (UTC+5)
-- 📊 **Change tracking** via Git commits
-- ✅ **Always current** (± 1 day from official)
+- ⏰ **Ежедневные обновления** в 02:00 (UTC+5)
+- 📊 **Отслеживание изменений** через Git коммиты
+- ✅ **Всегда актуально** (± 1 день от официальной)
 
-## 📖 About This Site
+## 📖 О этом сайте
 
-This is an unofficial documentation mirror created for:
+Это неофициальное зеркало документации, созданное для:
 
-- **Bilingual access** - Read in English or Russian
-- **AI integration** - Get instant answers
-- **Better navigation** - Easier to find what you need
-- **Offline capability** - Can be downloaded for offline use
+- **Двуязычного доступа** - Читайте на английском или русском
+- **Интеграции AI** - Получайте мгновенные ответы
+- **Лучшей навигации** - Легче найти то, что вам нужно
+- **Офлайн возможности** - Можно скачать для офлайн использования
 
-!!! info "Official Source"
-    Official Dynatrace documentation: [docs.dynatrace.com](https://docs.dynatrace.com)
+!!! info "Официальный источник"
+    Официальная документация Dynatrace: [docs.dynatrace.com](https://docs.dynatrace.com)
 
-## 🙋 Questions?
+## 🙋 Вопросы?
 
-- Check our [AI Assistant](ai/gemini.md) for instant answers
-- Browse the documentation using the sidebar
-- Use search to find specific topics
+- Проверьте наш [AI Ассистент](ai/gemini.md) для мгновенных ответов
+- Просматривайте документацию используя боковую панель
+- Используйте поиск для нахождения конкретных тем
 
 ---
 
-**Last updated:** Auto-generated | **Total pages:** Auto-generated
+**Последнее обновление:** Автоматически | **Всего страниц:** Автоматически
 
-Made with :heart: using [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
+Сделано с :heart: используя [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
