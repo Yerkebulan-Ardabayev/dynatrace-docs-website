@@ -49,7 +49,7 @@
 
     Complete official documentation in English - 100% accurate
 
-    [Get Started :octicons-arrow-right-24:](en/ting-started.md)
+    [Get Started :octicons-arrow-right-24:](en/getting-started.md)
 
 === "🇷🇺 Русский"
 
