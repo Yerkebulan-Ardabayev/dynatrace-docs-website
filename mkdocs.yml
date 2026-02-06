@@ -1,0 +1,150 @@
+site_name: Dynatrace Documentation
+site_description: Complete bilingual Dynatrace documentation with AI assistant
+site_author: Yerkebulan Ardabayev
+site_url: https://yerkebulan-ardabayev.github.io/dynatrace-docs/
+
+# Repository
+repo_name: dynatrace-docs-website
+repo_url: https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website
+edit_uri: ""
+
+# Theme
+theme:
+  name: material
+  language: ru  # Русский язык по умолчанию
+  
+  # Color scheme
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Переключить на тёмную тему
+    
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Переключить на светлую тему
+  
+  # Features
+  features:
+    - announce.dismiss
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  
+  # Logo and favicon
+  icon:
+    logo: material/book-open-variant
+    repo: fontawesome/brands/github
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Plugins
+plugins:
+  - search:
+      lang:
+        - en
+        - ru
+  - tags
+
+# Extensions
+markdown_extensions:
+  - admonition              # Callouts
+  - pymdownx.details        # Collapsible sections
+  - pymdownx.superfences    # Code blocks
+  - pymdownx.highlight:     # Syntax highlighting
+      anchor_linenums: true
+  - pymdownx.inlinehilite   # Inline code highlighting
+  - pymdownx.snippets       # Include snippets
+  - pymdownx.tabbed:        # Tabbed content
+      alternate_style: true
+  - attr_list               # Attribute lists
+  - md_in_html              # Markdown in HTML
+  - pymdownx.emoji:         # Emoji support
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true       # Permalink anchors
+  - tables                  # Tables support
+
+# Extra CSS/JS
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/gemini-chat.js
+
+# Navigation
+nav:
+  - Home: index.md
+  
+  - 🇬🇧 English:
+    - Getting Started: en/getting-started.md
+    - Dynatrace Managed:
+      - Overview: en/managed/index.md
+      - Installation: en/managed/installation.md
+      - Configuration: en/managed/configuration.md
+    - Observe:
+      - Overview: en/observe/index.md
+    - Platform:
+      - Overview: en/platform/index.md
+  
+  - 🇷🇺 Русский:
+    - Начало работы: ru/getting-started.md
+    - Dynatrace Managed:
+      - Обзор: ru/managed/index.md
+      - Установка: ru/managed/installation.md
+      - Настройка: ru/managed/configuration.md
+    - Мониторинг:
+      - Обзор: ru/observe/index.md
+    - Платформа:
+      - Обзор: ru/platform/index.md
+  
+  - 🤖 AI Assistant:
+    - Quick Chat: ai/gemini.md
+    - Deep Analysis: ai/notebooklm.md
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Yerkebulan-Ardabayev
+  
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback!
+
+# Copyright
+copyright: Copyright &copy; 2026 Dynatrace Documentation Mirror
