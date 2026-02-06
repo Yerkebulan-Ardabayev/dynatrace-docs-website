@@ -28,3 +28,30 @@ build/
 
 # Logs
 *.log
+scrape_log.txt
+auto_update.log
+
+# Скачанная документация (временная)
+scripts/dynatrace-docs/
+
+# Кеш переводов
+.translation_cache*.json
+
+# API ключи и секреты (ВАЖНО!)
+.env
+.env.local
+*.key
+*_key.txt
+
+# Задачи и планы (локальные)
+ACTION_PLAN.md
+SECURITY_FIXES.md
+COMPLETE_SETUP.md
+
+# Тестовые файлы
+docs/test-*.html
+api/
+
+# Vercel
+.vercel
+vercel.json
