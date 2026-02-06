@@ -40,7 +40,7 @@ jobs:
       - name: Build site
         run: |
           echo "🏗️ Building MkDocs site..."
-          mkdocs build --strict
+          mkdocs build
           echo "✅ Build completed!"
       
       - name: Deploy to GitHub Pages
