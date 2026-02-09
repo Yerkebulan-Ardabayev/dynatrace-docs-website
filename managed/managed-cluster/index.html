@@ -29,7 +29,7 @@
     
     
       
-        <title>Set up Dynatrace Managed cluster - Dynatrace Managed - Документация</title>
+        <title>Кластер - Dynatrace Managed - Документация</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#set-up-dynatrace-managed-cluster" class="md-skip">
+        <a href="#dynatrace-managed" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Set up Dynatrace Managed cluster
+              Кластер
             
           </span>
         </div>
@@ -665,6 +665,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -681,6 +699,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Архитектура кластера
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Добавление узла
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Управление узлами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление узлами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Просмотр состояния
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Удаление узла
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Масштабирование
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Балансировка нагрузки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -969,6 +1089,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Архитектура кластера
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Добавление узла
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Управление узлами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление узлами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Просмотр состояния
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Удаление узла
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Масштабирование
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Балансировка нагрузки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -984,107 +1195,85 @@
 
 
 
-<h1 id="set-up-dynatrace-managed-cluster">Set up Dynatrace Managed cluster<a class="headerlink" href="#set-up-dynatrace-managed-cluster" title="Permanent link">&para;</a></h1>
-<h1 id="set-up-dynatrace-managed-cluster_1">Set up Dynatrace Managed cluster<a class="headerlink" href="#set-up-dynatrace-managed-cluster_1" title="Permanent link">&para;</a></h1>
-<ul>
-<li>Updated on Dec 09, 2025</li>
-</ul>
-<p>In this section, you will learn how to install, configure, and operate a Dynatrace Managed cluster. You will also learn how the <a href="/managed/managed-cluster/data-privacy/mission-control-proactive-support" title="Learn about how Mission Control proactive support works.">Dynatrace Mission Control team</a> can support you with proactive assistance.</p>
-<h3 id="basic-concepts">Basic concepts<a class="headerlink" href="#basic-concepts" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="/managed/managed-cluster/basic-concepts/managed-components" title="Learn about the high-level architecture of Dynatrace Managed.">Dynatrace Managed components</a></li>
-<li><a href="/managed/managed-cluster/basic-concepts/managed-deployments" title="Find out about your options for deploying Dynatrace Managed.">Managed deployments</a></li>
-<li><a href="/managed/managed-cluster/basic-concepts/managed-failover-mechanism" title="Read about how cluster failover works and what happens during the switch.">Managed failover mechanism</a></li>
-</ul>
-<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="/managed/managed-cluster/installation/dynatrace-managed-hardware-and-system-requirements" title="Learn what hardware and operating system requirements need to be taken into account before installing your Dynatrace Managed cluster.">Managed hardware requirements</a></li>
-<li><a href="/managed/managed-cluster/installation/managed-system-requirements" title="Learn what operating system requirements need to be taken into account before installing your Dynatrace Managed cluster.">Managed system requirements</a></li>
-<li><a href="/managed/managed-cluster/installation/which-network-ports-does-dynatrace-server-use" title="Know which ports are used for inbound and outbound communications in your environment.">Cluster node ports</a></li>
-<li><a href="/managed/managed-cluster/installation/dynatrace-managed-on-selinux" title="Find out how to configure Dynatrace Managed services to run on a SELinux system.">Enable or disable SELinux</a></li>
-<li><a href="/managed/managed-cluster/installation/managed-hardware-requirements-for-clouds" title="Learn what hardware recommendations need to be taken into account before deploying Dynatrace Managed to specific cloud services.">Managed hardware recommendations for cloud deployments</a></li>
-<li><a href="/managed/managed-cluster/installation/set-up-a-cluster" title="Learn how to download and install Dynatrace Managed in order to set up your Dynatrace Managed cluster.">Set up a cluster</a></li>
-<li><a href="/managed/managed-cluster/installation/add-a-new-cluster-node" title="Understand the steps required to add a new Dynatrace Managed cluster node.">Add a new cluster node</a></li>
-<li><a href="/managed/managed-cluster/installation/customize-installation-for-dynatrace-managed" title="See the complete list of parameters you can use for command line installation of Dynatrace Managed.">Customize installation for Dynatrace Managed</a></li>
-<li><a href="/managed/managed-cluster/installation/how-to-install-a-cluster-activegate" title="Download and install a Cluster ActiveGate in a Dynatrace Managed deployment.">Install a Cluster ActiveGate</a></li>
-<li><a href="/managed/managed-cluster/installation/install-your-own-ssl-certificate" title="Learn how to install your own SSL certificate in case you don't want Dynatrace to create the domain and SSL certificate for you.">Install your own SSL certificate for a cluster node</a></li>
-<li><a href="/managed/managed-cluster/installation/install-your-own-ssl-certificate-cluster-ag" title="Learn how to install your own SSL certificate on a Cluster ActiveGate, in case you don't want Dynatrace to create the domain and SSL certificate for you.">Configure SSL certificate for a Cluster ActiveGate</a></li>
-<li><a href="/managed/managed-cluster/installation/dynatrace-offline" title="Learn how to obtain your license, install, and set up Dynatrace Managed in offline mode.">Dynatrace Managed in offline mode</a></li>
-</ul>
-<h3 id="data-privacy">Data privacy<a class="headerlink" href="#data-privacy" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="/managed/managed-cluster/data-privacy/managed-data-privacy-and-exchange" title="Learn what data is exchanged between your Managed cluster and Mission Control.">Data privacy and exchange in Managed</a></li>
-<li><a href="/managed/managed-cluster/data-privacy/monitored-technologies" title="Learn how Dynatrace sends information about monitored technologies and feature usage.">Monitored technologies and feature usage</a></li>
-<li><a href="/managed/managed-cluster/data-privacy/mission-control-proactive-support" title="Learn about how Mission Control proactive support works.">Mission Control proactive support</a></li>
-</ul>
-<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="/managed/managed-cluster/configuration/configurable-properties-of-dynatrace-managed" title="Learn about the Dynatrace Managed properties that you can configure based on your requirements.">Configurable properties of Dynatrace Managed</a></li>
-<li><a href="/managed/managed-cluster/configuration/how-to-add-a-certificate-to-server-trust-store" title="Learn how to import a custom SSL certificate when a Dynatrace Managed cluster cannot verify SSL connection.">Add an SSL certificate to Dynatrace Managed cluster TrustStore</a></li>
-<li><a href="/managed/managed-cluster/configuration/internet-proxy" title="Configure a proxy connection for your Managed cluster if you do not have direct internet access.">Configure internet proxy for cluster</a></li>
-<li><a href="/managed/managed-cluster/configuration/configure-smtp-server-connection" title="Learn how to configure an SMTP server connection and why this is recommended.">Configure an SMTP server connection</a></li>
-<li><a href="/managed/managed-cluster/configuration/dns-configuration-in-managed" title="Learn how to configure DNS entries for Dynatrace Managed.">DNS configuration for Dynatrace Managed</a></li>
-<li><a href="/managed/managed-cluster/configuration/cluster-node-capabilities" title="Find out how to enable/disable a cluster node via the Web UI or API call">Cluster node capabilities</a></li>
-<li><a href="/managed/managed-cluster/configuration/cluster-remote-access" title="Learn how to grant permission for remote access.">Cluster remote access</a></li>
-<li><a href="/managed/managed-cluster/configuration/configure-manage-user-sessions" title="Learn how to define the maximum number of concurrent user sessions for Dynatrace Managed.">Configure and manage user sessions</a></li>
-<li><a href="/managed/managed-cluster/configuration/password-complexity-rules" title="Learn how to configure password complexity rules for Dynatrace Managed.">Password complexity rules</a></li>
-<li><a href="/managed/managed-cluster/configuration/sign-in-customization" title="Learn how to customize the sign-in page in Dynatrace Managed.">Sign-in page customization</a></li>
-<li><a href="/managed/managed-cluster/configuration/configure-cluster-preferences" title="Configure cluster preferences and privacy settings">Cluster preferences settings</a></li>
-<li><a href="/managed/managed-cluster/configuration/cluster-event-notifications" title="Manage cluster notifications">Cluster event notifications</a></li>
-<li><a href="/managed/managed-cluster/configuration/configure-emergency-contacts-managed" title="Learn how to configure emergency contacts in Dynatrace Managed.">Configure emergency contacts in Dynatrace Managed</a></li>
-<li><a href="/managed/managed-cluster/configuration/set-up-load-balancer" title="Read about how set up a load balancer for your Dynatrace Managed deployment.">Set up a load balancer for Dynatrace Managed</a></li>
-<li><a href="/managed/managed-cluster/configuration/managed-elevated-permissions" title="Learn how to configure Dynatrace Managed elevated permissions (sudo, pbrun, dtrun).">Configure elevated permissions in Dynatrace Managed</a></li>
-</ul>
-<h3 id="operation">Operation<a class="headerlink" href="#operation" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="/managed/managed-cluster/operation/migrate-a-cluster" title="Learn how to migrate a cluster from one data center to another.">Migrate a cluster</a></li>
-<li><a href="/managed/managed-cluster/operation/manage-your-monitoring-environments" title="Find out how to create, configure, access, delete, disable, and switch between monitoring environments.">Manage your monitoring environments</a></li>
-<li><a href="/managed/managed-cluster/operation/change-storage-location" title="Learn how to change the location of datastores defined during the install of Dynatrace Managed.">Change storage location</a></li>
-<li><a href="/managed/managed-cluster/operation/apply-operating-system-patches-to-a-node" title="Find out how to perform a graceful server shut down and apply OS patches to a node.">Apply operating system patches to a node</a></li>
-<li><a href="/managed/managed-cluster/operation/update-dynatrace-managed" title="Learn how to schedule automatic updates or perform manual updates of Dynatrace Managed.">Update Dynatrace Managed</a></li>
-<li><a href="/managed/managed-cluster/operation/update-dynatrace-managed-activegate" title="Learn about manual and one-click cluster ActiveGate updates.">Update Cluster ActiveGate</a></li>
-<li><a href="/managed/managed-cluster/operation/back-up-and-restore-a-cluster" title="Understand the steps and commands required to restore a Dynatrace Managed cluster.">Backup and restore a cluster</a></li>
-<li><a href="/managed/managed-cluster/operation/estimating-cluster-backup-size" title="Learn how to estimate the cluster backup size for metrics storage and Elasticsearch storage.">Estimate cluster backup size</a></li>
-<li><a href="/managed/managed-cluster/operation/ip-reconfiguration" title="Learn how to reconfigure your node's IP address.">Reconfigure the IP address of a cluster node</a></li>
-<li><a href="/managed/managed-cluster/operation/remove-a-cluster-node" title="Learn how to remove a new cluster node using either the command prompt or the Cluster Management Console.">Remove a cluster node</a></li>
-<li><a href="/managed/managed-cluster/operation/remove-a-cluster" title="Learn how to remove a cluster and release the associated license.">Remove a cluster</a></li>
-<li><a href="/managed/managed-cluster/operation/diagnostic-archives-for-managed-installations" title="Learn how you can download a support archive that contains configuration and log files from all installed Dynatrace Managed components of a cluster node.">Diagnostic archives for Dynatrace Managed installations</a></li>
-<li><a href="/managed/managed-cluster/operation/start-stop-restart-node" title="Properly shut down and restart Dynatrace Managed nodes using command line parameters.">Start/stop/restart a node</a></li>
-<li><a href="/managed/managed-cluster/operation/start-stop-restart-cluster" title="Properly shut down and restart Dynatrace Managed deployments containing three or more nodes.">Start/stop/restart a cluster</a></li>
-<li><a href="/managed/managed-cluster/operation/export-license-data" title="Learn how to export license data from the Cluster Management Console.">Export license data</a></li>
-</ul>
-<h3 id="api-references">API references<a class="headerlink" href="#api-references" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="/managed/managed-cluster/api-references/cluster-api">Cluster API</a></li>
-<li><a href="/managed/managed-cluster/api-references/mission-control-api" title="Find out about Mission Control API for managing cluster updates and tokens.">Mission Control API</a></li>
-</ul>
-<h3 id="fault-domain-awareness">Fault domain awareness<a class="headerlink" href="#fault-domain-awareness" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="/managed/managed-cluster/fault-domain-awareness/premium-high-availability" title="Read about the concepts behind multi-data center configurations in Managed deployments.">Premium HA for multi-data centers</a></li>
-<li><a href="/managed/managed-cluster/fault-domain-awareness/replicate-nodes-across-dcs" title="Understand the steps required to mirror your cluster nodes across two data centers.">Premium HA - Replicate nodes across DCs</a></li>
-<li><a href="/managed/managed-cluster/fault-domain-awareness/rebuild-data-center" title="Learn how to rebuild data center in a multiple data center deployment.">Premium HA - Rebuild data center</a></li>
-<li><a href="/managed/managed-cluster/fault-domain-awareness/auto-repair">Premium HA multi-datacenter failover</a></li>
-<li><a href="/managed/managed-cluster/fault-domain-awareness/data-center-disaster-recovery-from-backup" title="Learn how to recover lost data center from backup in a multiple data center deployment.">Premium HA - Data center disaster recovery from backup</a></li>
-<li><a href="/managed/managed-cluster/fault-domain-awareness/data-center-disaster-recovery-from-data-center" title="Understand the steps required to spread your cluster to two data centers.">Premium HA - Data center disaster recovery from data center</a></li>
-<li><a href="/managed/managed-cluster/fault-domain-awareness/rack-awareness" title="Understand the steps required to create a rack aware Dynatrace Managed deployment">Rack aware managed deployment</a></li>
-<li><a href="/managed/managed-cluster/fault-domain-awareness/rack-aware-conversion-using-replication" title="Learn how to download and convert Dynatrace Managed cluster to rack aware using the expansion method.">Rack aware conversion using replication</a></li>
-<li><a href="/managed/managed-cluster/fault-domain-awareness/rack-aware-conversion-using-restore" title="Learn how to download and convert a Dynatrace Managed cluster to rack aware using the restore method.">Rack aware conversion using restore</a></li>
-</ul>
-<h3 id="self-monitoring">Self-monitoring<a class="headerlink" href="#self-monitoring" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="/managed/managed-cluster/self-monitoring/local-self-monitoring" title="Learn how to use local self-monitoring environment to gain additional insights into your Dynatrace Managed cluster health.">Local self-monitoring environment</a></li>
-<li><a href="/managed/managed-cluster/self-monitoring/hosted-self-monitoring" title="Learn how to use hosted self-monitoring environment to gain additional insights into your Dynatrace Managed cluster health.">Hosted self-monitoring environment</a></li>
-<li><a href="/managed/managed-cluster/self-monitoring/private-self-monitoring" title="Learn how to set up and configure a private self-monitoring environment to gain additional insights into your Dynatrace Managed cluster health.">Private self-monitoring environment</a></li>
-</ul>
+<h1 id="dynatrace-managed">Кластер Dynatrace Managed<a class="headerlink" href="#dynatrace-managed" title="Permanent link">&para;</a></h1>
+<p>Руководство по управлению кластером.</p>
+<h2 id="_1">Архитектура кластера<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│            Load Balancer                │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└────────────────┬────────────────────────┘
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                 │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    ┌────────────┼────────────┐
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    │            │            │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>┌───▼───┐   ┌───▼───┐   ┌───▼───┐
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│ Node 1│   │ Node 2│   │ Node 3│
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│ Active│   │ Active│   │ Active│
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>└───────┘   └───────┘   └───────┘
+</code></pre></div>
+<h2 id="_2">Добавление узла<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Установите Dynatrace Managed на новый сервер</li>
+<li>При установке укажите "Join existing cluster"</li>
+<li>Введите IP первого узла кластера</li>
+<li>Подтвердите в CMC</li>
+</ol>
+<h2 id="_3">Управление узлами<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">Просмотр состояния<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># На любом узле</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/opt/dynatrace-managed/cluster/status.sh
+</code></pre></div>
+<h3 id="_5">Удаление узла<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Откройте CMC</li>
+<li><strong>Cluster → Nodes</strong></li>
+<li>Выберите узел → <strong>Remove</strong></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Внимание</p>
+<p>Минимум 3 узла для production!</p>
+</div>
+<h2 id="_6">Масштабирование<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Размер кластера</th>
+<th>Узлов</th>
+<th>RAM/узел</th>
+<th>Хостов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small</td>
+<td>3</td>
+<td>32 GB</td>
+<td>до 100</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>5</td>
+<td>64 GB</td>
+<td>до 500</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>7+</td>
+<td>128 GB</td>
+<td>1000+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_7">Балансировка нагрузки<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Рекомендуемые решения:
+- HAProxy
+- NGINX
+- F5 Big-IP
+- AWS ALB / Azure LB</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
