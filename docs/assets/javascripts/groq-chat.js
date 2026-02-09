@@ -4,8 +4,8 @@
  * В 10 РАЗ БЫСТРЕЕ обычных AI!
  */
 
-// Configuration - API key should be set via GitHub Secrets and injected at build time
-const GROQ_API_KEY = window.GROQ_API_KEY || 'YOUR_GROQ_API_KEY_HERE';
+// Configuration - Groq API (Llama 3.1 70B - бесплатно и супер быстро!)
+const GROQ_API_KEY = '***GROQ_KEY_REMOVED***';
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 // Create chat widget
