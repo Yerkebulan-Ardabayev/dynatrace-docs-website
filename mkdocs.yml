@@ -12,7 +12,6 @@ edit_uri: ""
 theme:
   name: material
   language: ru
-  custom_dir: overrides
   
   palette:
     - media: "(prefers-color-scheme: dark)"
