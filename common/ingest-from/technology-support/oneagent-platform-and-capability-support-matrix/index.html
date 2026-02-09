@@ -1,0 +1,2313 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Полная документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/common/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="ru">
+        
+          <link rel="alternate" href="/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>OneAgent platform and capability support matrix - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oneagent-platform-and-capability-support-matrix" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OneAgent platform and capability support matrix
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Выберите язык">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../saas-reference/" class="md-tabs__link">
+          
+  
+  
+  📖 SaaS (справочно)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Установка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/installation/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/installation/requirements.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/installation/cluster-nodes.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Настройка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/configuration/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обслуживание
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/operations/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Кластер
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/cluster/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общие разделы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../davis-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS (справочно)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📖 SaaS (справочно)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS - Справочник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="oneagent-platform-and-capability-support-matrix">OneAgent platform and capability support matrix<a class="headerlink" href="#oneagent-platform-and-capability-support-matrix" title="Permanent link">&para;</a></h1>
+<h1 id="oneagent-platform-and-capability-support-matrix_1">OneAgent platform and capability support matrix<a class="headerlink" href="#oneagent-platform-and-capability-support-matrix_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>13-min read</li>
+<li>Updated on Oct 15, 2025</li>
+</ul>
+<p>This page describes which capabilities are supported by OneAgent on different operating systems and platforms.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GA</strong></td>
+<td>Generally available and fully supported.</td>
+</tr>
+<tr>
+<td><strong>Preview</strong></td>
+<td>These features are in the final stages of development and are ready to be previewed. Preview features aren't production-ready and they aren't officially supported.</td>
+</tr>
+<tr>
+<td><strong>Future</strong></td>
+<td>A feature or technology support that is either on the roadmap or may be considered on-demand.</td>
+</tr>
+<tr>
+<td><strong>Not planned</strong></td>
+<td>A feature or technology support that Dynatrace does not currently plan to pursue.</td>
+</tr>
+<tr>
+<td>n/a</td>
+<td>Not applicable</td>
+</tr>
+</tbody>
+</table>
+<h2 id="operating-systems">Operating systems<a class="headerlink" href="#operating-systems" title="Permanent link">&para;</a></h2>
+<p>The tables below contain information about the supported OneAgent capabilities for various supported operating systems. Note that Alpine Linux is supported in containers only, see <a href="#musl">Alpine Linux (musl libc) based containers</a>.</p>
+<h3 id="code-modules">Code modules<a class="headerlink" href="#code-modules" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Code module</th>
+<th><a href="/docs/ingest-from/technology-support#windows" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Windows</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux x64</a></th>
+<th><a href="#musl">Alpine Linux x64</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux ARM64 (AArch64)</a></th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">AIX PPC</a></th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Solaris SPARC/x86</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux PPC-LE (64bit)</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux s390x</a></th>
+<th><a href="/docs/ingest-from/technology-support/mainframe-technology-support" title="Learn which technologies Dynatrace supports for Mainframe monitoring.">z/OS</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/java" title="Learn about all aspects of Dynatrace support for Java application monitoring.">Java</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-1-def">1</a></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-2-def">2</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/dotnet" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET and .NET Core</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-1-def">1</a></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/dotnet" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET Framework</a></td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/nodejs" title="Read about Dynatrace support for Node.js applications.">Node.js</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-1-def">1</a></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-2-def">2</a></td>
+<td></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-1-def">1</a></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-1-def">1</a></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/go" title="Read an overview of Dynatrace support for Go applications.">Go</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-1-def">1</a></td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Apache, IHS</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-1-def">1</a></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-2-def">2</a></td>
+<td></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>NGINX</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-1-1-def">1</a></td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Microsoft IIS</td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p><a href="/docs/ingest-from/setup-on-k8s/how-it-works#classic" title="In-depth description on how the deployment on Kubernetes works.">Classic full-stack mode</a> is not supported for <a href="#musl">Alpine Linux (musl libc) based containers</a>. Please <a href="/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-cloud-native" title="Migrate your Dynatrace deployment from classic full-stack to cloud-native full-stack mode.">migrate</a> to the <a href="/docs/ingest-from/setup-on-k8s/how-it-works#cloud-native" title="In-depth description on how the deployment on Kubernetes works.">Cloud-native full-stack</a>.</p>
+<p>2</p>
+<p><a href="#musl">Alpine Linux (musl libc) based containers</a> are not supported.</p>
+<h3 id="ibm-technologies">IBM technologies<a class="headerlink" href="#ibm-technologies" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Code module</th>
+<th><a href="/docs/ingest-from/technology-support#windows" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Windows</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux x64</a></th>
+<th><a href="#musl">Alpine Linux x64</a></th>
+<th>Linux ARM64 (AArch64)</th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">AIX PPC</a></th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Solaris SPARC/x86</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux PPC-LE (64bit)</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux s390x</a></th>
+<th><a href="/docs/ingest-from/technology-support/mainframe-technology-support" title="Learn which technologies Dynatrace supports for Mainframe monitoring.">z/OS</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IBM App Connect Enterprise</td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IBM Integration Bus</td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IBM CICS</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td>IBM IMS</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="oneagent-sdk">OneAgent SDK<a class="headerlink" href="#oneagent-sdk" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>OneAgent SDK</th>
+<th><a href="/docs/ingest-from/technology-support#windows" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Windows</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux x64</a></th>
+<th><a href="#musl">Alpine Linux x64</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux ARM64 (AArch64)</a></th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">AIX PPC</a></th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Solaris SPARC/x86</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux PPC-LE (64bit)</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux s390x</a></th>
+<th><a href="/docs/ingest-from/technology-support/mainframe-technology-support" title="Learn which technologies Dynatrace supports for Mainframe monitoring.">z/OS</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OneAgent SDK for C/C++</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-2-1-def">1</a></td>
+<td><a href="#fn-2-1-def">1</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OneAgent SDK for Java</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OneAgent SDK for .NET</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>OneAgent SDK for Node.js</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>OneAgent SDK for Python</td>
+<td></td>
+<td></td>
+<td><a href="#fn-2-1-def">1</a></td>
+<td><a href="#fn-2-1-def">1</a></td>
+<td><a href="#fn-2-1-def">1</a></td>
+<td><a href="#fn-2-1-def">1</a></td>
+<td><a href="#fn-2-1-def">1</a></td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>We added support for Python, C++, and other runtimes via <a href="/docs/ingest-from/opentelemetry" title="Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.">OpenTelemetry</a> instead of the Dynatrace SDK (which is Dynatrace-proprietary). This is available on any platform.</p>
+<h3 id="other-modules">Other modules<a class="headerlink" href="#other-modules" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th><a href="/docs/ingest-from/technology-support#windows" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Windows</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux x64</a></th>
+<th><a href="#musl">Alpine Linux x64</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux ARM64 (AArch64)</a></th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">AIX PPC</a></th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Solaris SPARC/x86</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux PPC-LE (64bit)</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux s390x</a></th>
+<th><a href="/docs/ingest-from/technology-support/mainframe-technology-support" title="Learn which technologies Dynatrace supports for Mainframe monitoring.">z/OS</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS module<a href="#fn-3-1-def">1</a></td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Network module</td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Log module</td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td><a href="#fn-3-2-def">2</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JMX extensions</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Live Debugger <a href="#fn-3-3-def">3</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>OS module is required for out-of-the-box infrastructure alerting capabilities.</p>
+<p>2</p>
+<p>Log module support is limited to custom log sources, no log auto-detection is performed.</p>
+<p>3</p>
+<p>Supported for Java versions 8-23. Node.js version 22 is supported starting OneAgent version 1.313+.</p>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th><a href="/docs/ingest-from/technology-support#windows" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Windows</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux x64</a></th>
+<th><a href="#musl">Alpine Linux x64</a></th>
+<th>Linux ARM64 (AArch64)</th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">AIX PPC</a></th>
+<th><a href="/docs/ingest-from/technology-support#unix" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Solaris SPARC/x86</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux PPC-LE (64bit)</a></th>
+<th><a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Linux s390x</a></th>
+<th><a href="/docs/ingest-from/technology-support/mainframe-technology-support" title="Learn which technologies Dynatrace supports for Mainframe monitoring.">z/OS</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto-update of all modules</td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#auto-injection">Auto-injection</a> of code modules</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>n/a<a href="#fn-4-1-def">1</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#universal-injection">Universal injection</a> of code modules</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#auto-injection">Auto-injection</a> for containers</td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Non-privileged</td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Global auto-injection isn't possible for AIX. Instead, use the <a href="#universal-injection">universal injection</a> approach, as described on the <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix" title="Learn how to download and install Dynatrace OneAgent on AIX.">AIX OneAgent installation page</a>.</p>
+<h2 id="enterprise-cloud-platforms">Enterprise cloud platforms<a class="headerlink" href="#enterprise-cloud-platforms" title="Permanent link">&para;</a></h2>
+<p>The tables below contain information about the supported OneAgent capabilities for various supported Cloud platforms.</p>
+<p>Cloud Foundry application-only also applies to <a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring" title="Install OneAgent on SAP Business Technology Platform.">SAP Cloud</a>.</p>
+<p>OneAgent deployment via container (OneAgent Operator) on OpenShift and Kubernetes has some <a href="#agent-container">limitations</a> compared to standard OneAgent installation.</p>
+<h3 id="code-modules_1">Code modules<a class="headerlink" href="#code-modules_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Code module<a href="#fn-5-1-def">1</a></th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry" title="Install OneAgent on Cloud Foundry with BOSH.">Cloud Foundry</a></th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring" title="Install OneAgent on Cloud Foundry.">Cloud Foundry application-only</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">OpenShift</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">OpenShift application-only</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Kubernetes</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">Kubernetes application-only</a></th>
+<th>Azure ServiceFabric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/java" title="Learn about all aspects of Dynatrace support for Java application monitoring.">Java</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/dotnet" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET and .NET Core</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-5-1-def">1</a></td>
+<td></td>
+<td><a href="#fn-5-1-def">1</a></td>
+<td><a href="#fn-5-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/dotnet" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET Framework</a></td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/nodejs" title="Read about Dynatrace support for Node.js applications.">Node.js</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/python" title="Learn how to instrument your Python application with OpenTelemetry as a data source for Dynatrace.">Python</a></td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/go" title="Read an overview of Dynatrace support for Go applications.">Go</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-5-1-def">1</a></td>
+<td></td>
+<td><a href="#fn-5-1-def">1</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Apache, IHS</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-5-2-def">2</a></td>
+</tr>
+<tr>
+<td>NGINX</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-5-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Out-of-the-box infrastructure alerting capabilities are not supported for application-only code modules.</p>
+<p>2</p>
+<p><a href="#musl">Alpine Linux (musl libc) based containers</a> are not supported.</p>
+<h3 id="oneagent-sdk_1">OneAgent SDK<a class="headerlink" href="#oneagent-sdk_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>OneAgent SDK</th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry" title="Install OneAgent on Cloud Foundry with BOSH.">Cloud Foundry</a></th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring" title="Install OneAgent on Cloud Foundry.">Cloud Foundry application-only</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">OpenShift</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">OpenShift application-only</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Kubernetes</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">Kubernetes application-only</a></th>
+<th>Azure ServiceFabric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OneAgent SDK for C/C++</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OneAgent SDK for Python</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-modules_1">Other modules<a class="headerlink" href="#other-modules_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry" title="Install OneAgent on Cloud Foundry with BOSH.">Cloud Foundry</a></th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring" title="Install OneAgent on Cloud Foundry.">Cloud Foundry application-only</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">OpenShift</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">OpenShift application-only</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Kubernetes</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">Kubernetes application-only</a></th>
+<th>Azure ServiceFabric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS module</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td>Network module</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td>Log module</td>
+<td></td>
+<td><a href="#fn-6-1-def">1</a></td>
+<td></td>
+<td><a href="#fn-6-1-def">1</a></td>
+<td></td>
+<td><a href="#fn-6-1-def">1</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Extension module</td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td>Live Debugger</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>This is supported via the <a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data" title="Learn how to acquire log data in Dynatrace Log Monitoring.">FluentD integration</a> available in Dynatrace</p>
+<h3 id="features_1">Features<a class="headerlink" href="#features_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry" title="Install OneAgent on Cloud Foundry with BOSH.">Cloud Foundry</a></th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring" title="Install OneAgent on Cloud Foundry.">Cloud Foundry application-only</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">OpenShift</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">OpenShift application-only</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Kubernetes</a></th>
+<th><a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">Kubernetes application-only</a></th>
+<th>Azure ServiceFabric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto-update of all modules</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#auto-injection">Auto-injection</a> of code modules</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#universal-injection">Universal injection</a> of code modules</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#auto-injection">Auto-injection</a> for containers</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td>Non-privileged</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cloud-application-platforms">Cloud application platforms<a class="headerlink" href="#cloud-application-platforms" title="Permanent link">&para;</a></h2>
+<p>The tables below contain information about the supported OneAgent capabilities for supported Cloud application platforms.</p>
+<h3 id="code-modules_2">Code modules<a class="headerlink" href="#code-modules_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Code module</th>
+<th>AWS Lambda</th>
+<th><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions" title="Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.">Azure Functions</a></th>
+<th><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring" title="Learn how to configure OneAgent for monitoring Azure Spring Apps.">Azure Spring Apps</a></th>
+<th><a href="/docs/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring" title="Monitor Azure with Dynatrace">Azure App services</a></th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/heroku" title="Install OneAgent to monitor applications running on Heroku.">Heroku</a></th>
+<th><a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine" title="Install OneAgent on Google App Engine clusters for application-only monitoring.">Google App Engine</a></th>
+<th><a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate" title="Install OneAgent on AWS Fargate.">AWS Fargate</a></th>
+<th><a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun" title="Monitor Java application deployed on Google Cloud Run managed.">Google Cloud Run Managed</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/java" title="Learn about all aspects of Dynatrace support for Java application monitoring.">Java</a></td>
+<td><a href="#fn-7-1-def">1</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-7-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/dotnet" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET and .NET Core</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-7-3-def">3</a></td>
+<td><a href="#fn-7-3-def">3</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/dotnet" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET Framework</a></td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/nodejs" title="Read about Dynatrace support for Node.js applications.">Node.js</a></td>
+<td><a href="#fn-7-1-def">1</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="#fn-7-2-def">2</a></td>
+</tr>
+<tr>
+<td>Python</td>
+<td><a href="#fn-7-1-def">1</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PHP</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/technology-support/application-software/go" title="Read an overview of Dynatrace support for Go applications.">Go</a></td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td><a href="#fn-7-3-def">3</a></td>
+<td><a href="#fn-7-3-def">3</a></td>
+<td><a href="#fn-7-3-def">3</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Microsoft IIS</td>
+<td>n/a</td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Both 64-bit ARM (<a href="https://aws.amazon.com/ec2/graviton/">AWS Graviton2 processorsï»¿</a>) and 64-bit x86 architectures are supported.</p>
+<p>2</p>
+<p>Both Google Cloud Run execution environments are supported, with some restrictions.</p>
+<p>3</p>
+<p><a href="#musl">Alpine Linux (musl libc) based containers</a> are not supported.</p>
+<h3 id="features_2">Features<a class="headerlink" href="#features_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>AWS Lambda</th>
+<th><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions" title="Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.">Azure Functions</a></th>
+<th><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring" title="Learn how to configure OneAgent for monitoring Azure Spring Apps.">Azure Spring Apps</a></th>
+<th><a href="/docs/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring" title="Monitor Azure with Dynatrace">Azure App services</a></th>
+<th><a href="/docs/ingest-from/setup-on-container-platforms/heroku" title="Install OneAgent to monitor applications running on Heroku.">Heroku</a></th>
+<th><a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine" title="Install OneAgent on Google App Engine clusters for application-only monitoring.">Google App Engine</a></th>
+<th><a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate" title="Install OneAgent on AWS Fargate.">AWS Fargate</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#universal-injection">Universal injection</a> of code modules</td>
+<td>n/a</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="auto-injection-of-code-modules">Auto-injection of code modules<a class="headerlink" href="#auto-injection-of-code-modules" title="Permanent link">&para;</a></h2>
+<p>Auto-injection automatically injects code modules into monitored applications in a completely transparent and automatic fashion that requires no manual configuration or intervention. This approach to deep monitoring is supported for Windows (Docker only) and Linux. Among other things, auto-injection also automatically injects code modules into Docker, containerd, CRI-O, and Cloud Foundry Garden containers. This means that you don't have to change any container images on monitored platforms to gain full insights.</p>
+<h2 id="universal-injection-of-code-modules">Universal injection of code modules<a class="headerlink" href="#universal-injection-of-code-modules" title="Permanent link">&para;</a></h2>
+<p>Universal injection allows Dynatrace to inject code modules into applications in a unified way across multiple platforms, in situations where auto-injection isn't available. This applies to AIX and Solaris as well as to Cloud Foundry application-only, OpenShift application-only, Kubernetes application-only, Heroku, Google App Engine, AWS Fargate, and AWS App Runner.</p>
+<p>The feature is described on the <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix" title="Learn how to download and install Dynatrace OneAgent on AIX.">AIX</a>/<a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris" title="Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).">Solaris</a> OneAgent installation page. It is also part of the <a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">OpenShift application-only</a>/<a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">Kubernetes application-only</a> integration and the container platforms <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine" title="Install OneAgent on Google App Engine clusters for application-only monitoring.">Google App Engine</a> and <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate" title="Install OneAgent on AWS Fargate.">AWS Fargate</a>.</p>
+<p>Outside of these specific use cases, this feature isn't to be used directly!</p>
+<p>The <a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring" title="Install OneAgent on Cloud Foundry.">Cloud Foundry buildpack</a> integrations and <a href="/docs/ingest-from/setup-on-container-platforms/heroku" title="Install OneAgent to monitor applications running on Heroku.">Dynatrace Heroku</a> buildpack use this transparently under the hood without any need for manual intervention or configuration.</p>
+<p>Any form of undocumented injection (for example, older forms of manual injection) aren't supported.</p>
+<h2 id="alpine-linux-musl-libc-based-containers">Alpine Linux (musl libc) based containers<a class="headerlink" href="#alpine-linux-musl-libc-based-containers" title="Permanent link">&para;</a></h2>
+<p>Dynatrace supports <a href="/docs/ingest-from/technology-support#linux" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Alpine Linux (musl libc) based containers</a> on monitored Linux x86_64 hosts. This includes OpenShift, Kubernetes and Cloud Foundry installations and all forms of Docker environments. In these environments Dynatrace OneAgent <a href="#auto-injection">automatically injects</a> the code modules into the applications running inside the container.</p>
+<p>Alpine Linux is also supported in <a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">OpenShift application only</a> and <a href="/docs/ingest-from/setup-on-k8s/deployment/application-observability" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">Kubernetes application only</a> integrations as well as when pushing Docker images to Cloud Foundry and Heroku. This happens via the <a href="#universal-injection">universal injection</a>.</p>
+<p>Dynatrace OneAgent doesn't support direct installation in Alpine based Linux systems.</p>
+<p>Dynatrace OneAgent doesn't support monitoring binaries built against GNU C Library (glibc) running on Alpine based Linux systems using a GNU C Library (glibc) compatibility package like gcompat (GNU C Library compatibility layer for musl) or libc6-compat (compatibility libraries for glibc).</p>
+<h2 id="oneagent-deployment-via-dynatrace-operator">OneAgent deployment via Dynatrace Operator<a class="headerlink" href="#oneagent-deployment-via-dynatrace-operator" title="Permanent link">&para;</a></h2>
+<p>Dynatrace Operator deploys the OneAgent to Kubernetes or OpenShift clusters through a containerized approach. There are some <a href="/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container" title="Install and update Dynatrace OneAgent as a Docker container.">limitations</a> associated with deploying OneAgent via Dynatrace Operator. These include:</p>
+<ul>
+<li>The auto-update mechanism of modules is disabled for container rollouts. However, Dynatrace Operator ensures the restart of OneAgent pods to receive OneAgent updates.</li>
+<li>Auto-injection of code-modules is disabled for native (i.e., non-containerized) processes.</li>
+<li>JMX extensions aren't supported for technologies outside of containers</li>
+</ul>
+<p>For a detailed overview of limitations, see <a href="/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container" title="Install and update Dynatrace OneAgent as a Docker container.">Set up Dynatrace OneAgent as a Docker container</a>.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/technology-support" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Technology support</a></li>
+<li><a href="/docs/ingest-from/technology-support/known-solutions-and-workarounds" title="Check the solutions for reported problems regarding various technologies.">Known solutions and workarounds</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Documentation
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1545 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Полная документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/common/whats-new/preview-releases/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="ru">
+        
+          <link rel="alternate" href="/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Preview program - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preview-program" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Preview program
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Выберите язык">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../saas-reference/" class="md-tabs__link">
+          
+  
+  
+  📖 SaaS (справочно)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Установка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/installation/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/installation/requirements.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/installation/cluster-nodes.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Настройка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/configuration/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обслуживание
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/operations/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Кластер
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/cluster/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общие разделы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../davis-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS (справочно)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📖 SaaS (справочно)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS - Справочник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="preview-program">Preview program<a class="headerlink" href="#preview-program" title="Permanent link">&para;</a></h1>
+<h1 id="preview-program_1">Preview program<a class="headerlink" href="#preview-program_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Updated on Feb 04, 2026</li>
+</ul>
+<p>We value your insights! By participating in product previews, you become a key part of our development process, ensuring that our solutions continue to meet your needs. Below, you'll find a list of new enhancements that you can access before they are publicly availableâjoin today and be part of our journey!</p>
+<h2 id="preview-terms">Preview Terms<a class="headerlink" href="#preview-terms" title="Permanent link">&para;</a></h2>
+<p>Your use of previewed (i.e. not publicly available) Dynatrace technology (each a "Preview") is governed by the <a href="https://www.dynatrace.com/company/trust-center/customers/subscription-agreement/">Dynatrace Subscription Agreementï»¿</a> or, if you and Dynatrace entered into an executed subscription agreement, the executed subscription agreement (in each case, the "Subscription Agreement"), as supplemented by the following:</p>
+<ul>
+<li>A Preview may not reach GA status, and Dynatrace may modify or terminate Preview access at any time. If a Preview will consume licensing units, you'll be informed before accessing the Preview. Previews that can be used free of charge during the Preview period may consume licensing units if/when they reach GA status.</li>
+<li>Previews must be treated as Dynatrace's confidential information under the relevant provisions of the Subscription Agreement. Previews are provided by Dynatrace "AS IS" without any service levels, support commitments, representations or warranties, or indemnity obligations, regardless of whether specified in your Subscription Agreement. Dynatrace shall have no liability of any kind with respect to Preview use unless otherwise required by applicable law, in which case Dynatrace's liability shall not exceed $1,000.00. Dynatrace shall use commercially reasonable efforts to address reports that a Preview does not conform with applicable Documentation but shall not be obligated to correct or replace such non-conformities.</li>
+<li>If you choose to provide feedback, Dynatrace may use the feedback without restriction but shall not publicly identify you without your consent.</li>
+<li>Any inconsistencies between the terms of your Subscription Agreement and these terms shall be resolved in favor of these terms.</li>
+<li>
+<p>If you do not accept the Preview Terms, you may not access any Preview.</p>
+</li>
+<li>
+<p>Agentic and Generative AI Previews: Dynatrace may send your prompts to the LLM providers in the regions published in <a href="/docs/dynatrace-intelligence/copilot/copilot-data-privacy#prompt-data" title="Learn about Dynatrace Intelligence generative AI data privacy and security policy.">Dynatrace Intelligence generative AI data privacy and security</a>. The prompts are not retained by the LLM providers, however, Dynatrace may store them in the United States in order to provide and monitor the Preview experience and quality. Your acceptance of the Preview Terms for Agentic and Generative AI Previews will apply to all future Agentic and Generative AI Previews that Dynatrace offers under the same terms (i.e. if you wish to participate in any future Agentic and Generative AI Previews that may be offered under these terms, you will not be required to again accept the terms).</p>
+</li>
+</ul>
+<h2 id="join-a-preview">Join a preview<a class="headerlink" href="#join-a-preview" title="Permanent link">&para;</a></h2>
+<p>Currently, you can request access for the following enhancements:</p>
+<h3 id="database-extensions-on-kubernetes">Database Extensions on Kubernetes<a class="headerlink" href="#database-extensions-on-kubernetes" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.330+</p>
+<p>Do you want to run your database monitoring inside a Kubernetes cluster? Are you running databases on Kubernetes and wish your SQL-based extensions could run natively too? Want an easier, UI/API-driven way to deploy and scale them? Join our preview and help shape the future of database extensions on Kubernetes.</p>
+<p>We are enabling support in the Extension Framework 2.0 to run Database Extensions natively on K8s. Customers can use the UI, API (Terraform) for deployment. Dynatrace Operator 1.8 is required.</p>
+<p><a href="https://forms.office.com/r/9Lx8MUSixv">Request access here</a></p>
+<h3 id="extended-retention-for-rum-synthetic">Extended Retention for RUM &amp; Synthetic<a class="headerlink" href="#extended-retention-for-rum-synthetic" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.330+</p>
+<p>Available to DPS SaaS customers, extended retention lets you keep RUM and Synthetic data beyond the standard 35 days, up to 13 months.</p>
+<p>This enables new use cases such as long-term performance trending, seasonal analysis, and fraud detection, and helps meet audit-related data compliance requirements.</p>
+<p>Retained data can be queried in the core <a href="/docs/observe/digital-experience/new-rum-experience" title="Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.">Digital Experience apps</a>, or via <a href="/docs/analyze-explore-automate/dashboards-and-notebooks" title="Dashboards and Notebooks">Dashboards and Notebooks</a>.</p>
+<p>For more information, see <a href="/docs/license/capabilities/digital-experience-monitoring-query-retain/retention-dem" title="Learn how your DEM-extended retention is consumed and billed before and after Preview.">Calculate your consumption of Digital Experience Monitoring (DEM) - Retain</a>.</p>
+<p><a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=o-PrcDBbXUOdZ3cW10yhkGaiGvQH3Q1Mssy-CUGlJ9dURExYSUozVkNSMExLUkk1RkVDTzZJNThDUi4u&amp;route=shorturl">Request access</a></p>
+<h3 id="user-interactions">User Interactions<a class="headerlink" href="#user-interactions" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.330+</p>
+<p>User Interactions introduces a new class of frontend RUM events such as clicks, taps, scrolls, drags, zooms, and other UI gestures, that were not captured in Classic RUM. These enable Dynatrace to collect unprecedented rich behavioural analytics while the feature is still being refined. Customers gain early visibility into use cases such as behavioral funnels, feature adoption, retention analysis, and deeper UX insights.</p>
+<p>For more information, see <a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions">User Interactions documentation</a>.</p>
+<h3 id="dem-query">DEM Query<a class="headerlink" href="#dem-query" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.330+</p>
+<p>With the DEM Query Early Access program, customers can execute DEM-related DQL queries across Dashboards, Notebooks, Workflows, Custom Apps, SLOs, and the API that use DEM data without incurring query-based charges during the early access phase. Customers can explore and validate how RUM data on Grail behaves when queried at scale and consolidate their upcoming query-consumption patterns. An out-of-the-box dashboard will automatically be deployed to help customers track query usage.</p>
+<p>For more information, see <a href="/docs/license/capabilities/digital-experience-monitoring-query-retain/queries-dem" title="Learn how your consumption of the DEM-related DQL queries is consumed and billed before and after Early Access.">Digital Experience Monitoring (DEM) Query</a>.</p>
+<p><img alt="DQL" src="https://cdn.bfldr.com/B686QPH3/at/t9h436nzjqq6cww99sqs6z/DQL.svg?auto=webp&amp;width=72&amp;height=72" title="DQL" /></p>
+<h3 id="dynatrace-intelligence-agentic-workflows">Dynatrace Intelligence Agentic workflows<a class="headerlink" href="#dynatrace-intelligence-agentic-workflows" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.331+</p>
+<p>Turn workflows into agentic automations with the Dynatrace Intelligence (Preview) action in <img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong>.</p>
+<ul>
+<li>Embed prompts that interpret observability and security signals</li>
+<li>Summarize data findings and suggest remediation paths in plain language</li>
+<li>Chain our generative AI action with existing workflow actions to automate ticket creation and targeted notifications</li>
+<li>Explore our ready-made <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows" title="Basic concepts of using agentic workflows to automate complex, data-driven tasks more flexibly by leveraging generative and agentic AI.">Agentic workflows</a></li>
+<li>Optionally combine with Dynatrace Intelligence forecasting to support use cases such as proactive scaling based on demand</li>
+</ul>
+<p>For more information, see <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows" title="Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.">Dynatrace Intelligence (Preview) app</a>.</p>
+<p><a href="https://forms.office.com/r/PmFzJkRkDr">Request access</a></p>
+<p>Latest Dynatrace <img alt="Dot" src="https://dt-cdn.net/images/dot-a32314f261.svg" title="Dot" /> Disclaimer: Using Dynatrace Intelligence (Preview) can result in consumption when querying data.</p>
+<h3 id="forwarding-of-logs-to-cloud-storage">Forwarding of Logs to Cloud Storage<a class="headerlink" href="#forwarding-of-logs-to-cloud-storage" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.331+</p>
+<p>With Log Forwarding, OpenPipeline centralizes routing of logs to external cloud storage, either at ingest or after processing, while ensuring consistent governance and integration.</p>
+<ul>
+<li>Centralized filtering and enrichment for all logs, whether kept in Dynatrace or forwarded.</li>
+<li>Compliance and auditing supported from a single control point.</li>
+<li>Simplified migration and historical analysis workflows via cloud storage.</li>
+<li>Integrating logs with external tools, such as SIEM, directly from cloud storage, without the need for third party tools.</li>
+<li>Improved control, transparency, and cost efficiency through unified forwarding policies.</li>
+</ul>
+<p>This is available to Dynatrace SaaS customers on AWS or Azure with <a href="/docs/license/capabilities/log-analytics" title="Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.">Logs powered by Grail (DPS)</a> licensing capabilities.</p>
+<p>Preview opens in February 2026.</p>
+<p><a href="https://forms.office.com/r/zVzTi99BZq">Request access</a></p>
+<p>Latest Dynatrace <img alt="Dot" src="https://dt-cdn.net/images/dot-a32314f261.svg" title="Dot" /> Forwarding is not charged during preview. Once the feature is generally available, it will incur license fees.</p>
+<p><img alt="OpenPipeline" src="https://cdn.bfldr.com/B686QPH3/at/rp4vgwhpjx5rv6rm53mk88cc/OpenPipeline.svg?auto=webp&amp;width=72&amp;height=72" title="OpenPipeline" /></p>
+<h3 id="sensitive-data-scanner">Sensitive Data Scanner<a class="headerlink" href="#sensitive-data-scanner" title="Permanent link">&para;</a></h3>
+<p>Dynatrace SaaS version 1.328+</p>
+<p>The Sensitive Data Scanner available in <img alt="Sensitive Data Center" src="https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png" title="Sensitive Data Center" /> <strong>Sensitive Data Center</strong> monitors Grail for unintentionally ingested sensitive data in logs.</p>
+<ul>
+<li>Easy to set up, it delivers transparency on sensitive data ingestion. Helping you to reduce risk and simplify compliance.</li>
+<li>You can validate masking configuration, quickly identify, and take precise corrective actions for both future data ingestion and sensitive data that has already been ingested.</li>
+</ul>
+<p>The preview is available to customers with Latest Dynatrace and DPS licensing.</p>
+<p><a href="https://forms.office.com/r/7Zt0jLdSLA">Request access</a></p>
+<p><img alt="Sensitive Data Center" src="https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png" title="Sensitive Data Center" /></p>
+<h3 id="manage-encryption-keys-byok">Manage encryption keys (BYOK)<a class="headerlink" href="#manage-encryption-keys-byok" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.331+</p>
+<p>Dynatrace now allows you to bring your own AWS encryption key.</p>
+<p>With this feature, you can manage your own encryption key outside of Dynatrace.
+Your self-managed key can be used to encrypt and decrypt certain data that is stored in your Dynatrace environment.
+This includes all Grail data, and documents such as notebooks, workflows and dashboards.</p>
+<p>This is currently available only for customers with Dynatrace SaaS hosted on AWS.</p>
+<p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=o-PrcDBbXUOdZ3cW10yhkGnvB715bWpPhAdgeewUnapUOUgxTk1UVEtETDRSWVRGVzZVRFlYT0xBNS4u">Request access</a></p>
+<p>For more information, see <a href="/docs/manage/account-management/settings/encryption-keys" title="Bring your own key to use an AWS encryption key with Dynatrace.">Manage AWS encryption keys</a>.</p>
+<p>Latest Dynatrace</p>
+<h3 id="new-ai-observability-experience">New AI Observability Experience<a class="headerlink" href="#new-ai-observability-experience" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.326+</p>
+<p>The new AI Observability experience delivers end-to-end visibility into AI, LLM, and agentic workloads, enriching telemetry in the context of your existing stack.</p>
+<p>With <img alt="AI Observability" src="https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png" title="AI Observability" /> <strong>AI Observability</strong>, you'll gain:</p>
+<ul>
+<li>Observability for 20+ AI, Agent, and LLM technologies.</li>
+<li>Overview of your multicloud and multi-AI workloads setup, with visibility into performance, cost, errors, and latency metrics.</li>
+<li>Visibility into model providers, LLMs, and agent callsâincluding prompts, metrics, guardrails, and traces.</li>
+<li>Intelligent alerting and forecasting for AI loads.</li>
+<li>Dedicated onboarding experience for OpenTelemetry and Cloud Monitoring.</li>
+<li>Ready-made dashboards for AWS, Azure, OpenAI, NVIDIA, Kong, model versioning, and A/B testing.</li>
+</ul>
+<p>The preview is available to customers with Latest Dynatrace and DPS licensing. No sign-up is required.</p>
+<p>For more information, see <a href="/docs/observe/dynatrace-for-ai-observability" title="Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.">AI and LLM Observability</a>.</p>
+<p>Latest Dynatrace <img alt="Dot" src="https://dt-cdn.net/images/dot-a32314f261.svg" title="Dot" /> Consumes DPS commit and incurs code charges on your application.</p>
+<p><img alt="AI Observability" src="https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png" title="AI Observability" /></p>
+<h3 id="new-cloud-platform-monitoring-for-azure">New Cloud Platform Monitoring for Azure<a class="headerlink" href="#new-cloud-platform-monitoring-for-azure" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.326+</p>
+<p>The new Cloud Platform Monitoring for Azure provides a foundation for comprehensive telemetry coverage across Azure services, and enhanced visibility into cloud topology.
+With this update, you can enrich telemetry signals using cloud tags, leverage a revamped <img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong> for centralized monitoring, and take advantage of guided observability tools like ready-made dashboards and alert templates.</p>
+<p>This preview also delivers richer topology data with detailed metadata, full resource configuration, and infrastructure relationships.
+This enables use cases such as resource inventory management, and helps reduce cognitive load for SREs during troubleshooting.
+All cloud platform data is linked with related resources, ensuring deeper insights and better operational context.</p>
+<p><a href="https://forms.cloud.microsoft/r/MaZuREiL3p?origin=lprLink">Request access</a></p>
+<p>Latest Dynatrace <img alt="Dot" src="https://dt-cdn.net/images/dot-a32314f261.svg" title="Dot" /> Consumes DPS commit and incurs Azure Monitor charges on Azure.</p>
+<p><img alt="Azure" src="https://dt-cdn.net/images/azure-512-a93a37d351.png" title="Azure" /></p>
+<h3 id="new-cloud-platform-monitoring-for-google-cloud">New Cloud Platform Monitoring for Google Cloud<a class="headerlink" href="#new-cloud-platform-monitoring-for-google-cloud" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.326+</p>
+<p>The new Cloud Platform Monitoring for Google Cloud offers a robust foundation for comprehensive telemetry coverage across Google Cloud services, delivering enhanced visibility into cloud topology. It is currently in Private Preview, with participants being onboarded on an individual basis.</p>
+<p><a href="https://forms.cloud.microsoft/r/sgY0yN5T23">Request access</a></p>
+<p>Latest Dynatrace <img alt="Dot" src="https://dt-cdn.net/images/dot-a32314f261.svg" title="Dot" /> Consumes DPS commit and incurs Google Cloud charges.</p>
+<p><img alt="Google Cloud" src="https://dt-cdn.net/images/gcp-512-db85a455ae.webp" title="Google Cloud" /></p>
+<h3 id="lookup-data-in-grail">Lookup data in Grail<a class="headerlink" href="#lookup-data-in-grail" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.320+</p>
+<p>Lookup data in Grail lets you enrich your observability data, such as logs, events, traces, or metrics, with lookup tables. You can upload your data as files in text-based formats such as CSV, JSONL, or XML, which are then parsed into a Grail-native format for seamless integration. With lookup data stored in Grail, you can use it in your DQL queries to add additional context to your observability data. The preview is available to customers of the latest Dynatrace with DPS licensing. No sign-up is required.</p>
+<p>For more information, see <a href="/docs/platform/grail/lookup-data" title="Learn about lookup data in Grail.">Lookup data in Grail</a>.</p>
+<p><img alt="Grail" src="https://dt-cdn.net/images/grail-color-81fcaa6de3.svg" title="Grail" /></p>
+<h3 id="sdv2-for-oneagent-on-kubernetes">SDv2 for OneAgent on Kubernetes<a class="headerlink" href="#sdv2-for-oneagent-on-kubernetes" title="Permanent link">&para;</a></h3>
+<p>Dynatrace SaaS version 1.323+</p>
+<p>Service Detection v2 brings powerful unified service detection to OneAgent on Kubernetes, replacing complex multiple service types with a single, attribute-based approach that simplifies how you detect, name, and manage services. This new model provides greater flexibility through resource attributes and DQL matchers, giving you precise control over service boundaries and configuration.</p>
+<p><a href="https://dt-url.net/cb300tiz">Request access</a></p>
+<p>For breaking changes and limitations in Java workloads on Kubernetes in SaaS environmentsâwhere this is already availableâsee this <a href="https://dt-url.net/hr031kj">Dynatrace Community postï»¿</a> before opting in.</p>
+<h3 id="compliance-assistant">Compliance Assistant<a class="headerlink" href="#compliance-assistant" title="Permanent link">&para;</a></h3>
+<p><strong>Compliance Assistant</strong> <img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /> collects information from various sources and applications to maintain real-time visibility into the status of compliance across critical applications and systems.</p>
+<p>The first available compliance use case focuses on the Digital Operational Resilience Act (DORA).</p>
+<p>It leverages the Dynatrace platform's observability, security, and other capabilities, enhanced by hyper-modal Dynatrace Intelligence, to bolster its operational resilience and security posture.</p>
+<p>For more information, see <a href="/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant" title="Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.">Compliance Assistant</a>.</p>
+<p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=o-PrcDBbXUOdZ3cW10yhkLrUfJvfCElMtf4A6-5Fzj9UNU1WRlg2MzgwTVlSRFJaQUdCOFJLVEZLQy4u">Request access</a></p>
+<p><img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /></p>
+<h2 id="completed-previews">Completed previews<a class="headerlink" href="#completed-previews" title="Permanent link">&para;</a></h2>
+<p>Learn about recently completed previews that are now generally available to all Dynatrace customers.</p>
+<h3 id="new-cloud-platform-monitoring-for-aws">New Cloud Platform Monitoring for AWS<a class="headerlink" href="#new-cloud-platform-monitoring-for-aws" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.320+</p>
+<p><a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS)</a></p>
+<p><a href="/docs/ingest-from/amazon-web-services/aws-onboarding" title="Learn about our latest AWS Cloud Platform Monitoring.">The new Cloud Platform Monitoring for AWS</a> provides a foundation for comprehensive telemetry coverage across AWS services, and enhanced visibility into cloud topology.
+With this update, you can enrich telemetry signals using cloud tags, leverage a revamped <a href="/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app" title="Monitor all cloud platforms at once."><img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong></a> for centralized monitoring, and take advantage of guided observability tools like ready-made dashboards and alert templates.</p>
+<p>This preview also delivers richer topology data with detailed metadata, full resource configuration, and infrastructure relationships.</p>
+<p>This enables use cases such as resource inventory management and helps reduce cognitive load for SREs during troubleshooting.</p>
+<p>All cloud platform data is linked with related resources, ensuring deeper insights and better operational context.</p>
+<p>Latest Dynatrace <img alt="Dot" src="https://dt-cdn.net/images/dot-a32314f261.svg" title="Dot" /> Consumes DPS commit and incurs CloudWatch charges on AWS.</p>
+<p><img alt="AWS Cloud Monitoring (Preview)" src="https://dt-cdn.net/hub/aws_eABzzSW.png" title="AWS Cloud Monitoring (Preview)" /></p>
+<h3 id="enhanced-kubernetes-object-visibility">Enhanced Kubernetes Object Visibility<a class="headerlink" href="#enhanced-kubernetes-object-visibility" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.324+ ActiveGate version 1.323+ Dynatrace Operator version 1.7.0+ Kubernetes app 1.33.0+</p>
+<p>Accelerate root cause analysis with deeper Kubernetes object visibility.</p>
+<p>By enabling this preview, you'll gain:</p>
+<ul>
+<li>Visibility into additional Kubernetes objects: Ingress, NetworkPolicies, CRDs, PVCs, PVs, ConfigMaps, and more.</li>
+<li>Access to YAML definitions to debug and validate configurations in real time.</li>
+<li>Ability to query YAMLs across all clusters and namespaces using Dynatrace Query Language (DQL) to instantly surface misconfigurations, missing references, or policy violations across your Kubernetes environment.</li>
+</ul>
+<p>The preview is available to customers of the latest Dynatrace with DPS licensing. No sign-up is required.</p>
+<p>For more information, see <a href="/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview" title="Accelerate root cause analysis with deeper Kubernetes object visibility.">Enhanced Kubernetes Object Visibility</a>.</p>
+<p><img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /></p>
+<h3 id="segments">Segments<a class="headerlink" href="#segments" title="Permanent link">&para;</a></h3>
+<p>Segments help to logically structure and conveniently filter observability data in Grail. With segments, we allow upgrading from management zone filtering in classic Dynatrace, to data segmentation for cross-app filtering on the latest Dynatrace. To focus on the data that matters, you can use Segments to 'block out noise' and examine only a defined set of data.</p>
+<ul>
+<li>General availability: Dynatrace version 1.318+</li>
+<li>Get started: <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a></li>
+</ul>
+<p><img alt="Segments" src="https://dt-cdn.net/images/segments-256-8e66310720.webp" title="Segments" /></p>
+<h3 id="ask-dynatrace-assist">Ask Dynatrace Assist<a class="headerlink" href="#ask-dynatrace-assist" title="Permanent link">&para;</a></h3>
+<ul>
+<li>General availability: Dynatrace version 1.308+</li>
+<li>Get started: <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot" title="Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.">Dynatrace Assist</a></li>
+</ul>
+<p>Dynatrace Intelligence generative AI developed by Dynatrace allows you to explore data through natural language, helping with onboarding and boosting productivity. This Preview focuses on providing answers via a conversational interface to help, support, and onboarding questions based on our support resources.</p>
+<h3 id="session-replay-mobile">Session Replay Mobile<a class="headerlink" href="#session-replay-mobile" title="Permanent link">&para;</a></h3>
+<p>Session Replay Mobile lets you capture and watch all sessions from monitored mobile applications (native iOS and Android, SwiftUI, and Jetpack Composed support included). It creates anonymized, video-like recordings of users' interactions with mobile apps. You can watch their taps to identify what they're trying to do, where they're having trouble, and what's frustrating them. You'll be able to fix bugs and make improvements that increase overall user satisfaction.</p>
+<p><img alt="Session Replay" src="https://dt-cdn.net/images/session-replay-512-3b4b57b224.png" title="Session Replay" /></p>
+<h3 id="dynatrace-mcp-server">Dynatrace MCP Server<a class="headerlink" href="#dynatrace-mcp-server" title="Permanent link">&para;</a></h3>
+<p>The remote MCP Server allows third party AI agents to securely access and interact with Dynatrace. Once set up, users can utilize tools such as GitHub Copilot or Atlassian Rovo to obtain real-time insights from production environments, including logs, metrics, traces, and real-user data and all their dependencies.</p>
+<p>For more information, see <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp" title="Learn about the Dynatrace MCP server and how you can connect to it.">Dynatrace MCP Server</a>.</p>
+<p><img alt="Dynatrace Remote MCP Server" src="https://dt-cdn.net/images/picture5-103-8cd29dfe7e.png" title="Dynatrace Remote MCP Server" /></p>
+<h3 id="core-entities-in-smartscape-on-grail">Core entities in Smartscape on Grail<a class="headerlink" href="#core-entities-in-smartscape-on-grail" title="Permanent link">&para;</a></h3>
+<p>Dynatrace version 1.327+</p>
+<p>This preview introduces the new Dynatrace core entities in Smartscape on Grail, including key types such as <strong>Hosts</strong>, <strong>Processes</strong>, and <strong>Services</strong>, along with the relationships between them.</p>
+<p>To participate in this preview, you must first join the <a href="#k8s-object-visibility">Enhanced Kubernetes Object Visibility Preview</a>. Once enabled, you'll be able to use DQL within <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> to explore and analyze Smartscape topology.</p>
+<p>Please note that this preview does not include any updates to <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> or <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong>.</p>
+<p>For more information, see <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.">Smartscape on Grail</a>.</p>
+<p><img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-d5c4104cad.svg" title="Smartscape" /></p>
+<h3 id="real-user-monitoring-on-grail">Real User Monitoring on Grail<a class="headerlink" href="#real-user-monitoring-on-grail" title="Permanent link">&para;</a></h3>
+<p>With RUM on Grail, you will gain a better client-side visibility via our new event-based data model and use-case driven apps. This advancement is crucial for insightful and contextual analysis of modern frontends that are often page and view-based. You can access all of this data using new Digital Experience apps or query them using DQL in Notebooks and Dashboards.</p>
+<p>For more information, see <a href="/docs/observe/digital-experience/new-rum-experience" title="Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.">New Real User Monitoring Experience</a>.</p>
+<p><img alt="Experience Vitals" src="https://dt-cdn.net/images/experience-vitals-256-9999590b55.png" title="Experience Vitals" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Documentation
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>
