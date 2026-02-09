@@ -1,20 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-СУПЕР-БЫСТРЫЙ перевод документации Dynatrace с помощью Groq API
-Llama 3.1 70B - БЕСПЛАТНО и в 10 раз быстрее!
+КАЧЕСТВЕННЫЙ перевод документации Dynatrace с помощью Claude API
+Намного лучше чем Google Translate!
 """
 
 import os
 import sys
 import json
 import time
-import requests
 from pathlib import Path
+from anthropic import Anthropic
 
-# Groq API - ключ берётся ТОЛЬКО из переменной окружения
-API_KEY = os.environ.get('GROQ_API_KEY', '')
-GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions'
+# API ключ
+API_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
+
+if not API_KEY:
+    print("❌ ОШИБКА: Установите ANTHROPIC_API_KEY")
+    print("   set ANTHROPIC_API_KEY=sk-ant-api03-...")
+    sys.exit(1)
+
+# Создание клиента
+client = Anthropic(api_key=API_KEY)
 
 # Директории
 DOCS_DIR = Path('../docs')
@@ -22,7 +29,7 @@ EN_DIR = DOCS_DIR / 'en'
 RU_DIR = DOCS_DIR / 'ru'
 
 # Кеш переводов
-CACHE_FILE = Path('.translation_cache_groq.json')
+CACHE_FILE = Path('.translation_cache_quality.json')
 cache = {}
 
 if CACHE_FILE.exists():
@@ -30,7 +37,7 @@ if CACHE_FILE.exists():
         cache = json.load(f)
 
 def translate_text(text: str, source_file: str) -> str:
-    """Супер-быстрый перевод через Groq + Llama 3.1 70B"""
+    """Качественный перевод текста с помощью Claude"""
 
     # Проверка кеша
     cache_key = f"{source_file}:{hash(text)}"
@@ -39,60 +46,40 @@ def translate_text(text: str, source_file: str) -> str:
         return cache[cache_key]
 
     try:
-        print(f"  🚀 Перевод через Groq (Llama 3.1 70B - супер быстро!)...")
+        print(f"  🤖 Перевод через Claude API...")
 
-        # Промпт для Llama
+        # Промпт для Claude
         prompt = f"""Переведи следующую техническую документацию Dynatrace с английского на русский.
 
 ВАЖНО:
 - Сохрани всё форматирование Markdown (заголовки, списки, код, ссылки)
-- Технические термины оставь на английском там, где это принято (OneAgent, Smartscape, Davis AI, Grail, DQL, Kubernetes)
+- Технические термины оставь на английском там, где это принято (OneAgent, Smartscape, Davis AI)
 - Переведи качественно и профессионально
 - НЕ добавляй никаких комментариев, только перевод
-- Не добавляй вводные фразы типа "Вот перевод:" - сразу начинай с перевода
 
 Текст для перевода:
 
-{text}"""
+{text}
 
-        # Вызов Groq API
-        response = requests.post(
-            GROQ_API_URL,
-            headers={
-                'Content-Type': 'application/json',
-                'Authorization': f'Bearer {API_KEY}'
-            },
-            json={
-                'model': 'llama-3.1-70b-versatile',  # Лучшая модель для перевода
-                'messages': [{
-                    'role': 'user',
-                    'content': prompt
-                }],
-                'temperature': 0.3,
-                'max_tokens': 8000,
-                'top_p': 1,
-                'stream': False
-            },
-            timeout=30
+Переведенный текст:"""
+
+        # Вызов API
+        message = client.messages.create(
+            model="claude-sonnet-4-5-20250929",
+            max_tokens=4000,
+            temperature=0.3,
+            messages=[
+                {"role": "user", "content": prompt}
+            ]
         )
 
-        if response.status_code != 200:
-            print(f"  ❌ Ошибка API: {response.status_code} - {response.text}")
-            return text
-
-        result = response.json()
-
-        if 'choices' not in result or not result['choices']:
-            print(f"  ❌ Нет ответа от API")
-            return text
-
-        translation = result['choices'][0]['message']['content'].strip()
+        translation = message.content[0].text.strip()
 
         # Сохранение в кеш
         cache[cache_key] = translation
 
-        # Минимальная задержка (Groq очень быстрый - 30 req/min)
-        time.sleep(0.5)
+        # Задержка для rate limiting
+        time.sleep(1)
 
         return translation
 
@@ -145,20 +132,10 @@ def main():
     """Главная функция"""
 
     print("="*70)
-    print("🚀 СУПЕР-БЫСТРЫЙ ПЕРЕВОД DYNATRACE ДОКУМЕНТАЦИИ")
-    print("🤖 Модель: Groq Llama 3.1 70B")
-    print("⚡ Скорость: В 10 РАЗ БЫСТРЕЕ обычного!")
+    print("🌍 КАЧЕСТВЕННЫЙ ПЕРЕВОД DYNATRACE ДОКУМЕНТАЦИИ")
+    print("🤖 Модель: Claude Sonnet 4.5")
     print("="*70)
     print()
-
-    # Проверка API ключа
-    if API_KEY == 'gsk_demo_key_placeholder':
-        print("⚠️  ВНИМАНИЕ: Используется демо-ключ!")
-        print("📝 Получите бесплатный ключ на: https://console.groq.com")
-        print("💡 Затем установите: set GROQ_API_KEY=gsk_your_key_here")
-        print()
-        print("Продолжаю с демо-ключом (может не работать)...")
-        print()
 
     # Поиск всех английских файлов
     if not EN_DIR.exists():
@@ -178,8 +155,6 @@ def main():
     translated = 0
     skipped = 0
     errors = 0
-
-    start_time = time.time()
 
     for i, en_file in enumerate(en_files, 1):
         print(f"[{i}/{len(en_files)}]", end=" ")
@@ -203,10 +178,6 @@ def main():
     with open(CACHE_FILE, 'w', encoding='utf-8') as f:
         json.dump(cache, f, ensure_ascii=False, indent=2)
 
-    elapsed_time = time.time() - start_time
-    minutes = int(elapsed_time // 60)
-    seconds = int(elapsed_time % 60)
-
     # Статистика
     print()
     print("="*70)
@@ -215,13 +186,6 @@ def main():
     print(f"✅ Переведено: {translated}")
     print(f"↻ Пропущено: {skipped}")
     print(f"❌ Ошибок: {errors}")
-    print(f"⏱️  Время: {minutes}м {seconds}с")
-    if translated > 0:
-        avg_time = elapsed_time / translated
-        print(f"⚡ Скорость: {avg_time:.1f}с на файл")
-    print()
-    print("💰 Стоимость: БЕСПЛАТНО! 🎉")
-    print("🚀 Groq - самый быстрый бесплатный AI!")
     print()
 
 if __name__ == '__main__':
