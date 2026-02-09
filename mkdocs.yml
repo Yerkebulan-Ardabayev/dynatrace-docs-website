@@ -1,5 +1,5 @@
-site_name: Dynatrace Documentation
-site_description: Complete bilingual Dynatrace documentation with AI assistant
+site_name: Dynatrace Managed - Документация
+site_description: Полная документация Dynatrace Managed с AI-помощником
 site_author: Yerkebulan Ardabayev
 site_url: https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/
 
@@ -11,91 +11,128 @@ edit_uri: ""
 # Theme
 theme:
   name: material
-  language: ru  # Русский язык по умолчанию
+  language: ru
+  custom_dir: overrides
   
-  # Color scheme
   palette:
-    # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: deep purple
-      accent: pink
-      toggle:
-        icon: material/brightness-7
-        name: Переключить на тёмную тему
-    
-    # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: deep purple
-      accent: pink
+      accent: cyan
       toggle:
         icon: material/brightness-4
-        name: Переключить на светлую тему
+        name: Светлая тема
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Тёмная тема
   
-  # Features
   features:
-    - announce.dismiss
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - navigation.tracking
-    - navigation.instant
+    # Навигация
+    - navigation.tabs           # Табы вверху
+    - navigation.tabs.sticky    # Табы остаются
+    - navigation.sections       # Разделы в сайдбаре
+    - navigation.expand         # Раскрытие разделов
+    - navigation.top            # Кнопка вверх
+    - navigation.tracking       # Отслеживание позиции
+    - navigation.instant        # Быстрая навигация
     - navigation.instant.progress
-    - search.suggest
-    - search.highlight
-    - search.share
-    - content.code.copy
-    - content.code.annotate
-    - toc.follow
+    
+    # Поиск (УЛУЧШЕННЫЙ)
+    - search.suggest           # Подсказки при поиске
+    - search.highlight         # Подсветка результатов
+    - search.share             # Поделиться поиском
+    
+    # Контент
+    - content.code.copy        # Копирование кода
+    - content.code.annotate    # Аннотации кода
+    - content.tabs.link        # Связанные табы
+    - toc.follow               # Следование за прокруткой
   
-  # Logo and favicon
   icon:
-    logo: material/book-open-variant
+    logo: material/server
     repo: fontawesome/brands/github
   
   font:
     text: Roboto
-    code: Roboto Mono
+    code: JetBrains Mono
 
 # Plugins
 plugins:
   - search:
       lang:
-        - en
         - ru
+        - en
+      separator: '[\s\-\.]+'  # Лучший поиск
   - tags
+
+# === НАВИГАЦИЯ ПО КАТЕГОРИЯМ ===
+nav:
+  - 🏠 Главная: index.md
+  
+  # MANAGED - ГЛАВНЫЙ РАЗДЕЛ
+  - 🎯 Managed:
+    - managed/index.md
+    - Установка:
+      - managed/installation/index.md
+      - managed/installation/requirements.md
+      - managed/installation/cluster-nodes.md
+    - Настройка:
+      - managed/configuration/index.md
+    - Обслуживание:
+      - managed/operations/index.md
+    - Кластер:
+      - managed/cluster/index.md
+  
+  # ОБЩЕЕ (OneAgent, Davis и т.д.)
+  - 📊 Общее:
+    - common/index.md
+    - OneAgent: common/oneagent/
+    - Davis AI: common/davis-ai/
+    - Инфраструктура: common/infrastructure/
+  
+  # SaaS - СПРАВОЧНО
+  - 📖 SaaS (справочно):
+    - saas-reference/index.md
+  
+  # AI ПОМОЩНИК
+  - 🤖 AI: ai/groq.md
 
 # Extensions
 markdown_extensions:
-  - admonition              # Callouts
-  - pymdownx.details        # Collapsible sections
-  - pymdownx.superfences    # Code blocks
-  - pymdownx.highlight:     # Syntax highlighting
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.inlinehilite   # Inline code highlighting
-  - pymdownx.snippets       # Include snippets
-  - pymdownx.tabbed:        # Tabbed content
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
       alternate_style: true
-  - attr_list               # Attribute lists
-  - md_in_html              # Markdown in HTML
-  - pymdownx.emoji:         # Emoji support
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
-      permalink: true       # Permalink anchors
-  - tables                  # Tables support
+      permalink: true
+      toc_depth: 3
+  - tables
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 # Extra CSS/JS
 extra_css:
   - assets/stylesheets/extra.css
 
 extra_javascript:
-  - assets/javascripts/groq-chat.js  # Groq Llama 3.1 70B - супер быстро!
-
-# Navigation - auto-generated from docs structure
+  - assets/javascripts/groq-chat.js
 
 # Extra
 extra:
@@ -103,20 +140,13 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Yerkebulan-Ardabayev
   
-  analytics:
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >-
-            Thanks for your feedback!
+  # Переключатель языков
+  alternate:
+    - name: Русский
+      link: /
+      lang: ru
+    - name: English
+      link: /en/
+      lang: en
 
-# Copyright
-copyright: Copyright &copy; 2026 Dynatrace Documentation Mirror
+copyright: © 2026 Dynatrace Managed Documentation
