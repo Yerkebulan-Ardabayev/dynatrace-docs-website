@@ -1,0 +1,44 @@
+---
+title: "Dynatrace OneAgent"
+source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent
+updated: 2026-02-09
+---
+
+# Dynatrace OneAgent
+
+# Dynatrace OneAgent
+
+* 2-min read
+* Published Oct 09, 2018
+
+OneAgent is responsible for collecting all monitoring data within your monitored environment. A single OneAgent per host is required to collect all relevant monitoring dataâeven if your hosts are deployed within Docker containers, microservices architectures, or cloud-based infrastructure.
+
+A single instance of OneAgent can handle [monitoring for all types of entities](/managed/platform/oneagent/supported-monitoring-types "Read an overview of all monitoring capabilities offered by OneAgent."), including servers, applications, services, databases, and more. OneAgent gives you all the operational and business performance metrics you need, from the frontend to the backend and everything in betweenâcloud instances, hosts, network health, processes, and services. OneAgent discovers all the processes you have running on your hosts. Based on what it finds, OneAgent automatically activates instrumentation specifically for your unique application stack. It also injects all tags required for user-experience monitoring into the HTML of your application pages. New components are auto-instrumented on the fly.
+
+OneAgent is comprised of several code modules that enable OneAgent to work for most technologies out-of-the-box. To find out which code modules are supported for each platform, see the [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). To see which versions are supported for each code module, see [OneAgent supported technologies and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+
+### Requirements
+
+[OneAgent requirements](/managed/ingest-from/dynatrace-oneagent/oa-requirements "OneAgent code module requirements")
+
+### See also
+
+[Adaptive Traffic Management](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-managed "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.")
+
+### Installation and operation
+
+Cloud platforms
+
+Kubernetes
+
+Other container platforms
+
+Operating systems
+
+[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")AWS](/managed/ingest-from/amazon-web-services) [![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")Azure](/managed/ingest-from/microsoft-azure-services) [![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")Google Cloud](/managed/ingest-from/google-cloud-platform)
+
+[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](/managed/ingest-from/setup-on-k8s)
+
+[![Cloud Foundry](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry) [![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")Docker](/managed/ingest-from/setup-on-container-platforms/docker) [![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")Heroku](/managed/ingest-from/setup-on-container-platforms/heroku) [![Mesos](https://dt-cdn.net/images/mesos-512-0c28279189.webp "Mesos")Mesos](/managed/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon)
+
+[AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix) [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux) [Solaris](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/solaris) [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows) [zOS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos)
