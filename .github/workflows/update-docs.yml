@@ -39,7 +39,7 @@ jobs:
         run: |
           echo "Starting documentation scrape..."
           cd scripts
-          python scrape_docs.py --max-pages 200 --output ../temp_docs
+          python scrape_docs.py --max-pages 1000 --output ../temp_docs
           echo "Scraping completed!"
 
       - name: Organize documentation
