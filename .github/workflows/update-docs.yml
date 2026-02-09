@@ -17,48 +17,54 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
-      
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-      
+
       - name: Scrape documentation
+        continue-on-error: true
+        id: scrape
         run: |
-          echo "🚀 Starting documentation scrape..."
+          echo "Starting documentation scrape..."
           cd scripts
           python scrape_docs.py --max-pages 200 --output ../temp_docs
-          echo "✅ Scraping completed!"
-      
+          echo "Scraping completed!"
+
       - name: Organize documentation
+        if: steps.scrape.outcome == 'success'
         run: |
-          echo "📁 Organizing documentation..."
+          echo "Organizing documentation..."
           cd scripts
           python organize_docs.py --source ../temp_docs --target ../docs/en
-          echo "✅ Organization completed!"
-      
+          echo "Organization completed!"
+
       - name: Translate to Russian
+        if: steps.scrape.outcome == 'success'
+        continue-on-error: true
         run: |
-          echo "🌍 Translating to Russian..."
+          echo "Translating to Russian..."
           cd scripts
           python translate_docs.py --source ../docs/en --target ../docs/ru
-          echo "✅ Translation completed!"
-      
+          echo "Translation completed!"
+
       - name: Clean up temporary files
+        if: always()
         run: |
           rm -rf temp_docs
-          echo "🧹 Cleanup completed!"
-      
+          echo "Cleanup completed!"
+
       - name: Check for changes
         id: changes
         run: |
@@ -67,39 +73,41 @@ jobs:
           git add docs/
           if git diff --staged --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
-            echo "ℹ️ No changes detected"
+            echo "No changes detected"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
             CHANGED_FILES=$(git diff --staged --name-only | wc -l)
             echo "changed_count=$CHANGED_FILES" >> $GITHUB_OUTPUT
-            echo "📝 Detected $CHANGED_FILES changed files"
+            echo "Detected $CHANGED_FILES changed files"
           fi
-      
+
       - name: Commit changes
         if: steps.changes.outputs.changed == 'true'
         run: |
           DATE=$(date +'%Y-%m-%d %H:%M')
           FILES_COUNT=${{ steps.changes.outputs.changed_count }}
-          git commit -m "📚 Auto-update: $DATE ($FILES_COUNT files)"
-      
+          git commit -m "Auto-update: $DATE ($FILES_COUNT files)"
+
       - name: Push changes
         if: steps.changes.outputs.changed == 'true'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-      
+
       - name: Create summary
         if: always()
         run: |
-          echo "# 📊 Documentation Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "# Documentation Update Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.changes.outputs.changed }}" == "true" ]; then
-            echo "✅ **Status:** Documentation updated" >> $GITHUB_STEP_SUMMARY
-            echo "📝 **Files changed:** ${{ steps.changes.outputs.changed_count }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.scrape.outcome }}" == "failure" ]; then
+            echo "**Scrape:** Failed (site may be blocking requests)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.changes.outputs.changed }}" == "true" ]; then
+            echo "**Status:** Documentation updated" >> $GITHUB_STEP_SUMMARY
+            echo "**Files changed:** ${{ steps.changes.outputs.changed_count }}" >> $GITHUB_STEP_SUMMARY
           else
-            echo "ℹ️ **Status:** No changes detected" >> $GITHUB_STEP_SUMMARY
-            echo "📝 **Files changed:** 0" >> $GITHUB_STEP_SUMMARY
+            echo "**Status:** No changes detected" >> $GITHUB_STEP_SUMMARY
+            echo "**Files changed:** 0" >> $GITHUB_STEP_SUMMARY
           fi
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "⏰ **Last run:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "**Last run:** $(date)" >> $GITHUB_STEP_SUMMARY

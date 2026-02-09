@@ -39,6 +39,7 @@ class DynatraceDocScraper:
     def __init__(self, base_url, output_dir, max_pages=None, test_mode=False):
         self.base_url = base_url
         self.output_dir = Path(output_dir)
+        self.output_dir.mkdir(parents=True, exist_ok=True)
         self.max_pages = max_pages if not test_mode else 50
         self.test_mode = test_mode
         
@@ -178,6 +179,7 @@ scraped: {datetime.now().isoformat()}
         
         # Handle empty path (homepage)
         if not relative_path:
+            self.output_dir.mkdir(parents=True, exist_ok=True)
             return self.output_dir / 'index.md'
         
         # Create directory structure
