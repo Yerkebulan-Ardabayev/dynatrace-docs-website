@@ -1,14 +1,12 @@
 site_name: Dynatrace Managed - Документация
-site_description: Полная документация Dynatrace Managed с AI-помощником
+site_description: Документация Dynatrace Managed с AI-помощником
 site_author: Yerkebulan Ardabayev
 site_url: https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/
 
-# Repository
 repo_name: dynatrace-docs-website
 repo_url: https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website
 edit_uri: ""
 
-# Theme
 theme:
   name: material
   language: ru
@@ -30,26 +28,16 @@ theme:
         name: Тёмная тема
   
   features:
-    # Навигация
-    - navigation.tabs           # Табы вверху
-    - navigation.tabs.sticky    # Табы остаются
-    - navigation.sections       # Разделы в сайдбаре
-    - navigation.expand         # Раскрытие разделов
-    - navigation.top            # Кнопка вверх
-    - navigation.tracking       # Отслеживание позиции
-    - navigation.instant        # Быстрая навигация
-    - navigation.instant.progress
-    
-    # Поиск (УЛУЧШЕННЫЙ)
-    - search.suggest           # Подсказки при поиске
-    - search.highlight         # Подсветка результатов
-    - search.share             # Поделиться поиском
-    
-    # Контент
-    - content.code.copy        # Копирование кода
-    - content.code.annotate    # Аннотации кода
-    - content.tabs.link        # Связанные табы
-    - toc.follow               # Следование за прокруткой
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
   
   icon:
     logo: material/server
@@ -59,58 +47,48 @@ theme:
     text: Roboto
     code: JetBrains Mono
 
-# Plugins
 plugins:
   - search:
       lang:
         - ru
         - en
-      separator: '[\s\-\.]+'  # Лучший поиск
-  - tags
 
-# === НАВИГАЦИЯ ПО КАТЕГОРИЯМ ===
+# === НАВИГАЦИЯ (исправленная) ===
 nav:
   - 🏠 Главная: index.md
   
   # MANAGED - ГЛАВНЫЙ РАЗДЕЛ
   - 🎯 Managed:
-    - managed/index.md
-    - Установка:
-      - managed/installation/index.md
-      - managed/installation/requirements.md
-      - managed/installation/cluster-nodes.md
-    - Настройка:
-      - managed/configuration/index.md
-    - Обслуживание:
-      - managed/operations/index.md
-    - Кластер:
-      - managed/cluster/index.md
+    - Обзор: managed/index.md
+    - Установка: managed/installation.md
+    - Настройка: managed/configuration.md
+    - Обслуживание: managed/operations.md
+    - Обновления: managed/update.md
+    - Безопасность: managed/security.md
+    - Бэкап: managed/backup.md
+    - Кластер: managed/managed-cluster.md
+    - Лицензия: managed/license.md
+    - API: managed/dynatrace-api/
+    - Мониторинг: managed/observe/
+    - Интеграции: managed/ingest-from/
   
-  # ОБЩЕЕ (OneAgent, Davis и т.д.)
+  # ОБЩЕЕ
   - 📊 Общее:
-    - common/index.md
-    - OneAgent: common/oneagent/
-    - Davis AI: common/davis-ai/
-    - Инфраструктура: common/infrastructure/
+    - Обзор: common/index.md
   
-  # SaaS - СПРАВОЧНО
-  - 📖 SaaS (справочно):
-    - saas-reference/index.md
+  # SaaS СПРАВОЧНО  
+  - 📖 SaaS: saas-reference/index.md
   
-  # AI ПОМОЩНИК
+  # AI
   - 🤖 AI: ai/groq.md
 
-# Extensions
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
   - attr_list
@@ -120,32 +98,17 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
-      toc_depth: 3
   - tables
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
 
-# Extra CSS/JS
 extra_css:
   - assets/stylesheets/extra.css
 
 extra_javascript:
   - assets/javascripts/groq-chat.js
 
-# Extra
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Yerkebulan-Ardabayev
-  
-  # Переключатель языков
-  alternate:
-    - name: Русский
-      link: /
-      lang: ru
-    - name: English
-      link: /en/
-      lang: en
 
-copyright: © 2026 Dynatrace Managed Documentation
+copyright: © 2026 Dynatrace Managed Docs
