@@ -1,7 +1,7 @@
 ---
 title: Extend Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace
-scraped: 2026-02-06T16:00:51.504234
+scraped: 2026-02-06T22:23:15.978899
 ---
 
 # Extend Dynatrace
