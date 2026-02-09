@@ -4,8 +4,8 @@
  * В 10 РАЗ БЫСТРЕЕ обычных AI!
  */
 
-// Configuration
-const GROQ_API_KEY = 'YOUR_API_KEY_HERE';  // ВАШ ключ
+// Configuration - API key should be set via GitHub Secrets and injected at build time
+const GROQ_API_KEY = window.GROQ_API_KEY || 'YOUR_GROQ_API_KEY_HERE';
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 // Create chat widget
