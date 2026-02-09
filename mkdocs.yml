@@ -1,7 +1,7 @@
 site_name: Dynatrace Documentation
 site_description: Complete bilingual Dynatrace documentation with AI assistant
 site_author: Yerkebulan Ardabayev
-site_url: https://yerkebulan-ardabayev.github.io/dynatrace-docs/
+site_url: https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/
 
 # Repository
 repo_name: dynatrace-docs-website
@@ -95,35 +95,7 @@ extra_css:
 extra_javascript:
   - assets/javascripts/groq-chat.js  # Groq Llama 3.1 70B - супер быстро!
 
-# Navigation
-nav:
-  - Home: index.md
-  
-  - 🇬🇧 English:
-    - Getting Started: en/getting-started.md
-    - Dynatrace Managed:
-      - Overview: en/managed/index.md
-      - Installation: en/managed/installation.md
-      - Configuration: en/managed/configuration.md
-    - Observe:
-      - Overview: en/observe/index.md
-    - Platform:
-      - Overview: en/platform/index.md
-  
-  - 🇷🇺 Русский:
-    - Начало работы: ru/getting-started.md
-    - Dynatrace Managed:
-      - Обзор: ru/managed/index.md
-      - Установка: ru/managed/installation.md
-      - Настройка: ru/managed/configuration.md
-    - Мониторинг:
-      - Обзор: ru/observe/index.md
-    - Платформа:
-      - Обзор: ru/platform/index.md
-  
-  - 🤖 AI Assistant:
-    - Quick Chat: ai/gemini.md
-    - Deep Analysis: ai/notebooklm.md
+# Navigation - auto-generated from docs structure
 
 # Extra
 extra:
