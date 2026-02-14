@@ -10,6 +10,7 @@ import sys
 import json
 import time
 import hashlib
+from collections import deque
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from datetime import datetime
@@ -44,7 +45,7 @@ class DynatraceDocScraper:
         self.test_mode = test_mode
         
         self.visited_urls = set()
-        self.to_visit = [base_url]
+        self.to_visit = deque([base_url])
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
@@ -251,7 +252,7 @@ scraped: {datetime.now().isoformat()}
         
         with tqdm(desc="Scraping", unit=" pages") as pbar:
             while self.to_visit and (self.max_pages is None or self.stats['pages_downloaded'] < self.max_pages):
-                url = self.to_visit.pop(0)
+                url = self.to_visit.popleft()
                 
                 if url in self.visited_urls:
                     continue
@@ -265,7 +266,7 @@ scraped: {datetime.now().isoformat()}
                 if new_links:
                     # Add new links to queue
                     for link in new_links:
-                        if link not in self.visited_urls and link not in self.to_visit:
+                        if link not in self.visited_urls:
                             self.to_visit.append(link)
                 
                 pbar.update(1)

@@ -10,6 +10,7 @@ import sys
 import json
 import time
 import hashlib
+from collections import deque
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from datetime import datetime
@@ -191,12 +192,12 @@ updated: {datetime.now().strftime('%Y-%m-%d')}
         print(f"📚 Скачивание: {section_name}")
         print(f"{'='*60}")
         
-        to_visit = list(start_urls)
+        to_visit = deque(start_urls)
         downloaded = 0
-        
+
         with tqdm(total=max_pages, desc=section_name) as pbar:
             while to_visit and downloaded < max_pages:
-                url = to_visit.pop(0)
+                url = to_visit.popleft()
                 
                 if url in self.visited:
                     continue

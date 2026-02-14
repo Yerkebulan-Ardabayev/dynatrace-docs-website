@@ -9,11 +9,12 @@ import os
 import sys
 import json
 import time
+import hashlib
 import requests
 from pathlib import Path
 
-# API ключ (используем ваш бесплатный ключ)
-API_KEY = '***GEMINI_KEY_REMOVED***'
+# API ключ берётся ТОЛЬКО из переменной окружения
+API_KEY = os.environ.get('GEMINI_API_KEY', '')
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent'
 
 # Директории
@@ -32,8 +33,8 @@ if CACHE_FILE.exists():
 def translate_text(text: str, source_file: str) -> str:
     """Качественный перевод текста с помощью Gemini"""
 
-    # Проверка кеша
-    cache_key = f"{source_file}:{hash(text)}"
+    # Проверка кеша (hashlib для стабильности между сессиями)
+    cache_key = f"{source_file}:{hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]}"
     if cache_key in cache:
         print(f"  ↻ Из кеша")
         return cache[cache_key]
@@ -41,12 +42,18 @@ def translate_text(text: str, source_file: str) -> str:
     try:
         print(f"  🤖 Перевод через Gemini API (бесплатно)...")
 
-        # Промпт для Gemini
+        # Промпт для Gemini с полным глоссарием Dynatrace
         prompt = f"""Переведи следующую техническую документацию Dynatrace с английского на русский.
 
 ВАЖНО:
-- Сохрани всё форматирование Markdown (заголовки, списки, код, ссылки)
-- Технические термины оставь на английском там, где это принято (OneAgent, Smartscape, Davis AI, Grail, DQL)
+- Сохрани всё форматирование Markdown (заголовки, списки, код, ссылки, YAML frontmatter)
+- НЕ переводи следующие термины (оставь на английском как есть):
+  Dynatrace, OneAgent, ActiveGate, Smartscape, PurePath, Davis AI, Grail, DQL,
+  Cluster Management Console (CMC), Mission Control, Management Zone, Host Unit,
+  Host Group, Service Flow, Session Replay, Real User Monitoring (RUM),
+  Synthetic Monitoring, AppEngine, Hub, Extensions, Environment,
+  Kubernetes, Docker, Helm, OpenShift, Ansible, AWS, Azure, GCP,
+  API, SDK, REST API, gRPC, JSON, YAML, XML
 - Переведи качественно и профессионально
 - НЕ добавляй никаких комментариев, только перевод
 
@@ -56,43 +63,69 @@ def translate_text(text: str, source_file: str) -> str:
 
 Переведенный текст:"""
 
-        # Вызов Gemini API
-        response = requests.post(
-            f'{GEMINI_API_URL}?key={API_KEY}',
-            headers={'Content-Type': 'application/json'},
-            json={
-                'contents': [{
-                    'parts': [{
-                        'text': prompt
-                    }]
-                }],
-                'generationConfig': {
-                    'temperature': 0.3,
-                    'maxOutputTokens': 8000,
-                }
-            },
-            timeout=60
-        )
+        # Вызов Gemini API с retry и exponential backoff
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = requests.post(
+                    f'{GEMINI_API_URL}?key={API_KEY}',
+                    headers={'Content-Type': 'application/json'},
+                    json={
+                        'contents': [{
+                            'parts': [{
+                                'text': prompt
+                            }]
+                        }],
+                        'generationConfig': {
+                            'temperature': 0.3,
+                            'maxOutputTokens': 8000,
+                        }
+                    },
+                    timeout=60
+                )
 
-        if response.status_code != 200:
-            print(f"  ❌ Ошибка API: {response.status_code}")
-            return text
+                if response.status_code == 429:
+                    wait_time = 2 ** (attempt + 1)
+                    print(f"  ⏳ Rate limit, жду {wait_time}с (попытка {attempt + 1}/{max_retries})...")
+                    time.sleep(wait_time)
+                    continue
 
-        result = response.json()
+                if response.status_code != 200:
+                    print(f"  ❌ Ошибка API: {response.status_code}")
+                    if attempt < max_retries - 1:
+                        time.sleep(2 ** attempt)
+                        continue
+                    return text
 
-        if 'candidates' not in result or not result['candidates']:
-            print(f"  ❌ Нет ответа от API")
-            return text
+                result = response.json()
 
-        translation = result['candidates'][0]['content']['parts'][0]['text'].strip()
+                if 'candidates' not in result or not result['candidates']:
+                    print(f"  ❌ Нет ответа от API")
+                    return text
 
-        # Сохранение в кеш
-        cache[cache_key] = translation
+                translation = result['candidates'][0]['content']['parts'][0]['text'].strip()
 
-        # Задержка для rate limiting (Gemini free tier: 60 запросов в минуту)
-        time.sleep(1.5)
+                # Сохранение в кеш
+                cache[cache_key] = translation
 
-        return translation
+                # Задержка для rate limiting (Gemini free tier: 60 req/min)
+                time.sleep(1.5)
+
+                return translation
+
+            except requests.Timeout:
+                wait_time = 2 ** (attempt + 1)
+                print(f"  ⏳ Таймаут, жду {wait_time}с (попытка {attempt + 1}/{max_retries})...")
+                time.sleep(wait_time)
+                continue
+            except requests.ConnectionError:
+                wait_time = 2 ** (attempt + 1)
+                print(f"  ⏳ Ошибка соединения, жду {wait_time}с...")
+                time.sleep(wait_time)
+                continue
+
+        print(f"  ❌ Все {max_retries} попытки исчерпаны")
+        return text
 
     except Exception as e:
         print(f"  ❌ Ошибка перевода: {str(e)}")
@@ -147,6 +180,13 @@ def main():
     print("🤖 Модель: Gemini 1.5 Pro (БЕСПЛАТНО!)")
     print("="*70)
     print()
+
+    # Проверка API ключа
+    if not API_KEY:
+        print("❌ GEMINI_API_KEY не задан!")
+        print("📝 Получите бесплатный ключ на: https://aistudio.google.com/apikey")
+        print("💡 Затем установите: set GEMINI_API_KEY=AIza...")
+        return
 
     # Поиск всех английских файлов
     if not EN_DIR.exists():

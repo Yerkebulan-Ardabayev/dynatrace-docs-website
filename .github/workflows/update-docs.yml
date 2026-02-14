@@ -50,13 +50,15 @@ jobs:
           python organize_docs.py --source ../temp_docs --target ../docs/en
           echo "Organization completed!"
 
-      - name: Translate to Russian
+      - name: Translate to Russian (Groq Llama 3.1 70B)
         if: steps.scrape.outcome == 'success'
         continue-on-error: true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
-          echo "Translating to Russian..."
+          echo "Translating to Russian via Groq API..."
           cd scripts
-          python translate_docs.py --source ../docs/en --target ../docs/ru
+          python translate_docs_groq.py
           echo "Translation completed!"
 
       - name: Clean up temporary files

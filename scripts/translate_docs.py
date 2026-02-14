@@ -27,13 +27,24 @@ class DocumentTranslator:
         self.translator = Translator() if TRANSLATOR_AVAILABLE else None
         self.cache = self._load_cache()
         
-        # Terms that should NOT be translated
+        # Terms that should NOT be translated (Dynatrace glossary)
         self.preserve_terms = [
+            # Dynatrace Core
             'Dynatrace', 'OneAgent', 'ActiveGate', 'Managed', 'SaaS',
-            'Davis', 'Grail', 'DQL', 'Smartscape', 'PurePath',
-            'GitHub', 'Kubernetes', 'Docker', 'API', 'SDK',
-            'HTTP', 'HTTPS', 'URL', 'JSON', 'YAML', 'XML',
-            'Linux', 'Windows', 'macOS', 'Ubuntu', 'RedHat'
+            'Davis AI', 'Davis', 'Grail', 'DQL', 'Smartscape', 'PurePath',
+            # Dynatrace Managed specific
+            'Cluster Management Console', 'CMC', 'Mission Control',
+            'Cluster Node', 'Management Zone', 'Host Unit', 'Host Group',
+            'Environment', 'Deployment', 'Elasticsearch', 'Cassandra',
+            # Dynatrace features
+            'Real User Monitoring', 'RUM', 'Service Flow', 'Session Replay',
+            'Synthetic Monitoring', 'Log Monitoring', 'AppEngine',
+            'Software Intelligence Hub', 'Hub', 'Extensions',
+            # Tech terms
+            'GitHub', 'Kubernetes', 'Docker', 'API', 'SDK', 'REST API',
+            'HTTP', 'HTTPS', 'URL', 'JSON', 'YAML', 'XML', 'gRPC',
+            'Linux', 'Windows', 'macOS', 'Ubuntu', 'RedHat', 'RHEL',
+            'AWS', 'Azure', 'GCP', 'OpenShift', 'Helm', 'Ansible',
         ]
     
     def _load_cache(self) -> Dict:
