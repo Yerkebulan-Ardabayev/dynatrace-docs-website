@@ -67,14 +67,21 @@ def _is_managed_doc(file_path: Path) -> bool:
     path_str = str(file_path).lower()
     if 'managed' in path_str:
         return True
-    
-    # Check file content
+
+    # Check file content (scan 3000 chars for better detection)
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read(500)  # Read first 500 chars
-            
+            content = f.read(3000)
+
         content_lower = content.lower()
-        
+
+        # Check source URL in frontmatter (most reliable signal)
+        source_match = re.search(r'source:\s*(https?://\S+)', content)
+        if source_match:
+            source_url = source_match.group(1).lower()
+            if '/managed' in source_url or 'docs.dynatrace.com/managed' in source_url:
+                return True
+
         # Keywords that indicate Managed documentation
         managed_keywords = [
             'dynatrace managed',
@@ -82,16 +89,21 @@ def _is_managed_doc(file_path: Path) -> bool:
             'managed cluster',
             'managed installation',
             'on-premises deployment',
-            'self-hosted'
+            'self-hosted',
+            'cluster management console',
+            'mission control',
+            'managed node',
+            'cluster node',
+            'managed server',
         ]
-        
+
         for keyword in managed_keywords:
             if keyword in content_lower:
                 return True
-                
+
     except Exception as e:
         print(f"⚠️ Could not read {file_path}: {e}")
-    
+
     return False
 
 

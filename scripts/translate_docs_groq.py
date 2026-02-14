@@ -9,6 +9,7 @@ import os
 import sys
 import json
 import time
+import hashlib
 import requests
 from pathlib import Path
 
@@ -29,11 +30,56 @@ if CACHE_FILE.exists():
     with open(CACHE_FILE, 'r', encoding='utf-8') as f:
         cache = json.load(f)
 
+# Максимальный размер чанка (~4000 токенов ≈ 12000 символов, оставляем запас для промпта)
+MAX_CHUNK_CHARS = 10000
+
+import re
+
+def split_into_chunks(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list:
+    """Разбивает текст на чанки по Markdown-заголовкам, не превышая max_chars"""
+    if len(text) <= max_chars:
+        return [text]
+
+    chunks = []
+    # Разбиваем по заголовкам ## (второго уровня и ниже)
+    sections = re.split(r'(^#{1,3} .+$)', text, flags=re.MULTILINE)
+
+    current_chunk = ""
+    for section in sections:
+        if len(current_chunk) + len(section) > max_chars and current_chunk:
+            chunks.append(current_chunk)
+            current_chunk = section
+        else:
+            current_chunk += section
+
+    if current_chunk:
+        chunks.append(current_chunk)
+
+    # Если какой-то чанк всё ещё слишком большой — режем по абзацам
+    final_chunks = []
+    for chunk in chunks:
+        if len(chunk) <= max_chars:
+            final_chunks.append(chunk)
+        else:
+            paragraphs = chunk.split('\n\n')
+            sub_chunk = ""
+            for para in paragraphs:
+                if len(sub_chunk) + len(para) + 2 > max_chars and sub_chunk:
+                    final_chunks.append(sub_chunk)
+                    sub_chunk = para
+                else:
+                    sub_chunk += ('\n\n' if sub_chunk else '') + para
+            if sub_chunk:
+                final_chunks.append(sub_chunk)
+
+    return final_chunks
+
+
 def translate_text(text: str, source_file: str) -> str:
     """Супер-быстрый перевод через Groq + Llama 3.1 70B"""
 
-    # Проверка кеша
-    cache_key = f"{source_file}:{hash(text)}"
+    # Проверка кеша (hashlib для стабильности между сессиями)
+    cache_key = f"{source_file}:{hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]}"
     if cache_key in cache:
         print(f"  ↻ Из кеша")
         return cache[cache_key]
@@ -41,12 +87,18 @@ def translate_text(text: str, source_file: str) -> str:
     try:
         print(f"  🚀 Перевод через Groq (Llama 3.1 70B - супер быстро!)...")
 
-        # Промпт для Llama
+        # Промпт для Llama с полным глоссарием Dynatrace
         prompt = f"""Переведи следующую техническую документацию Dynatrace с английского на русский.
 
 ВАЖНО:
-- Сохрани всё форматирование Markdown (заголовки, списки, код, ссылки)
-- Технические термины оставь на английском там, где это принято (OneAgent, Smartscape, Davis AI, Grail, DQL, Kubernetes)
+- Сохрани всё форматирование Markdown (заголовки, списки, код, ссылки, YAML frontmatter)
+- НЕ переводи следующие термины (оставь на английском как есть):
+  Dynatrace, OneAgent, ActiveGate, Smartscape, PurePath, Davis AI, Grail, DQL,
+  Cluster Management Console (CMC), Mission Control, Management Zone, Host Unit,
+  Host Group, Service Flow, Session Replay, Real User Monitoring (RUM),
+  Synthetic Monitoring, AppEngine, Hub, Extensions, Environment,
+  Kubernetes, Docker, Helm, OpenShift, Ansible, AWS, Azure, GCP,
+  API, SDK, REST API, gRPC, JSON, YAML, XML
 - Переведи качественно и профессионально
 - НЕ добавляй никаких комментариев, только перевод
 - Не добавляй вводные фразы типа "Вот перевод:" - сразу начинай с перевода
@@ -55,46 +107,73 @@ def translate_text(text: str, source_file: str) -> str:
 
 {text}"""
 
-        # Вызов Groq API
-        response = requests.post(
-            GROQ_API_URL,
-            headers={
-                'Content-Type': 'application/json',
-                'Authorization': f'Bearer {API_KEY}'
-            },
-            json={
-                'model': 'llama-3.1-70b-versatile',  # Лучшая модель для перевода
-                'messages': [{
-                    'role': 'user',
-                    'content': prompt
-                }],
-                'temperature': 0.3,
-                'max_tokens': 8000,
-                'top_p': 1,
-                'stream': False
-            },
-            timeout=30
-        )
+        # Вызов Groq API с retry и exponential backoff
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = requests.post(
+                    GROQ_API_URL,
+                    headers={
+                        'Content-Type': 'application/json',
+                        'Authorization': f'Bearer {API_KEY}'
+                    },
+                    json={
+                        'model': 'llama-3.3-70b-versatile',
+                        'messages': [{
+                            'role': 'user',
+                            'content': prompt
+                        }],
+                        'temperature': 0.3,
+                        'max_tokens': 8000,
+                        'top_p': 1,
+                        'stream': False
+                    },
+                    timeout=60
+                )
 
-        if response.status_code != 200:
-            print(f"  ❌ Ошибка API: {response.status_code} - {response.text}")
-            return text
+                if response.status_code == 429:
+                    # Rate limited — backoff
+                    wait_time = 2 ** (attempt + 1)
+                    print(f"  ⏳ Rate limit, жду {wait_time}с (попытка {attempt + 1}/{max_retries})...")
+                    time.sleep(wait_time)
+                    continue
 
-        result = response.json()
+                if response.status_code != 200:
+                    print(f"  ❌ Ошибка API: {response.status_code} - {response.text[:200]}")
+                    if attempt < max_retries - 1:
+                        time.sleep(2 ** attempt)
+                        continue
+                    return text
 
-        if 'choices' not in result or not result['choices']:
-            print(f"  ❌ Нет ответа от API")
-            return text
+                result = response.json()
 
-        translation = result['choices'][0]['message']['content'].strip()
+                if 'choices' not in result or not result['choices']:
+                    print(f"  ❌ Нет ответа от API")
+                    return text
 
-        # Сохранение в кеш
-        cache[cache_key] = translation
+                translation = result['choices'][0]['message']['content'].strip()
 
-        # Минимальная задержка (Groq очень быстрый - 30 req/min)
-        time.sleep(0.5)
+                # Сохранение в кеш
+                cache[cache_key] = translation
 
-        return translation
+                # Задержка между запросами (Groq: 30 req/min)
+                time.sleep(2.0)
+
+                return translation
+
+            except requests.Timeout:
+                wait_time = 2 ** (attempt + 1)
+                print(f"  ⏳ Таймаут, жду {wait_time}с (попытка {attempt + 1}/{max_retries})...")
+                time.sleep(wait_time)
+                continue
+            except requests.ConnectionError:
+                wait_time = 2 ** (attempt + 1)
+                print(f"  ⏳ Ошибка соединения, жду {wait_time}с (попытка {attempt + 1}/{max_retries})...")
+                time.sleep(wait_time)
+                continue
+
+        print(f"  ❌ Все {max_retries} попытки исчерпаны")
+        return text
 
     except Exception as e:
         print(f"  ❌ Ошибка перевода: {str(e)}")
@@ -126,8 +205,17 @@ def translate_file(en_file: Path):
         print(f"  ❌ Ошибка чтения: {e}")
         return
 
-    # Перевод
-    translated = translate_text(content, str(relative_path))
+    # Перевод с chunking для больших файлов
+    if len(content) > MAX_CHUNK_CHARS:
+        print(f"  📏 Большой файл ({len(content)} символов) - разбиваю на части...")
+        chunks = split_into_chunks(content)
+        translated_parts = []
+        for ci, chunk in enumerate(chunks, 1):
+            print(f"  📦 Часть {ci}/{len(chunks)}...")
+            translated_parts.append(translate_text(chunk, f"{relative_path}#chunk{ci}"))
+        translated = '\n\n'.join(translated_parts)
+    else:
+        translated = translate_text(content, str(relative_path))
 
     # Сохранение
     try:
@@ -152,13 +240,11 @@ def main():
     print()
 
     # Проверка API ключа
-    if API_KEY == 'gsk_demo_key_placeholder':
-        print("⚠️  ВНИМАНИЕ: Используется демо-ключ!")
+    if not API_KEY:
+        print("❌ GROQ_API_KEY не задан!")
         print("📝 Получите бесплатный ключ на: https://console.groq.com")
         print("💡 Затем установите: set GROQ_API_KEY=gsk_your_key_here")
-        print()
-        print("Продолжаю с демо-ключом (может не работать)...")
-        print()
+        return
 
     # Поиск всех английских файлов
     if not EN_DIR.exists():

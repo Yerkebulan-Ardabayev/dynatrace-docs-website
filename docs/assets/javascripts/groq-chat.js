@@ -5,8 +5,9 @@
  */
 
 // Configuration - Groq API (Llama 3.1 70B - бесплатно и супер быстро!)
-const GROQ_API_KEY = '***GROQ_KEY_REMOVED***';
-const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+// API ключ загружается из meta-тега, установленного сервером
+const GROQ_API_KEY = document.querySelector('meta[name="groq-api-key"]')?.content || '';
+const GROQ_API_URL = '/api/chat'; // Проксируем через бэкенд для безопасности
 
 // Create chat widget
 function createChatWidget() {
@@ -107,25 +108,11 @@ ${context}
         const response = await fetch(GROQ_API_URL, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${GROQ_API_KEY}`
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                model: 'llama-3.3-70b-versatile',
-                messages: [
-                    {
-                        role: 'system',
-                        content: systemPrompt
-                    },
-                    {
-                        role: 'user',
-                        content: message
-                    }
-                ],
-                temperature: 0.7,
-                max_tokens: 1024,
-                top_p: 1,
-                stream: false
+                message: message,
+                context: systemPrompt
             })
         });
 
@@ -162,17 +149,11 @@ ${context}
 
         let errorText = '❌ Извините, произошла ошибка.';
 
-        if (GROQ_API_KEY === 'gsk_demo_key_placeholder') {
+        if (error.message && error.message.includes('API key')) {
             errorText = `
-                <p>❌ <strong>API ключ не настроен!</strong></p>
-                <p>Получите бесплатный ключ Groq:</p>
-                <ol style="text-align: left; margin: 10px 0;">
-                    <li>Перейдите на <a href="https://console.groq.com" target="_blank">console.groq.com</a></li>
-                    <li>Создайте аккаунт (бесплатно)</li>
-                    <li>Получите API ключ</li>
-                    <li>Добавьте в <code>groq-chat.js</code> строку 7</li>
-                </ol>
-                <p style="font-size: 0.9em;">💡 Groq бесплатный и очень быстрый!</p>
+                <p>❌ <strong>API ключ не настроен на сервере!</strong></p>
+                <p>Установите переменную окружения GROQ_API_KEY и перезапустите сервер.</p>
+                <p style="font-size: 0.9em;">💡 Получите бесплатный ключ на <a href="https://console.groq.com" target="_blank">console.groq.com</a></p>
             `;
         } else {
             errorText = `<p>❌ ${error.message}</p><p><em>Попробуйте ещё раз.</em></p>`;

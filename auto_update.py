@@ -32,7 +32,7 @@ def update_documentation():
 
     try:
         # 1. Скачивание
-        logger.info("[1/4] Скачивание документации...")
+        logger.info("[1/5] Скачивание документации...")
         result = subprocess.run(
             ['python', 'scripts/scrape_docs.py', '--max-pages', '1000'],
             capture_output=True,
@@ -48,7 +48,7 @@ def update_documentation():
         logger.info("✅ Скачивание завершено")
 
         # 2. Организация
-        logger.info("[2/4] Организация файлов...")
+        logger.info("[2/5] Организация файлов...")
         result = subprocess.run(
             ['python', 'scripts/organize_docs.py'],
             capture_output=True,
@@ -63,8 +63,8 @@ def update_documentation():
 
         logger.info("✅ Организация завершена")
 
-        # 3. СУПЕР-БЫСТРЫЙ перевод (Groq - бесплатно!)
-        logger.info("[3/4] СУПЕР-БЫСТРЫЙ перевод на русский (Groq Llama 3.1 70B)...")
+        # 3. Перевод (Groq)
+        logger.info("[3/5] Перевод на русский (Groq Llama 3.1 70B)...")
         result = subprocess.run(
             ['python', 'scripts/translate_docs_groq.py'],
             capture_output=True,
@@ -78,8 +78,23 @@ def update_documentation():
 
         logger.info("✅ Перевод завершен")
 
-        # 4. Сборка сайта
-        logger.info("[4/4] Сборка сайта...")
+        # 4. Валидация переводов
+        logger.info("[4/5] Валидация переводов...")
+        result = subprocess.run(
+            ['python', 'scripts/validate_translations.py'],
+            capture_output=True,
+            text=True,
+            timeout=300,
+            encoding='utf-8'
+        )
+
+        if result.returncode != 0:
+            logger.warning(f"Валидация с предупреждениями (продолжаем)")
+
+        logger.info("✅ Валидация завершена")
+
+        # 5. Сборка сайта
+        logger.info("[5/5] Сборка сайта...")
         result = subprocess.run(
             ['mkdocs', 'build'],
             capture_output=True,

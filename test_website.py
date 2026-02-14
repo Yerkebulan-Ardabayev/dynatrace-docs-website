@@ -5,6 +5,7 @@ Tests: links, navigation, file existence, AI integration
 """
 
 import os
+import re
 import sys
 from pathlib import Path
 import json
@@ -88,40 +89,57 @@ class WebsiteTester:
         print(f"\n{BLUE}{'='*60}{RESET}")
         print(f"{BLUE}Testing AI Integration{RESET}")
         print(f"{BLUE}{'='*60}{RESET}\n")
-        
-        # Check Gemini JavaScript
-        js_file = self.base_dir / 'docs/assets/javascripts/gemini-chat.js'
+
+        # Check Groq chat widget JavaScript
+        js_file = self.base_dir / 'docs/assets/javascripts/groq-chat.js'
         if js_file.exists():
             content = js_file.read_text(encoding='utf-8')
-            
-            # Check API key
-            if '***GEMINI_KEY_REMOVED***' in content:
-                self.print_status("PASS", "Gemini API key found in gemini-chat.js")
+
+            # SECURITY: Verify NO hardcoded API keys in client-side JS
+            if re.search(r'gsk_[a-zA-Z0-9]{20,}', content):
+                self.print_status("FAIL", "SECURITY: Hardcoded Groq API key found in groq-chat.js!")
             else:
-                self.print_status("FAIL", "Gemini API key NOT found in gemini-chat.js")
-            
-            # Check API endpoint
-            if 'generativelanguage.googleapis.com' in content:
-                self.print_status("PASS", "Gemini API endpoint configured")
+                self.print_status("PASS", "No hardcoded API keys in groq-chat.js")
+
+            if re.search(r'AIzaSy[a-zA-Z0-9_-]{30,}', content):
+                self.print_status("FAIL", "SECURITY: Hardcoded Gemini API key found in groq-chat.js!")
             else:
-                self.print_status("FAIL", "Gemini API endpoint NOT configured")
-            
+                self.print_status("PASS", "No hardcoded Gemini keys in groq-chat.js")
+
+            # Check that chat uses server proxy
+            if '/api/chat' in content:
+                self.print_status("PASS", "Chat widget uses server proxy (/api/chat)")
+            else:
+                self.print_status("WARN", "Chat widget may not use server proxy")
+
             # Check widget creation
             if 'createChatWidget' in content:
                 self.print_status("PASS", "Chat widget creation function exists")
             else:
                 self.print_status("FAIL", "Chat widget creation function MISSING")
         else:
-            self.print_status("FAIL", "gemini-chat.js NOT FOUND")
-        
+            self.print_status("WARN", "groq-chat.js not found (AI chat disabled)")
+
         # Check mkdocs.yml includes the JS
         mkdocs_file = self.base_dir / 'mkdocs.yml'
         if mkdocs_file.exists():
             content = mkdocs_file.read_text(encoding='utf-8')
-            if 'assets/javascripts/gemini-chat.js' in content:
-                self.print_status("PASS", "Gemini JS linked in mkdocs.yml")
+            if 'assets/javascripts/groq-chat.js' in content:
+                self.print_status("PASS", "Groq JS linked in mkdocs.yml")
+            elif 'assets/javascripts/' in content:
+                self.print_status("WARN", "JS file linked in mkdocs.yml but may need update")
             else:
-                self.print_status("FAIL", "Gemini JS NOT linked in mkdocs.yml")
+                self.print_status("FAIL", "No AI JS linked in mkdocs.yml")
+
+        # Check server-side scripts don't have hardcoded keys
+        for script_name in ['translate_docs_gemini.py', 'translate_docs_groq.py']:
+            script_file = self.base_dir / 'scripts' / script_name
+            if script_file.exists():
+                script_content = script_file.read_text(encoding='utf-8')
+                if re.search(r"API_KEY\s*=\s*['\"](?:AIzaSy|gsk_)[a-zA-Z0-9_-]+['\"]", script_content):
+                    self.print_status("FAIL", f"SECURITY: Hardcoded API key in {script_name}!")
+                elif 'os.environ.get' in script_content:
+                    self.print_status("PASS", f"{script_name} uses environment variables for API key")
     
     def count_documentation(self):
         """Count English and Russian documentation files"""
