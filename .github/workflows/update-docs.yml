@@ -61,6 +61,13 @@ jobs:
           python translate_docs_groq.py
           echo "Translation completed!"
 
+      - name: Sanitize secrets from scraped content
+        if: steps.scrape.outcome == 'success'
+        run: |
+          echo "Sanitizing documentation examples that trigger GitHub Push Protection..."
+          python scripts/sanitize_secrets.py --docs-dir docs
+          echo "Sanitization completed!"
+
       - name: Clean up temporary files
         if: always()
         run: |
@@ -92,7 +99,7 @@ jobs:
 
       - name: Push changes
         if: steps.changes.outputs.changed == 'true'
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
