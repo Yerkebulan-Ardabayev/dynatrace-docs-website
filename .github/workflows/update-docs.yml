@@ -15,6 +15,7 @@ on:
 jobs:
   update-docs:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
 
@@ -53,13 +54,14 @@ jobs:
       - name: Translate to Russian (Groq Llama 3.1 70B)
         if: steps.scrape.outcome == 'success'
         continue-on-error: true
+        timeout-minutes: 30
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
           echo "Translating to Russian via Groq API..."
           cd scripts
-          python translate_docs_groq.py
-          echo "Translation completed!"
+          timeout 1740 python translate_docs_groq.py || echo "Translation timed out (partial translation saved)"
+          echo "Translation step completed!"
 
       - name: Sanitize secrets from scraped content
         if: steps.scrape.outcome == 'success'
