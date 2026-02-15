@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-15T09:03:35.089998
+scraped: 2026-02-15T21:12:47.872610
 ---
 
 # Dynatrace Intelligence agentic and generative AI

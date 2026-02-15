@@ -1,7 +1,7 @@
 ---
 title: Monitor suspicious sign-in activity with Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/monitor-sign-in-activity
-scraped: 2026-02-15T09:02:21.563854
+scraped: 2026-02-15T21:12:05.866014
 ---
 
 # Monitor suspicious sign-in activity with Dynatrace

@@ -1,7 +1,7 @@
 ---
 title: Amazon CloudWatch Logs monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cloudwatch-logs
-scraped: 2026-02-15T09:06:40.424651
+scraped: 2026-02-15T21:26:20.639337
 ---
 
 # Amazon CloudWatch Logs monitoring

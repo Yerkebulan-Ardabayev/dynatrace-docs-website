@@ -1,7 +1,7 @@
 ---
 title: Service-level Objectives API classic
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/service-level-objectives-classic
-scraped: 2026-02-15T09:11:38.025703
+scraped: 2026-02-15T21:24:33.952618
 ---
 
 # Service-level Objectives API classic

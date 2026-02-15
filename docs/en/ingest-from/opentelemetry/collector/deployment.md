@@ -1,7 +1,7 @@
 ---
 title: Collector deployment
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/deployment
-scraped: 2026-02-15T09:13:45.864134
+scraped: 2026-02-15T21:23:21.659319
 ---
 
 # Collector deployment

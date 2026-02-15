@@ -1,7 +1,7 @@
 ---
 title: Stream logs to Dynatrace with Fluentd on Kubernetes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s
-scraped: 2026-02-15T09:03:54.210777
+scraped: 2026-02-15T21:11:55.128315
 ---
 
 # Stream logs to Dynatrace with Fluentd on Kubernetes

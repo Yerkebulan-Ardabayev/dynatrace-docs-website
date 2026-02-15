@@ -1,7 +1,7 @@
 ---
 title: Applications API - GET an application
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-an-app
-scraped: 2026-02-15T09:00:45.916365
+scraped: 2026-02-15T21:21:41.717299
 ---
 
 # Applications API - GET an application

@@ -1,7 +1,7 @@
 ---
 title: Rust
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/rust
-scraped: 2026-02-15T09:01:46.303524
+scraped: 2026-02-15T21:20:44.769924
 ---
 
 # Rust

@@ -1,7 +1,7 @@
 ---
 title: Update OneAgent on PPC BE Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-ppc-be-linux
-scraped: 2026-02-06T16:30:54.170536
+scraped: 2026-02-15T21:18:49.361073
 ---
 
 # Update OneAgent on PPC BE Linux
@@ -40,7 +40,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 
 ### Host Overview
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Click the host you are interested in.
 3. Expand **Properties** under the host's name. The installed version of OneAgent is included in the listed properties.
 

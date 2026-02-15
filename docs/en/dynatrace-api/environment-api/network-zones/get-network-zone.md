@@ -1,7 +1,7 @@
 ---
 title: Network zones API - GET a network zone
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/network-zones/get-network-zone
-scraped: 2026-02-15T09:00:18.137423
+scraped: 2026-02-15T21:19:37.945357
 ---
 
 # Network zones API - GET a network zone

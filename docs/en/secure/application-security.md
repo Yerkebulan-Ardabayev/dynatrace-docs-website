@@ -1,7 +1,7 @@
 ---
 title: Application Security
 source: https://www.dynatrace.com/docs/secure/application-security
-scraped: 2026-02-15T08:55:30.082980
+scraped: 2026-02-15T21:08:43.723414
 ---
 
 # Application Security

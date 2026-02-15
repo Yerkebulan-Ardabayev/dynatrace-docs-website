@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Dataproc monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-dataproc-monitoring
-scraped: 2026-02-15T09:06:53.845718
+scraped: 2026-02-15T21:29:58.293741
 ---
 
 # Google Cloud Dataproc monitoring

@@ -1,7 +1,7 @@
 ---
 title: Collector Configuration
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/configuration
-scraped: 2026-02-15T09:08:19.938129
+scraped: 2026-02-15T21:28:16.168727
 ---
 
 # Collector Configuration

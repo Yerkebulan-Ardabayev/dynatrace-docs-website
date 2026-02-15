@@ -1,7 +1,7 @@
 ---
 title: Migrate from classic full-stack to cloud-native full-stack mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-cloud-native
-scraped: 2026-02-15T09:09:26.097428
+scraped: 2026-02-15T21:29:59.592935
 ---
 
 # Migrate from classic full-stack to cloud-native full-stack mode

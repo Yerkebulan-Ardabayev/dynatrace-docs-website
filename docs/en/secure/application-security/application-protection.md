@@ -1,7 +1,7 @@
 ---
 title: Runtime Application Protection
 source: https://www.dynatrace.com/docs/secure/application-security/application-protection
-scraped: 2026-02-15T09:02:44.752186
+scraped: 2026-02-15T21:13:25.969512
 ---
 
 # Runtime Application Protection

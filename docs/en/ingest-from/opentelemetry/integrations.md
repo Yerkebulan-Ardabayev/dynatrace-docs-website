@@ -1,7 +1,7 @@
 ---
 title: Integrate with Istio and Envoy
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/integrations
-scraped: 2026-02-15T08:57:49.514097
+scraped: 2026-02-15T21:15:59.025523
 ---
 
 # Integrate with Istio and Envoy

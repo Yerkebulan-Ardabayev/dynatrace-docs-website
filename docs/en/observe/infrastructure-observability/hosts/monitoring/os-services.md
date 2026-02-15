@@ -1,7 +1,7 @@
 ---
 title: OS services monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/os-services
-scraped: 2026-02-06T16:31:57.431344
+scraped: 2026-02-15T21:18:39.855157
 ---
 
 # OS services monitoring
@@ -14,7 +14,7 @@ scraped: 2026-02-06T16:31:57.431344
 
 Dynatrace provides out-of-the-box availability monitoring of OS services.
 
-You can monitor hosts in full-stack monitoring mode or use lightweight monitoring modes. For more information, see [Infrastructure and Discovery monitoring modes](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
+You can monitor hosts in full-stack monitoring mode or use lightweight monitoring modes. For more information, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Requirements
 
@@ -104,7 +104,7 @@ Go to **Settings** > **Collect and capture** > **Infrastructure** > **OS** > **O
 
 ### Host level
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Find and select your host to display the host overview page.
 3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 
@@ -349,7 +349,7 @@ To manage the OS services
 
    Host level
 
-   1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+   1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
    2. Find and select your host to display the host overview page.
    3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 
@@ -387,7 +387,7 @@ OneAgent version 1.243+
 
 The [Host overview](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.") page contains the **OS services analysis** section listing the OS services for which any policy (with active alerting or monitoring) is fulfilled.
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Select any host to go to its overview page.
 3. In the **OS services analysis** section, select the service name to open the **Service overview** page.
 

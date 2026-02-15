@@ -1,7 +1,7 @@
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-15T09:08:38.432504
+scraped: 2026-02-15T21:30:29.145746
 ---
 
 # Email

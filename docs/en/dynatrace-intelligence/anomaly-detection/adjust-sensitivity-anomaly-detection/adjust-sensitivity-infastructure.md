@@ -1,7 +1,7 @@
 ---
 title: Adjust the sensitivity of anomaly detection for infrastructure
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
-scraped: 2026-02-06T16:31:53.852926
+scraped: 2026-02-15T21:18:31.130817
 ---
 
 # Adjust the sensitivity of anomaly detection for infrastructure
@@ -89,7 +89,7 @@ As an alternative to defining thresholds globally across your entire environment
 
 To change threshold settings for a specific host
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Select the host you want to configure.
 3. In the upper-right corner of the page, select **More** (**â¦**) > **Settings**.
 4. Go to **Anomaly detection** > **Infrastructure** to customize the configuration.

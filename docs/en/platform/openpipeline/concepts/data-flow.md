@@ -1,7 +1,7 @@
 ---
 title: Data flow in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/data-flow
-scraped: 2026-02-15T09:02:33.752946
+scraped: 2026-02-15T21:12:34.900470
 ---
 
 # Data flow in OpenPipeline

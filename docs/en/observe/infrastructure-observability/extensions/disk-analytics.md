@@ -1,7 +1,7 @@
 ---
 title: Disk Analytics extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/disk-analytics
-scraped: 2026-02-06T16:31:47.855259
+scraped: 2026-02-15T21:18:28.546480
 ---
 
 # Disk Analytics extension
@@ -68,7 +68,7 @@ If you enable the extension for a host, this overrides any setting on the host g
 
 To enable or disable the extension on one Linux host
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Find and select your host to display the host overview page.
 3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 
@@ -78,7 +78,7 @@ To enable or disable the extension on one Linux host
 
 ### Metrics
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host on which you want to analyze local storage devices.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host on which you want to analyze local storage devices.
 2. Select the **Linux disks** tab to scroll the page down to the **Linux disks** section.
 
 ### Licensing and costs

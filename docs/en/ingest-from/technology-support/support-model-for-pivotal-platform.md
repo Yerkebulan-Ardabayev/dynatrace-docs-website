@@ -1,7 +1,7 @@
 ---
 title: Dynatrace support model for VMware Tanzu Application Service
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/support-model-for-pivotal-platform
-scraped: 2026-02-15T09:01:55.795269
+scraped: 2026-02-15T21:20:54.165722
 ---
 
 # Dynatrace support model for VMware Tanzu Application Service

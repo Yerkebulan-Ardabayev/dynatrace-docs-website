@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Operator release notes version 1.7.0
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-0
-scraped: 2026-02-06T16:26:48.396259
+scraped: 2026-02-15T21:22:33.059648
 ---
 
 # Dynatrace Operator release notes version 1.7.0
@@ -16,15 +16,7 @@ Release date: September 8th, 2025
 
 Important notice
 
-If you're running Dynatrace Operator version 1.7, we recommend upgrading to version 1.7.1 to receive the latest important patches.
-
-## Known Issues
-
-We have identified the following known issues with Dynatrace Operator versions 1.7.0â1.7.2. For other known issues, see [Dynatrace Operator support and known issues](/docs/ingest-from/technology-support/support-model-and-issues#well-known-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
-
-* Due to optimization of the injected mounts (combining them under `/var/lib/dynatrace`), Dynatrace components can no longer be injected with the OneAgent.
-
-* Classic full-stack and metadata enrichment are not compatible and cannot be used to inject the same application pods.
+If you're running Dynatrace Operator version 1.7.0, we recommend upgrading to version 1.7.1 to receive the latest important patches.
 
 ## Announcements
 
@@ -73,14 +65,6 @@ The following features are limited in functionality if `settings.read` and `sett
 * Automatic Kubernetes API monitoring is disabled. You need to [enable it manually](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#local "Monitor the Kubernetes API using Dynatrace") for your tenant.
 * The OneAgent Log module is initially deployed without a MonitoredEntityID context. As soon as the MonitoredEntityID is known, its configuration is updated and the OneAgent Log module is restarted. As a consequence, logs may initially miss the `topology:dt.entity.kubernetes_cluster` enrichment.
 
-## Known issues
-
-We have identified the following known issues with Dynatrace Operator version 1.7.0.
-
-* In Kubernetes environments â especially those utilizing auto-scalers â there are challenges in reliably determining whether a node was intentionally removed or has failed unexpectedly. This ambiguity can lead to a high number of false-positive âHost is unavailableâ alerts, impacting monitoring accuracy and alerting quality.
-
-* OneAgent versions earlier than `1.317` are incompatible with the reduced volume mount and read-only binary setup, as they can't read configuration files from writable locations used by the init container.
-
 ## Resolved issues
 
 * The secret containing the auto-generated TLS certificate for ActiveGate is now properly removed when ActiveGate is disabled or deleted from the DynaKube configuration.
@@ -109,9 +93,17 @@ We have identified the following known issues with Dynatrace Operator version 1.
 * The network zone specified in `.spec.networkZone` will now be correctly propagated to the `logMonitoring` DaemonSet.
   For existing deployments, where standalone `logMonitoring` and `.spec.networkZone` are already configured, the `logMonitoring` pods will be restarted to use the correct network zone configuration.
 
+## Known issues
+
+We have identified the following known issues with Dynatrace Operator version 1.7.0.
+
+* In Kubernetes environments â especially those utilizing auto-scalers â there are challenges in reliably determining whether a node was intentionally removed or has failed unexpectedly. This ambiguity can lead to a high number of false-positive âHost is unavailableâ alerts, impacting monitoring accuracy and alerting quality.
+
+* OneAgent versions earlier than `1.317` are incompatible with the reduced volume mount and read-only binary setup, as they can't read configuration files from writable locations used by the init container.
+
 ## Removal and deprecation notices
 
-* The deprecated Dynatrace OneAgent Operator has been removed from the operatorhub.io catalog. Please use our [Dynatrace Operator](/docs/ingest-from/setup-on-k8s/quickstart#deploy-dynatrace-operator "Deploy Dynatrace Operator on Kubernetes") instead.
+* The deprecated Dynatrace OneAgent Operator has been removed from the `operatorhub.io` catalog. Use [Dynatrace Operator](/docs/ingest-from/setup-on-k8s/quickstart#deploy-dynatrace-operator "Deploy Dynatrace Operator on Kubernetes") instead.
 
 * The Helm repository located in `dynatrace/helm-charts` is deprecated and will stop receiving updates in a future release! If you are still using it,
   please update the URL to `dynatrace/dynatrace-operator` or switch to the OCI registry-based approach. Update the Helm repository URL with the following commands:
@@ -124,13 +116,13 @@ We have identified the following known issues with Dynatrace Operator version 1.
   helm repo add dynatrace https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable
   ```
 
-* The following API versions of the DynaKube CustomResourceDefinition have been removed in Dynatrace Operator version v1.7:
+* The following API versions of the DynaKube CustomResourceDefinition have been removed in Dynatrace Operator version 1.7.0:
 
   + `v1beta1`
   + `v1beta2`
 * The following API versions of the DynaKube CustomResourceDefinition are marked for deprecation and will be removed in the specified Dynatrace Operator versions:
 
-  + `v1beta3` will be removed with Dynatrace Operator version 1.8
+  + `v1beta3` will be removed with Dynatrace Operator version 1.8.0
 
 * To prevent potential disruptions, we strongly advise keeping your DynaKube API version up to date. Once a version is deprecated and removed, updates may become significantly more complex and time-sensitive.
 
@@ -142,7 +134,7 @@ We have identified the following known issues with Dynatrace Operator version 1.
   + Use the `.spec.oneagent.(cloudNativeFullStack|classicFullStack|hostMonitoring).version` field to pin the version on a per-DynaKube basis.
 
 * CSI sidecar binaries, located in `/usr/local/bin/csi-node-driver-registrar` and `/usr/local/bin/livenessprobe`, are now deprecated and will be removed in a future version of Dynatrace Operator.
-* [Support for OpenShift 4.10 and 4.11](/docs/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") ended in March 2025. As a result, Dynatrace Operator 1.7 will no longer support these versions.
+* [Support for OpenShift 4.10 and 4.11](/docs/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") ended in March 2025. As a result, Dynatrace Operator 1.7 no longer supports these versions.
 
 * The âMark for Terminationâ event is deprecated and will be removed in a future Operator version. This functionality is now redundant, as it has been superseded by host availability events on host shutdown and reboot introduced in OneAgent version 1.301.
 

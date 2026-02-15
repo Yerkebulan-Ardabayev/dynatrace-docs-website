@@ -1,7 +1,7 @@
 ---
 title: Configure key user actions for custom applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applications/additional-configuration/configure-key-user-actions-custom
-scraped: 2026-02-15T09:12:07.600790
+scraped: 2026-02-15T21:25:42.767696
 ---
 
 # Configure key user actions for custom applications

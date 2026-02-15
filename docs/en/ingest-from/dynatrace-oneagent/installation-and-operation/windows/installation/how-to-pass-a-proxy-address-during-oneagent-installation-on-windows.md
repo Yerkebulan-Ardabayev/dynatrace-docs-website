@@ -1,7 +1,7 @@
 ---
 title: How to pass a proxy address during OneAgent installation on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-windows
-scraped: 2026-02-06T16:30:59.703149
+scraped: 2026-02-15T21:19:11.139155
 ---
 
 # How to pass a proxy address during OneAgent installation on Windows
