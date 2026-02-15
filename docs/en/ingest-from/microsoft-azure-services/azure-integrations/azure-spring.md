@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure Spring Apps
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring
-scraped: 2026-02-06T16:24:13.651826
+scraped: 2026-02-15T08:57:06.177606
 ---
 
 # Monitor Azure Spring Apps
@@ -146,7 +146,7 @@ Optionally, you can customize the built-in rules for process group detection by 
 
 ## View data in Dynatrace
 
-Once you add the environment variables to your application, Dynatrace starts collecting data from it. To view data for your Azure Spring Apps application, go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select your application.
+Once you add the environment variables to your application, Dynatrace starts collecting data from it. To view data for your Azure Spring Apps application, go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select your application.
 
 Example service flow:
 

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace ActiveGate
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate
-scraped: 2026-02-06T16:21:09.742605
+scraped: 2026-02-15T08:55:51.234206
 ---
 
 # Dynatrace ActiveGate

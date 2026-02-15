@@ -1,7 +1,7 @@
 ---
 title: OneAgent security on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix
-scraped: 2026-02-06T16:31:40.105478
+scraped: 2026-02-15T09:09:31.052288
 ---
 
 # OneAgent security on AIX

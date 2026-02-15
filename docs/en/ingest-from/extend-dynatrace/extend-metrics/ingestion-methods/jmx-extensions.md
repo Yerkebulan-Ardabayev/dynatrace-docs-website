@@ -1,7 +1,7 @@
 ---
 title: JMX extensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions
-scraped: 2026-02-06T16:28:40.654968
+scraped: 2026-02-15T09:03:42.196412
 ---
 
 # JMX extensions
@@ -16,7 +16,7 @@ JMX ([Java Management Extensionsï»¿](https://www.oracle.com/technetwork/java/
 
 ## Infrastructure Monitoring mode
 
-JMX and PMI extensions are also available in [Infrastructure Monitoring mode](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.") You can use them to monitor any infrastructure component and backing service written in Java and have all the collected metrics reported by Dynatrace.
+JMX and PMI extensions are also available in [Infrastructure Monitoring mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") You can use them to monitor any infrastructure component and backing service written in Java and have all the collected metrics reported by Dynatrace.
 
 ## Create a JMX extension
 

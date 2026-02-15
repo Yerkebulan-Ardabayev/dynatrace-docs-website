@@ -1,7 +1,7 @@
 ---
 title: Application Security
 source: https://www.dynatrace.com/docs/secure/application-security
-scraped: 2026-02-06T16:20:04.671508
+scraped: 2026-02-15T08:55:30.082980
 ---
 
 # Application Security
@@ -50,7 +50,7 @@ Full-Stack Monitoring mode provides complete application performance monitoring,
 
 ### Infrastructure Monitoring mode
 
-[Infrastructure Monitoring mode](/docs/observe/infrastructure-observability/hosts/monitoring-modes#infrastructure-only "Find out what's included in Dynatrace Infrastructure Monitoring mode."), where OneAgent is configured to provide physical and virtual infrastructure-centric monitoring, provides less complete monitoring than the Full-Stack Monitoring mode. The following functionalities are provided:
+[Infrastructure Monitoring mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes#infrastructure-only "Find out more about the available monitoring modes when using OneAgent."), where OneAgent is configured to provide physical and virtual infrastructure-centric monitoring, provides less complete monitoring than the Full-Stack Monitoring mode. The following functionalities are provided:
 
 * System metrics (CPU usage, memory usage, disk usage)
 * [Third-party vulnerability detection](/docs/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
@@ -92,14 +92,14 @@ Same capabilities as Full-Stack Monitoring mode.
 
 ### Discovery mode
 
-[Discovery mode](/docs/observe/infrastructure-observability/hosts/monitoring-modes#discovery "Find out what's included in Dynatrace Infrastructure Monitoring mode.") is a lightweight monitoring mode that provides basic monitoring. The following functionalities are provided:
+[Discovery mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes#discovery "Find out more about the available monitoring modes when using OneAgent.") is a lightweight monitoring mode that provides basic monitoring. The following functionalities are provided:
 
 * System metrics (CPU usage, memory usage, disk usage)
 * [Third-party vulnerability detection](/docs/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Code-level vulnerability detection](/docs/secure/application-security/vulnerability-analytics#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
 
-For Application Security to work in Discovery mode, after [enabling Discovery mode](/docs/observe/infrastructure-observability/hosts/monitoring-modes#enable-discovery-mode "Find out what's included in Dynatrace Infrastructure Monitoring mode."), you also need to [enable code-module injection](/docs/observe/infrastructure-observability/hosts/monitoring-modes#code-module-injection "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
+For Application Security to work in Discovery mode, after [enabling Discovery mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes#enable-discovery-mode "Find out more about the available monitoring modes when using OneAgent."), you also need to [enable code-module injection](/docs/platform/oneagent/monitoring-modes/monitoring-modes#code-module-injection "Find out more about the available monitoring modes when using OneAgent.").
 
 #### Characteristics
 

@@ -1,7 +1,7 @@
 ---
 title: Span and trace context propagation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/tracking-transactions
-scraped: 2026-02-06T16:19:13.347585
+scraped: 2026-02-15T08:54:23.525387
 ---
 
 # Span and trace context propagation
@@ -61,9 +61,16 @@ There are several reasons to turn on W3C trace context in Dynatrace:
 
 ### Set up W3C trace context
 
-To turn W3C trace context on:
+To turn W3C trace context on
+
+**Latest Dynatrace**
+
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+2. Turn on **Send W3C Trace Context HTTP headers** and **Send W3C Trace Context gRPC headers**.
+
+**Dynatrace Classic**
 
 1. Go to **Settings** > **Preferences** > **OneAgent features**.
-2. Turn on the **Send W3C Trace Context HTTP headers** and **Send W3C Trace Context gRPC headers** toggles.
+2. Turn on **Send W3C Trace Context HTTP headers** and **Send W3C Trace Context gRPC headers**.
 
 While the W3C standard formally specifies HTTP propagation, Dynatrace and the broader industry apply these concepts to other communication protocols.

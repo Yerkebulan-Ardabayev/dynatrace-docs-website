@@ -1,7 +1,7 @@
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-06T16:29:50.927332
+scraped: 2026-02-15T08:54:21.311391
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -10,14 +10,83 @@ scraped: 2026-02-06T16:29:50.927332
 
 * Latest Dynatrace
 * Tutorial
-* 3-min read
-* Published Jan 15, 2026
+* 6-min read
+* Updated on Feb 04, 2026
+
+OpenPipeline processing allows you to normalize span and metric data to prevent high cardinality issues that can make aggregations and analysis unusable.
+
+The following use cases show how to reduce cardinality in different views in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**:
+
+* [Outbound calls](#outbound-calls)
+* [Message processing](/docs/observe/application-observability/services/monitor-service-message-processing "Monitor service message processing")
+
+## Outbound calls
+
+### High cardinality in outbound calls
+
+The **Outbound calls** tab displays aggregated metrics for external calls made by your service. High cardinality occurs when URLs contain unique identifiers in the path, such as `/users/12345` or `/orders/abc-def-123`, which leads to the creation of many distinct values.
+
+Processing rules help you transform these into normalized patterns, such as `/users/*` or `/orders/*`, optimizing your outbound call data.
+
+### Create an outbound calls normalization rule
+
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **Spans**.
+2. Go to the **Pipelines** tab. Select  **Pipeline** and enter a name (for example, `Outbound call normalization`) to create a new pipeline.
+3. Go to **Processing** >  **Processor** > **DQL** and configure a new processing rule for reducing the cardinality of the URL.
+4. Enter the following new DQL processor to normalize URLs:
+
+   * **Name**: URL or any preferred name.
+   * **Matching Condition**: The following condition matches all outbound HTTP calls.
+
+     ```
+     span.kind == "client" and isNotNull(url.full)
+     ```
+   * **DQL processor definition**
+
+     ```
+     fieldsAdd url.full.orig = url.full
+
+
+
+     | fieldsAdd path_normalized = replacePattern(url.path, "UUIDSTRING", "[UUID]")
+
+
+
+     | fieldsAdd path_normalized = replacePattern(path_normalized, "[/]LONG", "/[Number]")
+
+
+
+     | fieldsAdd port = if(isNotNull(server.port), concat(":", server.port),   else:null)
+
+
+
+     | fieldsAdd url.full = concat(url.scheme, "://", server.address, port, path_normalized)
+     ```
+
+### Enable the processor
+
+Now that we have defined and saved a processor, we can enable the processor by connecting it to OpenPipeline via a new dynamic route so that your pipeline receives span data.
+
+1. On the **Spans** page, go to the **Dynamic routing** tab.
+2. Select  **Dynamic route**.
+3. Define the dynamic route.
+
+   * **Name**: The name you gave the processor earlier.
+   * **Matching Condition**: The following matches all outbound HTTP calls.
+
+     ```
+     span.kind =="client" and isNotNull(url.full)
+     ```
+   * **Pipeline**: Select previously created pipeline from the list.
+4. Select **Save**.
+
+## Message processing
 
 ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** includes a **Message processing** view that aggregates metrics for messaging operations. High cardinality occurs when temporary queues are created with unique identifiers in their names (such as `amq.gen-6dggtCpu`, `async-job-2jrmsi5y`, or `orders-reply-2n68vy4g`), generating thousands of distinct queue names that make aggregations unusable.
 
 Most instrumentations keep the cardinality of `messaging.destination.name` low by using non-standard fields like `messaging.temp.queue.hash` for high-cardinality data or by setting `messaging.destination.temporary`. However, when instrumentation doesn't follow these practices, OpenPipeline processing rules can normalize temporary queue names into patterns or flag them as temporary.
 
-## How to identify high cardinality
+### High cardinality in message processing
 
 Before implementing normalization rules, query your spans to identify messaging systems with high percentages of unique destination names.
 
@@ -47,11 +116,9 @@ Before implementing normalization rules, query your spans to identify messaging 
    * Result in an excessive number of metrics with minimal analytical value.
    * Benefit from normalization as described below.
 
-## Steps
+### Create a message processing normalization rule
 
 You can use OpenPipeline processing rules to normalize temporary queue names into patterns or flag them as temporary.
-
-### Create a rule
 
 To create a rule
 
@@ -109,7 +176,7 @@ Now that we have defined and saved a processor, we can enable the processor by c
 2. Select  **Dynamic route**.
 3. Define the dynamic route.
 
-   * **Name**: The name you gave it earlier.
+   * **Name**: The name you gave the processor earlier.
    * **Matching Condition**: The following matches all spans that are related to messaging destinations starting with `odaRequestQueue`.
 
      ```

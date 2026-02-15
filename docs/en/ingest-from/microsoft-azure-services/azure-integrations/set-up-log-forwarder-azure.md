@@ -1,7 +1,7 @@
 ---
 title: Azure Logs
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure
-scraped: 2026-02-06T16:23:35.449287
+scraped: 2026-02-15T08:57:04.948939
 ---
 
 # Azure Logs
@@ -128,7 +128,7 @@ EVENT_HUB_CONNECTION_STRING="<your_Event_Hub_connection_string>"
 ## View Azure logs
 
 After deploying the script, you can view and analyze Azure logs in Dynatrace:
-Go to **Logs** (previous Dynatrace) or ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** and, in the attributes filter, search for **Azure**.
+Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** and, in the attributes filter, search for **Azure**.
 
 * If you see logs coming in, you managed to deploy Azure log forwarder successfully.
 * If there are no logs within 10 minutes checkout the **Verification** guide section of the page.
@@ -500,7 +500,7 @@ For a complete list of parameters, see the deploy table below.
 
 ## Verification
 
-To verify if the deployment was successful, in Dynatrace, go to **Logs** (previous Dynatrace) or ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** and confirm that the following log line is present:
+To verify if the deployment was successful, in Dynatrace, go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** and confirm that the following log line is present:
 
 ![Log line](https://dt-cdn.net/images/screenshot-2022-08-11-at-11-49-52-928-5957a24948.png)
 

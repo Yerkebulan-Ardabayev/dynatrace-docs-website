@@ -1,7 +1,7 @@
 ---
 title: Monitor Kubernetes/OpenShift events
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes
-scraped: 2026-02-06T16:26:33.256683
+scraped: 2026-02-15T09:05:25.359925
 ---
 
 # Monitor Kubernetes/OpenShift events
@@ -23,7 +23,7 @@ For full observability into your Kubernetes events, automatic Davis analysis, an
 
 To enable event monitoring for specific Kubernetes clusters
 
-1. Go to **Kubernetes** (previous Dynatrace) or ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
+1. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
 2. Find your Kubernetes cluster and, in the **Actions** column, select **More** (**â¦**) > **Settings**.
 3. On the **Monitoring Settings** tab, turn on **Monitor events**.
 4. Select **Save changes**.
@@ -60,7 +60,7 @@ For more information about an event, select **Details** for the event.
 
 Kubernetes events are associated with Kubernetes entities. An event is displayed on the respective entity page and on related entity pages. For example, pod events are displayed on the cluster, namespace, workload, and pod details page.
 
-You can also view events on the **Log viewer** page (in Dynatrace, go to **Logs** (previous Dynatrace) or ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**), which allows for advanced search and filtering.
+You can also view events on the **Log viewer** page (in Dynatrace, go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**), which allows for advanced search and filtering.
 
 If the environment is platform enabled the events are stored in Grail. The following DQL query can be used as a template to query for specific events in [**Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [**Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 
@@ -124,7 +124,7 @@ Via CLI
 
 Via API
 
-1. Go to **Kubernetes** (previous Dynatrace) or ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
+1. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
 2. Find your Kubernetes cluster and, in the **Actions** column, select **More** (**â¦**) > **Settings**.
 3. On the **Monitoring Settings** tab
 
@@ -165,7 +165,7 @@ By default, all these events are monitored when [**Monitor events**](#monitor-ev
 
 To enable monitoring of important events, when event filtering is turned on
 
-1. Go to **Kubernetes** (previous Dynatrace) or ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
+1. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
 2. Find your Kubernetes cluster and, in the **Actions** column, select **More** (**â¦**) > **Settings**.
 3. On the **Monitoring Settings** tab, turn on **Include important events**.
 

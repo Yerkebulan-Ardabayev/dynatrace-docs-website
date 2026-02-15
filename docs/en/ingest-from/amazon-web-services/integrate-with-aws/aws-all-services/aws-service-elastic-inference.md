@@ -1,7 +1,7 @@
 ---
 title: Amazon Elastic Inference monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-inference
-scraped: 2026-02-06T16:29:59.526511
+scraped: 2026-02-15T09:03:24.744306
 ---
 
 # Amazon Elastic Inference monitoring
@@ -638,7 +638,7 @@ You can view the service metrics in your Dynatrace environment either on the **c
 
 To access the custom device overview page
 
-1. Go to **Technologies & Processes** (previous Dynatrace) or ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
 2. Filter by service name and select the relevant custom device group.
 3. Once you select the custom device group, you're on the **custom device group overview page**.
 4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.

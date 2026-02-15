@@ -1,7 +1,7 @@
 ---
 title: Which are the most important processes?
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes
-scraped: 2026-02-06T16:21:31.432140
+scraped: 2026-02-15T08:55:23.160679
 ---
 
 # Which are the most important processes?
@@ -12,7 +12,7 @@ scraped: 2026-02-06T16:21:31.432140
 * 2-min read
 * Updated on Jan 16, 2025
 
-To view the most important processes running on a specific host, go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select a host to go to the host overview page. Locate the **Process analysis** section, where you'll find charts and lists of the processes running on the selected host.
+To view the most important processes running on a specific host, go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select a host to go to the host overview page. Locate the **Process analysis** section, where you'll find charts and lists of the processes running on the selected host.
 
 Within the **Process analysis** section, you can also see various process group instances categorized by technology type.
 

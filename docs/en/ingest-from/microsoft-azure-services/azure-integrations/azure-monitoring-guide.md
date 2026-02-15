@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure services with Azure Monitor metrics
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide
-scraped: 2026-02-06T16:23:50.835827
+scraped: 2026-02-15T08:57:12.169827
 ---
 
 # Monitor Azure services with Azure Monitor metrics
@@ -1023,7 +1023,7 @@ Within minutes, you'll see the data on your dashboards.
 
 To see the core measurements for each of your Azure connections
 
-1. Go to **Azure** (previous Dynatrace) or ![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure") **Azure Classic**.
+1. Go to ![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure") **Azure Classic**.
 2. Select the connection for which you want to see an overview of the Azure infrastructure.
 
 You can also build your own dashboard from the metrics collected for your Azure instances. For details on building dashboards, see [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").

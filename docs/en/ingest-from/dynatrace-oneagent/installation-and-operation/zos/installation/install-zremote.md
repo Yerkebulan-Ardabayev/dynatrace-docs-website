@@ -1,7 +1,7 @@
 ---
 title: Install the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote
-scraped: 2026-02-06T16:33:49.796821
+scraped: 2026-02-15T09:05:14.088686
 ---
 
 # Install the zRemote module
@@ -96,7 +96,7 @@ We recommend installing the zRemote module on an IBM Z or LinuxONE mainframe, on
   + The zRemote will write a warning to its logs after a connection latency of 3 seconds.
   + The zRemote will drop the connection after a connection latency of 10 seconds.
 * The zRemote only supports a [host-based ActiveGate installation](/docs/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.") configured for a single environment.
-* Monitoring of the host running the zRemote with OneAgent is only supported in [full-stack monitoring mode](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
+* Monitoring of the host running the zRemote with OneAgent is only supported in [full-stack monitoring mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
 
 ### Supported operating systems
 

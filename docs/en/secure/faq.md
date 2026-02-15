@@ -1,7 +1,7 @@
 ---
 title: Application Security FAQ
 source: https://www.dynatrace.com/docs/secure/faq
-scraped: 2026-02-06T16:29:24.927161
+scraped: 2026-02-15T09:00:52.022017
 ---
 
 # Application Security FAQ
@@ -30,8 +30,8 @@ You can detect, analyze, and understand security risks in your applications usin
 
 deprecated
 
-* To detect and monitor third-party vulnerabilities, [enable third-party vulnerability detection](/docs/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [**Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.").
-* For a unified view of third-party and code-level vulnerabilities and information about host coverage, [enable Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [**Security Overview** (previous Dynatrace) or ![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**](/docs/secure/application-security/vulnerability-analytics/application-security-overview "Get an overview of the security issues of your third-party libraries.").
+* To detect and monitor third-party vulnerabilities, [enable third-party vulnerability detection](/docs/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.").
+* For a unified view of third-party and code-level vulnerabilities and information about host coverage, [enable Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**](/docs/secure/application-security/vulnerability-analytics/application-security-overview "Get an overview of the security issues of your third-party libraries.").
 
 ### What's the difference between the classic monitoring rules and the new monitoring rules?
 
@@ -79,7 +79,7 @@ There are no scheduled scans. Once you enable any Dynatrace Application Security
 
 ### How can I give someone view-only access to vulnerabilities?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, which is deprecated.
 
 To restrict specific users to view-only access, so they can view but not manage vulnerabilities, see [Customize access](/docs/secure/application-security/vulnerability-analytics#restrict-permissions "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
 
@@ -117,7 +117,7 @@ In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-
 
 deprecated
 
-In [**Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries."), you can:
+In [![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries."), you can:
 
 * Use the recommended fixes from [Davis Security Advisor](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") to upgrade to a non-vulnerable version of the vulnerable component
 * [Set up tracking links for affected entities and follow up with their remediation progress](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
@@ -135,7 +135,7 @@ A vulnerability is marked as `Resolved` under the following conditions:
 
 ### Why is my vulnerability still open if there's no affected process group anymore?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 A vulnerability is still reported if it's still present in other management zones. To see the affected process groups, select `All` in the management zone filter.
 
@@ -168,7 +168,7 @@ To determine which processes are affected, see:
 
 ### Why do resolved vulnerabilities show up in every management zone?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 Management zone information is not directly attached to a vulnerability. It derives from the vulnerable entities that are affected by the respective vulnerability: a process in a management zone that uses a vulnerable library causes a third-party vulnerability in the respective management zone.
 
@@ -176,7 +176,7 @@ A vulnerability is resolved if there are no vulnerable entities anymore. In the 
 
 ### Why am I getting zero resolved process groups for resolved vulnerabilities in my management zone?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 ***For resolved vulnerabilities, I would like to examine resolved process groups to understand which entities were previously affected, but there are zero resolved process groups in my management zone. Why?***
 
@@ -190,7 +190,7 @@ See below the restart requirements by functionality.
 
 * **Third-party vulnerabilities**: An application process restart is required in the following case:
 
-  + In [**Discovery mode**](/docs/observe/infrastructure-observability/hosts/monitoring-modes#discovery "Find out what's included in Dynatrace Infrastructure Monitoring mode."), after you [enable code-module injection](/docs/observe/infrastructure-observability/hosts/monitoring-modes#code-module-injection "Find out what's included in Dynatrace Infrastructure Monitoring mode.")
+  + In [**Discovery mode**](/docs/platform/oneagent/monitoring-modes/monitoring-modes#discovery "Find out more about the available monitoring modes when using OneAgent."), after you [enable code-module injection](/docs/platform/oneagent/monitoring-modes/monitoring-modes#code-module-injection "Find out more about the available monitoring modes when using OneAgent.")
 * **Code-level vulnerabilities**: An application process restart is required in the following cases:
 
   + After each step in [Enable code-level vulnerability detection](/docs/secure/application-security/vulnerability-analytics#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."):
@@ -210,7 +210,7 @@ See below the restart requirements by functionality.
 
 ### Why is there a "Restart required" notification on some Application Security pages?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 OneAgent version 1.279+
 
@@ -316,7 +316,7 @@ To stop receiving notifications for this vulnerability, you can:
 ### How can I gain insights into my environment's Runtime Vulnerability Analytics coverage?
 
 * Latest Dynatrace Evaluate your environment's Runtime Vulnerability Analytics process and host coverage with the ready-made [**Vulnerability coverage** dashboard](/docs/secure/vulnerabilities/assess-coverage "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
-* deprecated Go to **Security Overview** (previous Dynatrace) or ![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**. In the **Host coverage** section, select **Monitored hosts** to go to the **Hosts** page filtered by monitored hosts. For details, see [Application Security overview: Host coverage](/docs/secure/application-security/vulnerability-analytics/application-security-overview#host-coverage "Get an overview of the security issues of your third-party libraries.").
+* deprecated Go to ![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**. In the **Host coverage** section, select **Monitored hosts** to go to the **Hosts** page filtered by monitored hosts. For details, see [Application Security overview: Host coverage](/docs/secure/application-security/vulnerability-analytics/application-security-overview#host-coverage "Get an overview of the security issues of your third-party libraries.").
 
 ### Why do I see a vulnerability on one host but not on another?
 
@@ -353,7 +353,7 @@ If you need guidance for setting up monitoring rules in common scenarios such as
 
 ### How can I limit Runtime Vulnerability Analytics monitoring to a specific management zone?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 [Create a monitoring rule](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.") that says `Do not monitor` if the management zone does not equal `<your-management-zone>`. After you add, edit, or remove a rule, allow up to 15 minutes for your changes to take effect.
 
@@ -380,7 +380,7 @@ Latest Dynatrace In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilitie
 
 ### What does "last update" on vulnerabilities list pages refer to?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 ***On the third-party vulnerabilities list page, does "Last update" refer to the last time when Dynatrace provided an update? How can I request an update for a vulnerability which was last updated two days ago?***
 
@@ -407,9 +407,9 @@ Content below refers to the classic **Third-Party Vulnerabilities** (previous Dy
 
 ### Why are there different values on the vulnerabilities page versus Data Explorer?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
-***In **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, on the **Third-party vulnerabilities** list page, when I filter for resolved vulnerabilities over the last seven days, I get `3` vulnerabilities. When I use the metric query (`builtin:security.securityProblem.resolved.new.global`) in Data Explorer, I get `25`. Why are there different values on the vulnerabilities page versus Data Explorer?***
+***In ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, on the **Third-party vulnerabilities** list page, when I filter for resolved vulnerabilities over the last seven days, I get `3` vulnerabilities. When I use the metric query (`builtin:security.securityProblem.resolved.new.global`) in Data Explorer, I get `25`. Why are there different values on the vulnerabilities page versus Data Explorer?***
 
 The vulnerability list shows the current state (the total count of vulnerabilities that are currently resolved), while using the metric query in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") shows the change over time.
 
@@ -426,7 +426,7 @@ To find out how many vulnerabilities were resolved in the given timeframe using 
 
 ### Why are there different values on the Third-party vulnerabilities and vulnerability details pages?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 There can be two reasons why values on these pages don't match:
 
@@ -435,7 +435,7 @@ There can be two reasons why values on these pages don't match:
 
 #### Different number of affected entities
 
-In **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, the number of affected entities (process groups or hosts) on the **Third-party vulnerabilities** page (in the **Affected entities** column for a specific vulnerability) may differ from the number of affected entities on the vulnerability details page for the following reasons:
+In ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, the number of affected entities (process groups or hosts) on the **Third-party vulnerabilities** page (in the **Affected entities** column for a specific vulnerability) may differ from the number of affected entities on the vulnerability details page for the following reasons:
 
 * On the **Third-party vulnerabilities** page:
 
@@ -448,7 +448,7 @@ In **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnera
 
 #### Different risk factors
 
-In **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, the assessment of risk factors (`Public exploit`, `Public internet exposure`, `Reachable data assets`, `Vulnerable functions in use`) in the infographic on the vulnerability details page and the **Davis Security Score** column on the **Third-party vulnerabilities** page may be different from the assessment of risk factors on the vulnerability details page (in the **Vulnerability details** section) for the following reason:
+In ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, the assessment of risk factors (`Public exploit`, `Public internet exposure`, `Reachable data assets`, `Vulnerable functions in use`) in the infographic on the vulnerability details page and the **Davis Security Score** column on the **Third-party vulnerabilities** page may be different from the assessment of risk factors on the vulnerability details page (in the **Vulnerability details** section) for the following reason:
 
 For the infographic on the vulnerability details page and the **Davis Security Score** column on the **Third-party vulnerabilities** page, calculations take place every 15 minutes
 For the **Vulnerability details** section on the vulnerability details page, current data is considered.
@@ -506,7 +506,7 @@ Runtime Vulnerability Analytics focuses on the runtime aspect, aiming to provide
 
 ### Where can I see the origin of a vulnerable library?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 On the remediation tracking pages for process groups and processes affected by a vulnerability, you can see where the software component has been loaded from.
 
@@ -546,7 +546,7 @@ There are two cases when information about vulnerable functions is not available
 
 #### How do I know which processes to restart?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 If you see the **Restart required** notification on the details page of a vulnerability, follow the steps below to determine which processes you need to restart:
 
@@ -566,7 +566,7 @@ This feature only works if [OneAgent monitoring for Java vulnerable functions is
 
 #### Why does my process still need to be restarted after I already restarted it?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 If you followed the [instructions](#which-process-to-restart) to identify the process and restarted it, and the process still requires a restart (the same **Restart required** notification shows up, and the information about vulnerable functions is unchanged), this can happen in Kubernetes deployments if there's no persistent storage.
 
@@ -574,7 +574,7 @@ To fix this issue, add persistent storage by mounting file storage that isn't de
 
 ### How can I know if information about vulnerable functions is outdated and what can I do about it?
 
-Content below refers to the classic **Third-Party Vulnerabilities** (previous Dynatrace) or ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
+Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
 OneAgent version 1.279+
 
@@ -645,7 +645,7 @@ For information about how security-related data is stored in Dynatrace, see [Dat
   + [Calculate your consumption of Security Posture Management](/docs/license/capabilities/application-security/security-posture-management "Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.")
 * If you're using [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), see [How capabilities affect monitoring consumption](/docs/license/monitoring-consumption-classic/application-security-units#how-capabilities-affect-monitoring-consumption "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
 
-deprecated To see which hosts consume DPS/ASUs, in **Security Overview** (previous Dynatrace) or ![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**, go to the **Host coverage** section for third-party and code-level vulnerabilities and select **Monitored hosts**. The resulting list of hosts are the hosts in your environment which consume DPS/ASUs.
+deprecated To see which hosts consume DPS/ASUs, in ![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**, go to the **Host coverage** section for third-party and code-level vulnerabilities and select **Monitored hosts**. The resulting list of hosts are the hosts in your environment which consume DPS/ASUs.
 For more information, see [Host coverage](/docs/secure/application-security/vulnerability-analytics/application-security-overview#host-coverage "Get an overview of the security issues of your third-party libraries.").
 
 ### Why is Application Security still showing usage even though I disabled RVA?

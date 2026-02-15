@@ -1,7 +1,7 @@
 ---
 title: Services app
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-app
-scraped: 2026-02-06T16:18:52.685581
+scraped: 2026-02-15T08:54:01.907037
 ---
 
 # Services app
@@ -11,7 +11,7 @@ scraped: 2026-02-06T16:18:52.685581
 * Latest Dynatrace
 * App
 * 4-min read
-* Updated on Jan 12, 2026
+* Updated on Feb 04, 2026
 
 Message Processing and Database Query Performance Analysis are projected to become available in Dynatrace SaaS version 1.330.
 
@@ -89,6 +89,14 @@ Visualize processing failure rates to pinpoint services struggling with message 
 ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** captures and analyzes database queries executed by your services, presenting the slowest queries ranked by execution time and frequency. Discover which operations consume the most resources and where indexing or caching could improve performance. Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.
 
 ![Database query view](https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png)
+
+### Outbound calls
+
+![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** captures and analyzes outbound calls made by your services, and then presents the most frequently called and slowest external dependencies ranked by request rate and duration. The **Outbound calls** view displays request rate, error rate, average duration, and cumulative duration for each outbound call. Discover which external calls consume the most resources and where performance bottlenecks exist in your service dependencies. By integrating outbound call observability with service-level metrics, you can eliminate blind spots and quickly determine if issues originate within your service or downstream.
+
+![Outbound calls tab](https://dt-cdn.net/images/scr-20260204-oxkt-1998-bc116aaf86.png)
+
+URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Reduce span- and metric-based cardinality").
 
 ## Concepts
 

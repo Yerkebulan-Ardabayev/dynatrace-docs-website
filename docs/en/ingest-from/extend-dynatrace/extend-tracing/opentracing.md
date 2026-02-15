@@ -1,7 +1,7 @@
 ---
 title: OpenTracing
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/opentracing
-scraped: 2026-02-06T16:22:52.766342
+scraped: 2026-02-15T08:58:54.661967
 ---
 
 # OpenTracing

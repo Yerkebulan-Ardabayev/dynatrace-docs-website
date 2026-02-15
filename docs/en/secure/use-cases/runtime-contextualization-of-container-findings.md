@@ -1,7 +1,7 @@
 ---
 title: Runtime contextualization of container findings
 source: https://www.dynatrace.com/docs/secure/use-cases/runtime-contextualization-of-container-findings
-scraped: 2026-02-06T16:28:04.085447
+scraped: 2026-02-15T09:02:25.749995
 ---
 
 # Runtime contextualization of container findings

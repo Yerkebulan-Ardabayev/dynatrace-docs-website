@@ -1,7 +1,7 @@
 ---
 title: Deployment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
-scraped: 2026-02-06T16:23:38.936090
+scraped: 2026-02-15T08:56:55.380616
 ---
 
 # Deployment
@@ -29,7 +29,7 @@ All deployment options on this page leverage [Dynatrace Operatorï»¿](https://
 
 Kubernetes platform
 
-[Kubernetes resources and topology](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases "Real-world scenarios and best practices for leveraging the new Dynatrace Kubernetes experience.")
+[Kubernetes resources and topology](/docs/observe/infrastructure-observability/kubernetes-app/use-cases "Real-world scenarios and best practices for leveraging the new Dynatrace Kubernetes experience.")
 
 ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
@@ -37,7 +37,7 @@ Kubernetes platform
 
 ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-[Kubernetes metrics (CPU, memory, network, PVCs), events, and alerts](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases "Real-world scenarios and best practices for leveraging the new Dynatrace Kubernetes experience.")
+[Kubernetes metrics (CPU, memory, network, PVCs), events, and alerts](/docs/observe/infrastructure-observability/kubernetes-app/use-cases "Real-world scenarios and best practices for leveraging the new Dynatrace Kubernetes experience.")
 
 ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
@@ -73,15 +73,15 @@ opt-in
 
 Infrastructure
 
-[Host and process level details](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor host and data center health to detect issues and improve infrastructure performance.")
+[Host and process level details](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 
 ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-[Host network analysis and topology](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor host and data center health to detect issues and improve infrastructure performance.")
+[Host network analysis and topology](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 
 ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-[Disk analysis and alerting](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor host and data center health to detect issues and improve infrastructure performance.")
+[Disk analysis and alerting](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 
 ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
@@ -259,7 +259,7 @@ Ensure workload, microservice and infrastructure health and performance througho
 
 The Dynatrace platform offers a variety of apps, analytics and automation functionality to cover your use cases for unified observability and security. You can leverage these capabilities for all the Kubernetes observability data you collect with any of the above modes, such as the ability to:
 
-* Explore Kubernetes health and signals in the [Kubernetes app](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+* Explore Kubernetes health and signals in the [Kubernetes app](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 * Visualize data with [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
 * Collaborate and conduct custom analysis with [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 * Automate with [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")

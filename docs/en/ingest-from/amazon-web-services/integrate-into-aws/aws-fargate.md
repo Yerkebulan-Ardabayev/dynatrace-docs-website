@@ -1,7 +1,7 @@
 ---
 title: Monitor AWS Fargate
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate
-scraped: 2026-02-06T16:24:07.587159
+scraped: 2026-02-15T08:57:09.746449
 ---
 
 # Monitor AWS Fargate
@@ -47,7 +47,7 @@ Before you start installation, make sure you have a running AWS Fargate cluster.
 3. Install Dynatrace Operator.
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.8.0/kubernetes.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.8.1/kubernetes.yaml
    ```
 4. Create the secret holding the API token for authentication to the Dynatrace cluster.
 

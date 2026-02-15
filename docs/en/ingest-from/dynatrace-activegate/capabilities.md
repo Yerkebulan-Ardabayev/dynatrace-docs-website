@@ -1,7 +1,7 @@
 ---
 title: ActiveGate purposes and functionality
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities
-scraped: 2026-02-06T16:33:39.922588
+scraped: 2026-02-15T09:05:19.121942
 ---
 
 # ActiveGate purposes and functionality
@@ -200,7 +200,7 @@ Log Monitoring
 
 ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
 [Metric ingestion](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose#metric_ing "Learn about the routing and monitoring capabilities and uses of ActiveGate.")
 

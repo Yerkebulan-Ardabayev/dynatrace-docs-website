@@ -1,7 +1,7 @@
 ---
 title: OneAgent
 source: https://www.dynatrace.com/docs/platform/oneagent
-scraped: 2026-02-06T16:19:57.523842
+scraped: 2026-02-15T08:55:39.809393
 ---
 
 # OneAgent
@@ -17,6 +17,12 @@ scraped: 2026-02-06T16:19:57.523842
 Find out the monitoring capabilities offered by OneAgent offers.](/docs/platform/oneagent/supported-monitoring-types "Read an overview of all monitoring capabilities offered by OneAgent.")[### How it works
 
 Understand how OneAgent works.](/docs/platform/oneagent/how-one-agent-works "Understand how OneAgent works.")
+
+[### OneAgent monitoring modes
+
+Find out about the available monitoring modes when using OneAgent.](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.")[### Enable monitoring modes
+
+Learn how to enable monitoring modes when using OneAgent.](/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes "Learn how to enable monitoring modes when using OneAgent.")
 
 ## Deploy OneAgent
 

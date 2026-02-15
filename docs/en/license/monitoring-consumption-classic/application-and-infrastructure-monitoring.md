@@ -1,7 +1,7 @@
 ---
 title: Application and Infrastructure Monitoring (Host Units)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring
-scraped: 2026-02-06T16:29:21.375226
+scraped: 2026-02-15T09:02:43.667263
 ---
 
 # Application and Infrastructure Monitoring (Host Units)
@@ -15,7 +15,7 @@ Dynatrace application and infrastructure monitoring is provided via installation
 
 However, not all hosts are of equal size. Larger hosts consume more host units than do smaller-sized hosts. We use the amount of RAM on a monitored server as a measuring stick to determine the size of a host (that is how many host units it comprises). The advantage of this approach is its simplicity. You can have 10 JVMs or 1,000 JVMs; such factors don't affect the amount of monitoring that an environment consumes.
 
-OneAgent can operate in two different modes. By default, OneAgent operates in Full-Stack Monitoring mode. Alternatively, you can use [Infrastructure Monitoring mode](/docs/observe/infrastructure-observability/hosts/monitoring-modes/how-effective-is-infrastructure-monitoring-on-its-own "Learn how monitoring only the infrastructure layer of your environment can lead to an incomplete picture of the health of your applications and customer experience.") to monitor hosts that don't require full-stack visibility. Infrastructure mode consumes fewer host units than Full-Stack mode.
+OneAgent can operate in two different modes. By default, OneAgent operates in Full-Stack Monitoring mode. Alternatively, you can use [Infrastructure monitoring mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes#infrastructure-only "Find out more about the available monitoring modes when using OneAgent.") to monitor hosts that don't require full-stack visibility. Infrastructure mode consumes fewer host units than Full-Stack mode.
 
 ## Host units
 
@@ -41,7 +41,7 @@ When the amount of RAM on a host falls between the values listed in the table ab
 
 2
 
-For [Infrastructure Monitoring mode](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode."), the same rounding principle applies. If a host unit cap is enabled for your Cloud Infrastructure license, the number of host units consumed by a host is capped at 1.0. If you have an existing agreement that doesn't reflect the `1.0` cap on host units per host, please [contact your Dynatrace Sales representativeï»¿](https://www.dynatrace.com/contact/).
+For [Infrastructure Monitoring mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent."), the same rounding principle applies. If a host unit cap is enabled for your Cloud Infrastructure license, the number of host units consumed by a host is capped at 1.0. If you have an existing agreement that doesn't reflect the `1.0` cap on host units per host, please [contact your Dynatrace Sales representativeï»¿](https://www.dynatrace.com/contact/).
 
 ### Host unit hours
 

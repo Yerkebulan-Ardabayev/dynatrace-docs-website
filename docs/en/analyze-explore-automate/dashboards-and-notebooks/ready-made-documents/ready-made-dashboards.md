@@ -1,7 +1,7 @@
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-02-06T16:18:58.173701
+scraped: 2026-02-15T08:54:09.498484
 ---
 
 # Ready-made dashboards
@@ -162,7 +162,7 @@ Offers an overview of host observability, with a breakdown by environment, impac
 
 [Explore in Playgroundï»¿](https://dt-url.net/gpc3wam).
 
-Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor host and data center health to detect issues and improve infrastructure performance.")
+Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 
 ![Ready-made dashboard example: Infrastructure Observability Dashboard](https://dt-cdn.net/images/infrastructure-observability-dashboard-1432-35f83ede4a.png)
 
@@ -182,7 +182,7 @@ Get broad visibility into the scale, status, and resource usage of your Kubernet
 
 [Explore in Playgroundï»¿](https://dt-url.net/0vg33tv)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Cluster](https://dt-cdn.net/images/ready-made-kubernetes-cluster-7680-ca562f4f97.png)
 
@@ -192,7 +192,7 @@ Analyze resource allocation of all pods within a namespace.
 
 [Explore in Playgroundï»¿](https://dt-url.net/zvi339y)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Namespace - Pods](https://dt-cdn.net/images/ready-made-kubernetes-namespace-pods-7680-84c7c1f4ba.png)
 
@@ -202,7 +202,7 @@ Explore the resource utilization distribution across workloads in your namespace
 
 [Explore in Playgroundï»¿](https://dt-url.net/f4m33vt)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Namespace - Workloads](https://dt-cdn.net/images/ready-made-kubernetes-namespace-workloads-7680-e811f53769.png)
 
@@ -212,7 +212,7 @@ Understand pod resource consumption on your Kubernetes nodes.
 
 [Explore in Playgroundï»¿](https://dt-url.net/1jo33ba)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Node - Pods](https://dt-cdn.net/images/ready-made-kubernetes-node-pods-7680-2fba73c7e9.png)
 
@@ -222,7 +222,7 @@ Inspect the utilization and size of your persistent volume claims.
 
 [Explore in Playgroundï»¿](https://dt-url.net/0vq330he)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Persistent Volumes](https://dt-cdn.net/images/ready-made-kubernetes-persistent-volumes-7680-a524779929.png)
 
@@ -252,7 +252,7 @@ Gain insights from synthetic monitoring using network availability monitors, whi
 
 [Explore in Playgroundï»¿](https://dt-url.net/rxw33oy)
 
-Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
+Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
 
 ![Ready-made dashboard example: Network availability monitoring](https://dt-cdn.net/images/network-availability-monitoring-1920-7e5215d39f.png)
 
@@ -260,7 +260,7 @@ Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-
 
 [Explore in Playgroundï»¿](https://dt-url.net/uyy33hp)
 
-Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor host and data center health to detect issues and improve infrastructure performance.")
+Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 
 ![Ready-made dashboard example: Network devices](https://dt-cdn.net/images/network-devices-3654-e5556c192b.png)
 
@@ -424,6 +424,6 @@ Gain insights into the health of critical APIs and front-ends to ensure seamless
 
 [Explore in Playgroundï»¿](https://dt-url.net/wv1i33mz)
 
-Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
+Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
 
 ![Ready-made dashboard example: Web availability and performance](https://dt-cdn.net/images/web-availability-and-performance-1920-da66ea8453.png)

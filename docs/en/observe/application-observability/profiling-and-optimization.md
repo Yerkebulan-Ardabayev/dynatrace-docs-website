@@ -1,7 +1,7 @@
 ---
 title: Profiling and optimization
 source: https://www.dynatrace.com/docs/observe/application-observability/profiling-and-optimization
-scraped: 2026-02-06T16:29:29.737790
+scraped: 2026-02-15T09:03:11.631971
 ---
 
 # Profiling and optimization
@@ -19,7 +19,7 @@ Apart from automated problem detection, Dynatrace offers you a set of analysis t
 
 To access profiling and optimization options
 
-1. Go to **Profiling & Optimization** (previous Dynatrace) or ![Profiling & Optimization](https://dt-cdn.net/hub/logos/profiling-optimization.png "Profiling & Optimization") **Profiling & Optimization**.
+1. Go to ![Profiling & Optimization](https://dt-cdn.net/hub/logos/profiling-optimization.png "Profiling & Optimization") **Profiling & Optimization**.
 2. Select the analysis option you want to investigate among **CPU profiling**, **Memory dumps**, and **Process crashes**.
 
 [### Memory dumps

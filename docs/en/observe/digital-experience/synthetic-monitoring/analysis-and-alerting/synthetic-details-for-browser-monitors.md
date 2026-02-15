@@ -1,7 +1,7 @@
 ---
 title: Synthetic details for browser monitors
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors
-scraped: 2026-02-06T16:33:20.227666
+scraped: 2026-02-15T09:04:50.448868
 ---
 
 # Synthetic details for browser monitors

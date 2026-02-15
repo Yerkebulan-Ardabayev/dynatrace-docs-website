@@ -1,7 +1,7 @@
 ---
 title: Extract a metric from user sessions
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions
-scraped: 2026-02-06T16:29:44.349883
+scraped: 2026-02-15T09:02:29.239024
 ---
 
 # Extract a metric from user sessions
@@ -20,7 +20,7 @@ To illustrate this process, this guide walks you through extracting a customer c
 
 In this tutorial, weâll use a web shop as our example. The shop is instrumented with the RUM JavaScript, and the captured data is mapped to a [frontend](/docs/observe/digital-experience/new-rum-experience/concepts/frontends "Learn about the frontend concept in the New RUM Experience.") named `webshop`.
 
-Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.") and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/dynatrace.sendSessionPropertyEvent.html):
+Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.") and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
 
 ```
 dynatrace.sendSessionPropertyEvent({

@@ -1,7 +1,7 @@
 ---
 title: Create log metric
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric
-scraped: 2026-02-06T16:25:32.166107
+scraped: 2026-02-15T08:57:23.663113
 ---
 
 # Create log metric
@@ -23,7 +23,7 @@ You need to count how many refused connections are recorded in your log data. Fo
 
 To build and run your query:
 
-1. Go to **Logs** (previous Dynatrace) or ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
+1. Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
 2. On the **Logs and events** page, turn on **Advanced mode**.
 3. Select ![Copy to clipboard](https://dt-cdn.net/images/dashboards-app-tile-copy-to-clipboard-e49e92a96b.svg "Copy to clipboard") **copy** for the code sample below.
 
@@ -77,7 +77,7 @@ You need to monitor an attribute of your logs, and you need to keep an eye on th
 
 To build and run your query
 
-1. Go to **Logs** (previous Dynatrace) or ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
+1. Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
 2. On the **Logs and events** page, turn on **Advanced mode**.
 3. Select ![Copy to clipboard](https://dt-cdn.net/images/dashboards-app-tile-copy-to-clipboard-e49e92a96b.svg "Copy to clipboard") **Copy** for the code sample below.
 

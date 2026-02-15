@@ -1,7 +1,7 @@
 ---
 title: New Real User Monitoring Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience
-scraped: 2026-02-06T16:27:16.161870
+scraped: 2026-02-15T09:03:16.509434
 ---
 
 # New Real User Monitoring Experience
@@ -9,7 +9,7 @@ scraped: 2026-02-06T16:27:16.161870
 # New Real User Monitoring Experience
 
 * Latest Dynatrace
-* Overview
+* Explanation
 * 1-min read
 * Updated on Jan 15, 2026
 
@@ -64,7 +64,7 @@ Ensure that your RUM setup complies with the data privacy regulations of your re
 
 #### Use cases
 
-Leverage the New RUM Experience and Dynatrace platform tools for your key use cases.](/docs/observe/digital-experience/new-rum-experience/use-cases "Learn how the New RUM Experience helps you address your key scenarios.")[#### Built-in metrics
+Leverage the New RUM Experience and Dynatrace platform tools for your key use cases.](/docs/observe/digital-experience/new-rum-experience/use-cases "Learn how the New RUM Experience helps you address your key scenarios.")[#### New RUM Experience metrics
 
 Explore the frontend metrics provided by the New RUM Experience.](/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration "See how RUM Classic metrics map to their logical equivalents in Grail.")
 

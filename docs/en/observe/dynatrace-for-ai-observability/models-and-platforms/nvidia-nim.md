@@ -1,7 +1,7 @@
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-06T16:30:03.768430
+scraped: 2026-02-15T09:03:23.390348
 ---
 
 # NVIDIA NIM
@@ -100,7 +100,7 @@ exporters:
 
 
 
-otlphttp:
+otlp_http:
 
 
 
@@ -136,12 +136,12 @@ processors: [cumulativetodelta]
 
 
 
-exporters: [otlphttp]
+exporters: [otlp_http]
 ```
 
 Cumulativetodelta processor recommendation
 
-It is recommended to set the `max_staleness` parameter of the [cumulativetodelta processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.143.0/processor/cumulativetodeltaprocessor) to a value higher than how often the collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
+It is recommended to set the `max_staleness` parameter of the [cumulativetodelta processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor) to a value higher than how often the collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
 
 ## Spans
 

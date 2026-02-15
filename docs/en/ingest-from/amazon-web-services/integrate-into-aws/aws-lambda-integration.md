@@ -1,14 +1,13 @@
 ---
 title: Monitor AWS Lambda
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration
-scraped: 2026-02-06T16:23:27.722805
+scraped: 2026-02-15T08:57:08.403383
 ---
 
 # Monitor AWS Lambda
 
 # Monitor AWS Lambda
 
-* Latest Dynatrace
 * Explanation
 * 3-min read
 * Updated on Jan 12, 2026

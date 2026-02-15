@@ -1,7 +1,7 @@
 ---
 title: Extend Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace
-scraped: 2026-02-06T16:20:01.880800
+scraped: 2026-02-15T08:55:42.039793
 ---
 
 # Extend Dynatrace
@@ -80,7 +80,7 @@ Learn how to extend log observability in Dynatrace with Fluentd as an alternativ
 
 Learn how to extend log observability in Dynatrace with Logstash as an alternative to OneAgent-based log collection.](https://github.com/dynatrace-oss/logstash-output-dynatrace)[### Log ingestion API
 
-Extend log observability via Dynatrace open Log APIs.](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-data-ingest "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+Extend log observability via Dynatrace open Log APIs.](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
 
 ## Distributed traces
 

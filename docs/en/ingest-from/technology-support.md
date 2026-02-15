@@ -1,7 +1,7 @@
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-02-06T16:21:38.762438
+scraped: 2026-02-15T08:55:21.998955
 ---
 
 # Technology support
@@ -10,7 +10,7 @@ scraped: 2026-02-06T16:21:38.762438
 
 * Latest Dynatrace
 * 17-min read
-* Updated on Feb 02, 2026
+* Updated on Feb 09, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/docs/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/docs/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
@@ -460,7 +460,7 @@ See [Dynatrace support/desupport for Java versions](/docs/ingest-from/technology
 | OpenJDK | 6, 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 22, 23, 24, 25 LTS | Alpine Linux 64-bit (x86-64), Linux (x86-64, s390), Windows (x86-64) |
 | Oracle HotSpot VM | 6, 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 22, 23, 24, 25 LTS | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Solaris (SPARC, x86-64), Windows (x86-64) |
 | Oracle JRockit | 6 | Alpine Linux 64-bit (x86-64), Linux (x86-64), Solaris (SPARC), Windows (x86-64) |
-| SAP JVM | 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24 | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
+| SapMachine | 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
 
 1
 
@@ -1550,13 +1550,11 @@ Dynatrace will deprecate the Dynatrace Xamarin NuGet package in May 2024 and des
 #### OneAgent for iOS
 
 * **32-bit devices**: OneAgent for iOS version 8.249 is the last version that supports 32-bit devices.
-* **Xcode**: We support apps built with Xcode 16+.
+* **Xcode**: We support only the Xcode versions that Apple allows for App Store submission. Check [Submit your iOS apps to the App Storeï»¿](https://developer.apple.com/ios/submit/) on the Apple Developer site to learn which Xcode versions are currently supported.
 
-  Specifically, we support only those Xcode versions that Apple allows for App Store submission. Check [Submit your iOS apps to the App Storeï»¿](https://developer.apple.com/ios/submit/) on the Apple Developer site to learn which Xcode versions are currently supported.
+Starting with OneAgent for iOS version 8.335, Dynatrace stopped supporting Xcode 16. We only support Xcode 26+.
 
-Starting with OneAgent for iOS version 8.309, Dynatrace stopped supporting Xcode 15. We only support Xcode 16+.
-
-Also, be aware that [Apple app submission guidelinesï»¿](https://dt-url.net/we038fb) will restrict support to applications built with a minimum of Xcode 16 and iOS 18 SDK starting April 2025.
+Also, be aware that [Apple's App Store submission guidelinesï»¿](https://dt-url.net/we038fb) will restrict support to applications built with a minimum of Xcode 26 around April 2026.
 
 Starting with OneAgent for iOS version 8.323, Dynatrace will stop supporting `static builds` and `Carthage` as integration methods.
 

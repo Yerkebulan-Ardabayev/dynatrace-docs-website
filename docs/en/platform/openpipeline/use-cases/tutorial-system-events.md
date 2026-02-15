@@ -1,7 +1,7 @@
 ---
 title: Extract a metric to track system events
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-system-events
-scraped: 2026-02-06T16:29:35.242397
+scraped: 2026-02-15T09:02:35.013745
 ---
 
 # Extract a metric to track system events

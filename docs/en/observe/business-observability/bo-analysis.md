@@ -1,7 +1,7 @@
 ---
 title: Business event analysis and examples
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-analysis
-scraped: 2026-02-06T16:25:30.705939
+scraped: 2026-02-15T08:58:23.369442
 ---
 
 # Business event analysis and examples

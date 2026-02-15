@@ -1,7 +1,7 @@
 ---
 title: Host-level settings
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-02-06T16:20:53.370212
+scraped: 2026-02-15T08:56:23.377054
 ---
 
 # Host-level settings
@@ -19,7 +19,7 @@ In many cases, you can configure monitoring settings at the environment, host gr
 
 To configure settings at the host level
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Find and select your host to display the host overview page.
 3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 
@@ -66,7 +66,7 @@ OneAgent automatically monitors a host and its processes, services, and applicat
 2. Go to **Monitoring** and set **Monitor this host** to turn monitoring on or off for the selected host.
 3. Go to **Monitoring Mode** and set **Full-Stack**, **Infrastructure**, or **Discovery** to turn the selected monitoring mode on or off for the selected host.
 
-   * For details, see [Infrastructure and Discovery monitoring modes](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
+   * For details, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
    * The OneAgent's monitoring mode will automatically overwrite this setting whenever it is changed with oneagentctl or the OneAgent comes online.
 4. Go to **Advanced settings** and set **ProcessAgent injection** or **CodeModule injection** to turn the automatic injection on or off for the selected host.
 5. Select **Save changes**.

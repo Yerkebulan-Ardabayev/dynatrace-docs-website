@@ -1,7 +1,7 @@
 ---
 title: Monitor Kubernetes/OpenShift workloads
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes
-scraped: 2026-02-06T16:26:22.843187
+scraped: 2026-02-15T09:05:24.045433
 ---
 
 # Monitor Kubernetes/OpenShift workloads
@@ -25,7 +25,7 @@ When deployed in application-only mode, OneAgent monitors the memory, disk, CPU,
 
 Once you enable Kubernetes workload monitoring support, you can easily see how many cluster resources have been allocated through the workloads that are running on the cluster.
 
-To display the Kubernetes workloads, go to **Kubernetes Workloads** (previous Dynatrace) or ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic**.
+To display the Kubernetes workloads, go to ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic**.
 
 ## Unified analysis view on your workloads, namespaces, and pods
 
@@ -43,7 +43,7 @@ The namespace unified analysis page provides a valuable view for business units 
 
 On the namespace unified analysis page, you can examine properties, potential problems, resource requests and limits, workloads analysis, quotas, and events, and see all the workloads that belong to that namespace (with links to them). You can filter namespaces by metric dimension filters.
 
-To display the namespace unified analysis page, in Dynatrace, go to **Kubernetes Workloads** (previous Dynatrace) or ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic** and select a namespace.
+To display the namespace unified analysis page, in Dynatrace, go to ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic** and select a namespace.
 
 ### Workloads
 
@@ -51,7 +51,7 @@ A workload consists of one or more pods. It's a way of describing a type of micr
 
 The workload unified analysis page provides insights into resource utilization, problem detection, [vulnerabilities](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes "Keep track of vulnerabilities in Kubernetes/OpenShift."), number of pods in the respective workload, number of services that are sending traffic to the pods, and events for all of the pods in a given workload. This information is valuable for analyzing the overall performance of a microservice rather than looking at specific problems in a pod instance.
 
-To display the workload unified analysis page, in Dynatrace, go to **Kubernetes Workloads** (previous Dynatrace) or ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic** and select a workload.
+To display the workload unified analysis page, in Dynatrace, go to ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic** and select a workload.
 
 Taking a closer look at the applications deployed in one of the namespaces, you can learn about their most important resource usage metrics. The workloads view covers workloads such as `Deployment`, `DeploymentConfig`, `ReplicaSet`, `DaemonSet`, `StatefulSet`, `StaticPod`, and `ReplicationController`.
 
@@ -67,7 +67,7 @@ On the pod unified analysis page, you can examine properties, potential problems
 
 To view the overview page of a Kubernetes pod
 
-1. Go to **Kubernetes Workloads** (previous Dynatrace) or ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic** and select a workload.
+1. Go to ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic** and select a workload.
 2. Select **Pods**.
 3. Select the pod you want.
 

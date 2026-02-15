@@ -1,7 +1,7 @@
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-06T16:32:55.788942
+scraped: 2026-02-15T09:04:55.053550
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -11,7 +11,7 @@ scraped: 2026-02-06T16:32:55.788942
 * Latest Dynatrace
 * Overview
 * 7-min read
-* Updated on Jun 23, 2025
+* Updated on Jan 26, 2026
 
 For information about how usage of a specific capability translates to consumption of your DPS license commit, see
 
@@ -64,11 +64,11 @@ For the default metrics bucket, the available retention period ranges from 15 mo
 
 ## Metrics - Query feature overview
 
-Query usage occurs when:
+Here's what's included with the Query data-usage dimension:
 
 | Concept | Explanation |
 | --- | --- |
-| DQL query execution | A [DQL query](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") scans and fetches data that is stored in Grail. |
+| DQL query execution | A [DQL query](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") scans and fetches data that is stored in Grail. Querying metrics using the `timeseries` command is always included. |
 | App usage | DQL queries can be executed by:  - Apps such as Notebooks **Notebooks**, Dashboards **Dashboards**, Workflows **Workflows**, and Anomaly Detection - new **Anomaly Detection**. - Dashboard tiles that are based on metrics trigger the execution of DQL queries on refresh - Custom apps - The Dynatrace API |
 
 ## Related topics

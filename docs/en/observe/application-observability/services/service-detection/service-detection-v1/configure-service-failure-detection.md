@@ -1,7 +1,7 @@
 ---
 title: Configure service failure detection
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection
-scraped: 2026-02-06T16:22:12.890230
+scraped: 2026-02-15T08:56:33.778168
 ---
 
 # Configure service failure detection
@@ -61,7 +61,7 @@ To configure service failure detection globally
 
 To configure service failure for a specific service
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select the service for which you need to adapt failure detection.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select the service for which you need to adapt failure detection.
 2. Select **More** (**â¦**) > **Settings**.
 3. Select **Failure detection** and then **HTTP parameters** or **General parameters**, depending on the parameters you want to configure.
 4. Turn on **Override global failure detection settings** (see **1** in the graphic).  
@@ -119,7 +119,7 @@ Parameters for failure detection include HTTP-specific parameters and general pa
 
   To create a custom error rule
 
-  1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+  1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
   2. Select the service for which you need to adapt failure detection.
   3. Select **More** (**â¦**) > **Settings**.
   4. Select **Failure detection** > **General parameters**

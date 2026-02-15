@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-06T16:21:44.540344
+scraped: 2026-02-15T08:56:21.074495
 ---
 
 # New Documentation articles
@@ -165,9 +165,9 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Get notified about workflow changes](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications "Get workflow notifications about changes to your workflow, such as edits, deletions, and failures.")
 * [Actions for Text Processing Connector](/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions "Learn about the type of actions you use as part of a workflow for text processing a JSON or YAML file.")
 * [Text Processing Connector](/docs/analyze-explore-automate/workflows/actions/text-processing "Automate text processing in JSON and YAML files for your workflows.")
-* [Install and update Chromium for Linux](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux "Learn how to install Chromium for Linux manually and from custom repositories.")
-* [Manage private locations](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/manage-private-locations "Learn how to manage private Synthetic locations.")
-* [Proxy for private locations](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations "Learn how to manage proxies for private Synthetic locations.")
+* [Install and update Chromium for Linux](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux "Learn how to install Chromium for Linux manually and from custom repositories.")
+* [Manage private locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/manage-private-locations "Learn how to manage private Synthetic locations.")
+* [Proxy for private locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations "Learn how to manage proxies for private Synthetic locations.")
 
 ## Oct 20, 2025
 
@@ -177,11 +177,11 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Monaco configuration YAML file - list of special configuration types](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "This is a list of Monaco special configuration types.")
 * [Monaco configuration YAML file - list of type fields](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields "This is a list of type fields in the Monaco configuration YAML file.")
 * [Monaco configuration YAML file structure](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas "The Monaco configuration YAML file is structure.")
-* [Install a Synthetic-enabled ActiveGate](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install "Learn how to install Synthetic-enabled ActiveGates.")
-* [Private synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations "Learn how to manage private locations in the Synthetic app.")
-* [Install and update Chromium for Linux](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux "Learn how to install Chromium for Linux manually and from custom repositories.")
-* [Proxy for private locations](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations "Learn how to manage proxies for private Synthetic locations.")
-* [Requirements for private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic "Check system and hardware requirements for private Synthetic locations.")
+* [Install a Synthetic-enabled ActiveGate](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install "Learn how to install Synthetic-enabled ActiveGates.")
+* [Private synthetic locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations "Learn how to manage private locations in the Synthetic app.")
+* [Install and update Chromium for Linux](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux "Learn how to install Chromium for Linux manually and from custom repositories.")
+* [Proxy for private locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations "Learn how to manage proxies for private Synthetic locations.")
+* [Requirements for private Synthetic locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic "Check system and hardware requirements for private Synthetic locations.")
 
 ## Oct 13, 2025
 
@@ -219,7 +219,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Set up automated notification](/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification "Configure automated notifications using Terraform and Configuration as Code.")
 * [Migration guides for DynaKube apiVersions](/docs/ingest-from/setup-on-k8s/guides/migration/dynakube "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.")
 * [New RUM APIs](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.")
-* [Synthetic alerting overview](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-alerting-overview-on-grail "Learn about synthetic alerting concepts and workflow.")
+* [Synthetic alerting overview](/docs/observe/digital-experience/synthetic-on-grail/synthetic-alerting-overview-on-grail "Learn about synthetic alerting concepts and workflow.")
 * [Migration your v1beta1 DynaKube to v1beta4](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta4 "Migrate your v1beta1 DynaKube CR to the v1beta4 apiVersions.")
 * [Migration of DynaKube v1beta1 to v1beta5](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta5 "Migrate your v1beta1 DynaKube CR to the v1beta5 apiVersions.")
 * [Migration your v1beta2 DynaKube to v1beta4](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta4 "Migrate your v1beta2 DynaKube CR to the v1beta4 apiVersions.")
@@ -227,7 +227,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Migration your v1beta3 DynaKube to v1beta4](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta4 "Migrate your v1beta3 DynaKube CR to the v1beta4 apiVersions.")
 * [Migration your v1beta3 DynaKube to v1beta5](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta5 "Migrate your v1beta3 DynaKube CR to the v1beta5 apiVersions.")
 * [Migration your v1beta4 DynaKube to v1beta5](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta5 "Migrate your v1beta4 DynaKube CR to the v1beta5 apiVersions.")
-* [Kubernetes Enhanced Object Visibility Preview](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/preview/enhanced-object-vis-preview "Accelerate root cause analysis with deeper Kubernetes object visibility.")
+* [Kubernetes Enhanced Object Visibility Preview](/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview "Accelerate root cause analysis with deeper Kubernetes object visibility.")
 
 ## Sep 01, 2025
 
@@ -420,7 +420,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Dec 16, 2024
 
 * [Microsoft Azure Arc-enabled servers](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-arc-enabled-servers "Azure integration with ARC servers")
-* [Synthetic App](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
+* [Synthetic App](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
 
 ## Dec 09, 2024
 
@@ -451,9 +451,9 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 * [Set up Jenkins Connector](/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup "Set up to automate pipelines in Jenkins.")
 * [Service users](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users")
-* [Create and configure an HTTP monitor](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.")
-* [HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.")
-* [HTTP monitors reporting results](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors "Learn about the Synthetic details page for HTTP monitors.")
+* [Create and configure an HTTP monitor](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.")
+* [HTTP monitors](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.")
+* [HTTP monitors reporting results](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors "Learn about the Synthetic details page for HTTP monitors.")
 
 ## Nov 11, 2024
 
@@ -547,8 +547,8 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Security events ingest](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.")
 * [Ingest AWS ECR vulnerability findings](/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data "Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.")
 * [Ingest custom security events via API](/docs/secure/threat-observability/security-events-ingest/ingest-custom-data "Ingest security events from custom third-party products via API.")
-* [Synthetic monitors](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
-* [Synthetic for Workflows](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-for-workflows "Enhance your automation capabilities with Synthetic Monitoring.")
+* [Synthetic monitors](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
+* [Synthetic for Workflows](/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows "Enhance your automation capabilities with Synthetic Monitoring.")
 * [Create a NAM monitor](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor "Learn how to set up a NAM monitor to check the performance and availability of your site.")
 * [NAM monitor metrics](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/nam-monitor-metrics "Learn about the performance metrics collected for NAM monitors.")
 * [Network availability monitoring](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring "ICMP, TCP, and DNS synthetic monitors")
@@ -646,14 +646,14 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Log Monitoring in Kubernetes](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.")
 * [Release validation](/docs/deliver/quality-gates "Validate the releases of your business-critical services")
 * [Test pipeline observability](/docs/deliver/test-pipeline-observability "Utilize Dynatrace to observe and analyze test pipelines effectively")
-* [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor host and data center health to detect issues and improve infrastructure performance.")
+* [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 * [Dynatrace Extensions Python SDK](/docs/ingest-from/extensions/develop-your-extensions/data-sources/python "Python library and a toolbox for building Python extensions for Dynatrace Extensions.")
 * [Account configuration for Monaco account management](/docs/deliver/configuration-as-code/monaco/configuration/account-configuration "Configure accounts for Monaco account management.")
 * [Instant Intrusion Response](/docs/secure/use-cases/instant-intrusion-response "Triage security incidents in minutes with instant schema-on-read queries.")
 * [Databases app](/docs/observe/infrastructure-observability/databases/database-app "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.")
 * [Email for Workflows](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")
 * [Event triggers for workflows](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.")
-* [Predictive Kubernetes operations](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases/predictive-operations "Proactively manage disk space within Kubernetes environments")
+* [Predictive Kubernetes operations](/docs/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations "Proactively manage disk space within Kubernetes environments")
 * [Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)](/docs/ingest-from/setup-on-k8s/deployment/marketplaces/eks-dto "Deploy and configure Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS) environment.")
 * [Deploy OneAgent using AWS Systems Manager Distributor](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2/deploy-oneagent-using-aws-systems-manager-distributor "Install OneAgent on your EC2 instances using the Dynatrace AWS Systems Manager Distributor package.")
 
@@ -678,7 +678,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Nov 22, 2023
 
-* [Ownership app](/docs/deliver/ownership/ownership-app "It provides custom actions to define workflows integrating entity owners and their contact information.")
+* [Ownership app](/docs/deliver/ownership-app "It provides custom actions to define workflows integrating entity owners and their contact information.")
 * [Metrics API v2 - Best practices](/docs/dynatrace-api/environment-api/metric-v2/best-practices "Best practices for metrics.")
 * [Improve database performance](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance "Boost your database performance in a few practical steps.")
 * [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
@@ -700,7 +700,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Dynatrace Operator network configuration](/docs/ingest-from/setup-on-k8s/reference/network "Network traffic requirements for the Dynatrace Operator components in a Kubernetes cluster.")
 * [Vulnerabilities API - POST remediation item tracking links](/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-item-tracking-link "Add, edit, or delete the tracking links of remediation items via Dynatrace API.")
 * [Service detection rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.")
-* [Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases/alert-use-case "Proactively address Kubernetes issues using out-of-the-box alerting mechanisms.")
+* [Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics](/docs/observe/infrastructure-observability/kubernetes-app/use-cases/alert-use-case "Proactively address Kubernetes issues using out-of-the-box alerting mechanisms.")
 
 ## Sep 25, 2023
 
@@ -857,7 +857,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [AutomationEngine](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.")
 * [Upgrade from Managed to SaaS deploymentï»¿](https://docs.dynatrace.com/managed/shortlink/up-upgrade)
 * [Navigate Dynatrace platform](/docs/discover-dynatrace/get-started/dynatrace-ui "Navigate the latest Dynatrace")
-* [Ownership app](/docs/deliver/ownership/ownership-app "It provides custom actions to define workflows integrating entity owners and their contact information.")
+* [Ownership app](/docs/deliver/ownership-app "It provides custom actions to define workflows integrating entity owners and their contact information.")
 * [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
 * [Edit visualizations for Notebooks and Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.")
 * [Upgrading Log Monitoring](/docs/analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.")
@@ -1543,7 +1543,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
 * [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")
 * [Log metrics](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
-* [Generic Log Ingestion](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-data-ingest "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+* [Generic Log Ingestion](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
 * [Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
 * [Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
 * [Metrics API - Metric expressions](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
@@ -1679,8 +1679,8 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 * [Store Dynatrace images in private registries - OpenShift](/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Store Dynatrace images in private registries")
 * [Store Dynatrace images in private registries - Kubernetes](/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Store Dynatrace images in private registries")
-* [HTTP monitor metrics](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic "Learn about the performance metrics collected for HTTP monitors (classic).")
-* [Synthetic details for HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors (classic).")
+* [HTTP monitor metrics](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic "Learn about the performance metrics collected for HTTP monitors.")
+* [Synthetic details for HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors.")
 * [Monitor Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
 * [Service-level objectives](/docs/deliver/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.")
 * [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")

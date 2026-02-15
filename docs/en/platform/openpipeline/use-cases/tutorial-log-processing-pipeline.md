@@ -1,7 +1,7 @@
 ---
 title: Parse log lines and extract a metric
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline
-scraped: 2026-02-06T16:29:48.020424
+scraped: 2026-02-15T09:00:08.604084
 ---
 
 # Parse log lines and extract a metric

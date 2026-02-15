@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on a server
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation
-scraped: 2026-02-06T16:18:55.331928
+scraped: 2026-02-15T08:54:15.467545
 ---
 
 # Install OneAgent on a server
@@ -81,6 +81,6 @@ OneAgent is now set up and monitoring your host. See [Get started with Dynatrace
 ## Related topics
 
 * [OneAgent features](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.")
-* [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor host and data center health to detect issues and improve infrastructure performance.")
+* [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 * [Host-level settings](/docs/observe/infrastructure-observability/hosts/configuration "Host-level settings")
-* [Infrastructure and Discovery monitoring modes](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.")
+* [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.")

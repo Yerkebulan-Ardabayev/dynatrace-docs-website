@@ -1,7 +1,7 @@
 ---
 title: Traces
 source: https://www.dynatrace.com/docs/semantic-dictionary/model/trace
-scraped: 2026-02-06T16:22:40.262764
+scraped: 2026-02-15T08:57:47.212834
 ---
 
 # Traces
@@ -10,7 +10,7 @@ scraped: 2026-02-06T16:22:40.262764
 
 * Latest Dynatrace
 * Reference
-* Updated on Jan 14, 2026
+* Updated on Feb 11, 2026
 
 Distributed traces are used to capture transactions flowing through a system. Traces are
 made of spans, which represent the units of work within a distributed trace.
@@ -299,257 +299,55 @@ Signals that there is only in-process communication not using a "real" network p
 | `DL/I` | DL/I db. |
 | `F/P` | Fast Path. |
 
-## Dynatrace Span
+## Dynatrace RUM links
 
-The semantic conventions for the Dynatrace span and the fields the user can expect.
+Semantic conventions for a RUM link on Dynatrace spans. A RUM link provides backend to frontend linking information from traces to Dynatrace RUM.
+Unlike span links which reference other spans, the RUM link connects a span to a user event and/or user session.
 
-### Hierarchical Attributes
+### By tracestate
 
-The following hierarchical attributes are mandatory.
+RUM link information for a span-to-user-event and span-to-user-session correlation.
 
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `span.alternate_parent_id` | uid | experimental The alternative `span.id` of this span's parent span. If a trace is monitored by more tracing systems (for example, OneAgent and OpenTelemetry), there might be two parent spans. If the two parent spans differ, `span.parent_id` holds the ID of the parent span originating from same tenant of the span while `span.alternate_parent_id` holds the other parent span ID. The `span.alternate_parent_id` is an 8-byte ID and hex-encoded if shown as a string. | `f76281848bd8288c` |
-| `span.id` | uid | stable A unique identifier for a span within a trace. The `span.id` is an 8-byte ID and hex-encoded if shown as a string. | `f76281848bd8288c` |
-| `span.is_subroutine` | boolean | experimental If set to `true`, it indicates that this span is a subroutine of its parent span. The spans represent functions running on the same thread on the same call stack. |  |
-| `span.kind` | string | stable Distinguishes between spans generated in a particular context. | `server` |
-| `span.parent_id` | uid | stable The `span.id` of this span's parent span. The `span.parent_id` is an 8-byte ID and hex-encoded if shown as a string. | `f76281848bd8288c` |
-| `trace.id` | uid | stable A unique identifier for a trace. The `trace.id` is a 16-byte ID and hex-encoded if shown as a string. | `357bf70f3c617cb34584b31bd4616af8` |
-
-### Timing Attributes
-
-Attributes `start_time`, `end_time` and `duration` are mandatory for all spans.
-The attributes in the `span.timing` namespace are optional and represent measurements provided by the OneAgent.
+This mechanism works with both OneAgent and OpenTelemetry instrumentation and is established when the Dynatrace RUM initiates a distributed trace using W3C Trace Context headers.
 
 | Attribute | Type | Description | Examples |
 | --- | --- | --- | --- |
-| `duration` | duration | stable The difference between `start_time` and `end_time` in nanoseconds. | `42` |
-| `end_time` | timestamp | stable End time of a data point. Value is a UNIX Epoch time in nanoseconds and greater than or equal to the `start_time`. | `1649822520123123165` |
-| `span.timing.cpu` | duration | stable The overall CPU time spent executing the span, including the CPU times of child spans that are running on the same thread on the same call stack. |  |
-| `span.timing.cpu_self` | duration | stable The CPU time spent exclusively on executing this span, not including the CPU times of any children. |  |
-| `start_time` | timestamp | stable Start time of a data point. Value is a UNIX Epoch time in nanoseconds and less than or equal to the `end_time`. | `1649822520123123123` |
+| `dt.rum.instance.id` | string | resource stable The RUM application instance ID. (This was formerly called the "Visitor id", "internal user ID", and "rxVisitor cookie value".) | `3735928559`; `1742973444821E7E6Q3E3SG28ATQPAGTT6T8HU92VFRFQ` |
+| `dt.rum.session.id` | string | stable A unique ID that represents the user session. | `HOPCPWKILUKHFHWRRQGBHHPAFLUJUOSH-0`; `23626166142035610_1-0` |
+| `span.id` | uid | stable The `span.id` on the user event. This `span.id` can be used together with the `trace.id` from the span to find the user event. | `f76281848bd8288c` |
 
-### Aggregation Attributes
+### By server-timing and cookie
 
-OneAgent might aggregate spans having the same parent span into a single one. The aggregated span contains attributes to indicated that aggregation happened and to allow to reconstruct details.
+RUM link information for a span-to-user-event and span-to-user-session correlation.
 
-For aggregated spans the `start_time` holds the earliest `start_time` and `end_time` holds the latest `end_time` of all aggregated spans. Like for non aggreated spans `duration` is the difference between `start_time` and `end_time` which might differ from `aggregation.duration_sum` because aggregated spans were executed in parallel or there were gaps between the spans.
+This mechanism requires OneAgent instrumentation and is established through `server-timing` HTTP response header and session context from HTTP cookies.
 
 | Attribute | Type | Description | Examples |
 | --- | --- | --- | --- |
-| `aggregation.count` | long | stable The number of spans aggregated into this span. Because this span represents multiple spans, the value is >1. | `3` |
-| `aggregation.duration_max` | duration | stable The duration in nanoseconds for the longest aggregated span. | `482` |
-| `aggregation.duration_min` | duration | stable The duration in nanoseconds for the shortest aggregated span. | `42` |
-| `aggregation.duration_samples` | duration[] | stable Array of reservoir sampled span durations of the aggregated spans. The duration samples can be used to estimate a more accurate duration distribution of aggregated spans rather than the average value. | `[42, 482, 301]` |
-| `aggregation.duration_sum` | duration | stable The duration sum in nanoseconds for all aggregated spans. | `123` |
-| `aggregation.exception_count` | long | stable The number of aggregated spans that included an exception. | `0`; `6` |
-| `aggregation.parallel_execution` | boolean | stable `true` indicates that aggregated spans may have been executed in parallel. Therefore, `start_time + duration_sum` may exceed `end_time`. |  |
+| `dt.rum.instance.id` | string | resource stable The RUM application instance ID. (This was formerly called the "Visitor id", "internal user ID", and "rxVisitor cookie value".) | `3735928559`; `1742973444821E7E6Q3E3SG28ATQPAGTT6T8HU92VFRFQ` |
+| `dt.rum.is_linking_candidate` | boolean | experimental Indicates that a user event likely exists that can be correlated to this trace. Use the `trace.id` from the span to find the user event. | `true` |
+| `dt.rum.session.id` | string | stable A unique ID that represents the user session. | `HOPCPWKILUKHFHWRRQGBHHPAFLUJUOSH-0`; `23626166142035610_1-0` |
 
-### Sampling Attributes
+### By server-timing only
 
-If the span does not represent a single span, it can have attributes to support extrapolation of its values.
+RUM link information for a span-to-user-event correlation.
+
+This mechanism requires OneAgent instrumentation and is established through `server-timing` HTTP response header.
 
 | Attribute | Type | Description | Examples |
 | --- | --- | --- | --- |
-| `sampling.threshold` | long | experimental The sampling probability is encoded as `sampling.threshold` with respect to a 56-bit random integer `rv`. A span is sampled if `rv >= sampling.threshold`; the sampling threshold acts as a rejection threshold and can be interpreted as the number of spans discarded out of 2^56. The attribute is only available if the `sampling.threshold` is not `0`, and therefore sampling happened. The relationship between sampling probability and threshold is `sampling probability = (2^56-sampling.threshold) * 2^(-56)`. Hence, `sampling.threshold=0` means 100% sampling probability (collect all data), `sampling.threshold=2^55` corresponds to a sampling probability of 50%, `sampling.threshold=2^54` corresponds to a sampling probability of 75%. | `36028797018963968` |
-| `supportability.alr_sampling_ratio` | long | experimental The denominator of the sampling ratio of the Dynatrace cluster, the attribute is only set if Adaptive Load Redution (ALR) is active on the Dynatrace cluster. A numerator is not specified, as it's always 1. If, for example, the Dynatrace cluster samples with a probability of 1/8 (12,5%), the value of `supportability.alr_sampling_ratio` would be 8 and the numerator is 1. | `8` |
-| `supportability.atm_sampling_ratio` | long | experimental The denominator of the sampling ratio of an Adaptive Traffic Management (ATM) aware sampler. The attribute is always present if an ATM-aware sampler is active (this applies, for example, to Dynatrace OneAgent). A numerator is not specified, as it is always 1. If, for example, Dynatrace OneAgent samples with a probability of 1/16 (6,25%), the value of `supportability.atm_sampling_ratio` would be 16 and the numerator is 1. | `16` |
-| `trace.capture.reasons` | string[] | experimental Explains why this trace was captured, multiple reasons can apply simultaneously. Note: 'atm' and 'fixed' are mutually exclusive sampling approaches, though 'fixed' may appear with other capture triggers. Values: 'atm' (Dynatrace's intelligent sampling automatically adjusted trace capture based on traffic volume and system load), 'fixed' (trace captured due to configured percentage rules - either global settings or specific endpoint rules), 'custom' (trace captured because of custom correlation headers propagated between services or systems), 'mainframe' (trace originated from or includes IBM mainframe/z/OS components), 'serverless' (trace captured from serverless functions like AWS Lambda, Azure Functions, or similar platforms), 'rum' (trace initiated by user interactions in web browsers or mobile apps monitored by Dynatrace RUM agents). | `['atm']`; `['fixed']`; `['fixed', 'custom']`; `['fixed', 'rum']` |
+| `dt.rum.is_linking_candidate` | boolean | experimental Indicates that a user event likely exists that can be correlated to this trace. Use the `trace.id` from the span to find the user event. | `true` |
 
-Currently sampling can happen two stages in the data processing. Independend where sampling happens the span has the `sampling.threshold` for calculation of the combined (effective) sample rate. Supportability attributes help the understand the sampling on the different stages.
+### By cookie
 
-* OneAgent: If the OneAgent has enabled adaptive traffic management (ATM), the agent samples PurePaths and the attribute `supportability.atm_sampling_ratio` is added to all effected spans.
-* Dynatrace Cluster: If the Dynatrace cluster is overloaded, it starts adaptive load reduction (ALR) and samples PurePaths. The attribute `supportability.alr_sampling_ratio` is added to all effected spans.
+RUM link information for a span-to-user-session correlation.
 
-If for example OneAgents samples with a probability of 25% the spans would contain the attributes `sampling.threshold=54043195528445952` and `supportability.atm_sampling_ratio=4`.
-
-Details about adaptive traffic management for distributed tracing can be found in the [documentation](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.").
-
-### Code Attributes
-
-When a span logically represents the execution of a function, it will have `code.*` attributes, describing that function.
-
-`invoked.code.*` attributes describe the function in which a span has been started, but not necessarily ended. It often represents the function that has been instrumented in order to start a span. These attributes are only populated, if they mismatch with `code.*`.
+This mechanism requires OneAgent instrumentation and is established through session context captured from HTTP cookies.
 
 | Attribute | Type | Description | Examples |
 | --- | --- | --- | --- |
-| `code.function` | string | experimental The method or function name, or equivalent (usually the rightmost part of the code unit's name). Represents the name of the function that is represented by this span. | `serveRequest` |
-| `code.namespace` | string | experimental The namespace within which `code.function` is defined. Usually, the qualified class or module name, such that `code.namespace` + some separator + `code.function` forms a unique identifier for the code unit. | `com.example.MyHttpService` |
-| `code.filepath` | string | experimental The source code file name that identifies the code unit as uniquely as possible. | `/usr/local/MyApplication/content_root/app/index.php` |
-| `code.line.number` | long | experimental The line number within the source code file. | `1337` |
-| `code.invoked.function` | string | experimental Like `code.function`, only it represents the function that was active when a span has been started. Typically, it's the function that has been instrumented. The spans duration does not reflect the duration of this function execution. It should only be set if it differs from `code.function`. | `invoke` |
-| `code.invoked.namespace` | string | experimental Like `code.namespace`, only it represents the namespace of the function that was active when a span has been started. Typically, it's the function that has been instrumented. It should only be set if it differs from `code.namespace`. | `com.sun.xml.ws.server.InvokerTube$2` |
-| `code.invoked.filepath` | string | experimental Like `code.filepath`, only it represents the file path of the function that was active when a span has been started. Typically, it is the function that has been instrumented. It should only be set if it differs from `code.filepath`. | `/usr/local/MyApplication/content_root/app/index.php` |
-| `code.call_stack` | string | experimental The call stack of the `code.function`. The call stack starts with the `code.function`, and the stack frames are separated by a line feed. | `com.example.SampleClass.doProcessing(SampleClass.java) com.example.SampleClass.doSomeWork(SampleClass.java) com.example.SampleClass.main(SampleClass.java)` |
-
-### Events
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `span.events` | record[] | stable A collection of events. An event is an optional time-stamped annotation of the span and consists of a name and key-value pairs. |  |
-| `supportability.dropped_events_count` | long | experimental The number of span events that were discarded on the source. | `1` |
-
-Span events have their own semantics defined here.
-
-#### Exception Events
-
-If the span was exited by an exception or contains other exception events, the following fields are available to provide a reference to the correct exception in the list of the `span.events`.
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `span.exit_by_exception_id` | uid | stable The `exception.id` of the exception the its `span.events` with the current span exited. The referenced exception has set the attribute `exception.escaped` to true. |  |
-| `span.is_exit_by_exception` | boolean | stable Set to `true` if an exception exited the span. If set to `false`, the span has exception events, but none exited the span. |  |
-
-### Links
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `span.links` | record[] | stable A collection of links. A link is a reference from this span to a whole trace or a span in the same or different trace. |  |
-| `supportability.dropped_links_count` | long | experimental The number of span links that were discarded on the source. | `1` |
-
-Span links have their own semantics defined here.
-
-### Failure Detection
-
-Fields that can be expected for a failure detection on a Dynatrace span.
-Failure detection will be applied to spans that represent requests on endpoints and incoming Istio services mesh proxies.
-A request is considered failed if at least one failure reason is detected and no success forcing rule matches. The combined result (failure or success) will be stored in the attribute `request.is_failed` (see also Request).
-To modify failure detection behavior, modify its configuration.
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `dt.failure_detection.ruleset_id` | uid | experimental The `id` of the failure detection rule set (failure detection v2) that was applied to that span (uid128). | `4d76194c11a9426197a9062548f9e66e` |
-| `dt.failure_detection.general_parameters_id` | uid | experimental The `id` of the failure detection general parameters (failure detection v1) that were applied to that span (uid128). | `4d76194c11a9426197a9062548f9e66f` |
-| `dt.failure_detection.http_parameters_id` | uid | experimental The `id` of the failure detection HTTP parameters (failure detection v1) that were applied to that span (uid128). | `4d76194c11a9426197a9062548f9e66a` |
-| `dt.failure_detection.global_rule_id` | uid | experimental The `id` of the global failure detection rule (failure detection v1) that was applied to that span (uid128). This is always used in conjunction with the `dt.failure_detection.global_parameters_id`. | `4d76194c11a9426197a9062548f9e66b` |
-| `dt.failure_detection.global_parameters_id` | uid | experimental The `id` of the global failure detection parameters (failure detection v1) that were applied to that span (uid128). This is always used in conjunction with the `dt.failure_detection.global_rule_id`. | `4d76194c11a9426197a9062548f9e66c` |
-| `dt.failure_detection.verdict` | string | experimental The final failure detection verdict based on the results in `dt.failure_detection.results`. | `failure` |
-| `dt.failure_detection.results` | record[] | experimental A collection of individual failure detection reasons and verdicts for each applied matching rule. If no entries exist, no rules matched, and the attribute does not exist. |  |
-
-`dt.failure_detection.verdict` MUST be one of the following:
-
-| Value | Description |
-| --- | --- |
-| `failure` | There is at least one result with verdict `failure` and no result with verdict `success`. |
-| `success` | There is at least one result with verdict `success` or no result at all. |
-
-Failure detection has its own semantics defined here.
-
-### Server and client attributes
-
-These attributes may be used to describe the client and server in a connection-based network interaction where there is one side (the client) that initiates the connection.
-This covers all TCP network interactions since TCP is connection-based and one side initiates the connection (an exception is made for peer-to-peer communication over TCP where the "user-facing" surface of the protocol / API does not expose a clear notion of client and server).
-This also covers UDP network interactions where one side initiates the interaction, e.g. QUIC (HTTP/3) and DNS.
-
-In an ideal situation, not accounting for proxies, multiple IP addresses or host names, the `server.*` attributes are the same on the client and server span.
-
-#### Server attributes
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `server.address` | string | stable Logical server hostname, matches server FQDN if available, and IP or socket address if FQDN is not known. | `example.com` |
-| `server.resolved_ips` | ipAddress[] | stable A list of IP addresses that are the result of DNS resolution of `server.address`. | `[194.232.104.141, 2a01:468:1000:9::140]` |
-| `server.port` | long | stable Logical server port number. | `65123`; `80` |
-
-##### `server.address`
-
-For IP-based communication, the name should be a DNS host name of the service. On client side it matches remote service name, on server side, it represents local service name as seen externally on clients.
-
-When connecting to a URL `https://example.com/foo`, `server.address` matches `"example.com"` on both client and server side.
-
-On client side, it's usually passed in form of a URL, connection string, host name, etc. Sometimes host name is only available as a string which may contain DNS name or IP address.
-
-If `network.transport` is `pipe`, the absolute path to the file representing it is used as `server.address`.
-
-For Unix domain socket, `server.address` attribute represents the remote endpoint address on client side and local endpoint address on server side.
-
-#### Client attributes
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `client.ip` | ipAddress | experimental The IP address of the client that makes the request. This can be IPv4 or IPv6. Tags: `sensitive-spans` `sensitive-user-events` | `194.232.104.141`; `2a01:468:1000:9::140` |
-| `client.port` | long | stable Client port number. | `65123`; `80` |
-| `client.isp` | string | experimental The name of the Internet Service Provider (ISP) associated with the client's IP address. | `Internet Service Provider Name` |
-| `client.ip.is_public` | boolean | experimental Indicates whether IP is a public IP. | `true` |
-| `client.app.name` | string | experimental The name of the client application used to perform the request. | `MS Outlook` |
-| `client.address` | string | experimental Client address - domain name if available without reverse DNS lookup; otherwise, IP address or Unix domain socket name. | `client.example.com`; `10.1.2.80`; `[local]` |
-
-### Supportability Attributes
-
-Supportability attributes help to understand the characteristics of the span.
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `supportability.dropped_attributes_count` | long | experimental The number of attributes that were discarded on the source. Attributes can be discarded because their keys are too long or because there are too many attributes. | `1` |
-| `supportability.non_persisted_attribute_keys` | string[] | experimental A string array of attribute keys that were not stored as they were not allow-listed or were removed during the pipeline steps. | `['"my_span_attribute", "db.name"']` |
-| `trace.alternate_id` | uid | experimental The preserved trace ID when OneAgent and other tracing systems monitor the same process and the trace ID from the other tracing system was replaced by the OneAgent trace ID. The `trace.alternate_id` is a 16-byte ID and hex-encoded if shown as a string. | `357bf70f3c617cb34584b31bd4616af8` |
-| `trace.state` | string | experimental The trace state in the w3c-trace-context format. | `f4fe05b2-bd92206c@dt=fw4;3;abf102d9;c4592;0;0;0;2ee;5607;2h01;3habf102d9;4h0c4592;5h01;6h5f9a543f1184a52b1b744e383038911c;7h6564df6f55bd6eae,apmvendor=boo,foo=bar` |
-
-### Requests
-
-#### Requests and Endpoints
-
-Requests are an important hierarchical grouping of spans within a trace. A request spawns all spans from the detected request root span until the service is left again.
-The grouping of spans into requests allows for very powerful queries and advanced analysis.
-Every request always has a request root span which is special as it is the trigger for detecting endpoints and hence defining the service API.
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `dt.endpoint_detection.rule_id` | uid | experimental The ID of the endpoint detection rule that was applied to that span. | `4d76194c11a9426197a9062548f9e66e` |
-| `endpoint.name` | string | stable The endpoint name is derived from endpoint detection rules and uniquely identifies one endpoint of a particular service. Endpoint names are usually technology-specific and should be defined by attributes with low cardinality, like `http.route` or `rpc.method`. Endpoints are exclusively detected on request root spans. | `GET /`; `PUT /users/:userID?`; `GET /productpage`; `Reviews.GetReviews` |
-| `request.is_failed` | boolean | experimental Indicates that the request is considered failed according to the failure detection rules. Only present on the request root span. |  |
-| `request.is_root_span` | boolean | experimental Marks the root of a request. It's the first span and starts the request within a service. |  |
-
-#### Request Attributes
-
-Request attributes allow you to enrich spans collected by OneAgents with deep-insight data which is not captured on trace data by default.
-They are modelled as:
-
-* Captured attributes, which represent the raw value as reported by the OneAgent.
-* Request attributes, which represent the normalized value along a complete request
-
-The names of request and captured attributes are composed of the prefixes "captured\_attribute" and "request\_attribute" and the name given in the configuration by the user:
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `captured_attribute.__attribute_name__` | array | stable Contains the span scoped raw values that were captured under the name `__attribute_name__` defined by the request attribute configuration. The values are mapped as an array according to the type of the captured attributes, so either boolean, double, long, or string. If the captured attributes have mixed types (e.g. long and string, or double and long, etc.), all attributes are converted to string and stored as string array. | `[42]`; `['Platinum']`; `[32, 16, 8]`; `['Special Offer', '1702']`; `['18.35', '16']` |
-| `request_attribute.__attribute_name__` | array | stable Contains the request scoped reconciled values of the attribute named `__attribute_name__` defined by the request attribute configuration. The data type of the value depends on the request attribute definition. Tags: `sensitive-spans` | `42`; `Platinum`; `['Product A', 'Product B']`; `['Special Offer', '1702']` |
-
-### Size of a span
-
-The calculated sizes of a span in bytes. The `dt.ingest.size` is calculated when the span is ingested while the `dt.retain.size` is calculated before the span gets stored.
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `dt.ingest.size` | long | stable The size of the ingested data point in bytes. | `2005` |
-| `dt.retain.size` | long | stable The size of the retained data point in bytes. | `2005` |
-
-### Status
-
-A span contains a status consisting of a code and an optional descriptive message. The status is especially relevant if there is a known error in the application code, such as an exception in which case the span status can be set to `error`. The span status is only present if it is explicitly set to `error` or `ok`.
-
-| Attribute | Type | Description | Examples |
-| --- | --- | --- | --- |
-| `span.status_code` | string | stable Defines the status of a span, predominantly used to indicate a processing error. This field is absent if the reported span status is `unset`. | `error` |
-| `span.status_message` | string | experimental An optional text that can provide a descriptive error message in case the `span.status_code` is `error`. | `Connection closed before message completed`; `Error sending request for url` |
-
-#### Error status reasons
-
-The following reasons cause the `span.status_code` to be `error`:
-
-* If the span was exited by an exception, i.e. the attribute `span.is_exit_by_exception` is set to `true`.
-* HTTP spans:
-
-  + General: For `http.response.status_code` values in the `5xx` range.
-  + If `span.kind` is `client`: For `http.response.status_code` values in the `4xx` range.
-* gRPC spans:
-
-  + If `span.kind` is `client`: For all `rpc.grpc.status_code` values except `OK (0)`.
-  + If `span.kind` is `server`: For `rpc.grpc.status_code` values `UNKNOWN (2)`, `DEADLINE_EXCEEDED (4)`, `UNIMPLEMENTED (12)`, `INTERNAL (13)`, `UNAVAILABLE (14)`, `DATA_LOSS (15)`.
-
-### Additional Attributes
-
-Beside the attributes listed above, arbitrary other attributes are allowed on a span.
+| `dt.rum.instance.id` | string | resource stable The RUM application instance ID. (This was formerly called the "Visitor id", "internal user ID", and "rxVisitor cookie value".) | `3735928559`; `1742973444821E7E6Q3E3SG28ATQPAGTT6T8HU92VFRFQ` |
+| `dt.rum.session.id` | string | stable A unique ID that represents the user session. | `HOPCPWKILUKHFHWRRQGBHHPAFLUJUOSH-0`; `23626166142035610_1-0` |
 
 ## Dynatrace Span Events
 
@@ -679,6 +477,274 @@ A span link by `dt.tracing.response.headers` refers to a downstream transaction.
 | --- | --- | --- | --- |
 | `dt.tracing.response.headers` | record | experimental A collection of key-value pairs containing received response headers related to tracing from an outgoing call. There may be multiple values for each header. Used for cross-environment linking. | `{'traceresponse': ['00-7b9e3e4068167838398f50017bfad358-d4ffc7e33530967a-01'], 'x-dt-tracestate': ['9651e1a8-19506b7c@dt']}` |
 
+## Dynatrace span
+
+The semantic conventions for the Dynatrace span and the fields the user can expect.
+
+### Hierarchical attributes
+
+The following hierarchical attributes are mandatory.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `span.alternate_parent_id` | uid | experimental The alternative `span.id` of this span's parent span. If a trace is monitored by more tracing systems (for example, OneAgent and OpenTelemetry), there might be two parent spans. If the two parent spans differ, `span.parent_id` holds the ID of the parent span originating from same tenant of the span while `span.alternate_parent_id` holds the other parent span ID. The `span.alternate_parent_id` is an 8-byte ID and hex-encoded if shown as a string. | `f76281848bd8288c` |
+| `span.id` | uid | stable A unique identifier for a span within a trace. The `span.id` is an 8-byte ID and hex-encoded if shown as a string. | `f76281848bd8288c` |
+| `span.is_subroutine` | boolean | experimental If set to `true`, it indicates that this span is a subroutine of its parent span. The spans represent functions running on the same thread on the same call stack. |  |
+| `span.kind` | string | stable Distinguishes between spans generated in a particular context. | `server` |
+| `span.parent_id` | uid | stable The `span.id` of this span's parent span. The `span.parent_id` is an 8-byte ID and hex-encoded if shown as a string. | `f76281848bd8288c` |
+| `trace.id` | uid | stable A unique identifier for a trace. The `trace.id` is a 16-byte ID and hex-encoded if shown as a string. | `357bf70f3c617cb34584b31bd4616af8` |
+
+### Timing attributes
+
+Attributes `start_time`, `end_time` and `duration` are mandatory for all spans.
+The attributes in the `span.timing` namespace are optional and represent measurements provided by the OneAgent.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `duration` | duration | stable The difference between `start_time` and `end_time` in nanoseconds. | `42` |
+| `end_time` | timestamp | stable End time of a data point. Value is a UNIX Epoch time in nanoseconds and greater than or equal to the `start_time`. | `1649822520123123165` |
+| `span.timing.cpu` | duration | stable The overall CPU time spent executing the span, including the CPU times of child spans that are running on the same thread on the same call stack. |  |
+| `span.timing.cpu_self` | duration | stable The CPU time spent exclusively on executing this span, not including the CPU times of any children. |  |
+| `start_time` | timestamp | stable Start time of a data point. Value is a UNIX Epoch time in nanoseconds and less than or equal to the `end_time`. | `1649822520123123123` |
+
+### Aggregation attributes
+
+OneAgent might aggregate spans having the same parent span into a single one. The aggregated span contains attributes to indicated that aggregation happened and to allow to reconstruct details.
+
+For aggregated spans the `start_time` holds the earliest `start_time` and `end_time` holds the latest `end_time` of all aggregated spans. Like for non aggreated spans `duration` is the difference between `start_time` and `end_time` which might differ from `aggregation.duration_sum` because aggregated spans were executed in parallel or there were gaps between the spans.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `aggregation.count` | long | stable The number of spans aggregated into this span. Because this span represents multiple spans, the value is >1. | `3` |
+| `aggregation.duration_max` | duration | stable The duration in nanoseconds for the longest aggregated span. | `482` |
+| `aggregation.duration_min` | duration | stable The duration in nanoseconds for the shortest aggregated span. | `42` |
+| `aggregation.duration_samples` | duration[] | stable Array of reservoir sampled span durations of the aggregated spans. The duration samples can be used to estimate a more accurate duration distribution of aggregated spans rather than the average value. | `[42, 482, 301]` |
+| `aggregation.duration_sum` | duration | stable The duration sum in nanoseconds for all aggregated spans. | `123` |
+| `aggregation.exception_count` | long | stable The number of aggregated spans that included an exception. | `0`; `6` |
+| `aggregation.parallel_execution` | boolean | stable `true` indicates that aggregated spans may have been executed in parallel. Therefore, `start_time + duration_sum` may exceed `end_time`. |  |
+
+### Sampling attributes
+
+If the span does not represent a single span, it can have attributes to support extrapolation of its values.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `sampling.threshold` | long | experimental The sampling probability is encoded as `sampling.threshold` with respect to a 56-bit random integer `rv`. A span is sampled if `rv >= sampling.threshold`; the sampling threshold acts as a rejection threshold and can be interpreted as the number of spans discarded out of 2^56. The attribute is only available if the `sampling.threshold` is not `0`, and therefore sampling happened. The relationship between sampling probability and threshold is `sampling probability = (2^56-sampling.threshold) * 2^(-56)`. Hence, `sampling.threshold=0` means 100% sampling probability (collect all data), `sampling.threshold=2^55` corresponds to a sampling probability of 50%, `sampling.threshold=2^54` corresponds to a sampling probability of 75%. | `36028797018963968` |
+| `supportability.alr_sampling_ratio` | long | experimental The denominator of the sampling ratio of the Dynatrace cluster, the attribute is only set if Adaptive Load Redution (ALR) is active on the Dynatrace cluster. A numerator is not specified, as it's always 1. If, for example, the Dynatrace cluster samples with a probability of 1/8 (12,5%), the value of `supportability.alr_sampling_ratio` would be 8 and the numerator is 1. | `8` |
+| `supportability.atm_sampling_ratio` | long | experimental The denominator of the sampling ratio of an Adaptive Traffic Management (ATM) aware sampler. The attribute is always present if an ATM-aware sampler is active (this applies, for example, to Dynatrace OneAgent). A numerator is not specified, as it is always 1. If, for example, Dynatrace OneAgent samples with a probability of 1/16 (6,25%), the value of `supportability.atm_sampling_ratio` would be 16 and the numerator is 1. | `16` |
+| `trace.capture.reasons` | string[] | experimental Explains why this trace was captured, multiple reasons can apply simultaneously. Note: The sampling approach ('atm' or 'fixed') is always placed at the first position in the array. These two values are mutually exclusive, though 'fixed' may appear with other capture triggers. Values: 'atm' (Dynatrace's intelligent sampling automatically adjusted trace capture based on traffic volume and system load), 'fixed' (trace captured due to configured percentage rules - either global settings or specific endpoint rules), 'custom' (trace captured because of custom correlation headers propagated between services or systems), 'mainframe' (trace originated from or includes IBM mainframe/z/OS components), 'serverless' (trace captured from serverless functions like AWS Lambda, Azure Functions, or similar platforms), 'rum' (trace initiated by user interactions in web browsers or mobile apps monitored by Dynatrace RUM agents). | `['atm']`; `['fixed']`; `['fixed', 'custom']`; `['fixed', 'rum']` |
+
+Currently sampling can happen two stages in the data processing. Independend where sampling happens the span has the `sampling.threshold` for calculation of the combined (effective) sample rate. Supportability attributes help the understand the sampling on the different stages.
+
+* OneAgent: if the OneAgent has enabled adaptive traffic management (ATM), the agent samples PurePaths and the attribute `supportability.atm_sampling_ratio` is added to all effected spans.
+* Dynatrace Cluster: if the Dynatrace cluster is overloaded, it starts adaptive load reduction (ALR) and samples PurePaths. The attribute `supportability.alr_sampling_ratio` is added to all effected spans.
+
+If for example OneAgents samples with a probability of 25% the spans would contain the attributes `sampling.threshold=54043195528445952` and `supportability.atm_sampling_ratio=4`.
+
+Details about adaptive traffic management for distributed tracing can be found in the [documentation](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.").
+
+### Code attributes
+
+When a span logically represents the execution of a function, it will have `code.*` attributes, describing that function.
+
+`invoked.code.*` attributes describe the function in which a span has been started, but not necessarily ended. It often represents the function that has been instrumented in order to start a span. These attributes are only populated, if they mismatch with `code.*`.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `code.function` | string | experimental The method or function name, or equivalent (usually the rightmost part of the code unit's name). Represents the name of the function that is represented by this span. | `serveRequest` |
+| `code.namespace` | string | experimental The namespace within which `code.function` is defined. Usually, the qualified class or module name, such that `code.namespace` + some separator + `code.function` forms a unique identifier for the code unit. | `com.example.MyHttpService` |
+| `code.filepath` | string | experimental The source code file name that identifies the code unit as uniquely as possible. | `/usr/local/MyApplication/content_root/app/index.php` |
+| `code.line.number` | long | experimental The line number within the source code file. | `1337` |
+| `code.invoked.function` | string | experimental Like `code.function`, only it represents the function that was active when a span has been started. Typically, it's the function that has been instrumented. The spans duration does not reflect the duration of this function execution. It should only be set if it differs from `code.function`. | `invoke` |
+| `code.invoked.namespace` | string | experimental Like `code.namespace`, only it represents the namespace of the function that was active when a span has been started. Typically, it's the function that has been instrumented. It should only be set if it differs from `code.namespace`. | `com.sun.xml.ws.server.InvokerTube$2` |
+| `code.invoked.filepath` | string | experimental Like `code.filepath`, only it represents the file path of the function that was active when a span has been started. Typically, it is the function that has been instrumented. It should only be set if it differs from `code.filepath`. | `/usr/local/MyApplication/content_root/app/index.php` |
+| `code.call_stack` | string | experimental The call stack of the `code.function`. The call stack starts with the `code.function`, and the stack frames are separated by a line feed. | `com.example.SampleClass.doProcessing(SampleClass.java) com.example.SampleClass.doSomeWork(SampleClass.java) com.example.SampleClass.main(SampleClass.java)` |
+
+### Events
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `span.events` | record[] | stable A collection of events. An event is an optional time-stamped annotation of the span and consists of a name and key-value pairs. |  |
+| `supportability.dropped_events_count` | long | experimental The number of span events that were discarded on the source. | `1` |
+
+Span events have their own semantics defined here.
+
+#### Exception events
+
+If the span was exited by an exception or contains other exception events, the following fields are available to provide a reference to the correct exception in the list of the `span.events`.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `span.exit_by_exception_id` | uid | stable The `exception.id` of the exception the its `span.events` with the current span exited. The referenced exception has set the attribute `exception.escaped` to true. |  |
+| `span.is_exit_by_exception` | boolean | stable Set to `true` if an exception exited the span. If set to `false`, the span has exception events, but none exited the span. |  |
+
+### Links
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `span.links` | record[] | stable A collection of links. A link is a reference from this span to a whole trace or a span in the same or different trace. |  |
+| `supportability.dropped_links_count` | long | experimental The number of span links that were discarded on the source. | `1` |
+
+Span links have their own semantics defined here.
+
+### RUM link
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `rum_link` | record | experimental A RUM link provides backend to frontend linking information from traces to Dynatrace RUM. Unlike span links which reference other spans, the RUM link connects a span to a user event and/or user session. |  |
+
+A RUM link has is own semantics defined here.
+
+### Failure detection
+
+Fields that can be expected for a failure detection on a Dynatrace span.
+Failure detection will be applied to spans that represent requests on endpoints and incoming Istio services mesh proxies.
+A request is considered failed if at least one failure reason is detected and no success forcing rule matches. The combined result (failure or success) will be stored in the attribute `request.is_failed` (see also Request).
+To modify failure detection behavior, modify its configuration.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `dt.failure_detection.ruleset_id` | uid | experimental The `id` of the failure detection rule set (failure detection v2) that was applied to that span (uid128). | `4d76194c11a9426197a9062548f9e66e` |
+| `dt.failure_detection.general_parameters_id` | uid | experimental The `id` of the failure detection general parameters (failure detection v1) that were applied to that span (uid128). | `4d76194c11a9426197a9062548f9e66f` |
+| `dt.failure_detection.http_parameters_id` | uid | experimental The `id` of the failure detection HTTP parameters (failure detection v1) that were applied to that span (uid128). | `4d76194c11a9426197a9062548f9e66a` |
+| `dt.failure_detection.global_rule_id` | uid | experimental The `id` of the global failure detection rule (failure detection v1) that was applied to that span (uid128).  This is always used in conjunction with the `dt.failure_detection.global_parameters_id`. | `4d76194c11a9426197a9062548f9e66b` |
+| `dt.failure_detection.global_parameters_id` | uid | experimental The `id` of the global failure detection parameters (failure detection v1) that were applied to that span (uid128).  This is always used in conjunction with the `dt.failure_detection.global_rule_id`. | `4d76194c11a9426197a9062548f9e66c` |
+| `dt.failure_detection.verdict` | string | experimental The final failure detection verdict based on the results in `dt.failure_detection.results`. | `failure` |
+| `dt.failure_detection.results` | record[] | experimental A collection of individual failure detection reasons and verdicts for each applied matching rule. If no entries exist, no rules matched, and the attribute does not exist. |  |
+
+`dt.failure_detection.verdict` MUST be one of the following:
+
+| Value | Description |
+| --- | --- |
+| `failure` | There is at least one result with verdict `failure` and no result with verdict `success`. |
+| `success` | There is at least one result with verdict `success` or no result at all. |
+
+Failure detection has its own semantics defined here.
+
+### Server and client attributes
+
+These attributes may be used to describe the client and server in a connection-based network interaction where there is one side (the client) that initiates the connection.
+This covers all TCP network interactions since TCP is connection-based and one side initiates the connection (an exception is made for peer-to-peer communication over TCP where the "user-facing" surface of the protocol / API does not expose a clear notion of client and server).
+This also covers UDP network interactions where one side initiates the interaction, e.g. QUIC (HTTP/3) and DNS.
+
+In an ideal situation, not accounting for proxies, multiple IP addresses or host names, the `server.*` attributes are the same on the client and server span.
+
+#### Server attributes
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `server.address` | string | stable Logical server hostname, matches server FQDN if available, and IP or socket address if FQDN is not known. | `example.com` |
+| `server.resolved_ips` | ipAddress[] | stable A list of IP addresses that are the result of DNS resolution of `server.address`. | `[194.232.104.141, 2a01:468:1000:9::140]` |
+| `server.port` | long | stable Logical server port number. | `65123`; `80` |
+
+##### `server.address`
+
+For IP-based communication, the name should be a DNS host name of the service. On client side it matches remote service name, on server side, it represents local service name as seen externally on clients.
+
+When connecting to a URL `https://example.com/foo`, `server.address` matches `"example.com"` on both client and server side.
+
+On client side, it's usually passed in form of a URL, connection string, host name, etc. Sometimes host name is only available as a string which may contain DNS name or IP address.
+
+If `network.transport` is `pipe`, the absolute path to the file representing it is used as `server.address`.
+
+For Unix domain socket, `server.address` attribute represents the remote endpoint address on client side and local endpoint address on server side.
+
+#### Client attributes
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `client.ip` | ipAddress | experimental The IP address of the client that makes the request. This can be IPv4 or IPv6. Tags: `sensitive-spans` `sensitive-user-events` | `194.232.104.141`; `2a01:468:1000:9::140` |
+| `client.port` | long | stable Client port number. | `65123`; `80` |
+| `client.isp` | string | experimental The name of the Internet Service Provider (ISP) associated with the client's IP address. | `Internet Service Provider Name` |
+| `client.ip.is_public` | boolean | experimental Indicates whether IP is a public IP. | `true` |
+| `client.app.name` | string | experimental The name of the client application used to perform the request. | `MS Outlook` |
+| `client.address` | string | experimental Client address - domain name if available without reverse DNS lookup; otherwise, IP address or Unix domain socket name. | `client.example.com`; `10.1.2.80`; `[local]` |
+
+### Supportability attributes
+
+Supportability attributes help to understand the characteristics of the span.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `supportability.dropped_attributes_count` | long | experimental The number of attributes that were discarded on the source. Attributes can be discarded because their keys are too long or because there are too many attributes. | `1` |
+| `supportability.non_persisted_attribute_keys` | string[] | experimental A string array of attribute keys that were not stored as they were not allow-listed or were removed during the pipeline steps. | `['"my_span_attribute", "db.name"']` |
+| `trace.alternate_id` | uid | experimental The preserved trace ID when OneAgent and other tracing systems monitor the same process and the trace ID from the other tracing system was replaced by the OneAgent trace ID. The `trace.alternate_id` is a 16-byte ID and hex-encoded if shown as a string. | `357bf70f3c617cb34584b31bd4616af8` |
+| `trace.state` | string | experimental The trace state in the w3c-trace-context format. | `f4fe05b2-bd92206c@dt=fw4;3;abf102d9;c4592;0;0;0;2ee;5607;2h01;3habf102d9;4h0c4592;5h01;6h5f9a543f1184a52b1b744e383038911c;7h6564df6f55bd6eae,apmvendor=boo,foo=bar` |
+
+### Transactions
+
+Transactions provide a unified semantic model across all service transaction types. A transaction represents a discrete unit of inbound work within a serviceâan endpoint request, message processing, or FaaS invocation.
+A single transaction root span can have multiple type attributes set simultaneously. For example, an HTTP-triggered Lambda has both `transaction.is_faas_invocation = true` and `transaction.is_endpoint_request = true`.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `transaction.is_endpoint_request` | boolean | experimental Indicates that this transaction is an endpoint request. Set by the endpoint detection ruleset. |  |
+| `transaction.is_faas_invocation` | boolean | experimental Indicates that this transaction is a FaaS invocation. Set when `faas.trigger` exists and `span.kind` is `server` or `consumer`. |  |
+| `transaction.is_failed` | boolean | experimental Indicates that the transaction is considered failed according to the failure detection rules. Only present on the transaction root span. |  |
+| `transaction.is_message_processing` | boolean | experimental Indicates that this transaction is a message processing transaction. Set when `messaging.operation.type == "PROCESS"`. |  |
+| `transaction.is_root_span` | boolean | experimental Marks the root span of a transaction. A span becomes a transaction root if at least one transaction type attribute is set. |  |
+
+#### Service mesh
+
+Service mesh spans represent requests proxied through a service mesh layer (e.g., Istio Envoy).
+They do not represent service transactions (`transaction.is_root_span` is not set).
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `transaction.service_mesh.is_failed` | boolean | experimental Indicates that the service mesh request is considered failed according to the failure detection rules. Only present on the service mesh root span. |  |
+| `transaction.service_mesh.is_root_span` | boolean | experimental Marks the root span of a service mesh request. Set by the service mesh detection ruleset. |  |
+
+#### Request attributes
+
+Request attributes allow you to enrich spans collected by OneAgents with deep-insight data which is not captured on trace data by default.
+They are modelled as:
+
+* Captured attributes, which represent the raw value as reported by the OneAgent.
+* Request attributes, which represent the normalized value along a complete request
+
+The names of request and captured attributes are composed of the prefixes "captured\_attribute" and "request\_attribute" and the name given in the configuration by the user:
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `captured_attribute.__attribute_name__` | array | stable Contains the span scoped raw values that were captured under the name `__attribute_name__` defined by the request attribute configuration. The values are mapped as an array according to the type of the captured attributes, so either boolean, double, long, or string. If the captured attributes have mixed types (e.g. long and string, or double and long, etc.), all attributes are converted to string and stored as string array. | `[42]`; `['Platinum']`; `[32, 16, 8]`; `['Special Offer', '1702']`; `['18.35', '16']` |
+| `request_attribute.__attribute_name__` | array | stable Contains the request scoped reconciled values of the attribute named `__attribute_name__` defined by the request attribute configuration. The data type of the value depends on the request attribute definition. Tags: `sensitive-spans` | `42`; `Platinum`; `['Product A', 'Product B']`; `['Special Offer', '1702']` |
+
+### Size of a span
+
+The calculated sizes of a span in bytes. The `dt.ingest.size` is calculated when the span is ingested while the `dt.retain.size` is calculated before the span gets stored.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `dt.ingest.size` | long | stable The size of the ingested data point in bytes. | `2005` |
+| `dt.retain.size` | long | stable The size of the retained data point in bytes. | `2005` |
+
+### Status
+
+A span contains a status consisting of a code and an optional descriptive message. The status is especially relevant if there is a known error in the application code, such as an exception in which case the span status can be set to `error`. The span status is only present if it is explicitly set to `error` or `ok`.
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `span.status_code` | string | stable Defines the status of a span, predominantly used to indicate a processing error. This field is absent if the reported span status is `unset`. | `error` |
+| `span.status_message` | string | experimental An optional text that can provide a descriptive error message in case the `span.status_code` is `error`. | `Connection closed before message completed`; `Error sending request for url` |
+
+#### Error status reasons
+
+The following reasons cause the `span.status_code` to be `error`:
+
+* If the span was exited by an exception, i.e. the attribute `span.is_exit_by_exception` is set to `true`.
+* HTTP spans:
+
+  + General: for `http.response.status_code` values in the `5xx` range.
+  + If `span.kind` is `client`: for `http.response.status_code` values in the `4xx` range.
+* gRPC spans:
+
+  + If `span.kind` is `client`: for all `rpc.grpc.status_code` values except `OK (0)`.
+  + If `span.kind` is `server`: for `rpc.grpc.status_code` values `UNKNOWN (2)`, `DEADLINE_EXCEEDED (4)`, `UNIMPLEMENTED (12)`, `INTERNAL (13)`, `UNAVAILABLE (14)`, `DATA_LOSS (15)`.
+
+### Additional attributes
+
+Beside the attributes listed above, arbitrary other attributes are allowed on a span.
+
 ## ESB Spans
 
 Semantic conventions for ESB (Enterprise Service Bus) spans. An ESB span holds information about the realm in which the span is produced. This metadata includes, for example, the workflow in which the span is placed and the application or library to which the workflow belongs.
@@ -719,8 +785,8 @@ This record relates to failure detection v1 and v2.
 
 | Value | Description |
 | --- | --- |
-| `custom_error_rule` | Verdict is caused by a custom error rule (request attribute). Applicable in failure detection v1. This reason always comes together with the `request_attribute_name` field. |
-| `custom_rule` | Verdict is caused by a custom rule. Applicable in failure detection v2. This reason always comes together with the `custom_rule_name` field. |
+| `custom_error_rule` | Verdict is caused by a custom error rule (request attribute). Applicable in failure detection v1.  This reason always comes together with the `request_attribute_name` field. |
+| `custom_rule` | Verdict is caused by a custom rule. Applicable in failure detection v2.  This reason always comes together with the `custom_rule_name` field. |
 | `exception` | Verdict is caused by an exception. Applicable in failure detection v1 and v2. |
 | `grpc_code` | Verdict is caused by the GRPC response code. Applicable in failure detection v2. |
 | `http_code` | Verdict is caused by the HTTP response code. Applicable in failure detection v1 and v2. |

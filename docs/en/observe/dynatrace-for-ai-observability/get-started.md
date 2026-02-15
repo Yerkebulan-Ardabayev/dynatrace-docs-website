@@ -1,7 +1,7 @@
 ---
 title: Get started
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started
-scraped: 2026-02-06T16:30:09.288463
+scraped: 2026-02-15T09:03:28.059612
 ---
 
 # Get started

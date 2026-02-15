@@ -1,7 +1,7 @@
 ---
 title: Access your DPS cost overview
 source: https://www.dynatrace.com/docs/license/cost-overview
-scraped: 2026-02-06T16:25:04.511419
+scraped: 2026-02-15T08:58:59.145815
 ---
 
 # Access your DPS cost overview
@@ -11,7 +11,7 @@ scraped: 2026-02-06T16:25:04.511419
 * Latest Dynatrace
 * How-to guide
 * 6-min read
-* Updated on Nov 24, 2025
+* Updated on Jan 20, 2026
 
 Dynatrace Platform Subscription (DPS) is your licensing model for all Dynatrace capabilities.
 It allows you the flexibility to use any Dynatrace capability at any volume, at any time.
@@ -33,7 +33,7 @@ For more information, see [Subscription overview (Dynatrace Platform Subscriptio
 Your billing report provides details about accrued costs per booking date.
 Use this view to determine which Dynatrace monitoring costs were recognized and booked on which day.
 
-Billing reports are available in **Account Management** > **Subscription** > **Accounting view**.
+Billing reports are available in **Account Management** > **Subscription** > **Billing report**.
 
 For more information, see [Billing report](/docs/license/billing-reports "View your billing to see details about accrued costs per booking date. Use this view to determine which Dynatrace monitoring costs were recognized and booked on which day.").
 

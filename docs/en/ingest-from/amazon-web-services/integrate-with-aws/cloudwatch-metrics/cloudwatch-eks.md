@@ -1,7 +1,7 @@
 ---
 title: Monitor Amazon Elastic Kubernetes Service (EKS) with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-eks
-scraped: 2026-02-06T16:23:19.924278
+scraped: 2026-02-15T08:56:45.738875
 ---
 
 # Monitor Amazon Elastic Kubernetes Service (EKS) with CloudWatch metrics
@@ -700,7 +700,7 @@ You can view the service metrics in your Dynatrace environment either on the **c
 
 To access the custom device overview page
 
-1. Go to **Technologies & Processes** (previous Dynatrace) or ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
 2. Filter by service name and select the relevant custom device group.
 3. Once you select the custom device group, you're on the **custom device group overview page**.
 4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.

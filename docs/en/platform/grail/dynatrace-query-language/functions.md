@@ -1,7 +1,7 @@
 ---
 title: DQL functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions
-scraped: 2026-02-06T16:25:18.916139
+scraped: 2026-02-15T08:58:19.213816
 ---
 
 # DQL functions
@@ -10,7 +10,7 @@ scraped: 2026-02-06T16:25:18.916139
 
 * Latest Dynatrace
 * Reference
-* Updated on Dec 09, 2025
+* Updated on Feb 02, 2026
 
 DQL functions grouped by category. For in-depth information on a specific function, select its name.
 
@@ -566,9 +566,17 @@ Returns the cumulative sum, also known as the running total, of the elements of 
 
 Returns an array where each element is the difference from the previous non-null element.
 
+[arrayDiff](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-diff "A list of DQL array functions.")
+
+Calculates the element-wise difference between consecutive elements in an array.
+
 [arrayDistinct](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-distinct "A list of DQL array functions.")
 
 Returns the array without duplicates.
+
+[arrayElement](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-element "A list of DQL array functions.")
+
+Extracts a single element with the given index from an array.
 
 [arrayFirst](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-first "A list of DQL array functions.")
 
@@ -634,6 +642,10 @@ Returns the array with elements in reversed order.
 
 Returns the size of an array.
 
+[arraySlice](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-slice "A list of DQL array functions.")
+
+Extracts a slice from the input array using a `from` index (inclusive) and a `to` index (exclusive).
+
 [arraySort](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-sort "A list of DQL array functions.")
 
 Returns the array with elements sorted in ascending order by default.
@@ -641,6 +653,10 @@ Returns the array with elements sorted in ascending order by default.
 [arraySum](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-sum "A list of DQL array functions.")
 
 Returns the sum of an array.
+
+[arraytoString](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-to-String "A list of DQL array functions.")
+
+Converts an array into a string.
 
 ## [Vector distance functions](/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions "A list of DQL vector distance functions.")
 

@@ -1,7 +1,7 @@
 ---
 title: Metadata enrichment of all telemetry originating from Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment
-scraped: 2026-02-06T16:23:00.058098
+scraped: 2026-02-15T08:58:32.990652
 ---
 
 # Metadata enrichment of all telemetry originating from Kubernetes
@@ -10,11 +10,9 @@ scraped: 2026-02-06T16:23:00.058098
 
 * Latest Dynatrace
 * 7-min read
-* Updated on Jul 01, 2025
+* Updated on Feb 05, 2026
 
 ## Prerequisites
-
-Operator version 1.6.0+, ActiveGate version 1.321+, OneAgent version 1.321+
 
 * Dynatrace Operator is installed and running in your Kubernetes cluster.
 * A valid DynaKube is applied to your cluster.
@@ -22,7 +20,7 @@ Operator version 1.6.0+, ActiveGate version 1.321+, OneAgent version 1.321+
 
 ## Use cases
 
-* Enhance your metrics, logs, trace data, events and entities with additional information using Kubernetes annotations and labels.
+* Enhance your metrics, logs, trace data, events and entities with additional information using Kubernetes namespace annotations and labels.
 * Enhance your metrics, logs, trace data, events and entities with additional information using OpenTelemetry environment variables
 * Enriched data can be used for [defining access control to users](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context"), or for solving [Cost Allocation](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.") in DPS.
 * Enriched data can be used for pipeline routing, bucket segmentation, segmentation, and filtering.
@@ -41,83 +39,69 @@ The following attributes are supported:
 * [`dt.cost.costcenter`](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.")
 * [`dt.cost.product`](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.")
 
-## Primary Grail Tags
+## Domain tags
 
-To streamline tasks like bucket selection, segmentation, filtering, and problem routing, Dynatrace allows you to enrich your telemetry data using existing Kubernetes labels or annotations. These tags are made available as domain-specific fields, such as `k8s.namespace.label.your_key` or `k8s.namespace.annotation.your_key`.
-
-We are working on automatically copying the domain-specific keys to `primary_tags.<key>`, enhancing usability and simplifying the tagging process. Primary Grail tags have already been added to the [Semantic Dictionary](/docs/semantic-dictionary/fields#primary-grail-tags "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+To streamline tasks like bucket selection, segmentation, filtering, and problem routing, Dynatrace allows you to enrich your telemetry data using existing Kubernetes namespace labels or annotations. These tags are made available as domain-specific fields, such as `k8s.namespace.label.your_key` or `k8s.namespace.annotation.your_key`.
 
 ## Which data will be enriched
 
 Data
 
-Primary Grail Tags
+Domain tags
 
 Security Context
 
 Cost Allocation
 
-OneAgent Metrics
+OneAgent metrics
 
-JMX/PMI Metrics collected via OneAgent
+JMX/PMI metrics collected via OneAgent
 
 Planned
 
-Service Metrics
+Service metrics
 
 Kubernetes platform metrics
 
+ActiveGate 1.331
+
+Prometheus metrics
+
 Planned
 
-OTLP Metrics
+Planned - ActiveGate 1.333
 
-Planned
+Planned - ActiveGate 1.333
+
+OTLP metrics
+
+ActiveGate 1.331
 
 Metrics collected by OpenTelemetry Collector
 
-Planned
-
 Logs collected by OpenTelemetry Collector
 
-Logs collected by OneAgent Log Module
+Logs collected by OneAgent log module
 
 Logs collected by FluentBit
 
-Planned
+Smartscape Kubernetes entities
 
-Kubernetes entities
+ActiveGate 1.331
 
-n/a
+Service metrics
 
-Planned for the [new Smartscape](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")
+OneAgent events
 
-n/a
+Kubernetes events
 
-Process entities
-
-Planned for the new Smartscape
-
-Planned for the new Smartscape
-
-n/a
-
-Service entities
-
-Planned for the new Smartscape
-
-n/a
-
-OneAgent Events
-
-Kubernetes Events
-
-Planned
+ActiveGate 1.331
 
 ## Enrichment options
 
 Depending on the specific use case, the following enrichment options are supported:
 
-### Use settings to use existing labels and annotations (recommended)
+### Use settings to use existing namespace labels and annotations (recommended)
 
 We recommend this option, as it is the only option that enriches all signals, including Kubernetes platform metrics, events, and entitiesâunlike environment variables or manual pod annotations. Use Kubernetes enrichment rules to leverage your existing namespace labels and annotations.
 The tenant configuration is applied to all Kubernetes clusters by default. However, you can override it for specific clusters if needed.
@@ -127,16 +111,16 @@ Hint: If you setup your rules before you deploy your Dynakube, you don't need to
 1. Go to **Kubernetes App** > **Namespace** > Select your namespace to have an overview of your existing namespace labels.
 
    ![Namespace details opened in the K8s App, pointing to the current namespace labels](https://dt-cdn.net/images/namespace-labels-1997-2a0370e1ef.png)
-2. Go to **Settings** > **Cloud and virtualization** > **Kubernetes telemetry enrichment**.
+2. Go to **Settings** > **Cloud and virtualization** > **Kubernetes Telemetry Enrichment**.
 3. Select **Add rule**.
 4. Select `Annotation` or `Label` in the **Metadata type** dropdown.
 5. Enter the namespace annotation/label key in the **Source** field, following [Kubernetes conventionsï»¿](https://dt-url.net/2c02sbn):
-6. For primary Grail tag enrichment, turn on **Use as Primary Grail Tag**.
+6. To use the key of the annotation or label as field name, turn on **Enrich telemetry with label/annotation directly**.
 
-   ![Enrichment Settings for Primary Grail Tag](https://dt-cdn.net/images/pgt-577-a257d7948b.png)
-7. For remapping, turn off **Use as Primary Grail Tag** and choose a value from the **Target** dropdown.
+   ![Enrich telemetry with label/annotation directly](https://dt-cdn.net/images/enrich-telemetry-with-label-annotation-directly-693-b6d33d539e.png)
+7. For remapping, turn off **Enrich telemetry with label/annotation directly** and choose a value from the **Target** dropdown.
 
-   ![Enrichment Settings for Remapping](https://dt-cdn.net/images/sec-ctxt-553-344bb2c287.png)
+   ![Enrichment Settings for Remapping](https://dt-cdn.net/images/enrichment-settings-for-remapping-663-33a85e6613.png)
 8. Select **Save changes**.
 9. After creating or modifying rules, allow up to 45 minutes for the changes to take effect. Once this time has passed, restart your pods.
 10. Navigate to your data and verify that the metadata is successfully enriched.
@@ -202,14 +186,18 @@ k8s.namespace.label.domain: finance
 
 For OTLP setups without OneAgent, additional steps for signal enrichment are required. This can be achieved either by modifying your code to parse metadata files provided by the operator or by using environment variables.
 
-### Enrich via code changes (recommended)
+### Enable automatic OpenTelemetry OTLP exporter configuration (recommended)
+
+[Automatic OpenTelemetry OTLP exporter configuration](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config "Automatically configure the OTLP exporter in applications instrumented with OpenTelemetry SDKs using Dynatrace Operator.") is the recommended option for OTLP setups without OneAgent injection, as it provides enrichment comparable to the OneAgent case. Enable it in your DynaKube to automatically enrich your telemetry with Dynatrace metadata. This feature is available for all OpenTelemetry supported languages.
+
+### Enrich via code changes
 
 This option is suitable for standalone OTLP setups without OneAgent injection. For optimal results, enrich your OTLP telemetry by parsing Dynatrace metadata files and adding the metadata directly in your code, as outlined in [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions."). You can find code samples in our OpenTelemetry section, like here for [Java](/docs/ingest-from/opentelemetry/walkthroughs/java/java-manual#add-telemetry-signals-manually "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.").
 This approach provides enrichment comparable to the OneAgent case.
 
 ### Enrich via environment variable
 
-If modifying your code isn't feasible, you can use the [`OTEL_RESOURCE_ATTRIBUTES`ï»¿](https://dt-url.net/ne03unx) environment variable for enrichment. However, this method has limitations: configuration can be complex, and certain properties, like k8s.container.name and Primary Grail Tags, must be set as static strings.
+If modifying your code isn't feasible, you can use the [`OTEL_RESOURCE_ATTRIBUTES`ï»¿](https://dt-url.net/ne03unx) environment variable for enrichment. However, this method has limitations: configuration can be complex, and certain properties, like k8s.container.name and tags, must be set as static strings.
 
 1. Create a config map for cluster level attributes
 
@@ -263,7 +251,7 @@ kubectl create configmap dynatrace-metadata \
 
 Adapt your Kubernetes pod specification by adding the following environment variables. You can include these in your Kubernetes Deployment or Pod manifest.
 
-Primary Grail tags and `k8s.container.name` cannot be set via downward API.
+Tags and `k8s.container.name` cannot be set via downward API.
 It needs to be provided as a static string.
 
 ```
@@ -491,7 +479,6 @@ To learn how to enrich signals with release metadata using the `OTEL_RESOURCE_AT
 ## Limitations
 
 * Limit of 20 rules per configuration scope.
-* Primary Grail tags do not yet enrich Kubernetes metrics or events.
 * After creating or modifying rules, allow up to 45 minutes for the changes to take effect. Once this time has passed, restart your pods.
 * Manually set `metadata.dynatrace.com` pod annotations take precedence.
 * Manually added attributes (anything other than `dt.security_context`, `dt.cost.costcenter`, or `dt.cost.product`) do not enrich any Kubernetes metrics or Kubernetes events.
