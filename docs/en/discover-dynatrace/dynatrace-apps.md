@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Apps
 source: https://www.dynatrace.com/docs/discover-dynatrace/dynatrace-apps
-scraped: 2026-02-06T16:18:41.787414
+scraped: 2026-02-15T08:53:58.674704
 ---
 
 # Dynatrace Apps

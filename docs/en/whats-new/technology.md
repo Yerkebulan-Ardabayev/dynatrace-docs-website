@@ -1,7 +1,7 @@
 ---
 title: New technology support
 source: https://www.dynatrace.com/docs/whats-new/technology
-scraped: 2026-02-06T16:21:46.206195
+scraped: 2026-02-15T08:56:19.522467
 ---
 
 # New technology support
@@ -54,6 +54,10 @@ Rollout starts Jan 7, 2026, for OneAgent
 * MySQLClient v2.0+ (Python module)
 * HTTPX v0.20.0+ (Python module)
 * Jedis Redis v6-7 (Java module)
+* IBM z17
+* z/OS 3.2 (OS module)
+* IBM MQ 9.4 (MQ module)
+* IBM CICS Transaction Server 6.3 (CICS module)
 
 ## 1.327 OneAgent
 
@@ -67,6 +71,7 @@ Rollout starts Nov 18, 2025, for OneAgent
 * Amazon DynamoDB v3.5.0+ (.NET Framework, .NET, and .NET Core)
 * Amazon SNS v3.5.0+ (.NET Framework, .NET, and .NET Core)
 * Confluent Golang 2.12 Client (Go module). OneAgent features: Go Kafka Consumer; Go Kafka Producer
+* Jakarta EE 9 (Java z/OS module)
 
 ## 1.325 OneAgent
 
@@ -90,8 +95,10 @@ Rollout starts Sep 23, 2025, for OneAgent
 * Windows Desktop 11 24H2 (OS module)
 * .NET OneAgent SDK V2
 * WebSphere Liberty 24 (z/OS Java module)
+* WebSphere Liberty 25 (z/OS Java module)
 * RabbitMQ Client v4 and v5 (Java module)
 * IBM Semeru 21 LTS (Java module)
+* IBM IMS 15.6 (IMS Module)
 
 ## 1.321 OneAgent
 

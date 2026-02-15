@@ -1,7 +1,7 @@
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-06T16:18:47.110335
+scraped: 2026-02-15T08:53:57.474972
 ---
 
 # Get started with Dynatrace
@@ -49,7 +49,7 @@ Not ready to install or ingest? Explore our functionalities with sample data in 
 
 * Proactively investigate and discover the root cause of issues in context with our [Logs app](/docs/analyze-explore-automate/logs/lma-logs-app "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.") ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs").
   [Explore Logs app in our sandboxï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.logs/).
-* Optimize the health and performance of your multicloud Kubernetes environments with our [Kubernetes app](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.") ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes").
+* Optimize the health and performance of your multicloud Kubernetes environments with our [Kubernetes app](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.") ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes").
   [Explore Kubernetes app in our sandboxï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.kubernetes/).
 * Triage, investigate and remediate incidents automatically and in context with our [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems").
   [Explore Problems app in our sandboxï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.davis.problems/).

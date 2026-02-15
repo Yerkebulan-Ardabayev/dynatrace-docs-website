@@ -166,7 +166,7 @@ Authentication type and method used to login to a Dynatrace system.
 | --- | --- | --- | --- |
 | `authentication.client.id` | string | experimental The OAuth2 client id if of type 'CLIENT\_CREDENTIALS'. | `dt0s02.UZCK6ENL.2YQ2A3DZUEISRJSUU5544J3SC3TMPXSEEMNA5HK7RW54SJ6XKLYGMWJNKL7B2DNH` |
 | `authentication.grant.type` | string | experimental The grant type used during OAuth2 authentication. | `AUTHORIZATION_CODE`; `CLIENT_CREDENTIALS` |
-| `authentication.token` | string | experimental The public token identifier of authentication.type 'TOKEN'. | `dt0c01.AM4SEYKIBROBEJ2N3HAXZ4IX` |
+| `authentication.token` | string | experimental The public token identifier of authentication.type 'TOKEN'. | `<DYNATRACE_TOKEN_PLACEHOLDER>` |
 | `authentication.type` | string | experimental The method of authentication. | `OAUTH2` |
 
 `authentication.grant.type` MUST be one of the following:

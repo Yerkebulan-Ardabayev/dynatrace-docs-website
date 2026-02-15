@@ -1,7 +1,7 @@
 ---
 title: Smartscape on Grail
 source: https://www.dynatrace.com/docs/platform/grail/smartscape-on-grail
-scraped: 2026-02-06T16:33:01.766482
+scraped: 2026-02-15T08:59:25.700711
 ---
 
 # Smartscape on Grail
@@ -203,7 +203,7 @@ Now only users that have the permission `ALLOW storage:fieldsets:read WHERE stor
 
 Node types used by Smartscape on Grail might be different from classic entity types. This means that the entity or node ID might also be different (for example, `CLOUD_APPLICATION_INSTANCE` is called `K8S_POD` in Smartscape on Grail). To avoid confusion, Smartscape nodes include an `id_classic` field that contains the entity ID of the corresponding classic entity. Classic entity IDs are available for K8s entities, core entities, and services.
 
-If there are no corresponding classic entities (for example, with [Cloud platform monitoring](/docs/observe/infrastructure-observability/cloud-platform-monitoring "The cloud platforms Dynatrace can monitor")), there are no `id_classic` fields on those nodes.
+If there are no corresponding classic entities (for example, with [Clouds](/docs/observe/infrastructure-observability/cloud-platform-monitoring "The cloud platforms Dynatrace can monitor")), there are no `id_classic` fields on those nodes.
 
 ## Differences between classic entities and Smartscape on Grail
 

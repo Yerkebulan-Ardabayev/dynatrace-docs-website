@@ -1,7 +1,7 @@
 ---
 title: Kubernetes API Monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring
-scraped: 2026-02-06T16:26:27.654794
+scraped: 2026-02-15T09:05:38.452023
 ---
 
 # Kubernetes API Monitoring
@@ -217,7 +217,7 @@ oc get namespace kube-system -o jsonpath='{.metadata.uid}'
 
 #### Step 2 Provide the Kubernetes cluster ID in Dynatrace
 
-1. Go to **Kubernetes** (previous Dynatrace) or ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
+1. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
 2. Select **Connect manually**.
 3. On the Kubernetes cluster connection settings page, provide a **Name**, and then turn on **Connect containerized ActiveGate to local Kubernetes API endpoint**.
 4. For **Kubernetes cluster ID**, enter the UID obtained earlier.
@@ -316,7 +316,7 @@ To connect to the public Kubernetes API, follow the instructions that apply to y
    ```
    oc get secret dynatrace-activegate -o jsonpath='{.data.token}' -n dynatrace | base64 --decode
    ```
-5. Go to **Kubernetes** (previous Dynatrace) or ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic** and select **Connect manually**.
+5. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic** and select **Connect manually**.
 6. On the Kubernetes cluster connection settings page, provide a **Name**, the **Kubernetes API URL**, and the **Bearer token** for the Kubernetes cluster.
 7. Select **Save changes**.
 
@@ -391,7 +391,7 @@ To connect to the public Kubernetes API, follow the instructions that apply to y
       Go to **API & Keys** and create a key either for your specific account (enter your cluster name) or for all clusters (enter **No scope**). For security reasons, we recommend selecting the first option.
 
       Newly created keys display four fields. Make sure to use the content of the field called **Bearer token** to set up the connection to the Kubernetes API described in the next section.
-3. Go to **Kubernetes** (previous Dynatrace) or ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic** and select **Connect manually**.
+3. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic** and select **Connect manually**.
 4. On the Kubernetes cluster connection settings page, provide a **Name**, the **Kubernetes API URL**, and the **Bearer token** for the Kubernetes cluster.
 
    For Rancher distributions, you need the bearer token that was created in the Rancher web UI, as described in **Special instructions for Rancher distributions to get the API URL and the bearer token** above.
@@ -410,7 +410,7 @@ Can I change settings for Kubernetes API monitoring?
 
 You can change Kubernetes cluster connection and monitoring settings at any time from your Kubernetes cluster details page.
 
-1. Go to **Kubernetes** (previous Dynatrace) or ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
+1. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
 2. Find your Kubernetes cluster, and then select **Actions** > **Settings**.
 3. Adjust your settings, and then select **Save changes**.
 
@@ -418,7 +418,7 @@ How can I delete the Kubernetes Platform Monitoring configuration for a Kubernet
 
 To delete the connection to a local Kubernetes API endpoint
 
-1. Go to **Kubernetes** (previous Dynatrace) or ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
+1. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
 2. Find your Kubernetes cluster, and then select **Actions** > **Settings**.
 3. Select **Use defaults**, and then select **Save changes**.
 

@@ -1,7 +1,7 @@
 ---
 title: Calculated metrics API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/calculated-metrics
-scraped: 2026-02-06T16:25:58.879477
+scraped: 2026-02-15T08:57:39.926419
 ---
 
 # Calculated metrics API

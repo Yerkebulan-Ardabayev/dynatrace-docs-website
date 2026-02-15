@@ -1,7 +1,7 @@
 ---
 title: Instrument ingress-nginx
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx
-scraped: 2026-02-06T16:22:24.722642
+scraped: 2026-02-15T08:58:06.084597
 ---
 
 # Instrument ingress-nginx

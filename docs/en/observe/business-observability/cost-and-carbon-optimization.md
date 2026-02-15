@@ -1,7 +1,7 @@
 ---
 title: Cost & Carbon Optimization
 source: https://www.dynatrace.com/docs/observe/business-observability/cost-and-carbon-optimization
-scraped: 2026-02-06T16:27:36.458823
+scraped: 2026-02-15T09:03:01.477241
 ---
 
 # Cost & Carbon Optimization
@@ -354,7 +354,7 @@ The **Data center emissions** table on the landing page shows costs, energy, and
 
 The **Hosts** tab details cost, energy, and CO2e consumption per host. You can narrow your search using filters. For example, you can view underutilized hosts in a specific data center or top CO2e emitters.
 
-Expand a hostname to see key infrastructure metrics: **CPU in use**, **Memory in use**, and **Receiving network traffic**. Select a host name to view the host details page in [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor host and data center health to detect issues and improve infrastructure performance.").
+Expand a hostname to see key infrastructure metrics: **CPU in use**, **Memory in use**, and **Receiving network traffic**. Select a host name to view the host details page in [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.").
 
 ![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** is automatically connected to Dynatrace SmartscapeÂ® topology modeling, so it's easy to see the host details or use [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") for ad hoc analysis with DQL.
 

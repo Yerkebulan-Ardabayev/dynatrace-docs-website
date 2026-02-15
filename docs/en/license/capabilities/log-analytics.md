@@ -1,7 +1,7 @@
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-06T16:27:08.308454
+scraped: 2026-02-15T09:02:54.164209
 ---
 
 # Log Analytics (DPS)

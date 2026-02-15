@@ -1,7 +1,7 @@
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-06T16:30:16.283831
+scraped: 2026-02-15T09:05:21.521319
 ---
 
 # Workflows Connectors
@@ -11,7 +11,7 @@ scraped: 2026-02-06T16:30:16.283831
 * Latest Dynatrace
 * Overview
 * 3-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 05, 2026
 
 You can select Workflows Connectors from the Dynatrace Platform catalog. The Workflows Connectors have various actions you can use in your workflow task. For example, you can use actions to create Jira tasks, send Slack notifications, and direct them based on extracted entity ownership information.
 
@@ -79,13 +79,13 @@ Integrate with Jenkins to trigger builds and query the status of build jobs.](/d
 
 [![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows")
 
-### Email Connector
+### Email
 
 Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")[![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")
 
 ### Ownership
 
-Ownership workflow actions are available directly within Workflows after you install the **Ownership** app. Ownership actions enable you to extract entity ownership contact information and use it in workflows for notifications and task assignments.](/docs/deliver/ownership/ownership-app "It provides custom actions to define workflows integrating entity owners and their contact information.")[![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")
+Ownership workflow actions are available directly within Workflows after you install the **Ownership** app. Ownership actions enable you to extract entity ownership contact information and use it in workflows for notifications and task assignments.](/docs/deliver/ownership-app "It provides custom actions to define workflows integrating entity owners and their contact information.")[![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")
 
 ### Site Reliability Guardian
 
@@ -95,7 +95,7 @@ Automate AI analysis such as to forecast and remediate capacity shortages.](/doc
 
 ### Synthetic for Workflows
 
-Enhance your automation capabilities with Synthetic Monitoring. **Synthetic for Workflows** allows you to execute synthetic monitors on demand at selected locations within your workflows.](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-for-workflows "Enhance your automation capabilities with Synthetic Monitoring.")[### Business Observability
+Enhance your automation capabilities with Synthetic Monitoring. **Synthetic for Workflows** allows you to execute synthetic monitors on demand at selected locations within your workflows.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows "Enhance your automation capabilities with Synthetic Monitoring.")[### Business Observability
 
 Generate business events from automated tasks to connect monitoring and observability data with business information.](/docs/observe/business-observability/bo-events-capturing "Capture business events for Dynatrace Business Observability.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 

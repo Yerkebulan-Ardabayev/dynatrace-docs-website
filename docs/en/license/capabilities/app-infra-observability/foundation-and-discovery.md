@@ -1,7 +1,7 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-02-06T16:29:23.435931
+scraped: 2026-02-15T09:02:39.846435
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -50,7 +50,7 @@ The image below illustrates how host-hour consumption per host, calculated at 15
 
 Foundation & Discovery includes basic built-in metrics.
 Unlike Full-Stack and Infrastructure Monitoring, Foundation & Discovery doesnât offer included custom metrics.
-For more information, see [Infrastructure and Discovery monitoring modes](/docs/observe/infrastructure-observability/hosts/monitoring-modes#discovery "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
+For more information, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes#discovery "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Consumption details: Foundation & Discovery
 

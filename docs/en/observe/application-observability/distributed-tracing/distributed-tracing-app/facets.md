@@ -1,7 +1,7 @@
 ---
 title: Manage facets
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app/facets
-scraped: 2026-02-06T16:22:51.316227
+scraped: 2026-02-15T08:57:21.172001
 ---
 
 # Manage facets

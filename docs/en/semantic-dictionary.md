@@ -1,7 +1,7 @@
 ---
 title: Semantic Dictionary
 source: https://www.dynatrace.com/docs/semantic-dictionary
-scraped: 2026-02-06T16:22:43.017953
+scraped: 2026-02-15T08:56:30.112367
 ---
 
 # Semantic Dictionary
@@ -10,7 +10,7 @@ scraped: 2026-02-06T16:22:43.017953
 
 * Latest Dynatrace
 * Overview
-* Updated on Jan 14, 2026
+* Updated on Feb 11, 2026
 
 The Semantic Dictionary defines standardized field names that are used across all types of monitoring data, such as logs, events, spans, metrics, and entities, as well as the different domain-specific data models that use these field names. This is a prerequisite for stable and robust applications and automations.
 

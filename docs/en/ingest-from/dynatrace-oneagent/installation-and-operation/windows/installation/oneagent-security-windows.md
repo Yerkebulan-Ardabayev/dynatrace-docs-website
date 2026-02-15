@@ -1,7 +1,7 @@
 ---
 title: OneAgent security on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows
-scraped: 2026-02-06T16:31:04.495032
+scraped: 2026-02-15T09:09:40.352023
 ---
 
 # OneAgent security on Windows

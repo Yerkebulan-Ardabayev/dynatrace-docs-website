@@ -1,7 +1,7 @@
 ---
 title: String functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions/string-functions
-scraped: 2026-02-06T16:22:35.355151
+scraped: 2026-02-15T08:57:45.398054
 ---
 
 # String functions
@@ -10,7 +10,7 @@ scraped: 2026-02-06T16:22:35.355151
 
 * Latest Dynatrace
 * Reference
-* Updated on Dec 09, 2025
+* Updated on Jan 29, 2026
 
 String functions allow you to create expressions that manipulate text strings in a variety of ways.
 
@@ -32,7 +32,7 @@ Concatenates the expressions into a single string.
 
 #### Syntax
 
-`concat(expression, â¦)`
+`concat(expression, â¦ [, delimiter: ])`
 
 #### Parameters
 
@@ -52,6 +52,14 @@ A numeric or string expressions that should be concatenated with others.
 
 Required
 
+delimiter
+
+string
+
+Constant string to be inserted between each concatenated value. Default: `""` (empty string).
+
+Optional
+
 #### Returns
 
 The data type of the returned value is `string`.
@@ -61,11 +69,11 @@ The data type of the returned value is `string`.
 ##### Example 1
 
 ```
-data record(a = "DQL", b = "is awesome!")
+data record(a = "DQL", b = "is", c = "awesome!")
 
 
 
-| fieldsAdd concat(a, " ", b)
+| fieldsAdd concat(a, b, c, delimiter: " ")
 ```
 
 Run in Playground
@@ -76,11 +84,15 @@ a
 
 b
 
-concat(a, " ", b)
+c
+
+concat(a, b, c, delimiter: " ")
 
 `DQL`
 
-`is awesome!`
+`is`
+
+`awesome!`
 
 `DQL is awesome!`
 

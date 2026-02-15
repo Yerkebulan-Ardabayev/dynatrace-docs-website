@@ -1,7 +1,7 @@
 ---
 title: Monitor Kubernetes/OpenShift metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes
-scraped: 2026-02-06T16:26:29.719750
+scraped: 2026-02-15T09:05:36.104076
 ---
 
 # Monitor Kubernetes/OpenShift metrics
@@ -37,7 +37,7 @@ The workload and node resource metrics feature aggregates container resource met
 
 To enable monitoring of workload and node resource metrics
 
-1. Go to **Kubernetes** (previous Dynatrace) or ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic** and select the cluster name to open the Kubernetes cluster overview page.
+1. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic** and select the cluster name to open the Kubernetes cluster overview page.
 2. In the upper-right corner, select **More** (**â¦**) > **Settings**, select **Monitoring settings**, and turn on **Monitor workload and node resource metrics**.
 
    Monitoring **node resource metrics** requires ActiveGate version 1.271+.

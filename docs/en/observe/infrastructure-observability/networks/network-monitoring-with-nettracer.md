@@ -1,7 +1,7 @@
 ---
 title: Extended network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer
-scraped: 2026-02-06T16:32:02.625850
+scraped: 2026-02-15T09:07:46.239842
 ---
 
 # Extended network monitoring
@@ -79,7 +79,7 @@ When enabled, OneAgent will use NetTracer to collect network data from container
 
 To enable NetTracer on a specific Linux host
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select your Linux host.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select your Linux host.
 2. On the host overview page, select **More** (**â¦**) > **Settings** in the upper-right corner of the page.
 3. On the **Host settings** page, select **NetTracer traffic** and turn on **Enable NetTracer traffic network monitoring**.
 
@@ -88,7 +88,7 @@ To enable NetTracer globally on all your Linux hosts
 1. Go to **Settings** > **Network & Discovery** > **NetTracer traffic**.
 2. Turn on **Enable NetTracer traffic network monitoring**.
 
-To ensure NetTracer works correctly, OneAgent must be installed in either Full-Stack or Infrastructure monitoring mode, as these modes enable the network monitoring feature. If OneAgent is installed in a limited mode (for example, Discovery monitoring mode), NetTracer may not function as intended. For more details, see [Infrastructure and Discovery monitoring modes](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
+To ensure NetTracer works correctly, OneAgent must be installed in either Full-Stack or Infrastructure monitoring mode, as these modes enable the network monitoring feature. If OneAgent is installed in a limited mode (for example, Discovery monitoring mode), NetTracer may not function as intended. For more details, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Built-in metrics for NetTracer
 

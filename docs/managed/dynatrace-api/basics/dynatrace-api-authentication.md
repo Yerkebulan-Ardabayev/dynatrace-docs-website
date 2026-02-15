@@ -21,7 +21,7 @@ Dynatrace uses a unique token format consisting of three components separated by
 
 ### Token example
 
-`dt0s01.ST2EY72KQINMH574WMNVI7YN.G3DFPBEJYMODIDAEX454M7YWBUVEFOWKPRVMWFASS64NFH52PX6BNDVFFM572RZM`
+`<DYNATRACE_TOKEN_PLACEHOLDER>`
 
 ### Token components
 
@@ -47,7 +47,7 @@ token identifier
 
 The **token identifier** is the combination of the **prefix** and the **public portion**. A token identifier can be safely displayed in the UI and can be used for logging purposes.
 
-In our example: `dt0s01.ST2EY72KQINMH574WMNVI7YN`
+In our example: `<DYNATRACE_TOKEN_PLACEHOLDER>`
 
 secret portion
 

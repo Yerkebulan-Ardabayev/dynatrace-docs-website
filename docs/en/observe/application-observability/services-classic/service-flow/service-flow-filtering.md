@@ -1,14 +1,13 @@
 ---
 title: Service flow filtering
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow/service-flow-filtering
-scraped: 2026-02-06T16:22:44.349076
+scraped: 2026-02-15T08:57:36.485569
 ---
 
 # Service flow filtering
 
 # Service flow filtering
 
-* Latest Dynatrace
 * 5-min read
 * Published Jul 19, 2017
 
@@ -18,7 +17,7 @@ The filtering features help you to navigate the complexity of your application's
 
 The general **Service flow** filtration procedure looks like this:
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
 2. Select the service you want to analyze.
 3. On the service overview page, under **Understand dependencies**, select **View service flow**.
 4. Within **Service flow**, select a called service to define the sequence of services you want to analyze.  
@@ -46,7 +45,7 @@ Call sequence filters are available in most service analysis views, but theyâ
 
 To focus **Service Flow** on these calls
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
 2. Select the service you want to analyze.
 3. On the service overview page, under **Understand dependencies**, select **View service flow**.
 4. Within **Service flow**, select a called service to define the sequence of services you want to analyze. In our example, it's `easyTravel-Business`.  

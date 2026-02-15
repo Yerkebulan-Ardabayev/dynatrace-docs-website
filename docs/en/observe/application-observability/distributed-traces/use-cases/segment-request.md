@@ -1,7 +1,7 @@
 ---
 title: Segment requests to improve response time degradation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/segment-request
-scraped: 2026-02-06T16:19:14.670329
+scraped: 2026-02-15T08:54:48.562115
 ---
 
 # Segment requests to improve response time degradation
@@ -24,7 +24,7 @@ The service `easyTravel Customer Frontend` received 249,000 requests during the 
 
    1. To access the service flow
 
-      1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+      1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
       2. Select the service you want to analyze.
       3. On the service overview page, under **Understand dependencies**, select **View service flow**.
 

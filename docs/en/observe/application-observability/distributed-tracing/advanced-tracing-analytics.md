@@ -1,7 +1,7 @@
 ---
 title: Advanced Tracing Analytics powered by Grail
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/advanced-tracing-analytics
-scraped: 2026-02-06T16:19:12.020467
+scraped: 2026-02-15T08:54:31.974574
 ---
 
 # Advanced Tracing Analytics powered by Grail
@@ -75,7 +75,7 @@ trace.id
 
 Example: DQL access to all attributes
 
-The following query fetches spans generated with an HTTP route from the server. To make sure all spans use the same field name for the HTTP request method field, it looks for two semantically different fields and stores the first result into a new field for consultation purposes. It then summarizes the results by HTTP request method and HTTP route, providing the number of spans, their average duration, and the value of their duration in the 50th and 90th percentiles.
+The following query fetches spans generated with an HTTP route from the server. To make sure all spans use the same field name for the HTTP request method field, it looks for two semantically different fields and stores the first result into a new field for consultation purposes. It then summarizes the results by HTTP request method and HTTP route, providing the number of spans, their average duration, and the value of their duration in the 50th percentiles.
 
 ```
 fetch spans
@@ -90,7 +90,7 @@ fetch spans
 
 
 
-| summarize { count(), avg(duration), p50=percentile(duration, 50), p90=percentile(duration, 90) }, by: { http.request.method, http.route }
+| summarize { count(), avg(duration), p50=percentile(duration, 50)}, by: { http.request.method, http.route }
 
 
 
@@ -109,8 +109,6 @@ avg(duration)
 
 p50
 
-p90
-
 `POST`
 
 `/v1/orders/{id}/status`
@@ -120,8 +118,6 @@ p90
 `84.28 ms`
 
 `78.11 ms`
-
-`131.37 ms`
 
 Example: Full text search
 

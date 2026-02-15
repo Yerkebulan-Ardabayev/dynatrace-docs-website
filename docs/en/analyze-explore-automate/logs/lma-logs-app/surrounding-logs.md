@@ -1,7 +1,7 @@
 ---
 title: View surrounding logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs
-scraped: 2026-02-06T16:21:02.860349
+scraped: 2026-02-15T08:56:13.707896
 ---
 
 # View surrounding logs

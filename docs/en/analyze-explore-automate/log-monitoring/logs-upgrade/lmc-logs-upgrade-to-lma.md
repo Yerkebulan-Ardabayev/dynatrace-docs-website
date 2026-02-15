@@ -1,7 +1,7 @@
 ---
 title: Upgrade to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma
-scraped: 2026-02-06T16:27:02.258254
+scraped: 2026-02-15T09:02:51.871476
 ---
 
 # Upgrade to Log Management and Analytics
@@ -20,7 +20,7 @@ For more information about the phased rollout, please reach out to one of your D
 
 Once your environment is enabled for activation:
 
-1. Go to **Logs** (previous Dynatrace) or ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
+1. Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
 2. In the banner message, select **Go to activation page** and select **Activate Logs powered by Grail**.
 3. On the **Activate Grail for log and events** page you can select:
 

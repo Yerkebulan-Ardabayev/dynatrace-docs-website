@@ -1,7 +1,7 @@
 ---
 title: Effective customer support with session segmentation
 source: https://www.dynatrace.com/docs/observe/digital-experience/dem-use-cases/customer-support-with-session-segmentation
-scraped: 2026-02-06T16:27:09.779546
+scraped: 2026-02-15T09:03:20.078910
 ---
 
 # Effective customer support with session segmentation
@@ -41,7 +41,7 @@ After receiving customer feedback, the first important step is to check the prob
 
 To view problematic user sessions of a particular user
 
-1. In Dynatrace, go to **Session Segmentation** (previous Dynatrace) or ![Session Segmentation](https://dt-cdn.net/images/session-segmentation-512-5278e8fa16.png "Session Segmentation") **Session Segmentation**.
+1. In Dynatrace, go to ![Session Segmentation](https://dt-cdn.net/images/session-segmentation-512-5278e8fa16.png "Session Segmentation") **Session Segmentation**.
 2. Use the [timeframe selector](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.") in the upper-right corner of the page to set the analysis timeframe to the date and time when the issue occurred.
 3. Select the **Filter by** box at the top of the page, and set the following [filtering attributes](/docs/observe/digital-experience/session-segmentation/new-user-sessions#session-segmentation-filters "Learn about user session segmentation and filtering attributes."). Once you select an attribute, the possible values for that attribute are displayed.
 

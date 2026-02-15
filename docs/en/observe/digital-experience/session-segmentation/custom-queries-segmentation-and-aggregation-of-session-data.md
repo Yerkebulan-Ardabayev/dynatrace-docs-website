@@ -1,7 +1,7 @@
 ---
 title: Custom queries, segmentation, and aggregation of session data
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data
-scraped: 2026-02-06T16:26:01.068479
+scraped: 2026-02-15T08:57:35.292312
 ---
 
 # Custom queries, segmentation, and aggregation of session data
@@ -20,7 +20,7 @@ Select your preferred approach:
 
 User session queries via the Dynatrace web UI
 
-1. Go to **Query User Sessions** (previous Dynatrace) or ![Query user sessions](https://dt-cdn.net/images/query-user-sessions-512-77c5a8da9f.png "Query user sessions") **Query User Sessions**.
+1. Go to ![Query user sessions](https://dt-cdn.net/images/query-user-sessions-512-77c5a8da9f.png "Query user sessions") **Query User Sessions**.
 2. Enter the query, and select **Run query**.
 
 ### Timeframe selector with USQL
@@ -1722,7 +1722,7 @@ You can convert some queries into USQL custom metrics for your [web](/docs/obser
 USQL custom metrics are available as
 user session custom metrics (USCMs) and user action custom metrics (UACMs). User action custom metrics are supported since Dynatrace version 1.260.
 
-1. Go to **Query User Sessions** (previous Dynatrace) or ![Query user sessions](https://dt-cdn.net/images/query-user-sessions-512-77c5a8da9f.png "Query user sessions") **Query User Sessions**.
+1. Go to ![Query user sessions](https://dt-cdn.net/images/query-user-sessions-512-77c5a8da9f.png "Query user sessions") **Query User Sessions**.
 2. Enter the query, and then select **Run query**.  
    For a list of supported fields, see the detailed guides for your [web](/docs/observe/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications."), [mobile](/docs/observe/digital-experience/mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications."), and [custom applications](/docs/observe/digital-experience/custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.").
 3. Select **Create custom metric**.

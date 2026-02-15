@@ -1,7 +1,7 @@
 ---
 title: Use OneAgent with OpenTelemetry data
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel
-scraped: 2026-02-06T16:22:55.023126
+scraped: 2026-02-15T08:58:53.425587
 ---
 
 # Use OneAgent with OpenTelemetry data
@@ -62,7 +62,7 @@ Enable for a host group
 
 Enable for a single host
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Find and select your host to display the host overview page.
 3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 
@@ -75,7 +75,7 @@ OneAgent uses the TCP port 14499 as default port for this endpoint. You can chan
 
 EEC unavailable on container setups
 
-The EEC ingestion endpoint is only available with [Full-Stack and Infrastructure Monitoring](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.") deployments. It is **not** available with [containerized setups](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"). Please use [ActiveGate](#export-to-saas-and-activegate) as export endpoint for container applications.
+The EEC ingestion endpoint is only available with [Full-Stack and Infrastructure Monitoring](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") deployments. It is **not** available with [containerized setups](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"). Please use [ActiveGate](#export-to-saas-and-activegate) as export endpoint for container applications.
 
 ### Export details
 

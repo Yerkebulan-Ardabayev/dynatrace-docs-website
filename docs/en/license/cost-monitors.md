@@ -1,7 +1,7 @@
 ---
 title: Customize cost alerts
 source: https://www.dynatrace.com/docs/license/cost-monitors
-scraped: 2026-02-06T16:24:51.103620
+scraped: 2026-02-15T08:59:06.388775
 ---
 
 # Customize cost alerts

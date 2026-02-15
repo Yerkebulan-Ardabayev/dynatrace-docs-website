@@ -1,7 +1,7 @@
 ---
 title: Allocate your DPS costs
 source: https://www.dynatrace.com/docs/license/cost-allocation
-scraped: 2026-02-06T16:25:02.404876
+scraped: 2026-02-15T08:59:04.014151
 ---
 
 # Allocate your DPS costs
@@ -11,7 +11,7 @@ scraped: 2026-02-06T16:25:02.404876
 * Latest Dynatrace
 * How-to guide
 * 16-min read
-* Updated on Nov 24, 2025
+* Updated on Feb 09, 2026
 
 Cost Allocation is exclusively available for Dynatrace SaaS environments with a Dynatrace Platform Subscription (DPS) licensing agreement that was signed after April 2023.
 
@@ -186,7 +186,11 @@ Log - Ingest
 
 Log - Retain
 
-Notebook available via Account Management
+â
+
+Logs - Retain with Included Queries
+
+â
 
 Log - Query
 
@@ -305,6 +309,9 @@ Cost Allocation is supported for different [Kubernetes deployment models](/docs/
 
 With Dynatrace, you can enrich telemetry data with Cost Allocation attributes (`dt.cost.costcenter`, `dt.cost.product`) as metadata.
 Telemetry enrichment with Cost Allocation attributes is possible for all supported ingest methodsâwhether logs, traces, metrics, or events.
+
+For ingested logs, Cost Allocation is also available for retained data ([Log - Retain](/docs/license/capabilities/log-analytics/dps-log-retain "Learn how your consumption of the Log Management & Analytics - Retain DPS capability is billed and charged.") and [Log - Retain with Included Queries](/docs/license/capabilities/log-analytics/dps-log-retain-included "Learn how your consumption of the Log Management & Analytics - Retain with Included Queries DPS capability is billed and charged.")).
+Both retain models use the settings that you already set up for ingest, so you don't need to do any additional configuration.
 
 You can use these attributes to allocate usage to your user-defined products and cost centers.
 

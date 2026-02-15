@@ -1,14 +1,13 @@
 ---
 title: Monitor key requests
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/monitor-key-requests
-scraped: 2026-02-06T16:30:14.195296
+scraped: 2026-02-15T08:56:31.426076
 ---
 
 # Monitor key requests
 
 # Monitor key requests
 
-* Latest Dynatrace
 * How-to guide
 * 5-min read
 * Updated on Jan 21, 2026
@@ -54,7 +53,7 @@ When you reach that limit, consider using [calculated service metrics](/docs/obs
 
 To mark a specific request as a key request
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
 2. Select the relevant service from the list.
 3. On the service overview page, select a **View** button (such as **View requests**, **View dynamic requests**, or **View resource requests**).
 4. Scroll down to **Top requests** and select a request you want to mark as a key request.
@@ -68,7 +67,7 @@ After you manually identify a key request, its trend lines are retained perpetua
 
 To create a dashboard tile for a specific request
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
 2. Select the relevant service from the list.
 3. On the service overview page, select **View** (**View requests**, **View dynamic requests**, or **View resource requests**).
 4. Scroll down to **Key requests/endpoints** and select a request you want to show on a dashboard.
@@ -81,7 +80,7 @@ Dashboard tiles include only data collected after the request has been marked as
 
 Key request detection is name-based. When you apply a [request naming rule](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer."), it can affect key requests. If you want Dynatrace to continue detecting renamed requests as key requests, you need to add the new name to the list of key request names.
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select the service you want to configure.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select the service you want to configure.
 2. Select **More** (**â¦**) > **Settings**.
 3. On the **Service settings** page, go to the **Key requests** tab and select **Add item** to add the name to which the request naming rules apply.
 

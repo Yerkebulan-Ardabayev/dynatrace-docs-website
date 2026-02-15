@@ -1,14 +1,13 @@
 ---
 title: Service response time hotspots
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-response-time-hotspots
-scraped: 2026-02-06T16:25:39.618630
+scraped: 2026-02-15T08:57:57.537665
 ---
 
 # Service response time hotspots
 
 # Service response time hotspots
 
-* Latest Dynatrace
 * How-to guide
 * 5-min read
 * Published Jul 19, 2017
@@ -24,7 +23,7 @@ Response time hotspots indicate which activities consume the most time for a spe
 
 To view the hotspot analysis
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
 2. Select the service you want to analyze.
 3. Do one of the following:
 

@@ -1,7 +1,7 @@
 ---
 title: Live Debugger
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger
-scraped: 2026-02-06T16:29:26.333137
+scraped: 2026-02-15T09:03:10.511073
 ---
 
 # Live Debugger
@@ -22,7 +22,7 @@ scraped: 2026-02-06T16:29:26.333137
 
 * Dynatrace SaaS environment with a Dynatrace Platform Subscription (DPS) that includes [Code Monitoring](/docs/license/capabilities/container-monitoring#code-monitoring "Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.")
 * OneAgent version 1.309+ with **Java Live-Debugger** and **Node.js Live-Debugger** [OneAgent features](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") enabled
-* [Monitoring modes](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode."): Full-Stack, Infrastructure, or Discovery (with container code-module injection)
+* [Monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent."): Full-Stack, Infrastructure, or Discovery (with container code-module injection)
 * [Code modules](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#other-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms."): Java and Node.js
 
 ## Get started

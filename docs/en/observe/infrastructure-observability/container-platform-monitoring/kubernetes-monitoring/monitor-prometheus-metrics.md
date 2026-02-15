@@ -1,7 +1,7 @@
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-06T16:26:25.507439
+scraped: 2026-02-15T09:05:31.314893
 ---
 
 # Monitor Prometheus metrics
@@ -9,7 +9,7 @@ scraped: 2026-02-06T16:26:25.507439
 # Monitor Prometheus metrics
 
 * 14-min read
-* Updated on Dec 09, 2025
+* Updated on Jan 29, 2026
 
 Prometheus is an open-source monitoring and alerting toolkit which is popular in the Kubernetes community. Prometheus scrapes metrics from a number of HTTP(s) endpoints that expose metrics in the OpenMetrics format.
 See the list of available [exportersï»¿](https://dt-url.net/vd03n1m) in the Prometheus documentation.
@@ -574,7 +574,7 @@ This annotation applies the token from the `dynatrace-activegate` service accoun
 
 Ingesting metrics from exporters requiring RBAC authorization is only possible with an ActiveGate deployed inside the monitored cluster and the Kubernetes connection settings configured to monitor the local Kubernetes API endpoint.
 
-For more information on how to annotate pods, see [annotations best practices](#best).
+For more information on how to annotate pods, see [Annotation best practices](#best).
 
 ## Annotate Kubernetes services
 
@@ -772,7 +772,13 @@ The current limitations of the Prometheus metrics integration are as follows:
 
 ### Multiple exporters in a pod
 
-Multiple exporters currently aren't supported; you can only select the exporter that is being used with the `metrics.dynatrace.com/port` annotation.
+Only one port and path can be specified in the annotations. However, it is possible to scrape multiple exporters in a pod by [annotating
+additional services](#annotate-kubernetes-services) that select the same pod.
+
+For example, if you want to scrape two endpoints in a pod, you could annotate the pod and the service
+that selects the pod. If no such service exists, you can create a new service just for this purpose.
+
+Alternatively, you could also annotate two different services that select the same pod. For more information, see [Annotation best practices](#best).
 
 ### Number of pods, metrics, and metric data points
 

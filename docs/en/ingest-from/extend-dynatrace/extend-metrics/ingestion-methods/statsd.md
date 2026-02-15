@@ -1,7 +1,7 @@
 ---
 title: Send StatsD metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd
-scraped: 2026-02-06T16:28:32.364530
+scraped: 2026-02-15T09:01:18.541661
 ---
 
 # Send StatsD metrics to Dynatrace
@@ -59,7 +59,7 @@ Enable for a single host
 
 To enable DynatraceStatsD metric ingestion only for selected hosts
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Find and select your host to display the host overview page.
 3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 

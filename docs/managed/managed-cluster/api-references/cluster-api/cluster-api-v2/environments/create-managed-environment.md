@@ -651,7 +651,7 @@ Success. The environment has been created and started. The response body contain
 
 
 
-"dt0c01.LJMAHMWOKCL5IPH3E2ORNHTR.<token-value>"
+"<DYNATRACE_TOKEN_PLACEHOLDER>.<token-value>"
 
 
 

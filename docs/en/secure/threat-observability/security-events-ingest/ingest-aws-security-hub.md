@@ -1,7 +1,7 @@
 ---
 title: Ingest AWS Security Hub security findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub
-scraped: 2026-02-06T16:32:30.013835
+scraped: 2026-02-15T09:04:30.444489
 ---
 
 # Ingest AWS Security Hub security findings

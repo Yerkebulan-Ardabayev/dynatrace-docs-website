@@ -1,7 +1,7 @@
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-06T16:18:59.637391
+scraped: 2026-02-15T08:54:05.943024
 ---
 
 # Problems app
@@ -318,7 +318,7 @@ This behavior differs from the DQL filter functionality, where array filters on 
 
 #### Custom problem fields modification
 
-To view or change the fields automatically propagated from events to problems, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **Dynatrace AI** > **Generative AI** > **Problem fields**. By modifying these problem fields, you can:
+To view or change the fields automatically propagated from events to problems, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **Dynatrace Intelligence** > **Root cause analysis** > **Problem fields**. By modifying these problem fields, you can:
 
 * Subscribe to custom record fields to be automatically propagated from all single events to any detected problem.
 * Rename existing problem fields.

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Pattern Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language
-scraped: 2026-02-06T16:27:26.753644
+scraped: 2026-02-15T09:02:19.119654
 ---
 
 # Dynatrace Pattern Language

@@ -1,7 +1,7 @@
 ---
 title: Supported connectivity schemes for ActiveGates
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates
-scraped: 2026-02-06T16:33:33.908796
+scraped: 2026-02-15T09:05:15.222617
 ---
 
 # Supported connectivity schemes for ActiveGates
@@ -29,7 +29,7 @@ The **direction of arrows** in the diagrams indicates which component initiates 
 
 * Dynatrace SaaS Cluster receives connections on port 443.
 
-If you run [Browser monitors](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") or [HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor (classic) to check the performance and availability of your site.") from private Synthetic locations, you need to make sure the Synthetic-enabled ActiveGate has access to the tested resource. If you use ActiveGate extensions, you need to make sure the ActiveGate executing the extensions has access to the monitored technology.
+If you run [Browser monitors](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") or [HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.") from private Synthetic locations, you need to make sure the Synthetic-enabled ActiveGate has access to the tested resource. If you use ActiveGate extensions, you need to make sure the ActiveGate executing the extensions has access to the monitored technology.
 
 Connection
 

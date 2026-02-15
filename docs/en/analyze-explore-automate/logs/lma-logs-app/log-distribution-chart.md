@@ -1,7 +1,7 @@
 ---
 title: Spot trends with the log distribution chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart
-scraped: 2026-02-06T16:20:56.056537
+scraped: 2026-02-15T08:56:10.437936
 ---
 
 # Spot trends with the log distribution chart

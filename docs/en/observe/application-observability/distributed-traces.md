@@ -1,7 +1,7 @@
 ---
 title: Distributed Traces Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces
-scraped: 2026-02-06T16:25:36.165539
+scraped: 2026-02-15T08:56:43.029878
 ---
 
 # Distributed Traces Classic
@@ -16,7 +16,9 @@ Distributed tracing is an essential monitoring, debugging, and optimizing tool f
 
 [### Concepts
 
-Learn the core concepts and terminology of distributed tracing in Dynatrace.](/docs/observe/application-observability/distributed-traces/concepts "Learn more about distributed tracing core concepts and terminology.")[![Distributed Traces Classic](https://dt-cdn.net/images/distributed-traces-classic-7197cdacfb.svg "Distributed Traces Classic")
+Learn the core concepts and terminology of distributed tracing in Dynatrace.](/docs/observe/application-observability/distributed-traces/concepts "Learn more about distributed tracing core concepts and terminology.")[### Context propagation
+
+Understand span and trace context propagation in Dynatrace and how to set them up.](/docs/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.")[![Distributed Traces Classic](https://dt-cdn.net/images/distributed-traces-classic-7197cdacfb.svg "Distributed Traces Classic")
 
 ### Analyze
 

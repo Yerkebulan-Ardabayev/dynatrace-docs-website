@@ -1,7 +1,7 @@
 ---
 title: Metric scripting integration
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe
-scraped: 2026-02-06T16:28:23.950322
+scraped: 2026-02-15T09:03:43.443721
 ---
 
 # Metric scripting integration
@@ -26,7 +26,7 @@ Enable at the environment level
 
 Enable for a single host
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Find and select your host to display the host overview page.
 3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 

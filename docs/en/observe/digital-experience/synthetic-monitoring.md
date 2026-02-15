@@ -1,14 +1,13 @@
 ---
 title: Synthetic Monitoring
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring
-scraped: 2026-02-06T16:27:20.390679
+scraped: 2026-02-15T09:02:16.909919
 ---
 
 # Synthetic Monitoring
 
 # Synthetic Monitoring
 
-* Latest Dynatrace
 * Overview
 * 1-min read
 * Published Sep 25, 2018
@@ -33,11 +32,11 @@ Dynatrace offers the following types of synthetic monitors: single-URL browser m
 
 ### HTTP monitors
 
-* [Create an HTTP monitor (classic)](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor (classic) to check the performance and availability of your site.")
-* [Configure HTTP monitors (classic)](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors (classic).")
-* [Script mode for HTTP monitor (classic) configuration](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.")
-* [Pre- and post-execution scripts for HTTP monitors (classic)](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Learn how to apply pre and post scripts to your requests")
-* [HTTP monitor metrics (classic)](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic "Learn about the performance metrics collected for HTTP monitors (classic).")
+* [Create an HTTP monitor](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.")
+* [Configure HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
+* [Script mode for HTTP monitor configuration](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.")
+* [Pre- and post-execution scripts for HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Learn how to apply pre and post scripts to your requests")
+* [HTTP monitor metrics](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic "Learn about the performance metrics collected for HTTP monitors.")
 
 ### Analysis and alerting
 
@@ -45,7 +44,7 @@ Dynatrace offers the following types of synthetic monitors: single-URL browser m
 * [Synthetic details for browser monitors](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.")
 * [Multidimensional analysis for browser monitors](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.")
 * [Waterfall graphs](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs "How to analyze page resource downloads for browser monitors.")
-* [HTTP monitors reporting results (classic)](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors (classic).")
+* [HTTP monitors reporting results](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors.")
 
 ### Browser monitors
 

@@ -1,7 +1,7 @@
 ---
 title: OpenPipeline processing examples
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/processing-examples
-scraped: 2026-02-06T16:29:52.750401
+scraped: 2026-02-15T09:00:06.109237
 ---
 
 # OpenPipeline processing examples
@@ -38,7 +38,7 @@ A stored event from an application (`myLogSource`) in the log viewer is missing 
 * Show a loglevel for the log.
 * Extract the thread name from the log line into a new attribute (`thread.name`).
 
-Steps
+### Steps
 
 1. Find the matching condition.
 
@@ -225,7 +225,7 @@ The processed log record is displayed with metadata, including a `timestamp` and
 
 A record has a field `content` (`String`) containing JSON input from which you want to parse out information. You can process specific fields, nested fields, or all fields, and treat them as plain text or bring them to top-level without knowing the schema of the JSON.
 
-Steps
+### Steps
 
 Depending on the type of field you want to parse out, configure a **DQL** processor in the **Processing** stage with a **DQL processor definition** copied from one of the following:
 
@@ -521,7 +521,7 @@ Conclusion
 
 Applications log the user ID with different schemes (`user ID=`, `userId=`, `userId:` , `user ID =`). You can parse out attributes with different formats via a single pattern expression that uses the optional modifier (`?`) and `Alternative Groups`.
 
-Steps
+### Steps
 
 To extract the user identifier as a standalone log attribute, configure a **DQL** processor in the **Processing** with the following **DQL processor definition**.
 
@@ -597,7 +597,7 @@ With a single definition, you've extracted the user identifier from different lo
 
 A JSON file contains information that you want to parse out and create new dedicate fields for it, based on the format. You can use [Dynatrace Pattern Language (DPL) matchers](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") for easier pattern building.
 
-Steps
+### Steps
 
 To use DPL matchers to identify and create new dedicated fields for a timestamp, a loglevel, the IP address, the endpoint, and response code from the JSON file content, configure a **DQL** processor in the **Processing** stage with the following definition.
 
@@ -661,7 +661,7 @@ You created new fields for the timestamp, a loglevel, IP address, endpoint, and 
 
 You can parse out specific values from a JSON file, perform calculations, and format the results by leveraging DQL functions and operators.
 
-Steps
+### Steps
 
 Configure a **DQL** processor in the **Processing** stage with the following definition.
 
@@ -717,7 +717,7 @@ You calculated the failure percentage based on the JSON content and created a ne
 
 You can add attributes that have static or dynamic values by leveraging different processors, with and without DQL queries.
 
-Steps
+### Steps
 
 To add attributes, configure one of the following processors in the **Processing** stage.
 
@@ -819,7 +819,7 @@ You added new top-level fields that store the length (`content.length`) and numb
 
 You can remove attributes by leveraging different processors, with and without DQL queries.
 
-Steps
+### Steps
 
 To remove specific fields
 
@@ -868,7 +868,7 @@ Conclusion
 
 You can rename attributes by leveraging different processors, with and without DQL queries.
 
-Steps
+### Steps
 
 To rename an attribute of a matching record to a static value,
 
@@ -905,7 +905,7 @@ Conclusion
 
 You can drop ingested records at different stages by leveraging different processors.
 
-Steps
+### Steps
 
 To drop an ingested record
 
@@ -920,7 +920,7 @@ The matching records won't be stored in Grail.
 
 You can mask parts of an attribute by leveraging `replacePattern` in combination with other DQL functions.
 
-Steps
+### Steps
 
 In this scenario you want to mask part of an IP address. Configure a **DQL** processor in the **Processing** stage with one of the following definitions, depending on the part that you want to mask.
 

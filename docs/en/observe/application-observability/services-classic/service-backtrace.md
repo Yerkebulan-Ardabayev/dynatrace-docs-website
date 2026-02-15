@@ -1,14 +1,13 @@
 ---
 title: Service backtrace
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-backtrace
-scraped: 2026-02-06T16:22:45.694439
+scraped: 2026-02-15T08:57:10.813903
 ---
 
 # Service backtrace
 
 # Service backtrace
 
-* Latest Dynatrace
 * How-to guide
 * 4-min read
 * Published Jul 19, 2017
@@ -19,7 +18,7 @@ Say for example that youâre analyzing a SQL database service and you want t
 
 To view service-level backtrace
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
 2. Select the service you want analyze.
 3. On the service overview page, in the **Understand dependencies section**, select **Analyze backtrace** to view the service-level backtrace of requests to this service.
 

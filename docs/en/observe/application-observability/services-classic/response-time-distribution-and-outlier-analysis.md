@@ -1,14 +1,13 @@
 ---
 title: Response time distribution and outlier analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis
-scraped: 2026-02-06T16:22:47.049223
+scraped: 2026-02-15T08:58:55.849244
 ---
 
 # Response time distribution and outlier analysis
 
 # Response time distribution and outlier analysis
 
-* Latest Dynatrace
 * How-to guide
 * 5-min read
 * Published Jul 19, 2017
@@ -19,7 +18,7 @@ To evaluate the performance of your applications, it's crucial that you have the
 
 To view the **Response time** chart for a service
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
 2. Select the service you want to analyze.
 3. On the service overview page, select a **View** button (such as **View requests**, **View dynamic requests**, or **View resource requests**).
 4. Select the **Response time** tab.

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector
-scraped: 2026-02-06T16:26:05.875535
+scraped: 2026-02-15T08:57:51.795675
 ---
 
 # Dynatrace Collector
@@ -46,12 +46,12 @@ The Dynatrace Collector offers the following advantages compared to the OpenTele
 * Collector components verified by Dynatrace
 * Security patches independent of OpenTelemetry Collector releases
 
-You can download the Dynatrace Collector release from [our repositoryï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.43.0).
+You can download the Dynatrace Collector release from [our repositoryï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.44.0).
 
 It is also available as a container image at [Github Packagesï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/pkgs/container/dynatrace-otel-collector%2Fdynatrace-otel-collector) and can be pulled using the following Docker command:
 
 ```
-docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.43.0
+docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 ```
 
 More information about further available container repositories can be found under [Collector deployment](/docs/ingest-from/opentelemetry/collector/deployment#container-image-registries "Deploy the Dynatrace Collector.").

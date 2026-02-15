@@ -1,7 +1,7 @@
 ---
 title: Custom applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applications
-scraped: 2026-02-06T16:27:11.909085
+scraped: 2026-02-15T09:03:15.271356
 ---
 
 # Custom applications

@@ -1,7 +1,7 @@
 ---
 title: Services Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic
-scraped: 2026-02-06T16:29:27.696197
+scraped: 2026-02-15T09:03:12.822909
 ---
 
 # Services Classic

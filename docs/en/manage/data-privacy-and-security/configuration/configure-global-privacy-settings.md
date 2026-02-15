@@ -1,7 +1,7 @@
 ---
 title: Configure data privacy settings
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
-scraped: 2026-02-06T16:23:09.406485
+scraped: 2026-02-15T08:58:29.316620
 ---
 
 # Configure data privacy settings
@@ -9,7 +9,7 @@ scraped: 2026-02-06T16:23:09.406485
 # Configure data privacy settings
 
 * Latest Dynatrace
-* Overview
+* How-to guide
 * 5-min read
 * Updated on Jan 15, 2026
 
@@ -64,7 +64,7 @@ Depending on your use cases and data needs, you can decide whether you want to m
 
 You can apply these settings to specific monitored process groups or globally to your whole environment.
 
-* Process group-specific Go to **Technologies & Processes** (previous Dynatrace) or ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic** > process group category > process group > **Settings** > **OneAgent-side masking**.
+* Process group-specific Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic** > process group category > process group > **Settings** > **OneAgent-side masking**.
 * Environment-wide Go to **Settings** > **Preferences** > **Data privacy** > **OneAgent-side masking**.
 
 OneAgent-side masking settings do not affect the [Dynatrace RUM JavaScript](/docs/observe/digital-experience/rum-concepts/applications#web "Learn about monitored applications in Real User Monitoring and the different application types supported by Dynatrace."). For web applications, use the [**Mask personal data in URIs** option](/docs/observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#mask-uris "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") to control sensitive data point masking for URLs.

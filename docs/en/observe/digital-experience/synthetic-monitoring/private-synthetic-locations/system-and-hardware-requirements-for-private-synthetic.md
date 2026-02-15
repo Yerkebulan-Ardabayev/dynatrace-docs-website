@@ -1,14 +1,13 @@
 ---
 title: Requirements for private Synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic
-scraped: 2026-02-06T16:33:43.670101
+scraped: 2026-02-15T09:01:42.644426
 ---
 
 # Requirements for private Synthetic locations
 
 # Requirements for private Synthetic locations
 
-* Latest Dynatrace
 * Reference
 * 15-min read
 * Updated on Jan 13, 2026

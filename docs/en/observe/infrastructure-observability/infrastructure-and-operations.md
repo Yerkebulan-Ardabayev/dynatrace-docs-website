@@ -1,7 +1,7 @@
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-06T16:20:46.905556
+scraped: 2026-02-15T08:55:46.641655
 ---
 
 # Infrastructure & Operations
@@ -259,49 +259,27 @@ See our detailed [Generic network topology](/docs/ingest-from/extend-dynatrace/e
 
 ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** has the following core components:
 
-### Data centers
+[#### Data centers
 
-The list of  **Data centers** provides visibility of interconnected data centers. Focusing on a particular data center gives you a detailed list of all monitored hosts.
+Monitor the health and performance of your data centers and availability zones to detect and resolve critical issues.
 
-* Filter data centers based on their type and location, then sort by the number of open problems.
-* Data centers with the highest number of open problems are listed first.
-* Selecting a data center helps you quickly identify the most problematic hosts within that data center.
+Data centers](/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers)[#### Hosts
 
-### Hosts
+Monitor infrastructure hosts across physical machines, VMs, and cloud instances to track health, performance, and resource utilization.
 
-The list of  **Hosts** displays detailed information about all monitored hosts in your environment.
+Hosts](/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts)[#### Containers
 
-* Sort and filter hosts by health metrics such as CPU load, available memory, disk capacity, and network connectivity to identify hosts requiring attention. By default, hosts are sorted by the number of open problems.
-* Select a host name to view all technologies with detailed status information and links to processes.
+Monitor and troubleshoot containerized workloads across Kubernetes and standalone hosts.
 
-### Processes
+Containers](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Processes
 
-The list of  **Processes** provides detailed insights into processes running on hosts or in containers, displaying CPU and memory usage trends and key metrics for troubleshooting.
+Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.
 
-* Visualize CPU and memory usage trends across all processes using the graph view.
-* Select a process to access detailed metrics, including traffic, resource consumption, and properties.
-* Sort and filter processes by metrics such as CPU usage, memory usage, or custom warnings to identify problematic processes.
-* Add technology-type tags at the process or process group level for simplified filtering and automation.
-* Drill down to detailed process-level insights, including versioning and release information, when deep monitoring is activated.
+Processes](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Networks
 
-### Containers
+Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
 
-The list of  **Containers** provides a comprehensive view of your containerized workloads, whether orchestrated by ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** or running on a standalone host.
-
-* Use the **Custom alerts** column and the **Critical alert** filter to quickly identify containers with problems. Select an alert to investigate it.
-* Analyze and compare CPU and memory usage metrics across containers.
-* Select a container name to view detailed graphs, processes, logs, and events for troubleshooting.
-* Use the time selector and resource usage graphs to identify patterns or anomalies over time.
-
-### Network devices
-
-The list of  **Network devices** provides insights into networking components and their availability, with Dynatrace Intelligence-powered analytics.
-
-* Monitor health status, interface availability, network utilization, and hardware metrics such as CPU and memory usage.
-* View all problems detected by Dynatrace Intelligence and access affected entities for specific issues.
-* Sort and filter network devices by name, type, problems, IP address, uptime, interface status, saturated interfaces, traffic volume, and reachability.
-* For auto-discovered network devices not currently monitored, install and configure extensions directly from the Messages tab.
-* Select a network device to access detailed views, including tags, properties, metrics, and related entities when monitored by an extension.
+Networks](/docs/observe/infrastructure-observability/infrastructure-and-operations/networks)
 
 ### Relation between hosts, containers, and processes
 

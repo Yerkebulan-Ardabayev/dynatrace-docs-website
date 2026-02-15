@@ -1,7 +1,7 @@
 ---
 title: Log on Grail examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-on-grail-examples
-scraped: 2026-02-06T16:25:23.621705
+scraped: 2026-02-15T08:58:15.236803
 ---
 
 # Log on Grail examples
@@ -15,7 +15,7 @@ scraped: 2026-02-06T16:25:23.621705
 
 Log Management and Analytics powered by Grail enables you to pinpoint and retrieve any log data with the help of [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). After reviewing the [fundamentals of DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts."), use the examples on this page to start getting answers from your log data.
 
-To run DQL queries with logs on Grail, go to **Logs** (previous Dynatrace) or ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** > **Advanced mode**.
+To run DQL queries with logs on Grail, go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** > **Advanced mode**.
 
 * [Example 1](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample1 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Get the distribution of HTTP status codes and counts per error type.
 * [Example 2](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample2 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Define an average cart size based on logs.

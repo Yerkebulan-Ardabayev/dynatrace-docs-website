@@ -1,7 +1,7 @@
 ---
 title: Create a private Synthetic location
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
-scraped: 2026-02-06T16:33:16.649247
+scraped: 2026-02-15T09:04:42.928435
 ---
 
 # Create a private Synthetic location
@@ -60,7 +60,7 @@ End-of-support information
 
 Install an ActiveGate in latest Dynatrace
 
-The instructions below describe how to install an ActiveGate in the previous Dynatrace. To learn how to install an ActiveGate in the latest Dynatrace, see [Private synthetic locations on Grail](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations#create-a-private-location "Learn how to manage private locations in the Synthetic app.").
+The instructions below describe how to install an ActiveGate in the previous Dynatrace. To learn how to install an ActiveGate in the latest Dynatrace, see [Private synthetic locations on Grail](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#create-a-private-location "Learn how to manage private locations in the Synthetic app.").
 
 Synthetic-enabled ActiveGate is used exclusively to run synthetic monitors. A clean ActiveGate installation for the purpose of synthetic monitoring disables all other ActiveGate features, including communication with OneAgents. Make sure the host on which you install the ActiveGate has access to the internet.
 
@@ -96,7 +96,7 @@ If this web UI-guided installation fails, or you prefer to prepare the host for 
 
 Add a private location in latest Dynatrace
 
-The instructions below describe how to add a private location in previous Dynatrace. To learn how to add a private location in latest Dynatrace, see [Private synthetic locations on Grail](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations#create-a-private-location "Learn how to manage private locations in the Synthetic app.").
+The instructions below describe how to add a private location in previous Dynatrace. To learn how to add a private location in latest Dynatrace, see [Private synthetic locations on Grail](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#create-a-private-location "Learn how to manage private locations in the Synthetic app.").
 
 1. Search for and select **Settings**. Then select **Web & mobile monitoring** > **Private synthetic locations**.
 2. Select **Create location**.
@@ -110,7 +110,7 @@ The instructions below describe how to add a private location in previous Dynatr
 
 ## Create a synthetic monitor
 
-Now, when you create your HTTP or browser monitor, select the location you've just created from the list of all available locations. For more information, see [Create an HTTP monitor](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor (classic) to check the performance and availability of your site."), [Create a single-URL browser monitor](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site."), or [Record a browser clickpath](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application.").
+Now, when you create your HTTP or browser monitor, select the location you've just created from the list of all available locations. For more information, see [Create an HTTP monitor](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site."), [Create a single-URL browser monitor](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site."), or [Record a browser clickpath](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application.").
 
 ## Linux only Install Chromium and dependencies manually from S3
 

@@ -1,7 +1,7 @@
 ---
 title: Set up request naming
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming
-scraped: 2026-02-06T16:22:15.729149
+scraped: 2026-02-15T08:57:30.977721
 ---
 
 # Set up request naming
@@ -37,7 +37,7 @@ Because request naming rules produce distinct service requests, each request is 
 
 The first step in setting up clear naming for your service (web) requests is to create request naming rules with conditions that define how they appear in your environment.
 
-1. Go to **Services** (previous Dynatrace) or ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select the service you want to configure.
+1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select the service you want to configure.
 2. Select **More** (**â¦**) > **Settings**.
 3. On the **Service settings** page, go to the **Request naming rules** (or **Web request naming rules**) and select **Add rule**.
 4. Define a set of conditions that represent the criteria of your service operations.

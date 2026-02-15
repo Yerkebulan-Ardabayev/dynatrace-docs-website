@@ -1,7 +1,7 @@
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions
-scraped: 2026-02-06T16:21:11.052760
+scraped: 2026-02-15T08:55:50.138076
 ---
 
 # Extensions

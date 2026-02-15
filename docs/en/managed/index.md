@@ -1,96 +1,52 @@
-# Dynatrace Managed Overview
+---
+title: Welcome to Dynatrace Documentation
+source: https://www.dynatrace.com/support/help/
+scraped: 2026-02-15T08:53:55.333661
+---
 
-Dynatrace Managed is the on-premises deployment option for organizations that require full control over their monitoring infrastructure.
+# Welcome to Dynatrace Documentation
 
-## What is Dynatrace Managed?
+# Welcome to Dynatrace Documentation
 
-Dynatrace Managed provides:
+Learn about Dynatrace and explore resources to enhance your observability and security.
 
-- **On-premises deployment** - Host in your own data center
-- **Full data control** - Your data never leaves your environment
-- **Compliance** - Meet regulatory requirements
-- **Same features** - All capabilities of Dynatrace SaaS
+![Dynatrace Documentation](https://dt-cdn.net/images/docs-hero-0423f9e141.svg "Dynatrace Documentation")
 
-## Architecture
+### Get started with Dynatrace or discover whatâs new
 
-```
-┌─────────────────────────────────────────┐
-│         Managed Cluster                 │
-│  ┌───────────────────────────────────┐  │
-│  │   Cluster Management Console       │  │
-│  └───────────────────────────────────┘  │
-│  ┌───────────────────────────────────┐  │
-│  │   Cluster Nodes                    │  │
-│  │   - Processing                     │  │
-│  │   - Storage                        │  │
-│  │   - UI                             │  │
-│  └───────────────────────────────────┘  │
-└─────────────────────────────────────────┘
-           ↑
-           │ Monitoring data
-           │
-    ┌──────┴───────┐
-    │  OneAgents   │
-    │  (deployed   │
-    │  on hosts)   │
-    └──────────────┘
-```
+* New to Dynatrace? Learn how to [get started](/docs/discover-dynatrace/get-started "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") in just a few steps.
+* Already on board? Discover whatâs new for [SaaS](/docs/whats-new/saas "Release notes for Dynatrace SaaS"), [OneAgent](/docs/whats-new/oneagent "Release notes for Dynatrace OneAgent"), or [ActiveGate](/docs/whats-new/activegate "Release notes for Dynatrace ActiveGate").
 
-## Key Features
+![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
-### Data Sovereignty
-- All data stored on-premises
-- No data transmission to Dynatrace cloud
-- Full control over data retention
+## Popular pages
 
-### Customization
-- Custom integrations
-- Private network deployment
-- Flexible sizing options
+## Tutorials
 
-### High Availability
-- Multi-node cluster setup
-- Automatic failover
-- Disaster recovery options
+Filter by
 
-## System Requirements
+Select an option
 
-### Minimum Requirements
+Type to filter
 
-- **CPU:** 8 cores
-- **RAM:** 32 GB
-- **Storage:** 200 GB (SSD recommended)
-- **OS:** Linux (Ubuntu, RHEL, SUSE)
+## Documentation highlights
 
-### Recommended for Production
+## Dynatrace apps
 
-- **CPU:** 16+ cores
-- **RAM:** 64+ GB
-- **Storage:** 500+ GB SSD
-- **Network:** 1 Gbps+
+Discover all [Dynatrace apps](/docs/discover-dynatrace/dynatrace-apps "Browse Dynatrace Apps.").
 
-## Installation
+## Still have questions?
 
-See our [Installation Guide](installation.md) for detailed instructions.
+[### Talk to our product experts
 
-## When to Choose Managed?
+Our Dynatrace product experts are here to help you with technical questions and provide in-depth assistance via chat.](https://support.dynatrace.com/)
 
-Choose Dynatrace Managed if you need:
+## Continue your learning journey
 
-- ✅ On-premises deployment
-- ✅ Data sovereignty
-- ✅ Air-gapped environments
-- ✅ Custom compliance requirements
-- ✅ Integration with private networks
+[### Join Dynatrace University
 
-## Next Steps
+Game-changing education and resources, online and in-person](https://university.dynatrace.com)[### Dynatrace Developer
 
-- [📥 Installation Guide](installation.md)
-- [⚙️ Configuration](configuration.md)
-- [🔧 Maintenance](maintenance md)
-- [🆘 Troubleshooting](troubleshooting.md)
+Learn to create incredible apps with minimal effort](https://developer.dynatrace.com)[### Join Dynatrace Community
 
-## Need Help?
-
-- 🤖 [Quick questions - AI Chat](../../ai/gemini.md)
-- 🔬 [Complex analysis - NotebookLM](../../ai/notebooklm.md)
+Find the answers you are looking for and meet other users and Dynatrace experts.](https://community.dynatrace.com)
