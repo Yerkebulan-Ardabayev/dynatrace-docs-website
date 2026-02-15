@@ -1,7 +1,7 @@
 ---
 title: Timestamp/splitting configuration
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration
-scraped: 2026-02-06T16:31:58.955342
+scraped: 2026-02-15T21:18:29.951505
 ---
 
 # Timestamp/splitting configuration
@@ -120,7 +120,7 @@ The OneAgent receives the merged list (merged lists from its respective hosts, h
 
 The host scope can be accessed through the **Host settings** for a specific host.
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Find and select your host to display the host overview page.
 3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 
@@ -141,7 +141,7 @@ The Kubernetes cluster scope can be accessed via the **Kubernetes** page.
 
 The host group scope can be accessed via the **Host** page.
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host that interests you.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host that interests you.
 2. On the host overview page, select **Properties and tags**.
 3. On the **Properties and tags** panel, find the **Host group** property to see the name of the host group to which the selected host belongs.
 
@@ -168,8 +168,6 @@ To add a rule (on the host, host group, or environment level) that interprets th
    The name to display for your configuration.
 3. **Pattern**  
    Enter the pattern to be read as a date from the logs. For details on timestamp formats, see [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics.") and the following list of format specifiers.
-
-   Format specifiers
 
    Pattern
 

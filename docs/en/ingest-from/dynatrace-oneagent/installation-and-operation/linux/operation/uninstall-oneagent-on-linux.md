@@ -1,7 +1,7 @@
 ---
 title: Uninstall OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux
-scraped: 2026-02-06T16:30:35.184008
+scraped: 2026-02-15T21:18:57.453043
 ---
 
 # Uninstall OneAgent on Linux

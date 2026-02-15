@@ -1,13 +1,14 @@
 ---
 title: Define tags based on environment variables
 source: https://www.dynatrace.com/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables
-scraped: 2026-02-06T16:30:26.267046
+scraped: 2026-02-15T21:19:08.432361
 ---
 
 # Define tags based on environment variables
 
 # Define tags based on environment variables
 
+* How-to guide
 * 2-min read
 * Updated on Aug 07, 2023
 

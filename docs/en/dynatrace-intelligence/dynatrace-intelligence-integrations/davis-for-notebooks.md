@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence for Notebooks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks
-scraped: 2026-02-15T08:59:20.390551
+scraped: 2026-02-15T21:16:59.240223
 ---
 
 # Dynatrace Intelligence for Notebooks

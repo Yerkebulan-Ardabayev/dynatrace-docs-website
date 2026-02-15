@@ -1,7 +1,7 @@
 ---
 title: Ready-made documents
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents
-scraped: 2026-02-15T09:00:13.540046
+scraped: 2026-02-15T21:19:42.979520
 ---
 
 # Ready-made documents

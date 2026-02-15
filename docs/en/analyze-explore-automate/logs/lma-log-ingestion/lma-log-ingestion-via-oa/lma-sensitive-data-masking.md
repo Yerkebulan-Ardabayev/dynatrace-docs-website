@@ -1,7 +1,7 @@
 ---
 title: Sensitive data masking in OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking
-scraped: 2026-02-06T16:31:45.694610
+scraped: 2026-02-15T21:18:35.743795
 ---
 
 # Sensitive data masking in OneAgent
@@ -166,7 +166,7 @@ The hierarchy is as follows:
 
 The host configuration rules can be accessed through the **Host settings** for a specific host.
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Find and select your host to display the host overview page.
 3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 
@@ -177,7 +177,7 @@ The host configuration rules can be accessed through the **Host settings** for a
 
 The host group configuration rules can be accessed via the **Host** page.
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host that interests you.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host that interests you.
 2. On the host overview page, select **Properties and tags**.
 3. On the **Properties and tags** panel, find the **Host group** property to see the name of the host group to which the selected host belongs.
 

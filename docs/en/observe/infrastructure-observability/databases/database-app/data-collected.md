@@ -1,7 +1,7 @@
 ---
 title: Data collected with Dynatrace database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/data-collected
-scraped: 2026-02-15T09:05:01.254599
+scraped: 2026-02-15T21:18:18.467453
 ---
 
 # Data collected with Dynatrace database monitoring

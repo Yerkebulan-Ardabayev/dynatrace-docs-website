@@ -1,7 +1,7 @@
 ---
 title: IBM Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring
-scraped: 2026-02-15T09:08:23.289106
+scraped: 2026-02-15T21:25:06.113619
 ---
 
 # IBM Database monitoring configuration

@@ -1,7 +1,7 @@
 ---
 title: Supported Go versions
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/go/support/supported-go-versions
-scraped: 2026-02-15T09:01:59.463422
+scraped: 2026-02-15T21:20:12.617197
 ---
 
 # Supported Go versions

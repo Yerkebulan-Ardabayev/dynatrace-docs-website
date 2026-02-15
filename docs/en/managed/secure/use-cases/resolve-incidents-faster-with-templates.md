@@ -1,7 +1,7 @@
 ---
 title: Resolve incidents faster with Investigations templates
 source: https://www.dynatrace.com/docs/secure/use-cases/resolve-incidents-faster-with-templates
-scraped: 2026-02-15T09:07:54.061002
+scraped: 2026-02-15T21:28:48.618587
 ---
 
 # Resolve incidents faster with Investigations templates

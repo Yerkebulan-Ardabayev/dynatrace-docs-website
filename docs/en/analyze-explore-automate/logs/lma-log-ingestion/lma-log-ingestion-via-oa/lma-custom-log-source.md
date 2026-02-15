@@ -1,7 +1,7 @@
 ---
 title: Custom log source
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source
-scraped: 2026-02-06T16:31:43.201243
+scraped: 2026-02-15T21:18:37.172108
 ---
 
 # Custom log source
@@ -31,7 +31,7 @@ Each custom log source path you add needs to be validated by OneAgent and abide 
 
 To configure custom log sources at the host level
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select your host.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select your host.
 2. Select **More** (**â¦**) > **Settings** to open the **Host settings** page (available only on hosts assigned to a host group).
 3. On the **Host settings** page, select **Log Monitoring** > **Custom log sources**.
 
@@ -39,7 +39,7 @@ To configure custom log sources at the host level
 
 To configure custom log sources at the host group level
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select your host.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select your host.
 2. Expand the **Properties and tags** section and select the **Host group** (available only on hosts assigned to a host group).
 3. On the **Host group settings** page, select **Log Monitoring** > **Custom log sources**.
 

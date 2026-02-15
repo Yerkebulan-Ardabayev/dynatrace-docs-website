@@ -1,7 +1,7 @@
 ---
 title: Update Dynatrace OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix
-scraped: 2026-02-06T16:31:34.531535
+scraped: 2026-02-15T21:19:28.668184
 ---
 
 # Update Dynatrace OneAgent on AIX
@@ -50,7 +50,7 @@ OneAgent update settings at the host group level override global settings and ar
    Access alternatives:
 
    * Go to **Settings** > **Monitoring** > **Monitoring overview**, find any host that is in the host group you want to configure, and select the host group name (not the host name).
-   * Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**, open a host page, and expand the **Properties and tags** section. If the host belongs to a group, there is a link to it under **Host group**.
+   * Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**, open a host page, and expand the **Properties and tags** section. If the host belongs to a group, there is a link to it under **Host group**.
    * Go to **Deployment Status** > **OneAgents**. If a host belongs to a host group, a link to the host group settings page is displayed under the host name.
 2. On the **Host group settings** page, select **OneAgent updates** on the left side of the page.
 3. Select one of the update options:
@@ -79,7 +79,7 @@ OneAgent update settings at the host level override OneAgent update settings at 
 1. Open the **Host** page for the host you want to configure.  
    Access options:
 
-   * Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and then select the host.
+   * Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and then select the host.
    * Go to **Settings** > **Monitoring** > **Monitoring overview**, select the **Hosts** tab, and then select the host.
 2. On the **Host** page, open the browse menu (**â¦**) and select **Settings**.
 3. Select **OneAgent updates** on the left side of the page.
@@ -179,7 +179,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 
 ### Host Overview
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Click the host you are interested in.
 3. Expand **Properties** under the host's name. The installed version of OneAgent is included in the listed properties.
 

@@ -1,7 +1,7 @@
 ---
 title: Log ingestion via OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa
-scraped: 2026-02-15T09:12:37.635041
+scraped: 2026-02-15T21:30:23.742781
 ---
 
 # Log ingestion via OneAgent

@@ -1,7 +1,7 @@
 ---
 title: Trace Google Cloud Functions with OpenTelemetry JavaScript
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-nodejs
-scraped: 2026-02-15T09:09:29.948288
+scraped: 2026-02-15T21:28:12.378337
 ---
 
 # Trace Google Cloud Functions with OpenTelemetry JavaScript

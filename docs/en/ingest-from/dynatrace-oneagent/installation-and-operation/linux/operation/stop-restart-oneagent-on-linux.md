@@ -1,7 +1,7 @@
 ---
 title: Stop/restart OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux
-scraped: 2026-02-06T16:30:56.993711
+scraped: 2026-02-15T21:18:56.082465
 ---
 
 # Stop/restart OneAgent on Linux

@@ -1,7 +1,7 @@
 ---
 title: Organize Kubernetes/OpenShift deployments by tags
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments
-scraped: 2026-02-15T09:05:33.866229
+scraped: 2026-02-15T21:20:01.069685
 ---
 
 # Organize Kubernetes/OpenShift deployments by tags

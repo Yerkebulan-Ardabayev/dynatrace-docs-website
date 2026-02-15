@@ -1,7 +1,7 @@
 ---
 title: Report custom device metric via Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/report-custom-device-metric-via-rest-api
-scraped: 2026-02-15T09:00:27.808683
+scraped: 2026-02-15T21:21:33.108161
 ---
 
 # Report custom device metric via Dynatrace API

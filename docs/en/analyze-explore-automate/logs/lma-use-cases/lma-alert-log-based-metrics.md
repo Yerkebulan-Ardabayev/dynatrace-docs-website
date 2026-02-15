@@ -1,7 +1,7 @@
 ---
 title: Set up custom alerts based on metrics extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics
-scraped: 2026-02-15T09:13:06.985287
+scraped: 2026-02-15T21:28:46.036494
 ---
 
 # Set up custom alerts based on metrics extracted from logs

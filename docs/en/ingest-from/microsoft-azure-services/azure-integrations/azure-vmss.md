@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure Virtual Machine Scale Set (VMSS)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss
-scraped: 2026-02-15T08:56:39.678668
+scraped: 2026-02-15T21:14:38.650014
 ---
 
 # Monitor Azure Virtual Machine Scale Set (VMSS)

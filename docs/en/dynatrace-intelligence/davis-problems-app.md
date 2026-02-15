@@ -1,7 +1,7 @@
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-15T08:54:05.943024
+scraped: 2026-02-15T21:08:18.691739
 ---
 
 # Problems app

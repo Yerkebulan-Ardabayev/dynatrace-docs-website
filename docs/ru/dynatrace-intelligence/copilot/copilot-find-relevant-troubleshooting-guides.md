@@ -1,7 +1,7 @@
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-15T08:55:08.939027
+scraped: 2026-02-15T21:10:24.301899
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -278,6 +278,8 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 
 ## Related topics
 
-* [Обзор генеративного ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах генеративного ИИ Dynatrace Intelligence.")
-* [Начало работы с генеративным ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить генеративный ИИ Dynatrace Intelligence.")
-* [Проблемы приложения](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Проблемы, чтобы быстро определить коренную причину инцидентов в вашей среде.")
+
+
+* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
+* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")

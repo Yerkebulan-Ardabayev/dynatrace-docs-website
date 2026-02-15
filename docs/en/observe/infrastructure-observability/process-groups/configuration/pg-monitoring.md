@@ -1,7 +1,7 @@
 ---
 title: Process deep monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring
-scraped: 2026-02-06T16:31:55.183729
+scraped: 2026-02-15T21:18:38.385645
 ---
 
 # Process deep monitoring
@@ -106,7 +106,7 @@ Dynatrace doesnât automatically carry out deep monitoring of **all** .NET a
 
 You can set the process group monitoring states at the host-group level.
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host that interests you.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host that interests you.
 2. On the host overview page, select **Properties and tags**.
 3. On the **Properties and tags** panel, find the **Host group** property to see the name of the host group to which the selected host belongs.
 
@@ -122,7 +122,7 @@ The process group settings on host groups override the environment-wide process 
 
 You can add a process group and define its monitoring states at the host level.
 
-1. Go to **Hosts** (previous Dynatrace) or ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Find and select your host to display the host overview page.
 3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
 

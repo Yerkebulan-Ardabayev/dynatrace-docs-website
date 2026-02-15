@@ -1,7 +1,7 @@
 ---
 title: Ingest OTLP traces
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-traces
-scraped: 2026-02-15T09:09:16.860584
+scraped: 2026-02-15T21:29:05.798631
 ---
 
 # Ingest OTLP traces

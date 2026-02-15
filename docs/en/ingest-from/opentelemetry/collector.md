@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector
-scraped: 2026-02-15T08:57:51.795675
+scraped: 2026-02-15T21:16:05.099077
 ---
 
 # Dynatrace Collector

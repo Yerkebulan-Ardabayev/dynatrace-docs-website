@@ -1,7 +1,7 @@
 ---
 title: Add data to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
-scraped: 2026-02-15T08:55:00.736729
+scraped: 2026-02-15T21:09:33.915662
 ---
 
 # Add data to a dashboard

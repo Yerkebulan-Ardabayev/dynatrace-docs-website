@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris
-scraped: 2026-02-06T16:31:20.116731
+scraped: 2026-02-15T21:19:33.862201
 ---
 
 # Install OneAgent on Solaris
@@ -30,7 +30,7 @@ All hosts that are to be monitored need to be able to send data to the Dynatrace
 ### Limitations
 
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* [Infrastructure Monitoring](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.") mode isn't supported on Solaris hosts.
+* [Infrastructure Monitoring](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") mode isn't supported on Solaris hosts.
 
 ### Allow connections through firewall
 

@@ -1,7 +1,7 @@
 ---
 title: Bubble map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble
-scraped: 2026-02-15T08:59:31.870843
+scraped: 2026-02-15T21:16:26.909710
 ---
 
 # Bubble map visualization

@@ -1,7 +1,7 @@
 ---
 title: Segments in DQL queries
 source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concepts-queries
-scraped: 2026-02-15T08:59:12.127444
+scraped: 2026-02-15T21:16:42.604411
 ---
 
 # Segments in DQL queries

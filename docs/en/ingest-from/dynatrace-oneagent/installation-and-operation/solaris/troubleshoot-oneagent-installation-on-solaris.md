@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting OneAgent installation on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris
-scraped: 2026-02-06T16:31:25.626498
+scraped: 2026-02-15T21:19:32.438757
 ---
 
 # Troubleshooting OneAgent installation on Solaris

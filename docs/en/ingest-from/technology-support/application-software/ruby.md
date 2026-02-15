@@ -1,7 +1,7 @@
 ---
 title: Ruby
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/ruby
-scraped: 2026-02-15T09:01:28.302364
+scraped: 2026-02-15T21:20:58.098937
 ---
 
 # Ruby

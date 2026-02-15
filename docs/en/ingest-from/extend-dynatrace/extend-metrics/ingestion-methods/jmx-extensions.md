@@ -1,7 +1,7 @@
 ---
 title: JMX extensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions
-scraped: 2026-02-15T09:03:42.196412
+scraped: 2026-02-15T21:11:52.603515
 ---
 
 # JMX extensions

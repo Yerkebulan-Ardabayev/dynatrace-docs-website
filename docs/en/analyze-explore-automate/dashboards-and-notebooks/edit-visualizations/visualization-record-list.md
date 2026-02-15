@@ -1,7 +1,7 @@
 ---
 title: Record list
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-record-list
-scraped: 2026-02-15T08:59:41.972408
+scraped: 2026-02-15T21:16:28.341412
 ---
 
 # Record list

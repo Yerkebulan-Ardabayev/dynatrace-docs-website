@@ -1,7 +1,7 @@
 ---
 title: GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab
-scraped: 2026-02-15T09:08:37.189222
+scraped: 2026-02-15T21:26:21.861314
 ---
 
 # GitLab Connector
