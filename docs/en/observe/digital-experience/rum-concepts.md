@@ -1,7 +1,7 @@
 ---
 title: Real User Monitoring concepts
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts
-scraped: 2026-02-16T09:26:51.788848
+scraped: 2026-02-16T21:22:58.661586
 ---
 
 # Real User Monitoring concepts

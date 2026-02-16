@@ -1,7 +1,7 @@
 ---
 title: OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/monitoring-modes
-scraped: 2026-02-16T09:14:56.192711
+scraped: 2026-02-16T21:10:35.552766
 ---
 
 # OneAgent monitoring modes

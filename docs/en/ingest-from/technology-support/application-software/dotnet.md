@@ -1,7 +1,7 @@
 ---
 title: .NET
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/dotnet
-scraped: 2026-02-16T09:21:40.340415
+scraped: 2026-02-16T21:18:32.613703
 ---
 
 # .NET

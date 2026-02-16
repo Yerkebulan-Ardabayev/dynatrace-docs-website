@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 66
+Files combined: 70
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 66
 ---
 title: Attacks API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/attacks
-scraped: 2026-02-15T21:28:56.835792
+scraped: 2026-02-16T21:25:45.541425
 ---
 
 # Attacks API
@@ -41,7 +41,7 @@ scraped: 2026-02-15T21:28:56.835792
 ---
 title: Vulnerabilities API - GET remediation item details
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-item-details
-scraped: 2026-02-15T09:06:43.930881
+scraped: 2026-02-16T21:30:05.164975
 ---
 
 # Vulnerabilities API - GET remediation item details
@@ -782,7 +782,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 ---
 title: Vulnerabilities API - GET remediation item entities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-item-entities
-scraped: 2026-02-16T09:37:42.566406
+scraped: 2026-02-16T21:31:56.790806
 ---
 
 # Vulnerabilities API - GET remediation item entities
@@ -3596,7 +3596,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 ---
 title: Vulnerabilities API - POST mute vulnerabilities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-mute-vulnerabilities
-scraped: 2026-02-15T09:08:54.194225
+scraped: 2026-02-16T21:24:57.428230
 ---
 
 # Vulnerabilities API - POST mute vulnerabilities
@@ -4733,13 +4733,737 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 ---
 
 
+## Source: post-remediation-items-mute.md
+
+
+---
+title: Vulnarabilities API - POST mute remediation items
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-items-mute
+scraped: 2026-02-16T21:26:48.028446
+---
+
+# Vulnarabilities API - POST mute remediation items
+
+# Vulnarabilities API - POST mute remediation items
+
+* Reference
+* Updated on Sep 25, 2024
+
+Mutes multiple [remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups or, in the case of Kubernetes vulnerabilities, multiple remediation tracking Kubernetes nodes.
+
+The request consumes an `application/json` payload.
+
+|  |  |  |
+| --- | --- | --- |
+| POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/mute` |
+| POST | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems/mute` |
+
+## Authentication
+
+To execute this request, you need an access token with `securityProblems.write` scope.
+
+To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+## Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| id | string | The ID of the requested third-party security problem. | path | Required |
+| body | [RemediationItemsBulkMute](#openapi-definition-RemediationItemsBulkMute) | The JSON body of the request. Contains the muting information. | body | Optional |
+
+### Request body objects
+
+#### The `RemediationItemsBulkMute` object
+
+Information on muting several remediation items.
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| comment | string | A comment about the muting reason. | Optional |
+| reason | string | The reason for muting the remediation items. The element can hold these values * `CONFIGURATION_NOT_AFFECTED` * `FALSE_POSITIVE` * `IGNORE` * `OTHER` * `VULNERABLE_CODE_NOT_IN_USE` | Required |
+| remediationItemIds | string[] | The ids of the remediation items to be muted. | Required |
+
+### Request body JSON model
+
+This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
+
+```
+{
+
+
+
+"comment": "string",
+
+
+
+"reason": "CONFIGURATION_NOT_AFFECTED",
+
+
+
+"remediationItemIds": [
+
+
+
+"string"
+
+
+
+]
+
+
+
+}
+```
+
+## Response
+
+### Response codes
+
+| Code | Type | Description |
+| --- | --- | --- |
+| **200** | [RemediationItemsBulkMuteResponse](#openapi-definition-RemediationItemsBulkMuteResponse) | Success. The remediation item(s) have been muted. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
+
+### Response body objects
+
+#### The `RemediationItemsBulkMuteResponse` object
+
+Response of muting several remediation items.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| summary | [RemediationItemMutingSummary[]](#openapi-definition-RemediationItemMutingSummary) | The summary of which remediation items were muted and which already were muted previously. |
+
+#### The `RemediationItemMutingSummary` object
+
+Summary of (un-)muting a remediation item.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| muteStateChangeTriggered | boolean | Whether a mute state change for the given remediation item was triggered by this request. |
+| reason | string | Contains a reason, in case the requested operation was not executed. The element can hold these values * `ALREADY_MUTED` * `ALREADY_UNMUTED` * `REMEDIATION_ITEM_NOT_AFFECTED_BY_GIVEN_SECURITY_PROBLEM` |
+| remediationItemId | string | The id of the remediation item that will be (un-)muted. |
+
+#### The `ErrorEnvelope` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| error | [Error](#openapi-definition-Error) | - |
+
+#### The `Error` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| code | integer | The HTTP status code |
+| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| message | string | The error message |
+
+#### The `ConstraintViolation` object
+
+A list of constraint violations
+
+| Element | Type | Description |
+| --- | --- | --- |
+| location | string | - |
+| message | string | - |
+| parameterLocation | string | -The element can hold these values * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| path | string | - |
+
+### Response body JSON models
+
+```
+{
+
+
+
+"summary": [
+
+
+
+{
+
+
+
+"muteStateChangeTriggered": true,
+
+
+
+"reason": "ALREADY_MUTED",
+
+
+
+"remediationItemId": "string"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+```
+{
+
+
+
+"error": {
+
+
+
+"code": 1,
+
+
+
+"constraintViolations": [
+
+
+
+{
+
+
+
+"location": "string",
+
+
+
+"message": "string",
+
+
+
+"parameterLocation": "HEADER",
+
+
+
+"path": "string"
+
+
+
+}
+
+
+
+],
+
+
+
+"message": "string"
+
+
+
+}
+
+
+
+}
+```
+
+## Example
+
+Mute two remediation items, `PROCESS_GROUP-46C0E12D9B0EF2D9` and `PROCESS_GROUP-549E6AD75BD598EC` as the configuration isn't affected.
+
+#### Curl
+
+```
+curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/mute' \
+
+
+
+-H 'accept: application/json; charset=utf-8' \
+
+
+
+-H 'Authorization: Api-Token [your_token]' \
+
+
+
+-H 'Content-Type: application/json; charset=utf-8' \
+
+
+
+-d '{
+
+
+
+"comment": "Example muting multiple entities",
+
+
+
+"reason": "CONFIGURATION_NOT_AFFECTED",
+
+
+
+"remediationItemIds": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
+
+
+
+}'
+```
+
+#### Request URL
+
+```
+https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/mute
+```
+
+#### Request body
+
+```
+{
+
+
+
+"comment": "Example muting multiple entities",
+
+
+
+"reason": "CONFIGURATION_NOT_AFFECTED",
+
+
+
+"remediationItemIds": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
+
+
+
+}
+```
+
+#### Response body
+
+```
+{
+
+
+
+"summary": [
+
+
+
+{
+
+
+
+"remediationItemId": "PROCESS_GROUP-549E6AD75BD598EC",
+
+
+
+"muteStateChangeTriggered": true
+
+
+
+},
+
+
+
+{
+
+
+
+"remediationItemId": "PROCESS_GROUP-46C0E12D9B0EF2D9",
+
+
+
+"muteStateChangeTriggered": true
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+If the request was successful, you'll see `muteStateChangeTriggered` per entity.
+
+## Related topics
+
+* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
+* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
+* [Remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+
+
+---
+
+
+## Source: post-remediation-items-unmute.md
+
+
+---
+title: Vulnerabilities API - POST unmute remediation items
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-items-unmute
+scraped: 2026-02-16T21:26:09.638354
+---
+
+# Vulnerabilities API - POST unmute remediation items
+
+# Vulnerabilities API - POST unmute remediation items
+
+* Reference
+* Updated on Sep 25, 2024
+
+Unmutes multiple [remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups or, in the case of Kubernetes vulnerabilities, multiple remediation tracking Kubernetes nodes.
+
+The request consumes an `application/json` payload.
+
+|  |  |  |
+| --- | --- | --- |
+| POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/unmute` |
+| POST | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems/unmute` |
+
+## Authentication
+
+To execute this request, you need an access token with `securityProblems.write` scope.
+
+To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+## Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| id | string | The ID of the requested third-party security problem. | path | Required |
+| body | [RemediationItemsBulkUnmute](#openapi-definition-RemediationItemsBulkUnmute) | The JSON body of the request. Contains the un-muting information. | body | Optional |
+
+### Request body objects
+
+#### The `RemediationItemsBulkUnmute` object
+
+Information on un-muting several remediation items.
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| comment | string | A comment about the un-muting reason. | Optional |
+| reason | string | The reason for un-muting the remediation items. The element can hold these values * `AFFECTED` | Required |
+| remediationItemIds | string[] | The ids of the remediation items to be un-muted. | Required |
+
+### Request body JSON model
+
+This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
+
+```
+{
+
+
+
+"comment": "string",
+
+
+
+"reason": "AFFECTED",
+
+
+
+"remediationItemIds": [
+
+
+
+"string"
+
+
+
+]
+
+
+
+}
+```
+
+## Response
+
+### Response codes
+
+| Code | Type | Description |
+| --- | --- | --- |
+| **200** | [RemediationItemsBulkUnmuteResponse](#openapi-definition-RemediationItemsBulkUnmuteResponse) | Success. The remediation item(s) have been un-muted. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
+
+### Response body objects
+
+#### The `RemediationItemsBulkUnmuteResponse` object
+
+Response of un-muting several remediation items.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| summary | [RemediationItemMutingSummary[]](#openapi-definition-RemediationItemMutingSummary) | The summary of which remediation items were un-muted and which already were un-muted previously. |
+
+#### The `RemediationItemMutingSummary` object
+
+Summary of (un-)muting a remediation item.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| muteStateChangeTriggered | boolean | Whether a mute state change for the given remediation item was triggered by this request. |
+| reason | string | Contains a reason, in case the requested operation was not executed. The element can hold these values * `ALREADY_MUTED` * `ALREADY_UNMUTED` * `REMEDIATION_ITEM_NOT_AFFECTED_BY_GIVEN_SECURITY_PROBLEM` |
+| remediationItemId | string | The id of the remediation item that will be (un-)muted. |
+
+#### The `ErrorEnvelope` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| error | [Error](#openapi-definition-Error) | - |
+
+#### The `Error` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| code | integer | The HTTP status code |
+| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| message | string | The error message |
+
+#### The `ConstraintViolation` object
+
+A list of constraint violations
+
+| Element | Type | Description |
+| --- | --- | --- |
+| location | string | - |
+| message | string | - |
+| parameterLocation | string | -The element can hold these values * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| path | string | - |
+
+### Response body JSON models
+
+```
+{
+
+
+
+"summary": [
+
+
+
+{
+
+
+
+"muteStateChangeTriggered": true,
+
+
+
+"reason": "ALREADY_MUTED",
+
+
+
+"remediationItemId": "string"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+```
+{
+
+
+
+"error": {
+
+
+
+"code": 1,
+
+
+
+"constraintViolations": [
+
+
+
+{
+
+
+
+"location": "string",
+
+
+
+"message": "string",
+
+
+
+"parameterLocation": "HEADER",
+
+
+
+"path": "string"
+
+
+
+}
+
+
+
+],
+
+
+
+"message": "string"
+
+
+
+}
+
+
+
+}
+```
+
+## Example
+
+Unmute two entities, `PROCESS_GROUP-46C0E12D9B0EF2D9` and `PROCESS_GROUP-549E6AD75BD598EC`.
+
+#### Curl
+
+```
+curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/unmute' \
+
+
+
+-H 'accept: application/json; charset=utf-8' \
+
+
+
+-H 'Authorization: Api-Token [your_token]' \
+
+
+
+-H 'Content-Type: application/json; charset=utf-8' \
+
+
+
+-d '{
+
+
+
+"comment": "Example unmute multiple",
+
+
+
+"reason": "AFFECTED",
+
+
+
+"remediationItemIds": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
+
+
+
+}'
+```
+
+#### Request URL
+
+```
+https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/unmute
+```
+
+#### Request body
+
+```
+{
+
+
+
+"comment": "Example unmute multiple",
+
+
+
+"reason": "AFFECTED",
+
+
+
+"remediationItemIds": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
+
+
+
+}
+```
+
+#### Response body
+
+```
+{
+
+
+
+"summary": [
+
+
+
+{
+
+
+
+"remediationItemId": "PROCESS_GROUP-46C0E12D9B0EF2D9",
+
+
+
+"muteStateChangeTriggered": true
+
+
+
+},
+
+
+
+{
+
+
+
+"remediationItemId": "PROCESS_GROUP-549E6AD75BD598EC",
+
+
+
+"muteStateChangeTriggered": true
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+## Related topics
+
+* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
+* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
+* [Remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+
+
+---
+
+
 ## Source: put-remediation-items.md
 
 
 ---
 title: Vulnerabilities API - PUT mute or unmute a remediation item
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/put-remediation-items
-scraped: 2026-02-16T09:31:40.455157
+scraped: 2026-02-16T21:31:00.874783
 ---
 
 # Vulnerabilities API - PUT mute or unmute a remediation item
@@ -4994,7 +5718,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/87886434718422029
 ---
 title: Credential vault API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/credential-vault
-scraped: 2026-02-15T21:23:00.741188
+scraped: 2026-02-16T21:28:14.112192
 ---
 
 # Credential vault API
@@ -6272,7 +6996,7 @@ A list of constraint violations
 ---
 title: Monitored entities API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2
-scraped: 2026-02-16T09:16:16.210215
+scraped: 2026-02-16T21:19:20.918698
 ---
 
 # Monitored entities API
@@ -7055,7 +7779,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 ---
 title: Events API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/events-v2
-scraped: 2026-02-15T21:27:08.947891
+scraped: 2026-02-16T21:28:52.730060
 ---
 
 # Events API v2
@@ -7089,6 +7813,56 @@ Get the details of an event property.](/docs/dynatrace-api/environment-api/event
 
 * [Event categories](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.")
 * [Event analysis and correlation](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
+
+
+---
+
+
+## Source: hub.md
+
+
+---
+title: Hub items API
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/hub
+scraped: 2026-02-16T21:32:55.388325
+---
+
+# Hub items API
+
+# Hub items API
+
+* Reference
+* Published Feb 07, 2023
+
+[### List categories
+
+View categories of Hub items.](/docs/dynatrace-api/environment-api/hub/get-categories "View categories of Hub items via the Hub capabilities API.")[### List items
+
+View Hub items.](/docs/dynatrace-api/environment-api/hub/get-items "View Hub items via the Hub capabilities API.")[### Get technology
+
+View technology details.](/docs/dynatrace-api/environment-api/hub/get-technology "View technology details via the Hub capabilities API.")
+
+## Extensions v1
+
+[### View an extension v1
+
+Get an overview of a version 1 extension.](/docs/dynatrace-api/environment-api/hub/get-extension-v1 "View details about a version 1 extension via the Hub capabilities API.")[### Download an extension v1
+
+Download the artifact of a version 1 extension.](/docs/dynatrace-api/environment-api/hub/get-extension-v1-artifact "Download the artifact of a version 1 extension via the Hub capabilities API.")
+
+## Extensions 2.0
+
+[### View an extension 2.0
+
+Get an overview of an extension 2.0.](/docs/dynatrace-api/environment-api/hub/get-extension-20 "View the details of an extension 2.0 via the Hub capabilities API.")[### Add an extension 2.0 to environment
+
+Register an extension 2.0 in your environment.](/docs/dynatrace-api/environment-api/hub/post-extension-20-to-evironment "Add an extension 2.0 to your environment via the Hub capabilities API.")[### Update an extension 2.0
+
+Update an extension 2.0 to the latest version.](/docs/dynatrace-api/environment-api/hub/post-update-extension-20 "Update an extension 2.0 via the Hub capabilities API.")[### Update an extension 2.0 metadata
+
+Update the metadata of an extension 2.0.](/docs/dynatrace-api/environment-api/hub/put-update-extension-20-metadata "Update the metadata of an extension 2.0 via the Hub capabilities API.")[### Add release notes to an extension 2.0 release
+
+Set the release notes of an extension 2.0 release.](/docs/dynatrace-api/environment-api/hub/put-extension-20-release-notes "Set the release notes of an extension 2.0 release via the Hub capabilities API.")
 
 
 ---
@@ -7144,7 +7918,7 @@ Push custom log records to Dynatrace.](/docs/dynatrace-api/environment-api/log-m
 ---
 title: Metrics API - Metric expressions
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-expressions
-scraped: 2026-02-16T09:35:12.884759
+scraped: 2026-02-16T21:29:50.927774
 ---
 
 # Metrics API - Metric expressions
@@ -12885,7 +13659,7 @@ You must apply an [aggregation transformation](#aggregation) before using the un
 ---
 title: Metrics API - POST ingest data points
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics
-scraped: 2026-02-16T09:33:34.301286
+scraped: 2026-02-16T21:25:26.208055
 ---
 
 # Metrics API - POST ingest data points
@@ -13119,7 +13893,7 @@ curl -L -X POST 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/ingest' \
 ---
 title: Metrics API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2
-scraped: 2026-02-16T09:26:56.637596
+scraped: 2026-02-16T21:23:21.291868
 ---
 
 # Metrics API v2
@@ -13255,7 +14029,7 @@ The result of a unit conversion.
 ---
 title: Network zones API - GET a network zone
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/network-zones/get-network-zone
-scraped: 2026-02-16T09:16:09.630863
+scraped: 2026-02-16T21:23:31.860273
 ---
 
 # Network zones API - GET a network zone
@@ -13465,7 +14239,7 @@ A list of constraint violations
 ---
 title: Network zones API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/network-zones
-scraped: 2026-02-16T09:35:44.309310
+scraped: 2026-02-16T21:26:06.797305
 ---
 
 # Network zones API
@@ -14697,7 +15471,7 @@ A list of constraint violations
 ---
 title: Problems API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/problems-v2
-scraped: 2026-02-16T09:37:01.468416
+scraped: 2026-02-16T21:31:14.554543
 ---
 
 # Problems API v2
@@ -14785,13 +15559,50 @@ scraped: 2026-02-16T09:29:11.273866
 ---
 
 
+## Source: geographic-regions.md
+
+
+---
+title: Geographic regions API
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/geographic-regions
+scraped: 2026-02-16T21:31:19.928023
+---
+
+# Geographic regions API
+
+# Geographic regions API
+
+* Reference
+* Updated on May 02, 2022
+
+[### List countries
+
+Get an overview of countries and their codes.](/docs/dynatrace-api/environment-api/rum/geographic-regions/get-countries "View countries via Geographic regions API.")[### List regions
+
+Get an overview of countries with a region breakdown.](/docs/dynatrace-api/environment-api/rum/geographic-regions/get-regions "View regions via Geographic regions API.")[### List regions of a country
+
+Get an overview of regions within a country.](/docs/dynatrace-api/environment-api/rum/geographic-regions/get-regions-country "View regions in a country via Geographic regions API.")[### List cities of a country
+
+Get an overview of cities within a country.](/docs/dynatrace-api/environment-api/rum/geographic-regions/get-cities-country "View cities in a country via Geographic regions API.")[### List cities of a region
+
+Get an overview of cities within a region.](/docs/dynatrace-api/environment-api/rum/geographic-regions/get-cities-region "View cities of a region via Geographic regions API.")
+
+## Related topics
+
+* [Real User Monitoring](/docs/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
+* [Detection of IP addresses, geolocations, and user agents](/docs/observe/digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")
+
+
+---
+
+
 ## Source: rum-cookie-names-get-cookie-names.md
 
 
 ---
 title: RUM cookie names API - GET cookie names
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-cookie-names-get-cookie-names
-scraped: 2026-02-15T21:23:34.649005
+scraped: 2026-02-16T21:31:03.617098
 ---
 
 # RUM cookie names API - GET cookie names
@@ -15068,7 +15879,7 @@ The response includes a `text/plain` payload containing the most recent version 
 ---
 title: GET OneAgent JavaScript tag with SRI
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri
-scraped: 2026-02-15T21:30:06.822711
+scraped: 2026-02-16T21:26:01.354720
 ---
 
 # GET OneAgent JavaScript tag with SRI
@@ -15156,7 +15967,7 @@ The response includes a `text/plain` payload containing the most recent version 
 ---
 title: RUM manual insertion tags API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags
-scraped: 2026-02-16T09:30:23.905254
+scraped: 2026-02-16T21:29:09.227504
 ---
 
 # RUM manual insertion tags API
@@ -15194,7 +16005,7 @@ Retrieve the most recent inline code for manual insertion.](/docs/dynatrace-api/
 ---
 title: Service-level Objectives API classic
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/service-level-objectives-classic
-scraped: 2026-02-15T21:24:33.952618
+scraped: 2026-02-16T21:31:13.226279
 ---
 
 # Service-level Objectives API classic
@@ -15238,7 +16049,7 @@ Create an alert for an SLO.](/docs/dynatrace-api/environment-api/service-level-o
 ---
 title: Settings API - GET effective values
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/objects/get-effective-values
-scraped: 2026-02-15T21:24:28.124966
+scraped: 2026-02-16T21:29:10.601844
 ---
 
 # Settings API - GET effective values
@@ -15490,7 +16301,7 @@ A list of constraint violations
 ---
 title: Settings API - POST an object
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/objects/post-object
-scraped: 2026-02-16T09:22:51.961086
+scraped: 2026-02-16T21:14:42.027783
 ---
 
 # Settings API - POST an object
@@ -15846,7 +16657,7 @@ A schema representing an arbitrary value type.
 ---
 title: Settings API - Kubernetes app schema table
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes
-scraped: 2026-02-15T21:19:50.889695
+scraped: 2026-02-16T21:17:29.230447
 ---
 
 # Settings API - Kubernetes app schema table
@@ -15897,7 +16708,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 ---
 title: Settings API - OneAgent features schema table
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features
-scraped: 2026-02-16T09:22:50.277107
+scraped: 2026-02-16T21:14:40.632242
 ---
 
 # Settings API - OneAgent features schema table
@@ -15945,7 +16756,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 ---
 title: Settings API - GET a schema
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/get-schema
-scraped: 2026-02-16T09:22:47.075744
+scraped: 2026-02-16T21:14:39.310890
 ---
 
 # Settings API - GET a schema
@@ -16911,7 +17722,7 @@ A list of constraint violations
 ---
 title: Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings
-scraped: 2026-02-16T09:22:48.685337
+scraped: 2026-02-16T21:14:37.680108
 ---
 
 # Settings API
@@ -16991,7 +17802,7 @@ Delete an ActiveGate token your environment doesn't need anymore.](/docs/dynatra
 ---
 title: Tenant tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens
-scraped: 2026-02-16T09:28:43.818412
+scraped: 2026-02-16T21:25:01.409835
 ---
 
 # Tenant tokens API
@@ -17025,7 +17836,7 @@ Cancel rotation of the tenant token.](/docs/dynatrace-api/environment-api/tokens
 ---
 title: Applications API - GET all apps
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-all
-scraped: 2026-02-16T09:19:35.417002
+scraped: 2026-02-16T21:19:23.814995
 ---
 
 # Applications API - GET all apps
@@ -17827,7 +18638,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications
 ---
 title: Applications API - GET an application
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-an-app
-scraped: 2026-02-16T09:19:18.556340
+scraped: 2026-02-16T21:19:19.598111
 ---
 
 # Applications API - GET an application
@@ -18357,7 +19168,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 ---
 title: Applications API - GET baseline
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-baseline
-scraped: 2026-02-16T09:19:29.858679
+scraped: 2026-02-16T21:19:15.019176
 ---
 
 # Applications API - GET baseline
@@ -18692,7 +19503,7 @@ A list of constraint violations
 ---
 title: Applications API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/post-tags
-scraped: 2026-02-16T09:19:37.084930
+scraped: 2026-02-16T21:19:22.297291
 ---
 
 # Applications API - POST tags
@@ -18959,7 +19770,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 ---
 title: Create custom device via the Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/create-custom-device-via-dynatrace-api
-scraped: 2026-02-16T09:19:02.020143
+scraped: 2026-02-16T21:19:06.696666
 ---
 
 # Create custom device via the Dynatrace API
@@ -19469,7 +20280,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfm
 ---
 title: Report custom device metric via Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/report-custom-device-metric-via-rest-api
-scraped: 2026-02-16T09:19:08.498360
+scraped: 2026-02-16T21:19:26.657439
 ---
 
 # Report custom device metric via Dynatrace API
@@ -20115,7 +20926,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfm
 ---
 title: Hosts API - GET a host
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-a-host
-scraped: 2026-02-16T09:19:33.537096
+scraped: 2026-02-16T21:19:03.523448
 ---
 
 # Hosts API - GET a host
@@ -21271,7 +22082,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 ---
 title: Hosts API - GET all hosts
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-all
-scraped: 2026-02-16T09:19:24.343238
+scraped: 2026-02-16T21:19:05.251823
 ---
 
 # Hosts API - GET all hosts
@@ -22700,7 +23511,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts
 ---
 title: Hosts API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/post-tags
-scraped: 2026-02-16T09:19:10.152525
+scraped: 2026-02-16T21:19:08.087928
 ---
 
 # Hosts API - POST tags
@@ -22967,7 +23778,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 ---
 title: Process groups API - GET a process group
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-a-process-group
-scraped: 2026-02-16T09:19:16.839152
+scraped: 2026-02-16T21:19:28.580940
 ---
 
 # Process groups API - GET a process group
@@ -25480,7 +26291,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 ---
 title: Process groups API - GET all process groups
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-all
-scraped: 2026-02-16T09:19:06.775531
+scraped: 2026-02-16T21:19:13.654825
 ---
 
 # Process groups API - GET all process groups
@@ -28200,7 +29011,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 ---
 title: Process groups API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/post-tags
-scraped: 2026-02-16T09:19:31.493707
+scraped: 2026-02-16T21:19:11.671621
 ---
 
 # Process groups API - POST tags
@@ -28459,7 +29270,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 ---
 title: Processes API - GET a process
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-a-process
-scraped: 2026-02-16T09:19:14.208345
+scraped: 2026-02-16T21:18:58.622088
 ---
 
 # Processes API - GET a process
@@ -31178,7 +31989,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/processes/PR
 ---
 title: Processes API - GET all processes
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-all
-scraped: 2026-02-16T09:19:04.376900
+scraped: 2026-02-16T21:19:10.202601
 ---
 
 # Processes API - GET all processes
@@ -34087,7 +34898,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/processes?re
 ---
 title: Services API - GET a service
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-a-service
-scraped: 2026-02-16T09:19:26.164197
+scraped: 2026-02-16T21:19:16.545103
 ---
 
 # Services API - GET a service
@@ -34799,7 +35610,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 ---
 title: Services API - GET all services
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-all
-scraped: 2026-02-16T09:19:28.037852
+scraped: 2026-02-16T21:19:18.146820
 ---
 
 # Services API - GET all services
@@ -35653,7 +36464,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services?relativeTime=5mins
 ---
 title: Services API - GET baseline
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-baseline
-scraped: 2026-02-16T09:19:20.198407
+scraped: 2026-02-16T21:19:00.013180
 ---
 
 # Services API - GET baseline
@@ -35886,7 +36697,7 @@ A list of constraint violations
 ---
 title: Services API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/post-tags
-scraped: 2026-02-16T09:19:11.917609
+scraped: 2026-02-16T21:19:25.173724
 ---
 
 # Services API - POST tags
@@ -36145,7 +36956,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 ---
 title: Topology and Smartscape API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape
-scraped: 2026-02-16T09:13:02.311657
+scraped: 2026-02-16T21:10:56.700334
 ---
 
 # Topology and Smartscape API

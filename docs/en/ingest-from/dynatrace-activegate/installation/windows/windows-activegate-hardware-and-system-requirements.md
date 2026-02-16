@@ -1,7 +1,7 @@
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements
-scraped: 2026-02-16T09:18:50.391933
+scraped: 2026-02-16T21:21:12.102156
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Windows

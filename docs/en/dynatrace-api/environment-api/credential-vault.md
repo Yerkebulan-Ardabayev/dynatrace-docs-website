@@ -1,7 +1,7 @@
 ---
 title: Credential vault API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/credential-vault
-scraped: 2026-02-15T21:23:00.741188
+scraped: 2026-02-16T21:28:14.112192
 ---
 
 # Credential vault API

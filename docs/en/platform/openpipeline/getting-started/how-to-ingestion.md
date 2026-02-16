@@ -1,7 +1,7 @@
 ---
 title: How to ingest data (events)
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-ingestion
-scraped: 2026-02-16T09:16:32.312673
+scraped: 2026-02-16T21:20:56.438958
 ---
 
 # How to ingest data (events)

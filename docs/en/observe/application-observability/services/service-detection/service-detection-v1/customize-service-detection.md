@@ -1,7 +1,7 @@
 ---
 title: Service detection rules
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection
-scraped: 2026-02-16T09:23:44.187862
+scraped: 2026-02-16T21:13:22.374372
 ---
 
 # Service detection rules

@@ -1,7 +1,7 @@
 ---
 title: Supported connectivity schemes for ActiveGates
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates
-scraped: 2026-02-16T09:18:48.737869
+scraped: 2026-02-16T21:21:20.451830
 ---
 
 # Supported connectivity schemes for ActiveGates

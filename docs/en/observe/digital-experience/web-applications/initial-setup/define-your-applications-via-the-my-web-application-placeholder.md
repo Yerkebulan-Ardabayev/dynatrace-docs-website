@@ -1,7 +1,7 @@
 ---
 title: Define applications for Real User Monitoring
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/define-your-applications-via-the-my-web-application-placeholder
-scraped: 2026-02-16T09:19:41.896866
+scraped: 2026-02-16T21:19:33.988164
 ---
 
 # Define applications for Real User Monitoring

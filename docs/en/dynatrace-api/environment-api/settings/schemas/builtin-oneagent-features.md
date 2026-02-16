@@ -1,7 +1,7 @@
 ---
 title: Settings API - OneAgent features schema table
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features
-scraped: 2026-02-16T09:22:50.277107
+scraped: 2026-02-16T21:14:40.632242
 ---
 
 # Settings API - OneAgent features schema table

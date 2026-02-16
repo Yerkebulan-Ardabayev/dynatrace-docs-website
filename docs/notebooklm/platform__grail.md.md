@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Grail
 source: https://www.dynatrace.com/docs/platform/grail
-scraped: 2026-02-16T09:14:11.117041
+scraped: 2026-02-16T21:11:35.868706
 ---
 
 # Grail

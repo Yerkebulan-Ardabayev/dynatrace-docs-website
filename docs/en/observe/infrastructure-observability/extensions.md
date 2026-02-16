@@ -1,7 +1,7 @@
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions
-scraped: 2026-02-16T09:26:34.529520
+scraped: 2026-02-16T21:22:25.437491
 ---
 
 # Extensions

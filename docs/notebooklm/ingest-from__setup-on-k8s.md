@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 39
+Files combined: 41
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 39
 ---
 title: Get started with Kubernetes platform monitoring + Application observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/application-observability
-scraped: 2026-02-16T09:21:58.837734
+scraped: 2026-02-16T21:18:25.629612
 ---
 
 # Get started with Kubernetes platform monitoring + Application observability
@@ -1183,7 +1183,7 @@ To install the Dynatrace Operator add-on for AWS EKS through the CLI
 ---
 title: Deploy ActiveGate in a VM
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm
-scraped: 2026-02-16T09:34:04.712118
+scraped: 2026-02-16T21:25:09.716059
 ---
 
 # Deploy ActiveGate in a VM
@@ -1863,13 +1863,1002 @@ To update ActiveGate, see [Update ActiveGate](/docs/ingest-from/dynatrace-active
 ---
 
 
+## Source: ag-statefulset.md
+
+
+---
+title: Manually deploy ActiveGate as a StatefulSet
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-statefulset
+scraped: 2026-02-16T21:32:13.917404
+---
+
+# Manually deploy ActiveGate as a StatefulSet
+
+# Manually deploy ActiveGate as a StatefulSet
+
+* Latest Dynatrace
+* 5-min read
+* Updated on Jan 19, 2025
+
+Dynatrace Operator manages the lifecycle of several Dynatrace components, including ActiveGate. If you can't use Dynatrace Operator, you can manually deploy ActiveGate as a StatefulSet in your Kubernetes cluster. See below for instructions.
+
+## Prerequisites
+
+* [Create an access token with `PaaS Integration - InstallerDownload`](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") scope
+* [Create an authentication token](/docs/ingest-from/dynatrace-activegate/activegate-security#generate-individual "Secure ActiveGates with dedicated tokens.")
+* Get your kube-system namespace UUID
+
+  How to extract the kube-system namespace UUID
+
+  Run the command below and save the UUID from the output for later use.
+
+  Kubernetes
+
+  OpenShift
+
+  ```
+  kubectl get namespace kube-system -o jsonpath='{.metadata.uid}'
+  ```
+
+  ```
+  oc get namespace kube-system -o jsonpath='{.metadata.uid}'
+  ```
+
+## Deploy ActiveGate
+
+To deploy ActiveGate, follow the steps below.
+
+1. Create a dedicated namespace (Kubernetes)/project (OpenShift).
+
+   Depending on your platform, select one of the options below.
+
+   Kubernetes
+
+   OpenShift
+
+   ```
+   kubectl create namespace dynatrace
+   ```
+
+   ```
+   oc adm new-project --node-selector="" dynatrace
+   ```
+2. Create two secrets:
+
+   * A secret holding the environment URL and login credentials for this registry
+   * A secret for the ActiveGate authentication token
+
+   Kubernetes
+
+   OpenShift
+
+   ```
+   kubectl -n dynatrace create secret docker-registry dynatrace-docker-registry --docker-server=<YOUR_ENVIRONMENT_URL> --docker-username=<YOUR_ENVIRONMENT_ID> --docker-password=<YOUR_PAAS_TOKEN>
+   ```
+
+   ```
+   oc -n dynatrace create secret docker-registry dynatrace-docker-registry --docker-server=<YOUR_ENVIRONMENT_URL> --docker-username=<YOUR_ENVIRONMENT_ID> --docker-password=<YOUR_PAAS_TOKEN>
+   ```
+
+   where you need to replace
+
+   * `<YOUR_ENVIRONMENT_URL>` with your environment URL (without `http`). Example: `{your-environment}.live.dynatrace.com`
+   * `<YOUR_ENVIRONMENT_ID>` with the Docker account username (same as the ID in your environment URL above).
+   * `<YOUR_PAAS_TOKEN>` with the PaaS token you created in [Prerequisites](#prereq)
+
+   Create a secret that holds the authentication details to the Dynatrace server used by ActiveGate.
+
+   Kubernetes
+
+   OpenShift
+
+   ```
+   kubectl -n dynatrace create secret generic dynatrace-tokens \
+
+
+
+   --from-literal=tenant-token=<YOUR_TENANT_TOKEN> \
+
+
+
+   --from-literal=auth-token=<YOUR_AUTH_TOKEN>
+   ```
+
+   ```
+   oc -n dynatrace create secret generic dynatrace-tokens \
+
+
+
+   --from-literal=tenant-token=<YOUR_TENANT_TOKEN> \
+
+
+
+   --from-literal=auth-token=<YOUR_AUTH_TOKEN>
+   ```
+
+   You need to replace
+
+   * `<YOUR_TENANT_TOKEN>` with the `tenantToken` value obtained in [Prerequisites](#prereq) from the connectivity information.
+   * `<YOUR_AUTH_TOKEN>` with the individual ActiveGate token obtained in [Prerequisites](#prereq).
+
+   To determine your environment ID, see the syntax below.  
+   **SaaS:** `https://{your-environment-id}.live.dynatrace.com`  
+   **Managed:** `https://{your-domain}/e/{your-environment-id}`
+3. Create a service account and a cluster role.
+
+   Create a `kubernetes-monitoring-service-account.yaml` file with the following content.
+
+   kubernetes-monitoring-service-account.yaml
+
+   ```
+   apiVersion: v1
+
+
+
+   kind: ServiceAccount
+
+
+
+   metadata:
+
+
+
+   name: dynatrace-activegate
+
+
+
+   namespace: dynatrace
+
+
+
+   ---
+
+
+
+   apiVersion: rbac.authorization.k8s.io/v1
+
+
+
+   kind: ClusterRole
+
+
+
+   metadata:
+
+
+
+   name: dynatrace-activegate
+
+
+
+   rules:
+
+
+
+   - apiGroups:
+
+
+
+   - ""
+
+
+
+   - batch
+
+
+
+   - apps
+
+
+
+   - apps.openshift.io
+
+
+
+   resources:
+
+
+
+   - nodes
+
+
+
+   - nodes/metrics
+
+
+
+   - pods
+
+
+
+   - namespaces
+
+
+
+   - deployments
+
+
+
+   - replicasets
+
+
+
+   - deploymentconfigs
+
+
+
+   - replicationcontrollers
+
+
+
+   - jobs
+
+
+
+   - cronjobs
+
+
+
+   - statefulsets
+
+
+
+   - daemonsets
+
+
+
+   - events
+
+
+
+   - resourcequotas
+
+
+
+   - pods/proxy
+
+
+
+   - services
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   ---
+
+
+
+   apiVersion: rbac.authorization.k8s.io/v1
+
+
+
+   kind: ClusterRoleBinding
+
+
+
+   metadata:
+
+
+
+   name: dynatrace-activegate
+
+
+
+   roleRef:
+
+
+
+   apiGroup: rbac.authorization.k8s.io
+
+
+
+   kind: ClusterRole
+
+
+
+   name: dynatrace-activegate
+
+
+
+   subjects:
+
+
+
+   - kind: ServiceAccount
+
+
+
+   name: dynatrace-activegate
+
+
+
+   namespace: dynatrace
+   ```
+4. Apply the file.
+
+   Kubernetes
+
+   OpenShift
+
+   ```
+   kubectl apply -f kubernetes-monitoring-service-account.yaml
+   ```
+
+   ```
+   oc apply -f kubernetes-monitoring-service-account.yaml
+   ```
+5. Create a file named `ag-monitoring-and-routing.yaml` with the following content, making sure to replace
+
+   * `<YOUR_ENVIRONMENT_URL>` with your value as described above.
+   * `<YOUR_KUBE-SYSTEM_NAMESPACE_UUID>` with the Kubernetes namespace UUID obtained in [Prerequisites](#prereq).
+
+   kubernetes-monitoring-and-routing.yaml
+
+   ```
+   apiVersion: v1
+
+
+
+   kind: Service
+
+
+
+   metadata:
+
+
+
+   name: dynatrace-activegate
+
+
+
+   namespace: dynatrace
+
+
+
+   spec:
+
+
+
+   type: ClusterIP
+
+
+
+   selector:
+
+
+
+   activegate: kubernetes-monitoring-and-routing
+
+
+
+   ports:
+
+
+
+   - protocol: TCP
+
+
+
+   port: 443
+
+
+
+   targetPort: ag-https
+
+
+
+   ---
+
+
+
+   apiVersion: apps/v1
+
+
+
+   kind: StatefulSet
+
+
+
+   metadata:
+
+
+
+   name: dynatrace-activegate
+
+
+
+   namespace: dynatrace
+
+
+
+   labels:
+
+
+
+   activegate: kubernetes-monitoring-and-routing
+
+
+
+   spec:
+
+
+
+   serviceName: ""
+
+
+
+   selector:
+
+
+
+   matchLabels:
+
+
+
+   activegate: kubernetes-monitoring-and-routing
+
+
+
+   template:
+
+
+
+   metadata:
+
+
+
+   #     Uncomment the lines below to enable AppArmor
+
+
+
+   #     annotations:
+
+
+
+   #  container.apparmor.security.beta.kubernetes.io/activegate: runtime/default
+
+
+
+   labels:
+
+
+
+   activegate: kubernetes-monitoring-and-routing
+
+
+
+   spec:
+
+
+
+   serviceAccountName: dynatrace-activegate
+
+
+
+   affinity:
+
+
+
+   nodeAffinity:
+
+
+
+   requiredDuringSchedulingIgnoredDuringExecution:
+
+
+
+   nodeSelectorTerms:
+
+
+
+   - matchExpressions:
+
+
+
+   - key: kubernetes.io/arch
+
+
+
+   operator: In
+
+
+
+   values:
+
+
+
+   - amd64
+
+
+
+   - key: kubernetes.io/os
+
+
+
+   operator: In
+
+
+
+   values:
+
+
+
+   - linux
+
+
+
+   containers:
+
+
+
+   - name: activegate
+
+
+
+   image: <YOUR_ENVIRONMENT_URL>/linux/activegate
+
+
+
+   imagePullPolicy: Always
+
+
+
+   ports:
+
+
+
+   - name: ag-https
+
+
+
+   containerPort: 9999
+
+
+
+   env:
+
+
+
+   - name: DT_ID_SEED_NAMESPACE
+
+
+
+   value: dynatrace
+
+
+
+   - name: DT_ID_SEED_K8S_CLUSTER_ID
+
+
+
+   value: <YOUR_KUBE-SYSTEM_NAMESPACE_UUID>
+
+
+
+   - name: DT_CAPABILITIES
+
+
+
+   value: kubernetes_monitoring,MSGrouter,restInterface
+
+
+
+   # - name: DT_NETWORK_ZONE
+
+
+
+   #   value: <CUSTOM_NZ>
+
+
+
+   - name: DT_DNS_ENTRY_POINT
+
+
+
+   value: https://$(DYNATRACE_ACTIVEGATE_SERVICE_HOST):$(DYNATRACE_ACTIVEGATE_SERVICE_PORT)/communication
+
+
+
+   volumeMounts:
+
+
+
+   - name: dynatrace-tokens
+
+
+
+   mountPath: /var/lib/dynatrace/secrets/tokens
+
+
+
+   - name: truststore-volume
+
+
+
+   mountPath: /opt/dynatrace/gateway/jre/lib/security/cacerts
+
+
+
+   readOnly: true
+
+
+
+   subPath: k8s-local.jks
+
+
+
+   - name: ag-lib-gateway-config
+
+
+
+   mountPath: /var/lib/dynatrace/gateway/config
+
+
+
+   - name: ag-lib-gateway-temp
+
+
+
+   mountPath: /var/lib/dynatrace/gateway/temp
+
+
+
+   - name: ag-lib-gateway-data
+
+
+
+   mountPath: /var/lib/dynatrace/gateway/data
+
+
+
+   - name: ag-log-gateway
+
+
+
+   mountPath: /var/log/dynatrace/gateway
+
+
+
+   - name: ag-tmp-gateway
+
+
+
+   mountPath: /var/tmp/dynatrace/gateway
+
+
+
+   livenessProbe:
+
+
+
+   failureThreshold: 2
+
+
+
+   httpGet:
+
+
+
+   path: /rest/state
+
+
+
+   port: ag-https
+
+
+
+   scheme: HTTPS
+
+
+
+   initialDelaySeconds: 30
+
+
+
+   periodSeconds: 30
+
+
+
+   successThreshold: 1
+
+
+
+   timeoutSeconds: 1
+
+
+
+   readinessProbe:
+
+
+
+   failureThreshold: 3
+
+
+
+   httpGet:
+
+
+
+   path: /rest/health
+
+
+
+   port: ag-https
+
+
+
+   scheme: HTTPS
+
+
+
+   initialDelaySeconds: 30
+
+
+
+   periodSeconds: 15
+
+
+
+   successThreshold: 1
+
+
+
+   timeoutSeconds: 1
+
+
+
+   resources:
+
+
+
+   requests:
+
+
+
+   cpu: 250m
+
+
+
+   memory: 512Mi
+
+
+
+   limits:
+
+
+
+   cpu: 250m
+
+
+
+   memory: 512Mi
+
+
+
+   securityContext:
+
+
+
+   allowPrivilegeEscalation: false
+
+
+
+   capabilities:
+
+
+
+   drop:
+
+
+
+   - all
+
+
+
+   privileged: false
+
+
+
+   readOnlyRootFilesystem: true
+
+
+
+   runAsNonRoot: true
+
+
+
+   seccompProfile:
+
+
+
+   type: RuntimeDefault
+
+
+
+   initContainers:
+
+
+
+   - name: certificate-loader
+
+
+
+   image: <YOUR_ENVIRONMENT_URL>/linux/activegate
+
+
+
+   workingDir: /var/lib/dynatrace/gateway
+
+
+
+   command: ['/bin/bash']
+
+
+
+   args: ['-c', '/opt/dynatrace/gateway/k8scrt2jks.sh']
+
+
+
+   volumeMounts:
+
+
+
+   - mountPath: /var/lib/dynatrace/gateway/ssl
+
+
+
+   name: truststore-volume
+
+
+
+   imagePullSecrets:
+
+
+
+   - name: dynatrace-docker-registry
+
+
+
+   volumes:
+
+
+
+   - name: dynatrace-tokens
+
+
+
+   secret:
+
+
+
+   secretName: dynatrace-tokens
+
+
+
+   - name: truststore-volume
+
+
+
+   emptyDir: {}
+
+
+
+   - name: ag-lib-gateway-config
+
+
+
+   emptyDir: {}
+
+
+
+   - name: ag-lib-gateway-temp
+
+
+
+   emptyDir: {}
+
+
+
+   - name: ag-lib-gateway-data
+
+
+
+   emptyDir: {}
+
+
+
+   - name: ag-log-gateway
+
+
+
+   emptyDir: {}
+
+
+
+   - name: ag-tmp-gateway
+
+
+
+   emptyDir: {}
+
+
+
+   updateStrategy:
+
+
+
+   type: RollingUpdate
+   ```
+
+   For more information about containerized ActiveGate configuration, see [Containerized ActiveGate configuration](/docs/ingest-from/dynatrace-activegate/activegate-in-container/configuration "Learn how to configure containerized ActiveGate.").
+
+   ActiveGate limit sizing hints
+
+   See below for a list of proposed sizes in relation to the number of Pods:
+
+   | Number of Pods | CPU | Memory |
+   | --- | --- | --- |
+   | Up to 1,000 Pods | 200 millicores (mCores) | 6 gibibyte (GiB) |
+   | Up to 5,000 Pods | 1,000 millicores (mCores) | 10 gibibyte (GiB) |
+   | Up to 20,000 Pods | 2,000 millicores (mCores) | 12 gibibytes (GiB) |
+   | Over 20,000 Pods | over 2,000 millicores (mCores)[1](#fn-1-1-def) | over 12 gibibytes (GiB)[1](#fn-1-1-def) |
+
+   1
+
+   Actual figures depend on your environment.
+
+   These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate [self-monitoring metrics](/docs/analyze-explore-automate/metrics-classic/self-monitoring-metrics#activegate-insights "Explore the complete list of self-monitoring Dynatrace metrics.").
+   For more information with regards to sizing guidelines refer to [Sizing guide for Dynatrace ActiveGate components](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")
+
+   For PPC64le architecture, additional configuration is required. For details, see [ActiveGate container image](/docs/ingest-from/dynatrace-activegate/activegate-in-container#additional-configuration "Deploy a containerized ActiveGate.").
+6. Deploy ActiveGate.
+
+   Kubernetes
+
+   OpenShift
+
+   ```
+   kubectl apply -f ag-monitoring-and-routing.yaml
+   ```
+
+   ```
+   oc apply -f ag-monitoring-and-routing.yaml
+   ```
+
+## Connect ActiveGate with Kubernetes API
+
+Continue with step 3 from the [guide for enabling Kubernetes API monitoring](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#connect-ag-k8s-api "Monitor the Kubernetes API using Dynatrace")
+
+## ActiveGate update behavior
+
+ActiveGate is updated automatically on pod restart whenever there is a new version available, unless the image already specifies a certain version.
+
+
+---
+
+
 ## Source: supported-technologies.md
 
 
 ---
 title: Supported distributions
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/supported-technologies
-scraped: 2026-02-16T09:20:40.640166
+scraped: 2026-02-16T21:18:24.092396
 ---
 
 # Supported distributions
@@ -2346,7 +3335,7 @@ No specific configuration is required.
 ---
 title: Deployment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
-scraped: 2026-02-16T09:24:27.035002
+scraped: 2026-02-16T21:14:04.602524
 ---
 
 # Deployment
@@ -3281,7 +4270,7 @@ feature.dynatrace.com/otlp-exporter-configuration-set-no-proxy: "false"
 ---
 title: Store Dynatrace images in private registries
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry
-scraped: 2026-02-15T09:07:16.777232
+scraped: 2026-02-16T21:26:32.072603
 ---
 
 # Store Dynatrace images in private registries
@@ -4041,7 +5030,7 @@ sample-edge-connect-name   <environment-id>.apps.dynatrace.com   Running   16m
 ---
 title: Deploy Dynatrace alongside Istio
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment
-scraped: 2026-02-16T09:24:44.503286
+scraped: 2026-02-16T21:14:23.962632
 ---
 
 # Deploy Dynatrace alongside Istio
@@ -4525,7 +5514,7 @@ If not, check if `enableIstio` is set to `true` in the DynaKube.
 ---
 title: Instrument ingress-nginx
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx
-scraped: 2026-02-16T09:24:05.689022
+scraped: 2026-02-16T21:12:45.448003
 ---
 
 # Instrument ingress-nginx
@@ -4600,7 +5589,7 @@ If your pod isn't up and running, make sure that it hasn't exceeded either of th
 ---
 title: Kubernetes API Monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring
-scraped: 2026-02-15T21:19:53.304303
+scraped: 2026-02-16T21:17:23.705849
 ---
 
 # Kubernetes API Monitoring
@@ -5035,7 +6024,7 @@ ActiveGate is updated automatically on pod restart whenever there is a new versi
 ---
 title: Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits
-scraped: 2026-02-16T09:37:35.754081
+scraped: 2026-02-16T21:31:27.043732
 ---
 
 # Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
@@ -5619,7 +6608,7 @@ templates:
 ---
 title: Auto-update for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update
-scraped: 2026-02-15T21:30:09.676370
+scraped: 2026-02-16T21:24:42.234335
 ---
 
 # Auto-update for Dynatrace Operator
@@ -5736,7 +6725,7 @@ Renovate automates the updating of dependencies in Git repositories. Integrating
 ---
 title: Manage Dynatrace deployments using GitOps
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops
-scraped: 2026-02-16T09:24:46.174150
+scraped: 2026-02-16T21:14:17.302129
 ---
 
 # Manage Dynatrace deployments using GitOps
@@ -6134,7 +7123,7 @@ For configuring automatic updates for Dynatrace Operator, see [Auto-update of Dy
 ---
 title: Metadata enrichment of all telemetry originating from Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment
-scraped: 2026-02-16T09:22:55.495278
+scraped: 2026-02-16T21:13:08.637777
 ---
 
 # Metadata enrichment of all telemetry originating from Kubernetes
@@ -6871,7 +7860,7 @@ k8s.namespace.label.domain: finance
 ---
 title: Configure enrichment directory
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment
-scraped: 2026-02-16T09:22:58.804043
+scraped: 2026-02-16T21:13:05.592514
 ---
 
 # Configure enrichment directory
@@ -9109,6 +10098,257 @@ The CSI driver is now used when installed as part of the Dynatrace Operator inst
 ---
 
 
+## Source: migrate-dk-v1beta2-v1beta5.md
+
+
+---
+title: Migration of DynaKube v1beta2 to v1beta5
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5
+scraped: 2026-02-16T21:28:22.251881
+---
+
+# Migration of DynaKube v1beta2 to v1beta5
+
+# Migration of DynaKube v1beta2 to v1beta5
+
+* Latest Dynatrace
+* Reference
+* 10-min read
+* Updated on Oct 30, 2025
+
+This guide will show you how you can manually migrate from `apiVersion: dynatrace.com/v1beta2` to `apiVersion: dynatrace.com/v1beta5` of the `DynaKube`.
+
+## Support lifecycle
+
+### v1beta2
+
+**Introduced in**: Dynatrace Operator version 1.2.0
+
+**Deprecated in**: Dynatrace Operator version 1.6.0
+
+**Last supported in**: Dynatrace Operator version 1.6.2
+
+### v1beta5
+
+**Introduced in**: Dynatrace Operator version 1.6.0
+
+## Changes
+
+Reminder
+
+When migrating your DynaKube, remember to update the `apiVersion` field as well as any other fields that have changed
+
+### Prepare for v1beta2 apiVersion removal
+
+Notice
+
+DynaKube CRD v1beta2 apiVersion will be removed in a future release. We recommend that you prepare for this ahead of time.
+User action will be required when upgrading from Dynatrace Operator version 1.3.0 and earlier.
+
+Query the current storage version of the DynaKube CRD:
+
+```
+kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.spec.versions[?(@.storage==true)].name}'
+```
+
+Query the stored versions of the DynaKube CRD:
+
+```
+kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.status.storedVersions}'
+```
+
+If the **stored versions list** contains versions that will be removed with the CRD update, **user intervention is required**.
+
+Make sure that the old apiVersion is no longer referenced by any manifest. This includes resources that load manifests from external sources, like Helm releases or ArgoCD applications.
+When using GitOps, always check the source that manifests are synced from, because diffing may take conversion into account.
+
+To ensure that the Kubernetes storage backend no longer contains outdated DynaKube objects, we recommend updating them in place.
+
+```
+for item in $(kubectl get dynakubes.dynatrace.com -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"/"}{.metadata.name}{"\n"}{end}'); do
+
+
+
+namespace=${item%/*}
+
+
+
+name=${item#*/}
+
+
+
+kubectl get dynakubes.dynatrace.com -n $namespace $name -o yaml | kubectl replace -f -
+
+
+
+done
+```
+
+Do not use the command `kubectl apply`, because it only writes data when changes are detected.
+
+Once the old apiVersion is no longer referenced, it is safe to update the CRD status.
+
+```
+kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource status --type merge -p '{"status":{"storedVersions":["<current storage version>"]}}'
+```
+
+### Replaced feature flags
+
+#### New CSI mount timeout feature flag
+
+The feature flag that controlled how many mount attempts the CSI driver would make before stopping (`feature.dynatrace.com/max-csi-mount-attempts: 5`) has been replaced with a timeout-based feature flag. This was done due to the difficulty of determining how many attempts equal a given timeout.
+
+```
+feature.dynatrace.com/max-csi-mount-timeout: "8m" # replaces feature.dynatrace.com/max-csi-mount-attempts: "10"
+```
+
+### Deprecated fields
+
+#### OneAgent `autoUpdate`
+
+The `spec.oneAgent.<mode>.autoUpdate: true/false` field is [deprecated](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).") in `v1beta5`, so it shouldn't be used.
+
+We recommend the following:
+
+* If you want `autoUpdate: true`, do not set `image`, `codeModulesImage`, or `version`.
+
+  ```
+  apiVersion: dynatrace.com/v1beta5
+
+
+
+  kind: DynaKube
+
+
+
+  metadata:
+
+
+
+  name: example
+
+
+
+  namespace: dynatrace
+
+
+
+  spec:
+
+
+
+  oneAgent:
+
+
+
+  cloudNativeFullstack: {} # same as autoUpdate: true
+
+
+
+  # ...
+  ```
+* If you want `autoUpdate: false`, set `image`, `codeModulesImage` or `version`
+
+  ```
+  apiVersion: dynatrace.com/v1beta5
+
+
+
+  kind: DynaKube
+
+
+
+  metadata:
+
+
+
+  name: example
+
+
+
+  namespace: dynatrace
+
+
+
+  spec:
+
+
+
+  oneAgent:
+
+
+
+  cloudNativeFullstack:
+
+
+
+  image: ... # same effect as autoUpdate: false
+
+
+
+  codeModulesImage: # same effect as autoUpdate: false
+
+
+
+  # ...
+
+
+
+  ---
+
+
+
+  apiVersion: dynatrace.com/v1beta5
+
+
+
+  kind: DynaKube
+
+
+
+  metadata:
+
+
+
+  name: example
+
+
+
+  namespace: dynatrace
+
+
+
+  spec:
+
+
+
+  oneAgent:
+
+
+
+  cloudNativeFullstack:
+
+
+
+  version: ... # replaces autoUpdate: false
+
+
+
+  # ...
+  ```
+
+### Removed fields
+
+#### `spec.applicationMonitoring.useCSIDriver`
+
+The `spec.applicationMonitoring.useCSIDriver: true/false` field has been removed.
+
+The CSI driver is now used when installed as part of the Dynatrace Operator installation.
+
+
+---
+
+
 ## Source: migrate-dk-v1beta3-v1beta5.md
 
 
@@ -9292,7 +10532,7 @@ We recommend the following:
 ---
 title: Migration of DynaKube v1beta4 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta5
-scraped: 2026-02-15T09:11:25.941818
+scraped: 2026-02-16T21:27:31.288039
 ---
 
 # Migration of DynaKube v1beta4 to v1beta5
@@ -9519,7 +10759,7 @@ The `spec.extensions` field was moved to `spec.extensions.prometheus` to accommo
 ---
 title: Migrate from classic full-stack to application monitoring mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-app-monitoring
-scraped: 2026-02-16T09:34:29.618811
+scraped: 2026-02-16T21:25:27.670767
 ---
 
 # Migrate from classic full-stack to application monitoring mode
@@ -9818,7 +11058,7 @@ Optional
 ---
 title: Migrate from classic full-stack to cloud-native full-stack mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-cloud-native
-scraped: 2026-02-15T21:29:59.592935
+scraped: 2026-02-16T21:28:08.735169
 ---
 
 # Migrate from classic full-stack to cloud-native full-stack mode
@@ -10478,7 +11718,7 @@ The Dynatrace Operator follows a structured deprecation process that follows the
 ---
 title: Migrate Dynatrace Operator to a new environment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/migrate-dto-to-tenant
-scraped: 2026-02-15T21:28:47.434489
+scraped: 2026-02-16T21:30:14.612503
 ---
 
 # Migrate Dynatrace Operator to a new environment
@@ -11325,7 +12565,7 @@ Automate and optimize your system's metadata management.](/docs/ingest-from/setu
 ---
 title: Full-stack observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack
-scraped: 2026-02-16T09:22:02.284300
+scraped: 2026-02-16T21:18:12.777972
 ---
 
 # Full-stack observability
@@ -11386,7 +12626,7 @@ The following components are deployed by applying a DynaKube with full-stack obs
 ---
 title: Classic Full-Stack monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack
-scraped: 2026-02-16T09:20:20.107080
+scraped: 2026-02-16T21:17:38.530885
 ---
 
 # Classic Full-Stack monitoring
@@ -11440,7 +12680,7 @@ Classic full-stack injection requires *write access* from the OneAgent Pod to th
 ---
 title: How it works
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works
-scraped: 2026-02-16T09:30:45.618036
+scraped: 2026-02-16T21:30:07.817516
 ---
 
 # How it works
@@ -13491,7 +14731,7 @@ A custom certificate is required for this capability. See the `tlsSecretName` pa
 ---
 title: EdgeConnect parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters
-scraped: 2026-02-16T09:34:36.511335
+scraped: 2026-02-16T21:28:34.864329
 ---
 
 # EdgeConnect parameters for Dynatrace Operator

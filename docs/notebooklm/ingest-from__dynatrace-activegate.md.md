@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace ActiveGate
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate
-scraped: 2026-02-16T09:12:57.498424
+scraped: 2026-02-16T21:11:15.768887
 ---
 
 # Dynatrace ActiveGate

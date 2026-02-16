@@ -628,7 +628,7 @@ TLS1.2, TLS1.3
 ---
 title: ActiveGate group
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-group
-scraped: 2026-02-16T09:17:53.760261
+scraped: 2026-02-16T21:20:09.353564
 ---
 
 # ActiveGate group
@@ -1317,7 +1317,7 @@ A containerized ActiveGate configuration is not persistently stored. It is decla
 ---
 title: ActiveGate container image
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container
-scraped: 2026-02-16T09:18:43.541842
+scraped: 2026-02-16T21:21:15.167483
 ---
 
 # ActiveGate container image
@@ -3009,7 +3009,7 @@ There is a dedicated, FIPS-compliant ActiveGate image available. See [ActiveGate
 ---
 title: Execute synthetic monitors from private locations
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose
-scraped: 2026-02-16T09:18:39.835793
+scraped: 2026-02-16T21:21:16.489194
 ---
 
 # Execute synthetic monitors from private locations
@@ -3068,7 +3068,7 @@ Additionally, you can also:
 ---
 title: Install the zRemote module for z/OS monitoring
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities/zremote-purpose
-scraped: 2026-02-16T09:18:53.723851
+scraped: 2026-02-16T21:21:24.508137
 ---
 
 # Install the zRemote module for z/OS monitoring
@@ -3103,7 +3103,7 @@ For more details and configuration options, see [Install the zRemote module](/do
 ---
 title: ActiveGate purposes and functionality
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities
-scraped: 2026-02-16T09:18:45.295410
+scraped: 2026-02-16T21:21:17.933641
 ---
 
 # ActiveGate purposes and functionality
@@ -3454,7 +3454,7 @@ zRemote
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements
-scraped: 2026-02-16T09:18:38.052575
+scraped: 2026-02-16T21:21:21.823115
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Linux
@@ -3845,7 +3845,7 @@ M
 ---
 title: ActiveGate on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/linux
-scraped: 2026-02-16T09:18:41.414843
+scraped: 2026-02-16T21:21:13.396590
 ---
 
 # ActiveGate on Linux
@@ -3884,7 +3884,7 @@ Dynatrace supports ActiveGate installation on Linux.
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements
-scraped: 2026-02-16T09:18:50.391933
+scraped: 2026-02-16T21:21:12.102156
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Windows
@@ -4125,7 +4125,7 @@ High
 ---
 title: ActiveGate on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/windows
-scraped: 2026-02-16T09:18:55.317096
+scraped: 2026-02-16T21:21:23.134923
 ---
 
 # ActiveGate on Windows
@@ -4164,7 +4164,7 @@ Dynatrace supports ActiveGate installation on Windows.
 ---
 title: Supported connectivity schemes for ActiveGates
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates
-scraped: 2026-02-16T09:18:48.737869
+scraped: 2026-02-16T21:21:20.451830
 ---
 
 # Supported connectivity schemes for ActiveGates

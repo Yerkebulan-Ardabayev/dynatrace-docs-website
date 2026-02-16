@@ -171,7 +171,7 @@ The following list of entity attributes should be avoided, as they are not avail
 ---
 title: Define tags based on environment variables
 source: https://www.dynatrace.com/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables
-scraped: 2026-02-15T21:19:08.432361
+scraped: 2026-02-16T21:16:45.408977
 ---
 
 # Define tags based on environment variables

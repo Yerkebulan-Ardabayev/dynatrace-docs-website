@@ -1,7 +1,7 @@
 ---
 title: Synthetic Monitoring
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring
-scraped: 2026-02-16T09:18:34.777837
+scraped: 2026-02-16T21:16:23.857760
 ---
 
 # Synthetic Monitoring

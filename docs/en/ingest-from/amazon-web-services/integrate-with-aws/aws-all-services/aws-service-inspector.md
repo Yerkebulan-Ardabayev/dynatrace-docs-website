@@ -1,7 +1,7 @@
 ---
 title: Amazon Inspector monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-inspector
-scraped: 2026-02-15T09:12:45.808411
+scraped: 2026-02-16T21:31:25.597123
 ---
 
 # Amazon Inspector monitoring

@@ -13,7 +13,7 @@ Files combined: 7
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-16T09:36:13.924731
+scraped: 2026-02-16T21:27:49.290983
 ---
 
 # Dynatrace Assist
@@ -251,7 +251,7 @@ In our logs and calls to LLM models, we replace values from the identified patte
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-16T09:12:33.472211
+scraped: 2026-02-16T21:12:07.683148
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -542,7 +542,7 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 ---
 title: Get started with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
-scraped: 2026-02-16T09:16:03.118912
+scraped: 2026-02-16T21:23:35.814073
 ---
 
 # Get started with Dynatrace Intelligence generative AI
@@ -645,7 +645,7 @@ To configure your data access
 ---
 title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-16T09:15:59.688924
+scraped: 2026-02-16T21:23:37.129280
 ---
 
 # Dynatrace Intelligence generative AI overview
@@ -830,7 +830,7 @@ We are actively working on improving and extending the Dynatrace Intelligence ge
 ---
 title: Query with natural language
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
-scraped: 2026-02-16T09:38:42.320904
+scraped: 2026-02-16T21:28:28.928398
 ---
 
 # Query with natural language

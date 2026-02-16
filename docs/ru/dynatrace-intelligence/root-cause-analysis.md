@@ -1,42 +1,42 @@
 ---
-title: Root cause analysis
+title: Анализ коренной причины
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis
-scraped: 2026-02-16T09:26:16.521900
+scraped: 2026-02-16T21:22:50.667404
 ---
 
-# Root cause analysis
+# Анализ коренной причины
 
-# Root cause analysis
+# Анализ коренной причины
 
-* Latest Dynatrace
-* Explanation
-* 1-min read
-* Updated on Jan 28, 2026
+* Последняя Dynatrace
+* Объяснение
+* 1-минутное чтение
+* Обновлено 28 января 2026 г.
 
-Dynatrace Intelligence causal AI root cause analysis automatically evaluates all captured and ingested information and highlights entities within the causal topology identified as the root cause of a complex situation. It offers a context-aware approach that uses available context information, such as the code-level information topology, to determine the precise cause of the issue.
+Интеллектуальный анализ коренной причины Dynatrace Intelligence на основе причинно-следственного ИИ автоматически оценивает всю захваченную и обработанную информацию и выделяет сущности в причинно-следственной топологии, определенные как коренная причина сложной ситуации. Он предлагает контекстно-зависимый подход, использующий доступную контекстную информацию, такую как топология кодового уровня, для определения точной причины проблемы.
 
-## Use cases
+## Сценарии использования
 
-* Save time by including all relevant anomalies and ranking root cause contributors to determine the primary cause.
-* Reduce the alert load by combining multiple connected anomalies into a single problem.
-* Improve the precision of root cause analysis using all the available data from multiple sources.
+* Экономьте время, включая все соответствующие аномалии и ранжируя вкладчиков коренной причины для определения основной причины.
+* Снизьте нагрузку оповещений, объединяя несколько связанных аномалий в одну проблему.
+* Повысьте точность анализа коренной причины, используя все доступные данные из нескольких источников.
 
-[#### Root cause analysis concepts
+[#### Концепции анализа коренной причины
 
-Get acquainted with root cause analysis concepts.
+Ознакомьтесь с концепциями анализа коренной причины.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis/concepts)[#### Event analysis and correlation
+Прочитайте это объяснение](/docs/dynatrace-intelligence/root-cause-analysis/concepts)[#### Анализ и корреляция событий
 
-Gain an understanding of the Events section on each host, process, and service overview page.
+Получите представление о разделе События на каждой странице обзора хоста, процесса и службы.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation)[#### Detection of frequent issues
+Прочитайте это объяснение](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation)[#### Обнаружение частых проблем
 
-Understand how Dynatrace detects and manages recurring problem patterns as frequent issues.
+Поймите, как Dynatrace обнаруживает и управляет повторяющимися проблемными моделями как частыми проблемами.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues)
+Прочитайте это объяснение](/docs/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues)

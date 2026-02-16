@@ -13,7 +13,7 @@ Files combined: 5
 ---
 title: How OneAgent works
 source: https://www.dynatrace.com/docs/platform/oneagent/how-one-agent-works
-scraped: 2026-02-16T09:24:57.454645
+scraped: 2026-02-16T21:23:07.750845
 ---
 
 # How OneAgent works
@@ -68,7 +68,7 @@ OneAgent reports its collected data via HTTP/S requests to the ActiveGates or th
 ---
 title: Enable OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes
-scraped: 2026-02-16T09:24:59.061143
+scraped: 2026-02-16T21:23:09.139339
 ---
 
 # Enable OneAgent monitoring modes
@@ -274,7 +274,7 @@ For details on how Application Security works in Discovery mode, see [Applicatio
 ---
 title: OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/monitoring-modes
-scraped: 2026-02-16T09:14:56.192711
+scraped: 2026-02-16T21:10:35.552766
 ---
 
 # OneAgent monitoring modes
@@ -686,7 +686,7 @@ By default, the global dimension limit is equal to `100` and the customer-define
 ---
 title: OneAgent monitoring capabilities
 source: https://www.dynatrace.com/docs/platform/oneagent/supported-monitoring-types
-scraped: 2026-02-16T09:22:24.913402
+scraped: 2026-02-16T21:14:50.222333
 ---
 
 # OneAgent monitoring capabilities

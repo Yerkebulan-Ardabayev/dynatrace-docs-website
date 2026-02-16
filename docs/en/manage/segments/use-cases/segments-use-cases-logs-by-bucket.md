@@ -1,7 +1,7 @@
 ---
 title: Segment logs by bucket
 source: https://www.dynatrace.com/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket
-scraped: 2026-02-16T09:16:29.086538
+scraped: 2026-02-16T21:23:19.989598
 ---
 
 # Segment logs by bucket

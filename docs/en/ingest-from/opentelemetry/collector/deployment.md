@@ -1,12 +1,12 @@
 ---
-title: Collector deployment
+title: Deploy Dynatrace OTel Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/deployment
-scraped: 2026-02-15T21:23:21.659319
+scraped: 2026-02-16T21:26:14.137029
 ---
 
-# Collector deployment
+# Deploy Dynatrace OTel Collector
 
-# Collector deployment
+# Deploy Dynatrace OTel Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -1424,7 +1424,7 @@ Run the following command to download the image of the Dynatrace Collector:
 docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 ```
 
-Next, ensure that the [Collector configuration file](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.") exists in the current working directory and run the Collector image with the following command:
+Next, ensure that the [Collector configuration file](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") exists in the current working directory and run the Collector image with the following command:
 
 ```
 docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0 --config=/etc/otelcol/otel-collector-config.yaml
@@ -1530,7 +1530,7 @@ rpm -ivh dynatrace-otel-collector_<VERSION>_Linux_<ARCH>.rpm
 
 #### Service configuration
 
-When first starting the service, it may fail to start if there is no [configuration file](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.") in place yet. By default, the Collector attempts to find the file at `/etc/dynatrace-otel-collector/config.yaml`.
+When first starting the service, it may fail to start if there is no [configuration file](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") in place yet. By default, the Collector attempts to find the file at `/etc/dynatrace-otel-collector/config.yaml`.
 
 Custom configuration location
 

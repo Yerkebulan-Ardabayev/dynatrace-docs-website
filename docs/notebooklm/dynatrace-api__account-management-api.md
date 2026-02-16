@@ -13,7 +13,7 @@ Files combined: 11
 ---
 title: Account limits API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/account-limits-api
-scraped: 2026-02-16T09:27:31.393325
+scraped: 2026-02-16T21:24:35.564431
 ---
 
 # Account limits API
@@ -721,7 +721,7 @@ To execute this request, you need the **Allow write access for usage and consump
 ---
 title: Dynatrace Platform Subscription API - Cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation
-scraped: 2026-02-16T09:31:35.419046
+scraped: 2026-02-16T21:28:15.426600
 ---
 
 # Dynatrace Platform Subscription API - Cost allocation
@@ -756,7 +756,7 @@ Manage Dynatrace Platform Subscription cost and usage are allocated to product a
 ---
 title: Dynatrace Platform Subscription API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api
-scraped: 2026-02-16T09:35:35.837929
+scraped: 2026-02-16T21:25:02.635327
 ---
 
 # Dynatrace Platform Subscription API
@@ -819,7 +819,7 @@ Manage Dynatrace Platform Subscription cost and usage are allocated to product a
 ---
 title: Platform tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/platform-tokens-api
-scraped: 2026-02-16T09:39:19.074075
+scraped: 2026-02-16T21:30:35.411661
 ---
 
 # Platform tokens API
@@ -1227,7 +1227,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 ---
 title: Policy management API - POST a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary
-scraped: 2026-02-15T21:24:26.820977
+scraped: 2026-02-16T21:31:07.820845
 ---
 
 # Policy management API - POST a policy boundary

@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry licensing
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/opentelemetry-licensing
-scraped: 2026-02-16T09:24:08.994916
+scraped: 2026-02-16T21:12:53.554036
 ---
 
 # OpenTelemetry licensing

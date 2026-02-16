@@ -1,7 +1,7 @@
 ---
 title: Transform OTLP gRPC to HTTP with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/grpc
-scraped: 2026-02-16T09:27:37.877589
+scraped: 2026-02-16T21:28:04.681933
 ---
 
 # Transform OTLP gRPC to HTTP with the OpenTelemetry Collector

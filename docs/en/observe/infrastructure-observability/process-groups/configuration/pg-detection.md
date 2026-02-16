@@ -1,7 +1,7 @@
 ---
 title: Process group detection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection
-scraped: 2026-02-16T09:16:11.366779
+scraped: 2026-02-16T21:13:20.860655
 ---
 
 # Process group detection

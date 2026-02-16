@@ -1,7 +1,7 @@
 ---
 title: Send Dynatrace notifications to Trello
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration
-scraped: 2026-02-16T09:13:24.615210
+scraped: 2026-02-16T21:11:27.799625
 ---
 
 # Send Dynatrace notifications to Trello

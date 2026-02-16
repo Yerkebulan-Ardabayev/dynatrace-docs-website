@@ -2,7 +2,124 @@
 
 Generated: 2026-02-16
 
-Files combined: 3
+Files combined: 8
+
+---
+
+
+## Source: smartscape-view-topology.md
+
+
+---
+title: View topology
+source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology
+scraped: 2026-02-16T21:30:15.938124
+---
+
+# View topology
+
+# View topology
+
+* Latest Dynatrace
+* Explanation
+* 2-min read
+* Published Jan 28, 2026
+
+View topology is an intuitive, in-context ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modal that allows you to visualize the topology of a selected entity across the platform. By integrating seamlessly into existing workflows, the modal helps you to get a deeper understanding of both vertical and horizontal relationships between entities in your environment.
+
+By using the View topology ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modal, you can easily explore Smartscape's rich topological insights without leaving the current context, gaining access to drill-downs and actionable information for all displayed entities.
+
+## View topology support in Dynatrace apps
+
+You can trigger View topology modal from the entity details in any Dynatrace application, either via an explicit intent or through the **Open with** option after selecting the entity.
+
+Some nodes might not have any edges to other nodes in your environment. If no edges exist in [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."), the topology view will only contain the selected node.
+
+You can find some examples of triggering the View topology modal below:
+
+* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities."): You can trigger the View topology modal directly from any entity in any [Smartscape view](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
+* [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."): You can trigger the View topology modal from a Smartscape node by selecting the **Show topology** action in the tooltip.
+* [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts."): You can trigger the View topology modal from the **Affected object** details within the app.
+
+## Overview
+
+The View topology modal offers two types of topology view:
+
+* Vertical topology: provides a complete hierarchical visualization of all related entities for a selected node.
+* Horizontal topology: focuses on directly connected upstream and downstream nodes.
+
+The View topology modal allows you to seamlessly switch between both perspectives to gain a complete understanding of an entity's context. Both perspectives consist of the following components:
+
+* Groups
+* Nodes
+* Edges
+
+Components represent different relationships and node types depending on the view.
+
+### Vertical topology
+
+The vertical topology view shows a complete hierarchical visualization of all related entities for the focused node. It allows you to view relationships between the nodes, such as `runs_on` or `part_of`.
+
+#### Group
+
+In the vertical topology view, a group contains entities of the same type, such as Hosts and Kubernetes nodes.
+
+#### Nodes
+
+In the vertical topology, nodes can be divided into the following types:
+
+* Focused node: your selected primary entity that's displayed at the center of the graph.
+* Upstream nodes: entities the focused node is connected to by a `runs_on` or a `part_of` relationship. By default, these entities are displayed above the focused node.
+* Downstream nodes: entities that are connected to the focused node by a `runs_on` or a `part_of` relationship. By default, these entities are displayed below the focused node.
+
+#### Edges
+
+Edges in vertical topology view represent relationships between nodes. The `runs_on` relationship is the most commonly displayed type, but other relationship types, such as `part_of` or `is_attached_to`, may also appear in this view.
+
+### Horizontal topology
+
+The horizontal topology view focuses on `calls` relationships between nodes, and showcases one level of connections in either direction.
+
+#### Group
+
+In the horizontal topology view, entities are divided into logical source and target groups:
+
+* Source group: entities that call the focused node (`calls` relationship), displayed to the left.
+* Target group: entities the focused node interacts with, displayed to the right.
+
+#### Nodes
+
+In horizontal topology, nodes can be divided into the following types:
+
+* Focused node: your selected primary entity that's displayed at the center of the graph.
+* Source nodes: entities calling the focused node, displayed to the left of the focused node.
+* Target nodes: entities called by the focused node, displayed to the right of the focused node.
+
+#### Edges
+
+Edges represent the `calls` relationship between nodes and can provide clarity on communication pathways.
+
+## Use cases
+
+You can use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** View topology to:
+
+* Understand the entity context and relationship between your services.
+* Identify dependencies between entities in your environment.
+
+## Best practice tips
+
+To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** View topology, you can:
+
+* Reference the legend to quickly view a summary of nodes and their types in the current topology.
+* Drill down into any displayed entity directly from the topology view to analyze performance metrics, troubleshoot errors, or resolve failures.
+* Use both vertical and horizontal topology views as a combined perspective to gain complete understanding of an entity's context and dependencies between your services.
+* Trigger additional topology views from within the current view to continue exploring related entities and better understand the full scope of dependencies.
+
+## Related topics
+
+* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape views](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.")
+
 
 ---
 
@@ -103,13 +220,171 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 ---
 
 
+## Source: aws-ec2-ecosystem-overview.md
+
+
+---
+title: AWS EC2 ecosystem overview
+source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview
+scraped: 2026-02-16T21:28:46.133688
+---
+
+# AWS EC2 ecosystem overview
+
+# AWS EC2 ecosystem overview
+
+* Latest Dynatrace
+* Explanation
+* 5-min read
+* Published Jan 28, 2026
+
+**AWS EC2 Instance Ecosystem** provides a focused, hierarchical visualization of your EC2 instances and their surrounding resource ecosystem. This view enables you to understand how your EC2 instances are organized across regions, availability zones, and subnets, along with their relationships to attached EBS volumes, associated Lambda functions, and connected DynamoDB tables.
+
+By presenting a clear structural hierarchy from region down to individual EC2 instances and their directly related resources, this view helps you quickly identify how your compute resources are distributed and connected, making it easier to troubleshoot issues, optimize instance placement, and ensure proper architectural design within your EC2 ecosystem.
+
+![An example of Smartscape AWS EC2 ecosystem overview home page](https://dt-cdn.net/images/aws-ec2-ecosystem-overview-smartscape-1920-ba3b71044c.png)
+
+## Constituent entities overview
+
+**AWS EC2 Instance Ecosystem** breaks down your EC2 environment into clear, hierarchical layers to help you visualize its structure. The layers consist of:
+
+* Nodes
+* Groups
+
+### Nodes and groups
+
+Nodes, the highest level of the view, showcase AWS Regions. Each region contains Availability Zones, Lambda functions, and DynamoDB tables, with additional resources nested within the availability zones. The structure can be visualized as follows:
+
+* AWS Region
+
+  + AWS Availability Zone
+
+    - AWS EC2 Subnet
+
+      * AWS EC2 Instance
+
+        + AWS Lambda Function
+    - AWS EC2 Volume
+  + AWS Lambda Function
+  + AWS DynamoDB Table
+
+Groups found on different hierarchy levels can contain entities of the same type or level. You can expand or collapse any group to improve visibility and focus on the relevant entities.
+
+## Use cases
+
+You can use the **AWS EC2 Instance Ecosystem** to:
+
+* Visualize and understand the distribution of EC2 instances across regions, availability zones, and subnets to ensure proper high-availability configurations.
+* Identify which resources are deployed in specific availability zones to assess potential single-point-of-failure risks.
+* Review your subnet organization and EC2 placement to validate network segmentation and security zone configurations.
+* Investigate infrastructure dependencies during troubleshooting to identify which resources might be affected by regional or zonal issues.
+* Plan capacity and disaster recovery by understanding the full scope of resources within specific regions or availability zones.
+
+## Best practice tips
+
+To use the **AWS EC2 Instance Ecosystem** effectively, we recommend that you:
+
+* Focus on specific areas by selecting a segment that defines your area of responsibility, such as specific regions, availability zones, or EC2 instances relevant to your team.
+* Use the topology graph to verify that your EC2 instances, subnets, and availability zones are correctly organized and associated with their intended regions.
+* Drill down into any region, availability zone, subnet, or EC2 instance to continue your exploration or investigation and access detailed health-relevant signals, metrics, events, and logs.
+* Review the distribution of instances across availability zones to ensure your architecture maintains high availability and fault tolerance.
+
+## Related topics
+
+* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+
+
+---
+
+
+## Source: infrastructure-overview.md
+
+
+---
+title: Infrastructure overview
+source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview
+scraped: 2026-02-16T21:31:58.111535
+---
+
+# Infrastructure overview
+
+# Infrastructure overview
+
+* Latest Dynatrace
+* Explanation
+* 5-min read
+* Published Jan 28, 2026
+
+**Infrastructure overview** provides a high-level visual representation of your physical infrastructure.
+
+It focuses on the physical stack, showcasing key infrastructure entities such as hosts, processes, disks, and network interfaces. By visualizing the relationships and interdependencies between these entities, the **Infrastructure overview** delivers a comprehensive understanding of how the underlying components of your environment interact to support your workloads.
+
+![An example of Smartscape Infrastructure overview](https://dt-cdn.net/images/infrastructure-overview-smartscape-1920-4dcf506dce.png)
+
+## Constituent entities overview
+
+### Nodes
+
+In the **Infrastructure overview**, nodes represent physical components detected within your environment. These nodes are organized in a hierarchical structure that can be visualized as follows:
+
+* Regions
+
+  + Cloud regions / data centers
+
+    - Hosts
+
+      * Containers
+
+        + Processes
+      * Non-containerized processes
+      * Disks
+      * Network interfaces
+
+Each level showcases specific infrastructure components and helps you traverse from the highest-level view of your environment, regions, down to individual processes within containers.
+
+### Edges
+
+In the **Infrastructure overview**, edges represent `calls` relationships between components. These connections can be visualized at varying levels of granularity:
+
+* Host-to-Host calls: displays interactions between hosts in your environment.
+* Process-to-Process calls: tracks communication at the most granular level and shows how individual processes interact across the infrastructure.
+
+These relationships are aggregated, or "bubbled up", to higher levels in the hierarchy where possible. This provides a clearer, more concise visualization of the key dependencies within your infrastructure.
+
+## Use cases
+
+You can use **Infrastructure overview** to:
+
+* Understand how your workloads are distributed by using the hierarchical structure of the view to drill down from regions to individual infrastructure components, such as containers and processes.
+* Explore the relationships within containers to see how processes interact with each other by exploring the relationships within containers.
+* Identify communication patterns, data flows, and potential bottlenecks at the infrastructure level by visualizing Host-to-Host calls.
+* Identify problematic interactions or unexpected dependencies between processes, both within and across hosts by tracing process-level communication.
+* Troubleshoot infrastructure issues.
+
+## Best practice tips
+
+To use **Infrastructure overview** effectively, we recommend that you:
+
+* Focus on individual hosts or regions to identify performance bottlenecks, overloaded resources, or problematic dependencies that may impact your system.
+* Thoroughly investigate non-containerized processes to pinpoint issues or dependencies that stem from processes running outside of containers, such as legacy applications or custom workloads.
+* Actively use the pin the tooltip functionality on nodes for easy key metric access. Key metrics such as CPU, memory, or disk utilization, and can help you gain insights necessary to detect and resolve performance issues faster.
+* Drill down into any nodes in the ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** app to continue your exploration of your infrastructure.
+
+## Related topics
+
+* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+
+
+---
+
+
 ## Source: kubernetes-overview.md
 
 
 ---
 title: Kubernetes overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview
-scraped: 2026-02-16T09:30:08.888443
+scraped: 2026-02-16T21:31:06.353392
 ---
 
 # Kubernetes overview
@@ -169,13 +444,140 @@ To use **Kubernetes overview** effectively, we recommend that you:
 ---
 
 
+## Source: problem-graph.md
+
+
+---
+title: Problem graph
+source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph
+scraped: 2026-02-16T21:29:35.618649
+---
+
+# Problem graph
+
+# Problem graph
+
+* Latest Dynatrace
+* Explanation
+* 5-min read
+* Published Jan 28, 2026
+
+The **Problem graph** view provides a comprehensive visualization of all detected problems within your environment, including their affected nodes, related nodes, and root causes. By displaying the interrelationships between problems and nodes across your digital system, this view enables you to easily identify highly related or interconnected problems.
+
+For example, you can quickly spot issues that affect a large number of entities or entities impacted by multiple problems.
+
+![An example of Smartscape Problem graph home page](https://dt-cdn.net/images/problem-graph-smartscape-1920-1f8a7b5198.png)
+
+## Constituent entities overview
+
+### Nodes
+
+The nodes in the **Problem graph** view represent all elements involved in a problem, as well as the problem itself. This includes:
+
+* Problems: all detected problems in your environment.
+* Affected nodes: any ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** nodes impacted by a problem, such as hosts, processes, services, applications, or Kubernetes workloads.
+* Related nodes: Any additional ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** nodes indirectly connected to a problem, providing broader context for troubleshooting.
+
+### Edges
+
+The edges in the **Problem graph** view connect problems, affected nodes, and related nodes. They illustrate the inter-relationships between all elements involved in the problems across your environment and help you understand the scope and dependencies at a glance.
+
+Edges link affected and related nodes together with problems to provide a visual representation of their relationships.
+
+Edges in the ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** **Problem graph** view are different from [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.") edges. For more details about Smartscape edges and how they differ, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** concepts](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.").
+
+## Use cases
+
+You can use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** **Problem graph** view to quickly identify:
+
+* High-impact problems: quickly determine which problems have the largest impact or "blast radius" by identifying those that affect the largest number of entities.
+* Problem-heavy nodes: identify nodes that are affected by multiple problems, helping you prioritize areas that require immediate attention.
+
+## Best practice tips
+
+To use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** **Problem graph** view effectively, we recommend that you:
+
+* Focus on Relevant Areas: narrow down the ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** **Problem graph** view by selecting one or more segments to display only the problems and nodes relevant to you or your team's area of responsibility.
+* Analyze further with visual resolution paths: understand the resolution path for problems directly within the graph, without needing to leave the app.
+* Drill down and open your problem in the dedicated ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** app to access detailed insights, root cause analysis, and resolution recommendations.
+* Investigate specific entities (such as services or hosts) further by opening them in their respective domain applications, such as the ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**, ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, or ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** apps.
+
+## Related topics
+
+* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+
+
+---
+
+
+## Source: service-dependency-graph.md
+
+
+---
+title: Service dependency graph
+source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph
+scraped: 2026-02-16T21:31:34.029783
+---
+
+# Service dependency graph
+
+# Service dependency graph
+
+* Latest Dynatrace
+* Explanation
+* 5-min read
+* Published Jan 28, 2026
+
+The **Service dependency graph** view provides a comprehensive visualization of the relationships between all services in your environment. This view focuses on the logical layer of your digital system, allowing you to explore how services interact with one another and uncover critical dependency chains.
+
+By visualizing the interconnections, the **Service dependency graph** view helps you understand how services influence each other, detect bottlenecks, and assess the potential impact of changes across your entire service landscape.
+
+![And example of Smartscape Service dependency graph starting view](https://dt-cdn.net/images/service-dependency-graph-smartscape-1920-1c512764c7.png)
+
+## Constituent entities overview
+
+### Nodes
+
+The nodes in the **Service dependency graph** view represent all services detected within your environment.
+
+### Edges
+
+The edges shown between service nodes in this view visualize the `_calls_` relationships between services in your environment.
+
+## Use cases
+
+You can use **Service dependency graph** to:
+
+* Identify dependency chains by examining both upstream services that your service depends on, as well as downstream services that rely on your service.
+* Analyze the impact of changes by visualizing how updates to one service may ripple across dependent services within the environment.
+* Collaborate across teams by sharing a filtered view of the graph, helping other teams understand how their services interact with yours and fostering better communication.
+
+## Best practice tips
+
+To use **Service dependency graph** effectively, we recommend that you:
+
+* Focus on what matters by selecting a segment that defines your area of responsibility, such as specific clusters, namespaces, or workloads relevant to your team.
+* Optimize the view's layout and the understanding of dependency chains by making use of the **Service dependency graph** layout options to either **Vertical** or **Horizontal**.
+
+  These layout options are only available on filtered-down views with fewer nodes.
+* Actively use the pin the tooltip functionality on your service nodes to reveal key metrics such as throughput, error rates, or response times in context.
+* Drill down into details of your service in the dedicated ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** app to access health-relevant signals, metrics, events, and logs.
+
+## Related topics
+
+* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+
+
+---
+
+
 ## Source: smartscape-on-grail-view.md
 
 
 ---
 title: Smartscape on Grail view
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view
-scraped: 2026-02-16T09:28:38.725447
+scraped: 2026-02-16T21:27:09.444394
 ---
 
 # Smartscape on Grail view

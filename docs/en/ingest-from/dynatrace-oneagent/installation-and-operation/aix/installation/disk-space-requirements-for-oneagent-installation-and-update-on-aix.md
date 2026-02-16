@@ -1,7 +1,7 @@
 ---
 title: OneAgent files and disk space requirements on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix
-scraped: 2026-02-15T21:19:24.585108
+scraped: 2026-02-16T21:15:54.114394
 ---
 
 # OneAgent files and disk space requirements on AIX

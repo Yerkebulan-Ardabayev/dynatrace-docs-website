@@ -1,47 +1,45 @@
 ---
-title: Configure automated notifications using Terraform and Configuration as Code
+title: Настройка автоматических уведомлений с помощью Terraform и Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-02-15T09:07:31.529502
+scraped: 2026-02-16T21:27:45.110164
 ---
 
-# Configure automated notifications using Terraform and Configuration as Code
-
-# Configure automated notifications using Terraform and Configuration as Code
+# Настройка автоматических уведомлений с помощью Terraform и Configuration as Code
 
 * Latest Dynatrace
-* Tutorial
-* 2-min read
-* Updated on Nov 05, 2025
+* Урок
+* 2-минутное чтение
+* Обновлено 05 ноября 2025 г.
 
-This tutorial explains how to configure an event notification with the latest Dynatrace.
+Этот урок объясняет, как настроить уведомление о событии с помощью последней версии Dynatrace.
 
-The notification consists of
+Уведомление состоит из
 
-* A [custom alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") configuration, which raises an alerting event if a certain conditions is met.
-* A simple workflow that automatically sends an email when the alerting event is active.
+* Настройки [пользовательского оповещения](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.") , которое вызывает событие оповещения, если выполнено определенное условие.
+* Простого рабочего процесса, который автоматически отправляет электронное письмо, когда событие оповещения активно.
 
-## Prerequisites
+## Предварительные условия
 
-* Terraform CLI with the Dynatrace provider installed and available under PATH.
-  For more information, see [Install Terraform CLI and set up Configuration as Code via Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.").
-* OAuth client or platform token with the following permissions.
-  For more information, see [Create API access token](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+* Terraform CLI с установленным провайдером Dynatrace и доступным по пути.
+  Для получения дополнительной информации см. [Установка Terraform CLI и настройка Configuration as Code через Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Установите Terraform CLI и настройте Configuration as Code Dynatrace через Terraform.").
+* Клиент OAuth или платформенный токен с следующими разрешениями.
+  Для получения дополнительной информации см. [Создание токена доступа к API](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup "Описывает различные варианты, которые провайдер Terraform может использовать для аутентификации вызовов API Dynatrace.").
 
-  + View settings objects for schema (`settings:objects:read`)
-  + Create settings objects for schema (`settings:objects:write`)
-  + View workflows (`automation:workflows:read`)
-  + Create and edit workflows (`automation:workflows:write`)
+  + Просмотр объектов настроек для схемы (`settings:objects:read`)
+  + Создание объектов настроек для схемы (`settings:objects:write`)
+  + Просмотр рабочих процессов (`automation:workflows:read`)
+  + Создание и редактирование рабочих процессов (`automation:workflows:write`)
 
-  The Terraform user needs to have all required permissions to run the run automated configurations such as custom alerts or workflows.
-  Missing or wrong permission can lead to an unexpected behavior.
+  Пользователь Terraform должен иметь все необходимые разрешения для запуска автоматических конфигураций, таких как пользовательские оповещения или рабочие процессы.
+  Отсутствие или неправильное разрешение может привести к непредвиденному поведению.
 
-## What will you learn
+## Что вы узнаете
 
-You'll learn how to configure a [custom alert](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.") and a [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") with an email action.
+Вы узнаете, как настроить [пользовательское оповещение](/docs/dynatrace-intelligence/anomaly-detection "Как Dynatrace обнаруживает аномалии в вашей среде.") и [рабочий процесс](/docs/analyze-explore-automate/workflows "Автоматизируйте процессы ИТ с помощью рабочих процессов Dynatrace — реагируйте на события, планируйте задачи и подключайте службы.") с действием электронной почты.
 
-## Steps
+## Шаги
 
-### Build Terraform configuration
+### Создание конфигурации Terraform
 
 To build a configuration for raising an event and a simple workflow for sending an email in case of a raised event
 
@@ -1130,8 +1128,10 @@ To build a configuration for raising an event and a simple workflow for sending 
    Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
    ```
 
-Файл состояния Terraform `terraform.tfstate` генерируется автоматически. Он отслеживает ресурсы, которыми управляет Terraform.
-Он имеет решающее значение для последующих операций Terraform.
+   A Terraform `terraform.tfstate` state file is automatically generated. It keeps track of the resources that Terraform manages.
+   It's crucial for subsequent Terraform operations.
+
+
 
 ### Modify Terraform configuration
 

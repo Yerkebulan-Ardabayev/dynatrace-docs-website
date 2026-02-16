@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: What's new in Dynatrace
 source: https://www.dynatrace.com/docs/whats-new
-scraped: 2026-02-16T09:12:20.784778
+scraped: 2026-02-16T21:09:59.061390
 ---
 
 # What's new in Dynatrace

@@ -254,7 +254,7 @@ Review all observable AI technologies in the Dynatrace Hub.](https://www.dynatra
 ---
 title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-16T09:30:35.599898
+scraped: 2026-02-16T21:30:25.448673
 ---
 
 # Kong AI Gateway
@@ -958,7 +958,7 @@ In the example below, Dynatrace Intelligence automatically reported a slowdown o
 ---
 title: Get started
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started
-scraped: 2026-02-16T09:25:07.288443
+scraped: 2026-02-16T21:21:39.342264
 ---
 
 # Get started
@@ -1100,7 +1100,7 @@ The Dynatrace full-stack observability platform combined with Traceloop's OpenLL
 ---
 title: Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock
-scraped: 2026-02-16T09:25:04.061409
+scraped: 2026-02-16T21:21:47.665335
 ---
 
 # Amazon Bedrock
@@ -1162,7 +1162,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-16T09:25:14.099487
+scraped: 2026-02-16T21:21:46.356389
 ---
 
 # NVIDIA NIM
@@ -1375,7 +1375,7 @@ Additionally, the following metrics are reported.
 ---
 title: Ollama
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama
-scraped: 2026-02-16T09:25:05.616464
+scraped: 2026-02-16T21:21:42.022364
 ---
 
 # Ollama
@@ -1428,7 +1428,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: OpenAI
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai
-scraped: 2026-02-16T09:25:10.792126
+scraped: 2026-02-16T21:21:40.709485
 ---
 
 # OpenAI
@@ -1496,7 +1496,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: TensorFlow Keras observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability
-scraped: 2026-02-15T09:08:26.927325
+scraped: 2026-02-16T21:25:58.347036
 ---
 
 # TensorFlow Keras observability
@@ -1880,7 +1880,7 @@ The screenshot below shows a Data Explorer visualization of the accuracy metric 
 ---
 title: LangChain
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain
-scraped: 2026-02-16T09:25:12.424347
+scraped: 2026-02-16T21:21:44.985669
 ---
 
 # LangChain

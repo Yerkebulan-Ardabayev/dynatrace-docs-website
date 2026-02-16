@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 13
+Files combined: 16
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 13
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-02-16T09:26:22.967775
+scraped: 2026-02-16T21:23:13.047019
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -122,7 +122,7 @@ These metrics are also available via the Environment API and your **Account Mana
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-02-15T21:19:05.606150
+scraped: 2026-02-16T21:16:46.811722
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -311,7 +311,7 @@ Metric data points sent via the Dynatrace Collector are included only if [Metric
 
 3
 
-Metric data points sent via the OpenTelemetry Collector are included only if [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card and the OpenTelemetry Collector has been configured as described in [Enrich from Kubernetes](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
+Metric data points sent via the OpenTelemetry Collector are included only if [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card and the OpenTelemetry Collector has been configured as described in [Enrich OTLP requests with Kubernetes data](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
 
 ### Included metric data point calculation example
 
@@ -551,7 +551,7 @@ When using the metric "(DPS) Total metric data points billed for Full-Stack moni
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-02-16T09:26:29.778800
+scraped: 2026-02-16T21:23:10.495679
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -769,7 +769,7 @@ The example below shows that one of the Infrastructure monitored hosts reported 
 ---
 title: Calculate your consumption of Mainframe Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/mainframe
-scraped: 2026-02-15T21:19:09.783938
+scraped: 2026-02-16T21:16:49.496698
 ---
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
@@ -990,6 +990,102 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 ---
 
 
+## Source: application-security.md
+
+
+---
+title: Application Security overview (DPS)
+source: https://www.dynatrace.com/docs/license/capabilities/application-security
+scraped: 2026-02-16T21:28:00.335099
+---
+
+# Application Security overview (DPS)
+
+# Application Security overview (DPS)
+
+* Latest Dynatrace
+* Overview
+* 13-min read
+* Updated on Jun 05, 2025
+
+[Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.") helps secure cloud-native and on-premise applications at runtime with intelligent automation.
+This includes visualizing, analyzing, and monitoring security vulnerabilities in your environment and blocking detected attacks on your applications.
+
+This page describes the different application security capabilities and the features that they provide with a DPS subscription.
+
+For information about how usage of a specific capability translates to consumption of your DPS license commit, see
+
+* [Runtime Vulnerability Analytics](/docs/license/capabilities/application-security/runtime-vulnerability-analytics "Learn how your consumption of the Dynatrace Runtime Vulnerability Analytics (RVA) DPS capability is billed and charged.")
+* [Runtime Application Protection](/docs/license/capabilities/application-security/runtime-application-protection "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.")
+* [Security Posture Management](/docs/license/capabilities/application-security/security-posture-management "Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.")
+
+## Runtime Vulnerability Analytics
+
+[Dynatrace Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") enables you to detect, visualize, analyze, and monitor the remediation of third-party and code-level vulnerabilities in your environment.
+
+These vulnerabilities include
+
+* [Third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules."), which can arise when your application uses a specific library or language runtime containing vulnerabilities.
+* [Code-level vulnerabilities](/docs/secure/application-security/vulnerability-analytics/code-level-vulnerabilities "Monitor, visualize, and analyze code-level vulnerabilities."), which can arise when Dynatrace Application Security detects a vulnerability in your code by evaluating the requests passing through your applications.
+
+## Runtime Application Protection (RAP)
+
+[Dynatrace Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") leverages code-level insights and transaction analysis to detect and block attacks on your applications automatically and in real time.
+
+## Security Posture Management (SPM)
+
+[Security Posture Management (SPM)](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") provides ongoing monitoring and automated assessment for KubernetesÂ® environments.
+With insights into configuration, compliance issues, and risk management, customers can maintain a strong security posture.
+
+This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes."), which focuses on identifying and mitigating security risks in your Kubernetes clusters.
+
+## Related topics
+
+* [Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
+* [Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+
+
+---
+
+
+## Source: automation.md
+
+
+---
+title: Automation Workflow capability overview (DPS)
+source: https://www.dynatrace.com/docs/license/capabilities/automation
+scraped: 2026-02-16T21:26:26.721298
+---
+
+# Automation Workflow capability overview (DPS)
+
+# Automation Workflow capability overview (DPS)
+
+* Latest Dynatrace
+* Explanation
+* 5-min read
+* Published Apr 25, 2023
+
+Dynatrace Automation empowers you to digitally transform with cloud-native answer-driven automation based on intelligent insights from observability, security, and business data.
+
+There are three types of Automation workflows in Dynatrace.
+
+* Standard workflows: These are automation workflows that trigger two or more tasks.
+* [Simple workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow."): Single-task workflows with restricted functionality.
+* [Draft-only workflows](/docs/analyze-explore-automate/workflows/building "Create and edit workflows in Dynatrace Workflows."): Workflows that are not yet deployed, or which have been un-deployed.
+
+## Related topics
+
+* [Calculate your consumption of Automation Workflow (DPS)](/docs/license/capabilities/automation/automation "Learn how your consumption of Dynatrace Automation Workflow DPS capability is billed and charged.")
+* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+
+
+---
+
+
 ## Source: kubernetes-platform-monitoring.md
 
 
@@ -1101,7 +1197,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Digital Experience Monitoring (DEM) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/digital-experience-monitoring
-scraped: 2026-02-16T09:27:05.233604
+scraped: 2026-02-16T21:31:47.869508
 ---
 
 # Digital Experience Monitoring (DEM) overview (DPS)
@@ -1198,7 +1294,7 @@ The following details apply to metric data points:
 ---
 title: Events powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/events
-scraped: 2026-02-16T09:17:59.004359
+scraped: 2026-02-16T21:20:02.351807
 ---
 
 # Events powered by Grail overview (DPS)
@@ -1403,7 +1499,7 @@ Use DQL to analyze event data in context with relevant data on the Dynatrace pla
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-16T09:14:35.459582
+scraped: 2026-02-16T21:11:59.662942
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1540,7 +1636,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-16T09:18:02.375668
+scraped: 2026-02-16T21:19:56.895128
 ---
 
 # Log Analytics (DPS)
@@ -1663,7 +1759,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-16T09:18:08.834584
+scraped: 2026-02-16T21:19:59.594291
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1744,13 +1840,94 @@ Here's what's included with the Query data-usage dimension:
 ---
 
 
+## Source: platform-extensions.md
+
+
+---
+title: Platform extensions overview (DPS)
+source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
+scraped: 2026-02-16T21:27:06.841017
+---
+
+# Platform extensions overview (DPS)
+
+# Platform extensions overview (DPS)
+
+* Latest Dynatrace
+* Overview
+* 16-min read
+* Updated on Jan 12, 2026
+
+As of January 12, 2026, SaaS platform extensions will no longer be part of the rate card for any new DPS subscription signed on or after that date.
+Existing DPS customers will continue to have access to the SaaS platform extensions capabilities.
+
+This page describes the different platform extensions and the features that they provide with a DPS subscription.
+
+For information about how usage of a specific capability translates to consumption of your DPS license commit, see
+
+* [Custom Events Classic](/docs/license/capabilities/platform-extensions/custom-events-classic "Learn how your consumption of the Dynatrace Custom Events Classic DPS capability is billed and charged.")
+* [Custom Metrics Classic](/docs/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.")
+* [Custom Traces Classic](/docs/license/capabilities/platform-extensions/custom-traces-classic "Learn how your consumption of the Dynatrace Custom Traces Classic DPS capability is billed and charged.")
+* [Log Monitoring Classic](/docs/license/capabilities/platform-extensions/log-monitoring-classic "Learn how your consumption of the Dynatrace Log Monitoring Classic DPS capability is billed and charged.")
+* [Serverless Functions Classic](/docs/license/capabilities/platform-extensions/serverless-functions-classic "Learn how your consumption of the Dynatrace Serverless Functions Classic DPS capability is billed and charged.")
+
+Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.
+
+## Custom Metrics Classic feature overview
+
+You can extend the value of Dynatrace by defining, enabling or ingesting custom metrics.
+Dynatrace enables you to integrate third-party data sources, ingest custom metrics via API, leverage extensions, cloud integrations, and more.
+
+Here is a non-exhaustive list of custom metric types:
+
+* Metrics ingested from Amazon CloudWatch, Azure Monitor, or Google Cloud Operations Cloud for Cloud services monitoring
+* Metrics ingested from remote extensions for monitoring of databases, network devices, queues, and more
+* All API-ingested metrics
+* Calculated service metrics, custom DEM metrics, and log metrics
+
+## Log Monitoring Classic feature overview
+
+Dynatrace can ingest log records.
+A log record is recognized in one of the following ways:
+
+* Timestamp
+* JSON Object
+
+## Custom Traces Classic feature overview
+
+You can [ingest traces](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") into Dynatrace using [OpenTelemetry exporters](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") for applications running on hosts that don't have OneAgent installed.
+These distributed traces are sent via the [Trace Ingest API](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+
+## Custom Events Classic feature overview
+
+You have the option to configure custom events and/or event-ingestion channels.
+
+Custom created/ingested or subscribed events that might be configured for an environment include:
+
+* Any custom event sent to Dynatrace using the [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.").
+* Any custom event (such as a Kubernetes event) created from log messages by a [log processing rule](/docs/analyze-explore-automate/logs/lma-classic-log-processing#lmc-log-processing-rules "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+
+## Serverless Functions Classic feature overview
+
+Dynatrace enables end-to-end observability of serverless Cloud functions based on monitoring data coming from traces, metrics, and logs.
+
+Dynatrace also allows you to ingest logs from your serverless cloud functions.
+
+## Related topics
+
+* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+
+
+---
+
+
 ## Source: traces.md
 
 
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-16T09:16:06.301853
+scraped: 2026-02-16T21:13:29.092420
 ---
 
 # Traces powered by Grail overview (DPS)

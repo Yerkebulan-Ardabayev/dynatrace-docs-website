@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 6
+Files combined: 9
 
 ---
 
@@ -1513,7 +1513,7 @@ Edit the dashboard JSON in your preferred development environment. For JSON synt
 ---
 title: Dynatrace dashboard timeframe and management zone settings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe
-scraped: 2026-02-16T09:19:56.681887
+scraped: 2026-02-16T21:19:31.240626
 ---
 
 # Dynatrace dashboard timeframe and management zone settings
@@ -1702,7 +1702,7 @@ To set a tile management zone that overrides the dashboard management zone
 ---
 title: Create remote/multi-environment Dynatrace dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment
-scraped: 2026-02-16T09:22:05.709203
+scraped: 2026-02-16T21:18:52.333343
 ---
 
 # Create remote/multi-environment Dynatrace dashboards
@@ -1887,6 +1887,449 @@ You can of course add other tile types and point to additional remote environmen
 * [Dashboards Classic API](/docs/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")
 * [Remote environments API](/docs/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")
 * [What is a monitoring environment?](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+
+
+---
+
+
+## Source: dashboards-preset.md
+
+
+---
+title: Preset Dynatrace dashboards
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset
+scraped: 2026-02-16T21:32:02.136483
+---
+
+# Preset Dynatrace dashboards
+
+# Preset Dynatrace dashboards
+
+* How-to guide
+* 4-min read
+* Published Feb 04, 2021
+
+[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+
+The dashboards discussed here are classic dashboards created using the dashboarding functionality integrated with previous Dynatrace.
+
+* For more about classic dashboards, see [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+* For more about dashboards created with the Dashboards app in the latest Dynatrace, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+* To improve your dashboard experience, you can [upgrade existing dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") from Dashboards Classic to the Dashboards app in the latest Dynatrace.
+
+Preset dashboards are visible to all users by default.
+
+* On the **Dashboards** page, the name of each preset dashboard is followed by the `Preset` tag.
+* To display only preset dashboards, set the `Preset` filter to `Yes`.
+
+Dynatrace offers several domain-specific out-of-the-box preset dashboards. Use them as inspiration for your own dashboards and clone them to create your own customized versions.
+
+* You can create your own preset dashboards.
+* You can set any preset dashboard as the home dashboard for a user group.
+
+## Manage global settings
+
+Preset dashboards are visible to all users by default. You can use the global settings to turn them off entirely or to limit visibility to certain user groups.
+
+### Enable presets
+
+Use **Enable presets** to turn preset dashboards on or off globally. If you turn it off, dashboards marked as presets will no longer appear on **Dashboard** tables for any users.
+
+### Limit preset visibility
+
+Use preset rules to ensure that specific preset dashboards are visible only to specific user groups and not to all users in the environment.
+
+1. Go to **Settings** and select **Dashboards** > **Preset settings**.
+2. In the **Limit preset visibility** section, **Add item**.
+
+   * Set **Preset dashboard** to the preset dashboard for which you want to manage group access.
+   * Set **User group** to the user group that should have access to the selected preset dashboard.
+3. Select **Save changes**.
+
+## List all preset dashboards
+
+To list all preset dashboards
+
+1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
+2. Set a filter using one of these methods:
+
+   * Under **Preset** in the left column, select `Yes`
+   * On the **Filter by** line, select `Preset: Yes`
+3. Select the name of any preset dashboard to display it.
+
+## Out-of-the-box preset dashboards
+
+You can't edit out-of-the-box preset dashboards, but you can clone them and edit the clones.
+
+### To clone an out-of-the-box preset dashboard
+
+Use **Clone** to create your personal, editable copy of a dashboard with `-cloned` appended to the dashboard name.
+
+1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
+2. Find the out-of-the-box preset dashboard you want to clone.
+3. Use one of these methods to clone the dashboard:
+
+   * Select **More** (**â¦**) > **Clone** for the dashboard you want to clone.
+   * Open the dashboard, select **More** (**â¦**) in the upper-right of the dashboard, and select **Clone**.
+
+To clone a dashboard you are currently displaying, select **More** (**â¦**) > **Clone**.
+
+### To inspect and edit the clone
+
+Now that you have a copy of the dashboard, you can experiment with it.
+
+1. Select **Edit** to inspect and edit the dashboard components.
+
+   * **Name**âSelect  after the dashboard name to personalize the name of your clone.
+   * **Tags**âUnder the dashboard name, add and delete tags as needed.
+   * **Markdown** and **Header** tilesâSelect them to see how to use text and headers on your dashboard to label and explain elements of the dashboard.
+   * Other tilesâselect tiles to see the settings in the tile-specific pane on the right. See [Available tiles](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.") for tile-specific help.
+2. Select **Done** to save any changes and display the working dashboard.
+3. Try drilldowns from the tiles to see where they go.
+
+   * Open a tile's menu to see menu options.
+   * Select tile elements to see available actions.
+
+## Create a preset dashboard
+
+You can create and modify your own preset dashboards.
+
+* Preset dashboards are automatically shared to all users
+* Preset dashboards appear on the **Dashboards** table for all users
+
+You need one of the following permissions:
+
+* Environment-wide permission **Change monitoring settings**
+* Role `ALLOW environment:roles:manage-settings`
+
+To designate a dashboard as a preset dashboard
+
+1. [Create a dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.") or display an existing dashboard for which you have editing rights.
+2. Select **Edit**.
+3. Switch to the **Settings** tab and then select **Configure more**.
+4. On the **Manage access** tab, turn on **Publish as preset**.
+5. **Save changes**.
+
+To verify the change
+
+1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
+2. Filter by `Preset: Yes`.
+3. Make sure the dashboard is displayed in the table.  
+   Also, each preset dashboard has a `Preset` tag after its name in the table.
+
+## Assign a home dashboard
+
+If you have admin privileges, you can assign a preset dashboard as the home dashboard for a user group. The selected dashboard will become that group's default landing page.
+
+1. Go to **Settings** > **Dashboards** > **General settings**.
+2. Select **Configure home dashboard**.
+3. Set **User group** to the group whose home dashboard you want to set.
+4. Set **Home dashboard** to one of the preset dashboards on the list.  
+   If your dashboard isn't listed, make sure it's set as a preset dashboard.
+5. Select **Save changes**.
+
+
+---
+
+
+## Source: dashboards-settings.md
+
+
+---
+title: Global Dynatrace dashboard settings
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-settings
+scraped: 2026-02-16T21:25:29.017350
+---
+
+# Global Dynatrace dashboard settings
+
+# Global Dynatrace dashboard settings
+
+* How-to guide
+* 2-min read
+* Published Mar 05, 2021
+
+[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+
+The dashboards discussed here are classic dashboards created using the dashboarding functionality integrated with previous Dynatrace.
+
+* For more about classic dashboards, see [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+* For more about dashboards created with the Dashboards app in the latest Dynatrace, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+* To improve your dashboard experience, you can [upgrade existing dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") from Dashboards Classic to the Dashboards app in the latest Dynatrace.
+
+Use the **Global dashboard settings** page to configure dashboard global settings and global settings for dashboard sharing and preset dashboards.
+
+## General settings
+
+### Allow anonymous access
+
+With public sharing, even users who don't have access to the related Dynatrace environment or any Dynatrace access at all can view (but not change) your dashboard.
+
+1. Go to **Settings** and select **Dashboards** > **General settings**.
+2. Turn **Allow anonymous access** on or off to determine at the global (account) level whether dashboards can be shared publicly.
+3. Select **Save changes**.
+
+### Home dashboards
+
+You can assign a preset dashboard as the home dashboard for any user group. The selected dashboard will become that group's default landing page.
+
+1. Go to **Settings** and select **Dashboards** > **General settings**.
+2. Select **Configure home dashboard**.
+3. Select **User group**.
+4. Select a preset dashboard from the **Home dashboard** list.  
+   If your dashboard isn't listed, make sure it's a [preset dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset "Learn about out-of-the-box Dynatrace dashboards and how to create your own preset dashboards.").
+5. Select **Save changes**.
+
+## Preset settings
+
+Use this page to configure preset dashboard settings at the global level.
+
+Preset dashboards are visible to all users by default. You can use the global settings to turn them off entirely or to limit visibility to certain user groups.
+
+### Enable presets
+
+Use **Enable preset** to turn preset dashboards on or off globally. If you turn it off, any dashboard marked as a preset will no longer be displayed on other users' **Dashboard** tables.
+
+### Limit preset visibility
+
+Use preset rules to ensure that specific preset dashboards are visible only to specific user groups and not to all users in the environment.
+
+1. Go to **Settings** and select **Dashboards** > **Preset settings**.
+2. In the **Limit preset visibility** section, **Add item**.
+
+   * Set **Preset dashboard** to the preset dashboard for which you want to manage group access.
+   * Set **User group** to the user group that should have access to the selected preset dashboard.
+3. Select **Save changes**.
+
+For more on preset dashboards, see [Preset dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset "Learn about out-of-the-box Dynatrace dashboards and how to create your own preset dashboards.").
+
+## Allowed URL pattern rules
+
+To add an image to your dashboard via URL, you first need to add a URL rule to the allowlist.
+
+1. Go to **Settings** and select **Dashboards** > **Allowed URL pattern rules**.
+2. Select **Add item**.
+3. Set **Rule**, which specifies how to process this allowlist entry.
+
+   * **Starts with**âallow any image whose URL starts with the contents of **Pattern**.
+   * **Exact**âallow the specific image whose URL matches the contents of **Pattern** exactly.
+4. Set **Pattern**:
+
+   * To specify a URL start, enter enough of the URL to make sure any matching image URLs will be suitable for your dashboards.  
+     Example: enter `https://example.com/images/` to allow any image whose URL starts with `https://example.com/images/`, such as  
+     `https://example.com/images/image-x.jpg` and
+     `https://example.com/images/my-picture.svg`
+   * To specify an exact URL, enter the entire URL of the image you want to allow.  
+     Example: enter `https://example.com/images/my-image-file-name.jpg` to allow only that image
+5. Select **Save changes** to add the specified rule to the allowlist.
+
+Then you can add a dashboard image via URL.
+
+1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
+2. Select the name of a dashboard to display that dashboard.
+3. Select **Edit** in the upper-right corner of the dashboard. The dashboard opens in edit mode.
+
+   * If you don't see an **Edit** option, you don't have permission to edit that dashboard.
+4. Drag an **Image** tile into position.
+5. On the **Image** panel, select the **Add image URL** tab.
+6. Enter the URL of the image file you want to display in the tile. It needs to match one of the rules on the allowlist.
+7. Size and position the tile as needed.
+
+
+---
+
+
+## Source: share-dashboards.md
+
+
+---
+title: Share Dynatrace dashboards
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards
+scraped: 2026-02-16T21:26:12.377218
+---
+
+# Share Dynatrace dashboards
+
+# Share Dynatrace dashboards
+
+* How-to guide
+* 7-min read
+* Published Jul 19, 2017
+
+[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+
+The dashboards discussed here are classic dashboards created using the dashboarding functionality integrated with previous Dynatrace.
+
+* For more about classic dashboards, see [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+* For more about dashboards created with the Dashboards app in the latest Dynatrace, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+* To improve your dashboard experience, you can [upgrade existing dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") from Dashboards Classic to the Dashboards app in the latest Dynatrace.
+
+You can share your dashboards with anyone, even if they don't have their own accounts within the same Dynatrace environment.
+
+Limitations
+
+* It is not possible to use an anonymous dashboard link to access Grail data.
+
+## Quick start
+
+To share a dashboard
+
+1. Display the dashboard you want to share.
+
+   * To display a dashboard, go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and select the name of the dashboard.
+2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
+4. Turn on **Share dashboard** and specify the sharing details as described below.
+
+   * [Grant access to a specific user](#access-user)
+   * [Grant access to a specific group](#access-group)
+   * [Grant access to any user with the link](#access-all-authenticated)
+   * [Grant anonymous access](#access-anonymous)
+
+   You can combine these options. For example, you might grant `Edit` access to dashboard developers and grant `View` access to other users or groups in your organization.
+5. Select **Save changes**.
+
+To stop sharing a dashboard
+
+1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and select the name of the dashboard.
+2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+3. In the pop-up, turn off **Share this dashboard**.
+
+Any share settings you made previously are preserved and will be reactivated if you turn **Share this dashboard** back on.
+
+## Configure global dashboard sharing settings
+
+With public sharing, even users who don't have access to the related Dynatrace environment or any Dynatrace access at all can view (but not change) your dashboard.
+
+1. Go to **Settings** and select **Dashboards** > **General settings**.
+2. Turn **Allow anonymous access** on or off to determine at the global (account) level whether dashboards can be shared publicly.
+3. Select **Save changes**.
+
+## Grant access to a specific user
+
+To grant access to an authenticated Dynatrace user
+
+1. Display the dashboard you want to share.
+
+   * To display a dashboard, go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and select the name of the dashboard.
+2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
+
+1. Turn on **Share dashboard**.
+2. Under **Access permissions**, select **Grant access permission**.
+3. From the **Who to grant access to** list, select **Specific user**.
+4. From the **User** list, select the user to whom you want to grant access.
+5. From the **What they should be able to do with the dashboard**, select `Edit` or `View`.
+6. Select **Save changes**.  
+   The specified user is added to the list under **Grant access permission**.
+
+   * When **Share dashboard** is turned on, the selected user has access to your dashboard as you specified above (`Edit` or `View`).
+   * To change the access type (`Edit` or `View`), select **Details** for that user and change **What they should be able to do with the dashboard**.
+   * To revoke this access, select **Delete** for that user.
+
+   Users assigned the `Edit` permission can edit shared dashboards. Be careful about sharing `Edit` permission:
+
+   * Changes someone else makes to a dashboard will affect all users who share the dashboard.
+   * When two users edit the same dashboard at the same time, the most recently saved changes take precedence over earlier changes. If you attempt to edit a dashboard that is currently being edited by another user, you'll see a notification.
+
+## Grant access to a specific group
+
+To grant access to everyone in a Dynatrace user group
+
+1. Display the dashboard you want to share.
+
+   * To display a dashboard, go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and select the name of the dashboard.
+2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
+
+1. Turn on **Share dashboard**.
+2. Under **Access permissions**, select **Grant access permission**.
+3. Under **Who to grant access to**, select **Specific group**.
+4. Under **User group**, select the group to whom you want to grant access to your dashboard.
+5. From the **What they should be able to do with the dashboard**, select `Edit` or `View`.
+6. Select **Save changes**.  
+   The specified user group is added to the list under **Grant access permission**.
+
+   * When **Share dashboard** is turned on, everyone in the selected user group has access to your dashboard as you specified above (`Edit` or `View`).
+   * To change the access type (`Edit` or `View`), select **Details** for that user group and change **What they should be able to do with the dashboard**.
+   * To revoke this access, select **Delete** for that user group.
+
+   Users assigned the `Edit` permission can edit shared dashboards. Be careful about sharing `Edit` permission:
+
+   * Changes someone else makes to a dashboard will affect all users who share the dashboard.
+   * When two users edit the same dashboard at the same time, the most recently saved changes take precedence over earlier changes. If you attempt to edit a dashboard that is currently being edited by another user, you'll see a notification.
+
+## Grant access to any user with the link
+
+To grant access to any authenticated Dynatrace user who has a copy of the shared link
+
+1. Display the dashboard you want to share.
+
+   * To display a dashboard, go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and select the name of the dashboard.
+2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
+
+1. Turn on **Share dashboard**.
+2. Under **Access permissions**, select **Grant access permission**.
+3. Under **Who to grant access to**, select **Any user with the link**.
+4. Select **Copy link** to get the link you need to share the dashboard.
+5. Select **Save changes**.  
+   **Any user with the link has permission** is added to the list of permissions under the **Grant access permission** button.
+6. Share the link (address) with users who should view the dashboard.
+
+   * When **Share dashboard** is turned on, any user who has a copy of the link can use it to view the dashboard.
+   * The dashboard will not be visible on the user's **Dashboards** table in Dynatrace until they use the link for the first time.
+   * To revoke this access, select **Delete** in the **Any user with the link has permission** row.
+
+## Grant anonymous access
+
+You can grant **anonymous access** to your dashboard based on distributable links to the dashboard:
+
+* Anonymous access grants view permission only
+* You can specify links per management zone
+* To enable or disable anonymous access for your environment, see **Settings** > **Dashboards** > **General settings**.
+
+* It is not possible to use an anonymous dashboard link to access Grail data.
+
+### Create a shareable link to your dashboard
+
+To create a shareable link to your dashboard that can be used by anyone (with no authentication)
+
+1. Display the dashboard you want to share.
+
+   * To display a dashboard, go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and select the name of the dashboard.
+2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
+
+1. Turn on **Share dashboard**.
+2. Under **Anonymous access**, select **Add anonymous access link**.
+3. From **Management Zone for anonymous access link**, select a management zone or leave it set to `default`.
+
+   * Which management zones are available depends on your permissions when you create the link.
+4. Select **Save changes**.  
+   A shareable link is added to the list displayed under **Add anonymous access link**.
+5. Expand the list entry (**Details**) and select **Copy link** to copy the link to your clipboard. Paste the link to any message you send referring to the dashboard.
+
+Repeat this procedure to create multiple anonymous links.
+
+* If a [default timeframe and management zone](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe#default "Learn about Dynatrace dashboard timeframe and management zone settings.") are set for the dashboard, the link is shared with those settings. Otherwise, the link is shared with the timeframe of **last 2 hours** and **All** management zone.
+* If the dashboard is shared with the **All** management zone, a recipient of the link has access to the management zones that you had access to when you created the link.
+
+### Revoke a shareable link to your dashboard
+
+To revoke a shareable link to your dashboard that can be used by anyone (with no authentication)
+
+1. Under **Anonymous access**, locate the link.
+2. Select **X** in the **Delete** column for that row and then select **Save changes**.
+
+### Caution on shared links
+
+A shared link has the creator's permissions, not the recipient's permissions.
+
+* Anyone using a link you create can see everything you see through that link (such as management zones).
+* If you lose permissions, people using your link also lose those permissions.
+
+To maintain stricter control over who can see your dashboard, use the authenticated options per user, group, or environment.
 
 
 ---

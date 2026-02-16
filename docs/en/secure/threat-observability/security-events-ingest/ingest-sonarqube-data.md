@@ -1,7 +1,7 @@
 ---
 title: Ingest SonarQube security and quality events, metrics, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-sonarqube-data
-scraped: 2026-02-16T09:17:15.709321
+scraped: 2026-02-16T21:20:31.743633
 ---
 
 # Ingest SonarQube security and quality events, metrics, and audit logs

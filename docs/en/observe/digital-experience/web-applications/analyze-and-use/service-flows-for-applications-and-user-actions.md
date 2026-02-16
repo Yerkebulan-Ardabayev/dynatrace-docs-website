@@ -1,7 +1,7 @@
 ---
 title: Service flows for applications and user actions
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/service-flows-for-applications-and-user-actions
-scraped: 2026-02-16T09:19:50.094954
+scraped: 2026-02-16T21:19:38.013850
 ---
 
 # Service flows for applications and user actions

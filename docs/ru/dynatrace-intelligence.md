@@ -1,100 +1,100 @@
 ---
 title: Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence
-scraped: 2026-02-16T09:14:22.392872
+scraped: 2026-02-16T21:11:44.949366
 ---
 
 # Dynatrace Intelligence
 
 # Dynatrace Intelligence
 
-* Latest Dynatrace
-* Overview
-* 2-min read
-* Updated on Jan 28, 2026
+* Последняя версия Dynatrace
+* Обзор
+* 2-минутное чтение
+* Обновлено 28 января 2026 г.
 
-Dynatrace Intelligence applies deterministic, causation-based analysis across applications, services, infrastructure, logs, and traces. Using the Grail data lakehouse and the Smartscape real-time dependency graph, it establishes baselines, detects anomalies, and identifies root cause with topology and dependency context. It correlates code changes, deployments, configuration, and policy updates to show what changed and why a problem occurred.
+Dynatrace Intelligence применяет детерминированный, основанный на причинно-следственных связях анализ для приложений, сервисов, инфраструктуры, журналов и трассировок. Используя хранилище данных Grail и реальное графическое представление зависимостей Smartscape, он устанавливает базовые показатели, обнаруживает аномалии и определяет коренную причину с учетом топологии и контекста зависимостей. Он коррелирует изменения кода, развертывания, конфигурации и обновления политики, чтобы показать, что изменилось и почему произошла проблема.
 
-Intelligence can propose and run approved actions through agentic workflows and built-in agents operating under policy guardrails ([Preview](/docs/whats-new/preview-releases#dynatrace-intelligence-agentic-workflows "Learn about our Preview releases and how you can participate in them.")). It supports in-context natural language for investigation and guided next steps, so teams can review findings, open tickets, notify owners, or execute vetted runbooks using the same unified data and context.
+Intelligence может предлагать и выполнять утвержденные действия через агентские рабочие процессы и встроенные агенты, работающие под контролем политики ([Предварительный просмотр](/docs/whats-new/preview-releases#dynatrace-intelligence-agentic-workflows "Узнайте о наших предварительных выпусках и о том, как вы можете участвовать в них.")). Он поддерживает естественный язык в контексте для расследования и пошаговых инструкций, чтобы команды могли просматривать результаты, открывать тикеты, уведомлять владельцев или выполнять проверенные скрипты с использованием одних и тех же объединенных данных и контекста.
 
 ![Dynatrace Intelligence](https://dt-cdn.net/images/dti-light-mode-0c2a24e5ba-86a638dfc1.svg "Dynatrace Intelligence")
 
-## Use cases
+## Сценарии использования
 
-For a deeper understanding of how Dynatrace Intelligence can enhance your operations, explore the use cases.
+Для более глубокого понимания того, как Dynatrace Intelligence может улучшить ваши операции, изучите сценарии использования.
 
-### Developers
+### Разработчики
 
-* Detect regressions and link them to builds or feature flags.
-* Pinpoint root cause with code-level details and stack traces.
-* Propose fixes or rollbacks through agentic workflows ([Preview](/docs/whats-new/preview-releases#dynatrace-intelligence-agentic-workflows "Learn about our Preview releases and how you can participate in them.")).
+* Обнаруживать регрессии и связывать их с сборками или флагами функций.
+* Определять коренную причину с помощью деталей кода и стек-трассировок.
+* Предлагать исправления или откат через агентские рабочие процессы ([Предварительный просмотр](/docs/whats-new/preview-releases#dynatrace-intelligence-agentic-workflows "Узнайте о наших предварительных выпусках и о том, как вы можете участвовать в них.")).
 
 ### SRE
 
-* Monitor Kubernetes and cloud with anomaly detection tied to root cause.
-* Map impact across dependencies and surface recommended actions.
-* Auto-enrich incidents and trigger approved scaling or reconfiguration runbooks.
+* Мониторить Kubernetes и облако с обнаружением аномалий, связанным с коренной причиной.
+* Отображать влияние на зависимости и предлагать рекомендуемые действия.
+* Автоматически обогащать инциденты и запускать утвержденные скрипты масштабирования или пере конфигурации.
 
-### Security
+### Безопасность
 
-* Triage and prioritize vulnerabilities and runtime findings by risk and service context.
-* Create tickets and initiate remediation workflows.
-* Provide evidence and context to streamline handoffs and resolution.
+* Тriage и расставлять приоритеты уязвимостей и результатов runtime по риску и контексту сервиса.
+* Создавать тикеты и инициировать рабочие процессы исправления.
+* Предоставлять доказательства и контекст для упрощения передачи и решения.
 
-## Concepts
+## Концепции
 
-[#### Anomaly detection
+[#### Обнаружение аномалий
 
-How Dynatrace detects anomalies in your environment.
+Как Dynatrace обнаруживает аномалии в вашей среде.
 
-* Overview
+* Обзор
 
-See the overview](/docs/dynatrace-intelligence/anomaly-detection)[#### Root cause analysis
+Смотрите обзор](/docs/dynatrace-intelligence/anomaly-detection)[#### Анализ коренной причины
 
-How Dynatrace analyzes problems to determine their root cause.
+Как Dynatrace анализирует проблемы для определения их коренной причины.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis)[#### Dynatrace Intelligence agentic and generative AI
+Читайте это объяснение](/docs/dynatrace-intelligence/root-cause-analysis)[#### Dynatrace Intelligence агентский и генеративный AI
 
-Learn about Dynatrace Intelligence generative AI.
+Узнайте о Dynatrace Intelligence генеративном AI.
 
-* App
+* Приложение
 
-Explore this app](/docs/dynatrace-intelligence/copilot)[#### AI models
+Изучайте это приложение](/docs/dynatrace-intelligence/copilot)[#### Модели AI
 
-Learn about AI models that Dynatrace Intelligence uses.
+Узнайте о моделях AI, которые использует Dynatrace Intelligence.
 
-* Overview
+* Обзор
 
-See the overview](/docs/dynatrace-intelligence/reference/ai-models)[#### Dynatrace Intelligence integrations
+Смотрите обзор](/docs/dynatrace-intelligence/reference/ai-models)[#### Интеграции Dynatrace Intelligence
 
-Enhance your Dynatrace experience with the power of AI.
+Улучшите ваш опыт работы с Dynatrace с помощью силы AI.
 
-* Overview
+* Обзор
 
-See the overview](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations)
+Смотрите обзор](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations)
 
-## Getting started
+## Начало работы
 
-[![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new")
+[![Проблемы приложения - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое")
 
-#### Problems app
+#### Проблемы приложения
 
-Use the Problems app to quickly get to the root cause of incidents in your environment.
+Используйте приложение Проблемы, чтобы быстро определить коренную причину инцидентов в вашей среде.
 
-* App
+* Приложение
 
-Explore this app](/docs/dynatrace-intelligence/davis-problems-app)[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new")
+Изучайте это приложение](/docs/dynatrace-intelligence/davis-problems-app)[![Обнаружение аномалий - новое](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Обнаружение аномалий - новое")
 
-#### Anomaly Detection app
+#### Приложение обнаружения аномалий
 
-Explore anomaly detection configurations using the Anomaly Detection app.
+Изучайте конфигурации обнаружения аномалий с помощью приложения Обнаружение аномалий.
 
-* App
+* Приложение
 
-Explore this app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app)
+Изучайте это приложение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app)
 
-## Related topics
+## Связанные темы
 
-* [Learn more about ways to use Dynatrace Intelligence and Anomaly detection with practical examplesï»¿](https://www.youtube.com/playlist?list=PLqt2rd0eew1YFx9m8dBFSiGYSBcDuWG38)
+* [Узнайте больше о способах использования Dynatrace Intelligence и обнаружения аномалий с помощью практических примеров](https://www.youtube.com/playlist?list=PLqt2rd0eew1YFx9m8dBFSiGYSBcDuWG38)

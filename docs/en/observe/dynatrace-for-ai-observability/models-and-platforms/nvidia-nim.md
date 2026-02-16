@@ -1,7 +1,7 @@
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-16T09:25:14.099487
+scraped: 2026-02-16T21:21:46.356389
 ---
 
 # NVIDIA NIM

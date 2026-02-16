@@ -1,7 +1,7 @@
 ---
 title: ActiveGate purposes and functionality
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities
-scraped: 2026-02-16T09:18:45.295410
+scraped: 2026-02-16T21:21:17.933641
 ---
 
 # ActiveGate purposes and functionality

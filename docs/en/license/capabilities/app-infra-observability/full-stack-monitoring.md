@@ -1,7 +1,7 @@
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-02-15T21:19:05.606150
+scraped: 2026-02-16T21:16:46.811722
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -190,7 +190,7 @@ Metric data points sent via the Dynatrace Collector are included only if [Metric
 
 3
 
-Metric data points sent via the OpenTelemetry Collector are included only if [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card and the OpenTelemetry Collector has been configured as described in [Enrich from Kubernetes](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
+Metric data points sent via the OpenTelemetry Collector are included only if [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card and the OpenTelemetry Collector has been configured as described in [Enrich OTLP requests with Kubernetes data](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
 
 ### Included metric data point calculation example
 

@@ -1,7 +1,7 @@
 ---
 title: Variables in segments
 source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concepts-variables
-scraped: 2026-02-16T09:16:21.060164
+scraped: 2026-02-16T21:23:30.503338
 ---
 
 # Variables in segments

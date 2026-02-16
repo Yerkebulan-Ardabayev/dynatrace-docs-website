@@ -13,7 +13,7 @@ Files combined: 16
 ---
 title: Automate vulnerability remediation with GitHub Copilot and Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/ai-remediation-github-copilot
-scraped: 2026-02-15T21:25:25.825568
+scraped: 2026-02-16T21:26:56.205472
 ---
 
 # Automate vulnerability remediation with GitHub Copilot and Dynatrace
@@ -366,7 +366,7 @@ Once configured, GitHub Copilot will assist with remediating vulnerabilities by 
 ---
 title: Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/ai-remediation-kiro-cli
-scraped: 2026-02-16T09:32:57.901905
+scraped: 2026-02-16T21:32:52.821154
 ---
 
 # Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace
@@ -1484,7 +1484,7 @@ These are some of the use cases that can be solved using CloudTrail logs and Dyn
 ---
 title: Automate and orchestrate security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/automate-and-orchestrate-security-findings
-scraped: 2026-02-16T09:26:10.031795
+scraped: 2026-02-16T21:21:50.339729
 ---
 
 # Automate and orchestrate security findings
@@ -1548,7 +1548,7 @@ Example result:
 ---
 title: Automated threat-alert triaging
 source: https://www.dynatrace.com/docs/secure/use-cases/automated-threat-alert-triaging
-scraped: 2026-02-15T21:27:03.812947
+scraped: 2026-02-16T21:25:05.303131
 ---
 
 # Automated threat-alert triaging
@@ -2064,7 +2064,7 @@ To see if such events are present in your CloudTrail logs
 ---
 title: Discover coverage gaps in security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/discover-coverage-gaps-in-security-scans
-scraped: 2026-02-16T09:26:06.818789
+scraped: 2026-02-16T21:21:48.981466
 ---
 
 # Discover coverage gaps in security findings
@@ -2127,7 +2127,7 @@ For a better understanding of how to build your queries, see [DQL query examples
 ---
 title: Ingest and process custom security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/ingest-and-process-custom-security-findings
-scraped: 2026-02-16T09:25:59.880403
+scraped: 2026-02-16T21:21:57.999124
 ---
 
 # Ingest and process custom security findings
@@ -3617,7 +3617,7 @@ Now you can use the data to
 ---
 title: Instant Intrusion Response
 source: https://www.dynatrace.com/docs/secure/use-cases/instant-intrusion-response
-scraped: 2026-02-15T21:28:06.931389
+scraped: 2026-02-16T21:31:22.722941
 ---
 
 # Instant Intrusion Response
@@ -4025,7 +4025,7 @@ You can use the above instructions as building blocks to automate common steps i
 ---
 title: Monitor suspicious sign-in activity with Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/monitor-sign-in-activity
-scraped: 2026-02-16T09:26:03.529918
+scraped: 2026-02-16T21:21:54.858021
 ---
 
 # Monitor suspicious sign-in activity with Dynatrace
@@ -4349,7 +4349,7 @@ Monitoring sign-in activities in cloud environments is essential for detecting a
 ---
 title: CSPM Notification Automation
 source: https://www.dynatrace.com/docs/secure/use-cases/notification-automation
-scraped: 2026-02-16T09:26:01.838950
+scraped: 2026-02-16T21:21:53.475448
 ---
 
 # CSPM Notification Automation
@@ -5605,7 +5605,7 @@ CSPM Notification Automation with Dynatrace
 ---
 title: Runtime contextualization of container findings
 source: https://www.dynatrace.com/docs/secure/use-cases/runtime-contextualization-of-container-findings
-scraped: 2026-02-16T09:26:05.201029
+scraped: 2026-02-16T21:21:51.760292
 ---
 
 # Runtime contextualization of container findings
@@ -6518,7 +6518,7 @@ From here on, the complexity of the investigation will only grow, and the abilit
 ---
 title: Visualize and analyze security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/visualize-and-analyze-security-findings
-scraped: 2026-02-16T09:26:08.443347
+scraped: 2026-02-16T21:21:56.163251
 ---
 
 # Visualize and analyze security findings

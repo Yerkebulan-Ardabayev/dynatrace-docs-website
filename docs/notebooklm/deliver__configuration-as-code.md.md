@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Configuration as Code overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code
-scraped: 2026-02-15T09:11:48.928834
+scraped: 2026-02-16T21:24:24.218084
 ---
 
 # Configuration as Code overview

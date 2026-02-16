@@ -1,7 +1,7 @@
 ---
 title: Set up monitoring notifications with Azure Monitor alerts
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-monitoring-with-azure-alerts
-scraped: 2026-02-16T09:39:25.704574
+scraped: 2026-02-16T21:28:16.783094
 ---
 
 # Set up monitoring notifications with Azure Monitor alerts

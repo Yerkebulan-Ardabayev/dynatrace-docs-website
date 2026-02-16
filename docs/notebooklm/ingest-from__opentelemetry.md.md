@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: OpenTelemetry and Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry
-scraped: 2026-02-16T09:20:16.938301
+scraped: 2026-02-16T21:14:28.043794
 ---
 
 # OpenTelemetry and Dynatrace

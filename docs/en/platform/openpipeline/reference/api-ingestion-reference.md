@@ -1,7 +1,7 @@
 ---
 title: Ingest sources in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/api-ingestion-reference
-scraped: 2026-02-16T09:16:43.939267
+scraped: 2026-02-16T21:20:57.902738
 ---
 
 # Ingest sources in OpenPipeline

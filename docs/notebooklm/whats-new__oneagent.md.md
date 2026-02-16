@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: OneAgent release notes
 source: https://www.dynatrace.com/docs/whats-new/oneagent
-scraped: 2026-02-16T09:12:05.849642
+scraped: 2026-02-16T21:09:43.982411
 ---
 
 # OneAgent release notes

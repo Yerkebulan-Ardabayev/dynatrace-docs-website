@@ -13,7 +13,7 @@ Files combined: 6
 ---
 title: Create service-level objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
-scraped: 2026-02-15T09:06:50.320855
+scraped: 2026-02-16T21:32:10.969067
 ---
 
 # Create service-level objectives
@@ -154,7 +154,7 @@ For the SLO details view
 ---
 title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-02-15T21:24:11.149444
+scraped: 2026-02-16T21:24:55.915432
 ---
 
 # Add a service-level objective (SLO) tile to a dashboard
@@ -389,7 +389,7 @@ You can view details of your SLO tile in your dashboard.
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-02-16T09:33:01.517200
+scraped: 2026-02-16T21:27:24.251782
 ---
 
 # Upgrade Classic SLOs

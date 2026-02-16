@@ -1,7 +1,7 @@
 ---
 title: What is Dynatrace Grail?
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-grail
-scraped: 2026-02-16T09:14:02.605591
+scraped: 2026-02-16T21:10:22.185904
 ---
 
 # What is Dynatrace Grail?

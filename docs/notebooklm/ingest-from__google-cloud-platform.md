@@ -73,7 +73,7 @@ The following feature sets are available for Google Cloud Run.
 ---
 title: Monitor Google Cloud Run managed
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun
-scraped: 2026-02-16T09:24:35.890786
+scraped: 2026-02-16T21:14:07.528109
 ---
 
 # Monitor Google Cloud Run managed
@@ -862,7 +862,7 @@ The following feature sets are available for Google Cloud Functions.
 ---
 title: Integrate on Google Cloud Functions .NET
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet
-scraped: 2026-02-16T09:29:48.734924
+scraped: 2026-02-16T21:23:52.614739
 ---
 
 # Integrate on Google Cloud Functions .NET
@@ -1108,7 +1108,7 @@ Because code running outside the function execution can be terminated at any tim
 ---
 title: Integrate on Google Cloud Functions Node.js
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs
-scraped: 2026-02-16T09:39:03.682284
+scraped: 2026-02-16T21:24:01.453495
 ---
 
 # Integrate on Google Cloud Functions Node.js
@@ -1604,7 +1604,7 @@ You need to pay special attention to cases like unhandled exceptions or function
 ---
 title: Integrate on Google Cloud Functions Python
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python
-scraped: 2026-02-15T09:06:02.149376
+scraped: 2026-02-16T21:24:07.134651
 ---
 
 # Integrate on Google Cloud Functions Python
@@ -1844,7 +1844,7 @@ Because code running outside the function execution can be terminated at any tim
 ---
 title: Set up OpenTelemetry monitoring for Google Cloud Functions
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf
-scraped: 2026-02-16T09:31:53.777059
+scraped: 2026-02-16T21:30:09.140544
 ---
 
 # Set up OpenTelemetry monitoring for Google Cloud Functions
@@ -1929,7 +1929,7 @@ The Dynatrace Google Cloud Functions integration doesn't capture the IP addresse
 ---
 title: Trace Google Cloud Functions in Go with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go
-scraped: 2026-02-16T09:28:56.438392
+scraped: 2026-02-16T21:24:10.367558
 ---
 
 # Trace Google Cloud Functions in Go with OpenTelemetry
@@ -3063,7 +3063,7 @@ To view your custom attributes, you need to allow them in the Dynatrace web UI f
 ---
 title: Trace Google Cloud Functions with OpenTelemetry JavaScript
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-nodejs
-scraped: 2026-02-16T09:35:10.873753
+scraped: 2026-02-16T21:32:46.721429
 ---
 
 # Trace Google Cloud Functions with OpenTelemetry JavaScript
@@ -3955,7 +3955,7 @@ To view your custom attributes, you need to allow them in the Dynatrace web UI f
 ---
 title: Google Cloud Functions monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions
-scraped: 2026-02-16T09:24:47.763443
+scraped: 2026-02-16T21:14:22.607578
 ---
 
 # Google Cloud Functions monitoring
@@ -6185,7 +6185,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: Set up the Dynatrace Google Cloud metric integration on a GKE cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only
-scraped: 2026-02-16T09:34:08.163861
+scraped: 2026-02-16T21:30:50.952364
 ---
 
 # Set up the Dynatrace Google Cloud metric integration on a GKE cluster
@@ -7942,7 +7942,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: Google Cloud Apigee monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apigee-monitoring
-scraped: 2026-02-16T09:34:27.936218
+scraped: 2026-02-16T21:28:23.569496
 ---
 
 # Google Cloud Apigee monitoring
@@ -8059,7 +8059,7 @@ The following feature sets are available for Google Cloud Assistant Smart Home.
 ---
 title: Google Cloud Bigtable monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigtable-monitoring
-scraped: 2026-02-16T09:32:20.844858
+scraped: 2026-02-16T21:30:29.462887
 ---
 
 # Google Cloud Bigtable monitoring
@@ -8549,7 +8549,7 @@ The following feature sets are available for Google Cloud SQL.
 ---
 title: Google Cloud Storage monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-storage-monitoring
-scraped: 2026-02-16T09:28:42.212585
+scraped: 2026-02-16T21:28:01.673089
 ---
 
 # Google Cloud Storage monitoring
@@ -8662,7 +8662,7 @@ The following feature sets are available for Google Cloud Tasks.
 ---
 title: Google Cloud Dataflow monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-dataflow-monitoring
-scraped: 2026-02-16T09:29:21.363102
+scraped: 2026-02-16T21:25:23.487231
 ---
 
 # Google Cloud Dataflow monitoring
@@ -8735,7 +8735,7 @@ The following feature sets are available for Google Cloud Dataflow.
 ---
 title: Google Cloud Dataproc monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-dataproc-monitoring
-scraped: 2026-02-15T21:29:58.293741
+scraped: 2026-02-16T21:28:51.422338
 ---
 
 # Google Cloud Dataproc monitoring
@@ -8922,7 +8922,7 @@ The following feature sets are available for Google Cloud Filestore.
 ---
 title: Google Cloud Firebase monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-firebase-monitoring
-scraped: 2026-02-16T09:36:05.810974
+scraped: 2026-02-16T21:29:14.614721
 ---
 
 # Google Cloud Firebase monitoring
@@ -9272,7 +9272,7 @@ The following feature sets are available for Google Cloud Network Security.
 ---
 title: Google Cloud Network Topology monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-network-topology-monitoring
-scraped: 2026-02-15T21:27:51.213443
+scraped: 2026-02-16T21:29:49.303252
 ---
 
 # Google Cloud Network Topology monitoring
@@ -9322,7 +9322,7 @@ The following feature sets are available for Google Cloud Network Topology.
 ---
 title: Operations: Cloud Monitoring & Logging
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-operations-cloud-monitoring-and-logging
-scraped: 2026-02-15T21:30:31.739831
+scraped: 2026-02-16T21:24:15.918520
 ---
 
 # Operations: Cloud Monitoring & Logging
@@ -9392,7 +9392,7 @@ The following feature sets are available for Google Cloud Operations suite.
 ---
 title: Google Cloud Pub/Sub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-monitoring
-scraped: 2026-02-16T09:34:01.352217
+scraped: 2026-02-16T21:29:25.962899
 ---
 
 # Google Cloud Pub/Sub monitoring
@@ -9543,7 +9543,7 @@ The following feature sets are available for Google Cloud reCAPTCHA Enterprise.
 ---
 title: Google Cloud Router monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-router-monitoring
-scraped: 2026-02-15T21:28:55.598564
+scraped: 2026-02-16T21:25:03.963559
 ---
 
 # Google Cloud Router monitoring
@@ -9604,7 +9604,7 @@ The following feature sets are available for Google Cloud Router.
 ---
 title: Google Cloud Spanner monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-spanner-monitoring
-scraped: 2026-02-16T09:36:34.243204
+scraped: 2026-02-16T21:31:50.549496
 ---
 
 # Google Cloud Spanner monitoring
@@ -9774,7 +9774,7 @@ The following feature sets are available for Google Cloud VPC.
 ---
 title: Google Cloud supported services
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new
-scraped: 2026-02-16T09:24:54.659502
+scraped: 2026-02-16T21:13:53.217860
 ---
 
 # Google Cloud supported services
@@ -10314,7 +10314,7 @@ Every time you want to update your version of Dynatrace OneAgent, you must redep
 ---
 title: Monitor Google Compute Engine
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine
-scraped: 2026-02-16T09:21:21.669570
+scraped: 2026-02-16T21:14:15.894272
 ---
 
 # Monitor Google Compute Engine
@@ -10349,7 +10349,7 @@ You can update OneAgent by running regular [Linux](/docs/ingest-from/dynatrace-o
 ---
 title: Google Kubernetes Engine monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke/google-kubernetes-engine-monitoring
-scraped: 2026-02-16T09:34:57.603846
+scraped: 2026-02-16T21:25:19.214195
 ---
 
 # Google Kubernetes Engine monitoring
@@ -10514,7 +10514,7 @@ The following feature sets are available for Google Kubernetes Engine.
 ---
 title: Monitor Google Kubernetes Engine (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke
-scraped: 2026-02-16T09:21:13.513930
+scraped: 2026-02-16T21:13:51.829779
 ---
 
 # Monitor Google Kubernetes Engine (GKE)
@@ -10548,7 +10548,7 @@ Refer to the [Google Marketplaceï»¿](https://www.dynatrace.com/news/blog/60-s
 ---
 title: Google Cloud integrations
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations
-scraped: 2026-02-16T09:21:02.286881
+scraped: 2026-02-16T21:18:16.676891
 ---
 
 # Google Cloud integrations
@@ -10591,7 +10591,7 @@ Dynatrace OneAgent provides full-stack monitoring on Google Compute Engine and G
 ---
 title: Google Cloud supported service metrics (legacy)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/legacy/gcp-supported-service-metrics-legacy
-scraped: 2026-02-16T09:32:19.226874
+scraped: 2026-02-16T21:31:11.931440
 ---
 
 # Google Cloud supported service metrics (legacy)

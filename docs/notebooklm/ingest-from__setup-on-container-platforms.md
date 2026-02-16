@@ -13,7 +13,7 @@ Files combined: 6
 ---
 title: Set up Dynatrace on Cloud Foundry
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/cloud-foundry
-scraped: 2026-02-16T09:20:37.299999
+scraped: 2026-02-16T21:14:56.797632
 ---
 
 # Set up Dynatrace on Cloud Foundry
@@ -78,7 +78,7 @@ If you don't have access to BOSH, Dynatrace provides two different approaches fo
 ---
 title: Deploy OneAgent on Mesos/Marathon
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon
-scraped: 2026-02-16T09:22:23.326079
+scraped: 2026-02-16T21:14:55.429222
 ---
 
 # Deploy OneAgent on Mesos/Marathon
@@ -302,7 +302,7 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
 ---
 title: Set up Dynatrace on Docker
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/docker
-scraped: 2026-02-16T09:22:26.510680
+scraped: 2026-02-16T21:14:00.466524
 ---
 
 # Set up Dynatrace on Docker
@@ -338,7 +338,7 @@ In a typical scenario, container orchestration and management tools such as Kube
 ---
 title: Set up Dynatrace on Heroku
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/heroku
-scraped: 2026-02-16T09:20:35.724245
+scraped: 2026-02-16T21:14:25.349686
 ---
 
 # Set up Dynatrace on Heroku
@@ -1188,7 +1188,7 @@ helm uninstall dynatrace-oneagent-operator -n dynatrace
 ---
 title: Deploy OneAgent Operator on OpenShift (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-openshift-legacy
-scraped: 2026-02-16T09:39:37.615801
+scraped: 2026-02-16T21:26:17.107579
 ---
 
 # Deploy OneAgent Operator on OpenShift (deprecated)

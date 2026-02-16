@@ -1,7 +1,7 @@
 ---
 title: Update OneAgent on PPC BE Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-ppc-be-linux
-scraped: 2026-02-15T21:18:49.361073
+scraped: 2026-02-16T21:15:55.440568
 ---
 
 # Update OneAgent on PPC BE Linux
