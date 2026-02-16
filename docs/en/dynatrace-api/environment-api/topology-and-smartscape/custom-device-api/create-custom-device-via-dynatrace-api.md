@@ -1,7 +1,7 @@
 ---
 title: Create custom device via the Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/create-custom-device-via-dynatrace-api
-scraped: 2026-02-16T09:19:02.020143
+scraped: 2026-02-16T21:19:06.696666
 ---
 
 # Create custom device via the Dynatrace API

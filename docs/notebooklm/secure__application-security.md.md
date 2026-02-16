@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Application Security
 source: https://www.dynatrace.com/docs/secure/application-security
-scraped: 2026-02-16T09:14:24.131893
+scraped: 2026-02-16T21:11:50.226532
 ---
 
 # Application Security

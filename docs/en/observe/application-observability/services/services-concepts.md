@@ -1,7 +1,7 @@
 ---
 title: Service-related concepts
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-concepts
-scraped: 2026-02-16T09:15:07.647601
+scraped: 2026-02-16T21:11:02.052440
 ---
 
 # Service-related concepts

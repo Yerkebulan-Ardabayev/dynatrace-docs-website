@@ -1,7 +1,7 @@
 ---
 title: Instant Intrusion Response
 source: https://www.dynatrace.com/docs/secure/use-cases/instant-intrusion-response
-scraped: 2026-02-15T21:28:06.931389
+scraped: 2026-02-16T21:31:22.722941
 ---
 
 # Instant Intrusion Response

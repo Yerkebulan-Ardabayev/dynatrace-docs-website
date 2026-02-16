@@ -1,7 +1,7 @@
 ---
 title: Route data
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-routing
-scraped: 2026-02-16T09:15:39.645797
+scraped: 2026-02-16T21:23:38.496088
 ---
 
 # Route data

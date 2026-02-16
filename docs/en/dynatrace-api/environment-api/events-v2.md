@@ -1,7 +1,7 @@
 ---
 title: Events API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/events-v2
-scraped: 2026-02-15T21:27:08.947891
+scraped: 2026-02-16T21:28:52.730060
 ---
 
 # Events API v2

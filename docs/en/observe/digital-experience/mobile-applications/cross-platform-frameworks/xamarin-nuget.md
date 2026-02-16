@@ -1,7 +1,7 @@
 ---
 title: Instrument mobile apps with Dynatrace Xamarin NuGet package
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget
-scraped: 2026-02-16T09:20:54.127381
+scraped: 2026-02-16T21:18:01.721591
 ---
 
 # Instrument mobile apps with Dynatrace Xamarin NuGet package

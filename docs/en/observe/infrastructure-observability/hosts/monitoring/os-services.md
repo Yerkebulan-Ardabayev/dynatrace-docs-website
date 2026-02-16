@@ -1,7 +1,7 @@
 ---
 title: OS services monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/os-services
-scraped: 2026-02-15T21:18:39.855157
+scraped: 2026-02-16T21:16:44.108302
 ---
 
 # OS services monitoring
@@ -19,7 +19,7 @@ You can monitor hosts in full-stack monitoring mode or use lightweight monitorin
 ## Requirements
 
 * Linux systemd version 230+ is required on the monitored host to monitor relations between processes and OS services.
-* Linux systemd version 250+ is required on the monitored host for improved OS services detection performance by less frequent refreshes.
+* Linux systemd version 250+ is required on the monitored host for improved OS service detection performance by less frequent refreshes.
 
 ## OS services alerting options
 

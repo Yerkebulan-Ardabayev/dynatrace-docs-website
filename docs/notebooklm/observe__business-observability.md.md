@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Business Observability
 source: https://www.dynatrace.com/docs/observe/business-observability
-scraped: 2026-02-16T09:14:15.919678
+scraped: 2026-02-16T21:11:43.837299
 ---
 
 # Business Observability

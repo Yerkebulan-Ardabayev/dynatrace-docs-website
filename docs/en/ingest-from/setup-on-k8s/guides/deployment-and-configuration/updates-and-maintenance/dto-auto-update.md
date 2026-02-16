@@ -1,7 +1,7 @@
 ---
 title: Auto-update for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update
-scraped: 2026-02-15T21:30:09.676370
+scraped: 2026-02-16T21:24:42.234335
 ---
 
 # Auto-update for Dynatrace Operator

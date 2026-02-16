@@ -47,7 +47,7 @@ Remove and account from the AWS PrivateLink allowlist.](/docs/dynatrace-api/conf
 ---
 title: Calculated metrics API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/calculated-metrics
-scraped: 2026-02-16T09:22:40.915823
+scraped: 2026-02-16T21:13:44.153244
 ---
 
 # Calculated metrics API
@@ -516,7 +516,7 @@ Update configuration of IP address mappings.](/docs/dynatrace-api/configuration-
 ---
 title: Geographic regions - IP mapping headers API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-header
-scraped: 2026-02-16T09:31:23.266592
+scraped: 2026-02-16T21:24:11.661965
 ---
 
 # Geographic regions - IP mapping headers API
@@ -681,7 +681,7 @@ Update configuration of configuration.](/docs/dynatrace-api/configuration-api/ru
 ---
 title: Service detection API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/detection-rules
-scraped: 2026-02-16T09:23:40.584651
+scraped: 2026-02-16T21:13:13.986496
 ---
 
 # Service detection API
@@ -825,7 +825,7 @@ Delete a failure detection rule you don't need anymore.](/docs/dynatrace-api/con
 ---
 title: Request attributes API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/request-attributes-api
-scraped: 2026-02-16T09:22:39.330678
+scraped: 2026-02-16T21:13:40.162888
 ---
 
 # Request attributes API

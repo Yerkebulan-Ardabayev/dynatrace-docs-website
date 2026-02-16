@@ -1,7 +1,7 @@
 ---
 title: Azure Kubernetes Service (AKS)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-aks
-scraped: 2026-02-16T09:20:15.406541
+scraped: 2026-02-16T21:13:57.744311
 ---
 
 # Azure Kubernetes Service (AKS)

@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 38
+Files combined: 40
 
 ---
 
@@ -236,14 +236,14 @@ If this configuration option is not specified, the default behavior depends on w
 
 
 ---
-title: Collector deployment
+title: Deploy Dynatrace OTel Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/deployment
-scraped: 2026-02-15T21:23:21.659319
+scraped: 2026-02-16T21:26:14.137029
 ---
 
-# Collector deployment
+# Deploy Dynatrace OTel Collector
 
-# Collector deployment
+# Deploy Dynatrace OTel Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -1661,7 +1661,7 @@ Run the following command to download the image of the Dynatrace Collector:
 docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 ```
 
-Next, ensure that the [Collector configuration file](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.") exists in the current working directory and run the Collector image with the following command:
+Next, ensure that the [Collector configuration file](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") exists in the current working directory and run the Collector image with the following command:
 
 ```
 docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0 --config=/etc/otelcol/otel-collector-config.yaml
@@ -1767,7 +1767,7 @@ rpm -ivh dynatrace-otel-collector_<VERSION>_Linux_<ARCH>.rpm
 
 #### Service configuration
 
-When first starting the service, it may fail to start if there is no [configuration file](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.") in place yet. By default, the Collector attempts to find the file at `/etc/dynatrace-otel-collector/config.yaml`.
+When first starting the service, it may fail to start if there is no [configuration file](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") in place yet. By default, the Collector attempts to find the file at `/etc/dynatrace-otel-collector/config.yaml`.
 
 Custom configuration location
 
@@ -1819,13 +1819,531 @@ Container images for the Dynatrace distribution of the OpenTelemetry Collector a
 ---
 
 
+## Source: scaling.md
+
+
+---
+title: How to scale the OpenTelemetry Collector
+source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/scaling
+scraped: 2026-02-16T21:26:04.100687
+---
+
+# How to scale the OpenTelemetry Collector
+
+# How to scale the OpenTelemetry Collector
+
+* Latest Dynatrace
+* How-to guide
+* 10-min read
+* Published Sep 30, 2025
+
+When the Collector's CPU or memory usage exceeds a threshold that would put it
+at risk of being overloaded if there were a burst of traffic, it is recommended
+to find ways to either increase the resources allotted to the Collector, or to
+scale processing to multiple Collector instances. We will primarily focus on
+solutions available in Kubernetes here. Note that the guidance and examples in
+this documentation are generalized and may not give optimal performance for your
+specific case; you will need to analyze your systems to determine the best way
+to scale them.
+
+For more general information in the OpenTelemetry documentation, please see the
+[Scaling the Collectorï»¿](https://opentelemetry.io/docs/collector/scaling/) page
+on the OpenTelemetry website.
+
+## Determining when to scale
+
+You will want to consider scaling when you begin to approach the limits of the
+resources that have been allotted to your Collector. Self-monitoring metrics
+available through the Collector and metrics available from the host environment
+(e.g. Kubernetes) will be helpful to track this. See our page on [Collector self-monitoring](/docs/ingest-from/opentelemetry/collector/self-monitoring "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.")
+for more information on collecting this data.
+The following are a few metrics worth paying attention to:
+
+* `otelcol_processor_refused_spans`: If you have the [Memory Limiter
+  Processorï»¿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.145.0/processor/memorylimiterprocessor)
+  enabled, this metric (or the equivalent for other signals) will indicate that
+  the Collector needs more memory to continue processing its current load.
+* `otelcol_exporter_queue_capacity` and `otelcol_exporter_queue_size`: Once the
+  exporter queue size starts to get close to or exceed the queue capacity, that
+  indicates the Collector is having trouble sending data to the backend. This is
+  either because workers are not becoming available to send the data, or the
+  backend itself is overloaded. You may need to increase the processing power
+  available to the Collector to continue processing this volume of data.
+* `k8s.resource_quota.used`: If you are monitoring your Kubernetes cluster with
+  the [Kubernetes Cluster
+  Receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/receiver/k8sclusterreceiver),
+  this can be used to determine the amount of
+  CPU/memory quota your Collector has used.
+* `container.cpu.usage` and `container.memory.usage`: If you are monitoring your
+  cluster with the [Kubelet Stats
+  Receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/receiver/kubeletstatsreceiver),
+  these can tell you if a given Collector container is nearing or hitting its
+  quota limits.
+
+## Scaling the Collector
+
+Kubernetes comes with multiple object types capable of scaling the Collector
+based on the needs of specific scenarios. For simple scaling, Deployments or
+ReplicaSets can be used to create a pool of Collectors that can be scheduled by
+Kubernetes without too much forethought. For more general information on
+Collector deployment architectures, see our guide on [Deploy Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.").
+
+Most of the advice in this document applies to horizontally scaling the
+Collector by creating more Collector instances or spreading instances across
+machines. However, if your current deployment uses a single Collector instance
+to do all your processing, you should first determine if vertically scaling the
+Collector is sufficient for your anticipated load. Vertically scaling the
+Collector has a lower cap on the amount of processing power and memory that can
+be given to the Collector, but is also simpler. In Kubernetes, you can do this
+by raising the CPU and memory limits on the Collector pod.
+
+### Scaling stateless Collectors
+
+It's comparatively easy to scale stateless Collectors: since it doesn't matter
+which data goes to which Collector, the decision about which Collector to send a
+payload to can be made regardless of the contents of the data. As a result,
+any standard load balancer for a given transmission protocol should work.
+
+The simplest way to balance load is through a Kubernetes Service object that
+points to multiple replicas of a Collector pod deployed through any standard
+type of Kubernetes workload such as a Deployment, ReplicaSet, StatefulSet, or
+DaemonSet. For short-lived connections, this will distribute load among the
+Collectors accessible through the service fairly evenly. Note that long-lived
+connections, such as those over HTTP/2 or gRPC, will keep a connection open
+to a single Collector and therefore may make the load between Collectors uneven.
+
+For more complex cases, such as handling gRPC connections, a Service with type
+`LoadBalancer` can offer more control over how load is balanced. LoadBalancer
+Services are able to leverage a separate load balancer to determine which
+Collector a connection is routed to. Service meshes such as Istio or Linkerd can
+also help with load balancing, as they have detailed control over network
+connections inside the cluster.
+
+For cases where your deployment topology matters, for example with gateway
+Collectors deployed through a DaemonSet, you can use a Service object with
+specialized routing settings to only send data to Collectors running on the same
+node as the source of the data. On Kubernetes version 1.26+, this is done by
+configuring a service to [only accept traffic internal to a
+nodeï»¿](https://kubernetes.io/docs/concepts/services-networking/service-traffic-policy/).
+
+### Scaling stateful processing using non-pooled Collectors
+
+When using the Collector to do stateful processing, it's important that the same
+data is always sent to the same Collector. You can increase the throughput of
+your pipeline while still following this rule by choosing certain Collectors to
+handle certain data. This can be done by choosing a particular deployment
+pattern for Collectors, or by assigning data sources to Collectors:
+
+* **Sidecar Collectors**: If a Collector is deployed as a sidecar and is coupled
+  to an application, then all the data from that application will go through the
+  sidecar Collector and can be processed with stateful operations.
+* **DaemonSet Collectors**: An agent Collector deployed to a Kubernetes node
+  (such as through a DaemonSet) can be used for stateful processing if a given
+  application on the node always sends its data to the Collector. Note that this
+  assumes there is only a single Collector per node.
+* **Single Collector**: If you only need to run a
+  single Collector for a given set of data sources, this Collector can be used
+  for stateful processing since all data will flow through the same Collector.
+  You may choose this if you decide to send a particular signal or data from a
+  chosen set of applications to a given Collector. Note that for
+  high-availability, redundant Collector instances must be kept as backups and
+  not receive data unless the first Collector goes down. Additionally,
+  processing will be reset if a redundant Collector is activated.
+
+### Scaling pooled stateful Collectors with the Load Balancing Exporter
+
+Scaling a horizontally-scaled pool of stateful Collectors likely necessitates
+using the [Load Balancing
+Exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/exporter/loadbalancingexporter).
+The Load Balancing Exporter turns the
+Collector into an OTLP-aware load balancer that allows you to route data to a
+specific downstream Collector based on information inside an OTLP payload such
+as a metric name.
+
+Note that for metrics, the Load Balancing Exporter component has a [Development
+stability
+levelï»¿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.145.0/docs/component-stability.md).
+It is not recommended for production use at this time.
+
+#### Stateful processors
+
+You will want to consider using the exporter if you are scaling and using any
+of the following stateful components. We only cover components
+included in the Dynatrace Collector here, you
+will need to determine the best default for any other stateful components you
+use. You can also configure which part of the data is used for routing. The best
+key to use depends on your use-case, but we give recommendations below.
+
+* The [Cumulative to Delta
+  Processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor):
+  Data points for the same metric are required to be sent to the same Collector
+  for the collection period of the metric. The `metric_name` key is therefore a
+  good default for routing.
+* The [Tail Sampling
+  Processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/tailsamplingprocessor):
+  In order to make a decision about whether to sample a trace, the processor
+  must be able to see all spans within the trace. Therefore, all spans must be
+  sent to the same Collector, and we recommend routing by the `traceID` key to
+  accomplish this.
+* The [Span Metrics
+  Connectorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/connector/spanmetricsconnector):
+  The connector needs to see all spans from a service in order to emit metrics
+  about its performance. Therefore we highly recommend routing by the `service`
+  key.
+
+#### Configuring the Load Balancing Exporter
+
+There are two important elements involved with configuring the [Load Balancing
+Exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/exporter/loadbalancingexporter):
+the key used to route the data, and the method the exporter uses to find
+Collectors in the pool.
+
+Configuring the routing key is done by setting the `routing_key` option. The defaults for each signal are:
+
+* Traces: `traceID`
+* Metrics: `service`
+* Logs: `traceID` if present, otherwise a random trace ID. The `routing_key`
+  option will not override this behavior and will have no effect on how logs are
+  routed.
+
+We recommend you leave these as the default or set them based on the
+recommendations in the [Stateful processors](#stateful-processors) section
+above.
+
+The other important configuration option is the `resolver` key, which is used
+by the exporter to determine which Collectors are available to forward data to.
+In Kubernetes, we recommend using the `k8s` resolver since it is
+Kubernetes-native. Specifically, it supports dynamically updating the pool based
+on which Collector pods are running, and will add or remove Collectors if the
+number of replicas changes. It will also remove Collectors that become
+unhealthy, ensuring high-availability requirements are met if retries are also
+configured through the `retry_on_failure` option.
+
+Note that configuring the `static` resolver with a set pool of Collectors can
+cause data loss if a Collector goes down and is not replaced before the retry
+limit is met. The Collectors configured in the pool are set for the lifetime of
+the load-balancing Collector.
+
+#### Resiliency
+
+The load balancing exporter comes with resiliency options to help mitigate the
+risk of data loss. These options are both for dealing with a fluctuating number of downstream
+Collectors as well as issues sending data to a particular Collector. The
+[upstream
+docsï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/exporter/loadbalancingexporter#resilience-and-scaling-considerations)
+cover these in detail and explain how and when to use them.
+
+#### Scaling load balancer Collectors
+
+Since the Load Balancing Exporter uses a deterministic hash to determine which
+downstream Collector to send data to, load-balancing Collectors can be
+considered stateless and can therefore be scaled using the approaches outlined
+in the [Scaling stateless Collectors](#scaling-stateless-collectors) section.
+Note that if the resolver for the load-balancing Collectors update their
+downstream pools at different times, this may result in data meant for a single
+Collector momentarily being sent to multiple Collectors.
+
+## Demo configuration
+
+```
+extensions:
+
+
+
+health_check:
+
+
+
+endpoint: 0.0.0.0:13133
+
+
+
+receivers:
+
+
+
+otlp:
+
+
+
+protocols:
+
+
+
+grpc:
+
+
+
+endpoint: 0.0.0.0:4317
+
+
+
+http:
+
+
+
+endpoint: 0.0.0.0:4318
+
+
+
+exporters:
+
+
+
+loadbalancing/traces:
+
+
+
+protocol:
+
+
+
+otlp:
+
+
+
+resolver:
+
+
+
+k8s:
+
+
+
+service: traces-receiver.default
+
+
+
+ports:
+
+
+
+- 4317
+
+
+
+loadbalancing/logs:
+
+
+
+protocol:
+
+
+
+otlp:
+
+
+
+resolver:
+
+
+
+k8s:
+
+
+
+service: logs-receiver.default
+
+
+
+ports:
+
+
+
+- 4317
+
+
+
+loadbalancing/metrics:
+
+
+
+retry_on_failure:
+
+
+
+enabled: true
+
+
+
+initial_interval: 5s
+
+
+
+max_interval: 30s
+
+
+
+max_elapsed_time: 300s
+
+
+
+sending_queue:
+
+
+
+enabled: true
+
+
+
+num_consumers: 10
+
+
+
+queue_size: 1000
+
+
+
+sizer: requests
+
+
+
+protocol:
+
+
+
+otlp:
+
+
+
+resolver:
+
+
+
+k8s:
+
+
+
+service: metrics-receiver.default
+
+
+
+ports:
+
+
+
+- 4317
+
+
+
+service:
+
+
+
+extensions: [health_check]
+
+
+
+pipelines:
+
+
+
+metrics:
+
+
+
+receivers: [otlp]
+
+
+
+processors: []
+
+
+
+exporters:
+
+
+
+- loadbalancing/metrics
+
+
+
+traces:
+
+
+
+receivers: [otlp]
+
+
+
+processors: []
+
+
+
+exporters:
+
+
+
+- loadbalancing/traces
+
+
+
+logs:
+
+
+
+receivers: [otlp]
+
+
+
+processors: []
+
+
+
+exporters:
+
+
+
+- loadbalancing/logs
+```
+
+Configuration validation
+
+[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
+
+## Components
+
+For our configuration, we use the following components.
+
+### Receivers
+
+Under `receivers`, we configure the [`otlp` receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.145.0/receiver/otlpreceiver) to receive data over gRPC and HTTP.
+
+### Exporters
+
+In the `exporters` section, we configure three [`loadbalancing exporters`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/exporter/loadbalancingexporter),
+one for each signal. The exporters are all configured to use the `k8s` resolver,
+which uses a Kubernetes service to determine the pool of Collectors to send data
+to. One reason to split further processing by signal is that each signal likely
+receives different amounts of traffic: for example, you may receive a large
+amount of logs, some traces, and relatively few metrics. Therefore, you would
+want the Collector pool that processes logs to be bigger than the one that processes
+metrics; extra Collectors allocated for processing fewer metrics may waste
+resources.
+
+### Service pipelines
+
+In our pipelines, we receive data over OTLP and export it through the Load
+Balancing Exporter for the particular signal, without doing any additional
+processing. Since this Collector is exclusively for load balancing, we want to
+do as little processing as possible so it can handle as much data as possible.
+
+## Related topics
+
+* [Batch OTLP requests with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/batch "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.")
+* [Apply memory limits to the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/memory "Configure the OpenTelemetry Collector to respect memory limits and not use excessive system resources.")
+
+
+---
+
+
 ## Source: system-requirements.md
 
 
 ---
 title: Dynatrace OTel Collector system requirements.
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/system-requirements
-scraped: 2026-02-16T09:31:46.954846
+scraped: 2026-02-16T21:32:49.819658
 ---
 
 # Dynatrace OTel Collector system requirements.
@@ -2387,7 +2905,7 @@ Under `service`, we assemble our receiver, processor, and exporter objects into 
 ---
 title: Transform OTLP gRPC to HTTP with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/grpc
-scraped: 2026-02-16T09:27:37.877589
+scraped: 2026-02-16T21:28:04.681933
 ---
 
 # Transform OTLP gRPC to HTTP with the OpenTelemetry Collector
@@ -3395,7 +3913,7 @@ For more information see:
 ---
 title: Scrape Promethus metrics with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/prometheus
-scraped: 2026-02-16T09:30:40.521569
+scraped: 2026-02-16T21:28:10.118170
 ---
 
 # Scrape Promethus metrics with the OpenTelemetry Collector
@@ -4588,7 +5106,7 @@ For more information see:
 ---
 title: Transform and filter data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/transform
-scraped: 2026-02-16T09:38:00.528977
+scraped: 2026-02-16T21:31:42.344824
 ---
 
 # Transform and filter data with the OpenTelemetry Collector
@@ -5133,7 +5651,7 @@ Under `service`, we eventually assemble our receiver and exporter objects into a
 ---
 title: OpenTelemetry Collector use cases
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases
-scraped: 2026-02-16T09:28:03.971920
+scraped: 2026-02-16T21:32:26.503593
 ---
 
 # OpenTelemetry Collector use cases
@@ -5213,7 +5731,7 @@ Configure the OpenTelemetry Collector to ingest and transform Zipkin data into D
 ---
 title: Dynatrace OTel Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector
-scraped: 2026-02-16T09:24:13.737965
+scraped: 2026-02-16T21:12:57.376408
 ---
 
 # Dynatrace OTel Collector
@@ -5349,7 +5867,7 @@ Services are used to define pipelines that channel data through the Collector. T
 ---
 title: Get started with OpenTelemetry and Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/getting-started
-scraped: 2026-02-16T09:13:59.411678
+scraped: 2026-02-16T21:10:06.854716
 ---
 
 # Get started with OpenTelemetry and Dynatrace
@@ -5387,7 +5905,7 @@ How to calculate DPS consumption related to OpenTelemetry.](/docs/ingest-from/op
 ---
 title: Configure OpenTelemetry tracing with Envoy
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/integrations/envoy
-scraped: 2026-02-16T09:21:16.820526
+scraped: 2026-02-16T21:13:50.509458
 ---
 
 # Configure OpenTelemetry tracing with Envoy
@@ -5551,7 +6069,7 @@ Once the setup is complete and you have ingested your first data, you can verify
 ---
 title: Configure OpenTelemetry tracing with Istio
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/integrations/istio
-scraped: 2026-02-15T09:08:49.409862
+scraped: 2026-02-16T21:31:10.478249
 ---
 
 # Configure OpenTelemetry tracing with Istio
@@ -5814,7 +6332,7 @@ Once the setup is complete and you have ingested your first data, you can verify
 ---
 title: Integrate with Istio and Envoy
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/integrations
-scraped: 2026-02-16T09:24:12.139980
+scraped: 2026-02-16T21:12:56.181797
 ---
 
 # Integrate with Istio and Envoy
@@ -5840,7 +6358,7 @@ This page provides information on how to configure Istio and Envoy to export Ope
 ---
 title: OpenTelemetry licensing
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/opentelemetry-licensing
-scraped: 2026-02-16T09:24:08.994916
+scraped: 2026-02-16T21:12:53.554036
 ---
 
 # OpenTelemetry licensing
@@ -5973,7 +6491,7 @@ These are described on the respective DPS capability page:
 ---
 title: Set up Grail permissions for OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/opentelemetry-security-context
-scraped: 2026-02-16T09:22:57.131617
+scraped: 2026-02-16T21:13:02.782266
 ---
 
 # Set up Grail permissions for OpenTelemetry
@@ -6038,7 +6556,7 @@ To read more about enrichment options and setup, see how to [enrich via environm
 ---
 title: Ingest OTLP logs
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-logs
-scraped: 2026-02-15T21:24:35.802004
+scraped: 2026-02-16T21:30:49.394236
 ---
 
 # Ingest OTLP logs
@@ -6956,7 +7474,7 @@ For multi-value attributes, the attribute key contributes to billing only once, 
 ---
 title: About OTLP metrics ingest
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest
-scraped: 2026-02-16T09:31:07.458912
+scraped: 2026-02-16T21:30:34.062520
 ---
 
 # About OTLP metrics ingest
@@ -7139,7 +7657,7 @@ Typical limit of the OpenTelemetry SDK. Not limited by Dynatrace.
 ---
 title: OpenTelemetry to Dynatrace semantic mapping
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/otel-semantic-mapping
-scraped: 2026-02-15T21:22:55.444265
+scraped: 2026-02-16T21:26:22.729828
 ---
 
 # OpenTelemetry to Dynatrace semantic mapping
@@ -7228,7 +7746,7 @@ Standard [OpenTelemetry semantic conventionsï»¿](https://opentelemetry.io/doc
 ---
 title: Dynatrace OTLP API endpoints
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api
-scraped: 2026-02-16T09:24:15.354720
+scraped: 2026-02-16T21:12:52.231607
 ---
 
 # Dynatrace OTLP API endpoints
@@ -7430,7 +7948,7 @@ Verify that the following are true:
 ---
 title: Ensure success with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/troubleshooting
-scraped: 2026-02-16T09:24:07.401475
+scraped: 2026-02-16T21:12:50.906797
 ---
 
 # Ensure success with OpenTelemetry
@@ -7593,7 +8111,7 @@ See this [GitHub readmeï»¿](https://github.com/open-telemetry/opentelemetry-c
 ---
 title: Instrument your C++ application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/cpp
-scraped: 2026-02-16T09:21:28.892958
+scraped: 2026-02-16T21:18:19.921884
 ---
 
 # Instrument your C++ application with OpenTelemetry
@@ -9857,7 +10375,7 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 ---
 title: Instrument your Erlang application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/erlang
-scraped: 2026-02-16T09:20:42.290224
+scraped: 2026-02-16T21:18:08.755746
 ---
 
 # Instrument your Erlang application with OpenTelemetry
@@ -10363,6 +10881,704 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 ---
 
 
+## Source: go.md
+
+
+---
+title: Instrument your Go application with OpenTelemetry
+source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/go
+scraped: 2026-02-16T21:24:14.547867
+---
+
+# Instrument your Go application with OpenTelemetry
+
+# Instrument your Go application with OpenTelemetry
+
+* Latest Dynatrace
+* How-to guide
+* 5-min read
+* Published Apr 20, 2023
+
+This walkthrough shows how to add observability to your Go application using the OpenTelemetry Go libraries and tools.
+
+| Feature | Supported |
+| --- | --- |
+| Automatic instrumentation | Yes |
+| Traces | Yes |
+| Metrics | Yes |
+| Logs | No |
+
+## Prerequisites
+
+* Dynatrace version 1.222+
+* For tracing, W3C Trace Context is enabled
+
+  1. Go to **Settings** > **Preferences** > **OneAgent features**.
+  2. Turn on **Send W3C Trace Context HTTP headers**.
+
+## Step 1 Get the Dynatrace access details
+
+### Determine the API base URL
+
+For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). The URL should end in `/api/v2/otlp`.
+
+### Get API access token
+
+To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+
+[Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on the format and the necessary access scopes.
+
+## Step 2 Choose how you want to instrument your application
+
+OpenTelemetry supports on Go automatic and manual instrumentation, or a combination of both.
+
+Which instrumentation should I choose?
+
+It's a good idea to start with automatic instrumentation and add manual instrumentation if the automatic approach doesn't work or doesn't provide enough information.
+
+## Step 3 Initialize OpenTelemetry
+
+1. Add the following import statements.
+
+   ```
+   import (
+
+
+
+   "context"
+
+
+
+   "github.com/Dynatrace/OneAgent-SDK-for-Go/sdk"
+
+
+
+   "go.opentelemetry.io/otel"
+
+
+
+   "go.opentelemetry.io/otel/attribute"
+
+
+
+   "go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp"
+
+
+
+   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
+
+
+
+   "go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploghttp"
+
+
+
+   "go.opentelemetry.io/otel/propagation"
+
+
+
+   "go.opentelemetry.io/otel/trace"
+
+
+
+   sdkmetric "go.opentelemetry.io/otel/sdk/metric"
+
+
+
+   "go.opentelemetry.io/otel/sdk/metric/metricdata"
+
+
+
+   "go.opentelemetry.io/otel/sdk/resource"
+
+
+
+   sdktrace "go.opentelemetry.io/otel/sdk/trace"
+
+
+
+   semconv "go.opentelemetry.io/otel/semconv/v1.20.0"
+
+
+
+   "log"
+
+
+
+   "time"
+
+
+
+   "log/slog"
+
+
+
+   "go.opentelemetry.io/contrib/bridges/otelslog"
+
+
+
+   "go.opentelemetry.io/otel/log/global"
+
+
+
+   sdklog "go.opentelemetry.io/otel/sdk/log"
+
+
+
+   )
+   ```
+2. Run Go's [`mod tidy` commandï»¿](https://go.dev/ref/mod#go-mod-tidy) to install the dependencies.
+
+   ```
+   go mod tidy
+   ```
+3. Add the following code to your startup file and provide the [respective values](#get-the-dynatrace-access-details) for `DT_API_HOST` and `DT_API_TOKEN`.
+
+   * `DT_API_HOST` should contain only the hostname of your Dynatrace URL (for example, `XXXXX.live.dynatrace.com`); it is not a URL and must not contain any schemas or paths
+   * `DT_API_TOKEN` should contain the access token
+
+   ```
+   func InitOpenTelemetry() {
+
+
+
+   // ===== GENERAL SETUP =====
+
+
+
+   DT_API_HOST := "" // Only the host part of your Dynatrace URL
+
+
+
+   DT_API_BASE_PATH := "/api/v2/otlp"
+
+
+
+   DT_API_TOKEN := ""
+
+
+
+   authHeader := map[string]string{"Authorization": "Api-Token " + DT_API_TOKEN}
+
+
+
+   ctx := context.Background()
+
+
+
+   oneagentsdk := sdk.CreateInstance()
+
+
+
+   dtMetadata := oneagentsdk.GetEnrichmentMetadata()
+
+
+
+   var attributes []attribute.KeyValue
+
+
+
+   for k, v := range dtMetadata {
+
+
+
+   attributes = append(attributes, attribute.KeyValue{Key: attribute.Key(k), Value: attribute.StringValue(v)})
+
+
+
+   }
+
+
+
+   attributes = append(attributes,
+
+
+
+   semconv.ServiceNameKey.String("go-quickstart"), //TODO Replace with the name of your application
+
+
+
+   semconv.ServiceVersionKey.String("1.0.1"),      //TODO Replace with the version of your application
+
+
+
+   )
+
+
+
+   res, err := resource.New(ctx, resource.WithAttributes(attributes...))
+
+
+
+   if err != nil {
+
+
+
+   log.Fatalf("Failed to create resource: %v", err)
+
+
+
+   }
+
+
+
+   // ===== TRACING SETUP =====
+
+
+
+   exporter, err := otlptracehttp.New(
+
+
+
+   ctx,
+
+
+
+   otlptracehttp.WithEndpoint(DT_API_HOST),
+
+
+
+   otlptracehttp.WithURLPath(DT_API_BASE_PATH+"/v1/traces"),
+
+
+
+   otlptracehttp.WithHeaders(authHeader),
+
+
+
+   )
+
+
+
+   if err != nil {
+
+
+
+   log.Fatalf("Failed to create OTLP exporter: %v", err)
+
+
+
+   }
+
+
+
+   tp := sdktrace.NewTracerProvider(
+
+
+
+   sdktrace.WithResource(res),
+
+
+
+   sdktrace.WithSampler(sdktrace.AlwaysSample()),
+
+
+
+   sdktrace.WithBatcher(exporter),
+
+
+
+   )
+
+
+
+   otel.SetTracerProvider(tp)
+
+
+
+   otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
+
+
+
+   // ===== METRIC SETUP =====
+
+
+
+   var deltaTemporalitySelector = func(sdkmetric.InstrumentKind) metricdata.Temporality { return metricdata.DeltaTemporality }
+
+
+
+   metricsExporter, err := otlpmetrichttp.New(
+
+
+
+   ctx,
+
+
+
+   otlpmetrichttp.WithEndpoint(DT_API_HOST),
+
+
+
+   otlpmetrichttp.WithURLPath(DT_API_BASE_PATH+"/v1/metrics"),
+
+
+
+   otlpmetrichttp.WithHeaders(authHeader),
+
+
+
+   otlpmetrichttp.WithTemporalitySelector(deltaTemporalitySelector),
+
+
+
+   )
+
+
+
+   if err != nil {
+
+
+
+   log.Fatalf("Failed to create OTLP exporter: %v", err)
+
+
+
+   }
+
+
+
+   mp := sdkmetric.NewMeterProvider(
+
+
+
+   sdkmetric.WithResource(res),
+
+
+
+   sdkmetric.WithReader(sdkmetric.NewPeriodicReader(metricsExporter, sdkmetric.WithInterval(2*time.Second))),
+
+
+
+   )
+
+
+
+   otel.SetMeterProvider(mp)
+
+
+
+   // ===== LOG SETUP =====
+
+
+
+   logExporter, err := otlploghttp.New(
+
+
+
+   ctx,
+
+
+
+   otlploghttp.WithEndpoint(DT_API_HOST),
+
+
+
+   otlploghttp.WithURLPath(DT_API_BASE_PATH+"/v1/logs"),
+
+
+
+   otlploghttp.WithHeaders(authHeader),
+
+
+
+   )
+
+
+
+   if err != nil {
+
+
+
+   log.Fatalf("Failed to create OTLP exporter: %v", err)
+
+
+
+   }
+
+
+
+   lp := sdklog.NewLoggerProvider(
+
+
+
+   sdklog.WithProcessor(sdklog.NewBatchProcessor(logExporter)),
+
+
+
+   sdklog.WithResource(res),
+
+
+
+   )
+
+
+
+   global.SetLoggerProvider(lp)
+
+
+
+   logger := otelslog.NewLogger("my-logger-scope", otelslog.WithLoggerProvider(lp))
+
+
+
+   slog.SetDefault(logger) // here we are overwriting the sdtout to http logger exporter
+
+
+
+   }
+   ```
+4. Make sure to call `InitOpenTelemetry` as early as possible in your startup code to initialize OpenTelemetry.
+
+## Step 4 optional Automatically instrument your application Optional
+
+1. Browse the [OpenTelemetry registryï»¿](https://opentelemetry.io/ecosystem/registry/?language=go&component=instrumentation) and pick the instrumentation libraries matching your application libraries.
+2. Add the relevant packages to your import statements.
+
+   ```
+   import (
+
+
+
+   "go.opentelemetry.io/[PACKAGE]"
+
+
+
+   )
+   ```
+3. Run Go's [`mod tiny` commandï»¿](https://go.dev/ref/mod#go-mod-tidy) to install the dependencies.
+
+   ```
+   go mod tidy
+   ```
+4. Wrap your existing code with calls to the support libraries.
+
+### Example for `net/http`
+
+1. Install the [instrumentation library for `net/http`ï»¿](https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp).
+2. Add the package to your import statements.
+
+   ```
+   import (
+
+
+
+   // other packages
+
+
+
+   "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+
+
+
+   )
+   ```
+3. Wrap your HTTP handler function.
+
+   ```
+   handler := http.HandlerFunc(httpHandler)
+
+
+
+   wrappedHandler := otelhttp.NewHandler(handler, "my-span") //TODO Replace with the name of your span
+
+
+
+   //Use the wrappedHandler with your handle
+
+
+
+   http.Handle("/", wrappedHandler)
+   ```
+
+## Step 5 Manually instrument your application
+
+### Add tracing
+
+1. You first need to get a tracer object.
+
+   ```
+   tracer := otel.Tracer("my-tracer")
+   ```
+2. With `tracer`, you can now use a span builder to create and start new spans.
+
+   ```
+   _, span := tracer.Start(r.Context(), "Call to /myendpoint")
+
+
+
+   defer span.End()
+
+
+
+   span.SetAttributes(attribute.String("http.method", "GET"), attribute.String("net.protocol.version", "1.1"))
+
+
+
+   // TODO your code goes here
+   ```
+
+   In the code above, we:
+
+   * Create a new span and name it "Call to /myendpoint"
+   * Schedule a deferred call to `End()`, to ensure the span is properly closed when the function returns
+   * Add two attributes, following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+   * Add a `TODO` in place of the eventual business logic
+
+### Collect metrics
+
+1. Obtain a meter object.
+
+   ```
+   meter := otel.Meter("my-meter")
+   ```
+2. With `meter`, we can now create individual instruments, such as a counter.
+
+   ```
+   requestCounter, _ := meter.Int64Counter("request_counter")
+   ```
+3. Now we can invoke the `Add()` method of `requestCounter` to record new values with the counter.
+
+   ```
+   requestCounter.Add(context.Background(), 1)
+   ```
+
+### Connect logs
+
+With OpenTelemetry logging initialized in `InitOpenTelemetry()` and set as default logger for [slogï»¿](https://pkg.go.dev/log/slog), we can now call any of slog's log functions (for example, [`Info()`ï»¿](https://pkg.go.dev/log/slog#Info)) to send our log information to Dynatrace.
+
+```
+slog.Info("an info message")
+
+
+
+slog.Debug("a debug message")
+
+
+
+slog.Error("an error")
+```
+
+### Ensure context propagation Optional
+
+Context propagation is particularly important when network calls (for example, REST) are involved.
+
+#### Extracting the context when receiving a request
+
+In the following example, we assume that we have received a network call via the [`net/http`ï»¿](https://pkg.go.dev/net/http) library and its [`Request`ï»¿](https://pkg.go.dev/net/http#Request) type.
+
+To obtain a handle to the original context (which was provided by the calling service), we pass the HTTP header object (`r.Header`) to the `Extract` function of the global propagator singleton, which instantiates that context and returns in `parentCtx`. This allows us to continue the previous trace with our own spans.
+
+```
+func httpHandler(w http.ResponseWriter, r *http.Request) {
+
+
+
+parentCtx := otel.GetTextMapPropagator().Extract(r.Context(), propagation.HeaderCarrier(r.Header))
+
+
+
+tracer := otel.Tracer("my-tracer")
+
+
+
+ctx, span := tracer.Start(
+
+
+
+parentCtx,
+
+
+
+"manual-server", //TODO Replace with the name of your span
+
+
+
+trace.WithAttributes(
+
+
+
+attribute.String("my-key-1", "my-value-1"), //TODO Add attributes
+
+
+
+),
+
+
+
+)
+
+
+
+defer span.End()
+
+
+
+//TODO your code goes here
+
+
+
+}
+```
+
+#### Injecting the context when sending requests
+
+In the following example, we set up a new instance of [`Request`ï»¿](https://pkg.go.dev/net/http#Request) and pass the object to the `Inject` call of the global propagator singleton. This adds the necessary HTTP headers to the request object, which we eventually pass to `Do` to execute the network request.
+
+```
+client := http.Client{}
+
+
+
+req, err := http.NewRequest("<method>", "<url>", <body>)
+
+
+
+if err != nil {
+
+
+
+// TODO handle error
+
+
+
+}
+
+
+
+//Method to inject the current context in the request headers
+
+
+
+otel.GetTextMapPropagator().Inject(ctx, propagation.HeaderCarrier(req.Header))
+
+
+
+client.Do(req) // Your call goes here
+```
+
+## Step 6 Configure data capture to meet privacy requirements Optional
+
+While Dynatrace automatically captures all OpenTelemetry attributes, only attribute values specified in the allowlist are stored and displayed in the Dynatrace web UI. This prevents accidental storage of personal data, so you can meet your privacy requirements and control the amount of monitoring data stored.
+
+To view your custom attributes, you need to allow them in the Dynatrace web UI first. To learn how to configure attribute storage and masking, see [Attribute redaction](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
+
+## Step 7 Verify data ingestion into Dynatrace
+
+Once you have finished the instrumentation of your application, perform a couple of test actions to create and send demo traces, metrics, and logs and verify that they were correctly ingested into Dynatrace.
+
+To do that for traces, go to ![Distributed Traces Classic](https://dt-cdn.net/images/distributed-traces-classic-7197cdacfb.svg "Distributed Traces Classic") **Distributed Traces Classic** and select the **Ingested traces** tab. If you use OneAgent, select **PurePaths** instead.
+
+For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
+
+## Related topics
+
+* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+
+
+---
+
+
 ## Source: java.md
 
 
@@ -10409,7 +11625,7 @@ The following features are currently supported by OpenTelemetry Java.
 ---
 title: Instrument your JavaScript application on Node.js with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/nodejs
-scraped: 2026-02-15T09:09:15.804154
+scraped: 2026-02-16T21:25:31.878751
 ---
 
 # Instrument your JavaScript application on Node.js with OpenTelemetry
@@ -10957,7 +12173,7 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 ---
 title: Instrument your Python application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/python
-scraped: 2026-02-16T09:20:47.233663
+scraped: 2026-02-16T21:12:42.699456
 ---
 
 # Instrument your Python application with OpenTelemetry
@@ -10998,7 +12214,7 @@ The following features are currently supported by OpenTelemetry Python.
 ---
 title: Instrument your Ruby application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/ruby
-scraped: 2026-02-16T09:20:23.513606
+scraped: 2026-02-16T21:18:38.102966
 ---
 
 # Instrument your Ruby application with OpenTelemetry
@@ -11384,7 +12600,7 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 ---
 title: Instrument your Rust application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/rust
-scraped: 2026-02-16T09:21:47.101594
+scraped: 2026-02-16T21:17:48.305851
 ---
 
 # Instrument your Rust application with OpenTelemetry
@@ -12103,7 +13319,7 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 ---
 title: Instrument your application
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs
-scraped: 2026-02-16T09:24:10.584506
+scraped: 2026-02-16T21:12:54.876187
 ---
 
 # Instrument your application

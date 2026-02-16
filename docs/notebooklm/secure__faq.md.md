@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Application Security FAQ
 source: https://www.dynatrace.com/docs/secure/faq
-scraped: 2026-02-16T09:20:01.752261
+scraped: 2026-02-16T21:18:42.394295
 ---
 
 # Application Security FAQ

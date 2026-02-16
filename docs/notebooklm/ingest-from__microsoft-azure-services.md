@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 107
+Files combined: 114
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 107
 ---
 title: Azure Kubernetes Service (AKS)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-aks
-scraped: 2026-02-16T09:20:15.406541
+scraped: 2026-02-16T21:13:57.744311
 ---
 
 # Azure Kubernetes Service (AKS)
@@ -49,7 +49,7 @@ In addition you can enable capturing AKS specific metrics from Azure Monitor
 ---
 title: Integrate OneAgent on Azure App Service for Windows
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-azure-app-service
-scraped: 2026-02-16T09:20:25.413795
+scraped: 2026-02-16T21:18:03.343937
 ---
 
 # Integrate OneAgent on Azure App Service for Windows
@@ -994,7 +994,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure App Service
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice
-scraped: 2026-02-16T09:24:25.313473
+scraped: 2026-02-16T21:14:29.333844
 ---
 
 # Monitor Azure App Service
@@ -1187,7 +1187,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Autosuggest monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-autosuggest
-scraped: 2026-02-16T09:39:22.419397
+scraped: 2026-02-16T21:28:39.246388
 ---
 
 # Azure AI - Bing Autosuggest monitoring
@@ -1262,7 +1262,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Custom Search monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-custom-search
-scraped: 2026-02-15T09:07:56.413213
+scraped: 2026-02-16T21:32:15.236893
 ---
 
 # Azure AI - Bing Custom Search monitoring
@@ -1337,7 +1337,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Entity Search monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-entity-search
-scraped: 2026-02-15T21:26:13.540944
+scraped: 2026-02-16T21:26:37.634148
 ---
 
 # Azure AI - Bing Entity Search monitoring
@@ -1487,7 +1487,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Spell Check monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-spell-check
-scraped: 2026-02-15T21:28:14.787818
+scraped: 2026-02-16T21:27:14.783707
 ---
 
 # Azure AI - Bing Spell Check monitoring
@@ -1637,7 +1637,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI Content Moderator monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-content-moderator
-scraped: 2026-02-15T09:13:16.958440
+scraped: 2026-02-16T21:28:48.725054
 ---
 
 # Azure AI Content Moderator monitoring
@@ -1712,7 +1712,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Custom Vision Prediction monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-custom-vision-prediction
-scraped: 2026-02-16T09:38:45.566580
+scraped: 2026-02-16T21:25:06.633934
 ---
 
 # Azure AI - Custom Vision Prediction monitoring
@@ -1800,6 +1800,81 @@ scraped: 2026-02-16T09:33:10.253387
 * Published Sep 22, 2020
 
 Dynatrace ingests metrics from Azure Metrics API for Custom Vision. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.203+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Cognitive services](https://dt-cdn.net/images/dashboard-79-1423-6e181ef360.png)
+
+## Available metrics
+
+| Name | Description | Dimensions | Unit | Recommended |
+| --- | --- | --- | --- | --- |
+| BlockedCalls | Number of calls that exceeded rate or quota limit | ApiName, OperationName, Region | Count | Applicable |
+| ClientErrors | Number of calls with client-side error (HTTP response code `4xx`) | ApiName, OperationName, Region | Count | Applicable |
+| DataIn | Size of incoming data in bytes | ApiName, OperationName, Region | Byte | Applicable |
+| DataOut | Size of outgoing data in bytes | ApiName, OperationName, Region | Byte | Applicable |
+| Latency | Latency in milliseconds | ApiName, OperationName, Region | MilliSecond | Applicable |
+| ServerErrors | Number of calls with service internal error (HTTP response code `5xx`) | ApiName, OperationName, Region | Count | Applicable |
+| SuccessfulCalls | Number of successful calls | ApiName, OperationName, Region | Count | Applicable |
+| TotalCalls | Total number of calls | ApiName, OperationName, Region | Count |  |
+| TotalErrors | Total number of calls with error response (HTTP response code `4xx` or `5xx`) | ApiName, OperationName, Region | Count | Applicable |
+
+
+---
+
+
+## Source: monitor-azure-ai-face.md
+
+
+---
+title: Azure AI - Face monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-face
+scraped: 2026-02-16T21:32:12.382368
+---
+
+# Azure AI - Face monitoring
+
+# Azure AI - Face monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Sep 22, 2020
+
+Dynatrace ingests metrics from Azure Metrics API for Face. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
 
 ## Prerequisites
 
@@ -2012,7 +2087,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Language Understanding (LUIS) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-language-understanding
-scraped: 2026-02-16T09:36:28.992237
+scraped: 2026-02-16T21:27:29.922593
 ---
 
 # Azure AI - Language Understanding (LUIS) monitoring
@@ -2088,7 +2163,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure OpenAI
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-openai
-scraped: 2026-02-16T09:33:11.832527
+scraped: 2026-02-16T21:28:58.027387
 ---
 
 # Azure OpenAI
@@ -2314,7 +2389,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Speech monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-speech
-scraped: 2026-02-16T09:27:13.596496
+scraped: 2026-02-16T21:25:38.939373
 ---
 
 # Azure AI - Speech monitoring
@@ -2388,7 +2463,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Text Analytics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-text-analytics
-scraped: 2026-02-15T09:07:06.296436
+scraped: 2026-02-16T21:29:45.348121
 ---
 
 # Azure AI - Text Analytics monitoring
@@ -2464,7 +2539,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Translator monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-translator
-scraped: 2026-02-15T21:25:20.368706
+scraped: 2026-02-16T21:27:54.900490
 ---
 
 # Azure AI - Translator monitoring
@@ -2692,7 +2767,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Application Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-application-gateway
-scraped: 2026-02-16T09:34:09.782574
+scraped: 2026-02-16T21:31:39.319774
 ---
 
 # Azure Application Gateway monitoring
@@ -2915,7 +2990,7 @@ To learn how to enable service monitoring, see [Enable service monitoring](/docs
 ---
 title: Azure Basic Load Balancer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-basic-load-balancer
-scraped: 2026-02-16T09:36:55.951905
+scraped: 2026-02-16T21:27:59.039898
 ---
 
 # Azure Basic Load Balancer monitoring
@@ -2948,7 +3023,7 @@ To learn how to enable service monitoring, see [Enable service monitoring](/docs
 ---
 title: Azure Batch monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-batch
-scraped: 2026-02-16T09:32:39.381491
+scraped: 2026-02-16T21:32:00.766429
 ---
 
 # Azure Batch monitoring
@@ -3120,13 +3195,289 @@ Hiding a dashboard doesn't affect other users.
 ---
 
 
+## Source: monitor-azure-cache-for-redis.md
+
+
+---
+title: Azure Cache for Redis monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cache-for-redis
+scraped: 2026-02-16T21:27:21.541768
+---
+
+# Azure Cache for Redis monitoring
+
+# Azure Cache for Redis monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 23-min read
+* Updated on Nov 15, 2023
+
+For information about differences between classic services and other services, see [Migrate from Azure classic (formerly 'built-in') services to cloud services](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide "Migrate Azure classic services to their new versions.").
+
+Dynatrace ingests metrics from Azure Metrics API for Azure Cache for Redis. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.199+
+* Environment ActiveGate version 1.195+
+
+This service monitors a part of Azure Cache for Redis (`Microsoft.Cache/redis`).
+
+While you have this service configured, you **can't** have Azure Redis Cache (built-in) service turned on.
+
+Enterprise Azure Cache for Redis service (`Microsoft.Cache/redisEnterprise`) currently cannot be monitored; to request this type of monitoring, please create an RFE (Request for Enhancement).
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+## Available metrics
+
+| Name | Description | Dimensions | Unit | Recommended |
+| --- | --- | --- | --- | --- |
+| Connected clients | The number of client connections to the cache. | Shard ID | Count | Applicable |
+| Total operations | The total number of commands processed by the cache server. | Shard ID | Count | Applicable |
+| Cache hits | The number of successful key lookups. | Shard ID | Count | Applicable |
+| Cache misses | The number of failed key lookups. | Shard ID | Count | Applicable |
+| Cache miss rate | The % of get requests that miss. | Shard ID | Percent | Applicable |
+| Gets | The number of get operations from the cache. | Shard ID | Count |  |
+| Sets | The number of set operations to the cache. | Shard ID | Count |  |
+| Operations per second | The number of instantaneous operations per second executed on the cache. | Shard ID | Count |  |
+| Evicted keys | The number of items evicted from the cache. | Shard ID | Count |  |
+| Total keys | The total number of items in the cache. | Shard ID | Count |  |
+| Expired keys | The number of items expired from the cache. | Shard ID | Count |  |
+| Used memory | The amount of cache memory used for key/value pairs in the cache in MB. | Shard ID | Byte |  |
+| Used memory percentage | The percentage of cache memory used for key/value pairs. | Shard ID | Percent | Applicable |
+| Used memory RSS | The amount of cache memory used in MB, including fragmentation and metadata. | Shard ID | Byte |  |
+| Server load | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. | Shard ID | Percent |  |
+| Cache write | The amount of data written to the cache in bytes per second. | Shard ID | BytePerSecond |  |
+| Cache read | The amount of data read from the cache in bytes per second. | Shard ID | BytePerSecond |  |
+| Connections created per second (instance based) | The number of instantaneous connections created per second on the cache via port 6379 or 6380 (SSL). | Shard ID, Primary, SSL | PerSecond |  |
+| Connections closed per second (instance based) | The number of instantaneous connections closed per second on the cache via port 6379 or 6380 (SSL). | Shard ID, Primary, SSL | PerSecond |  |
+| Connected clients (instance based) | The number of client connections to the cache. | Shard ID, Port, Primary | Count |  |
+| Total operations (instance based) | The total number of commands processed by the cache server. | Shard ID, Port, Primary | Count |  |
+| Cache hits (instance based) | The number of successful key lookups. | Shard ID, Port, Primary | Count |  |
+| Cache misses (instance based) | The number of failed key lookups. | Shard ID, Port, Primary | Count |  |
+| Gets (instance based) | The number of get operations from the cache. | Shard ID, Port, Primary | Count |  |
+| Sets (instance based) | The number of set operations to the cache. | Shard ID, Port, Primary | Count |  |
+| Operations per second (instance based) | The number of instantaneous operations per second executed on the cache. | Shard ID, Port, Primary | Count |  |
+| Evicted keys (instance based) | The number of items evicted from the cache. | Shard ID, Port, Primary | Count |  |
+| Total keys (instance based) | The total number of items in the cache. | Shard ID, Port, Primary | Count |  |
+| Expired keys (instance based) | The number of items expired from the cache. | Shard ID, Port, Primary | Count |  |
+| Used memory (instance based) | The amount of cache memory used for key/value pairs in the cache in MB. | Shard ID, Port, Primary | Byte |  |
+| Used memory percentage (instance based) | The percentage of cache memory used for key/value pairs. | Shard ID, Port, Primary | Percent |  |
+| Used memory RSS (instance based) | The amount of cache memory used in MB, including fragmentation and metadata. | Shard ID, Port, Primary | Byte |  |
+| Server load (instance based) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. | Shard ID, Port, Primary | Percent |  |
+| Cache write (instance based) | The amount of data written to the cache in bytes per second. | Shard ID, Port, Primary | BytePerSecond |  |
+| Cache read (instance based) | The amount of data read from the cache in bytes per second. | Shard ID, Port, Primary | BytePerSecond |  |
+| CPU (instance based) | The CPU utilization of the Azure Redis Cache server as a percentage. | Shard ID, Port, Primary | Percent |  |
+| CPU | The CPU utilization of the Azure Redis Cache server as a percentage. | Shard ID | Percent | Applicable |
+| Cache latency microseconds (preview) | The latency to the cache in microseconds. | Shard ID | Count |  |
+| Errors | The number errors that occurred on the cache. | Shard ID, Error type | Count |  |
+| Connected clients (shard 0) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 0) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 0) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 0) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 0) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 0) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 0) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 0) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 0) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 0) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 0) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 0) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 0) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 0) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 0) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 0) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Connected clients (shard 1) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 1) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 1) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 1) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 1) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 1) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 1) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 1) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 1) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 1) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 1) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 1) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 1) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 1) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 1) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 1) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Connected clients (shard 2) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 2) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 2) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 2) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 2) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 2) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 2) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 2) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 2) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 2) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 2) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 2) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 2) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 2) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 2) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 2) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Connected clients (shard 3) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 3) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 3) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 3) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 3) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 3) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 3) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 3) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 3) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 3) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 3) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 3) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 3) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 3) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 3) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 3) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Connected clients (shard 4) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 4) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 4) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 4) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 4) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 4) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 4) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 4) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 4) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 4) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 4) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 4) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 4) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 4) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 4) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 4) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Connected clients (shard 5) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 5) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 5) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 5) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 5) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 5) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 5) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 5) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 5) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 5) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 5) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 5) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 5) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 5) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 5) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 5) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Connected clients (shard 6) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 6) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 6) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 6) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 6) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 6) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 6) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 6) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 6) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 6) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 6) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 6) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 6) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 6) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 6) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 6) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Connected clients (shard 7) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 7) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 7) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 7) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 7) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 7) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 7) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 7) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 7) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 7) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 7) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 7) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 7) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 7) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 7) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 7) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Connected clients (shard 8) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 8) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 8) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 8) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 8) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 8) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 8) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 8) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 8) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 8) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 8) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 8) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 8) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 8) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 8) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 8) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Connected clients (shard 9) | The number of client connections to the cache. |  | Count |  |
+| Total operations (shard 9) | The total number of commands processed by the cache server. |  | Count |  |
+| Cache hits (shard 9) | The number of successful key lookups. |  | Count |  |
+| Cache misses (shard 9) | The number of failed key lookups. |  | Count |  |
+| Gets (shard 9) | The number of get operations from the cache. |  | Count |  |
+| Sets (shard 9) | The number of set operations to the cache. |  | Count |  |
+| Operations per second (shard 9) | The number of instantaneous operations per second executed on the cache. |  | Count |  |
+| Evicted keys (shard 9) | The number of items evicted from the cache. |  | Count |  |
+| Total keys (shard 9) | The total number of items in the cache. |  | Count |  |
+| Expired keys (shard 9) | The number of items expired from the cache. |  | Count |  |
+| Used memory (shard 9) | The amount of cache memory used for key/value pairs in the cache in MB. |  | Byte |  |
+| Used memory RSS (shard 9) | The amount of cache memory used in MB, including fragmentation and metadata. |  | Byte |  |
+| Server load (shard 9) | The percentage of cycles in which the Redis server is busy processing and not waiting idle for messages. |  | Percent |  |
+| Cache write (shard 9) | The amount of data written to the cache in bytes per second. |  | BytePerSecond |  |
+| Cache read (shard 9) | The amount of data read from the cache in bytes per second. |  | BytePerSecond |  |
+| CPU (shard 9) | The CPU utilization of the Azure Redis Cache server as a percentage. |  | Percent |  |
+| Geo - replication healthy | The health status of geo-replication link. 1 if healthy and 0 if disconnected or unhealthy. | Shard ID | Count |  |
+| Geo - replication data sync offset | Approximate amount of data in bytes that needs to be synchronized to geo-secondary cache. | Shard ID | Byte |  |
+| Geo - replication connectivity lag | Time in seconds since last successful data synchronization with geo-primary cache. Value will continue to increase if the link status is down. | Shard ID | Second |  |
+| Geo - replication full sync event started | Fired on initiation of a full synchronization event between geo-replicated caches. This metric reports 0 most of the time because geo-replication uses partial resynchronizations for any new data added after the initial full synchronization. | Shard ID | Count |  |
+| Geo - replication full sync event finished | Fired on completion of a full synchronization event between geo-replicated caches. This metric reports 0 most of the time because geo-replication uses partial resynchronizations for any new data added after the initial full synchronization. | Shard ID | Count |  |
+
+
+---
+
+
 ## Source: monitor-azure-cognitive-services-ink-recognizer.md
 
 
 ---
 title: Azure Cognitive Services - Ink Recognizer monitoring (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cognitive-services-ink-recognizer
-scraped: 2026-02-15T09:13:31.309376
+scraped: 2026-02-16T21:28:55.404781
 ---
 
 # Azure Cognitive Services - Ink Recognizer monitoring (deprecated)
@@ -3201,7 +3552,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Container App monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-app
-scraped: 2026-02-15T21:24:01.929012
+scraped: 2026-02-16T21:25:51.279595
 ---
 
 # Azure Container App monitoring
@@ -3340,7 +3691,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure Container Instances
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-instances
-scraped: 2026-02-16T09:35:04.008863
+scraped: 2026-02-16T21:27:34.170507
 ---
 
 # Monitor Azure Container Instances
@@ -3736,7 +4087,7 @@ This service monitors a part of Azure Cosmos DB Account (Microsoft.DocumentDB/da
 ---
 title: Azure Data Explorer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-explorer-cluster
-scraped: 2026-02-16T09:29:34.956385
+scraped: 2026-02-16T21:29:42.281054
 ---
 
 # Azure Data Explorer monitoring
@@ -4177,7 +4528,7 @@ After you create the management zone, select it from your dashboard (**Edit** > 
 ---
 title: Azure Database for MySQL monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mysql
-scraped: 2026-02-16T09:30:10.501247
+scraped: 2026-02-16T21:24:51.772296
 ---
 
 # Azure Database for MySQL monitoring
@@ -4680,7 +5031,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Event Hubs (Clusters) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-event-hubs
-scraped: 2026-02-15T21:26:01.565201
+scraped: 2026-02-16T21:30:17.283935
 ---
 
 # Azure Event Hubs (Clusters) monitoring
@@ -4765,7 +5116,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure ExpressRoute Circuit monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-expressroute-circuit
-scraped: 2026-02-15T21:26:43.551235
+scraped: 2026-02-16T21:30:24.027099
 ---
 
 # Azure ExpressRoute Circuit monitoring
@@ -4837,7 +5188,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Firewall monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-firewall
-scraped: 2026-02-16T09:40:04.694991
+scraped: 2026-02-16T21:28:20.905965
 ---
 
 # Azure Firewall monitoring
@@ -4981,13 +5332,86 @@ Hiding a dashboard doesn't affect other users.
 ---
 
 
+## Source: monitor-azure-gateway-load-balancer.md
+
+
+---
+title: Azure Gateway Load Balancer monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-gateway-load-balancer
+scraped: 2026-02-16T21:32:36.260360
+---
+
+# Azure Gateway Load Balancer monitoring
+
+# Azure Gateway Load Balancer monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Updated on Nov 15, 2023
+
+For information about differences between classic services and other services, see [Migrate from Azure classic (formerly 'built-in') services to cloud services](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide "Migrate Azure classic services to their new versions.").
+
+Dynatrace ingests metrics from Azure Metrics API for Azure Gateway Load Balancer. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.199+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+## Available metrics
+
+This service monitors a part of Azure Load Balancer (Microsoft.Network/loadBalancers). While you have this service configured, you can't have Azure Load Balancers (built-in) service turned on.
+
+| Name | Description | Dimensions | Unit | Recommended |
+| --- | --- | --- | --- | --- |
+| Data path availability | Average Load Balancer data path availability per time duration | Frontend IP address, Frontend port | Count | Applicable |
+| Health probe status | Average Load Balancer health probe status per time duration | Protocol type, Backend port, Frontend IP address, Frontend port, Backend IP address | Count | Applicable |
+| Byte count | Total number of Bytes transmitted within time period | Frontend IP address, Frontend port, Direction | Byte |  |
+| Packet count | Total number of Packets transmitted within time period | Frontend IP address, Frontend port, Direction | Count | Applicable |
+| SYN count | Total number of SYN Packets transmitted within time period | Frontend IP address, Frontend port, Direction | Count |  |
+
+
+---
+
+
 ## Source: monitor-azure-integration-service-environment.md
 
 
 ---
 title: Azure Integration Service Environment monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment
-scraped: 2026-02-15T09:13:37.045299
+scraped: 2026-02-16T21:29:23.243840
 ---
 
 # Azure Integration Service Environment monitoring
@@ -5164,7 +5588,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure IoT Hub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-iot-hub
-scraped: 2026-02-15T09:12:13.673055
+scraped: 2026-02-16T21:32:22.186642
 ---
 
 # Azure IoT Hub monitoring
@@ -5724,7 +6148,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure NetApp Files monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-netapp-files
-scraped: 2026-02-16T09:38:47.236567
+scraped: 2026-02-16T21:25:46.916741
 ---
 
 # Azure NetApp Files monitoring
@@ -5890,7 +6314,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-network-watcher
-scraped: 2026-02-16T09:38:37.437586
+scraped: 2026-02-16T21:25:42.897649
 ---
 
 # Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring
@@ -6099,7 +6523,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Power BI Embedded monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-power-bi
-scraped: 2026-02-16T09:31:56.978748
+scraped: 2026-02-16T21:27:57.743476
 ---
 
 # Azure Power BI Embedded monitoring
@@ -6265,7 +6689,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Recovery Services Vault
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-recovery-services-vault
-scraped: 2026-02-16T09:35:34.258040
+scraped: 2026-02-16T21:26:58.875189
 ---
 
 # Azure Recovery Services Vault
@@ -6397,7 +6821,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure SignalR
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-signalr
-scraped: 2026-02-15T21:29:36.059764
+scraped: 2026-02-16T21:26:50.714605
 ---
 
 # Monitor Azure SignalR
@@ -6852,7 +7276,7 @@ This service monitors a part of Azure SQL (Microsoft.Sql/servers/databases). Whi
 ---
 title: Azure SQL elastic pool (DTU) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-elastic-pool-dtu
-scraped: 2026-02-16T09:30:32.300604
+scraped: 2026-02-16T21:26:02.683177
 ---
 
 # Azure SQL elastic pool (DTU) monitoring
@@ -6934,13 +7358,100 @@ This service monitors a part of Azure SQL (Microsoft.Sql/servers/elasticpools). 
 ---
 
 
+## Source: monitor-azure-sql-elastic-pool-vcore.md
+
+
+---
+title: Azure SQL elastic pool (vCore) monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-elastic-pool-vcore
+scraped: 2026-02-16T21:25:52.607782
+---
+
+# Azure SQL elastic pool (vCore) monitoring
+
+# Azure SQL elastic pool (vCore) monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 3-min read
+* Updated on Nov 15, 2023
+
+For information about differences between classic services and other services, see [Migrate from Azure classic (formerly 'built-in') services to cloud services](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide "Migrate Azure classic services to their new versions.").
+
+Dynatrace ingests metrics from Azure Metrics API for Azure SQL elastic pool (vCore). You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.199+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+## Available metrics
+
+This service monitors a part of Azure SQL (Microsoft.Sql/servers/elasticpools). While you have this service configured, you can't have Azure Sql Servers (built-in) service turned on.
+
+| Name | Description | Dimensions | Unit | Recommended |
+| --- | --- | --- | --- | --- |
+| CPU percentage | CPU percentage | Database arm resource ID | Percent | Applicable |
+| Data IO percentage | Data IO percentage | Database arm resource ID | Percent | Applicable |
+| Log IO percentage | Log IO percentage | Database arm resource ID | Percent | Applicable |
+| Data space used percent | Data space used percent. Not applicable to hyperscale |  | Percent |  |
+| Workers percentage | Workers percentage | Database arm resource ID | Percent |  |
+| Sessions percentage | Sessions percentage | Database arm resource ID | Percent | Applicable |
+| Sessions count | Number of active sessions |  | Count | Applicable |
+| Data max size | Data max size. Not applicable to hyperscale |  | Byte |  |
+| Data space used | Data space used. Not applicable to hyperscale | Database arm resource ID | Byte |  |
+| In - memory OLTP storage percent | In-Memory OLTP storage percent. Not applicable to hyperscale |  | Percent |  |
+| CPU limit | CPU limit. Applies to vCore-based elastic pools. | Database arm resource ID | Count | Applicable |
+| CPU used | CPU used. Applies to vCore-based elastic pools. | Database arm resource ID | Count | Applicable |
+| SQL server process core percent | CPU usage as a percentage of the SQL DB process. Applies to elastic pools. (This metric is equivalent to sql\_instance\_cpu\_percent, and will be removed in the future.) |  | Percent |  |
+| SQL server process memory percent | Memory usage as a percentage of the SQL DB process. Applies to elastic pools. (This metric is equivalent to sql\_instance\_memory\_percent, and will be removed in the future.) |  | Percent |  |
+| Tempdb data file size kB | Space used in tempdb data files in kilobytes. |  | Count |  |
+| Tempdb log file size kB | Space used in tempdb transaction log file in kilobytes. |  | Count |  |
+| Tempdb percent log used | Space used percentage in tempdb transaction log file |  | Percent |  |
+| Data space allocated | Data space allocated. Not applicable to hyperscale | Database arm resource ID | Byte |  |
+| Data space allocated percent | Data space allocated percent. Not applicable to hyperscale |  | Percent |  |
+
+
+---
+
+
 ## Source: monitor-azure-sql-server.md
 
 
 ---
 title: Azure SQL Server monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-server
-scraped: 2026-02-16T09:27:15.167257
+scraped: 2026-02-16T21:28:43.429668
 ---
 
 # Azure SQL Server monitoring
@@ -6973,7 +7484,7 @@ To learn how to enable service monitoring, see [Enable service monitoring](/docs
 ---
 title: Azure Standard Load Balancer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-standard-load-balancer
-scraped: 2026-02-16T09:37:37.383586
+scraped: 2026-02-16T21:28:07.372810
 ---
 
 # Azure Standard Load Balancer monitoring
@@ -7039,6 +7550,153 @@ This service monitors a part of Azure Load Balancer (Microsoft.Network/loadBalan
 | Allocated SNAT ports | Total number of SNAT ports allocated within time period | Frontend IP address, Backend IP address, Protocol type | Count |  |
 | Used SNAT ports | Total number of SNAT ports used within time period | Frontend IP address, Backend IP address, Protocol type | Count |  |
 | Health probe status | Azure Cross-region Load Balancer backend health and status per time duration | Frontend IP address, Frontend port, Backend IP address, Protocol type, Frontend region, Backend region | Count |  |
+
+
+---
+
+
+## Source: monitor-azure-storage-account-classic.md
+
+
+---
+title: Azure Storage Account Classic (Blob, File, Queue, Table) monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account-classic
+scraped: 2026-02-16T21:26:36.329635
+---
+
+# Azure Storage Account Classic (Blob, File, Queue, Table) monitoring
+
+# Azure Storage Account Classic (Blob, File, Queue, Table) monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 11-min read
+* Updated on Nov 15, 2023
+
+Dynatrace ingests metrics for multiple preselected namespaces, including Azure Storage Account Classic. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.196+
+* Environment ActiveGate version 1.195+
+
+This service monitors a part of Storage Account Classic (`Microsoft.ClassicStorage/storageAccounts`). You can find the already monitored resources on the Azure overview page in the **Cloud services** section or use a dashboard preset.
+
+To monitor resources of the `Microsoft.Storage/storageAccounts` (including Storage, StorageV2 and BlobStorage) type, check Storage Accounts and the **Storage accounts** section on the Azure overview page.
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Storage Account Classic](https://dt-cdn.net/images/storageaccountnew-2908-6a758a1c35.png)
+
+## Available metrics
+
+**Storage Account (Classic)**
+
+| Name | Description | Unit | Dimensions | Recommended |
+| --- | --- | --- | --- | --- |
+| Availability | The percentage of availability for the storage service or the specified API operation. Availability is calculated by taking the TotalBillableRequests value and dividing it by the number of applicable requests, including those that produced unexpected errors. All unexpected errors result in reduced availability for the storage service or the specified API operation. | Percent | Authentication, GeoType, ApiName | Applicable |
+| Egress | The amount of egress data, in bytes. This number includes egress from an external client into Azure Storage as well as egress within Azure. As a result, this number does not reflect billable egress. | Byte | Authentication, GeoType, ApiName | Applicable |
+| Ingress | The amount of ingress data, in bytes. This number includes ingress from an external client into Azure Storage as well as ingress within Azure. | Byte | Authentication, GeoType, ApiName | Applicable |
+| SuccessE2ELatency | The end-to-end latency of successful requests made to a storage service or the specified API operation, in milliseconds. This value includes the required processing time within Azure Storage to read the request, send the response, and receive acknowledgment of the response. | MilliSecond | Authentication, GeoType, ApiName | Applicable |
+| SuccessServerLatency | The latency used by Azure Storage to process a successful request, in milliseconds. This value does not include the network latency specified in SuccessE2ELatency. | MilliSecond | Authentication, GeoType, ApiName |  |
+| Transactions | The number of requests made to a storage service or the specified API operation. This number includes successful and failed requests, as well as requests which produced errors. Use ResponseType dimension for the number of different type of response. | Count | Authentication, GeoType, ResponseType, ApiName | Applicable |
+| UsedCapacity | Account used capacity. | Byte |  | Applicable |
+
+**Azure Storage Blob Services (Classic)**
+
+This service monitors a part of Storage Account Classic (Microsoft.ClassicStorage/storageAccounts). You can find the already monitored resources on the Azure overview page in the `Cloud services` section or use a dashboard preset. To monitor resources of the Microsoft.Storage/storageAccounts type (including Storage, StorageV2 and BlobStorage), check Storage Accounts and the `Storage accounts` section on the Azure overview page.
+
+| Name | Description | Unit | Dimensions | Recommended |
+| --- | --- | --- | --- | --- |
+| Availability | The percentage of availability for the storage service or the specified API operation. Availability is calculated by taking the TotalBillableRequests value and dividing it by the number of applicable requests, including those that produced unexpected errors. All unexpected errors result in reduced availability for the storage service or the specified API operation. | Percent | Authentication, GeoType, ApiName | Applicable |
+| BlobCapacity | The amount of storage used by the storage accountâs Blob service in bytes. | Byte | BlobType | Applicable |
+| BlobCount | The number of Blob in the storage accountâs Blob service. | Count | BlobType | Applicable |
+| ContainerCount | The number of containers in the storage accountâs Blob service. | Count |  | Applicable |
+| Egress | The amount of egress data, in bytes. This number includes egress from an external client into Azure Storage as well as egress within Azure. As a result, this number does not reflect billable egress. | Byte | Authentication, GeoType, ApiName | Applicable |
+| IndexCapacity | The amount of storage used by ADLS Gen2 (Hierarchical) Index in bytes. | Byte |  |  |
+| Ingress | The amount of ingress data, in bytes. This number includes ingress from an external client into Azure Storage as well as ingress within Azure. | Byte | Authentication, GeoType, ApiName | Applicable |
+| SuccessE2ELatency | The end-to-end latency of successful requests made to a storage service or the specified API operation, in milliseconds. This value includes the required processing time within Azure Storage to read the request, send the response, and receive acknowledgment of the response. | MilliSecond | Authentication, GeoType, ApiName | Applicable |
+| SuccessServerLatency | The latency used by Azure Storage to process a successful request, in milliseconds. This value does not include the network latency specified in SuccessE2ELatency. | MilliSecond | Authentication, GeoType, ApiName |  |
+| Transactions | The number of requests made to a storage service or the specified API operation. This number includes successful and failed requests, as well as requests which produced errors. Use ResponseType dimension for the number of different type of response. | Count | Authentication, GeoType, ResponseType, ApiName | Applicable |
+
+**Azure Storage File Services (Classic)**
+
+This service monitors a part of Storage Account Classic (Microsoft.ClassicStorage/storageAccounts). You can find the already monitored resources in Azure overview page in `Cloud services` section or use a dashboard preset. To monitor resources of the Microsoft.Storage/storageAccounts type (including Storage, StorageV2 and BlobStorage), check Storage Accounts and the `Storage accounts` section on the Azure overview page.
+
+| Name | Description | Unit | Dimensions | Recommended |
+| --- | --- | --- | --- | --- |
+| Availability | The percentage of availability for the storage service or the specified API operation. Availability is calculated by taking the TotalBillableRequests value and dividing it by the number of applicable requests, including those that produced unexpected errors. All unexpected errors result in reduced availability for the storage service or the specified API operation. | Percent | Authentication, FileShare, GeoType, ApiName | Applicable |
+| Egress | The amount of egress data, in bytes. This number includes egress from an external client into Azure Storage as well as egress within Azure. As a result, this number does not reflect billable egress. | Byte | Authentication, FileShare, GeoType, ApiName | Applicable |
+| FileCapacity | The amount of storage used by the storage accountâs File service in bytes. | Byte | FileShare | Applicable |
+| FileCount | The number of file in the storage accountâs File service. | Count | FileShare | Applicable |
+| FileShareCount | The number of file shares in the storage accountâs File service. | Count |  | Applicable |
+| FileShareQuota | The upper limit on the amount of storage that can be used by Azure Files Service in bytes. | Byte | FileShare | Applicable |
+| FileShareSnapshotCount | The number of snapshots present on the share in storage accountâs Files Service. | Count | FileShare |  |
+| FileShareSnapshotSize | The amount of storage used by the snapshots in storage accountâs File service in bytes. | Byte | FileShare |  |
+| Ingress | The amount of ingress data, in bytes. This number includes ingress from an external client into Azure Storage as well as ingress within Azure. | Byte | Authentication, FileShare, GeoType, ApiName | Applicable |
+| SuccessE2ELatency | The end-to-end latency of successful requests made to a storage service or the specified API operation, in milliseconds. This value includes the required processing time within Azure Storage to read the request, send the response, and receive acknowledgment of the response. | MilliSecond | Authentication, FileShare, GeoType, ApiName | Applicable |
+| SuccessServerLatency | The latency used by Azure Storage to process a successful request, in milliseconds. This value does not include the network latency specified in SuccessE2ELatency. | MilliSecond | Authentication, FileShare, GeoType, ApiName |  |
+| Transactions | The number of requests made to a storage service or the specified API operation. This number includes successful and failed requests, as well as requests which produced errors. Use ResponseType dimension for the number of different type of response. | Count | Authentication, FileShare, GeoType, ResponseType, ApiName | Applicable |
+
+**Azure Storage Queue Services (Classic)**
+
+This service monitors a part of Storage Account Classic (Microsoft.ClassicStorage/storageAccounts). You can find the already monitored resources in Azure overview page in `Cloud services` section or use a dashboard preset. To monitor resources of type Microsoft.Storage/storageAccounts (including Storage, StorageV2 and BlobStorage), check Storage Accounts and Azure overview section `Storage accounts`.
+
+| Name | Description | Unit | Dimensions | Recommended |
+| --- | --- | --- | --- | --- |
+| Availability | The percentage of availability for the storage service or the specified API operation. Availability is calculated by taking the TotalBillableRequests value and dividing it by the number of applicable requests, including those that produced unexpected errors. All unexpected errors result in reduced availability for the storage service or the specified API operation. | Percent | Authentication, GeoType, ApiName | Applicable |
+| Egress | The amount of egress data, in bytes. This number includes egress from an external client into Azure Storage as well as egress within Azure. As a result, this number does not reflect billable egress. | Byte | Authentication, GeoType, ApiName | Applicable |
+| Ingress | The amount of ingress data, in bytes. This number includes ingress from an external client into Azure Storage as well as ingress within Azure. | Byte | Authentication, GeoType, ApiName | Applicable |
+| QueueCapacity | The amount of storage used by the storage accountâs Queue service in bytes. | Byte |  | Applicable |
+| QueueCount | The number of queue in the storage accountâs Queue service. | Count |  | Applicable |
+| QueueMessageCount | The approximate number of queue messages in the storage accountâs Queue service. | Count |  | Applicable |
+| SuccessE2ELatency | The end-to-end latency of successful requests made to a storage service or the specified API operation, in milliseconds. This value includes the required processing time within Azure Storage to read the request, send the response, and receive acknowledgment of the response. | MilliSecond | Authentication, GeoType, ApiName | Applicable |
+| SuccessServerLatency | The latency used by Azure Storage to process a successful request, in milliseconds. This value does not include the network latency specified in SuccessE2ELatency. | MilliSecond | Authentication, GeoType, ApiName |  |
+| Transactions | The number of requests made to a storage service or the specified API operation. This number includes successful and failed requests, as well as requests which produced errors. | Count | Authentication, GeoType, ResponseType, ApiName | Applicable |
+
+**Azure Storage Table Services (Classic)**
+
+This service monitors a part of Storage Account Classic (Microsoft.ClassicStorage/storageAccounts). You can find the already monitored resources in Azure overview page in `Cloud services` section or use a dashboard preset. To monitor resources of the Microsoft.Storage/storageAccounts type (including Storage, StorageV2 and BlobStorage), check Storage Accounts and the `Storage accounts` section on the Azure overview page.
+
+| Name | Description | Unit | Dimensions | Recommended |
+| --- | --- | --- | --- | --- |
+| Availability | The percentage of availability for the storage service or the specified API operation. Availability is calculated by taking the TotalBillableRequests value and dividing it by the number of applicable requests, including those that produced unexpected errors. All unexpected errors result in reduced availability for the storage service or the specified API operation. | Percent | Authentication, GeoType, ApiName | Applicable |
+| Egress | The amount of egress data, in bytes. This number includes egress from an external client into Azure Storage as well as egress within Azure. As a result, this number does not reflect billable egress. | Byte | Authentication, GeoType, ApiName | Applicable |
+| Ingress | The amount of ingress data, in bytes. This number includes ingress from an external client into Azure Storage as well as ingress within Azure. | Byte | Authentication, GeoType, ApiName | Applicable |
+| SuccessE2ELatency | The end-to-end latency of successful requests made to a storage service or the specified API operation, in milliseconds. This value includes the required processing time within Azure Storage to read the request, send the response, and receive acknowledgment of the response. | MilliSecond | Authentication, GeoType, ApiName | Applicable |
+| SuccessServerLatency | The latency used by Azure Storage to process a successful request, in milliseconds. This value does not include the network latency specified in SuccessE2ELatency. | MilliSecond | Authentication, GeoType, ApiName |  |
+| TableCapacity | The amount of storage used by the storage accountâs Table service in bytes. | Byte |  | Applicable |
+| TableCount | The number of table in the storage accountâs Table service. | Count |  | Applicable |
+| TableEntityCount | The number of table entities in the storage accountâs Table service. | Count |  | Applicable |
+| Transactions | The number of requests made to a storage service or the specified API operation. This number includes successful and failed requests, as well as requests which produced errors. Use ResponseType dimension for the number of different type of response. | Count | Authentication, GeoType, ResponseType, ApiName | Applicable |
 
 
 ---
@@ -7132,7 +7790,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Synapse Analytics (Synapse Workspace, Apache Spark pool, SQL pool) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-synapse-analytics
-scraped: 2026-02-16T09:32:12.161122
+scraped: 2026-02-16T21:30:02.367157
 ---
 
 # Azure Synapse Analytics (Synapse Workspace, Apache Spark pool, SQL pool) monitoring
@@ -7236,7 +7894,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Time Series Insights (Environment, Event Source) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-time-series-insights
-scraped: 2026-02-16T09:33:29.008603
+scraped: 2026-02-16T21:30:36.748292
 ---
 
 # Azure Time Series Insights (Environment, Event Source) monitoring
@@ -7453,13 +8111,80 @@ Hiding a dashboard doesn't affect other users.
 ---
 
 
+## Source: monitor-azure-web-application-firewall-policies.md
+
+
+---
+title: Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-web-application-firewall-policies
+scraped: 2026-02-16T21:27:13.461185
+---
+
+# Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
+
+# Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Sep 18, 2020
+
+Dynatrace ingests metrics from Azure Metrics API for Azure Web Application Firewall (WAF) Policy on Azure CDN. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.203+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Webapp](https://dt-cdn.net/images/2021-03-12-11-42-49-1338-4713f92c56.png)
+
+## Available metrics
+
+| Name | Description | Dimensions | Unit | Recommended |
+| --- | --- | --- | --- | --- |
+| WebApplicationFirewallRequestCount | The number of client requests processed by Web Application Firewall | PolicyName, RuleName, Action | Count | Applicable |
+
+
+---
+
+
 ## Source: azure-cloud-services-metrics.md
 
 
 ---
 title: All Azure cloud services
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics
-scraped: 2026-02-16T09:24:22.057715
+scraped: 2026-02-16T21:14:09.079548
 ---
 
 # All Azure cloud services
@@ -7667,7 +8392,7 @@ All cloud services consume DDUs. The amount of DDU consumption per service insta
 ---
 title: Trace Azure Functions written in .NET
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet
-scraped: 2026-02-16T09:28:17.607016
+scraped: 2026-02-16T21:23:46.874984
 ---
 
 # Trace Azure Functions written in .NET
@@ -8697,7 +9422,7 @@ The underlying issue can also affect other instrumentations. Therefore, we do no
 ---
 title: Trace Azure Functions written in Node.js
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs
-scraped: 2026-02-16T09:37:12.135887
+scraped: 2026-02-16T21:23:54.263643
 ---
 
 # Trace Azure Functions written in Node.js
@@ -9308,7 +10033,7 @@ Supported [Azure Functions programming modelï»¿](https://learn.microsoft.com/
 ---
 title: Trace Azure Functions written in Python
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python
-scraped: 2026-02-15T09:06:04.552820
+scraped: 2026-02-16T21:23:57.189344
 ---
 
 # Trace Azure Functions written in Python
@@ -9599,6 +10324,99 @@ return func.HttpResponse("Hello world", status_code=200)
 
 * [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
 * [Azure monitoringï»¿](https://www.dynatrace.com/technologies/azure-monitoring/)
+
+
+---
+
+
+## Source: opentelemetry-on-azure-functions.md
+
+
+---
+title: Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions
+scraped: 2026-02-16T21:25:30.369253
+---
+
+# Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
+
+# Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
+
+* Latest Dynatrace
+* How-to guide
+* 3-min read
+* Updated on Mar 31, 2025
+
+Dynatrace version 1.240+ OneAgent version 1.193+
+
+Dynatrace uses [OpenTelemetryï»¿](https://dt-url.net/y903u4j) to monitor Azure Functions invocations.
+For that purpose, Dynatrace provides language-specific packages, such as [`Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions.Core` for .NET](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace."), that can be used in combination with default OpenTelemetry SDKs and APIs.
+
+## Installation
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Activate the OneAgent feature**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions#oneagent-feature "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Select a configuration method**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions#choose-config-method "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
+
+**Specify a Dynatrace API endpoint**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions#specify-endpoint "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+
+**Apply the configuration to your function app**](#apply-config)[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+
+**Instrument the function code**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions#instrument-code "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")
+
+### Step 1 Activate the OneAgent feature
+
+Go to **Settings** > **Preferences** > **OneAgent features** and activate the **Forward Tag 4 trace context extension** OneAgent feature.
+
+### Step 2 Select a configuration method
+
+1. In Dynatrace,  **Search** for **Deploy OneAgent** app and select it.
+2. Under **Download Dynatrace OneAgent**, select **Set up** > **Azure Functions**.
+3. On the **Enable Monitoring for Azure Functions** page, under **How will you configure your Azure Functions?**, select your preferred configuration method from the dropdown menu.
+
+### Step 3 optional Specify a Dynatrace API endpoint Optional
+
+If you don't want to use the default public Dynatrace endpoint, specify a custom Dynatrace API endpoint where you want to receive monitoring data.
+
+To reduce network latency, you typically deploy a Dynatrace ActiveGate close to (in the same region as) the Azure Function that you want to monitor.
+
+### Step 4 Apply the configuration to your function app
+
+To apply the configuration, select one of the options below, depending on your configuration method.
+
+Configure with JSON file
+
+Configure with environment variables
+
+Copy the JSON snippet into a file named `dtconfig.json` located in the root folder of your Azure Functions deployment.
+
+On **Enable Monitoring for Azure Functions**, under **Use the following values to configure your monitored Azure Functions**, there's a snippet with all required environment variables. Be sure to add these environment variables and their values to your function app configuration:
+
+1. In Azure Portal, go to your function app.
+2. In **Settings**, select **Configuration**.
+3. Edit any existing environment variables so that the names and values match those in [Dynatrace](#variables-dynatrace), or, if your function app doesn't have any existing variables, select **New application setting** and add the names and values for all the variables in [Dynatrace](#variables-dynatrace).
+
+Leave the settings not listed by Dynatrace unchanged.
+
+### Step 5 Instrument the function code
+
+Adding the required API calls to monitor function invocations via OpenTelemetry is specific to languages and their respective OpenTelemetry distribution:
+
+* **.NET (C#):** [Trace Azure Functions written in .NET](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace.")
+* **Node.js (Javascript):** [Trace Azure Functions written in Node.js](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs "Monitor Azure Functions with OpenTelemetry for Node.js and Dynatrace.")
+* **Python:** [Trace Azure Functions written in Python](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python "Monitor Azure Functions with OpenTelemetry for Python and Dynatrace.")
+
+## Known limitations
+
+The Dynatrace Azure Functions integration doesn't capture the IP addresses of outgoing HTTP requests. If the called service isn't monitored with Dynatrace OneAgent, this results in **unmonitored hosts**.
+
+## Related topics
+
+* [Monitor Azure Functions on App Service Plan for Windows](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.")
+* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
+* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
 
 
 ---
@@ -9994,7 +10812,7 @@ For Azure Functions, monitoring consumption is based on Davis data units. See [S
 ---
 title: Monitor Azure Functions on App Service Plan for Windows
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions
-scraped: 2026-02-16T09:21:25.130186
+scraped: 2026-02-16T21:17:46.565631
 ---
 
 # Monitor Azure Functions on App Service Plan for Windows
@@ -10389,7 +11207,7 @@ See [Serverless monitoring](/docs/license/monitoring-consumption-classic/davis-d
 ---
 title: Monitor Azure Functions using Azure App Service (built-in)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions
-scraped: 2026-02-16T09:24:28.690158
+scraped: 2026-02-16T21:14:13.114368
 ---
 
 # Monitor Azure Functions using Azure App Service (built-in)
@@ -10967,7 +11785,7 @@ For all other metrics collected by Dynatrace per configurable Azure service, see
 ---
 title: Limit API calls to Azure
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/limit-api-calls-to-azure
-scraped: 2026-02-16T09:32:46.244123
+scraped: 2026-02-16T21:25:24.834641
 ---
 
 # Limit API calls to Azure
@@ -11079,7 +11897,7 @@ To monitor resources based on tags
 ---
 title: Set up metric events for alerting
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-metric-events-for-alerting
-scraped: 2026-02-15T09:06:39.045591
+scraped: 2026-02-16T21:30:18.656617
 ---
 
 # Set up metric events for alerting
@@ -11225,7 +12043,7 @@ If you disable any or all of the alerting rules, you can always re-enable them.
 ---
 title: Set up monitoring notifications with Azure Monitor alerts
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-monitoring-with-azure-alerts
-scraped: 2026-02-16T09:39:25.704574
+scraped: 2026-02-16T21:28:16.783094
 ---
 
 # Set up monitoring notifications with Azure Monitor alerts
@@ -11813,7 +12631,7 @@ This page presents common troubleshooting scenarios for Azure monitoring setup.
 ---
 title: Monitor Azure services with Azure Monitor metrics
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide
-scraped: 2026-02-16T09:24:32.415149
+scraped: 2026-02-16T21:14:03.165899
 ---
 
 # Monitor Azure services with Azure Monitor metrics
@@ -12865,7 +13683,7 @@ You can also monitor Azure logs. For more information, see [Azure Logs](/docs/in
 ---
 title: Monitor Azure Service Fabric
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-servicefabric
-scraped: 2026-02-16T09:20:57.359179
+scraped: 2026-02-16T21:14:10.411094
 ---
 
 # Monitor Azure Service Fabric
@@ -12906,7 +13724,7 @@ To deploy OneAgent on Azure Service Fabric, follow the same procedure as for [Az
 ---
 title: Monitor Azure Spring Apps
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring/monitor-azure-spring-apps
-scraped: 2026-02-16T09:39:47.370426
+scraped: 2026-02-16T21:31:18.631147
 ---
 
 # Monitor Azure Spring Apps
@@ -13006,7 +13824,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure Spring Apps
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring
-scraped: 2026-02-16T09:24:23.711838
+scraped: 2026-02-16T21:14:32.095890
 ---
 
 # Monitor Azure Spring Apps
@@ -13268,7 +14086,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure Virtual Machines
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vm
-scraped: 2026-02-16T09:21:23.430864
+scraped: 2026-02-16T21:13:54.720821
 ---
 
 # Monitor Azure Virtual Machines
@@ -13714,7 +14532,7 @@ See [network zones](/docs/manage/network-zones "Find out how network zones work 
 ---
 title: Monitor Azure Virtual Machine Scale Set (VMSS)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss
-scraped: 2026-02-16T09:22:04.082244
+scraped: 2026-02-16T21:13:59.173429
 ---
 
 # Monitor Azure Virtual Machine Scale Set (VMSS)
@@ -14135,7 +14953,7 @@ Restart-AzureRmVmss -ResourceGroupName "<Resource-Group>" -VMScaleSetName "<VMSS
 ---
 title: Azure Logs
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure
-scraped: 2026-02-16T09:24:30.522398
+scraped: 2026-02-16T21:14:14.612871
 ---
 
 # Azure Logs
@@ -14702,7 +15520,7 @@ To uninstall the Dynatrace Azure log forwarder
 ---
 title: Microsoft Azure Integrations
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations
-scraped: 2026-02-16T09:21:32.026581
+scraped: 2026-02-16T21:18:39.407411
 ---
 
 # Microsoft Azure Integrations

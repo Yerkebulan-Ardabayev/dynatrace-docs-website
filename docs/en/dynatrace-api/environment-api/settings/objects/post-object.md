@@ -1,7 +1,7 @@
 ---
 title: Settings API - POST an object
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/objects/post-object
-scraped: 2026-02-16T09:22:51.961086
+scraped: 2026-02-16T21:14:42.027783
 ---
 
 # Settings API - POST an object

@@ -13,7 +13,7 @@ Files combined: 2
 ---
 title: Root cause analysis concepts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/concepts
-scraped: 2026-02-16T09:13:00.716111
+scraped: 2026-02-16T21:10:18.127897
 ---
 
 # Root cause analysis concepts
@@ -171,7 +171,7 @@ Alternatively, you can set the processing state per Davis event source in [Log e
 ---
 title: Event analysis and correlation
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation
-scraped: 2026-02-15T21:24:00.732089
+scraped: 2026-02-16T21:26:24.066349
 ---
 
 # Event analysis and correlation

@@ -1,67 +1,67 @@
 ---
-title: What's new in Dynatrace
+title: Что нового в Dynatrace
 source: https://www.dynatrace.com/docs/whats-new
-scraped: 2026-02-16T09:12:20.784778
+scraped: 2026-02-16T21:09:59.061390
 ---
 
-# What's new in Dynatrace
+# Что нового в Dynatrace
 
-# What's new in Dynatrace
+# Что нового в Dynatrace
 
-* Latest Dynatrace
-* Updated on Feb 03, 2026
+* Последняя версия Dynatrace
+* Обновлено 03 февраля 2026 г.
 
-These release notes for Dynatrace updatesâshowcasing new features, changes, and bug fixesâkeep you informed and ahead of the game.
+Эти заметки о выпуске для Dynatrace, в которых представлены новые функции, изменения и исправления ошибок, помогают вам оставаться в курсе и опережать события.
 
-Filter by
+Фильтр по
 
-Select an option
+Выберите опцию
 
-Type to filter
+Введите текст для фильтрации
 
-Unable to render DataTable. Check configuration.
+Невозможно отобразить таблицу данных. Проверьте конфигурацию.
 
-## How does rollout work?
+## Как работает выпуск?
 
-Dynatrace follows an agile development process with sprints every two weeks.
+Dynatrace следует гибкому процессу разработки с спринтами каждые две недели.
 
 ### Dynatrace SaaS
 
-Every sprint is publicly released. To guarantee maximum reliability, we follow a staged rollout process that typically takes under two weeks to complete.
+Каждый спринт выпускается публично. Чтобы гарантировать максимальную надежность, мы следуем поэтапному процессу выпуска, который обычно занимает менее двух недель.
 
-* SaaS **rollout** is the two-week period during which we roll out a new release to Dynatrace clusters.
-* **Rollout start** is the date when the two-week period begins.
-* Your cluster update will occur at some time within the two-week rollout period.
+* **Выпуск** SaaS - это двухнедельный период, в течение которого мы выпускаем новую версию на кластеры Dynatrace.
+* **Начало выпуска** - это дата, когда начинается двухнедельный период.
+* Обновление вашего кластера произойдет в течение двухнедельного периода выпуска.
 
-![Rollout process Dynatrace Server](https://dt-cdn.net/images/rollout-process-dynatrace-saas-1108-414ce96427.png)
+![Процесс выпуска Dynatrace Server](https://dt-cdn.net/images/rollout-process-dynatrace-saas-1108-414ce96427.png)
 
-### Dynatrace OneAgent and ActiveGate
+### Dynatrace OneAgent и ActiveGate
 
-Every second sprint is publicly released. To guarantee maximum reliability, we follow a staged rollout process that typically takes under four weeks to complete.
+Каждый второй спринт выпускается публично. Чтобы гарантировать максимальную надежность, мы следуем поэтапному процессу выпуска, который обычно занимает менее четырех недель.
 
-![Rollout process](https://dt-cdn.net/images/rollout-process-1108-fb0a5a03b6.png)
+![Процесс выпуска](https://dt-cdn.net/images/rollout-process-1108-fb0a5a03b6.png)
 
-## How long are versions supported following rollout?
+## Как долго поддерживаются версии после выпуска?
 
-|  | [Standard Supportï»¿](https://www.dynatrace.com/services-support/) | [Enterprise Success and Supportï»¿](https://www.dynatrace.com/services-support/) |
+|  | [Стандартная поддержка](https://www.dynatrace.com/services-support/) | [Предприятие Success и поддержка](https://www.dynatrace.com/services-support/) |
 | --- | --- | --- |
-| OneAgent | 9 months | 12 months |
-| ActiveGate | 9 months | 12 months |
+| OneAgent | 9 месяцев | 12 месяцев |
+| ActiveGate | 9 месяцев | 12 месяцев |
 
-### Other components
+### Другие компоненты
 
-Other Dynatrace components have their own release cycles, independent of Dynatrace bi-weekly releases.
+Другие компоненты Dynatrace имеют свои собственные циклы выпуска, независимые от двухнедельных выпусков Dynatrace.
 
-* [EdgeConnect](/docs/whats-new/edgeconnect "Release notes for EdgeConnect")
+* [EdgeConnect](/docs/whats-new/edgeconnect "Заметки о выпуске для EdgeConnect")
 
-* [Dynatrace Operator](/docs/whats-new/dynatrace-operator "Release notes for Dynatrace Operator")
+* [Dynatrace Operator](/docs/whats-new/dynatrace-operator "Заметки о выпуске для Dynatrace Operator")
 
-## Other news
+## Другие новости
 
-[### New technology support
+[### Новая поддержка технологий
 
-Discover new technologies that can be monitored with Dynatrace, and how to get started.](/docs/whats-new/technology "Discover new technologies that can be monitored with Dynatrace.")[### End-of-support news
+Узнайте о новых технологиях, которые можно отслеживать с помощью Dynatrace, и о том, как начать работу.](/docs/whats-new/technology "Узнайте о новых технологиях, которые можно отслеживать с помощью Dynatrace.")[### Новости об окончании поддержки
 
-End of support announcements for technologies supported by Dynatrace.](/docs/whats-new/technology/end-of-support-news "End of support announcements for technologies supported by Dynatrace.")[### New Documentation topics
+Объявления об окончании поддержки технологий, поддерживаемых Dynatrace.](/docs/whats-new/technology/end-of-support-news "Объявления об окончании поддержки технологий, поддерживаемых Dynatrace.")[### Новые темы документации
 
-List of all new or significantly changed Dynatrace Documentation topics, sorted by week of publication.](/docs/whats-new/documentation "See what Documentation topics have been added recently.")
+Список всех новых или значительно измененных тем документации Dynatrace, отсортированных по неделе публикации.](/docs/whats-new/documentation "Посмотрите, какие темы документации были добавлены недавно.")

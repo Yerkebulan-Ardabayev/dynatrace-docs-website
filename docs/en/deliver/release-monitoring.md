@@ -1,7 +1,7 @@
 ---
 title: Release monitoring Classic
 source: https://www.dynatrace.com/docs/deliver/release-monitoring
-scraped: 2026-02-15T09:08:02.784929
+scraped: 2026-02-16T21:31:09.113611
 ---
 
 # Release monitoring Classic

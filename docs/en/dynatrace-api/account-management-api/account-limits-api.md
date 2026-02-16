@@ -1,7 +1,7 @@
 ---
 title: Account limits API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/account-limits-api
-scraped: 2026-02-16T09:27:31.393325
+scraped: 2026-02-16T21:24:35.564431
 ---
 
 # Account limits API

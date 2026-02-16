@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 26
+Files combined: 27
 
 ---
 
@@ -954,7 +954,7 @@ Select scopes > repo (Full control of private repositories).
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-16T09:30:27.480932
+scraped: 2026-02-16T21:24:44.696873
 ---
 
 # Set up GitHub Connector
@@ -1034,7 +1034,7 @@ We strongly recommend that you limit the permissions of your personal access tok
 ---
 title: GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
-scraped: 2026-02-16T09:27:34.606779
+scraped: 2026-02-16T21:29:48.005822
 ---
 
 # GitHub Connector
@@ -1372,7 +1372,7 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-02-16T09:35:49.107387
+scraped: 2026-02-16T21:24:21.515039
 ---
 
 # Set up GitLab Connector
@@ -1482,7 +1482,7 @@ Learn about available actions used by GitLab Connector integration for automatin
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-02-16T09:32:51.023168
+scraped: 2026-02-16T21:29:18.908111
 ---
 
 # Set up Jenkins Connector
@@ -2041,7 +2041,7 @@ The following are solutions to problems some people have.
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-16T09:22:15.326593
+scraped: 2026-02-16T21:21:36.675105
 ---
 
 # ServiceNow
@@ -2372,7 +2372,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-16T09:37:03.310789
+scraped: 2026-02-16T21:32:29.353945
 ---
 
 # Slack Connector
@@ -3901,7 +3901,7 @@ For more information on how to start a workflow to use Text Processing, see [Wor
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-16T09:22:12.004416
+scraped: 2026-02-16T21:21:35.273526
 ---
 
 # Workflows Connectors
@@ -4096,7 +4096,7 @@ The result of the HTTP request action is a JSON structure that includes
 ---
 title: Run JavaScript action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action
-scraped: 2026-02-15T21:23:56.968382
+scraped: 2026-02-16T21:29:32.336363
 ---
 
 # Run JavaScript action for Workflows
@@ -4430,13 +4430,65 @@ console.log( ex.params.event);
 ---
 
 
+## Source: default-workflow-actions.md
+
+
+---
+title: Workflows actions
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
+scraped: 2026-02-16T21:31:53.662018
+---
+
+# Workflows actions
+
+# Workflows actions
+
+* Latest Dynatrace
+* Overview
+* 1-min read
+* Published Apr 02, 2024
+
+An action is a generic, reusable function configured and triggered by a [task](/docs/analyze-explore-automate/workflows#concept-task "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). For example, an action could be **Run JavaScript**, while a task would execute the action with a specific configuration to `get problem details` project. Actions are the tools to be assembled in your workflow to fit your custom process. Actions are provided out of the box by Dynatrace and can be installed via Dynatrace Hub.
+
+## Workflows actions
+
+[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+
+### Run JavaScript
+
+Use the **Run JavaScript** action to run JavaScript code.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Execute JavaScript action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+
+### Execute DQL Query action
+
+Use the **Execute DQL Query** action for executing DQL queries.](/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action "Execute DQL query action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+
+### HTTP Request action
+
+Use the **HTTP Request** action for executing HTTP requests.](/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action "Execute HTTP request action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+
+### Request approval
+
+Use the **Request approval** action to add an approval step for manual confirmation.](/docs/analyze-explore-automate/workflows/default-workflow-actions/approval-request-workflow-action "Add an approval step to your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+
+### Run Workflow action
+
+Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-workflow-action "Run a workflow as a task in another workflow.")
+
+## Related topics
+
+* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+
+
+---
+
+
 ## Source: workflows-access-management.md
 
 
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-02-16T09:29:43.234414
+scraped: 2026-02-16T21:30:28.126743
 ---
 
 # Access workflow management functionality
@@ -4484,7 +4536,7 @@ To access various workflow management commands:
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-16T09:37:25.429478
+scraped: 2026-02-16T21:27:04.226827
 ---
 
 # Manage live or draft workflows
@@ -4525,7 +4577,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-16T09:40:07.852390
+scraped: 2026-02-16T21:31:21.249637
 ---
 
 # Get notified about workflow changes
@@ -4601,7 +4653,7 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-02-16T09:38:27.113957
+scraped: 2026-02-16T21:24:22.885415
 ---
 
 # User permissions for workflows
@@ -4790,7 +4842,7 @@ For more information, see [Service users](/docs/manage/identity-access-managemen
 ---
 title: Event triggers for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
-scraped: 2026-02-15T21:24:09.997342
+scraped: 2026-02-16T21:32:39.027970
 ---
 
 # Event triggers for workflows

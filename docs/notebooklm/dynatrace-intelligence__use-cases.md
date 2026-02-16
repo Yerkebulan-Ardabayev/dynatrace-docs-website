@@ -1112,7 +1112,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 ---
 title: Summarize open problems with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
-scraped: 2026-02-15T21:28:01.667784
+scraped: 2026-02-16T21:28:18.160161
 ---
 
 # Summarize open problems with Workflows
@@ -1321,7 +1321,7 @@ Once a new problem appears, you should receive an email from `no-reply@dev.apps.
 ---
 title: Create log alerts for a log event or summary of log data
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/create-alert-in-logs
-scraped: 2026-02-16T09:38:12.044938
+scraped: 2026-02-16T21:32:54.066371
 ---
 
 # Create log alerts for a log event or summary of log data
@@ -1476,7 +1476,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-16T09:23:03.793508
+scraped: 2026-02-16T21:15:02.683901
 ---
 
 # Dynatrace Intelligence DQL examples
@@ -1848,7 +1848,7 @@ count
 ---
 title: AI in Workflows - Predictive maintenance of cloud disks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-for-workflows
-scraped: 2026-02-15T09:07:44.938596
+scraped: 2026-02-16T21:32:37.705946
 ---
 
 # AI in Workflows - Predictive maintenance of cloud disks

@@ -1,7 +1,7 @@
 ---
 title: Stonebranch Universal Automation Center extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/stonebranch-uac
-scraped: 2026-02-16T09:28:24.244781
+scraped: 2026-02-16T21:26:44.934793
 ---
 
 # Stonebranch Universal Automation Center extension

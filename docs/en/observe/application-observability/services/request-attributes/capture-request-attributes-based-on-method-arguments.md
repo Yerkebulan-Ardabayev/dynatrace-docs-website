@@ -1,7 +1,7 @@
 ---
 title: Capture request attributes based on method arguments
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments
-scraped: 2026-02-16T09:22:34.647725
+scraped: 2026-02-16T21:13:42.823983
 ---
 
 # Capture request attributes based on method arguments

@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-16T09:14:44.177946
+scraped: 2026-02-16T21:12:18.836571
 ---
 
 # New Documentation articles

@@ -13,7 +13,7 @@ Files combined: 2
 ---
 title: Assign ownership teams to monitored entities
 source: https://www.dynatrace.com/docs/deliver/ownership/assign-ownership
-scraped: 2026-02-15T21:27:05.176237
+scraped: 2026-02-16T21:25:33.322942
 ---
 
 # Assign ownership teams to monitored entities
@@ -533,7 +533,7 @@ Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "E
 ---
 title: Best practices for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/best-practices
-scraped: 2026-02-15T09:06:19.735417
+scraped: 2026-02-16T21:30:40.821825
 ---
 
 # Best practices for entity ownership

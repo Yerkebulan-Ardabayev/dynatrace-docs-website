@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Data Explorer
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer
-scraped: 2026-02-15T21:18:34.138261
+scraped: 2026-02-16T21:16:30.967220
 ---
 
 # Data Explorer

@@ -13,7 +13,7 @@ Files combined: 36
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-02-16T09:15:20.840313
+scraped: 2026-02-16T21:12:21.521840
 ---
 
 # Add code to a dashboard
@@ -233,7 +233,7 @@ To see more examples, open the  menu at the top of your dashboard and browse the
 ---
 title: Add data to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
-scraped: 2026-02-16T09:15:22.483614
+scraped: 2026-02-16T21:12:37.372973
 ---
 
 # Add data to a dashboard
@@ -434,7 +434,7 @@ Select **Run query**.
 ---
 title: Add Markdown to dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
-scraped: 2026-02-16T09:15:26.043739
+scraped: 2026-02-16T21:12:36.018305
 ---
 
 # Add Markdown to dashboard
@@ -716,7 +716,7 @@ For details on variables, see [Add a variable to a dashboard](/docs/analyze-expl
 ---
 title: Add a snippet to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
-scraped: 2026-02-16T09:15:17.497710
+scraped: 2026-02-16T21:12:33.146537
 ---
 
 # Add a snippet to a dashboard
@@ -828,7 +828,7 @@ When you find something interesting:
 ---
 title: Add a variable to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
-scraped: 2026-02-16T09:15:15.865012
+scraped: 2026-02-16T21:12:31.805843
 ---
 
 # Add a variable to a dashboard
@@ -1350,7 +1350,7 @@ In this example, we selected `Variable1` to display the variable definition and 
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-16T09:12:26.139014
+scraped: 2026-02-16T21:10:00.897568
 ---
 
 # Dashboards
@@ -2697,7 +2697,7 @@ To delete multiple tiles simultaneously
 ---
 title: API for Dashboards and Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-api
-scraped: 2026-02-16T09:35:21.262488
+scraped: 2026-02-16T21:24:49.086188
 ---
 
 # API for Dashboards and Notebooks
@@ -2750,7 +2750,7 @@ To see the full API documentation for the documents service
 ---
 title: Manage document versions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
-scraped: 2026-02-16T09:15:19.133723
+scraped: 2026-02-16T21:12:28.964605
 ---
 
 # Manage document versions
@@ -9938,7 +9938,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Scatterplot visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot
-scraped: 2026-02-15T21:16:16.806023
+scraped: 2026-02-16T21:29:57.995685
 ---
 
 # Scatterplot visualization
@@ -10562,7 +10562,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Edit visualizations for Notebooks and Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations
-scraped: 2026-02-16T09:15:29.446282
+scraped: 2026-02-16T21:12:30.296307
 ---
 
 # Edit visualizations for Notebooks and Dashboards
@@ -10733,7 +10733,7 @@ For details, see [Scatterplot visualization](/docs/analyze-explore-automate/dash
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-16T09:15:31.364520
+scraped: 2026-02-16T21:12:27.525303
 ---
 
 # Explore data
@@ -11655,7 +11655,7 @@ That's what makes this a great tool for beginners and experts.
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-16T09:12:31.786423
+scraped: 2026-02-16T21:12:11.174890
 ---
 
 # Notebooks
@@ -12961,7 +12961,7 @@ Create powerful, data-driven documents for custom analytics and collaboration.](
 ---
 title: Drilldowns and navigation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/open-with
-scraped: 2026-02-16T09:15:33.124997
+scraped: 2026-02-16T21:12:22.975784
 ---
 
 # Drilldowns and navigation
@@ -13368,7 +13368,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-02-16T09:12:10.970218
+scraped: 2026-02-16T21:09:52.217097
 ---
 
 # Ready-made dashboards
@@ -13805,7 +13805,7 @@ Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-
 ---
 title: Ready-made documents
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents
-scraped: 2026-02-16T09:15:58.014715
+scraped: 2026-02-16T21:23:43.906535
 ---
 
 # Ready-made documents

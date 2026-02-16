@@ -1,7 +1,7 @@
 ---
 title: Stop/restart OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows
-scraped: 2026-02-15T21:19:15.439454
+scraped: 2026-02-16T21:17:00.382762
 ---
 
 # Stop/restart OneAgent on Windows

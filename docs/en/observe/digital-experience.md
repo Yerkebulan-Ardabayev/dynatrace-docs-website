@@ -1,7 +1,7 @@
 ---
 title: Digital Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience
-scraped: 2026-02-16T09:14:30.530089
+scraped: 2026-02-16T21:11:47.510038
 ---
 
 # Digital Experience

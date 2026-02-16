@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 17
+Files combined: 18
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 17
 ---
 title: Business event analysis and examples
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-analysis
-scraped: 2026-02-16T09:23:11.012052
+scraped: 2026-02-16T21:15:04.115060
 ---
 
 # Business event analysis and examples
@@ -441,7 +441,7 @@ Select any tile and then select [**Open with** ![Open with](https://dt-cdn.net/i
 ---
 title: Ingest business events via API
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-api-ingest
-scraped: 2026-02-16T09:25:23.109322
+scraped: 2026-02-16T21:22:40.835594
 ---
 
 # Ingest business events via API
@@ -1910,7 +1910,7 @@ To authenticate a call, attach the token to the `Authorization` HTTP header prec
 ---
 title: Basic concepts of Dynatrace Business Observability
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-basic-concepts
-scraped: 2026-02-16T09:25:30.210885
+scraped: 2026-02-16T21:22:42.170777
 ---
 
 # Basic concepts of Dynatrace Business Observability
@@ -1990,7 +1990,7 @@ The business event dataflow in Dynatrace has three stages:
 ---
 title: Business event bucket assignment via classic pipeline
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-bucket-assignment
-scraped: 2026-02-16T09:25:33.372798
+scraped: 2026-02-16T21:22:36.405818
 ---
 
 # Business event bucket assignment via classic pipeline
@@ -2040,13 +2040,113 @@ matchesValue(event.provider, "www.easytrade.com")
 ---
 
 
+## Source: bo-metric-extraction.md
+
+
+---
+title: Business event metric extraction via classic pipeline
+source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-metric-extraction
+scraped: 2026-02-16T21:30:58.194811
+---
+
+# Business event metric extraction via classic pipeline
+
+# Business event metric extraction via classic pipeline
+
+* Latest Dynatrace
+* How-to guide
+* 3-min read
+* Updated on Sep 06, 2023
+
+With business event metric extraction via the classic pipeline, you can create your own business metrics. It enables you to:
+
+* Create custom alerts, such as when a certain value surges or drops. Alerts can be based on attribute values or specific business event occurrences.
+* Reduce your DDU consumption and lower your costs.
+
+You need to create your business metrics before ingesting business event data.
+
+## Configure metric extraction
+
+To add a business event metric
+
+1. Go to **Settings** > **Business Observability** > **Metric extraction**.
+2. Select **Add business event metric** and name your metric by adding a metric **Key** starting with the `bizevents.` prefix (for example, `bizevents.EasyTrade.TradingVolume`).
+3. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher "Examine specific DQL functions and logical operators for log processing."). In the above example, to calculate your trading volume metric, you need to extract only buy transactions, so the matcher query is as follows.
+
+   ```
+   matchesValue(event.type, "com.easytrade.buy-assets")
+   ```
+4. Choose the **Measure** on which your metric will be based. There are two options.
+
+   * **Occurrence of business events records**âa count of events that match your DQL query
+   * **Attribute value**âa collection of measures for the attribute value of business events that match your DQL query
+
+     Specify your attribute name in the **Attribute** field. Attribute name matching is not case sensitive. For example, if you choose `Trading_Volume`, the specified attribute name for metric extraction should be `trading_volume`. However, be sure to use the exact attribute name of your business event.
+5. Select **Add dimension**. Adding dimensions allows you to split the business event occurrences by a specific business event attribute such as a hostname. If the attribute contains more than one value, the first attribute value acts as the metric dimension. The maximum number of dimensions is 50. Be sure to use the exact attribute name of your business event.
+6. Select **Save changes**.
+
+## Visualize metrics
+
+You can extract and visualize your metrics to use them further in your analysis. You can also create metric-based alerts tailored to your needs.
+
+### Display metrics in Data Explorer
+
+To display business event metrics
+
+1. Go to **Data Explorer**.
+2. Find your metric in the search window, select **Run query**, and display the results.
+
+   You can also:
+
+   * Visualize your metric on a classic dashboard by selecting **Pin to dashboard**.
+   * Export your data to a CSV file.
+   * Share a link.
+   * Copy the request.
+
+See the example visualization below.
+
+![Visualization of business events metric, bizevents.EasyTrade.TradingVolume](https://dt-cdn.net/images/business-event-metric-display-2806-d2f55d9cc7.png)
+
+### Display metrics in Notebooks Notebooks
+
+You can also explore custom metrics based on business events in Grail, for example, by using the DQL [`timeseries` command](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands"). The following is an example DQL `timeseries` query against the `bizevents.easyTrade.TradingVolume` metric.
+
+```
+timeseries avg(bizevents.easyTrade.TradingVolume), alias:avgTradingVolume, interval:1d, from:now()-30d, to:now()
+```
+
+Run this query in [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (**Query Grail** > **Run query**) and view results using the recommended **Line chart** visualization option.
+
+![Query Business Observability custom metrics through DQL with timeseries in Notebooks](https://dt-cdn.net/images/ba-event-metric-query-notebooks-2122-6c3ead0aef.webp)
+
+### Create alerts with metrics
+
+To create alerts based on business event metrics
+
+1. Go to **Settings** > **Anomaly detection** > **Metric events**.
+2. Select **Add metric event** and create a custom event where **Type** is **Metric selector**. This is the [metric key defined earlier](#configure), for example, `bizevents.EasyTrade.TradingVolume`.
+
+   Metric events based on business events are only supported with metric selector queries. See [Metric selector events](/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events#metricselectorevent "Learn about metric events based on a metric selector.") for more information.
+
+### Unrecognized timestamp handling
+
+If the event timestamp doesn't fall within the allowed [range](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works."), your metric is replaced in Grail by a metric with the `.failed` suffix added to the metric key. This new metric will have a recent timestamp, `(now())` and the dimension that would have been attached to the metric you wanted to extract. You can also visualize this metric in [Data Explorer](#data-explorer) or [Notebooks](#notebooks).
+
+## Related topics
+
+* [Metric ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
+
+
+---
+
+
 ## Source: bo-processing-classic-pipeline.md
 
 
 ---
 title: Business event processing via classic pipeline
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-processing-classic-pipeline
-scraped: 2026-02-16T09:25:19.444568
+scraped: 2026-02-16T21:22:48.037949
 ---
 
 # Business event processing via classic pipeline
@@ -2395,7 +2495,7 @@ In the below examples, you can see how ingest pipeline processing can be used to
 ---
 title: Business events security context
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-security-context
-scraped: 2026-02-16T09:23:00.436113
+scraped: 2026-02-16T21:13:01.477183
 ---
 
 # Business events security context
@@ -2675,7 +2775,7 @@ If you don't migrate your existing rules, it's still possible to use OpenPipelin
 ---
 title: Business event capture
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-capturing
-scraped: 2026-02-16T09:25:25.065611
+scraped: 2026-02-16T21:16:26.826889
 ---
 
 # Business event capture
@@ -4529,7 +4629,7 @@ opt
 ---
 title: Business Flow
 source: https://www.dynatrace.com/docs/observe/business-observability/business-flow
-scraped: 2026-02-16T09:25:26.714987
+scraped: 2026-02-16T21:22:37.770090
 ---
 
 # Business Flow
@@ -4742,7 +4842,7 @@ Track your business performance indicators and results, detect problematic proce
 ---
 title: Business process monitoring
 source: https://www.dynatrace.com/docs/observe/business-observability/business-process-monitoring
-scraped: 2026-02-15T09:09:55.005786
+scraped: 2026-02-16T21:31:45.028451
 ---
 
 # Business process monitoring
@@ -4931,7 +5031,7 @@ To report on trends, capture the relevant business metrics as business events. E
 ---
 title: Cost & Carbon Optimization
 source: https://www.dynatrace.com/docs/observe/business-observability/cost-and-carbon-optimization
-scraped: 2026-02-16T09:25:15.967275
+scraped: 2026-02-16T21:22:45.316020
 ---
 
 # Cost & Carbon Optimization
@@ -5390,7 +5490,7 @@ Track and reduce your site infrastructure's carbon footprint.](https://www.dynat
 ---
 title: Business events end-to-end example
 source: https://www.dynatrace.com/docs/observe/business-observability/end-to-end-example
-scraped: 2026-02-16T09:25:17.764135
+scraped: 2026-02-16T21:22:43.611415
 ---
 
 # Business events end-to-end example
@@ -5766,7 +5866,7 @@ You can display your results in several ways, including the following options.
 ---
 title: Explore Business Events
 source: https://www.dynatrace.com/docs/observe/business-observability/explore-business-events
-scraped: 2026-02-16T09:25:21.065692
+scraped: 2026-02-16T21:22:39.099495
 ---
 
 # Explore Business Events
@@ -5896,7 +5996,7 @@ Understand the Dynatrace business analysis process end-to-end.](https://www.dyna
 ---
 title: Microsoft Power BI
 source: https://www.dynatrace.com/docs/observe/business-observability/extensions/microsoft-power-bi
-scraped: 2026-02-16T09:25:31.806545
+scraped: 2026-02-16T21:22:46.617437
 ---
 
 # Microsoft Power BI
@@ -5965,7 +6065,7 @@ To connect to a Dynatrace SaaS instance from Power Query Desktop, take the follo
 ---
 title: Salesforce Insights
 source: https://www.dynatrace.com/docs/observe/business-observability/extensions/salesforce-insights
-scraped: 2026-02-16T09:25:28.585694
+scraped: 2026-02-16T21:22:35.079800
 ---
 
 # Salesforce Insights

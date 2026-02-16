@@ -1,7 +1,7 @@
 ---
 title: OpenAI
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai
-scraped: 2026-02-16T09:25:10.792126
+scraped: 2026-02-16T21:21:40.709485
 ---
 
 # OpenAI

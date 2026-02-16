@@ -13,7 +13,7 @@ Files combined: 3
 ---
 title: Issue-tracking integration
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
-scraped: 2026-02-16T09:34:14.608250
+scraped: 2026-02-16T21:27:22.845700
 ---
 
 # Issue-tracking integration
@@ -106,7 +106,7 @@ The following is a solution to a problem some people had with [Automated release
 ---
 title: Monitor releases with Dynatrace
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/monitor-releases-with-dynatrace
-scraped: 2026-02-16T09:31:50.612722
+scraped: 2026-02-16T21:27:40.990551
 ---
 
 # Monitor releases with Dynatrace

@@ -1,7 +1,7 @@
 ---
 title: Investigations
 source: https://www.dynatrace.com/docs/secure/investigations
-scraped: 2026-02-16T09:32:42.941569
+scraped: 2026-02-16T21:28:19.598676
 ---
 
 # Investigations

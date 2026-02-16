@@ -1,7 +1,7 @@
 ---
 title: Microsoft Azure Integrations
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations
-scraped: 2026-02-16T09:21:32.026581
+scraped: 2026-02-16T21:18:39.407411
 ---
 
 # Microsoft Azure Integrations

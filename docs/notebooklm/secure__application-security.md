@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 19
+Files combined: 20
 
 ---
 
@@ -97,7 +97,7 @@ You can edit, disable, enable, or remove rules at any time.
 ---
 title: Runtime Application Protection
 source: https://www.dynatrace.com/docs/secure/application-security/application-protection
-scraped: 2026-02-16T09:26:21.401256
+scraped: 2026-02-16T21:23:14.372927
 ---
 
 # Runtime Application Protection
@@ -224,7 +224,7 @@ Runtime Application Protection is licensed based on the consumption of [GiB-hour
 ---
 title: Security Posture Management
 source: https://www.dynatrace.com/docs/secure/application-security/security-posture-management-hub
-scraped: 2026-02-16T09:26:24.799146
+scraped: 2026-02-16T21:23:17.230436
 ---
 
 # Security Posture Management
@@ -535,7 +535,7 @@ Set up the Dynatrace [integration with Runecast Analyzer](/docs/secure/threat-ob
 ---
 title: Metrics Classic for Dynatrace Runtime Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/app-sec-metrics
-scraped: 2026-02-16T09:27:25.048553
+scraped: 2026-02-16T21:30:38.083312
 ---
 
 # Metrics Classic for Dynatrace Runtime Vulnerability Analytics
@@ -681,7 +681,7 @@ Once you run a query in Data Explorer, you can
 ---
 title: Application Security overview
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/application-security-overview
-scraped: 2026-02-15T21:26:23.302362
+scraped: 2026-02-16T21:25:54.004918
 ---
 
 # Application Security overview
@@ -1377,7 +1377,7 @@ To verify that your integration is set up correctly
 ---
 title: Webhook integration for security notifications
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/security-notifications-rva/webhook-integration
-scraped: 2026-02-15T09:13:40.608927
+scraped: 2026-02-16T21:30:21.337438
 ---
 
 # Webhook integration for security notifications
@@ -1489,7 +1489,7 @@ To verify that your integration is set up correctly
 ---
 title: Davis Security Advisor calculations
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor
-scraped: 2026-02-16T09:20:08.398783
+scraped: 2026-02-16T21:18:43.688538
 ---
 
 # Davis Security Advisor calculations
@@ -1545,7 +1545,7 @@ To filter by recommended fixes, see [Filter third-party vulnerabilities by recom
 ---
 title: Davis Security Score calculations
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score
-scraped: 2026-02-16T09:20:05.137066
+scraped: 2026-02-16T21:18:45.038354
 ---
 
 # Davis Security Score calculations
@@ -1656,7 +1656,7 @@ Thus, the DSS (score and risk level) for vulnerabilities on Grail-powered apps c
 ---
 title: Monitoring rules - Third-party Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv
-scraped: 2026-02-16T09:20:12.132278
+scraped: 2026-02-16T21:18:50.976505
 ---
 
 # Monitoring rules - Third-party Vulnerability Analytics
@@ -2944,7 +2944,7 @@ New monitoring rules Classic monitoring rules
 ---
 title: Filter or change status of third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities
-scraped: 2026-02-16T09:19:59.937409
+scraped: 2026-02-16T21:18:47.859448
 ---
 
 # Filter or change status of third-party vulnerabilities
@@ -3117,7 +3117,7 @@ The last five status changes of the vulnerability are logged in the **Vulnerabil
 ---
 title: Manage third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities
-scraped: 2026-02-16T09:20:03.539681
+scraped: 2026-02-16T21:18:49.279605
 ---
 
 # Manage third-party vulnerabilities
@@ -3557,7 +3557,7 @@ Lists and links to the top five process groups, sorted by status (`Affected`, th
 ---
 title: Remediation tracking
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking
-scraped: 2026-02-16T09:20:10.149219
+scraped: 2026-02-16T21:18:46.500278
 ---
 
 # Remediation tracking
@@ -4006,7 +4006,7 @@ To change the vulnerability status of
 ---
 title: Use cases for monitoring rules
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules
-scraped: 2026-02-15T09:06:17.520813
+scraped: 2026-02-16T21:30:43.524835
 ---
 
 # Use cases for monitoring rules
@@ -4209,7 +4209,7 @@ The order of the monitoring rules is important: As soon as a rule matches an ent
 ---
 title: Third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities
-scraped: 2026-02-16T09:13:05.538990
+scraped: 2026-02-16T21:10:53.963051
 ---
 
 # Third-party vulnerabilities
@@ -4248,13 +4248,126 @@ Create, modify, and delete custom monitoring rules for Dynatrace-monitored proce
 ---
 
 
+## Source: vulnerabilities-upgrade-classic-to-latest.md
+
+
+---
+title: Upgrade Thirdâparty and Codeâlevel vulnerabilities to the 3rd generation experience
+source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/vulnerabilities-upgrade-classic-to-latest
+scraped: 2026-02-16T21:31:17.265344
+---
+
+# Upgrade Thirdâparty and Codeâlevel vulnerabilities to the 3rd generation experience
+
+# Upgrade Thirdâparty and Codeâlevel vulnerabilities to the 3rd generation experience
+
+* Latest Dynatrace
+* How-to guide
+* Updated on Jan 28, 2026
+
+If you're currently using the third party or code level vulnerabilities pages, you can upgrade to the [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** app](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments."), which provides a unified, improved view in the latest Dynatrace experience.
+
+## Why upgrade?
+
+The new ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** app offers:
+
+* **Advanced filtering**: Use the [new filtering mechanism](/docs/secure/vulnerabilities/manage-results#filter "Filter, format, and sort to find relevant vulnerability information.") to search and prioritize vulnerabilities across your stack.
+* **Additional prioritization option**: Leverage [CISA KEV insights](/docs/secure/vulnerabilities/prioritize#cisa-kev "Prioritize third-party, code-level, and runtime vulnerabilities.").
+* **Full data access**: Query vulnerability data in [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.") with [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."), build dashboards, and automate workflows.
+* **State report queries**: Drill down with DQL and create dashboards (see [example query](/docs/secure/threat-observability/dql-examples#vulnerabilities-per-application "DQL examples for security data powered by Grail.")).
+* **Guidance from Dynatrace Intelligence generative AI**: Get [explanations and remediation suggestions](/docs/secure/vulnerabilities/address-remediation#explain "Address remediation and optimize remediation activities.").
+* **Unified findings view**: See all vulnerability findings from Dynatrace and integrated scanners in one place.  
+  Use the [Findings page](/docs/secure/vulnerabilities/explore-findings "View, filter, and analyze vulnerability findings from Dynatrace and external security tools.") to filter, sort, group, and remove duplicate results, and to access detailed context such as severity, affected objects, component metadata, and source information.
+* Coming soon OS vulnerabilities, host coverage for hosts monitored by Runtime Vulnerability Analytics, and crossâapp vulnerability views (for example, navigating to ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** for deeper insights).
+
+## Whatâs changing and what you need to do
+
+Below are the key changes when moving from the classic apps to the latest Dynatrace experience, along with the actions you should take.
+
+### Permissions
+
+| Latest Dynatrace | Previous Dynatrace |
+| --- | --- |
+| Permissions are aligned with [Dynatrace IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies"). | Permissions are tied to management zones and app access. |
+
+**Improvement for you**:
+
+* **Compliance support**: IAM permissions align with industry standards like OIDC, OAuth 2.0, SAML, and SCIM, helping organizations meet regulatory and compliance requirements.
+* **Efficient user management**: IAM simplifies user and group management, allowing integration with identity providers (IdPs) and centralized control over authentication and authorization.
+
+**Your action**: [Set up IAM permissions](/docs/secure/vulnerabilities#permissions "Prioritize and efficiently manage vulnerabilities in your monitored environments.") before using the ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** app.
+
+### Management zones
+
+| Latest Dynatrace | Previous Dynatrace |
+| --- | --- |
+| You can slice and dice data with [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions."). | You can scope vulnerability data with management zones. |
+
+**Improvement for you**: [Data segmentation](/docs/platform/upgrade#data-segmentation "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.") acts as logical filtering, recalculating DSS only for selected entities, helping you focus on relevant risks.
+
+* On the **Prioritization** page, segments are applied using fields from state reports.
+* On the **Findings** page, segments are applied using fields from vulnerability findings.
+
+**Your action**: Use the [segment selector](/docs/secure/vulnerabilities/manage-results#segments "Filter, format, and sort to find relevant vulnerability information.") to filter vulnerabilities and affected entities.
+
+### Monitoring rules
+
+| Latest Dynatrace | Previous Dynatrace |
+| --- | --- |
+| You define monitoring rules based on resource attributes and Kubernetes labels. | You define monitoring rules based on management zones or tags. |
+
+**Improvement for you**: You gain more precise data segmentation, support for Kubernetes labels, and alignment with the Dynatrace unified access and resource model. Rules are easier to maintain, transparent, and futureâproof.
+
+**Your action**:
+
+* **Thirdâparty vulnerabilities**:
+
+  + Although classic rules based on management zones and tags still work after upgrading to the latest Dynatrace experience, they are scheduled for deprecation. We strongly recommend migrating to the [new rules based on resource attributes or Kubernetes labels](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#new "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes."). Automatic migration isn't possible; for details, see [FAQ](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#migrate "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.").
+  + New rules based on resource attributes are already compatible, no migration needed.
+* **Codeâlevel vulnerabilities**: Rules are already based on resource attributes; no changes are required.
+
+### Security notifications
+
+| Latest Dynatrace | Previous Dynatrace |
+| --- | --- |
+| You create and orchestrate alerts via [Workflows **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). | You configure security notifications globally in Settings (Classic). |
+
+**Improvement for you**: You can define granular conditions, integrate with external tools ([Slack](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces"), [Teams](/docs/analyze-explore-automate/workflows/actions/microsoft-teams "Send messages to Microsoft Teams"), [Jira](/docs/analyze-explore-automate/workflows/actions/jira "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows."), [ServiceNow](/docs/analyze-explore-automate/workflows/actions/service-now "Automate creation of incidents in ServiceNow based on your monitoring data and events."), [email](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")), and orchestrate multiple actions in one workflow. This enables flexible, automated responses tailored to your environment.
+
+**Your action**: Recreate notifications using workflows.
+
+### Muting logic
+
+| Latest Dynatrace | Previous Dynatrace |
+| --- | --- |
+| A vulnerability is muted only when all affected entities are muted. | You can mute vulnerabilities globally. |
+
+**Improvement for you**: You gain finer control, transparency, and assurance that teams focus only on vulnerabilities that remain relevant.
+
+**Your action**: [Adjust your muting practices to entityâlevel logic](/docs/secure/vulnerabilities/address-remediation#mute-entities "Address remediation and optimize remediation activities.").
+
+## How to upgrade
+
+1. [Set up the IAM permissions](/docs/secure/vulnerabilities#permissions "Prioritize and efficiently manage vulnerabilities in your monitored environments.").
+2. Recommended Recreate or migrate existing [classic monitoring rules for third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#classic "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.") to [resourceâattributeââbased rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#new "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes."). For examples of how to define new monitoring rules based on resource attributes and Kubernetes labels, see [Use cases for monitoring rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules "Common scenarios for defining monitoring rules for vulnerabilities based on resource attributes and Kubernetes labels.").
+3. Optional Configure notifications via [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). For examples of how to set up a workflow, see [Workflows use cases](/docs/analyze-explore-automate/workflows/use-cases "Explore common Workflows use cases in Dynatrace deployments.").
+4. Optional [Adjust muting practices to entity-level logic](/docs/secure/vulnerabilities/address-remediation#mute-entities "Address remediation and optimize remediation activities.").
+
+## Still have questions?
+
+Connect with the Dynatrace Community to [share feedback and ask questionsï»¿](https://dt-url.net/up03ph5)âyour input helps us improve.
+
+
+---
+
+
 ## Source: vulnerability-analytics.md
 
 
 ---
 title: Runtime Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics
-scraped: 2026-02-16T09:26:28.172811
+scraped: 2026-02-16T21:23:15.795581
 ---
 
 # Runtime Vulnerability Analytics

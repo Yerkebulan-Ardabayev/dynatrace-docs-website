@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix
-scraped: 2026-02-15T21:19:25.872655
+scraped: 2026-02-16T21:15:50.128640
 ---
 
 # Install OneAgent on AIX

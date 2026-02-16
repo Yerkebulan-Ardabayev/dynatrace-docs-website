@@ -78,7 +78,7 @@ No. After the change, all old configurations are wiped out, so be sure before yo
 ---
 title: Stream Kubernetes logs with Fluent Bit (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-fluent-bit-logs-k8s
-scraped: 2026-02-16T09:32:41.214115
+scraped: 2026-02-16T21:29:52.480772
 ---
 
 # Stream Kubernetes logs with Fluent Bit (Logs Classic)
@@ -3334,7 +3334,7 @@ Yes. Content filtering conducted on OneAgent reduces both DDU costs and network 
 ---
 title: Log ingestion API (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api
-scraped: 2026-02-16T09:25:38.245720
+scraped: 2026-02-16T21:22:20.034812
 ---
 
 # Log ingestion API (Logs Classic)
@@ -4557,7 +4557,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Log ingest & process (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data
-scraped: 2026-02-16T09:29:29.917830
+scraped: 2026-02-16T21:24:12.982633
 ---
 
 # Log ingest & process (Logs Classic)
@@ -4633,7 +4633,7 @@ Dynatrace Log Monitoring incorporates reshaping the incoming log data into the f
 ---
 title: Log custom attributes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes
-scraped: 2026-02-16T09:30:02.376295
+scraped: 2026-02-16T21:26:08.127111
 ---
 
 # Log custom attributes (Logs Classic)
@@ -4863,7 +4863,7 @@ Note that, in this example, while we have configured two properties (`K8 Id` and
 ---
 title: Log metrics (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics
-scraped: 2026-02-16T09:34:38.135176
+scraped: 2026-02-16T21:29:06.579303
 ---
 
 # Log metrics (Logs Classic)
@@ -5016,7 +5016,7 @@ Now that you have defined the metric, you can chart it, pin it to a dashboard, a
 ---
 title: Log viewer (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer
-scraped: 2026-02-16T09:35:08.881078
+scraped: 2026-02-16T21:24:25.619729
 ---
 
 # Log viewer (Logs Classic)
@@ -5235,7 +5235,7 @@ Unique log data attributes (high-cardinality attributes) such as `span_id` and `
 ---
 title: Management zones and ingested log data (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring
-scraped: 2026-02-16T09:30:44.031260
+scraped: 2026-02-16T21:31:59.407316
 ---
 
 # Management zones and ingested log data (Logs Classic)
@@ -5387,7 +5387,7 @@ processing\_prepare\_input\_error
 ---
 title: Connecting log data to traces (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment
-scraped: 2026-02-16T09:13:57.831509
+scraped: 2026-02-16T21:10:15.204403
 ---
 
 # Connecting log data to traces (Logs Classic)
@@ -6573,7 +6573,7 @@ For details on configuration, see [Instrument your Python application with OpenT
 ---
 title: Sensitive data masking (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/sensitive-data-masking
-scraped: 2026-02-16T09:30:57.182828
+scraped: 2026-02-16T21:26:39.267404
 ---
 
 # Sensitive data masking (Logs Classic)
@@ -7603,7 +7603,7 @@ Be aware of the following limitations to sensitive data masking:
 ---
 title: Supported timestamp formats (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format
-scraped: 2026-02-16T09:34:33.187949
+scraped: 2026-02-16T21:29:11.991320
 ---
 
 # Supported timestamp formats (Logs Classic)
@@ -9771,7 +9771,7 @@ To create a log processing rule
 ---
 title: Upgrade to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma
-scraped: 2026-02-16T09:18:22.099757
+scraped: 2026-02-16T21:21:25.880404
 ---
 
 # Upgrade to Log Management and Analytics

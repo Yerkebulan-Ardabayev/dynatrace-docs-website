@@ -1,7 +1,7 @@
 ---
 title: New: User session analysis
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/new-user-sessions
-scraped: 2026-02-16T09:31:05.840686
+scraped: 2026-02-16T21:27:25.677613
 ---
 
 # New: User session analysis

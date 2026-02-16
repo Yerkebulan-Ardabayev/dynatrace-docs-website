@@ -1,7 +1,7 @@
 ---
 title: Send Dynatrace notifications to PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration
-scraped: 2026-02-16T09:13:21.453863
+scraped: 2026-02-16T21:11:21.104339
 ---
 
 # Send Dynatrace notifications to PagerDuty

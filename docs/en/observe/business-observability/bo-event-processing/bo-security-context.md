@@ -1,7 +1,7 @@
 ---
 title: Business events security context
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-security-context
-scraped: 2026-02-16T09:23:00.436113
+scraped: 2026-02-16T21:13:01.477183
 ---
 
 # Business events security context

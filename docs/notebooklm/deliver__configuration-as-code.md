@@ -1144,7 +1144,7 @@ Some configuration types have special requirements for their JSON payloads and m
 ---
 title: Monaco configuration YAML file - list of special configuration types
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas
-scraped: 2026-02-16T09:27:41.250146
+scraped: 2026-02-16T21:29:59.595544
 ---
 
 # Monaco configuration YAML file - list of special configuration types
@@ -1985,7 +1985,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-02-16T09:28:02.368937
+scraped: 2026-02-16T21:30:31.097027
 ---
 
 # Monaco configuration YAML file structure
@@ -3695,7 +3695,7 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-16T09:32:10.529888
+scraped: 2026-02-16T21:26:25.397736
 ---
 
 # Monaco concepts
@@ -4265,7 +4265,7 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 ---
 title: Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/reference/commands-saas
-scraped: 2026-02-15T21:24:08.623280
+scraped: 2026-02-16T21:30:32.702727
 ---
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
@@ -5335,7 +5335,7 @@ Optional
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-02-16T09:33:05.010302
+scraped: 2026-02-16T21:26:05.486160
 ---
 
 # Terraform API support and access permission handling
@@ -5466,7 +5466,7 @@ Information can be found at [IAM policy reference](/docs/manage/identity-access-
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-16T09:36:08.992491
+scraped: 2026-02-16T21:24:36.897092
 ---
 
 # Terraform CLI commands
@@ -5649,7 +5649,7 @@ The reasons are added as comments at the beginning of each file.
 ---
 title: Configure automated notifications using Terraform and Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-02-15T09:07:31.529502
+scraped: 2026-02-16T21:27:45.110164
 ---
 
 # Configure automated notifications using Terraform and Configuration as Code

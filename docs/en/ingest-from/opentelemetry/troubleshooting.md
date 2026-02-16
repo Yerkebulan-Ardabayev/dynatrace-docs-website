@@ -1,7 +1,7 @@
 ---
 title: Ensure success with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/troubleshooting
-scraped: 2026-02-16T09:24:07.401475
+scraped: 2026-02-16T21:12:50.906797
 ---
 
 # Ensure success with OpenTelemetry

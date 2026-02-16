@@ -1,7 +1,7 @@
 ---
 title: Azure Standard Load Balancer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-standard-load-balancer
-scraped: 2026-02-16T09:37:37.383586
+scraped: 2026-02-16T21:28:07.372810
 ---
 
 # Azure Standard Load Balancer monitoring

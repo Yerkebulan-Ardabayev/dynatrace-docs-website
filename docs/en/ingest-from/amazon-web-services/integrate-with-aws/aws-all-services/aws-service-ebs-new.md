@@ -1,7 +1,7 @@
 ---
 title: Amazon EBS (Elastic Block Store) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-ebs-new
-scraped: 2026-02-16T09:31:16.090934
+scraped: 2026-02-16T21:32:45.009195
 ---
 
 # Amazon EBS (Elastic Block Store) monitoring

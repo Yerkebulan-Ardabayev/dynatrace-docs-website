@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 31
+Files combined: 32
 
 ---
 
@@ -1186,6 +1186,46 @@ See [Prometheus data source reference](/docs/ingest-from/extensions/develop-your
 ---
 
 
+## Source: python.md
+
+
+---
+title: Dynatrace Extensions Python SDK
+source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/python
+scraped: 2026-02-16T21:30:59.509495
+---
+
+# Dynatrace Extensions Python SDK
+
+# Dynatrace Extensions Python SDK
+
+* Latest Dynatrace
+* Reference
+* 1-min read
+* Published Jan 18, 2024
+
+The Dynatrace Extensions Python SDK provides you with a framework to ingest data into Dynatrace from any technology exposing an interface.
+
+Custom-coded extensions are based on the same principles. They're declarative, similar to other data sources, but you use the provided methods to use extracted data to create metrics and events.
+
+This SDK offers:
+
+* Greater flexibility to ingest the data from your proprietary technologies or when your case requires extended customization that available data sources don't offer.
+* Tooling to export your current OneAgent and ActiveGate extensions to the new framework.
+
+Dynatrace Extensions Python SDK is publicly available with [OneAgent 1.285](/docs/whats-new/oneagent/sprint-285#custom-coded-python-extensions "Release notes for Dynatrace OneAgent version 1.285").
+
+Set the filesystem flag to `exec` and not `noexec` to ensure a Python extension runs correctly. This configuration is crucial because it allows the execution of binaries and scripts within the specified filesystem. The extension can't execute properly without this setting, leading to potential errors and failures.
+
+For more information, see:
+
+* [Dynatrace Extensions Python SDK documentationï»¿](https://dt-url.net/7g638yh)
+* [Dynatrace Extensions Python SDK repositoryï»¿](https://dt-url.net/jsa38pm) on Dynatrace Extensions GitHub.
+
+
+---
+
+
 ## Source: ibm-monitoring.md
 
 
@@ -2250,7 +2290,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: Oracle Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
-scraped: 2026-02-16T09:34:16.388030
+scraped: 2026-02-16T21:24:47.757564
 ---
 
 # Oracle Database monitoring configuration
@@ -3419,7 +3459,7 @@ To define the SAP Hana Database server, put `ngdbc.jar` file in the following lo
 ---
 title: Snowflake Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
-scraped: 2026-02-16T09:34:50.486840
+scraped: 2026-02-16T21:32:19.308650
 ---
 
 # Snowflake Database monitoring configuration
@@ -3727,7 +3767,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SQL data source reference
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference
-scraped: 2026-02-16T09:39:13.957851
+scraped: 2026-02-16T21:33:00.515935
 ---
 
 # SQL data source reference
@@ -4723,7 +4763,7 @@ The monitoring configuration format depends on the database provider. For more i
 ---
 title: SQL data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql
-scraped: 2026-02-15T09:12:08.704347
+scraped: 2026-02-16T21:27:16.086566
 ---
 
 # SQL data source
@@ -4789,7 +4829,7 @@ The SQL data source supports remote database access using various authentication
 ---
 title: WMI data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions
-scraped: 2026-02-16T09:30:33.898957
+scraped: 2026-02-16T21:27:17.403033
 ---
 
 # WMI data source
@@ -4903,7 +4943,7 @@ For more information, see [Setting Up a Fixed Port for WMIï»¿](https://docs.m
 ---
 title: Extension YAML file
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/extension-yaml
-scraped: 2026-02-16T09:38:35.826343
+scraped: 2026-02-16T21:27:56.417153
 ---
 
 # Extension YAML file
@@ -5517,7 +5557,7 @@ Save the `root.pem` certificate file in the following location:
 ---
 title: Develop your own Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
-scraped: 2026-02-16T09:17:45.679202
+scraped: 2026-02-16T21:19:52.989797
 ---
 
 # Develop your own Extensions
@@ -5597,7 +5637,7 @@ Find solutions to common issues with our expert-written troubleshooting articles
 ---
 title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-02-16T09:17:44.088939
+scraped: 2026-02-16T21:19:50.279659
 ---
 
 # Manage Extensions
@@ -6119,7 +6159,7 @@ Explore ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0
 ---
 title: Manage SNMP extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/snmp
-scraped: 2026-02-16T09:25:35.023513
+scraped: 2026-02-16T21:22:15.881914
 ---
 
 # Manage SNMP extensions
@@ -6276,7 +6316,7 @@ Unable to render DataTable. Check configuration.
 ---
 title: Manage IBM Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db
-scraped: 2026-02-15T09:06:41.536724
+scraped: 2026-02-16T21:30:44.879129
 ---
 
 # Manage IBM Database extensions
@@ -6370,7 +6410,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Microsoft SQL Server extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
-scraped: 2026-02-16T09:25:39.844887
+scraped: 2026-02-16T21:22:13.160045
 ---
 
 # Manage Microsoft SQL Server extensions
@@ -6562,7 +6602,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Oracle Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-02-16T09:25:49.873217
+scraped: 2026-02-16T21:22:14.501798
 ---
 
 # Manage Oracle Database extensions
@@ -6770,7 +6810,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage SAP Hana Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana
-scraped: 2026-02-15T21:28:24.216073
+scraped: 2026-02-16T21:30:10.509521
 ---
 
 # Manage SAP Hana Database extensions
@@ -6985,7 +7025,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-02-16T09:25:43.081773
+scraped: 2026-02-16T21:22:08.839851
 ---
 
 # Manage WMI extensions
@@ -7186,7 +7226,7 @@ This is especially useful when you need to interact with custom APIs, proprietar
 ---
 title: Explore supported Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions
-scraped: 2026-02-16T09:17:47.251648
+scraped: 2026-02-16T21:19:51.653240
 ---
 
 # Explore supported Extensions

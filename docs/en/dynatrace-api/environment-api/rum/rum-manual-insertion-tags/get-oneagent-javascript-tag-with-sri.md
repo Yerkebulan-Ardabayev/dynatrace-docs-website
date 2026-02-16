@@ -1,7 +1,7 @@
 ---
 title: GET OneAgent JavaScript tag with SRI
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri
-scraped: 2026-02-15T21:30:06.822711
+scraped: 2026-02-16T21:26:01.354720
 ---
 
 # GET OneAgent JavaScript tag with SRI

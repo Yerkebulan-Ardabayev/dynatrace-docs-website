@@ -95,7 +95,7 @@ To learn more about how to create, edit, or delete service detection rules, see 
 ---
 title: Monitor Kubernetes/OpenShift cluster utilization
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes
-scraped: 2026-02-15T21:20:04.913642
+scraped: 2026-02-16T21:17:20.912242
 ---
 
 # Monitor Kubernetes/OpenShift cluster utilization
@@ -158,7 +158,7 @@ By selecting a specific node, you can access the host details at the top of the 
 ---
 title: Monitor PostgreSQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/postgres
-scraped: 2026-02-16T09:38:39.064440
+scraped: 2026-02-16T21:29:07.895141
 ---
 
 # Monitor PostgreSQL database
@@ -274,7 +274,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: VMware vSphere monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring
-scraped: 2026-02-16T09:21:48.690898
+scraped: 2026-02-16T21:15:40.370464
 ---
 
 # VMware vSphere monitoring

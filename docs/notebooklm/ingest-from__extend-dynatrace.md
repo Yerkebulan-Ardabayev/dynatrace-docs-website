@@ -305,7 +305,7 @@ curl --request POST --url http://localhost:14499/v2/events/ingest --header "Cont
 ---
 title: OneAgent log ingest API
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api
-scraped: 2026-02-16T09:29:16.249870
+scraped: 2026-02-16T21:24:50.425459
 ---
 
 # OneAgent log ingest API
@@ -1129,7 +1129,7 @@ A series has the following attributes:
 ---
 title: JMX extensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions
-scraped: 2026-02-16T09:25:48.300835
+scraped: 2026-02-16T21:22:18.627310
 ---
 
 # JMX extensions
@@ -1388,7 +1388,7 @@ The JMX extension listed below initially consume each monitored host's quota of 
 ---
 title: Send Micrometer metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer
-scraped: 2026-02-16T09:25:45.050952
+scraped: 2026-02-16T21:22:11.830229
 ---
 
 # Send Micrometer metrics to Dynatrace
@@ -2623,7 +2623,7 @@ The [Timeseries v1 API](/docs/dynatrace-api/environment-api/metric-v1 "Retrieve 
 ---
 title: OneAgent metric API
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api
-scraped: 2026-02-16T09:25:36.644829
+scraped: 2026-02-16T21:22:06.133189
 ---
 
 # OneAgent metric API
@@ -2773,7 +2773,7 @@ However, to have events raised for a selected host and have Dynatrace Intelligen
 ---
 title: Metric scripting integration
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe
-scraped: 2026-02-16T09:25:57.810016
+scraped: 2026-02-16T21:22:17.259785
 ---
 
 # Metric scripting integration
@@ -2920,7 +2920,7 @@ Note that changing the port for scripting integration also affects OneAgent REST
 ---
 title: Manage Prometheus extensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions
-scraped: 2026-02-15T09:12:00.693990
+scraped: 2026-02-16T21:32:23.542718
 ---
 
 # Manage Prometheus extensions
@@ -3047,7 +3047,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Prometheus
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus
-scraped: 2026-02-16T09:25:51.417367
+scraped: 2026-02-16T21:22:10.135438
 ---
 
 # Prometheus
@@ -3098,7 +3098,7 @@ For environments that require greater customization, Dynatrace allows the ingest
 ---
 title: Send StatsD metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd
-scraped: 2026-02-16T09:21:45.166508
+scraped: 2026-02-16T21:17:37.230777
 ---
 
 # Send StatsD metrics to Dynatrace
@@ -4619,7 +4619,7 @@ There's no limit to the metric number, but [API throttling](/docs/dynatrace-api/
 ---
 title: Event topology extraction and mapping
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/events-entity-extraction
-scraped: 2026-02-16T09:30:37.220689
+scraped: 2026-02-16T21:27:52.251752
 ---
 
 # Event topology extraction and mapping
@@ -4761,7 +4761,7 @@ If the remapping fails, you can retrieve the diagnostic information on an event 
 ---
 title: Generic network topology
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/network-topology
-scraped: 2026-02-16T09:18:31.487290
+scraped: 2026-02-16T21:16:15.584415
 ---
 
 # Generic network topology
@@ -9480,7 +9480,7 @@ Not yet, but this capability is expected to be available soon, at which point th
 ---
 title: Custom topology model
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology
-scraped: 2026-02-16T09:25:46.656246
+scraped: 2026-02-16T21:22:21.402155
 ---
 
 # Custom topology model
@@ -9617,7 +9617,7 @@ See [Define custom topology](/docs/ingest-from/extend-dynatrace/extend-topology/
 ---
 title: OneAgent SDK
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk
-scraped: 2026-02-16T09:18:56.950532
+scraped: 2026-02-16T21:13:23.687435
 ---
 
 # OneAgent SDK
@@ -9698,7 +9698,7 @@ The Dynatrace OneAgent SDK is published directly to GitHub together with the tec
 ---
 title: OpenTracing
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/opentracing
-scraped: 2026-02-16T09:24:18.566106
+scraped: 2026-02-16T21:13:26.422909
 ---
 
 # OpenTracing
@@ -9889,7 +9889,7 @@ Dynatrace integrates traces from any OpenTracing instrumentations. We have posit
 ---
 title: Span settings
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings
-scraped: 2026-02-16T09:13:37.743674
+scraped: 2026-02-16T21:10:08.214266
 ---
 
 # Span settings
@@ -10039,7 +10039,7 @@ To define rules to enable context propagation for specific spans
 ---
 title: Extend distributed tracing
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing
-scraped: 2026-02-16T09:14:00.999395
+scraped: 2026-02-16T21:10:13.486172
 ---
 
 # Extend distributed tracing
@@ -10072,7 +10072,7 @@ Learn how to extend distributed tracing observability in Dynatrace with the OneA
 ---
 title: Extend built-in unified analysis pages
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui/extend-unified-analysis-pages
-scraped: 2026-02-16T09:28:07.293142
+scraped: 2026-02-16T21:30:39.470645
 ---
 
 # Extend built-in unified analysis pages
@@ -10456,7 +10456,7 @@ The exploratory analysis analyzes only the metrics from the graph charts that ar
 ---
 title: Extend Dynatrace with domain-specific web UI
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui
-scraped: 2026-02-16T09:25:53.028854
+scraped: 2026-02-16T21:22:03.470337
 ---
 
 # Extend Dynatrace with domain-specific web UI
@@ -10487,7 +10487,7 @@ Extend the Dynatrace web UI using your data-tailored dashboards.](/docs/ingest-f
 ---
 title: Extend user experience and behavior data
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/openkit
-scraped: 2026-02-16T09:25:56.183078
+scraped: 2026-02-16T21:22:07.477918
 ---
 
 # Extend user experience and behavior data

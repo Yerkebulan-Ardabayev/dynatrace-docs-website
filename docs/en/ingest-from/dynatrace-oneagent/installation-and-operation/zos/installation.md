@@ -1,7 +1,7 @@
 ---
 title: z/OS installation overview
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation
-scraped: 2026-02-15T21:19:02.859877
+scraped: 2026-02-16T21:16:52.243375
 ---
 
 # z/OS installation overview
