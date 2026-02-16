@@ -970,31 +970,97 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>Tutorial</li>
-<li>3-min read</li>
-<li>Published Jan 15, 2026</li>
+<li>6-min read</li>
+<li>Updated on Feb 04, 2026</li>
 </ul>
+<p>OpenPipeline processing allows you to normalize span and metric data to prevent high cardinality issues that can make aggregations and analysis unusable.</p>
+<p>The following use cases show how to reduce cardinality in different views in <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong>:</p>
+<ul>
+<li><a href="#outbound-calls">Outbound calls</a></li>
+<li><a href="/docs/observe/application-observability/services/monitor-service-message-processing" title="Monitor service message processing">Message processing</a></li>
+</ul>
+<h2 id="outbound-calls">Outbound calls<a class="headerlink" href="#outbound-calls" title="Permanent link">&para;</a></h2>
+<h3 id="high-cardinality-in-outbound-calls">High cardinality in outbound calls<a class="headerlink" href="#high-cardinality-in-outbound-calls" title="Permanent link">&para;</a></h3>
+<p>The <strong>Outbound calls</strong> tab displays aggregated metrics for external calls made by your service. High cardinality occurs when URLs contain unique identifiers in the path, such as <code>/users/12345</code> or <code>/orders/abc-def-123</code>, which leads to the creation of many distinct values.</p>
+<p>Processing rules help you transform these into normalized patterns, such as <code>/users/*</code> or <code>/orders/*</code>, optimizing your outbound call data.</p>
+<h3 id="create-an-outbound-calls-normalization-rule">Create an outbound calls normalization rule<a class="headerlink" href="#create-an-outbound-calls-normalization-rule" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>OpenPipeline</strong> &gt; <strong>Spans</strong>.</li>
+<li>Go to the <strong>Pipelines</strong> tab. Select  <strong>Pipeline</strong> and enter a name (for example, <code>Outbound call normalization</code>) to create a new pipeline.</li>
+<li>Go to <strong>Processing</strong> &gt;  <strong>Processor</strong> &gt; <strong>DQL</strong> and configure a new processing rule for reducing the cardinality of the URL.</li>
+<li>
+<p>Enter the following new DQL processor to normalize URLs:</p>
+</li>
+<li>
+<p><strong>Name</strong>: URL or any preferred name.</p>
+</li>
+<li>
+<p><strong>Matching Condition</strong>: The following condition matches all outbound HTTP calls.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>span.kind == &quot;client&quot; and isNotNull(url.full)
+</code></pre></div>
+   * <strong>DQL processor definition</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fieldsAdd url.full.orig = url.full
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| fieldsAdd path_normalized = replacePattern(url.path, &quot;UUIDSTRING&quot;, &quot;[UUID]&quot;)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>| fieldsAdd path_normalized = replacePattern(path_normalized, &quot;[/]LONG&quot;, &quot;/[Number]&quot;)
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>| fieldsAdd port = if(isNotNull(server.port), concat(&quot;:&quot;, server.port),   else:null)
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>| fieldsAdd url.full = concat(url.scheme, &quot;://&quot;, server.address, port, path_normalized)
+</code></pre></div>
+</li>
+</ol>
+<h3 id="enable-the-processor">Enable the processor<a class="headerlink" href="#enable-the-processor" title="Permanent link">&para;</a></h3>
+<p>Now that we have defined and saved a processor, we can enable the processor by connecting it to OpenPipeline via a new dynamic route so that your pipeline receives span data.</p>
+<ol>
+<li>On the <strong>Spans</strong> page, go to the <strong>Dynamic routing</strong> tab.</li>
+<li>Select  <strong>Dynamic route</strong>.</li>
+<li>
+<p>Define the dynamic route.</p>
+</li>
+<li>
+<p><strong>Name</strong>: The name you gave the processor earlier.</p>
+</li>
+<li>
+<p><strong>Matching Condition</strong>: The following matches all outbound HTTP calls.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>span.kind ==&quot;client&quot; and isNotNull(url.full)
+</code></pre></div>
+   * <strong>Pipeline</strong>: Select previously created pipeline from the list.
+4. Select <strong>Save</strong>.</p>
+</li>
+</ol>
+<h2 id="message-processing">Message processing<a class="headerlink" href="#message-processing" title="Permanent link">&para;</a></h2>
 <p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> includes a <strong>Message processing</strong> view that aggregates metrics for messaging operations. High cardinality occurs when temporary queues are created with unique identifiers in their names (such as <code>amq.gen-6dggtCpu</code>, <code>async-job-2jrmsi5y</code>, or <code>orders-reply-2n68vy4g</code>), generating thousands of distinct queue names that make aggregations unusable.</p>
 <p>Most instrumentations keep the cardinality of <code>messaging.destination.name</code> low by using non-standard fields like <code>messaging.temp.queue.hash</code> for high-cardinality data or by setting <code>messaging.destination.temporary</code>. However, when instrumentation doesn't follow these practices, OpenPipeline processing rules can normalize temporary queue names into patterns or flag them as temporary.</p>
-<h2 id="how-to-identify-high-cardinality">How to identify high cardinality<a class="headerlink" href="#how-to-identify-high-cardinality" title="Permanent link">&para;</a></h2>
+<h3 id="high-cardinality-in-message-processing">High cardinality in message processing<a class="headerlink" href="#high-cardinality-in-message-processing" title="Permanent link">&para;</a></h3>
 <p>Before implementing normalization rules, query your spans to identify messaging systems with high percentages of unique destination names.</p>
 <ol>
 <li>Go to <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and select  <strong>Notebooks</strong> to create a new notebook.</li>
 <li>Select  <strong>New section</strong> &gt; <strong>DQL</strong>.</li>
 <li>Copy and paste the following query into the edit box and select  <strong>Run</strong>.</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch spans
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| filter isNotNull(messaging.system) and isNotNull(messaging.destination.name)
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>| summarize count=count(), distinctCount=countDistinct(messaging.destination.name), by:{messaging.system, messaging.destination.temporary}
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>| fieldsAdd cardinality_ratio = toDouble(distinctCount) / toDouble(count)
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>fetch spans
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>| filter isNotNull(messaging.system) and isNotNull(messaging.destination.name)
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>| summarize count=count(), distinctCount=countDistinct(messaging.destination.name), by:{messaging.system, messaging.destination.temporary}
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>| fieldsAdd cardinality_ratio = toDouble(distinctCount) / toDouble(count)
 </code></pre></div>
 4. Examine the results for high cardinality ratios.</p>
 <p>Systems showing high cardinality ratios (above <code>0.5</code>) without <code>messaging.destination.temporary</code> set indicate queues that would:</p>
@@ -1002,9 +1068,8 @@
 <li>Result in an excessive number of metrics with minimal analytical value.</li>
 <li>Benefit from normalization as described below.</li>
 </ul>
-<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
+<h3 id="create-a-message-processing-normalization-rule">Create a message processing normalization rule<a class="headerlink" href="#create-a-message-processing-normalization-rule" title="Permanent link">&para;</a></h3>
 <p>You can use OpenPipeline processing rules to normalize temporary queue names into patterns or flag them as temporary.</p>
-<h3 id="create-a-rule">Create a rule<a class="headerlink" href="#create-a-rule" title="Permanent link">&para;</a></h3>
 <p>To create a rule</p>
 <ol>
 <li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> and select <strong>Process and contextualize</strong> &gt; <strong>OpenPipeline</strong> &gt; <strong>Spans</strong>.</li>
@@ -1019,14 +1084,14 @@
 <li><strong>Name</strong>: <code>Temporary queue selector</code> (or any name you like)</li>
 <li>
 <p><strong>Matching Condition</strong>: The following matches all messaging spans that were detected as not temporary and match the specific destination pattern <code>odaRequestQueue*</code> that we want to override to be considered temporary.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>messaging.destination.temporary == false and
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>messaging.destination.temporary == false and
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
 </code></pre></div>
    * <strong>DQL processor definition</strong>: The only action to perform is to overwrite the existing value from false to true.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>fieldsAdd messaging.destination.temporary = true
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>fieldsAdd messaging.destination.temporary = true
 </code></pre></div>
 </li>
 </ul>
@@ -1036,7 +1101,7 @@
 <li><strong>Name</strong>: <code>Destination renamer</code> (or any name you like)</li>
 <li>
 <p><strong>Matching Condition</strong>: The following matches all spans that are related to messaging destinations starting with <code>odaRequestQueue</code>.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
 </code></pre></div>
    * <strong>Add fields</strong>: To replace the original content, you can simply add the field again with the corrected value. In this case, the original string that ends with consecutive numbers is replaced with a static string only containing the first, constant part of the destination name.</p>
 <p>Enter the following and then select <strong>Add</strong>:</p>
@@ -1047,7 +1112,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="enable-the-processor">Enable the processor<a class="headerlink" href="#enable-the-processor" title="Permanent link">&para;</a></h3>
+<h3 id="enable-the-processor_1">Enable the processor<a class="headerlink" href="#enable-the-processor_1" title="Permanent link">&para;</a></h3>
 <p>Now that we have defined and saved a processor, we can enable the processor by connecting it to OpenPipeline via a new dynamic route, so that your pipeline receives span data.</p>
 <ol>
 <li>Still on the <strong>Spans</strong> page, go to the <strong>Dynamic routing</strong> tab.</li>
@@ -1056,11 +1121,11 @@
 <p>Define the dynamic route.</p>
 </li>
 <li>
-<p><strong>Name</strong>: The name you gave it earlier.</p>
+<p><strong>Name</strong>: The name you gave the processor earlier.</p>
 </li>
 <li>
 <p><strong>Matching Condition</strong>: The following matches all spans that are related to messaging destinations starting with <code>odaRequestQueue</code>.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
 </code></pre></div>
    * <strong>Pipeline</strong>: Select from the list.
 4. Select <strong>Save</strong>.</p>

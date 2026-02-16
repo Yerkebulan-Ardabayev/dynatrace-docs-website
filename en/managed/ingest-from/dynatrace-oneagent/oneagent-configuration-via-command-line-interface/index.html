@@ -1,0 +1,1711 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>OneAgent configuration via command-line interface - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oneagent-configuration-via-command-line-interface" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OneAgent configuration via command-line interface
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="oneagent-configuration-via-command-line-interface">OneAgent configuration via command-line interface<a class="headerlink" href="#oneagent-configuration-via-command-line-interface" title="Permanent link">&para;</a></h1>
+<h1 id="oneagent-configuration-via-command-line-interface_1">OneAgent configuration via command-line interface<a class="headerlink" href="#oneagent-configuration-via-command-line-interface_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>20-min read</li>
+<li>Updated on Sep 17, 2025</li>
+</ul>
+<p>Use the <code>oneagentctl</code> command-line interface to perform some post-installation OneAgent configuration at the individual host level.</p>
+<h2 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h2>
+<p>The tool location depends on whether you customized the OneAgent installation using the <code>&lt;INSTALL_PATH&gt;</code> parameter:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>&lt;INSTALL_PATH&gt;/agent/tools</code>, by default <code>/opt/dynatrace/oneagent/agent/tools</code><br />
+  You need root privileges.</li>
+<li><strong>Docker-based deployment</strong><br />
+<code>&lt;INSTALL_PATH&gt;/agent/tools</code>, by default <code>/opt/dynatrace/oneagent/agent/tools</code><br />
+  Note that this path will differ for a volume-based deployment.</li>
+<li><strong>Windows</strong>:<br />
+<code>&lt;INSTALL_PATH&gt;\agent\tools</code>, by default <code>%PROGRAMFILES%\dynatrace\oneagent\agent\tools</code><br />
+  You need administrator privileges. If you try to run <code>oneagentctl</code> in a non-admin Windows console, Windows will display a User Account Control pop-up and fail.</li>
+</ul>
+<h2 id="parameter-types">Parameter types<a class="headerlink" href="#parameter-types" title="Permanent link">&para;</a></h2>
+<p>The <code>oneagentctl</code> command accepts the <code>get</code> parameter to check the state or value of a setting, and the <code>set</code> parameter to change a setting. Note that you can use multiple <code>set</code> parameters in a single command.</p>
+<h2 id="oneagent-restart">OneAgent restart<a class="headerlink" href="#oneagent-restart" title="Permanent link">&para;</a></h2>
+<p>When you use the <code>set</code> parameters, you need to restart OneAgent service to apply changes. You can use the <code>--restart-service</code> parameter with the command that triggers the restart automatically. In some cases you'll also need to restart monitored applications. You can also use the restart parameter on its own, without other parameters. See an example command below.</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-proxy=my-proxy.com --restart-service</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-proxy=my-proxy.com --restart-service</code></li>
+</ul>
+<h2 id="display-help">Display help<a class="headerlink" href="#display-help" title="Permanent link">&para;</a></h2>
+<p>Use the <code>--help</code> parameter to display all supported parameters.</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --help</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --help</code></li>
+</ul>
+<h2 id="display-oneagent-version">Display OneAgent version<a class="headerlink" href="#display-oneagent-version" title="Permanent link">&para;</a></h2>
+<p>Use the <code>--version</code> parameter to display the OneAgent version.</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --version</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --version</code></li>
+</ul>
+<h2 id="oneagent-communication">OneAgent communication<a class="headerlink" href="#oneagent-communication" title="Permanent link">&para;</a></h2>
+<h3 id="set-oneagent-communication-settings">Set OneAgent communication settings<a class="headerlink" href="#set-oneagent-communication-settings" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-server</code> parameter to set a OneAgent communication endpoint. Use the IP address or name, combined with the <code>/communication</code> suffix. Depending on your deployment, it can be a Dynatrace Server, Dynatrace Managed Cluster, or ActiveGate.</p>
+<p>Run the following command to adjust OneAgent connection settings:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-server=https://my-server.com:9999/communication --set-tenant=abc123456 --set-tenant-token=abcdefg123456790 --set-proxy=my-proxy.com</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-server=https://my-server.com:9999/communication --set-tenant=abc123456 --set-tenant-token=abcdefg123456790 --set-proxy=my-proxy.com</code></li>
+</ul>
+<p>To define multiple endpoints, separate them by semicolon and add the quotes. For example, <code>--set-server="https://server1;https://server2"</code>.</p>
+<p>These parameters require restart of OneAgent, as well as restart of all the applications monitored with deep code modules. Add <a href="#oneagent-restart"><code>--restart-service</code></a> to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Learn how to stop and restart OneAgent on Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Learn how to stop and restart OneAgent on Windows.">Windows</a>, or <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Learn how to stop and restart OneAgent on AIX.">AIX</a>.</p>
+<p>This command will immediately change the OS module connection endpoint, but the code modules won't be able to read the new setting until the next restart.</p>
+<p>OneAgent and Dynatrace Cluster automatically maintain a working connection. If an endpoint detail changes, the cluster notifies OneAgent of the change and OneAgent automatically updates the endpoint you set using the <code>--set-server</code> to the new working value.</p>
+<p>Directing OneAgent traffic through ActiveGate</p>
+<p>Routing OneAgent traffic through an ActiveGate can enhance the security of your data by ensuring it remains within controlled network paths and is encrypted during transmission.</p>
+<ol>
+<li>Determine the IP address or hostname of the ActiveGate that will handle traffic.</li>
+<li><a href="#set-oneagent-communication-settings">Set the Communication Endpoint</a>.</li>
+</ol>
+<p>Configure OneAgent by specifying the ActiveGate as its new endpoint. For example:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.\oneagentctl.exe --set-server=https://&lt;activegate-endpoint&gt;:9999/communication --restart-service
+</code></pre></div>
+3. <a href="#check-if-auto-update-is-enabled">Check if auto-update is enabled</a>.</p>
+<h3 id="show-current-communication-endpoints">Show current communication endpoints<a class="headerlink" href="#show-current-communication-endpoints" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-server</code> parameter to display the endpoints that OneAgent is to send the data to. These can be Dynatrace Server, Dynatrace Managed Cluster or ActiveGate.</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-server</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-server</code></li>
+</ul>
+<p>Starting with OneAgent version 1.207, endpoints are reported using a format in which endpoints of equal priority are grouped using braces (<code>{...}</code>) and sorted according to connection priority. An asterisk (<code>*</code>) indicates the endpoint to which OneAgent currently sends the data. Endpoints are separated by a semicolon (<code>;</code>).
+For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{https://endpoint1.com/communication;https:/10.0.0.0/communication;*https://endpoint3.com/communication}{https://endpoint4.com:9999/communication}
+</code></pre></div>
+<h3 id="set-environment-id">Set environment ID<a class="headerlink" href="#set-environment-id" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-tenant</code> parameter to set an <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">environment ID</a>. By default, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-tenant=abc123456</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-tenant=abc123456</code></li>
+</ul>
+<p>Always use in combination with <code>--set-tenant-token</code>, which defines the <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token" title="Learn what a tenant token is and how to change it.">tenant token</a> for internal authentication.</p>
+<h3 id="show-environment-id">Show environment ID<a class="headerlink" href="#show-environment-id" title="Permanent link">&para;</a></h3>
+<p>The Dynatrace <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">environment ID</a> you received with your activation email.</p>
+<p>Use the <code>--get-tenant</code> parameter to display the environment ID:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-tenant</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-tenant</code></li>
+</ul>
+<h3 id="set-tenant-token">Set tenant token<a class="headerlink" href="#set-tenant-token" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-tenant-token</code> parameter to set the <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token" title="Learn what a tenant token is and how to change it.">tenant token</a>, which is used to authenticate communication with the defined endpoint. Always use in combination with <code>--set-tenant</code>.</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-tenant-token=abcdefg123456790</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-tenant-token=abcdefg123456790</code></li>
+</ul>
+<h3 id="show-tenant-token">Show tenant token<a class="headerlink" href="#show-tenant-token" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-tenant-token</code> parameter to display the currently defined token:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-tenant-token</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-tenant-token</code></li>
+</ul>
+<h3 id="set-proxy-configuration">Set proxy configuration<a class="headerlink" href="#set-proxy-configuration" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-proxy</code> parameter to set a proxy server:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-proxy=my-proxy.com</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-proxy=my-proxy.com</code></li>
+</ul>
+<h3 id="clear-proxy-configuration">Clear proxy configuration<a class="headerlink" href="#clear-proxy-configuration" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-proxy</code> parameter set to an empty value to clear proxy configuration:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-proxy=</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-proxy=</code></li>
+</ul>
+<p>Restart OneAgent service to apply changes.</p>
+<h3 id="show-current-proxy">Show current proxy<a class="headerlink" href="#show-current-proxy" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-proxy</code> parameter to display the currently defined proxy OneAgent connects through:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-proxy</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-proxy</code></li>
+</ul>
+<h3 id="exclude-specific-ips-from-proxy">Exclude specific IPs from proxy<a class="headerlink" href="#exclude-specific-ips-from-proxy" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-no-proxy</code> parameter to exclude certain domains or IP addresses from using the proxy:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-no-proxy=my-proxy.com</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-no-proxy=my-proxy.com</code></li>
+</ul>
+<h3 id="show-current-no-proxy-settings">Show current no-proxy settings<a class="headerlink" href="#show-current-no-proxy-settings" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-no-proxy</code> parameter to view the currently configured settings for domains and IP ranges excluded from using the proxy:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-no-proxy</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-no-proxy</code></li>
+</ul>
+<h3 id="check-current-port-range">Check current port range<a class="headerlink" href="#check-current-port-range" title="Permanent link">&para;</a></h3>
+<p>OneAgent consists of different processes that communicate via a TCP port with a watchdog. At startup, OneAgent watchdog attempts to open the first available port between port 50000 and 50100. In some cases you may need this port for your own applications that are started after OneAgent.</p>
+<p>Use the <code>--get-watchdog-portrange</code> parameter to check the current port range defined for the watchdog.</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-watchdog-portrange</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-watchdog-portrange</code></li>
+</ul>
+<h3 id="set-a-new-port-range">Set a new port range<a class="headerlink" href="#set-a-new-port-range" title="Permanent link">&para;</a></h3>
+<p>Deprecated</p>
+<p>Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its own inter-process communication. In case OneAgent occupies your applications' ports, upgrade OneAgent to version 1.301+.</p>
+<p>Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:</p>
+<ul>
+<li><code>oneagentos</code>âoperating system monitoring</li>
+<li><code>oneagentplugin</code>âmonitoring using <a href="/docs/ingest-from/extensions/develop-your-extensions#oneagent-extensions" title="Develop your own Extensions in Dynatrace.">OneAgent extensions</a></li>
+<li><code>oneagentextensions</code>âmonitoring using local <a href="/docs/ingest-from/extensions" title="Learn how to create and manage Dynatrace Extensions.">Extensions</a></li>
+<li><code>oneagentloganalytics</code>â<a href="/docs/analyze-explore-automate/log-monitoring" title="Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.">Log Monitoring</a></li>
+<li><code>oneagentnetwork</code>â<a href="/docs/observe/infrastructure-observability/networks" title="Learn how to monitor network communications.">network monitoring</a></li>
+</ul>
+<p>Use the <code>--set-watchdog-portrange=arg</code> parameter to change the watchdog listening port range to <code>&lt;arg&gt;</code>. The <code>&lt;arg&gt;</code> must contain two port numbers separated by a colon (<code>:</code>). For example <code>50000:50100</code>. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower.</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-watchdog-portrange=50000:50100</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-watchdog-portrange=50000:50100</code></li>
+</ul>
+<h2 id="automatic-updates">Automatic updates<a class="headerlink" href="#automatic-updates" title="Permanent link">&para;</a></h2>
+<p>For more information, see update OneAgent topics for <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux" title="Learn about the different ways to update OneAgent on Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows" title="Learn about the different ways to update Dynatrace OneAgent on Windows.">Windows</a>, and <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix" title="Learn how you can update Dynatrace OneAgent on AIX.">AIX</a>.</p>
+<h3 id="check-if-auto-update-is-enabled">Check if auto-update is enabled<a class="headerlink" href="#check-if-auto-update-is-enabled" title="Permanent link">&para;</a></h3>
+<p>Use the <code>get-auto-update-enabled</code> parameter to check whether OneAgent auto-update is enabled:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-auto-update-enabled</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-auto-update-enabled</code></li>
+</ul>
+<h3 id="enable-or-disable-auto-update">Enable or disable auto-update<a class="headerlink" href="#enable-or-disable-auto-update" title="Permanent link">&para;</a></h3>
+<p>Set the <code>--set-auto-update-enabled</code> parameter to <code>true</code> or <code>false</code> to disable or enable OneAgent auto-update:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-auto-update-enabled=true</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-auto-update-enabled=true</code></li>
+</ul>
+<p>After you use this command to disable auto-updates, you won't be able to control OneAgent automatic updates using Dynatrace at <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>OneAgent updates</strong>.</p>
+<h2 id="log-monitoring">Log monitoring<a class="headerlink" href="#log-monitoring" title="Permanent link">&para;</a></h2>
+<p>For more information, see <a href="/docs/analyze-explore-automate/logs" title="Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.">Log Monitoring</a>.</p>
+<h3 id="check-if-log-monitoring-is-enabled">Check if Log Monitoring is enabled<a class="headerlink" href="#check-if-log-monitoring-is-enabled" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-app-log-content-access</code> parameter to check whether Log Monitoring is enabled:</p>
+<ul>
+<li><strong>Linux</strong>:<br />
+<code>./oneagentctl --get-app-log-content-access</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-app-log-content-access</code></li>
+</ul>
+<h3 id="enable-or-disable-log-monitoring">Enable or disable Log Monitoring<a class="headerlink" href="#enable-or-disable-log-monitoring" title="Permanent link">&para;</a></h3>
+<p>Set the <code>--set-app-log-content-access</code> parameter to <code>true</code> or <code>false</code> to disable or enable Log Monitoring:</p>
+<ul>
+<li><strong>Linux</strong>:<br />
+<code>./oneagentctl --set-app-log-content-access=true</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-app-log-content-access=true</code></li>
+</ul>
+<h2 id="create-support-archive">Create support archive<a class="headerlink" href="#create-support-archive" title="Permanent link">&para;</a></h2>
+<p>OneAgent version 1.225+</p>
+<p>If you don't have access to Dynatrace or you would like to script diagnostic data collection, you can use the <code>oneagentctl</code> command to collect a <a href="#contents">subset</a> of the full <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics" title="Learn how to run OneAgent diagnostics">OneAgent diagnostics</a> data right on the host where OneAgent is installed. With the diagnostic data collected for OneAgent, you can:</p>
+<ul>
+<li>Easily collect the diagnostic data for a specific host</li>
+<li>Directly provide Dynatrace Support the details they need to diagnose the issue</li>
+</ul>
+<p>The command requires the OneAgent service to be running.</p>
+<p>To create a support archive with diagnostic data, run <code>oneagentctl</code> with the <code>--create-support-archive</code> parameter. By default, the support archive contains the data for a 7-day time frame and is created in the current working directory. Optionally, you can set a custom directory and timeframe with the <code>directory</code> and <code>days</code> parameters. Note that <code>onegentctl</code> won't create a directory; you must point it to an existing directory with a relative or absolute path. For example:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --create-support-archive directory=/data/support-archive days=30</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --create-support-archive directory=C:\data\support-archive days=30</code></li>
+</ul>
+<p>The command saves the archive as the <code>support_archive_agent_YYYY-MM-DD_hhmmss.zip</code> file. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Creating support archive from last 30 days in C:\data\support-archive
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Waiting 30s for archive request to be processed
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Processing archive, waiting up to 15m 0s
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Archive saved as C:\data\support-archive\support_archive_agent_2021-09-07_121619.zip
+</code></pre></div>
+<h3 id="contents-of-diagnostic-data">Contents of diagnostic data<a class="headerlink" href="#contents-of-diagnostic-data" title="Permanent link">&para;</a></h3>
+<p>All the collected diagnostic data is compressed into a <code>support_archive_agent_YYYY-MM-DD_hhmmss.zip</code> archive that includes the following subset of the full <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics" title="Learn how to run OneAgent diagnostics">OneAgent diagnostics</a> data:</p>
+<p>Folder or file</p>
+<p>Description</p>
+<p><code>support_archive</code> (ZIP)</p>
+<p>Contains the local configuration of the OneAgent installed on the host or process where youâve run the troubleshooting, as well as the OneAgent-related log files.</p>
+<p><code>diagnostic_files</code> (ZIP)</p>
+<p>Contains information about process group detection, auto-injection problems, and extension configuration.</p>
+<h2 id="access-to-system-logs-for-proactive-support">Access to system logs for proactive support<a class="headerlink" href="#access-to-system-logs-for-proactive-support" title="Permanent link">&para;</a></h2>
+<p>OneAgent downloads specific system logs so that Dynatrace can diagnose issues that may be caused by conditions in your environment. The logs are also saved in the support archive. Most often such issues are related to deep monitoring or auto-update installations.</p>
+<h3 id="check-if-access-to-system-logs-is-enabled">Check if access to system logs is enabled<a class="headerlink" href="#check-if-access-to-system-logs-is-enabled" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-system-logs-access-enabled</code> parameter to check whether access to system logs is enabled:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-system-logs-access-enabled</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-system-logs-access-enabled</code></li>
+</ul>
+<h3 id="enable-or-disable-access-to-system-logs">Enable or disable access to system logs<a class="headerlink" href="#enable-or-disable-access-to-system-logs" title="Permanent link">&para;</a></h3>
+<p>Set the <code>--set-system-logs-access-enabled</code> parameter to <code>true</code> or <code>false</code> to disable or enable access to system logs:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-system-logs-access-enabled=true</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-system-logs-access-enabled=true</code>
+  Restart OneAgent service to apply changes.</li>
+</ul>
+<p>Note that the <code>--set-system-logs-access-enabled</code> and <code>--get-system-logs-access-enabled</code> parameters refer to a self-diagnostics setting and are not related to <a href="#log-monitoring">Log Monitoring</a>.</p>
+<p>Disabling system log access limits our ability to diagnose and solve issues proactively. With access to system logs revoked, you may need to manually provide Dynatrace with the contents of your system logs to help us diagnose issues within your environment.</p>
+<h2 id="host-id">Host ID<a class="headerlink" href="#host-id" title="Permanent link">&para;</a></h2>
+<p>Dynatrace assigns a unique ID to each host monitored in your environment. Host IDs can be used as parameters in Dynatrace API requests, for example <a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api" title="Learn how you can use the Dynatrace API to manage monitored hosts.">Topology and Smartscape API - Hosts API</a>. The host ID also constitutes the URL of the <strong>Host overview</strong> page, for example, <code>https://environment.org/#newhosts/hostdetails;id=HOST-6E56EE455C84E232</code>.</p>
+<h3 id="display-your-host-id">Display your host ID<a class="headerlink" href="#display-your-host-id" title="Permanent link">&para;</a></h3>
+<p>To find a host ID, use the <code>--get-host-id</code> parameter. For example:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-host-id</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-host-id</code></li>
+</ul>
+<h3 id="define-the-host-id-source">Define the host ID source<a class="headerlink" href="#define-the-host-id-source" title="Permanent link">&para;</a></h3>
+<p>Available on all supported platforms for OneAgent version 1.223+. For OneAgent version 1.221 and earlier, this feature is supported only for Citrix Virtual Apps and Desktops.</p>
+<p>It's particularly important to keep your host ID static in dynamic virtual environments where hosts are recreated on a daily basis.</p>
+<p>To <strong>define the source for host ID generation</strong>, use <code>--set-host-id-source</code> and set it to one of the predefined values:</p>
+<ul>
+<li><code>auto</code> â Let Dynatrace generate the host ID automatically</li>
+<li><code>ip-addresses</code> â Generate host ID based on the host IP address</li>
+<li><code>mac-addresses</code> â Generate host ID based on the host's NIC MAC address</li>
+<li><code>fqdn</code> â Generate host ID based on the host fully qualified domain name (FQDN) in the <code>host.domain</code> format. If the FQDN doesn't contain a dot character, the NIC MAC address is used instead.</li>
+<li>
+<p>If you monitor multiple environments, you can split the hosts with identical IPs, MAC addresses, or FQDNs using a different namespace for each environment. The namespace can contain only alphanumeric characters, hyphens, underscores, and periods; the maximum length is 256 characters.</p>
+</li>
+<li>
+<p><code>ip-addresses;namespace=&lt;namespace&gt;</code></p>
+</li>
+<li><code>mac-addresses;namespace=&lt;namespace&gt;</code></li>
+<li><code>fqdn;namespace=&lt;namespace&gt;</code></li>
+</ul>
+<p>For example, to set the host ID source to <code>ip-addresses</code> and assign it to a namespace called <code>test</code>, run <code>oneagentctl</code> with the following parameter:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-host-id-source="ip-addresses;namespace=test"</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-host-id-source="ip-addresses;namespace=test"</code></li>
+</ul>
+<p>After you change the host ID source, you must restart all your monitored applications and then restart the OneAgent service to create the new host entity in your environment. You can use the <code>--restart-service</code> parameter with <code>oneagentctl</code> to restart OneAgent automatically or stop and start OneAgent process manually. For OS-specific instructions, see <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Learn how to stop and restart OneAgent on Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Learn how to stop and restart OneAgent on Windows.">Windows</a>, or <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Learn how to stop and restart OneAgent on AIX.">AIX</a>.</p>
+<p>To <strong>check the host ID source</strong>, use the <code>--get-host-id-source</code> parameter:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-host-id-source</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-host-id-source</code></li>
+</ul>
+<p>For host ID source set to <code>ip-addresses</code> and the <code>test</code> namespace, the command will return the following result:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ip-addresses;namespace=test
+</code></pre></div>
+<h2 id="host-groups">Host groups<a class="headerlink" href="#host-groups" title="Permanent link">&para;</a></h2>
+<p>For an overview of how to use host groups, see <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups" title="Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.">Organize your environment using host groups</a>.</p>
+<p>Alternatively, to modify host group assignment centrally from the Dynatrace Cluster, you can use <a href="/docs/ingest-from/bulk-configuration#configure-oneagents" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration management</a> (select the <strong>modify host group</strong> action).</p>
+<h3 id="change-host-group-assignment">Change host group assignment<a class="headerlink" href="#change-host-group-assignment" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-host-group</code> parameter to change the host group assignment.</p>
+<p>To assign the host to <code>MyHostGroup</code>:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-host-group=MyHostGroup</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-host-group=MyHostGroup</code></li>
+</ul>
+<p>Host group string requirements:</p>
+<ul>
+<li>Can contain only alphanumeric characters, hyphens, underscores, and periods</li>
+<li>Must not start with <code>dt.</code></li>
+<li>Maximum length is 100 characters</li>
+</ul>
+<p>Using <code>--set-host-group</code> requires restart of OneAgent, as well as restart of all the monitored services. Add <a href="#oneagent-restart"><code>--restart-service</code></a> to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Learn how to stop and restart OneAgent on Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Learn how to stop and restart OneAgent on Windows.">Windows</a>, or <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Learn how to stop and restart OneAgent on AIX.">AIX</a>.</p>
+<p>Changing the host group assignments results in recalculation of process group IDs, which impacts data aggregation. To read more about the impact of host group changes on process group detection, see <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups#how-host-groups-affect-your-monitoring-environment" title="Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.">Organize your environment using host groups</a>.</p>
+<h3 id="clear-host-group-assignment">Clear host group assignment<a class="headerlink" href="#clear-host-group-assignment" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-host-group</code> parameter with an empty value to clear the host group assignment:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-host-group=</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-host-group=</code></li>
+</ul>
+<h3 id="display-host-group-assignment">Display host group assignment<a class="headerlink" href="#display-host-group-assignment" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-host-group</code> parameter to display the current host group assignment:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-host-group</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-host-group</code></li>
+</ul>
+<h2 id="host-tags-and-metadata">Host tags and metadata<a class="headerlink" href="#host-tags-and-metadata" title="Permanent link">&para;</a></h2>
+<p>Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you can use dedicated <code>oneagentctl</code> parameters to apply custom tags, names, and metadata to your hosts.</p>
+<p>The <code>oneagentctl</code> methods listed below allow only for editing the metadata added using <code>oneagentctl</code> itself or previously using the configuration files. Tags and metadata added using Dynatrace, as well as retrieved from a monitored environment (for example the AWS tags) are not editable with <code>oneagentctl</code> and won't be displayed using <code>--get-host-tags</code> and <code>--get-host-properties</code> parameters.</p>
+<h3 id="cloud-metadata-detection">Cloud metadata detection<a class="headerlink" href="#cloud-metadata-detection" title="Permanent link">&para;</a></h3>
+<p>By default, the <code>oneagentos</code> process automatically detects cloud environments such as AWS, Azure, and Google Compute Engine. It sends requests to the dedicated Metadata API located at the internal IP address <code>169.254.169.254</code>. The OneAgent uses the retrieved metadata to provide additional context about the monitored resources within these environments.</p>
+<h3 id="custom-host-name">Custom host name<a class="headerlink" href="#custom-host-name" title="Permanent link">&para;</a></h3>
+<p>Use the <code>oneagentctl</code> command-line tool with the <code>--set-host-name</code> parameter to override an automatically detected host name. A host name must not contain the <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>CR</code> (carriage return), or <code>LF</code> (line feed) characters. The maximum length is 256 characters.</p>
+<p>This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see <a href="/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments" title="Learn how to change a monitored host name.">Set custom host names</a>.</p>
+<p>To change the host name:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:
+  <code>./oneagentctl --set-host-name=myhostname</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-host-name=myhostname</code></li>
+</ul>
+<p>To revert to the auto-detected host name, set the <code>--set-host-name</code> parameter to an empty value, as in <code>--set-host-name=""</code>. For example:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:
+  <code>./oneagentctl --set-host-name=""</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-host-name=""</code></li>
+</ul>
+<p>The change might not be reflected in the Dynatrace web UI for up to 6 minutes.</p>
+<p>Using <code>--set-host-name</code> requires restart of OneAgent. Add <code>--restart-service</code> to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Learn how to stop and restart OneAgent on Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Learn how to stop and restart OneAgent on Windows.">Windows</a>, or <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Learn how to stop and restart OneAgent on AIX.">AIX</a>.</p>
+<p>To show the host name:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-host-name</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-host-name</code></li>
+</ul>
+<h3 id="custom-host-metadata">Custom host metadata<a class="headerlink" href="#custom-host-metadata" title="Permanent link">&para;</a></h3>
+<p>Once configured, custom metadata is displayed as a set of properties at the bottom of the <strong>Properties and tags</strong> section of the host overview page. The property values must not contain an <code>=</code> character (unless used as a key-value delimiter) or whitespace characters. The maximum length is 256 characters, including the key-value delimiter. The key name must not start with a <code>#</code> character.</p>
+<p>Alternatively, to modify host metadata centrally from the Dynatrace Cluster, you can use <a href="/docs/ingest-from/bulk-configuration#configure-oneagents" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration management</a> (select the <strong>modify host properties</strong> action).</p>
+<p>For versions earlier than 1.189, use a <a href="/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file" title="Learn how to tag and set additional properties for a monitored host.">host metadata configuration file</a>.</p>
+<p>To <strong>add or change host properties</strong>, run the following command:</p>
+<ul>
+<li><strong>Linux</strong> and <strong>AIX</strong><br />
+<code>./oneagentctl --set-host-property=AppName --set-host-property=Environment=Dev</code></li>
+<li><strong>Windows</strong><br />
+<code>.\oneagentctl.exe --set-host-property=AppName --set-host-property Environment=Dev</code></li>
+</ul>
+<p>You can add or change more than one property in the same command.</p>
+<p>Set a security context for your host</p>
+<p>To set a security context for your host, use the following command:</p>
+<ul>
+<li><strong>Linux</strong> and <strong>AIX</strong><br />
+<code>./oneagentctl --set-host-property=dt.security_context=easytrade_sec</code></li>
+<li><strong>Windows</strong><br />
+<code>.\oneagentctl.exe --set-host-property=dt.security_context=easytrade_sec</code></li>
+</ul>
+<p>The <code>dt.security_context</code> is utilized by multiple features within Dynatrace, such as <a href="/docs/analyze-explore-automate/logs/lma-security-context" title="Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.">Log security context</a> and <a href="/docs/observe/business-observability/bo-event-processing/bo-security-context" title="Use Dynatrace powered by Grail and DQL to reshape incoming business events data for better understanding, analysis, or further processing.">Business events security context</a>.
+Additionally, if you're an account administrator looking to grant access to monitored entities based on their security context, see <a href="/docs/manage/identity-access-management/use-cases/access-security-context" title="Grant access to entities with security context">Grant access to entities with security context</a>.</p>
+<p>To <strong>remove host properties</strong>, run the following command:</p>
+<ul>
+<li><strong>Linux</strong> and <strong>AIX</strong><br />
+<code>./oneagentctl --remove-host-property=AppName --remove-host-property=Environment=Dev</code></li>
+<li><strong>Windows</strong><br />
+<code>.\oneagentctl.exe --remove-host-property=AppName --remove-host-property=Environment=Dev</code></li>
+</ul>
+<p>You can remove more than one property with a single command. If a property key that's passed in the command doesn't exist, a non-zero exit code will be returned, but all the existing properties passed in the command will be removed. After you remove host properties, they remain visible in Dynatrace for up to 7 hours.</p>
+<p>To <strong>show all properties</strong> configured for the host, run the following command:</p>
+<ul>
+<li><strong>Linux</strong> and <strong>AIX</strong><br />
+<code>./oneagentctl --get-host-properties</code></li>
+<li><strong>Windows</strong><br />
+<code>.\oneagentctl.exe --get-host-properties</code></li>
+</ul>
+<h3 id="custom-host-tags">Custom host tags<a class="headerlink" href="#custom-host-tags" title="Permanent link">&para;</a></h3>
+<p>After you configure custom host tags, they are displayed at the top of the <strong>Properties and tags</strong> section of the host overview page. A property value must not contain <code>=</code> (unless used as a key-value delimiter) or whitespace characters. The maximum length is 256 characters, including the key-value delimiter. A key name must not start with <code>#</code>.</p>
+<p>Alternatively, to modify host tags centrally from the Dynatrace Cluster, you can use <a href="/docs/ingest-from/bulk-configuration#configure-oneagents" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration management</a> (select the <strong>modify host tags</strong> action).</p>
+<p>To <strong>add or change host tags</strong>, run the following command:</p>
+<ul>
+<li><strong>Linux</strong> and <strong>AIX</strong><br />
+<code>./oneagentctl --set-host-tag=TestHost --set-host-tag=role=fallback --set-host-tag=Gdansk</code></li>
+<li><strong>Windows</strong><br />
+<code>.\oneagentctl.exe --set-host-tag=TestHost --set-host-tag=role=fallback --set-host-tag=Gdansk</code></li>
+</ul>
+<p>You can add or change more than one tag in the same command. It is allowed to define tags with the same key but different values.</p>
+<p>To <strong>remove tags</strong>, run the following command:</p>
+<ul>
+<li><strong>Linux</strong> and <strong>AIX</strong><br />
+<code>./oneagentctl --remove-host-tag=role=fallback --remove-host-tag=Gdansk</code></li>
+<li><strong>Windows</strong><br />
+<code>.\oneagentctl.exe --remove-host-tag=role=fallback --remove-host-tag=Gdansk</code></li>
+</ul>
+<p>You can remove more than one tag with the same command. If a tag passed in the command doesn't exist, a non-zero exit code is returned, but all the existing tags passed in the command are removed. After you remove tags, they remain visible in Dynatrace for up to 6 hours.</p>
+<p>To <strong>show all tags</strong> configured for the host, run the following command:</p>
+<ul>
+<li><strong>Linux</strong> and <strong>AIX</strong><br />
+<code>./oneagentctl --get-host-tags</code></li>
+<li><strong>Windows</strong><br />
+<code>.\oneagentctl.exe --get-host-tags</code></li>
+</ul>
+<h2 id="monitoring-modes">Monitoring modes<a class="headerlink" href="#monitoring-modes" title="Permanent link">&para;</a></h2>
+<p>Activates one of the OneAgent monitoring modes:</p>
+<ul>
+<li><code>fullstack</code>: Full-Stack Monitoring</li>
+<li><code>infra-only</code>: Infrastructure Monitoring</li>
+<li><code>discovery</code>: Discovery</li>
+</ul>
+<p>To enable a specific monitoring mode, set the <code>--set-monitoring-mode</code> parameter to one of the values:</p>
+<ul>
+<li><code>fullstack</code></li>
+<li><code>infra-only</code></li>
+<li><code>discovery</code></li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>--set-monitoring-mode=infra-only
+</code></pre></div>
+<p>Use Infrastructure Monitoring mode or Discovery mode in place of Full-Stack Monitoring mode. With this approach, you receive infrastructure health data, with no application or user performance data. For details, see <a href="/docs/platform/oneagent/monitoring-modes/monitoring-modes" title="Find out more about the available monitoring modes when using OneAgent.">Monitoring modes</a>.</p>
+<h3 id="check-which-monitoring-mode-is-enabled">Check which monitoring mode is enabled<a class="headerlink" href="#check-which-monitoring-mode-is-enabled" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-monitoring-mode</code> parameter to check which monitoring mode is enabled:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-monitoring-mode</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-monitoring-mode</code></li>
+</ul>
+<p>The command returns one of the following:</p>
+<ul>
+<li><code>fullstack</code>: Full-Stack Monitoring mode</li>
+<li><code>infra-only</code>: Infrastructure Monitoring mode</li>
+<li><code>discovery</code>: Discovery mode</li>
+</ul>
+<p>Changing the Infrastructure Monitoring mode requires restart of OneAgent, as well as restart of all monitored services. Add <a href="#oneagent-restart"><code>--restart-service</code></a> to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Learn how to stop and restart OneAgent on Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Learn how to stop and restart OneAgent on Windows.">Windows</a>, or <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Learn how to stop and restart OneAgent on AIX.">AIX</a>.</p>
+<h2 id="automatic-injection-for-infrastructure-monitoring-mode">Automatic injection for Infrastructure Monitoring mode<a class="headerlink" href="#automatic-injection-for-infrastructure-monitoring-mode" title="Permanent link">&para;</a></h2>
+<p>OneAgent version 1.213</p>
+<p>Automatic OneAgent injection is enabled by default in Infrastructure Monitoring mode. It's required to collect JMX/PMI metrics and to handle Application Security in Infrastructure Monitoring mode.</p>
+<p>For more information, see <a href="/docs/platform/oneagent/monitoring-modes/monitoring-modes" title="Find out more about the available monitoring modes when using OneAgent.">OneAgent monitoring modes</a>.</p>
+<h3 id="check-if-auto-injection-is-enabled">Check if auto-injection is enabled<a class="headerlink" href="#check-if-auto-injection-is-enabled" title="Permanent link">&para;</a></h3>
+<p>Use the <code>get-auto-injection-enabled</code> parameter to check whether OneAgent auto-injection is enabled:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-auto-injection-enabled</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-auto-injection-enabled</code></li>
+</ul>
+<h3 id="enable-or-disable-auto-injection">Enable or disable auto-injection<a class="headerlink" href="#enable-or-disable-auto-injection" title="Permanent link">&para;</a></h3>
+<p>Set the <code>--set-auto-injection-enabled</code> parameter to <code>true</code> or <code>false</code> to enable or disable OneAgent auto-injection:</p>
+<p>To enable auto-injections:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-auto-injection-enabled=true</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-auto-injection-enabled=true</code></li>
+</ul>
+<p>To disable auto-injections:</p>
+<ul>
+<li><strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-auto-injection-enabled=false</code></li>
+<li><strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-auto-injection-enabled=false</code></li>
+</ul>
+<p>For more information, see <a href="/docs/platform/oneagent/monitoring-modes/monitoring-modes#disable-auto-injection" title="Find out more about the available monitoring modes when using OneAgent.">Disable auto-injection</a>.</p>
+<h2 id="metric-ingestion">Metric ingestion<a class="headerlink" href="#metric-ingestion" title="Permanent link">&para;</a></h2>
+<p>Local metric ingestion is currently supported only on Windows and Linux.</p>
+<p>You can use the <code>oneagentctl</code> command to check or change communication ports used for local metric ingestion using the <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api" title="Use the Dynatrace API to retrieve the metrics of monitored entities.">OneAgent metric API</a>, <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe" title="Learn how to ingest metrics using local scripting integration.">Scripting integration</a>, <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf" title="Ingest Telegraf metrics into Dynatrace.">Telegraf</a>, or <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd" title="Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.">DynatraceStatsd</a>. Changing the metric ingestion port requires restart of OneAgent. Add <a href="#oneagent-restart"><code>--restart-service</code></a> to the command to restart OneAgent automatically.</p>
+<p>See <a href="/docs/ingest-from/extend-dynatrace/extend-metrics" title="Learn how to extend metric observability in Dynatrace.">Metrics ingestion</a> to learn more.</p>
+<h3 id="oneagent-api-scripting-integration-and-telegraf">OneAgent API, scripting integration, and Telegraf<a class="headerlink" href="#oneagent-api-scripting-integration-and-telegraf" title="Permanent link">&para;</a></h3>
+<p>The default metric ingestion port is <code>14499</code>. If necessary, you can use the <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">oneagentctl</a> command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent."><code>--restart-service</code></a> to the command to restart OneAgent automatically.</p>
+<h3 id="check-the-ingestion-port">Check the ingestion port<a class="headerlink" href="#check-the-ingestion-port" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-extensions-ingest-port</code> parameter to show the current local ingestion port, <code>14499</code> by default.</p>
+<ul>
+<li><strong>Linux</strong>, <strong>AIX</strong>:
+  <code>./oneagentctl --get-extensions-ingest-port</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-extensions-ingest-port</code></li>
+</ul>
+<h3 id="set-a-custom-ingestion-port">Set a custom ingestion port<a class="headerlink" href="#set-a-custom-ingestion-port" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-extensions-ingest-port=&lt;arg&gt;</code> parameter to set a custom local ingestion port.</p>
+<ul>
+<li><strong>Linux</strong>, <strong>AIX</strong>:
+  <code>./oneagentctl --set-extensions-ingest-port=14499 --restart-service</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-extensions-ingest-port=14499 --restart-service</code></li>
+</ul>
+<h3 id="configure-proxy">Configure proxy<a class="headerlink" href="#configure-proxy" title="Permanent link">&para;</a></h3>
+<p>Configure your host proxy to allow localhost traffic going to the metric ingestion port, <code>14499</code> by default.</p>
+<h3 id="statsd">StatsD<a class="headerlink" href="#statsd" title="Permanent link">&para;</a></h3>
+<h3 id="oneagent-listener">OneAgent listener<a class="headerlink" href="#oneagent-listener" title="Permanent link">&para;</a></h3>
+<p>The default DynatraceStatsD UDP listening port for the OneAgent listener is <code>18125</code>. If necessary, you can use the <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">oneagentctl</a> command to check or change the metric ingestion port. Changing the port requires restart of OneAgent. Add <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent."><code>--restart-service</code></a> to the command to restart OneAgent automatically.</p>
+<h4 id="check-the-ingestion-port_1">Check the ingestion port<a class="headerlink" href="#check-the-ingestion-port_1" title="Permanent link">&para;</a></h4>
+<p>Use the <code>--get-extensions-statsd-port</code> parameter to show the current DynatraceStatsd UDP listening port (default = <code>18125</code>).</p>
+<ul>
+<li><strong>Linux</strong>:
+  <code>./oneagentctl --get-extensions-statsd-port</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-extensions-statsd-port</code></li>
+</ul>
+<h4 id="set-a-custom-ingestion-port_1">Set a custom ingestion port<a class="headerlink" href="#set-a-custom-ingestion-port_1" title="Permanent link">&para;</a></h4>
+<p>Use the <code>--set-extensions-statsd-port=&lt;arg&gt;</code> parameter to set a custom DynatraceStatsd UDP listening port.</p>
+<ul>
+<li><strong>Linux</strong>:
+  <code>./oneagentctl --set-extensions-statsd-port=18125 --restart-service</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-extensions-statsd-port=18125 --restart-service</code></li>
+</ul>
+<h3 id="remote-statsd">Remote StatsD<a class="headerlink" href="#remote-statsd" title="Permanent link">&para;</a></h3>
+<p>The default DynatraceStatsD UDP listening port for a remote listener is <code>18126</code>.</p>
+<p>To change the default <code>18126</code> listening port, modify the <code>StatsdPort</code> parameter in the ActiveGate <code>extensionsuser.conf</code> file:</p>
+<ul>
+<li>Linux
+  <code>/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf</code></li>
+<li>Windows
+  <code>C:\ProgramData\dynatrace\remotepluginmodule\agent\conf\extensionsuser.conf</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>StatsdPort=18126
+</code></pre></div>
+<h2 id="network-zones">Network zones<a class="headerlink" href="#network-zones" title="Permanent link">&para;</a></h2>
+<p>To learn about network zone naming rules and other reference information, see <a href="/docs/manage/network-zones" title="Find out how network zones work in Dynatrace.">Network zones</a>.</p>
+<p>Alternatively, to modify network zone assignment centrally from the Dynatrace Cluster, you can use <a href="/docs/ingest-from/bulk-configuration#configure-oneagents" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration management</a> (select the <strong>modify network zone</strong> action).</p>
+<h3 id="set-a-network-zone">Set a network zone<a class="headerlink" href="#set-a-network-zone" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--set-network-zone</code> parameter to instruct OneAgent to communicate via the specified network zone. The name of a network zone is a string of alphanumeric characters. You can also use hyphens (<code>-</code>), underscores (<code>_</code>), and a dot (<code>.</code>) as a seperator. The network zone name must not start with a dot. The length of the string is limited to 256 characters. Network zone names are not case-sensitive. Dynatrace stores these names in lowercase. For more information, see the section on <a href="/docs/manage/network-zones/network-zones-basic-info#naming" title="Learn how to get started with network zones.">network zone naming</a></p>
+<ul>
+<li>On <strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-network-zone=&lt;your.network.zone&gt;</code></li>
+<li>On <strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-network-zone=&lt;your.network.zone&gt;</code></li>
+</ul>
+<h4 id="reset-a-network-zone">Reset a network zone<a class="headerlink" href="#reset-a-network-zone" title="Permanent link">&para;</a></h4>
+<p>You can reset the network zone setting by passing an empty network zone name:</p>
+<ul>
+<li>On <strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --set-network-zone=""</code></li>
+<li>On <strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --set-network-zone=""</code></li>
+</ul>
+<h3 id="display-network-zone-setting">Display network zone setting<a class="headerlink" href="#display-network-zone-setting" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-network-zone</code> parameter to display the current network zone configuration:</p>
+<ul>
+<li>On <strong>Linux</strong> or <strong>AIX</strong>:<br />
+<code>./oneagentctl --get-network-zone</code></li>
+<li>On <strong>Windows</strong>:<br />
+<code>.\oneagentctl.exe --get-network-zone</code></li>
+</ul>
+<h2 id="passing-configuration-parameters-during-installation">Passing configuration parameters during installation<a class="headerlink" href="#passing-configuration-parameters-during-installation" title="Permanent link">&para;</a></h2>
+<p>You can pass the <code>--set-*</code> parameters at installation time. The configuration parameters are applied right before OneAgent service starts and there's no need to restart it to apply your configuration.</p>
+<p>Linux and AIX</p>
+<p>Windows</p>
+<p>To pass through the configuration parameters, simply add the parameter and precede the value with the equals sign (<code>=</code>). For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/bin/sh Dynatrace-OneAgent-Linux.sh â-set-host-group=test_group
+</code></pre></div>
+<h3 id="exe-installer">EXE installer<a class="headerlink" href="#exe-installer" title="Permanent link">&para;</a></h3>
+<p>To pass the configuration parameters through using the EXE installer, simply add the parameter and precede the value with the equals sign (<code>=</code>). For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Dynatrace-OneAgent-Windows.exe --set-host-group=test_group
+</code></pre></div>
+<h3 id="msi-package">MSI package<a class="headerlink" href="#msi-package" title="Permanent link">&para;</a></h3>
+<p>You can also pass the configuration parameters through using the MSI package. This time however, you must use an extra <code>ADDITIONAL_CONFIGURATION</code> parameter. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Dynatrace-OneAgent-Windows.msi ADDITIONAL_CONFIGURATION=&quot;--set-host-group=test_group&quot;
+</code></pre></div>
+<h2 id="fips-140-cryptographic-algorithms">FIPS 140 cryptographic algorithms<a class="headerlink" href="#fips-140-cryptographic-algorithms" title="Permanent link">&para;</a></h2>
+<p>OneAgent version 1.245+</p>
+<p>OneAgent uses the FIPS mode to be compliant with the FIPS 140-3 computer security standard.</p>
+<h3 id="check-if-fips-140-is-enabled">Check if FIPS 140 is enabled<a class="headerlink" href="#check-if-fips-140-is-enabled" title="Permanent link">&para;</a></h3>
+<p>Use the <code>--get-fips-enabled</code> to check if OneAgent uses FIPS 140 validated cryptographic algorithms.</p>
+<ul>
+<li>On <strong>Linux</strong> or <strong>AIX</strong><br />
+<code>./oneagentctl --get-fips-enabled</code></li>
+<li>On <strong>Windows</strong><br />
+<code>.\oneagentctl.exe --get-fips-enabled</code></li>
+</ul>
+<h3 id="enable-or-disable-fips-140">Enable or disable FIPS 140<a class="headerlink" href="#enable-or-disable-fips-140" title="Permanent link">&para;</a></h3>
+<p>Enabling or disabling of FIPS 140 validated cryptographic algorithms can only be done during installation.</p>
+<p>Set the <code>--set-fips-enabled</code> parameter to <code>true</code> or <code>false</code> to enable or disable the FIPS 140 validated cryptographic algorithms on OneAgent. The default value for first time installation is <code>false</code>.</p>
+<p>To enable FIPS mode:</p>
+<ul>
+<li>On <strong>Linux</strong>, <strong>AIX</strong> or <strong>Windows</strong>:
+  Run the installer with <code>--set-fips-enabled=true</code></li>
+</ul>
+<p>To disable FIPS mode:</p>
+<ul>
+<li>On <strong>Linux</strong>, <strong>AIX</strong> or <strong>Windows</strong>:
+  Run the installer with <code>--set-fips-enabled==false</code></li>
+</ul>
+<p>If you want to enable FIPS mode for application-only deployment, go to <code>/paas/package/agent</code> and delete <code>dt_fips_disabled.flag</code>.</p>
+<h2 id="cap_setuid-for-os-agent">cap_setuid for OS Agent<a class="headerlink" href="#cap_setuid-for-os-agent" title="Permanent link">&para;</a></h2>
+<p>GPFS monitoring</p>
+<p>OneAgent version 1.293+</p>
+<p>Enabling <code>cap_setuid</code> for OS Agent is required for GPFS monitoring.</p>
+<p>Following parameters are only available in <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged" title="Find out when Dynatrace OneAgent requires root privileges on Linux.">OneAgent non-privileged mode on Linux</a>.</p>
+<ul>
+<li><code>get-osagent-cap-setuid-enabled</code></li>
+<li><code>set-osagent-cap-setuid-enabled</code></li>
+</ul>
+<p>You can enable <code>cap_setuid</code> for OS Agent starting from OneAgent version 1.293+, but you can use GPFS monitoring only from OneAgent version 1.295+.</p>
+<h3 id="check-if-cap_setuid-for-os-agent-is-enabled">Check if cap_setuid for OS Agent is enabled<a class="headerlink" href="#check-if-cap_setuid-for-os-agent-is-enabled" title="Permanent link">&para;</a></h3>
+<p>Use the <code>get-osagent-cap-setuid-enabled</code> parameter to check whether cap_setuid for OS Agent is enabled:</p>
+<p><code>./oneagentctl --get-osagent-cap-setuid-enabled</code></p>
+<h3 id="enable-or-disable-cap_setuid-for-os-agent">Enable or disable cap_setuid for OS Agent<a class="headerlink" href="#enable-or-disable-cap_setuid-for-os-agent" title="Permanent link">&para;</a></h3>
+<p>Set the <code>--set-osagent-cap-setuid-enabled</code> parameter to <code>true</code> or <code>false</code> to disable or enable cap_setuid for OS Agent:</p>
+<p><code>./oneagentctl --set-osagent-cap-setuid-enabled=true</code></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

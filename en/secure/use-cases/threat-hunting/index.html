@@ -1,0 +1,1473 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/secure/use-cases/threat-hunting/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Threat hunting and forensics - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#threat-hunting-and-forensics" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Threat hunting and forensics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="threat-hunting-and-forensics">Threat hunting and forensics<a class="headerlink" href="#threat-hunting-and-forensics" title="Permanent link">&para;</a></h1>
+<h1 id="threat-hunting-and-forensics_1">Threat hunting and forensics<a class="headerlink" href="#threat-hunting-and-forensics_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Tutorial</li>
+<li>Published Mar 14, 2024</li>
+</ul>
+<p>When threat hunting, time and precision are crucial. You need to be as fast and accurate as possible to find and act upon information. As a security analyst investigating security incidents or threat hunting, you often need to</p>
+<ul>
+<li>Navigate between multiple executed queries and their results</li>
+<li>Manage the evidence gathered during investigations and reuse it when building additional queries</li>
+<li>
+<p>Ensure that</p>
+</li>
+<li>
+<p>The investigation is maintained in context.</p>
+</li>
+<li>The tools for such activities support quick query creation and a detailed overview of the results.</li>
+</ul>
+<p>In the following, we demonstrate how you can achieve these goals using <a href="/docs/secure/investigations" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a>.</p>
+<h2 id="target-audience">Target audience<a class="headerlink" href="#target-audience" title="Permanent link">&para;</a></h2>
+<p>This page is intended for Security teams performing threat hunting or analyzing security incidents, such as the Incident Response team or Security Analysts.</p>
+<h2 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
+<p>In the following, we address a scenario in which you get a notification from an external source about a suspiciously high number of unauthorized requests towards our Kubernetes control plane between <code>2024-02-13 16:00:00</code> and <code>2024-02-13 18:59:59</code>. Your Kubernetes cluster has been set up to AWS EKS cluster, and logs are forwarded to Dynatrace.</p>
+<p>As a security analyst, you want to understand if this is related to malicious activities or if it may be an indication of a cyber security incident. During this investigation, you will follow the trail of your findings to illustrate the nature of threat hunting and incident solving.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack" title="Deploy Dynatrace Operator in classic full-stack mode to Kubernetes">Set up Kubernetes observability with Dynatrace Operator</a></li>
+<li>
+<p>Set up AWS logging to CloudWatch:</p>
+</li>
+<li>
+<p><a href="https://dt-url.net/va038gi">Set up EKS Cluster loggingï»¿</a></p>
+</li>
+<li><a href="https://dt-url.net/ya238ol">Set up VPC Flow loggingï»¿</a></li>
+<li><a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-eks/k8s-dns-logs" title="Learn how to ingest Kubernetes-related DNS logs from AWS to Dynatrace.">Set up K8S DNS logging</a></li>
+<li><a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose" title="Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.">Stream logs via Amazon Data Firehose</a></li>
+<li>
+<p>Basic knowledge of</p>
+</li>
+<li>
+<p><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language (DQL)</a></p>
+</li>
+<li><a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">Dynatrace Pattern Language (DPL)</a></li>
+<li>How DNS name resolving works in Kubernetes clusters</li>
+</ul>
+<h2 id="investigation-path-1-analyze-kubernetes-audit-logs">Investigation path 1: Analyze Kubernetes audit logs<a class="headerlink" href="#investigation-path-1-analyze-kubernetes-audit-logs" title="Permanent link">&para;</a></h2>
+<p>First, you want to understand which activities caused the notification about the high number of unauthorized requests in your Kubernetes audit logs.
+Open <a href="/docs/secure/investigations" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> and create a new investigation.</p>
+<ol>
+<li>Set the timeframe</li>
+</ol>
+<p>In the <a href="/docs/secure/investigations/define-timeframes#selector" title="Adjust time ranges for data analysis and event correlation in Investigations.">timeframe section</a>, set the timeframe from <code>2024-02-13 16:00:00</code> to <code>2024-02-13 18:59:59</code>, when the unauthorized requests occurred.</p>
+<p><img alt="set the timeframe" src="https://dt-cdn.net/images/2024-03-06-08-15-45-1914-2f0de669a4.png" /></p>
+<ol>
+<li>
+<p>Fetch Kubernetes cluster audit logs</p>
+</li>
+<li>
+<p>Kubernetes audit logs are forwarded to Dynatrace with <code>aws.log_group</code> and <code>log_stream</code> values attached. To fetch all the unique AWS CloudWatch log groups that are ingested to Dynatrace, copy-paste the following <a href="/docs/platform/grail/dynatrace-query-language/dql-guide" title="Find out how DQL works and what are DQL key concepts.">DQL query</a> in the query input.</p>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch logs
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| summarize count(), by: aws.log_group
+</code></pre></div>
+2. Select <strong>Run</strong> to execute the query.</p>
+<p><img alt="fetch kubernetes cluster audit logs" src="https://dt-cdn.net/images/2024-03-06-08-45-30-1910-d1342717df.png" /></p>
+<p>At this point, you notice a circle has appeared in the <strong>Query tree</strong> section in the upper right. This is called a root node and marks the starting point of your investigation. From here on, every time you modify and execute a query, a new node will be added in the query tree, allowing you to navigate among queries while keeping the history of your investigation intact. For details, see <a href="/docs/secure/investigations/concepts#query-tree" title="Key concepts for using Dynatrace Investigations across security, operations, and performance analysis.">query tree</a>.</p>
+<ol>
+<li>
+<p>Filter by log group name</p>
+</li>
+<li>
+<p>In the query results, find the record with the log group collecting the EKS control plane logs (in our example, <code>/aws/eks/unguard-secla-demo/cluster</code>) and <a href="/docs/secure/investigations#fields" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.">add it as a filter</a> to your DQL query.</p>
+</li>
+</ol>
+<p><img alt="Add a filter for the log group name" src="https://dt-cdn.net/images/2024-03-06-09-01-16-1530-51987a9960.png" />
+2. To view only the control plane audit events, modify the <code>filter</code> command in the query input by adding the <a href="/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators" title="A list of DQL Operators."><code>and</code> operator</a> and the <a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#contains" title="A list of DQL string functions."><code>contains</code> string function</a> as follows:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>| filter aws.log_group == &quot;/aws/eks/unguard-secla-demo/cluster&quot; and contains(aws.log_stream, &quot;audit&quot;)
+</code></pre></div>
+3. In the query input, remove the <code>summarize</code> command and select <strong>Run</strong> to execute the query.</p>
+<p><img alt="view only the control plane audit events" src="https://dt-cdn.net/images/2024-03-06-09-19-12-1919-c2f0267459.png" /></p>
+<ol>
+<li>Inspect the content</li>
+</ol>
+<p>In the query results table, right-click on any cell in the <strong>content</strong> field and select <strong>View field details</strong> to view the raw content of the field. For details, see <a href="/docs/secure/investigations/enhance-results#view-details" title="Organize and interpret query outputs across investigations --- from performance analysis to threat detection.">Explore data in the original format</a>.</p>
+<p><img alt="Inspect the content" src="https://dt-cdn.net/images/2024-03-07-16-43-25-1546-aa18860a77.png" /></p>
+<ol>
+<li>
+<p>Extract fields from JSON</p>
+</li>
+<li>
+<p>In the query results table, right-click on any cell in the <strong>Content</strong> field and select <a href="/docs/secure/investigations/extract-fields#field" title="Pull specific data points from logs in Investigations."><strong>Extract fields</strong></a> to navigate to <a href="/docs/platform/grail/dynatrace-pattern-language/dpl-architect" title="Extract fields with Dynatrace Pattern Language Architect.">DPL Architect</a>.</p>
+</li>
+<li>Select <strong>Saved patterns</strong>.</li>
+<li>In <strong>Dynatrace patterns</strong>, select <strong>k8s</strong> &gt; <strong>audit</strong>.</li>
+</ol>
+<p><img alt="extract field" src="https://dt-cdn.net/images/2024-03-06-18-41-50-1547-0df2e723b3.png" /></p>
+<p>When extracting fields from a JSON structure, you can define only a partial schema for the fields that are relevant for your use case. To continue your investigation, you need to select only the relevant fields.
+4. In the query input of DPL Architect, replace the pattern as follows:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>JSON{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>STRING:verb,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>JSON{string:username}(flat=true):user,
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>JSON_ARRAY{ipaddr}(typed=true):sourceIPs,
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>JSON{string+:resource}(flat=true):objectRef,
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>JSON{int:code}(flat=true):responseStatus
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>}(flat=true)
+</code></pre></div>
+5. Select <strong>Results</strong> for an overview of the fields that will be extracted from the <a href="/docs/platform/grail/dynatrace-pattern-language/dpl-architect#match-preview" title="Extract fields with Dynatrace Pattern Language Architect.">match preview dataset</a>.</p>
+<p><img alt="display results" src="https://dt-cdn.net/images/2024-03-06-14-28-54-816-6ec66c1606.png" />
+6. Select <strong>Insert pattern</strong> to append the pattern to your DQL query.</p>
+<p><img alt="Insert pattern in DPL Architect" src="https://dt-cdn.net/images/2024-03-11-08-59-35-613-d01beb3deb.png" />
+7. Select <strong>Run</strong> to execute the query.</p>
+<ol>
+<li>Filter events</li>
+</ol>
+<p>To find out which IPs have unauthorized activity, you need to</p>
+<ul>
+<li><a href="/docs/platform/grail/dynatrace-query-language/commands/structuring-commands#expand" title="DQL structuring commands">Expand</a> the source IP array</li>
+<li><a href="/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize" title="DQL aggregation commands">Summarize</a> the results with the relevant fields extracted previously</li>
+<li>
+<p><a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filter" title="DQL filter and search commands">Filter</a> the results to view only unauthorized requests (<code>401</code>) and forbidden requests (<code>403</code>)</p>
+</li>
+<li>
+<p>In the query input, add the following DQL snippet, then select <strong>Run</strong> to execute the query.</p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>| expand sourceIPs
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>| summarize count(), by: {sourceIPs, username, verb, resource=objectRef, responseStatus}
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>| filter in(responseStatus, {401, 403})
+</code></pre></div>
+2. In the results table menu, sort results by count to see which IP addresses had the most connections.</p>
+<p><img alt="filter the relevant events" src="https://dt-cdn.net/images/2024-03-07-08-11-17-1448-777bfa0c1e.png" /></p>
+<p>It looks like you found the origin of your security notification:</p>
+<ul>
+<li>An unauthorized external IP address is trying to fetch secrets from your control plane (in our example, <code>198.51.100.2</code>, with <code>401</code> response code and 122 connections). This is not surprising, since security scanners are attempting this daily from the internet.</li>
+<li>
+<p>A private IP address is trying to enumerate pods repeatedly (in our example, <code>172.31.29.138</code>, with <code>403</code> response code and 2090 connections). It seems to be one of the pods in your Kubernetes cluster, and such behavior might indicate a compromised pod!</p>
+</li>
+<li>
+<p>Add IPs as evidence</p>
+</li>
+</ul>
+<p>Both IP addresses need to be analyzed further, but the one with a <code>403</code> response and 2090 attempts is more critical and requires special attention.</p>
+<p>To save the IPs as <a href="/docs/secure/investigations/manage-evidence" title="Collect and preserve investigation artifacts in Investigations.">evidence</a>, you can add the first IP (<code>198.51.100.2</code>) to a preset evidence list and the second one (<code>172.31.29.138</code>) to a new customized evidence list:</p>
+<ol>
+<li>Right-click on <code>198.51.100.2</code>, then select <strong>Add to evidence list</strong> &gt; <strong>Suspicious IPs</strong>.</li>
+<li>Right-click on <code>172.31.29.138</code>, select <strong>Add to evidence list</strong> &gt; <strong>New evidence list</strong> and enter a name, for example, "Suspicious pod".</li>
+</ol>
+<p><img alt="add to IP collections" src="https://dt-cdn.net/images/2024-03-07-08-32-32-357-51a8b2b145.png" /></p>
+<h2 id="investigation-path-2-investigate-potential-target">Investigation path 2: Investigate potential target<a class="headerlink" href="#investigation-path-2-investigate-potential-target" title="Permanent link">&para;</a></h2>
+<p>To understand what the pod did and which other service logs you need for your investigation, you can start with the network logs. For AWS, the best place to start is the <a href="https://dt-url.net/6c0385l">VPC network flow logsï»¿</a>.</p>
+<ol>
+<li>
+<p>Fetch VPC flow logs</p>
+</li>
+<li>
+<p>Using the <a href="/docs/secure/investigations/concepts#query-tree" title="Key concepts for using Dynatrace Investigations across security, operations, and performance analysis.">query tree</a> created during your investigation, navigate to the <a href="#fetch-k8s-logs">Fetch Kubernetes cluster audit logs</a> step.</p>
+</li>
+<li>In the query results, find the record with the log group that contains your VPC flow logs (in our example, <code>/aws/vpc/unguard-secla-demo/vpc-flow-logs</code>), and add it as a filter to the DQL query.</li>
+</ol>
+<p><img alt="VPC flow logs" src="https://dt-cdn.net/images/2024-03-06-16-11-40-1905-ed76689a2c.png" /></p>
+<p>The node in the query tree has changed its icon, which means youâre in the middle of editing the query. You can either revert to the original query to update the results table or execute the modified query. When you run the modified query, a new node is created with the respective query and its results. You can <a href="/docs/secure/investigations/query-tree" title="Visualize and structure complex queries in Investigations.">give the node a distinctive name and color</a> to recognize it later.
+3. In the query input, remove the <code>summarize</code> command, then select <strong>Run</strong> to execute the modified query.</p>
+<p><img alt="execute modified query" src="https://dt-cdn.net/images/2024-03-07-18-21-06-1913-6f988f1771.png" /></p>
+<p>This creates a second branch in the query tree. A branch is the visual representation of an investigation path. Let's see where this new path takes us.</p>
+<ol>
+<li>Extract fields</li>
+</ol>
+<p>For more accurate results, you need to extract fields from the log records with DPL Architect.</p>
+<ol>
+<li>In the query results table, right-click on any cell in the <strong>content</strong> field and select <strong>Extract fields</strong>.</li>
+<li>In DPL Architect, select <strong>Saved patterns</strong>.</li>
+<li>In <strong>Dynatrace patterns</strong>, select <strong>aws</strong> &gt; <strong>vpc-flow-full</strong>.</li>
+<li>Select <strong>Insert pattern</strong>.</li>
+<li>
+<p>Select <strong>Run</strong> to execute the query.</p>
+</li>
+<li>
+<p>Filter results</p>
+</li>
+</ol>
+<p>Since youâre interested only in the results from the suspicious pod, you can add a filter to your DQL query based on the evidence created in the <a href="#evidence">Add evidence for later use</a> step.</p>
+<ol>
+<li>Go to <strong>Evidence lists</strong> and select the evidence menu for the <code>Suspicious pod</code> list to see the filtering options and the suitable field names that match the <code>IPADDR</code> type.</li>
+<li>Select <strong>Filter for</strong> &gt; <strong>Filter within field <code>pkt_srcaddr</code></strong>. This appends the filter to your DQL query.</li>
+</ol>
+<p><img alt="Filter by evidence" src="https://dt-cdn.net/images/2024-03-07-08-51-47-790-18cc53cc6c.png" />
+3. To get a better overview about the network connections, append the following command to the DQL query in the query input:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>| summarize count(), by: { pkt_dstaddr, protocol, action, dstport}
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>| sort `count()` desc
+</code></pre></div>
+4. Select <strong>Run</strong> to execute the query.</p>
+<p>You can see that the suspicious pod has most often connected to the cluster's DNS service via UDP port 53.</p>
+<p><img alt="Better overview of network connections" src="https://dt-cdn.net/images/2024-03-07-09-20-38-1421-bf0a76a211.png" /></p>
+<p>There could be an application misconfiguration or something suspicious might be happening with that pod.</p>
+<h2 id="investigation-path-3-identify-what-data-the-pod-sent-out">Investigation path 3: Identify what data the pod sent out<a class="headerlink" href="#investigation-path-3-identify-what-data-the-pod-sent-out" title="Permanent link">&para;</a></h2>
+<p>To look for the DNS names resolved by a pod you need to check the CoreDNS logs. If configured properly, the query logs are visible in the CoreDNS container logs.</p>
+<ol>
+<li>
+<p>Fetch coreDNS logs</p>
+</li>
+<li>
+<p>To fetch CoreDNS container logs, navigate to the <a href="#fetch-k8s-logs">Fetch Kubernetes cluster audit logs</a> step and modify the query in the query input as follows:</p>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>fetch logs
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| filter k8s.container.name == &quot;coredns&quot;
+</code></pre></div>
+2. Select <strong>Run</strong> to execute the query. This creates a third branch in the query tree.</p>
+<p><img alt="Fetch coreDNS logs" src="https://dt-cdn.net/images/2024-03-07-19-14-29-1919-bdcb4fef59.png" /></p>
+<ol>
+<li>
+<p>Extract fields</p>
+</li>
+<li>
+<p>In the query results table, right-click on any cell in the <strong>content</strong> field and select <strong>Extract fields</strong>.</p>
+</li>
+<li>In DPL Architect, select <strong>Saved patterns</strong>.</li>
+<li>In <strong>Dynatrace patterns</strong>, select <strong>k8s</strong> &gt; <strong>coredns-query</strong>.</li>
+<li>Select <strong>Insert pattern</strong>.</li>
+<li>
+<p>Select <strong>Run</strong> to execute the query.</p>
+</li>
+<li>
+<p>Filter results</p>
+</li>
+</ol>
+<p>To view only records containing the DNS requests originating from your suspicious pod, select the <strong>source_ip</strong> column header, then select <strong>Filter for</strong> &gt; <strong>Suspicious pod</strong>.</p>
+<p><img alt="Filter the source_ip field by the suspicious pod" src="https://dt-cdn.net/images/2024-03-07-09-52-47-539-9ece6d7f6f.png" /></p>
+<ol>
+<li>Extract domain name</li>
+</ol>
+<p>There could be quite a lot of DNS requests in the results table. For a better understanding of the resolved hostnames, you need to extract the domain name portion from the name field and summarize results based on it.</p>
+<ol>
+<li>In the query input, add the following snippet to the DQL query:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>| parse name, &quot;ld* &#39;.&#39;? ( (ld &#39;.&#39; ld):domain &#39;.&#39; eos)&quot;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| summarize count = count(), by: {domain}
+</code></pre></div>
+2. Select <strong>Run</strong> to execute the query.</p>
+<p>You notice that, besides internal or local domains, one suspicious domain (<code>tiitha-maliciousdomain.com</code>) is being resolved quite a lot!</p>
+<p><img alt="suspicious domain identified" src="https://dt-cdn.net/images/2024-03-07-10-01-49-503-598f18f1d7.png" /></p>
+<ol>
+<li>
+<p>Add domain as evidence</p>
+</li>
+<li>
+<p>In the query results table, right-click on the suspicious domain name, then select <strong>Add to evidence list</strong> &gt; <strong>New evidence list</strong>.</p>
+</li>
+<li>Enter a name for your new evidence list, for example, <strong>Attacker domain</strong>.</li>
+</ol>
+<p><img alt="Add attacker domain as evidence" src="https://dt-cdn.net/images/2024-03-07-18-32-15-488-857db7fc3a.png" /></p>
+<ol>
+<li>
+<p>Filter by attacker domain</p>
+</li>
+<li>
+<p>In the query results table, select the cell with the suspicious domain, then select <strong>Filter for</strong> to add a filter to the query that fetches only requests that include the attacker domain.</p>
+</li>
+</ol>
+<p><img alt="Filter for the malicious domain" src="https://dt-cdn.net/images/2024-03-07-10-17-10-1039-fc84720720.png" />
+2. In the query input, remove the <code>summarize</code> command and select <strong>Run</strong> to execute the query.</p>
+<p>It looks like there's some kind of data movement between the suspicious pod and the attacker domain. Looking at the query names and considering the number of queries, data appears to be extracted via DNS tunneling.</p>
+<p><img alt="data is being extracted via DNS tunnelling" src="https://dt-cdn.net/images/2024-03-07-10-24-01-1450-8d1cdc2027.png" /></p>
+<ol>
+<li>Analyze DNS requests</li>
+</ol>
+<p>As there are thousands of DNS requests towards that particular domain, you may want to aggregate the data to determine how to proceed further.</p>
+<ol>
+<li>In the query results, select the <strong>type</strong> column header, then select <a href="/docs/secure/investigations/enhance-results#aggregate" title="Organize and interpret query outputs across investigations --- from performance analysis to threat detection."><strong>Summarize</strong></a>.</li>
+<li>Select <strong>Run</strong> to execute the query.</li>
+</ol>
+<p><img alt="Summarize by type" src="https://dt-cdn.net/images/2024-03-07-10-40-41-399-c7c4bf8285.png" /></p>
+<p>You notice many A, AAAA, and TXT requests from the pod. You start investigating the A requests.
+3. In the query results table, right-click on an <strong>A</strong> cell and select <strong>Filter for</strong> to add a filter to the DQL query.
+4. In the query input, remove the <code>summarize</code> command and select <strong>Run</strong> to execute the query.</p>
+<p>To determine what is being sent out, you need to extract the subdomain portion of the domain. For this, you need to analyze one of the DNS queries that is resolving the attacker domain.
+5. Double-click on any cell in the query results table.
+6. In the <strong>Details (â¦)</strong> window, check the data in the <strong>name</strong> field.</p>
+<p>It seems that the DNS name is structured by an ID followed by the payload portion encoded in hex, and these parts are delimited by <code>.</code>.</p>
+<p><img alt="Inspect the name" src="https://dt-cdn.net/images/2024-03-07-11-09-13-997-28d0d5a17a.png" />
+7. To parse and decode the payload, add the following DQL snippet to the DQL query:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>| parse name, &quot;&quot;&quot;ld:id &#39;.&#39; ld:payload &#39;.tiitha-maliciousdomain&#39;&quot;&quot;&quot;
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>| fieldsAdd payload=replaceString(payload,&quot;.&quot;,&quot;&quot;)
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>| fields timestamp, id, payload=decodeBase16ToString(payload)
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>| sort timestamp, id
+</code></pre></div>
+<p>The result proves that data from your pod is definitely being extracted and sent out!</p>
+<p><img alt="data from pod is extracted and sent out" src="https://dt-cdn.net/images/2024-03-07-11-11-40-1106-e7433155ee.png" /></p>
+<h2 id="investigation-path-4-find-out-how-the-commands-were-sent-to-the-pod">Investigation path 4: Find out how the commands were sent to the pod<a class="headerlink" href="#investigation-path-4-find-out-how-the-commands-were-sent-to-the-pod" title="Permanent link">&para;</a></h2>
+<p>You know for sure the pod is sending information to an external DNS server, but you havenât figured out how it gets the commands. Since TXT-type DNS queries enable larger responses and are sometimes used for malicious transactions as well, you need to take a look at those requests. Since CoreDNS records don't contain the response payload, you turn to Route53 logs.</p>
+<ol>
+<li>
+<p>Analyze TXT records</p>
+</li>
+<li>
+<p>Using the query tree, navigate to the <a href="#fetch-k8s-logs">Fetch Kubernetes cluster audit logs</a> step.</p>
+</li>
+<li>In the query results, find the record with your Route53 log group (in our example, <code>/aws/route53/unguard-secla-demo/resolver-logs</code>) and add it as a filter to your DQL query.</li>
+<li>In the query input, remove the <code>summarize</code> command and select <strong>Run</strong> to execute the query. This creates a fourth branch in the query tree.</li>
+</ol>
+<p><img alt="Analyze TXT records" src="https://dt-cdn.net/images/2024-03-07-18-55-59-1919-a0b7fff314.png" /></p>
+<ol>
+<li>
+<p>Extract fields from log records</p>
+</li>
+<li>
+<p>In the query results table, right-click on any cell in the <strong>content</strong> field and select <strong>Extract fields</strong>.</p>
+</li>
+<li>In DPL Architect, select <strong>Saved patterns</strong>.</li>
+<li>In <strong>Dynatrace patterns</strong>, select <strong>aws</strong> &gt; <strong>route53-query</strong>.</li>
+<li>You need to extract the <code>query_name</code>, <code>query_type</code>, <code>srcaddr</code>, and <code>answers</code> values from the log record. In the query input, you can replace the pattern as follows:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>json{
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>string:query_name,
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>string:query_type,
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>json_array:answers,
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>ipaddr:srcaddr
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>}(flat=true)
+</code></pre></div>
+5. Select <strong>Insert pattern</strong>.
+6. Select <strong>Run</strong> to execute the query.</p>
+<ol>
+<li>
+<p>Filter data</p>
+</li>
+<li>
+<p>In the query results, select the <code>query_name</code> column header, then select <strong>Filter for</strong> &gt; <strong>Attacker domain</strong>.</p>
+</li>
+<li>Select <strong>Run</strong> to execute the query.</li>
+</ol>
+<p>You only care about the queries with the TXT type, so you can append the filter with the appropriate expression. Since the answers portion is an array, expand the field so that each value in the array is a separate record. The only fields you need are <code>srcaddr</code>, <code>query_name</code>, and the <code>Rdata</code> element from the answer object.
+3. In the query input, modify the <code>filter</code> command by adding the following snippet:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>| filter endsWith(query_name, &quot;tiitha-maliciousdomain.com.&quot;) and query_type == &quot;TXT&quot;
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>| expand answers
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>| fields srcaddr, uery_name, answer=answers[Rdata]
+</code></pre></div>
+4. Select <strong>Run</strong> to execute the query.</p>
+<p>Your hypothesis is correct: the TXT DNS queries were used to fetch the commands. The executed commands (including the Kubernetes control plane requests as curl commands) show up as responses in your DNS logs!</p>
+<p><img alt="Correct hypothesis: TXT DNS queries were used to fetch the commands" src="https://dt-cdn.net/images/2024-03-07-19-02-39-1919-08659833f4.png" /></p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>You've found out what happened but haven't figured out what else the pod has done, what process or activity is triggering the DNS requests, who controls the data extraction, how and when the pod was infected, and other relevant aspects of a security incident.</p>
+<p>From here on, the complexity of the investigation will only grow, and the ability to navigate between different stages of an investigation is even more crucial. All these questions might trigger a new branch in the query tree, if not a separate investigation. Our investigation introduces many additional questions that require answers.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator" title="Analyze CloudTrail logs and find potential security issues with Dynatrace.">Analyze AWS CloudTrail logs with Investigations</a></li>
+<li><a href="/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator" title="Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.">Analyze Amazon API Gateway access logs with Investigations</a></li>
+<li><a href="/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator" title="Monitor and identify potential threats against your AWS Secrets with Dynatrace.">Detect threats against your AWS Secrets with Investigations</a></li>
+<li><a href="/docs/secure/use-cases/resolve-incidents-faster-with-templates" title="Speed up your log-related investigations with Investigations templates.">Resolve incidents faster with Investigations templates</a></li>
+<li><a href="/docs/secure/use-cases/operationalize-query-results" title="Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.">Operationalize DQL query results with Investigations</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

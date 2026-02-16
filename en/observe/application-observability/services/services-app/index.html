@@ -971,7 +971,7 @@
 <li>Latest Dynatrace</li>
 <li>App</li>
 <li>4-min read</li>
-<li>Updated on Jan 12, 2026</li>
+<li>Updated on Feb 04, 2026</li>
 </ul>
 <p>Message Processing and Database Query Performance Analysis are projected to become available in Dynatrace SaaS version 1.330.</p>
 <p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> delivers comprehensive visibility into your distributed services, enabling teams to quickly identify, investigate, and resolve issues across complex microservice architectures. This unified interface consolidates critical health signals and performance metrics to accelerate troubleshooting and optimize service reliability.</p>
@@ -1022,6 +1022,10 @@ To see what queries your service is executing and the response time, failure rat
 <h3 id="database-query-performance-analysis">Database query performance analysis<a class="headerlink" href="#database-query-performance-analysis" title="Permanent link">&para;</a></h3>
 <p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> captures and analyzes database queries executed by your services, presenting the slowest queries ranked by execution time and frequency. Discover which operations consume the most resources and where indexing or caching could improve performance. Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.</p>
 <p><img alt="Database query view" src="https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png" /></p>
+<h3 id="outbound-calls">Outbound calls<a class="headerlink" href="#outbound-calls" title="Permanent link">&para;</a></h3>
+<p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> captures and analyzes outbound calls made by your services, and then presents the most frequently called and slowest external dependencies ranked by request rate and duration. The <strong>Outbound calls</strong> view displays request rate, error rate, average duration, and cumulative duration for each outbound call. Discover which external calls consume the most resources and where performance bottlenecks exist in your service dependencies. By integrating outbound call observability with service-level metrics, you can eliminate blind spots and quickly determine if issues originate within your service or downstream.</p>
+<p><img alt="Outbound calls tab" src="https://dt-cdn.net/images/scr-20260204-oxkt-1998-bc116aaf86.png" /></p>
+<p>URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in <a href="/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality" title="Reduce span- and metric-based cardinality">Reduce span-based and metric-based cardinality</a>.</p>
 <h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
 <p>Service-related concepts, including distributed traces and spans, are central concepts in Dynatrace observability. Understanding these concepts enables effective monitoring and analysis of distributed systems. See <a href="/docs/observe/application-observability/services/services-concepts" title="Understand application observability, services, and distributed tracing concepts.">Service-related concepts</a>.</p>
 <h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>

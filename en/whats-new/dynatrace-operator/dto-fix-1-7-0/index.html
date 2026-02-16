@@ -974,17 +974,7 @@
 </ul>
 <p>Release date: September 8th, 2025</p>
 <p>Important notice</p>
-<p>If you're running Dynatrace Operator version 1.7, we recommend upgrading to version 1.7.1 to receive the latest important patches.</p>
-<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
-<p>We have identified the following known issues with Dynatrace Operator versions 1.7.0â1.7.2. For other known issues, see <a href="/docs/ingest-from/technology-support/support-model-and-issues#well-known-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Dynatrace Operator support and known issues</a>.</p>
-<ul>
-<li>
-<p>Due to optimization of the injected mounts (combining them under <code>/var/lib/dynatrace</code>), Dynatrace components can no longer be injected with the OneAgent.</p>
-</li>
-<li>
-<p>Classic full-stack and metadata enrichment are not compatible and cannot be used to inject the same application pods.</p>
-</li>
-</ul>
+<p>If you're running Dynatrace Operator version 1.7.0, we recommend upgrading to version 1.7.1 to receive the latest important patches.</p>
 <h2 id="announcements">Announcements<a class="headerlink" href="#announcements" title="Permanent link">&para;</a></h2>
 <h3 id="reduced-volume-mounts-and-read-only-oneagent-binaries">Reduced volume mounts and read-only OneAgent binaries<a class="headerlink" href="#reduced-volume-mounts-and-read-only-oneagent-binaries" title="Permanent link">&para;</a></h3>
 <p>The number of volume mounts required for injecting code modules into application pods has been reduced. Additionally, OneAgent binaries are now mounted as read-only to enhance security and stability. For more details, refer to the updated <a href="/docs/ingest-from/setup-on-k8s/reference/workload-mutation" title="Application pod mutations when oneagent and/or metadata-enrichment is enabled.">workload mutation</a> documentation.</p>
@@ -1034,16 +1024,6 @@
 <li>Automatic Kubernetes API monitoring is disabled. You need to <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#local" title="Monitor the Kubernetes API using Dynatrace">enable it manually</a> for your tenant.</li>
 <li>The OneAgent Log module is initially deployed without a MonitoredEntityID context. As soon as the MonitoredEntityID is known, its configuration is updated and the OneAgent Log module is restarted. As a consequence, logs may initially miss the <code>topology:dt.entity.kubernetes_cluster</code> enrichment.</li>
 </ul>
-<h2 id="known-issues_1">Known issues<a class="headerlink" href="#known-issues_1" title="Permanent link">&para;</a></h2>
-<p>We have identified the following known issues with Dynatrace Operator version 1.7.0.</p>
-<ul>
-<li>
-<p>In Kubernetes environments â especially those utilizing auto-scalers â there are challenges in reliably determining whether a node was intentionally removed or has failed unexpectedly. This ambiguity can lead to a high number of false-positive âHost is unavailableâ alerts, impacting monitoring accuracy and alerting quality.</p>
-</li>
-<li>
-<p>OneAgent versions earlier than <code>1.317</code> are incompatible with the reduced volume mount and read-only binary setup, as they can't read configuration files from writable locations used by the init container.</p>
-</li>
-</ul>
 <h2 id="resolved-issues">Resolved issues<a class="headerlink" href="#resolved-issues" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -1085,10 +1065,20 @@
   For existing deployments, where standalone <code>logMonitoring</code> and <code>.spec.networkZone</code> are already configured, the <code>logMonitoring</code> pods will be restarted to use the correct network zone configuration.</p>
 </li>
 </ul>
+<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
+<p>We have identified the following known issues with Dynatrace Operator version 1.7.0.</p>
+<ul>
+<li>
+<p>In Kubernetes environments â especially those utilizing auto-scalers â there are challenges in reliably determining whether a node was intentionally removed or has failed unexpectedly. This ambiguity can lead to a high number of false-positive âHost is unavailableâ alerts, impacting monitoring accuracy and alerting quality.</p>
+</li>
+<li>
+<p>OneAgent versions earlier than <code>1.317</code> are incompatible with the reduced volume mount and read-only binary setup, as they can't read configuration files from writable locations used by the init container.</p>
+</li>
+</ul>
 <h2 id="removal-and-deprecation-notices">Removal and deprecation notices<a class="headerlink" href="#removal-and-deprecation-notices" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>The deprecated Dynatrace OneAgent Operator has been removed from the operatorhub.io catalog. Please use our <a href="/docs/ingest-from/setup-on-k8s/quickstart#deploy-dynatrace-operator" title="Deploy Dynatrace Operator on Kubernetes">Dynatrace Operator</a> instead.</p>
+<p>The deprecated Dynatrace OneAgent Operator has been removed from the <code>operatorhub.io</code> catalog. Use <a href="/docs/ingest-from/setup-on-k8s/quickstart#deploy-dynatrace-operator" title="Deploy Dynatrace Operator on Kubernetes">Dynatrace Operator</a> instead.</p>
 </li>
 <li>
 <p>The Helm repository located in <code>dynatrace/helm-charts</code> is deprecated and will stop receiving updates in a future release! If you are still using it,
@@ -1103,7 +1093,7 @@
 </code></pre></div>
 <ul>
 <li>
-<p>The following API versions of the DynaKube CustomResourceDefinition have been removed in Dynatrace Operator version v1.7:</p>
+<p>The following API versions of the DynaKube CustomResourceDefinition have been removed in Dynatrace Operator version 1.7.0:</p>
 </li>
 <li>
 <p><code>v1beta1</code></p>
@@ -1113,7 +1103,7 @@
 <p>The following API versions of the DynaKube CustomResourceDefinition are marked for deprecation and will be removed in the specified Dynatrace Operator versions:</p>
 </li>
 <li>
-<p><code>v1beta3</code> will be removed with Dynatrace Operator version 1.8</p>
+<p><code>v1beta3</code> will be removed with Dynatrace Operator version 1.8.0</p>
 </li>
 <li>
 <p>To prevent potential disruptions, we strongly advise keeping your DynaKube API version up to date. Once a version is deprecated and removed, updates may become significantly more complex and time-sensitive.</p>
@@ -1134,7 +1124,7 @@
 <p>CSI sidecar binaries, located in <code>/usr/local/bin/csi-node-driver-registrar</code> and <code>/usr/local/bin/livenessprobe</code>, are now deprecated and will be removed in a future version of Dynatrace Operator.</p>
 </li>
 <li>
-<p><a href="/docs/ingest-from/technology-support/support-model-and-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Support for OpenShift 4.10 and 4.11</a> ended in March 2025. As a result, Dynatrace Operator 1.7 will no longer support these versions.</p>
+<p><a href="/docs/ingest-from/technology-support/support-model-and-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Support for OpenShift 4.10 and 4.11</a> ended in March 2025. As a result, Dynatrace Operator 1.7 no longer supports these versions.</p>
 </li>
 <li>
 <p>The âMark for Terminationâ event is deprecated and will be removed in a future Operator version. This functionality is now redundant, as it has been superseded by host availability events on host shutdown and reboot introduced in OneAgent version 1.301.</p>

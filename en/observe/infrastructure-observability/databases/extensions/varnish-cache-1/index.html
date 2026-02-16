@@ -1,0 +1,2294 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/infrastructure-observability/databases/extensions/varnish-cache-1/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Varnish Cache extension - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#varnish-cache-extension" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Varnish Cache extension
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="varnish-cache-extension">Varnish Cache extension<a class="headerlink" href="#varnish-cache-extension" title="Permanent link">&para;</a></h1>
+<h1 id="varnish-cache-extension_1">Varnish Cache extension<a class="headerlink" href="#varnish-cache-extension_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Extension</li>
+<li>Updated on Dec 04, 2025</li>
+</ul>
+<p>Monitor Varnish Cache performance to optimize content delivery and reduce response times.</p>
+<h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p>Monitor the statistics of Varnish Cache instances.</p>
+<h3 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Monitor the health and state of Varnish cache instances.</li>
+<li>Detect and alert on anomalous behavior.</li>
+<li>Understand the load and operational performance of the cache.</li>
+</ul>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OneAgent must be installed on the host with the Varnish Cache instance to be monitored.</li>
+<li><code>varnishstat</code> binary must be present on the host.</li>
+<li>OneAgent user must be able to execute the binary on the host.</li>
+<li>Before running the <code>sudo varnishstat</code> command, make sure <code>dtuser</code> has sudo permissions and is set up for passwordless access in the <code>sudoers</code> file.</li>
+</ul>
+<h3 id="compatibility-information">Compatibility information<a class="headerlink" href="#compatibility-information" title="Permanent link">&para;</a></h3>
+<p>Varnish version 6.2.1+.</p>
+<h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Out-of-the-box metrics</li>
+</ul>
+<p>Varnish Cache system performance metrics (CPU, memory, and more) are available with no additional configuration when using OneAgent on a server running Dynatrace OneAgent.</p>
+<p>You also get details about network traffic, TCP requests, and connectivity, along with quality metrics such as retransmissions, round-trip time, and throughput.</p>
+<ul>
+<li>
+<p>Advanced Varnish Cache server metrics such as</p>
+</li>
+<li>
+<p>Cache performance</p>
+</li>
+<li>Backend metrics</li>
+<li>Client metrics</li>
+<li>Thread metrics are <strong>not</strong> available out of the box in Dynatrace.</li>
+</ul>
+<p>This extension collects the above advanced Varnish Cache server metrics by executing the <code>varnishstat</code> command and then sending the resulting output back to Dynatrace.</p>
+<h3 id="licensing-and-cost">Licensing and cost<a class="headerlink" href="#licensing-and-cost" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DPS:</li>
+</ul>
+<p><code>((20 * #_of_backends) + (7 * #_of_malloc_stevedores) + (7 * #_of_umem_stevedores) + (10 * #_of_file_stevedores) + 198)</code></p>
+<ul>
+<li>DDUs:</li>
+</ul>
+<p><code>((20 * #_of_backends) + (7 * #_of_malloc_stevedores) + (7 * #_of_umem_stevedores) + (10 * #_of_file_stevedores) + 198) * 0.001</code></p>
+<h2 id="feature-sets">Feature sets<a class="headerlink" href="#feature-sets" title="Permanent link">&para;</a></h2>
+<p>When activating your extension using <a href="#monitoring-configuration">monitoring configuration</a>, you can limit monitoring to one of the feature sets. To work properly, the extension has to collect at least one metric after the activation.</p>
+<p>In highly segmented networks, feature sets can reflect the segments of your environment. Then, when you create a monitoring configuration, you can select a feature set and a corresponding ActiveGate group that can connect to this particular segment.</p>
+<p>All metrics that aren't categorized into any feature set are considered to be the default and are always reported.</p>
+<p>A metric inherits the feature set of a subgroup, which in turn inherits the feature set of a group. Also, the feature set defined on the metric level overrides the feature set defined on the subgroup level, which in turn overrides the feature set defined on the group level.</p>
+<p>main</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stat summ operations</td>
+<td>varnish.cache.main.summs.count</td>
+<td>Number of times per-thread statistics were summed into the global counters.</td>
+</tr>
+<tr>
+<td>Child process uptime</td>
+<td>varnish.cache.main.uptime.count</td>
+<td>How long the child process has been running.</td>
+</tr>
+<tr>
+<td>Sessions accepted</td>
+<td>varnish.cache.main.sess_conn.count</td>
+<td>Count of sessions successfully accepted</td>
+</tr>
+<tr>
+<td>Session accept failures</td>
+<td>varnish.cache.main.sess_fail.count</td>
+<td>Count of failures to accept TCP connection. This counter is the sum of the sess_fail_* counters, which give more detailed information.</td>
+</tr>
+<tr>
+<td>Session accept failures: connection aborted</td>
+<td>varnish.cache.main.sess_fail_econnaborted.count</td>
+<td>Detailed reason for sess_fail: Connection aborted by the client, usually harmless.</td>
+</tr>
+<tr>
+<td>Session accept failures: interrupted system call</td>
+<td>varnish.cache.main.sess_fail_eintr.count</td>
+<td>Detailed reason for sess_fail: The accept() call was interrupted, usually harmless</td>
+</tr>
+<tr>
+<td>Session accept failures: too many open files</td>
+<td>varnish.cache.main.sess_fail_emfile.count</td>
+<td>Detailed reason for sess_fail: No file descriptor was available. Consider raising RLIMIT_NOFILE (see ulimit -n).</td>
+</tr>
+<tr>
+<td>Session accept failures: bad file descriptor</td>
+<td>varnish.cache.main.sess_fail_ebadf.count</td>
+<td>Detailed reason for sess_fail: The listen socket file descriptor was invalid. Should never happen.</td>
+</tr>
+<tr>
+<td>Session accept failures: not enough memory</td>
+<td>varnish.cache.main.sess_fail_enomem.count</td>
+<td>Detailed reason for sess_fail: Most likely insufficient socket buffer memory. Should never happen</td>
+</tr>
+<tr>
+<td>Session accept failures: other</td>
+<td>varnish.cache.main.sess_fail_other.count</td>
+<td>Detailed reason for sess_fail: neither of the above, see SessError log (varnishlog -g raw -i SessError).</td>
+</tr>
+<tr>
+<td>Client requests received, subject to 400 errors</td>
+<td>varnish.cache.main.client_req_400.count</td>
+<td>400 means we couldn't make sense of the request, it was malformed in some drastic way.</td>
+</tr>
+<tr>
+<td>Client requests received, subject to 417 errors</td>
+<td>varnish.cache.main.client_req_417.count</td>
+<td>417 means that something went wrong with an Expect: header.</td>
+</tr>
+<tr>
+<td>Good client requests received</td>
+<td>varnish.cache.main.client_req.count</td>
+<td>The count of parseable client requests seen.</td>
+</tr>
+<tr>
+<td>ESI subrequests</td>
+<td>varnish.cache.main.esi_req.count</td>
+<td>Number of ESI subrequests made.</td>
+</tr>
+<tr>
+<td>Cache hits</td>
+<td>varnish.cache.main.cache_hit.count</td>
+<td>Count of cache hits. A cache hit indicates that an object has been delivered to a client without fetching it from a backend server.</td>
+</tr>
+<tr>
+<td>Cache grace hits</td>
+<td>varnish.cache.main.cache_hit_grace.count</td>
+<td>Count of cache hits with grace. A cache hit with grace is a cache hit where the object is expired. Note that such hits are also included in the cache_hit counter.</td>
+</tr>
+<tr>
+<td>Cache hits for pass.</td>
+<td>varnish.cache.main.cache_hitpass.count</td>
+<td>Count of hits for pass. A cache hit for pass indicates that Varnish is going to pass the request to the backend and this decision has been cached in it self. This counts how many times the cached decision is being used.</td>
+</tr>
+<tr>
+<td>Cache hits for miss.</td>
+<td>varnish.cache.main.cache_hitmiss.count</td>
+<td>Count of hits for miss. A cache hit for miss indicates that Varnish is going to proceed as for a cache miss without request coalescing, and this decision has been cached. This counts how many times the cached decision is being used.</td>
+</tr>
+<tr>
+<td>Cache misses</td>
+<td>varnish.cache.main.cache_miss.count</td>
+<td>Count of misses. A cache miss indicates the object was fetched from the backend before delivering it to the client.</td>
+</tr>
+<tr>
+<td>Uncacheable backend responses</td>
+<td>varnish.cache.main.beresp_uncacheable.count</td>
+<td>Count of backend responses considered uncacheable.</td>
+</tr>
+<tr>
+<td>Shortlived objects</td>
+<td>varnish.cache.main.beresp_shortlived.count</td>
+<td>Count of objects created with ttl+grace+keep shorter than the 'shortlived' runtime parameter.</td>
+</tr>
+<tr>
+<td>Backend conn. success</td>
+<td>varnish.cache.main.backend_conn.count</td>
+<td>How many backend connections have successfully been established.</td>
+</tr>
+<tr>
+<td>Backend conn. not attempted</td>
+<td>varnish.cache.main.backend_unhealthy.count</td>
+<td>Backend conn. not attempted</td>
+</tr>
+<tr>
+<td>Backend conn. too many</td>
+<td>varnish.cache.main.backend_busy.count</td>
+<td>Backend conn. too many</td>
+</tr>
+<tr>
+<td>Backend conn. failures</td>
+<td>varnish.cache.main.backend_fail.count</td>
+<td>Backend conn. failures</td>
+</tr>
+<tr>
+<td>Backend conn. reuses</td>
+<td>varnish.cache.main.backend_reuse.count</td>
+<td>Count of backend connection reuses. This counter is increased whenever we reuse a recycled connection.</td>
+</tr>
+<tr>
+<td>Backend conn. recycles</td>
+<td>varnish.cache.main.backend_recycle.count</td>
+<td>Count of backend connection recycles. This counter is increased whenever we have a keep-alive connection that is put back into the pool of connections. It has not yet been used, but it might be, unless the backend closes it.</td>
+</tr>
+<tr>
+<td>Backend conn. retry</td>
+<td>varnish.cache.main.backend_retry.count</td>
+<td>Backend conn. retry</td>
+</tr>
+<tr>
+<td>Fetch no body (HEAD)</td>
+<td>varnish.cache.main.fetch_head.count</td>
+<td>beresp with no body because the request is HEAD.</td>
+</tr>
+<tr>
+<td>Fetch with Length</td>
+<td>varnish.cache.main.fetch_length.count</td>
+<td>beresp.body with Content-Length.</td>
+</tr>
+<tr>
+<td>Fetch chunked</td>
+<td>varnish.cache.main.fetch_chunked.count</td>
+<td>beresp.body with Chunked.</td>
+</tr>
+<tr>
+<td>Fetch EOF</td>
+<td>varnish.cache.main.fetch_eof.count</td>
+<td>beresp.body with EOF.</td>
+</tr>
+<tr>
+<td>Fetch bad T-E</td>
+<td>varnish.cache.main.fetch_bad.count</td>
+<td>beresp.body length/fetch could not be determined.</td>
+</tr>
+<tr>
+<td>Fetch no body</td>
+<td>varnish.cache.main.fetch_none.count</td>
+<td>beresp.body empty</td>
+</tr>
+<tr>
+<td>Fetch no body (1xx)</td>
+<td>varnish.cache.main.fetch_1xx.count</td>
+<td>beresp with no body because of 1XX response.</td>
+</tr>
+<tr>
+<td>Fetch no body (204)</td>
+<td>varnish.cache.main.fetch_204.count</td>
+<td>beresp with no body because of 204 response.</td>
+</tr>
+<tr>
+<td>Fetch no body (304)</td>
+<td>varnish.cache.main.fetch_304.count</td>
+<td>beresp with no body because of 304 response.</td>
+</tr>
+<tr>
+<td>Fetch failed (all causes)</td>
+<td>varnish.cache.main.fetch_failed.count</td>
+<td>beresp fetch failed.</td>
+</tr>
+<tr>
+<td>Background fetch failed (no thread)</td>
+<td>varnish.cache.main.bgfetch_no_thread.count</td>
+<td>A bgfetch triggered by a grace hit failed, no thread available.</td>
+</tr>
+<tr>
+<td>Number of thread pools</td>
+<td>varnish.cache.main.pools</td>
+<td>Number of thread pools. See also parameter thread_pools. NB: Presently pools cannot be removed once created.</td>
+</tr>
+<tr>
+<td>Total number of threads</td>
+<td>varnish.cache.main.threads</td>
+<td>Number of threads in all pools. See also parameters thread_pools, thread_pool_min and thread_pool_max.</td>
+</tr>
+<tr>
+<td>Threads hit max</td>
+<td>varnish.cache.main.threads_limited.count</td>
+<td>Number of times more threads were needed, but limit was reached in a thread pool. See also parameter thread_pool_max.</td>
+</tr>
+<tr>
+<td>Threads created</td>
+<td>varnish.cache.main.threads_created.count</td>
+<td>Total number of threads created in all pools.</td>
+</tr>
+<tr>
+<td>Threads destroyed</td>
+<td>varnish.cache.main.threads_destroyed.count</td>
+<td>Total number of threads destroyed in all pools.</td>
+</tr>
+<tr>
+<td>Thread creation failed</td>
+<td>varnish.cache.main.threads_failed.count</td>
+<td>Number of times creating a thread failed. See VSL::Debug for diagnostics. See also parameter thread_fail_delay.</td>
+</tr>
+<tr>
+<td>Length of session queue</td>
+<td>varnish.cache.main.thread_queue_len</td>
+<td>Length of session queue waiting for threads. NB: Only updates once per second. See also parameter thread_queue_limit.</td>
+</tr>
+<tr>
+<td>Number of requests sent to sleep on busy objhdr</td>
+<td>varnish.cache.main.busy_sleep.count</td>
+<td>Number of requests sent to sleep without a worker thread because they found a busy object.</td>
+</tr>
+<tr>
+<td>Number of requests woken after sleep on busy objhdr</td>
+<td>varnish.cache.main.busy_wakeup.count</td>
+<td>Number of requests taken off the busy object sleep list and rescheduled.</td>
+</tr>
+<tr>
+<td>Number of requests killed after sleep on busy objhdr</td>
+<td>varnish.cache.main.busy_killed.count</td>
+<td>Number of requests killed from the busy object sleep list due to lack of resources.</td>
+</tr>
+<tr>
+<td>Sessions queued for thread</td>
+<td>varnish.cache.main.sess_queued.count</td>
+<td>Number of times session was queued waiting for a thread. See also parameter thread_queue_limit.</td>
+</tr>
+<tr>
+<td>Sessions dropped for thread</td>
+<td>varnish.cache.main.sess_dropped.count</td>
+<td>Number of times an HTTP/1 session was dropped because the queue was too long already. See also parameter thread_queue_limit.</td>
+</tr>
+<tr>
+<td>Requests dropped</td>
+<td>varnish.cache.main.req_dropped.count</td>
+<td>Number of times an HTTP/2 stream was refused because the queue was too long already. See also parameter thread_queue_limit.</td>
+</tr>
+<tr>
+<td>object structs made</td>
+<td>varnish.cache.main.n_object</td>
+<td>Approximate number of HTTP objects (headers + body, if present) in the cache.</td>
+</tr>
+<tr>
+<td>unresurrected objects</td>
+<td>varnish.cache.main.n_vampireobject</td>
+<td>Number of unresurrected objects</td>
+</tr>
+<tr>
+<td>objectcore structs made</td>
+<td>varnish.cache.main.n_objectcore</td>
+<td>Approximate number of object metadata elements in the cache. Each object needs an objectcore, extra objectcores are for hit-for-miss, hit-for-pass and busy objects.</td>
+</tr>
+<tr>
+<td>objecthead structs made</td>
+<td>varnish.cache.main.n_objecthead</td>
+<td>Approximate number of different hash entries in the cache.</td>
+</tr>
+<tr>
+<td>Number of backends</td>
+<td>varnish.cache.main.n_backend</td>
+<td>Number of backends known to us.</td>
+</tr>
+<tr>
+<td>Number of expired objects</td>
+<td>varnish.cache.main.n_expired.count</td>
+<td>Number of objects that expired from cache because of old age.</td>
+</tr>
+<tr>
+<td>Number of LRU nuked objects</td>
+<td>varnish.cache.main.n_lru_nuked.count</td>
+<td>How many objects have been forcefully evicted from storage to make room for a new object.</td>
+</tr>
+<tr>
+<td>Number of LRU moved objects</td>
+<td>varnish.cache.main.n_lru_moved.count</td>
+<td>Number of move operations done on the LRU list.</td>
+</tr>
+<tr>
+<td>Reached nuke_limit</td>
+<td>varnish.cache.main.n_lru_limited.count</td>
+<td>Number of times more storage space were needed, but limit was reached in a nuke_limit. See also parameter nuke_limit.</td>
+</tr>
+<tr>
+<td>HTTP header overflows</td>
+<td>varnish.cache.main.losthdr.count</td>
+<td>HTTP header overflows</td>
+</tr>
+<tr>
+<td>Total sessions seen</td>
+<td>varnish.cache.main.s_sess.count</td>
+<td>Total sessions seen</td>
+</tr>
+<tr>
+<td>Number of ongoing pipe sessions</td>
+<td>varnish.cache.main.n_pipe</td>
+<td>Number of ongoing pipe sessions</td>
+</tr>
+<tr>
+<td>Pipes hit pipe_sess_max</td>
+<td>varnish.cache.main.pipe_limited.count</td>
+<td>Number of times more pipes were needed, but the limit was reached. See also parameter pipe_sess_max.</td>
+</tr>
+<tr>
+<td>Total pipe sessions seen</td>
+<td>varnish.cache.main.s_pipe.count</td>
+<td>Total pipe sessions seen</td>
+</tr>
+<tr>
+<td>Total pass-ed requests seen</td>
+<td>varnish.cache.main.s_pass.count</td>
+<td>Total pass-ed requests seen</td>
+</tr>
+<tr>
+<td>Total backend fetches initiated</td>
+<td>varnish.cache.main.s_fetch.count</td>
+<td>Total backend fetches initiated, including background fetches.</td>
+</tr>
+<tr>
+<td>Total backend background fetches initiated</td>
+<td>varnish.cache.main.s_bgfetch.count</td>
+<td>Total backend background fetches initiated</td>
+</tr>
+<tr>
+<td>Total synthetic responses made</td>
+<td>varnish.cache.main.s_synth.count</td>
+<td>Total synthetic responses made</td>
+</tr>
+<tr>
+<td>Request header bytes</td>
+<td>varnish.cache.main.s_req_hdrbytes.count</td>
+<td>Total request header bytes received</td>
+</tr>
+<tr>
+<td>Request body bytes</td>
+<td>varnish.cache.main.s_req_bodybytes.count</td>
+<td>Total request body bytes received</td>
+</tr>
+<tr>
+<td>Response header bytes</td>
+<td>varnish.cache.main.s_resp_hdrbytes.count</td>
+<td>Total response header bytes transmitted</td>
+</tr>
+<tr>
+<td>Response body bytes</td>
+<td>varnish.cache.main.s_resp_bodybytes.count</td>
+<td>Total response body bytes transmitted</td>
+</tr>
+<tr>
+<td>Pipe request header bytes</td>
+<td>varnish.cache.main.s_pipe_hdrbytes.count</td>
+<td>Total request bytes received for piped sessions</td>
+</tr>
+<tr>
+<td>Piped bytes from client</td>
+<td>varnish.cache.main.s_pipe_in.count</td>
+<td>Total number of bytes forwarded from clients in pipe sessions</td>
+</tr>
+<tr>
+<td>Piped bytes to client</td>
+<td>varnish.cache.main.s_pipe_out.count</td>
+<td>Total number of bytes forwarded to clients in pipe sessions</td>
+</tr>
+<tr>
+<td>Session Closed</td>
+<td>varnish.cache.main.sess_closed.count</td>
+<td>Session Closed</td>
+</tr>
+<tr>
+<td>Session Closed with error</td>
+<td>varnish.cache.main.sess_closed_err.count</td>
+<td>Total number of sessions closed with errors. See sc_* diag counters for detailed breakdown</td>
+</tr>
+<tr>
+<td>Session Read Ahead</td>
+<td>varnish.cache.main.sess_readahead.count</td>
+<td>Session Read Ahead</td>
+</tr>
+<tr>
+<td>Session herd</td>
+<td>varnish.cache.main.sess_herd.count</td>
+<td>Number of times the timeout_linger triggered</td>
+</tr>
+<tr>
+<td>Session OK REM_CLOSE</td>
+<td>varnish.cache.main.sc_rem_close.count</td>
+<td>Number of session closes with REM_CLOSE (Client Closed)</td>
+</tr>
+<tr>
+<td>Session OK REQ_CLOSE</td>
+<td>varnish.cache.main.sc_req_close.count</td>
+<td>Number of session closes with REQ_CLOSE (Client requested close)</td>
+</tr>
+<tr>
+<td>Session Err REQ_HTTP10</td>
+<td>varnish.cache.main.sc_req_http10.count</td>
+<td>Number of session closes with Error REQ_HTTP10 (Proto &lt; HTTP/1.1)</td>
+</tr>
+<tr>
+<td>Session Err RX_BAD</td>
+<td>varnish.cache.main.sc_rx_bad.count</td>
+<td>Number of session closes with Error RX_BAD (Received bad req/resp)</td>
+</tr>
+<tr>
+<td>Session Err RX_BODY</td>
+<td>varnish.cache.main.sc_rx_body.count</td>
+<td>Number of session closes with Error RX_BODY (Failure receiving req.body)</td>
+</tr>
+<tr>
+<td>Session Err RX_JUNK</td>
+<td>varnish.cache.main.sc_rx_junk.count</td>
+<td>Number of session closes with Error RX_JUNK (Received junk data)</td>
+</tr>
+<tr>
+<td>Session Err RX_OVERFLOW</td>
+<td>varnish.cache.main.sc_rx_overflow.count</td>
+<td>Number of session closes with Error RX_OVERFLOW (Received buffer overflow)</td>
+</tr>
+<tr>
+<td>Session Err RX_TIMEOUT</td>
+<td>varnish.cache.main.sc_rx_timeout.count</td>
+<td>Number of session closes with Error RX_TIMEOUT (Receive timeout)</td>
+</tr>
+<tr>
+<td>Session Err RX_CLOSE_IDLE</td>
+<td>varnish.cache.main.sc_rx_close_idle.count</td>
+<td>Number of session closes with Error RX_CLOSE_IDLE: timeout_idle has been exceeded while waiting for a client request.</td>
+</tr>
+<tr>
+<td>Session OK TX_PIPE</td>
+<td>varnish.cache.main.sc_tx_pipe.count</td>
+<td>Number of session closes with TX_PIPE (Piped transaction)</td>
+</tr>
+<tr>
+<td>Session Err TX_ERROR</td>
+<td>varnish.cache.main.sc_tx_error.count</td>
+<td>Number of session closes with Error TX_ERROR (Error transaction)</td>
+</tr>
+<tr>
+<td>Session OK TX_EOF</td>
+<td>varnish.cache.main.sc_tx_eof.count</td>
+<td>Number of session closes with TX_EOF (EOF transmission)</td>
+</tr>
+<tr>
+<td>Session OK RESP_CLOSE</td>
+<td>varnish.cache.main.sc_resp_close.count</td>
+<td>Number of session closes with RESP_CLOSE (Backend/VCL requested close)</td>
+</tr>
+<tr>
+<td>Session Err OVERLOAD</td>
+<td>varnish.cache.main.sc_overload.count</td>
+<td>Number of session closes with Error OVERLOAD (Out of some resource)</td>
+</tr>
+<tr>
+<td>Session Err PIPE_OVERFLOW</td>
+<td>varnish.cache.main.sc_pipe_overflow.count</td>
+<td>Number of session closes with Error PIPE_OVERFLOW (Session pipe overflow)</td>
+</tr>
+<tr>
+<td>Session Err RANGE_SHORT</td>
+<td>varnish.cache.main.sc_range_short.count</td>
+<td>Number of session closes with Error RANGE_SHORT (Insufficient data for range)</td>
+</tr>
+<tr>
+<td>Session Err REQ_HTTP20</td>
+<td>varnish.cache.main.sc_req_http20.count</td>
+<td>Number of session closes with Error REQ_HTTP20 (HTTP2 not accepted)</td>
+</tr>
+<tr>
+<td>Session Err VCL_FAILURE</td>
+<td>varnish.cache.main.sc_vcl_failure.count</td>
+<td>Number of session closes with Error VCL_FAILURE (VCL failure)</td>
+</tr>
+<tr>
+<td>Delivery failed due to insufficient workspace.</td>
+<td>varnish.cache.main.client_resp_500.count</td>
+<td>Number of times we failed a response due to running out of workspace memory during delivery.</td>
+</tr>
+<tr>
+<td>workspace_backend overflows</td>
+<td>varnish.cache.main.ws_backend_overflow.count</td>
+<td>Number of times we ran out of space in workspace_backend.</td>
+</tr>
+<tr>
+<td>workspace_client overflows</td>
+<td>varnish.cache.main.ws_client_overflow.count</td>
+<td>Number of times we ran out of space in workspace_client.</td>
+</tr>
+<tr>
+<td>workspace_thread overflows</td>
+<td>varnish.cache.main.ws_thread_overflow.count</td>
+<td>Number of times we ran out of space in workspace_thread.</td>
+</tr>
+<tr>
+<td>workspace_session overflows</td>
+<td>varnish.cache.main.ws_session_overflow.count</td>
+<td>Number of times we ran out of space in workspace_session.</td>
+</tr>
+<tr>
+<td>SHM records</td>
+<td>varnish.cache.main.shm_records.count</td>
+<td>Number of log records written to the shared memory log.</td>
+</tr>
+<tr>
+<td>SHM writes</td>
+<td>varnish.cache.main.shm_writes.count</td>
+<td>Number of individual writes to the shared memory log. A single write may batch multiple records for bufferred tasks.</td>
+</tr>
+<tr>
+<td>SHM flushes due to overflow</td>
+<td>varnish.cache.main.shm_flushes.count</td>
+<td>Number of writes performed before the end of a bufferred task because adding a record to a batch would exceed vsl_buffer.</td>
+</tr>
+<tr>
+<td>SHM lock contention</td>
+<td>varnish.cache.main.shm_cont.count</td>
+<td>Number of times a write had to wait for the lock.</td>
+</tr>
+<tr>
+<td>SHM cycles through VSL space</td>
+<td>varnish.cache.main.shm_cycles.count</td>
+<td>Number of times a write of log records would reach past the end of the shared memory log, cycling back to the beginning.</td>
+</tr>
+<tr>
+<td>SHM bytes</td>
+<td>varnish.cache.main.shm_bytes.count</td>
+<td>Number of bytes written to the shared memory log.</td>
+</tr>
+<tr>
+<td>Backend requests made</td>
+<td>varnish.cache.main.backend_req.count</td>
+<td>Backend requests made</td>
+</tr>
+<tr>
+<td>Number of loaded VCLs in total</td>
+<td>varnish.cache.main.n_vcl</td>
+<td>Number of loaded VCLs in total</td>
+</tr>
+<tr>
+<td>Number of VCLs available</td>
+<td>varnish.cache.main.n_vcl_avail</td>
+<td>Number of VCLs available</td>
+</tr>
+<tr>
+<td>Number of discarded VCLs</td>
+<td>varnish.cache.main.n_vcl_discard</td>
+<td>Number of discarded VCLs</td>
+</tr>
+<tr>
+<td>VCL failures</td>
+<td>varnish.cache.main.vcl_fail.count</td>
+<td>Count of failures which prevented VCL from completing.</td>
+</tr>
+<tr>
+<td>Count of bans</td>
+<td>varnish.cache.main.bans</td>
+<td>Number of all bans in system, including bans superseded by newer bans and bans already checked by the ban-lurker.</td>
+</tr>
+<tr>
+<td>Number of bans marked 'completed'</td>
+<td>varnish.cache.main.bans_completed</td>
+<td>Number of bans which are no longer active, either because they got checked by the ban-lurker or superseded by newer identical bans.</td>
+</tr>
+<tr>
+<td>Number of bans using obj.*</td>
+<td>varnish.cache.main.bans_obj</td>
+<td>Number of bans which use obj.* variables. These bans can possibly be washed by the ban-lurker.</td>
+</tr>
+<tr>
+<td>Number of bans using req.*</td>
+<td>varnish.cache.main.bans_req</td>
+<td>Number of bans which use req.* variables. These bans can not be washed by the ban-lurker.</td>
+</tr>
+<tr>
+<td>Bans added</td>
+<td>varnish.cache.main.bans_added.count</td>
+<td>Counter of bans added to ban list.</td>
+</tr>
+<tr>
+<td>Bans deleted</td>
+<td>varnish.cache.main.bans_deleted.count</td>
+<td>Counter of bans deleted from ban list.</td>
+</tr>
+<tr>
+<td>Bans tested against objects (lookup)</td>
+<td>varnish.cache.main.bans_tested.count</td>
+<td>Count of how many bans and objects have been tested against each other during hash lookup.</td>
+</tr>
+<tr>
+<td>Objects killed by bans (lookup)</td>
+<td>varnish.cache.main.bans_obj_killed.count</td>
+<td>Number of objects killed by bans during object lookup.</td>
+</tr>
+<tr>
+<td>Bans tested against objects (lurker)</td>
+<td>varnish.cache.main.bans_lurker_tested.count</td>
+<td>Count of how many bans and objects have been tested against each other by the ban-lurker.</td>
+</tr>
+<tr>
+<td>Ban tests tested against objects (lookup)</td>
+<td>varnish.cache.main.bans_tests_tested.count</td>
+<td>Count of how many tests and objects have been tested against each other during lookup. 'ban req.url == foo &amp;&amp; req.http.host == bar' counts as one in 'bans_tested' and as two in 'bans_tests_tested'</td>
+</tr>
+<tr>
+<td>Ban tests tested against objects (lurker)</td>
+<td>varnish.cache.main.bans_lurker_tests_tested.count</td>
+<td>Count of how many tests and objects have been tested against each other by the ban-lurker. 'ban req.url == foo &amp;&amp; req.http.host == bar' counts as one in 'bans_tested' and as two in 'bans_tests_tested'</td>
+</tr>
+<tr>
+<td>Objects killed by bans (lurker)</td>
+<td>varnish.cache.main.bans_lurker_obj_killed.count</td>
+<td>Number of objects killed by the ban-lurker.</td>
+</tr>
+<tr>
+<td>Objects killed by bans for cutoff (lurker)</td>
+<td>varnish.cache.main.bans_lurker_obj_killed_cutoff.count</td>
+<td>Number of objects killed by the ban-lurker to keep the number of bans below ban_cutoff.</td>
+</tr>
+<tr>
+<td>Bans superseded by other bans</td>
+<td>varnish.cache.main.bans_dups.count</td>
+<td>Count of bans replaced by later identical bans.</td>
+</tr>
+<tr>
+<td>Lurker gave way for lookup</td>
+<td>varnish.cache.main.bans_lurker_contention.count</td>
+<td>Number of times the ban-lurker had to wait for lookups.</td>
+</tr>
+<tr>
+<td>Bytes used by the persisted ban lists</td>
+<td>varnish.cache.main.bans_persisted_bytes</td>
+<td>Number of bytes used by the persisted ban lists.</td>
+</tr>
+<tr>
+<td>Extra bytes in persisted ban lists due to fragmentation</td>
+<td>varnish.cache.main.bans_persisted_fragmentation</td>
+<td>Number of extra bytes accumulated through dropped and completed bans in the persistent ban lists.</td>
+</tr>
+<tr>
+<td>Number of purge operations executed</td>
+<td>varnish.cache.main.n_purges.count</td>
+<td>Number of purge operations executed</td>
+</tr>
+<tr>
+<td>Number of purged objects</td>
+<td>varnish.cache.main.n_obj_purged.count</td>
+<td>Number of purged objects</td>
+</tr>
+<tr>
+<td>Number of objects mailed to expiry thread</td>
+<td>varnish.cache.main.exp_mailed.count</td>
+<td>Number of objects mailed to expiry thread for handling.</td>
+</tr>
+<tr>
+<td>Number of objects received by expiry thread</td>
+<td>varnish.cache.main.exp_received.count</td>
+<td>Number of objects received by expiry thread for handling.</td>
+</tr>
+<tr>
+<td>HCB Lookups without lock</td>
+<td>varnish.cache.main.hcb_nolock.count</td>
+<td>HCB Lookups without lock</td>
+</tr>
+<tr>
+<td>HCB Lookups with lock</td>
+<td>varnish.cache.main.hcb_lock.count</td>
+<td>HCB Lookups with lock</td>
+</tr>
+<tr>
+<td>HCB Inserts</td>
+<td>varnish.cache.main.hcb_insert.count</td>
+<td>HCB Inserts</td>
+</tr>
+<tr>
+<td>ESI parse errors (unlock)</td>
+<td>varnish.cache.main.esi_errors.count</td>
+<td>ESI parse errors (unlock)</td>
+</tr>
+<tr>
+<td>ESI parse warnings (unlock)</td>
+<td>varnish.cache.main.esi_warnings.count</td>
+<td>ESI parse warnings (unlock)</td>
+</tr>
+<tr>
+<td>Loaded VMODs</td>
+<td>varnish.cache.main.vmods</td>
+<td>Loaded VMODs</td>
+</tr>
+<tr>
+<td>Gzip operations</td>
+<td>varnish.cache.main.n_gzip.count</td>
+<td>Gzip operations</td>
+</tr>
+<tr>
+<td>Gunzip operations</td>
+<td>varnish.cache.main.n_gunzip.count</td>
+<td>Gunzip operations</td>
+</tr>
+<tr>
+<td>Test gunzip operations</td>
+<td>varnish.cache.main.n_test_gunzip.count</td>
+<td>Those operations occur when Varnish receives a compressed object from a backend. They are done to verify the gzip stream while it's inserted in storage.</td>
+</tr>
+<tr>
+<td>Premature iovec flushes</td>
+<td>varnish.cache.main.http1_iovs_flush.count</td>
+<td>Number of additional writes performed on HTTP1 connections because the number of IO vectors was too small to submit all possible IO in one go. This number is configured through the http1_iovs parameter for client connections and implicitly defined by the amount of free workspace for backend connections.</td>
+</tr>
+</tbody>
+</table>
+<p>mempool</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In use</td>
+<td>varnish.cache.mempool.live</td>
+<td>In use</td>
+</tr>
+<tr>
+<td>In Pool</td>
+<td>varnish.cache.mempool.pool</td>
+<td>In Pool</td>
+</tr>
+<tr>
+<td>Size requested</td>
+<td>varnish.cache.mempool.sz_wanted</td>
+<td>Size requested</td>
+</tr>
+<tr>
+<td>Size allocated</td>
+<td>varnish.cache.mempool.sz_actual</td>
+<td>Size allocated</td>
+</tr>
+<tr>
+<td>Allocations</td>
+<td>varnish.cache.mempool.allocs.count</td>
+<td>Allocations</td>
+</tr>
+<tr>
+<td>Frees</td>
+<td>varnish.cache.mempool.frees.count</td>
+<td>Frees</td>
+</tr>
+<tr>
+<td>Recycled from pool</td>
+<td>varnish.cache.mempool.recycle.count</td>
+<td>Recycled from pool</td>
+</tr>
+<tr>
+<td>Timed out from pool</td>
+<td>varnish.cache.mempool.timeout.count</td>
+<td>Timed out from pool</td>
+</tr>
+<tr>
+<td>Too small to recycle</td>
+<td>varnish.cache.mempool.toosmall.count</td>
+<td>Too small to recycle</td>
+</tr>
+<tr>
+<td>Too many for pool</td>
+<td>varnish.cache.mempool.surplus.count</td>
+<td>Too many for pool</td>
+</tr>
+<tr>
+<td>Pool ran dry</td>
+<td>varnish.cache.mempool.randry.count</td>
+<td>Pool ran dry</td>
+</tr>
+</tbody>
+</table>
+<p>lck</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Created locks</td>
+<td>varnish.cache.lck.creat.count</td>
+<td>Created locks</td>
+</tr>
+<tr>
+<td>Destroyed locks</td>
+<td>varnish.cache.lck.destroy.count</td>
+<td>Destroyed locks</td>
+</tr>
+<tr>
+<td>Lock Operations</td>
+<td>varnish.cache.lck.locks.count</td>
+<td>Lock Operations</td>
+</tr>
+<tr>
+<td>Contended lock operations</td>
+<td>varnish.cache.lck.dbg_busy.count</td>
+<td>If the lck debug bit is set: Lock operations which returned EBUSY on the first locking attempt. If the lck debug bit is unset, this counter will never be incremented even if lock operations are contended.</td>
+</tr>
+<tr>
+<td>Contended trylock operations</td>
+<td>varnish.cache.lck.dbg_try_fail.count</td>
+<td>If the lck debug bit is set: Trylock operations which returned EBUSY. If the lck debug bit is unset, this counter will never be incremented even if lock operations are contended.</td>
+</tr>
+</tbody>
+</table>
+<p>vbe</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Happy health probes</td>
+<td>varnish.cache.vbe.happy</td>
+<td>Represents the last probe results as a bitmap. Happy probes are bits set to 1, and the unhappy ones are set to 0. The highest bits represent the oldest probes.</td>
+</tr>
+<tr>
+<td>Request header bytes</td>
+<td>varnish.cache.vbe.bereq_hdrbytes.count</td>
+<td>Total backend request header bytes sent</td>
+</tr>
+<tr>
+<td>Request body bytes</td>
+<td>varnish.cache.vbe.bereq_bodybytes.count</td>
+<td>Total backend request body bytes sent</td>
+</tr>
+<tr>
+<td>Response header bytes</td>
+<td>varnish.cache.vbe.beresp_hdrbytes.count</td>
+<td>Total backend response header bytes received</td>
+</tr>
+<tr>
+<td>Response body bytes</td>
+<td>varnish.cache.vbe.beresp_bodybytes.count</td>
+<td>Total backend response body bytes received</td>
+</tr>
+<tr>
+<td>Pipe request header bytes</td>
+<td>varnish.cache.vbe.pipe_hdrbytes.count</td>
+<td>Total request bytes sent for piped sessions</td>
+</tr>
+<tr>
+<td>Piped bytes to backend</td>
+<td>varnish.cache.vbe.pipe_out.count</td>
+<td>Total number of bytes forwarded to backend in pipe sessions</td>
+</tr>
+<tr>
+<td>Piped bytes from backend</td>
+<td>varnish.cache.vbe.pipe_in.count</td>
+<td>Total number of bytes forwarded from backend in pipe sessions</td>
+</tr>
+<tr>
+<td>Concurrent connections used</td>
+<td>varnish.cache.vbe.conn</td>
+<td>The number of currently used connections to the backend. This number is always less or equal to the number of connections to the backend (as, for example shown as ESTABLISHED for TCP connections in netstat) due to connection pooling.</td>
+</tr>
+<tr>
+<td>Backend requests sent</td>
+<td>varnish.cache.vbe.req.count</td>
+<td>Backend requests sent</td>
+</tr>
+<tr>
+<td>Fetches not attempted due to backend being unhealthy</td>
+<td>varnish.cache.vbe.unhealthy.count</td>
+<td>Fetches not attempted due to backend being unhealthy</td>
+</tr>
+<tr>
+<td>Fetches not attempted due to backend being busy</td>
+<td>varnish.cache.vbe.busy.count</td>
+<td>Number of times the max_connections limit was reached .. === Anything below is actually per VCP entry, but collected per === backend for simplicity</td>
+</tr>
+<tr>
+<td>Connections failed</td>
+<td>varnish.cache.vbe.fail.count</td>
+<td>Counter of failed opens. Detailed reasons are given in the fail_* counters (DIAG level) and in the log under the FetchError tag. This counter is the sum of all detailed fail_* counters. All fail_* counters may be slightly inaccurate for efficiency.</td>
+</tr>
+<tr>
+<td>Connections failed with EACCES or EPERM</td>
+<td>varnish.cache.vbe.fail_eacces.count</td>
+<td>Connections failed with EACCES or EPERM</td>
+</tr>
+<tr>
+<td>Connections failed with EADDRNOTAVAIL</td>
+<td>varnish.cache.vbe.fail_eaddrnotavail.count</td>
+<td>Connections failed with EADDRNOTAVAIL</td>
+</tr>
+<tr>
+<td>Connections failed with ECONNREFUSED</td>
+<td>varnish.cache.vbe.fail_econnrefused.count</td>
+<td>Connections failed with ECONNREFUSED</td>
+</tr>
+<tr>
+<td>Connections failed with ENETUNREACH</td>
+<td>varnish.cache.vbe.fail_enetunreach.count</td>
+<td>Connections failed with ENETUNREACH</td>
+</tr>
+<tr>
+<td>Connections failed ETIMEDOUT</td>
+<td>varnish.cache.vbe.fail_etimedout.count</td>
+<td>Connections failed ETIMEDOUT</td>
+</tr>
+<tr>
+<td>Connections failed for other reason</td>
+<td>varnish.cache.vbe.fail_other.count</td>
+<td>Connections failed for other reason</td>
+</tr>
+<tr>
+<td>Connection opens not attempted</td>
+<td>varnish.cache.vbe.helddown.count</td>
+<td>Connections not attempted during the backend_local_error_holddown or backend_remote_error_holddown interval after a fundamental connection issue.</td>
+</tr>
+</tbody>
+</table>
+<p>mgt</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Management process uptime</td>
+<td>varnish.cache.mgt.uptime.count</td>
+<td>Uptime in seconds of the management process</td>
+</tr>
+<tr>
+<td>Child process started</td>
+<td>varnish.cache.mgt.child_start.count</td>
+<td>Number of times the child process has been started</td>
+</tr>
+<tr>
+<td>Child process normal exit</td>
+<td>varnish.cache.mgt.child_exit.count</td>
+<td>Number of times the child process has been cleanly stopped</td>
+</tr>
+<tr>
+<td>Child process unexpected exit</td>
+<td>varnish.cache.mgt.child_stop.count</td>
+<td>Number of times the child process has exited with an unexpected return code</td>
+</tr>
+<tr>
+<td>Child process died (signal)</td>
+<td>varnish.cache.mgt.child_died.count</td>
+<td>Number of times the child process has died due to signals</td>
+</tr>
+<tr>
+<td>Child process core dumped</td>
+<td>varnish.cache.mgt.child_dump.count</td>
+<td>Number of times the child process has produced core dumps</td>
+</tr>
+<tr>
+<td>Child process panic</td>
+<td>varnish.cache.mgt.child_panic.count</td>
+<td>Number of times the management process has caught a child panic</td>
+</tr>
+</tbody>
+</table>
+<p>default</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Return code</td>
+<td>varnish.cache.returncode</td>
+<td>Return code of the varnishstat command</td>
+</tr>
+</tbody>
+</table>
+<p>smf</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocator requests</td>
+<td>varnish.cache.smf.c_req.count</td>
+<td>Number of times the storage has been asked to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Allocator failures</td>
+<td>varnish.cache.smf.c_fail.count</td>
+<td>Number of times the storage has failed to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Bytes allocated</td>
+<td>varnish.cache.smf.c_bytes.count</td>
+<td>Number of total bytes allocated by this storage.</td>
+</tr>
+<tr>
+<td>Bytes freed</td>
+<td>varnish.cache.smf.c_freed.count</td>
+<td>Number of total bytes returned to this storage.</td>
+</tr>
+<tr>
+<td>Allocations outstanding</td>
+<td>varnish.cache.smf.g_alloc</td>
+<td>Number of storage allocations outstanding.</td>
+</tr>
+<tr>
+<td>Bytes outstanding</td>
+<td>varnish.cache.smf.g_bytes</td>
+<td>Number of bytes allocated from the storage.</td>
+</tr>
+<tr>
+<td>Bytes available</td>
+<td>varnish.cache.smf.g_space</td>
+<td>Number of bytes left in the storage.</td>
+</tr>
+<tr>
+<td>N struct smf</td>
+<td>varnish.cache.smf.g_smf</td>
+<td>N struct smf</td>
+</tr>
+<tr>
+<td>N small free smf</td>
+<td>varnish.cache.smf.g_smf_frag</td>
+<td>N small free smf</td>
+</tr>
+<tr>
+<td>N large free smf</td>
+<td>varnish.cache.smf.g_smf_large</td>
+<td>N large free smf</td>
+</tr>
+</tbody>
+</table>
+<p>smu</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocator requests</td>
+<td>varnish.cache.smu.c_req.count</td>
+<td>Number of times the storage has been asked to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Allocator failures</td>
+<td>varnish.cache.smu.c_fail.count</td>
+<td>Number of times the storage has failed to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Bytes allocated</td>
+<td>varnish.cache.smu.c_bytes.count</td>
+<td>Number of total bytes allocated by this storage.</td>
+</tr>
+<tr>
+<td>Bytes freed</td>
+<td>varnish.cache.smu.c_freed.count</td>
+<td>Number of total bytes returned to this storage.</td>
+</tr>
+<tr>
+<td>Allocations outstanding</td>
+<td>varnish.cache.smu.g_alloc</td>
+<td>Number of storage allocations outstanding.</td>
+</tr>
+<tr>
+<td>Bytes outstanding</td>
+<td>varnish.cache.smu.g_bytes</td>
+<td>Number of bytes allocated from the storage.</td>
+</tr>
+<tr>
+<td>Bytes available</td>
+<td>varnish.cache.smu.g_space</td>
+<td>Number of bytes left in the storage.</td>
+</tr>
+</tbody>
+</table>
+<p>sma</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocator requests</td>
+<td>varnish.cache.sma.c_req.count</td>
+<td>Number of times the storage has been asked to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Allocator failures</td>
+<td>varnish.cache.sma.c_fail.count</td>
+<td>Number of times the storage has failed to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Bytes allocated</td>
+<td>varnish.cache.sma.c_bytes.count</td>
+<td>Number of total bytes allocated by this storage.</td>
+</tr>
+<tr>
+<td>Bytes freed</td>
+<td>varnish.cache.sma.c_freed.count</td>
+<td>Number of total bytes returned to this storage.</td>
+</tr>
+<tr>
+<td>Allocations outstanding</td>
+<td>varnish.cache.sma.g_alloc</td>
+<td>Number of storage allocations outstanding.</td>
+</tr>
+<tr>
+<td>Bytes outstanding</td>
+<td>varnish.cache.sma.g_bytes</td>
+<td>Number of bytes allocated from the storage.</td>
+</tr>
+<tr>
+<td>Bytes available</td>
+<td>varnish.cache.sma.g_space</td>
+<td>Number of bytes left in the storage.</td>
+</tr>
+</tbody>
+</table>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h3>
+<p>Monitor the statistics of your Varnish Cache instances.](https://www.dynatrace.com/hub/detail/varnish-cache-1/)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

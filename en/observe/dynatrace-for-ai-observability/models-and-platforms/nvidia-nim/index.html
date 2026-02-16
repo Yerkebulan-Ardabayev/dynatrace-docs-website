@@ -1051,7 +1051,7 @@ With the following config, the collector will scrape AI metrics every 10 seconds
 <a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
 <a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>
 <a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>
-<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>otlphttp:
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>otlp_http:
 <a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>
 <a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>
 <a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>
@@ -1087,10 +1087,10 @@ With the following config, the collector will scrape AI metrics every 10 seconds
 <a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>
 <a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>
 <a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>
-<a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>exporters: [otlphttp]
+<a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>exporters: [otlp_http]
 </code></pre></div>
 <p>Cumulativetodelta processor recommendation</p>
-<p>It is recommended to set the <code>max_staleness</code> parameter of the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.143.0/processor/cumulativetodeltaprocessor">cumulativetodelta processorï»¿</a> to a value higher than how often the collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.</p>
+<p>It is recommended to set the <code>max_staleness</code> parameter of the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor">cumulativetodelta processorï»¿</a> to a value higher than how often the collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.</p>
 <h2 id="spans">Spans<a class="headerlink" href="#spans" title="Permanent link">&para;</a></h2>
 <p>The following attributes are available for GenAI Spans.</p>
 <table>

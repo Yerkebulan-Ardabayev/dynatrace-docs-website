@@ -981,7 +981,7 @@
 </ul>
 <h2 id="get-an-instant-overview-of-your-kubernetes-environment">Get an instant overview of your Kubernetes environment<a class="headerlink" href="#get-an-instant-overview-of-your-kubernetes-environment" title="Permanent link">&para;</a></h2>
 <p>Once you enable Kubernetes workload monitoring support, you can easily see how many cluster resources have been allocated through the workloads that are running on the cluster.</p>
-<p>To display the Kubernetes workloads, go to <strong>Kubernetes Workloads</strong> (previous Dynatrace) or <img alt="Kubernetes Workloads" src="https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png" title="Kubernetes Workloads" /> <strong>Kubernetes Workloads Classic</strong>.</p>
+<p>To display the Kubernetes workloads, go to <img alt="Kubernetes Workloads" src="https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png" title="Kubernetes Workloads" /> <strong>Kubernetes Workloads Classic</strong>.</p>
 <h2 id="unified-analysis-view-on-your-workloads-namespaces-and-pods">Unified analysis view on your workloads, namespaces, and pods<a class="headerlink" href="#unified-analysis-view-on-your-workloads-namespaces-and-pods" title="Permanent link">&para;</a></h2>
 <p>The unified analysis view enables you to examine all the namespace-related data on the overview page of a specific Kubernetes namespace, all workload-related data on the overview page of a specific Kubernetes workload, and all the pod-related data on the overview page of a specific Kubernetes pod.</p>
 <p>Customized unified analysis</p>
@@ -990,11 +990,11 @@
 <p>It's common for organizations using Kubernetes to split applications into namespaces in order to isolate different business units. For example, a human resources group might have applications in the <code>hr</code> namespace, while a finance group deploys to the <code>finance</code> namespace.</p>
 <p>The namespace unified analysis page provides a valuable view for business units like these to track the amount of resources they are allocated and compare this to their utilization rates.</p>
 <p>On the namespace unified analysis page, you can examine properties, potential problems, resource requests and limits, workloads analysis, quotas, and events, and see all the workloads that belong to that namespace (with links to them). You can filter namespaces by metric dimension filters.</p>
-<p>To display the namespace unified analysis page, in Dynatrace, go to <strong>Kubernetes Workloads</strong> (previous Dynatrace) or <img alt="Kubernetes Workloads" src="https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png" title="Kubernetes Workloads" /> <strong>Kubernetes Workloads Classic</strong> and select a namespace.</p>
+<p>To display the namespace unified analysis page, in Dynatrace, go to <img alt="Kubernetes Workloads" src="https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png" title="Kubernetes Workloads" /> <strong>Kubernetes Workloads Classic</strong> and select a namespace.</p>
 <h3 id="workloads">Workloads<a class="headerlink" href="#workloads" title="Permanent link">&para;</a></h3>
 <p>A workload consists of one or more pods. It's a way of describing a type of microservice that comprises an application. For instance, an application might have a frontend workload and a backend workload made up of a dozen pods, each across a Kubernetes cluster.</p>
 <p>The workload unified analysis page provides insights into resource utilization, problem detection, <a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes" title="Keep track of vulnerabilities in Kubernetes/OpenShift.">vulnerabilities</a>, number of pods in the respective workload, number of services that are sending traffic to the pods, and events for all of the pods in a given workload. This information is valuable for analyzing the overall performance of a microservice rather than looking at specific problems in a pod instance.</p>
-<p>To display the workload unified analysis page, in Dynatrace, go to <strong>Kubernetes Workloads</strong> (previous Dynatrace) or <img alt="Kubernetes Workloads" src="https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png" title="Kubernetes Workloads" /> <strong>Kubernetes Workloads Classic</strong> and select a workload.</p>
+<p>To display the workload unified analysis page, in Dynatrace, go to <img alt="Kubernetes Workloads" src="https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png" title="Kubernetes Workloads" /> <strong>Kubernetes Workloads Classic</strong> and select a workload.</p>
 <p>Taking a closer look at the applications deployed in one of the namespaces, you can learn about their most important resource usage metrics. The workloads view covers workloads such as <code>Deployment</code>, <code>DeploymentConfig</code>, <code>ReplicaSet</code>, <code>DaemonSet</code>, <code>StatefulSet</code>, <code>StaticPod</code>, and <code>ReplicationController</code>.</p>
 <p>The CPU throttling metric tells you how long the application was throttled, so you can determine where more CPU time would have been needed for processing. This usually happens when the containers don't have enough CPU resources (limits) in the workload definition. This might affect the performance of the processes and applications running inside the containers.</p>
 <p>You can also see the number of running pods versus desired pods for every cloud application.</p>
@@ -1003,7 +1003,7 @@
 <p>On the pod unified analysis page, you can examine properties, potential problems, utilization and resources, and events, and you can see the container to which the pod belongs (with a link to it).</p>
 <p>To view the overview page of a Kubernetes pod</p>
 <ol>
-<li>Go to <strong>Kubernetes Workloads</strong> (previous Dynatrace) or <img alt="Kubernetes Workloads" src="https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png" title="Kubernetes Workloads" /> <strong>Kubernetes Workloads Classic</strong> and select a workload.</li>
+<li>Go to <img alt="Kubernetes Workloads" src="https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png" title="Kubernetes Workloads" /> <strong>Kubernetes Workloads Classic</strong> and select a workload.</li>
 <li>Select <strong>Pods</strong>.</li>
 <li>Select the pod you want.</li>
 </ol>

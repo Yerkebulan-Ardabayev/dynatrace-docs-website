@@ -1018,7 +1018,7 @@
 <p><code>GET</code></p>
 <p><code>86b11c85e1bc1dc039252a95fd009d16</code></p>
 <p>Example: DQL access to all attributes</p>
-<p>The following query fetches spans generated with an HTTP route from the server. To make sure all spans use the same field name for the HTTP request method field, it looks for two semantically different fields and stores the first result into a new field for consultation purposes. It then summarizes the results by HTTP request method and HTTP route, providing the number of spans, their average duration, and the value of their duration in the 50th and 90th percentiles.</p>
+<p>The following query fetches spans generated with an HTTP route from the server. To make sure all spans use the same field name for the HTTP request method field, it looks for two semantically different fields and stores the first result into a new field for consultation purposes. It then summarizes the results by HTTP request method and HTTP route, providing the number of spans, their average duration, and the value of their duration in the 50th percentiles.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fetch spans
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -1031,7 +1031,7 @@
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>| summarize { count(), avg(duration), p50=percentile(duration, 50), p90=percentile(duration, 90) }, by: { http.request.method, http.route }
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>| summarize { count(), avg(duration), p50=percentile(duration, 50)}, by: { http.request.method, http.route }
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
@@ -1043,13 +1043,11 @@
 <p>count()</p>
 <p>avg(duration)</p>
 <p>p50</p>
-<p>p90</p>
 <p><code>POST</code></p>
 <p><code>/v1/orders/{id}/status</code></p>
 <p><code>758</code></p>
 <p><code>84.28 ms</code></p>
 <p><code>78.11 ms</code></p>
-<p><code>131.37 ms</code></p>
 <p>Example: Full text search</p>
 <p>The following example fetches spans with an HTTP route that contain <code>user</code> and don't end with <code>username</code> and summarizes the results, providing the number of spans by HTTP request method and HTTP route.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>fetch spans

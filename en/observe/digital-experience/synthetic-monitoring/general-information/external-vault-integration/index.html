@@ -1,0 +1,1439 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>External vault integration - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#external-vault-integration" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              External vault integration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="external-vault-integration">External vault integration<a class="headerlink" href="#external-vault-integration" title="Permanent link">&para;</a></h1>
+<h1 id="external-vault-integration_1">External vault integration<a class="headerlink" href="#external-vault-integration_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>22-min read</li>
+<li>Updated on Jan 17, 2024</li>
+</ul>
+<p>Synthetic Monitoring <a href="/docs/manage/credential-vault#uid-password" title="Store and manage credentials in the credential vault.">username-password</a> and <a href="/docs/manage/credential-vault#token" title="Store and manage credentials in the credential vault.">token</a> credentials in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a> can be synchronized with an external vaultâ<a href="#azure-key-vault">Azure Key Vault</a>, <a href="#hashicorp">HashiCorp Vault</a>, or <a href="#cyberark">CyberArk Vault</a> (username-password credentials only). Synchronized credentials contain the keys of external key-value pairs that hold the required values.</p>
+<p>When you set up synchronized credentials in the credential vault, Dynatrace automatically creates <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic" title="Learn how to set up an HTTP monitor to check the performance and availability of your site.">HTTP monitors</a> specifically for the purpose of synchronization. You can also use the <code>api.saveCredential()</code> or <code>api.saveToken()</code> methods in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">pre-and post-execution scripts</a> to create your own synchronization monitors.</p>
+<p>Autocreated synchronization monitors are named with the credential ID of the synchronized credential and are executed hourly by default from the Amazon US East (N. Virginia) <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations" title="Learn about all currently available public Synthetic Monitoring locations.">public Synthetic location</a>. Note that the request and response bodies and headers of synchronization monitors are automatically hidden from execution details (<strong>Analyze execution details</strong>).</p>
+<p>Other synthetic monitors can call and use these synchronized credentials for testing API endpoints and websites. The monitors that call these credentials use the synchronized values obtained from the external vaults. Synchronization frequency determines how often these credentials are rotated within the synthetic monitors that call them.</p>
+<p>Synchronization process reads the credentials from external vault and saves a copy within the Dynatrace vault.</p>
+<h2 id="azure-key-vault">Azure Key Vault<a class="headerlink" href="#azure-key-vault" title="Permanent link">&para;</a></h2>
+<p>Username-password or token credentials for use in synthetic monitors can be synchronized with Azure Key Vault key-value pairs containing the username, password, or token value.</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>Before setting up credentials synchronized with Azure Key Vault, you need to define the required <strong>client (application) ID</strong> and <strong>client secret</strong> as <a href="/docs/manage/credential-vault#token" title="Store and manage credentials in the credential vault.">token credentials</a> stored in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>. We recommend naming such prerequisite tokens so that they're easily identifiable as companion credentials for synchronization. If your vault doesn't contain any tokens that you have access to, you'll see a warning.</p>
+<h3 id="set-up-synchronized-credentials">Set up synchronized credentials<a class="headerlink" href="#set-up-synchronized-credentials" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the credential vault, create a <strong>User and password</strong> or <strong>Token</strong> credential. You can also overwrite an existing credential.</li>
+<li>For <strong>Credential scope</strong>, select <strong>Synthetic</strong>.</li>
+<li>Turn on <strong>Synchronization with external vault</strong>.</li>
+<li>Select <strong>Azure Key Vault</strong> (default) as the <strong>Credential source</strong>.</li>
+<li>We recommend editing the default <strong>Credential name</strong> to easily identify your new credential.</li>
+<li>Enter the URL to access the vault (<strong>Vault URL</strong>) and the <strong>Tenant (directory) ID</strong>.</li>
+<li>Select the <a href="#azure-prereqs">companion tokens</a> created earlier for the <strong>Client (application) ID</strong> and <strong>Client secret</strong>.</li>
+<li>Enter the name of the Azure Key Vault key.</li>
+</ol>
+<p>Username-password credentials</p>
+<p>Token credentials</p>
+<ul>
+<li>In <strong>Secret name for username</strong>, enter the name of the Azure Key Vault key mapped to the username value; do not enter an actual username.</li>
+<li>
+<p>In <strong>Secret name for password</strong>, enter the name of the Azure Key Vault key mapped to the password value; do not enter an actual password.</p>
+</li>
+<li>
+<p>In <strong>Secret name for token</strong>, enter the name of the Azure Key Vault key mapped to the token value; do not enter an actual token value.</p>
+</li>
+<li>Select a <strong>Location for synchronization</strong>âyou can select any public or private Synthetic location for <a href="#azure-monitor">synchronization monitor</a> execution. You can search for a location by entering the location name in the field.</li>
+<li>Optional Provide a <strong>Description</strong> for the credential.</li>
+<li>Credentials are set to <strong>Owner access only</strong> by default. (Read more about <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">credential ownership</a>.)</li>
+<li><strong>Save</strong> your credential.</li>
+</ul>
+<p>See also <a href="#best-practices">Best practices</a> and what happens when you <a href="#edit-delete-credential">edit or delete synchronized and companion credentials</a>.</p>
+<p><img alt="Set up Azure synchronization - token" src="https://dt-cdn.net/images/cv-azure-token-1113-f0f69b54d9.webp" /></p>
+<h3 id="azure-key-vault-synchronization-monitors">Azure Key Vault synchronization monitors<a class="headerlink" href="#azure-key-vault-synchronization-monitors" title="Permanent link">&para;</a></h3>
+<p>When you have <a href="#azure-set-up">set up your synchronized username-password or token credential</a>, Dynatrace automatically creates and executes an <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic" title="Learn how to set up an HTTP monitor to check the performance and availability of your site.">HTTP monitor</a> that synchronizes the credential with Azure Key Vault. This monitor is automatically associated with the synchronized username-password or token credential.</p>
+<p>See also <a href="#best-practices">Best practices</a> and what happens when you <a href="#edit-delete-credential">edit or delete synchronization credentials</a>.</p>
+<p>Username-password credentials</p>
+<p>Token credentials</p>
+<p>The synchronization monitor contains three requests. Azure Key Vault requires splitting the retrieval of the username and password into two separate requests.</p>
+<ol>
+<li>
+<p>The first request (POST) fetches an access token.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the tenant ID as an attribute of the <a href="#azure-set-up">synchronized credential</a> defined above; the tenant ID is not displayed.</p>
+<p><img alt="Azure KV request 1 URL" src="https://dt-cdn.net/images/cvazurerequest1url-1446-eed3251a4d.png" />
+   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a>; the client ID and client secret are not displayed.</p>
+<p><img alt="Azure KV request 1 request body" src="https://dt-cdn.net/images/cvazurerequest1requestbody-984-7631f538d2.png" />
+   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+<p><img alt="Azure KV request 1 post script" src="https://dt-cdn.net/images/cvazurerequest1postscript-962-26b361836f.png" />
+2. The second request (GET) fetches the username value.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL as an attribute of the <a href="#azure-set-up">synchronized credential</a> defined above; the vault URL is not displayed. The request URL also references the key mapped to the username value in Azure Key Vault.</p>
+<p><img alt="Azure KV request 2 URL" src="https://dt-cdn.net/images/cvazurerequest2url-1775-b114ec0406.png" />
+   * The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">Authorization header</a> contains the access token retrieved in the first request.</p>
+<p><img alt="Azure KV request 2 request header" src="https://dt-cdn.net/images/cvazurerequest2authheader-964-9fb3850f7d.png" />
+   * The username value is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+<p><img alt="Azure KV request 2 post script" src="https://dt-cdn.net/images/cvazurerequest2postscript-962-8bccc9e09c.png" />
+3. The third request (GET) fetches the password value. It also uses <code>api.saveCredential()</code> in a post-execution script to write the fetched values to the <a href="#azure-set-up">synchronized username-password credential</a> defined above.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL as an attribute of the <a href="#azure-set-up">synchronized credential</a>; the vault URL is not displayed. The request URL also references the key mapped to the password value in Azure Key Vault.</p>
+<p><img alt="Azure KV request 3 URL" src="https://dt-cdn.net/images/cvazurerequest3url-1777-8a113269d0.png" />
+   * The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">Authorization header</a> contains the access token retrieved in the first request.
+   * The password value is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
+<p><img alt="Azure KV request 3 post script" src="https://dt-cdn.net/images/cvazurerequest3postscript-962-b44c6bda2a.png" /></p>
+</li>
+</ol>
+<p>The synchronization monitor contains two requests.</p>
+<ol>
+<li>
+<p>The first request (POST) fetches an access token.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the tenant ID, which is stored as an attribute of the <a href="#azure-set-up">synchronized credential</a> defined above; the tenant ID is not displayed.</p>
+<p><img alt="Azure KV request 1 URL" src="https://dt-cdn.net/images/cv-azure-token-request1-url-1446-9fd964d06c.png" />
+   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a>; the client ID and client secret are not displayed.</p>
+<p><img alt="Azure KV request 1 request body" src="https://dt-cdn.net/images/cvazurerequest1requestbody-984-7631f538d2.png" />
+   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+<p><img alt="Azure KV request 1 post script" src="https://dt-cdn.net/images/cvazurerequest1postscript-962-26b361836f.png" />
+2. The second request (GET) fetches the token value.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL as an attribute of the <a href="#azure-set-up">synchronized credential</a> defined above; the vault URL is not displayed. The request URL also references the key mapped to the token value in Azure Key Vault.</p>
+<p><img alt="Azure KV request 2 URL" src="https://dt-cdn.net/images/cv-azure-token-request2-url-1770-f949f51173.png" />
+   * The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">Authorization header</a> contains the access token retrieved in the first request.</p>
+<p><img alt="Azure KV request 2 request header" src="https://dt-cdn.net/images/cvazurerequest2authheader-964-9fb3850f7d.png" />
+   * The token value is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a variable. It also uses <code>api.saveToken()</code> in a post-execution script to write the retrieved value to the synchronized token credential.</p>
+<p><img alt="Azure KV request 2 post script" src="https://dt-cdn.net/images/cv-azure-token-request2-post-script-961-337899fa61.png" /></p>
+</li>
+</ol>
+<h2 id="hashicorp-vault">HashiCorp Vault<a class="headerlink" href="#hashicorp-vault" title="Permanent link">&para;</a></h2>
+<p><a href="#hashicorp-set-up">Username-password or token credentials</a> for use in synthetic monitors can be synchronized with HashiCorp Vault key-value pairs containing the username, password, or token value. You can use either <strong><a href="#app-role">AppRole-based</a> or <a href="#certificate">certificate authentication</a></strong>.</p>
+<h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Before using <a href="#app-role">AppRole-based authentication</a>, you need to define the required <strong>secret ID</strong> as a <a href="/docs/manage/credential-vault#token" title="Store and manage credentials in the credential vault.">token credential</a> stored in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>; do not reuse other tokens as the secret ID. If your vault doesn't contain any tokens you have access to, you'll see a warning.</li>
+<li>Before using <a href="#certificate">certificate authentication</a>, you need to store the required <strong>TLS <a href="/docs/manage/credential-vault#certificate" title="Store and manage credentials in the credential vault.">certificate</a></strong> in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>. If your vault doesn't contain any certificates you have access to, you'll see a warning.</li>
+</ul>
+<p>We recommend naming such prerequisite tokens and certificates so that they're easily identifiable as companion credentials for synchronization.</p>
+<h3 id="set-up-synchronized-credentials_1">Set up synchronized credentials<a class="headerlink" href="#set-up-synchronized-credentials_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the credential vault, create a <strong>User and password</strong> or <strong>Token</strong> credential. You can also overwrite an existing credential.</li>
+<li>For <strong>Credential scope</strong>, select <strong>Synthetic</strong>.</li>
+<li>Turn on <strong>Synchronization with external vault</strong>.</li>
+<li>Select <strong>HashiCorp Vault</strong> as the <strong>Credential source</strong>.</li>
+<li>We recommend editing the default <strong>Credential name</strong> to easily identify your new credential.</li>
+<li>Enter the URL to access the vault (<strong>Vault URL</strong>) and the <strong>Path to credentials</strong> (folders must be separated by a forward slash).</li>
+</ol>
+<p>The HashiCorp <strong>Vault URL</strong> for certificate authentication might be different from that used for AppRole-based authentication.
+7. Enter the name of the HashiCorp Vault key.</p>
+<p>Username-password credentials</p>
+<p>Token credentials</p>
+<ul>
+<li>In <strong>Secret name for username</strong>, enter the name of the HashiCorp Vault key mapped to the username value; do not enter an actual username.</li>
+<li>
+<p>In <strong>Secret name for password</strong>, enter the name of the HashiCorp Vault key mapped to the password value; do not enter an actual password.</p>
+</li>
+<li>
+<p>In <strong>Secret name for token</strong>, enter the name of the HashiCorp Vault key mapped to the token value; do not enter an actual token value.</p>
+</li>
+<li>Perform steps related to <strong>Authentication method</strong>.</li>
+</ul>
+<p>AppRole</p>
+<p>Certificate</p>
+<ol>
+<li>Select <strong>AppRole</strong> for the <strong>Authentication method</strong>.</li>
+<li>Enter the string provided by HashiCorp in <strong>Role ID</strong>.</li>
+<li>Select the <a href="#hashicorp-prereqs">companion token</a> created earlier for the <strong>Secret ID</strong>.</li>
+<li>Enter the <strong>Vault namespace</strong>.</li>
+</ol>
+<p><img alt="Set up HashiCorp AppRole synchronization - token" src="https://dt-cdn.net/images/cv-hashicorp-approle-token-1113-2263da2bbc.webp" /></p>
+<ol>
+<li>Select <strong>Certificate</strong> for the <strong>Authentication method</strong>.</li>
+<li>For <strong>Certificate</strong>, select the <a href="#hashicorp-prereqs">companion TLS certificate</a> created earlier.</li>
+</ol>
+<p><img alt="Set up HashiCorp certificate synchronization - UID" src="https://dt-cdn.net/images/cv-hashicorp-certificate-uid-1113-8b177811b5.webp" />
+9. Select a <strong>Location for synchronization</strong>âyou can select any public or private Synthetic location for synchronization monitor execution. You can search for a location by entering the location name in the field.
+10. Optional Provide a <strong>Description</strong>.
+11. Credentials are set to <strong>Owner access only</strong> by default. (Read more about <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">credential ownership</a>.)
+12. <strong>Save</strong> your credential.</p>
+<p>See also <a href="#best-practices">Best practices</a> and what happens when you <a href="#edit-delete-credential">edit or delete synchronized and companion credentials</a>.</p>
+<p>When you have set up your synchronized credential, Dynatrace automatically creates and executes an <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic" title="Learn how to set up an HTTP monitor to check the performance and availability of your site.">HTTP monitor</a> that synchronizes the credential with HashiCorp Vault.</p>
+<h3 id="hashicorp-vault-approle-synchronization-monitors">HashiCorp Vault AppRole synchronization monitors<a class="headerlink" href="#hashicorp-vault-approle-synchronization-monitors" title="Permanent link">&para;</a></h3>
+<p>The autocreated HTTP monitor contains two requests and is automatically associated with the <a href="#hashicorp-set-up">synchronized credential</a> defined above.</p>
+<p>Username-password credentials</p>
+<p>Token credentials</p>
+<ol>
+<li>
+<p>The first request (POST) fetches a client token.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL as an attribute of the <a href="#hashicorp-set-up">synchronized credential</a>; the vault URL is not displayed. The request URL also contains the authentication method <code>approle</code>.</p>
+<p><img alt="HashiCorp AppRole request 1 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest1url-1447-20b5ca2512.png" />
+   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a>; the vault namespace is not displayed.</p>
+<p><img alt="HashiCorp AppRole request 1 header" src="https://dt-cdn.net/images/cvhashiapprolerequest1requestheader-964-7efd88a7af.png" />
+   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a>; the role ID and secret ID are not displayed.</p>
+<p><img alt="HashiCorp AppRole request 1 body" src="https://dt-cdn.net/images/cvhashiapprolerequest1requestbody-966-5eb6ad4427.png" />
+   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+<p><img alt="HashiCorp AppRole request 1 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png" />
+2. The second request (GET) fetches the username and password values. It also uses <code>api.saveCredential()</code> in s post-execution script to write the fetched values to the <a href="#hashicorp-set-up">synchronized username-password credential</a> defined above.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL and the path to credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.</p>
+<p><img alt="HashiCorp AppRole request 2 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png" />
+   * A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a> contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.</p>
+<p><img alt="HashiCorp AppRole request 2 headers" src="https://dt-cdn.net/images/cvhashiapprolerequest2requestheader-964-739c560649.png" />
+   * The username and password values are returned in the JSON response. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the values in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variables</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
+<p><img alt="HashiCorp AppRole request 2 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest2postscript-964-828da84802.png" /></p>
+</li>
+<li>
+<p>The first request (POST) fetches a client token.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL as an attribute of the <a href="#hashicorp-set-up">synchronized credential</a>; the vault URL is not displayed. The request URL also contains the authentication method <code>approle</code>.</p>
+<p><img alt="HashiCorp AppRole request 1 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest1url-1447-20b5ca2512.png" />
+   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a>; the vault namespace is not displayed.</p>
+<p><img alt="HashiCorp AppRole request 1 header" src="https://dt-cdn.net/images/cvhashiapprolerequest1requestheader-964-7efd88a7af.png" />
+   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a>; the role ID and secret ID are not displayed.</p>
+<p><img alt="HashiCorp AppRole request 1 body" src="https://dt-cdn.net/images/cvhashiapprolerequest1requestbody-966-5eb6ad4427.png" />
+   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+<p><img alt="HashiCorp AppRole request 1 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png" />
+2. The second request (GET) fetches the token value. It also uses <code>api.saveToken()</code> in a post-execution script to write the fetched values to the <a href="#hashicorp-set-up">synchronized token credential</a> defined above.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL and the path to the credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.</p>
+<p><img alt="HashiCorp AppRole request 2 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png" />
+   * A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a> contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.</p>
+<p><img alt="HashiCorp AppRole request 2 headers" src="https://dt-cdn.net/images/cvhashiapprolerequest2requestheader-964-739c560649.png" />
+   * The token value is returned in the JSON response. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>. It also uses <code>api.saveToken()</code> to write the retrieved value to the synchronized token credential.</p>
+<p><img alt="HashiCorp AppRole request 2 post-script to save token" src="https://dt-cdn.net/images/cv-hashi-approle-request2-postscript-savetoken-936-a139146cec.png" /></p>
+</li>
+</ol>
+<h3 id="hashicorp-vault-tls-certificate-synchronization-monitors">HashiCorp Vault TLS certificate synchronization monitors<a class="headerlink" href="#hashicorp-vault-tls-certificate-synchronization-monitors" title="Permanent link">&para;</a></h3>
+<p>The autocreated HTTP monitor contains two requests and is automatically associated with the <a href="#hashicorp-set-up">synchronized credential</a> defined above.</p>
+<p>Username-password credentials</p>
+<p>Token credentials</p>
+<ol>
+<li>
+<p>The first request (POST) fetches a client token.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL as an attribute of the <a href="#hashicorp-set-up">synchronized credential</a>; the vault URL is not displayed. The request URL also contains the authentication method <code>cert</code>.</p>
+<p><img alt="HashiCorp certificate request 1 URL" src="https://dt-cdn.net/images/cvhashicertificaterequest1url-1448-630ba53192.png" />
+   * The request uses the TLS certificate for authentication.</p>
+<p><img alt="HashiCorp certificate request 1 certificate" src="https://dt-cdn.net/images/cvhashicertificaterequest1cert-964-996d51d92a.png" />
+   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+<p><img alt="HashiCorp certificate request 1 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png" />
+2. The second request (GET) fetches the username and password values. It also uses <code>api.saveCredential()</code> in a post-execution script to write the fetched values to the <a href="#hashicorp-set-up">synchronized username-password credential</a> defined above.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL and the path to credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.</p>
+<p><img alt="HashiCorp AppRole request 2 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png" />
+   * A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a> contains the client token retrieved in the first request.</p>
+<p><img alt="HashiCorp certificate request 2 header" src="https://dt-cdn.net/images/cvhashicertificaterequest2requestheader-964-230e35242e.png" />
+   * The username and password values are returned in the JSON response. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the values in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variables</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
+<p><img alt="HashiCorp certificate request 2 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest2postscript-964-828da84802.png" /></p>
+</li>
+<li>
+<p>The first request (POST) fetches a client token.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL as an attribute of the <a href="#hashicorp-set-up">synchronized credential</a>; the vault URL is not displayed. The request URL also contains the authentication method <code>cert</code>.</p>
+<p><img alt="HashiCorp certificate request 1 URL" src="https://dt-cdn.net/images/cvhashicertificaterequest1url-1448-630ba53192.png" />
+   * The request uses the TLS certificate for authentication.</p>
+<p><img alt="HashiCorp certificate request 1 certificate" src="https://dt-cdn.net/images/cvhashicertificaterequest1cert-964-996d51d92a.png" />
+   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+<p><img alt="HashiCorp certificate request 1 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png" />
+2. The second request (GET) fetches the token value. It also uses <code>api.saveToken()</code> in a post-execution script to write the fetched value to the <a href="#hashicorp-set-up">synchronized token credential</a> defined above.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the vault URL and the path to the credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.</p>
+<p><img alt="HashiCorp AppRole request 2 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png" />
+   * A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a> contains the client token retrieved in the first request.</p>
+<p><img alt="HashiCorp certificate request 2 header" src="https://dt-cdn.net/images/cvhashicertificaterequest2requestheader-964-230e35242e.png" />
+   * The token value is returned in the JSON response. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>. It also uses <code>api.saveToken()</code> to write the retrieved value to the synchronized token credential.</p>
+<p><img alt="HashiCorp certificate request 2 post-script to save token" src="https://dt-cdn.net/images/cv-hashi-approle-request2-postscript-savetoken-936-a139146cec.png" /></p>
+</li>
+</ol>
+<h2 id="cyberark-vault">CyberArk Vault<a class="headerlink" href="#cyberark-vault" title="Permanent link">&para;</a></h2>
+<p>Username-password credentials for use in synthetic monitors can be synchronized with CyberArk Vault key-value pairs containing the username or password. You can use either <a href="#cyberark-monitor-uid-authentication">username and password</a> or <a href="#cyberark-monitor-allowed-machines">host-based authentication</a> to CyberArk Vault. Host-based authentication allows you to predefine hosts (<strong>Allowed Machines</strong>) in CyberArk Vault that are allowed to access credentials. These hosts are the <a href="#cyberark-set-up">public or private Synthetic locations you select</a> for synchronization monitor execution and are defined by hostname or IP address. Host-based authentication enables synchronization monitors to bypass fetching an access token from CyberArk Vault.</p>
+<h3 id="prerequisites_2">Prerequisites<a class="headerlink" href="#prerequisites_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Before using <a href="#cyberark-monitor-uid-authentication">username and password authentication</a>, you need to define authentication credentials for CyberArk Vaultâa <a href="/docs/manage/credential-vault#uid-password" title="Store and manage credentials in the credential vault.">username-password pair</a> and, optionally, a <a href="/docs/manage/credential-vault#certificate" title="Store and manage credentials in the credential vault.">certificate credential</a> stored in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>. We recommend naming such prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.</li>
+<li>Before using <a href="#cyberark-monitor-allowed-machines">host-based authentication</a>, you need to define <strong>Allowed Machines</strong> by hostname or IP address in CyberArk Vault Application Details. These are the hosts that are allowed to access the synchronized credentials in CyberArk Vault and are the public or private Synthetic locations you select for synchronization monitor execution. Note that when defining allowed machines in CyberArk Vault, the application ID must be the same as provided when <a href="#cyberak-set-up">you set up a synchronized credential in Dynatrace</a>. Optionally, you can also define a <a href="/docs/manage/credential-vault#certificate" title="Store and manage credentials in the credential vault.">certificate credential</a> stored in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a> for authentication to CyberArk Vault. If your vault doesn't contain any certificates you have access to, you'll see a warning.</li>
+</ul>
+<p>We recommend naming any prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.</p>
+<h3 id="set-up-synchronized-credentials_2">Set up synchronized credentials<a class="headerlink" href="#set-up-synchronized-credentials_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the credential vault, create a <strong>User and password</strong> credential. You can also overwrite an existing credential.</li>
+<li>For <strong>Credential scope</strong>, select <strong>Synthetic</strong>.</li>
+<li>Turn on <strong>Synchronization with external vault</strong>.</li>
+<li>Select <strong>CyberArk Vault</strong> as the <strong>Credential source</strong>.</li>
+<li>We recommend editing the default <strong>Credential name</strong> to easily identify your new credential.</li>
+<li>Enter the <strong>Central Credential Provider URL</strong> (HTTPS) to access the vault.</li>
+<li>Perform steps related to <strong>Authentication method</strong>.</li>
+</ol>
+<p>Username and password</p>
+<p>Allowed machines</p>
+<ol>
+<li>Select <strong>Username and password</strong> for the <strong>Authentication method</strong>.</li>
+<li>Select the <a href="#cyberark-prereqs">companion username-password</a> created earlier for CyberArk authentication from the <strong>Username and password for Central Credential Provider</strong> list.</li>
+</ol>
+<p><img alt="Set up CyberArk synchronization - UID" src="https://dt-cdn.net/images/cyberark-credential-vault-uid-1145-62675d95c7.webp" /></p>
+<ol>
+<li>
+<p>Select <strong>Allowed machines (location)</strong> for the <strong>Authentication method</strong>.</p>
+<p>You should already have registered the hostname or IP address of your selected <strong>Location for synchronization</strong> in the CyberArk Allowed Machines listâsee <a href="#cyberark-prereqs">Prerequisites</a> above.</p>
+</li>
+</ol>
+<p><img alt="Set up CyberArk synchronization - allowed machines" src="https://dt-cdn.net/images/cyberark-credential-vault-allowed-machines-1154-a9d5d09098.webp" />
+8. Recommended Select a <strong>Certificate used for authentication to CyberArk application</strong> from the list provided.
+9. Enter additional fields for identifying the CyberArk Vault key-value pair.</p>
+<ul>
+<li><strong>Application ID</strong>âThis must be the same as the application ID when defining allowed machines in CyberArk Vaultâsee <a href="#cyberark-prereqs">Prerequisites</a> above.</li>
+<li><strong>Safe name</strong></li>
+<li><strong>Account name</strong>âThe name of the object that stores the username and password to retrieve and synchronize with the Dynatrace credential vault; this is not the name of the account logged into CyberArk Central Credential Provider.</li>
+<li><strong>Folder name</strong> OptionalâThe name of the folder where the credentials are stored in CyberArk Vault; the default folder name is <code>Root</code>.</li>
+<li>Select a <strong>Location for synchronization</strong>âyou can select any public or private Synthetic location for synchronization monitor execution. You can search for a location by entering the location name in the field.</li>
+<li>Optional Provide a <strong>Description</strong> for the credential.</li>
+<li>Credentials are set to <strong>Owner access only</strong> by default. (Read more about <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">credential ownership</a>.)</li>
+<li><strong>Save</strong> your credential.</li>
+</ul>
+<p>See also <a href="#best-practices">Best practices</a> and what happens when you <a href="#edit-delete-credential">edit or delete synchronized and companion credentials</a>.</p>
+<p>When you have set up your synchronized credential, Dynatrace automatically creates and executes an <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic" title="Learn how to set up an HTTP monitor to check the performance and availability of your site.">HTTP monitor</a> that synchronizes the credential with CyberArk Vault.</p>
+<h3 id="cyberark-vault-synchronization-monitors-username-password-authentication">CyberArk Vault synchronization monitors (username-password authentication)<a class="headerlink" href="#cyberark-vault-synchronization-monitors-username-password-authentication" title="Permanent link">&para;</a></h3>
+<p>The autocreated HTTP monitor contains two requests and is automatically associated with the <a href="#cyberark-set-up">synchronized credential</a> defined above.</p>
+<ol>
+<li>
+<p>The first request (POST) fetches an access token.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the <strong>Central Credential Provider URL</strong> as an attribute of the <a href="#cyberark-set-up">synchronized credential</a> defined above; the central credential provider URL is not displayed.</p>
+<p><img alt="CyberArk Vault request 1 URL" src="https://dt-cdn.net/images/cv-cyberark-request1-url-1445-f352bc0566.png" />
+   * The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a> references the username-password credential selected for CyberArk Vault authentication (<strong>Username and password for Central Credential Provider</strong>); the authentication username and password are not displayed.</p>
+<p><img alt="CyberArk Vault request 1 request body" src="https://dt-cdn.net/images/cv-cyberark-request1-request-body-1409-efb85f9433.png" />
+   * Additionally, the first request contains any authentication certificate specified in <strong>Certificate used for authentication to CyberArk</strong>.</p>
+<p><img alt="CyberArk Vault request 1 certificate" src="https://dt-cdn.net/images/cv-cyberark-request1-certificate-962-8b7934f165.png" />
+   * A token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+<p><img alt="CyberArk Vault request 1 post script" src="https://dt-cdn.net/images/cv-cyberark-request1-post-script-962-04c94bf083.png" />
+2. The second request (GET) fetches the username and password values from CyberArk Vault. It also uses <code>api.saveCredential()</code> in a post-execution script to write the fetched values to the <a href="#cyberark-set-up">synchronized username-password credential</a> defined above.
+   Request configuration details</p>
+</li>
+<li>
+<p>The request URL references the <strong>Central Credential Provider URL</strong> as an attribute of the synchronized credential; the central credential provider URL is not displayed. The request URL also references (but doesn't display) the <strong>Application ID</strong>, <strong>Safe name</strong>, <strong>Account name</strong>, and <strong>Folder name</strong>.</p>
+<p><img alt="CyberArk Vault request 2 URL" src="https://dt-cdn.net/images/cv-cyberark-request2-url-1879-7911c0b652.png" />
+   * The second request also contains any authentication certificate and the access token retrieved in the first request in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">Authorization header</a>.</p>
+<p><img alt="CyberArk Vault request 2 token and certificate" src="https://dt-cdn.net/images/cv-cyberark-request2-certificate-auth-header-1269-b10aa9737b.png" />
+   * The username and password values are returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the values in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variables</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
+<p><img alt="CyberArk Vault request 2 post script" src="https://dt-cdn.net/images/cv-cyberark-request2-post-script-999-5b4607154b.png" /></p>
+</li>
+</ol>
+<h3 id="cyberark-vault-synchronization-monitors-host-based-authentication">CyberArk Vault synchronization monitors (host-based authentication)<a class="headerlink" href="#cyberark-vault-synchronization-monitors-host-based-authentication" title="Permanent link">&para;</a></h3>
+<p>Because the autocreated HTTP monitor can bypass fetching an access token, it contains a single GET request to fetch the username and password values from CyberArk Vault. It also uses <code>api.saveCredential()</code> in a post-execution script to write the fetched values to the <a href="#cyberark-set-up">synchronized username-password credential</a> defined above. The synchronization monitor is automatically associated with the synchronized credential.</p>
+<p>Request configuration details</p>
+<ul>
+<li>The request URL references the <strong>Central Credential Provider URL</strong> as an attribute of the synchronized credential; the central credential provider URL is not displayed. The request URL also references (but doesn't display) the <strong>Application ID</strong>, <strong>Safe name</strong>, <strong>Account name</strong>, and <strong>Folder name</strong>.</li>
+</ul>
+<p><img alt="CyberArk Vault allowed machines request URL" src="https://dt-cdn.net/images/cv-cyberark-allowed-machines-url-1881-1ea05be669.jpg" /></p>
+<ul>
+<li>The request also contains any authentication certificate specified during credential setup.</li>
+</ul>
+<p><img alt="CyberArk Vault allowed machines authentication certificate" src="https://dt-cdn.net/images/cv-cyberark-allowed-machines-certificate-1415-568a21181f.jpg" /></p>
+<ul>
+<li>The username and password values are returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the values in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variables</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</li>
+</ul>
+<p><img alt="CyberArk Vault allowed machines post script" src="https://dt-cdn.net/images/cv-cyberark-allowed-machines-post-script-1415-5e3ea56704.jpg" /></p>
+<h2 id="best-practices-and-caveats">Best practices and caveats<a class="headerlink" href="#best-practices-and-caveats" title="Permanent link">&para;</a></h2>
+<p>If creating a synchronization monitor manually, be sure to select <strong>Do not store and display request and response bodies and header values in execution details</strong> in any requests that fetch client tokens or credential values from external vaults. Failing to do so will expose the sensitive information when you <strong>Analyze execution details</strong> in <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic" title="Learn about the Synthetic details page for HTTP monitors.">HTTP monitor details</a>.</p>
+<ul>
+<li>
+<p>Automatically created synchronization monitors may be edited. To edit an autocreated synchronization monitor, you must have <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">access to the credentials</a> referenced in the monitor. You might need to make edits if the external vault vendor makes changes. For example, you might need to edit request URLs if Microsoft changes the API version for fetching client tokens from Azure Key Vault.</p>
+</li>
+<li>
+<p>In general, however, we recommend that you limit your changes to execution frequency or locations.</p>
+</li>
+<li>When changing location, be careful not to pick <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location" title="Learn how to create a private location for synthetic monitoring.">private Synthetic locations</a> that don't have external network access.</li>
+<li>When changing location to a private Synthetic location, ensure that the proxy configuration isn't blocking access to required resources.</li>
+<li>We recommend editing the default names of synchronized credentials, companion credentials (for example, TLS certificates for HashiCorp Vault), and synchronization monitors for easy identification.</li>
+<li>We do not recommend reusing companion credentials (for example, for the HashiCorp secret ID token) required for synchronization monitors in other synthetic monitors for testing purposes.</li>
+</ul>
+<h3 id="edit-or-delete-synchronized-and-companion-credentials">Edit or delete synchronized and companion credentials<a class="headerlink" href="#edit-or-delete-synchronized-and-companion-credentials" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Once created, synchronized credentials are no longer editable by anyone; they can only be <a href="/docs/manage/credential-vault#overwrite-credential" title="Store and manage credentials in the credential vault.">overwritten</a>. In order to overwrite a synchronized credential, you need to provide new synchronization details; do not provide actual username, password, or token values.</p>
+</li>
+<li>
+<p>When you overwrite a synchronized credential, Dynatrace-created synchronization monitors are automatically updated.</p>
+</li>
+<li>Be sure to maintain the same <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">ownership</a> for all credentials within a synchronization monitor (that is, the synchronized credential and companion credentials).</li>
+<li>You cannot delete companion credentials referenced by a synchronization monitor unless you disable or delete the synchronization monitor.</li>
+<li>
+<p>If you delete a synchronized credential, its autocreated synchronization monitor is deleted as well.</p>
+</li>
+<li>
+<p>If there's more than one synchronization monitor, you need to delete or disable such monitors before you can delete a synchronized credential.</p>
+</li>
+<li>Any synthetic monitor that uses the (deleted) synchronized credential for testing is disabled.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

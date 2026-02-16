@@ -1,0 +1,1470 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>On-demand synthetic monitor executions for CI/CD - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#on-demand-synthetic-monitor-executions-for-cicd" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              On-demand synthetic monitor executions for CI/CD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="on-demand-synthetic-monitor-executions-for-cicd">On-demand synthetic monitor executions for CI/CD<a class="headerlink" href="#on-demand-synthetic-monitor-executions-for-cicd" title="Permanent link">&para;</a></h1>
+<h1 id="on-demand-synthetic-monitor-executions-for-cicd_1">On-demand synthetic monitor executions for CI/CD<a class="headerlink" href="#on-demand-synthetic-monitor-executions-for-cicd_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Explanation</li>
+<li>17-min read</li>
+<li>Updated on Jul 03, 2024</li>
+</ul>
+<p>ActiveGate version 1.233+</p>
+<p>In addition to scheduling synthetic monitor executions at regular intervals (in <strong>Frequency and locations</strong> settings), you can also trigger on-demand executions for <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors" title="Learn about configuring browser monitors and clickpaths.">browser</a> as well as <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic" title="Learn about configuring HTTP monitors.">HTTP</a> monitors. You can even trigger on-demand executions of <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration" title="Synchronize Synthetic Monitoring credentials with external vaults.">autocreated HTTP monitors for credential synchronization</a>. In the <a href="#ui">Dynatrace web UI</a>, select <strong>On-demand execution</strong> at the top of a monitor's details page.</p>
+<p><img alt="Trigger on-demand executions" src="https://dt-cdn.net/images/on-demand-execution-ui-2174-b5b18ea2b7.png" /></p>
+<p>You can also use the powerful <a href="#api"><strong>Synthetic - On-demand monitor executions</strong> API</a> to trigger executions of multiple monitors and retrieve the results. On-demand execution requests take precedence over your scheduled executions and are sent to the top of the request queue.</p>
+<p>You can trigger on-demand executions from <strong>any</strong> assigned or unassigned location <a href="#ui">via the web UI</a> or <a href="#api">the API</a>.</p>
+<p>During synthetic monitor creation and in edit mode, you can also set up a monitor to be executed on demand onlyâselect the <strong>On demand only</strong> frequency.</p>
+<p><img alt="On-demand frequency" src="https://dt-cdn.net/images/frequencyondemandonly-617-ae2bdb37f6.jpg" /></p>
+<p>On-demand executions, with their powerful features, are a valuable tool in your CI/CD strategy:</p>
+<ul>
+<li>Monitors can be executed on demand from any location, public or private.</li>
+<li>On-demand execution results may be included or excluded from overall monitor results.</li>
+<li>Executions may be included or excluded from problem detection.</li>
+<li>Executions can be triggered via the web UI or API.</li>
+</ul>
+<p>These executions can validate that a new deployment of your software is successful and can be integrated with build tools like Jenkins or <a href="https://v1.keptn.sh/docs">Keptnï»¿</a>.</p>
+<p>On-demand executions are also very valuable as quick monitor tests, for example, to test a monitor after developing a complex script. Likewise, such executions can verify that a fix for a Dynatrace-detected problem was effective, for example, if you added host memory or reverted to an older application version.</p>
+<p>With their ability to be included or excluded from overall monitor results and problem detection, on-demand executions offer many more options than <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath#playback" title="Learn how to record a browser clickpath to monitor the availability and performance of your application.">local playback of browser clickpaths</a>.</p>
+<h2 id="ui-based-on-demand-executions">UI-based on-demand executions<a class="headerlink" href="#ui-based-on-demand-executions" title="Permanent link">&para;</a></h2>
+<p>The <strong>On-demand execution</strong> button on synthetic monitor details pages allows you to trigger executions for the selected monitor from all or a selected location. It also displays a list of all on-demand executions for the monitor over the preceding six hours, triggered by any user via the web UI or <a href="#api">API</a>.</p>
+<p><img alt="On-demand execution page" src="https://dt-cdn.net/images/on-demand-executions-http-monitor-2207-0d9244213b.png" /></p>
+<h3 id="trigger-an-execution">Trigger an execution<a class="headerlink" href="#trigger-an-execution" title="Permanent link">&para;</a></h3>
+<p>Any user with the <strong>View environment</strong> permission at the environment or management-zone level can trigger an execution via the UI.</p>
+<p>Even if you <a href="/docs/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window#disable-synthetic" title="Create maintenance windows and define their scope.">disable scheduled synthetic monitor execution during maintenance windows</a>, you can still execute monitors on demand.</p>
+<ol>
+<li>Select <strong>On-demand execution</strong> at the top of the monitor's details page.</li>
+<li>You are directed to the <strong>On-demand execution</strong> page. Select <strong>All assigned locations</strong> or any assigned or unassigned public or private location.</li>
+<li>
+<p>Select a <strong>Processing mode</strong>ânote that this applies to all executions if you select all locations.</p>
+</li>
+<li>
+<p><strong>Standard</strong> (default)âthe executions contribute to problem detection and availability and performance statistics. For browser monitors, you can view data points on the <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors" title="Learn how to analyze browser-monitor data points."><strong>Multidimensional analysis</strong> page</a>. For HTTP monitors, you can access execution results when you <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic" title="Learn about the Synthetic details page for HTTP monitors."><strong>Analyze execution details</strong></a>.</p>
+</li>
+<li><strong>Disable problem detection</strong>âthe executions contribute to availability and performance statistics but not to problem detection. For browser monitors, data points appear on the <strong>Multidimensional analysis</strong> page; for HTTP monitors, you can view execution results when you <strong>Analyze execution details</strong>.</li>
+<li><strong>Execution details only</strong>âthe executions do not contribute to availability and performance statistics or to problem detection. For HTTP monitors, you can still access results when you <strong>Analyze execution details</strong>; for browser monitors, these data points appear on the <strong>Multidimensional analysis</strong> page.</li>
+</ol>
+<p>Note that for all processing modes, executions are visible in the list of on-demand executions in the web UI and retrieved via the <a href="#api">on-demand executions API</a>. Summary and detailed execution information is available for six hours via the API.
+4. <strong>Fail on performance threshold violation</strong>âby default, on-demand executions fail when they violate a performance threshold, given that their main purpose is to validate new software versions in your CI/CD pipeline. However, you can disable this setting so that on-demand executions behave like regularly scheduled executions (that is, performance threshold violations do not cause monitors to fail).
+5. HTTP monitors only <strong>Fail on missing or expiring SSL certificate</strong>âfail the monitor if one or more of its requests encounters an expired, missing, or expiring SSL certificate.</p>
+<p>This setting only works if <strong>SSL expiration date verification</strong> has already been enabled for an HTTP request in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic" title="Learn about configuring HTTP monitors.">monitor settings</a>; it uses the request-level setting to check for SSL certificate validity within the specified number of days.</p>
+<p>If your monitor has multiple requests with different settings for SSL certificate validity, <strong>Fail on missing or expiring SSL certificate</strong> checks and honors each setting.
+6. Browser monitors only <strong>Take screenshot on successful execution</strong>âcapture screenshots upon success from public or private locations; this setting is disabled by default. When you enable this setting, screenshots upon success are captured even if the monitor exceeds a performance threshold. If you trigger executions from all locations, screenshots upon success are captured from the first location. You can also capture screenshots upon success for executions triggered via the API.</p>
+<p>Note that screenshots are automatically captured upon failure.
+7. Select <strong>Trigger now</strong>âyou see a summary dialog listing the execution locations; the execution list displays new entries for the triggered executions. The <strong>Execution stage</strong> initially is <code>Triggered</code>.</p>
+<p>Any change you make to monitor script (configuration) is immediately available for on-demand executions on public or private locations.</p>
+<p>Note that executions might not all begin at the same time from different locationsâexecutions might take longer to begin from public locations than from private locations. See additional information on <a href="#throttling">throttling</a> below.</p>
+<p><img alt="Triggered execution" src="https://dt-cdn.net/images/on-demand-exec-triggered-2185-f3ccf8cf28.png" /></p>
+<h3 id="throttling-and-limits">Throttling and limits<a class="headerlink" href="#throttling-and-limits" title="Permanent link">&para;</a></h3>
+<ul>
+<li>There is a mandatory gap per user of 60 seconds between consecutive on-demand executions of a monitor from the same location (whether triggered via the web UI or API).</li>
+</ul>
+<p>Examples of throttling</p>
+<p>All these examples assume execution from the same location.</p>
+<ul>
+<li>User A triggers a monitor via API within 60 seconds of triggering the same monitor via UIâthrottled.</li>
+<li>User B triggers a monitor via API within 60 seconds of user A triggering the same monitor via UIâno throttling.</li>
+<li>User B triggers a monitor via UI within 60 seconds of user A triggering the same monitor via UIâno throttling.</li>
+<li>
+<p>User B triggers a monitor via API within 60 seconds of user A triggering the same monitor via APIâno throttling.</p>
+</li>
+<li>
+<p>When triggering multiple on-demand executions via the <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions#api" title="Execute synthetic monitors on demand from public or private locations">API</a>, there is a limit of 100 executions per batch.</p>
+</li>
+<li>There's also a limit of 5000 on-demand executions per minute for a Dynatrace environment.</li>
+<li>You can define up to 64 key-value pairs of <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions#api" title="Execute synthetic monitors on demand from public or private locations">metadata per batch</a>, where keys and values can each be up to 1024 characters.</li>
+<li>When specifying <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions#api" title="Execute synthetic monitors on demand from public or private locations">repeated on-demand executions per location</a>, the maximum execution count is 10.</li>
+</ul>
+<h3 id="failure-to-be-triggered">Failure to be triggered<a class="headerlink" href="#failure-to-be-triggered" title="Permanent link">&para;</a></h3>
+<p>On-demand executions might not be successfully triggered for various reasons, for example, when a monitor is disabled, a location is down, or when throttling is in effect for a monitor on a given location.</p>
+<p>There are several additional reasons that on-demand executions might not be successfully triggered via the <a href="#api">API</a>: monitor deletion, incorrect specification of monitor or location IDs, incorrect specification of related service or application IDs, location deletion, problems with the public Synthetic infrastructure, or problems with your Dynatrace monitoring environment.</p>
+<p>If an execution can't be successfully triggered via the UI, the reasons are shown in the <strong>Triggering status summary</strong> after you select <strong>Trigger now</strong>. The <strong>Execution stage</strong> in the execution list is <code>Not triggered</code>. Details of executions not triggered via the <a href="#api">API</a> are returned in the <code>triggeringProblemsCount</code> and <code>triggeringProblemsDetails</code> response parameters for the POST request.</p>
+<p><img alt="Failure to be triggered" src="https://dt-cdn.net/images/on-demand-exec-not-triggered-2190-97500e2d2a.png" /></p>
+<p>Executions that can't be triggered are different from executions that are triggered but can't be executedâsee the <a href="#api">API</a> section below for information.</p>
+<h3 id="list-of-executions">List of executions<a class="headerlink" href="#list-of-executions" title="Permanent link">&para;</a></h3>
+<p>The list of executions shows all on-demand executions (triggered by any user via the web UI or API) for a given monitor within the last six hours.</p>
+<p><img alt="On-demand execution list" src="https://dt-cdn.net/images/on-demand-exec-list-2179-8c66facb90.png" /></p>
+<ul>
+<li>The <strong>Execution ID</strong> is a unique ID assigned to each execution; if you trigger executions from all locations, each location's execution has a different ID.</li>
+<li>The <strong>Triggered</strong> column shows the start time of the execution in the logged-in user's time zone.</li>
+<li><strong>Source</strong> shows whether the execution was triggered via the web <code>UI</code> or the <code>API</code>.</li>
+<li>The <strong>User</strong> column shows the Dynatrace user ID of the user who triggered the execution.</li>
+<li>The <strong>Location</strong> column shows the name of the public or private location from which the monitor was executed.</li>
+<li>
+<p><strong>Execution stage</strong> identifies the different stages of the on-demand execution. The initial value is <code>Triggered</code> (or <code>Not triggered</code>). When execution is complete, the value changes to <code>Executed</code>. Basic results such as duration and HTTP status code are available at this stage. The progress spinner continues to be displayed at the <code>Executed</code> stage until detailed results are available and the value changes to <code>Data retrieved</code>. If multiple sequential executions are triggered per location, the first execution is marked <code>Triggered</code>; the remaining executions are marked <code>Waiting</code>.</p>
+</li>
+<li>
+<p>The <strong>Result</strong> column displays whether the execution was a <code>Success</code> or <code>Failure</code> (with an accompanying <strong>Failure reason</strong>).</p>
+</li>
+<li>You can <strong>Rerun</strong> <img alt="Refresh" src="https://dt-cdn.net/images/refresh-turquoise-500-64f72fec6c.svg" title="Refresh" /> an execution with the exact configuration defined, for example, with metadata defined via the API. Besides metadata, other execution parameters replicated are the <a href="#trigger-ui">processing mode</a>, failure for violating a performance threshold, failure due to an SSL certificate issue, and screenshot capture upon success.</li>
+<li>Select the expand button <img alt="Expand row" src="https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg" title="Expand row" /> in the <strong>Details</strong> column to view execution duration, batch metadata like key-value pairs (available via <a href="#api">API</a> only), and a link to results.</li>
+</ul>
+<h3 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h3>
+<p>When the <strong>Execution stage</strong> in the <a href="#list">list of executions</a> changes to <code>Data retrieved</code>, you can follow the <strong>execution details</strong> link to view detailed results for the browser or HTTP monitor that was executed.</p>
+<p>For browser monitors, you're directed to the <strong>Multidimensional analysis</strong> page with the data point selected in the scatter plot. On-demand executions are identifiable by shape in the <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#scatter-plot" title="Learn how to analyze browser-monitor data points.">scatter plot</a> as well as by an annotation in the list of <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#data-points" title="Learn how to analyze browser-monitor data points.">data points</a>.</p>
+<p><img alt="Scatter plot" src="https://dt-cdn.net/images/scatterplotondemandexecution-2164-393f41dda4.jpg" /></p>
+<p>Screenshot collection for on-demand browser monitor executions is the same as for <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors#screenshots" title="Analyze browser monitor and clickpath results on the Synthetic details page.">scheduled executions</a>. However, you can enable screenshot collection upon success <a href="#trigger-ui">via the UI</a> as well as POST requests <a href="#api">via API</a>.</p>
+<p>For HTTP monitors, you're directed to the <strong>On-demand execution</strong> tab of the <strong>Analyze execution details</strong> page. You can also access this tab by selecting <strong>Analyze execution details</strong> from the <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic" title="Learn about the Synthetic details page for HTTP monitors.">HTTP monitor details page</a>. Select an on-demand <strong>Execution</strong> from the dropdown list to view its details.</p>
+<p><img alt="On-demand executions tab" src="https://dt-cdn.net/images/analyze-last-execution-filters2-1600-0085726604.png" /></p>
+<p>The <strong>On-demand execution</strong> tab is overwritten with each on-demand execution. If the on-demand executions are in <strong>Standard</strong> or <strong>Disable problem detection</strong> modes, details are also written to the last failed/successful execution tabs. Note that in these modes, if you fail a monitor for violating a performance threshold, the execution appears in the tabs for successful and on-demand executions.</p>
+<h2 id="api-synthetic-on-demand-monitor-executions">API: Synthetic - On-demand monitor executions<a class="headerlink" href="#api-synthetic-on-demand-monitor-executions" title="Permanent link">&para;</a></h2>
+<p>Check the section on <a href="#throttling">throttling</a> above for on-demand execution limits via the web UI and API.</p>
+<p>For more information, check documentation on the <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution" title="View the results of Synthetic monitor executions via the Synthetic v2 API.">Synthetic monitor executions API v2</a>. You can <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/post-batch-execution" title="Trigger a batch execution of synthetic monitors via the Dynatrace API.">trigger a batch execution</a>, <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-all-executions" title="List all on-demand executions of synthetic monitors via the Dynatrace API.">list on-demand executions</a>, check <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-execution-basic" title="View basic information about an on-demand execution of a synthetic monitor via the Dynatrace API.">basic</a> as well as <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-execution-full" title="View full information about an on-demand execution of a synthetic monitor via the Dynatrace API.">detailed results</a> of a single execution, and check <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-batch-summary" title="View the summary of a batch execution of synthetic monitors via the Dynatrace API.">batch execution results</a>.</p>
+<p>API-based on-demand executions offer greater flexibility and scalability than the UI. The <strong>Synthetic - On-demand monitor executions</strong> API offers:</p>
+<ul>
+<li>The ability to execute multiple monitors on demand (<strong>batch execution</strong>) by specifying monitor IDs, and, optionally, location IDs. If you don't specify locations, a monitor is executed from all assigned locations. This ability is only available via API.</li>
+<li>The ability to execute monitors from <strong>any location</strong>. In the POST request for triggering on-demand executions, each specified monitor is executed from the specified locations (or all assigned locations if none are specified).</li>
+<li>ActiveGate version 1.259+ The ability to specify an <strong>execution count for repeated executions per location</strong>, which is helpful for quality gates and load tests. This ability is only available via API. The <code>executionCount</code> parameter allows you to specify the number of executions per location for each monitor; the maximum value is 10; if there is no value, the monitor is executed once per location. Executions can be triggered sequentially (<code>repeatMode</code> is <code>SEQUENTIAL</code>) or in parallel (<code>repeatMode</code> is <code>PARALLEL</code>). The default mode is sequential.</li>
+</ul>
+<p>In sequential mode, each execution automatically references the following execution, if any, with the <code>nextExecutionId</code> parameter. When you trigger multiple sequential executions on a location, the first execution is in the <code>Triggered</code> stage while the others are marked <code>Waiting</code>. Executions on each location are independent of each other.</p>
+<ul>
+<li>If a sequential execution times out on a location, any following executions on that location are not triggered.</li>
+<li>Note that execution IDs in <code>nextExecutionId</code> are sequential for public locations and randomly generated for private locations.</li>
+<li>Monitor script or credential changes after a batch of sequential executions has been triggered do not affect any remaining executions. So if another user changes a script you are executing sequentially, the script changes are not reflected in any remaining executions.</li>
+<li>ActiveGate version 1.259+ The ability to <strong>partially override the monitor script</strong> and provide custom parameter values specifically for on-demand execution, which simplifies the reconfiguration and testing of synthetic monitors. This ability is only available via API. The <code>customizedScript</code> parameter allows you to list <code>requests</code> (HTTP monitors) or <code>events</code> (browser monitors) with customizations per request or event. For HTTP monitors, you see which parameters had custom values when you <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution" title="Learn about the Synthetic details page for HTTP monitors."><strong>Analyze execution details</strong></a>.</li>
+</ul>
+<p>The following parameters can be customized for HTTP monitors</p>
+<ul>
+<li><code>url</code></li>
+<li><code>requestBody</code></li>
+<li><code>validation</code></li>
+<li><code>preProcessingScript</code></li>
+<li><code>postProcessingScript</code></li>
+<li><code>requestTimeout</code></li>
+<li><code>authentication</code></li>
+<li>
+<p><code>configuration</code></p>
+<ul>
+<li><code>requestHeaders</code></li>
+<li><code>acceptAnyCertificate</code></li>
+<li><code>followRedirects</code></li>
+</ul>
+</li>
+</ul>
+<p>The following event types can be customized for browser monitors</p>
+<ul>
+<li>Navigate</li>
+<li>Click</li>
+<li>JavaScript</li>
+<li>Keystroke</li>
+<li>Tap</li>
+<li>Select option</li>
+<li>Cookie</li>
+</ul>
+<p>You can optionally specify a <code>sequenceId</code> for the order of the request or event in the monitor script. For example, use <code>"sequenceId": "3"</code> to specify changes to the third event in a browser monitor. If you don't specify a <code>sequenceId</code>, the modifications apply to the first request or event that hasn't been referenced by a sequence ID in the API request. See examples below.</p>
+<ul>
+<li>Any such script changes are for the purpose of on-demand execution only and do not persist thereafter.</li>
+<li>You cannot change or reorder the number of requests or events.</li>
+<li>You cannot change the <strong>Name</strong> of requests or events (<code>description</code> in script mode).</li>
+<li>You cannot change the request type (for example, GET) or event type (for example, Navigate).</li>
+<li>You cannot add a pre- or post-processing script to an HTTP monitor that has neither.</li>
+</ul>
+<p>Example: HTTP monitor with custom URL for a single request</p>
+<p>As no sequence ID is specified, the URL override in this example applies to the first HTTP request.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>&quot;monitors&quot;: [
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>{
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;monitorId&quot;: &quot;HTTP_CHECK-C608F75BF82E5B22&quot;,
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>&quot;customizedScript&quot;: {
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>&quot;requests&quot;: [
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>{
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>&quot;url&quot;: &quot;https://www.yourdomain.com&quot;
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>}
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>]
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>}
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>}
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>]
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>}
+</code></pre></div>
+<p>Example: HTTP monitor with overrides for two requests</p>
+<p>As no sequence ID is specified, the URL override and pre-execution script with the <code>api.fail()</code> method apply to the first HTTP request. Note that you can only override the pre- or post-execution script for a monitor that already has one such script defined. For the third request where the sequence ID has been specified, a validation rule has been added.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&quot;monitors&quot;: [
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>{
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&quot;monitorId&quot;: &quot;HTTP_CHECK-6349B98E1CD87352&quot;,
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>&quot;customizedScript&quot;: {
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>&quot;requests&quot;: [
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>{
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>&quot;url&quot;: &quot;https://www.somepage.org&quot;,
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>&quot;preProcessingScript&quot;: &quot;if (response.getResponseBody().includes(\&quot;error\&quot;)) {api.fail(\&quot;HTTP failing monitor.\&quot;);}&quot;
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>},
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>{
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>&quot;sequenceId&quot;: &quot;3&quot;,
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>&quot;validation&quot;: {
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>&quot;rules&quot;: [
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>{
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>&quot;value&quot;: &quot;=201&quot;,
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>&quot;passIfFound&quot;: &quot;true&quot;
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>}
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>]
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>}
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>}
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>]
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>}
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>
+<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>}
+<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a>
+<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a>
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a>
+<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a>]
+<a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a>
+<a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a>
+<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a>
+<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a>}
+</code></pre></div>
+<p>Example: Browser monitor with custom URL for Navigate event</p>
+<p>As no sequence ID is specified, the URL override in this example applies to the first Navigate event.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&quot;takeScreenshotsOnSuccess&quot;: true,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>&quot;monitors&quot;: [
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>{
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>&quot;monitorId&quot;: &quot;SYNTHETIC_TEST-114F1C18CF07CD1D&quot;,
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>&quot;customizedScript&quot;: {
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>&quot;events&quot;: [
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>{
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>&quot;type&quot;: &quot;navigate&quot;,
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>&quot;url&quot;: &quot;www.yourdomain.com&quot;
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>}
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>]
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>}
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>}
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>]
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>}
+</code></pre></div>
+* The ability to execute a group of monitors on demand by specifying common <strong>tags and/or IDs of related services or applications</strong>. Note that all specified conditions must match for a monitor to be executed on demand. This ability is only available via API.</p>
+<p>If you specify three monitors by ID and one tag in your POST request, each of the three monitors plus all monitors matching the tag will be executed.
+* Automatic assignment of a <strong>batch ID</strong> for all executions of the POST method, whether for a single monitor or multiple monitors. This enables the retrieval of results by batch ID as well.
+* The ability to define <strong>custom key-value pairs</strong>, for example, to identify application versions, as part of batch <code>metadata</code>. This ability is only available via API. You can define up to 64 pairs per batch, where keys and values can each be up to 1024 characters. Key-value metadata is available in individual as well as batch execution results retrieved via the API and is displayed in the web UI.
+* The capture of <strong>screenshots upon success</strong> for browser monitors from public or private locations by setting <code>"takeScreenshotsOnSuccess": true</code> in the POST request (the default is <code>false</code>). Screenshots upon success are captured from the first location specified for each monitor ID. If no location is specified (for example, when you use tags to define a list of monitors), screenshots are captured from any of the locations assigned to a monitor.</p>
+<p>Note that screenshots are automatically captured upon failure. But if a monitor fails because of a performance threshold violation, it's still considered available, and no screenshots are captured; however, you can enable <code>takeScreenshotsOnSuccess</code>.
+* The ability to fail an on-demand HTTP monitor execution if the <strong>SSL certificate</strong> is missing, expired, or expiring (<code>failOnSslWarning</code> parameter.)
+* The ability to <strong>stop triggering all executions in a batch</strong> if there is a problem with triggering any execution (<code>stopOnProblem</code> parameter), for example, if the monitor ID is incorrect/missing or the monitor is deleted. This ability is only available via API.
+* Retrieval of the <strong>list</strong> of on-demand executions (triggered via the web UI or API by all users in your environment) in the preceding six hours. The list includes execution IDs for each execution. You can filter this list by:</p>
+<ul>
+<li>Execution and data-delivery timestamps</li>
+<li>Batch IDs</li>
+<li>Monitor IDs</li>
+<li>Location IDs</li>
+<li>User IDs</li>
+<li>Retrieval of the basic as well as more detailed <strong>results</strong> of an execution (for which you provide an execution ID).</li>
+</ul>
+<p>Basic results are best suited for CI/CD purposes and include the number of requests/events executed, success/failure result, and some key metrics. For example, basic results for HTTP monitors report total request size (for all requests taken together), time to first byte, TLS handshake time, TCP connect time, DNS lookup time, and the final HTTP status code.</p>
+<p>Detailed results are more suitable for troubleshooting. For HTTP monitors, this is the entire set of results visible in the web UI when you opt to <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution" title="Learn about the Synthetic details page for HTTP monitors."><strong>Analyze execution details</strong></a>.
+* <strong>Batch retrieval of results</strong> when you provide a batch ID.</p>
+<p>Batch results include information on executions that were triggered and those that resulted in an outcome.</p>
+<p>Note that the <code>executedCount</code> is the number of executions that resulted in success or failure. <code>failedToExecuteCount</code> is the number of executions that were triggered but for which results are not available for technical reasons (such as a problem with the ActiveGate or Synthetic engine or results that could not be sent to the Dynatrace Cluster). <code>executedCount</code> + <code>failedToExecuteCount</code> = <code>triggeredCount</code>.
+* <strong>Granular permissions</strong> for triggering and retrieving data for on-demand executions.</p>
+<p>To trigger executions (POST), you need rights to create monitors (<code>ExternalSyntheticIntegration</code> token scope) or the <code>syntheticExecutions.write</code> token scope, which enables you to trigger executions but not create new monitors.</p>
+<p>To retrieve data (GET), you need any of the <code>ExternalSyntheticIntegration</code>, <code>ReadSyntheticData</code>, or <code>syntheticExecutions.read</code> token scopes.</p>
+<h3 id="best-practices">Best practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ul>
+<li>When you override any credentials in a monitor script, for example, for the Authorization header, be sure that you have access to the updated credential.</li>
+<li>If you override the URL in a browser monitor Navigate event, it's best not to enable screenshots upon success, as the reference screenshots for the event will be overwritten by ones from the customized URL.</li>
+</ul>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution" title="View the results of Synthetic monitor executions via the Synthetic v2 API.">Synthetic monitor executions API v2</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

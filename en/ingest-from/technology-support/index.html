@@ -970,7 +970,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>17-min read</li>
-<li>Updated on Feb 02, 2026</li>
+<li>Updated on Feb 09, 2026</li>
 </ul>
 <p>Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see <a href="/docs/ingest-from/technology-support/serverless-compute-services" title="Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS).">Serverless compute support matrix</a>. For mainframe, see <a href="/docs/ingest-from/technology-support/mainframe-technology-support" title="Learn which technologies Dynatrace supports for Mainframe monitoring.">Mainframe technology support</a>.</p>
 <p>See also, <a href="/docs/whats-new/technology/end-of-support-news" title="End of support announcements for technologies supported by Dynatrace.">End-of-support announcements</a>.</p>
@@ -1949,8 +1949,8 @@
 <td>Alpine Linux 64-bit (x86-64), Linux (x86-64), Solaris (SPARC), Windows (x86-64)</td>
 </tr>
 <tr>
-<td>SAP JVM</td>
-<td>7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24</td>
+<td>SapMachine</td>
+<td>7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS</td>
 <td>Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64)</td>
 </tr>
 </tbody>
@@ -4416,11 +4416,10 @@
 <h4 id="oneagent-for-ios">OneAgent for iOS<a class="headerlink" href="#oneagent-for-ios" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>32-bit devices</strong>: OneAgent for iOS version 8.249 is the last version that supports 32-bit devices.</li>
-<li><strong>Xcode</strong>: We support apps built with Xcode 16+.</li>
+<li><strong>Xcode</strong>: We support only the Xcode versions that Apple allows for App Store submission. Check <a href="https://developer.apple.com/ios/submit/">Submit your iOS apps to the App Storeï»¿</a> on the Apple Developer site to learn which Xcode versions are currently supported.</li>
 </ul>
-<p>Specifically, we support only those Xcode versions that Apple allows for App Store submission. Check <a href="https://developer.apple.com/ios/submit/">Submit your iOS apps to the App Storeï»¿</a> on the Apple Developer site to learn which Xcode versions are currently supported.</p>
-<p>Starting with OneAgent for iOS version 8.309, Dynatrace stopped supporting Xcode 15. We only support Xcode 16+.</p>
-<p>Also, be aware that <a href="https://dt-url.net/we038fb">Apple app submission guidelinesï»¿</a> will restrict support to applications built with a minimum of Xcode 16 and iOS 18 SDK starting April 2025.</p>
+<p>Starting with OneAgent for iOS version 8.335, Dynatrace stopped supporting Xcode 16. We only support Xcode 26+.</p>
+<p>Also, be aware that <a href="https://dt-url.net/we038fb">Apple's App Store submission guidelinesï»¿</a> will restrict support to applications built with a minimum of Xcode 26 around April 2026.</p>
 <p>Starting with OneAgent for iOS version 8.323, Dynatrace will stop supporting <code>static builds</code> and <code>Carthage</code> as integration methods.</p>
 <p>We recommend migrating to a supported alternative like Swift Package Manager to ensure continued compatibility and updates.</p>
 <h4 id="dynatrace-android-gradle-plugin">Dynatrace Android Gradle plugin<a class="headerlink" href="#dynatrace-android-gradle-plugin" title="Permanent link">&para;</a></h4>

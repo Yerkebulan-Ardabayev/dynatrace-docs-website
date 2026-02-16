@@ -1,0 +1,1776 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/deliver/configuration-as-code/monaco/reference/commands-saas/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Work with Dynatrace Monaco CLI commands for Latest Dynatrace - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#work-with-dynatrace-monaco-cli-commands-for-latest-dynatrace" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Work with Dynatrace Monaco CLI commands for Latest Dynatrace
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="work-with-dynatrace-monaco-cli-commands-for-latest-dynatrace">Work with Dynatrace Monaco CLI commands for Latest Dynatrace<a class="headerlink" href="#work-with-dynatrace-monaco-cli-commands-for-latest-dynatrace" title="Permanent link">&para;</a></h1>
+<h1 id="work-with-dynatrace-monaco-cli-commands-for-latest-dynatrace_1">Work with Dynatrace Monaco CLI commands for Latest Dynatrace<a class="headerlink" href="#work-with-dynatrace-monaco-cli-commands-for-latest-dynatrace_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>Updated on Jan 26, 2026</li>
+</ul>
+<p>The Dynatrace Monaco CLI offers several native commands that can be used to manage Dynatrace configuration files.</p>
+<ul>
+<li><code>deploy</code>: Deploy configurations to a Dynatrace environment.</li>
+<li><code>download</code>: Download configurations from a Dynatrace environment.</li>
+<li><code>delete</code>: Remove configurations from a Dynatrace environment and exclude them from subsequent deployments.</li>
+<li><code>generate</code>: Generate file skeletons based on a given configuration.</li>
+<li><code>account</code>: Operations involving Account Management resources.</li>
+<li>Global flags: modify the commands.</li>
+</ul>
+<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h2>
+<p>The <code>deploy</code> command deploys configurations to environments defined in a selected deployment manifest file.</p>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>monaco deploy [ARGS] [OPTIONS]
+</code></pre></div>
+<p>The most straightforward way to use deploy is to run it without any flags and pass the file name of your deployment manifest.
+This way, all configurations in the project section of the deployment manifest file are applied to all environments defined in the environments section of the file.</p>
+<h3 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">&para;</a></h3>
+<p>Argument</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>&lt;manifest.yaml&gt;</code></p>
+<p>The manifest file defining projects to deploy and the environments to deploy them to.</p>
+<p>Required</p>
+<h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h3>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--continue-on-error</code>, <code>-c</code></p>
+<p>Proceed with deployment even if an error is encountered.</p>
+<p>This can be used to ensure that all valid configurations are applied to your environments, even if other configurations are invalid or failed to deploy.</p>
+<p>Using this flag might lead to follow-up errors for configurations that depend on each other.</p>
+<p>Optional</p>
+<p><code>--dry-run</code>, <code>-d</code></p>
+<p>Validate the configuration file structure without deploying it.</p>
+<p>With this flag set, <code>monaco deploy</code> checks whether your templates are valid JSON and whether your configuration YAML files can be parsed and used.</p>
+<p>A <code>dry-run</code> doesn't connect to Dynatrace and can't validate the content of the JSON sent to Dynatrace.
+A deployment may still fail with <code>HTTP 400 Bad Request</code> errors after a successful <code>dry-run</code> if the content of a JSON template is incorrect.</p>
+<p>Optional</p>
+<p><code>--environment &lt;name&gt;</code>, <code>-e &lt;name&gt;</code></p>
+<p>Apply your configurations to specific environments within your deployment manifest file.
+To set multiple environments, either repeat this flag or separate them using a comma (<code>,</code>).</p>
+<p>This flag is mutually exclusive with <code>--group</code>:</p>
+<ul>
+<li>If this flag is specified, configurations are deployed to each specified environment.</li>
+<li>If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</li>
+</ul>
+<p>Optional</p>
+<p><code>--group &lt;name&gt;</code>, <code>-g &lt;name&gt;</code></p>
+<p>Apply your configurations to specific <a href="/docs/deliver/configuration-as-code/monaco/configuration#environment-groups" title="Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.">environment groups</a> within your deployment manifest file.
+To set multiple groups, either repeat this flag or separate them using a comma (<code>,</code>).</p>
+<p>This flag is mutually exclusive with <code>--environment</code>:</p>
+<ul>
+<li>If this flag is specified, configurations are deployed to each environment within the specified groups.</li>
+<li>If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</li>
+</ul>
+<p>Optional</p>
+<p><code>--project &lt;name&gt;</code>, <code>-p &lt;name&gt;</code></p>
+<p>Specify one or more projects to be deployed.
+To set multiple projects, either repeat this flag or separate them using a comma (<code>,</code>).</p>
+<ul>
+<li>If this flag is specified, configurations from the specified projects are deployed.</li>
+<li>Without this flag, configurations from all projects defined in the manifest are deployed.</li>
+</ul>
+<p>Optional</p>
+<h3 id="additional-configuration-via-environment-variables">Additional configuration via environment variables<a class="headerlink" href="#additional-configuration-via-environment-variables" title="Permanent link">&para;</a></h3>
+<p>You can use environment variables to set additional configuration options.</p>
+<h4 id="specify-proxy-server">Specify proxy server<a class="headerlink" href="#specify-proxy-server" title="Permanent link">&para;</a></h4>
+<p>In environments where access to Dynatrace API endpoints is only possible or allowed via a proxy server, the Dynatrace Monaco CLI provides an option to specify the address of your proxy server when running a command:</p>
+<p>To do this, set the <code>HTTPS_PROXY</code> environment variable to the address of your proxy server.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Linux or Mac OS
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>HTTPS_PROXY=localhost:5000
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>monaco deploy example.yaml
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a># Windows
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>$env:HTTPS_PROXY=&quot;localhost:5000&quot;
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>monaco deploy example.yaml
+</code></pre></div>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
+<p>The <code>download</code> command lets you download configurations from a Dynatrace environment as Dynatrace Monaco CLI files.</p>
+<p>This command lets you:</p>
+<ul>
+<li>Back up existing Dynatrace configurations.</li>
+<li>Share (download and) Dynatrace configurations from one environment to another.</li>
+<li>Create blueprints/templates of Dynatrace configuration files from existing (UI-created) configurations.</li>
+</ul>
+<p>Monaco can either:</p>
+<ul>
+<li>Download via a local manifest YAML file, in which the environment is specified.</li>
+<li>Download directly from a Dynatrace environment URL.</li>
+</ul>
+<h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>monaco download [ARGS] [OPTIONS]
+</code></pre></div>
+<h3 id="options_1">Options<a class="headerlink" href="#options_1" title="Permanent link">&para;</a></h3>
+<p>The available options depend on the download method.</p>
+<h4 id="arguments-to-download-via-manifest">Arguments to download via manifest<a class="headerlink" href="#arguments-to-download-via-manifest" title="Permanent link">&para;</a></h4>
+<p>These arguments are used when you want to download via a manifest YAML file.</p>
+<p>Argument</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--manifest &lt;filepath&gt;</code>, <code>-m &lt;filepath&gt;</code></p>
+<p>The path to the manifest file to use for connection information.</p>
+<p>If not specified, Monaco searches for a file named <code>manifest.yaml</code> in the current directory.</p>
+<p>Required</p>
+<p><code>--environment &lt;name&gt;</code>, <code>-e &lt;name&gt;</code></p>
+<p>Specify an environment defined in the manifest from which the configuration is to be downloaded.</p>
+<p>Required</p>
+<p><code>--force</code>, <code>-f</code></p>
+<p>Used in combination with <code>--manifest</code>.
+Force overwrites any existing <code>manifest.yaml</code> file.</p>
+<p>Never append the source environment name to the project folder name.</p>
+<p>Optional</p>
+<h4 id="arguments-to-download-via-url">Arguments to download via URL<a class="headerlink" href="#arguments-to-download-via-url" title="Permanent link">&para;</a></h4>
+<p>These arguments are used when you want to download via the Dynatrace environment URL.</p>
+<p>Argument</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--url &lt;url&gt;</code></p>
+<p>The URL of the Dynatrace environment from which to download the configuration.</p>
+<p>This flag is mutually exclusive with <code>--manifest</code> or <code>--environment</code>.</p>
+<p>Required</p>
+<p><code>--platform-token &lt;environment variable name&gt;</code></p>
+<p>The name of the environment variable that contains the Dynatrace platform token.</p>
+<p>This is mutually exclusive with <code>--oauth-client-id</code> and <code>--oauth-client-secret</code>.</p>
+<p>Required</p>
+<p><code>--token &lt;environment variable name&gt;</code></p>
+<p>The name of the environment variable that contains the API token (classic Dynatrace only).</p>
+<p>Required</p>
+<p><code>--oauth-client-id &lt;environment variable name&gt;</code></p>
+<p>The name of the environment variable that contains the OAuth client ID.</p>
+<p>This must be used together with <code>--oauth-client-secret</code>.
+This is mutually exclusive with <code>--platform-token</code>.</p>
+<p>Required</p>
+<p><code>--oauth-client-secret &lt;environment-variable-name&gt;</code></p>
+<p>The name of the environment variable that contains the OAuth client secret.</p>
+<p>This must be used together with <code>--oauth-client-id</code>.
+This is mutually exclusive with <code>--platform-token</code>.</p>
+<p>Required</p>
+<h4 id="options_2">Options<a class="headerlink" href="#options_2" title="Permanent link">&para;</a></h4>
+<p>These options can be used with either download method (whether via manifest or URL).</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--output-folder &lt;filepath&gt;</code>, <code>-o &lt;filepath&gt;</code></p>
+<p>Specifies the name of the output folder in which downloaded configurations will be stored.</p>
+<p>By default, the folder name will be <code>download</code> with the current timestamp appended.</p>
+<p>Optional</p>
+<p><code>--project &lt;name&gt;</code>, <code>-p &lt;name&gt;</code></p>
+<p>The name of the project (which contains all downloaded configurations) that will be generated.</p>
+<p>By default, the project name is <code>project</code>.</p>
+<p>Optional</p>
+<p><code>--api &lt;name&gt;</code>, <code>-a &lt;name&gt;</code></p>
+<p>Download one or more classic Configuration APIs, including deprecated ones.
+You can specify multiple APIs by repeating the flag, or by using comma-separated values.</p>
+<p>Optional</p>
+<p><code>--settings-schema &lt;name&gt;</code>, <code>-s &lt;name&gt;</code></p>
+<p>Download Settings 2.0 objects for one or more Settings 2.0 schemas.
+You can specify multiple APIs by repeating the flag, or by using comma-separated values.</p>
+<p>Optional</p>
+<p><code>--only-apis</code></p>
+<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#API-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">classic Configuration APIs</a>.
+Deprecated configuration APIs will not be included.</p>
+<p>Optional</p>
+<p><code>--only-automation</code></p>
+<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#automation-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">automation</a> configurations.</p>
+<p>Optional</p>
+<p><code>--only-settings</code></p>
+<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#settings-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">Settings 2.0</a> configuration objects.</p>
+<p>Optional</p>
+<p><code>--only-buckets</code></p>
+<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#bucket-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">bucket</a> configurations.</p>
+<p>Optional</p>
+<p><code>--only-documents</code></p>
+<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#document-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">document</a> configurations.</p>
+<p>Optional</p>
+<p><code>--only-openpipeline</code> Deprecated</p>
+<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#openpipeline-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">openpipeline</a> configurations.</p>
+<p>Optional</p>
+<p><code>--only-segments</code></p>
+<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#segment-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">segment</a> configurations.</p>
+<p>Optional</p>
+<p><code>--only-slo-v2</code></p>
+<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#slo-v2-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">slo-v2</a> configurations.</p>
+<p>Optional</p>
+<p>You can combine multiple <code>--only-&lt;type&gt;</code> flags in a single <code>monaco download</code> command to download several types at once.</p>
+<h3 id="additional-configuration-via-environment-variables_1">Additional configuration via environment variables<a class="headerlink" href="#additional-configuration-via-environment-variables_1" title="Permanent link">&para;</a></h3>
+<p>You can use environment variables to set additional configuration options.</p>
+<h4 id="filtering-of-downloaded-files">Filtering of downloaded files<a class="headerlink" href="#filtering-of-downloaded-files" title="Permanent link">&para;</a></h4>
+<p>By default, certain configuration types or configuration objects are not included in a download.
+This is because the Dynatrace API does not return full information from these configuration types.</p>
+<ul>
+<li>
+<p>Typically, these types contain secrets that must not be exported, such as:</p>
+</li>
+<li>
+<p><code>aws-credentials</code></p>
+</li>
+<li><code>azure-credentials</code></li>
+<li><code>kubernetes-credentials</code></li>
+<li><code>credential-vault</code></li>
+<li><code>extension</code></li>
+<li>Read-only configurations are also excluded.</li>
+</ul>
+<p>With Dynatrace Monaco CLI version 2.2.0+, you can deactivate this filtering.
+To do so, set one of the environment variables as described in the table below.
+Then, use <code>monaco download</code> to download the settings configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Environment variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MONACO_FEAT_DOWNLOAD_FILTER</code></td>
+<td>Controls all download filtering. If set to <code>false</code>, no filters are applied, and all settings are downloaded. This supersedes all other environment variables.</td>
+</tr>
+<tr>
+<td><code>MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS</code></td>
+<td>Controls Settings 2.0 download filtering. If set to <code>false</code>, all Settings 2.0 settings are downloaded without filtering. This supersedes the <code>MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS_UNMODIFIABLE</code> environment variables.</td>
+</tr>
+<tr>
+<td><code>MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS_UNMODIFIABLE</code></td>
+<td>Controls Settings 2.0 download filtering. If set to <code>false</code>, read-only settings are also downloaded.</td>
+</tr>
+<tr>
+<td><code>MONACO_FEAT_DOWNLOAD_FILTER_CLASSIC_CONFIGS</code></td>
+<td>Controls classic Configuration API type download filtering. If set to <code>false</code>, all classic Configuration API configurations are downloaded without filtering.</td>
+</tr>
+</tbody>
+</table>
+<p>While this lets you download a project, you won't be able to deploy it automatically.
+Some manual post-processing will be needed.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># Linux or macOS
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>MONACO_FEAT_DOWNLOAD_FILTER=false
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a># MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS=false
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a># MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS_UNMODIFIABLE=false
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a># MONACO_FEAT_DOWNLOAD_FILTER_CLASSIC_CONFIGS=false
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>monaco download
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a># Windows
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>$env:MONACO_FEAT_DOWNLOAD_FILTER=&quot;false&quot;
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a># $env:MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS=&quot;false&quot;
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a># $env:MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS_UNMODIFIABLE=&quot;false&quot;
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a># $env:MONACO_FEAT_DOWNLOAD_FILTER_CLASSIC_CONFIGS=&quot;false&quot;
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>monaco download
+</code></pre></div>
+<h4 id="concurrent-downloads">Concurrent downloads<a class="headerlink" href="#concurrent-downloads" title="Permanent link">&para;</a></h4>
+<p>When downloading a configuration, Monaco makes multiple simultaneous API calls to ensure that large configuration sets are downloaded as quickly as possible.
+By default, up to five concurrent requests are made.</p>
+<p>If you need faster downloads, and your environment or network allows it, you can configure Monaco to make additional concurrent requests.
+To do this, use the <code>MONACO_CONCURRENT_REQUESTS</code> environment variable set to the number of concurrent requests that you want to set.
+For example, <code>MONACO_CONCURRENT_REQUESTS=15</code> enables up to 15 concurrent requests.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># Linux or Mac OS
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>MONACO_CONCURRENT_REQUESTS=15
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>monaco download
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a># Windows
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>$env:MONACO_CONCURRENT_REQUESTS=&quot;15&quot;
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>monaco download
+</code></pre></div>
+<p>If you notice problems with downloading configurations, for example, if the internal network setup is throttling and dropping requests, reduce the number of concurrent requests.</p>
+<h4 id="dependency-resolution">Dependency resolution<a class="headerlink" href="#dependency-resolution" title="Permanent link">&para;</a></h4>
+<p>A Dynatrace configuration may contain dependencies on other configurations.
+Monaco resolves these dependencies automatically:</p>
+<ul>
+<li>The default resolver is run automatically as part of <code>monaco download</code>.</li>
+<li>A faster resolver is available with Monaco CLI version 2.0.2+.
+  This speeds up the <code>monaco download</code> execution, but is resource intensive: it requires 16+ GB of RAM and several hundred GB of storage available as swap space.</li>
+</ul>
+<p>To activate the fast resolver, set the environment variable <code>MONACO_FEAT_FAST_DEPENDENCY_RESOLVER</code> to <code>true</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a># Linux or Mac OS
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>MONACO_FEAT_FAST_DEPENDENCY_RESOLVER=true
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>monaco download
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a># Windows
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>$env:MONACO_FEAT_FAST_DEPENDENCY_RESOLVER=&quot;true&quot;
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>monaco download
+</code></pre></div>
+<h2 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
+<p>The <code>delete</code> command is a convenient way to remove configurations from Dynatrace environments.</p>
+<ul>
+<li>Deleting long-lived configurations in production environments is not ideal, but sometimes it's necessary</li>
+<li>Clean up temporary configurations in development environments.</li>
+</ul>
+<p>As input, the <code>delete</code> command requires two YAML files:</p>
+<ul>
+<li>The <a href="/docs/deliver/configuration-as-code/monaco/configuration#deployment-manifest" title="Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.">manifest file</a> that specifies the relevant Dynatrace environments.</li>
+<li>The <a href="/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference" title="Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.">deletefile</a> that specifies the relevant configurations.</li>
+</ul>
+<p>The deletefile itself is generated with <code>monaco generate deletefile</code>, see <a href="/docs/deliver/configuration-as-code/monaco/reference/commands-saas#generate-deletefile" title="How to use the Monaco CLI application, including arguments and options.">Generate</a>.</p>
+<h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>monaco delete [--manifest &lt;file&gt;] [--file &lt;file&gt;] [OPTIONS]
+</code></pre></div>
+<h3 id="arguments_1">Arguments<a class="headerlink" href="#arguments_1" title="Permanent link">&para;</a></h3>
+<p>Argument</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--manifest &lt;file&gt;</code>, <code>-m &lt;file&gt;</code></p>
+<p>The manifest file that specifies the relevant Dynatrace environments.</p>
+<p>If not specified, Monaco will look for the file named <code>manifest.yaml</code>.</p>
+<p>Optional</p>
+<p><code>--file &lt;file&gt;</code></p>
+<p>The delete file that specifies the relevant configurations.</p>
+<p>If not specified, Monaco will look for the file named <code>delete.yaml</code>.</p>
+<p>Optional</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--environment &lt;name&gt;</code>, <code>-e &lt;name&gt;</code></p>
+<p>The environment(s) from which the configurations should be deleted.
+To delete from multiple environments in a single call, either repeat this flag or use comma-separated variables.</p>
+<p>This flag is mutually exclusive with <code>--group</code>.
+If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</p>
+<p>Optional</p>
+<p><code>--group &lt;name&gt;</code>, <code>-g &lt;name&gt;</code></p>
+<p>The environment group(s) from which the configurations should be deleted.
+To delete from multiple groups in a single call, either repeat this flag or use comma-separated variables.</p>
+<p>This flag is mutually exclusive with <code>--environment</code>.
+If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</p>
+<p>Optional</p>
+<h2 id="generate">Generate<a class="headerlink" href="#generate" title="Permanent link">&para;</a></h2>
+<p>The <code>monaco generate</code> command lets you generate various auxiliary files, based on your configuration:</p>
+<ul>
+<li>Deletefile</li>
+<li>DOT graph</li>
+<li>JSON schema files</li>
+</ul>
+<h3 id="usage_3">Usage<a class="headerlink" href="#usage_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>monaco generate [ARGS] [OPTIONS]
+</code></pre></div>
+<h3 id="arguments_2">Arguments<a class="headerlink" href="#arguments_2" title="Permanent link">&para;</a></h3>
+<p>Argument</p>
+<p>Description</p>
+<p>Supported from version</p>
+<p>Required</p>
+<p><code>deletefile</code></p>
+<p>Generates a deletefile.</p>
+<p>Dynatrace Monaco 2.6.0</p>
+<p>Optional</p>
+<p><code>graph</code></p>
+<p>Generates a DOT representation of the dependencies between configurations defined in a manifest's projects.</p>
+<p>The <a href="https://graphviz.org/doc/info/lang.html">DOT formatï»¿</a> is a standardized text-based format for representing graphs.
+You can create visual representations with tools such as Graphviz.</p>
+<p>Dynatrace Monaco 2.6.0</p>
+<p>Optional</p>
+<p><code>schema</code></p>
+<p>Creates JSON schema files for Monaco's YAML files, such as the manifest, configuration, and delete files.</p>
+<p>Dynatrace Monaco 2.10.0</p>
+<p>Optional</p>
+<h3 id="options_3">Options<a class="headerlink" href="#options_3" title="Permanent link">&para;</a></h3>
+<p>The available options depend on the specific argument that is used.</p>
+<h4 id="deletefile">deletefile<a class="headerlink" href="#deletefile" title="Permanent link">&para;</a></h4>
+<p>These options are used with the <code>monaco generate deletefile</code> command.</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--file &lt;file&gt;</code></p>
+<p>Specify the name of the generated delete file.
+If a file of this name already exists, a timestamp is appended.
+By default, the file is named <code>delete.yaml</code>.</p>
+<p>Optional</p>
+<p><code>--output-folder &lt;path&gt;</code>, <code>-o &lt;path&gt;</code></p>
+<p>Specify the path/name of the output folder where the deletefile will be saved.</p>
+<p>If not specified, the file is generated in the directory from which you run the command.</p>
+<p>Optional</p>
+<p><code>--project &lt;name&gt;</code>, <code>-p &lt;name&gt;</code></p>
+<p>Specify the project(s) for which deletefile entries are generated.</p>
+<p>If not specified, all projects in the manifest are used.</p>
+<p>Optional</p>
+<p>The <code>generate deletefile</code> command can't process configurations that contain references in their name field and will fail when encountering such configurations.</p>
+<p><strong>Example of a problematic configuration:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>configs:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>- id: appRule
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>config:
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>name:
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>configId: application
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>configType: application-web
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>property: name
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>type: reference
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>template: rule.json
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>skip: false
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>type:
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>api: app-detection-rule
+</code></pre></div>
+<p><strong>Workaround:</strong> Create the delete file manually or update the generated file to set the configuration name without references. See the <a href="/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference" title="Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.">delete file format</a> for the correct syntax.</p>
+<h4 id="graph">graph<a class="headerlink" href="#graph" title="Permanent link">&para;</a></h4>
+<p>These options are used with the <code>monaco generate graph</code> command.</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--output-folder &lt;path&gt;</code>, <code>-o &lt;path&gt;</code></p>
+<p>Specify the path/name of the output folder where the graph will be saved.</p>
+<p>If not specified, the file is generated in the directory from which you run the command.</p>
+<p>Optional</p>
+<p><code>--environment &lt;name&gt;</code>, <code>-e &lt;name&gt;</code></p>
+<p>Generate dependency graphs for one or more environment(s) within your deployment manifest file.
+To set multiple environments, either repeat this flag or separate them using a comma (<code>,</code>).</p>
+<p>This flag is mutually exclusive with <code>--group</code>:</p>
+<ul>
+<li>If this flag is specified, graphs are generated for each specified environment.</li>
+<li>If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</li>
+</ul>
+<p>Optional</p>
+<p><code>--group &lt;name&gt;</code>, <code>-g &lt;name&gt;</code></p>
+<p>Generate dependency graphs for one or more specific <a href="/docs/deliver/configuration-as-code/monaco/configuration#environment-groups" title="Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.">environment groups</a> within your deployment manifest file.
+To set multiple groups, either repeat this flag or separate them using a comma (<code>,</code>).</p>
+<p>This flag is mutually exclusive with <code>--environment</code>:</p>
+<ul>
+<li>If this flag is specified, graphs are generated for each environment within the specified groups.</li>
+<li>If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</li>
+</ul>
+<p>Optional</p>
+<p><code>--id-encoding [default,json]</code></p>
+<p>Starting with Dynatrace Monaco 2.12.0, you can choose the encoding format:</p>
+<ul>
+<li>The default string representation.</li>
+<li>JSON.</li>
+</ul>
+<p>JSON encoding can be useful when processing generated DOT files automatically.</p>
+<p>Optional</p>
+<h4 id="schema">schema<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h4>
+<p>These options are used with the <code>monaco generate schema</code> command.</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--output-folder &lt;filepath&gt;</code>, <code>-o &lt;filepath&gt;</code></p>
+<p>Specifies the name of the output folder in which the JSON schema files will be saved.</p>
+<p>If not specified, the files will be saved in a <code>./schemas/</code> directory, which is within the directory where you ran the command.</p>
+<p>Optional</p>
+<h2 id="account">Account<a class="headerlink" href="#account" title="Permanent link">&para;</a></h2>
+<p>The <code>account</code> command is used for operations that affect Account Management resources.</p>
+<h3 id="usage_4">Usage<a class="headerlink" href="#usage_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>monaco account [ARGS] [OPTIONS]
+</code></pre></div>
+<h3 id="arguments_3">Arguments<a class="headerlink" href="#arguments_3" title="Permanent link">&para;</a></h3>
+<p>Argument</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>deploy</code></p>
+<p>Deploy Account Management resources.</p>
+<p>Optional</p>
+<p><code>download</code></p>
+<p>Download Account Management resources.</p>
+<p>Optional</p>
+<p><code>delete</code></p>
+<p>Delete Account Management resources.</p>
+<p>Optional</p>
+<h3 id="options_4">Options<a class="headerlink" href="#options_4" title="Permanent link">&para;</a></h3>
+<p>The available options depend on the specific argument that is used.</p>
+<h4 id="deploy_1">deploy<a class="headerlink" href="#deploy_1" title="Permanent link">&para;</a></h4>
+<p>These options are used with the <code>monaco account deploy</code> command.</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--account &lt;name&gt;</code>, <code>-a &lt;name&gt;</code></p>
+<p>The account name to deploy to, as specified in the manifest file.</p>
+<p>Optional</p>
+<p><code>--dry-run</code>, <code>-d</code></p>
+<p>Validate the structure of your manifest, projects, and configurations.
+A dry run resolves all configuration parameters, but it can't verify if the Dynatrace APIs will accept the content.</p>
+<p>Optional</p>
+<p><code>--manifest &lt;file&gt;</code>, <code>-m &lt;file&gt;</code></p>
+<p>The name of the manifest file.</p>
+<p>If not specified, Monaco searches for the <code>./manifest.yaml</code> file in the folder where the command is executed from.</p>
+<p>Optional</p>
+<p><code>--project &lt;name&gt;</code>, <code>-p &lt;name&gt;</code></p>
+<p>Specify one or more projects to be deployed.
+To set multiple projects, either repeat this flag or separate them using a comma (<code>,</code>).</p>
+<ul>
+<li>If this flag is specified, configurations from the specified projects are deployed.</li>
+<li>Without this flag, configurations from all projects defined in the manifest are deployed.</li>
+</ul>
+<p>Optional</p>
+<h4 id="download_1">download<a class="headerlink" href="#download_1" title="Permanent link">&para;</a></h4>
+<p>These options are used with the <code>monaco account download</code> command.</p>
+<h5 id="options-to-download-via-manifest">Options to download via manifest<a class="headerlink" href="#options-to-download-via-manifest" title="Permanent link">&para;</a></h5>
+<p>These options are used when you want to download via a manifest YAML file.</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--manifest &lt;file&gt;</code>, <code>-m &lt;file&gt;</code></p>
+<p>The name of the manifest file.</p>
+<p>If the file name is not specified, Monaco searches for the <code>./manifest.yaml</code> file in the folder where the command is executed from.</p>
+<p>Optional</p>
+<p><code>--account &lt;name&gt;</code>, <code>-a &lt;name&gt;</code></p>
+<p>The account name(s) to download from, as specified in the manifest file.
+To set multiple accounts, either repeat this flag or separate them using a comma (<code>,</code>).</p>
+<ul>
+<li>If this flag is specified, configurations from the specified accounts are downloaded.</li>
+<li>Without this flag, configurations from all projects defined in the manifest are downloaded.</li>
+</ul>
+<p>Optional</p>
+<p><code>--force</code>, <code>-f</code></p>
+<p>Used in combination with <code>--manifest</code>.
+Force overwrites any existing <code>manifest.yaml</code> file.</p>
+<p>Optional</p>
+<h5 id="options-to-download-via-uuid">Options to download via UUID<a class="headerlink" href="#options-to-download-via-uuid" title="Permanent link">&para;</a></h5>
+<p>These options are used when you want to download via a Dynatrace account UUID</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--oauth-client-id &lt;environment variable name&gt;</code></p>
+<p>The name of the environment variable that contains the OAuth client ID.</p>
+<p>Required</p>
+<p><code>--oauth-client-secret &lt;environment-variable-name&gt;</code></p>
+<p>The name of the environment variable that contains the OAuth client secret.</p>
+<p>Required</p>
+<p><code>--uuid &lt;account UUID&gt;</code>, <code>-u &lt;account UUID&gt;</code></p>
+<p>Account UUID from which the account management resources should be downloaded.</p>
+<p>You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</p>
+<p>Required</p>
+<h5 id="additional-options">Additional options<a class="headerlink" href="#additional-options" title="Permanent link">&para;</a></h5>
+<p>These options can be used with either download method (whether via manifest or UUID).</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--output-folder &lt;filepath&gt;</code>, <code>-o &lt;filepath&gt;</code></p>
+<p>Specifies the name of the output folder in which downloaded configurations will be stored.</p>
+<p>By default, the folder name will be <code>download</code> with the current timestamp appended.</p>
+<p>Optional</p>
+<h4 id="delete_1">delete<a class="headerlink" href="#delete_1" title="Permanent link">&para;</a></h4>
+<p>These options are used with the <code>monaco account delete</code> command.</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--account &lt;name&gt;</code>, <code>-a &lt;name&gt;</code></p>
+<p>The account name(s) account whose resources should be deleted, as specified in the manifest file.
+To set multiple accounts, either repeat this flag or separate them using a comma (<code>,</code>).</p>
+<ul>
+<li>If this flag is specified, configurations from the specified accounts are deleted.</li>
+<li>Without this flag, configurations from all projects defined in the manifest are deleted.</li>
+</ul>
+<p>Optional</p>
+<p><code>--file &lt;file&gt;</code></p>
+<p>The delete file that specifies the relevant configurations.</p>
+<p>If not specified, Monaco will look for the file named <code>delete.yaml</code>.</p>
+<p>Optional</p>
+<p><code>--manifest &lt;file&gt;</code>, <code>-m &lt;file&gt;</code></p>
+<p>The manifest file that specifies the relevant Dynatrace environments.</p>
+<p>If not specified, Monaco will look for the file named <code>manifest.yaml</code>.</p>
+<p>Optional</p>
+<h5 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h5>
+<p>In this example, we delete a user, service user, group, policy, and boundary using respective entries in a <code>delete.yaml</code> file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>delete:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>- type: user
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>email: the.user@dynatrace.com
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>- type: serviceUser
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>name: Monaco service user
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>- type: group
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>name: My Group
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>- type: policy
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>name: My Policy
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>level:
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>type: account
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>- type: boundary
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>name: My Boundary
+</code></pre></div>
+<h2 id="global-options">Global options<a class="headerlink" href="#global-options" title="Permanent link">&para;</a></h2>
+<p>These options can be used with any <code>monaco</code> argument.
+They are useful for troubleshooting any errors that you might encounter.</p>
+<p>Option</p>
+<p>Description</p>
+<p>Required</p>
+<p><code>--support-archive</code></p>
+<p>Create a <a href="/docs/deliver/configuration-as-code/monaco/reference/logging#support-archive" title="Logging reference for Dynatrace Configuration as Code via Monaco">support archive for troubleshooting</a>.</p>
+<p>Optional</p>
+<p><code>--verbose</code>, <code>-v</code></p>
+<p>Enable <a href="/docs/deliver/configuration-as-code/monaco/reference/logging" title="Logging reference for Dynatrace Configuration as Code via Monaco">verbose debugging logs</a>.</p>
+<p>Optional</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

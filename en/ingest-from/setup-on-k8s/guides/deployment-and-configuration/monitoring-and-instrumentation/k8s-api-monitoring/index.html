@@ -1140,7 +1140,7 @@
 </code></pre></div>
 <h4 id="step-2-provide-the-kubernetes-cluster-id-in-dynatrace">Step 2 Provide the Kubernetes cluster ID in Dynatrace<a class="headerlink" href="#step-2-provide-the-kubernetes-cluster-id-in-dynatrace" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Go to <strong>Kubernetes</strong> (previous Dynatrace) or <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong>.</li>
+<li>Go to <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong>.</li>
 <li>Select <strong>Connect manually</strong>.</li>
 <li>On the Kubernetes cluster connection settings page, provide a <strong>Name</strong>, and then turn on <strong>Connect containerized ActiveGate to local Kubernetes API endpoint</strong>.</li>
 <li>For <strong>Kubernetes cluster ID</strong>, enter the UID obtained earlier.</li>
@@ -1211,7 +1211,7 @@
 </code></pre></div>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>oc get secret dynatrace-activegate -o jsonpath=&#39;{.data.token}&#39; -n dynatrace | base64 --decode
 </code></pre></div>
-5. Go to <strong>Kubernetes</strong> (previous Dynatrace) or <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong> and select <strong>Connect manually</strong>.
+5. Go to <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong> and select <strong>Connect manually</strong>.
 6. On the Kubernetes cluster connection settings page, provide a <strong>Name</strong>, the <strong>Kubernetes API URL</strong>, and the <strong>Bearer token</strong> for the Kubernetes cluster.
 7. Select <strong>Save changes</strong>.</p>
 <h4 id="kubernetes-version-earlier-than-124">Kubernetes version earlier than 1.24<a class="headerlink" href="#kubernetes-version-earlier-than-124" title="Permanent link">&para;</a></h4>
@@ -1256,7 +1256,7 @@
    4. Create an API key.</p>
 <p>Go to <strong>API &amp; Keys</strong> and create a key either for your specific account (enter your cluster name) or for all clusters (enter <strong>No scope</strong>). For security reasons, we recommend selecting the first option.</p>
 <p>Newly created keys display four fields. Make sure to use the content of the field called <strong>Bearer token</strong> to set up the connection to the Kubernetes API described in the next section.
-3. Go to <strong>Kubernetes</strong> (previous Dynatrace) or <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong> and select <strong>Connect manually</strong>.
+3. Go to <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong> and select <strong>Connect manually</strong>.
 4. On the Kubernetes cluster connection settings page, provide a <strong>Name</strong>, the <strong>Kubernetes API URL</strong>, and the <strong>Bearer token</strong> for the Kubernetes cluster.</p>
 </li>
 </ol>
@@ -1272,14 +1272,14 @@
 <p>Can I change settings for Kubernetes API monitoring?</p>
 <p>You can change Kubernetes cluster connection and monitoring settings at any time from your Kubernetes cluster details page.</p>
 <ol>
-<li>Go to <strong>Kubernetes</strong> (previous Dynatrace) or <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong>.</li>
+<li>Go to <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong>.</li>
 <li>Find your Kubernetes cluster, and then select <strong>Actions</strong> &gt; <strong>Settings</strong>.</li>
 <li>Adjust your settings, and then select <strong>Save changes</strong>.</li>
 </ol>
 <p>How can I delete the Kubernetes Platform Monitoring configuration for a Kubernetes cluster?</p>
 <p>To delete the connection to a local Kubernetes API endpoint</p>
 <ol>
-<li>Go to <strong>Kubernetes</strong> (previous Dynatrace) or <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong>.</li>
+<li>Go to <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong>.</li>
 <li>Find your Kubernetes cluster, and then select <strong>Actions</strong> &gt; <strong>Settings</strong>.</li>
 <li>Select <strong>Use defaults</strong>, and then select <strong>Save changes</strong>.</li>
 </ol>

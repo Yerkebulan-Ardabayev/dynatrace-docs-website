@@ -1,0 +1,1325 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>HTTP monitors reporting results - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#http-monitors-reporting-results" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HTTP monitors reporting results
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="http-monitors-reporting-results">HTTP monitors reporting results<a class="headerlink" href="#http-monitors-reporting-results" title="Permanent link">&para;</a></h1>
+<h1 id="http-monitors-reporting-results_1">HTTP monitors reporting results<a class="headerlink" href="#http-monitors-reporting-results_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>15-min read</li>
+<li>Updated on Nov 03, 2025</li>
+</ul>
+<p>The HTTP monitors reporting results page provides an overview panel of monitor execution results, result visualizations, and monitor properties. The details panel shows you at-a-glance information and graphs, with ready links and filters to drill right down to problem details and edit monitor settings.</p>
+<p>To access the HTTP monitors reporting results page,</p>
+<ol>
+<li>Go to <img alt="Synthetic" src="https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png" title="Synthetic" /> <strong>Synthetic</strong>.</li>
+<li>Optional Select <strong>HTTP</strong> on the left to filter the list for HTTP monitors.</li>
+<li>From the list of HTTP monitors, select the monitor you want to examine.</li>
+<li>Select <strong>View details</strong> from the preview panel to access the details page.</li>
+</ol>
+<p><img alt="HTTP Monitor Reporting - Top" src="https://dt-cdn.net/images/screenshot-2025-06-11-112148-3221-e023915f0e.png" /></p>
+<p><img alt="HTTP Monitor Reporting - Bottom" src="https://dt-cdn.net/images/screenshot-2025-06-11-112555-3221-cedecd8ab7.png" /></p>
+<h2 id="metric-visualizations">Metric visualizations<a class="headerlink" href="#metric-visualizations" title="Permanent link">&para;</a></h2>
+<p>The top panel shows overall monitor <a href="#availability">availability</a> and <a href="#performance">performance</a> infographics for the selected timeframe.</p>
+<p>Use the  filter bar at the top of the page to filter all HTTP details by one or more locations.</p>
+<p>In the upper-right corner of the page, you can access <a href="#analyze-executions"><strong>Analyze executions</strong></a>, <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/on-demand-executions" title="Learn about how to perform on-demand executions."><strong>On-demand execution</strong></a>, and more HTTP monitor settings:</p>
+<ul>
+<li><strong>Edit</strong></li>
+<li>for more options ( <strong>Disable</strong> and  <strong>Delete</strong>)</li>
+</ul>
+<h3 id="analyze-executions">Analyze executions<a class="headerlink" href="#analyze-executions" title="Permanent link">&para;</a></h3>
+<p>DPS License</p>
+<p>If you're a non-DPS user, see <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution" title="Learn about the Synthetic details page for HTTP monitors.">HTTP monitors reporting results</a>.</p>
+<p>When you access <strong>Analyze executions</strong> functionality, you're presented with the <strong>Select execution</strong> section with the scatter plot chart on which you can move the view window to the next or previous 50 executions. For readability, the whole chart is limited to 100 points. The content of the scatter plot chart might be divided into results (success/failure), locations, or all of those dimensions. Therefore, you can analyze your executions in three ways:</p>
+<ul>
+<li><strong>Split by status</strong>âthe default view shows <strong>Healthy</strong> and <strong>Failed</strong> executions separately. Below the graph, there's a legend where you can select any status to focus the graph on it. Select  icon for more options.</li>
+<li><strong>Split by location</strong>âshows executions performed from different locations. Below the graph, there's a legend where you can select a given location to focus the graph on it. Select  icon for more options.</li>
+<li><strong>Split by both</strong>âcombines the <strong>Split by status</strong> and <strong>Split by location</strong> views.</li>
+</ul>
+<p>Note that if there's more than one execution status for the location, the legend below the graph presents the location more than once. For example, <code>Las Vegas (Healthy)</code> and <code>Las Vegas (Failed)</code>.</p>
+<p>Not only can you see the details of the last failed or successful execution, but also the details of all executions within the retention period.</p>
+<p><img alt="Analyze executions view" src="https://dt-cdn.net/images/analyze-executions-3022-c395fceee3.png" /></p>
+<ul>
+<li>Each dot represents a separate execution. You can select any dot, hover over the data, and select <strong>Analyze execution</strong> to display the execution's details in the panel below.</li>
+<li>You can narrow down the displayed details to a needed set of elements using filters visible on the left in the <strong>Visible parts</strong> section.</li>
+<li>
+<p>You can also select two executions for comparison. To do that</p>
+</li>
+<li>
+<p>Select an execution and hover over their data visible in the tooltip. Then, select <strong>Analyze execution</strong>.</p>
+</li>
+<li>Select the second execution you want to compare the first with. Hover over their data visible in the tooltip and select <strong>Compare execution</strong>.</li>
+</ul>
+<p>You'll see the following comparison:</p>
+<p><img alt="Synthetic HTTP compare execution" src="https://dt-cdn.net/images/synthetic-http-responses-comparison-1914-2d38bd9eac.png" /></p>
+<p>On-demand executions</p>
+<p>You can trigger an execution on-demand. For details, see <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/on-demand-executions" title="Learn about how to perform on-demand executions.">On-demand monitor executions</a>.</p>
+<h2 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h2>
+<p>The Availability section displays the monitor's availability for the selected timeframe, with details of downtime and affected locations, if any. The panel contains information about all problems related to the given monitor. Outage (downtime) duration and affected locations infographics are displayed if the monitor is down (unavailable) at one or more locations.</p>
+<p>Also, the panel shows reasons for discarded tests. The bar above the time frame indicates when a downtime occurred. Hover over the bar to see why the tests were discarded. The possible reasons can be:</p>
+<ul>
+<li><strong>Maintenance window</strong> - the monitor execution was deliberately <a href="/docs/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window#disable-synthetic" title="Create maintenance windows and define their scope.">made inactive</a> due to maintenance. For details, see the maintenance window.</li>
+</ul>
+<p>How to see the maintenance window, and what happens if the monitor execution is on/off</p>
+<p>To see the maintenance window:</p>
+<ol>
+<li>Select the bar to pin the <strong>Maintenance window</strong> tooltip.</li>
+<li>Hover over the <strong>Maintenance window</strong> tooltip.</li>
+<li>Select <strong>View maintenance window settings</strong>.</li>
+<li>
+<p>Select <strong>Settings Classic</strong>.</p>
+</li>
+<li>
+<p>When the <strong>Disable synthetic monitor execution</strong> option is on in the maintenance window, the tests are suppressed during the maintenance period so there are no tests results for this period.</p>
+</li>
+<li>When the <strong>Disable synthetic monitor execution</strong> option is on in the maintenance window, the scheduled automatic tests are suppressed during the maintenance period, but the <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions" title="Execute synthetic monitors on demand from public or private locations">on-demand</a> tests are not suppressed.</li>
+<li>
+<p>When the <strong>Disable synthetic monitor execution</strong> option is off in the maintenance window, the tests are executed during the maintenance period, but, due to maintenance, the test results may differ from those observed under the normal conditions.</p>
+</li>
+<li>
+<p><strong>No result</strong> - the execution started but the results were not delivered. Reach out to the Dynatrace support team.</p>
+</li>
+<li><strong>No capability</strong> - you're trying to execute monitors that aren't supported by a location (for example, NAM ICMP monitors - from a location with inactive ICMP).</li>
+<li><strong>Discarded, not executed</strong> - the probable cause is the overloaded private location. Check the capacity metrics. If there are no issues with the metrics, contact the Dynatrace support team.</li>
+<li><strong>Http monitor local outage</strong> - the outage happened in one or more locations from which the monitor executed the tests.</li>
+<li><strong>Http monitor global outage</strong> - the outage happened in all locations from which the monitor executed the tests.</li>
+</ol>
+<p>Local and global outage - view problem details</p>
+<p>To see the details of the problem that's causing the local or global outage:</p>
+<ol>
+<li>Select the bar with the  icon to pin the <strong>Http monitor local outage</strong> or <strong>Http monitor global outage</strong> tooltip.</li>
+<li>Hover over the tooltip.</li>
+<li>Select  <strong>View problem details</strong>.</li>
+<li>
+<p>Select one of the available options:</p>
+<ul>
+<li><strong>Problems Classic</strong></li>
+<li><strong>Problems</strong> in the problems app</li>
+<li><strong>Problems</strong> in the current app to view problem details.</li>
+</ul>
+</li>
+</ol>
+<p>A monitor can be down at one or all locations even if no <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance" title="Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.">outage thresholds (global or local)</a> have been set up. The outage duration is the sum of all downtimes in the selected timeframe, not counting overlapping downtimes.</p>
+<p>The <strong>Availability</strong> card shows overall availability across all monitor locations, with annotations for global/local outages and global/local missing data (as when the monitor is inactive).</p>
+<h3 id="availability-calculation">Availability calculation<a class="headerlink" href="#availability-calculation" title="Permanent link">&para;</a></h3>
+<p>Availability metrics are calculated by dividing the number of successful executions ("up") by the total number of executions. Thus, to calculate availability</p>
+<ol>
+<li>Determine the number of up executions within the timeframe.</li>
+</ol>
+<p>This is the total number of executions within the timeframe, minus the number of failed ("down") executions within the timeframe.
+2. Determine availability.</p>
+<p>Divide the number of up executions by the total number of executions, and then multiply by 100 to get a percentage.</p>
+<p><strong>Example</strong></p>
+<p>Suppose we have 5 down executions within a 35-minute timeframe.</p>
+<ul>
+<li>Total executions = <code>35</code></li>
+<li>Down executions = <code>5</code></li>
+<li>Up executions = <code>35-5 = 30</code></li>
+<li>Availability = <code>(30/35) \* 100 = 0.8571 \* 100</code> = <code>85.71 percent</code></li>
+</ul>
+<h4 id="exclude-maintenance-period-executions-from-metrics-calculations">Exclude maintenance period executions from metrics calculations<a class="headerlink" href="#exclude-maintenance-period-executions-from-metrics-calculations" title="Permanent link">&para;</a></h4>
+<p>You can set up a <a href="/docs/analyze-explore-automate/notifications-and-alerting/maintenance-windows" title="Understand when to use a maintenance window. Read about the supported maintenance window types.">maintenance window</a> so <a href="/docs/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window#disable-synthetic" title="Create maintenance windows and define their scope.">test executions are not suppressed</a> during maintenance periods. Then, if outages happen during the maintenance period, down executions are included in the metrics calculations.</p>
+<p>In the example below, the availability is less than 100% because the down executions are included in the metric calculation by default.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>timeseries avg(dt.synthetic.http.availability), by:{dt.entity.http_check, dt.maintenance_window_ids, interpolated}
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| filter dt.entity.http_check == &quot;HTTP_CHECK-2F280898D4FCB1A8&quot;
+</code></pre></div>
+<p>Run in Playground</p>
+<p><img alt="Availability with included maintenance period executions" src="https://dt-cdn.net/images/a40863a4-4a5d-4380-8ef8-7d8353639756-1179-34988a102e.png" /></p>
+<p>To exclude the maintenance period executions from the metric calculation</p>
+<ol>
+<li>Add the <code>dt.maintenance_window_ids</code> dimension to the query.</li>
+<li>Filter the executions that are not covered by the maintenance window with <code>isNull(dt.maintenance_window_ids)</code>.</li>
+</ol>
+<p>In the example below, we have down executions detected during the maintenance period, but they were not included into the calculation metric due to we used the <code>dt.maintenance_window_ids</code> dimension, and the <code>isNull(dt.maintenance_window_ids)</code> filter condition.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>timeseries av = avg(dt.synthetic.http.availability), by: {dt.entity.http_check, dt.maintenance_window_ids}
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| filter dt.entity.http_check == &quot;HTTP_CHECK-2F280898D4FCB1A8&quot;
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>| filter isNull(dt.maintenance_window_ids)
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>| fields avgAV=arrayAvg(av)
+</code></pre></div>
+<p>Run in Playground</p>
+<p><img alt="Example use of dt.maintenance_window_ids" src="https://dt-cdn.net/images/dem-3738-1179-248a06b401.png" /></p>
+<h4 id="interpolation">Interpolation<a class="headerlink" href="#interpolation" title="Permanent link">&para;</a></h4>
+<p>The approach described above requires all executions to happen at the same rate. However, in a real-world environment this is not always the case as the monitor execution frequency may change or additional on-demand executions may be triggered.</p>
+<p>To make the calculation more accurate, the interpolation mechanism is introduced: the total monitoring time is divided into minute-level data points. All data points count as executions, although they don't necessarily coincide with actual executions.</p>
+<p>On the screen below, the blue data points coincide with actual executions, and the white data points don't.</p>
+<p><img alt="Up/down interpolated data points" src="https://dt-cdn.net/images/screenshot-2025-06-05-142009-1552-ea3432b75b.png" /></p>
+<p>Let's imagine a monitor is set to execute tests every five minutes. So, every fifth data point (blue) coincides with an actual execution. All data points following the first down execution and preceding the first up execution count as "down." Thus, when calculating the availability metrics, the number of down executions is calculated as follows:</p>
+<p>Down executions = the first actual down execution + all following "down" data points.</p>
+<h3 id="open-in-notebooks">Open in Notebooks<a class="headerlink" href="#open-in-notebooks" title="Permanent link">&para;</a></h3>
+<p>DPS License</p>
+<p>Through the Availability section, you can also access <strong>Notebooks</strong> <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> with three predefined DQL queries which are executed to get data from Synthetic events in Grail.</p>
+<p>Note that queries for synthetic events from outside the Synthetic application, such as those from <strong>Notebooks</strong> <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" />, <strong>Dashboards</strong> <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" />, and <strong>SRG</strong> <img alt="Site Reliability Guardian" src="https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg" title="Site Reliability Guardian" />, are <strong>not</strong> charged.</p>
+<p>The predefined queries are examples of how to deal with synthetic monitor execution details using our Dynatrace Query Language. You can use those queries as patterns and adjust them to your needs.</p>
+<ul>
+<li>Query number 1âreturns an executions list of the selected monitors within the selected time range. For each execution, the query returns a timestamp, basic information about the result, and an ID.</li>
+<li>Query number 2âby default contains the filter applied to the last execution from the list mentioned above and returns details of each executed step of the monitor.</li>
+<li>Query number 3âreturns full details of an HTTP monitor execution, including the whole request and response.</li>
+</ul>
+<h2 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h2>
+<p>The performance section displays the HTTP monitor's performanceâresponse time for the sum of all requests across all locations for the selected timeframe. We don't do sum operation for executions from different locations.</p>
+<p>Additional metrics are captured per request and are shown in the <a href="#http-requests">requests card</a>.</p>
+<p><strong>Performance</strong> card shows trend lines for response time for the execution time for the whole monitor with the shaded area representing the difference between the two values at any given time. Note that if your monitor runs from a single location, the minimum and maximum trend lines coincide.</p>
+<p>Optional You can view trend lines for the HTTP monitor's performance.</p>
+<h3 id="display-problems-in-performance-section">Display problems in Performance section<a class="headerlink" href="#display-problems-in-performance-section" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Red bar above the chart indicates an ongoing problem.</li>
+<li>Grey bar above the chart indicates a closed problem.</li>
+</ul>
+<p>Availability and other problems are not marked in this section.</p>
+<p>If the monitor violates a <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance" title="Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.">performance threshold</a>, whether for the sum of all requests or an individual request, a solid red line appears above the performance graph for the problem duration. Select the solid red bar to display a link to the problem overview page.</p>
+<p>View problem details</p>
+<ol>
+<li>Hover over the problem bar to see an ongoing/closed problem details in the form of a tooltip.</li>
+<li>Select the problem bar and hover over the tooltip to display more options.</li>
+<li>Select  <strong>View problem details</strong> to open the problem details in Problems <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" />.</li>
+</ol>
+<h2 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h2>
+<p>The <strong>Problems</strong> card shows performance (threshold violation) and availability (local or global outage) problems when you enable the respective thresholds in <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance" title="Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.">monitor settings</a>.</p>
+<p>See <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor" title="Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.">Create and configure an HTTP monitor</a> for information on defining performance and thresholds availability outage rules. See the <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview" title="Learn about synthetic alerting concepts and workflow.">Synthetic alerting overview</a> for alerting workflow and concepts, including setting up notification profiles and templates.</p>
+<p>There are three main problem types for HTTP monitors:</p>
+<ul>
+<li>Global outage (availability)</li>
+<li>Local outage (availability)</li>
+<li>Performance threshold violation (performance problem for sum of all requests or individual requests)</li>
+</ul>
+<p>Performance problems may combine threshold violations at the monitor as well as request levels.</p>
+<p>The problems section lists all problems in the selected time frame, both open and closed. On top of that, you can:</p>
+<ul>
+<li>See the details of a problem in the form of a table with a start date and duration.</li>
+<li>Expand each problem to see affected entities and alerting profiles.</li>
+</ul>
+<p>Problems, along with their constituent <a href="#events">events</a> and any corresponding <a href="#http-requests">status codes</a> give you a full picture of the number and scope of your monitor's issues.</p>
+<h2 id="http-requests">HTTP requests<a class="headerlink" href="#http-requests" title="Permanent link">&para;</a></h2>
+<p>An HTTP monitor can consist of one or multiple HTTP requests. The <strong>HTTP requests</strong> card overviews all executed requests, their order, name, request URL, and the HTTP method used. For each request, the <strong>HTTP requests</strong> card splits performance (<strong>Response time</strong>) by the following metrics (see more in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic" title="Learn about the performance metrics collected for HTTP monitors.">HTTP monitor metrics</a>):</p>
+<ul>
+<li><strong>DNS lookup time</strong></li>
+<li><strong>TCP connect time</strong></li>
+<li><strong>TLS handshake time</strong></li>
+<li><strong>Waiting</strong></li>
+<li><strong>Download</strong></li>
+</ul>
+<p><strong>Response time</strong> is the summation of these different metrics.</p>
+<p>Expand a request from the list to view all performance metrics in one chart. Select a metric in the legend to remove/add it to the performance chart. Select <strong>Edit request</strong> to go to monitor settings from this card.</p>
+<p>The <strong>Status codes</strong> tab shows the timeline of returned HTTP status codes for a particular request. (The <a href="#status-codes">HTTP status codes card</a> shows the returned HTTP status codes for your HTTP monitor as a whole.)</p>
+<p>When a request violates its <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance" title="Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.">event-specific performance threshold</a>, it is highlighted in red. Expand the request to see the performance timings and the threshold violated. A solid red line for the problem duration appears above the stacked graph; the request threshold appears as a dotted red line. Select the solid red bar to display a link to the problem overview page.</p>
+<h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h2>
+<p>The <strong>Errors</strong> card displays errors found in the selected time frame.</p>
+<p>The Problems section lists all problems, both open and closed. On top of that, you can:</p>
+<ul>
+<li>See the details of an error in the form of a table with the request and number of occurrences.</li>
+<li>Select <strong>Analyze errors</strong>  for an in-depth error analysis.</li>
+</ul>
+<h2 id="response-size">Response size<a class="headerlink" href="#response-size" title="Permanent link">&para;</a></h2>
+<p>The <strong>Response size</strong> card shows trend lines for minimum and maximum response size for the sum of all requests, with any shaded area representing the difference between the two values at any given time. The trend lines might coincide, as when your monitor runs from a single location. However, response size might vary, for example, when different responses are sent based on location.</p>
+<p>To track such differences, you can <strong>Show response size breakdown per location</strong>. Note that if you filter the entire details page by any locations, the toggle is no longer available.</p>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p>The <strong>Events</strong> card shows all events that compose problems. Events for active as well as resolved problems show up in the list and timeline.</p>
+<p>Hover over a time slot in the event timeline to see the type and number of events generated at that interval. Select a time slot to view a tooltip with the events that took place in it.</p>
+<p>Select an event type, for example, <strong>HTTP monitor location slowdown</strong>, to see the list of events. One slowdown event is always created per location where your monitor violates request- or monitor-level performance thresholds. Select an individual event to see details.</p>
+<p>The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#end" title="Learn how to apply pre and post scripts to your requests"><code>api.fail()</code> method</a> can be used to define a custom <strong>Failure message</strong> that appears in the Events card in case of failure. Custom log messages also appear in the <code>customLogs</code> attribute in <a href="#analyze-last-execution">HTTP monitor execution details</a>.</p>
+<h2 id="properties-and-tags">Properties and tags<a class="headerlink" href="#properties-and-tags" title="Permanent link">&para;</a></h2>
+<p>This informational card shows the number of steps, locations, frequency of monitor execution, and any applied tags.</p>
+<p>Select  <strong>Edit</strong> to edit or apply additional tags.</p>
+<h2 id="changes">Changes<a class="headerlink" href="#changes" title="Permanent link">&para;</a></h2>
+<p>The <strong>Changes</strong> card shows the history log that displays:</p>
+<ul>
+<li>When the monitor was created and who created it.</li>
+<li>Who changed the monitor properties, when the change was made, and which properties were changed in the selected timeframe.</li>
+</ul>
+<h2 id="frontends">Frontends<a class="headerlink" href="#frontends" title="Permanent link">&para;</a></h2>
+<p>The <strong>Frontends</strong> card displays the frontends to which the monitor is assigned.</p>
+<h2 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h2>
+<p>The <strong>Services</strong> card displays any monitored services automatically associated with the HTTP monitor. This card appears when the monitored HTTP endpoint is hosted on a OneAgent-monitored host, and the endpoint URL is handled by one of the discovered services. The association between the HTTP monitor and the service is made based on data provided by OneAgent. Therefore, at least one monitor execution needs to be completed before a service can be associated with the monitor.</p>
+<p>Select the link for a displayed service to view the service overview page, filtered by the HTTP monitor.</p>
+<h3 id="view-traces">View traces<a class="headerlink" href="#view-traces" title="Permanent link">&para;</a></h3>
+<p>In HTTP monitors that have associated services, you can see:</p>
+<ul>
+<li>A full list of traces for an entire monitor within a specific period of time</li>
+<li>A full list of traces for a specific service within a specific period of time</li>
+<li>Traces for specific synthetic executions</li>
+</ul>
+<h4 id="traces-for-an-entire-monitor">Traces for an entire monitor<a class="headerlink" href="#traces-for-an-entire-monitor" title="Permanent link">&para;</a></h4>
+<p>To see a full list of traces for an entire monitor, select <strong>View traces</strong> in either of these locations:</p>
+<ul>
+<li>The top of the monitor's details page</li>
+<li>The <strong>Services</strong> card header</li>
+</ul>
+<h4 id="traces-for-a-specific-service">Traces for a specific service<a class="headerlink" href="#traces-for-a-specific-service" title="Permanent link">&para;</a></h4>
+<p>To see a full list of traces for a specific service</p>
+<ol>
+<li>In the <strong>Services</strong> card, find a service you want to investigate.</li>
+<li>Select the  icon in the <strong>View traces</strong> column.</li>
+</ol>
+<p><img alt="Traces for a specific service" src="https://dt-cdn.net/images/screenshot-2025-05-28-104143-910-bad89d821e.png" /></p>
+<h4 id="traces-for-a-specific-execution">Traces for a specific execution<a class="headerlink" href="#traces-for-a-specific-execution" title="Permanent link">&para;</a></h4>
+<p>To see backed traces for a specific execution</p>
+<ol>
+<li>Select <strong>Analyze executions</strong> at the top of the monitor's details page.</li>
+<li>On the graph, select an execution to pin its tooltip.</li>
+<li>Hover over the tooltip and select <strong>View traces</strong>.</li>
+</ol>
+<p><img alt="Traces for a specific execution" src="https://dt-cdn.net/images/screenshot-2025-05-27-165215-910-851ffdee13.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

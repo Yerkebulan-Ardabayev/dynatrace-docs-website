@@ -1,0 +1,1165 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Waterfall graphs - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#waterfall-graphs" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Waterfall graphs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="waterfall-graphs">Waterfall graphs<a class="headerlink" href="#waterfall-graphs" title="Permanent link">&para;</a></h1>
+<h1 id="waterfall-graphs_1">Waterfall graphs<a class="headerlink" href="#waterfall-graphs_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Explanation</li>
+<li>11-min read</li>
+<li>Updated on Feb 26, 2024</li>
+</ul>
+<p>Sometimes it's necessary to analyze individual browser monitor executions to understand the impact of certain locations, local CDN partners, or other variables. Waterfall analysis is a great tool for viewing detailed information about the various resources that comprise a specific load or XHR action in an execution.</p>
+<p>A waterfall graph is a graphical display of every request and resource downloaded for an action, which can be an entire page load (load action) or the update of a specific in-page context without navigating to a new URL (XHR action). Resource- and page-level analysis is based on <a href="/docs/observe/digital-experience/rum-concepts/user-action-metrics" title="Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.">W3C timings</a>.</p>
+<p>Waterfall graphs are available on the Synthetic <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors" title="Learn how to analyze browser-monitor data points."><strong>Multidimensional analysis</strong> page</a> for every <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/number-of-actions-consumed-by-browser-clickpaths" title="Find out how many actions are consumed by a browser clickpath and how they differ from events.">action</a> in events with timings in browser monitor <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#data-points" title="Learn how to analyze browser-monitor data points.">executions</a> (both single URL and clickpaths).</p>
+<p>Used in conjunction with the <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#scatter-plot" title="Learn how to analyze browser-monitor data points.">scatter plot</a> and filters on the <strong>Multidimensional analysis</strong> page, waterfall graphs can help you narrow down the specific resources in specific executions that are causing failures or performance violations. <a href="#findings">Top findings</a> for each waterfall abstract waterfall data into accessible and actionable information.</p>
+<p>The images below show waterfall graphs for a load and XHR action respectively.</p>
+<p><img alt="Load action waterfall" src="https://dt-cdn.net/images/waterfallloadaction1-1205-086b74aa33.png" /></p>
+<p><img alt="XHR action waterfall" src="https://dt-cdn.net/images/waterfallxhraction1-1274-efc6bcbdc0.png" /></p>
+<p>Failed executions can have waterfall graphs for constituent actions up to the point when the monitor failed. Depending on the event in which failure occurs and the error type, you can find waterfall graphs even for monitors with 0% availability, and, consequently, no monitor-level performance data.</p>
+<h2 id="understand-the-data-in-waterfall-graphs">Understand the data in waterfall graphs<a class="headerlink" href="#understand-the-data-in-waterfall-graphs" title="Permanent link">&para;</a></h2>
+<p>The initial entry in a waterfall graph (<strong>Loading of page</strong> in a load action or a URL in an XHR action) shows the overall <strong>user action duration</strong>. The user action duration is also represented by the vertical timing line <strong>A</strong>.</p>
+<p>See <a href="#troubleshoot-mv3">Troubleshoot MV3-related issues in browser monitors</a> for information on the impact of transitioning the Synthetic Recorder (a Chrome browser extension) to Manifest Version 3, which is the latest iteration of the Chrome extension platform.</p>
+<p>Hover over the entry to see additional information on the <strong>Number of resources</strong> downloaded or distinct <strong>URLs</strong> contacted. (Check <a href="#findings">findings</a> for the number of first- and third-party resources.)</p>
+<p><img alt="First entry in a load action waterfall" src="https://dt-cdn.net/images/waterfallloadactionloadingofpage-1112-882a1717d2.png" /></p>
+<p><img alt="First entry in an XHR action waterfall" src="https://dt-cdn.net/images/waterfallxhractionfirstentry-1174-cd6dcb60a3.png" /></p>
+<p>The waterfall graph organizes its main entries into three categories, <a href="#document-requests">Document requests</a>, <a href="#xhr-requests">XHR requests</a>, and <a href="#resources">Resource requests</a>. Hover over a request or resource to see the full URL.</p>
+<h3 id="document-requests">Document requests<a class="headerlink" href="#document-requests" title="Permanent link">&para;</a></h3>
+<p>For load actions, which load the entire page, this section lists the base page and any content displayed in frames. The initial request, usually the base page, is highlighted in purple. For XHR actions, this section generally shows document requests in iframes.</p>
+<p>Base page timings are the basis of the page-level vertical timing lines displayed on the chart. For example, the start of base page load time marks the W3C Navigation start metric (the vertical timing line <strong>N</strong>). Load actions have a different set of <a href="#filters">page-level timing events</a> compared to XHR actions.</p>
+<p>If there's a redirect in place for the page you navigate to, the document request and resources for the page you are redirected to are shown.</p>
+<p>Hover over the entry to see a breakdown of its load time into components. The Processing, OnDOMContentLoaded, and OnLoad components are only applicable to the base page.</p>
+<p>Dynatrace Synthetic Monitoring includes processing time in its waterfall display and calculation. Processing time, which is time spent in JavaScript execution or simply browser overhead, is represented by the gap between the end of one resource and the start of another. Processing time is shown as a component of base page load time.</p>
+<p><img alt="Base page" src="https://dt-cdn.net/images/waterfallloadactionbasepage1-1406-9cc7f0b23f.png" /></p>
+<h3 id="xhr-requests">XHR requests<a class="headerlink" href="#xhr-requests" title="Permanent link">&para;</a></h3>
+<p>Load actions as well as XHR actions can contain XHR/fetch calls, or resource requests that do not result in a complete page load. An example of generating XHRs is typing into a form field and seeing autocomplete suggestions that change dynamically as you type.</p>
+<p>The initial XHR in an XHR action is highlighted in purple, and its timings are displayed as page-level timings in vertical lines. XHR actions have a different set of <a href="#filters">page-level timing events</a> compared to load actions.</p>
+<p>XHR entries display W3C resource timings as well as any JavaScript callback timesâin the Callback component. The Callback component is only applicable to XHRs.</p>
+<p><img alt="Component timings for an XHR" src="https://dt-cdn.net/images/waterfallxhractioninitialcomponenttimings-586-2be36bf9a7.png" /></p>
+<h3 id="resource-requests">Resource requests<a class="headerlink" href="#resource-requests" title="Permanent link">&para;</a></h3>
+<p>Resources are listed in the order requested and indented to show the offset from the start of page navigation when each was called. Check the <a href="#waterfall-data">top-most entry</a> in a waterfall graph to view the total number of resources downloaded; check <a href="#findings">findings</a> to view the breakdown by first and third parties.</p>
+<p>Each resource's download time and its components are shown in relation to that of other resources and in the context of overall page-level W3C timings. Hover over a resource to see timing details.</p>
+<p>Resources can be <a href="#filters">grouped and filtered</a>.</p>
+<p>Failed resources are marked in red. Hover over the resource for an explanation. Note that a failed resource does not necessarily result in action or monitor failure.</p>
+<p><img alt="Failed resource request" src="https://dt-cdn.net/images/waterfallfailedresource1-589-cca3366f7a.png" /></p>
+<p>If you have blocked requests to specified domains/URLs/resource types in <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#advanced-setup" title="Learn about configuring browser monitors and clickpaths.">monitor settings</a>, resources from such domains are shown without detailed timings.</p>
+<p><img alt="Blocked request" src="https://dt-cdn.net/images/waterfallblockedrequest-628-61d68bd691.png" /></p>
+<p>You can plot the performance (<strong>HTML downloaded</strong> / <strong>Response end</strong>) of any request, including document and XHR requests, across data points in the <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#scatter-plot" title="Learn how to analyze browser-monitor data points.">scatter plot</a> by selecting <strong>Analyze over time</strong>.</p>
+<p><img alt="Analyze a request over time" src="https://dt-cdn.net/images/scatterplotanalyzeovertime-1619-07e12cf69a.png" /></p>
+<h2 id="findings">Findings<a class="headerlink" href="#findings" title="Permanent link">&para;</a></h2>
+<p>Davis, the Dynatrace AI causation engine, automatically detects top findings for each waterfall. Findings are key statistics and tips that capture how resources can impact page-level W3C timings of the initial request of an actionâthe base page in the case of load actions or the initial XHR in the case of XHR actions. Initial requests drive the first impressions of new visitors. Top findings are tools that help you identify which resources can be optimized, such as the resources impacting Visually complete (the user's above-the-fold experience), uncompressed text resources, large resources, or slow CDN resources.</p>
+<p>Select <strong>Show all findings</strong> to expand the list of findings above a waterfall. Select a finding to highlight the associated resources in the waterfall graph.</p>
+<p><img alt="Top findings expanded" src="https://dt-cdn.net/images/waterfalltopfinding-1196-54e42a27e5.png" /></p>
+<p>The <strong>Visually complete</strong> finding compares the action timing to any configured threshold and highlights any images that impact the metric. (Thresholds and timeouts can be configured in browser monitor settings: <strong>Advanced setup</strong> &gt; <strong>Enable custom RUM JavaScript settings</strong> &gt; <strong>Configure parameters for Visually complete and Speed index calculation</strong>.)</p>
+<p><img alt="Visually complete finding" src="https://dt-cdn.net/images/waterfallvcfinding-650-f2d19da580.png" /></p>
+<p>Another finding highlights uncompressed text resources; if an uncompressed text resource is larger than 860 bytes, the hover data on compression is highlighted in red. This threshold may be configurableâ<a href="#finding-thresholds">see below</a>.</p>
+<p><img alt="Uncompressed resource" src="https://dt-cdn.net/images/waterfalluncompressedresource-586-e65284b928.png" /></p>
+<h3 id="thresholds-for-waterfall-findings">Thresholds for waterfall findings<a class="headerlink" href="#thresholds-for-waterfall-findings" title="Permanent link">&para;</a></h3>
+<p>If Real User Monitoring (RUM) is enabled for the web applications your browser monitor runs against, you can specify thresholds for waterfall findings in application settings.</p>
+<p>You can also find default values for findings here. For example, you can determine how to peg <strong>Speed index</strong> to <strong>Visually complete</strong> or how large is too large when it comes to being warned about the size of resources.</p>
+<p>To configure waterfall finding thresholds</p>
+<ol>
+<li>Go to <strong>Web</strong>.</li>
+<li>Select the application that you want to configure.</li>
+<li>In the upper-right corner of the application overview page, select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Edit</strong>.</li>
+<li>From the application settings, select <strong>Capturing</strong> &gt; <strong>Advanced setup</strong>.</li>
+<li>Adjust the required thresholds under <strong>Waterfall finding thresholds</strong>.</li>
+</ol>
+<h3 id="purepatha-distributed-traces-for-visibility-into-application-infrastructure">PurePathÂ® distributed traces for visibility into application infrastructure<a class="headerlink" href="#purepatha-distributed-traces-for-visibility-into-application-infrastructure" title="Permanent link">&para;</a></h3>
+<p>The <strong>Traces</strong> finding is displayed when your browser monitor runs against a web application with a <a href="/docs/ingest-from/dynatrace-oneagent" title="Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.">OneAgent</a> instance installed on the server side and that has the relevant server-side monitoring. The finding displays the linked service calls. If the monitor is associated with a web application that doesn't have the relevant server-side monitoring, the <strong>Traces</strong> finding is not displayed, as there are no underlying monitored services.</p>
+<p>PurePathÂ® technology traces a web request through your application infrastructure so you can see what is driving performance behind the scenes at the application level. If you see that one or two requests are taking the majority of the time on a slow page, you can drill into the distributed trace to see, for example, if there are too many database requests or just one slow request. You can then use this information to drive performance improvements or error analysis.</p>
+<p>When you select the finding, the associated requests and resources are highlighted in the waterfall. You can select the link provided in the top finding to access all available distributed traces or hover over an individual request to drill into a specific distributed trace. You'll probably want to analyze distributed traces for your <a href="/docs/discover-dynatrace/get-started/glossary#request" title="Get acquainted with Dynatrace terminology.">dynamic requests</a>, (<a href="#document-requests">document requests</a>, or <a href="#xhr-requests">XHRs</a>) rather than individual resources. In the image below, hovering over the document request displays the <strong>View trace</strong> link for that request.</p>
+<p><img alt="Traces top finding and single request Purepath trace" src="https://dt-cdn.net/images/waterfalltracesfinding-1121-556a6c6eed.png" /></p>
+<p>In the <strong>Distributed traces</strong> list view, select a resource/request and drill down to view <strong>Trace</strong>.</p>
+<p><img alt="Traces accessed from Synthetic waterfall" src="https://dt-cdn.net/images/tracesfromwaterfall-1491-340c596da0.png" /></p>
+<ul>
+<li>
+<p>For processes that are under heavy load, Dynatrace OneAgent automatically adjusts the data sent. Therefore, certain distributed traces may not be available. In such cases, you'll see a message about <a href="/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management" title="Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.">Adaptive Traffic Management</a> in the <strong>Traces</strong> finding.</p>
+</li>
+<li>
+<p>Drilling down from an individual resource (based on W3C resource timings) to a distributed trace (captured by OneAgent) is enabled by comparing URLs. If there are any rewrite rules or if parts of the URL arenât identical on the client and server sides, the <strong>View trace</strong> button for the resource wonât be displayed. In such cases, you can get to all your distributed traces from the <strong>Traces</strong> finding.</p>
+</li>
+</ul>
+<h2 id="javascript-errors">JavaScript errors<a class="headerlink" href="#javascript-errors" title="Permanent link">&para;</a></h2>
+<p>You can analyze the details of JavaScript errors that are detected during the execution of load or XHR actions. JavaScript errors appear as red vertical markers in the waterfall graph at the point they occurred during the execution. Click a marker to analyze the details of that error. JavaScript errors do not lead to monitor failure, and monitor failure is not directly attributable to any JavaScript errors.</p>
+<p><img alt="Waterfall JavaScript error" src="https://dt-cdn.net/images/waterfalljserror-1198-234304aad2.jpg" /></p>
+<p>When you filter the <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#scatter-plot" title="Learn how to analyze browser-monitor data points.">scatter plot</a> for JavaScript errors, you can click any data point to automatically select the event and load the waterfall where a JavaScript error occurs.</p>
+<p>The Error details page for each detected JavaScript error includes a complete stack trace that identifies the exact line of code responsible for the error. This insight can dramatically accelerate the time it takes to resolve such errors.</p>
+<p><img alt="JavaScript error details" src="https://dt-cdn.net/images/jserrordetails-1680-b4b1d8ef5d.jpg" /></p>
+<h2 id="grouping-filters-and-legend">Grouping, filters, and legend<a class="headerlink" href="#grouping-filters-and-legend" title="Permanent link">&para;</a></h2>
+<p>Grouping and filtering tools help you focus on the waterfall requests that matter to you. You can combine grouping and filtering controls.</p>
+<p><strong>Grouping by domain</strong> organizes resources into first-party, third-party, and CDN domains. You can see the load order and timing details for specific domains.</p>
+<p><strong>Grouping by type</strong> allows you to see the main categories of first-party, third-party, and CDN resourcesâimage, script (JavaScript), CSS, and others.</p>
+<p><img alt="Group resources by type" src="https://dt-cdn.net/images/waterfallgroupbytype1-1206-c6a1a11b85.png" /></p>
+<p>Note that the group-level timings represent the end-to-end timings for loading the resources of a given type/domain; these timings are not additive, in that individual resource times do not add up to group-level timings, as resources can be loaded concurrently.</p>
+<p>Filters allow you to focus on resources that most impact your user experience. You can view the full waterfall, or <strong>Focus on</strong> just those resources up until significant browser events such as DOM interactive or Visually complete.</p>
+<p><img alt="Filter resources by browser event" src="https://dt-cdn.net/images/waterfallfilterbyevent1-1203-ad6b72b76f.png" /></p>
+<p>The legend at the bottom of the waterfall lists the following with detailed descriptions below:</p>
+<ul>
+<li>W3C page-level metrics</li>
+<li>JavaScript errors</li>
+<li>Resource timing components</li>
+</ul>
+<p>Select any of these to exclude/include them from the waterfall graph. The images below show the browser events and resource timing components available for load actions and XHR actions, respectively.</p>
+<p><img alt="Legend for load actions" src="https://dt-cdn.net/images/legend1loadactionwaterfall-1112-ee3b169f08.png" /></p>
+<p><img alt="Legend for XHR actions" src="https://dt-cdn.net/images/legendxhractionwaterfall1-1225-a7c2e4c4e0.png" /></p>
+<h2 id="troubleshooting-mv3-related-issues-in-browser-monitors">Troubleshooting MV3-related issues in browser monitors<a class="headerlink" href="#troubleshooting-mv3-related-issues-in-browser-monitors" title="Permanent link">&para;</a></h2>
+<p>The Dynatrace Synthetic Recorder, which is a Google Chrome browser extension, is transitioning to Manifest Version 3 (MV3), which is the latest iteration of the Chrome extension platform. As a result of this required transition, there are changes in the operation of the Synthetic Recorder that might require workarounds in your browser monitor configurations or application code.</p>
+<p>Check out the following articles in the <a href="https://dt-url.net/dy122xtf">Troubleshooting forum in the Dynatrace Communityï»¿</a>.</p>
+<ul>
+<li><a href="https://dt-url.net/2zg2xr6">Missing XHR actions for third-party iframesï»¿</a></li>
+<li><a href="https://dt-url.net/w0i2xhk">Unable to block specific requests owing to limitations on the length of regular expressionsï»¿</a></li>
+<li><a href="https://dt-url.net/1ck2xb1"><code>window.dispatchEvent</code> and <code>window.addEventListener</code> functions in application codeï»¿</a></li>
+<li><a href="https://dt-url.net/62m2x72">401 failures on challenge-response pagesï»¿</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

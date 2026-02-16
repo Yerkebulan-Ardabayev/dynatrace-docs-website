@@ -1,0 +1,1536 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/technology-support/known-solutions-and-workarounds/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Known solutions and workarounds - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#known-solutions-and-workarounds" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Known solutions and workarounds
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="known-solutions-and-workarounds">Known solutions and workarounds<a class="headerlink" href="#known-solutions-and-workarounds" title="Permanent link">&para;</a></h1>
+<h1 id="known-solutions-and-workarounds_1">Known solutions and workarounds<a class="headerlink" href="#known-solutions-and-workarounds_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>14-min read</li>
+<li>Updated on Feb 26, 2024</li>
+</ul>
+<p>This page details a number of resolved issues and solutions to issues that have been reported to the Dynatrace Support team.</p>
+<h2 id="oneagent-prevents-startup-of-elasticsearch-818">OneAgent prevents startup of Elasticsearch 8.18+<a class="headerlink" href="#oneagent-prevents-startup-of-elasticsearch-818" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>OneAgent prevents startup of Elasticsearch 8.18+</p>
+<p><strong>Solution:</strong></p>
+<p>For more information, kindly visit <a href="https://community.dynatrace.com/t5/Heads-up-from-Dynatrace/OneAgent-prevents-startup-of-Elasticsearch-8-18/ta-p/278744">this pageï»¿</a></p>
+<h2 id="oneagent-on-a-sap-hana-host">OneAgent on a SAP HANA host<a class="headerlink" href="#oneagent-on-a-sap-hana-host" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>OneAgent installed on a HANA host may interfere with database updates if it has automatic process injection enabled (default).</p>
+<p><strong>Solution:</strong></p>
+<p>Disable process auto-injection for a OneAgent installed on a SAP HANA host.</p>
+<h3 id="disable-auto-injection-at-installation-time">Disable auto-injection at installation time<a class="headerlink" href="#disable-auto-injection-at-installation-time" title="Permanent link">&para;</a></h3>
+<p>To install OneAgent with the parameters to enable Infrastructure Monitoring mode and disable process injection, run the command below:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/bin/sh Dynatrace-OneAgent-Linux-&lt;version&gt;.sh --set-monitoring-mode=infra-only --set-auto-injection-enabled=false
+</code></pre></div>
+<h3 id="disable-auto-injection-after-oneagent-installation">Disable auto-injection after OneAgent installation<a class="headerlink" href="#disable-auto-injection-after-oneagent-installation" title="Permanent link">&para;</a></h3>
+<p>To disable auto-injection after OneAgent is installed</p>
+<ol>
+<li>Open a terminal on your HANA host.</li>
+<li>Run the <code>oneagentctl</code> command-line tool with the following parameters to enable Infrastructure Monitoring mode and disable process injection. The command will also restart the OneAgent service to automatically apply your changes.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./oneagentctl --set-monitoring-mode=infra-only --set-auto-injection-enabled=false --restart-service
+</code></pre></div>
+<p>For more information, see <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">OneAgent configuration via command-line interface</a></p>
+<h4 id="dynatrace-web-ui">Dynatrace web UI<a class="headerlink" href="#dynatrace-web-ui" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Go to <img alt="Hosts" src="https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png" title="Hosts" /> <strong>Hosts Classic</strong>.</li>
+<li>Find your HANA host and select it.</li>
+<li>Select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Settings</strong> &gt; <strong>Monitoring</strong>.</li>
+<li>Turn off <strong>Full-stack monitoring</strong> and <strong>Auto-injection</strong>.</li>
+</ol>
+<h2 id="alpine-linuxmusl-libc-memory-allocation">Alpine Linux/musl-libc, Memory allocation<a class="headerlink" href="#alpine-linuxmusl-libc-memory-allocation" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>On musl-libc-based Alpine Linux systems, each executable has its memory limits which are controlled via the <code>MPROTECT</code> parameter. When monitoring an musl-libc-based Alpine Linux application with Dynatrace OneAgent, your process (for example, a Java process) may exceed the specified memory limit. When this is the case, the subsequent memory allocation will fail with a message like <code>There is insufficient memory for the Java Runtime Environment to continue.</code></p>
+<p><strong>Solution:</strong></p>
+<p>To overcome such issues, it's recommended that you ignore the memory protection parameter for executables that you plan to monitor with Dynatrace OneAgent. To do this, you must install the paxctl tool using:</p>
+<p><code>apk add paxctl</code></p>
+<p>You can then remove the memory check, for example</p>
+<p><code>paxctl -m /usr/lib/jvm/java-1.8-openjdk/jre/bin/java</code></p>
+<p>For 3rd-party executables not shipped by Alpine, you'll be notified that</p>
+<p><code>&lt;file&gt; does not have a PT_PAX_FLAGS program</code></p>
+<p>In such instances, convert your file beforehand, for example</p>
+<p><code>paxctl -C /usr/lib/jvm/java-1.8-openjdk/jre/bin/java</code></p>
+<h2 id="alpine-linuxmusl-libc-gnu-c-library-glibc-compatibility-packages">Alpine Linux/musl-libc, GNU C Library (glibc) compatibility packages<a class="headerlink" href="#alpine-linuxmusl-libc-gnu-c-library-glibc-compatibility-packages" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Binaries built against GNU C Library (glibc) running on Alpine based Linux systems via <strong>gcompat (GNU C Library compatibility layer for musl)</strong> package or <strong>libc6-compat (compatibility libraries for glibc)</strong> package are not supported.</p>
+<p><strong>Solution:</strong></p>
+<p>Please migrate your build pipeline to natively compile and package against the Alpine based Linux.</p>
+<h2 id="php-running-in-apache-on-windows-stack-size">PHP running in Apache on Windows, Stack size<a class="headerlink" href="#php-running-in-apache-on-windows-stack-size" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>The default stack size of Apache on Windows is 1 MB, which is rather low compared to other platforms. Therefore, the additional memory footprint involved in enabling Dynatrace monitoring for PHP can lead to stack overflows.</p>
+<p><strong>Solution:</strong></p>
+<p>This problem can be solved by changing the stack size to 8 MB, which is the default on Linux.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;IfModule mpm_winnt_module&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>ThreadStackSize 8388608
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>&lt;/IfModule&gt;
+</code></pre></div>
+<h2 id="cloud-foundry-ibm-websphere-liberty-buildpack">Cloud Foundry, IBM WebSphere Liberty buildpack<a class="headerlink" href="#cloud-foundry-ibm-websphere-liberty-buildpack" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>The recommended version of IBM WebSphere Liberty buildpack changed from <code>v3.7-20170118-2046</code> to <code>v3.9-20170419-1403</code> due to known issues related to a limitation of the JVM command line to 512 characters and an issue with trailing slashes.</p>
+<p><strong>Solution:</strong><br />
+Please use IBM WebSphere Liberty buildpack version v3.9-20170419-1403+</p>
+<h2 id="host-ubuntu-1610">Host, Ubuntu 16.10<a class="headerlink" href="#host-ubuntu-1610" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Due to compile optimization changes in the C runtime packages provided with Ubuntu 16.10, new stack-alignment requirements have been introduced. OneAgent versions earlier than 1.103.237 don't yet fulfill these requirements. Using versions of OneAgent earlier than 1.103.237 may lead to process crashes during dynamic symbol resolution (<code>dlsym</code>) calls in the C runtime.</p>
+<p><strong>Solution:</strong></p>
+<p>Update to OneAgent version 1.103.237 or higher. This version of OneAgent will be available to all Dynatrace environments by October 20th, 2016. Here are the instructions for upgrading OneAgent:</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Preferences</strong> (only visible to environment admins).</li>
+<li>Ensure that the <strong>Automatically update OneAgent instances</strong> setting is enabled. OneAgent version 1.103.237 will be automatically deployed once itâs available on your environment.
+   If <strong>Automatically update One Agent instances</strong> is disabled, select <strong>OneAgent version 1.103.237 or higher</strong> and click <strong>Update now</strong>.</li>
+</ol>
+<h2 id="java-ibm-j9">Java, IBM J9<a class="headerlink" href="#java-ibm-j9" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>In rare situations, when implementing a try-catch-finally block and catching a multi-type exception with Java 7, the exception is caught, but the source code in the finally block doesn't execute. This issue has been fixed since IBM J9.</p>
+<p><strong>Solution:</strong></p>
+<p>Fixed since IBM J9</p>
+<ul>
+<li>7 R1 SR2 FP11 (7.1.3.0)</li>
+<li>7 SR9 (7.0.9.0)</li>
+<li>8 SR1 (8.0.1.0)</li>
+</ul>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://www-01.ibm.com/support/docview.wss?uid=swg1IV68110">IBM 1IV68110ï»¿</a></li>
+</ul>
+<h2 id="java-websphere-mq-jms">Java, WebSphere MQ , JMS<a class="headerlink" href="#java-websphere-mq-jms" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>When using WebSphere MQ via JMS, Dynatrace isn't always able to determine the queue name and may report the queue name as 'unavailable'. This happens when MQ messages have not been properly mapped to JMS.</p>
+<p><strong>Solution:</strong></p>
+<p>Follow the IBM documentation for <a href="https://www.ibm.com/support/knowledgecenter/SSFKSJ_8.0.0/com.ibm.mq.dev.doc/q031990_.htm">mapping JMS messages onto IBM MQ messagesï»¿</a>. Once the <code>MQRFH2</code> header has been properly mapped, Dynatrace will pick up the correct queue name.</p>
+<h2 id="java-oracle-hotspotopenjdk">Java, Oracle HotSpot/OpenJDK<a class="headerlink" href="#java-oracle-hotspotopenjdk" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>A known issue in Oracle HotSpot and OpenJDK can lead to a JVM deadlock in <code>ThreadTimesClosure</code> or incomplete CPU timings of background activities. Be sure to update to Oracle HotSpot 6u38/7u40 or OpenJDK 7u45 and higher to benefit from this solution.</p>
+<p><strong>Solution:</strong></p>
+<p>Fixed in Oracle HotSpot 6u38/7u40 and OpenJDK 7u45</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=7196045">Source Oracle HotSpot 6 (bug 7196045))ï»¿</a></li>
+<li><a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8005479">Source Oracle HotSpot 7 (bug 8005479)ï»¿</a></li>
+<li><a href="https://bugs.openjdk.java.net/browse/JDK-7196045">Source OpenJDK (JDK-7196045)ï»¿</a></li>
+</ul>
+<p><strong>Issue:</strong></p>
+<p>A known issue in Oracle HotSpot and OpenJDK can lead to a JVM crash when a JVMTI agent is loaded, <a href="https://docs.oracle.com/en/java/javase/11/vm/class-data-sharing.html#GUID-7EAA3411-8CF0-4D19-BD05-DF5E1780AA91">class data sharingï»¿</a> is turned on, and the <code>classes.jsa</code> file exists. This is not normally the case, but it does occur in Docker environments, especially with Java 11 where class data sharing is set to <code>auto</code>.</p>
+<p><strong>Solution:</strong></p>
+<p>Change the java command line to turn off class data sharing via -Xshare:off.</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://bugs.openjdk.java.net/browse/JDK-8212200">Source OpenJDK (JDK-8212200)ï»¿</a></li>
+</ul>
+<h2 id="java-spring-aspectj">Java, Spring, AspectJ<a class="headerlink" href="#java-spring-aspectj" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Some customers have reported the following <code>NullPointerException</code> during startup of their Java Spring or AspectJ applications. AspectJ has resolved this issue in version 1.6+. Ensure that the classpath is updated to use AspectJ 1.6+.</p>
+<p>Message: <code>NullPointerException at</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>`org.aspectj.weaver.reflect.Java15AnnotationFindergetAnnotations
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>(Java15AnnotationFinder.java:109)`
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<p>Fixed since Spring 2.5.4/AspectJ 1.6</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://jira.spring.io/browse/SPR-4390">SPR-4390ï»¿</a></li>
+</ul>
+<h2 id="javareal-user-monitoringapigee">Java/Real User Monitoring/Apigee<a class="headerlink" href="#javareal-user-monitoringapigee" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Real User Monitoring of Java applications may trigger a <code>ClassCastException</code> error upon a type cast to the implemented <code>HttpServletRequest</code> interface because Dynatrace replaces the original <code>HttpServletRequest</code> implementation with a <code>RequestWrapper</code> for automatic RUM JavaScript injection.</p>
+<p>This crash also occurs for customers using <a href="https://apigee.com">Apigeeï»¿</a>.</p>
+<p><strong>Solution:</strong></p>
+<p>You have a few options:</p>
+<ol>
+<li>Change your source code so that it doesn't expect a specific implementation of the <code>HttpServletRequest</code> interface.</li>
+<li>If you're using a 3rd party framework, you can reach out to your framework vendor.</li>
+<li>For Apigee, we've disabled Real User Monitoring auto-injection. Manual Real User Monitoring injection isn't affected and can be used as a workaround.</li>
+<li>You can use a web server in front of Javaâthe web server will auto-inject the Real User Monitoring JavaScript and thereby avoid the crash.</li>
+</ol>
+<p><strong>Source:</strong><br />
+n/a</p>
+<h2 id="java-cpu-overhead">Java CPU overhead<a class="headerlink" href="#java-cpu-overhead" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Periodically, spikes of CPU usage or overall CPU usage occur when instrumenting Preview for JBoss. Querying JMX measures cause these spikes. JMX calls done in 10 sec intervals lead to a CPU spike on certain versions affected by this JBoss bug. Versions 6.4.x are considered to be problematic.</p>
+<p><strong>Solution:</strong></p>
+<p>Solution is to upgrade to Preview for JBoss and/or contact RedHat.</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1367784">Bug 1367784ï»¿</a></li>
+</ul>
+<h2 id="uidocker">UI/Docker<a class="headerlink" href="#uidocker" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>With Docker versions 1.10.3 - 1.11, CPU, memory, and network container statistics are missing from the UI because data requests sent to containers via <code>docker stats</code> time out. Restarting Docker addresses this issue temporarily.</p>
+<p><strong>Solution:</strong></p>
+<p>Fixed since Docker 1.12. Upgrade to Docker 1.12.</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://github.com/docker/docker/issues/22655">Issue 22655ï»¿</a></li>
+</ul>
+<h2 id="uiiis">UI/IIS<a class="headerlink" href="#uiiis" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Due to a lack of Windows Performance Counters, the <strong>Further details</strong> tab may be not visible in the UI for IIS processes, even following IIS restart. No errors are raised during OneAgent injection.</p>
+<p><strong>Solution:</strong></p>
+<p>This can occur if there is a problem with the Performance Counter Library in the Windows Registry. To check this:</p>
+<p>Using a Windows command, verify that the metrics are not retrievable from the Windows Registry:
+typeperf <code>"\Process(w3wp*)\ID Process" -sc 15</code>
+Alternatively, use <code>Perfmon.exe</code> to see if data is available for the counters or to confirm that the counters don't exist.</p>
+<p>Consult Microsoft technical documentation to rebuild the performance libraries in the registry.</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://support.microsoft.com/en-us/kb/300956">KB 00956ï»¿</a></li>
+</ul>
+<h2 id="net-iis">.NET, IIS<a class="headerlink" href="#net-iis" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>If IIS monitoring is enabled for an ASP.NET application using .NET &gt;= 4.5 and &lt; 4.6, in rare circumstances the application could fail with an unhandled <code>NullReferenceException</code>.</p>
+<p>Message: <code>System.NullReferenceException at</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>`System.Web.Security.Roles.IsUserInRole(String username, String roleName)`
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<p>Fixed since .NET 4.6.</p>
+<ul>
+<li><a href="https://connect.microsoft.com/VisualStudio/feedbackdetail/view/967133/roles-getrolesforuser-throw-a-nullreferenceexception-in-a-wcf-service-which-is-hosted-in-asp-net-with-the-aspnetcompatibilityenabled-define-to-false">Sourceï»¿</a></li>
+</ul>
+<h2 id="net-cassette">.NET, Cassette<a class="headerlink" href="#net-cassette" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Customers reported a crash when using the Cassette web asset management library.</p>
+<p>Message: Crash at</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>`[TinyIoCResolutionException: Unable to resolve type: Cassette.Views.BundlesDocumentationer]`
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<p>As a workaround, you can use the file system as Cassette's cache by specifying a directory in your <code>web.config</code> file as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>`&lt;cassette cacheDirectory=&quot;App_Data\Cassette&quot; /&gt;`
+</code></pre></div>
+<p>Potentially fixed in v2.4.1</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://github.com/andrewdavey/cassette/pull/441">Pull 441ï»¿</a></li>
+</ul>
+<h2 id="net-confuserex">.NET, ConfuserEx<a class="headerlink" href="#net-confuserex" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Using the assembly-obfuscation tool ConfuserEx can sometimes crash .NET applications because the ConfuserEx assembly doesn't allow "profilers" like Dynatrace.</p>
+<p>Message: Crash at</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>`System.Environment.FailFast(System.String)`
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<p>Disable ConfuserEx obfuscation or disable Dynatrace monitoring at the process level.</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://github.com/yck1509/ConfuserEx/blob/816172adcb1ea2a6c74a964274373987fc2e9fe5/Confuser.Runtime/AntiDebug.Antinet.cs">Sourceï»¿</a></li>
+</ul>
+<h2 id="real-user-monitoring-chrome">Real User Monitoring, Chrome<a class="headerlink" href="#real-user-monitoring-chrome" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Real User Monitoring analysis with Google Chrome can lead to browser crashes when some resources can't be loaded.</p>
+<p>Message: Crash at</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>`window.performance.getEntriesByType(&#39;resource&#39;)`
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<p>Until Chrome provides a fix for this issue, make sure that all resources are loaded successfully (no 301 responses) or disable <strong>W3C resource timing for third party/CDN</strong>.</p>
+<p>To disable W3C resource timing for third party/CDN:</p>
+<ol>
+<li>Go to <strong>Frontend</strong>.</li>
+<li>Select the application you want to edit.</li>
+<li>Click the <strong>More</strong> (<strong>â¦</strong>) button.</li>
+<li>Click <strong>Edit</strong>.</li>
+<li>Click <strong>Content capture</strong>.</li>
+<li>Set the <strong>W3C resource timing for third party/CDN</strong> switch to <strong>Off</strong>.</li>
+</ol>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=586443">Issue 586443ï»¿</a></li>
+</ul>
+<h2 id="agentless-real-user-monitoring-chrome">Agentless Real User Monitoring, Chrome<a class="headerlink" href="#agentless-real-user-monitoring-chrome" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Users may see a browser warning in Chrome's Developer Console if they are on slow connections such as 2G networks.</p>
+<p>Message:
+<code>A Parser-blocking, cross-origin script, https://js-cdn.dynatrace.com/jstag/148709fdc4b/ruxitagent_2fgjqrx_10111170210093847.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.</code></p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Go to <strong>Frontend</strong>.</li>
+<li>Select the application you want to configure.</li>
+<li>Click the <strong>Browse (â¦)</strong> button and select <strong>Edit</strong>.</li>
+<li>In the <strong>Setup</strong> section, select <strong>Agentless monitoring setup</strong>.</li>
+<li>Disable the <strong>Easy monitoring</strong> switch.</li>
+</ol>
+<p>The only downside of this change is that every time you make a configuration change you have to copy and re-inject the Real User Monitoring JavaScript again. Therefore, it's better to use the REST API to get the updated tag.</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://developers.google.com/web/updates/2016/08/removing-document-write">Update 2016/08ï»¿</a></li>
+</ul>
+<h2 id="real-user-monitoring-jquery">Real User Monitoring, jQuery<a class="headerlink" href="#real-user-monitoring-jquery" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>In the course of Real User Monitoring, failing asynchronous JQuery user actions lead to action timeouts after 180 seconds, but no error is reported. This is caused by a known jQuery limitation.</p>
+<p><strong>Solution:</strong></p>
+<p>JQuery has not provided a fix for this problem. To resolve this issue, fix the failing jQuery call on your end (for example, an AJAX request to a missing resource) or disable jQuery in XHR (Ajax) detection settings and enable basic XHR detection.</p>
+<p>To disable JQuery detection and enable basic XHR detection:</p>
+<ol>
+<li>Go to <strong>Frontend</strong>.</li>
+<li>Select the application you want to edit.</li>
+<li>Click the <strong>More</strong> (<strong>â¦</strong>) button.</li>
+<li>Click <strong>Edit</strong>.</li>
+<li>Click <strong>XHR (Ajax)</strong> detection.</li>
+<li>Set the <strong>JQuery, Backbone.js</strong> switch to <strong>Off</strong>.</li>
+<li>Set the <strong>Basic XHR detection</strong> switch to <strong>On</strong>.</li>
+</ol>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://bugs.jquery.com/ticket/9613">Ticket 9613ï»¿</a></li>
+</ul>
+<h2 id="real-user-monitoring-ext-js">Real User Monitoring, Ext JS<a class="headerlink" href="#real-user-monitoring-ext-js" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>In large, complex Ext JS applications customers experienced client side response time degradation like a web browser notification about an unresponsive script. Due to the internal event handling mechanism of Ext JS the application can be running slow if too many events are triggered which are captured by the RUM JavaScript.</p>
+<p><strong>Solution:</strong></p>
+<p>Turn off extended Ext JS event capturing in Real User Monitoring settings.</p>
+<ol>
+<li>Go to <strong>Web</strong>.</li>
+<li>Select the application that you want to configure.</li>
+<li>In the upper-right corner of the application overview page, select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Edit</strong>.</li>
+<li>From the application settings, select <strong>Capturing</strong> &gt; <strong>Custom configuration properties</strong>.</li>
+<li>Select <strong>Add a custom configuration property</strong> and enter <code>exteventsoff=1</code>.</li>
+</ol>
+<p>If certain user actions are not captured afterwards, use the JavaScript API to trigger actions manually.</p>
+<h2 id="real-user-monitoring-salesforce">Real User Monitoring, Salesforce<a class="headerlink" href="#real-user-monitoring-salesforce" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong>
+When <a href="/docs/observe/digital-experience/web-applications/initial-setup/rum-injection" title="Configure automatic injection of the RUM JavaScript into the pages of your applications">injecting RUM</a> into Salesforce, you may experience the application stuck in "loading" when viewing records from a search result. When this happens, browser debugging displays the JavaScript error: <code>Wrong number of arguments or invalid property assignment on b.b.open,arguments,b.b</code>.</p>
+<p>This occurs when the RUM JavaScript is not the first JavaScript loaded on the page. There can be JavaScript code loading in the heading that has a negative impact on the RUM JavaScript.</p>
+<p><strong>Solution:</strong>
+Shifting the RUM JavaScript to load before any JavaScript resolves this issue.</p>
+<p><strong>Issue:</strong>
+Dynatrace RUM isn't working for Salesforce applications based on the <a href="https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm">Lightning Component Frameworkï»¿</a>.</p>
+<p>The reason for this is that many Salesforce applications and offerings are based on <a href="https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm">Lightning Component Frameworkï»¿</a>. This framework has a security architecture called <a href="https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm">Lightning Lockerï»¿</a>, which restricts access to DOM elements and therefore influences the Dynatrace RUM JavaScript. Whenever the Locker code is loaded and executed before the Dynatrace RUM JavaScript, monitoring won't work, independently of whether you add the <a href="/docs/observe/digital-experience/web-applications/initial-setup/rum-injection" title="Configure automatic injection of the RUM JavaScript into the pages of your applications">RUM JavaScript</a>.</p>
+<p><strong>Solution:</strong>
+There is currently no solution from the Dynatrace side. Please contact Salesforce support. Perhaps there is a way to allow the Dynatrace RUM JavaScript.</p>
+<h2 id="real-user-monitoring-salesforce-commerce">Real User Monitoring, Salesforce Commerce<a class="headerlink" href="#real-user-monitoring-salesforce-commerce" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>There is currently an incompatibility between Dynatrace Agentless RUM and Salesforce Commerce. This is due to a reserved character within the Salesforce compiler.</p>
+<p><strong>Solution:</strong></p>
+<p>Replace <code>#</code> with <code>${'#'}</code> in the Dynatrace RUM JavaScript.</p>
+<h2 id="real-user-monitoring-visually-complete-internet-explorer-11">Real User Monitoring, Visually complete, Internet Explorer 11<a class="headerlink" href="#real-user-monitoring-visually-complete-internet-explorer-11" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>Enabling the <a href="/docs/observe/digital-experience/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics" title="Learn how to use 'Visually complete' and 'Speed index' metrics."><strong>Visually complete</strong></a> application setting while using Dynatrace with Internet Explorer 11 can lead to a complete page crash or hanging in cases where heavy <code>&lt;table&gt;</code> or table-like (using the style attribute <code>display:table</code>) DOM mutations occur. This tends to be more common with single-page applications. Simply monitoring mutations with the MutationObserver, as is done for Visually complete, can crash the page once it's loaded. Here is a <a href="https://jsfiddle.net/gd88q1n3/2/">simple reproduction of the issueï»¿</a> with a table-like element mutation crash.</p>
+<h4 id="more-information-on-visually-complete-and-speed-index">More information on Visually complete and Speed index<a class="headerlink" href="#more-information-on-visually-complete-and-speed-index" title="Permanent link">&para;</a></h4>
+<p>Speed index and Visually complete metrics are only available on browsers that support <a href="https://developers.google.com/web/updates/2012/02/Detect-DOM-changes-with-Mutation-Observers"><code>mutationobservers</code>ï»¿</a>. This includes the following browsers:</p>
+<ul>
+<li>Microsoft Internet Explorer 11</li>
+<li>Microsoft Edge 15 or later</li>
+<li>Firefox 57 or later</li>
+<li>Google Chrome 61 or later</li>
+</ul>
+<p>Speed index is available only for load actions. Visually complete is available for all actions, including load actions, but not for AJAX requests that don't affect the DOM.</p>
+<p><strong>Solution:</strong></p>
+<p>Microsoft fixed the bulk of this issue for <code>&lt;table&gt;</code> element mutations in a <a href="https://support.microsoft.com/en-za/help/4025252/cumulative-security-update-for-internet-explorer-july-11-2017">recent updateï»¿</a>. Update Internet Explorer 11 to this version to fix this issue in most cases.</p>
+<p>Elements with the style attribute <code>display:table</code> still run into this problem following update of Internet Explorer 11. For this reason, we've created a feature flag you can use to disable Visually complete within Internet Explorer 11 only. To enable this feature flag, Please contact a Dynatrace product expert via live chat within your environment..</p>
+<h2 id="redhat-enterprise-linux-74">Redhat Enterprise Linux 7.4<a class="headerlink" href="#redhat-enterprise-linux-74" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>RHEL v7.4 (upgraded from v7.3 or fresh install) comes with the stix-fonts package. When this package is installed, the default font changes from <code>Utopia</code> to <code>STIX</code>. As a result, Java default fonts are mapped to <code>STIX</code>, including the <code>sans-serif</code> font family. However, the <code>STIX</code> fonts don't seem to be compatible with Java (OpenJDK + IBM JDK) and cause exceptions and bad calculated artefacts when using <code>java.awt</code>, which is the case with <code>JasperReports</code>.</p>
+<p>For Dynatrace Managed, which is based on Java, this issue was experienced as a problem in Smartscape. More specifically, selecting any item in Smartscape shows an unspecific error message that something went wrong.</p>
+<p><strong>Solution:</strong></p>
+<p>Create a file <code>/etc/fonts/local.conf</code> with the content shown below to explicitly make <code>Utopia</code> the default font again.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&lt;?xml version=&#39;1.0&#39;?&gt;
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>&lt;!DOCTYPE fontconfig SYSTEM &#39;fonts.dtd&#39;&gt;
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>&lt;fontconfig&gt;
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>&lt;alias&gt;
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>&lt;family&gt;serif&lt;/family&gt;
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>&lt;prefer&gt;&lt;family&gt;Utopia&lt;/family&gt;&lt;/prefer&gt;
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>&lt;/alias&gt;
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>&lt;alias&gt;
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>&lt;family&gt;sans-serif&lt;/family&gt;
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>&lt;prefer&gt;&lt;family&gt;Utopia&lt;/family&gt;&lt;/prefer&gt;
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>&lt;/alias&gt;
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>&lt;alias&gt;
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>&lt;family&gt;monospace&lt;/family&gt;
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>&lt;prefer&gt;&lt;family&gt;Utopia&lt;/family&gt;&lt;/prefer&gt;
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>&lt;/alias&gt;
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>&lt;alias&gt;
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>&lt;family&gt;dialog&lt;/family&gt;
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>
+<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>
+<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>
+<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>&lt;prefer&gt;&lt;family&gt;Utopia&lt;/family&gt;&lt;/prefer&gt;
+<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>
+<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>
+<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>
+<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>&lt;/alias&gt;
+<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>
+<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>
+<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>
+<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>&lt;alias&gt;
+<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>
+<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>
+<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>
+<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>&lt;family&gt;dialoginput&lt;/family&gt;
+<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a>
+<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>
+<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a>
+<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a>&lt;prefer&gt;&lt;family&gt;Utopia&lt;/family&gt;&lt;/prefer&gt;
+<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>
+<a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a>
+<a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a>
+<a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a>&lt;/alias&gt;
+<a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a>
+<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a>
+<a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a>
+<a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a>&lt;/fontconfig&gt;
+</code></pre></div>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1484079#c8">Bug 1484079ï»¿</a></li>
+</ul>
+<h2 id="ibm-http-server-ihs-85">IBM HTTP Server (IHS) 8.5<a class="headerlink" href="#ibm-http-server-ihs-85" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>IHS 8.5 on Linux crashes with segmentation fault.</p>
+<p><strong>Solution:</strong></p>
+<p>Disable prelink on IHS server.</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="https://www.google.at/search?q=prelink+crash">Sourceï»¿</a></li>
+</ul>
+<h2 id="adobe-dispatcher">Adobe Dispatcher<a class="headerlink" href="#adobe-dispatcher" title="Permanent link">&para;</a></h2>
+<p><strong>Issue:</strong></p>
+<p>When using Adobe Dispatcher with a web server monitored by Dynatrace OneAgent, the RUM JavaScript agent tag is injected twice into the HTML page. As a consequence, the RUM JavaScript agent will be executed twice at the browser, producing unnecessary load (e.g. the beacons will be sent twice, etc.).</p>
+<p>The reason for this is that Adobe Dispatcher doesn't cache HTTP response headers by default and so the header X-OneAgent-JS-Injection "gets lost" for already injected sites, which are served from the cache. If this header is not present, the webserver agent injects (another) RUM JavaScript agent tag, even if it's already present in the cached content.</p>
+<p><strong>Solution:</strong></p>
+<p>The dispatcher needs to be configured to cache the response header "X-OneAgent-JS-Injection". To avoid double injection of the RUM JavaScript agent tag when using Adobe Dispatcher with a web server monitored by Dynatrace OneAgent, add "X-OneAgent-JS-Injection" to the <code>/cache/headers</code> section of the Adobe Dispatcher configuration:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/cache
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>{
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a># Cache configuration
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a># &lt;existing configuration&gt;
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a># ...
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>/headers
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>{
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>&quot;X-OneAgent-JS-Injection&quot;
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>}
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>}
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

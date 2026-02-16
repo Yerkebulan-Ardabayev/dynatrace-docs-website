@@ -993,7 +993,7 @@
 <li>Show a loglevel for the log.</li>
 <li>Extract the thread name from the log line into a new attribute (<code>thread.name</code>).</li>
 </ul>
-<p>Steps</p>
+<h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Find the matching condition.</p>
@@ -1163,7 +1163,7 @@
 </code></pre></div>
 <h3 id="parse-a-field-containing-json-as-a-raw-string">Parse a field containing JSON as a raw string<a class="headerlink" href="#parse-a-field-containing-json-as-a-raw-string" title="Permanent link">&para;</a></h3>
 <p>A record has a field <code>content</code> (<code>String</code>) containing JSON input from which you want to parse out information. You can process specific fields, nested fields, or all fields, and treat them as plain text or bring them to top-level without knowing the schema of the JSON.</p>
-<p>Steps</p>
+<h3 id="steps_1">Steps<a class="headerlink" href="#steps_1" title="Permanent link">&para;</a></h3>
 <p>Depending on the type of field you want to parse out, configure a <strong>DQL</strong> processor in the <strong>Processing</strong> stage with a <strong>DQL processor definition</strong> copied from one of the following:</p>
 <p>Specific fields</p>
 <p>Nested fields</p>
@@ -1403,7 +1403,7 @@
 </code></pre></div>
 <h3 id="parse-out-attributes-with-different-formats">Parse out attributes with different formats<a class="headerlink" href="#parse-out-attributes-with-different-formats" title="Permanent link">&para;</a></h3>
 <p>Applications log the user ID with different schemes (<code>user ID=</code>, <code>userId=</code>, <code>userId:</code> , <code>user ID =</code>). You can parse out attributes with different formats via a single pattern expression that uses the optional modifier (<code>?</code>) and <code>Alternative Groups</code>.</p>
-<p>Steps</p>
+<h3 id="steps_2">Steps<a class="headerlink" href="#steps_2" title="Permanent link">&para;</a></h3>
 <p>To extract the user identifier as a standalone log attribute, configure a <strong>DQL</strong> processor in the <strong>Processing</strong> with the following <strong>DQL processor definition</strong>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>parse content, &quot;
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
@@ -1465,7 +1465,7 @@
 </code></pre></div>
 <h3 id="use-specialized-dpl-matchers">Use specialized DPL matchers<a class="headerlink" href="#use-specialized-dpl-matchers" title="Permanent link">&para;</a></h3>
 <p>A JSON file contains information that you want to parse out and create new dedicate fields for it, based on the format. You can use <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">Dynatrace Pattern Language (DPL) matchers</a> for easier pattern building.</p>
-<p>Steps</p>
+<h3 id="steps_3">Steps<a class="headerlink" href="#steps_3" title="Permanent link">&para;</a></h3>
 <p>To use DPL matchers to identify and create new dedicated fields for a timestamp, a loglevel, the IP address, the endpoint, and response code from the JSON file content, configure a <strong>DQL</strong> processor in the <strong>Processing</strong> stage with the following definition.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>parse content, &quot;ISO8601:timestamp SPACE UPPER:loglevel SPACE IPADDR:ip SPACE DQS:request SPACE INTEGER:code&quot;
 </code></pre></div>
@@ -1515,7 +1515,7 @@
 </code></pre></div>
 <h3 id="perform-basic-math-on-attributes">Perform basic math on attributes<a class="headerlink" href="#perform-basic-math-on-attributes" title="Permanent link">&para;</a></h3>
 <p>You can parse out specific values from a JSON file, perform calculations, and format the results by leveraging DQL functions and operators.</p>
-<p>Steps</p>
+<h3 id="steps_4">Steps<a class="headerlink" href="#steps_4" title="Permanent link">&para;</a></h3>
 <p>Configure a <strong>DQL</strong> processor in the <strong>Processing</strong> stage with the following definition.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>parse content, &quot;LD &#39;total: &#39; INT:total &#39;; failed: &#39; INT:failed&quot; // Parses `total` and `failed` field values.
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
@@ -1557,7 +1557,7 @@
 </code></pre></div>
 <h3 id="add-new-attributes">Add new attributes<a class="headerlink" href="#add-new-attributes" title="Permanent link">&para;</a></h3>
 <p>You can add attributes that have static or dynamic values by leveraging different processors, with and without DQL queries.</p>
-<p>Steps</p>
+<h3 id="steps_5">Steps<a class="headerlink" href="#steps_5" title="Permanent link">&para;</a></h3>
 <p>To add attributes, configure one of the following processors in the <strong>Processing</strong> stage.</p>
 <p>Add fields</p>
 <p>DQL</p>
@@ -1632,7 +1632,7 @@
 </code></pre></div>
 <h3 id="remove-attributes">Remove attributes<a class="headerlink" href="#remove-attributes" title="Permanent link">&para;</a></h3>
 <p>You can remove attributes by leveraging different processors, with and without DQL queries.</p>
-<p>Steps</p>
+<h3 id="steps_6">Steps<a class="headerlink" href="#steps_6" title="Permanent link">&para;</a></h3>
 <p>To remove specific fields</p>
 <ul>
 <li>Configure a <strong>Remove fields</strong> processor in the <strong>Processing</strong> stage by providing the field names. This processor doesn't leverage DQL queries.</li>
@@ -1669,7 +1669,7 @@
 </code></pre></div>
 <h3 id="rename-attributes">Rename attributes<a class="headerlink" href="#rename-attributes" title="Permanent link">&para;</a></h3>
 <p>You can rename attributes by leveraging different processors, with and without DQL queries.</p>
-<p>Steps</p>
+<h3 id="steps_7">Steps<a class="headerlink" href="#steps_7" title="Permanent link">&para;</a></h3>
 <p>To rename an attribute of a matching record to a static value,</p>
 <ul>
 <li>Configure a <strong>Rename fields</strong> processor in the <strong>Processing</strong> stage by providing the field names that you want to be renamed and the new names. This processor doesn't leverage DQL queries.</li>
@@ -1694,7 +1694,7 @@
 </code></pre></div>
 <h3 id="drop-records">Drop records<a class="headerlink" href="#drop-records" title="Permanent link">&para;</a></h3>
 <p>You can drop ingested records at different stages by leveraging different processors.</p>
-<p>Steps</p>
+<h3 id="steps_8">Steps<a class="headerlink" href="#steps_8" title="Permanent link">&para;</a></h3>
 <p>To drop an ingested record</p>
 <ul>
 <li>Before it's processed, configure a <strong>Drop record</strong> processor in the <strong>Processing</strong> stage by providing a matcher query.</li>
@@ -1704,7 +1704,7 @@
 <p>The matching records won't be stored in Grail.</p>
 <h3 id="mask-data">Mask data<a class="headerlink" href="#mask-data" title="Permanent link">&para;</a></h3>
 <p>You can mask parts of an attribute by leveraging <code>replacePattern</code> in combination with other DQL functions.</p>
-<p>Steps</p>
+<h3 id="steps_9">Steps<a class="headerlink" href="#steps_9" title="Permanent link">&para;</a></h3>
 <p>In this scenario you want to mask part of an IP address. Configure a <strong>DQL</strong> processor in the <strong>Processing</strong> stage with one of the following definitions, depending on the part that you want to mask.</p>
 <p>Given bits</p>
 <p>Pattern</p>

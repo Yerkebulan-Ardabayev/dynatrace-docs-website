@@ -1,0 +1,1246 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Supported authentication methods in Synthetic Monitoring - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#supported-authentication-methods-in-synthetic-monitoring" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Supported authentication methods in Synthetic Monitoring
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="supported-authentication-methods-in-synthetic-monitoring">Supported authentication methods in Synthetic Monitoring<a class="headerlink" href="#supported-authentication-methods-in-synthetic-monitoring" title="Permanent link">&para;</a></h1>
+<h1 id="supported-authentication-methods-in-synthetic-monitoring_1">Supported authentication methods in Synthetic Monitoring<a class="headerlink" href="#supported-authentication-methods-in-synthetic-monitoring_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>9-min read</li>
+<li>Updated on Aug 19, 2025</li>
+</ul>
+<p>Dynatrace Synthetic Monitoring offers various methods for monitoring web applications or API endpoints that require authentication. Read on for an overview of the most common scenarios and the appropriate methods to use.</p>
+<h2 id="browser-monitors">Browser monitors<a class="headerlink" href="#browser-monitors" title="Permanent link">&para;</a></h2>
+<p>The <a href="#http-bm"><strong>HTTP authentication</strong></a> and <a href="#certificate-bm"><strong>certificate authentication</strong></a> methods are supported for both <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor" title="Learn how to set up a single-URL browser monitor to check the availability of your site.">single-URL browser monitors</a> and <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath" title="Learn how to record a browser clickpath to monitor the availability and performance of your application.">browser clickpaths</a>.</p>
+<p>The <a href="#web-form-bm"><strong>web form</strong> (<strong>HTML-based</strong>)</a> is supported only for browser clickpaths.</p>
+<h3 id="web-form-html-based-authentication-for-web-applications">Web form (HTML-based) authentication for web applications<a class="headerlink" href="#web-form-html-based-authentication-for-web-applications" title="Permanent link">&para;</a></h3>
+<p>The most common scenario is a webpage with web form (HTML-based) authentication, which requires you to enter a username and password.</p>
+<p><img alt="Web application with HTML-based authentication" src="https://dt-cdn.net/images/htmlbasedauthentication-2048-c9fcf36a82.png" /></p>
+<p>You can monitor a transaction in a <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath" title="Learn how to record a browser clickpath to monitor the availability and performance of your application.">browser clickpath</a> by recording credentials in a web form.</p>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong> &gt; <strong>Create a synthetic monitor</strong> &gt; <strong>Create a browser monitor</strong>.</li>
+<li>Specify the monitor name, starting URL, and other options before selecting <strong>Record clickpath</strong> at the bottom of the page.</li>
+<li>While recording, manually enter the username and password for authentication; Dynatrace automatically captures the credentials.</li>
+<li>After recording, you have the option of storing the credentials to the <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>.</li>
+<li><a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors" title="Learn about configuring browser monitors and clickpaths.">Complete the configuration</a> of your clickpath.</li>
+</ol>
+<h4 id="single-url-monitors-with-web-form-authentication">Single-URL monitors with web form authentication<a class="headerlink" href="#single-url-monitors-with-web-form-authentication" title="Permanent link">&para;</a></h4>
+<p>Deprecated</p>
+<p>Web form authentication is no longer supported for the single-URL browser monitors. You can instead create <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath" title="Learn how to record a browser clickpath to monitor the availability and performance of your application.">browser clickpath</a> monitors for the test scenarios that require web form login. Your previously configured single-URL monitors will run as before, but we recommend to re-record them as clickpaths to clearly separate each step of the login process.</p>
+<p>Re-recording is required if you want to modify any part of your monitor's configuration. You can no longer save changes in their current format.</p>
+<p>Starting from Dynatrace version 1.324+, the single-URL monitors with the web form login will be automatically updated by adding a free JavaScript step to support the login process.</p>
+<h3 id="basic-digest-ntlm-or-negotiate-kerberos-authentication-for-web-applications">Basic, digest, NTLM, or Negotiate (Kerberos) authentication for web applications<a class="headerlink" href="#basic-digest-ntlm-or-negotiate-kerberos-authentication-for-web-applications" title="Permanent link">&para;</a></h3>
+<p>If you need to monitor a page with a browser-native dialog box (that's not part of the web application) to authenticate (as in the image below), it's likely that the basic, digest, NTLM, or Negotiate authentication methods are used in the background.</p>
+<p>Negotiate (Kerberos) is supported for browser monitors executed in <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#kerberos-client-setup" title="Learn how to create a private location for synthetic monitoring.">private locations</a> on</p>
+<ul>
+<li>Windows</li>
+<li>ActiveGate version 1.311+ Linux</li>
+<li>ActiveGate version 1.311+ <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations#kerberos" title="Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.">Containerized</a></li>
+</ul>
+<p><img alt="Native browser login dialog box" src="https://dt-cdn.net/images/nativebrowserlogindialogbox-1837-c1502c0fdf.png" /></p>
+<p>Monitor a single page</p>
+<p>Transaction in a recorded clickpath</p>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong> &gt; <strong>Create a synthetic monitor</strong> &gt; <strong>Create a browser monitor</strong>.</li>
+<li>In <strong>Additional options</strong>, turn on <strong>Enable global login authentication</strong>.</li>
+<li>
+<p>Select either:</p>
+</li>
+<li>
+<p><strong>HTTP authentication</strong> if the login happens via the native browser dialogue</p>
+</li>
+<li>
+<p><strong>Kerberos authentication</strong> if the login happens via Kerberos protocol. Fill additional required fields:</p>
+<ul>
+<li>Domain: User's domain name</li>
+<li>Auth server allow list: List of allowed servers for Kerberos authentication. Wildcards can be used. Exact details are provided in the <a href="https://dt-url.net/p803wkm">Chrome Enterprise documentationï»¿</a></li>
+<li>Either use an existing credential from the <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a> (<strong>Select credentials</strong>) or <strong>Create new credentials</strong>.</li>
+<li><a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors" title="Learn about configuring browser monitors and clickpaths.">Complete the configuration</a> of your single-URL browser monitor.</li>
+</ul>
+</li>
+<li>
+<p>Go to <strong>Synthetic Classic</strong> &gt; <strong>Create a synthetic monitor</strong> &gt; <strong>Create a browser monitor</strong>.</p>
+</li>
+<li>Specify the monitor name, starting URL, and other options before selecting <strong>Record clickpath</strong> at the bottom of the page.</li>
+<li>While recording, manually enter the username and password in the browser-native dialog box.</li>
+<li>When done recording, open the first <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#navigate" title="Learn about the event types created when recording a browser clickpath.">Navigate event</a> of your clickpath and turn on <strong>Enable HTTP authentication</strong>.</li>
+</ol>
+<p><img alt="Navigate event HTTP authentication" src="https://dt-cdn.net/images/navigatehttpauthentication-652-d4048163be.png" />
+5. Either use an existing credential from the <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a> (<strong>Select credentials</strong>) or <strong>Create new credentials</strong>.</p>
+<p>Your clickpath will automatically use these credentials to authenticate via the browser-native login dialog.
+6. To use Kerberos authentication, select <strong>Kerberos authentication</strong>. Authentication will be done by receiving Kerberos tickets for provided credentials from the Kerberos Key Distribution Center.</p>
+<p><img alt="Kerberos Authentication" src="https://dt-cdn.net/images/kerberosauth-608-429fe9ac73.png" /></p>
+<ul>
+<li>Domain: User's domain name</li>
+<li>Auth server allow list: List of allowed servers for Kerberos authentication. Wildcards can be used. Exact details are provided in the <a href="https://dt-url.net/p803wkm">Chrome Enterprise documentationï»¿</a></li>
+<li><a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors" title="Learn about configuring browser monitors and clickpaths.">Complete the configuration</a> of your browser clickpath.</li>
+</ul>
+<p>Supported username formats</p>
+<ul>
+<li>Browser monitors: <code>&lt;username&gt;</code> and <code>&lt;domain&gt;\&lt;username&gt;</code></li>
+<li>HTTP monitors: <code>&lt;username&gt;</code></li>
+<li><strong>NTLM authentication</strong> in browser and HTTP monitors: <code>&lt;username&gt;</code></li>
+</ul>
+<h3 id="client-certificate-authentication-for-web-applications">Client certificate authentication for web applications<a class="headerlink" href="#client-certificate-authentication-for-web-applications" title="Permanent link">&para;</a></h3>
+<p>Certificate authentication is available for browser monitors executed from any <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations" title="Learn about all currently available public Synthetic Monitoring locations.">public location</a> and on Linux-based <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location" title="Learn how to create a private location for synthetic monitoring.">private locations</a>. Once you set up your browser monitor, you need to specify client certificate details in the <strong>Advanced setup</strong> tab of monitor settings in edit mode.</p>
+<p>Monitor a single page</p>
+<p>Transaction in a recorded clickpath</p>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong> &gt; <strong>Create a synthetic monitor</strong> &gt; <strong>Create a browser monitor</strong>.</li>
+<li>Specify the monitor URL and name.</li>
+</ol>
+<p>You cannot specify a client certificate when initially setting up a single-URL browser monitor.
+3. <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors" title="Learn about configuring browser monitors and clickpaths.">Complete the configuration</a> of your single-URL browser monitor.</p>
+<ol>
+<li>Before first recording a clickpath on a website that requires certificate authentication, ensure that you have installed the required certificate in Chrome.</li>
+<li>Go to <strong>Synthetic Classic</strong> &gt; <strong>Create a synthetic monitor</strong> &gt; <strong>Create a browser monitor</strong>.</li>
+<li>Specify the monitor name, starting URL, and other options before selecting <strong>Record clickpath</strong> at the bottom of the page.</li>
+<li>When you navigate to the website in the recording window, the native browser dialog simply selects the correct certificate that you've installed in Chrome. After you record the clickpath, you need to specify the certificate to use for monitor execution, as described below.</li>
+</ol>
+<p>Next, in edit mode, add client certificates for browser monitor execution.</p>
+<ol>
+<li>Select the <strong>Advanced setup</strong> tab in browser monitor settings.</li>
+<li>Turn on <strong>Use client certificates</strong>.</li>
+<li>Select <strong>Add client certificate</strong>.</li>
+<li>Enter the <strong>Domain</strong> that the certificate is valid for.</li>
+<li>Select a credential from the list of certificate credentials displayed. Alternatively, select <strong>Create new credential</strong> to upload and use a new client certificate. Any certificate credential you create is automatically designated as <a href="/docs/manage/credential-vault#work-with-credentials" title="Store and manage credentials in the credential vault.">owner only</a> and stored in the <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>.</li>
+</ol>
+<p>You can specify and upload certificate files in PFX, P12, or PEM format.</p>
+<p><img alt="Certificate authentication setting for browser monitors" src="https://dt-cdn.net/images/bm-client-certificates-788-4347c846d7.png" />
+6. Select <strong>Add entry</strong>.
+7. Repeat these steps to add multiple certificates for use in your clickpath. However, each certificate must be tied to a single domain.
+8. <strong>Save changes</strong>.</p>
+<h2 id="http-monitors">HTTP monitors<a class="headerlink" href="#http-monitors" title="Permanent link">&para;</a></h2>
+<p>HTTP monitors support basic, NTLM, token, OAuth 2.0, or certificate-based authentication.</p>
+<h3 id="basic-or-ntlm-authentication-for-endpoints">Basic or NTLM authentication for endpoints<a class="headerlink" href="#basic-or-ntlm-authentication-for-endpoints" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong> &gt; <strong>Create a synthetic monitor</strong> &gt; <strong>Create an HTTP monitor</strong>.</li>
+<li>Select <strong>Add HTTP request</strong> and choose the <strong>HTTP request</strong> type.</li>
+<li>In the <strong>Additional options</strong> of the request, <strong>Set authentication/authorization</strong>.</li>
+<li>Select <strong>Basic authentication</strong> or <strong>NTLM</strong>.</li>
+<li>Either use an existing credential from the <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a> (<strong>Select credentials</strong>) or <strong>Create new credentials</strong>.</li>
+</ol>
+<p>Dynatrace automatically generates the required <code>Authorization</code> header with the information you've provided.</p>
+<p>Supported username formats</p>
+<ul>
+<li>Browser monitors: <code>&lt;username&gt;</code> and <code>&lt;domain&gt;\&lt;username&gt;</code></li>
+<li>HTTP monitors: <code>&lt;username&gt;</code></li>
+<li><strong>NTLM authentication</strong> in browser and HTTP monitors: <code>&lt;username&gt;</code></li>
+<li>Finish <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic" title="Learn about configuring HTTP monitors.">configuring your HTTP monitor</a>.</li>
+</ul>
+<h3 id="bearer-or-token-authentication-for-endpoints">Bearer or token authentication for endpoints<a class="headerlink" href="#bearer-or-token-authentication-for-endpoints" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong> &gt; <strong>Create a synthetic monitor</strong> &gt; <strong>Create an HTTP monitor</strong>.</li>
+<li>Select <strong>Add HTTP request</strong> and choose the <strong>HTTP request</strong> type.</li>
+<li>In the <strong>Additional options</strong> of the request, <strong>Set additional HTTP headers</strong>.</li>
+<li>Select <strong>Add header</strong>.</li>
+<li>Fill out the header, for example, set:</li>
+</ol>
+<p><strong>Header name</strong> = <code>Authorization</code></p>
+<p><strong>Header value</strong> = <code>Bearer &lt;your-token&gt;</code></p>
+<p>or</p>
+<p><strong>Header name</strong> = <code>Authorization</code></p>
+<p><strong>Header value</strong> = <code>Api-Token &lt;your-token&gt;</code>
+6. Finish <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic" title="Learn about configuring HTTP monitors.">configuring your HTTP monitor</a>.</p>
+<h3 id="oauth-20-authorization-for-endpoints">OAuth 2.0 authorization for endpoints<a class="headerlink" href="#oauth-20-authorization-for-endpoints" title="Permanent link">&para;</a></h3>
+<p>OAuth 2.0 authorization is available for HTTP monitors and is most commonly used when querying API endpoints. Dynatrace provides the <strong>OAuth2 authorization request</strong> type, which is a specialized HTTP request template for OAuth 2.0 authorization requests.</p>
+<p>You first need to set up an OAuth 2.0 request for an access token, which you then use in all subsequent HTTP requests in your monitor that queries the API endpoint. The returned token is not stored to the credential vault, but it's easily accessible as an autocomplete option in your subsequent HTTP requests.</p>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong> &gt; <strong>Create a synthetic monitor</strong> &gt; <strong>Create an HTTP monitor</strong> and provide a <strong>Name</strong>.</li>
+<li>Select <strong>Add HTTP request</strong> and choose the <strong>OAth2 authorization request</strong> type.</li>
+<li>Enter the URL from which you're requesting an authorization token (<strong>Access token URL</strong>) and request <strong>Name</strong>.</li>
+<li>Select <strong>Add HTTP request</strong> to view expanded request settings. Note that the OAuth 2.0 request is automatically created as a <code>POST</code> request.</li>
+<li>
+<p>Fill out or edit these important settings in the request details.</p>
+</li>
+<li>
+<p>Depending on how your authentication server is set up, opt to <strong>Add authorization data to</strong> the <strong>Request body</strong> or <strong>Request URL</strong>. Fill out the POST parameters (<code>grant_Type</code>, <code>scope</code>, <code>client_id</code>, <code>username</code>, and <code>password</code>) in the <strong>Request body</strong> or <strong>Request URL</strong>. You can add or modify parameters as needed.</p>
+<p><img alt="OAuth parameters in request body" src="https://dt-cdn.net/images/oauthparamsbody1-1171-5bbbc6be5d.png" /></p>
+<p><img alt="OAuth parameters in request URL" src="https://dt-cdn.net/images/oauthparamsurl-1314-353802a4b5.png" />
+   2. A <strong>post-execution script</strong> is automatically enabled, where:</p>
+<ul>
+<li>The request fails if the returned status code is not <code>200</code>.</li>
+<li>The <code>api.fail()</code> method defines the <strong>Failure message</strong> that appears in case of failure in the <strong>Events</strong> card on the <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic" title="Learn about the Synthetic details page for HTTP monitors.">HTTP monitor details page</a> and in <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution" title="Learn about the Synthetic details page for HTTP monitors.">execution details</a>.</li>
+<li>If the request is successful, the response body, which is a JSON-formatted string, is stored in a JavaScript object (called <code>bearToken-2</code> in this example).</li>
+<li>The <code>api.info()</code> method sends information to a log file, which is accessible on <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location" title="Learn how to create a private location for synthetic monitoring.">private Synthetic locations</a>.</li>
+</ul>
+<p>Custom log messages also appear in the <code>customLogs</code> attribute in <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution" title="Learn about the Synthetic details page for HTTP monitors.">HTTP monitor execution details</a>.</p>
+<p><img alt="Post-execution script" src="https://dt-cdn.net/images/oauthpostexecutionscript-812-911fe199bc.png" />
+   3. <strong>Set token request authentication</strong> enables you to specify additional authentication details (<strong>Basic authentication</strong>, <strong>NTLM</strong>, or <strong>Kerberos</strong>) for the server that the OAuth application sits behind.</p>
+</li>
+</ol>
+<p>For subsequent HTTP requests</p>
+<ol>
+<li>Create an additional HTTP request for the endpoint you need to monitor (<strong>Add HTTP request</strong>).</li>
+<li>
+<p>In the <strong>Additional options</strong> of the second request:</p>
+</li>
+<li>
+<p>Enable <strong>Set authentication/authorization</strong> and select the <strong>OAuth2</strong> method. Note that this option is only available if you've first created an OAuth 2.0 authorization request (described above).</p>
+<p>An autogenerated <strong>pre-execution script</strong> referencing the OAuth token received in the request created above is displayed.</p>
+<p><img alt="OAuth method in HTTP request" src="https://dt-cdn.net/images/oauthtokeninsert1-1129-0244726c35.png" />
+   * As an alternative, set an HTTP <code>Authorization</code> header with the JavaScript object containing the OAuth token as the <strong>Header value</strong>.</p>
+<p><img alt="OAuth method in HTTP request" src="https://dt-cdn.net/images/oauthtokeninsert2-1214-783de8da93.png" />
+3. Finish <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic" title="Learn about configuring HTTP monitors.">configuring your HTTP monitor</a>.</p>
+</li>
+</ol>
+<h3 id="client-certificate-authentication-for-endpoints">Client certificate authentication for endpoints<a class="headerlink" href="#client-certificate-authentication-for-endpoints" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong> &gt; <strong>Create a synthetic monitor</strong> &gt; <strong>Create an HTTP monitor</strong> and provide a <strong>Name</strong>.</li>
+<li>Select <strong>Add HTTP request</strong> and choose the <strong>HTTP request</strong> type.</li>
+<li>In the <strong>Additional options</strong> of the request, <strong>Add client certificate</strong>.</li>
+<li>Either use an existing certificate from the <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a> (<strong>Select credentials</strong>) or <strong>Create new credentials</strong>.</li>
+<li>Finish <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic" title="Learn about configuring HTTP monitors.">configuring your HTTP monitor</a>.</li>
+</ol>
+<p>To assure full mutual authentication, disable <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#ssl-accept" title="Learn about configuring HTTP monitors."><strong>Accept any SSL certificate</strong></a> when using certificate authentication.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

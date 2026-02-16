@@ -1,0 +1,1268 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/dynatrace-api/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dynatrace API - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-api" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dynatrace-api">Dynatrace API<a class="headerlink" href="#dynatrace-api" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-api_1">Dynatrace API<a class="headerlink" href="#dynatrace-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Справочник</li>
+<li>Опубликовано 19 июля 2017 г.</li>
+</ul>
+<p>Используйте Dynatrace API для автоматизации задач мониторинга и экспорта различных типов данных в инструменты отчетности и анализа третьих сторон. Общение с API обеспечивает безопасность с помощью защищенного общения через протокол HTTPS.</p>
+<h2 id="_1">Основы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="/docs/dynatrace-api/basics/dynatrace-api-authentication" title="Узнайте, как аутентифицироваться для использования Dynatrace API.">Аутентификация</a></p>
+<p><a href="/docs/dynatrace-api/basics/dynatrace-api-response-codes" title="Узнайте, какие коды ответов HTTP используются в Dynatrace API.">Коды ответов</a></p>
+<p><a href="/docs/dynatrace-api/basics/access-limit" title="Узнайте о ограничениях полезной нагрузки и ограничении запросов, которые могут повлиять на использование Dynatrace API.">Ограничение доступа</a></p>
+<p><a href="/docs/dynatrace-api/basics/preview-early-access" title="Как работают предварительные и ранние выпуски конечных точек Dynatrace API">Предварительные и ранние выпуски</a></p>
+<p><a href="/docs/dynatrace-api/basics/deprecation-migration-guides" title="Перенесите свою автоматизацию на более новые конечные точки Dynatrace API.">Руководства по миграции</a></p>
+<p><a href="https://developer.dynatrace.com/plan/platform-services/grail-service/">Grail APIs</a></p>
+<h2 id="_2">Конечные точки<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Среда</p>
+<p>Конфигурация</p>
+<p>Управление учетными записями</p>
+<h3 id="activegate">ActiveGate<a class="headerlink" href="#activegate" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/activegates/activegate-info" title="Список всех ActiveGate, в настоящее время или недавно подключенных к среде через Dynatrace API.">Информация</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/activegates/auto-update-config" title="Управление конфигурацией автоматического обновления ActiveGate среды через Dynatrace API.">Конфигурация автоматического обновления</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/activegates/auto-update-jobs" title="Управление заданиями автоматического обновления ActiveGate через Dynatrace API.">Задания автоматического обновления</a></p>
+<h3 id="_3">Анонимизация<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/anonymization" title="Узнайте, как выполнить требования GDPR, используя Dynatrace API для удаления данных пользователей.">Анонимизация</a></p>
+<h3 id="_4">Безопасность приложений<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities" title="Узнайте, что предлагает API уязвимостей.">Уязвимости</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/application-security/davis-security-advice" title="Просмотрите рекомендации Совета по безопасности Davis через Dynatrace API.">Советы по безопасности Davis</a>
+<a href="/docs/dynatrace-api/environment-api/application-security/attacks" title="Узнайте, что предлагает API атак Dynatrace.">Атаки</a></p>
+<h3 id="_5">Журналы аудита<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/audit-logs" title="Чтение журналов аудита Dynatrace через Dynatrace API.">Журналы аудита</a></p>
+<p><img alt="Бизнес-наблюдаемость" src="https://cdn.bfldr.com/B686QPH3/at/96c9p97q7f48grj67tqhchz/Business_Analytics.svg?auto=webp&amp;width=72&amp;height=72" title="Бизнес-наблюдаемость" /></p>
+<h3 id="-">Бизнес-события<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/business-analytics-v2" title="Узнайте, как можно принять бизнес-событие с помощью API бизнес-событий Dynatrace v2.">Бизнес-события</a></p>
+<h3 id="_6">Информация о кластере<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/cluster-information" title="Узнайте, как проверить версию и время кластера с помощью Dynatrace API.">Информация о кластере</a></p>
+<h3 id="_7">Хранилище учетных данных<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/credential-vault" title="Узнайте, что предлагает API учетных данных Dynatrace.">Хранилище учетных данных</a></p>
+<h3 id="_8">Пользовательские теги<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/custom-tags" title="Управление пользовательскими тегами контролируемых сущностей через Dynatrace API.">Пользовательские теги контролируемых сущностей</a></p>
+<h3 id="_9">Развертывание<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/deployment/oneagent" title="Скачайте установщики OneAgent через Dynatrace API.">OneAgent</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/deployment/activegate" title="Скачайте установщики ActiveGate через Dynatrace API.">ActiveGate</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/deployment/bosh" title="Скачайте установщики OneAgent в виде BOSH-архивов через Dynatrace API.">BOSH-архивы</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/deployment/orchestration" title="Скачайте установщики OneAgent в виде архивов оркестровки через Dynatrace API.">Архивы оркестровки</a></p>
+<h3 id="_10">События<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/events-v2/get-events" title="Список событий среды мониторинга через Dynatrace API.">Список событий</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/events-v2/get-event-types" title="Список типов событий через Dynatrace API.">Список типов событий</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/events-v2/get-event-properties" title="Список всех свойств событий через Dynatrace API.">Список свойств событий</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/events-v2/post-event" title="Принятие события через Dynatrace API.">Принятие событий</a></p>
+<h3 id="20">Расширения 2.0<a class="headerlink" href="#20" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/extensions-20" title="Узнайте, как управлять расширениями с помощью API расширений Dynatrace 2.0.">Расширения 2.0</a></p>
+<h3 id="_11">Возможности хаба<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/hub" title="Узнайте, как получить доступ к функциям Dynatrace Hub через API элементов хаба.">Возможности хаба</a></p>
+<h3 id="_12">Мониторинг журналов<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/log-monitoring-v2" title="Узнайте, что можно сделать с помощью API мониторинга журналов v2.">Мониторинг журналов</a></p>
+<h3 id="_13">Метрики<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h4 id="1">Версия 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p><a href="/docs/dynatrace-api/environment-api/metric-v1" title="Получение информации о метриках через API Timeseries v1.">Основы</a></p>
+<h4 id="2">Версия 2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<p><a href="/docs/dynatrace-api/environment-api/metric-v2/get-all-metrics" title="Список всех метрик, доступных в среде мониторинга, через API метрик v2.">Список метрик</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/metric-v2/get-data-points" title="Чтение точек данных одной или нескольких метрик через API метрик v2.">Получение точек данных</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Принятие пользовательских метрик в Dynatrace через API метрик v2.">Принятие точек данных</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector" title="Настройка селектора метрик для API метрик v2.">Селектор метрик</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-expressions" title="Использование выражений метрик для применения арифметических операций в запросе точек данных через API метрик v2.">Выражения метрик</a></p>
+<h3 id="_14">Единицы измерения метрик<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/metrics-units/get-all-units" title="Список всех метрик, доступных для среды мониторинга, через Dynatrace API.">Список единиц</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/metrics-units/get-unit" title="Просмотр метаданных единицы измерения через Dynatrace API.">Просмотр единицы</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/metrics-units/get-unit-convert" title="Преобразование значения метрики из одной единицы в другую через Dynatrace API.">Преобразование единиц</a></p>
+<h3 id="_15">Контролируемые сущности<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о API контролируемых сущностей Dynatrace.">Контролируемые сущности</a></p>
+<h3 id="_16">Сети зон<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/network-zones" title="Управление сетевыми зонами через Dynatrace API.">Сети зон</a></p>
+<h3 id="oneagent">OneAgent на хосте<a class="headerlink" href="#oneagent" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents" title="Проверка конфигурации экземпляров OneAgent на хостах через Dynatrace API.">OneAgent на хосте</a></p>
+<h3 id="_17">Проблемы<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/problems-v2" title="Узнайте, что предлагает API проблем Dynatrace v2.">Проблемы v2</a></p>
+<h3 id="_18">Релизы<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/releaseapi" title="Узнайте, что предлагает API релизов Dynatrace.">Релизы</a></p>
+<h3 id="_19">Удаленная конфигурация<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/remote-configuration/oneagent" title="Управление конфигурацией OneAgent удаленно в масштабе с помощью Dynatrace API.">OneAgent</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/remote-configuration/activegate" title="Управление конфигурацией ActiveGate удаленно в масштабе с помощью Dynatrace API.">ActiveGate</a></p>
+<h3 id="rum">RUM<a class="headerlink" href="#rum" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/rum/geographic-regions" title="Просмотр запросов, доступных через API географических регионов Dynatrace.">Географические регионы</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/rum/user-sessions" title="Узнайте, что предлагает API языка запроса сессий пользователей Dynatrace.">Сессии пользователей</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code" title="Узнайте, как можно использовать Dynatrace API для настройки и поддержки вручную инъектируемых приложений с помощью API JavaScript Real User Monitoring.">JavaScript Real User Monitoring</a></p>
+<h3 id="_20">Настройки<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает API настроек Dynatrace.">Настройки</a></p>
+<h3 id="slo">SLO<a class="headerlink" href="#slo" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/service-level-objectives" title="Откройте для себя функциональные возможности API новых целей уровня обслуживания, работающих на Grail.">Цели уровня обслуживания</a></p>
+<h3 id="_21">Синтетический<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/synthetic/synthetic-monitors" title="Управление синтетическими мониторами через API синтетики v1.">Мониторы</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution" title="Просмотр результатов выполнения синтетических мониторов через API синтетики v2.">Выполнения мониторов v2</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/synthetic/synthetic-locations" title="Управление синтетическими местоположениями через API синтетики v1.">Местоположения v1</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2" title="Управление синтетическими местоположениями через API синтетики v2.">Местоположения v2</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/synthetic/synthetic-nodes" title="Получение информации о синтетических узлах через API синтетики v1.">Узлы v1</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2" title="Управление синтетическими узлами через API синтетики v2.">Узлы v2</a></p>
+<p><a href="/docs/dynatrace-api/environment-api/synthetic/third-party-synthetic" title="Передача синтетических данных третьих сторон в Dynatrace через API.">Синтетика третьих сторон</a></p>
+<h3 id="_22">Токены<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/tokens-v2" title="Управление токенами доступа Dynatrace через Dynatrace API.">Токены v2</a></p>
+<h3 id="_23">Обнаружение аномалий<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-applications" title="Узнайте, что предлагает API обнаружения аномалий Dynatrace для приложений.">Приложения</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-aws" title="Узнайте, что предлагает API обнаружения аномалий Dynatrace для AWS.">AWS</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database" title="Узнайте, что предлагает API обнаружения аномалий Dynatrace для сервисов баз данных.">Сервисы баз данных</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events" title="Узнайте, что предлагает API обнаружения аномалий Dynatrace для событий диска.">События диска</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-hosts" title="Узнайте, что предлагает API обнаружения аномалий Dynatrace для хостов.">Хосты</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-process-groups" title="Узнайте, что предлагает API обнаружения аномалий Dynatrace для групп процессов.">Группы процессов</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-services" title="Узнайте, что предлагает API обнаружения аномалий Dynatrace для сервисов.">Сервисы</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-vmware" title="Узнайте, что предлагает API обнаружения аномалий Dynatrace для VMware.">VMware</a></p>
+<h3 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/aws-credentials-api" title="Узнайте, что предлагает API конфигурации учетных данных AWS Dynatrace.">Учетные данные AWS</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/aws-privatelink" title="Узнайте, что предлагает API конфигурации AWS PrivateLink Dynatrace.">AWS PrivateLink</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/aws-supported-services" title="Получите список поддерживаемых сервисов AWS через API Dynatrace.">Поддерживаемые сервисы AWS</a></p>
+<h3 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/azure-credentials-api" title="Узнайте, что предлагает API конфигурации учетных данных Azure Dynatrace.">Учетные данные Azure</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/azure-supported-services" title="Получите список поддерживаемых сервисов Azure через API Dynatrace.">Поддерживаемые сервисы Azure</a></p>
+<h3 id="_24">Расчетные метрики<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics" title="Управляйте расчетными метриками для мобильных и пользовательских приложений через API конфигурации Dynatrace.">Метрики мобильных приложений</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics" title="Управляйте расчетными метриками сервисов через API конфигурации Dynatrace.">Метрики сервисов</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics" title="Управляйте расчетными синтетическими метриками через API конфигурации Dynatrace.">Синтетические метрики</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/rum-metrics" title="Управляйте расчетными метриками веб-приложений через API конфигурации Dynatrace.">Метрики веб-приложений</a></p>
+<h3 id="_25">Условное именование<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/conditional-naming" title="Узнайте, что предлагает API конфигурации условного именования Dynatrace.">Условное именование</a></p>
+<h3 id="_26">Защита данных<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/data-privacy-api" title="Узнайте, что предлагает API конфигурации защиты данных Dynatrace.">Защита данных</a></p>
+<h3 id="_27">Панели управления<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/dashboards-api" title="Узнайте, как управлять конфигурацией панели управления через классический API конфигурации Dynatrace.">Панели управления</a></p>
+<h3 id="_28">Расширения<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/extensions-api" title="Узнайте, что предлагает API расширений Dynatrace.">Расширения</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/plugins-api" title="Узнайте, как управлять плагинами через API конфигурации Dynatrace.">Плагины</a></p>
+<h3 id="_29">Мобильные устройства<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration" title="Узнайте, что предлагает API конфигурации мобильных и пользовательских приложений Dynatrace.">Конфигурация мобильных и пользовательских приложений</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/mobile-symbolication-api" title="Управляйте файлами символов мобильных устройств через API Dynatrace.">Симболикация мобильных устройств</a></p>
+<h3 id="oneagent_1">OneAgent<a class="headerlink" href="#oneagent_1" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host" title="Управляйте конфигурацией экземпляров OneAgent на ваших хостах через API Dynatrace.">OneAgent на хосте</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/oneagent-configuration/oneagent-in-host-group" title="Управляйте конфигурацией экземпляров OneAgent в ваших группах хостов через API Dynatrace.">OneAgent в группе хостов</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/oneagent-configuration/oneagent-environment-wide" title="Управляйте конфигурацией OneAgent на уровне окружения через API Dynatrace.">Конфигурация окружения</a></p>
+<h3 id="_30">Удаленные окружения<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/remote-environments" title="Управляйте конфигурациями удаленных окружений Dynatrace через API конфигурации Dynatrace.">Удаленные окружения</a></p>
+<h3 id="_31">Отчеты<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/reports-api" title="Управляйте отчетами через API конфигурации Dynatrace.">Отчеты</a></p>
+<h3 id="rum_1">RUM<a class="headerlink" href="#rum_1" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors" title="Узнайте, что предлагает API конфигурации разрешенных источников маяков для Cross Origin Resource Sharing Dynatrace.">Разрешенные источники маяков для CORS</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/rum/application-detection-configuration" title="Узнайте, что предлагает API обнаружения приложений Dynatrace.">Конфигурация обнаружения приложений</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/rum-metrics" title="Управляйте расчетными метриками веб-приложений через API конфигурации Dynatrace.">Расчетные метрики веб-приложений</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/rum/content-resources" title="Узнайте, что предлагает API конфигурации ресурсов контента Dynatrace.">Ресурсы контента</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address" title="Узнайте, что предлагает API конфигурации правил сопоставления IP-адресов Dynatrace.">Географические регионы - правила сопоставления IP-адресов</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-header" title="Узнайте, что предлагает API конфигурации заголовков сопоставления IP Dynatrace.">Географические регионы - заголовки сопоставления IP</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration" title="Узнайте, что предлагает API конфигурации мобильных и пользовательских приложений Dynatrace.">Конфигурация мобильных и пользовательских приложений</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api" title="Узнайте, что предлагает API конфигурации веб-приложения Dynatrace.">Конфигурация веб-приложения</a></p>
+<h3 id="_32">Сервисы<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics" title="Управляйте расчетными метриками сервисов через API конфигурации Dynatrace.">Расчетные метрики сервисов</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/service-api/custom-services-api" title="Узнайте, что предлагает API конфигурации пользовательских сервисов Dynatrace.">Пользовательские сервисы</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/service-api/failure-detection" title="Узнайте, что предлагает API конфигурации обнаружения сбоев Dynatrace.">Обнаружение сбоев</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/service-api/request-attributes-api" title="Узнайте, что предлагает API конфигурации атрибутов запросов Dynatrace.">Атрибуты запросов</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/service-api/request-naming-api" title="Узнайте, что предлагает API конфигурации именования запросов Dynatrace.">Именование запросов</a></p>
+<p><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules" title="Узнайте, что предлагает API конфигурации правил обнаружения сервисов Dynatrace.">Правила обнаружения сервисов</a></p>
+<h3 id="_33">Управление пользователями<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p>Просмотр и управление пользователями Dynatrace в вашем аккаунте. (/docs/dynatrace-api/account-management-api/user-management-api "Просмотр и управление пользователями в вашем аккаунте Dynatrace через API управления пользователями.")</p>
+<h3 id="_34">Управление группами<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<p>Просмотр и управление группами пользователей в вашем аккаунте. (/docs/dynatrace-api/account-management-api/group-management-api "Создание и управление группами пользователей в вашем аккаунте Dynatrace через API управления группами.")</p>
+<h3 id="_35">Управление разрешениями<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
+<p>Управление разрешениями пользователей в вашем аккаунте. (/docs/dynatrace-api/account-management-api/permission-management-api "Управление разрешениями групп пользователей в вашем аккаунте Dynatrace через API управления разрешениями.")</p>
+<h3 id="_36">Управление политиками<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
+<p>Управление политиками доступа в вашем аккаунте. (/docs/dynatrace-api/account-management-api/policy-management-api/policies "Управление политиками доступа в вашем аккаунте Dynatrace через API управления политиками.")</p>
+<h3 id="_37">Ограничения аккаунта<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<p>Просмотр ограничений аккаунта вашего аккаунта. (/docs/dynatrace-api/account-management-api/account-limits-api "Просмотр назначенных ограничений аккаунта в вашем аккаунте Dynatrace через API Dynatrace.")</p>
+<h3 id="_38">Управление сервисными пользователями<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<p>Управление сервисными пользователями в вашем аккаунте. (/docs/dynatrace-api/account-management-api/service-user-management-api "Создание и управление сервисными пользователями в вашем аккаунте Dynatrace через API Dynatrace.")</p>
+<h3 id="_39">Платформенные токены<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
+<p>Управление платформенными токенами вашего аккаунта. (/docs/dynatrace-api/account-management-api/platform-tokens-api "Создание и управление платформенными токенами в вашем аккаунте Dynatrace через API Dynatrace.")</p>
+<h3 id="_40">Управление окружением<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h3>
+<p>Просмотр окружений мониторинга вашего аккаунта Dynatrace. (/docs/dynatrace-api/account-management-api/environment-management-api/environment-management-api "Просмотр окружений мониторинга вашего аккаунта Dynatrace через API управления окружением.")</p>
+<h3 id="dynatrace">Подписка на платформу Dynatrace<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h3>
+<p>Просмотр вашей подписки на платформу Dynatrace и ее использования. (/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Запрос данных о вашей подписке на платформу Dynatrace через API управления аккаунтом.")</p>
+<h3 id="_41">Справочные данные<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<p>Просмотр справочной информации о вашем аккаунте. (/docs/dynatrace-api/account-management-api/reference-data "Проверка справочной информации вашего аккаунта через API справочных данных.")</p>
+<h2 id="api">Обозреватель API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<p>Среда</p>
+<p>Конфигурация</p>
+<p>Управление учетными записями</p>
+<p>Вы можете получить доступ ко всем конечным точкам API Dynatrace, используя API Explorer.</p>
+<ul>
+<li>Последняя версия Dynatrace Перейдите в раздел <strong>Токены доступа</strong> и затем выберите ссылку <strong>API Explorer Dynatrace</strong>.</li>
+<li>Предыдущая версия Dynatrace Из <a href="/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace" title="Перейти к последней версии Dynatrace">меню пользователя</a>, прокрутите вниз до <strong>API Dynatrace</strong> и выберите раздел API, который вас интересует.</li>
+</ul>
+<p>Альтернативно, вы можете получить доступ к API Explorer по прямой ссылке <code>https://{your-environment-id}.live.dynatrace.com/rest-api-doc/</code>.</p>
+<h3 id="api-explorer">Аутентификация в API Explorer<a class="headerlink" href="#api-explorer" title="Permanent link">&para;</a></h3>
+<p>Выберите значок замка <img alt="Lock" src="https://dt-cdn.net/images/blue-lock-icon-77090b9928.svg" title="Lock" /> рядом с любой конечной точкой, чтобы отобразить информацию об OAuth 2.0 токенах, которые защищают эту конечную точку. Каждая конечная точка требует определенного типа токена.</p>
+<p>Вы также можете разблокировать все конечные точки, выбрав <strong>Авторизовать</strong>. В отображаемом диалоговом окне вы можете увидеть, какие разрешения токена необходимы для каждой конечной точки API. Вводя ваш OAuth 2.0 токен в глобальный диалог <strong>Доступные авторизации</strong>, вы можете разблокировать все связанные конечные точки API.</p>
+<h3 id="api_1">Попробовать вызов API<a class="headerlink" href="#api_1" title="Permanent link">&para;</a></h3>
+<p>После ввода вашего OAuth 2.0 токена вы можете直接 выполнить вызовы API внутри API Explorer. Просто выберите <strong>Попробовать</strong> , чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав <strong>Выполнить</strong>.</p>
+<p>Вы можете получить доступ ко всем конечным точкам API Dynatrace, используя API Explorer.</p>
+<ul>
+<li>Последняя версия Dynatrace Перейдите в раздел <strong>Токены доступа</strong> и затем выберите ссылку <strong>API Explorer Dynatrace</strong>.</li>
+<li>Предыдущая версия Dynatrace Из <a href="/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace" title="Перейти к последней версии Dynatrace">меню пользователя</a>, прокрутите вниз до <strong>API Dynatrace</strong> и выберите раздел API, который вас интересует.</li>
+</ul>
+<p>Альтернативно, вы можете получить доступ к API Explorer по прямой ссылке <code>https://{your-environment-id}.live.dynatrace.com/rest-api-doc/</code>.</p>
+<h3 id="api-explorer_1">Аутентификация в API Explorer<a class="headerlink" href="#api-explorer_1" title="Permanent link">&para;</a></h3>
+<p>Выберите значок замка <img alt="Lock" src="https://dt-cdn.net/images/blue-lock-icon-77090b9928.svg" title="Lock" /> рядом с любой конечной точкой, чтобы отобразить информацию об OAuth 2.0 токенах, которые защищают эту конечную точку. Каждая конечная точка требует определенного типа токена.</p>
+<p>Вы также можете разблокировать все конечные точки, выбрав <strong>Авторизовать</strong>. В отображаемом диалоговом окне вы можете увидеть, какие разрешения токена необходимы для каждой конечной точки API. Вводя ваш OAuth 2.0 токен в глобальный диалог <strong>Доступные авторизации</strong>, вы можете разблокировать все связанные конечные точки API.</p>
+<h3 id="api_2">Попробовать вызов API<a class="headerlink" href="#api_2" title="Permanent link">&para;</a></h3>
+<p>После ввода вашего OAuth 2.0 токена вы можете直接 выполнить вызовы API внутри API Explorer. Просто выберите <strong>Попробовать</strong> , чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав <strong>Выполнить</strong>.</p>
+<p>Вы можете получить доступ ко всем конечным точкам API Dynatrace, используя API Explorer.</p>
+<ol>
+<li>Перейдите в <a href="https://myaccount.dynatrace.com/"><strong>Управление учетными записями</strong></a>. Если у вас несколько учетных записей, выберите учетную запись, которую вы хотите управлять.</li>
+<li>В верхней навигационной панели перейдите в <strong>Управление идентификаторами и доступом</strong> &gt; <strong>Клиенты OAuth</strong>.</li>
+<li>В правом верхнем углу страницы выберите <strong>API управления учетными записями</strong>.</li>
+</ol>
+<h3 id="api-explorer_2">Аутентификация в API Explorer<a class="headerlink" href="#api-explorer_2" title="Permanent link">&para;</a></h3>
+<p>Выберите значок замка <img alt="Lock" src="https://dt-cdn.net/images/blue-lock-icon-77090b9928.svg" title="Lock" /> рядом с любой конечной точкой, чтобы отобразить информацию об OAuth 2.0 токенах, которые защищают эту конечную точку. Каждая конечная точка требует определенного типа токена.</p>
+<p>Вы также можете разблокировать все конечные точки, выбрав <strong>Авторизовать</strong>. В отображаемом диалоговом окне вы можете увидеть, какие разрешения токена необходимы для каждой конечной точки API. Вводя ваш OAuth 2.0 токен в глобальный диалог <strong>Доступные авторизации</strong>, вы можете разблокировать все связанные конечные точки API.</p>
+<h3 id="api_3">Попробовать вызов API<a class="headerlink" href="#api_3" title="Permanent link">&para;</a></h3>
+<p>После ввода вашего OAuth 2.0 токена вы можете直接 выполнить вызовы API внутри API Explorer. Просто выберите <strong>Попробовать</strong> , чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав <strong>Выполнить</strong>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

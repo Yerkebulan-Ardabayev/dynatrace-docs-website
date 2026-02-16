@@ -1013,7 +1013,7 @@ This is shown in the figure above, where the application uses the local-only OTL
 </ol>
 <p>Enable for a single host</p>
 <ol>
-<li>Go to <strong>Hosts</strong> (previous Dynatrace) or <img alt="Hosts" src="https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png" title="Hosts" /> <strong>Hosts Classic</strong>.</li>
+<li>Go to <img alt="Hosts" src="https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png" title="Hosts" /> <strong>Hosts Classic</strong>.</li>
 <li>Find and select your host to display the host overview page.</li>
 <li>
 <p>In the upper-right corner of the host overview page, select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Settings</strong>.</p>
@@ -1026,7 +1026,7 @@ This is shown in the figure above, where the application uses the local-only OTL
 <p>With the EEC enabled, the OneAgent installations on the respective hosts will start accepting OTLP traces on URL <code>http://localhost:14499/otlp/v1/traces</code>.</p>
 <p>OneAgent uses the TCP port 14499 as default port for this endpoint. You can change the port with <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api#communication-port" title="Use the Dynatrace API to retrieve the metrics of monitored entities."><code>oneagentctl</code></a>.</p>
 <p>EEC unavailable on container setups</p>
-<p>The EEC ingestion endpoint is only available with <a href="/docs/observe/infrastructure-observability/hosts/monitoring-modes" title="Find out what's included in Dynatrace Infrastructure Monitoring mode.">Full-Stack and Infrastructure Monitoring</a> deployments. It is <strong>not</strong> available with <a href="/docs/ingest-from/setup-on-k8s/deployment" title="Deploy Dynatrace Operator on Kubernetes">containerized setups</a>. Please use <a href="#export-to-saas-and-activegate">ActiveGate</a> as export endpoint for container applications.</p>
+<p>The EEC ingestion endpoint is only available with <a href="/docs/platform/oneagent/monitoring-modes/monitoring-modes" title="Find out more about the available monitoring modes when using OneAgent.">Full-Stack and Infrastructure Monitoring</a> deployments. It is <strong>not</strong> available with <a href="/docs/ingest-from/setup-on-k8s/deployment" title="Deploy Dynatrace Operator on Kubernetes">containerized setups</a>. Please use <a href="#export-to-saas-and-activegate">ActiveGate</a> as export endpoint for container applications.</p>
 <h3 id="export-details">Export details<a class="headerlink" href="#export-details" title="Permanent link">&para;</a></h3>
 <p>Calls to these API endpoints need to adhere to the following protocol details:</p>
 <ul>

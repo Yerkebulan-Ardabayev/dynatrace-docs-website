@@ -1,0 +1,1245 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/rum-concepts/user-actions/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>User actions - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-actions" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User actions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="user-actions">User actions<a class="headerlink" href="#user-actions" title="Permanent link">&para;</a></h1>
+<h1 id="user-actions_1">User actions<a class="headerlink" href="#user-actions_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Explanation</li>
+<li>12-min read</li>
+<li>Updated on Jul 11, 2024</li>
+</ul>
+<p>A user action is an interaction with an end-user interface that involves a call to a web server, which can potentially have multiple nested calls. It is a transformation from one view to another view that is triggered by a user input, for example, a page load, click, or touch.</p>
+<h2 id="user-action-types-for-web-applications">User action types for web applications<a class="headerlink" href="#user-action-types-for-web-applications" title="Permanent link">&para;</a></h2>
+<p>Web applications</p>
+<p>The following types of user actions are available in Dynatrace for <a href="/docs/observe/digital-experience/rum-concepts/applications#web" title="Learn about monitored applications in Real User Monitoring and the different application types supported by Dynatrace.">web applications</a>:</p>
+<ul>
+<li><a href="#load-action">Load actions</a></li>
+<li><a href="#xhr-action">XHR actions</a></li>
+<li><a href="#custom-action">Custom actions</a></li>
+</ul>
+<p>The key difference among these action types is the way action duration is calculated and the list of available metrics.</p>
+<h3 id="load-actions">Load actions<a class="headerlink" href="#load-actions" title="Permanent link">&para;</a></h3>
+<p>A load action is defined as an actual page loading in your browser. If you type a URL in your browser and use <strong>Enter</strong>, a load action occurs. During this action type, many resources are loaded, including images, HTML, and CSS.</p>
+<h4 id="load-action-duration">Load action duration<a class="headerlink" href="#load-action-duration" title="Permanent link">&para;</a></h4>
+<p>The action duration is the time required for the complete load action. More specifically, the start time of the user action equals the W3C <code>navigationStart</code> time. If this attribute is not available, the start time equals the time when the <a href="/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats" title="Select a format for the RUM JavaScript snippet that best fits your specific use case">RUM JavaScript</a> is initialized in the browser. The end time is when the last <code>onload</code> handler has completed its task. The <code>onload</code> handler is an event handler in JavaScript that's used to call the execution of JavaScript after a page, frame, or image has completely loaded. If any <a href="#xhr-action"><code>XMLHttpRequests</code></a> are started by an <code>onload</code> handler, the user action ends when the <code>XMLHttpRequest</code> is complete.</p>
+<p><img alt="Page load cycle" src="https://dt-cdn.net/images/pageload-1886-93237e4321.png" /></p>
+<h4 id="load-action-timings">Load action timings<a class="headerlink" href="#load-action-timings" title="Permanent link">&para;</a></h4>
+<p>The following measures are used to chart the duration of specific steps in the load action process.</p>
+<p>Measure</p>
+<p>Description</p>
+<p>Definition in terms of W3C specification</p>
+<p><strong>DNS lookup</strong></p>
+<p>The time taken to resolve the hostname for a target URL</p>
+<p><code>window.performance.timing.domainLookupEnd</code> â <code>window.performance.timing.domainLookupStart</code></p>
+<p><strong>TCP connect</strong></p>
+<p>The time taken to establish a TCP connection to the server (including SSL)</p>
+<p><code>window.performance.timing.connectEnd</code> â <code>window.performance.timing.connectStart</code></p>
+<p><strong>Secure connect</strong></p>
+<p>The time taken to secure the connection established to the server<br />
+This includes the SSL handshake and SOCKS.</p>
+<p><code>window.performance.timing.connectEnd</code> â <code>window.performance.timing.secureConnectionStart</code></p>
+<p><strong>Redirect time</strong></p>
+<p>The time taken to follow any HTTP redirects</p>
+<p><code>window.performance.timing.redirectEnd</code> â <code>window.performance.timing.redirectStart</code></p>
+<p><strong>Request</strong></p>
+<p>The time taken to request the page from the server until the first byte is received</p>
+<p><code>window.performance.timing.responseStart</code> â <code>window.performance.timing.requestStart</code></p>
+<p><strong>Response</strong></p>
+<p>The time taken to receive the response</p>
+<p><code>window.performance.timing.responseEnd</code> â <code>window.performance.timing.responseStart</code></p>
+<p><strong>Time to first byte (TTFB)</strong></p>
+<p>The time taken until the first byte of the response is received from the server, relevant application caches, or a local resource</p>
+<p><code>window.performance.timing.responseStart</code></p>
+<p><strong>Server time</strong></p>
+<p>The time spent on server-side processing for a page</p>
+<p><code>window.performance.timing.responseStart</code> â <code>window.performance.timing.requestStart</code></p>
+<p><strong>Network time</strong></p>
+<p>The time taken to request and receive resources (including DNS lookup, redirect, and TCP connect time)</p>
+<p><code>window.performance.timing.responseEnd</code> â <code>window.performance.timing.fetchStart</code> â (<code>window.performance.timing.responseStart</code> â <code>window.performance.timing.requestStart</code>)</p>
+<p><strong>Frontend time</strong></p>
+<p>The time taken by the browser to render a page</p>
+<p><code>User action duration</code> â <code>Server time</code> â <code>Network time</code></p>
+<p><strong>Processing</strong></p>
+<p>The time between DOM loading and Load event start</p>
+<p><code>window.performance.timing.loadEventStart</code> â <code>window.performance.timing.domLoading</code></p>
+<p><strong>Application cache</strong></p>
+<p>The time spent checking any relevant application caches<br />
+This includes the time before the connection to the server is established.</p>
+<p><code>window.performance.timing.domainLookupStart</code> â <code>window.performance.timing.fetchStart</code></p>
+<p><strong>OnDomContentLoaded</strong></p>
+<p>The time taken to execute <code>OnDomContentLoaded</code> handlers</p>
+<p><code>window.performance.timing.domContentLoaded</code> â <code>window.performance.timing.domLoading</code></p>
+<p><strong>OnLoad</strong></p>
+<p>The time taken to process the load event</p>
+<p><code>window.performance.timing.loadEventEnd</code> â <code>window.performance.timing.loadEventStart</code></p>
+<p><strong>Callback</strong></p>
+<p>The time taken to execute XHR callbacks</p>
+<p>N/A</p>
+<p><strong>First paint</strong></p>
+<p>The time taken to render the first non-default background element</p>
+<p>N/A</p>
+<p><strong>First input start</strong></p>
+<p>The moment when the user first interacts with a page, for example, clicks a UI control</p>
+<p>N/A</p>
+<p><strong>First input delay</strong></p>
+<p>The time from the first interaction with the page to when the user agent can respond to that interaction</p>
+<p>N/A</p>
+<p><strong>First contentful paint</strong></p>
+<p>The time taken to render the first bit of content, such as text or images</p>
+<p>N/A</p>
+<p><strong>Largest contentful paint</strong></p>
+<p>The time taken to render the largest element in the viewport</p>
+<p>N/A</p>
+<p><strong>Cumulative layout shift</strong></p>
+<p>The score measuring the unexpected shifting of visible webpage elements for a load action</p>
+<p>N/A</p>
+<p><strong>Visually complete</strong></p>
+<p>The time taken to fully render content in the viewport</p>
+<p>N/A</p>
+<p><strong>Speed index</strong></p>
+<p>The score measuring how quickly the visible parts of the page are rendered</p>
+<p>N/A</p>
+<p><strong>User action duration</strong></p>
+<p>The time taken to complete the page load<br />
+This includes load time of XHR requests initiated before <code>loadEventEnd</code> and load time of dynamic resources and script executions triggered by DOM modifications.</p>
+<p>N/A</p>
+<h3 id="xhr-actions">XHR actions<a class="headerlink" href="#xhr-actions" title="Permanent link">&para;</a></h3>
+<p>Dynatrace continuously tracks user interactions with each page. If user interaction leads to <code>XmlHttpRequests</code> or <code>fetch()</code> calls, an XHR action is created. Dynatrace also detects if there are additional XHRs triggered in the callback of the initial XHR and so on. In this case, Dynatrace waits until all requests are finished. By monitoring the DOM, Dynatrace can also identify resources that have been added in the callbacks. Dynatrace then waits until those resources have finished downloading before ending the action.</p>
+<p>An XHR action starts with the user's click on a control on a web page. All <a href="/docs/observe/digital-experience/rum-concepts/user-action-metrics" title="Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.">metrics</a> are calculated in relation to this point in time and are based on the initial XHR that triggers the user action.</p>
+<p>By default, RUM captures certain interaction types. You can configure RUM to detect even more interaction types. For details, see <a href="/docs/observe/digital-experience/web-applications/additional-configuration/capture-interaction-types" title="Choose which interaction types RUM should detect for your web applications.">Capture additional interaction types for web applications</a>.</p>
+<h4 id="xmlhttprequest">XmlHttpRequest<a class="headerlink" href="#xmlhttprequest" title="Permanent link">&para;</a></h4>
+<p>Most modern applications, including single-page applications, rely on a single load action that downloads the framework and initializes the page. After that, the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">DOMï»¿</a> of the page is changed via JavaScript, and all communication with the web server is done via <a href="/docs/observe/digital-experience/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions" title="Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions."><code>XmlHttpRequest</code></a>.</p>
+<p><img alt="XHR actions" src="https://dt-cdn.net/images/xhractions-1785-0de9863dfd.png" /></p>
+<h4 id="fetch-api">Fetch API<a class="headerlink" href="#fetch-api" title="Permanent link">&para;</a></h4>
+<p>The <a href="https://fetch.spec.whatwg.org/">Fetch APIï»¿</a> provides an interface for fetching resources, including resources across the network. It is similar to <code>XMLHttpRequest</code>, but the API provides a more flexible feature set. The generic definitions of <code>Request</code>, <code>Response</code>, and other network request objects in Fetch allow them to be used at any time they are needed, whether it's for service workers, Cache API, or anything that handles or modifies requests and responses. Fetch also supports the Cross Origin Resource Sharing (CORS).</p>
+<p>User actions based on the Fetch API appear in Dynatrace as XHR actions. You can configure RUM to <a href="/docs/observe/digital-experience/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions" title="Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions.">automatically detect and capture Fetch API request information</a>.</p>
+<h3 id="custom-user-actions">Custom user actions<a class="headerlink" href="#custom-user-actions" title="Permanent link">&para;</a></h3>
+<p>Rather than relying on default user action generation, you may want to fine-tune your Real User Monitoring by adding additional user actions directly into your application's HTML. This can be useful if our automated user-action generation doesn't catch specific actions or you want to introduce specific fine-grained timings into your application monitoring. For example, you can measure how long it takes to open a JavaScript-only dropdown menu, or you can measure the duration time of some JavaScript code. To define custom actions, use the <a href="/docs/observe/digital-experience/web-applications/additional-configuration/customize-rum" title="Find out how to customize Real User Monitoring using the JavaScript API.">RUM JavaScript API</a>.</p>
+<h2 id="user-action-duration">User action duration<a class="headerlink" href="#user-action-duration" title="Permanent link">&para;</a></h2>
+<p>Below, you can find information on the maximum user action duration in Dynatrace and the user action contributors for web applications.</p>
+<h3 id="maximum-user-action-duration">Maximum user action duration<a class="headerlink" href="#maximum-user-action-duration" title="Permanent link">&para;</a></h3>
+<p>The maximum user action duration depends on the application type.</p>
+<p>Web application</p>
+<p>Mobile app</p>
+<p>Custom app</p>
+<p>The maximum duration of a web user action is 3 minutes. When a user action takes longer than this, Dynatrace reports such an action as a 3-minute action.</p>
+<p>The maximum duration of a mobile user action depends on the action type.</p>
+<ul>
+<li><strong>Autogenerated actions</strong></li>
+</ul>
+<p>By default, the maximum duration of a mobile autogenerated user action is set to 1 minute. You can increase this limit up to 9 minutes, though we don't recommend doing that. For Android, see <a href="/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#configure-user-action-monitoring" title="Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.">Configure user action monitoring</a>; for iOS, use the <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#user-actions" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXAutoActionMaxDurationMilliseconds</code> configuration key</a>.</p>
+<p>If an autogenerated user action takes longer than the configured maximum duration, such an action is closed and reported to Dynatrace with a duration slightly longer than the configured maximum duration.
+* <strong>Custom actions</strong></p>
+<p>The maximum duration of a mobile custom action is 9 minutes.</p>
+<p>If a custom action takes longer than 9 minutes and is not closed, such an action is discarded and not reported to Dynatrace.</p>
+<p>The maximum duration of a user action in custom apps is 10 minutes. When a user action takes longer than this, such an action is discarded and not reported to Dynatrace.</p>
+<h3 id="user-action-contributors-for-web-applications">User action contributors for web applications<a class="headerlink" href="#user-action-contributors-for-web-applications" title="Permanent link">&para;</a></h3>
+<p>The duration of a user action can be broken down into three components:</p>
+<ul>
+<li><strong>Server time</strong>: The time spent on server-side processing for a page</li>
+<li><strong>Network time</strong>: The time taken to request and receive resources (including DNS lookup, redirect, and TCP connect time)</li>
+<li><strong>Frontend time</strong>: The time taken by the browser to render a page</li>
+</ul>
+<p>These components contribute to the overall duration of a user action.</p>
+<p>The user action duration is calculated as follows.</p>
+<p><strong>User action duration</strong> = (<code>loadEventEnd</code> or <code>endTimeOfLastXHR</code>) â <code>actionStart</code></p>
+<p>In this calculation</p>
+<p>actionStart
+:   <code>navigationStart</code> for page loads or "click time" for XHR actions and user navigations, such as a click on a button or a link</p>
+<p>endTimeOfLastXHR
+:   When XHR calls are triggered during the process and aren't completed before <code>loadEventEnd</code>, then the end time of the last XHR call is used instead of the <code>loadEventEnd</code> time.</p>
+<p>The user action contributors are calculated as follows.</p>
+<p><strong>Server time</strong> = <code>responseStart</code> â <code>requestStart</code></p>
+<p><strong>Network time</strong> = (<code>requestStart</code> â <code>actionStart</code>) + (<code>responseEnd</code> â <code>responseStart</code>)</p>
+<p><strong>Frontend time</strong> = <code>User action duration</code> â <code>Server time</code> â <code>Network time</code></p>
+<p>View the examples of user action contributors below.</p>
+<p>User action contributors for a single instance of a user action within a user session</p>
+<p><img alt="User session view" src="https://dt-cdn.net/images/user-session-view-updated-2472-c33e411c76.png" /></p>
+<p>User action contributors aggregated for one user action, in other words, across all user action instances</p>
+<p><img alt="User action view" src="https://dt-cdn.net/images/useractionview-1785-9f221a3aac.png" /></p>
+<p>User action contributors aggregated for the entire application</p>
+<p><img alt="Application overview" src="https://dt-cdn.net/images/appoverview-1789-db21269b45.png" /></p>
+<h2 id="user-action-naming-rules">User action naming rules<a class="headerlink" href="#user-action-naming-rules" title="Permanent link">&para;</a></h2>
+<p>Many applications allow users to accomplish the same goal using different UI controls and following different paths. When monitoring such applications, it can be difficult to differentiate between actions that have the same result and goal but are executed using different parts of the application UI. Likewise, if the application is translated into multiple languages, the same application function or UI element can appear under varying names. With user action naming rules, Dynatrace can detect such subtle variations and intelligently group user actions that achieve the same goal into logical groups for monitoring.</p>
+<p>Dynatrace automatically removes certain common <code>sessionid</code> tokens from user action names, for example, <code>jsessionid</code> for Java containers, default <code>sessionid</code> for PHP, and <code>CFID</code> and <code>CFTOKEN</code> for ColdFusion. Nonetheless, there are numerous session ID variations that may be present in your environment. If Dynatrace doesn't automatically recognize and remove session IDs from certain user action names you encounter, you'll need to configure custom naming rules for your <a href="/docs/observe/digital-experience/web-applications/initial-setup/create-custom-names-for-user-actions" title="Customize automatically generated user action names for your web applications.">web</a>, <a href="/docs/observe/digital-experience/mobile-applications/additional-configuration/naming-rules-mobile" title="Customize automatically generated user action names for your mobile applications.">mobile</a>, and <a href="/docs/observe/digital-experience/custom-applications/additional-configuration/naming-rules-custom" title="Customize automatically generated user action names for your custom applications.">custom applications</a>.</p>
+<p>When you configure custom naming rules for your web, mobile, and custom applications, remember that your input in the <strong>Add placeholder</strong> and <strong>Add naming rule</strong> sections is case-sensitive. Only the already configured user action name can be set to case-insensitive.</p>
+<h2 id="child-actions">Child actions<a class="headerlink" href="#child-actions" title="Permanent link">&para;</a></h2>
+<p>Child actions are actions attached to the main, or parent, user action. You can create child actions for web, mobile, and custom applications.</p>
+<p>For web applications, you can create child actions using the RUM JavaScript API, specifically, the <a href="https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#enterxhraction"><code>enterXhrAction</code>ï»¿</a> method.</p>
+<p>For mobile and custom applications, Dynatrace offers an API method for creating a child action.</p>
+<p><a href="/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android#child-actions">Android SDK</a> <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios#create-child-action">iOS SDK</a> <a href="/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget#manual-sub-action">Xamarin</a> <a href="/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui#manual-sub-action"><img alt=".NET MAUI" src="https://dt-cdn.net/images/dotnetmaui-aea483621e.svg" title=".NET MAUI" />.NET MAUI</a> <a href="https://pub.dev/packages/dynatrace_flutter_plugin#a-namecustomsubactionacreate-custom-sub-actions">Flutter</a> <a href="https://www.npmjs.com/package/@dynatrace/react-native-plugin#create-custom-sub-actions">React Native</a> <a href="/docs/ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods#create-custom-actions">OpenKit</a> </p>
+<p>The possible child action nesting depends on the application type and technology used.</p>
+<p>Web applications</p>
+<p>There's no limit on the number of child actions attached to a parent action, and there's no limit on the number of levels.</p>
+<p>However, note that child actions are not displayed on the <a href="/docs/observe/digital-experience/session-segmentation/new-user-sessions#session-details-page" title="Learn about user session segmentation and filtering attributes.">user session details page</a>, and child action nesting is not preserved on the <a href="/docs/observe/digital-experience/web-applications/analyze-and-use/waterfall-analysis" title="Learn how to analyze all user action monitoring data through waterfall analysis.">waterfall analysis page</a> for a parent action to which these child actions are attached.</p>
+<p>Android, iOS</p>
+<p>There's no limit on the number of child actions attached to a parent action. However, note that you can have only nine levels of child actionsâyou can create one parent action and nine levels of child actions (when child action A is added to a parent action, child action B is added to child action A, child action C is added to child action B, and so on). Also, refer to <a href="/docs/observe/digital-experience/rum-concepts/user-session#session-structure-dep-on-app-type" title="Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.">User session structure for individual user</a>.</p>
+<p>Child actions are not displayed on the <a href="/docs/observe/digital-experience/session-segmentation/new-user-sessions#session-details-page" title="Learn about user session segmentation and filtering attributes.">user session details page</a>, but you can view them on the <a href="/docs/observe/digital-experience/web-applications/analyze-and-use/waterfall-analysis" title="Learn how to analyze all user action monitoring data through waterfall analysis.">waterfall analysis page</a> for a parent action to which these child actions are attached. Even though the child action nesting is not fully preserved in the waterfall analysis view and all child actions are displayed as child actions of level 1, you can still grasp the action nesting from the timings.</p>
+<p>Flutter, React Native, Xamarin, .NET MAUI, OpenKit</p>
+<p>There's no limit on the number of child actions attached to a custom action. However, note that you can have only one level of child actionsâyou can't create a child action for another child action (child actions can't have their own child actions). Also, refer to <a href="/docs/observe/digital-experience/rum-concepts/user-session#session-structure-dep-on-app-type" title="Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.">User session structure for individual user</a>.</p>
+<p>Child actions are not displayed on the <a href="/docs/observe/digital-experience/session-segmentation/new-user-sessions#session-details-page" title="Learn about user session segmentation and filtering attributes.">user session details page</a>, but you can view them on the <a href="/docs/observe/digital-experience/web-applications/analyze-and-use/waterfall-analysis" title="Learn how to analyze all user action monitoring data through waterfall analysis.">waterfall analysis page</a> for a custom action to which these child actions are attached.</p>
+<h2 id="key-user-actions">Key user actions<a class="headerlink" href="#key-user-actions" title="Permanent link">&para;</a></h2>
+<p>Most applications include user actions that are particularly important to the success of your digital business. Examples of these actions are signups, checkouts, and product searches. Such key user actions might take longer to execute than others, or they might have the requirement to be of a shorter-than-average duration.</p>
+<p>For instance, consider that you've set your global <a href="/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings" title="Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.">Apdex threshold</a> to 3 seconds. While this threshold might be acceptable for the majority of user actions, it might not be acceptable for a signup user action. Alternatively, there could be a search action that is quite complex and requires more time than the allotted 3 seconds.</p>
+<p>You can mark a user action as a key user action and configure Apdex rating for key user actions in your <a href="/docs/observe/digital-experience/web-applications/additional-configuration/configure-key-user-actions-web" title="Mark a user action as a key user action and configure Apdex rating for key user actions of your web applications.">web</a>, <a href="/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-key-user-actions-mobile" title="Mark a user action as a key user action and configure Apdex rating for key user actions of your mobile applications.">mobile</a>, and <a href="/docs/observe/digital-experience/custom-applications/additional-configuration/configure-key-user-actions-custom" title="Mark a user action as a key user action and configure Apdex rating for key user actions of your custom applications.">custom application</a> settings.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/observe/digital-experience/web-applications/initial-setup/create-custom-names-for-user-actions" title="Customize automatically generated user action names for your web applications.">Create custom user action names for web applications</a></li>
+<li><a href="/docs/observe/digital-experience/mobile-applications/additional-configuration/naming-rules-mobile" title="Customize automatically generated user action names for your mobile applications.">Create custom user action names for mobile applications</a></li>
+<li><a href="/docs/observe/digital-experience/custom-applications/additional-configuration/naming-rules-custom" title="Customize automatically generated user action names for your custom applications.">Create custom user action names for custom applications</a></li>
+<li><a href="/docs/observe/digital-experience/web-applications/additional-configuration/configure-key-user-actions-web" title="Mark a user action as a key user action and configure Apdex rating for key user actions of your web applications.">Configure key user actions for web applications</a></li>
+<li><a href="/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-key-user-actions-mobile" title="Mark a user action as a key user action and configure Apdex rating for key user actions of your mobile applications.">Configure key user actions for mobile applications</a></li>
+<li><a href="/docs/observe/digital-experience/custom-applications/additional-configuration/configure-key-user-actions-custom" title="Mark a user action as a key user action and configure Apdex rating for key user actions of your custom applications.">Configure key user actions for custom applications</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

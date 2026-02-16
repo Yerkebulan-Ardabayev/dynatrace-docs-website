@@ -1197,58 +1197,30 @@
 <p>See our detailed <a href="/docs/ingest-from/extend-dynatrace/extend-topology/network-topology" title="Use the generic network topology model available in Dynatrace extensions.">Generic network topology</a> guide on how to make your custom extensions appear in <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong>.</p>
 <h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
 <p><img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> has the following core components:</p>
-<h3 id="data-centers">Data centers<a class="headerlink" href="#data-centers" title="Permanent link">&para;</a></h3>
-<p>The list of  <strong>Data centers</strong> provides visibility of interconnected data centers. Focusing on a particular data center gives you a detailed list of all monitored hosts.</p>
-<ul>
-<li>Filter data centers based on their type and location, then sort by the number of open problems.</li>
-<li>Data centers with the highest number of open problems are listed first.</li>
-<li>Selecting a data center helps you quickly identify the most problematic hosts within that data center.</li>
-</ul>
-<h3 id="hosts">Hosts<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h3>
-<p>The list of  <strong>Hosts</strong> displays detailed information about all monitored hosts in your environment.</p>
-<ul>
-<li>Sort and filter hosts by health metrics such as CPU load, available memory, disk capacity, and network connectivity to identify hosts requiring attention. By default, hosts are sorted by the number of open problems.</li>
-<li>Select a host name to view all technologies with detailed status information and links to processes.</li>
-</ul>
-<h3 id="processes">Processes<a class="headerlink" href="#processes" title="Permanent link">&para;</a></h3>
-<p>The list of  <strong>Processes</strong> provides detailed insights into processes running on hosts or in containers, displaying CPU and memory usage trends and key metrics for troubleshooting.</p>
-<ul>
-<li>Visualize CPU and memory usage trends across all processes using the graph view.</li>
-<li>Select a process to access detailed metrics, including traffic, resource consumption, and properties.</li>
-<li>Sort and filter processes by metrics such as CPU usage, memory usage, or custom warnings to identify problematic processes.</li>
-<li>Add technology-type tags at the process or process group level for simplified filtering and automation.</li>
-<li>Drill down to detailed process-level insights, including versioning and release information, when deep monitoring is activated.</li>
-</ul>
-<h3 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h3>
-<p>The list of  <strong>Containers</strong> provides a comprehensive view of your containerized workloads, whether orchestrated by <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong> or running on a standalone host.</p>
-<ul>
-<li>Use the <strong>Custom alerts</strong> column and the <strong>Critical alert</strong> filter to quickly identify containers with problems. Select an alert to investigate it.</li>
-<li>Analyze and compare CPU and memory usage metrics across containers.</li>
-<li>Select a container name to view detailed graphs, processes, logs, and events for troubleshooting.</li>
-<li>Use the time selector and resource usage graphs to identify patterns or anomalies over time.</li>
-</ul>
-<h3 id="network-devices">Network devices<a class="headerlink" href="#network-devices" title="Permanent link">&para;</a></h3>
-<p>The list of  <strong>Network devices</strong> provides insights into networking components and their availability, with Dynatrace Intelligence-powered analytics.</p>
-<ul>
-<li>Monitor health status, interface availability, network utilization, and hardware metrics such as CPU and memory usage.</li>
-<li>View all problems detected by Dynatrace Intelligence and access affected entities for specific issues.</li>
-<li>Sort and filter network devices by name, type, problems, IP address, uptime, interface status, saturated interfaces, traffic volume, and reachability.</li>
-<li>For auto-discovered network devices not currently monitored, install and configure extensions directly from the Messages tab.</li>
-<li>Select a network device to access detailed views, including tags, properties, metrics, and related entities when monitored by an extension.</li>
-</ul>
+<p>[#### Data centers</p>
+<p>Monitor the health and performance of your data centers and availability zones to detect and resolve critical issues.</p>
+<p>Data centers](/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers)[#### Hosts</p>
+<p>Monitor infrastructure hosts across physical machines, VMs, and cloud instances to track health, performance, and resource utilization.</p>
+<p>Hosts](/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts)[#### Containers</p>
+<p>Monitor and troubleshoot containerized workloads across Kubernetes and standalone hosts.</p>
+<p>Containers](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Processes</p>
+<p>Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.</p>
+<p>Processes](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Networks</p>
+<p>Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.</p>
+<p>Networks](/docs/observe/infrastructure-observability/infrastructure-and-operations/networks)</p>
 <h3 id="relation-between-hosts-containers-and-processes">Relation between hosts, containers, and processes<a class="headerlink" href="#relation-between-hosts-containers-and-processes" title="Permanent link">&para;</a></h3>
 <p>Hosts, containers, and processes are interconnected, and you can navigate between them to understand dependencies and troubleshoot issues.</p>
-<h4 id="hosts_1">Hosts<a class="headerlink" href="#hosts_1" title="Permanent link">&para;</a></h4>
+<h4 id="hosts">Hosts<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h4>
 <ul>
 <li>The host full-page view includes <strong>Processes</strong> and <strong>Containers</strong> tabs showing related processes and containers. Select an entity to navigate to its details.</li>
 </ul>
-<h4 id="containers_1">Containers<a class="headerlink" href="#containers_1" title="Permanent link">&para;</a></h4>
+<h4 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Containers run on hosts. The container metadata displays the host name.</li>
 <li>The container full-page view includes an <strong>Overview</strong> tab with links to the host and container group. Selecting the host navigates to the host details. Selecting the container group filters the container list to show all containers in that group.</li>
 <li>The <strong>Processes</strong> tab shows related processes. Select a process to navigate to its details.</li>
 </ul>
-<h4 id="processes_1">Processes<a class="headerlink" href="#processes_1" title="Permanent link">&para;</a></h4>
+<h4 id="processes">Processes<a class="headerlink" href="#processes" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Processes run directly on hosts or in containers. The process metadata displays the related host and container name (if applicable).</li>
 <li>The process side panel shows information about technologies, host, process group, container (if applicable), and deep monitoring details.</li>

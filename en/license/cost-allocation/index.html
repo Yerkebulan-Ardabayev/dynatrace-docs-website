@@ -971,7 +971,7 @@
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
 <li>16-min read</li>
-<li>Updated on Nov 24, 2025</li>
+<li>Updated on Feb 09, 2026</li>
 </ul>
 <p>Cost Allocation is exclusively available for Dynatrace SaaS environments with a Dynatrace Platform Subscription (DPS) licensing agreement that was signed after April 2023.</p>
 <p>Dynatrace Cost Allocation lets you allocate Dynatrace DPS usage to customer-defined cost centers, products, or both.
@@ -1101,7 +1101,9 @@ The actual policy statement is provided in the code block below.</p>
 <p>Log - Ingest</p>
 <p>â</p>
 <p>Log - Retain</p>
-<p>Notebook available via Account Management</p>
+<p>â</p>
+<p>Logs - Retain with Included Queries</p>
+<p>â</p>
 <p>Log - Query</p>
 <p>See <a href="#user-based">Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions</a>.</p>
 <p>Traces powered by Grail</p>
@@ -1165,6 +1167,8 @@ One host can be allocated to a maximum of one cost center and one product.</p>
 <h3 id="configure-cost-allocation-for-telemetry-ingest">Configure Cost Allocation for telemetry ingest<a class="headerlink" href="#configure-cost-allocation-for-telemetry-ingest" title="Permanent link">&para;</a></h3>
 <p>With Dynatrace, you can enrich telemetry data with Cost Allocation attributes (<code>dt.cost.costcenter</code>, <code>dt.cost.product</code>) as metadata.
 Telemetry enrichment with Cost Allocation attributes is possible for all supported ingest methodsâwhether logs, traces, metrics, or events.</p>
+<p>For ingested logs, Cost Allocation is also available for retained data (<a href="/docs/license/capabilities/log-analytics/dps-log-retain" title="Learn how your consumption of the Log Management &amp; Analytics - Retain DPS capability is billed and charged.">Log - Retain</a> and <a href="/docs/license/capabilities/log-analytics/dps-log-retain-included" title="Learn how your consumption of the Log Management &amp; Analytics - Retain with Included Queries DPS capability is billed and charged.">Log - Retain with Included Queries</a>).
+Both retain models use the settings that you already set up for ingest, so you don't need to do any additional configuration.</p>
 <p>You can use these attributes to allocate usage to your user-defined products and cost centers.</p>
 <ul>
 <li>They're stored in Grail and are available through <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>, <strong>Account Management</strong>, and the <a href="/docs/dynatrace-api" title="Find out what you need to use the Dynatrace API.">Dynatrace API</a>.</li>

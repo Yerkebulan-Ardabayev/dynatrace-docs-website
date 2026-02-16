@@ -969,7 +969,7 @@
 <h1 id="monitor-prometheus-metrics_1">Monitor Prometheus metrics<a class="headerlink" href="#monitor-prometheus-metrics_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>14-min read</li>
-<li>Updated on Dec 09, 2025</li>
+<li>Updated on Jan 29, 2026</li>
 </ul>
 <p>Prometheus is an open-source monitoring and alerting toolkit which is popular in the Kubernetes community. Prometheus scrapes metrics from a number of HTTP(s) endpoints that expose metrics in the OpenMetrics format.
 See the list of available <a href="https://dt-url.net/vd03n1m">exportersï»¿</a> in the Prometheus documentation.</p>
@@ -1443,7 +1443,7 @@ The aforementioned annotations are then used on a pod, with the secrets referenc
 <p><code>metrics.dynatrace.com/http.auth: 'builtin:default'</code></p>
 <p>This annotation applies the token from the <code>dynatrace-activegate</code> service account as an authorization header for requests to the exporter.</p>
 <p>Ingesting metrics from exporters requiring RBAC authorization is only possible with an ActiveGate deployed inside the monitored cluster and the Kubernetes connection settings configured to monitor the local Kubernetes API endpoint.</p>
-<p>For more information on how to annotate pods, see <a href="#best">annotations best practices</a>.</p>
+<p>For more information on how to annotate pods, see <a href="#best">Annotation best practices</a>.</p>
 <h2 id="annotate-kubernetes-services">Annotate Kubernetes services<a class="headerlink" href="#annotate-kubernetes-services" title="Permanent link">&para;</a></h2>
 <p><strong>Requirements:</strong> Add the permission to access <strong>services</strong> for the <code>dynatrace-kubernetes-monitoring</code> ClusterRole (not needed for Dynatrace Operator users, as this is enabled by default in <a href="https://dt-url.net/gl027s4">clusterrole-kubernetes-monitoring.yamlï»¿</a>).</p>
 <p>You can also annotate services instead of pods. Pods corresponding to the Kubernetes services are automatically discovered via the service label selector, causing scraping of all pods belonging to the service.</p>
@@ -1619,7 +1619,11 @@ The aforementioned annotations are then used on a pod, with the secrets referenc
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <p>The current limitations of the Prometheus metrics integration are as follows:</p>
 <h3 id="multiple-exporters-in-a-pod">Multiple exporters in a pod<a class="headerlink" href="#multiple-exporters-in-a-pod" title="Permanent link">&para;</a></h3>
-<p>Multiple exporters currently aren't supported; you can only select the exporter that is being used with the <code>metrics.dynatrace.com/port</code> annotation.</p>
+<p>Only one port and path can be specified in the annotations. However, it is possible to scrape multiple exporters in a pod by <a href="#annotate-kubernetes-services">annotating
+additional services</a> that select the same pod.</p>
+<p>For example, if you want to scrape two endpoints in a pod, you could annotate the pod and the service
+that selects the pod. If no such service exists, you can create a new service just for this purpose.</p>
+<p>Alternatively, you could also annotate two different services that select the same pod. For more information, see <a href="#best">Annotation best practices</a>.</p>
 <h3 id="number-of-pods-metrics-and-metric-data-points">Number of pods, metrics, and metric data points<a class="headerlink" href="#number-of-pods-metrics-and-metric-data-points" title="Permanent link">&para;</a></h3>
 <p>Per Kubernetes cluster, this integration supports a maximum of:</p>
 <ul>

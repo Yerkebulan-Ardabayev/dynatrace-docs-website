@@ -1013,10 +1013,16 @@
 <li>Tool conflictsâmultiple APM tools in the same process may overwrite each other's context.</li>
 </ul>
 <h3 id="set-up-w3c-trace-context">Set up W3C trace context<a class="headerlink" href="#set-up-w3c-trace-context" title="Permanent link">&para;</a></h3>
-<p>To turn W3C trace context on:</p>
+<p>To turn W3C trace context on</p>
+<p><strong>Latest Dynatrace</strong></p>
+<ol>
+<li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Collect and capture</strong> &gt; <strong>General monitoring settings</strong> &gt; <strong>OneAgent features</strong>.</li>
+<li>Turn on <strong>Send W3C Trace Context HTTP headers</strong> and <strong>Send W3C Trace Context gRPC headers</strong>.</li>
+</ol>
+<p><strong>Dynatrace Classic</strong></p>
 <ol>
 <li>Go to <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent features</strong>.</li>
-<li>Turn on the <strong>Send W3C Trace Context HTTP headers</strong> and <strong>Send W3C Trace Context gRPC headers</strong> toggles.</li>
+<li>Turn on <strong>Send W3C Trace Context HTTP headers</strong> and <strong>Send W3C Trace Context gRPC headers</strong>.</li>
 </ol>
 <p>While the W3C standard formally specifies HTTP propagation, Dynatrace and the broader industry apply these concepts to other communication protocols.</p>
 
