@@ -25,7 +25,7 @@
     
     
       
-        <title>Collector deployment - Dynatrace Managed - Документация</title>
+        <title>Deploy Dynatrace OTel Collector - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#collector-deployment" class="md-skip">
+        <a href="#deploy-dynatrace-otel-collector" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Collector deployment
+              Deploy Dynatrace OTel Collector
             
           </span>
         </div>
@@ -965,8 +965,8 @@
 
 
 
-<h1 id="collector-deployment">Collector deployment<a class="headerlink" href="#collector-deployment" title="Permanent link">&para;</a></h1>
-<h1 id="collector-deployment_1">Collector deployment<a class="headerlink" href="#collector-deployment_1" title="Permanent link">&para;</a></h1>
+<h1 id="deploy-dynatrace-otel-collector">Deploy Dynatrace OTel Collector<a class="headerlink" href="#deploy-dynatrace-otel-collector" title="Permanent link">&para;</a></h1>
+<h1 id="deploy-dynatrace-otel-collector_1">Deploy Dynatrace OTel Collector<a class="headerlink" href="#deploy-dynatrace-otel-collector_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
@@ -2318,7 +2318,7 @@
 <p>Run the following command to download the image of the Dynatrace Collector:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 </code></pre></div>
-<p>Next, ensure that the <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="Configure the OpenTelemetry Collector.">Collector configuration file</a> exists in the current working directory and run the Collector image with the following command:</p>
+<p>Next, ensure that the <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="How to configure the OpenTelemetry Collector.">Collector configuration file</a> exists in the current working directory and run the Collector image with the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0 --config=/etc/otelcol/otel-collector-config.yaml
 </code></pre></div>
 <p>The <code>-v</code> parameter maps the local configuration file to the given container path, which is subsequently passed to the <code>--config</code> parameter.</p>
@@ -2399,7 +2399,7 @@
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>rpm -ivh dynatrace-otel-collector_&lt;VERSION&gt;_Linux_&lt;ARCH&gt;.rpm
 </code></pre></div>
 <h4 id="service-configuration">Service configuration<a class="headerlink" href="#service-configuration" title="Permanent link">&para;</a></h4>
-<p>When first starting the service, it may fail to start if there is no <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="Configure the OpenTelemetry Collector.">configuration file</a> in place yet. By default, the Collector attempts to find the file at <code>/etc/dynatrace-otel-collector/config.yaml</code>.</p>
+<p>When first starting the service, it may fail to start if there is no <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="How to configure the OpenTelemetry Collector.">configuration file</a> in place yet. By default, the Collector attempts to find the file at <code>/etc/dynatrace-otel-collector/config.yaml</code>.</p>
 <p>Custom configuration location</p>
 <p>If you wish to use a different path, you can override the default path with the <code>--config</code> parameter as part of the <code>OTELCOL_OPTIONS</code> variable in the Systemd environment file at <code>/etc/dynatrace-otel-collector/dynatrace-otel-collector.conf</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>OTELCOL_OPTIONS=&quot;--config=&lt;HERE-PATH-TO-CONFIG-FILE&gt;&quot;

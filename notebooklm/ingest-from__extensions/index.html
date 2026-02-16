@@ -986,7 +986,7 @@
 
 <h1 id="dynatrace-documentation-ingest-fromextensions">Dynatrace Documentation: ingest-from/extensions<a class="headerlink" href="#dynatrace-documentation-ingest-fromextensions" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 31</p>
+<p>Files combined: 32</p>
 <hr />
 <h2 id="source-dedicated-performance-profilemd">Source: dedicated-performance-profile.md<a class="headerlink" href="#source-dedicated-performance-profilemd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1989,6 +1989,35 @@ scraped: 2026-02-15T21:22:35.725727</p>
 </ul>
 <p>See <a href="/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference" title="Learn about Prometheus extensions in the Extensions framework.">Prometheus data source reference</a> to learn about the structure of the Prometheus extension YAML file and monitoring configuration format.</p>
 <hr />
+<h2 id="source-pythonmd">Source: python.md<a class="headerlink" href="#source-pythonmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Dynatrace Extensions Python SDK
+source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/python
+scraped: 2026-02-16T21:30:59.509495</p>
+<hr />
+<h1 id="dynatrace-extensions-python-sdk">Dynatrace Extensions Python SDK<a class="headerlink" href="#dynatrace-extensions-python-sdk" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-extensions-python-sdk_1">Dynatrace Extensions Python SDK<a class="headerlink" href="#dynatrace-extensions-python-sdk_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>1-min read</li>
+<li>Published Jan 18, 2024</li>
+</ul>
+<p>The Dynatrace Extensions Python SDK provides you with a framework to ingest data into Dynatrace from any technology exposing an interface.</p>
+<p>Custom-coded extensions are based on the same principles. They're declarative, similar to other data sources, but you use the provided methods to use extracted data to create metrics and events.</p>
+<p>This SDK offers:</p>
+<ul>
+<li>Greater flexibility to ingest the data from your proprietary technologies or when your case requires extended customization that available data sources don't offer.</li>
+<li>Tooling to export your current OneAgent and ActiveGate extensions to the new framework.</li>
+</ul>
+<p>Dynatrace Extensions Python SDK is publicly available with <a href="/docs/whats-new/oneagent/sprint-285#custom-coded-python-extensions" title="Release notes for Dynatrace OneAgent version 1.285">OneAgent 1.285</a>.</p>
+<p>Set the filesystem flag to <code>exec</code> and not <code>noexec</code> to ensure a Python extension runs correctly. This configuration is crucial because it allows the execution of binaries and scripts within the specified filesystem. The extension can't execute properly without this setting, leading to potential errors and failures.</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="https://dt-url.net/7g638yh">Dynatrace Extensions Python SDK documentationï»¿</a></li>
+<li><a href="https://dt-url.net/jsa38pm">Dynatrace Extensions Python SDK repositoryï»¿</a> on Dynatrace Extensions GitHub.</li>
+</ul>
+<hr />
 <h2 id="source-ibm-monitoringmd">Source: ibm-monitoring.md<a class="headerlink" href="#source-ibm-monitoringmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: IBM Database monitoring configuration
@@ -2867,7 +2896,7 @@ scraped: 2026-02-15T21:22:58.151321</p>
 <hr />
 <p>title: Oracle Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
-scraped: 2026-02-16T09:34:16.388030</p>
+scraped: 2026-02-16T21:24:47.757564</p>
 <hr />
 <h1 id="oracle-database-monitoring-configuration">Oracle Database monitoring configuration<a class="headerlink" href="#oracle-database-monitoring-configuration" title="Permanent link">&para;</a></h1>
 <h1 id="oracle-database-monitoring-configuration_1">Oracle Database monitoring configuration<a class="headerlink" href="#oracle-database-monitoring-configuration_1" title="Permanent link">&para;</a></h1>
@@ -3814,7 +3843,7 @@ scraped: 2026-02-15T09:10:59.662186</p>
 <hr />
 <p>title: Snowflake Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
-scraped: 2026-02-16T09:34:50.486840</p>
+scraped: 2026-02-16T21:32:19.308650</p>
 <hr />
 <h1 id="snowflake-database-monitoring-configuration">Snowflake Database monitoring configuration<a class="headerlink" href="#snowflake-database-monitoring-configuration" title="Permanent link">&para;</a></h1>
 <h1 id="snowflake-database-monitoring-configuration_1">Snowflake Database monitoring configuration<a class="headerlink" href="#snowflake-database-monitoring-configuration_1" title="Permanent link">&para;</a></h1>
@@ -4084,7 +4113,7 @@ scraped: 2026-02-16T09:34:50.486840</p>
 <hr />
 <p>title: SQL data source reference
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference
-scraped: 2026-02-16T09:39:13.957851</p>
+scraped: 2026-02-16T21:33:00.515935</p>
 <hr />
 <h1 id="sql-data-source-reference">SQL data source reference<a class="headerlink" href="#sql-data-source-reference" title="Permanent link">&para;</a></h1>
 <h1 id="sql-data-source-reference_1">SQL data source reference<a class="headerlink" href="#sql-data-source-reference_1" title="Permanent link">&para;</a></h1>
@@ -4961,7 +4990,7 @@ If filters are set on more than one dimension, all filters have to match for a m
 <hr />
 <p>title: SQL data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql
-scraped: 2026-02-15T09:12:08.704347</p>
+scraped: 2026-02-16T21:27:16.086566</p>
 <hr />
 <h1 id="sql-data-source">SQL data source<a class="headerlink" href="#sql-data-source" title="Permanent link">&para;</a></h1>
 <h1 id="sql-data-source_1">SQL data source<a class="headerlink" href="#sql-data-source_1" title="Permanent link">&para;</a></h1>
@@ -5016,7 +5045,7 @@ scraped: 2026-02-15T09:12:08.704347</p>
 <hr />
 <p>title: WMI data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions
-scraped: 2026-02-16T09:30:33.898957</p>
+scraped: 2026-02-16T21:27:17.403033</p>
 <hr />
 <h1 id="wmi-data-source">WMI data source<a class="headerlink" href="#wmi-data-source" title="Permanent link">&para;</a></h1>
 <h1 id="wmi-data-source_1">WMI data source<a class="headerlink" href="#wmi-data-source_1" title="Permanent link">&para;</a></h1>
@@ -5099,7 +5128,7 @@ scraped: 2026-02-16T09:30:33.898957</p>
 <hr />
 <p>title: Extension YAML file
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/extension-yaml
-scraped: 2026-02-16T09:38:35.826343</p>
+scraped: 2026-02-16T21:27:56.417153</p>
 <hr />
 <h1 id="extension-yaml-file">Extension YAML file<a class="headerlink" href="#extension-yaml-file" title="Permanent link">&para;</a></h1>
 <h1 id="extension-yaml-file_1">Extension YAML file<a class="headerlink" href="#extension-yaml-file_1" title="Permanent link">&para;</a></h1>
@@ -5627,7 +5656,7 @@ When adding the certificate, select the <strong>Extension validation</strong> sc
 <hr />
 <p>title: Develop your own Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
-scraped: 2026-02-16T09:17:45.679202</p>
+scraped: 2026-02-16T21:19:52.989797</p>
 <hr />
 <h1 id="develop-your-own-extensions">Develop your own Extensions<a class="headerlink" href="#develop-your-own-extensions" title="Permanent link">&para;</a></h1>
 <h1 id="develop-your-own-extensions_1">Develop your own Extensions<a class="headerlink" href="#develop-your-own-extensions_1" title="Permanent link">&para;</a></h1>
@@ -5692,7 +5721,7 @@ scraped: 2026-02-16T09:17:45.679202</p>
 <hr />
 <p>title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-02-16T09:17:44.088939</p>
+scraped: 2026-02-16T21:19:50.279659</p>
 <hr />
 <h1 id="manage-extensions">Manage Extensions<a class="headerlink" href="#manage-extensions" title="Permanent link">&para;</a></h1>
 <h1 id="manage-extensions_1">Manage Extensions<a class="headerlink" href="#manage-extensions_1" title="Permanent link">&para;</a></h1>
@@ -6110,7 +6139,7 @@ scraped: 2026-02-16T09:17:44.088939</p>
 <hr />
 <p>title: Manage SNMP extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/snmp
-scraped: 2026-02-16T09:25:35.023513</p>
+scraped: 2026-02-16T21:22:15.881914</p>
 <hr />
 <h1 id="manage-snmp-extensions">Manage SNMP extensions<a class="headerlink" href="#manage-snmp-extensions" title="Permanent link">&para;</a></h1>
 <h1 id="manage-snmp-extensions_1">Manage SNMP extensions<a class="headerlink" href="#manage-snmp-extensions_1" title="Permanent link">&para;</a></h1>
@@ -6227,7 +6256,7 @@ scraped: 2026-02-16T09:25:35.023513</p>
 <hr />
 <p>title: Manage IBM Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db
-scraped: 2026-02-15T09:06:41.536724</p>
+scraped: 2026-02-16T21:30:44.879129</p>
 <hr />
 <h1 id="manage-ibm-database-extensions">Manage IBM Database extensions<a class="headerlink" href="#manage-ibm-database-extensions" title="Permanent link">&para;</a></h1>
 <h1 id="manage-ibm-database-extensions_1">Manage IBM Database extensions<a class="headerlink" href="#manage-ibm-database-extensions_1" title="Permanent link">&para;</a></h1>
@@ -6311,7 +6340,7 @@ scraped: 2026-02-15T09:06:41.536724</p>
 <hr />
 <p>title: Manage Microsoft SQL Server extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
-scraped: 2026-02-16T09:25:39.844887</p>
+scraped: 2026-02-16T21:22:13.160045</p>
 <hr />
 <h1 id="manage-microsoft-sql-server-extensions">Manage Microsoft SQL Server extensions<a class="headerlink" href="#manage-microsoft-sql-server-extensions" title="Permanent link">&para;</a></h1>
 <h1 id="manage-microsoft-sql-server-extensions_1">Manage Microsoft SQL Server extensions<a class="headerlink" href="#manage-microsoft-sql-server-extensions_1" title="Permanent link">&para;</a></h1>
@@ -6480,7 +6509,7 @@ scraped: 2026-02-15T21:26:25.852412</p>
 <hr />
 <p>title: Manage Oracle Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-02-16T09:25:49.873217</p>
+scraped: 2026-02-16T21:22:14.501798</p>
 <hr />
 <h1 id="manage-oracle-database-extensions">Manage Oracle Database extensions<a class="headerlink" href="#manage-oracle-database-extensions" title="Permanent link">&para;</a></h1>
 <h1 id="manage-oracle-database-extensions_1">Manage Oracle Database extensions<a class="headerlink" href="#manage-oracle-database-extensions_1" title="Permanent link">&para;</a></h1>
@@ -6657,7 +6686,7 @@ scraped: 2026-02-16T09:32:07.259119</p>
 <hr />
 <p>title: Manage SAP Hana Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana
-scraped: 2026-02-15T21:28:24.216073</p>
+scraped: 2026-02-16T21:30:10.509521</p>
 <hr />
 <h1 id="manage-sap-hana-database-extensions">Manage SAP Hana Database extensions<a class="headerlink" href="#manage-sap-hana-database-extensions" title="Permanent link">&para;</a></h1>
 <h1 id="manage-sap-hana-database-extensions_1">Manage SAP Hana Database extensions<a class="headerlink" href="#manage-sap-hana-database-extensions_1" title="Permanent link">&para;</a></h1>
@@ -6845,7 +6874,7 @@ scraped: 2026-02-15T21:25:52.124737</p>
 <hr />
 <p>title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-02-16T09:25:43.081773</p>
+scraped: 2026-02-16T21:22:08.839851</p>
 <hr />
 <h1 id="manage-wmi-extensions">Manage WMI extensions<a class="headerlink" href="#manage-wmi-extensions" title="Permanent link">&para;</a></h1>
 <h1 id="manage-wmi-extensions_1">Manage WMI extensions<a class="headerlink" href="#manage-wmi-extensions_1" title="Permanent link">&para;</a></h1>
@@ -6987,7 +7016,7 @@ scraped: 2026-02-15T09:10:29.666562</p>
 <hr />
 <p>title: Explore supported Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions
-scraped: 2026-02-16T09:17:47.251648</p>
+scraped: 2026-02-16T21:19:51.653240</p>
 <hr />
 <h1 id="explore-supported-extensions">Explore supported Extensions<a class="headerlink" href="#explore-supported-extensions" title="Permanent link">&para;</a></h1>
 <h1 id="explore-supported-extensions_1">Explore supported Extensions<a class="headerlink" href="#explore-supported-extensions_1" title="Permanent link">&para;</a></h1>

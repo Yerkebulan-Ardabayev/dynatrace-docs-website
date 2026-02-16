@@ -1208,28 +1208,31 @@
 </code></pre></div>
 <h2 id="chart-the-number-of-cpu-saturation-and-high-memory-events-in-the-last-7-days">Chart the number of CPU saturation and high-memory events in the last 7 days<a class="headerlink" href="#chart-the-number-of-cpu-saturation-and-high-memory-events-in-the-last-7-days" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Извлекает таблицу <code>dt.davis.events</code> за последние 7 дней.</li>
-<li>Считает в разрешении 60-минутных интервалов.</li>
+<li>Fetches table <code>dt.davis.events</code> for the last 7 days.</li>
+<li>Counts in a resolution of 60-minute bins.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>fetch dt.davis.events, from:now()-7d, to:now()
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>| filter event.kind == &quot;DAVIS_EVENT&quot;
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>| filter event.kind == &quot;DAVIS_EVENT&quot;
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>| filter event.type == &quot;OSI_HIGH_CPU&quot; or event.type == &quot;OSI_HIGH_MEMORY&quot;
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>| makeTimeseries count =  count(default: 0)
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>| filter event.type == &quot;OSI_HIGH_CPU&quot; or event.type == &quot;OSI_HIGH_MEMORY&quot;
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>| makeTimeseries count =  count(default: 0)
 </code></pre></div>
-<p><strong>Результат запроса</strong></p>
-<p>60-минутный интервал</p>
+<p><strong>Query result</strong></p>
+<p>60min interval</p>
 <p>count</p>
-<p>25.05.2023, 15:00</p>
+<p>5/25/2023, 3:00 PM</p>
 <p>146</p>
-<p>25.05.2023, 16:00</p>
+<p>5/25/2023, 4:00 PM</p>
 <p>312</p>
-<p>25.05.2023, 17:00</p>
+<p>5/25/2023, 5:00 PM</p>
 <p>201</p>
 
 

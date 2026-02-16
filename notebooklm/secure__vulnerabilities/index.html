@@ -986,13 +986,13 @@
 
 <h1 id="dynatrace-documentation-securevulnerabilities">Dynatrace Documentation: secure/vulnerabilities<a class="headerlink" href="#dynatrace-documentation-securevulnerabilities" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 5</p>
+<p>Files combined: 6</p>
 <hr />
 <h2 id="source-address-remediationmd">Source: address-remediation.md<a class="headerlink" href="#source-address-remediationmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Address remediation
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/address-remediation
-scraped: 2026-02-16T09:39:57.892514</p>
+scraped: 2026-02-16T21:24:54.603133</p>
 <hr />
 <h1 id="address-remediation">Address remediation<a class="headerlink" href="#address-remediation" title="Permanent link">&para;</a></h1>
 <h1 id="address-remediation_1">Address remediation<a class="headerlink" href="#address-remediation_1" title="Permanent link">&para;</a></h1>
@@ -1179,7 +1179,7 @@ For visibility into overall monitoring coverage and exposure trends, see <a href
 <hr />
 <p>title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/assess-coverage
-scraped: 2026-02-16T09:37:07.061713</p>
+scraped: 2026-02-16T21:26:21.416600</p>
 <hr />
 <h1 id="assess-coverage">Assess coverage<a class="headerlink" href="#assess-coverage" title="Permanent link">&para;</a></h1>
 <h1 id="assess-coverage_1">Assess coverage<a class="headerlink" href="#assess-coverage_1" title="Permanent link">&para;</a></h1>
@@ -1906,7 +1906,7 @@ When calculating the advice, Security Advisor ignores the specific version of th
 <hr />
 <p>title: Explore findings
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/explore-findings
-scraped: 2026-02-16T09:38:40.689884</p>
+scraped: 2026-02-16T21:31:15.930371</p>
 <hr />
 <h1 id="explore-findings">Explore findings<a class="headerlink" href="#explore-findings" title="Permanent link">&para;</a></h1>
 <h1 id="explore-findings_1">Explore findings<a class="headerlink" href="#explore-findings_1" title="Permanent link">&para;</a></h1>
@@ -2042,6 +2042,129 @@ scraped: 2026-02-16T09:38:40.689884</p>
 <ul>
 <li><a href="https://www.dynatrace.com/news/blog/introducing-findings-in-the-vulnerabilities-app-unified-granular-insights-for-smarter-security/">Introducing findings in the Vulnerabilities app: Unified, granular insights for smarter securityï»¿</a></li>
 </ul>
+<hr />
+<h2 id="source-prioritizemd">Source: prioritize.md<a class="headerlink" href="#source-prioritizemd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Prioritize vulnerabilities
+source: https://www.dynatrace.com/docs/secure/vulnerabilities/prioritize
+scraped: 2026-02-16T21:29:24.637977</p>
+<hr />
+<h1 id="prioritize-vulnerabilities">Prioritize vulnerabilities<a class="headerlink" href="#prioritize-vulnerabilities" title="Permanent link">&para;</a></h1>
+<h1 id="prioritize-vulnerabilities_1">Prioritize vulnerabilities<a class="headerlink" href="#prioritize-vulnerabilities_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>Updated on Dec 18, 2025</li>
+</ul>
+<p>In the following, you'll learn to prioritize third-party, code-level, and runtime vulnerabilities based on</p>
+<ul>
+<li><a href="#dss">Dynatrace Security Score</a></li>
+<li><a href="#risk-factors">Dynatrace Assessment</a></li>
+<li><a href="#affected-related">What is at risk (affected and related entities)</a></li>
+<li><a href="#exploit">Exploit attempts</a></li>
+<li><a href="#evolution">Vulnerability evolution</a></li>
+<li><a href="#cisa-kev">CISA KEV catalog</a></li>
+<li><a href="#coverage">Coverage</a></li>
+</ul>
+<h2 id="prioritize-by-dynatrace-security-score">Prioritize by Dynatrace Security Score<a class="headerlink" href="#prioritize-by-dynatrace-security-score" title="Permanent link">&para;</a></h2>
+<p>Third-party vulnerabilities</p>
+<p>The risk level (severity) of a vulnerability is calculated based on Dynatrace Security Score (DSS), so you can focus on fixing vulnerabilities that are relevant in your environment, instead of on those that have only a theoretical impact. See below for your options.</p>
+<h3 id="filter-by-dss">Filter by DSS<a class="headerlink" href="#filter-by-dss" title="Permanent link">&para;</a></h3>
+<p>Use Dynatrace Security Score filters to focus on vulnerabilities based on their severity and risk classification.</p>
+<p>On the <strong>Prioritization</strong> page, in the filter field, you can filter by</p>
+<ul>
+<li>The DSS score (select <strong>Dynatrace Security Score</strong> and then enter a score)</li>
+<li>The risk level (select <strong>Dynatrace Risk Level</strong> and then select a severity)</li>
+</ul>
+<p>For details, see <a href="/docs/secure/vulnerabilities/manage-results#expressions" title="Filter, format, and sort to find relevant vulnerability information.">Filter expressions</a>.</p>
+<h3 id="get-details-about-dss-calculation">Get details about DSS calculation<a class="headerlink" href="#get-details-about-dss-calculation" title="Permanent link">&para;</a></h3>
+<p>View how the Dynatrace Security Score is calculated for individual vulnerabilities.</p>
+<ol>
+<li>On the <strong>Prioritization</strong> page, select a vulnerability.</li>
+<li>In the side panel, go to <strong>Overview</strong> and look for <strong>Dynatrace Security Score calculation</strong>.</li>
+</ol>
+<h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="/docs/secure/faq#risk-assessment-affected-entities" title="Frequently asked questions about Dynatrace Application Security.">Why does my vulnerability have a different risk assessment and Dynatrace Security Score than its affected entities?</a></li>
+</ul>
+<h3 id="further-reading_1">Further reading<a class="headerlink" href="#further-reading_1" title="Permanent link">&para;</a></h3>
+<p>To learn more about DSS, see <a href="/docs/secure/vulnerabilities/concepts#dss" title="Concepts that are specific to the Dynatrace Vulnerabilities app.">Concepts: Dynatrace Security Score</a>.</p>
+<h2 id="prioritize-by-dynatrace-assessment">Prioritize by Dynatrace Assessment<a class="headerlink" href="#prioritize-by-dynatrace-assessment" title="Permanent link">&para;</a></h2>
+<p>Prioritize vulnerabilities by analyzing the <a href="/docs/secure/vulnerabilities/concepts#assessment" title="Concepts that are specific to the Dynatrace Vulnerabilities app.">risk factors and assessment modes taken into consideration when determining the Dynatrace Security Score</a>. By understanding the assessment modes behind the Dynatrace Security Score, you can make smarter remediation decisions, tailor your response to business impact, and stay ahead of emerging threats. See below for your options.</p>
+<h3 id="filter-by-risk-factors-and-assessment-modes">Filter by risk factors and assessment modes<a class="headerlink" href="#filter-by-risk-factors-and-assessment-modes" title="Permanent link">&para;</a></h3>
+<p>Use filters to narrow down vulnerabilities based on Dynatrace Security Score assessment modes and associated risk factors.</p>
+<ol>
+<li>On the <strong>Prioritization</strong> page, in the filter field, select <strong>Dynatrace Assessment</strong>.</li>
+<li>Select the options you're interested in.</li>
+</ol>
+<p>For details, see <a href="/docs/secure/vulnerabilities/manage-results#expressions" title="Filter, format, and sort to find relevant vulnerability information.">Filter expressions</a>.</p>
+<h3 id="review-reachable-data-assets">Review reachable data assets<a class="headerlink" href="#review-reachable-data-assets" title="Permanent link">&para;</a></h3>
+<p>Investigate which database services are impacted by the vulnerability and trace direct connections to affected assets.</p>
+<ol>
+<li>On the <strong>Prioritization</strong> page, select a vulnerability.</li>
+<li>In the side panel, go to <strong>Affected entities</strong> and look for <strong>Reachable data assets</strong>.</li>
+</ol>
+<h3 id="review-vulnerable-functions">Review vulnerable functions<a class="headerlink" href="#review-vulnerable-functions" title="Permanent link">&para;</a></h3>
+<p>Third-party vulnerabilities</p>
+<p>Identify which functions are affected by the vulnerability and assess their usage within your application.</p>
+<ol>
+<li>On the <strong>Prioritization</strong> page, select a vulnerability.</li>
+<li>In the side panel, go to <strong>Details</strong> and look for <strong>Vulnerable functions</strong>.</li>
+</ol>
+<h3 id="further-reading_2">Further reading<a class="headerlink" href="#further-reading_2" title="Permanent link">&para;</a></h3>
+<p>To learn more about the risk factors, see <a href="/docs/secure/vulnerabilities/concepts#assessment" title="Concepts that are specific to the Dynatrace Vulnerabilities app.">Concepts: Risk factors</a>.</p>
+<h2 id="prioritize-by-related-and-affected-entities">Prioritize by related and affected entities<a class="headerlink" href="#prioritize-by-related-and-affected-entities" title="Permanent link">&para;</a></h2>
+<p>Identify whatâs at risk by examining the entities connected to each vulnerability. See below for your options.</p>
+<h3 id="review-related-and-affected-process-groups-or-kubernetes-nodes">Review related and affected process groups or Kubernetes nodes<a class="headerlink" href="#review-related-and-affected-process-groups-or-kubernetes-nodes" title="Permanent link">&para;</a></h3>
+<p>Understand how a vulnerability affects process groups or Kubernetes nodesâsee how many are affected, resolved, or muted, and what percentage they represent. Track remediation progress, exposure level, and overall impact.</p>
+<ol>
+<li>On the <strong>Prioritization</strong> page, select a vulnerability.</li>
+<li>In the side panel, go to <strong>Affected entities</strong> and look for <strong>Process group overview</strong> or <strong>Kubernetes node overview</strong>.</li>
+</ol>
+<h3 id="review-other-related-entities">Review other related entities<a class="headerlink" href="#review-other-related-entities" title="Permanent link">&para;</a></h3>
+<p>Explore entities connected to affected process groups or Kubernetes nodes to uncover indirect exposure, trace root causes, and assess the broader impact of vulnerabilities. Open these entities in compatible apps to investigate further and take targeted action.</p>
+<ol>
+<li>On the <strong>Prioritization</strong> page, select a vulnerability.</li>
+<li>In the side panel, go to <strong>Related entities</strong>.</li>
+</ol>
+<h3 id="further-reading_3">Further reading<a class="headerlink" href="#further-reading_3" title="Permanent link">&para;</a></h3>
+<p>To learn more about affected and related entities, see <a href="/docs/secure/vulnerabilities/concepts#entities" title="Concepts that are specific to the Dynatrace Vulnerabilities app.">Concepts: Affected and related entities</a>.</p>
+<h2 id="prioritize-by-exploit-attempts">Prioritize by exploit attempts<a class="headerlink" href="#prioritize-by-exploit-attempts" title="Permanent link">&para;</a></h2>
+<p>Code-level vulnerabilities</p>
+<p>Prioritize vulnerabilities based on observed exploit activity to better understand exposure and response patterns. View how frequently a vulnerability has been targeted, what actions were taken in response, and key details from recent attempts to help guide your remediation efforts. Adjust <a href="/docs/secure/vulnerabilities/manage-results#timeframe" title="Filter, format, and sort to find relevant vulnerability information.">timeframe</a> and <a href="/docs/secure/vulnerabilities/manage-results#segments" title="Filter, format, and sort to find relevant vulnerability information.">segments</a> and open exploits in <a href="/docs/secure/threats-and-exploits" title="Understand, triage, and investigate detection findings and alerts."><img alt="Threats &amp; Exploits" src="https://dt-cdn.net/images/attacks-512-b922840b12.png" title="Threats &amp; Exploits" /> <strong>Threats &amp; Exploits</strong></a> for further insights.</p>
+<ol>
+<li>On the <strong>Prioritization</strong> page, select a vulnerability.</li>
+<li>In the side panel, go to <strong>Exploit attempts</strong>.</li>
+</ol>
+<p>To detect exploit attempts you need to <a href="/docs/secure/application-security/application-protection" title="Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.">set up Runtime Application Protection</a>.</p>
+<h2 id="prioritize-by-vulnerability-evolution">Prioritize by vulnerability evolution<a class="headerlink" href="#prioritize-by-vulnerability-evolution" title="Permanent link">&para;</a></h2>
+<p>Track vulnerability evolution to understand severity changes over time and prioritize response accordingly.</p>
+<p>Historical context helps clarify whether a vulnerability has always been critical or recently escalated. For example, if a <code>Medium</code> severity issue becomes <code>Critical</code>, you'll know it wasn't neglectedâit simply evolved and now demands attention. Without this timeline, a newly critical vulnerability might appear to have been overlooked for longer than it actually has.</p>
+<ol>
+<li>On the <strong>Prioritization</strong> page, select a vulnerability.</li>
+<li>In the side panel, go to <strong>Vulnerability evolution</strong>.</li>
+</ol>
+<p>Events are stored for one year and can only be queried up to the timestamp of when the vulnerability was first detected.</p>
+<h2 id="prioritize-by-cisa-kev-catalog">Prioritize by CISA KEV catalog<a class="headerlink" href="#prioritize-by-cisa-kev-catalog" title="Permanent link">&para;</a></h2>
+<p>Third-party vulnerabilities</p>
+<p>Leverage the <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV catalogï»¿</a> to prioritize vulnerabilities based on known exploit activity and remediation deadlinesâso you can focus on threats with real-world impact and regulatory urgency. See below for your options.</p>
+<h3 id="filter-by-cisa-kev">Filter by CISA KEV<a class="headerlink" href="#filter-by-cisa-kev" title="Permanent link">&para;</a></h3>
+<p>On the <strong>Prioritization</strong> page, use the <a href="/docs/secure/vulnerabilities/manage-results#filter" title="Filter, format, and sort to find relevant vulnerability information.">filter</a> field to</p>
+<ul>
+<li>Show whether a vulnerability appears in the CISA KEV catalog (<code>CISA KEV</code> &gt; <code>CISA KEV - In catalog</code> &gt; <code>Yes</code>/<code>No</code>)</li>
+<li>View when a CISA KEV-listed vulnerability is due (<code>CISA KEV</code> &gt; <code>CISA KEV - Due date</code>, then enter the target date, in <code>YYYY-MM-DD</code> format)</li>
+</ul>
+<h3 id="sort-by-cisa-kev">Sort by CISA KEV<a class="headerlink" href="#sort-by-cisa-kev" title="Permanent link">&para;</a></h3>
+<ol>
+<li>On the <strong>Prioritization</strong> page, go to the column settings <img alt="Column" src="https://dt-cdn.net/images/column-settings-dfb41f159c.svg" title="Column" /> and select <code>CISA KEV</code> to add the <strong>CISA KEV</strong> column to the results table.</li>
+<li>Select the <strong>CISA KEV</strong> column header, then select <strong>Sort ascending</strong> or <strong>Sort descending</strong>.</li>
+</ol>
+<h3 id="understand-remediation-deadlines">Understand remediation deadlines<a class="headerlink" href="#understand-remediation-deadlines" title="Permanent link">&para;</a></h3>
+<p>Vulnerabilities with missed remediation deadlines are labeled <strong>Overdue</strong>.</p>
+<p>For GCP deployments, data may lag behind the CISA KEV catalog by approximately two to four weeks.</p>
+<h2 id="prioritize-by-coverage">Prioritize by coverage<a class="headerlink" href="#prioritize-by-coverage" title="Permanent link">&para;</a></h2>
+<p>Coverage of library vulnerabilities shows how well your environment's processes and hosts are monitored by Runtime Vulnerability Analytics (RVA). By reviewing coverage, you can identify monitoring gaps, understand which entities are most affected in runtime, and track exposure trends over time. This context helps you prioritize remediation where it matters most.</p>
+<p>For details, see <a href="/docs/secure/vulnerabilities/assess-coverage" title="Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.">Assess coverage</a>.</p>
 <hr />
 
 

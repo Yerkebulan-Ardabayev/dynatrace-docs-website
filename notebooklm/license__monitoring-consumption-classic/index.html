@@ -986,13 +986,13 @@
 
 <h1 id="dynatrace-documentation-licensemonitoring-consumption-classic">Dynatrace Documentation: license/monitoring-consumption-classic<a class="headerlink" href="#dynatrace-documentation-licensemonitoring-consumption-classic" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 2</p>
+<p>Files combined: 3</p>
 <hr />
 <h2 id="source-application-and-infrastructure-monitoringmd">Source: application-and-infrastructure-monitoring.md<a class="headerlink" href="#source-application-and-infrastructure-monitoringmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Application and Infrastructure Monitoring (Host Units)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring
-scraped: 2026-02-16T09:26:26.406771</p>
+scraped: 2026-02-16T21:23:11.838429</p>
 <hr />
 <h1 id="application-and-infrastructure-monitoring-host-units">Application and Infrastructure Monitoring (Host Units)<a class="headerlink" href="#application-and-infrastructure-monitoring-host-units" title="Permanent link">&para;</a></h1>
 <h1 id="application-and-infrastructure-monitoring-host-units_1">Application and Infrastructure Monitoring (Host Units)<a class="headerlink" href="#application-and-infrastructure-monitoring-host-units_1" title="Permanent link">&para;</a></h1>
@@ -1265,6 +1265,35 @@ Examples of host unit calculations are shown at <a href="#application-only-host-
 <li><a href="/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption" title="Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.">DDUs for Log Monitoring Classic</a></li>
 </ul>
 <hr />
+<h2 id="source-custom-tracesmd">Source: custom-traces.md<a class="headerlink" href="#source-custom-tracesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: DDUs for custom traces (Trace API)
+source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/custom-traces
+scraped: 2026-02-16T21:26:49.364158</p>
+<hr />
+<h1 id="ddus-for-custom-traces-trace-api">DDUs for custom traces (Trace API)<a class="headerlink" href="#ddus-for-custom-traces-trace-api" title="Permanent link">&para;</a></h1>
+<h1 id="ddus-for-custom-traces-trace-api_1">DDUs for custom traces (Trace API)<a class="headerlink" href="#ddus-for-custom-traces-trace-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Published Mar 30, 2021</li>
+</ul>
+<p>While there are no additional costs or licensing involved in the integration of OpenTracing and OpenTelemetry span data into Dynatrace via OneAgent, you have the option to configure the Dynatrace Trace API to ingest OpenTelemetry and OpenTracing spans; these are known as "custom traces." This approach is useful for seamlessly integrating OpenTelemetry trace data that's emitted by third-party services. Ingestion of spans via the Trace API endpoint consumes <a href="/docs/license/monitoring-consumption-classic/davis-data-units" title="Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).">Davis data units</a> because this approach requires more processing and analytical power than ingestion via OneAgent.</p>
+<p>For details on OneAgent-based ingestion of OpenTelemetry and OpenTracing spans, which does not consume DDUs, see <a href="/docs/ingest-from/extend-dynatrace/extend-tracing/opentracing" title="Learn how to integrate OpenTracing with Dynatrace.">OneAgent OpenTracing and OpenTelemetry support</a>.</p>
+<h2 id="ddu-consumption-for-custom-trace-ingestion">DDU consumption for custom trace ingestion<a class="headerlink" href="#ddu-consumption-for-custom-trace-ingestion" title="Permanent link">&para;</a></h2>
+<p>While a trace may contain spans captured with OneAgent and the Dynatrace Trace API, only spans that are ingested via the Dynatrace Trace API consume DDUs. For an API service that is instrumented with OpenTelemetry and spans are captured via OneAgent, no DDUs are consumed. Custom traces ingested via the Dynatrace Trace API are licensed on the basis of ingestion of spans (each span equates to a single operation within a trace).</p>
+<h3 id="ddu-consumption-example">DDU consumption example<a class="headerlink" href="#ddu-consumption-example" title="Permanent link">&para;</a></h3>
+<p>To calculate the DDU consumption for custom traces, multiply the total number of invocations by the total number of spans times the DDU weight, for the measured time period. Consider an API service that's instrumented with OpenTelemetry that ingests on average 10 spans per API call via the Dynatrace Trace API. If the average number of API calls per month is 1 million, the monthly DDU consumption is 7,000 DDUs (<code>1,000,000 invocations Ã 10 spans Ã .0007 DDUs = 7,000 DDUs</code>), with an annual equivalent of 84,000 DDUs (<code>7,000 DDUs Ã 12 months = 84,000 DDUs</code>).</p>
+<p>Davis data unit pools</p>
+<p><a href="/docs/license/monitoring-consumption-classic/davis-data-units#ddu-pools" title="Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).">Davis data units pools for traces</a> allow you to set hard limits on your DDU consumption for traces. Go to <strong>Settings</strong> &gt; <strong>Consumption</strong> &gt; <strong>Davis data units pools</strong> and turn on <strong>Enable limit</strong> in the <strong>Traces</strong> section to set an annual or monthly limit.</p>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.dynatrace.com/pricing/">Dynatrace pricingï»¿</a></li>
+<li><a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">License Dynatrace</a></li>
+<li><a href="/docs/license/monitoring-consumption-classic/davis-data-units" title="Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).">Extending Dynatrace (Davis data units)</a></li>
+<li><a href="/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation" title="Understand how to calculate Davis data unit consumption and costs related to monitored metrics.">DDUs for metrics</a></li>
+<li><a href="/docs/ingest-from/extend-dynatrace/extend-metrics" title="Learn how to extend metric observability in Dynatrace.">Extend metric observability</a></li>
+</ul>
+<hr />
 <h2 id="source-ddu-eventsmd">Source: ddu-events.md<a class="headerlink" href="#source-ddu-eventsmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: DDUs for custom Davis events
@@ -1291,7 +1320,7 @@ scraped: 2026-02-15T21:27:38.777146</p>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <h3 id="what-can-cause-consumption-shown-as-entity-not-related-to-a-monitored-entity">What can cause consumption shown as entity "Not related to a monitored entity"<a class="headerlink" href="#what-can-cause-consumption-shown-as-entity-not-related-to-a-monitored-entity" title="Permanent link">&para;</a></h3>
 <p>The consumption can be caused by events v2 API if no entity selector is provided. See <a href="/docs/dynatrace-api/environment-api/events-v2" title="Find out what you can do with the Dynatrace Events API v2.">Events v2</a>.</p>
-<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.dynatrace.com/pricing/">Dynatrace pricingï»¿</a></li>
 </ul>

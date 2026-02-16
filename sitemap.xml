@@ -645,6 +645,18 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/dashboards-classic/dashboards/dashboards-settings/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/explorer/explorer-troubleshooting/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -826,6 +838,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-cribl/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -1021,11 +1037,31 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/smartscape/smartscape-views/problem-graph/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -1034,6 +1070,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/workflows/actions/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/workflows/default-workflow-actions/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -1397,6 +1437,14 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/basics/deprecation-migration-guides/alerting-profiles-to-settings/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/basics/deprecation-migration-guides/frequent-issues-to-settings/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/basics/deprecation-migration-guides/maintenance-windows-to-settings/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -1462,6 +1510,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/environment-api/events-v2/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/environment-api/hub/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -1533,6 +1585,14 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-items-mute/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-items-unmute/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/environment-api/application-security/vulnerabilities/put-remediation-items/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -1590,6 +1650,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-api/environment-api/rum/geographic-regions/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -1777,6 +1841,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -1786,6 +1854,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -2061,11 +2133,19 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-transcoder/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediaconnect/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediaconvert/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediapackage/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -2098,6 +2178,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-polly/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-quantum-ledger-database-qldb/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -2170,6 +2254,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/tags-and-management-zones-aws/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -2621,6 +2709,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/extensions/develop-your-extensions/data-sources/python/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/extensions/develop-your-extensions/data-sources/sql/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -3009,6 +3101,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-face/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-immersive-reader/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -3074,6 +3170,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-blockchain-service/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cache-for-redis/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -3158,6 +3258,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-front-door/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-gateway-load-balancer/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -3249,11 +3353,19 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-elastic-pool-vcore/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-server/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-standard-load-balancer/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account-classic/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -3277,6 +3389,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-web-application-firewall-policies/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -3294,6 +3410,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -3378,6 +3498,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/opentelemetry/collector/deployment/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/opentelemetry/collector/scaling/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -3473,6 +3597,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/opentelemetry/walkthroughs/go/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/opentelemetry/walkthroughs/java/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -3542,6 +3670,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/setup-on-k8s/deployment/other/ag-in-vm/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/setup-on-k8s/deployment/other/ag-statefulset/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -3634,6 +3766,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta4/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -3749,6 +3885,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/technology-support/application-software/java/quarkus/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/technology-support/application-software/java/set-up-event-and-memory-alerting/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -3817,6 +3957,14 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/license/capabilities/application-security/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/license/capabilities/automation/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/license/capabilities/digital-experience-monitoring/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -3830,6 +3978,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/license/capabilities/metrics/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/license/capabilities/platform-extensions/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -3865,6 +4017,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/license/monitoring-consumption-classic/davis-data-units/custom-traces/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/license/monitoring-consumption-classic/davis-data-units/ddu-events/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -3878,6 +4034,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/manage/hub/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/manage/network-zones/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -3921,6 +4081,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-scheduled-scan/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/manage/data-privacy-and-security/data-security/data-security-controls/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -3958,6 +4122,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/manage/identity-access-management/use-cases/access-security-context/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/manage/identity-access-management/user-and-group-management/access-saml/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -4037,6 +4205,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/managed/analyze-explore-automate/log-monitoring/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/managed/analyze-explore-automate/metrics-classic/self-monitoring-metrics/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -4089,7 +4261,15 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-file-system-efs/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-mapreduce-emr/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticache/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -4162,6 +4342,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-trusted-advisor/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-vpc/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -4501,6 +4685,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/application-observability/services-classic/monitor-key-requests/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -4582,6 +4770,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/business-observability/bo-event-processing/bo-bucket-assignment/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/business-observability/bo-event-processing/bo-metric-extraction/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -4753,6 +4945,18 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/new-rum-experience/concepts/data-model/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/new-rum-experience/experience-vitals/waterfall/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/new-rum-experience/mobile-frontends/data-privacy/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -4809,6 +5013,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/adapt-csp-rules/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -4822,6 +5030,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/enable-new-rum-for-web-apps/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/selective-rum-rollout/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -4949,6 +5161,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -4997,6 +5213,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-on-grail/synthetic-app/browser-monitors-results-reporting/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -5026,6 +5246,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -5086,6 +5310,14 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/web-applications/additional-configuration/delete-application-web/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/web-applications/additional-configuration/rum-for-process-groups/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/digital-experience/web-applications/additional-configuration/rum-javascript-version/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -5345,6 +5577,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/infrastructure-observability/databases/database-app/get-started/ibm-db2/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/infrastructure-observability/databases/database-app/get-started/mariadb/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -5362,6 +5598,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/infrastructure-observability/databases/database-app/get-started/sap-hana/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/observe/infrastructure-observability/databases/database-app/get-started/snowflake/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -5765,6 +6005,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/secure/application-security/vulnerability-analytics/vulnerabilities-upgrade-classic-to-latest/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -5997,6 +6241,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/secure/vulnerabilities/prioritize/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/secure/xspm/assess-coverage/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -6006,6 +6254,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/secure/xspm/gain-insights/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/secure/xspm/review-findings/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -6078,6 +6330,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/whats-new/dynatrace-operator/dto-fix-1-7-3/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/whats-new/dynatrace-operator/dto-fix-1-8-1/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
@@ -7325,6 +7581,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/manage__network-zones.md/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/manage__segments/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -7873,6 +8133,10 @@
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
@@ -7882,6 +8146,10 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>

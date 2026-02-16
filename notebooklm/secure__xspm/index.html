@@ -986,7 +986,7 @@
 
 <h1 id="dynatrace-documentation-securexspm">Dynatrace Documentation: secure/xspm<a class="headerlink" href="#dynatrace-documentation-securexspm" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 4</p>
+<p>Files combined: 5</p>
 <hr />
 <h2 id="source-assess-coveragemd">Source: assess-coverage.md<a class="headerlink" href="#source-assess-coveragemd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1270,6 +1270,77 @@ scraped: 2026-02-16T09:35:37.484000</p>
 <li><a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management" title="Configure and enable Security Posture Management in Kubernetes.">Kubernetes Security Posture Management</a></li>
 </ul>
 <hr />
+<h2 id="source-review-findingsmd">Source: review-findings.md<a class="headerlink" href="#source-review-findingsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Review findings
+source: https://www.dynatrace.com/docs/secure/xspm/review-findings
+scraped: 2026-02-16T21:31:37.992400</p>
+<hr />
+<h1 id="review-findings">Review findings<a class="headerlink" href="#review-findings" title="Permanent link">&para;</a></h1>
+<h1 id="review-findings_1">Review findings<a class="headerlink" href="#review-findings_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>Updated on Oct 13, 2025</li>
+</ul>
+<p>To efficiently manage and analyze security and compliance findings, you can <a href="#filter">filter</a> and <a href="#sort">sort</a> results to prioritize the most relevant findings.</p>
+<h2 id="filter">Filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h2>
+<p>Select which information is to be displayed.</p>
+<h3 id="filter-by-standard">Filter by standard<a class="headerlink" href="#filter-by-standard" title="Permanent link">&para;</a></h3>
+<p>You have two options:</p>
+<p>From Overview</p>
+<p>From Assessment results</p>
+<ol>
+<li>Go to the <strong>Overview</strong> page.</li>
+<li>From the list of available compliance standard cards, select the one you're interested in. This will navigate you to the <strong>Assessment results</strong> page, filtered by the respective standard.</li>
+</ol>
+<p><img alt="filter by standard" src="https://dt-cdn.net/images/2024-11-10-11-32-31-1491-79379f31bf.png" /></p>
+<ol>
+<li>Go to the <strong>Assessment results</strong> page.</li>
+<li>In the filter bar, select a <strong>Standard</strong> (short form) and/or a <strong>Standard name</strong> (full name of the standard) to focus your results.</li>
+</ol>
+<p><img alt="filter by standard" src="https://dt-cdn.net/images/2025-10-13-15-28-08-1920-94cd4524a0.png" /></p>
+<h3 id="filter-by-system">Filter by system<a class="headerlink" href="#filter-by-system" title="Permanent link">&para;</a></h3>
+<p>You have two options:</p>
+<p>From Overview</p>
+<p>From Assessment results</p>
+<ol>
+<li>Go to the <strong>Overview</strong> page.</li>
+<li>In the <strong>My systems</strong> table, look for and select the system you're interested in. This will navigate you to the <strong>Assessment results</strong> page, filtered by the respective system.</li>
+</ol>
+<p><img alt="filter by system" src="https://dt-cdn.net/images/2024-11-10-12-06-27-860-9e7c4d01d1.png" /></p>
+<p>Only systems on which Security Posture Management is enabled can be selected.</p>
+<ol>
+<li>Go to the <strong>Assessment results</strong> page.</li>
+<li>In the <strong>System</strong> filter, select the system you're interested in.</li>
+</ol>
+<p><img alt="filter by system" src="https://dt-cdn.net/images/2025-10-13-15-34-33-1357-5c705ed4d4.png" /></p>
+<p>Only systems on which Security Posture Management is enabled are displayed.
+3. Select <strong>Update</strong> next to the systems filter bar to update results based on your selection.</p>
+<h3 id="filter-by-assessment-view">Filter by assessment view<a class="headerlink" href="#filter-by-assessment-view" title="Permanent link">&para;</a></h3>
+<p>On the <strong>Assessment results</strong> page, use the <strong>Assessment view</strong> filter to control the scope of displayed rules:</p>
+<ul>
+<li><strong>Complete results</strong>: Displays all rules assessed for the selected systems, including those marked <code>Not relevant</code>.</li>
+<li><strong>Recommended</strong>: Displays only the results which are relevant to your environment: <code>Failed</code>, <code>Manual</code>, or <code>Passed</code>.</li>
+</ul>
+<p><img alt="assessment view filter" src="https://dt-cdn.net/images/2025-10-13-14-37-49-1920-1a11441c0c.png" /></p>
+<h3 id="filter-by-results-severity-and-rule">Filter by results, severity and rule<a class="headerlink" href="#filter-by-results-severity-and-rule" title="Permanent link">&para;</a></h3>
+<p>On the <strong>Assessment results</strong> page, filter for the options you're interested in:</p>
+<ul>
+<li><a href="/docs/secure/xspm/concepts#concept-results" title="Concepts that are specific to the Dynatrace Security Posture Management app.">Result</a> (<code>Failed</code>, <code>Manual</code>, <code>Passed</code>, <code>Not relevant</code>)</li>
+<li><a href="/docs/secure/xspm/concepts#concept-severity" title="Concepts that are specific to the Dynatrace Security Posture Management app.">Severity</a> (<code>Critical</code>, <code>High</code>, <code>Medium</code>, <code>Low</code>)</li>
+<li>Rule (full or partial match of the rule name)</li>
+</ul>
+<p>Filters can be combined.</p>
+<p><img alt="combined filters" src="https://dt-cdn.net/images/2025-10-13-15-38-12-1920-a0e9d073f1.png" /></p>
+<h2 id="sort">Sort<a class="headerlink" href="#sort" title="Permanent link">&para;</a></h2>
+<p>On the <strong>Overview</strong> and the <strong>Assessment results</strong> pages, select any of the columns with a sorter symbol  to change the order of results to ascending or descending based on that criteria.</p>
+<p><img alt="sorting" src="https://dt-cdn.net/images/2024-11-10-11-16-35-579-3bd762be27.png" /></p>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management" title="Configure and enable Security Posture Management in Kubernetes.">Kubernetes Security Posture Management</a></li>
+</ul>
+<hr />
 <h2 id="source-share-findingsmd">Source: share-findings.md<a class="headerlink" href="#source-share-findingsmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Collaborate with apps and share findings
@@ -1321,7 +1392,7 @@ scraped: 2026-02-15T21:27:41.500681</p>
 <li>On the upper-right of the vulnerabilities table, select  &gt; <strong>Download as CSV</strong> &gt; <strong>All</strong>.</li>
 </ol>
 <p><img alt="download as csv" src="https://dt-cdn.net/images/2024-11-17-12-40-34-1865-7ac81cfa63.png" /></p>
-<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management" title="Configure and enable Security Posture Management in Kubernetes.">Kubernetes Security Posture Management</a></li>
 </ul>

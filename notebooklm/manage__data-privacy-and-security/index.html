@@ -986,13 +986,13 @@
 
 <h1 id="dynatrace-documentation-managedata-privacy-and-security">Dynatrace Documentation: manage/data-privacy-and-security<a class="headerlink" href="#dynatrace-documentation-managedata-privacy-and-security" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 9</p>
+<p>Files combined: 10</p>
 <hr />
 <h2 id="source-configure-global-privacy-settingsmd">Source: configure-global-privacy-settings.md<a class="headerlink" href="#source-configure-global-privacy-settingsmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Configure data privacy settings
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
-scraped: 2026-02-16T09:23:02.080011</p>
+scraped: 2026-02-16T21:13:04.167152</p>
 <hr />
 <h1 id="configure-data-privacy-settings">Configure data privacy settings<a class="headerlink" href="#configure-data-privacy-settings" title="Permanent link">&para;</a></h1>
 <h1 id="configure-data-privacy-settings_1">Configure data privacy settings<a class="headerlink" href="#configure-data-privacy-settings_1" title="Permanent link">&para;</a></h1>
@@ -1244,7 +1244,7 @@ scraped: 2026-02-15T21:26:06.804206</p>
 <hr />
 <p>title: Data retention periods
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods
-scraped: 2026-02-16T09:16:07.940100</p>
+scraped: 2026-02-16T21:14:47.584011</p>
 <hr />
 <h1 id="data-retention-periods">Data retention periods<a class="headerlink" href="#data-retention-periods" title="Permanent link">&para;</a></h1>
 <h1 id="data-retention-periods_1">Data retention periods<a class="headerlink" href="#data-retention-periods_1" title="Permanent link">&para;</a></h1>
@@ -1450,6 +1450,48 @@ scraped: 2026-02-16T09:16:07.940100</p>
 <h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#evolution" title="Monitor the security issues of your third-party libraries.">Third-party vulnerability evolution events</a> are stored for 365 days and can only be queried up to the timestamp of when the vulnerability was first detected.</p>
 <p><img alt="First detected timestamp" src="https://dt-cdn.net/images/2023-12-13-09-27-13-602-340a8dff4a.png" /></p>
+<hr />
+<h2 id="source-create-scheduled-scanmd">Source: create-scheduled-scan.md<a class="headerlink" href="#source-create-scheduled-scanmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Create scheduled scan in Sensitive Data Center
+source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-scheduled-scan
+scraped: 2026-02-16T21:32:17.910955</p>
+<hr />
+<h1 id="create-scheduled-scan-in-sensitive-data-center">Create scheduled scan in Sensitive Data Center<a class="headerlink" href="#create-scheduled-scan-in-sensitive-data-center" title="Permanent link">&para;</a></h1>
+<h1 id="create-scheduled-scan-in-sensitive-data-center_1">Create scheduled scan in Sensitive Data Center<a class="headerlink" href="#create-scheduled-scan-in-sensitive-data-center_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>4-min read</li>
+<li>Published Dec 16, 2025</li>
+<li>Preview</li>
+</ul>
+<p>You can configure scheduled scans in <img alt="Sensitive Data Center" src="https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png" title="Sensitive Data Center" /> <strong>Sensitive Data Center</strong> to continuously monitor your environment for sensitive data. You can choose to monitor specific buckets or the entire environment, select sensitive data types from built-in rules, and define how often the scan runs.</p>
+<h2 id="configure-scans-in-sensitive-data-scanner">Configure scans in Sensitive Data Scanner<a class="headerlink" href="#configure-scans-in-sensitive-data-scanner" title="Permanent link">&para;</a></h2>
+<p>To create a recurring scan for continuous monitoring</p>
+<ol>
+<li>Go to <img alt="Sensitive Data Center" src="https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png" title="Sensitive Data Center" /> <strong>Sensitive Data Center</strong>.</li>
+<li>Go to the <strong>Scanner</strong> tab and select <strong>Create scan</strong>.</li>
+<li>Choose one or more <strong>Sensitive data types</strong> from the list, such as email address, credit card numbers, or IP addresses.</li>
+<li>Define the scan interval by selecting the cadence depending on your compliance needs.</li>
+<li>Select the <strong>Log bucket scope</strong> by either choosing specific buckets from the list or the entire environment.</li>
+<li>Optional Apply scan policies to refine the scope of the scanâfor example, to exclude known false positives. For details, see <a href="/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-policy" title="Create a policy to enrich or filter request results with Sensitive Data Center.">Create a policy in Sensitive Data Center</a>.</li>
+<li>Provide a meaningful name for the scan.</li>
+<li>Select <strong>Create scan</strong> to save the configuration.</li>
+</ol>
+<p>The scan runs automatically at the defined interval and alerts you when data matching the selected criteria is found.</p>
+<h2 id="review-scan-results">Review scan results<a class="headerlink" href="#review-scan-results" title="Permanent link">&para;</a></h2>
+<p>The scanner dashboard provides a clear overview of scan statuses and highlights when sensitive data is found. From there, you can drill down into a specific scan to review detailed findings and understand exactly what was detected.</p>
+<p>You can review the results and examine the data flow from ingestion to the storage location.</p>
+<p>For environments with high log ingest volume, scan results may be sampled. Sampling is adaptive and helps reduce processing costs while maintaining detection accuracy. The sampling rate adjusts automatically based on your current log ingest volume.</p>
+<h2 id="mitigate-potential-findings">Mitigate potential findings<a class="headerlink" href="#mitigate-potential-findings" title="Permanent link">&para;</a></h2>
+<p>Based on scan results, you can take immediate action:</p>
+<ul>
+<li><a href="/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings" title="Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.">Configure or adjust masking rules</a> to prevent similar data ingestion.</li>
+<li>Change access permissions for stored data.</li>
+<li>Update <a href="/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods" title="Check retention times for various data types.">data retention periods</a>.</li>
+<li>Use <a href="/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/cleanup-data" title="Clean up data with Sensitive Data Center cleanup requests.">cleanup functionality</a> to delete sensitive data as needed.</li>
+</ul>
 <hr />
 <h2 id="source-sensitive-data-centermd">Source: sensitive-data-center.md<a class="headerlink" href="#source-sensitive-data-centermd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1845,7 +1887,7 @@ scraped: 2026-02-16T09:38:58.838246</p>
 <hr />
 <p>title: User privacy for iOS
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-ios
-scraped: 2026-02-16T09:32:27.643838</p>
+scraped: 2026-02-16T21:31:43.694447</p>
 <hr />
 <h1 id="user-privacy-for-ios">User privacy for iOS<a class="headerlink" href="#user-privacy-for-ios" title="Permanent link">&para;</a></h1>
 <h1 id="user-privacy-for-ios_1">User privacy for iOS<a class="headerlink" href="#user-privacy-for-ios_1" title="Permanent link">&para;</a></h1>
@@ -1953,7 +1995,7 @@ scraped: 2026-02-16T09:32:27.643838</p>
 <hr />
 <p>title: Data security controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/data-security-controls
-scraped: 2026-02-15T21:26:17.825759</p>
+scraped: 2026-02-16T21:27:05.537753</p>
 <hr />
 <h1 id="data-security-controls">Data security controls<a class="headerlink" href="#data-security-controls" title="Permanent link">&para;</a></h1>
 <h1 id="data-security-controls_1">Data security controls<a class="headerlink" href="#data-security-controls_1" title="Permanent link">&para;</a></h1>
@@ -2069,7 +2111,7 @@ scraped: 2026-02-15T21:26:17.825759</p>
 <hr />
 <p>title: Secure development controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/secure-development-controls
-scraped: 2026-02-16T09:29:55.547925</p>
+scraped: 2026-02-16T21:25:11.026845</p>
 <hr />
 <h1 id="secure-development-controls">Secure development controls<a class="headerlink" href="#secure-development-controls" title="Permanent link">&para;</a></h1>
 <h1 id="secure-development-controls_1">Secure development controls<a class="headerlink" href="#secure-development-controls_1" title="Permanent link">&para;</a></h1>

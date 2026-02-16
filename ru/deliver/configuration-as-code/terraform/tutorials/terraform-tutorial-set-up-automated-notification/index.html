@@ -25,7 +25,7 @@
     
     
       
-        <title>Configure automated notifications using Terraform and Configuration as Code - Dynatrace Managed - Документация</title>
+        <title>Настройка автоматических уведомлений с помощью Terraform и Configuration as Code - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configure-automated-notifications-using-terraform-and-configuration-as-code" class="md-skip">
+        <a href="#terraform-configuration-as-code" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configure automated notifications using Terraform and Configuration as Code
+              Настройка автоматических уведомлений с помощью Terraform и Configuration as Code
             
           </span>
         </div>
@@ -950,6 +950,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Предварительные условия
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что вы узнаете
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаги
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаги">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Создание конфигурации Terraform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-terraform-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modify Terraform configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-your-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete your configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -965,41 +1045,40 @@
 
 
 
-<h1 id="configure-automated-notifications-using-terraform-and-configuration-as-code">Configure automated notifications using Terraform and Configuration as Code<a class="headerlink" href="#configure-automated-notifications-using-terraform-and-configuration-as-code" title="Permanent link">&para;</a></h1>
-<h1 id="configure-automated-notifications-using-terraform-and-configuration-as-code_1">Configure automated notifications using Terraform and Configuration as Code<a class="headerlink" href="#configure-automated-notifications-using-terraform-and-configuration-as-code_1" title="Permanent link">&para;</a></h1>
+<h1 id="terraform-configuration-as-code">Настройка автоматических уведомлений с помощью Terraform и Configuration as Code<a class="headerlink" href="#terraform-configuration-as-code" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
-<li>Tutorial</li>
-<li>2-min read</li>
-<li>Updated on Nov 05, 2025</li>
+<li>Урок</li>
+<li>2-минутное чтение</li>
+<li>Обновлено 05 ноября 2025 г.</li>
 </ul>
-<p>This tutorial explains how to configure an event notification with the latest Dynatrace.</p>
-<p>The notification consists of</p>
+<p>Этот урок объясняет, как настроить уведомление о событии с помощью последней версии Dynatrace.</p>
+<p>Уведомление состоит из</p>
 <ul>
-<li>A <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">custom alert</a> configuration, which raises an alerting event if a certain conditions is met.</li>
-<li>A simple workflow that automatically sends an email when the alerting event is active.</li>
+<li>Настройки <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.">пользовательского оповещения</a> , которое вызывает событие оповещения, если выполнено определенное условие.</li>
+<li>Простого рабочего процесса, который автоматически отправляет электронное письмо, когда событие оповещения активно.</li>
 </ul>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="_1">Предварительные условия<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Terraform CLI with the Dynatrace provider installed and available under PATH.
-  For more information, see <a href="/docs/deliver/configuration-as-code/terraform/terraform-cli" title="Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.">Install Terraform CLI and set up Configuration as Code via Terraform</a>.</li>
+<li>Terraform CLI с установленным провайдером Dynatrace и доступным по пути.
+  Для получения дополнительной информации см. <a href="/docs/deliver/configuration-as-code/terraform/terraform-cli" title="Установите Terraform CLI и настройте Configuration as Code Dynatrace через Terraform.">Установка Terraform CLI и настройка Configuration as Code через Terraform</a>.</li>
 <li>
-<p>OAuth client or platform token with the following permissions.
-  For more information, see <a href="/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup" title="Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.">Create API access token</a>.</p>
+<p>Клиент OAuth или платформенный токен с следующими разрешениями.
+  Для получения дополнительной информации см. <a href="/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup" title="Описывает различные варианты, которые провайдер Terraform может использовать для аутентификации вызовов API Dynatrace.">Создание токена доступа к API</a>.</p>
 </li>
 <li>
-<p>View settings objects for schema (<code>settings:objects:read</code>)</p>
+<p>Просмотр объектов настроек для схемы (<code>settings:objects:read</code>)</p>
 </li>
-<li>Create settings objects for schema (<code>settings:objects:write</code>)</li>
-<li>View workflows (<code>automation:workflows:read</code>)</li>
-<li>Create and edit workflows (<code>automation:workflows:write</code>)</li>
+<li>Создание объектов настроек для схемы (<code>settings:objects:write</code>)</li>
+<li>Просмотр рабочих процессов (<code>automation:workflows:read</code>)</li>
+<li>Создание и редактирование рабочих процессов (<code>automation:workflows:write</code>)</li>
 </ul>
-<p>The Terraform user needs to have all required permissions to run the run automated configurations such as custom alerts or workflows.
-  Missing or wrong permission can lead to an unexpected behavior.</p>
-<h2 id="what-will-you-learn">What will you learn<a class="headerlink" href="#what-will-you-learn" title="Permanent link">&para;</a></h2>
-<p>You'll learn how to configure a <a href="/docs/dynatrace-intelligence/anomaly-detection" title="How Dynatrace detects anomalies in your environment.">custom alert</a> and a <a href="/docs/analyze-explore-automate/workflows" title="Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.">workflow</a> with an email action.</p>
-<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
-<h3 id="build-terraform-configuration">Build Terraform configuration<a class="headerlink" href="#build-terraform-configuration" title="Permanent link">&para;</a></h3>
+<p>Пользователь Terraform должен иметь все необходимые разрешения для запуска автоматических конфигураций, таких как пользовательские оповещения или рабочие процессы.
+  Отсутствие или неправильное разрешение может привести к непредвиденному поведению.</p>
+<h2 id="_2">Что вы узнаете<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Вы узнаете, как настроить <a href="/docs/dynatrace-intelligence/anomaly-detection" title="Как Dynatrace обнаруживает аномалии в вашей среде.">пользовательское оповещение</a> и <a href="/docs/analyze-explore-automate/workflows" title="Автоматизируйте процессы ИТ с помощью рабочих процессов Dynatrace — реагируйте на события, планируйте задачи и подключайте службы.">рабочий процесс</a> с действием электронной почты.</p>
+<h2 id="_3">Шаги<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="terraform">Создание конфигурации Terraform<a class="headerlink" href="#terraform" title="Permanent link">&para;</a></h3>
 <p>To build a configuration for raising an event and a simple workflow for sending an email in case of a raised event</p>
 <ol>
 <li>Inside your working directory, create a <code>main.tf</code> file with the content for selected resources.</li>
@@ -2076,8 +2155,8 @@
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 </code></pre></div>
-<p>Файл состояния Terraform <code>terraform.tfstate</code> генерируется автоматически. Он отслеживает ресурсы, которыми управляет Terraform.
-Он имеет решающее значение для последующих операций Terraform.</p>
+<p>A Terraform <code>terraform.tfstate</code> state file is automatically generated. It keeps track of the resources that Terraform manages.
+   It's crucial for subsequent Terraform operations.</p>
 <h3 id="modify-terraform-configuration">Modify Terraform configuration<a class="headerlink" href="#modify-terraform-configuration" title="Permanent link">&para;</a></h3>
 <p>To modify the Terraform configuration</p>
 <ol>

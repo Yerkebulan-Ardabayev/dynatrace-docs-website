@@ -957,10 +957,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#source-self-monitoring-metricsmd" class="md-nav__link">
+  <a href="#source-log-monitoringmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Source: self-monitoring-metrics.md
+        Source: log-monitoring.md
       
     </span>
   </a>
@@ -986,13 +986,63 @@
 
 <h1 id="dynatrace-documentation-managedanalyze-explore-automate">Dynatrace Documentation: managed/analyze-explore-automate<a class="headerlink" href="#dynatrace-documentation-managedanalyze-explore-automate" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 1</p>
+<p>Files combined: 2</p>
+<hr />
+<h2 id="source-log-monitoringmd">Source: log-monitoring.md<a class="headerlink" href="#source-log-monitoringmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Log Monitoring Classic
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring
+scraped: 2026-02-16T21:30:46.193948</p>
+<hr />
+<h1 id="log-monitoring-classic">Log Monitoring Classic<a class="headerlink" href="#log-monitoring-classic" title="Permanent link">&para;</a></h1>
+<h1 id="log-monitoring-classic_1">Log Monitoring Classic<a class="headerlink" href="#log-monitoring-classic_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Updated on Nov 20, 2025</li>
+</ul>
+<p>With Log Monitoring as a part of the Dynatrace platform, you gain direct access to the log content of all your mission-critical applications, infrastructure and cloud platforms. You can create custom log metrics for smarter and faster troubleshooting. You will be able to understand log data in the context of your full stack, including real user impacts.</p>
+<p>Log Monitoring Classic end-of-life</p>
+<p>Log Monitoring Classic, which is available for SaaS and Managed deployments, will reach end-of-life by 2027. For details, see the <a href="/docs/whats-new/saas/sprint-328#log-monitoring-classic-end-of-life" title="Release notes for Dynatrace SaaS, version 1.328">Log Monitoring Classic end-of-life</a> announcement in our release notes.</p>
+<p>We recommend <a href="/docs/analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma" title="Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.">upgrading to Log Management and Analytics</a> well in advance.</p>
+<p><img alt="LMC - Ingestion channel overview" src="https://dt-cdn.net/images/lmc-ingestion-channel-overview-2500-abfee3614c.png" /></p>
+<p>[### Ingest &amp; Processing</p>
+<p>Set up automatic log collection, and extract value with Log Processing.](/docs/analyze-explore-automate/log-monitoring/acquire-log-data "Learn how to acquire log data in Dynatrace Log Monitoring.")[### Analysis</p>
+<p>Analyze significant log events across multiple logs, across parts of the environment (production), and potentially over a longer timeframe.](/docs/analyze-explore-automate/log-monitoring/analyze-log-data "Learn how to analyze log data in Dynatrace Log Monitoring.")[### Alerting</p>
+<p>Define patterns, events, and custom log metrics to receive proactive notifications.](/docs/analyze-explore-automate/log-monitoring/alert-log-data "Create, or let Dynatrace create, alerts-based log data in Dynatrace log monitoring")[### API</p>
+<p>Use the Dynatrace API to send log data to Dynatrace and quickly search, aggregate, or export the log content.](/docs/dynatrace-api/environment-api/log-monitoring-v2 "Find out what you can do with the Log Monitoring API v2.")</p>
+<h4 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h4>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma" title="Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.">Get the latest Log Monitoring</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration" title="Learn how to configure Dynatrace Log Monitoring.">Tweak your setup</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/log-monitoring-limits" title="Default limits for the latest version of Dynatrace Log Monitoring.">Default limits</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-data-format" title="This topic lists all the log formats supported by Log Monitoring.">Supported log data format</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment" title="Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis.">Connect log data to traces</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage" title="Configure storage of log files that are already known to OneAgent.">Log ingest rules</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting" title="Fix issues related to the setup and configuration of Log Monitoring Classic.">Log Monitoring FAQ</a></p>
+<h4 id="log-data-acquisition">Log data acquisition<a class="headerlink" href="#log-data-acquisition" title="Permanent link">&para;</a></h4>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-content-auto-discovery-v2" title="Learn about autodiscovery of log content and requirements for autodiscovery to occur.">Autodiscovery</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-manually-v2" title="Learn how to manually add log files for analysis.">Add log files manually</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api" title="Learn how Dynatrace ingests log data and what are potential limits such ingestion.">Generic log ingestion</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/cloud-provider-log-forwarding" title="Learn how to configure AWS, Azure and Google Cloud log forwarding to ingest logs.">Cloud log forwarding</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-kubernetes" title="Learn how to monitor logs in Kubernetes.">Logs from Kubernetes</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2" title="Learn how to include and exclude log sources for analysis.">Add log sources</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/log-processing" title="Create log processing rules that reshape your incoming log data for better analysis or further processing.">Log processing</a></p>
+<h4 id="log-data-analysis">Log data analysis<a class="headerlink" href="#log-data-analysis" title="Permanent link">&para;</a></h4>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer" title="Learn how to use Dynatrace log viewer to analyze log data.">Log viewer</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events" title="Learn how to create and use Dynatrace log events to analyze log data.">Log events</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics" title="Learn how to create and use Dynatrace log metrics to analyze log data.">Log metrics</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes" title="Learn how to create and use custom attributes during log data ingestion.">Log custom attributes</a></p>
+<p><a href="/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring" title="Find out how ingested log data is assigned to management zones.">Management zones</a></p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.dynatrace.com/platform/log-monitoring/">Log monitoringï»¿</a></li>
+<li><a href="/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption" title="Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.">DDUs for Log Monitoring Classic</a></li>
+</ul>
 <hr />
 <h2 id="source-self-monitoring-metricsmd">Source: self-monitoring-metrics.md<a class="headerlink" href="#source-self-monitoring-metricsmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Self-monitoring metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/self-monitoring-metrics
-scraped: 2026-02-15T09:07:55.341451</p>
+scraped: 2026-02-16T21:26:29.361772</p>
 <hr />
 <h1 id="self-monitoring-metrics">Self-monitoring metrics<a class="headerlink" href="#self-monitoring-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="self-monitoring-metrics_1">Self-monitoring metrics<a class="headerlink" href="#self-monitoring-metrics_1" title="Permanent link">&para;</a></h1>

@@ -986,13 +986,13 @@
 
 <h1 id="dynatrace-documentation-dynatrace-intelligenceanomaly-detection">Dynatrace Documentation: dynatrace-intelligence/anomaly-detection<a class="headerlink" href="#dynatrace-documentation-dynatrace-intelligenceanomaly-detection" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 13</p>
+<p>Files combined: 15</p>
 <hr />
 <h2 id="source-adjust-sensitivity-infastructuremd">Source: adjust-sensitivity-infastructure.md<a class="headerlink" href="#source-adjust-sensitivity-infastructuremd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Adjust the sensitivity of anomaly detection for infrastructure
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
-scraped: 2026-02-15T21:18:31.130817</p>
+scraped: 2026-02-16T21:16:32.308655</p>
 <hr />
 <h1 id="adjust-the-sensitivity-of-anomaly-detection-for-infrastructure">Adjust the sensitivity of anomaly detection for infrastructure<a class="headerlink" href="#adjust-the-sensitivity-of-anomaly-detection-for-infrastructure" title="Permanent link">&para;</a></h1>
 <h1 id="adjust-the-sensitivity-of-anomaly-detection-for-infrastructure_1">Adjust the sensitivity of anomaly detection for infrastructure<a class="headerlink" href="#adjust-the-sensitivity-of-anomaly-detection-for-infrastructure_1" title="Permanent link">&para;</a></h1>
@@ -1140,7 +1140,7 @@ scraped: 2026-02-15T21:16:52.922709</p>
 <hr />
 <p>title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-16T09:38:02.121100</p>
+scraped: 2026-02-16T21:26:53.359318</p>
 <hr />
 <h1 id="anomaly-detection-status-types">Anomaly Detection status types<a class="headerlink" href="#anomaly-detection-status-types" title="Permanent link">&para;</a></h1>
 <h1 id="anomaly-detection-status-types_1">Anomaly Detection status types<a class="headerlink" href="#anomaly-detection-status-types_1" title="Permanent link">&para;</a></h1>
@@ -1193,6 +1193,101 @@ scraped: 2026-02-16T09:38:02.121100</p>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Anomaly Detection app</a></li>
 <li><a href="/docs/dynatrace-intelligence/use-cases/anomaly-detection-examples" title="Use the power of Grail and DQL to convert any data into time series for anomaly detection analyzers.">Examples of anomaly detection on Grail</a></li>
+</ul>
+<hr />
+<h2 id="source-configure-a-simple-admd">Source: configure-a-simple-ad.md<a class="headerlink" href="#source-configure-a-simple-admd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Configure a simple custom alert
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad
+scraped: 2026-02-16T21:30:22.695106</p>
+<hr />
+<h1 id="configure-a-simple-custom-alert">Configure a simple custom alert<a class="headerlink" href="#configure-a-simple-custom-alert" title="Permanent link">&para;</a></h1>
+<h1 id="configure-a-simple-custom-alert_1">Configure a simple custom alert<a class="headerlink" href="#configure-a-simple-custom-alert_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>4-min read</li>
+<li>Updated on Jan 28, 2026</li>
+</ul>
+<p><img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong> allows you to create custom alerts, set up customized alerts, and transform metric events configuration. You can also save time and create a custom alert in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> while using the app.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>To use the latest version of <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong>, you need to have appropriate permissions. For more information, see <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app."><img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong> overview</a>.</p>
+<h2 id="create-or-edit-a-simple-custom-alert">Create or edit a simple custom alert<a class="headerlink" href="#create-or-edit-a-simple-custom-alert" title="Permanent link">&para;</a></h2>
+<p>To manually create a simple custom alert configuration</p>
+<ol>
+<li>Go to <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong>.</li>
+<li>Select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" /> <strong>New alert</strong> &gt; <strong>Create your own custom alert</strong> to create a new alert. To edit an existing custom alert, select any custom alert from the list.</li>
+<li>On the <strong>Simple</strong> tab, expand <strong>Set scope</strong>.</li>
+<li>Optional In <strong>Segments</strong>, choose one or more segments you want to filter by.</li>
+<li>In <strong>Query</strong>, provide the <a href="/docs/platform/grail/dynatrace-query-language/dql-guide" title="Find out how DQL works and what are DQL key concepts.">DQL query</a> to fetch your data.</li>
+</ol>
+<p>We recommend that you use the <code>interval: 1m</code> parameter to ensure proper data resolution for the analysis.
+6. Expand <strong>Define alert condition</strong>.
+7. In <strong>Select use case</strong>, choose the preferred analyzer. For details, see <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="How to set up an alert for missing measurements.">Analyzer type and parameters</a>.
+8. In <strong>Set a condition</strong> &gt; <strong>Threshold</strong>, select <strong>Suggest values</strong> if you want Dynatrace Intelligence to automatically suggest a value based on the latest behavior of your data. You can also choose the desired threshold value and the <strong>Unit</strong> of your value manually.
+9. Optional In <strong>Set a condition</strong> &gt; <strong>Alert condition</strong>, select:</p>
+<ul>
+<li><strong>Alert if metric is above</strong> to receive alerts when the value exceeds the threshold value.</li>
+<li><strong>Alert if metric is below</strong> to receive alerts when the value is below the threshold value.</li>
+<li>Optional Select <strong>Preview</strong> to see a demonstration of your alert condition.</li>
+<li>Expand <strong>Add details</strong>.</li>
+<li>Set <strong>Title</strong> to name your custom alert.</li>
+<li>
+<p>Set <strong>Event name</strong> to any name you like. The <strong>Event name</strong> will show as a title for events generated by this custom alert.</p>
+<p>You can write <code>{</code> to let Dynatrace Intelligence suggest you placeholder names with desired value (for example, <code>{alert_condition}</code>). For more information, see <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#event-template" title="How to set up an alert for missing measurements.">Event template</a>.
+14. Select <strong>Create</strong> to create a simple custom alert or select <strong>Save</strong> to update your configuration.</p>
+</li>
+</ul>
+<p>Whenever you <strong>Create</strong> or <strong>Save</strong> your custom alert, its configuration gets automatically validated. If the there's no errors present in your configuration, you'll be able to save or update your configuration. If there are any errors, the section will be highlighted with red and marked with <code>Error</code> message under the section title.</p>
+<p>Check the <strong>Status</strong> of the new configuration shortly after creation to ensure there are no errors in the execution.</p>
+<h2 id="create-a-simple-custom-alert-in-notebooks">Create a simple custom alert in Notebooks<a class="headerlink" href="#create-a-simple-custom-alert-in-notebooks" title="Permanent link">&para;</a></h2>
+<p>With Dynatrace Intelligence for Notebooks, you can preview your custom alert configuration and evaluate its effectiveness. This option takes you to <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>, where you configure the query and monitoring strategy, and then back to <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong> to create an event template.</p>
+<ol>
+<li>Go to <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong>.</li>
+<li>Select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" /> <strong>New alert</strong> &gt; <strong>Open a custom alert in Notebooks</strong>.</li>
+<li>Select a notebook in which you want to preview your configuration.<br />
+   This action takes you to <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
+<li>Add a new <strong>DQL</strong> or <strong>Metrics</strong> section and query the data you're interested in.</li>
+</ol>
+<p>For a DQL query, we recommend that you use the <code>interval: 1m</code> parameter to ensure proper data resolution for the analysis.
+5. Optional Select , then select one or more segments you want to filter by.
+6. Select <strong>Options</strong> &gt; <strong>Analyze and alert</strong>.
+7. Activate the analyzer.
+8. Select the required analyzer and configure it. For details, see <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration" title="How to set up an alert for missing measurements.">Anomaly detection configuration</a>.
+9. Select <strong>Run analysis</strong>.
+10. Once you're satisfied with the result, select <img alt="More actions" src="https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg" title="More actions" /> &gt; <img alt="Open with" src="https://dt-cdn.net/images/open-with-003fc82dcd.svg" title="Open with" /> <strong>Open with</strong> and select <strong>Anomaly Detection</strong>.<br />
+    This action takes you back to <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong>.
+11. Expand <strong>Add details</strong> and set <strong>Title</strong> to any name you like.
+12. Set <strong>Event name</strong> to any name you like. The <strong>Event name</strong> will show as a title for events events generated by this custom alert.
+13. Select <strong>Create</strong>.</p>
+<div class="highlight"><pre><span></span><code>Check the **Status** of the new configuration shortly after creation to ensure there are no errors in the execution.
+</code></pre></div>
+<h2 id="transform-a-metric-event-configuration">Transform a metric event configuration<a class="headerlink" href="#transform-a-metric-event-configuration" title="Permanent link">&para;</a></h2>
+<p><a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Learn about metric events in Dynatrace">Metric events</a> enhance anomaly detection, expanding them beyond out-of-the-box use cases into metric-based events. With the power of DQL, you can extend this reach further.</p>
+<p>To convert a metric event to the custom alert configuration</p>
+<ol>
+<li>Go to <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong>.</li>
+<li>Select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" /> <strong>New alert</strong> &gt; <strong>Improve metric events with DQL</strong>.</li>
+<li>Select the required metric event and select <strong>Transform</strong>.</li>
+<li>
+<p>To configure an auto-adaptive threshold and seasonal baseline, adapt the query to a 1-minute resolution.</p>
+</li>
+<li>
+<p>For the newly created configuration, select the transformed custom alert from the list.</p>
+</li>
+<li>Expand the <strong>Set scope</strong>.</li>
+<li>Append the <code>interval:1m</code> parameter to the query.</li>
+<li>Select <strong>Save</strong> to save your changes.</li>
+<li>The converted metric event is automatically disabled, and the newly created configuration is active instead.</li>
+</ol>
+<p>Check the <strong>Status</strong> of the new configuration shortly after creation to ensure there are no errors in the execution.</p>
+<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Anomaly Detection app</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad" title="Learn how to create and edit advanced custom alerts in the Anomaly Detection app">Configure an advanced custom alert</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types" title="An explanation of Anomaly Detection status types">Anomaly Detection status types</a></li>
+<li><a href="https://www.youtube.com/watch?v=WDZUus-VxCE">[Video] Elevating Security with Anomaly Detectionï»¿</a></li>
+<li><a href="https://www.youtube.com/watch?v=HPQi63mQg3w">[Video] Anomaly Detection and Data Observabilityï»¿</a></li>
 </ul>
 <hr />
 <h2 id="source-davis-ad-dql-best-practicemd">Source: davis-ad-dql-best-practice.md<a class="headerlink" href="#source-davis-ad-dql-best-practicemd" title="Permanent link">&para;</a></h2>
@@ -1325,7 +1420,7 @@ scraped: 2026-02-15T09:09:53.941961</p>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| limit 10 // remove this; to choose specific hosts, we recommend using filter instead
 </code></pre></div>
-<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Anomaly Detection app</a></li>
 <li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
@@ -1458,7 +1553,7 @@ scraped: 2026-02-15T09:12:43.424809</p>
 <li>Include at least one entire token tilde or <code>matchesPhrase</code> filter.</li>
 <li>Either avoid less efficient filters or use them in addition to the filters mentioned above.</li>
 </ul>
-<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Anomaly Detection app</a></li>
 <li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
@@ -1469,7 +1564,7 @@ scraped: 2026-02-15T09:12:43.424809</p>
 <hr />
 <p>title: Anomaly Detection app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
-scraped: 2026-02-16T09:17:52.210377</p>
+scraped: 2026-02-16T21:20:00.943398</p>
 <hr />
 <h1 id="anomaly-detection-app">Anomaly Detection app<a class="headerlink" href="#anomaly-detection-app" title="Permanent link">&para;</a></h1>
 <h1 id="anomaly-detection-app_1">Anomaly Detection app<a class="headerlink" href="#anomaly-detection-app_1" title="Permanent link">&para;</a></h1>
@@ -1575,7 +1670,7 @@ scraped: 2026-02-16T09:17:52.210377</p>
 <h2 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h2>
 <p>Detect anomalies in timeseries using <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong>.</p>
 <p><a href="https://www.dynatrace.com/hub/detail/davis-anomaly-detection/">Dynatrace Hubï»¿</a></p>
-<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types" title="An explanation of Anomaly Detection status types">Anomaly Detection status types</a></li>
 <li><a href="/docs/dynatrace-intelligence/reference/davis-ai-limits" title="Reference limits of Dynatrace Intelligence components.">Dynatrace Intelligence limits</a></li>
@@ -1701,7 +1796,7 @@ scraped: 2026-02-15T21:16:57.911444</p>
 </li>
 </ul>
 <p>You can provide additional parameters as key-value pairs. For a list of possible event properties, see <a href="/docs/semantic-dictionary/model/davis#davis-ai-events" title="Get to know the Semantic Dictionary models related to Davis AI.">Semantic Dictionary</a>.</p>
-<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Learn about metric events in Dynatrace">Metric events</a></li>
 </ul>
@@ -1736,7 +1831,7 @@ scraped: 2026-02-16T09:39:29.029281</p>
 </ul>
 <p>Another important parameter for dynamic thresholds is the sliding window that is used to compare current measurements against the calculated threshold. It defines how often the calculated threshold must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to avoid alerting too aggressively on single violations. You can set the sliding window to a maximum of 60 minutes.</p>
 <p>By default, any 3 minutes out of a sliding window of 5 minutes must violate your threshold to raise an event. That is, an event must have 3 violating minutes within any 5-minute sliding window.</p>
-<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_8">Related topics<a class="headerlink" href="#related-topics_8" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">Metrics Classic</a></li>
 </ul>
@@ -1816,7 +1911,7 @@ Alerting on response time degradations begins once the baseline cube is ready an
 <hr />
 <p>title: Metric key events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events
-scraped: 2026-02-15T21:25:01.929979</p>
+scraped: 2026-02-16T21:30:42.131991</p>
 <hr />
 <h1 id="metric-key-events">Metric key events<a class="headerlink" href="#metric-key-events" title="Permanent link">&para;</a></h1>
 <h1 id="metric-key-events_1">Metric key events<a class="headerlink" href="#metric-key-events_1" title="Permanent link">&para;</a></h1>
@@ -1894,8 +1989,109 @@ If the merge is allowed, DavisÂ® AI will try to merge this event into existing
 14. Select <strong>Save changes</strong>.</p>
 </li>
 </ol>
-<h2 id="related-topics_8">Related topics<a class="headerlink" href="#related-topics_8" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_9">Related topics<a class="headerlink" href="#related-topics_9" title="Permanent link">&para;</a></h2>
 <ul>
+<li><a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">Metrics Classic</a></li>
+</ul>
+<hr />
+<h2 id="source-metric-selector-eventsmd">Source: metric-selector-events.md<a class="headerlink" href="#source-metric-selector-eventsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Metric selector events
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events
+scraped: 2026-02-16T21:27:38.306338</p>
+<hr />
+<h1 id="metric-selector-events">Metric selector events<a class="headerlink" href="#metric-selector-events" title="Permanent link">&para;</a></h1>
+<h1 id="metric-selector-events_1">Metric selector events<a class="headerlink" href="#metric-selector-events_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>4-min read</li>
+<li>Updated on May 22, 2025</li>
+</ul>
+<p>The metric selector is a powerful instrument for specifying which data you want to read for the metric event evaluation. It provides you with two major possibilities:</p>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector" title="Configure the metric selector for the Metric v2 API.">Metric transformations</a> for transforming the data you're reading.</li>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-expressions" title="Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.">Metric expressions</a> for combining one or more metrics into a different result using simple mathematics.</li>
+</ul>
+<p>With the metric selector, Davis can access the historic data of the metric and can learn the normal behavior of your environment, enabling you to use auto-adaptive thresholds in your metric event. However, some limitations apply:</p>
+<ul>
+<li><strong>100,000</strong> monitored metric dimensions per environment</li>
+<li><strong>10,000</strong> metric events configurations (both metric key and metric selector) per environment</li>
+<li><strong>1,000</strong> monitored dimensions per metric event configuration (static or auto-adaptive threshold)</li>
+<li><strong>500</strong> monitored dimensions per metric event configuration (seasonal baseline)</li>
+<li><strong>100</strong> metric selectors per monitoring strategy. You can have 100 configurations with an auto-adaptive threshold and 100 with a static threshold.</li>
+</ul>
+<h2 id="scope-of-metric-selector-events">Scope of metric selector events<a class="headerlink" href="#scope-of-metric-selector-events" title="Permanent link">&para;</a></h2>
+<p>The selector itself defines the scope of a metric selector event. It is important to understand the implications when configuring a selector consisting of measurements from thousands of individual sources. Dynatrace applies safety limits to anomaly detection in terms of the number of metric dimensions that can be observed within one monitoring environment to avoid any operational issues. To learn how to narrow down the scope of your configuration, see <a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector#filter" title="Configure the metric selector for the Metric v2 API."><strong>Filter transformation</strong></a>.</p>
+<p><img alt="Metric selector example" src="https://dt-cdn.net/images/metric-selector-example-1296-84f54644de.png" /></p>
+<h2 id="combining-metrics">Combining metrics<a class="headerlink" href="#combining-metrics" title="Permanent link">&para;</a></h2>
+<p>With the power of a metric expression, you can implement alerting with a top-down view of a situation rather than alerting on each component.</p>
+<p>For example, you can observe log patterns across multiple hosts. By calculating the total count of observed log patterns across all relevant log files, Dynatrace can detect pattern anomalies on the accumulated log stream rather than on the individual counts per log file.
+If there are sparse counts across many entities (for example, an error count across multiple processes of the same type), aggregated top-down anomaly detection is much more resilient against false-positive alerts than detection on an individual error count per process.</p>
+<h2 id="create-a-metric-selector-event">Create a metric selector event<a class="headerlink" href="#create-a-metric-selector-event" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Anomaly Detection</strong> &gt; <strong>Metric events</strong> and select <strong>Add metric event</strong>.</li>
+<li>In the <strong>Summary</strong> field, provide a short meaningful description of the event.</li>
+<li>
+<p>In the <strong>Query definition</strong> section, configure the metric query:</p>
+</li>
+<li>
+<p>Select the <strong>Metric selector</strong> type of the query.</p>
+</li>
+<li>Specify the required metric selector.</li>
+<li>Select a management zone. Only data coming from this zone is evaluated for the metric event. Omit this field to use all the data queried by the metric selector.</li>
+<li>Optional In the <strong>Advanced query definition</strong> section, specify the query's offset (in minutes).<br />
+   You need the offset for metrics with latency; otherwise, the metric event might produce false alerts.</li>
+<li>
+<p>Define the monitoring strategy</p>
+</li>
+<li>
+<p>Choose the model type:</p>
+<ul>
+<li>Auto-adaptive thresholdâDynatrace calculates the threshold automatically and adapts it dynamically to your metric's behavior.</li>
+<li>Static thresholdâthe threshold that doesn't change over time.</li>
+<li>Seasonal BaselineâDynatrace creates a confidence band on a metric with seasonal patterns</li>
+<li>For the static threshold, specify the threshold. Select <strong>Use suggested threshold</strong> to use a value based on the previous data.</li>
+<li>Choose the <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data" title="How to set up an alert for missing measurements.">missing data alert</a> behavior.<br />
+  If the missing data alert is enabled, it is combined with the threshold condition by the <strong>OR</strong> logic.</li>
+<li>Select the alert condition: alert if the metric is above, below, or outside of the threshold.</li>
+<li>Optional In the <strong>Advanced model properties</strong> section, specify a <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window" title="How to set up an alert for missing measurements.">sliding window</a> for comparison.<br />
+  The sliding window defines how often the thresholdâwhether it is automatically calculated or manually specifiedâmust be violated within a sliding window of time to raise an event (violations don't have to be successive). This helps you to avoid overly aggressive alerting on single violations. You can set a sliding window of up to 60 minutes.</li>
+<li>Check the preview for your alert and evaluate the effectiveness of your configuration.</li>
+</ul>
+</li>
+<li>
+<p>Select the dimension values that you want to see on the preview.</p>
+</li>
+<li>Select the timeframe of the preview. You can receive alerts for one, three, or seven days.</li>
+<li>Provide a <strong>Title</strong> for your event. The title should be a short, easy-to-read string describing the situation, such as <code>High network activity</code> or <code>CPU saturation</code>.</li>
+<li>
+<p>In the <strong>Description</strong> section, create a meaningful event message. Event messages help you understand the nature of the event. You can use the following placeholders:</p>
+</li>
+<li>
+<p><code>{alert_condition}</code>âthe condition of the alert (above/below the threshold).</p>
+</li>
+<li><code>{baseline}</code>âthe violated value of the baseline.</li>
+<li><code>{dims}</code>âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: <code>{dims:dt.entity.&lt;entity&gt;}</code>. To fetch the list of available dimensions for your metric, query it via the <a href="/docs/dynatrace-api/environment-api/metric-v2/get-descriptor" title="View the descriptor of a metric via Metrics v2 API.">GET metric descriptor</a> request.</li>
+<li><code>{entityname}</code>âthe name of the affected entity.</li>
+<li><code>{metricname}</code>âthe name of the metric that violated the threshold.</li>
+<li>
+<p><code>{missing_data_samples}</code>âthe number of samples with missing data. Only available if missing data alert is enabled.</p>
+<p><code>{missing_data_samples}</code> in the event description</p>
+<p>We recommend including the <code>{missing_data_samples}</code> placeholder in the event description to see whether the problem is raised due to missing data samples or threshold violations.
+   * <code>{severity}</code>âthe severity of the event.
+   * <code>{threshold}</code>âthe violated value of the threshold.
+10. Select the <strong>Event type</strong> for triggered events.
+11. Turn <strong>Allow merge</strong> on or off to define the merge strategy for triggered events.<br />
+If <strong>Allow merge</strong> is turned on, Davis AI will try to merge this event into existing problems; if it's turned off, a new problem is raised each time.
+12. Optional Set additional key-value properties to be attached to the event.
+13. Select <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<h2 id="related-topics_10">Related topics<a class="headerlink" href="#related-topics_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector" title="Configure the metric selector for the Metric v2 API.">Metrics API - Metric selector</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-expressions" title="Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.">Metrics API - Metric expressions</a></li>
 <li><a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">Metrics Classic</a></li>
 </ul>
 <hr />
@@ -1903,7 +2099,7 @@ If the merge is allowed, DavisÂ® AI will try to merge this event into existing
 <hr />
 <p>title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-02-16T09:18:58.623529</p>
+scraped: 2026-02-16T21:13:38.859274</p>
 <hr />
 <h1 id="metric-events">Metric events<a class="headerlink" href="#metric-events" title="Permanent link">&para;</a></h1>
 <h1 id="metric-events_1">Metric events<a class="headerlink" href="#metric-events_1" title="Permanent link">&para;</a></h1>
@@ -1989,7 +2185,7 @@ scraped: 2026-02-16T09:18:58.623529</p>
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
 <a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>batchjob.executions,dt.entity.host=HOST-2222222,dt.entity.process_group_instance=PROCESS-GROUP-INSTANCE-2,hostname=hostB,ip=53.43.23.12 23
 </code></pre></div>
-<h2 id="related-topics_9">Related topics<a class="headerlink" href="#related-topics_9" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_11">Related topics<a class="headerlink" href="#related-topics_11" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=NVuiTwOYHQA">[Video] Dynatrace Metric Events: Setup anomaly detection based on your businessï»¿</a></li>
 </ul>
@@ -2022,7 +2218,7 @@ scraped: 2026-02-15T21:16:56.756883</p>
 <li><a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a> or <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens" title="Create personalised platform tokens to access Dynatrace services via the API in your user context.">Platform tokens</a></li>
 <li><a href="https://developer.dynatrace.com/develop/access-platform-apis-from-outside/">How to access platform APIsï»¿</a></li>
 </ul>
-<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h3>
 <p>You need the following permissions to be able to set up custom alerts using API:</p>
 <ul>
 <li><code>settings:schemas:read</code></li>
@@ -2413,7 +2609,7 @@ scraped: 2026-02-15T21:16:56.756883</p>
 </ul>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>You have learned how to set up and configure a custom alert via API. Now you can make direct calls to custom alerts and use DQL-based anomaly detection via API configuration.</p>
-<h2 id="related-topics_10">Related topics<a class="headerlink" href="#related-topics_10" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_12">Related topics<a class="headerlink" href="#related-topics_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection" title="How Dynatrace detects anomalies in your environment.">Anomaly detection</a></li>
 <li><a href="/docs/dynatrace-intelligence/reference/ai-models" title="Learn about AI models that Dynatrace Intelligence uses.">AI models</a></li>
@@ -2427,7 +2623,7 @@ scraped: 2026-02-15T21:16:56.756883</p>
 <hr />
 <p>title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-02-16T09:31:12.279172</p>
+scraped: 2026-02-16T21:26:54.708110</p>
 <hr />
 <h1 id="static-thresholds-for-anomaly-detection">Static thresholds for anomaly detection<a class="headerlink" href="#static-thresholds-for-anomaly-detection" title="Permanent link">&para;</a></h1>
 <h1 id="static-thresholds-for-anomaly-detection_1">Static thresholds for anomaly detection<a class="headerlink" href="#static-thresholds-for-anomaly-detection_1" title="Permanent link">&para;</a></h1>
@@ -2445,7 +2641,7 @@ scraped: 2026-02-16T09:31:12.279172</p>
 <p><img alt="Adaptive threshold" src="https://dt-cdn.net/images/static-threshold-2-1041-538cab4669.png" /></p>
 <p>Apart from the threshold value, you can specify how often the threshold must be violated within a sliding time window to raise an event (violations don't have to be successive). It helps you to avoid alerting too aggressively on single threshold violations. You can set a sliding window of up to 60 minutes.</p>
 <p>By default, any 3 minutes out of a sliding window of 5 minutes must violate your threshold to raise an event. That is, an event would require 3 violating minutes within any 5-minute sliding window.</p>
-<h2 id="related-topics_11">Related topics<a class="headerlink" href="#related-topics_11" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_13">Related topics<a class="headerlink" href="#related-topics_13" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">Metrics Classic</a></li>
 </ul>
