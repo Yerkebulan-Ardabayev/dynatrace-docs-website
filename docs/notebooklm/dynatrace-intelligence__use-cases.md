@@ -1,0 +1,1871 @@
+# Dynatrace Documentation: dynatrace-intelligence/use-cases
+
+Generated: 2026-02-16
+
+Files combined: 4
+
+---
+
+
+## Source: copilot-examples.md
+
+
+---
+title: Generative AI quick analysis examples
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-examples
+scraped: 2026-02-15T21:22:37.299426
+---
+
+# Generative AI quick analysis examples
+
+# Generative AI quick analysis examples
+
+* Latest Dynatrace
+* Reference
+* 9-min read
+* Updated on Jan 28, 2026
+
+Dynatrace Intelligence generative AI can help you analyze data for many different use cases. See the examples below to understand what kind of DQL output you can expect from your prompts.
+
+See the selected pairs to understand what kind of DQL output you can expect from your prompts.
+
+## Analyze logs with generative AI
+
+Prompt
+
+Generated query
+
+**Show me all logs**
+
+```
+fetch logs
+```
+
+**Show me all log lines from the last 6 hours**
+
+```
+fetch logs, from:now() - 6h
+```
+
+**Chart logs by their log level over timeExclude `"NONE"`**
+
+```
+fetch logs
+
+
+
+| filterOut loglevel == "NONE"
+
+
+
+| makeTimeseries by:{loglevel}, interval:1h, count = count()
+```
+
+**Show me the maximum number of logs ingested per hour for each loglevel and each host**
+
+```
+fetch logs
+
+
+
+| makeTimeseries by:{loglevel, host = dt.entity.host}, interval:1h, count = count()
+
+
+
+| summarize by:{loglevel, host}, max_count = max(arrayMax(count))
+```
+
+**Compare the number of error logs from today with yesterday**
+
+```
+fetch logs, from:bin(now(), 24h)
+
+
+
+| filter loglevel == "ERROR"
+
+
+
+| summarize todayErrorCount = count()
+
+
+
+| append
+
+
+
+[
+
+
+
+fetch logs, from:bin(now(), 24h) - 24h, to:bin(now(), 24h)
+
+
+
+| filter loglevel == "ERROR"
+
+
+
+| summarize yesterdayErrorCount = count()
+
+
+
+]
+```
+
+**Show me all error logs over the last day with a granularity of one hour**
+
+```
+fetch logs, from:now() - 24h
+
+
+
+| filter loglevel == "ERROR"
+
+
+
+| makeTimeseries interval:1h, count = count()
+```
+
+**Show me 5 log sources with the highest volume**
+
+```
+fetch logs
+
+
+
+| summarize by:{log.source}, log_count = count()
+
+
+
+| sort log_count desc
+
+
+
+| limit 5
+```
+
+**Show me the most recurring log lines and add a column with the log source and AWS Region**
+
+```
+fetch logs
+
+
+
+| summarize by:{content, log.source, aws.region}, count = count()
+
+
+
+| sort count desc
+```
+
+**Summarize slow database queries from logs**
+
+```
+fetch logs, from:now() - 48h
+
+
+
+| filter contains(content, "slow") AND contains(content, "database")
+
+
+
+| summarize by:{loglevel, content}, count = count()
+```
+
+**What is causing the most error log lines?**
+
+```
+fetch logs, from:now() - 2h
+
+
+
+| filter loglevel == "ERROR"
+
+
+
+| summarize by:{log.source}, errorCount = count()
+
+
+
+| sort errorCount desc
+
+
+
+| limit 1
+```
+
+**Which host is experiencing the highest number of error logs?**
+
+**Show host name**
+
+```
+fetch logs
+
+
+
+| filter loglevel == "ERROR"
+
+
+
+| summarize by:{dt.entity.host}, errorCount = count()
+
+
+
+| lookup
+
+
+
+[
+
+
+
+fetch dt.entity.host
+
+
+
+| fieldsAdd entity.name
+
+
+
+], sourceField:dt.entity.host, lookupField:id, fields:{entity.name}
+
+
+
+| sort errorCount desc
+
+
+
+| limit 1
+```
+
+**Maximum number of logs ingested per hour for each loglevel and each host sorted in descending order**
+
+```
+fetch logs
+
+
+
+| summarize by:{loglevel, host = dt.entity.host, bin(timestamp, 1h)}, count = count()
+
+
+
+| summarize by:{loglevel, host}, max_count = max(count)
+
+
+
+| sort max_count desc
+```
+
+## Analyze events with generative AI
+
+Prompt
+
+Generated query
+
+**Return all events from the last three hours**
+
+```
+fetch events, from:now() - 3h
+```
+
+**Show an aggregated view of events by kind over the last three hours**
+
+```
+fetch events, from:-3h
+
+
+
+| summarize by:{event.kind}, count = count()
+```
+
+## Analyze business events with generative AI
+
+Prompt
+
+Generated query
+
+**Show all business events during business hours grouped by type and category**
+
+```
+fetch bizevents
+
+
+
+| fieldsAdd day_of_week = getDayOfWeek(timestamp), hour_of_day = formatTimestamp(timestamp, format:"HH")
+
+
+
+| filter day_of_week >= 1 AND day_of_week <= 5 AND hour_of_day >= 9 AND hour_of_day <= 17
+
+
+
+| summarize by:{event.type, event.category}, count()
+```
+
+**Show all business events from the last month, grouped by type and category.**
+
+**Limit this to events during business days.**
+
+**Sort by category**
+
+```
+fetch bizevents, from:-720h
+
+
+
+| fieldsAdd day_of_week = getDayOfWeek(timestamp)
+
+
+
+| filter day_of_week >= 1 AND day_of_week <= 5
+
+
+
+| summarize by:{event.type, event.category}, count = count()
+
+
+
+| sort event.category
+```
+
+**Show all business events over time by type**
+
+```
+fetch bizevents
+
+
+
+| makeTimeseries by:{event.type}, interval:1h, count = count()
+```
+
+**Show timeseries of bizevents by source**
+
+```
+fetch bizevents
+
+
+
+| makeTimeseries by:{event.provider}, interval:1h, count = count()
+```
+
+**Show all easytravel `bizevents` by type as a timeseries for the last week**
+
+```
+fetch bizevents, from:-168h
+
+
+
+| filter event.provider == "www.easytravel.com"
+
+
+
+| makeTimeseries by:{event.type}, interval:24h, count = count()
+```
+
+**Show all easytrade `bizevents` by type as a timeseries for the last week**
+
+```
+fetch bizevents, from:now() - 168h, to:now()
+
+
+
+| filter contains(event.provider, "easytrade")
+
+
+
+| makeTimeseries by:{event.type}, interval:24h, count = count()
+```
+
+**How many trades took place on easytrade in the last 24 hours?**
+
+```
+fetch bizevents, from:now() - 24h, to:now()
+
+
+
+| filter event.type == "com.easytrade.trades"
+
+
+
+| summarize tradeCount = count()
+```
+
+**Summarize easytrade `buy.finish` event types by country**
+
+```
+fetch bizevents
+
+
+
+| filter event.type == "com.easytrade.buy.finish"
+
+
+
+| summarize by:{geo.country.name}, event_count = count()
+```
+
+**Show me the count of distinct emails containing `"@gmail.com"` from `bizevents`**
+
+```
+fetch bizevents
+
+
+
+| filter contains(email, "@gmail.com")
+
+
+
+| summarize distinctEmailCount = countDistinct(email)
+```
+
+## Analyze Davis events with generative AI
+
+Prompt
+
+Generated query
+
+**Compare the number of Davis events day-by-day for the last week**
+
+```
+fetch dt.davis.events.snapshots, from:now() - 168h, to:now()
+
+
+
+| summarize by:{bin(timestamp, 24h)}, dailyEventCount = count()
+```
+
+**Summarize how many and which categories of Davis events occurred**
+
+```
+fetch dt.davis.events, from:-48h
+
+
+
+| summarize by:{event.category}, event_count = count()
+```
+
+**How many service slowdown events occurred yesterday?**
+
+```
+fetch dt.davis.events.snapshots, from:bin(now(), 24h) - 24h, to:bin(now(), 24h)
+
+
+
+| filter event.type == "SERVICE_SLOWDOWN"
+
+
+
+| summarize slowdown_count = count()
+```
+
+**Compare the number of Davis events day-by-day for the last week**
+
+```
+fetch dt.davis.events, from:now() - 168h, to:now()
+
+
+
+| fieldsAdd day = bin(timestamp, 24h)
+
+
+
+| summarize by:{day}, event_count = count()
+```
+
+**Summarize how many and which categories of Davis events occurred**
+
+```
+fetch dt.davis.events
+
+
+
+| summarize by:{event.category}, count = count()
+```
+
+## Analyze spans with generative AI
+
+Prompt
+
+Generated query
+
+**Show me the average database response time broken down by host and database**
+
+```
+fetch spans
+
+
+
+| filter span.kind == "client" AND isNotNull(db.system) AND isNotNull(server.address) AND isNotNull(db.namespace)
+
+
+
+| summarize by:{host = server.address, database = db.namespace}, avg_duration = avg(duration)
+```
+
+**Show me the average database response time in 1 minute granularity, split by database**
+
+```
+fetch spans
+
+
+
+| filter span.kind == "client" AND isNotNull(db.system)
+
+
+
+| makeTimeseries by:{db.system}, interval:1m, avg_duration = avg(duration)
+```
+
+## Analyze metrics with generative AI
+
+Prompt
+
+Generated query
+
+**Show the three most important metrics for host HOST-12ABC**
+
+```
+timeseries by:{dt.entity.host}, filter:dt.entity.host == "HOST-12ABC", {availability = avg(dt.host.availability), uptime = avg(dt.host.uptime), cpu_usage = avg(dt.host.cpu.usage)}
+
+
+
+| fieldsAdd avg_availability = arrayAvg(availability), avg_uptime = arrayAvg(uptime), avg_cpu_usage = arrayAvg(cpu_usage)
+
+
+
+| sort avg_availability desc, avg_uptime desc, avg_cpu_usage desc
+
+
+
+| limit 3
+```
+
+**Show each lambda function's execution time as metric timeseries**
+
+```
+timeseries by:{dt.entity.aws_lambda_function}, avg_execution_time = avg(dt.cloud.aws.lambda.duration)
+```
+
+**Compare last 24 hours' CPU usage with the corresponding timeframe from one week ago**
+
+```
+timeseries from:now() - 24h, to:now(), cpu_usage_last_24h = avg(dt.host.cpu.usage)
+
+
+
+| append [timeseries from:now() - 168h - 24h, to:now() - 168h, cpu_usage_last_week = avg(dt.host.cpu.usage)]
+```
+
+**Show me the top ten processes with respect to memory consumption and the host they are running on**
+
+```
+timeseries by:{dt.entity.process_group_instance, dt.entity.host}, maxMemory = max(dt.process.memory.working_set_size)
+
+
+
+| summarize by:{dt.entity.process_group_instance, dt.entity.host}, maxMemory = max(maxMemory)
+
+
+
+| sort maxMemory desc
+
+
+
+| limit 10
+
+
+
+| lookup [fetch dt.entity.host], sourceField:dt.entity.host, lookupField:id, fields:{entity.name}
+```
+
+**Give me an overview of the CPU-related metrics for `HOST-14DC825E0C327E32` for the last day**
+
+```
+timeseries by:{dt.entity.host}, filter:dt.entity.host == "HOST-14DC825E0C327E32", timeframe:timeframe(from:now() - 24h, to:now()), {avg_cpu_usage = avg(dt.host.cpu.usage), avg_cpu_system = avg(dt.host.cpu.system), avg_cpu_user = avg(dt.host.cpu.user), avg_cpu_iowait = avg(dt.host.cpu.iowait), avg_cpu_load15m = avg(dt.host.cpu.load15m)}
+```
+
+**Show the CPU average from all Kubernetes services grouped by container name.**
+
+**Limit to top 10**
+
+```
+timeseries by:{k8s.container.name}, avg_cpu = avg(dt.kubernetes.container.cpu_usage)
+
+
+
+| sort avg_cpu desc
+
+
+
+| limit 10
+```
+
+## Analyze entities with generative AI
+
+Prompt
+
+Generated query
+
+**Show me the top lambda function with respect to code size**
+
+```
+fetch dt.entity.aws_lambda_function
+
+
+
+| sort awsCodeSize desc
+
+
+
+| fieldsKeep awsCodeSize, entity.name
+
+
+
+| limit 1
+```
+
+**Show me the most tagged host groups**
+
+```
+fetch dt.entity.host_group
+
+
+
+| fieldsAdd tags
+
+
+
+| expand tags
+
+
+
+| summarize by:{entity.name}, tag_count = count()
+
+
+
+| sort tag_count desc
+
+
+
+| limit 10
+```
+
+**How many Azure VMs do we have compared to ec2 instances?**
+
+```
+fetch dt.entity.azure_vm
+
+
+
+| summarize azure_vm_count = count()
+
+
+
+| append
+
+
+
+[
+
+
+
+fetch dt.entity.ec2_instance
+
+
+
+| summarize ec2_instance_count = count()
+
+
+
+]
+```
+
+**Show me the 5 shortest lived Kubernetes services**
+
+```
+fetch dt.entity.kubernetes_service
+
+
+
+| fieldsAdd id, entity.name, lifetime
+
+
+
+| fieldsAdd duration = toDuration(lifetime)
+
+
+
+| sort duration
+
+
+
+| limit 5
+```
+
+**How many AWS lambda functions are deployed?**
+
+```
+fetch dt.entity.aws_lambda_function
+
+
+
+| summarize deployed_functions = count()
+```
+
+**Show me all hosts with CPU usage greater than 60% over the last week**
+
+```
+timeseries by:{dt.entity.host}, from:now() - 168h, cpuUsage = avg(dt.host.cpu.usage)
+
+
+
+| filter arrayAvg(cpuUsage) > 60
+
+
+
+| lookup [fetch dt.entity.host], sourceField:dt.entity.host, lookupField:id
+```
+
+## Analyze problems with generative AI
+
+Prompt
+
+Generated query
+
+**Show number of problems by problem status for the last day, as a timeseries**
+
+```
+fetch dt.davis.problems, from:now() - 24h, to:now()
+
+
+
+| makeTimeseries by:{status = event.status}, interval:1h, count = count()
+```
+
+**Summarize the top ten problems of the last 24 hours, ranked by number of affected entities**
+
+```
+fetch dt.davis.problems, from:now() - 24h
+
+
+
+| expand affected_entity_ids
+
+
+
+| summarize by:{event.name}, affectedEntityCount = count()
+
+
+
+| sort affectedEntityCount desc
+
+
+
+| limit 10
+```
+
+**Show most problem-affected entities**
+
+```
+fetch dt.davis.problems
+
+
+
+| expand affected_entity_ids
+
+
+
+| summarize by:{affected_entity_ids}, count = count()
+
+
+
+| sort count desc
+```
+
+**Show all active problems by category as a timeseries**
+
+```
+fetch dt.davis.problems
+
+
+
+| filter event.status == "ACTIVE"
+
+
+
+| makeTimeseries by:{event.category}, interval:1h, count = count()
+```
+
+**Show active problems by their root cause, where the root cause is not null or empty**
+
+```
+fetch dt.davis.problems
+
+
+
+| filter isNotNull(root_cause_entity_id) AND root_cause_entity_id != ""
+
+
+
+| fields root_cause_entity_id, display_id, event.name, timestamp
+```
+
+**How many entities are affected by a problem called "HTTP monitor global outage"?**
+
+```
+fetch dt.davis.problems
+
+
+
+| filter event.name == "Http monitor global outage"
+
+
+
+| expand affected_entity_ids
+
+
+
+| summarize affected_entities = countDistinct(affected_entity_ids)
+```
+
+**How many slowdown problems have been detected over the last 3 days?**
+
+```
+fetch dt.davis.problems, from:now() - 72h
+
+
+
+| filter event.category == "SLOWDOWN"
+
+
+
+| summarize slowdownCount = count()
+```
+
+**Show all problems that affected more than 500 users. Keep these fields: `display\_id`, `dt.davis.affected\_users\_count`, `event.category`, `event.description`, and `resolved\_problem\_duration`**
+
+```
+fetch dt.davis.problems
+
+
+
+| filter dt.davis.affected_users_count > 500
+
+
+
+| fieldsKeep display_id, dt.davis.affected_users_count, event.category, event.description, resolved_problem_duration
+```
+
+**Show how many problems there have been this year, as a week-by-week comparison**
+
+```
+fetch dt.davis.problems, from:bin(now(), 24h) - 365d
+
+
+
+| fieldsAdd week_of_year = getWeekOfYear(timestamp)
+
+
+
+| summarize by:{week_of_year}, problem_count = count()
+```
+
+## Related topics
+
+* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
+* [Dynatrace Intelligence generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
+
+
+---
+
+
+## Source: copilot-in-workflows-examples.md
+
+
+---
+title: Summarize open problems with Workflows
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
+scraped: 2026-02-15T21:28:01.667784
+---
+
+# Summarize open problems with Workflows
+
+# Summarize open problems with Workflows
+
+* Latest Dynatrace
+* Tutorial
+* 4-min read
+* Updated on Feb 05, 2026
+* Preview
+
+With [Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows."), you can automate problem summarization and ask Dynatrace Intelligence generative AI to suggest remediation steps that can be sent to your email.
+
+## Target audience
+
+This guide is written for:
+
+* Operations engineers
+* Pipeline engineers
+* Systems engineers
+* Site reliability engineers (SREs)
+* Build automation engineers
+
+## Scenario
+
+Letâs assume you want to automate analyzing new problems and get immediate suggestions for resolving the issue.
+To do this, you need to create a workflow that uses Dynatrace Intelligence generative AI to summarize all open problems and automatically suggest the best way to remediate them.
+When a new problem is opened, the workflow will automatically run, and the Dynatrace Intelligence generative AI response will be sent to your email.
+
+## Before you begin
+
+### Prerequisites
+
+To use Dynatrace Intelligence (Preview), ensure that you have:
+
+* **Conversational recommender** (`ALLOW davis-copilot:conversations:execute;`) permission.
+* Installed  **Dynatrace Intelligence (Preview)**.
+
+## Steps
+
+1. Configure a workflow trigger
+
+1. Go to ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") Workflows.
+2. Select  **Workflow** to create a new workflow.
+3. From **Event** triggers, select a **Davis problem trigger**.
+4. Configure the fields:
+
+   * Set the **Event state** to `active`.
+   * Set the **Event category** to `Custom`.
+   * Set **Affected entities** to `include entities with all defined tags below`.
+   * Set **Additional custom filter query** to
+
+     ```
+     matchesPhrase(event.name, "Host cpu stateful custom alert 1h")
+     ```
+
+     This example demonstrates filtering for a specific problem.
+     However, you can apply a filter to include all new problems as well.
+
+1. An example of setting a Davis problems trigger
+
+![An example of setting a Davis Problem trigger for new problems.](https://dt-cdn.net/images/generative-ai-in-workflows-set-trigger-1920-775b0ee285.png)
+
+2. Extract problem details
+
+1. Select  Add task.
+2. In the  search field, enter `Run JavaScript`, or select **Run JavaScript** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the JavaScript workflow action, see [Run JavaScript action for Workflows](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Execute JavaScript action for your workflows.").
+3. Enter the workflow task name.
+4. In the **Input** tab, enter the following **Source code**:
+
+   ```
+   import { execution } from '@dynatrace-sdk/automation-utils';
+
+
+
+   export default async function ({ executionId }) {
+
+
+
+   const ex = await execution(executionId);
+
+
+
+   let rawEvent = ex.params.event;
+
+
+
+   let problemDescription = rawEvent["event.description"];
+
+
+
+   return {
+
+
+
+   description : rawEvent["event.description"],
+
+
+
+   problem_id : rawEvent["display_id"]
+
+
+
+   };
+
+
+
+   }
+   ```
+
+1. An example of setting a JavaScript action
+
+![An example of setting a javascript action to extract problem details](https://dt-cdn.net/images/copilot-in-workflows-run-javascript-1896-4a0406181b.png)
+
+3. Ask Dynatrace Intelligence generative AI to summarize the problem and suggest remediation steps
+
+1. Select  Add task.
+2. In the  search field, enter `Dynatrace Intelligence`, or select  **Define prompt** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions.
+3. Configure Dynatrace Intelligence generative AI:
+
+   * In the **Prompt** field, enter the following prompt:
+
+     ```
+     A new Davis Problem with id {{result("extract_problem_details").problem_id}} has just been opened. Please provide a summary of what happened and actionable steps to remediate it. Provide output as plain text without any formatting or markdown
+     ```
+   * In the **Additional context** field, enter the following:
+
+     ```
+     Use the following information about the Davis Problem with Id {{result("extract_problem_details")["problem_id"]}}:
+
+
+
+     """
+
+
+
+     {{result("extract_problem_details")["description"]}}
+
+
+
+     """
+     ```
+   * Enable **Auto-trim**.
+   * Set **Document retrieval** to `Disabled`.
+
+1. An example of preparing a Dynatrace Intelligence generative AI prompt
+
+![An example of setting a Dynatrace Intelligence action to summarize new problems.](https://dt-cdn.net/images/set-dynatrace-intelligence-action-in-workflows-1920-8fd3190dc2.png)
+
+4. Send Dynatrace Intelligence generative AI results to your email
+
+1. Select  Add task.
+2. In the  search field, enter `Send email`, or select ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") **Send email** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the Email workflow actions, see [Email](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+3. Enter the workflow task name.
+4. Configure the fields:
+
+   * In **Configure email** > **Recipients**, set the **To** field to your email address. If you want to add more than one email address, use `;` to separate them.
+   * In the **Content**, **Subject** field, enter the following text:
+
+     ```
+     New Davis Problem {{ result("extract_problem_details")["problem_id"] }} started
+     ```
+   * Set the **Message** field to the following:
+
+     ```
+     A Davis Problem with ID {{ result("extract_problem_details")["problem_id"] }} has been opened.
+
+
+
+     Dynatrace Intelligence generative AI has analyzed it and provided the following information:
+
+
+
+     {{ result("analyze_problem_with_davis_copilot")["text"] }}
+     ```
+
+1. An example of an email configuration
+
+![An example of configuring an email to send Dynatrace Intelligence generative AI results.](https://dt-cdn.net/images/generative-ai-in-workflows-send-email-1920-47ec9a8954.png)
+
+5. Finalize workflow configuration
+
+1. Select  **Save**.
+2. Select  **Run** to test the workflow.
+
+Once a new problem appears, you should receive an email from `no-reply@dev.apps.dynatracelabs.com`. You can see the example of the message content below:
+
+![An example of an email from Dynatrace Intelligence generative AI in workflows use case](https://dt-cdn.net/images/copilot-in-workflows-email-example-1584-f32b4d0bbb.png)
+
+## Related topics
+
+* [Dynatrace Assist](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
+* [Dynatrace Intelligence (Preview) app](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
+* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* [Dynatrace Intelligence (Preview) app](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
+
+
+---
+
+
+## Source: davis-dql-examples.md
+
+
+---
+title: Dynatrace Intelligence DQL examples
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
+scraped: 2026-02-15T21:14:46.378640
+---
+
+# Dynatrace Intelligence DQL examples
+
+# Dynatrace Intelligence DQL examples
+
+* Latest Dynatrace
+* Reference
+* 7-min read
+* Updated on Jan 28, 2026
+
+These examples illustrate how to build powerful and flexible health dashboards by using DQL to slice and dice all Dynatrace Intelligence reported problems and events.
+
+Davis problems represent results that originate from the Dynatrace Intelligence root-cause analysis runs. In Grail, Davis problems and their updates are stored as Grail events.
+
+* [Problem example 1](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Count the total number of problems in the last 24 hours.
+* [Problem example 2](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample2 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Count the current number of active problems.
+* [Problem example 3](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample3 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Chart the number of problems in the last 7 days to identify a trend within your environment stability.
+* [Problem example 4](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample4 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Identify the top 10 problem-affected entities within your environment.
+* [Problem example 5](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample5 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Join entity attributes with detected problems and apply a name filter.
+* [Problem example 6](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample6 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Load the last state of a given problem.
+* [Problem example 7](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample7 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Load all active problems and exclude all those that are marked as duplicates.
+* [Problem example 8](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample8 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Calculate the mean time to resolve for problems over time.
+* [Problem example 9](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample9 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Show a chart of the concurrently open problems over time.
+
+Davis events represent raw events that originate from various custom alerts within Dynatrace or within the OneAgent. Examples here are OneAgent-detected CPU saturation events or high garbage collection time events.
+
+* [Davis event example 1](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpdaviseventexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+  Chart the number of process restart events in the last 7 days.
+
+## Count the total number of problems in the last 24 hours
+
+* Fetches table `dt.davis.problems`.
+* Uses the summarize DQL command to get the total number of distinct problems.
+* The `event.id` holds the unique problem ID, which is stable across all refreshes and updates that Dynatrace Intelligence reports for the same problem.
+
+```
+fetch dt.davis.problems, from:now()-24h, to:now()
+
+
+
+| summarize {problemCount = countDistinct(event.id)}
+```
+
+**Query result**
+
+problemCount
+
+415
+
+## Count the current number of distinct active problems
+
+* Fetches table `dt.davis.problems`.
+* Groups the result by the unique `event.id` field, which contains the problem ID.
+* Filters out all problems that are no longer in state `ACTIVE`. To do this, the DQL command `takeLast` of the field `event.status` receives the last state.
+
+```
+fetch dt.davis.problems
+
+
+
+| filter event.status == "ACTIVE"
+
+
+
+| summarize {activeProblems = countDistinct(event.id)}
+```
+
+**Query result**
+
+activeProblems
+
+15
+
+## Chart the number of problems from the last 7 days
+
+* Fetches table `dt.davis.problems`.
+* Shows the number of problems that occurred during the day over the span of 7 days.
+* Counts in a resolution of 6-hour bins.
+* Allows to identify stability trends within your environment
+
+```
+fetch dt.davis.problems, from:now()-7d
+
+
+
+| makeTimeseries count(default:0)
+```
+
+**Query result**
+
+timeframe
+
+interval
+
+count
+
+start: 20/11/2024, 12:00 end: 27/11/2024, 13:00
+
+60 min
+
+0.00, 55.00, 143.00, 703.00, 504.00, 120.00, 117.00, 692.00, 534.00
+
+## Identify the top 3 problem-affected entities within your environment
+
+* Fetches table `dt.davis.problems`.
+* Expands the arrays field containing all affected entity IDs into individual fields.
+* Counts all unique problems grouped by the affected entity IDs.
+* Sorts by that problem count.
+* Returns the top 3 entity IDs.
+
+```
+fetch dt.davis.problems
+
+
+
+| expand affected_entity_ids
+
+
+
+| summarize count = countDistinct(display_id), by:{affected_entity_ids}
+
+
+
+| sort count, direction:"descending"
+
+
+
+| limit 3
+```
+
+**Query result**
+
+affected\_entity\_ids
+
+count
+
+HOST-A9449CACDE12B2BF
+
+10
+
+SERVICE-5624DD59D74FF453
+
+5
+
+PROCESS\_GROUP\_INSTANCE-3184C659684130C7
+
+3
+
+## Fetch all problems for a host with the name "myhost"
+
+This example joins entity attributes in order to filter all problems with a given host name.
+
+* Fetches table `dt.davis.problems`.
+* Expands the arrays field containing all affected entity IDs into individual fields.
+* Does a topology and entity lookup on the `affected_entity_ids` field.
+* Enriches the resulting records with two entity fields that are prefixed with `host.`: `host.id` and `host.name`.
+* Applies a filter for the host name `myhost`.
+
+```
+fetch dt.davis.problems
+
+
+
+| expand affected_entity_ids
+
+
+
+| fieldsAdd host.name = entityName(affected_entity_ids, type: "dt.entity.host")
+
+
+
+| filter host.name == "myhost"
+```
+
+**Query result**
+
+timestamp
+
+affected\_entity\_ids
+
+host.id
+
+host.name
+
+display\_id
+
+5/31/2023, 1:31:39 PM
+
+HOST-27D70086952122CF
+
+HOST-27D70086952122CF
+
+myhost
+
+P-23054243
+
+## Load the last state of a given problem
+
+This example shows you how to filter problems by a unique ID.
+
+* Fetches table `dt.davis.problems`.
+* Filters by the unique display identifier of the problem.
+* Allows to find problems connected to a particular ID.
+
+```
+fetch dt.davis.problems
+
+
+
+| filter display_id == "P-24051200"
+```
+
+**Query result**
+
+timestamp
+
+affected\_entity\_ids
+
+host.id
+
+host.name
+
+display\_id
+
+5/31/2023, 1:31:39 PM
+
+HOST-27D70086952122CF
+
+HOST-27D70086952122CF
+
+myhost
+
+P-23053506
+
+## Load all active problems and exclude all those that are marked as duplicates
+
+This example shows you how to fetch all active problems that weren't marked as duplicates.
+
+Since the duplicate flag appears during the lifecycle of a problem, the update events need to be sorted by timestamp. Then, the events need to be summarized by taking the last state of the duplicate and status fields. It's possible to correctly apply the filter only after you sort the events by the timestamp.
+
+* Fetches table `dt.davis.problems`.
+* Filters out problems that are marked as duplicates.
+* Filters out problems that were closed already.
+
+```
+fetch dt.davis.problems
+
+
+
+| filter event.status == "ACTIVE" and not dt.davis.is_duplicate == "true"
+```
+
+**Query result**
+
+display\_id
+
+status
+
+id
+
+duplicate
+
+P-230910385
+
+ACTIVE
+
+P-230910385
+
+false
+
+## Calculate the mean time of resolving problems over time
+
+This example shows you how to calculate the mean time that was needed to resolve all the reported problems by summarizing the delta between start and end of each problem over time.
+
+* Fetches table `dt.davis.problems`.
+* Flattens the problem fields into the record.
+* Filters out all frequent and duplicate problems.
+* Returns all closed problems.
+* Converts the values into a time series of averages over time.
+
+```
+fetch dt.davis.problems, from:now()-7d
+
+
+
+| filter event.status == "CLOSED"
+
+
+
+| filter dt.davis.is_frequent_event == false and dt.davis.is_duplicate == false and maintenance.is_under_maintenance == false
+
+
+
+| makeTimeseries `AVG Problem duration in hours` = avg(toLong(resolved_problem_duration)/3600000000000.0), time:event.end
+```
+
+## Show a chart of the concurrently open problems over time
+
+This example shows how to create a chart displaying the number of concurrently open problems over time. The resolution gaps are filled with the `spread` command.
+
+* Fetches table `dt.davis.problems`.
+* Creates a time series of the problem count.
+* Fills the gaps between start and end timestamps of a problem with the correct count by using the `spread` command.
+
+```
+fetch dt.davis.problems
+
+
+
+| makeTimeseries count = count(), spread: timeframe(from: event.start, to: coalesce(event.end, now()))
+```
+
+## Chart the number of CPU saturation and high-memory events in the last 7 days
+
+* Fetches table `dt.davis.events` for the last 7 days.
+* Counts in a resolution of 60-minute bins.
+
+```
+fetch dt.davis.events, from:now()-7d, to:now()
+
+
+
+| filter event.kind == "DAVIS_EVENT"
+
+
+
+| filter event.type == "OSI_HIGH_CPU" or event.type == "OSI_HIGH_MEMORY"
+
+
+
+| makeTimeseries count =  count(default: 0)
+```
+
+**Query result**
+
+60min interval
+
+count
+
+5/25/2023, 3:00 PM
+
+146
+
+5/25/2023, 4:00 PM
+
+312
+
+5/25/2023, 5:00 PM
+
+201
+
+
+---
+
+
+## Source: davis-for-workflows.md
+
+
+---
+title: AI in Workflows - Predictive maintenance of cloud disks
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-for-workflows
+scraped: 2026-02-15T09:07:44.938596
+---
+
+# AI in Workflows - Predictive maintenance of cloud disks
+
+# AI in Workflows - Predictive maintenance of cloud disks
+
+* Latest Dynatrace
+* Tutorial
+* 6-min read
+* Updated on Jan 28, 2026
+
+Dynatrace Intelligence data analyzers offer a broad range of general-purpose artificial intelligence and machine learning (AI/ML) functionality, such as learning and predicting time series, detecting anomalies, or identifying metric behavior changes within time series. Dynatrace Intelligence enables you to seamlessly integrate those analyzers into your custom workflows. An example use case is a fully automated task of predicting and remediating future capacity demands. It helps you to avoid critical outages by being notified days in advance before incidents even arise.
+
+## Install Dynatrace Intelligence (Preview)
+
+To use Dynatrace Intelligence actions, you first need to install **Dynatrace Intelligence (Preview)** from Dynatrace Hub.
+
+1. In Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub"), search for **Dynatrace Intelligence (Preview)**.
+2. Select **Dynatrace Intelligence (Preview)** and select **Install**.
+
+After installation, Dynatrace Intelligence actions appear automatically in the **Chose action** section of [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+
+## Example use case
+
+This use case shows how you can leverage the Dynatrace Intelligence predictive AI analyzer to foresee future disk capacity needs and raise predictive alerts weeks before critical incidents occur.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+Grant necessary permissions](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#permissions "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+Explore capacity measurements](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#explore "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+Define a trigger schedule](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#schedule "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+
+Configure the forecast](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#forecast "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+
+Evaluate the result](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#evaluate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
+
+Remediate before it happens](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#remediate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Step 7")
+
+Review raised problems](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#problems "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")
+
+### Step 1 Grant necessary permissions
+
+A successful Dynatrace Intelligence analysis requires proper access rights.
+
+1. In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, go to **Settings** > **Authorization settings**.
+2. Grant the following primary permission.
+
+   ```
+   app-engine:functions:run
+   ```
+3. Grant the following secondary permissions.
+
+   ```
+   davis:analyzers:read
+
+
+
+   davis:analyzers:execute
+
+
+
+   storage:bizevents:read
+
+
+
+   storage:buckets:read
+
+
+
+   storage:events:read
+
+
+
+   storage:logs:read
+
+
+
+   storage:metrics:read
+
+
+
+   storage:spans:read
+
+
+
+   storage:system:read
+   ```
+4. In the top right, select **Save**.
+
+### Step 2 Explore capacity measurements in a notebook
+
+Predictive capacity management starts within [**Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") where you need to configure your capacity indicators. The image below shows an example of the free disk percentage indicator for an operations team.
+
+![An example of an AI data analysis forecast.](https://dt-cdn.net/images/notebooks-data-analyzer-forecast-1891-28bee08431.png)
+
+Once you have the required indicators, it's time to build the workflow that triggers a forecast at regular intervals.
+
+### Step 3 Define a trigger schedule
+
+In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, configure the required schedule to trigger the forecast. To learn how, see [Workflow schedule trigger](/docs/analyze-explore-automate/workflows/trigger/schedules "Guide to creating workflow automation schedule triggers in Dynatrace Workflows."). The image below shows the workflow that runs at 8:00 AM to trigger the forecast of all the disks that are likely to run out of space in the next week.
+
+![Example of a Dynatrace Intelligence trigger in the Workflows app.](https://dt-cdn.net/images/workflows-forecast-trigger-1920-652d16e024.png)
+
+### Step 4 Configure the forecast
+
+To trigger the forecast from a workflow, you need the **Analyze data** action. The action uses the forecast analysis and a data set for the forecast. You can use any time series data for the forecast. All you need is to fetch it from Grail via a DQL query. Here, we define a set of disks for which we want to predict capacity. We use the `dt.host.disk.free` metric, but you can use any capacity metricâhost CPU, memory, network load. You can even extract the value from a log line.
+
+Our forecast is trained on a relative timeframe of the last seven days, specified in the DQL query. It predicts 100 data points; that is, the original 120 points fetched from Grail are expanded by predicted 100 data points, spanning approximately one week into the future. See the DQL query below.
+
+The action returns all the forecasted time series, which could be hundreds or thousands of individual disk predictions.
+
+To configure this forecast in the action
+
+1. Add a new **Analyze data** action.
+2. Set the name of the action as `predict_disk_capacity`.
+3. Select the **Generic Forecast Analysis** as an analyzer.
+4. In **Time series data**, specify the following DQL query:
+
+   ```
+   timeseries avg(dt.host.disk.free), by:{dt.entity.host, dt.entity.disk}, bins: 120, from:now()-7d, to:now()
+   ```
+5. Set **Data points to predict** as `100`.
+
+![Dynatrace Intelligence forecast for workflows in the Workflows app.](https://dt-cdn.net/images/dynatrace-intelligence-forecast-for-workflows-1920-de2e97e37b.png)
+
+### Step 5 Evaluate the result
+
+The next workflow action tests each prediction to determine whether the disk will run out of space during the next week. It's a **Run JavaScript** action, running the custom TypeScript code, checking threshold violations, and passing all violations to the next action. It returns a custom object with a boolean flag (`violation`) and an array containing violation details (`violations`).
+
+1. Add a new **Run JavaScript** action.
+2. Set the name of the action as `check_prediction`.
+3. Use the following source code.
+
+   ```
+   import { execution } from '@dynatrace-sdk/automation-utils';
+
+
+
+   const THRESHOLD = 15;
+
+
+
+   const TASK_ID = 'predict_disk_capacity';
+
+
+
+   export default async function ({ executionId }) {
+
+
+
+   const exe = await execution(executionId);
+
+
+
+   const predResult = await exe.result(TASK_ID);
+
+
+
+   const result = predResult['result'];
+
+
+
+   const predictionSummary = { violation: false, violations: new Array<Record<string, string>>() };
+
+
+
+   console.log("Total number of predicted lines: " + result.output.length);
+
+
+
+   // Check if prediction was successful.
+
+
+
+   if (result && result.executionStatus == 'COMPLETED') {
+
+
+
+   console.log('Prediction was successful.')
+
+
+
+   // Check each predicted result, if it violates the threshold.
+
+
+
+   for (let i = 0; i < result.output.length; i++) {
+
+
+
+   const prediction = result.output[i];
+
+
+
+   // Check if the prediction result is considered valid
+
+
+
+   if (prediction.analysisStatus == 'OK' && prediction.forecastQualityAssessment == 'VALID') {
+
+
+
+   const lowerPredictions = prediction.timeSeriesDataWithPredictions.records[0]['dt.davis.forecast:lower'];
+
+
+
+   const lastValue = lowerPredictions[lowerPredictions.length-1];
+
+
+
+   // check against the threshold
+
+
+
+   if (lastValue < THRESHOLD) {
+
+
+
+   predictionSummary.violation = true;
+
+
+
+   // we need to remember all metric properties in the result,
+
+
+
+   // to inform the next actions which disk ran out of space
+
+
+
+   predictionSummary.violations.push(prediction.timeSeriesDataWithPredictions.records[0]);
+
+
+
+   }
+
+
+
+   }
+
+
+
+   }
+
+
+
+   console.log(predictionSummary.violations.length == 0 ? 'No violations found :)' : '' + predictionSummary.violations.length + ' capacity shortages were found!')
+
+
+
+   return predictionSummary;
+
+
+
+   } else {
+
+
+
+   console.log('Prediction run failed!');
+
+
+
+   }
+
+
+
+   }
+   ```
+
+### Step 6 Remediate before it happens
+
+You have a variety of remediation actions to follow up on predicted capacity shortages. In our example, the workflow raises a Davis problem and sends a Slack message for each potential shortage. Both are conditional actions that only trigger if the forecast predicts any disk space shortages.
+
+Each raised Davis problem carries custom properties that provide insight into the situation and help to identify the problematic disk.
+
+![An example of a Dynatrace Intelligence conditional action.](https://dt-cdn.net/images/workflows-forecast-conditional-action-1920-8dbefdfc44.png)
+
+To send a message
+
+1. Add a new **Send message** action.
+2. Set the name of the action as `send_message`.
+3. Configure the message. To learn how, see [Slack Connector](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces").
+4. Open the **Conditions** tab.
+5. Select the `success` condition for the **check\_prediction** action.
+6. Add the following custom condition:
+
+   ```
+   {{ result('check_prediction').violation }}
+   ```
+
+To raise a Davis problem
+
+1. Add a new **Run JavaScript** action.
+2. Set the name of the action as `raise_violation_events`.
+3. Use the following source code.
+
+   ```
+   import { eventsClient, EventIngestEventType } from "@dynatrace-sdk/client-classic-environment-v2";
+
+
+
+   import { execution } from '@dynatrace-sdk/automation-utils';
+
+
+
+   export default async function ({ executionId }) {
+
+
+
+   const exe = await execution(executionId);
+
+
+
+   const checkResult = await exe.result('check_prediction');
+
+
+
+   const violations = await checkResult.violations;
+
+
+
+   // Raise an event for each violation
+
+
+
+   violations.forEach(function (violation) {
+
+
+
+   eventsClient.createEvent({
+
+
+
+   body : {
+
+
+
+   eventType: EventIngestEventType.ResourceContentionEvent,
+
+
+
+   title: 'Predicted Disk Capacity Alarm',
+
+
+
+   entitySelector: 'type(DISK),entityId("' + violation['dt.entity.disk'] + '")',
+
+
+
+   properties: {
+
+
+
+   'dt.entity.host' : violation['dt.entity.host']
+
+
+
+   }
+
+
+
+   }
+
+
+
+   });
+
+
+
+   });
+
+
+
+   };
+   ```
+4. Open the **Conditions** tab.
+5. Select the `success` condition for the **check\_prediction** action.
+6. Add the following custom condition.
+
+   ```
+   {{ result('check_prediction').violation }}
+   ```
+
+### Step 7 Review all Dynatrace Intelligence predicted capacity problems
+
+In Dynatrace, the operations team can review all predicted capacity shortages in the Dynatrace Intelligence problems feed.
+
+Raising a problem is an optional remediation step that you can skip completely, opting for notifications for responsible teams. In this example it illustrates the flexibility and power of the AutomationEngine combined with the analytical capabilities of Dynatrace Intelligence and Grail.
+
+![An example of Dynatrace Intelligence Capacity Prediction and Predictive Alerts.](https://dt-cdn.net/images/problems-predictive-capacity-alert-3600-89a8dfa6a9.png)
+
+## Related topics
+
+* [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+
+
+---
