@@ -1,0 +1,2886 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/analyze-explore-automate__dashboards-classic/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dynatrace Documentation: analyze-explore-automate/dashboards-classic - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-documentation-analyze-explore-automatedashboards-classic" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace Documentation: analyze-explore-automate/dashboards-classic
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-available-tilesmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: available-tiles.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dynatrace-documentation-analyze-explore-automatedashboards-classic">Dynatrace Documentation: analyze-explore-automate/dashboards-classic<a class="headerlink" href="#dynatrace-documentation-analyze-explore-automatedashboards-classic" title="Permanent link">&para;</a></h1>
+<p>Generated: 2026-02-16</p>
+<p>Files combined: 6</p>
+<hr />
+<h2 id="source-available-tilesmd">Source: available-tiles.md<a class="headerlink" href="#source-available-tilesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Available tiles
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles
+scraped: 2026-02-15T09:10:07.331936</p>
+<hr />
+<h1 id="available-tiles">Available tiles<a class="headerlink" href="#available-tiles" title="Permanent link">&para;</a></h1>
+<h1 id="available-tiles_1">Available tiles<a class="headerlink" href="#available-tiles_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>33-min read</li>
+<li>Updated on May 16, 2022</li>
+</ul>
+<p><a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a></p>
+<p>The dashboards discussed here are classic dashboards created using the dashboarding functionality integrated with previous Dynatrace.</p>
+<ul>
+<li>For more about classic dashboards, see <a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a>.</li>
+<li>For more about dashboards created with the Dashboards app in the latest Dynatrace, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Dashboards</a>.</li>
+<li>To improve your dashboard experience, you can <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest" title="Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.">upgrade existing dashboards</a> from Dashboards Classic to the Dashboards app in the latest Dynatrace.</li>
+</ul>
+<p>Tiles you can add to your dashboards are described below.</p>
+<p>Editing tips</p>
+<ul>
+<li>To make multiple similar <strong>tiles</strong>, start with one good tile, clone it, and then edit the cloned tiles.</li>
+</ul>
+<p>Clone a tile to the current dashboard</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select the name of a dashboard to display that dashboard.</li>
+<li>
+<p>Select <strong>Edit</strong> in the upper-right corner of the dashboard. The dashboard opens in edit mode.</p>
+<ul>
+<li>If you don't see an <strong>Edit</strong> option, you don't have permission to edit that dashboard.</li>
+<li>
+<p>Select the tile that you want to clone (add a copy of the tile to the current dashboard) and then select <strong>Clone</strong>.</p>
+</li>
+<li>
+<p>To clone multiple tiles to the current dashboard, drag a selection rectangle around the <em>x</em> tiles you want to clone and then select <strong>Clone x tiles</strong>.</p>
+</li>
+<li>Edit the cloned tiles as needed.</li>
+</ul>
+</li>
+</ol>
+<p>Clone a tile to another dashboard</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select the name of a dashboard to display that dashboard.</li>
+<li>
+<p>Select <strong>Edit</strong> in the upper-right corner of the dashboard. The dashboard opens in edit mode.</p>
+<ul>
+<li>If you don't see an <strong>Edit</strong> option, you don't have permission to edit that dashboard.</li>
+<li>
+<p>Select the tile you want to clone to another dashboard and then select <strong>Clone to</strong>.</p>
+</li>
+<li>
+<p>To clone multiple tiles to another dashboard, drag a selection rectangle around the <em>x</em> tiles you want to clone and then select <strong>Clone x to</strong>.</p>
+</li>
+<li>In the <strong>Where do you want to pin to?</strong> pop-up window, select an existing dashboard or <strong>Create new dashboard</strong>.</li>
+<li>Select <strong>Pin</strong> to add the selected tiles to the dashboard.</li>
+<li>Edit the cloned tiles as needed.</li>
+<li>To make multiple similar <strong>dashboards</strong>, each with the same tiles, start with one good dashboard, clone it, and then edit the cloned dashboards/tiles.</li>
+</ul>
+</li>
+</ol>
+<p>Clone an existing dashboard</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>
+<p>In the table of dashboards, select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Clone</strong> for the dashboard you want to copy.</p>
+<ul>
+<li>The copy opens in edit mode.</li>
+<li>The original dashboard is unaffected.</li>
+</ul>
+</li>
+</ol>
+<h2 id="visualizations">Visualizations<a class="headerlink" href="#visualizations" title="Permanent link">&para;</a></h2>
+<p>Use visualization tiles to create visual representations of <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a> queries that you can pin to your dashboards.</p>
+<h3 id="visualization-types">Visualization types<a class="headerlink" href="#visualization-types" title="Permanent link">&para;</a></h3>
+<p>Dynatrace offers the following visualization types:</p>
+<ul>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph" title="Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.">Graph</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column" title="Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.">Stacked column</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area" title="Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.">Stacked area</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie" title="Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.">Pie</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value" title="Configure and use a single-value visualization in Data Explorer and display it on your dashboards.">Single value</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table" title="Configure and use a table visualization in Data Explorer and display it on your dashboards.">Table</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list" title="Configure a top-list visualization in Data Explorer and display it on your dashboards.">Top list</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap" title="Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.">Heatmap</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb" title="Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.">Honeycomb</a></li>
+</ul>
+<h4 id="interactivity">Interactivity<a class="headerlink" href="#interactivity" title="Permanent link">&para;</a></h4>
+<p>Interactivity of visualization tiles varies according to the type of visualization, but they generally share common capabilities.</p>
+<ul>
+<li>Hover over an element (such as a line or a slice of pie) to see details in a tooltip.</li>
+<li>Select (click) an element and then select a button in the tooltip to drill down for details. For example, in a visualization showing a line for each host, select an interesting point on a line and then select the <strong>View host</strong> button to drill down to the selected host page.</li>
+<li>The legend is active: select a legend entry to show or hide the corresponding element on the visualization.</li>
+<li>
+<p>All tiles have a tile menu in the upper-right corner:</p>
+</li>
+<li>
+<p><strong>Configure tile in Data Explorer</strong> opens the tile in <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>, where you can configure the query and visualization.</p>
+</li>
+<li><strong>Edit tile</strong> (if you have edit rights) opens the dashboard in edit mode with the current tile selected.</li>
+</ul>
+<h4 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h4>
+<p>To configure a visualization tile from the dashboard editor</p>
+<ol>
+<li>Display your dashboard and select <strong>Edit</strong>.</li>
+<li>Drag a visualization tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard.</li>
+<li>Select <strong>Configure tile</strong> to open your tile in <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>.</li>
+<li>
+<p>Configure the query for the tile. You don't have to create the final version all at once; you can build your query iteratively.</p>
+</li>
+<li>
+<p>Select <strong>Run query</strong> after you make a query change to see the results of the change.</p>
+</li>
+<li>Optional Select a different visualization type and see what works best for your query.</li>
+<li>The selection of visual settings available depends on the query and visualization type.</li>
+<li>
+<p>After you have defined the query:</p>
+</li>
+<li>
+<p>To save your changes to the tile and dashboard you started from, select <strong>Save changes to dashboard</strong>.</p>
+</li>
+<li>To save your changes to a different tile, even a different dashboard, select <strong>Pin to dashboard</strong> and choose the destination dashboard and tile title.</li>
+<li>Select <strong>Open dashboard</strong>.</li>
+<li>Optional Change the tile title.</li>
+<li>Optional Select a custom timeframe.</li>
+<li>Optional Select a custom management zone.</li>
+<li>Optional Select an environment.</li>
+</ol>
+<p>To configure a visualization tile from the 'Data Explorer'</p>
+<ol>
+<li>Go to <strong>Data Explorer</strong>.</li>
+<li>
+<p>Configure the query for the tile. You don't have to create the final version all at once; you can build your query iteratively.</p>
+</li>
+<li>
+<p>Select <strong>Run query</strong> after you make a query change to see the results of the change.</p>
+</li>
+<li>Select different visualization types to see what works best for your query.</li>
+<li>
+<p>The selection of visual settings available depends on the query and visualization type. For details:</p>
+<ul>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph" title="Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.">Graph</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column" title="Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.">Stacked column</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area" title="Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.">Stacked area</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie" title="Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.">Pie</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value" title="Configure and use a single-value visualization in Data Explorer and display it on your dashboards.">Single value</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table" title="Configure and use a table visualization in Data Explorer and display it on your dashboards.">Table</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list" title="Configure a top-list visualization in Data Explorer and display it on your dashboards.">Top list</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap" title="Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.">Heatmap</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb" title="Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.">Honeycomb</a></li>
+<li>Some visualizations (for example, heatmaps) can display only one metric. To display a different metric in the visualization, select the letter next to the metric you want to visualize. In this example, we would change the selection from <strong>A</strong> (<code>CPU usage %</code>) to <strong>B</strong> (<code>Memory used %</code>).</li>
+</ul>
+<p><img alt="Change metric selection" src="https://dt-cdn.net/images/select-metric-379-6a5af28695.png" /></p>
+<p>Other visualizations (for example, tables) can display more than one metric. To change the selection of metrics to visualize, select the letters next to the metric names. In the above example, we would change the selection from <strong>A</strong> (<code>CPU usage %</code> only) to both <strong>A</strong> and <strong>B</strong> (<code>CPU usage %</code> and <code>Memory used %</code>).
+3. When you are satisfied with the results of your query, select <strong>Pin to dashboard</strong> and choose the destination dashboard and tile title.
+4. Select <strong>Open dashboard</strong> to see the tile on the dashboard.
+5. Optional Change the tile title.
+6. Optional Select a custom timeframe.
+7. Optional Select a custom management zone.
+8. Optional Select an environment.</p>
+</li>
+</ol>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<p>Use the context tiles (<strong>Header</strong>, <strong>Markdown</strong>, and <strong>Image</strong>) to explain your dashboard contents and add graphics such as company logos. This is particularly important if you're making dashboards to share with others.</p>
+<h3 id="header">Header<a class="headerlink" href="#header" title="Permanent link">&para;</a></h3>
+<p>Use a header tile to put a bold label over another tile.</p>
+<h3 id="markdown">Markdown<a class="headerlink" href="#markdown" title="Permanent link">&para;</a></h3>
+<p>Use one or more markdown tiles to customize and describe your dashboard: what it does, how to use it, and so on.</p>
+<p>Limitations: 1,000 characters per markdown tile.</p>
+<p>Markdown syntax</p>
+<h4 id="headings">Headings<a class="headerlink" href="#headings" title="Permanent link">&para;</a></h4>
+<p>Markdown heading levels <code>#</code> - <code>######</code> are supported.</p>
+<h4 id="horizontal-lines">Horizontal lines<a class="headerlink" href="#horizontal-lines" title="Permanent link">&para;</a></h4>
+<p>Use <code>***</code> or <code>___</code> or <code>---</code> alone on one line to add a horizontal line separating sections of your tile.</p>
+<h4 id="line-breaks">Line breaks<a class="headerlink" href="#line-breaks" title="Permanent link">&para;</a></h4>
+<p>Leave two spaces at the end of a line to force a line break.</p>
+<h4 id="emphasis">Emphasis<a class="headerlink" href="#emphasis" title="Permanent link">&para;</a></h4>
+<p>Use <code>**text**</code> or <code>__text__</code> to display bold <strong>text</strong>.</p>
+<h4 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h4>
+<p>You can create numbered (<code>1.</code>) or bulleted (<code>*</code>) markdown lists, or a mix of the two, with nesting.</p>
+<h4 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h4>
+<p>If you have favorite Dynatrace pages and websites, you can add links to all of them from your dashboards.</p>
+<p>A link consists of two parts:</p>
+<ul>
+<li>The link label in square brackets: <code>[</code> and <code>]</code>. This is free-form text between two square brackets, such as <code>[Dynatrace]</code>.</li>
+<li>
+<p>The link target in parentheses: <code>(</code> and <code>)</code>. There are two ways to define a target:</p>
+</li>
+<li>
+<p>An absolute URL. For example, to link to:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://www.example.com/
+</code></pre></div>
+<p>put the whole URL in parentheses</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>(https://www.example.com/)
+</code></pre></div>
+<p>to get a link definition like:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[Example](https://www.example.com/)
+</code></pre></div>
+  + An anchor to a Dynatrace page (including other dashboards).<br />
+To get that anchor, navigate to the target page in Dynatrace and copy everything on the browser address line that follows the domain and slash.<br />
+If the full URL of the target page is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://myenvironment.live.dynatrace.com/ui/deploymentstatus/oneagents?gtf=-2h&amp;gf=all
+</code></pre></div>
+<p>the anchor text is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ui/deploymentstatus/oneagents?gtf=-2h&amp;gf=all
+</code></pre></div>
+<p>and the full link specification is something like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[My link to deployment status](ui/deploymentstatus/oneagents?gtf=-2h&amp;gf=all)
+</code></pre></div>
+<p>Similarly, if you added this example to a markdown tile on one of your dashboards, the link would open the Dynatrace Hosts table:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[Hosts](#newhosts;gtf=-2h;gf=all)
+</code></pre></div>
+</li>
+</ul>
+<h3 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h3>
+<p>Add images to your dashboards to improve their appearance and customize them for presentations.</p>
+<p>Supported image file types: JPG/JPEG, GIF, PNG, WEBP, TIFF, BMP, SVG</p>
+<p>You can upload an image or point to it via URL.</p>
+<p>Unlike other tile types, an image tile is not automatically refreshed. You need to refresh a dashboard manually to update the image tiles on that dashboard.</p>
+<p>Upload an image</p>
+<p>To upload an image and display it on your dashboard</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select the name of a dashboard to display that dashboard.</li>
+<li>
+<p>Select <strong>Edit</strong> in the upper-right corner of the dashboard. The dashboard opens in edit mode.</p>
+</li>
+<li>
+<p>If you don't see an <strong>Edit</strong> option, you don't have permission to edit that dashboard.</p>
+</li>
+<li>Drag an <strong>Image</strong> tile into position.</li>
+<li>On the <strong>Image</strong> panel, select the <strong>Upload an image</strong> tab.</li>
+<li>Select <strong>Upload image</strong>.</li>
+<li>Browse for and select the image file you want to display in the tile.</li>
+<li>Size and position the tile as needed.</li>
+</ol>
+<p>Point to image via URL</p>
+<p>To point to an image via URL and display it on your dashboard, you first need to add the URL to the allowlist, and then you can refer to that URL from an image tile.</p>
+<p><strong>Add the URL to the allowlist</strong></p>
+<ol>
+<li>Go to <strong>Settings</strong> and select <strong>Dashboards</strong> &gt; <strong>Allowed URL pattern rules</strong>.</li>
+<li>Select <strong>Add item</strong>.</li>
+<li>
+<p>Set <strong>Rule</strong>, which specifies how to process this allowlist entry.</p>
+</li>
+<li>
+<p><strong>Starts with</strong>âallow any image whose URL starts with the contents of <strong>Pattern</strong>.</p>
+</li>
+<li><strong>Exact</strong>âallow the specific image whose URL matches the contents of <strong>Pattern</strong> exactly.</li>
+<li>
+<p>Set <strong>Pattern</strong>:</p>
+</li>
+<li>
+<p>To specify a URL start, enter enough of the URL to make sure any matching image URLs will be suitable for your dashboards.<br />
+     Example: enter <code>https://example.com/images/</code> to allow any image whose URL starts with <code>https://example.com/images/</code>, such as<br />
+<code>https://example.com/images/image-x.jpg</code> and
+     <code>https://example.com/images/my-picture.svg</code></p>
+</li>
+<li>To specify an exact URL, enter the entire URL of the image you want to allow.<br />
+     Example: enter <code>https://example.com/images/my-image-file-name.jpg</code> to allow only that image</li>
+<li>Select <strong>Save changes</strong> to add the specified rule to the allowlist.</li>
+</ol>
+<p><strong>Add the image tile</strong></p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select the name of a dashboard to display that dashboard.</li>
+<li>
+<p>Select <strong>Edit</strong> in the upper-right corner of the dashboard. The dashboard opens in edit mode.</p>
+</li>
+<li>
+<p>If you don't see an <strong>Edit</strong> option, you don't have permission to edit that dashboard.</p>
+</li>
+<li>Drag an <strong>Image</strong> tile into position.</li>
+<li>On the <strong>Image</strong> panel, select the <strong>Add image URL</strong> tab.</li>
+<li>Enter the URL of the image file you want to display in the tile. It needs to match one of the rules on the allowlist.</li>
+<li>Size and position the tile as needed.</li>
+</ol>
+<p>Example dashboard with images:</p>
+<p><img alt="Example dashboard with images" src="https://dt-cdn.net/images/dashboard-image-example-01-1286-031295613c.png" /></p>
+<h2 id="infrastructure">Infrastructure<a class="headerlink" href="#infrastructure" title="Permanent link">&para;</a></h2>
+<h3 id="host-health">Host health<a class="headerlink" href="#host-health" title="Permanent link">&para;</a></h3>
+<p>Displays the number of hosts (operating system instances, whether physical and virtual) in your environment compared to the number of hosts in your environment that are currently affected by problems. Each host instance equates to a Dynatrace OneAgent installed in your environment.</p>
+<h4 id="drilldowns">Drilldowns<a class="headerlink" href="#drilldowns" title="Permanent link">&para;</a></h4>
+<p>Health tile drilldowns</p>
+<ul>
+<li>From a health tile (such as <strong>Host health</strong>, <strong>Service health</strong>, and <strong>Application health</strong>), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.</li>
+<li>To drill down to a problematic (red) element, select the red hexagon and then select the <strong>Viewâ¦</strong> button. On this example <strong>Synthetic monitor health</strong> tile, we have selected a red element, which enabled the <strong>View test</strong> drilldown button for that element.</li>
+</ul>
+<p><img alt="Drill down to problematic entity from health tile" src="https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png" />
+* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select <strong>View details</strong> to display the relevant Dynatrace page for the tile. For example, <strong>View details</strong> from a <strong>Synthetic monitor health</strong> tile displays the <strong>Synthetic monitors</strong> table.</p>
+<p><img alt="Select tile menu" src="https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png" /></p>
+<p><img alt="Select 'View details' from tile menu" src="https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png" /></p>
+<h4 id="configuration_1">Configuration<a class="headerlink" href="#configuration_1" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Host health</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select whether to show a visualization on the tile</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <img alt="Hosts" src="https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png" title="Hosts" /> <strong>Hosts Classic</strong>.</li>
+<li>Set filters in the <strong>Filtered by</strong> box.</li>
+<li>
+<p>Select <strong>Pin to dashboard</strong>, select a target dashboard, and select <strong>Pin</strong> to add a <strong>Hosts</strong> tile to the selected dashboard with the selected filters. You can then set any of the options described above.</p>
+</li>
+<li>
+<p>The tile will reflect all filters and options you have set</p>
+</li>
+<li>The next time you select the tile on your dashboard, the <strong>Hosts</strong> page will open with the filters and options already applied</li>
+</ol>
+<h3 id="network-metrics">Network metrics<a class="headerlink" href="#network-metrics" title="Permanent link">&para;</a></h3>
+<p>Displays network health metrics for traffic flowing through your monitored hosts. Shows current traffic volume and quality of communication of both new (Connectivity) and established sessions (Retransmissions).</p>
+<h4 id="drilldowns_1">Drilldowns<a class="headerlink" href="#drilldowns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the <strong>Host networking</strong> page</li>
+</ul>
+<h4 id="configuration_2">Configuration<a class="headerlink" href="#configuration_2" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="network-status">Network status<a class="headerlink" href="#network-status" title="Permanent link">&para;</a></h3>
+<p>Displays current network traffic flowing through your monitored hosts. Shows traffic volume, number of nodes (Talkers) exchanging network traffic, and number of nodes experiencing performance problems (Processes and Hosts).</p>
+<h4 id="drilldowns_2">Drilldowns<a class="headerlink" href="#drilldowns_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the <strong>Host networking</strong> page</li>
+</ul>
+<h4 id="configuration_3">Configuration<a class="headerlink" href="#configuration_3" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Network status</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select whether to show a visualization on the tile</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>Displays current number of Docker containers and images compared to last week, plus current number of Docker hosts.</p>
+<h4 id="drilldowns_3">Drilldowns<a class="headerlink" href="#drilldowns_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the <strong>Docker</strong> page</li>
+</ul>
+<h4 id="configuration_4">Configuration<a class="headerlink" href="#configuration_4" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Docker</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="vmware">VMware<a class="headerlink" href="#vmware" title="Permanent link">&para;</a></h3>
+<p>Displays current basic indicators related to the virtualized infrastructure in your environment, including the number of VMs, migration events, and the corresponding trends, as well as the number of ESXi hosts (standalone or managed by attached vCenter servers) against the number of ESXi hosts in your environment that are currently affected by problems. If there are multiple vCenter or ESXi hosts attached, all gathered data can be aggregated or presented for a selected entity.</p>
+<h4 id="drilldowns_4">Drilldowns<a class="headerlink" href="#drilldowns_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the <strong>VMware</strong> page</li>
+</ul>
+<h4 id="configuration_5">Configuration<a class="headerlink" href="#configuration_5" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>VMware</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
+<p>Displays quick insights and health indicators of three services running under your AWS account:</p>
+<ul>
+<li>Elastic Compute Cloud (EC2) instances</li>
+<li>Elastic Block Storage (EBS)</li>
+<li>Classic Load Balancer (ELB)</li>
+</ul>
+<h4 id="drilldowns_5">Drilldowns<a class="headerlink" href="#drilldowns_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the <strong>AWS</strong> page</li>
+</ul>
+<h4 id="configuration_6">Configuration<a class="headerlink" href="#configuration_6" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag an <strong>AWS</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an AWS account</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h2 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h2>
+<h3 id="service-health">Service health<a class="headerlink" href="#service-health" title="Permanent link">&para;</a></h3>
+<p>Displays an overview of all services monitored by Dynatrace, including the number of services experiencing performance degradation. This high-level visualization provides an easily digestible view, which makes it a great fit for management dashboards.</p>
+<p>Depending on the selected timeframe, the tile shows:</p>
+<ul>
+<li>For a <em>last X</em> timeframe: the most recent time slot of data.</li>
+<li>For other timeframe types: the average value within the timeframe.</li>
+</ul>
+<h4 id="drilldowns_6">Drilldowns<a class="headerlink" href="#drilldowns_6" title="Permanent link">&para;</a></h4>
+<p>Health tile drilldowns</p>
+<ul>
+<li>From a health tile (such as <strong>Host health</strong>, <strong>Service health</strong>, and <strong>Application health</strong>), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.</li>
+<li>To drill down to a problematic (red) element, select the red hexagon and then select the <strong>Viewâ¦</strong> button. On this example <strong>Synthetic monitor health</strong> tile, we have selected a red element, which enabled the <strong>View test</strong> drilldown button for that element.</li>
+</ul>
+<p><img alt="Drill down to problematic entity from health tile" src="https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png" />
+* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select <strong>View details</strong> to display the relevant Dynatrace page for the tile. For example, <strong>View details</strong> from a <strong>Synthetic monitor health</strong> tile displays the <strong>Synthetic monitors</strong> table.</p>
+<p><img alt="Select tile menu" src="https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png" /></p>
+<p><img alt="Select 'View details' from tile menu" src="https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png" /></p>
+<h4 id="configuration_7">Configuration<a class="headerlink" href="#configuration_7" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Service health</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select whether to show a visualization on the tile</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <img alt="Services Classic" src="https://dt-cdn.net/images/services-classic-f58502bd22.svg" title="Services Classic" /> <strong>Services Classic</strong>.</li>
+<li>Set filters in the <strong>Filtered by</strong> box.</li>
+<li>
+<p>Select <strong>Pin to dashboard</strong> to add a <strong>Services</strong> tile to the selected dashboard with the selected filters. You can then set any of the options described above.</p>
+</li>
+<li>
+<p>The tile will reflect all filters and options you have set</p>
+</li>
+<li>The next time you select the tile on your dashboard, the <strong>Services</strong> page will open with the filters and options already applied</li>
+</ol>
+<h3 id="service-or-request">Service or request<a class="headerlink" href="#service-or-request" title="Permanent link">&para;</a></h3>
+<p>Displays current key performance indicators related to the selected service or request (requests per minute, failure rate, and response time) in a resizable tile format.</p>
+<h4 id="drilldowns_7">Drilldowns<a class="headerlink" href="#drilldowns_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected service or request details page</li>
+</ul>
+<h4 id="configuration_8">Configuration<a class="headerlink" href="#configuration_8" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Service or request</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select a service type</li>
+<li>Select a service</li>
+<li>Select a key request</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <img alt="Services Classic" src="https://dt-cdn.net/images/services-classic-f58502bd22.svg" title="Services Classic" /> <strong>Services Classic</strong>.</li>
+<li>Select a service.</li>
+<li>
+<p>From the service page, select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Pin to dashboard</strong>. You can then set any of the options described above.</p>
+</li>
+<li>
+<p>The tile will reflect the options you have set</p>
+</li>
+<li>The next time you select the tile on your dashboard, the service page will open with the options already applied</li>
+</ol>
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
+<h3 id="top-web-applications">Top web applications<a class="headerlink" href="#top-web-applications" title="Permanent link">&para;</a></h3>
+<p>Displays load details related to up to three web applications in your environment that have the highest user-action rate.</p>
+<ul>
+<li>Current values are compared against baseline measurements (when available)</li>
+<li>Performance threshold violations are color coded in red</li>
+<li>Optional Select a custom management zone</li>
+</ul>
+<h4 id="drilldowns_8">Drilldowns<a class="headerlink" href="#drilldowns_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the <strong>Applications</strong> page filtered by web applications (and any other filters you set on the tile if you pinned it from the <strong>Applications</strong> page)</li>
+</ul>
+<h4 id="configuration_9">Configuration<a class="headerlink" href="#configuration_9" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Top web applications</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select a custom management zone</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Web</strong>.</li>
+<li>Set other filters as needed.</li>
+<li>Select <strong>Pin to dashboard</strong>, select a target dashboard, and select <strong>Pin</strong>.</li>
+</ol>
+<h3 id="application-health">Application health<a class="headerlink" href="#application-health" title="Permanent link">&para;</a></h3>
+<p>Displays the total number of applications in your environment versus the number of applications that are currently affected by problems. Opens your Applications page.</p>
+<h4 id="drilldowns_9">Drilldowns<a class="headerlink" href="#drilldowns_9" title="Permanent link">&para;</a></h4>
+<p>Health tile drilldowns</p>
+<ul>
+<li>From a health tile (such as <strong>Host health</strong>, <strong>Service health</strong>, and <strong>Application health</strong>), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.</li>
+<li>To drill down to a problematic (red) element, select the red hexagon and then select the <strong>Viewâ¦</strong> button. On this example <strong>Synthetic monitor health</strong> tile, we have selected a red element, which enabled the <strong>View test</strong> drilldown button for that element.</li>
+</ul>
+<p><img alt="Drill down to problematic entity from health tile" src="https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png" />
+* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select <strong>View details</strong> to display the relevant Dynatrace page for the tile. For example, <strong>View details</strong> from a <strong>Synthetic monitor health</strong> tile displays the <strong>Synthetic monitors</strong> table.</p>
+<p><img alt="Select tile menu" src="https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png" /></p>
+<p><img alt="Select 'View details' from tile menu" src="https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png" /></p>
+<h4 id="configuration_10">Configuration<a class="headerlink" href="#configuration_10" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag an <strong>Application health</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select whether to show a visualization on the tile</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Custom Applications</strong>, <strong>Frontend</strong>, <strong>Mobile</strong>, or <strong>Web</strong>.</li>
+<li>Set filters in the <strong>Filtered by</strong> box.</li>
+<li>
+<p>Select <strong>Pin to dashboard</strong> to add an <strong>Application health</strong> tile to the selected dashboard with the selected filters. You can then set any of the options described above.</p>
+</li>
+<li>
+<p>The tile will reflect all filters and options you have set</p>
+</li>
+<li>The next time you select the tile on your dashboard, the <strong>Applications</strong> page will open with the filters and options already applied</li>
+</ol>
+<h3 id="user-behavior">User behavior<a class="headerlink" href="#user-behavior" title="Permanent link">&para;</a></h3>
+<p>Displays key user behavior indicators related to the selected application (active sessions per minute, actions per session, and session duration) over the timeframe.</p>
+<h4 id="drilldowns_10">Drilldowns<a class="headerlink" href="#drilldowns_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected application's user behavior section</li>
+</ul>
+<h4 id="configuration_11">Configuration<a class="headerlink" href="#configuration_11" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>User behavior</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Custom Applications</strong>, <strong>Frontend</strong>, <strong>Mobile</strong>, or <strong>Web</strong>, depending on the type of application you want to monitor.</li>
+<li>Select the application you want to monitor with a tile.</li>
+<li>Select the <strong>User behavior</strong> section of the infographic.</li>
+<li>Select <strong>Pin to dashboard</strong>, select a target dashboard, and select <strong>Pin</strong>.<br />
+   A <strong>User behavior</strong> tile for the selected application is pinned to the selected dashboard.</li>
+</ol>
+<h3 id="user-breakdown">User breakdown<a class="headerlink" href="#user-breakdown" title="Permanent link">&para;</a></h3>
+<p>Displays a user type breakdown (doughnut) by real users, robots, and monitors, and visualizes new users versus returning users over the timeframe.</p>
+<h4 id="drilldowns_11">Drilldowns<a class="headerlink" href="#drilldowns_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected application's user behavior section</li>
+</ul>
+<h4 id="configuration_12">Configuration<a class="headerlink" href="#configuration_12" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>User breakdown</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application you want to monitor with a tile</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="world-map">World map<a class="headerlink" href="#world-map" title="Permanent link">&para;</a></h3>
+<p>Displays a geographic map of the selected metric for the selected application.</p>
+<p>The timeframe of the world map tile is always <strong>Last 2 hours</strong>, regardless of the global or dashboard timeframe setting. If you need to see a different timeframe, drill down to the full world map and change the timeframe there.</p>
+<h4 id="drilldowns_12">Drilldowns<a class="headerlink" href="#drilldowns_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li>To open the full-sized world map page for the selected metric and location, either select the tile or select <strong>View details</strong> from the tile menu</li>
+</ul>
+<h4 id="configuration_13">Configuration<a class="headerlink" href="#configuration_13" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>World map</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application (or <code>Most active application</code>) from the list</li>
+<li>Select a geolocation</li>
+<li>Select the metric you want to map. There are two categories. You can select only one item.</li>
+</ol>
+<p><strong>Performance metric based on user actions:</strong></p>
+<ul>
+<li><a href="/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings" title="Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.">Apdex</a></li>
+<li><a href="/docs/observe/digital-experience/rum-concepts/user-actions" title="Learn what user actions are and how they help you understand what users do with your application.">User actions</a></li>
+<li><a href="/docs/observe/digital-experience/rum-concepts/user-actions#load-action" title="Learn what user actions are and how they help you understand what users do with your application.">Load actions</a></li>
+<li><a href="/docs/observe/digital-experience/rum-concepts/user-actions#xhr-action" title="Learn what user actions are and how they help you understand what users do with your application.">XHR actions</a></li>
+<li><a href="/docs/observe/digital-experience/rum-concepts/user-actions#custom-action" title="Learn what user actions are and how they help you understand what users do with your application.">Custom actions</a></li>
+<li>Errors</li>
+</ul>
+<p><strong>Behavior metric based on sessions or users:</strong></p>
+<ul>
+<li>Active sessions</li>
+<li>Active users</li>
+<li>Actions per session</li>
+<li>Bounce rate</li>
+<li>Session duration</li>
+</ul>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Custom Applications</strong>, <strong>Frontend</strong>, <strong>Mobile</strong>, or <strong>Web</strong>, depending on the type of application you want to monitor.</li>
+<li>Select an application.</li>
+<li>On the infographic, select <strong>View geolocation breakdown</strong>.</li>
+<li>In the <strong>Geolocation breakdown</strong> section that is now displayed under the infographic, select <strong>View full world map</strong>.</li>
+<li>In the filter bar, set a <code>Location</code> filter to zoom that map to that location</li>
+<li>Select a metric button (<strong>Apdex</strong>, <strong>User actions</strong>, <strong>Load actions</strong>, <strong>XHR actions</strong>, <strong>Custom actions</strong>, or <strong>Errors</strong>) to focus the map on that metric</li>
+<li>Select <strong>Pin to dashboard</strong>, select the target dashboard, and select <strong>Pin</strong>.</li>
+</ol>
+<p><strong>Troubleshooting:</strong></p>
+<ul>
+<li>If you don't see data on the world map, you might need to map your internal IP addresses to locations for your <a href="/docs/observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web" title="Configure Dynatrace to use local addresses to understand where the users of your web applications are.">web</a>, <a href="/docs/observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile" title="Configure Dynatrace to use local addresses to understand where the users of your mobile applications are.">mobile</a>, and <a href="/docs/observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom" title="Configure Dynatrace to use local addresses to understand where the users of your custom applications are.">custom applications</a>.</li>
+<li>Remember that the timeframe of a world map tile is always <strong>Last 2 hours</strong>, regardless of how you set the global or dashboard timeframe.</li>
+</ul>
+<h3 id="key-user-action-overview">Key user action overview<a class="headerlink" href="#key-user-action-overview" title="Permanent link">&para;</a></h3>
+<p>Displays an overview of the selected application's key user actions and any corresponding open problems.</p>
+<h4 id="drilldowns_13">Drilldowns<a class="headerlink" href="#drilldowns_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the user action analysis page for the selected application with a full list of key user actions.</li>
+</ul>
+<h4 id="configuration_14">Configuration<a class="headerlink" href="#configuration_14" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Key user action overview</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="bounce-rate">Bounce rate<a class="headerlink" href="#bounce-rate" title="Permanent link">&para;</a></h3>
+<p>Displays a comparison of the current bounce rate with yesterday and the number of entry actions.</p>
+<h4 id="drilldowns_14">Drilldowns<a class="headerlink" href="#drilldowns_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected application's bounce rate analysis.</li>
+</ul>
+<h4 id="configuration_15">Configuration<a class="headerlink" href="#configuration_15" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Bounce rate</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="top-conversion-goals">Top conversion goals<a class="headerlink" href="#top-conversion-goals" title="Permanent link">&para;</a></h3>
+<p>Displays the overall conversion rate and your top 5 goals for the selected application. This tile also serves as a direct link to the selected application goals view.</p>
+<h4 id="drilldowns_15">Drilldowns<a class="headerlink" href="#drilldowns_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected application's <strong>Conversion</strong> page.</li>
+</ul>
+<h4 id="configuration_16">Configuration<a class="headerlink" href="#configuration_16" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Top conversion goals</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="conversion-goal">Conversion goal<a class="headerlink" href="#conversion-goal" title="Permanent link">&para;</a></h3>
+<p>Displays the overall conversion rate and completions for the selected goal. This tile also serves as a direct link to the selected application goals view.</p>
+<h4 id="drilldowns_16">Drilldowns<a class="headerlink" href="#drilldowns_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected application's goals view.</li>
+</ul>
+<h4 id="configuration_17">Configuration<a class="headerlink" href="#configuration_17" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Conversion goal</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Select a goal</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="javascript-errors">JavaScript errors<a class="headerlink" href="#javascript-errors" title="Permanent link">&para;</a></h3>
+<p>Displays JavaScript error indicators related to the selected application (JavaScript errors per minute, percent affected user actions).</p>
+<h4 id="drilldowns_17">Drilldowns<a class="headerlink" href="#drilldowns_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open <strong>Compare JavaScript errors</strong> for the selected application.</li>
+</ul>
+<h4 id="configuration_18">Configuration<a class="headerlink" href="#configuration_18" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>JavaScript errors</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
+<p>Displays load details for application-specific resources grouped by first-party, third-party, and CDN resources.</p>
+<h4 id="drilldowns_18">Drilldowns<a class="headerlink" href="#drilldowns_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the application details page with <strong>Resources</strong> selected.</li>
+</ul>
+<h4 id="configuration_19">Configuration<a class="headerlink" href="#configuration_19" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Resources</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Select a metric: <code>Count per minute</code> or <code>Load time</code></li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="most-used-3rd-parties">Most used 3rd parties<a class="headerlink" href="#most-used-3rd-parties" title="Permanent link">&para;</a></h3>
+<p>Displays load details related to the three third-party content providers that your application uses most frequently.</p>
+<h4 id="drilldowns_19">Drilldowns<a class="headerlink" href="#drilldowns_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the application details page with <strong>Resources</strong> selected.</li>
+</ul>
+<h4 id="configuration_20">Configuration<a class="headerlink" href="#configuration_20" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Most used 3rd parties</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Select a metric: <code>3rd party</code>, <code>CDN</code>, or <code>1st party</code></li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="mobile-app">Mobile app<a class="headerlink" href="#mobile-app" title="Permanent link">&para;</a></h3>
+<p>Displays key performance indicators related to the selected mobile app (users, crash-free user rate, and number of crashes).</p>
+<h4 id="drilldowns_20">Drilldowns<a class="headerlink" href="#drilldowns_20" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected mobile app page.</li>
+</ul>
+<h4 id="configuration_21">Configuration<a class="headerlink" href="#configuration_21" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Mobile map</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select a mobile app from the list.</li>
+<li>Optional Select a custom timeframe.</li>
+<li>Optional Select an environment.</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Mobile</strong>.</li>
+<li>Select the mobile application for which you want to create a dashboard tile.</li>
+<li>On the application page, select <strong>Pin to dashboard</strong>, select the target dashboard, and select <strong>Pin</strong>.</li>
+</ol>
+<h3 id="custom-application">Custom application<a class="headerlink" href="#custom-application" title="Permanent link">&para;</a></h3>
+<p>Displays key performance indicators related to the selected custom application (users, crash free user rate, and number of crashes).</p>
+<h4 id="drilldowns_21">Drilldowns<a class="headerlink" href="#drilldowns_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected custom application page.</li>
+</ul>
+<h4 id="configuration_22">Configuration<a class="headerlink" href="#configuration_22" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Custom application</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select a custom application from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Custom Applications</strong>.</li>
+<li>Select the custom application you want to monitor with a dashboard tile.</li>
+<li>On the application page, select <strong>Pin to dashboard</strong>, select the target dashboard, and select <strong>Pin</strong>.</li>
+</ol>
+<h3 id="live-user-activity">Live user activity<a class="headerlink" href="#live-user-activity" title="Permanent link">&para;</a></h3>
+<p>Displays the number of current live users overall as well as your applications with most live users.</p>
+<h4 id="drilldowns_22">Drilldowns<a class="headerlink" href="#drilldowns_22" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open <strong>User sessions</strong> filtered for <code>Live: Yes</code> and <code>User type: Real users</code>.</li>
+</ul>
+<h4 id="configuration_23">Configuration<a class="headerlink" href="#configuration_23" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Live user activity</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="web-application">Web application<a class="headerlink" href="#web-application" title="Permanent link">&para;</a></h3>
+<p>Displays key performance indicators related to the selected application: <a href="/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings" title="Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.">Apdex rating</a>, <a href="/docs/observe/digital-experience/rum-concepts/user-actions" title="Learn what user actions are and how they help you understand what users do with your application.">user actions</a> per minute, and number of JavaScript errors per minute.</p>
+<h4 id="drilldowns_23">Drilldowns<a class="headerlink" href="#drilldowns_23" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected application page.</li>
+</ul>
+<h4 id="configuration_24">Configuration<a class="headerlink" href="#configuration_24" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Web application</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Web</strong>.</li>
+<li>Select the web application you want to monitor with this tile.</li>
+<li>Display the <strong>Performance analysis</strong> section of the infographic.</li>
+<li>Select <strong>Pin to dashboard</strong>.<br />
+   A <strong>Web application</strong> tile for the selected application is pinned to the selected web dashboard.</li>
+</ol>
+<h3 id="key-user-action">Key user action<a class="headerlink" href="#key-user-action" title="Permanent link">&para;</a></h3>
+<p>Displays key performance indicators related to the selected application and key <a href="/docs/observe/digital-experience/rum-concepts/user-actions" title="Learn what user actions are and how they help you understand what users do with your application.">user action</a>: user action duration, user actions/min, and number of errors/min.</p>
+<h4 id="drilldowns_24">Drilldowns<a class="headerlink" href="#drilldowns_24" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected key user action page for the selected application and key user action.</li>
+</ul>
+<h4 id="configuration_25">Configuration<a class="headerlink" href="#configuration_25" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Key user action</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an application from the list</li>
+<li>Select a key user action from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Custom Applications</strong>, <strong>Frontend</strong>, <strong>Mobile</strong>, or <strong>Web</strong>, depending on the type of application you want to monitor.</li>
+<li>Select the application you want to monitor with this tile.</li>
+<li>In the <strong>Top 3 user actions</strong> section, select <strong>View full details</strong>.</li>
+<li>
+<p>Select a key user action.</p>
+</li>
+<li>
+<p>If the user action has already been selected as a key user action, select it in the <strong>Key user actions</strong> list.</p>
+</li>
+<li>If the user action has not been selected as a key user action, select a user action from the <strong>Top 100 user actions</strong> tab, and then select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Mark as key user action</strong>.</li>
+</ol>
+<p>The <strong>Pin to dashboard</strong> button is now displayed.
+5. Select <strong>Pin to dashboard</strong>, select a target dashboard, and select <strong>Pin</strong>.</p>
+<h3 id="user-sessions-query">User Sessions Query<a class="headerlink" href="#user-sessions-query" title="Permanent link">&para;</a></h3>
+<p>Create advanced queries on completed user sessions with user sessions query language.</p>
+<h4 id="drilldowns_25">Drilldowns<a class="headerlink" href="#drilldowns_25" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the user sessions query page for this query.</li>
+</ul>
+<h4 id="configuration_26">Configuration<a class="headerlink" href="#configuration_26" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>User Sessions Query</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select <strong>Configure tile</strong> in the <strong>User Sessions Query</strong> configuration pane</li>
+<li>On the <strong>User sessions query</strong> page, <a href="/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data" title="Learn how you can access and query user session data based on keywords, syntax, functions, and more.">create a query</a> and select <strong>Run query</strong></li>
+<li>When you have a query that you want to link to your tile, select <strong>Save changes to dashboard</strong></li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<h2 id="service-level-objectives">Service-level objectives<a class="headerlink" href="#service-level-objectives" title="Permanent link">&para;</a></h2>
+<h3 id="service-level-objective">Service-level objective<a class="headerlink" href="#service-level-objective" title="Permanent link">&para;</a></h3>
+<p>Displays the following:</p>
+<ul>
+<li><strong>Title</strong></li>
+<li><strong>Status</strong>: numeric value displayed in green (good), yellow (warning), red (bad), or gray (no data).</li>
+<li><strong>Error budget</strong>: numeric value displayed in green (good), yellow (warning), red (bad), or gray (no data).</li>
+<li><strong>Target</strong>: numeric value</li>
+<li>Problems indicator is optional</li>
+<li>Legend (colors) and metric names are optional</li>
+<li>Colorized based on status is optional</li>
+<li><strong>Tiles filters*Environment</strong></li>
+<li>Optional Set <strong>Title</strong></li>
+</ul>
+<p>For more information, see <a href="/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#slodashboardtile" title="Create, configure, and monitor service-level objectives with Dynatrace.">Configure and monitor service-level objectives with Dynatrace</a>.</p>
+<h4 id="drilldowns_26">Drilldowns<a class="headerlink" href="#drilldowns_26" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the <strong>Service-level objectives</strong> page filtered to the selected SLO.</li>
+</ul>
+<h4 id="configuration_27">Configuration<a class="headerlink" href="#configuration_27" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Service-level objective</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Set <strong>Select a SLO</strong> to one of the listed service-level objectives.</li>
+<li>
+<p>Adjust its configuration as needed.</p>
+</li>
+<li>
+<p>Optional Set <strong>Max shown decimals</strong> to a different value.</p>
+</li>
+<li>Optional Turn <strong>Show metric names</strong> on or off.</li>
+<li>Optional Turn <strong>Show legend</strong> on or off.</li>
+<li>Optional Turn <strong>Show problems indicator</strong> on or off.</li>
+<li>Optional Turn <strong>Colorize based on status</strong> on or off.</li>
+<li>Optional Select a custom timeframe.</li>
+<li>Optional Select an environment.</li>
+<li>Select <strong>Done</strong>.</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <img alt="SLOs Classic" src="https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png" title="SLOs Classic" /> <strong>Service-Level Objectives Classic</strong>.</li>
+<li>Find the SLO you want to pin to the dashboard.</li>
+<li>In the <strong>Actions</strong> column, select the pin icon for that SLO.</li>
+<li>Select the dashboard to which you want to pin the tile.</li>
+<li>Select <strong>Pin</strong>.</li>
+<li>Select <strong>Open dashboard</strong> to open the dashboard in edit mode with the new tile selected.</li>
+<li>
+<p>Adjust its configuration as needed.</p>
+</li>
+<li>
+<p>Optional Turn <strong>Show legend</strong> on or off.</p>
+</li>
+<li>Optional Turn <strong>Show metric names</strong> on or off.</li>
+<li>Optional Turn <strong>Show problems indicator</strong> on or off.</li>
+<li>Optional Set <strong>Max shown decimals</strong> to a different value.</li>
+<li>Optional Select a custom timeframe.</li>
+<li>Optional Select an environment.</li>
+<li>Select <strong>Done</strong>.</li>
+</ol>
+<h2 id="synthetic">Synthetic<a class="headerlink" href="#synthetic" title="Permanent link">&para;</a></h2>
+<h3 id="browser-monitor">Browser monitor<a class="headerlink" href="#browser-monitor" title="Permanent link">&para;</a></h3>
+<p>Displays key performance indicators related to the selected browser monitor (availability, duration, and location status).</p>
+<h4 id="drilldowns_27">Drilldowns<a class="headerlink" href="#drilldowns_27" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected browser monitor page.</li>
+</ul>
+<h4 id="configuration_28">Configuration<a class="headerlink" href="#configuration_28" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Browser monitor</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select a browser monitor from the list</li>
+<li>Optional Exclude maintenance windows from availability calculations</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong>.<br />
+   To filter the list, set <strong>Type of synthetic monitor</strong> to <strong>Browser</strong>.</li>
+<li>Select the browser monitor for which you want to create a dashboard tile.</li>
+<li>On the browser monitor page, select <strong>Pin to dashboard</strong>, select the target dashboard, and select <strong>Pin</strong>.</li>
+</ol>
+<h3 id="synthetic-monitor-health">Synthetic monitor health<a class="headerlink" href="#synthetic-monitor-health" title="Permanent link">&para;</a></h3>
+<p>Displays the number of active synthetic monitors in your environment against the number of synthetic monitors in your environment that are currently affected by problems.</p>
+<h4 id="drilldowns_28">Drilldowns<a class="headerlink" href="#drilldowns_28" title="Permanent link">&para;</a></h4>
+<p>Health tile drilldowns</p>
+<ul>
+<li>From a health tile (such as <strong>Host health</strong>, <strong>Service health</strong>, and <strong>Application health</strong>), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.</li>
+<li>To drill down to a problematic (red) element, select the red hexagon and then select the <strong>Viewâ¦</strong> button. On this example <strong>Synthetic monitor health</strong> tile, we have selected a red element, which enabled the <strong>View test</strong> drilldown button for that element.</li>
+</ul>
+<p><img alt="Drill down to problematic entity from health tile" src="https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png" />
+* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select <strong>View details</strong> to display the relevant Dynatrace page for the tile. For example, <strong>View details</strong> from a <strong>Synthetic monitor health</strong> tile displays the <strong>Synthetic monitors</strong> table.</p>
+<p><img alt="Select tile menu" src="https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png" /></p>
+<p><img alt="Select 'View details' from tile menu" src="https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png" /></p>
+<h4 id="configuration_29">Configuration<a class="headerlink" href="#configuration_29" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Synthetic monitor health</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Show a visualization on the tile</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong>.</li>
+<li>Set filters in the <strong>Filtered by</strong> box.</li>
+<li>
+<p>Select <strong>Pin to dashboard</strong> to add a <strong>Hosts</strong> tile to the selected dashboard with the selected filters. You can then set any of the options described above (timeframe, management zone, environment).</p>
+</li>
+<li>
+<p>The tile will reflect all filters and options you have set</p>
+</li>
+<li>The next time you select the tile on your dashboard, the <strong>Synthetic</strong> page will open with the filters and options already applied</li>
+</ol>
+<h3 id="third-party-monitor">Third-party monitor<a class="headerlink" href="#third-party-monitor" title="Permanent link">&para;</a></h3>
+<p>Displays key performance indicators related to the selected third-party monitor (availability, duration, and location status).</p>
+<h4 id="drilldowns_29">Drilldowns<a class="headerlink" href="#drilldowns_29" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected third-party monitor page.</li>
+</ul>
+<h4 id="configuration_30">Configuration<a class="headerlink" href="#configuration_30" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Third-party monitor</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select a third-party monitor from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong>.</li>
+<li>In the <strong>Filtered by</strong> box, set <strong>Type of synthetic monitor</strong> to <strong>Third-party</strong>.</li>
+<li>Select the third-party monitor for which you want to create a dashboard tile.</li>
+<li>On the third-party monitor page, select <strong>Pin to dashboard</strong>, select the target dashboard, and select <strong>Pin</strong>.</li>
+</ol>
+<h3 id="http-monitor">HTTP monitor<a class="headerlink" href="#http-monitor" title="Permanent link">&para;</a></h3>
+<p>Displays key performance indicators related to the selected HTTP monitor (availability and duration).</p>
+<h4 id="drilldowns_30">Drilldowns<a class="headerlink" href="#drilldowns_30" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected HTTP monitor page.</li>
+</ul>
+<h4 id="configuration_31">Configuration<a class="headerlink" href="#configuration_31" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag an <strong>HTTP monitor</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select an HTTP monitor from the list</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<p>To pin this tile to your dashboard with filters set</p>
+<ol>
+<li>Go to <strong>Synthetic Classic</strong>.</li>
+<li>In the <strong>Filtered by</strong> box, set <strong>Type of synthetic monitor</strong> to <strong>HTTP</strong>.</li>
+<li>Select the HTTP monitor for which you want to create a dashboard tile.</li>
+<li>On the HTTP monitor page, select <strong>Pin to dashboard</strong>, select the target dashboard, and select <strong>Pin</strong>.</li>
+</ol>
+<h2 id="databases">Databases<a class="headerlink" href="#databases" title="Permanent link">&para;</a></h2>
+<h3 id="database-health">Database health<a class="headerlink" href="#database-health" title="Permanent link">&para;</a></h3>
+<p>Displays the number of databases in your environment against the number of databases that are currently affected by problems.</p>
+<h4 id="drilldowns_31">Drilldowns<a class="headerlink" href="#drilldowns_31" title="Permanent link">&para;</a></h4>
+<p>Health tile drilldowns</p>
+<ul>
+<li>From a health tile (such as <strong>Host health</strong>, <strong>Service health</strong>, and <strong>Application health</strong>), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.</li>
+<li>To drill down to a problematic (red) element, select the red hexagon and then select the <strong>Viewâ¦</strong> button. On this example <strong>Synthetic monitor health</strong> tile, we have selected a red element, which enabled the <strong>View test</strong> drilldown button for that element.</li>
+</ul>
+<p><img alt="Drill down to problematic entity from health tile" src="https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png" />
+* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select <strong>View details</strong> to display the relevant Dynatrace page for the tile. For example, <strong>View details</strong> from a <strong>Synthetic monitor health</strong> tile displays the <strong>Synthetic monitors</strong> table.</p>
+<p><img alt="Select tile menu" src="https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png" /></p>
+<p><img alt="Select 'View details' from tile menu" src="https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png" /></p>
+<h4 id="configuration_32">Configuration<a class="headerlink" href="#configuration_32" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Database health</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Show a visualization on the tile</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="database-performance">Database performance<a class="headerlink" href="#database-performance" title="Permanent link">&para;</a></h3>
+<p>Displays key performance indicators related to the selected database service (commits per hour, statements per minute, and response time).</p>
+<h4 id="drilldowns_32">Drilldowns<a class="headerlink" href="#drilldowns_32" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open the selected Database service page.</li>
+</ul>
+<h4 id="configuration_33">Configuration<a class="headerlink" href="#configuration_33" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Database performance</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Select a database service from the list.</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select an environment</li>
+</ol>
+<h2 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h2>
+<h3 id="data-center-service-health">Data center service health<a class="headerlink" href="#data-center-service-health" title="Permanent link">&para;</a></h3>
+<p>Displays the total number of data center services in your environment against the number of data center services that are currently affected by problems.</p>
+<h4 id="drilldowns_33">Drilldowns<a class="headerlink" href="#drilldowns_33" title="Permanent link">&para;</a></h4>
+<p>Health tile drilldowns</p>
+<ul>
+<li>From a health tile (such as <strong>Host health</strong>, <strong>Service health</strong>, and <strong>Application health</strong>), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.</li>
+<li>To drill down to a problematic (red) element, select the red hexagon and then select the <strong>Viewâ¦</strong> button. On this example <strong>Synthetic monitor health</strong> tile, we have selected a red element, which enabled the <strong>View test</strong> drilldown button for that element.</li>
+</ul>
+<p><img alt="Drill down to problematic entity from health tile" src="https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png" />
+* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select <strong>View details</strong> to display the relevant Dynatrace page for the tile. For example, <strong>View details</strong> from a <strong>Synthetic monitor health</strong> tile displays the <strong>Synthetic monitors</strong> table.</p>
+<p><img alt="Select tile menu" src="https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png" /></p>
+<p><img alt="Select 'View details' from tile menu" src="https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png" /></p>
+<h4 id="configuration_34">Configuration<a class="headerlink" href="#configuration_34" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Data center service health</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<h2 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h2>
+<h3 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h3>
+<p>Displays the number of problems that are currently watched and active against the number of resolved problems in your environment. When a problem is active, the problem count is displayed in red.</p>
+<h4 id="drilldowns_34">Drilldowns<a class="headerlink" href="#drilldowns_34" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open your <a href="/docs/dynatrace-intelligence/root-cause-analysis/concepts" title="Get acquainted with root cause analysis concepts.">Problems</a> feed.</li>
+</ul>
+<h4 id="configuration_35">Configuration<a class="headerlink" href="#configuration_35" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Problems</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="smartscape">Smartscape<a class="headerlink" href="#smartscape" title="Permanent link">&para;</a></h3>
+<p>Synthetically visualizes your environment components based on <a href="/docs/analyze-explore-automate/smartscape-classic" title="Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.">Smartscape</a> analysis. The tile display constantly cycles through the five Smartscape layers: applications, services, OS processes, hosts, and datacenters. For each layer, the tile shows the total number in your environment and, in red, the number currently affected by problems.</p>
+<h4 id="drilldowns_35">Drilldowns<a class="headerlink" href="#drilldowns_35" title="Permanent link">&para;</a></h4>
+<ul>
+<li>From the tile menu, select <strong>View details</strong> to open your <a href="/docs/analyze-explore-automate/smartscape-classic#services" title="Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.">Smartscape</a> topology view to the Services layer.</li>
+</ul>
+<h4 id="configuration_36">Configuration<a class="headerlink" href="#configuration_36" title="Permanent link">&para;</a></h4>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Smartscape</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ol>
+<h3 id="log-query-table">Log query table<a class="headerlink" href="#log-query-table" title="Permanent link">&para;</a></h3>
+<p>Displays log events matching the specific log data query. Only columns configured in the log viewer for that query are displayed in the table tile.</p>
+<h4 id="configuration_37">Configuration<a class="headerlink" href="#configuration_37" title="Permanent link">&para;</a></h4>
+<p>To pin this tile type to your dashboard with filters set</p>
+<ol>
+<li>Go to <img alt="Logs and Events" src="https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png" title="Logs and Events" /> <strong>Logs &amp; Events Classic</strong>.</li>
+<li>In <strong>Log Viewer</strong>, enter the log query that you want the tile to reflect.</li>
+<li>Optional Select <strong>Table options</strong> to specify which table columns to display.</li>
+<li>Select <strong>Pin to dashboard</strong>, select the target dashboard, and then select <strong>Pin</strong>.</li>
+<li>
+<p>Select <strong>Open dashboard</strong> to see the new tile on the dashboard.</p>
+</li>
+<li>
+<p>The tile displays the results of the query you specified in <strong>Log Viewer</strong>.</p>
+</li>
+<li>Only the columns you specified with <strong>Table options</strong> are displayed.</li>
+</ol>
+<p>To configure this tile type from the dashboard editor</p>
+<ol>
+<li>Drag a <strong>Log query table</strong> tile from the <strong>Edit dashboard</strong> pane, <strong>Tiles</strong> tab, to your dashboard.</li>
+<li>Select <strong>Configure tile</strong> to display <strong>Log Viewer</strong>.</li>
+<li>Enter a log query.</li>
+<li>Optional Select <strong>Table options</strong> to specify which table columns to display.</li>
+<li>Select <strong>Save changes to dashboard</strong> to return to editing the <strong>Log query table</strong> tile on the dashboard.</li>
+<li>Optional Select a custom timeframe.</li>
+<li>Optional Select a custom management zone.</li>
+<li>Optional Select an environment.</li>
+</ol>
+<hr />
+<h2 id="source-pin-tiles-to-your-dashboardmd">Source: pin-tiles-to-your-dashboard.md<a class="headerlink" href="#source-pin-tiles-to-your-dashboardmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Pin tiles to your dashboard
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard
+scraped: 2026-02-15T21:25:16.400487</p>
+<hr />
+<h1 id="pin-tiles-to-your-dashboard">Pin tiles to your dashboard<a class="headerlink" href="#pin-tiles-to-your-dashboard" title="Permanent link">&para;</a></h1>
+<h1 id="pin-tiles-to-your-dashboard_1">Pin tiles to your dashboard<a class="headerlink" href="#pin-tiles-to-your-dashboard_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>5-min read</li>
+<li>Updated on May 16, 2022</li>
+</ul>
+<p><a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a></p>
+<p>The dashboards discussed here are classic dashboards created using the dashboarding functionality integrated with previous Dynatrace.</p>
+<ul>
+<li>For more about classic dashboards, see <a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a>.</li>
+<li>For more about dashboards created with the Dashboards app in the latest Dynatrace, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Dashboards</a>.</li>
+<li>To improve your dashboard experience, you can <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest" title="Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.">upgrade existing dashboards</a> from Dashboards Classic to the Dashboards app in the latest Dynatrace.</li>
+</ul>
+<p>You can automatically create a new dashboard tile from any Dynatrace page that includes a <strong>Pin to dashboard</strong> button. All you need is <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards" title="Learn how to share your Dynatrace dashboards with others.">edit permission</a> for the dashboard. In this example, we create a new dashboard, so you are guaranteed to have edit permission.</p>
+<h2 id="create-a-dashboard">Create a dashboard<a class="headerlink" href="#create-a-dashboard" title="Permanent link">&para;</a></h2>
+<p>We start by creating an empty dashboard.</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select <strong>Create dashboard</strong>, enter a <strong>Dashboard name</strong> (in this example, use <code>Filtered Dashboard</code>), and select <strong>Create</strong>.<br />
+   This creates the dashboard and opens it in edit mode.</li>
+<li>Select <strong>Done</strong>.<br />
+   Now we have an empty dashboard named <code>Filtered Dashboard</code>.</li>
+</ol>
+<h2 id="create-a-filtered-tile">Create a filtered tile<a class="headerlink" href="#create-a-filtered-tile" title="Permanent link">&para;</a></h2>
+<p>Now we create a tile based on a filtered view of the <strong>Hosts</strong> page and pin the tile to the empty dashboard.</p>
+<ol>
+<li>Go to <img alt="Hosts" src="https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png" title="Hosts" /> <strong>Hosts Classic</strong>.</li>
+<li>Set a filter on the list. In this example, we set <code>Data center: GdaÅsk, Poland</code>.</li>
+</ol>
+<p><img alt="Resulting filter" src="https://dt-cdn.net/images/filter-03-379-52198a4b6b.png" /></p>
+<p>How to set a filter</p>
+<ol>
+<li>
+<p>On the <strong>Filtered by</strong> line, start typing to select a filter</p>
+<p><img alt="Select a filter" src="https://dt-cdn.net/images/filter-01-325-2fe63fb62a.png" />
+   2. Select or type a value</p>
+<p><img alt="Select a value" src="https://dt-cdn.net/images/filter-02-404-32504bda2e.png" /></p>
+</li>
+</ol>
+<p>For more common filters, you can select a filter directly from the <strong>Quick filters</strong> column of the <strong>Hosts</strong> page.
+3. Select <strong>Pin to dashboard</strong>.</p>
+<p>Dynatrace displays a preview of the tile and asks you to select the dashboard to which you want to pin it. The list of dashboards is searchable: select in the list and start typing to filter the list, and then select the dashboard from the filtered list.</p>
+<p><img alt="Filter tiles: pin" src="https://dt-cdn.net/images/filtered-tile-01-382-0dbefb8cc5.png" />
+4. Select a dashboard (in this example, <code>Filtered Dashboard</code>) and select <strong>Pin</strong>. This creates the tile and pins it to that dashboard.</p>
+<p><img alt="Filter tiles: open dashboard" src="https://dt-cdn.net/images/filtered-tile-02-380-4c83bb3eb7.png" />
+5. Select <strong>Open dashboard</strong>.<br />
+   The formerly empty dashboard now opens in edit mode with the new tile selected for editing. You can make optional settings to this tile before saving it. For a <strong>Host health</strong> tile, you have the following options:</p>
+<ul>
+<li>Optional Select whether to show a visualization on the tile</li>
+<li>Optional Select a custom timeframe</li>
+<li>Optional Select a custom management zone</li>
+<li>Optional Select an environment</li>
+</ul>
+<p><img alt="Filter tiles: tile edit mode" src="https://dt-cdn.net/images/filtered-tile-03-1187-acc59a36d4.png" />
+6. Select <strong>Done</strong>.<br />
+   The dashboard is displayed with the new tile representing hosts in GdaÅsk, Poland.</p>
+<p><img alt="Filter tiles: display mode" src="https://dt-cdn.net/images/filtered-tile-05-1186-285827111d.png" /></p>
+<p>Now we have a tile that's specific to the hosts in the GdaÅsk, Poland, data center.</p>
+<ul>
+<li>The filter is fully dynamic. If hosts are added or removed, or if their statuses change, the tile updates automatically.</li>
+<li>To view the filtered <strong>Hosts</strong> page from which we created the tile, open the menu in the tile's upper-right corner and select <strong>View details</strong>.</li>
+</ul>
+<h2 id="add-a-header-to-your-tile">Add a header to your tile<a class="headerlink" href="#add-a-header-to-your-tile" title="Permanent link">&para;</a></h2>
+<p>Optional</p>
+<p>To add a meaningful label to your tile</p>
+<ol>
+<li>Select <strong>Edit</strong> to edit your dashboard.</li>
+<li>Drag a <strong>Header</strong> tile from the <strong>Edit dashboard</strong> pane to your dashboard.<br />
+   This will be the title of your tile.</li>
+<li>Edit the header text. In this example, we use <strong>Gdansk hosts</strong>.</li>
+<li>Drag your <strong>Header</strong> tile into position above your <strong>Hosts</strong> tile.<br />
+   Depending on the position of your <strong>Hosts</strong> tile on the dashboard, you may need to drag both tiles to new positions so you can fit the <strong>Header</strong> tile over the <strong>Hosts</strong> tile.</li>
+</ol>
+<p><img alt="Header tile - edit dashboard" src="https://dt-cdn.net/images/filtered-tile-08-399-4d36db7eb2.png" />
+5. Select <strong>Done</strong>.</p>
+<p><img alt="Header tile" src="https://dt-cdn.net/images/filtered-tile-07-401-f9f22ea2e9.png" /></p>
+<h2 id="update-a-filtered-tile">Update a filtered tile<a class="headerlink" href="#update-a-filtered-tile" title="Permanent link">&para;</a></h2>
+<p>To change the filters on your tile</p>
+<ol>
+<li>On your dashboard, select the tile to display the <strong>Hosts</strong> table with your filter applied.</li>
+<li>Add or delete filters.</li>
+</ol>
+<p>In this example, we keep <code>Data center: GdaÅsk, Poland</code> and add <code>Operating system: Linux</code>. Because we have changed the filters, the <strong>Update dashboard tile</strong> button is enabled so you can save changes.</p>
+<p><img alt="Filter tiles: additional filter" src="https://dt-cdn.net/images/filtered-tile-06-1431-274639b9a2.png" />
+3. Select <strong>Update dashboard tile</strong>.<br />
+   The new filter settings are saved to the tile. In this example, the tile on your dashboard displays the health of hosts matching <code>Data center: GdaÅsk, Poland</code> and <code>Operating system: Linux</code>, and it opens the <strong>Hosts</strong> page with those filters.
+4. To return to the dashboard, select the dashboard button in the upper-left corner of Dynatrace.</p>
+<p><img alt="Dashboard button" src="https://dt-cdn.net/images/dashboardbutton-28-e3cbad6cfe.png" /></p>
+<h2 id="pin-as-new-tile">Pin as new tile<a class="headerlink" href="#pin-as-new-tile" title="Permanent link">&para;</a></h2>
+<p>Instead of updating a tile, you might want to save a new copy of the tile. For example, you might want multiple similar tiles but with each tile filtered for a different operating system.</p>
+<ol>
+<li>On the same example dashboard, open the tile menu (in the upper-right of the tile) and select <strong>View details</strong>.<br />
+   The <strong>Hosts</strong> page opens with the same filters set.</li>
+<li>
+<p>Select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Pin as new tile</strong>.</p>
+</li>
+<li>
+<p>Select a different dashboard to have copies of the same tile on two different dashboards.</p>
+</li>
+<li>
+<p>Select the same dashboard to have two copies of the tile on the same dashboard, which might seem pointless. However:</p>
+<ul>
+<li>You can edit each copy of the tile to have a different management zone, timerange, and environment</li>
+<li>You can set different filters on each copy of the tile</li>
+</ul>
+</li>
+</ol>
+<h2 id="clone-tiles">Clone tiles<a class="headerlink" href="#clone-tiles" title="Permanent link">&para;</a></h2>
+<p>Tile cloning can save you a lot of work. For example, suppose you want your dashboard to display three visualizations that are identical except that they each query a different host. The easiest solution is to create the first visualization, experiment with the visualization settings until it's perfect, and then clone it twice. After that, you just need to edit the clones to query the other two hosts.</p>
+<h3 id="clone-a-tile-to-the-current-dashboard">Clone a tile to the current dashboard<a class="headerlink" href="#clone-a-tile-to-the-current-dashboard" title="Permanent link">&para;</a></h3>
+<p>To pin the cloned tiles to the same dashboard</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select the name of a dashboard to display that dashboard.</li>
+<li>
+<p>Select <strong>Edit</strong> in the upper-right corner of the dashboard. The dashboard opens in edit mode.</p>
+</li>
+<li>
+<p>If you don't see an <strong>Edit</strong> option, you don't have permission to edit that dashboard.</p>
+</li>
+<li>
+<p>Select the tile that you want to clone (add a copy of the tile to the current dashboard) and then select <strong>Clone</strong>.</p>
+</li>
+<li>
+<p>To clone multiple tiles to the current dashboard, drag a selection rectangle around the <em>x</em> tiles you want to clone and then select <strong>Clone x tiles</strong>.</p>
+</li>
+<li>Edit the cloned tiles as needed.</li>
+</ol>
+<h3 id="clone-a-tile-to-another-dashboard">Clone a tile to another dashboard<a class="headerlink" href="#clone-a-tile-to-another-dashboard" title="Permanent link">&para;</a></h3>
+<p>To pin the cloned tiles to another existing dashboard, or to create another dashboard and pin the clones to it</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select the name of a dashboard to display that dashboard.</li>
+<li>
+<p>Select <strong>Edit</strong> in the upper-right corner of the dashboard. The dashboard opens in edit mode.</p>
+</li>
+<li>
+<p>If you don't see an <strong>Edit</strong> option, you don't have permission to edit that dashboard.</p>
+</li>
+<li>
+<p>Select the tile you want to clone to another dashboard and then select <strong>Clone to</strong>.</p>
+</li>
+<li>
+<p>To clone multiple tiles to another dashboard, drag a selection rectangle around the <em>x</em> tiles you want to clone and then select <strong>Clone x to</strong>.</p>
+</li>
+<li>In the <strong>Where do you want to pin to?</strong> pop-up window, select an existing dashboard or <strong>Create new dashboard</strong>.</li>
+<li>Select <strong>Pin</strong> to add the selected tiles to the dashboard.</li>
+<li>Edit the cloned tiles as needed.</li>
+</ol>
+<hr />
+<h2 id="source-dashboard-jsonmd">Source: dashboard-json.md<a class="headerlink" href="#source-dashboard-jsonmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Edit Dynatrace dashboard JSON
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json
+scraped: 2026-02-15T09:08:50.600588</p>
+<hr />
+<h1 id="edit-dynatrace-dashboard-json">Edit Dynatrace dashboard JSON<a class="headerlink" href="#edit-dynatrace-dashboard-json" title="Permanent link">&para;</a></h1>
+<h1 id="edit-dynatrace-dashboard-json_1">Edit Dynatrace dashboard JSON<a class="headerlink" href="#edit-dynatrace-dashboard-json_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>3-min read</li>
+<li>Published Sep 24, 2020</li>
+</ul>
+<p><a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a></p>
+<p>The dashboards discussed here are classic dashboards created using the dashboarding functionality integrated with previous Dynatrace.</p>
+<ul>
+<li>For more about classic dashboards, see <a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a>.</li>
+<li>For more about dashboards created with the Dashboards app in the latest Dynatrace, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Dashboards</a>.</li>
+<li>To improve your dashboard experience, you can <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest" title="Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.">upgrade existing dashboards</a> from Dashboards Classic to the Dashboards app in the latest Dynatrace.</li>
+</ul>
+<p>You can edit the JSON definition of your dashboard offline or, for small changes, edit the JSON directly in Dynatrace.</p>
+<p>API alternative</p>
+<p>To manage dashboard JSON at scale, you need the <a href="/docs/dynatrace-api/configuration-api/dashboards-api" title="Find out how to manage dashboard configuration via Dynatrace Classic configuration API.">Dashboards API</a>.</p>
+<h2 id="edit-offline">Edit offline<a class="headerlink" href="#edit-offline" title="Permanent link">&para;</a></h2>
+<p>Use this procedure to download a dashboard's JSON definition, edit it offline, and upload it back to Dynatrace.</p>
+<p>When you upload a dashboard using this procedure, you overwrite the dashboard whose definition you originally downloaded. If you want to upload a dashboard definition to a new dashboard, see <a href="#import-dashboard">Import dashboard</a> below.</p>
+<ol>
+<li>Display the dashboard.</li>
+<li>Select <strong>Edit</strong>.</li>
+<li>Switch to the <strong>Settings</strong> tab and then select <strong>Configure more</strong>.</li>
+<li>Select <strong>Dashboard JSON</strong>.</li>
+<li>On the <strong>Dashboard JSON</strong> page, select <strong>Download</strong>.<br />
+   A JSON file with the dashboard's name is downloaded to your local machine.</li>
+<li>Edit the JSON in your preferred development environment.<br />
+   For JSON syntax details, see the <a href="/docs/dynatrace-api/configuration-api/dashboards-api" title="Find out how to manage dashboard configuration via Dynatrace Classic configuration API.">Dashboards API</a> Documentation.</li>
+<li>On the <strong>Dashboard JSON</strong> page, select <strong>Upload</strong>, browse for the edited JSON file, and upload it to Dynatrace.<br />
+   The uploaded JSON is displayed on the <strong>Dashboard JSON</strong> page.</li>
+<li>Select <strong>Save changes</strong> to replace the old JSON with your edited JSON.</li>
+<li>Display the dashboard to verify your changes.</li>
+</ol>
+<h2 id="edit-in-dynatrace">Edit in Dynatrace<a class="headerlink" href="#edit-in-dynatrace" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Display the dashboard.</li>
+<li>Select <strong>Edit</strong>.</li>
+<li>Switch to the <strong>Settings</strong> tab and then select <strong>Configure more</strong>.</li>
+<li>Select <strong>Dashboard JSON</strong>.</li>
+<li>On the <strong>Dashboard JSON</strong> page, the dashboard JSON is displayed in an edit window.</li>
+<li>
+<p>Click in the displayed JSON and start editing.</p>
+</li>
+<li>
+<p>You can work directly in the edit window or copy and paste back and forth from another editor.</p>
+</li>
+<li>The <strong>You have unsaved changes</strong> message in the lower left of the page will remind you that you have work in progress. Be sure to save before you navigate away from the page.</li>
+<li>Syntax is checked each time you save. You can work incrementally and use <strong>Save changes</strong> to verify that it still parses.</li>
+<li>For JSON syntax details, see the <a href="/docs/dynatrace-api/configuration-api/dashboards-api" title="Find out how to manage dashboard configuration via Dynatrace Classic configuration API.">Dashboards API</a> Documentation.</li>
+<li>When you are finished, display the dashboard to verify your changes.</li>
+</ol>
+<h2 id="import-dashboard">Import dashboard<a class="headerlink" href="#import-dashboard" title="Permanent link">&para;</a></h2>
+<p>Use this procedure to import a dashboard definition as a new dashboard.</p>
+<p>[<img alt="Step 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Step 1" /></p>
+<p><strong>Export the dashboard</strong>](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-1 "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.")[<img alt="Step 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Step 2" /></p>
+<p><strong>Edit the dashboard JSON file</strong>](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-2 "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.")[<img alt="Step 3" src="https://dt-cdn.net/images/step-3-350cf6c19a.svg" title="Step 3" /></p>
+<p><strong>Import the dashboard</strong>](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-3 "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.")</p>
+<p>When you import a dashboard using this procedure, you add a new dashboard to Dynatrace. If you want to overwrite an existing dashboard, see <a href="#edit-offline">Edit offline</a> above.</p>
+<h3 id="step-1-export-the-dashboard">Step 1 Export the dashboard<a class="headerlink" href="#step-1-export-the-dashboard" title="Permanent link">&para;</a></h3>
+<p>If you want to start from an existing dashboard definition</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>In the table of dashboards, select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Export</strong> for the dashboard you want to export.<br />
+   The dashboard definition is exported as a JSON file to your computer.</li>
+</ol>
+<h3 id="step-2-edit-the-dashboard-json-file">Step 2 Edit the dashboard JSON file<a class="headerlink" href="#step-2-edit-the-dashboard-json-file" title="Permanent link">&para;</a></h3>
+<p>Edit the dashboard JSON in your preferred development environment. For JSON syntax details, see the <a href="/docs/dynatrace-api/configuration-api/dashboards-api" title="Find out how to manage dashboard configuration via Dynatrace Classic configuration API.">Dashboards API</a> Documentation.</p>
+<h3 id="step-3-import-the-dashboard">Step 3 Import the dashboard<a class="headerlink" href="#step-3-import-the-dashboard" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select <strong>Import dashboard</strong>.</li>
+<li>Select the JSON file for the dashboard you want to import.<br />
+   The imported dashboard opens in edit mode.</li>
+</ol>
+<hr />
+<h2 id="source-dashboard-timeframemd">Source: dashboard-timeframe.md<a class="headerlink" href="#source-dashboard-timeframemd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Dynatrace dashboard timeframe and management zone settings
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe
+scraped: 2026-02-15T21:21:57.277325</p>
+<hr />
+<h1 id="dynatrace-dashboard-timeframe-and-management-zone-settings">Dynatrace dashboard timeframe and management zone settings<a class="headerlink" href="#dynatrace-dashboard-timeframe-and-management-zone-settings" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-dashboard-timeframe-and-management-zone-settings_1">Dynatrace dashboard timeframe and management zone settings<a class="headerlink" href="#dynatrace-dashboard-timeframe-and-management-zone-settings_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>2-min read</li>
+<li>Published Jul 19, 2017</li>
+</ul>
+<p><a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a></p>
+<p>The dashboards discussed here are classic dashboards created using the dashboarding functionality integrated with previous Dynatrace.</p>
+<ul>
+<li>For more about classic dashboards, see <a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a>.</li>
+<li>For more about dashboards created with the Dashboards app in the latest Dynatrace, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Dashboards</a>.</li>
+<li>To improve your dashboard experience, you can <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest" title="Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.">upgrade existing dashboards</a> from Dashboards Classic to the Dashboards app in the latest Dynatrace.</li>
+</ul>
+<p>The global selectors for timeframe and management zone are available for use across all pages and views. You'll find them in the upper-right corner.</p>
+<p><img alt="Timeframe selector: menu bar" src="https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png" /></p>
+<ul>
+<li>Select the filter button to select a new management zone</li>
+<li>Select the timeframe to select a new timeframe
+  Timeframe selector controls</li>
+</ul>
+<p>The global timeframe selector serves as a time filter that, in most cases, enables you to select a specific analysis timeframe that persists across all product pages and views as you navigate through your analysis.</p>
+<p><img alt="Timeframe selector: presets" src="https://dt-cdn.net/images/timeframe-selector-basic-355-f0a835da1e.png" /></p>
+<ul>
+<li>The <strong>Presets</strong> tab lists all standard timeframes available. Select one to change your timeframe to that preset.</li>
+<li>
+<p>The <strong>Custom</strong> tab displays a calendar. Click a start day, click an end day, and then click <strong>Apply</strong> to select that range of days as your timeframe.</p>
+<ul>
+<li>Selected calendar intervals are set to end on start of the next day (with the time set to <code>00:00</code>). For example, if you select September 3 to September 4 on the calendar, the timeframe starts on September 3 at time <code>00:00</code> and ends on September <strong>5</strong> at time <code>00:00</code>, so you never miss the last minute of the time range. You can edit these displayed times.</li>
+<li>The <strong>Recent</strong> tab displays recently used timeframes. Select one to revert to that timeframe.</li>
+<li>The <strong>&lt;</strong> and <strong>&gt;</strong> controls shift the timerange forward or backward in time. The increment is the length of the original timerange. For example, if the current timerange is <code>Last 2 hours</code> (the two-hour range ending now), click <strong>&lt;</strong> to shift the timerange two hours back, to <code>-4h to -2h</code> (the two-hour range ending two hours ago).</li>
+<li>Hover over the timeframe to see the start time, duration, and end time.</li>
+</ul>
+<p><img alt="Timeframe selector: hover" src="https://dt-cdn.net/images/timeframe-selector-hover-168-cfb13dc777.png" /></p>
+</li>
+</ul>
+<p>Timeframe selector expressions</p>
+<p>If you select the current timeframe in the menu bar, an editable timeframe expression is displayed.</p>
+<ul>
+<li>Reading from left to right, a timeframe expression has a start time, a <code>to</code> operator, and an end time.</li>
+<li>If there is no explicit end time, the <code>to</code> and <code>now</code> are implied. For example, <code>-2h</code> is the same <code>-2h to now</code>.</li>
+<li>Supported units: <code>s</code>, <code>m</code>, <code>h</code>, <code>d</code>, <code>w</code>, <code>M</code>, <code>q</code>, <code>y</code> (you can also use whole words such as <code>minutes</code> and <code>quarter</code>)</li>
+</ul>
+<p><strong>Example timeframe expressions</strong></p>
+<p><strong>Meaning</strong></p>
+<p><code>today</code></p>
+<p>From the beginning of today to the beginning of tomorrow.</p>
+<p><code>yesterday</code></p>
+<p>From the beginning of yesterday to the beginning of today. Like <code>-1d/d to today</code>.</p>
+<p><code>yesterday to now</code></p>
+<p>From the beginning of yesterday to the current time today.</p>
+<p><code>previous week</code></p>
+<p>The previous seven whole days. If today is Monday, you get the previous Monday through the previous Sunday (yesterday).</p>
+<p><code>this year</code></p>
+<p>The current calendar year, from January 1 of this year at <code>00:00</code> through January 1 of next year at <code>00:00</code>.</p>
+<p><code>last 6 weeks</code></p>
+<p>The last 42 days (6 weeks * 7 days) ending now. Equivalent to <code>-6w to now</code>.</p>
+<p><code>-2h</code></p>
+<p>From 2 hours (120 minutes) ago to the current time (<code>now</code> is implied). Equivalent to <code>Last 2 hours</code> and <code>-2h to now</code>.</p>
+<p><code>-4d to -1h30m</code></p>
+<p>From 4 days (96 hours) ago to 1.5 hours ago.</p>
+<p><code>-1w</code></p>
+<p>The last 7 days (168 hours), from this time 7 days ago to the current time (<code>now</code>). Equivalent to <code>-7d</code> and <code>-168h</code>.</p>
+<p><code>-1w/w</code></p>
+<p>From the beginning of the previous calendar week to the current time (now).</p>
+<ul>
+<li>If you used <code>-1w/w</code> on a Friday afternoon at 3:00, you would get a range of 11 days 15 hours, starting with the beginning of the previous week's Monday, because <code>/w</code> rounds down to the beginning of the week.</li>
+<li>If you used <code>-1w</code> without <code>/w</code> on a Friday afternoon at 3:00, the start time would be exactly 7 days (168 hours) earlier: the previous Friday at 3:00 in the afternoon.</li>
+</ul>
+<p>In general, <code>/</code> used in combination with a unit (such as <code>/d</code>, <code>/w</code>, <code>/M</code>, and <code>/y</code>) means to round down the date or time to the beginning of the specified time unit. For example, <code>-3d</code> means exactly 72 hours ago, whereas <code>-3d/d</code> means three days ago rounded down to the nearest day (starting at time <code>00:00</code>, the beginning of the day). Use <code>now/d</code> to mean the start of today.</p>
+<p><code>-1w/w + 8h</code></p>
+<p>Starting from the beginning of last week plus 8 hours (8:00 AM Monday).</p>
+<ul>
+<li>Note that you can use the <code>+</code> and <code>-</code> operators with units, timestamps, and <code>now</code>.</li>
+</ul>
+<p><code>-1d/d+9h00m to -1d/d+17h00m</code></p>
+<p>Business hours yesterday, from 09:00 - 17:00 (9 AM to 5 PM).</p>
+<p><code>2020-08-16 21:28 to 2020-08-19 10:02</code></p>
+<p>An absolute range consisting of absolute start and end dates and times in <code>YYYY-MM-DD hh:mm</code> format.</p>
+<ul>
+<li>If you provide a date but omit the time (for example, just <code>2020-08-16</code>), the time is assumed to be the beginning of day (<code>00:00</code>)</li>
+<li>If you provide a time but omit the date (for example, just <code>21:28</code>), the date is assumed to be today</li>
+</ul>
+<p><code>1598545932346 to 1598837052346</code></p>
+<p>Unix epoch millisecond timestamps.</p>
+<h2 id="timeframe-and-management-zone-preservation">Timeframe and management zone preservation<a class="headerlink" href="#timeframe-and-management-zone-preservation" title="Permanent link">&para;</a></h2>
+<p>Timeframe and management zone selections are stickyâthey're propagated to all pages you visit. For example, after changing the timeframe and management zone on your dashboard, the selections are preserved as you drill down from the <strong>Applications</strong> tile to individual application pages.</p>
+<p>The exception is opening a new dashboard or getting back to the current dashboard by selecting <strong>Dashboard</strong> in the upper-left corner of the page. In that case, the timeframe and management zone are reset to the dashboard's <a href="#default">defaults</a>.</p>
+<p>The timeframe selector remembers up to 10 recently used timeframes.</p>
+<h2 id="default-timeframe-and-management-zone">Default timeframe and management zone<a class="headerlink" href="#default-timeframe-and-management-zone" title="Permanent link">&para;</a></h2>
+<p>You can set a default timeframe and management zone for each dashboard; these are selected every time you open the dashboard. They're also used when you <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards" title="Learn how to share your Dynatrace dashboards with others.">share</a> the dashboard.</p>
+<p>You can also specify a default timeframe and management zone for each tile.</p>
+<h3 id="dashboard-specific-timeframe">Dashboard-specific timeframe<a class="headerlink" href="#dashboard-specific-timeframe" title="Permanent link">&para;</a></h3>
+<p>To set a dashboard timeframe that overrides the global timeframe</p>
+<ol>
+<li>Switch to the <strong>Settings</strong> tab.</li>
+<li>Turn on <strong>Default timeframe</strong>.</li>
+<li>Select the timeframe you want to be the default for this dashboard.</li>
+</ol>
+<h3 id="dashboard-specific-management-zone">Dashboard-specific management zone<a class="headerlink" href="#dashboard-specific-management-zone" title="Permanent link">&para;</a></h3>
+<p>To set a dashboard management zone that overrides the global management zone</p>
+<ol>
+<li>Switch to the <strong>Settings</strong> tab.</li>
+<li>Turn on <strong>Default management zone</strong>.</li>
+<li>Select the management zone you want to be the default for this dashboard.</li>
+</ol>
+<h3 id="tile-specific-timeframe">Tile-specific timeframe<a class="headerlink" href="#tile-specific-timeframe" title="Permanent link">&para;</a></h3>
+<p>To set a tile timeframe that overrides the dashboard timeframe</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select the name of a dashboard to display that dashboard.</li>
+<li>
+<p>Select <strong>Edit</strong> in the upper-right corner of the dashboard. The dashboard opens in edit mode.</p>
+</li>
+<li>
+<p>If you don't see an <strong>Edit</strong> option, you don't have permission to edit that dashboard.</p>
+</li>
+<li>Select the tile you want to configure.</li>
+<li>Turn on <strong>Custom timeframe</strong>.</li>
+<li>Select the timeframe you want to be the default for this tile.</li>
+<li><strong>Done</strong>.<br />
+   When you set a tile-specific timeframe, a filter is displayed in the upper-right of the tile. Hover over the filter to see the setting.</li>
+</ol>
+<h3 id="tile-specific-management-zone">Tile-specific management zone<a class="headerlink" href="#tile-specific-management-zone" title="Permanent link">&para;</a></h3>
+<p>To set a tile management zone that overrides the dashboard management zone</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>.</li>
+<li>Select the name of a dashboard to display that dashboard.</li>
+<li>
+<p>Select <strong>Edit</strong> in the upper-right corner of the dashboard. The dashboard opens in edit mode.</p>
+</li>
+<li>
+<p>If you don't see an <strong>Edit</strong> option, you don't have permission to edit that dashboard.</p>
+</li>
+<li>Select the tile you want to configure.</li>
+<li>Turn on <strong>Custom management zone</strong>.</li>
+<li>Select the management zone you want to be the default for this tile.</li>
+<li><strong>Done</strong>.<br />
+   When you set a tile-specific management zone, a filter is displayed in the upper-right of the tile. Hover over the filter to see the setting.</li>
+</ol>
+<hr />
+<h2 id="source-dashboards-multi-environmentmd">Source: dashboards-multi-environment.md<a class="headerlink" href="#source-dashboards-multi-environmentmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Create remote/multi-environment Dynatrace dashboards
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment
+scraped: 2026-02-15T21:21:16.659628</p>
+<hr />
+<h1 id="create-remotemulti-environment-dynatrace-dashboards">Create remote/multi-environment Dynatrace dashboards<a class="headerlink" href="#create-remotemulti-environment-dynatrace-dashboards" title="Permanent link">&para;</a></h1>
+<h1 id="create-remotemulti-environment-dynatrace-dashboards_1">Create remote/multi-environment Dynatrace dashboards<a class="headerlink" href="#create-remotemulti-environment-dynatrace-dashboards_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>8-min read</li>
+<li>Updated on Jun 04, 2024</li>
+</ul>
+<p><a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a></p>
+<p>The dashboards discussed here are classic dashboards created using the dashboarding functionality integrated with previous Dynatrace.</p>
+<ul>
+<li>For more about classic dashboards, see <a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a>.</li>
+<li>For more about dashboards created with the Dashboards app in the latest Dynatrace, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Dashboards</a>.</li>
+<li>To improve your dashboard experience, you can <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest" title="Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.">upgrade existing dashboards</a> from Dashboards Classic to the Dashboards app in the latest Dynatrace.</li>
+</ul>
+<p>A Dynatrace dashboard can include monitoring artifacts (such as metrics, logs, events, user sessions, and server-side traces) from multiple Dynatrace environments and can even support remote management zones (for tiles that support custom management zones).</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h3 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h3>
+<p>Dynatrace dashboards serve as a single pane of glass for monitoring artifacts such as metrics, logs, events, and user sessions. With multi-environment dashboards, your dashboards can combine these monitoring artifacts from separate Dynatrace environments.</p>
+<p>After you configure the remote connection in your local Dynatrace environment, <a href="#tile">you can quickly point dashboard tiles to the remote environment</a>.</p>
+<p><img alt="Example: select remote environment for tile" src="https://dt-cdn.net/images/select-tile-environment-example-317-72348cc81f.png" /></p>
+<p>For tiles that allow a custom management zone (look for the <strong>Custom management zone</strong> setting in the configuration panel for the tile), you can specify another management zone.</p>
+<p>Because the remote-environment capabilities of dashboard tiles allow you to build a common overview of problems and other data, dashboards can essentially serve as a hub for deeper analysis. A single click on any given dashboard tile displaying remote information takes you straight into a dedicated view of the remote environment where you can continue your analysis.</p>
+<h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>A remote environment tile is backward compatible for up to five versions.</p>
+</li>
+<li>
+<p>A remote environment tile running in a Dynatrace version <em>x</em> environment will work correctly with Dynatrace version <em>x</em>-5 or later deployed in the remote environment.</p>
+<p>When there's a difference of more than five versions between the local and remote versions, the tile may still work but that configuration is not supported.
+  + A remote environment tile displays data based on the features included in the remote environment's cluster version.</p>
+<p>For example, if a remote environment tile depends on a feature that was added in Dynatrace version <em>x</em>, and that version is deployed locally, but the remote environment is still running Dynatrace version <em>x</em>-1, the feature won't be displayed in the local dashboard because the remote environment doesn't support it.</p>
+<p>If a remote environment tile depends on a feature that is not supported in the remote environment, the tile displays an error message explaining the discrepancy between the local and remote environments.
+  + To maintain maximum compatibility between local and remote environments, keep your Dynatrace environments on the same version.
+* Remote-environment connections donât pass user context and permissions over environment boundaries.</p>
+</li>
+</ul>
+<p>For this reason, the best practice is to use management zones to segment/limit dashboard tiles when viewing remote information.</p>
+<p>Because of the above consideration, remote-environment dashboards can be configured only by environment administrators. Regular users can still view and interact with remote-environment dashboards without limitation.
+* The world map dashboard tile isnât suited for (and therefore doesnât support) remote-environment scenarios.</p>
+<h2 id="configuration_38">Configuration<a class="headerlink" href="#configuration_38" title="Permanent link">&para;</a></h2>
+<p>To create a dashboard tile that queries data from a remote environment:</p>
+<ul>
+<li>In the remote Dynatrace environment, <a href="#token">create an access token</a> that permits you to query data from that environment</li>
+<li>In the local Dynatrace environment, <a href="#link">add the remote environment</a> to the table of remote environments</li>
+<li>In the local Dynatrace environment, <a href="#tile">create one or more tiles that display remote data</a> queried from the remote environment</li>
+</ul>
+<p>API equivalents</p>
+<p>The procedures that follow use the Dynatrace web UI. To carry out the equivalent tasks via API, see:</p>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Manage Dynatrace API authentication tokens.">Access tokens API</a>âto create a token in the remote environment</li>
+<li><a href="/docs/dynatrace-api/configuration-api/remote-environments" title="Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.">Remote environments API</a>âto create a link to the remote environment from the local environment</li>
+<li><a href="/docs/dynatrace-api/configuration-api/dashboards-api" title="Find out how to manage dashboard configuration via Dynatrace Classic configuration API.">Dashboards Classic API</a>âto configure a dashboard with tiles that query the remote environment</li>
+</ul>
+<h3 id="create-an-access-token">Create an access token<a class="headerlink" href="#create-an-access-token" title="Permanent link">&para;</a></h3>
+<p>With this procedure, you get an access token from the remote environment that you need in the other steps.</p>
+<p>To create an access token for the remote Dynatrace environment</p>
+<ol>
+<li>
+<p>Sign in to the remote environment.</p>
+</li>
+<li>
+<p>This is the environment from which you pull data.</p>
+</li>
+<li>If you can't sign in to the remote environment, someone with access to the remote environment can do this procedure for you.</li>
+<li>Go to <strong>Access Tokens</strong>.</li>
+<li>Select <strong>Generate new token</strong>.</li>
+<li>Enter a token name.</li>
+<li>Find the <strong>Fetch data from a remote environment</strong> scope (<code>RestRequestForwarding</code>) and select its checkbox.</li>
+<li>Select <strong>Generate token</strong>.<br />
+   This generates a token that gives your local environment permission to pull data from this remote environment.</li>
+<li>Select <strong>Copy</strong> and then paste the token to a secure location.<br />
+   It's a long string that you need to copy and paste back into Dynatrace later.</li>
+</ol>
+<h3 id="add-the-remote-environment">Add the remote environment<a class="headerlink" href="#add-the-remote-environment" title="Permanent link">&para;</a></h3>
+<p>To add the remote Dynatrace environment to your list of available remote environments</p>
+<ol>
+<li>Sign in to your local Dynatrace environment.</li>
+<li>Go to <strong>Settings</strong>.</li>
+<li>Select <strong>Integration</strong> &gt; <strong>Remote environments</strong>.</li>
+<li>Select <strong>Connect environment</strong>.</li>
+<li>
+<p>Define the remote environment from which your local environment pulls data, and then select <strong>Save changes</strong>.</p>
+</li>
+<li>
+<p><strong>Name</strong> is the name under which this environment will be listed in your local Dynatrace environment when you configure a tile to query this remote environment. This is freeform text. It doesn't affect the remote environment.</p>
+</li>
+<li>
+<p><strong>Remote environment URI</strong></p>
+<ul>
+<li>For Dynatrace SaaS, it needs to be in the following format:</li>
+</ul>
+<p><code>https://&lt;ENVIRONMENTID&gt;.live.dynatrace.com/</code></p>
+<p>Replace <code>&lt;ENVIRONMENTID&gt;</code> with your actual environment ID.
+ + For Dynatrace Managed, any URI is allowed.
+ + To connect a Dynatrace (SaaS deployment) environment to a Dynatrace Managed deployment via a URI that is outside the <code>dynatrace-managed.com</code> domain, contact a Dynatrace product expert via live chat within your Dynatrace environment.
+   * <strong>Network scope</strong></p>
+<ul>
+<li><code>External</code>: The remote environment is located in another network. Globally configured proxy settings are used if present. This is the default scope.</li>
+<li><code>Internal</code>: The remote environment is located in the same network. Globally configured proxy settings are not used.</li>
+<li><code>Cluster</code>: The remote environment is located in the same cluster. The request is made to <code>localhost</code>.</li>
+</ul>
+<p>Dynatrace SaaS can only use the <code>External</code> network scope.
+   * <strong>Token</strong> is the token you generated in the previous procedure. It needs to include the <strong>Fetch data from a remote environment</strong> scope (<code>RestRequestForwarding</code>).
+   * <strong>Test connection</strong> checks the connection from your local environment to the remote environment.</p>
+<p>Be sure to get a <code>connection successfully established</code> message before continuing.</p>
+</li>
+</ol>
+<p>Now that you have established a link to the remote environment, you can create dashboard tiles that query that environment.</p>
+<h3 id="create-a-tile-that-displays-remote-data">Create a tile that displays remote data<a class="headerlink" href="#create-a-tile-that-displays-remote-data" title="Permanent link">&para;</a></h3>
+<p>To create a tile that pulls data from the remote environment</p>
+<ol>
+<li>Display the dashboard that will display the tile.</li>
+<li>Select <strong>Edit</strong>.</li>
+<li>
+<p>Select or add a tile on which you want to display data from the remote environment.<br />
+   The <strong>Environment</strong> section of the tile settings pane displays the name of the environment from which that tile pulls monitoring data.</p>
+</li>
+<li>
+<p><strong>Default (local)</strong> configures the tile to pull its data from the local Dynatrace environment.</p>
+</li>
+<li>All other listed environments are remote environments for which a connection has been established.</li>
+<li>Select the remote environment that you want the selected tile to query.<br />
+   If you named the remote environment <code>Boston</code> when you added the remote environment in the previous procedure, <code>Boston</code> should be on this list.</li>
+</ol>
+<p><img alt="Example: select remote environment for tile" src="https://dt-cdn.net/images/select-tile-environment-example-317-72348cc81f.png" />
+5. Select <strong>Done</strong> to display the finished dashboard.
+6. Hover over the tile filter icon to see the environment selection.</p>
+<p><img alt="Example: display tile filters to see remote environment selection" src="https://dt-cdn.net/images/tile-remote-environment-tooltip-example-495-96be8d3ec4.png" /></p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="same-tiles-different-environments">Same tiles, different environments<a class="headerlink" href="#same-tiles-different-environments" title="Permanent link">&para;</a></h3>
+<p>In this example, we create a dashboard that shows the host health and network status for the local environment and a remote environment side by side. We assume that you have already added the remote environment to your local environment.</p>
+<ol>
+<li>Go to <img alt="Dashboards Classic" src="https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png" title="Dashboards Classic" /> <strong>Dashboards Classic</strong>, select <strong>Create dashboard</strong>, give it a name, and select <strong>Create</strong>.</li>
+<li>Drag two <strong>Header</strong> tiles to the dashboard (or drag one and then clone it).</li>
+<li>Edit one header to say <strong>Local</strong> and the other to say <strong>Remote</strong>.</li>
+<li>Drag two <strong>Host health</strong> tiles to the dashboard (or drag one and then clone it).<br />
+   Position one under the <strong>Local</strong> header and the other under the <strong>Remote</strong> header.</li>
+<li>Drag two <strong>Network status</strong> tiles to the dashboard (or drag one and then clone it).<br />
+   Position one under the <strong>Local</strong> header and the other under the <strong>Remote</strong> header.</li>
+</ol>
+<p>At this point, all of the tiles query the local environment, so you have two identical <strong>Host health</strong> tiles and two identical <strong>Network status</strong> tiles.</p>
+<p><img alt="Same tiles, same environments" src="https://dt-cdn.net/images/same-tiles-same-environments-595-51063546a9.png" />
+6. Under the <strong>Remote</strong> header, edit the <strong>Host health</strong> and <strong>Network status</strong> tiles so that both of them query the remote environment (<code>Boston</code> in this example).</p>
+<p><img alt="Example: select remote environment for tile" src="https://dt-cdn.net/images/select-tile-environment-example-317-72348cc81f.png" />
+7. Select <strong>Done</strong> to display the dashboard.</p>
+<ul>
+<li>The tiles under <strong>Local</strong> still display local host and network information.</li>
+<li>
+<p>The tiles under <strong>Remote</strong> now query the remote environment:</p>
+<ul>
+<li>The remote tiles display the host health and network status for the remote environment, not the default local environment.</li>
+<li>The remote tiles each display a filter icon. Hover over the icon to see the environment name.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Same tiles, different environments" src="https://dt-cdn.net/images/same-tiles-different-environments-595-d747473897.png" /></p>
+<p>You can of course add other tile types and point to additional remote environments.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p><a href="https://dt-url.net/t903mr6"><code>Verification failed, please check your settings: Constraints violated.</code> message displayed when adding a remote environmentï»¿</a></p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/dashboards-api" title="Find out how to manage dashboard configuration via Dynatrace Classic configuration API.">Dashboards Classic API</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/remote-environments" title="Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.">Remote environments API</a></li>
+<li><a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">What is a monitoring environment?</a></li>
+</ul>
+<hr />
+<h2 id="source-metrics-browsermd">Source: metrics-browser.md<a class="headerlink" href="#source-metrics-browsermd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Metrics browser
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/metrics-browser
+scraped: 2026-02-15T09:08:57.807077</p>
+<hr />
+<h1 id="metrics-browser">Metrics browser<a class="headerlink" href="#metrics-browser" title="Permanent link">&para;</a></h1>
+<h1 id="metrics-browser_1">Metrics browser<a class="headerlink" href="#metrics-browser_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>5-min read</li>
+<li>Updated on Aug 01, 2022</li>
+</ul>
+<p>Early Adopter</p>
+<p>Go to <strong>Metrics</strong> to open the <strong>Metrics</strong> browser, which is a cool tool for browsing all metrics available in your monitoring environment and making a quick metric-specific visualization.</p>
+<ul>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard" title="Learn to pin tiles to your dashboards.">Dashboards Classic</a>: You can pin the visualization to a classic dashboard.</li>
+</ul>
+<h2 id="filter-and-sort-the-table">Filter and sort the table<a class="headerlink" href="#filter-and-sort-the-table" title="Permanent link">&para;</a></h2>
+<ul>
+<li>By default, the table of metrics is filtered to show only those metrics that were last reported after the start of the selected timeframe (for example, <code>Last 2 hours</code>). Turn off <strong>Only show metrics reported after the start of the selected timeframe</strong> to see all metrics regardless of when they were last reported.</li>
+<li>
+<p>Set <strong>Favorites</strong> to <code>Any</code>, <code>Yes</code>, or <code>No</code> to filter the table by metrics that you have favorited.</p>
+</li>
+<li>
+<p>To favorite a metric, select the star in the <strong>Favorite</strong> column of the table. Favorited metrics sort to the top of the table by default.</p>
+</li>
+<li>To unfavorite a metric, select the star again.</li>
+<li>
+<p>The filter bar (<strong>Filtered by</strong>) has the following options.</p>
+</li>
+<li>
+<p><code>Text</code>âSelect <code>Text</code>, enter a filter string, and then press <strong>Enter</strong> to list metrics that include the string in <strong>Metric name</strong>, <strong>Metric key</strong>, or <strong>Description</strong>.</p>
+</li>
+<li><code>Tag</code>âSelect <code>Tag</code>, enter a filter string, and then select a matching tag to list metrics that include the tag in <strong>Tags</strong>.</li>
+<li><code>Unit</code>âSelect <code>Unit</code>, enter a filter string, and then select a matching metric unit (for example, <code>Percent</code>) to list metrics that have the selected <strong>Unit</strong>.</li>
+<li><code>Favorites</code>âSelect <code>Favorites</code> and then select <code>Yes</code> (to list only favorited metrics) or <code>No</code> (to list only metrics that are not favorited).</li>
+<li>
+<p><code>Dimension</code>âSelect <code>Dimension</code>, enter a filter string, and then select a matching metric dimension (for example, <code>Host</code>) to list metrics that have the selected dimension.</p>
+<p>If you combine filters, they are ANDed together. For example, if you set <code>Dimension</code> to <code>Host</code> and set <code>Text</code> to <code>usage</code>, the metrics browser lists all metrics with the <code>Host</code> dimension that also include the string <code>usage</code> in the <strong>Metric name</strong>, <strong>Metric key</strong>, or <strong>Description</strong> field.
+* Select column header <strong>Favorite</strong>, <strong>Name</strong>, or <strong>Key</strong> to sort by the selected column.
+* Select <img alt="Expand row" src="https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg" title="Expand row" /> in the <strong>Details</strong> column to display metric details.</p>
+</li>
+</ul>
+<h2 id="review-metric-details">Review metric details<a class="headerlink" href="#review-metric-details" title="Permanent link">&para;</a></h2>
+<p>Expand <strong>Details</strong> for any metric (row) in the table to see metric details and a visualization of the metric over the selected timeframe.</p>
+<p>Metric details available in the 'Metrics browser'</p>
+<p>Field</p>
+<p>Description</p>
+<p>Metric name</p>
+<p>The name of the metric in the user interface.</p>
+<p>Metric key</p>
+<p>The fully qualified key of the metric. If a transformation has been used, it is reflected in the metric key.</p>
+<p>Entity type</p>
+<p>Entity type for this metric.</p>
+<p>Description</p>
+<p>A short description of the metric.</p>
+<p>Tags</p>
+<p>Tags allow further grouping of metrics.</p>
+<p>Created</p>
+<p>The timestamp when the metric was created.</p>
+<p>Last written</p>
+<p>The timestamp when the metric was last written.</p>
+<p>DDU billing</p>
+<p>Whether the metric is subject to <a href="/docs/license/monitoring-consumption-classic/davis-data-units" title="Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).">Davis data unit (DDU) consumption</a>.</p>
+<p>Unit</p>
+<p>The unit of the metric.</p>
+<p>Minimum value</p>
+<p>The known lower boundary value for the metric.</p>
+<p>Maximum value</p>
+<p>The known upper boundary value for the metric.</p>
+<p>Default aggregation</p>
+<p>The default aggregation for this metric.</p>
+<p>Aggregations</p>
+<p>The list of allowed aggregations for this metric.</p>
+<p>Dimensions</p>
+<p>The fine metric division (for example, process group and process ID for a process-related metric).</p>
+<p>Transformations</p>
+<p>Possible transform operators.</p>
+<h2 id="order-of-magnitude-notation">Order-of-magnitude notation<a class="headerlink" href="#order-of-magnitude-notation" title="Permanent link">&para;</a></h2>
+<p>In this example, you can see values displayed in millions. This is order-of-magnitude notation (<code>7.5M</code> means "about 7.5 million" and not "exactly 7.5 million").</p>
+<p>The order of magnitude here is selected automatically based on the size of the values. For example, the same metric measured over a shorter timeframe might be displayed in <code>k</code> values instead of <code>M</code>.</p>
+<p><img alt="Example order-of-magnitude values in the metrics browser." src="https://dt-cdn.net/images/magnitude-metrics-browser-1284-02225955bf.png" /></p>
+<p>Examples of order-of-magnitude notation in Dynatrace:</p>
+<p>Notation</p>
+<p>Factor</p>
+<p>Meaning</p>
+<p>k</p>
+<p>10^3</p>
+<p>kilo, thousand</p>
+<p>M</p>
+<p>10^6</p>
+<p>mega, million</p>
+<p>G</p>
+<p>10^9</p>
+<p>giga, billion</p>
+<p>T</p>
+<p>10^12</p>
+<p>tera, trillion</p>
+<p>For details, see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation" title="Dynatrace order-of-magnitude notation for displaying metric values">Order-of-magnitude notation</a>.</p>
+<h2 id="add-metric-to-dashboard">Add metric to dashboard<a class="headerlink" href="#add-metric-to-dashboard" title="Permanent link">&para;</a></h2>
+<p><a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a></p>
+<p>To add a metric to a classic dashboard</p>
+<ol>
+<li>Select <img alt="Expand row" src="https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg" title="Expand row" /> in the <strong>Details</strong> column to display metric details.</li>
+<li>Select <strong>Create chart</strong> to open the metric in <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>.</li>
+<li>Adjust the query and visualization settings as needed. For details, see <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a> or <a href="/docs/analyze-explore-automate/explorer/explorer-quick-start" title="Using Data Explorer, create your first query, select a visualization, and pin the results to a dashboard.">Data Explorer quick start</a>.</li>
+<li>Select <strong>Pin to dashboard</strong>.</li>
+<li>Specify the target dashboard and metric title.</li>
+<li>Select <strong>Pin</strong>.</li>
+</ol>
+<h2 id="metadata-for-custom-metrics">Metadata for custom metrics<a class="headerlink" href="#metadata-for-custom-metrics" title="Permanent link">&para;</a></h2>
+<p>To provide contextual information for custom metrics (for example, to define the unit of measurement, or to provide display names or descriptions or even information such as lower and upper value ranges or Davis-relevant information), you can create metric metadata per metric key.</p>
+<p>Once this information is provided, it becomes part of the metrics descriptor and can be queried via the API and used in the Metrics Browser and Data Explorer.</p>
+<ul>
+<li>Providing metadata via Settings 2.0 is available only for custom/schemaless metrics, not for built-in/code-registered metrics.</li>
+<li>The metadata provided for a specific metric key exists side-by-side with the metric time series itself. You can even create the metric metadata before you ingest datapoints for the first time.</li>
+</ul>
+<h3 id="configuration-via-api">Configuration via API<a class="headerlink" href="#configuration-via-api" title="Permanent link">&para;</a></h3>
+<p>Metric metadata is fully configurable via API. For details, see <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata" title="Provide metadata for your custom metric.">Custom metric metadata</a>.</p>
+<h3 id="configuration-via-web-ui">Configuration via web UI<a class="headerlink" href="#configuration-via-web-ui" title="Permanent link">&para;</a></h3>
+<p>To configure metric metadata for custom metrics via the web UI</p>
+<ol>
+<li>Go to <strong>Metrics</strong>.</li>
+<li>Select <img alt="Expand row" src="https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg" title="Expand row" /> in the <strong>Details</strong> column to display metric details.</li>
+<li>Select <strong>Edit metadata</strong>.<br />
+   If you don't see an <strong>Edit metadata</strong> button in the expanded row, you haven't selected a custom metric.</li>
+<li>
+<p>On the <strong>Metric metadata</strong> page, edit the metadata for the selected metric.<br />
+   If the page displays a lock, you don't have the necessary write permissions to edit the selected metric's metadata.</p>
+</li>
+<li>
+<p><strong>Display name</strong>âEnter a human-friendly name for the metric.</p>
+</li>
+<li><strong>Description</strong>âEnter a free-form description of the metric: how it is measured, etc.</li>
+<li><strong>Unit</strong>âSelect a unit from the list.</li>
+<li>
+<p><strong>Metric properties</strong></p>
+<ul>
+<li><strong>Minimum value</strong>âThe lower boundary of the metric.</li>
+<li><strong>Maximum value</strong>âThe upper boundary of the metric.</li>
+<li><strong>Root cause relevant</strong>âA root-cause relevant metric represents a strong indicator for a faulty component.</li>
+<li><strong>Impact relevant</strong>âAn impact-relevant metric is highly dependent on other metrics and changes because an underlying root-cause metric has changed.</li>
+<li>
+<p><strong>Value type</strong>âThe type of the metric's value. You have these options:</p>
+</li>
+<li>
+<p><code>score</code>: A score metric is a metric where high values indicate a good situation, while low values indicate trouble. An example of such a metric is a success rate.</p>
+</li>
+<li><code>error</code>: An error metric is a metric where high values indicate trouble, while low values indicate a good situation. An example of such a metric is an error count.</li>
+<li><strong>Latency</strong>âThe latency of the metric, in minutes. It indicates how long it takes before an ingested new metric data point is available in Dynatrace.</li>
+<li><strong>Metric dimensions</strong>âTo add a dimension, select <strong>Add dimension</strong> and enter the <strong>Dimension key</strong> and <strong>Display name</strong> for the dimension.</li>
+<li><strong>Tags</strong>âTo add a tag, select <strong>Add tag</strong> and enter the tag.</li>
+<li><strong>Source entity type</strong>âTo configure the entity type of the metric. Only editable if the metric is ingested via an API endpoint.</li>
+<li>Select <strong>Save changes</strong> to save your edits.</li>
+</ul>
+</li>
+</ol>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

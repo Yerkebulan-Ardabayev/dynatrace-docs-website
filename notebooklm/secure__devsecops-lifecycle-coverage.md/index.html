@@ -1,0 +1,1303 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/secure__devsecops-lifecycle-coverage.md/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dynatrace Documentation: secure/devsecops-lifecycle-coverage.md - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-documentation-securedevsecops-lifecycle-coveragemd" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace Documentation: secure/devsecops-lifecycle-coverage.md
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-devsecops-lifecycle-coveragemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: devsecops-lifecycle-coverage.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dynatrace-documentation-securedevsecops-lifecycle-coveragemd">Dynatrace Documentation: secure/devsecops-lifecycle-coverage.md<a class="headerlink" href="#dynatrace-documentation-securedevsecops-lifecycle-coveragemd" title="Permanent link">&para;</a></h1>
+<p>Generated: 2026-02-16</p>
+<p>Files combined: 1</p>
+<hr />
+<h2 id="source-devsecops-lifecycle-coveragemd">Source: devsecops-lifecycle-coverage.md<a class="headerlink" href="#source-devsecops-lifecycle-coveragemd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: DevSecOps Lifecycle Coverage with Snyk
+source: https://www.dynatrace.com/docs/secure/devsecops-lifecycle-coverage
+scraped: 2026-02-15T21:25:53.440068</p>
+<hr />
+<h1 id="devsecops-lifecycle-coverage-with-snyk">DevSecOps Lifecycle Coverage with Snyk<a class="headerlink" href="#devsecops-lifecycle-coverage-with-snyk" title="Permanent link">&para;</a></h1>
+<h1 id="devsecops-lifecycle-coverage-with-snyk_1">DevSecOps Lifecycle Coverage with Snyk<a class="headerlink" href="#devsecops-lifecycle-coverage-with-snyk_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>App</li>
+<li>Updated on Dec 13, 2023</li>
+</ul>
+<p>Combining the Dynatrace AI-powered application runtime insights and analytics with the pre-deployment security information from Snyk, <img alt="DevSecOps" src="https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg" title="DevSecOps" /> <strong>DevSecOps Lifecycle Coverage with Snyk</strong> provides a holistic view across the DevSecOps lifecycle, enabling you to eliminate blind spots, mitigate security risks, and ensure end-to-end coherent security coverage from development to production.</p>
+<p><strong>Capabilities:</strong></p>
+<ul>
+<li>Real-time view and continuous reporting of your container workload coverage, highlighting where containers have slipped into production after bypassing security controls, and enabling you to improve coverage, decrease the number of vulnerable containers, and eliminate unscanned ones.</li>
+<li>A flexible approach, which allows you to drill down into your environment and focus on specific parts that youâre interested in to obtain the exact information you need.</li>
+<li>Container details that cover all levels of your organizationâs business-critical applications.</li>
+</ul>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h3>
+<p>Connect Snyk container scans and Dynatrace runtime insights for strong security.](https://www.dynatrace.com/hub/detail/devsecops-lifecycle-coverage/?internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross)</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>See below for the <a href="#dt-requirements">Dynatrace</a> and <a href="#workflow">Snyk</a> requirements.</p>
+<h3 id="dynatrace-requirements">Dynatrace requirements<a class="headerlink" href="#dynatrace-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Dynatrace version 1.272+</li>
+<li>OneAgent version 1.239+</li>
+<li><a href="/docs/secure/application-security/vulnerability-analytics" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Set up Dynatrace Runtime Vulnerability Analytics</a></li>
+<li>Make sure that an <strong>External request</strong> to Snyk is allowed.</li>
+</ul>
+<p>Show me how</p>
+<ol>
+<li>Go to <strong>Settings</strong> and select <strong>General</strong> &gt; <strong>Environment management</strong>, <strong>External Requests</strong>.</li>
+<li>Select  <strong>New host pattern</strong>.</li>
+<li>Add the <code>api.snyk.io</code> domain name.</li>
+<li>Select <strong>Add</strong>.</li>
+<li>Make sure the right permissions are enabled.</li>
+</ol>
+<p>Show me how</p>
+<ol>
+<li>In  <strong>Hub</strong>, select <img alt="DevSecOps" src="https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg" title="DevSecOps" /> <strong>DevSecOps Lifecycle Coverage with Snyk</strong>.</li>
+<li>Select the <strong>Technical Information</strong> tab.</li>
+<li>Check the <strong>User Permissions</strong> section for a list of all the permissions you need to include in the policies bound to user groups that are allowed to use <img alt="DevSecOps" src="https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg" title="DevSecOps" /> <strong>DevSecOps Lifecycle Coverage with Snyk</strong>.</li>
+</ol>
+<p>For more information, see <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Manage user permissions with IAM policies</a> and <a href="/docs/analyze-explore-automate/workflows/running" title="Run and monitor workflows created in Dynatrace Workflows.">Workflow authorization settings</a>.</p>
+<h3 id="snyk-requirements">Snyk requirements<a class="headerlink" href="#snyk-requirements" title="Permanent link">&para;</a></h3>
+<p>To display container image scan data, you need to set up the connection with Snyk via <a href="https://dt-url.net/wl234nw"><img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong>ï»¿</a>.</p>
+<ol>
+<li>Go to <strong>DevSecOps Lifecycle Coverage with Snyk</strong>.</li>
+<li>On the <strong>Overview</strong> page, on the <strong>Pre-deployment scans are not running</strong> section, select <strong>Adapt workflow</strong>.</li>
+<li>In the <strong>Open with</strong> dialog, select <strong>Create a new workflow with tasks and an optional trigger</strong>. This takes you to a preconfigured workflow, with the prefilled values recommended by Dynatrace.</li>
+<li>Below the <strong>Time interval trigger</strong> node, select <strong>Snyk container image coverage ingest</strong>.</li>
+<li>In the side panel, select <strong>Create a new connection</strong>.</li>
+<li>In the <strong>Open with</strong> dialog, select <strong>Open settings</strong>.</li>
+<li>On the <strong>Snyk connections</strong> settings page, select <strong>Add item</strong>, then enter a name for your connection and your Snyk service account token.</li>
+<li>Select <strong>Save changes</strong>.</li>
+<li>Go to your workflow and select <strong>Run</strong> to verify the connection, then select <strong>Save</strong> to save the workflow.</li>
+</ol>
+<h2 id="global-view-of-security-coverage">Global view of security coverage<a class="headerlink" href="#global-view-of-security-coverage" title="Permanent link">&para;</a></h2>
+<p>The <strong>Overview</strong> page displays a global view of the container workload, container image, and running container coverage in your environment. Container workloads are groups of running containers that together implement an application. Running containers are based on container images, and can belong to different container platforms, such as Kubernetes/OpenShift, Cloud Foundry, Docker, and others.</p>
+<p>The following information is displayed.</p>
+<ul>
+<li><strong>N container workloads</strong>:</li>
+</ul>
+<p><img alt="container-workloads" src="https://dt-cdn.net/images/n-container-workloads-1387-a55403f265.png" /></p>
+<ul>
+<li>A donut chart with the coverage percentage of the container workloads in your environment according to the coverage mode (<code>Fully covered</code>, <code>Partially covered</code>, <code>Not covered</code>). For details, hover over the donut chart.</li>
+<li>A count of the container workloads detected in your environment, the running containers that form the container workloads, and the container images on which the running containers are based.</li>
+<li>
+<p>The coverage of container workloads across the entire DevSecOps lifecycle:</p>
+</li>
+<li>
+<p><strong>Fully covered</strong>: A container workload is considered fully covered if all its running containers are monitored with Application Security and all the container images on which the running containers are based have been scanned by Snyk.</p>
+</li>
+<li><strong>Partially covered</strong>: A container workload is considered partially covered if only some of its running containers are monitored with Application Security or only some of the container images on which the running containers are based have been scanned by Snyk.</li>
+<li><strong>Not covered</strong>: A container workload is considered not covered if none of its running containers are monitored with Application Security and none of the container images on which the running containers are based have been scanned by Snyk.</li>
+<li>Select <strong>View container workloads</strong> to navigate to the <a href="#workloads"><strong>Container workloads</strong></a> page for detailed information on the coverage of the container workloads in your environment.</li>
+</ul>
+<p>For instructions on how to improve workload coverage or troubleshoot coverage issues, see <a href="#improve-coverage">Improve coverage</a>.</p>
+<ul>
+<li><strong>N container images</strong>:</li>
+</ul>
+<p><img alt="container-images" src="https://dt-cdn.net/images/container-images-681-774dfe03f5.png" /></p>
+<ul>
+<li>A donut chart with the coverage percentage of container images in your environment according to the coverage mode (<code>Covered</code>, <code>Not covered</code>). For details, hover over the donut chart.</li>
+<li>
+<p>The coverage of container images in the pre-deployment (development) phase of the DevSecOps lifecycle:</p>
+</li>
+<li>
+<p><strong>Covered</strong>: A container image is considered covered if it has been scanned by Snyk.</p>
+</li>
+<li><strong>Not covered</strong>: A container image is considered not covered if it hasn't been scanned by Snyk.</li>
+<li><strong>N running containers</strong>:</li>
+</ul>
+<p><img alt="running-containers" src="https://dt-cdn.net/images/2023-11-28-12-15-46-777-22e713116a.png" /></p>
+<ul>
+<li>A donut chart with the coverage percentage of the running containers in your environment according to the coverage mode (<code>Covered</code>, <code>Not covered</code>). For details, hover over the donut chart.</li>
+<li>
+<p>The coverage of running containers in the post-deployment (runtime) phase of the DevSecOps lifecycle:</p>
+</li>
+<li>
+<p><strong>Covered</strong>: A running container is considered covered if all its processes are monitored with Application Security.</p>
+</li>
+<li><strong>Not covered</strong>: A running container is considered not covered if not all its processes are monitored with Application Security.</li>
+<li>Select <strong>View details</strong> to navigate to the <a href="#running-containers"><strong>Running containers</strong></a> page for detailed information on the running containers coverage.</li>
+</ul>
+<h3 id="drill-down-into-your-environment">Drill down into your environment<a class="headerlink" href="#drill-down-into-your-environment" title="Permanent link">&para;</a></h3>
+<p>Apart from the global overview of the security coverage in your environment, you can create different perspectives (or views) that allow you to you examine closely the security coverage in specific parts of your environment. A view corresponds to a part of the environment that you want to drill down into.</p>
+<p>To add a view</p>
+<ol>
+<li>On the <strong>Overview</strong> page, select <strong>Add new view</strong>.</li>
+<li>Enter a name for your view.</li>
+<li>In the <strong>Entity selection</strong> field, enter an entity query to define the container workloads that you want to monitor.</li>
+</ol>
+<p>A workload is an entity of type <code>CONTAINER_GROUP</code>. Example query: <code>type("CONTAINER_GROUP"), entityName.startsWith("MyWorkload")</code>. For more information on how to write entity selector queries, see <a href="https://dt-url.net/oq034sp">Entity selectorï»¿</a>.</p>
+<ol>
+<li>Optional Select <strong>Add query</strong> to add a new query. You can add as many queries as you want to build your view.</li>
+<li>Select <strong>Add view</strong> to save your configuration.</li>
+</ol>
+<p>Views are displayed in <strong>Overview</strong> &gt; <strong>Your customized views</strong>.<br />
+A customized view shows security coverage information about your selected container workloads and associated container images and running containers.</p>
+<p>A customized view is only visible to the user who creates it.</p>
+<p>You can add as many views as you want, and selected partitions can overlap. Selecting a view collapses or expands it.</p>
+<ul>
+<li>Select <strong>View container workloads</strong> to navigate to the <a href="#workloads"><strong>Container workloads</strong></a> page for detailed information on the coverage of the container workloads in your customized view.</li>
+<li>To delete a view, select  for the view you want to delete, then select <strong>Delete</strong> and confirm.</li>
+</ul>
+<h2 id="container-workload-coverage">Container workload coverage<a class="headerlink" href="#container-workload-coverage" title="Permanent link">&para;</a></h2>
+<p>The <strong>Container workloads</strong> page provides detailed information about your container workload devtime and runtime coverage. Two different perspectives are provided, depending on how you navigate to this page:</p>
+<ul>
+<li>To see container workloads in your environment, go to <strong>Overview</strong> &gt; <strong>Global</strong> and select <strong>View container workloads</strong>. This takes you to the global overview of the <strong>Container workloads</strong> page.</li>
+<li>To see container workloads in a selected customized view, go to <strong>Overview</strong> &gt; <strong>Your customized views</strong> and select <strong>View container workloads</strong> for your desired view. This takes you to the <strong>Container workloads</strong> page, filtered by your selected customized view.</li>
+</ul>
+<p>The following information is displayed.</p>
+<ul>
+<li><strong>Container workload devtime coverage</strong>:</li>
+</ul>
+<p><img alt="container-workload-devtime-coverage" src="https://dt-cdn.net/images/container-workload-devtime-coverage-703-c2ef974c9e.png" /></p>
+<ul>
+<li>A donut chart with the devtime coverage percentage of the container workloads according to the coverage mode (<code>Covered</code>, <code>Partially covered</code>, <code>Not covered</code>). For details, hover over the donut chart.</li>
+<li>
+<p>The coverage of container workloads in the pre-deployment (development) phase of the DevSecOps lifecycle:</p>
+</li>
+<li>
+<p><strong>Covered</strong>: A container workload is considered covered if all container images of the running containers in that workload have been scanned by Snyk.</p>
+</li>
+<li><strong>Partially covered</strong>: A container workload is considered partially covered if only some container images of the running containers in that workload have been scanned by Snyk.</li>
+<li><strong>Not covered</strong>: A container workload is considered not covered if no container image of the running containers in that workload has been scanned by Snyk.</li>
+<li><strong>Container workload runtime coverage</strong>:</li>
+</ul>
+<p><img alt="container-workload-runtime-coverage" src="https://dt-cdn.net/images/container-workload-runtime-coverage-701-6adfce029b.png" /></p>
+<ul>
+<li>A donut chart with the runtime coverage percentage of your container workloads according to the coverage mode (<code>Covered</code>, <code>Partially covered</code>, <code>Not covered</code>). For details, hover over the donut chart.</li>
+<li>
+<p>The coverage of container workloads in the post-deployment (runtime) phase of the DevSecOps lifecycle:</p>
+</li>
+<li>
+<p><strong>Covered</strong>: A container workload is considered covered if all running containers in that workload are monitored with Application Security.</p>
+</li>
+<li><strong>Partially covered</strong>: A container workload is considered partially covered if only some running containers in that workload are monitored with Application Security.</li>
+<li><strong>Not covered</strong>: A container workload is considered not covered if no running container in that workload is monitored with Application Security.</li>
+</ul>
+<h3 id="filter-container-workloads">Filter container workloads<a class="headerlink" href="#filter-container-workloads" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Filter container workloads</strong> section, you can filter for container workloads in your whole environment/in your selected customized view by name or coverage mode (<code>Fully covered</code>, <code>Partially covered</code>, <code>Not covered</code>).</p>
+<ul>
+<li><strong>Fully covered</strong>: Filters for the container workloads where all running containers are monitored with Application Security and all the container images on which the running containers are based have been scanned by Snyk.</li>
+<li><strong>Partially covered</strong>: Filters for the container workloads where only some running containers are monitored with Application Security or only some of the container images on which the running containers are based have been scanned by Snyk.</li>
+<li><strong>Not covered</strong>: Filters for the container workloads where no running container is monitored with Application Security and no container image on which the running containers are based has been scanned by Snyk.</li>
+</ul>
+<p>Select <strong>Open withâ¦</strong> &gt; <strong>View container group</strong> on any container workload to navigate to the overview page of the selected workload.</p>
+<h2 id="running-containers-coverage">Running containers coverage<a class="headerlink" href="#running-containers-coverage" title="Permanent link">&para;</a></h2>
+<p>The <strong>Running containers</strong> page provides detailed information about your running containers coverage. Two different perspectives are provided, depending on how you navigate to this page:</p>
+<ul>
+<li>To see running containers in your environment, go to <strong>Overview</strong> &gt; <strong>Global</strong> and, in the <strong>Running containers</strong> section, select <strong>View details</strong>. This takes you to the global overview of the <strong>Running containers</strong> page.</li>
+<li>To see running containers in a selected customized view, go to <strong>Overview</strong> &gt; <strong>Your customized views</strong> and, in the <strong>Running containers</strong> section, select <strong>View details</strong> for your desired view. This takes you to the <strong>Running containers</strong> page, filtered by your selected customized view.</li>
+</ul>
+<h3 id="filter-running-containers">Filter running containers<a class="headerlink" href="#filter-running-containers" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Filter running containers</strong> section, you can filter for running containers in your whole environment/in your selected customized view by name or coverage mode (<code>Covered</code>, <code>Not covered</code>).</p>
+<ul>
+<li><strong>Covered</strong>: Filters for the running containers where all processes are monitored with Application Security.</li>
+<li><strong>Not covered</strong>: Filters for the running containers where not all processes are monitored with Application Security.</li>
+</ul>
+<p>The list of results includes information about</p>
+<ul>
+<li>The container workload to which the runtime container belongs</li>
+<li>The container image on which the running container is based</li>
+</ul>
+<h2 id="improve-coverage">Improve coverage<a class="headerlink" href="#improve-coverage" title="Permanent link">&para;</a></h2>
+<p>To improve your container workload coverage, you need to improve coverage for both <a href="#improve-coverage-images">container images</a> and <a href="#improve-coverage-containers">running containers</a>.</p>
+<h3 id="improve-coverage-for-container-images">Improve coverage for container images<a class="headerlink" href="#improve-coverage-for-container-images" title="Permanent link">&para;</a></h3>
+<p>A container image is considered covered when it's scanned by Snyk. To improve coverage for container images</p>
+<ul>
+<li>Make sure your container images are <a href="https://dt-url.net/23034xd">scanned by Snykï»¿</a>.</li>
+<li>Make sure your container images have container IDs, otherwise, they're not matched and excluded.</li>
+<li>In <img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong>, check your <a href="#workflow">Snyk connection</a> status or run the workflow manually. For details, see <a href="https://dt-url.net/q22349v">Run a workflowï»¿</a>. If the execution fails, edit your connection settings or set up a new Snyk connection.</li>
+</ul>
+<p>How to set up a new Snyk connection</p>
+<ol>
+<li>Go to <img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong> and select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" /> <strong>New workflow</strong>.</li>
+<li>Set the workflow title (for example, <code>DevSecOps Lifecycle Coverage with Snyk</code>).</li>
+<li>In the side panel, select <strong>Time interval trigger</strong> and set it to run every <code>15</code> minutes, <code>every day</code>.</li>
+<li>Select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" /> on the trigger node.</li>
+<li>In the side panel, find and select the <strong>DevSecOps Lifecycle Coverage with Snyk</strong> action.</li>
+<li>Select <strong>Create a new connection</strong>.</li>
+<li>In the <strong>Open with</strong> dialog, select <strong>Open settings</strong>.</li>
+<li>On the <strong>Snyk connections</strong> settings page, select <strong>Add item</strong>, then enter a name for your connection and your Snyk service account token.</li>
+<li>Select <strong>Save changes</strong>.</li>
+<li>Go to your workflow and select <strong>Run</strong> to verify the connection, then select <strong>Save</strong> to save the workflow.</li>
+</ol>
+<h3 id="improve-coverage-for-running-containers">Improve coverage for running containers<a class="headerlink" href="#improve-coverage-for-running-containers" title="Permanent link">&para;</a></h3>
+<p>A running container is considered covered if all its processes are monitored by Dynatrace. To improve coverage for running containers</p>
+<ul>
+<li>Make sure all <a href="#dt-requirements">Dynatrace requirements</a> are met.</li>
+<li><a href="/docs/secure/application-security/vulnerability-analytics#enable-tpva" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Enable Third-party Vulnerability Analytics</a> globally.</li>
+<li>Enable all the <a href="/docs/secure/application-security/vulnerability-analytics#tech-tpv" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">supported technologies</a> that you want Dynatrace to cover.</li>
+<li>Make sure that your <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">monitoring rules</a> don't exclude any entities.</li>
+</ul>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<h3 id="does-the-snyk-container-scan-detect-vulnerabilities-in-libraries">Does the Snyk container scan detect vulnerabilities in libraries?<a class="headerlink" href="#does-the-snyk-container-scan-detect-vulnerabilities-in-libraries" title="Permanent link">&para;</a></h3>
+<p><strong><em>Does the Snyk container scan detect vulnerabilities in libraries? In the DevSecOps Lifecycle Coverage with Snyk app, what are the differences between the vulnerabilities detected in container images by Snyk and the ones detected by Runtime Vulnerability Analytics?</em></strong></p>
+<p><img alt="DevSecOps" src="https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg" title="DevSecOps" /> <strong>DevSecOps Lifecycle Coverage with Snyk</strong> monitors your container workload devtime and runtime coverage. It doesn't detect vulnerabilities.</p>
+<ul>
+<li>A container image is considered covered if it has been scanned by Snyk. The coverage results are displayed in DevSecOps Lifecycle Coverage with Snyk, while the results of the Snyk scans are displayed <a href="https://dt-url.net/cn03zyw">on the Snyk sideï»¿</a>.</li>
+<li>A running container is considered covered if all of its processes are monitored by Application Security. The coverage results are displayed in DevSecOps Lifecycle Coverage with Snyk, while the results of Application Security monitoring are displayed on <img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong>.</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

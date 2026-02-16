@@ -1,0 +1,2572 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/manage__identity-access-management/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dynatrace Documentation: manage/identity-access-management - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-documentation-manageidentity-access-management" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace Documentation: manage/identity-access-management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-access-tokensmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: access-tokens.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dynatrace-documentation-manageidentity-access-management">Dynatrace Documentation: manage/identity-access-management<a class="headerlink" href="#dynatrace-documentation-manageidentity-access-management" title="Permanent link">&para;</a></h1>
+<p>Generated: 2026-02-16</p>
+<p>Files combined: 11</p>
+<hr />
+<h2 id="source-access-tokensmd">Source: access-tokens.md<a class="headerlink" href="#source-access-tokensmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Access tokens classic
+source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens
+scraped: 2026-02-15T21:21:14.219764</p>
+<hr />
+<h1 id="access-tokens-classic">Access tokens classic<a class="headerlink" href="#access-tokens-classic" title="Permanent link">&para;</a></h1>
+<h1 id="access-tokens-classic_1">Access tokens classic<a class="headerlink" href="#access-tokens-classic_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>2-min read</li>
+<li>Updated on Oct 25, 2023</li>
+</ul>
+<p>This article discusses access tokens used in previous Dynatrace to authenticate to classic Configuration and Environment APIs. For the latest Dynatrace access, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens" title="Create personalised platform tokens to access Dynatrace services via the API in your user context.">Platform tokens</a> and <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
+<p>All external access to your Dynatrace monitoring environment relies on two pieces of information: the <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">environment ID</a> and an <em>access token</em>.</p>
+<p>Dynatrace uses several types of tokens:</p>
+<ul>
+<li>
+<p>Access tokens and personal access tokens grant access to:</p>
+</li>
+<li>
+<p><a href="/docs/dynatrace-api" title="Find out what you need to use the Dynatrace API.">Dynatrace API</a></p>
+</li>
+<li>Download of OneAgent and ActiveGate installers</li>
+<li><a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token" title="Learn the concept of a personal access token and its scopes.">Personal access tokens</a> grant access to some endpoints of Dynatrace API</li>
+<li><a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token" title="Learn what a tenant token is and how to change it.">Tenant tokens</a> allow OneAgent to report data to Dynatrace</li>
+</ul>
+<h2 id="token-format">Token format<a class="headerlink" href="#token-format" title="Permanent link">&para;</a></h2>
+<p>Dynatrace uses a unique token format consisting of three components separated by dots (<code>.</code>).</p>
+<h3 id="token-example">Token example<a class="headerlink" href="#token-example" title="Permanent link">&para;</a></h3>
+<p><code>&lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;</code></p>
+<h3 id="token-components">Token components<a class="headerlink" href="#token-components" title="Permanent link">&para;</a></h3>
+<p>Component name</p>
+<p>Component description</p>
+<p>prefix</p>
+<p>The <strong>prefix</strong> identifies the token type.</p>
+<p>In our example: <code>dt0s01</code></p>
+<p>See <a href="#token-format-prefixes">Token prefixes</a> below for a table of standard prefixes.</p>
+<p>public portion</p>
+<p>The <strong>public portion</strong> of the token is a 24-character public identifier.</p>
+<p>In our example: <code>ST2EY72KQINMH574WMNVI7YN</code></p>
+<p>token identifier</p>
+<p>The <strong>token identifier</strong> is the combination of the <strong>prefix</strong> and the <strong>public portion</strong>. A token identifier can be safely displayed in the UI and can be used for logging purposes.</p>
+<p>In our example: <code>&lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;</code></p>
+<p>secret portion</p>
+<p>The <strong>secret portion</strong> of the token is a 64-character string that should be treated like a password:</p>
+<ul>
+<li>Don't display it</li>
+<li>Don't store it in log files</li>
+<li>Rotate it instantly if it's leaked</li>
+</ul>
+<p>In our example: <code>G3DFPBEJYMODIDAEX454M7YWBUVEFOWKPRVMWFASS64NFH52PX6BNDVFFM572RZM</code></p>
+<h3 id="token-prefixes">Token prefixes<a class="headerlink" href="#token-prefixes" title="Permanent link">&para;</a></h3>
+<p>Prefix</p>
+<p>Description</p>
+<p><code>dt0s01</code></p>
+<p>This is an API token. It's used as an authorization method: a valid token allows the user to make changes within the Dynatrace account through SCIM.</p>
+<ul>
+<li>It is generated once.</li>
+<li>Do not reveal the secret portion of a <code>dt0s01</code> token.</li>
+<li>The public portion is used for identification in the web UI, but you generally should not reveal it (or any portion of this token).</li>
+<li>This token remains in effect until invalidated by the customer, so you must rotate it instantly if it is ever leaked.</li>
+</ul>
+<p><code>dt0s02</code></p>
+<p>OAuth2 Clients created by users through Account Management to be used with Dynatrace Apps and Account Management API.</p>
+<p><code>dt0s03</code></p>
+<p>OAuth2 Clients for internal and external services and integrations.</p>
+<p><code>dt0s04</code></p>
+<p>Chat and identity linking.</p>
+<p><code>dt0s06</code></p>
+<p>This is an OAuth2 Refresh Token, which is used to retrieve a new Access Token and generally changes frequently (typically every 5 to 15 minutes).</p>
+<p><code>dt0s08</code></p>
+<p>OAuth2 Clients for internal and external services and integrations.</p>
+<p><code>dt0s09</code></p>
+<p>Chat and identity linking.</p>
+<p><code>dt0s16</code></p>
+<p>Platform Token enabling programmatic access to Dynatrace platform services.</p>
+<p>This predictable format offers you several capabilities:</p>
+<ul>
+<li>Use Git pre-commit hooks to avoid pushing tokens to source code repositories (for example, using tools like <a href="https://github.com/awslabs/git-secrets">git-secretsï»¿</a>)</li>
+<li>Define masking rules to obfuscate the secret portions of tokens when writing log files</li>
+<li>Detect tokens in internal files or communications</li>
+<li>Enable the <a href="https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-secret-scanning#about-secret-scanning-for-public-repositories">GitHub secret scanning serviceï»¿</a> to identify any token pushed to a public GitHub repository</li>
+</ul>
+<p>Use this regular expression to look for tokens:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dt0[a-zA-Z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64}
+</code></pre></div>
+<p>With the rollout of Dynatrace version 1.210, this format is enabled by default (all newly generated tokens will use the new format).</p>
+<p>All existing tokens of the old format remain valid.</p>
+<h3 id="disable-the-new-format">Disable the new format<a class="headerlink" href="#disable-the-new-format" title="Permanent link">&para;</a></h3>
+<p>For a limited time, you can opt out of using the new token format:</p>
+<ol>
+<li>Go to <strong>Settings &gt; Integration &gt; Token settings</strong>.</li>
+<li>Turn off <strong>Create Dynatrace API tokens in the new format</strong>.</li>
+</ol>
+<h2 id="generate-an-access-token">Generate an access token<a class="headerlink" href="#generate-an-access-token" title="Permanent link">&para;</a></h2>
+<p>To generate an access token:</p>
+<ol>
+<li>Go to <img alt="Access tokens" src="https://dt-cdn.net/images/access-tokens-512-a766b810b8.png" title="Access tokens" /> <strong>Access Tokens</strong>.</li>
+<li>Select <strong>Generate new token</strong>.</li>
+<li>Enter a name for your token.<br />
+   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.</li>
+<li>Select the required scopes for the token.</li>
+<li>Select <strong>Generate token</strong>.</li>
+<li>Copy the generated token to the clipboard. Store the token in a password manager for future use.</li>
+</ol>
+<p>You can only access your token once upon creation. You can't reveal it afterward.</p>
+<h2 id="token-scopes">Token scopes<a class="headerlink" href="#token-scopes" title="Permanent link">&para;</a></h2>
+<p>Access tokens have fine-grained scopes to limit access to specific product functionality for security reasons.</p>
+<h3 id="openpipeline">OpenPipeline<a class="headerlink" href="#openpipeline" title="Permanent link">&para;</a></h3>
+<p>Name</p>
+<p>API value</p>
+<p>Description</p>
+<p>OpenPipeline - Ingest Events</p>
+<p><code>openpipeline.events</code></p>
+<p>Grants access to <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-builtin" title="Ingest generic events from built-in endpoints via OpenPipeline Ingest API.">POST Built-in generic events</a> request of the OpenPipeline Ingest API.</p>
+<p>OpenPipeline - Ingest Events, Software Development Lifecycle</p>
+<p><code>openpipeline.events_sdlc</code></p>
+<p>Grants access to <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-builtin" title="Ingest SDLC events from built-in endpoints via OpenPipeline Ingest API.">POST Built-in SLDC events</a> request of the OpenPipeline Ingest API.</p>
+<p>OpenPipeline - Ingest Events, Software Development Lifecycle (Custom)</p>
+<p><code>openpipeline.events_sdlc.custom</code></p>
+<p>Grants access to <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-custom-endpoint" title="Configure a custom SDLC event endpoint via OpenPipeline Ingest API.">POST Custom SLDC events</a> request of the OpenPipeline Ingest API.</p>
+<p>OpenPipeline - Ingest Security Events (Built-in)</p>
+<p><code>openpipeline.events_security</code></p>
+<p>Grants access to <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-builtin" title="Ingest security events from built-in endpoints via OpenPipeline Ingest API.">POST Built-in security events</a> request of the OpenPipeline Ingest API.</p>
+<p>OpenPipeline - Ingest Security Events (Custom)</p>
+<p><code>openpipeline.events_security.custom</code></p>
+<p>Grants access to <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-custom-endpoint" title="Configure a custom security event endpoint via OpenPipeline Ingest API.">POST Custom security events</a> request of the OpenPipeline Ingest API.</p>
+<p>OpenPipeline - Ingest Events (Custom)</p>
+<p><code>openpipeline.events.custom</code></p>
+<p>Grants access to <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-custom-endpoint" title="Configure a custom generic event endpoint via OpenPipeline Ingest API.">POST Custom generic event endpoint</a> request of the OpenPipeline Ingest API.</p>
+<h3 id="api-v2">API v2<a class="headerlink" href="#api-v2" title="Permanent link">&para;</a></h3>
+<p>Name</p>
+<p>API value</p>
+<p>Description</p>
+<p>Read ActiveGates</p>
+<p><code>activeGates.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/activegates" title="Learn what the Dynatrace ActiveGate API offers.">ActiveGates API</a>.</p>
+<p>Write ActiveGates</p>
+<p><code>activeGates.write</code></p>
+<p>Grants access to POST and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/activegates" title="Learn what the Dynatrace ActiveGate API offers.">ActiveGates API</a>.</p>
+<p>Create ActiveGate tokens</p>
+<p><code>activeGateTokenManagement.create</code></p>
+<p>Grants access to the POST request of the ActiveGate tokens API.</p>
+<p>Read ActiveGate tokens</p>
+<p><code>activeGateTokenManagement.read</code></p>
+<p>Grants access to GET requests of the ActiveGate tokens API.</p>
+<p>Write ActiveGate tokens</p>
+<p><code>activeGateTokenManagement.write</code></p>
+<p>Grants access to POST and DELETE requests of the ActiveGate tokens API.</p>
+<p>Read API tokens</p>
+<p><code>apiTokens.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Manage Dynatrace API authentication tokens.">Access tokens API</a>.</p>
+<p>Write API tokens</p>
+<p><code>apiTokens.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Manage Dynatrace API authentication tokens.">Access tokens API</a>.</p>
+<p>Read attacks</p>
+<p><code>attacks.read</code></p>
+<p>Grants access to GET requests of the Attacks API and the <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a> for Application Protection (<code>builtin:appsec.attack-protection-settings</code>, <code>builtin:appsec.attack-protection-advanced-config</code>, and <code>builtin:appsec.attack-protection-allowlist-config schemas</code>).</p>
+<p>Write Application Protection settings</p>
+<p><code>attacks.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a> for Application Protection (<code>builtin:appsec.attack-protection-settings</code>, <code>builtin:appsec.attack-protection-advanced-config</code>, and <code>builtin:appsec.attack-protection-allowlist-config schemas</code>).</p>
+<p>Read audit logs</p>
+<p><code>auditLogs.read</code></p>
+<p>Grants access to the <a href="/docs/manage/data-privacy-and-security/configuration/audit-logs-api" title="Learn how to manage audit logs using an API.">audit log</a>.</p>
+<p>Read credential vault entries</p>
+<p><code>credentialVault.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/credential-vault" title="Learn what the Dynatrace API for credentials offers.">Credential vault API</a>.</p>
+<p>Write credential vault entries</p>
+<p><code>credentialVault.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/credential-vault" title="Learn what the Dynatrace API for credentials offers.">Credential vault API</a>.</p>
+<p>Read entities</p>
+<p><code>entities.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Learn about the Dynatrace Monitored entities API.">Monitored entities</a> and <a href="/docs/dynatrace-api/environment-api/custom-tags" title="Manage custom tags of the monitored entities via the Dynatrace API.">Custom tags</a> APIs.</p>
+<p>Write entities</p>
+<p><code>entities.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Learn about the Dynatrace Monitored entities API.">Monitored entities</a> and <a href="/docs/dynatrace-api/environment-api/custom-tags" title="Manage custom tags of the monitored entities via the Dynatrace API.">Custom tags</a> APIs.</p>
+<p>Ingest events</p>
+<p><code>events.ingest</code></p>
+<p>Grants access to POST request of the <a href="/docs/dynatrace-api/environment-api/events-v2" title="Find out what you can do with the Dynatrace Events API v2.">Events API v2</a>.</p>
+<p>Read events</p>
+<p><code>events.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/events-v2" title="Find out what you can do with the Dynatrace Events API v2.">Events API v2</a>.</p>
+<p>Read extensions monitoring configuration</p>
+<p><code>extensionConfigurations.read</code></p>
+<p>Grants access to GET requests from the <strong>Extensions monitoring configuration</strong> section of the <a href="/docs/dynatrace-api/environment-api/extensions-20" title="Learn how to manage extensions with the Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</p>
+<p>Write extensions monitoring configuration</p>
+<p><code>extensionConfigurations.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests from the <strong>Extensions monitoring configuration</strong> section of the <a href="/docs/dynatrace-api/environment-api/extensions-20" title="Learn how to manage extensions with the Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</p>
+<p>Read extensions environment configuration</p>
+<p><code>extensionEnvironment.read</code></p>
+<p>Grants access to GET requests from the <strong>Extensions environment configuration</strong> section of the <a href="/docs/dynatrace-api/environment-api/extensions-20" title="Learn how to manage extensions with the Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</p>
+<p>Write extensions environment configuration</p>
+<p><code>extensionEnvironment.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests from the <strong>Extensions environment configuration</strong> section of the <a href="/docs/dynatrace-api/environment-api/extensions-20" title="Learn how to manage extensions with the Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</p>
+<p>Read extensions</p>
+<p><code>extensions.read</code></p>
+<p>Grants access to GET requests from the <strong>Extensions</strong> section of the <a href="/docs/dynatrace-api/environment-api/extensions-20" title="Learn how to manage extensions with the Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</p>
+<p>Write extensions</p>
+<p><code>extensions.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests from the <strong>Extensions</strong> section of the <a href="/docs/dynatrace-api/environment-api/extensions-20" title="Learn how to manage extensions with the Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</p>
+<p>Read Geographic regions</p>
+<p><code>geographicRegions.read</code></p>
+<p>Grants access to the <a href="/docs/dynatrace-api/environment-api/rum/geographic-regions" title="View requests available through the Dynatrace Geographic regions API.">Geographic regions API</a>.</p>
+<p>Install and update Hub items</p>
+<p><code>hub.install</code></p>
+<p>Grants permission to install and update extensions via the <a href="/docs/dynatrace-api/environment-api/hub" title="Learn how to access Dynatrace Hub features via the Hub items API.">Hub items API</a>.</p>
+<p>Read Hub related data</p>
+<p><code>hub.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/hub" title="Learn how to access Dynatrace Hub features via the Hub items API.">Hub items API</a>.</p>
+<p>Manage metadata of Hub items</p>
+<p><code>hub.write</code></p>
+<p>Grants permission to manage metadata of Hub items via the <a href="/docs/dynatrace-api/environment-api/hub" title="Learn how to access Dynatrace Hub features via the Hub items API.">Hub items API</a>.</p>
+<p>Read JavaScript mapping files</p>
+<p><code>javaScriptMappingFiles.read</code></p>
+<p>Write JavaScript mapping files</p>
+<p><code>javaScriptMappingFiles.write</code></p>
+<p>Ingest logs</p>
+<p><code>logs.ingest</code></p>
+<p>Grants access to the <a href="/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs" title="Push custom logs to Dynatrace via the Log Monitoring API v2.">POST ingest logs</a> request of the Log Monitoring API v2 as well as the <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">OpenTelemetry log ingest API</a>.</p>
+<p>Read logs</p>
+<p><code>logs.read</code></p>
+<p>Grants access to the GET requests of the <a href="/docs/dynatrace-api/environment-api/log-monitoring-v2" title="Find out what you can do with the Log Monitoring API v2.">Log Monitoring API v2</a></p>
+<p>Ingest metrics</p>
+<p><code>metrics.ingest</code></p>
+<p>Grants access to the <a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Ingest custom metrics to Dynatrace via Metrics v2 API.">POST ingest data points</a> request of the Metrics v2 API as well as the <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">OpenTelemetry metrics ingest API</a>.</p>
+<p>Read metrics</p>
+<p><code>metrics.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/metric-v2" title="Retrieve metric information via Metrics v2 API.">Metrics API v2</a>.</p>
+<p>Write metrics</p>
+<p><code>metrics.write</code></p>
+<p>Grants access to the <a href="/docs/dynatrace-api/environment-api/metric-v2/delete-metric" title="Delete a metric ingested via Metrics v2 API.">DELETE a custom metric</a> request of the Metrics API v2.</p>
+<p>Read network zones</p>
+<p><code>networkZones.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/network-zones" title="Manage network zones via the Dynatrace API.">Network zones API</a>.</p>
+<p>Write network zones</p>
+<p><code>networkZones.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/network-zones" title="Manage network zones via the Dynatrace API.">Network zones API</a>.</p>
+<p>Read OneAgents</p>
+<p><code>oneAgents.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents" title="Check the configuration of OneAgent instances on your hosts via Dynatrace API.">OneAgents API</a>.</p>
+<p>Write OneAgents</p>
+<p><code>oneAgents.write</code></p>
+<p>Grants access to POST and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents" title="Check the configuration of OneAgent instances on your hosts via Dynatrace API.">OneAgents API</a>.</p>
+<p>Ingest OpenTelemetry traces</p>
+<p><code>openTelemetryTrace.ingest</code></p>
+<p>Grants permission to <a href="/docs/ingest-from/opentelemetry" title="Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.">ingest OpenTelemetry traces</a>.</p>
+<p>Read problems</p>
+<p><code>problems.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/problems-v2" title="Find out what the Dynatrace Problems v2 API offers.">Problems API v2</a>.</p>
+<p>Write problems</p>
+<p><code>problems.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/problems-v2" title="Find out what the Dynatrace Problems v2 API offers.">Problems API v2</a>.</p>
+<p>Read releases</p>
+<p><code>releases.read</code></p>
+<p>Grants access to the <a href="/docs/dynatrace-api/environment-api/releaseapi" title="Find out what the Dynatrace Releases API offers.">Releases API</a>.</p>
+<p>Read security problems</p>
+<p><code>securityProblems.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities" title="Find out what the vulnerabilities API offers.">Security problems API</a>.</p>
+<p>Write security problems</p>
+<p><code>securityProblems.write</code></p>
+<p>Grants access to POST requests of the <a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities" title="Find out what the vulnerabilities API offers.">Security problems API</a>.</p>
+<p>Read settings</p>
+<p><code>settings.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a>.</p>
+<p>Write settings</p>
+<p><code>settings.write</code></p>
+<p>Grants access to POST and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a>.</p>
+<p>Read SLO</p>
+<p><code>slo.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/service-level-objectives-classic" title="Find out what the Dynatrace SLO API classic offers.">Service-level objectives API</a>.</p>
+<p>Write SLO</p>
+<p><code>slo.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/service-level-objectives-classic" title="Find out what the Dynatrace SLO API classic offers.">Service-level objectives API</a>.</p>
+<p>Read synthetic monitor execution results</p>
+<p><code>syntheticExecutions.read</code></p>
+<p>Grants access to GET requests of the <code>/synthetic/executions</code> API.</p>
+<p>Write synthetic monitor execution results</p>
+<p><code>syntheticExecutions.write</code></p>
+<p>Grants access to POST request of <code>/synthetic/executions</code> API.</p>
+<p>Read synthetic locations</p>
+<p><code>syntheticLocations.read</code></p>
+<p>Grants access to GET requests of the <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2" title="Manage synthetic locations via the Synthetic v2 API.">Synthetic locations API v2</a> and <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2" title="Manage synthetic nodes via the Synthetic v2 API.">Synthetic nodes API v2</a>.</p>
+<p>Write synthetic locations</p>
+<p><code>syntheticLocations.write</code></p>
+<p>Grants access to POST, PUT, and DELETE requests of the <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2" title="Manage synthetic locations via the Synthetic v2 API.">Synthetic locations API v2</a> and <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2" title="Manage synthetic nodes via the Synthetic v2 API.">Synthetic nodes API v2</a>.</p>
+<p>Tenant token rotation</p>
+<p><code>tenantTokenRotation.write</code></p>
+<p>Grants access to the <a href="/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens" title="Rotate Dynatrace tenant tokens.">Tenant tokens API</a>.</p>
+<p>Look up a single trace</p>
+<p><code>traces.lookup</code></p>
+<p>Checks for the presence of a trace in cross-environment tracing.</p>
+<p>Read Unified Analysis page</p>
+<p><code>unifiedAnalysis.read</code></p>
+<p>Grants access to the Unified analysis schema in the <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a>.</p>
+<h3 id="api-v1">API v1<a class="headerlink" href="#api-v1" title="Permanent link">&para;</a></h3>
+<p>Name</p>
+<p>API value</p>
+<p>Description</p>
+<p>Access problems and event feed, metrics, and topology</p>
+<p><code>DataExport</code></p>
+<p>Grants access to various calls of <a href="/docs/dynatrace-api/environment-api" title="Find out what you need to use the environment section of the Dynatrace API.">Environment API</a>.</p>
+<p>Create and read synthetic monitors, locations, and nodes</p>
+<p><code>ExternalSyntheticIntegration</code></p>
+<p>Grants access to the <a href="/docs/dynatrace-api/environment-api/synthetic" title="Find out what the Dynatrace Synthetic v1 API offers.">Synthetic API</a>.</p>
+<p>Read synthetic monitors, locations, and nodes</p>
+<p><code>ReadSyntheticData</code></p>
+<p>Grants access to GET requests of <a href="/docs/dynatrace-api/environment-api/synthetic" title="Find out what the Dynatrace Synthetic v1 API offers.">Synthetic API</a>.</p>
+<p>Read configuration</p>
+<p><code>ReadConfig</code></p>
+<p>Grants access to GET calls of <a href="/docs/dynatrace-api/configuration-api" title="Find out what you need to use the configuration section of the Dynatrace API.">Configuration API</a>.</p>
+<p>Write configuration</p>
+<p><code>WriteConfig</code></p>
+<p>Grants access to POST, PUT, and DELETE calls of <a href="/docs/dynatrace-api/configuration-api" title="Find out what you need to use the configuration section of the Dynatrace API.">Configuration API</a>.</p>
+<p>Change data privacy settings</p>
+<p><code>DataPrivacy</code></p>
+<p>Grants access to <a href="/docs/dynatrace-api/configuration-api/data-privacy-api" title="Learn what the Dynatrace data privacy config API offers.">Data privacy API</a> and data privacy calls of <a href="/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api" title="Learn what the Dynatrace web application config API offers.">Web application configuration API</a>.</p>
+<p>User sessions</p>
+<p><code>DTAQLAccess</code></p>
+<p>Grants access to <a href="/docs/dynatrace-api/environment-api/rum/user-sessions" title="Learn what the Dynatrace User Sessions Query language API offers.">User sessions API</a>.</p>
+<p>Anonymize user sessions for data privacy reasons</p>
+<p><code>UserSessionAnonymization</code></p>
+<p>Grants access to <a href="/docs/dynatrace-api/environment-api/anonymization" title="Find out how fulfill GDPR requirements by using the Dynatrace API to remove user data.">Anonymization API</a>.</p>
+<p>Mobile symbol file management</p>
+<p><code>DssFileManagement</code></p>
+<p>Grants access to <a href="/docs/dynatrace-api/configuration-api/mobile-symbolication-api" title="Manage mobile symbol files via the Dynatrace API.">Mobile symbolication API</a>.</p>
+<p>Real User Monitoring JavaScript tag management</p>
+<p><code>RumJavaScriptTagManagement</code></p>
+<p>Grants access to <a href="/docs/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code" title="Learn how you can use the Dynatrace API to set up and maintain your manually injected applications using the Real User Monitoring JavaScript API.">Real User Monitoring JavaScript API</a>.</p>
+<p>ActiveGate certificate management</p>
+<p><code>ActiveGateCertManagement</code></p>
+<p>Grants permission to <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate" title="Learn how to configure the SSL certificate on your ActiveGate.">configure certificate</a> on private ActiveGates.</p>
+<p>Fetch data from a remote environment</p>
+<p><code>RestRequestForwarding</code></p>
+<p>Grants permission to fetch data from <a href="/docs/dynatrace-api/configuration-api/remote-environments" title="Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.">remote Dynatrace environments</a> for multi-environment dashboarding.</p>
+<p>Capture request data</p>
+<p><code>CaptureRequestData</code></p>
+<p>Grants access to <a href="/docs/dynatrace-api/configuration-api/service-api/request-attributes-api" title="Learn what the Dynatrace request attribute config API offers.">Request attributes API</a>.</p>
+<p>Read log content</p>
+<p><code>LogExport</code></p>
+<p>Grants access to <a href="/docs/dynatrace-api/environment-api/log-monitoring-v2" title="Find out what you can do with the Log Monitoring API v2.">Log Monitoring API</a>.</p>
+<h3 id="paas">PaaS<a class="headerlink" href="#paas" title="Permanent link">&para;</a></h3>
+<p>Name</p>
+<p>API value</p>
+<p>Description</p>
+<p>Download OneAgent and ActiveGate installers</p>
+<p><code>InstallerDownload</code></p>
+<p>Allows download of installers via <a href="/docs/dynatrace-api/environment-api/deployment" title="Download OneAgent and ActiveGate installers via Dynatrace API.">Deployment API</a>.</p>
+<p>Create support alerts</p>
+<p><code>SupportAlert</code></p>
+<p>Allows creation of <a href="/docs/observe/application-observability/profiling-and-optimization/crash-analysis#support-alert" title="Learn how Dynatrace can help you gain insight into process crashes.">support alerts</a> for crash analysis.</p>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
+<p>Name</p>
+<p>API value</p>
+<p>Description</p>
+<p>Upload plugins using the command line</p>
+<p><code>PluginUpload</code></p>
+<p>Grants permission to upload OneAgent extensions via <a href="/docs/ingest-from/extensions/develop-your-extensions" title="Develop your own Extensions in Dynatrace.">Extension SDK</a>.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/tokens-v1" title="Learn how to manage Dynatrace API authentication tokens in your environment.">Tokens API v1</a></li>
+</ul>
+<hr />
+<h2 id="source-iam-conceptsmd">Source: iam-concepts.md<a class="headerlink" href="#source-iam-conceptsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Overview of Dynatrace IAM
+source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-concepts
+scraped: 2026-02-15T09:06:25.796733</p>
+<hr />
+<h1 id="overview-of-dynatrace-iam">Overview of Dynatrace IAM<a class="headerlink" href="#overview-of-dynatrace-iam" title="Permanent link">&para;</a></h1>
+<h1 id="overview-of-dynatrace-iam_1">Overview of Dynatrace IAM<a class="headerlink" href="#overview-of-dynatrace-iam_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Overview</li>
+<li>2-min read</li>
+<li>Updated on Jun 18, 2025</li>
+</ul>
+<p>This guide outlines the key Identity and Access Management (IAM) components in Dynatrace, covering user and group management, access models, identity providers, access policies, and access tokens. These components ensure secure interactions, enable effective automation, and support seamless integration within the platform.</p>
+<h2 id="identity-management">Identity management<a class="headerlink" href="#identity-management" title="Permanent link">&para;</a></h2>
+<p>Manage user and group lifecycle operations and implement automated authentication with identity providers (IdPs).</p>
+<p>[<img alt="Concepts" src="https://dt-cdn.net/images/concept-6e215a8350.svg" title="Concepts" /></p>
+<h3 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h3>
+<p>Discover the IAM user types, identity federation, and user repositories.](/docs/manage/identity-access-management/user-and-group-management/identity-concepts "Understand the key identity concepts in Dynatrace IAM")[### Local users</p>
+<p>Dynatrace serves as your identity store.](/docs/manage/identity-access-management/user-and-group-management/identity-concepts#users "Understand the key identity concepts in Dynatrace IAM")[### Service users</p>
+<p>Non-human identities interacting with services and resources.](/docs/manage/identity-access-management/user-and-group-management/identity-concepts#service-users "Understand the key identity concepts in Dynatrace IAM")[### SAML federation</p>
+<p>Delegate authentication through your IdP.](/docs/manage/identity-access-management/user-and-group-management/access-saml "SAML")[### SCIM</p>
+<p>Keep your identity repositories in sync.](/docs/manage/identity-access-management/user-and-group-management/access-scim "SCIM")</p>
+<h2 id="access-management">Access management<a class="headerlink" href="#access-management" title="Permanent link">&para;</a></h2>
+<p>Define granular user access in Dynatrace, controlling permissions to safeguard sensitive data and resources.</p>
+<p>[<img alt="Concepts" src="https://dt-cdn.net/images/concept-6e215a8350.svg" title="Concepts" /></p>
+<h3 id="concepts_1">Concepts<a class="headerlink" href="#concepts_1" title="Permanent link">&para;</a></h3>
+<p>Discover how Dynatrace manages groups and policies.](/docs/manage/identity-access-management/permission-management/access-concepts "Understand the key access concepts in Dynatrace IAM")[### Groups</p>
+<p>Collectively manage your access configurations.](/docs/manage/identity-access-management/permission-management/access-concepts#groups "Understand the key access concepts in Dynatrace IAM")[### Policies</p>
+<p>Define tailored permissions to access resources.](/docs/manage/identity-access-management/permission-management/access-concepts#policies "Understand the key access concepts in Dynatrace IAM")[### Policy boundaries</p>
+<p>Scale, refine, and simplify access permissions.](/docs/manage/identity-access-management/permission-management/access-concepts#policy-boundaries "Understand the key access concepts in Dynatrace IAM")[### Policy templates</p>
+<p>Reusable policies to regulate access control.](/docs/manage/identity-access-management/permission-management/access-concepts#policy-templates "Understand the key access concepts in Dynatrace IAM")[### Default policies</p>
+<p>Get started with Dynatrace default policies.](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference")[### Default groups</p>
+<p>Get started with Dynatrace default groups.](/docs/manage/identity-access-management/user-and-group-management/default-groups "Dynatrace default groups reference")</p>
+<h2 id="tokens-and-oauth-clients">Tokens and OAuth clients<a class="headerlink" href="#tokens-and-oauth-clients" title="Permanent link">&para;</a></h2>
+<p>Externalize and automate the access to Dynatrace using secure tokens.</p>
+<p>[<img alt="Concepts" src="https://dt-cdn.net/images/concept-6e215a8350.svg" title="Concepts" /></p>
+<h3 id="concepts_2">Concepts<a class="headerlink" href="#concepts_2" title="Permanent link">&para;</a></h3>
+<p>Discover how Dynatrace handles API tokens and access automation.](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/token-concepts "Understand the key API access and automation in Dynatrace IAM")[### Platform tokens</p>
+<p>Allow interactions with the Dynatrace platform.](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.")[### OAuth tokens</p>
+<p>Access Dynatrace through OAuth clients.](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.")</p>
+<hr />
+<h2 id="source-iam-limitsmd">Source: iam-limits.md<a class="headerlink" href="#source-iam-limitsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Identity and Access Management limits
+source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-limits
+scraped: 2026-02-15T21:26:00.378921</p>
+<hr />
+<h1 id="identity-and-access-management-limits">Identity and Access Management limits<a class="headerlink" href="#identity-and-access-management-limits" title="Permanent link">&para;</a></h1>
+<h1 id="identity-and-access-management-limits_1">Identity and Access Management limits<a class="headerlink" href="#identity-and-access-management-limits_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>1-min read</li>
+<li>Updated on Nov 12, 2025</li>
+</ul>
+<p>The following table indicates the current default IAM resource limits.</p>
+<p>About Adjustable column</p>
+<p>Limits marked as 'Adjustable' can only be modified through contacting our customer support. Please note that we will validate every request before considering a change.</p>
+<p>Recommended</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Level</th>
+<th>Default limit</th>
+<th>Adjustable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Users</td>
+<td>Account</td>
+<td>10,000</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Groups</td>
+<td>Account</td>
+<td>5,000</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Groups</td>
+<td>User</td>
+<td>8,000</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Permissions</td>
+<td>Group</td>
+<td>1,000</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>OAuth clients</td>
+<td>Account</td>
+<td>200</td>
+<td>No</td>
+</tr>
+<tr>
+<td>SCIM tokens</td>
+<td>Account</td>
+<td>10</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Policies</td>
+<td>Account</td>
+<td>200</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Policy statements</td>
+<td>Policy</td>
+<td>100</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Groups-to-policy bindings</td>
+<td>Account or Environment</td>
+<td>30,000</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Policy boundaries</td>
+<td>Account</td>
+<td>2,000</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Policy boundary restrictions</td>
+<td>Boundary</td>
+<td>10</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="source-iam-policy-boundariesmd">Source: iam-policy-boundaries.md<a class="headerlink" href="#source-iam-policy-boundariesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Policy boundaries
+source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries
+scraped: 2026-02-15T21:24:37.190901</p>
+<hr />
+<h1 id="policy-boundaries">Policy boundaries<a class="headerlink" href="#policy-boundaries" title="Permanent link">&para;</a></h1>
+<h1 id="policy-boundaries_1">Policy boundaries<a class="headerlink" href="#policy-boundaries_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>6-min read</li>
+<li>Published Sep 01, 2024</li>
+</ul>
+<p>With policy boundaries, you can assign permissions with fine-granular restrictions on the data level.</p>
+<p>Policy boundaries enable to restrict user permissions on the record and resource level and are intended to work very well with the Dynatrace default policies.</p>
+<h2 id="what-are-policy-boundaries">What are policy boundaries?<a class="headerlink" href="#what-are-policy-boundaries" title="Permanent link">&para;</a></h2>
+<p>Policy boundaries allow you to bundle restrictions on the record and/or resource level together for usage in your permission assignments. This allows for easier management of partitions on the data level and enables re-usability. Boundaries alone don't restrict anything, they are always used together with policies in the process of assigning policies to your user groups.</p>
+<p>Whenever a boundary is selected in combination with a security policy, it further restricts the existing policy, which can also result in no access for the user.</p>
+<p>Policy boundaries support all conditions that are available in the <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements" title="Complete reference of IAM policies and corresponding conditions across all Dynatrace services.">IAM reference</a>.</p>
+<h2 id="boundaries-and-default-policies">Boundaries and default policies<a class="headerlink" href="#boundaries-and-default-policies" title="Permanent link">&para;</a></h2>
+<p><strong>Use case</strong>:</p>
+<p>As an account admin I would like to restrict the <strong>Read logs</strong> default policy for 20 user groups to logs from K8s development namespace.</p>
+<p><strong>Solution</strong>:</p>
+<ol>
+<li>
+<p>Create a boundary <strong>K8s DEV</strong> with the following content:</p>
+</li>
+<li>
+<p><code>storage:k8s.namespace.name = "DEVELOPMENT";</code></p>
+</li>
+<li>
+<p>Select the boundary when you assign the <strong>Read Logs</strong> default policy to your user groups.</p>
+</li>
+<li>
+<p>The boundary is automatically applied to all permissions where it fits and therefore restricts log access.</p>
+</li>
+</ol>
+<p>If you ever want to adopt the boundary because your access requirements have changed, for example you introduce another stage in your development process, you just need to change the boundary like so:</p>
+<p><code>storage:k8s.namespace.name IN ("DEVELOPMENT","HARDENING");</code></p>
+<h3 id="technical-details-about-boundaries">Technical details about boundaries<a class="headerlink" href="#technical-details-about-boundaries" title="Permanent link">&para;</a></h3>
+<p>Boundaries allow you to decouple the "What" and "Where" of a policy.</p>
+<p>In other words, enable you to externalize the conditions to a separate object for easier management and re-usability.</p>
+<p><code>ALLOW &lt;permissions&gt; WHERE &lt;conditions&gt;</code></p>
+<ul>
+<li><strong>What</strong> being the permissions part of the policy that defines which APIs you are allowed to use</li>
+<li><strong>Where</strong> being the service related fine granular permissions on record/resource-level expressed by the policy conditions.</li>
+</ul>
+<p>This mechanism is extremely useful in combination with the <a href="/docs/manage/identity-access-management/permission-management/default-policies#default-policies" title="Dynatrace default policies reference">default policies</a>.</p>
+<p>The default policies define a set of permissions to access features and data. As they are generic, they don't restrict the access to a specific records and resources.</p>
+<p><strong>Example</strong>:</p>
+<p>The <code>storage:k8s.namespace.name IN ("DEV","PREPROD")</code> is a recurring pattern in your policies and can be externalized into a policy boundary.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ALLOW storage:logs:read WHERE storage:k8s.namespace.name IN (&quot;DEV&quot;,&quot;PREPROD&quot;);
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>ALLOW storage:metrics:read WHERE storage:k8s.namespace.name IN (&quot;DEV&quot;,&quot;PREPROD&quot;);
+</code></pre></div>
+<p>Boundary <strong>K8s-dev-preprod</strong>:</p>
+<p><code>storage:k8s.namespace.name IN ("DEV","PREPROD");</code></p>
+<p>Of course, this is a basic example and your boundary could consist of more statements that exactly define to what records and resources your users have access.</p>
+<h2 id="working-with-policy-boundaries">Working with policy boundaries<a class="headerlink" href="#working-with-policy-boundaries" title="Permanent link">&para;</a></h2>
+<p>The boundary management operations listed below are all performed using the <strong>Account Management</strong> pages.</p>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a>. If you have more than one account, select the account you want to manage.</li>
+</ol>
+<p>This opens <code>https://myaccount.dynatrace.com/</code>, which you can bookmark for easy access to Account Management.
+2. Go to <strong>Identity &amp; access management</strong> &gt; <strong>Policy management</strong>.
+3. On the policy management screen you find two tabs for <strong>Policies</strong> and <strong>Boundaries</strong> on top.
+4. Select <strong>Boundaries</strong> to open the boundary management screen.</p>
+<h3 id="create-a-new-policy-boundary">Create a new policy boundary<a class="headerlink" href="#create-a-new-policy-boundary" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Select  <strong>Boundary</strong> and specify:</p>
+</li>
+<li>
+<p><strong>Boundary Name</strong></p>
+</li>
+<li>
+<p><strong>Boundary query</strong></p>
+<ul>
+<li>Here you provide your conditions in textual format. One line per condition, no logical operators allowed.</li>
+<li>Select <strong>Save</strong> to create your boundary.</li>
+</ul>
+</li>
+</ol>
+<h3 id="edit-a-policy-boundary">Edit a policy boundary<a class="headerlink" href="#edit-a-policy-boundary" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Find the policy boundary that you want to edit in the list overview.</li>
+<li>In the Actions column, select  &gt; <strong>Edit boundary</strong>.</li>
+<li>
+<p>Adopt the boundary to your requirements and click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>A change in the boundary will have an immediate effect on the user permissions that are assigned with this boundary.</p>
+</li>
+</ol>
+<h3 id="delete-a-policy-boundary">Delete a policy boundary<a class="headerlink" href="#delete-a-policy-boundary" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Find the policy boundary that you want to edit in the list overview.</li>
+<li>In Actions column, select  &gt; <strong>Delete boundary</strong>.</li>
+<li>In the Confirmation dialog click <strong>Cancel</strong> to abort or <strong>Delete</strong> to confirm.</li>
+</ol>
+<p>Deletion of used boundaries</p>
+<p>A boundary that is used in policy bindings can not be deleted. Before you can delete the boundary you have to adjust or remove all bindings where the boundary is used.</p>
+<h3 id="assignment-of-a-policy-boundaries-during-permission-assignment">Assignment of a policy boundaries during permission assignment<a class="headerlink" href="#assignment-of-a-policy-boundaries-during-permission-assignment" title="Permanent link">&para;</a></h3>
+<ol>
+<li>To assign a boundary please configure your group permissions as described in <a href="/docs/manage/identity-access-management/user-and-group-management/access-group-management#manage-group-permissions" title="Manage Dynatrace groups and their permissions.">Group management</a>.</li>
+<li>
+<p>Select one or multiple boundaries that should be applied to your permission assignment.</p>
+</li>
+<li>
+<p>To learn about how boundaries are applied to your policy permissions, see the <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries#apply-boundary" title="Restrict security policies with policy boundaries to provide tailored access to your users.">How are policy boundaries applied?</a> section below.</p>
+</li>
+</ol>
+<p>Boundaries assignment</p>
+<p>Policy boundaries can only be assigned to policies, they are not compatible with role-based permissions.</p>
+<h2 id="how-are-policy-boundaries-applied">How are policy boundaries applied?<a class="headerlink" href="#how-are-policy-boundaries-applied" title="Permanent link">&para;</a></h2>
+<p>Boundaries work for all services that are covered with the security policies and which are documented in the <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements" title="Complete reference of IAM policies and corresponding conditions across all Dynatrace services.">IAM Policy reference</a>.</p>
+<p>When a policy binding contains boundaries the effective policy is calculated according to the following rules:</p>
+<ul>
+<li>Only conditions added to service configuration will be applied to relative permissions. This rule doesn't apply to global conditions. Global conditions will be applied to all permissions</li>
+<li>When a boundary contains repeated condition names, then each policy statement is multiplied by such conditions. Each of the repeated conditions appears separately in each applicable statement.</li>
+<li>When more than one boundary applies to a policy, then effective statements are calculated for each boundary separately</li>
+</ul>
+<p>In certain configurations this may cause unintended unconditional access. For example when this policy:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&quot;ALLOW storage:logs:read, storage:entities:read;&quot;
+</code></pre></div>
+<p>is bound to boundary one:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>storage:host.name=&quot;myHost&quot;
+</code></pre></div>
+<p>and boundary two:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>storage:dt.security_context=&quot;mySC&quot;
+</code></pre></div>
+<p>will produce:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ALLOW storage:entities:read;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>ALLOW storage:entities:read WHERE storage:dt.security_context = &quot;mySC&quot;;
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>ALLOW storage:logs:read WHERE storage:host.name = &quot;myHost&quot;;
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>ALLOW storage:logs:read WHERE storage:dt.security_context = &quot;mySC&quot; `
+</code></pre></div>
+<p>which would effectively grant unconditional read access to storage entities, as boundary one's condition of <code>storage:host.name="myHost"</code>does not apply to permission <code>storage:entities:read</code>.</p>
+<ul>
+<li>When a policy statement contains multiple permissions, then such a statement will be split into single permission statements</li>
+<li>Boundaries are applied to policy statements without evaluating the statement's condition. Boundary will be applied no matter if the statement already contains the same condition</li>
+<li>Boundaries don't apply to <code>DENY</code> statements</li>
+</ul>
+<h2 id="expressing-management-zones-inside-of-policy-boundaries">Expressing management zones inside of policy boundaries<a class="headerlink" href="#expressing-management-zones-inside-of-policy-boundaries" title="Permanent link">&para;</a></h2>
+<p>To use your management zones inside of boundaries you just need to reference them as a condition in your policy boundary.</p>
+<p>Boundary <strong>Kubernetes</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>environment:management-zone startsWith &quot;[Kubernetes]&quot;;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>storage:k8s.namespace.name IN (&quot;DEV&quot;,&quot;PREPROD&quot;);
+</code></pre></div>
+<p>This boundary includes all management zones that start with <code>[Kubernetes]</code>, as well as all the records stored in Grail for the <code>DEV</code> and <code>PREPROD</code> K8s namespaces.</p>
+<p>Be aware that the management zones referenced in your boundaries only apply to policy statements that support management zones.</p>
+<p>Grail does not support management zones but uses the <code>storage:</code> fields for record level access control. For more details see <a href="/docs/platform/upgrade#access-control" title="Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.">What is the difference between management zones and new IAM policies?</a></p>
+<h2 id="restrictions-and-limits-of-policy-boundaries">Restrictions and limits of policy boundaries<a class="headerlink" href="#restrictions-and-limits-of-policy-boundaries" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Only 10 restrictions per boundary, to keep them manageable. If you need more restrictions for your use case, create more boundaries and <a href="/docs/manage/identity-access-management/iam-limits" title="IAM limits for Dynatrace SaaS">assign multiple boundaries</a> to the policy.</li>
+<li>Boundaries are only compatible with security policies. No role-based support.</li>
+<li>
+<p>Boundaries don't support the AND operator, every line of a boundary can only consist of one condition.</p>
+</li>
+<li>
+<p>If you need logical operators and also want to re-use your policy definitions please take a look into <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policy-templating" title="Policy templating">policy templating</a>.</p>
+</li>
+</ul>
+<hr />
+<h2 id="source-iam-policy-mgtmd">Source: iam-policy-mgt.md<a class="headerlink" href="#source-iam-policy-mgtmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Manage IAM policies
+source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt
+scraped: 2026-02-15T21:12:00.444032</p>
+<hr />
+<h1 id="manage-iam-policies">Manage IAM policies<a class="headerlink" href="#manage-iam-policies" title="Permanent link">&para;</a></h1>
+<h1 id="manage-iam-policies_1">Manage IAM policies<a class="headerlink" href="#manage-iam-policies_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>7-min read</li>
+<li>Updated on Aug 20, 2025</li>
+</ul>
+<p>Use these procedures in the Dynatrace web UI to manage Dynatrace <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">IAM</a> policies.</p>
+<p>API alternative</p>
+<p>To instead use the API to manage IAM policies, go to <a href="https://dt-url.net/vr03thr">Dynatrace Account Management API 1.0ï»¿</a>.</p>
+<h2 id="list-iam-policies">List IAM policies<a class="headerlink" href="#list-iam-policies" title="Permanent link">&para;</a></h2>
+<p>To list configured IAM policies</p>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>Policy management</strong>.</li>
+<li>
+<p>Review the table of all existing policies that you can bind to user groups.</p>
+</li>
+<li>
+<p><strong>Name</strong>âthe name of the policy</p>
+</li>
+<li><strong>Description</strong>âa brief description of the policy</li>
+<li><strong>Source</strong>â<code>global</code>, <code>account</code>, or <code>environment</code></li>
+<li><strong>Actions</strong>âview, edit, or delete that row's policy (actions available to you depend on your permission level)</li>
+</ol>
+<h3 id="default-policies">Default policies<a class="headerlink" href="#default-policies" title="Permanent link">&para;</a></h3>
+<p>To let you use policies right away, Dynatrace IAM is shipped with built-in global policies.</p>
+<ul>
+<li>On the <strong>Policies</strong> page, in the <strong>Source</strong> column, they're all set to <code>Dynatrace</code></li>
+<li>They're predefined and managed by Dynatrace</li>
+<li>You can apply a built-in policy by <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">assigning it to a group</a> for the whole account or to any environment.</li>
+<li>You can inspect themâselect <strong>View policy</strong> in the <strong>Actions</strong> columnâbut you can't edit them</li>
+</ul>
+<h2 id="create-a-policy">Create a policy<a class="headerlink" href="#create-a-policy" title="Permanent link">&para;</a></h2>
+<p>To create a policy</p>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>Policy management</strong>.</li>
+<li>Select <strong>Create policy</strong>.</li>
+<li>Enter the following information.</li>
+</ol>
+<p>Element</p>
+<p>Description</p>
+<p>Name</p>
+<p>The name of the policy.</p>
+<p>Description</p>
+<p>A brief description of the policy.</p>
+<p>Organization level</p>
+<p>Each policy has a level that determines its scope:</p>
+<ul>
+<li><code>global</code>: These policies are predefined and managed by Dynatrace, and they apply to all accounts and environments. They cannot be edited.</li>
+<li><code>account</code>: These policies apply to all environments under that account (customer). Use them to set company-wide policies.</li>
+<li><code>environment</code>: These policies apply only to a single customer environment.</li>
+</ul>
+<p>Organization levels are restricted in the UI to the <code>account</code> level (other levels are still available via API).
+   Restriction in UI was provided to avoid confusion between <em>creating</em> and <em>binding</em>.
+   Commonly creating multiple identical policies on the <code>environment</code> levels can be achieved in a more efficient way by defining one policy on the <code>account</code> level and binding it to <code>environment</code> levels.</p>
+<p>Policy statement</p>
+<p>A statement specifying exactly what this policy allows.</p>
+<p>Example: Policy for Settings 2.0 Write</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ALLOW settings:objects:read;
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>ALLOW settings:objects:write;
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>ALLOW settings:schemas:read;
+</code></pre></div>
+<p>You can combine multiple permissions in a single statement. Here is the same example combined into a single statement:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ALLOW settings:objects:read, settings:objects:write, settings:schemas:read;
+</code></pre></div>
+<p>Combining statements is particularly useful for managing policies with complicated conditions.</p>
+<h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h3>
+<p>For a complete and up-to-date list of Dynatrace services that support permission management via IAM policies, see <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements" title="Complete reference of IAM policies and corresponding conditions across all Dynatrace services.">IAM policy reference</a>.</p>
+<h2 id="edit-a-policy">Edit a policy<a class="headerlink" href="#edit-a-policy" title="Permanent link">&para;</a></h2>
+<p>To edit an existing policy</p>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>Policy management</strong>.</li>
+<li>Find the policy you want to edit.<br />
+   You can filter and sort the table.</li>
+<li>Select <strong>Actions</strong> &gt; <strong>Edit policy</strong>.</li>
+<li>Make your changes and select <strong>Save</strong>.</li>
+</ol>
+<h2 id="delete-a-policy">Delete a policy<a class="headerlink" href="#delete-a-policy" title="Permanent link">&para;</a></h2>
+<p>To delete a policy</p>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>Policy management</strong>.</li>
+<li>Find the policy you want to delete.<br />
+   You can filter and sort the table.</li>
+<li>Select <strong>Actions</strong> &gt; <strong>Delete</strong> for the policy.</li>
+</ol>
+<h2 id="copy-a-policy">Copy a policy<a class="headerlink" href="#copy-a-policy" title="Permanent link">&para;</a></h2>
+<p>To copy an existing policy</p>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>Policy management</strong>.</li>
+<li>Find the policy you want to copy.<br />
+   You can filter and sort the table.</li>
+<li>Select the <strong>Edit</strong> button for the policy.</li>
+<li>Copy the contents of <strong>Policy statement</strong> to the clipboard.</li>
+<li>Go back to the <strong>Policies</strong> page.</li>
+<li>Select <strong>Create policy</strong>.</li>
+<li>Paste the copied policy statements into <strong>Policy statement</strong>.</li>
+<li>Fill in the <strong>Name</strong> and optional <strong>Description</strong>.</li>
+<li>Select <strong>Create policy</strong>.</li>
+</ol>
+<h2 id="apply-a-policy-to-a-group">Apply a policy to a group<a class="headerlink" href="#apply-a-policy-to-a-group" title="Permanent link">&para;</a></h2>
+<p>To apply a policy to a group, you need to bind the policy to the group. For details on managing group permissions with IAM, see <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Working with policies</a>.</p>
+<hr />
+<h2 id="source-manage-user-permissions-policiesmd">Source: manage-user-permissions-policies.md<a class="headerlink" href="#source-manage-user-permissions-policiesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Working with policies
+source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies
+scraped: 2026-02-15T21:20:10.171652</p>
+<hr />
+<h1 id="working-with-policies">Working with policies<a class="headerlink" href="#working-with-policies" title="Permanent link">&para;</a></h1>
+<h1 id="working-with-policies_1">Working with policies<a class="headerlink" href="#working-with-policies_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Explanation</li>
+<li>9-min read</li>
+<li>Updated on Aug 20, 2025</li>
+</ul>
+<p>Use Dynatrace identity and access management (IAM) to manage user access to Dynatrace features.</p>
+<p>With the IAM framework, you can define policies that clearly specify whether an action in Dynatrace is allowed. When policies are bound to user groups, they describe an access pattern for the group that is enforced at runtime. This gives you much more fine-grained control over how your users interact with Dynatrace.</p>
+<h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
+<p>[### Manage IAM policies</p>
+<p>List, create, delete, and copy policies using the Account Management.](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.")[### Create your policies</p>
+<p>Learn the policy statement syntax and see the example custom policies.](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax "IAM policy statement syntax.")[### Policy boundaries</p>
+<p>Boundaries allow you to further restrict policies.](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.")</p>
+<h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
+<p>[### Global conditions</p>
+<p>You can apply global conditions to any policy statement because they are not service-specific.](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-global-conditions "Policy global conditions")[### Global attributes</p>
+<p>Apply attributes to certain global conditions, usable in the policy syntax without extra configuration.](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-global-attributes "Policy global attributes")[### Migrate role-based permissions</p>
+<p>Dynatrace security policies now support the classic role-based permissions, learn how to migrate them.](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/migrate-roles "Manage access to a Dynatrace environment using security policies.")</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<p>[### IAM permissions reference</p>
+<p>A complete list of all supported IAM permissions across all Dynatrace services.](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.")[### Policy management API</p>
+<p>Manage the policies at scale using the policy management API.](/docs/dynatrace-api/account-management-api/policy-management-api/policies "Manage access policies in your Dynatrace account via the Policy management API.")</p>
+<hr />
+<h2 id="source-management-zone-rulesmd">Source: management-zone-rules.md<a class="headerlink" href="#source-management-zone-rulesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Management-zone rules
+source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules
+scraped: 2026-02-15T09:13:32.622060</p>
+<hr />
+<h1 id="management-zone-rules">Management-zone rules<a class="headerlink" href="#management-zone-rules" title="Permanent link">&para;</a></h1>
+<h1 id="management-zone-rules_1">Management-zone rules<a class="headerlink" href="#management-zone-rules_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>16-min read</li>
+<li>Updated on Oct 03, 2025</li>
+</ul>
+<p>Management zones comprise one or more rules that define and limit the entities or dimensional data (such as logs and metrics) that can be accessed within the management zone.</p>
+<p>When you select a management zone in <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>Management zones</strong>, all configured rules are displayed. You can <strong>Disable/Enable</strong> individual rules.</p>
+<p><img alt="Management zone rules" src="https://dt-cdn.net/images/mz-rules-1a-1227-bcb209a202.png" /></p>
+<p>Read more about:</p>
+<ul>
+<li>How log data can be ingested and automatically assigned to management zones in <a href="/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring" title="Find out how ingested log data is assigned to management zones.">Management zones and ingested log data (Logs Classic)</a>.</li>
+<li>How to <a href="/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#mz" title="Create, configure, and monitor service-level objectives with Dynatrace.">add a service-level objective to a management zone</a> so users with access to the management zone can view SLO status and error budget in the <strong>Service-level objectives</strong> page.</li>
+</ul>
+<h2 id="rule-types">Rule types<a class="headerlink" href="#rule-types" title="Permanent link">&para;</a></h2>
+<p>Management zones offer <strong>UI-based rule definition</strong> for:</p>
+<ul>
+<li><a href="#ui">Monitored entities</a></li>
+<li><a href="#logs-metrics">Dimensional data (logs and metrics)</a></li>
+</ul>
+<p>You can select the type of rule, and then create rule conditions based on entity/data properties, operators, and values where relevant.</p>
+<p>When creating rules for some entities, you can propagate access to related topological entities without creating an extra rule. See <a href="#rules-apply">How management-zone rules are applied</a> below.</p>
+<p>For UI-based rules for dimensional log and metric data, you can define conditions based on the log file name, metric keys and dimension keys and values. Built-in, calculated, and ingested metrics are supported.</p>
+<p>More information on the Metrics API v2</p>
+<p>Use the powerful <a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector" title="Configure the metric selector for the Metric v2 API.">metric selector</a> of the <a href="/docs/dynatrace-api/environment-api/metric-v2" title="Retrieve metric information via Metrics v2 API.">Metrics API v2</a> for metric and dimension keys and values:</p>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/get-all-metrics" title="List all metrics available in your monitoring environment via Metrics v2 API.">GET a list of all available metrics</a> in your environment.</li>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/get-descriptor" title="View the descriptor of a metric via Metrics v2 API.">GET the details of a specified metric</a> to check dimension keys.</li>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/get-data-points" title="Read data points of one or multiple metrics via Metrics v2 API.">GET a list of data points</a> to check dimension values.</li>
+</ul>
+<p>Note that users automatically get access to logs and metrics associated with entities that are included within their assigned management zones.</p>
+<p><strong><a href="#text">Text-based rules</a></strong> leverage the powerful <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Configure the entity selector for Environment API endpoints.">entity selector</a> for v2 Environment APIs to define entities. Text-based rules enable you to define entity access based on all the entity types, properties, values, and relationships exposed by the <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Learn about the Dynatrace Monitored entities API.">Monitored entities API v2</a>.</p>
+<p>There are several advantages of text-based rules.</p>
+<ul>
+<li>You can provide granular and focused entity definitions without having to review the subset of choices available in the UI.</li>
+<li>While UI-based rules allow for some relationship-based <a href="#rules-apply">propagation of entity access</a>, with text-based rules, you can explicitly use relationships to filter your entity selection. You have the flexibility to decide exactly which relationships you want to use to filter entities.</li>
+<li>You can define text-based rules for including your own custom entity types, attributes, and relationships in management zones.</li>
+</ul>
+<p>Per monitoring environment, you can add:</p>
+<ul>
+<li>5,000 management zones by default. For any questions, contact a Dynatrace product expert via live chat.</li>
+<li>300 UI-based management-zone rules for entities (150 for Dynatrace versions 1.323 and earlier).</li>
+<li>300 UI-based management-zone rules for dimensional data (150 for Dynatrace versions 1.323 and earlier).</li>
+<li>300 text-based entity selector rules for management zones (150 for Dynatrace versions 1.323 and earlier).</li>
+<li>100,000 conditions for all management-zone rules taken together (does not apply to <a href="/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text" title="Define rules to limit the entities accessible within a management zone.">entity selector rules</a>).</li>
+<li>Any individual entity to a maximum of 200 management zones (run the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-entity" title="View parameters of a monitored entity via Dynatrace API.">GET an entity</a> API call to see an entity's management zones).</li>
+</ul>
+<p>Check our documentation on <a href="/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale" title="Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.">how to optimize management-zone rule performance at scale</a>.</p>
+<h3 id="add-a-ui-based-rule-for-entities">Add a UI-based rule for entities<a class="headerlink" href="#add-a-ui-based-rule-for-entities" title="Permanent link">&para;</a></h3>
+<p>See <a href="#examples">Examples</a> for different rule types and implementations.</p>
+<ol>
+<li><a href="/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones" title="Create and assign access rights to management zones.">Select/create a management zone</a> and then select <strong>Add a new rule</strong>.</li>
+<li>Select <strong>Monitored entity</strong> as the <strong>Rule type</strong>. (See also information on <a href="#logs-metrics">rules for dimensional data</a> and <a href="#text">text-based rule definition</a> via the <strong>Entity selector</strong>.)</li>
+<li>Select the entity type to which the rule should apply (<strong>Rule applies to</strong>), for example, <strong>Web applications</strong>.</li>
+</ol>
+<p><img alt="Select an entity type" src="https://dt-cdn.net/images/mz-rules-entity-type-571-8a758524db.png" />
+4. Each entity can be defined and limited by several different conditions. Select <strong>Add condition</strong>.
+5. Choose the condition <strong>Property</strong>, <strong>Operator</strong>, and <strong>Value</strong> (where relevant). For example, you can specify that the <strong>Web application name begins with</strong> a specified string. You can enter up to 80 characters; wildcard characters are not allowed; regular expressions are allowed in the <strong>contains regex</strong> and <strong>does not contain regex</strong> condition operators.
+6. If you enter a text string, specify whether it is <strong>Case sensitive</strong>.</p>
+<p><img alt="Rule conditions" src="https://dt-cdn.net/images/mz-rules-3a-958-3a6e99d6a0.png" />
+7. For some entities, you can propagate access to related topological entities without creating an extra rule. For example, turn on the appropriate toggles to include underlying hosts and process groups when defining a management-zone rule for <strong>Services</strong>.</p>
+<p><img alt="Include related entities" src="https://dt-cdn.net/images/mz-rules-4a-879-f4b10ae36b.png" />
+8. Select <strong>Add condition</strong> to add another condition (or <strong>Remove condition</strong> to remove a condition) as required.</p>
+<ul>
+<li>You need to define at least one condition per rule.</li>
+<li>Conditions are applied using the <code>AND</code> logicâall conditions need to be met for the rule to apply to an entity.</li>
+<li>There's no limit on the number of conditions per rule. However, there's a limit of 100,000 conditions for all rules taken together per environment.</li>
+<li>Select <strong>Preview</strong> to see entities matching the rule that were active and online in the last 72 hours. Of course, when you actually apply the management zone, all entities matching the rules for the given timeframe will be displayed. Note that <strong>Preview</strong> is only available for entity-based rules.</li>
+</ul>
+<p><img alt="Rule preview" src="https://dt-cdn.net/images/mz-rules-5a-957-2b8d1b7d14.png" />
+10. <strong>Save changes</strong>.</p>
+<h3 id="add-a-ui-based-rule-for-dimensional-data">Add a UI-based rule for dimensional data<a class="headerlink" href="#add-a-ui-based-rule-for-dimensional-data" title="Permanent link">&para;</a></h3>
+<p>See <a href="#examples">Examples</a> for different rule types and implementations.</p>
+<ol>
+<li><a href="/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones" title="Create and assign access rights to management zones.">Select/create a management zone</a> and then select <strong>Add a new rule</strong>.</li>
+<li>Select <strong>Dimensional data</strong> for <strong>Rule type</strong>. (See also information on <a href="#ui">rules for entities</a> and <a href="#text">text-based rule definition</a> via the <strong>Entity selector</strong>.)</li>
+<li>
+<p>Select the data <strong>Type</strong> to which the rule should apply.</p>
+</li>
+<li>
+<p>For a UI-based rule for a built-in, calculated, or ingested metric, select <strong>METRIC</strong>.</p>
+</li>
+<li>For a UI-based rule for logs, select <strong>LOG</strong>.</li>
+<li>Each rule can be defined and limited by several different conditions. Select <strong>Add condition</strong>.</li>
+<li>Choose the condition <strong>Type</strong>, <strong>Key</strong> (where appropriate), <strong>Operator</strong>, and <strong>Value</strong>. You can enter up to 80 characters in any text field; wildcard characters are not allowed.</li>
+</ol>
+<p>Condition types are:</p>
+<ul>
+<li>
+<p>For a log attribute or metric dimension, <strong>DIMENSION</strong>.</p>
+<p><img alt="Log attribute or metric dimension condition" src="https://dt-cdn.net/images/mz-rules-data-dimension-580-3843630e79.png" />
+   * For a log filename, <strong>LOG_FILE_NAME</strong>. The log filename should match the attribute <code>log.source</code>.</p>
+<p><img alt="Log filename condition" src="https://dt-cdn.net/images/mz-rules-log-filename-580-7f89e2cbd4.png" />
+   * For a metric key, <strong>METRIC_KEY</strong>.</p>
+<p><img alt="Metric key condition" src="https://dt-cdn.net/images/mz-rules-metric-key-580-fac4735560.png" />
+   * For a combined log or metric condition, <strong>ANY</strong>.</p>
+</li>
+</ul>
+<p>Allowed operators are <strong>begins with</strong> and <strong>equals</strong>.
+6. Select <strong>Add condition</strong> to add another condition (or <strong>Remove condition</strong> to remove a condition) as required.</p>
+<ul>
+<li>You need to define at least one condition per rule.</li>
+<li>Conditions are applied using the <code>AND</code> logicâall conditions need to be met for the rule to apply to an entity.</li>
+<li>There's no limit on the number of conditions per rule. However, there's a limit of 100,000 conditions for all rules taken together per environment.</li>
+<li><strong>Preview</strong> is not available for dimensional-data rules.</li>
+<li><strong>Save changes</strong>.</li>
+</ul>
+<h3 id="add-a-text-based-entity-selector-rule">Add a text-based entity selector rule<a class="headerlink" href="#add-a-text-based-entity-selector-rule" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones" title="Create and assign access rights to management zones.">Select/create a management zone</a> and then select <strong>Add a new rule</strong>.</li>
+<li>In <strong>Rule type</strong>, select <strong>Entity selector</strong>.</li>
+<li>To fill out the <strong>Entity Selector</strong> text string, you might need to run <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Learn about the Dynatrace Monitored entities API.">Monitored entities API v2 calls</a> to fetch entity types, properties, values, and relationships. Consult <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Configure the entity selector for Environment API endpoints.">entity selector documentation</a> for details on how to construct an entity definition. See <a href="#examples">Examples</a> for different rule types and implementations.</li>
+</ol>
+<p><strong>Important parts of the entity selector string</strong></p>
+<ul>
+<li>
+<p><code>type(&lt;entityType&gt;)</code> defines the type of entity that is subject to the rule. For example, the entity type for hosts is <code>host</code> and for process groups is <code>process_group</code>. The entity type is not case sensitive. You can only provide a single entry in <code>&lt;entityType&gt;</code>.</p>
+<p>Run the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-all-entity-types" title="View all types of monitored entities in your environment via Dynatrace API.">GET all entity types</a> API call for a list of all entity types in your environment (including custom entities) and their properties.</p>
+<p>Alternatively, you can specify multiple individual entity IDs with the <code>entityId</code> criterion. You can run the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-entities-list" title="View a list of monitored entities via Dynatrace API.">GET entities list</a> API call for a list of actual entities in your environment and their properties.
+   * Entity properties and values filter the entity list that your rule applies to. For example:</p>
+<ul>
+<li><code>entityName.startsWith("Book")</code> filters for entities whose name starts with <code>Book</code>.</li>
+<li><code>serviceType(WEB_REQUEST_SERVICE)</code> filters for web request services.</li>
+</ul>
+<p>You can run the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-entity-type" title="View the details of a monitored entity type via Dynatrace API.">GET entity type API call</a> for any entity type (for example, <code>service</code>) to get a list of all its properties (for example, <code>serviceType</code>). You can also run the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-entities-list" title="View a list of monitored entities via Dynatrace API.">GET entities list</a> API call for a list of actual entities in your environment with their property values (for example, <code>WEB_REQUEST_SERVICE</code>).
+   * Relationships further refine entity selection by defining an entity in terms of its relationship to another. Relationships are of two kinds.</p>
+<ul>
+<li>A <code>fromRelationship</code> implies that the direction of the relationship is <strong>from the given entity</strong> (that is, the entity being queried) to a related entity. When you query all the services that service A calls, this is a relationship âfrom (service A)â to other services.</li>
+<li>A <code>toRelationship</code> implies that the direction of the relationship is from a related entity <strong>to the given entity</strong> (that is, the entity being queried). When you query all the services that call service A, this relationship is âto (service A).â</li>
+</ul>
+<p>You can run the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-entity-type" title="View the details of a monitored entity type via Dynatrace API.">GET entity type API call</a> on any entity type to get a list of the entity's from/to relationships and the related entity types. You can also run the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-entities-list" title="View a list of monitored entities via Dynatrace API.">GET entities list</a> API call to get a list of the actual entities in your environment along with their relationship values (for example, a <code>service</code> entity type can have a <code>calls</code> "from relationship" to another <code>service</code>).
+4. Select <strong>Preview</strong> to see entities matching the rule that were active and online in the last 72 hours. (Of course, when you actually apply the management zone, all entities matching the rules for the given timeframe will be displayed.)</p>
+</li>
+</ul>
+<p><img alt="Entity-selector rule preview" src="https://dt-cdn.net/images/mz-rules-6a-998-ebeb2f11bd.png" />
+5. <strong>Save changes</strong>.</p>
+<h2 id="how-management-zone-rules-are-applied">How management-zone rules are applied<a class="headerlink" href="#how-management-zone-rules-are-applied" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Conditions are applied using the <code>AND</code> logicâall conditions within a rule need to be met for the rule to apply to an entity.</li>
+<li>Rules are applied using the <code>OR</code> logicâany rule must apply for an entity to be included in a management zone.</li>
+<li>When creating rules for some entities, you can propagate access to related topological entities without creating an extra rule. For example, when creating a rule for services, you can opt to add underlying hosts and process groups. See <a href="#ui">Add a UI-based rule</a> above.</li>
+</ul>
+<p>In other cases, the propagation of access to related topological entities is implicit. For example, when you grant access to a host in a management zone, any custom metrics ingested via that host are also accessible within the management zone. Note that this does not automatically include all measurements of those custom metrics but only those measurements that were sent in for your host.</p>
+<p>In cases where such propagation isn't available, you need to explicitly create rules for the entities you wish to add to a management zone. For example, a management-zone rule that applies to <strong>Host groups</strong> does not automatically grant access to the hosts within those groups; you need to explicitly add rules for the <strong>Hosts</strong> you wish to include in the management zone, as shown in <a href="#examples">Examples</a> below.</p>
+<p>Management zones are always implicitly propagated to the following related entities. However, this does not apply to entity selector based rules.</p>
+<p>From</p>
+<p>To</p>
+<p>Process Group</p>
+<p>Process Group Instance, Container Group, Container Group Instance</p>
+<p>Hypervisor</p>
+<p>VCenter</p>
+<p>Host</p>
+<p>EC2 Instance, Container Group Instance</p>
+<p>AWS Credentials</p>
+<p>AWS availability zone, AWS lambda function, AWS application load balancer, AWS network load balancer, EC2 instance, Custom device, Custom device group, Auto scaling group, Relational database service</p>
+<p>Synthetic Test</p>
+<p>Application
+* When you add an entity using tags to a management zone as part of entity creation via API, there might be a delay in management-zone assignment depending on the number and complexity of your tagging rules. See <a href="/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale" title="Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.">Best practices for scaling tagging and management-zone rules</a> for best practices to speed up the time taken to assign tags and management zones within your monitoring environments.
+* You cannot define management-zone rules where the entity selector for one management zone filters by another management zone. Management zone predicates such as <code>mzID</code> or <code>mzName</code> are not allowed in entity selector strings. This means, for example, that you cannot define management zone A as containing hosts belonging to management zone B. Management-zone rules based on other management zones increase the number of runs made by the conditional decision engine and can greatly delay management-zone assignment. See also <a href="/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale" title="Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.">Best practices for scaling tagging and management-zone rules</a> for related information.</p>
+<p>As a workaround, use the same entity selector string in both management zones. For example, consider that:</p>
+<ul>
+<li>Management zone A has the rule <code>type(SERVICE),entityName.startsWith("myService"),tag("my:tag")</code>.</li>
+<li>Management zone B is required to include services that call services in Management zone A. To do so, define the rule <code>type(SERVICE),fromRelationships.calls(type(SERVICE),entityName.startsWith("myService"),tag("my:tag"))</code>.</li>
+</ul>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>Example 1: Management-zone rules providing access to hosts of specific host groups; users assigned to the zone can filter by accessible host groups.</p>
+<ol>
+<li>
+<p>Set up a rule for hosts.</p>
+</li>
+<li>
+<p>Select <strong>Monitored entity</strong> as the <strong>Rule type</strong>.</p>
+</li>
+<li>Select <strong>Hosts</strong> as the entity that the <strong>Rule applies to</strong>.</li>
+<li>Add a condition.</li>
+<li>Select <strong>Host group</strong> as the <strong>Property</strong>.</li>
+<li>Select or search for a host group in the <strong>Value</strong> field.</li>
+<li>
+<p><strong>Preview</strong> the list of matching entities.</p>
+<p><img alt="Preview the rule for hosts" src="https://dt-cdn.net/images/mz-sample-1-1a-1026-c1e2a8cd09.png" />
+   7. <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<p>Add a rule in this way for each set of hosts per host group.
+2. Set up a rule for host groups.</p>
+<p>In order for users to have visibility into host groups containing the hosts in the management zone, you need to set up host group rulesâone per host group you wish to include. This ensures that users can filter by the host groups on the <strong>Hosts</strong> page.</p>
+<ol>
+<li>Select <strong>Monitored entity</strong> as the <strong>Rule type</strong>.</li>
+<li>Choose <strong>Host groups</strong> as the entity that the <strong>Rule applies to</strong>.</li>
+<li>Add a condition.</li>
+<li>Select <strong>Host group name</strong> as the <strong>Property</strong>.</li>
+<li>Define the condition for the host group name, for example, a text string contained in the host group's name.</li>
+<li>
+<p><strong>Preview</strong> the list of matching host groups.</p>
+<p><img alt="Rule for a host group" src="https://dt-cdn.net/images/mz-sample-1-2a-1025-fd96aea449.png" />
+   7. <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<p>Add a rule in this way for each host group you wish to include in the management zone. Host group names are shown in the filter on the <strong>Hosts</strong> page only if a corresponding management-zone rule is defined for them. Generally, you would grant access to the same host groups that the hosts in your management zone belong to.</p>
+<p>When the management zone is applied, the user can see only the assigned hosts and can filter the <strong>Hosts</strong> page by <strong>Host group</strong>. The host groups are those defined in your management-zone rules.</p>
+<p><img alt="Host groups filter" src="https://dt-cdn.net/images/mz-sample-1-3-1612-2b773ed1d7.png" /></p>
+<p>Example 2: Management-zone rules providing access to all synthetic monitors</p>
+<p>Management-zone rules can be defined for three types of synthetic entities:</p>
+<ul>
+<li>Browser monitors</li>
+<li>HTTP monitors</li>
+<li>Third-party monitors</li>
+</ul>
+<p>To provide access to all synthetic monitors, you need to define rules to cover all monitors per monitor type.</p>
+<p><img alt="Management zones: synthetic entities" src="https://dt-cdn.net/images/mz-sample-2-1a-823-7985b67d21.png" /></p>
+<p>To set up a rule to cover all <strong>Browser monitors</strong>, for example:</p>
+<p>Specify that the <strong>Browser monitor name exists</strong>. <strong>Preview</strong> the rule to see the matching entities.</p>
+<p><img alt="Browser-monitor rule" src="https://dt-cdn.net/images/mz-sample-2-2a-1119-c1287aafd6.png" /></p>
+<p>Additionally, set up similar rules for HTTP and third-party monitors to cover all synthetic monitors in your environment.</p>
+<p>If you'd like your user to be able to create or edit synthetic monitors in a management zone, you need to provide the <strong>Manage monitoring settings</strong> <a href="/docs/manage/identity-access-management/permission-management/role-based-permissions" title="Role-based permissions">permission</a> at the management-zone or environment level.</p>
+<p>Example 3: Management-zone rules providing access to specific measurements of specific ingested metrics</p>
+<p>You can provide access to an ingested metric, filtered by a dimension value so that only specific measurements of the given metric are accessible within the management zone (for charting and analysis, for example).</p>
+<ol>
+<li>Select the <strong>Dimensional data</strong> entity of type <strong>METRIC</strong>.</li>
+<li>Fill out the condition for the metric name (<strong>METRIC_KEY</strong>). You can provide access to a specific metric by providing the entire name or a set of metrics by specifying the opening string (for example, <code>business.revenue</code>).</li>
+</ol>
+<p><img alt="Management-zone rule for custom metric name" src="https://dt-cdn.net/images/mz-sample-3-1-955-64a30c6239.png" />
+3. To filter for specific measurements of the metrics, you need to add a condition for the metric dimension. Select <strong>DIMENSION</strong> and provide the dimension name (<strong>Key</strong>) and (<strong>Value</strong>). For example, to filter your business metrics for the US eastern region, you would specify the dimension name <code>region</code> and value <code>useast</code>.</p>
+<p><img alt="Dimensional metric data in a management zone" src="https://dt-cdn.net/images/mz-sample-3-2-937-3087a6c4e0.png" />
+4. <strong>Save changes</strong>.</p>
+<p>If your management zone already provides access to the host through which a custom metric and its measurements are ingested, you automatically provide access to that custom metric; you don't need to set up an explicit rule for the custom metric. Note that this doesnât include all measurements of that custom metric but only those measurements that were sent in for your host.</p>
+<p>Example 4: Management-zone rules providing access to specific measurements of specific ingested logs</p>
+<p>You can provide access to logs filtered by a log attribute value (as an alternative to filtering logs by entities).</p>
+<ol>
+<li>Select <strong>Dimensional data</strong> in the <strong>Rule type</strong> field.</li>
+<li>Select <strong>LOG</strong> in the <strong>Type</strong> field.</li>
+<li>
+<p>Add a condition for logs.</p>
+</li>
+<li>
+<p>Select <strong>DIMENSION</strong> for condition type.</p>
+</li>
+<li>Provide the log attribute name in the <strong>Key</strong> field. You can list only one attribute value.</li>
+<li>Add the phrase to search for in the <strong>Value</strong> field.</li>
+<li>You can also set the <strong>Operator</strong> as <code>begins with</code> or <code>equals</code> for the <strong>Value</strong> entered. For example, to filter your logs for a specific Kubernetes deployment name, specify the <code>k8s.deployment.name</code> key and <code>begins with</code> <code>automation-server</code> as the value.</li>
+<li><strong>Save changes</strong>.</li>
+</ol>
+<p><img alt="Example management-zone rule for logs" src="https://dt-cdn.net/images/mz-log-example-726-67634de796.png" /></p>
+<p>If your management zone already provides access to the host through which logs are ingested, you automatically provide access to those logs. This means that you don't need to set up an explicit dimensional rule for such logs.</p>
+<p>Example 5: Entity selector rule based on entity relationships</p>
+<p>In order to filter for services that directly call a service with the name <code>JourneyService</code>, you can run the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-all-entity-types" title="View all types of monitored entities in your environment via Dynatrace API.">GET all entity types</a> API call to check the entity type and relationships for services.</p>
+<p>From the information gathered, you can now construct an entity-selector rule for the entity type <code>service</code> that has a <code>calls</code> "from relationship" to the entity type <code>service</code> with the name <code>JourneyService</code>:</p>
+<p><code>type(SERVICE),fromRelationship.calls(type(SERVICE),entityName(JourneyService))</code></p>
+<p>This can also be written as <code>type(SERVICE),fromRelationship.calls(type(SERVICE) AND entityName.equals(JourneyService))</code>.</p>
+<p><img alt="Entity-selector rule based on relationships" src="https://dt-cdn.net/images/mz-sample-4-1-954-606bb32f43.png" /></p>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/entity-v2" title="Learn about the Dynatrace Monitored entities API.">Monitored entities API</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Configure the entity selector for Environment API endpoints.">Environment API v2 - Entity selector</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2" title="Retrieve metric information via Metrics v2 API.">Metrics API v2</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector" title="Configure the metric selector for the Metric v2 API.">Metrics API - Metric selector</a></li>
+<li><a href="/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring" title="Find out how ingested log data is assigned to management zones.">Management zones and ingested log data (Logs Classic)</a></li>
+<li><a href="/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale" title="Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.">Best practices for scaling tagging and management-zone rules</a></li>
+</ul>
+<hr />
+<h2 id="source-access-security-contextmd">Source: access-security-context.md<a class="headerlink" href="#source-access-security-contextmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Grant access to entities with security context
+source: https://www.dynatrace.com/docs/manage/identity-access-management/use-cases/access-security-context
+scraped: 2026-02-15T09:13:15.888833</p>
+<hr />
+<h1 id="grant-access-to-entities-with-security-context">Grant access to entities with security context<a class="headerlink" href="#grant-access-to-entities-with-security-context" title="Permanent link">&para;</a></h1>
+<h1 id="grant-access-to-entities-with-security-context_1">Grant access to entities with security context<a class="headerlink" href="#grant-access-to-entities-with-security-context_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Tutorial</li>
+<li>4-min read</li>
+<li>Updated on Sep 17, 2025</li>
+</ul>
+<p>This article shows you how to set the security context and grant access to the monitored entities using policies.</p>
+<p>Don't mistake IAM policies with management zones. Unlike management zones, an IAM policy that is set up to filter entities (<code>allow storage:entities:read</code>) will not filter related metrics, logs, or traces.
+These entity filters only control which entities can be queried via DQL.
+To control access to logs, metrics, and spans, you need to use the corresponding permissions, such as <code>allow storage:logs:read</code>.</p>
+<h2 id="who-this-is-for">Who this is for<a class="headerlink" href="#who-this-is-for" title="Permanent link">&para;</a></h2>
+<p>This is for Dynatrace account administrators who are responsible for creating policies to grant users access to monitored entities such as hosts, through <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">DQL</a>.</p>
+<h2 id="what-youll-learn">What you'll learn<a class="headerlink" href="#what-youll-learn" title="Permanent link">&para;</a></h2>
+<p>In this article, you'll learn:</p>
+<ul>
+<li>How to set the security context on monitored entities.</li>
+<li>How to create policies to grant access to monitoring data stored in Grail in the context of monitored entities.</li>
+<li>How to use the security context in combination with IAM security policies to provide granular access to your entities.</li>
+</ul>
+<h2 id="before-you-begin">Before you begin<a class="headerlink" href="#before-you-begin" title="Permanent link">&para;</a></h2>
+<p>Prior knowledge</p>
+<ul>
+<li><a href="/docs/manage/identity-access-management" title="Configure users, groups and permissions.">Identity and access management (IAM)</a></li>
+<li><a href="/docs/manage/identity-access-management/use-cases/access-platform" title="Grant access to Dynatrace">Grant access to Dynatrace</a></li>
+<li><a href="/docs/manage/identity-access-management/user-and-group-management/default-groups" title="Dynatrace default groups reference">User permissions in default groups</a></li>
+</ul>
+<p>Prerequisites</p>
+<ul>
+<li>A Dynatrace account with administrative privileges.</li>
+<li>Set up the required users, federations, and user groups in advance.</li>
+</ul>
+<p>Key terms</p>
+<p>Security context
+:   Defines the scope of access for a user or group</p>
+<p>Management zone
+:   Information-partitioning mechanism that promotes collaboration and the sharing of relevant data in your Dynatrace environment</p>
+<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
+<p>Letâs start by setting up the security context, then learn how to create the policies to grant access to data on entities.</p>
+<ol>
+<li>Set the security context for monitored entities</li>
+</ol>
+<p>To set the security context for entities, you can choose one of the following options,</p>
+<h4 id="option-1-use-an-already-existing-property-of-the-entity">Option 1: Use an already existing property of the entity<a class="headerlink" href="#option-1-use-an-already-existing-property-of-the-entity" title="Permanent link">&para;</a></h4>
+<p>If you have already set up management zones, it's possible to map the management zones into the security context, depending on its type.</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Topology model</strong> &gt; <strong>Grail Security Context</strong>.</li>
+<li>Expand the relevant entity type</li>
+<li>In the <strong>Destination property</strong> section, choose the field that should map into the security context. It can be either <code>managementZones</code>, <code>entity.detected_name</code>, or <code>dt.security_context</code> itself.</li>
+</ol>
+<p><img alt="Grail Security Context " src="https://dt-cdn.net/images/123-1532-c8aa238683.webp" /></p>
+<p><code>managementZones</code> is the default value for the majority of entity types. With this option, the security context of entities is mapped from classic management zones.
+Logs, spans, metrics, and events powered by Grail that are sent from an entity do not inherit the management zones of that entity.
+This means <a href="/docs/platform/grail/organize-data/assign-permissions-in-grail" title="Find out how to assign permissions to buckets and tables in Grail.">access controls</a> on logs, spans, metrics and events powered by Grail must be handled separately.
+This option is useful if you have management zones already in place and you want to re-use those to control access on entities.</p>
+<h4 id="option-2-host-tags-and-properties">Option 2: Host tags and properties<a class="headerlink" href="#option-2-host-tags-and-properties" title="Permanent link">&para;</a></h4>
+<p>You can set the security context using the <code>dt.security_context</code> host property set using automated rules or host properties set using <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">OneAgent configuration via command-line interface</a>.</p>
+<p>After you set the security context on a host, it will be used to automatically determine the security context for all logs, spans, metrics, and events that are sent from this host.</p>
+<p>Additionally, it will set the security context for host-related entities reported from this host, such as process group instances and disks.</p>
+<p>With this option, ensure the security context is mapped using the <code>dt.security_context</code> field for the entity types of interest, as described in Option 1 above.</p>
+<p>To set a security context using <code>oneagentctl</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./oneagentctl --set-host-property=dt.security_context=my-security-context
+</code></pre></div>
+<h4 id="option-3-define-an-extraction-rule-for-generic-types">Option 3: Define an extraction rule for generic types<a class="headerlink" href="#option-3-define-an-extraction-rule-for-generic-types" title="Permanent link">&para;</a></h4>
+<p>For <a href="/docs/ingest-from/extend-dynatrace/extend-topology/events-entity-extraction#extract-map" title="Extract generic entities from event metadata and map events to them.">generic entity types</a>, you can add an extraction rule for <code>dt.security_context</code> and derive the security context from any detail on the data source.
+This is particularly useful for extensions where you can set the <code>dt.security_context</code> per extension configuration.</p>
+<p>Let's use the PostgreSQL extension with a simplified example, assuming a configuration with <code>dt.security_context</code> set to <code>TeamA</code>.
+For that configuration, the extension sends metric data points using the Metrics API such as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>postgres.activity.idle,port=5432,dt.security_context=&quot;TeamA&quot;,dt.entity.sql:postgres_instance=&quot;CUSTOM_DEVICE-...&quot; 42
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>postgres.activity.idle,port=5432,dt.security_context=&quot;TeamA&quot;,dt.entity.sql:postgres_instance=&quot;CUSTOM_DEVICE-...&quot; 45
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>postgres.activity.idle,port=5432,dt.security_context=&quot;TeamA&quot;,dt.entity.sql:postgres_instance=&quot;CUSTOM_DEVICE-...&quot; 43
+</code></pre></div>
+<p>Based on this, you can add an extraction rule to the existing PostgreSQL extension extraction rules that sets the <code>dt.security_context</code>
+to the value of the <code>dt.security_context</code> dimension in the metric data points (<code>TeamA</code>).</p>
+<p>As with option 2, ensure the security context is mapped using the <code>dt.security_context</code> field for the entity types of interest.
+If the entity types are not listed, we recommend creating those entity types.</p>
+<h4 id="option-4-dynatrace-api">Option 4: Dynatrace API<a class="headerlink" href="#option-4-dynatrace-api" title="Permanent link">&para;</a></h4>
+<p>This API is deprecated.</p>
+<p>Set the security context via the <a href="/docs/dynatrace-api/environment-api/entity-v2/security-context" title="Create or delete security context via Dynatrace API.">Monitored entities API</a>.</p>
+<ol>
+<li>Create the policy</li>
+</ol>
+<p>Entity permissions allow you to define policies that control data access on entities. In contrast to monitoring data, entity permissions only allow filtering for the <code>dt.security_context</code> field.</p>
+<p>Access to all entities is configured via the <code>storage:entities:read</code> permission, which supports the following conditions</p>
+<ul>
+<li><code>storage:entity.type</code></li>
+</ul>
+<p>the entity type in upper snake case (for example <code>PROCESS_GROUP_INSTANCE</code>)
+* <code>storage:dt.security_context</code></p>
+<p>the security context of this entity. Can be a multi-value field and <code>startsWith</code> will evaluate for any matching value.</p>
+<p>For example, the following policy grants access to data with the security context set to <code>mySecurityContext</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ALLOW
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>storage:entities:read
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>WHERE
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>storage:dt.security_context = &quot;mySecurityContext&quot;;
+</code></pre></div>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/entity-v2/security-context" title="Create or delete security context via Dynatrace API.">Monitored entities API - security context</a></li>
+<li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements" title="Complete reference of IAM policies and corresponding conditions across all Dynatrace services.">IAM policy reference</a></li>
+<li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Working with policies</a></li>
+</ul>
+<hr />
+<h2 id="source-user-mfamd">Source: user-mfa.md<a class="headerlink" href="#source-user-mfamd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Enhance your account security with MFA TOTP
+source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-mfa/user-mfa
+scraped: 2026-02-15T21:22:42.442272</p>
+<hr />
+<h1 id="enhance-your-account-security-with-mfa-totp">Enhance your account security with MFA TOTP<a class="headerlink" href="#enhance-your-account-security-with-mfa-totp" title="Permanent link">&para;</a></h1>
+<h1 id="enhance-your-account-security-with-mfa-totp_1">Enhance your account security with MFA TOTP<a class="headerlink" href="#enhance-your-account-security-with-mfa-totp_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>4-min read</li>
+<li>Published Dec 05, 2025</li>
+</ul>
+<p><strong>Non-federated users</strong> can choose to increase their user account security by enabling MFA Time-based One-Time Password (TOTP) with their preferred authenticator app. When enabled, they will be prompted to enter the verification code from their registered authenticator app every time they access any environment.</p>
+<p>Federated Users</p>
+<p><strong>Federated users</strong> are not required to register or apply MFA, even if MFA is enabled on their environment. Instead, their login is verified by their Identity Provider (IdP) during the login process.</p>
+<h3 id="enable-mfa-totp-for-your-user-account">Enable MFA TOTP for your user account<a class="headerlink" href="#enable-mfa-totp-for-your-user-account" title="Permanent link">&para;</a></h3>
+<p>To enable MFA TOTP</p>
+<ol>
+<li>Go to the <a href="https://myaccount.dynatrace.com/accounts">Account Managementï»¿</a> <strong>My profile</strong> &gt; <strong>Security options</strong> tab and select <strong>Add authenticator app</strong>.</li>
+<li>Enter the verification code sent to your registered email address.</li>
+<li>Scan the QR code using your phone's camera in your preferred authenticator app. Optionally, you can enter the code by selecting <strong>Can't scan the QR code?</strong>.</li>
+<li>Enter the code generated into the <strong>One-Time Password</strong> field and select <strong>Add</strong>.</li>
+</ol>
+<p>Verification code prompt frequency</p>
+<p>Verification code prompts display once during a user login session. To further reduce code verification requests on trusted devices, use the <strong>Remember Me</strong> option on the login screen to instruct the system to remember you on that web browser.</p>
+<p>To remove MFA TOTP</p>
+<ol>
+<li>Go to the <a href="https://myaccount.dynatrace.com/accounts">Account Managementï»¿</a> <strong>My profile</strong> &gt; <strong>Security options</strong> tab and select <strong>Add authenticator app</strong>.</li>
+<li>Open the  menu and select <strong>Delete</strong>.</li>
+<li>Enter the code generated into the <strong>One-Time Password</strong> field and select <strong>Delete</strong>.</li>
+</ol>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<p>While signing up for MFA TOTP, I did not receive a one-time password via email.</p>
+<p>Please wait 30 seconds and check your junk email folder.</p>
+<p>I signed up for MFA TOTP, but the verification code does not work.</p>
+<p>Ensure that you're using the correct code from the Dynatrace entry in your authenticator app and that the code has not timed out.</p>
+<p>Can I register another Authenticator app?</p>
+<p>Currently, only one authenticator app can be registered at a time. If you want to switch to another authenticator app, do not delete the old app yet. First, remove MFA TOTP by deleting it from <a href="https://myaccount.dynatrace.com/accounts">Dynatrace accountï»¿</a>, and then enable it again with the new authenticator app.</p>
+<p>I signed up for MFA TOTP, but Iâm not prompted for a verification code.</p>
+<p>Common reasons why you might not be prompted for MFA when accessing Dynatrace:</p>
+<ul>
+<li>You're a federated user, logging in through your federated identity provider (such as Azure AD or Okta). In this case, MFA should be handled by your IdP.</li>
+<li>You're a non-federated user, but you're in the same login session and have previously provided an MFA code.</li>
+<li>You're a non-federated user but have previously chosen the <strong>Remember me</strong> option on the login window and are using the same web browser.</li>
+</ul>
+<hr />
+<h2 id="source-scim-azuremd">Source: scim-azure.md<a class="headerlink" href="#source-scim-azuremd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Azure SCIM configuration for Dynatrace
+source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure
+scraped: 2026-02-15T21:27:14.155315</p>
+<hr />
+<h1 id="azure-scim-configuration-for-dynatrace">Azure SCIM configuration for Dynatrace<a class="headerlink" href="#azure-scim-configuration-for-dynatrace" title="Permanent link">&para;</a></h1>
+<h1 id="azure-scim-configuration-for-dynatrace_1">Azure SCIM configuration for Dynatrace<a class="headerlink" href="#azure-scim-configuration-for-dynatrace_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>4-min read</li>
+<li>Updated on Aug 06, 2024</li>
+</ul>
+<p>This page describes the IdP (<strong>Azure</strong>) end of your <strong>SCIM</strong> SSO configuration, not the Dynatrace end. Use it as part of the entire <a href="/docs/manage/identity-access-management/user-and-group-management/access-scim" title="SCIM">SCIM configuration procedure</a> for Dynatrace SaaS if you're using Azure.</p>
+<p>While we do our best to provide you with current information, Dynatrace has no control over changes that may be made by third-party providers. Always refer to official third-party documentation from your IdP as your primary source of information for third-party products.</p>
+<p>To set up SCIM for your domain</p>
+<p>[<img alt="Step 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Step 1" /></p>
+<p><strong>Create SCIM application in Azure</strong>](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#create-scim-app "Learn how to configure Dynatrace SCIM in Azure.")[<img alt="Step 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Step 2" /></p>
+<p><strong>Configure provisioning</strong>](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#provisioning "Learn how to configure Dynatrace SCIM in Azure.")[<img alt="Step 3 optional" src="https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg" title="Step 3 optional" /></p>
+<p><strong>Configure group mappings</strong>](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#configure-group-mappings "Learn how to configure Dynatrace SCIM in Azure.")[<img alt="Step 4" src="https://dt-cdn.net/images/step-4-3f89d67d41.svg" title="Step 4" /></p>
+<p><strong>Configure user mappings</strong>](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#configure-user-mappings "Learn how to configure Dynatrace SCIM in Azure.")[<img alt="Step 5" src="https://dt-cdn.net/images/step-5-2de312b50f.svg" title="Step 5" /></p>
+<p><strong>Assign users and groups</strong>](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#assign-users-and-groups "Learn how to configure Dynatrace SCIM in Azure.")[<img alt="Step 6" src="https://dt-cdn.net/images/step-6-f906c6c957.svg" title="Step 6" /></p>
+<p><strong>Enable SCIM</strong>](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#enable-scim "Learn how to configure Dynatrace SCIM in Azure.")</p>
+<h2 id="step-1-create-scim-application-in-azure">Step 1 Create SCIM application in Azure<a class="headerlink" href="#step-1-create-scim-application-in-azure" title="Permanent link">&para;</a></h2>
+<p>In <strong>Microsoft Entra ID</strong></p>
+<ol>
+<li>From the leftmost menu, select <strong>Manage</strong> &gt; <strong>Enterprise applications</strong>.</li>
+<li>Select <strong>New application</strong> &gt; <strong>Create your own application</strong>.</li>
+<li>In the pop-up window on the right, enter an <strong>Input name</strong> for your app.</li>
+</ol>
+<p>Make sure that you have selected <strong>Integrate any other application you don't find in the gallery (Non-gallery)</strong>.
+4. Select <strong>Create</strong>.</p>
+<h2 id="step-2-configure-provisioning">Step 2 Configure provisioning<a class="headerlink" href="#step-2-configure-provisioning" title="Permanent link">&para;</a></h2>
+<p>To configure provisioning in Azure, you need the Dynatrace SCIM base URL and a secret token you got in the <a href="/docs/manage/identity-access-management/user-and-group-management/access-scim#scim-endpoint-secret-token" title="SCIM">Get Dynatrace SCIM endpoint and create secret token</a> procedure.</p>
+<p>In <strong>Microsoft Entra ID</strong> with your application selected</p>
+<ol>
+<li>If you're already on the application <strong>Overview</strong> page, select <strong>3. Provision User Accounts</strong> in the <strong>Getting Started</strong> section.</li>
+</ol>
+<p>Alternatively, from the leftmost menu, select <strong>Manage</strong> &gt; <strong>Provisioning</strong>.
+2. If you're doing this for the first time, select <strong>Get started</strong>.
+3. In <strong>Provisioning Mode</strong>, select <strong>Automatic</strong>.
+4. Expand <strong>Admin Credentials</strong>.
+5. Enter your admin credentials:</p>
+<ul>
+<li><strong>Tenant URL</strong><br />
+     Example: <code>https://api.sso.dynatrace.com/idm/public/scim/&lt;YOUR_ACCOUNT_ID&gt;/v2</code></li>
+<li><strong>Secret Token</strong><br />
+     You got this token from Dynatrace.</li>
+<li>Select <strong>Test Connection</strong> to validate the endpoint and credentials.</li>
+<li>If the test succeeds, select <strong>Save</strong> in the upper-left corner of the page to generate mappings.</li>
+</ul>
+<p>If the test fails, verify your settings:</p>
+<ul>
+<li><strong>Tenant URL</strong><br />
+     Example: <code>https://api.sso.dynatrace.com/idm/public/scim/&lt;YOUR_ACCOUNT_ID&gt;/v2</code></li>
+<li><strong>Secret Token</strong><br />
+     You created this earlier in the <a href="/docs/manage/identity-access-management/user-and-group-management/access-scim#scim-endpoint-secret-token" title="SCIM">Get a secret token</a> procedure.</li>
+</ul>
+<h2 id="step-3-optional-configure-group-mappings-optional">Step 3 optional Configure group mappings Optional<a class="headerlink" href="#step-3-optional-configure-group-mappings-optional" title="Permanent link">&para;</a></h2>
+<p>Do this if you need to provision only certain groups in Dynatrace.</p>
+<p>In <strong>Microsoft Entra ID</strong> with your application selected</p>
+<ol>
+<li>On the <strong>Provisioning</strong> page, expand <strong>Mappings</strong>.</li>
+<li>Select <strong>Synchronize Azure Active Directory Groups to customappsso</strong>.</li>
+</ol>
+<p>Make sure that the <strong>Enabled</strong> toggle is set to <strong>Yes</strong>.
+3. In <strong>Source Object Scope</strong>, select <strong>All records</strong>.
+4. Select <strong>Add new filter group</strong>.
+5. Fill in the fields.
+6. Select <strong>Apply</strong> in the lower-left corner.
+7. You can leave all <strong>Target Object Actions</strong> selected.<br />
+   Dynatrace SCIM supports all of these actions.
+8. Set <strong>Attribute Mappings</strong> as follows:</p>
+<p>Microsoft Entra ID Attribute</p>
+<p>customappsso Attribute</p>
+<p><code>displayName</code></p>
+<p><code>displayName</code></p>
+<p><code>objectId</code></p>
+<p><code>externalId</code></p>
+<p><code>members</code></p>
+<p><code>members</code>
+9. Select <strong>Save</strong> on the <strong>Attribute Mapping</strong> page.</p>
+<h2 id="step-4-configure-user-mappings">Step 4 Configure user mappings<a class="headerlink" href="#step-4-configure-user-mappings" title="Permanent link">&para;</a></h2>
+<p>You need to limit the scope of users that are provisioned by SCIM to those with matching email domains to prevent your SCIM requests from being rejected.</p>
+<p>To create a filtering rule for users</p>
+<ol>
+<li>On the <strong>Provisioning</strong> page, expand <strong>Mappings</strong>.</li>
+<li>Select <strong>Synchronize Azure Active Directory Users to customappsso</strong>.</li>
+<li>Select your <strong>Source Object Scope</strong>.</li>
+<li>Select <strong>Add new filter group</strong>.</li>
+<li>
+<p>On <strong>Add Scoping Filter</strong>, fill in the fields as follows:</p>
+</li>
+<li>
+<p>Source Attribute: <code>mail</code></p>
+</li>
+<li>Operator: <code>ENDS_WITH</code></li>
+<li>Clause value: <code>@&lt;YOUR_DOMAIN&gt;</code> (for example, <code>@example.com</code>)</li>
+</ol>
+<p>Keep in mind that subdomains should be verified for the account separately. Therefore, the <code>@</code> in the domain string is required and will guarantee that your requests won't be rejected due to an invalid user domain.
+6. Select <strong>Apply</strong> in the lower-left corner.
+7. You can leave all <strong>Target Object Actions</strong> selected.<br />
+   Dynatrace SCIM supports all of these actions.
+8. Limit <strong>Attribute Mappings</strong> to the following:</p>
+<p>Microsoft Entra ID Attribute</p>
+<p>customappsso Attribute</p>
+<p><code>userPrincipalName</code></p>
+<p><code>userName</code></p>
+<p><code>Switch([IsSoftDeleted],,"False","True","True","False")</code></p>
+<p><code>active</code></p>
+<p><code>displayName</code></p>
+<p><code>displayName</code></p>
+<p><code>givenName</code></p>
+<p><code>name.givenName</code></p>
+<p><code>surname</code></p>
+<p><code>name.familyName</code>
+9. Select <strong>Show advanced options</strong> in <strong>Attribute Mappings</strong>, and select <strong>Edit attribute list for customappsso</strong>.
+10. Make sure the following checkboxes are selected.</p>
+<div class="highlight"><pre><span></span><code>* For **id**âselect **Primary Key?** and **Required?**
+* For **userName**âselect **Required?**
+</code></pre></div>
+<ol>
+<li>Select <strong>Save</strong> on the <strong>Edit Attribute List</strong> page.</li>
+<li>Select <strong>Save</strong> on the <strong>Attribute Mapping</strong> page.</li>
+</ol>
+<h2 id="step-5-assign-users-and-groups">Step 5 Assign users and groups<a class="headerlink" href="#step-5-assign-users-and-groups" title="Permanent link">&para;</a></h2>
+<p>To assign users or groups to your application and send them via SCIM to Dynatrace, in <strong>Microsoft Entra ID</strong></p>
+<ol>
+<li>If you're already on the application <strong>Overview</strong> page, select <strong>1. Assign users and groups</strong> in the <strong>Getting Started</strong> section.</li>
+</ol>
+<p>Alternatively, from the leftmost menu, select <strong>Manage</strong> &gt; <strong>Users</strong>.
+2. Select <strong>Add user/group</strong>.
+3. Select the <strong>Users and groups</strong> you want to sync.
+4. Select <strong>Assign</strong>.</p>
+<h2 id="step-6-enable-scim">Step 6 Enable SCIM<a class="headerlink" href="#step-6-enable-scim" title="Permanent link">&para;</a></h2>
+<p>To enable SCIM provisioning</p>
+<ol>
+<li>Go to the <strong>Provisioning</strong> page and expand <strong>Settings</strong>.</li>
+<li>In <strong>Scope</strong> list, select <strong>Sync only assigned users and groups</strong>.</li>
+<li>Turn <strong>Provisioning Status</strong> on.</li>
+</ol>
+<p>In Azure, the initial sync takes longer than subsequent syncs, which occur approximately every 40 minutes as long as the service is running.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>I have accidentally deleted a SCIM synchronized user in Dynatrace my account. Is it possible to re-synchronize the user via SCIM in Azure?</p>
+<p>Yes, you can restart SCIM synchronization. To do this, go to the SCIM application's <strong>Overview</strong> tab and select <strong>Restart provisioning</strong>.</p>
+<hr />
+<h2 id="source-access-service-usersmd">Source: access-service-users.md<a class="headerlink" href="#source-access-service-usersmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Service users
+source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-service-users
+scraped: 2026-02-15T21:26:51.698869</p>
+<hr />
+<h1 id="service-users">Service users<a class="headerlink" href="#service-users" title="Permanent link">&para;</a></h1>
+<h1 id="service-users_1">Service users<a class="headerlink" href="#service-users_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>3-min read</li>
+<li>Updated on Dec 05, 2025</li>
+</ul>
+<p>An administrator or a user belonging to a group with <code>View and manage users and groups</code> permission can perform the service user management activities listed here.</p>
+<h2 id="whats-a-service-user">What's a service user?<a class="headerlink" href="#whats-a-service-user" title="Permanent link">&para;</a></h2>
+<p>A service user is a non-interactive user: it can't sign in to Dynatrace and it isn't related to any real person. It has its own identity and access management permissions assigned directly.</p>
+<p>You can select a service user as the actor of a <a href="/docs/analyze-explore-automate/workflows/security#service-users" title="Guide on security aspects of workflow automation in Dynatrace Workflows">workflow</a> or <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app#service-user" title="Explore anomaly detection configurations using the Anomaly Detection app.">custom alert</a>.</p>
+<h2 id="use-case">Use case<a class="headerlink" href="#use-case" title="Permanent link">&para;</a></h2>
+<p>When workflows and custom alerts are executed in the context of a service user, it makes them independent of the status of the user who maintains them. This makes it a good fit for a department or production use cases, or any collaborative efforts where a dependency on an actual user could hinder your work. Using a service user also strengthens the security of the actions executed by the actor.</p>
+<h2 id="list-and-edit-service-users">List and edit service users<a class="headerlink" href="#list-and-edit-service-users" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a>. If you have more than one account, select the account you want to manage.</li>
+<li>Go to <strong>Identity &amp; access management</strong> &gt; <strong>Service users</strong>.</li>
+</ol>
+<p>A table lists the defined service users.
+3. In the <strong>Actions</strong> column for the user you want to edit, select  &gt;  <strong>Edit</strong>.
+4. In the <strong>Edit service user</strong> page, you can:</p>
+<ul>
+<li>Change the <strong>Name</strong></li>
+<li>Change the <strong>Description</strong></li>
+</ul>
+<p><strong>Note</strong>: You can't change the service user email address. It's the identifier used in policy statements. See <a href="#policy">Create policies based on a service user</a>.</p>
+<ol>
+<li>On the <strong>Select group</strong> section, you can add or remove the selected groups. Service users get permissions via the selected groups.</li>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<h2 id="create-service-user">Create service user<a class="headerlink" href="#create-service-user" title="Permanent link">&para;</a></h2>
+<ol>
+<li>On the <strong>Service users</strong> page, select  <strong>Add service user</strong>.</li>
+<li>
+<p>On the <strong>Create service user</strong> page, enter the following service user details.</p>
+</li>
+<li>
+<p><strong>Name</strong></p>
+</li>
+<li>
+<p>Optional <strong>Description</strong></p>
+<p><strong>Tip</strong>: Make sure they're both meaningful for environment admins so that they understand the purpose of the service user.
+ The service user's email address is created automatically and can't be modified. It's the identifier used in the <a href="#policy">policy statements</a>.
+3. In the <strong>Assign permissions</strong> section, select whether to assign permissions <strong>Through existing groups</strong> or <strong>Directly</strong>.</p>
+</li>
+<li>
+<p><strong>Through existing groups</strong>: Select one or more existing groups whose permissions you want to assign to this service user.</p>
+</li>
+<li>
+<p><strong>Directly</strong>: Make your own custom selection of permissions. A new group will be automatically created.</p>
+<ol>
+<li>On the <strong>Assign permissions</strong> tab, select a <strong>Permission</strong>, <strong>Scope</strong>, and <strong>Boundaries</strong> to assign to this service user.</li>
+<li>On the <strong>View permissions</strong> tab, verify the details of the selected permission.</li>
+<li>Select <strong>Create</strong>.</li>
+</ol>
+</li>
+</ol>
+<h2 id="user-permissions-to-use-service-users-as-actors">User permissions to use service users as actors<a class="headerlink" href="#user-permissions-to-use-service-users-as-actors" title="Permanent link">&para;</a></h2>
+<p>A user who wants to use a service user as an actor of a workflow or custom alert must be granted the <code>iam:service-users:use</code> permission.</p>
+<p>That permission is granted with the following default policies:</p>
+<ul>
+<li><a href="/docs/manage/identity-access-management/permission-management/default-policies#DynatraceAccessProUser" title="Dynatrace default policies reference">Dynatrace Pro User</a></li>
+<li><a href="/docs/manage/identity-access-management/permission-management/default-policies#DynatraceAccessAdminUser" title="Dynatrace default policies reference">Dynatrace Admin User</a></li>
+</ul>
+<h2 id="create-policies-based-on-a-service-user">Create policies based on a service user<a class="headerlink" href="#create-policies-based-on-a-service-user" title="Permanent link">&para;</a></h2>
+<p>To control the use of service users even further, you can create a policy allowing users to use only specific service users as workflows or custom alerts actors.</p>
+<p>To do that, create a policy with <code>iam:service-users:use</code> set to the <code>iam:service-user-email</code> condition</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ALLOW iam:service-users:use
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>WHERE iam:service-user-email IN (&quot;be820735-3114-4d40-9c44-dfa18fa62be9@service.sso.dynatrace.com&quot;);
+</code></pre></div>
+<p>Such policies are secure. You can't modify the service user identifier or assign a custom email address to a service user.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

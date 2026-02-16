@@ -1,0 +1,2200 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/discover-dynatrace__get-started/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dynatrace Documentation: discover-dynatrace/get-started - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-documentation-discover-dynatraceget-started" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace Documentation: discover-dynatrace/get-started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-accessibilitymd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: accessibility.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dynatrace-documentation-discover-dynatraceget-started">Dynatrace Documentation: discover-dynatrace/get-started<a class="headerlink" href="#dynatrace-documentation-discover-dynatraceget-started" title="Permanent link">&para;</a></h1>
+<p>Generated: 2026-02-16</p>
+<p>Files combined: 9</p>
+<hr />
+<h2 id="source-accessibilitymd">Source: accessibility.md<a class="headerlink" href="#source-accessibilitymd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Accessibility
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
+scraped: 2026-02-15T21:24:47.895677</p>
+<hr />
+<h1 id="accessibility">Accessibility<a class="headerlink" href="#accessibility" title="Permanent link">&para;</a></h1>
+<h1 id="accessibility_1">Accessibility<a class="headerlink" href="#accessibility_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>1-min read</li>
+<li>Updated on Sep 17, 2025</li>
+</ul>
+<p>At Dynatrace, we aspire to provide quality products and services that promote diversity, equality, and inclusion. To achieve this goal, it is essential to follow high accessibility standards that promote the usability of our platform for individuals with disabilities.</p>
+<ul>
+<li>Dynatrace development best practices and accessibility criteria align with <strong>Web Content Accessibility Guidelines</strong> (WCAG), the internationally recognized standard developed by the <strong>World Wide Web Consortium</strong> (W3C).</li>
+<li>The <strong>Voluntary Product Accessibility Template</strong> (VPAT) is a standardized model to document how a product conforms to a set of accessibility standards.</li>
+<li>The VPAT is used to create an <strong>Accessibility Conformance Report</strong> (ACR), which provides details of how a productâs features meet this set of criteria.</li>
+</ul>
+<p>Dynatrace works in conjunction with third-party vendors and tools to evaluate our accessibility posture against the WCAG standard, currently <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 level AAï»¿</a>.</p>
+<p>Our product accessibility journey at Dynatrace is continuous, and we are committed to iterative improvements toward WCAG 2.1 level AA compliance. The ACR linked below represents accessibility status at the time of publishing, so check back for annual updates to this report.</p>
+<p>Disclaimer</p>
+<p>Any ACR posted below, or anywhere else on the Dynatrace website, or otherwise publicly available, shall not be construed to be included in any contract, either explicitly or implicitly, in whole or in part, absent Dynatrace express acknowledgment through language in the contract itself that such report or its substantive equivalent is included.</p>
+<h2 id="product-accessibility-conformance-report">Product Accessibility Conformance Report<a class="headerlink" href="#product-accessibility-conformance-report" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://cdn.dm.dynatrace.com/assets/documents/legal/trust-center/2025-09-Dynatrace-VPAT-Accessibility-Conformance-Report-WCAG-Edition-VPAT-September-2025.pdf">Dynatrace SaaS 1.323ï»¿</a></li>
+<li><a href="https://assets.dynatrace.com/en/docs/report/Dynatrace_VPAT2-4_WCAG_October_2023.pdf">Dynatrace SaaS 1.278ï»¿</a></li>
+<li><a href="https://assets.dynatrace.com/en/docs/report/Dynatrace_VPAT2_4_WCAG_August_2022.pdf">Dynatrace SaaS 1.246ï»¿</a></li>
+<li><a href="https://assets.dynatrace.com/en/docs/report/dynatrace-accessibility-conformance-report-wcag-2021-08.pdf">Dynatrace SaaS 1.224ï»¿</a></li>
+</ul>
+<hr />
+<h2 id="source-interact-visualizationsmd">Source: interact-visualizations.md<a class="headerlink" href="#source-interact-visualizationsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Data visualizations
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
+scraped: 2026-02-15T21:28:17.395512</p>
+<hr />
+<h1 id="data-visualizations">Data visualizations<a class="headerlink" href="#data-visualizations" title="Permanent link">&para;</a></h1>
+<h1 id="data-visualizations_1">Data visualizations<a class="headerlink" href="#data-visualizations_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>1-min read</li>
+<li>Published Apr 20, 2023</li>
+</ul>
+<p>Charts are one of the primary components used in data visualization. They're essential in visualizing complex data in a consumable and actionable manner. Get an overview of our chart types and insight into some of the most common interactions.</p>
+<p>This article presents all the visualizations and interaction options offered by the latest Dynatrace. Note that <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Dashboards</a> and <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.">Notebooks</a> applications offer you a subset of available visualizations and interactions.</p>
+<p>Are you an app creator?</p>
+<p>If you are an app creator and would like to use our chart components in your own app, head over to <a href="https://dt-url.net/developer-charts">Dynatrace Developerï»¿</a> for our technical documentation.</p>
+<p>[<img alt="Single value" src="https://dt-cdn.net/images/singlevaluecharticon-09d449f684-min-9d68ddb64b.svg" title="Single value" /></p>
+<h3 id="single-value-chart">Single value chart<a class="headerlink" href="#single-value-chart" title="Permanent link">&para;</a></h3>
+<p>One large value with the option to add a label, trend, sparkline, and icon.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/single-value "Interact with the most basic visualization in the Dynatrace design system.")[<img alt="Donut chart" src="https://dt-cdn.net/images/donut-a4dc4e6b1d.svg" title="Donut chart" /></p>
+<h3 id="donut-and-pie-chart">Donut and pie chart<a class="headerlink" href="#donut-and-pie-chart" title="Permanent link">&para;</a></h3>
+<p>Circular categorical charts that show part-to-whole relationships.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/piechart "The donut and pie charts are both circular categorical charts that show part-to-whole relationships.")[<img alt="Line chart" src="https://dt-cdn.net/images/linecharticon-fa6b06b9a8-min-cae31a2af5.svg" title="Line chart" /></p>
+<h3 id="time-series-charts">Time series charts<a class="headerlink" href="#time-series-charts" title="Permanent link">&para;</a></h3>
+<p>Changes plotted over time along a continuous axis.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/time-series "Time series charts plot time-based data along a continuous time axis (X-axis).")[<img alt="Bar chart" src="https://dt-cdn.net/images/barcharticon-b10415ec73-aaaadb9f73-min-ec8c7a9f32.svg" title="Bar chart" /></p>
+<h3 id="categorical-charts">Categorical charts<a class="headerlink" href="#categorical-charts" title="Permanent link">&para;</a></h3>
+<p>One continuous numerical axis and one categorical axis.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/categorical "Categorical chart features one continuous numerical axis and one categorical axis.")[<img alt="Overview" src="https://dt-cdn.net/images/chartcollectionicon-32ce349d22-min-2f3dbada57.svg" title="Overview" /></p>
+<h3 id="common-interactions-and-features">Common interactions and features<a class="headerlink" href="#common-interactions-and-features" title="Permanent link">&para;</a></h3>
+<p>Common interactions and features of data visualizations in the latest Dynatrace.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/common-interactions "Get to know the common interactions and features of data visualizations in the latest Dynatrace")</p>
+<hr />
+<h2 id="source-launchpadsmd">Source: launchpads.md<a class="headerlink" href="#source-launchpadsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Launchpads
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
+scraped: 2026-02-15T21:17:00.690638</p>
+<hr />
+<h1 id="launchpads">Launchpads<a class="headerlink" href="#launchpads" title="Permanent link">&para;</a></h1>
+<h1 id="launchpads_1">Launchpads<a class="headerlink" href="#launchpads_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>4-min read</li>
+<li>Published Sep 18, 2024</li>
+</ul>
+<p>The full landscape of Dynatrace use cases can seem overwhelming, with a somewhat complex learning curve towards understanding which elements people need in their daily observability journeys through Dynatrace.</p>
+<p>To make things easier, use the <strong>Launcher</strong> app to create customizable "launchpads" (customizable start pages) designed to improve user experience and efficiency. When people start Dynatrace with a launchpad, they focus on what they want to see first and have quick navigation to the Dynatrace components most important to them.</p>
+<ul>
+<li>Coordinate a project with a bigger group of people</li>
+<li>Manage the rollout of Dynatrace across an entire organization</li>
+</ul>
+<h2 id="get-started-with-launchpads">Get started with launchpads<a class="headerlink" href="#get-started-with-launchpads" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In the <strong>Launcher</strong> app, select  <strong>Launchpad</strong> to add a new launchpad.</li>
+<li>Select <strong>Customize</strong>.</li>
+<li>
+<p>Select a component type and start customizing it. Components you can add to your launchpad include:</p>
+</li>
+<li>
+<p>LinksâA collection of links to Dynatrace apps and documents, as well as general links to internal or external resources</p>
+</li>
+<li>MarkdownâA tile of Markdown-formatted text, including links to web pages and images</li>
+<li>CardsâFor each card, add a brief explanation, an optional image, and a button to take you to your destination</li>
+<li>After you have built your launchpad, select <strong>Done</strong>.</li>
+</ol>
+<h2 id="home-launchpads">Home launchpads<a class="headerlink" href="#home-launchpads" title="Permanent link">&para;</a></h2>
+<p>Home launchpads act as individual start pages, providing a customized experience when using Dynatrace, for focus and quick access to things people need most.</p>
+<h3 id="set-home-launchpads-for-user-groups">Set home launchpads for user groups<a class="headerlink" href="#set-home-launchpads-for-user-groups" title="Permanent link">&para;</a></h3>
+<p>To set home launchpads for user groups</p>
+<ol>
+<li>Go to <strong>Settings</strong>.</li>
+<li>Select <strong>General</strong>.</li>
+<li>Select <strong>Launcher</strong> &gt; <strong>Home launchpad</strong>.</li>
+<li>Select  <strong>Add home launchpad</strong>.</li>
+<li>Select a launchpad from the list.</li>
+<li>Start typing to <strong>Select a user group</strong>, or select <strong>Everyone</strong> to change the start page for all users.</li>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p>After setting a home launchpad, it will be indicated as the  <strong>Home</strong> launchpad and load as the start page when entering Dynatrace. Access to <strong>Getting started with Dynatrace</strong>, the default home launchpad, is retained on the launchpads overview page.</p>
+<p><img alt="Launchpads list" src="https://dt-cdn.net/images/launchpads-list-2208-f213920787.png" /></p>
+<h3 id="set-your-personal-home-launchpad">Set your personal home launchpad<a class="headerlink" href="#set-your-personal-home-launchpad" title="Permanent link">&para;</a></h3>
+<p>To set your personal home launchpad</p>
+<ol>
+<li>Select  <strong>Browse all</strong>.<br />
+   The launchpads overview page opens.</li>
+<li>Select the launchpad you want to switch to.</li>
+<li>Select  &gt;  <strong>Set as Home</strong></li>
+<li>The next time you sign in to Dynatrace, your home launchpad will be your new start page.</li>
+</ol>
+<p><img alt="Set as home" src="https://dt-cdn.net/images/set-as-home-2642-cfef19cf7b.png" /></p>
+<p>Setting a home launchpad for yourself will override any home launchpad set by your admin. Access to home launchpads set by your admin will be retained under <strong>Suggested</strong> on the lauchpads overview page.</p>
+<p>Home launchpad priority</p>
+<ol>
+<li>Your personal home launchpad, set as  <strong>Home</strong></li>
+<li>Home launchpad set by your admin with highest rank</li>
+<li>Other home launchpads set by your admin with lower ranks and other groups you're member of</li>
+<li><strong>Getting started with Dynatrace</strong>, the default home launchpad</li>
+</ol>
+<p>In case a home launchpad fails to load (for example, due to failing permissions), the next in line will be opened.</p>
+<h2 id="common-actions-for-launchpads">Common actions for launchpads<a class="headerlink" href="#common-actions-for-launchpads" title="Permanent link">&para;</a></h2>
+<p>Select  in a launchpad or the overview page. From there, you can:</p>
+<ul>
+<li><strong>Rename</strong> a launchpad.</li>
+<li><strong>Make a copy</strong> to start building a new launchpad based on an existing one.</li>
+<li><strong>Delete</strong> a launchpad.</li>
+<li><strong>Download</strong> a launchpad so you can move it between environments. See <a href="#move">Download and upload a launchpad</a>.</li>
+<li><strong>Add to Dock</strong>.</li>
+</ul>
+<h2 id="customize-your-launchpad">Customize your launchpad<a class="headerlink" href="#customize-your-launchpad" title="Permanent link">&para;</a></h2>
+<p>To customize a launchpad, open the launchpad and select <strong>Customize</strong>.</p>
+<ul>
+<li>Hover over a component you want to customize and select  &gt;  <strong>Edit</strong>. You can also simply select a component when in <strong>Customize</strong> mode.</li>
+<li>Hover over a component and select  to select and drag the component to a new position.</li>
+</ul>
+<p><img alt="Move launchpad component" src="https://dt-cdn.net/images/drag-1888-0f03edd34a.png" /></p>
+<h3 id="add-a-launchpad-icon">Add a launchpad icon<a class="headerlink" href="#add-a-launchpad-icon" title="Permanent link">&para;</a></h3>
+<p>Adding an icon will help your team know which launchpad they're on and will make it easier to pick the right one from a list of launchpads.</p>
+<p><img alt="Upload launchpad icon" src="https://dt-cdn.net/images/launchpads-icon-upload-2442-75e4e4057e.png" /></p>
+<p>To add a launchpad icon</p>
+<ol>
+<li>Select <strong>Customize</strong></li>
+<li>Select <strong>Upload icon</strong></li>
+<li>Select the image to use as this launchpad's icon.</li>
+<li>Select <strong>Save</strong></li>
+</ol>
+<p>File size limits</p>
+<ul>
+<li>1 MB for JPG, PNG, and WEBP images</li>
+<li>10 KB for SVG images</li>
+</ul>
+<h2 id="download-and-upload-a-launchpad">Download and upload a launchpad<a class="headerlink" href="#download-and-upload-a-launchpad" title="Permanent link">&para;</a></h2>
+<p>To move a launchpad between environments</p>
+<ol>
+<li>Select  &gt;  <strong>Download</strong> to download the launchpad.</li>
+<li>Go to the destination environment, select  <strong>Launchpads</strong> &gt;  <strong>Upload</strong>, and upload the JSON file you downloaded in the previous step.</li>
+</ol>
+<h2 id="share-launchpads">Share launchpads<a class="headerlink" href="#share-launchpads" title="Permanent link">&para;</a></h2>
+<p>If you own a launchpad, you can share it with other users in your Dynatrace environment.</p>
+<p><img alt="Share launchpad" src="https://dt-cdn.net/images/share-2226-f40006e092.png" /></p>
+<p>For details on sharing Dynatrace documents (including launchpads), see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/share" title="Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.">Share documents</a>.</p>
+<h2 id="api-for-launchpads">API for launchpads<a class="headerlink" href="#api-for-launchpads" title="Permanent link">&para;</a></h2>
+<p>The <strong>Launcher</strong> app uses the <a href="https://dt-url.net/x403ua9">document serviceï»¿</a> API to persist launchpads as documents.</p>
+<p>Documents are content-agnostic, but have common metadata: a unique identifier, a name, and a description.</p>
+<p>To distinguish different types of documents, and to make them visible to the respective apps, they need the correct <code>type</code> document attribute, in this case: <code>launchpad</code>. This attribute can also be used to query the API as shown in the following example.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://environment/platform/document/v1/documents?filter=type=&#39;launchpad&#39;
+</code></pre></div>
+<h3 id="access-full-document-service-documentation">Access full document service documentation<a class="headerlink" href="#access-full-document-service-documentation" title="Permanent link">&para;</a></h3>
+<p>To see the full API documentation for the documents service</p>
+<ol>
+<li>Go to the <a href="https://dt-url.net/x403ua9">Document serviceï»¿</a> page of the <a href="https://developer.dynatrace.com/">Dynatrace Developerï»¿</a> site.</li>
+<li>In the <strong>Related links</strong> section, select the <strong>Swagger API</strong> link.</li>
+</ol>
+<p>You may need to sign in to your Dynatrace environment.</p>
+<hr />
+<h2 id="source-login-issuesmd">Source: login-issues.md<a class="headerlink" href="#source-login-issuesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Troubleshooting sign-in issues
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
+scraped: 2026-02-15T21:24:57.994483</p>
+<hr />
+<h1 id="troubleshooting-sign-in-issues">Troubleshooting sign-in issues<a class="headerlink" href="#troubleshooting-sign-in-issues" title="Permanent link">&para;</a></h1>
+<h1 id="troubleshooting-sign-in-issues_1">Troubleshooting sign-in issues<a class="headerlink" href="#troubleshooting-sign-in-issues_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>1-min read</li>
+<li>Published Apr 22, 2021</li>
+</ul>
+<p>Use this page to solve problems with signing in to your Dynatrace account.</p>
+<ul>
+<li><a href="https://dt-url.net/vf038mx">Why can't I sign in to Dynatrace? I'm having password/login issues.ï»¿</a></li>
+<li><a href="https://dt-url.net/kl2387f">Why can't I sign in to Dynatrace using single sign-on (SSO)?ï»¿</a></li>
+</ul>
+<hr />
+<h2 id="source-sharemd">Source: share.md<a class="headerlink" href="#source-sharemd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Share documents
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
+scraped: 2026-02-15T21:09:36.929299</p>
+<hr />
+<h1 id="share-documents">Share documents<a class="headerlink" href="#share-documents" title="Permanent link">&para;</a></h1>
+<h1 id="share-documents_1">Share documents<a class="headerlink" href="#share-documents_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>10-min read</li>
+<li>Updated on Jan 12, 2026</li>
+</ul>
+<p>A Dynatrace document (dashboard, notebook, or launchpad) can be shared with other users in your Dynatrace environment.</p>
+<h2 id="who-can-share-a-document">Who can share a document<a class="headerlink" href="#who-can-share-a-document" title="Permanent link">&para;</a></h2>
+<p>When you create a document, you are the owner. You can share it and do everything else listed in the <strong>Owner</strong> column of the <a href="#document-share-permissions-table">Permissions</a> table.</p>
+<p>By default, only the document owner can share a document.</p>
+<p>However, the owner of a dashboard, notebook, or launchpad can choose to allow everyone with <strong>Can edit</strong> permission for a document to also share the document.</p>
+<ol>
+<li>Display the document (dashboard, notebook, or launchpad).</li>
+<li>Select <strong>Share</strong>.</li>
+<li>Select  (<strong>Manage access</strong>).</li>
+<li>Turn on <strong>Allow editors to share</strong>.</li>
+</ol>
+<p>Give it away</p>
+<p>If you no longer want to own a document at all, you can <a href="#change-owner">assign ownership to someone else</a> instead of just sharing it.</p>
+<h2 id="sharing-options">Sharing options<a class="headerlink" href="#sharing-options" title="Permanent link">&para;</a></h2>
+<p>If you have permission to share a document, you have the following sharing options. You can combine options.</p>
+<ul>
+<li>
+<p><a href="#document-share-visible-all">Access for all (view-only)</a>: let everyone in your Dynatrace environment view the document.</p>
+</li>
+<li>
+<p>Easy to do: just turn on the <strong>Visible to anyone in your environment (Read only)</strong> switch.</p>
+</li>
+<li>Easy to undo: just turn it off again.</li>
+<li>Best for publishing information that should be available to everyone.</li>
+<li>No write access: this is view-only sharing.</li>
+<li>No access granularity: when you turn this on, everyone in your Dynatrace environment can see your document.</li>
+<li>
+<p><a href="#document-share-access">Access per user or group</a>: specify Dynatrace users and groups that can view or edit the document.</p>
+</li>
+<li>
+<p>Better for ongoing sharing, where you want certain people or groups to always have access to the document.</p>
+</li>
+<li>Better granularity over who has access to the documentâyou can add, change, and revoke access per user and user group.</li>
+<li>You need to maintain a list of users and user groups that have access.</li>
+<li>
+<p><a href="#document-share-link">Access via shared link</a>: create links to your document that others can use to view or edit the document.</p>
+</li>
+<li>
+<p>Better for <em>ad hoc</em> sharing. Just generate a URL (with <a href="#document-share-permissions-table">View or Edit permissions</a>) and forward it to people who should access the document.</p>
+</li>
+<li>
+<p>If you share a document link, recipients can share it with others.
+    Caution</p>
+<ul>
+<li>Be careful when using the <strong>Share link</strong> method of sharing documents.</li>
+</ul>
+<p>If you a share a document link with other people in your Dynatrace environment, link recipients could forward the link to others. No one outside your Dynatrace environment could use the link to access your document, of course, but anyone in your Dynatrace environment could use it, and they would have the same permissions (<strong>Can edit</strong> or <strong>Can view</strong>) that you selected when you created the link.</p>
+<p>The <strong>Share access</strong> method gives you tighter control (with a granularity down to the person) over who can view or edit your documents.
+- Be careful when using the <strong>Allow editors to share</strong> option, which allows anyone with <strong>Can edit</strong> permission to share your document with others.
+  + If you need to revoke access for one person, you need to revoke access for everyone (disable the link you distributed) and then create and distribute a new link for people who should have access.</p>
+</li>
+</ul>
+<p>Note that you can use a combination of sharing options for the same document.
+For example:</p>
+<ul>
+<li>Maintain a list of people or groups who need regular edit or view access to the document (collaboration and joint editing).</li>
+<li>Occasionally send out an early access link to a wider audience (people who only need to review the document).</li>
+<li>Enable view access for all when you have a publishable document that you want to share with everyone in your Dynatrace environment.</li>
+</ul>
+<p>For details on document permission levels, see the <a href="#document-share-permissions-table">Permissions</a> section.</p>
+<h3 id="access-for-all-view-only">Access for all (view-only)<a class="headerlink" href="#access-for-all-view-only" title="Permanent link">&para;</a></h3>
+<p>The simplest way to share your information with everyone in your Dynatrace environment is to give <a href="#document-share-permissions-table">Can view</a> access to everyone in your Dynatrace environment.</p>
+<ol>
+<li>Display the document (dashboard, notebook, or launchpad).</li>
+<li>Select <strong>Share</strong>.</li>
+</ol>
+<p>If you don't see a <strong>Share</strong> option in the document, you don't have write permission for the document, so you can't access the share settings.
+3. Select  (<strong>Manage access</strong>).
+4. Turn on <strong>Visible to anyone in your environment (Read only)</strong>.</p>
+<p>Now everyone in your Dynatrace environment has <a href="#document-share-permissions-table">Can view</a> permissions for your document.</p>
+<ul>
+<li>To revoke this access, just turn off <strong>Visible to anyone in your environment (Read only)</strong>.</li>
+<li>If you select <a href="#document-remove-all-access">Remove all access</a>, that includes turning off this switch.</li>
+</ul>
+<h3 id="access-per-user-or-group">Access per user or group<a class="headerlink" href="#access-per-user-or-group" title="Permanent link">&para;</a></h3>
+<p>If you use SCIM groups</p>
+<p>Users in SCIM groups are not listed in the web UI for sharing a document (dashboard or notebook) to specific users or groups unless you add those users to local Dynatrace groups.</p>
+<p>To share a document by creating a list of users and user groups with <strong>Can view</strong> or <strong>Can edit</strong> access</p>
+<ol>
+<li>Display the document (dashboard, notebook, or launchpad).</li>
+<li>Select <strong>Share</strong>.</li>
+</ol>
+<p>If you don't see a <strong>Share</strong> option in the document, you don't own the document, so you can't access the share settings.
+3. In the  <strong>Share access</strong> section of the <strong>Share document</strong> window, specify one or more people and groups with whom you want to share the document, and select the permission level they should have (<strong>Can view</strong> or <strong>Can edit</strong>). Repeat this part of the procedure as many times as you need:</p>
+<ol>
+<li>Select <strong>Add people or groups in your company</strong>, and then find and select one or more people and groups with whom you want to share the document. You need to type at least three characters to get valid search results.</li>
+<li>Select the permission level (<strong>Can view</strong> or <strong>Can edit</strong>) that you want to give to the selected people and groups.</li>
+<li>
+<p>Select <strong>Share document</strong>. This adds the selected people and groups to a list of people with whom you can share the document. It includes the permission level (<strong>Can view</strong> or <strong>Can edit</strong>) that was displayed when you selected <strong>Share document</strong>.</p>
+<p>Don't give <strong>Can edit</strong> access to people if you don't want them to change your copy of the document.</p>
+<p>For a list of what people can do with <strong>Can view</strong> and <strong>Can edit</strong> permission, see the <a href="#document-share-permissions-table">Permissions</a> section below.</p>
+</li>
+</ol>
+<h3 id="access-via-shared-link">Access via shared link<a class="headerlink" href="#access-via-shared-link" title="Permanent link">&para;</a></h3>
+<p>To share a document by generating and distributing links (URLs)</p>
+<ol>
+<li>Display the document that you want to share.</li>
+<li>Select <strong>Share</strong>.</li>
+</ol>
+<p>If you don't see a <strong>Share</strong> option in the document, you don't own the document, so you can't access the share settings.
+3. In the  <strong>Share link</strong> section of the <strong>Share document</strong> window, select a permission level (<strong>Can view</strong> or <strong>Can edit</strong>) and then select <strong>Create link</strong>. This creates a URL (with the selected permission level) and copies it to your clipboard.
+4. Paste the link to a company communication channel (email, for example) and send the link to Dynatrace users in your company with whom you want to share the document. Recipients will be able to use the link to open your document with the selected permission level.</p>
+<h2 id="manage-access">Manage access<a class="headerlink" href="#manage-access" title="Permanent link">&para;</a></h2>
+<p>To manage sharing permissions for your document</p>
+<ol>
+<li>Display the document.</li>
+<li>Select <strong>Share</strong>.</li>
+</ol>
+<p>If you don't see a <strong>Share</strong> option in the document, you don't own the document, so you can't access the share settings.
+3. In the <strong>Share document</strong> window, select  (<strong>Manage access</strong>) in the upper-right corner.
+4. In the <strong>Manage access</strong> window, review and change sharing options as needed.</p>
+<p>People and groups</p>
+<p>Link for editing</p>
+<p>Link for viewing</p>
+<p>The <strong>People and groups</strong> tab lists</p>
+<ul>
+<li>The owner of the document. By default, this is the person who created the document, but you can <a href="#change-owner">change the owner</a>.</li>
+<li>Every other person or group with <strong>Can view</strong> or <strong>Can edit</strong> access to the document (other than through any links you might have shared)</li>
+</ul>
+<p>For each entry other than the owner, you can select one of the following:</p>
+<ul>
+<li><strong>Can view</strong></li>
+<li><strong>Can edit</strong></li>
+<li><strong>Remove</strong></li>
+</ul>
+<p>To add people or groups to the list, see the <a href="#document-share-access">Access per user or group</a> section above.</p>
+<p>Anyone in your company with a link for editing can follow the link to your document and then view or edit it.</p>
+<ul>
+<li>If you haven't made a link for editing, this tab is empty. Select <strong>Create link</strong> if you want to share such a link with others.</li>
+<li>
+<p>If you have made a link for editing, this tab displays the link.</p>
+<ul>
+<li>To get a copy of the link that you can share with others in your company, select <strong>Copy</strong>.</li>
+<li>To delete the link, select <strong>Delete</strong>. If you already shared the link with anyone, the link will no longer work.</li>
+</ul>
+</li>
+</ul>
+<p>Anyone in your company with a link for viewing can follow the link to your document and view but not edit it.</p>
+<ul>
+<li>If you haven't made a link for viewing, this tab is empty. Select <strong>Create link</strong> if you want to share such a link with others.</li>
+<li>
+<p>If you have made a link for viewing, this tab displays the link.</p>
+<ul>
+<li>To get a copy of the link that you can share with others in your company, select <strong>Copy</strong>.</li>
+<li>To delete the link, select <strong>Delete</strong>. If you already shared the link with anyone, the link will no longer work.</li>
+</ul>
+</li>
+</ul>
+<h2 id="remove-all-access">Remove all access<a class="headerlink" href="#remove-all-access" title="Permanent link">&para;</a></h2>
+<p>Sometimes you need to quickly and easily remove all shared access to a document.</p>
+<p>To revoke all sharing for your document</p>
+<ol>
+<li>Display the document.</li>
+<li>Select <strong>Share</strong>.</li>
+</ol>
+<p>If you don't see a <strong>Share</strong> option in the document, you don't own the document, so you can't access the share settings.
+3. In the <strong>Share document</strong> window, select  in the upper-right corner.
+4. In the <strong>Manage access</strong> window, select <strong>Remove all access</strong> and then confirm your choice.</p>
+<p>After you remove all access, only you can view or edit your document.</p>
+<ul>
+<li>No other people have individual access</li>
+<li>Access is not granted to anyone through membership in any groups</li>
+<li>Previously shared <strong>Can view</strong> and <strong>Can edit</strong> links to your document no longer work</li>
+<li>If <strong>Visible to anyone in your environment (Read only)</strong> was turned on, now it's off</li>
+</ul>
+<h2 id="verify-all-access">Verify all access<a class="headerlink" href="#verify-all-access" title="Permanent link">&para;</a></h2>
+<p>After you change sharing settings, it's a good idea to verify them.</p>
+<p><strong>Quick check</strong>: the icon before the <strong>Share</strong> button at the top of your document indicates whether the document is already shared.</p>
+<ul>
+<li>= shared</li>
+<li>= not shared</li>
+</ul>
+<p>If you just updated your share settings, you might need to refresh your document to display the correct icon.</p>
+<p>If your document is shared, you can check to see who has access to it.</p>
+<ol>
+<li>Display the document.</li>
+<li>Select <strong>Share</strong>.</li>
+<li>In the <strong>Share document</strong> window, select  (<strong>Manage access</strong>) in the upper-right corner.</li>
+<li>
+<p>Review the settings.</p>
+</li>
+<li>
+<p>If <strong>Visible to anyone in your environment (Read only)</strong> is turned on, everyone in your Dynatrace environment can view the document.</p>
+</li>
+<li>If <strong>Allow editors to share</strong> is turned on, everyone with <strong>Can edit</strong> permission for the document can also share the document. If you turn this setting off, only the document owner can share the document.</li>
+<li>
+<p>Are the settings on the three tabs correct?</p>
+<ul>
+<li><strong>People and groups</strong></li>
+<li><strong>Link for editing</strong></li>
+<li><strong>Link for viewing</strong></li>
+</ul>
+</li>
+</ol>
+<h2 id="change-owner">Change owner<a class="headerlink" href="#change-owner" title="Permanent link">&para;</a></h2>
+<p>A Dynatrace documentâsuch as a dashboard, notebook, launchpad, or workflowâis initially owned by the user who created it. The document owner has full permissions for that document.</p>
+<p>When you change the document owner, you immediately lose access to the document.</p>
+<ul>
+<li>Be sure you are ready to transfer ownership before you select this command.</li>
+<li>You can regain access to the document only if the new owner gives you permission.</li>
+</ul>
+<p>If you think you might need to access the document again, make a duplicate of the document, transfer ownership of one of the duplicate documents, and retain ownership of the other until you're sure you don't need it anymore.</p>
+<h3 id="dashboards-dashboards">Dashboards <strong>Dashboards</strong><a class="headerlink" href="#dashboards-dashboards" title="Permanent link">&para;</a></h3>
+<p>To change ownership of the currently displayed <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">dashboard</a></p>
+<ol>
+<li>Open the  menu next to the dashboard name and select  <strong>Change owner</strong>.</li>
+<li>Find and select a new owner, and then select  <strong>Change owner</strong>.</li>
+</ol>
+<p>To change ownership of multiple dashboards</p>
+<ol>
+<li>In <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, select <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> in the upper-left corner to display the <strong>Dashboards</strong> table.</li>
+<li>Filter the table for  <strong>Owned by me</strong> to list your dashboards.</li>
+<li>For each dashboard whose ownership you want to change, open the  menu for that dashboard and select  <strong>Change owner</strong>.</li>
+</ol>
+<h3 id="notebooks-notebooks">Notebooks <strong>Notebooks</strong><a class="headerlink" href="#notebooks-notebooks" title="Permanent link">&para;</a></h3>
+<p>To change ownership of the currently displayed <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.">notebook</a></p>
+<ol>
+<li>Open the  menu next to the notebook name and select  <strong>Change owner</strong>.</li>
+<li>Find and select a new owner, and then select  <strong>Change owner</strong>.</li>
+</ol>
+<p>To change ownership of multiple notebooks</p>
+<ol>
+<li>In <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>, select <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Notebooks</strong> in the upper-left corner to display the <strong>Notebooks</strong> table.</li>
+<li>Filter the table for  <strong>Owned by me</strong> to list your notebooks.</li>
+<li>For each notebook whose ownership you want to change, open the  menu for that notebook and select  <strong>Change owner</strong>.</li>
+</ol>
+<h3 id="launchpads_2">Launchpads<a class="headerlink" href="#launchpads_2" title="Permanent link">&para;</a></h3>
+<p>To change ownership of a <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads" title="Build and manage custom start pages with launchpads.">launchpad</a></p>
+<ol>
+<li>Go to <strong>Launcher</strong>. If a launchpad is displayed, select  <strong>Browse all</strong> in the upper-left corner to display a table of launchpads.</li>
+<li>Filter the table for  <strong>Owned by me</strong> to list your launchpads.</li>
+<li>For each launchpad whose ownership you want to change, open the  menu for that launchpad and select  <strong>Change owner</strong>.</li>
+</ol>
+<h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h2>
+<p>When you create a document, you are the document owner and you can do anything listed in the <strong>Owner</strong> column of the permissions table below. All other people have <strong>Can view</strong> or <strong>Can edit</strong> permission as determined by the document owner.</p>
+<ul>
+<li><strong>Can view</strong>: can do the limited set of read-only things listed in the <strong>Can view</strong> column.</li>
+<li><strong>Can edit</strong>: can do almost anything the owner can do.</li>
+<li><strong>Owner</strong>: has permission to do everything with the document, including share it, change the owner, and delete it.</li>
+</ul>
+<p>Sharing exceptions</p>
+<ul>
+<li>Be careful when using the <strong>Share link</strong> method of sharing documents.</li>
+</ul>
+<p>If you a share a document link with other people in your Dynatrace environment, link recipients could forward the link to others. No one outside your Dynatrace environment could use the link to access your document, of course, but anyone in your Dynatrace environment could use it, and they would have the same permissions (<strong>Can edit</strong> or <strong>Can view</strong>) that you selected when you created the link.</p>
+<p>The <strong>Share access</strong> method gives you tighter control (with a granularity down to the person) over who can view or edit your documents.
+* Be careful when using the <strong>Allow editors to share</strong> option, which allows anyone with <strong>Can edit</strong> permission to share your document with others.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Permission</strong></th>
+<th><strong>Can view</strong></th>
+<th><strong>Can edit</strong></th>
+<th><strong>Owner</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>View the document</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Adjust the timeframe of the displayed data</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Refresh the document</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Adjust the automatic refresh rate</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Adjust the filter settings</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Maximize and minimize tiles</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Copy one or more tiles to the clipboard</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Save a copy of the document</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Export the JSON definition of the document</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Import the JSON definition of the document</td>
+<td>Applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Edit the document</td>
+<td>Not applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Change the layout</td>
+<td>Not applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Rename the document</td>
+<td>Not applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Add, change, and delete data</td>
+<td>Not applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Add, change, and delete code</td>
+<td>Not applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Add, change, and delete markdown</td>
+<td>Not applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Add, change, and delete variables/filters</td>
+<td>Not applicable</td>
+<td>Applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Share the document</td>
+<td>Not applicable</td>
+<td>Not applicable or Applicable*</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Change owner of the document</td>
+<td>Not applicable</td>
+<td>Not applicable</td>
+<td>Applicable</td>
+</tr>
+<tr>
+<td>Delete the document</td>
+<td>Not applicable</td>
+<td>Not applicable</td>
+<td>Applicable</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>If the document owner turns on <strong>Allow editors to share</strong>, anyone with <strong>Can edit</strong> permission can share the document with others.</li>
+</ul>
+<hr />
+<h2 id="source-ui-filter-fieldmd">Source: ui-filter-field.md<a class="headerlink" href="#source-ui-filter-fieldmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Filter field
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
+scraped: 2026-02-15T21:13:49.232236</p>
+<hr />
+<h1 id="filter-field">Filter field<a class="headerlink" href="#filter-field" title="Permanent link">&para;</a></h1>
+<h1 id="filter-field_1">Filter field<a class="headerlink" href="#filter-field_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>6-min read</li>
+<li>Updated on Jan 07, 2026</li>
+</ul>
+<p>The filter field is a powerful UI component that enables you to quickly narrow down results and find relevant information within Dynatrace apps. Use the filter field when you need to search by specific attributes (like service name or status), combine multiple conditions with logical operators, or filter JSON data using dot or bracket notation.</p>
+<p>For complex queries beyond what the filter field offers, consider using <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language (DQL)</a> in <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> instead.</p>
+<h2 id="anatomy">Anatomy<a class="headerlink" href="#anatomy" title="Permanent link">&para;</a></h2>
+<p><img alt="Filter field component in the Dynatrace UI." src="https://dt-cdn.net/images/ui-filter-field-2018-44c7241dc1.png" /></p>
+<ol>
+<li><strong>Filter statement</strong>: Each gray section is one complete statement of a filter criteria.</li>
+<li><strong>Key</strong>: The first part of the filter statement is the filter key or category.</li>
+<li><strong>Comparison operator</strong>: Shows the type of comparison.</li>
+<li><strong>Value</strong>: The specific value that youâre looking for.</li>
+<li><strong>Logical operator</strong>: Connects multiple filter statements. <code>AND</code> will be used automatically unless you add <code>OR</code>.</li>
+</ol>
+<h2 id="how-to-use-filters">How to use filters<a class="headerlink" href="#how-to-use-filters" title="Permanent link">&para;</a></h2>
+<ul>
+<li>To create a filter statement, simply start typing in the filter field. A dropdown with suggestions will immediately open.</li>
+<li>
+<p>Depending on the implementation, you can apply the filter:</p>
+</li>
+<li>
+<p>By making a change in the filter field (dynamic filtering)</p>
+</li>
+<li>By selecting <strong>Apply</strong> (batched filtering)</li>
+<li>By using the keyboard shortcuts: Windows<strong>Ctrl+Enter</strong> or macOS<strong>Cmd+Enter</strong></li>
+<li>To clear the entire filter field, select the <code>X</code> at the right side of the field.</li>
+<li>To remove an individual filter, hover over the filter statement and select the <code>X</code> for that statement.</li>
+</ul>
+<h3 id="use-filter-suggestions">Use filter suggestions<a class="headerlink" href="#use-filter-suggestions" title="Permanent link">&para;</a></h3>
+<p>To make things easier for you, filter field offers relevant suggestions as you type.</p>
+<ul>
+<li>Descriptions on the right side of the suggestion provide context.</li>
+<li>To apply a suggestion, select it from the list (click or tap), or use the up and down arrow keys to navigate the list and then press <strong>Enter</strong>.</li>
+</ul>
+<h2 id="general-syntax">General syntax<a class="headerlink" href="#general-syntax" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Use a space as the separator, or delimiter, between keys, comparison operators, values, and filter statements.</li>
+<li>For numbers, use a decimal point <code>.</code> as the decimal separator.</li>
+<li>For arrays, use an equals sign <code>key = value</code>.</li>
+</ul>
+<p>Note</p>
+<p>Some features may not be available due to performance or data source limitations. For example, filter field generally supports <a href="#wildcards">wildcards</a> (indicated by an asterisk <code>*</code>) at either the beginning (ends-with) or end (starts-with) of a value. However, certain implementations, such as those based on the classic entity selector API, might not support the ends-with option.</p>
+<h3 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <code>* ~ searchterm</code> to search across all data.</li>
+<li>Multiple searches can be combined using <code>AND</code> or <code>OR</code>. For details, see <a href="#filter-field-logical-operators">Logical operators</a>. In the following example, the result includes all data with the terms <code>paymentError</code> or <code>timeout</code> in any field.</li>
+</ul>
+<p><code>* ~Â paymentError OR * ~ timeout</code>
+* Searches can be combined with filters using <code>AND</code>. For details, see <a href="#filter-field-logical-operators">Logical operators</a>. In the following example, the result includes all data from the <code>payment-service</code> with the term <code>paymentError</code> in any field.</p>
+<p><code>service = payment-service AND * ~Â paymentError</code></p>
+<h3 id="comparison-operators">Comparison operators<a class="headerlink" href="#comparison-operators" title="Permanent link">&para;</a></h3>
+<p>Comparison operators define how a key compares to a value. Here are the available comparison operators:</p>
+<p>Filter syntax</p>
+<p>Description</p>
+<p>Example</p>
+<p><code>=</code></p>
+<p>equals</p>
+<p><code>key = value</code></p>
+<p><code>!=</code></p>
+<p>doesn't equal</p>
+<p><code>key != value</code></p>
+<p><code>&lt;</code></p>
+<p>less than</p>
+<p><code>key &lt; value</code></p>
+<p><code>&lt;=</code></p>
+<p>less than or equal to</p>
+<p><code>key &lt;= value</code></p>
+<p><code>&gt;</code></p>
+<p>greater than</p>
+<p><code>key &gt; value</code></p>
+<p><code>&gt;=</code></p>
+<p>greater than or equal to</p>
+<p><code>key &gt;= value</code></p>
+<p><code>= *</code></p>
+<p>is any value</p>
+<p><code>key = *</code></p>
+<p><code>!= *</code></p>
+<p>isn't any value</p>
+<p><code>key != *</code></p>
+<p><code>in</code></p>
+<p>matches one or more values in a list of values</p>
+<p><code>key in (value1, value2)</code></p>
+<p><code>not in</code></p>
+<p>doesnât match any value in a list of values</p>
+<p><code>key not in (value1, value2)</code></p>
+<h3 id="logical-operators">Logical operators<a class="headerlink" href="#logical-operators" title="Permanent link">&para;</a></h3>
+<p>The filter field supports the logical operators <code>AND</code> and <code>OR</code>. If you donât specify an operator, filter statements are automatically connected by an implicit <code>AND</code>, which is the default logical operator between any two expressions.</p>
+<p>Filter syntax</p>
+<p>Description</p>
+<p>Example</p>
+<p><code>AND</code></p>
+<p>Both expressions must be true.</p>
+<p><code>key = value key2 = value</code><br />
+Alternative:<br />
+<code>key = value AND key2 = value</code></p>
+<p><code>OR</code></p>
+<p>Only one expression must be true.</p>
+<p><code>key = value OR key2 = value</code></p>
+<h3 id="grouping-filter-statements">Grouping filter statements<a class="headerlink" href="#grouping-filter-statements" title="Permanent link">&para;</a></h3>
+<p>Use parentheses <code>()</code> to group filter statements logically. For example, <code>key = value OR (key2 = value key3 = value)</code>.</p>
+<h3 id="escaping-values">Escaping values<a class="headerlink" href="#escaping-values" title="Permanent link">&para;</a></h3>
+<p>Space, <code>*</code>, <code>,</code>, <code>(</code>, <code>)</code>, <code>!</code>, <code>&lt;</code>, <code>&gt;</code>, <code>=</code>, <code>"</code>, <code>$</code>, <code>:</code>, <code>[</code>, <code>]</code>, <code>\</code>, and <code>~</code> are special characters in the filter field. To use special characters as part of a key or a value, you need to escape them.</p>
+<p>Escape option</p>
+<p>Description</p>
+<p>Example</p>
+<p>Quotation marks <code>"</code></p>
+<p>Wrap the corresponding key or value in quotation marks. In the following example, the spaces between <code>Product</code> and <code>Name</code>, and between <code>Widget</code> and <code>A</code>, are escaped by wrapping the values in quotation marks.</p>
+<p><code>"Product Name" = "Widget A"</code></p>
+<p>Backslash <code>\</code></p>
+<p>Escape a single character with a backslash <code>\</code>. In the following example, the asterisk on the right end is escaped with a backslash. This means it isn't interpreted as a wildcard.</p>
+<p><code>key = openshift-service-serving-signer@1677006647\*</code></p>
+<p>If you want a backslash to appear in a value, it must itself be escaped.
+For example, to get <code>path = C:\my\path</code> you need to write <code>path = C:\\my\\path</code>.</p>
+<h3 id="case-sensitivity">Case sensitivity<a class="headerlink" href="#case-sensitivity" title="Permanent link">&para;</a></h3>
+<p>String values are case-insensitive for all operators.</p>
+<h3 id="wildcards">Wildcards<a class="headerlink" href="#wildcards" title="Permanent link">&para;</a></h3>
+<p>A wildcard will match any character in a value. Wildcards are indicated by an asterisk <code>*</code>.</p>
+<p>Wildcard syntax</p>
+<p>Description</p>
+<p><code>key = *value</code></p>
+<p>ends with any <code>value</code></p>
+<p><code>key = value*</code></p>
+<p>starts with any <code>value</code></p>
+<p><code>key = *value*</code></p>
+<p>contains any <code>value</code></p>
+<p>When a value contains <strong>special characters</strong> such as spaces, you must escape the value to ensure that it is correctly interpreted. In such cases, wildcards can be used <strong>outside or inside</strong> the escaped value. See examples below:</p>
+<p>Suppose you want to filter for a service named "Payment Service". You would write the filter like this:</p>
+<p><code>Name = "Payment Service"</code></p>
+<p>This ensures that the entire string "Payment Service" is treated as a single value, including the space between "Payment" and "Service".</p>
+<p>If you want to use wildcards with a value that contains spaces, you can do it like this:</p>
+<p><code>Name = *"Payment Service"*</code></p>
+<p>Or like this:</p>
+<p><code>Name = "*Payment Service*"</code></p>
+<p>This filter will match any service name that contains "Payment Service" anywhere within the name.</p>
+<p>Wildcards are not supported within the <code>in ()</code> operator. The <code>in ()</code> operator filters for exact matches and does not interpret <code>*</code> as a wildcard.
+If you want to use <code>*</code> as a literal character, you need to escape it using a backslash <code>\</code>. For example, to match the string <code>/visit*/_settings</code>, use <code>key = "/visit\*/_settings"</code>.
+For more details, see <a href="#escaping-values">Escaping values</a> in filter expressions.</p>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<p>Variables act as a placeholder and allow you to dynamically select the values you want to use. To reference a variable, start the value with a <code>$</code>. For example: <code>k8s.cluster.name = $cluster</code>.</p>
+<h4 id="variables-and-wildcards">Variables and wildcards<a class="headerlink" href="#variables-and-wildcards" title="Permanent link">&para;</a></h4>
+<p>Use the wildcard character <code>*</code> to filter for data that starts with, ends with, or contains a variable's value. You can place the <code>*</code> before, after, or on both sides of a variable. The position of the <code>*</code> determines how the filter behaves. For more insights see <a href="#wildcards">wildcards</a>.</p>
+<p>When using a variable like <code>$cluster</code>, the position of the <code>*</code> relative to the variable determines the matching behavior:</p>
+<ul>
+<li>
+<p><strong>Ends with the variable value</strong></p>
+</li>
+<li>
+<p><code>k8s.cluster.name = *$cluster</code> matches any value that ends with the value of <code>$cluster</code>.</p>
+</li>
+<li><strong>Example:</strong> If <code>$cluster</code> is <em>myClusterName</em>, this matches <em>prod-myClusterName</em>.</li>
+<li>
+<p><strong>Starts with the variable value</strong></p>
+</li>
+<li>
+<p><code>k8s.cluster.name = $cluster*</code> matches any value that starts with the value of <code>$cluster</code>.</p>
+</li>
+<li><strong>Example:</strong> Matches <em>myClusterName-east</em>.</li>
+<li>
+<p><strong>Contains the variable value</strong></p>
+</li>
+<li>
+<p><code>k8s.cluster.name = *$cluster*</code> matches any value that contains the value of <code>$cluster</code> anywhere within the string.</p>
+</li>
+<li><strong>Example:</strong> Matches <em>prod-myClusterName-east</em>.</li>
+</ul>
+<h4 id="related-content">Related content<a class="headerlink" href="#related-content" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">Variables in dashboards</a></li>
+<li><a href="/docs/manage/segments/concepts/segments-concepts-variables" title="Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.">Variables in segments</a></li>
+</ul>
+<h3 id="filtering-json-data">Filtering JSON data<a class="headerlink" href="#filtering-json-data" title="Permanent link">&para;</a></h3>
+<p>Access nested fields in JSON data with dot or bracket notation. JSON filters may use a combination of dot and bracket notations.</p>
+<p>Notation</p>
+<p>Description</p>
+<p>Example</p>
+<p>Dot notation
+<code>key$.field</code></p>
+<p>Use the compact dot notation for simple syntax.</p>
+<p><code>content$.uri = "/status-service/deployments/health"</code></p>
+<p>Bracket notation
+<code>key$["field"][index]</code></p>
+<p>Use bracket notation for subkeys with special characters (spaces, dashes, etc.) and to access a child of an array.</p>
+<p><code>content$["spans"][0]["duration-ms"] &gt; 75</code></p>
+<hr />
+<h2 id="source-dynatrace-uimd">Source: dynatrace-ui.md<a class="headerlink" href="#source-dynatrace-uimd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Navigate the Dynatrace platform
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
+scraped: 2026-02-15T21:24:15.029034</p>
+<hr />
+<h1 id="navigate-the-dynatrace-platform">Navigate the Dynatrace platform<a class="headerlink" href="#navigate-the-dynatrace-platform" title="Permanent link">&para;</a></h1>
+<h1 id="navigate-the-dynatrace-platform_1">Navigate the Dynatrace platform<a class="headerlink" href="#navigate-the-dynatrace-platform_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>11-min read</li>
+<li>Updated on Jan 28, 2026</li>
+</ul>
+<p>Learn your way around the Dynatrace web UI.</p>
+<p>If you haven't upgraded to the latest Dynatrace, <a href="#menu">go to the bottom of this page</a> for help with the old interface.</p>
+<h2 id="dock">Dock<a class="headerlink" href="#dock" title="Permanent link">&para;</a></h2>
+<p>The Dock is your starting point. It's the expandable/collapsable panel on the left of the Dynatrace display. This is your tool belt, which you can equip with links to applications that you need daily.</p>
+<p>Use the Dock to:</p>
+<ul>
+<li>Quickly switch between your pinned or recently used apps.</li>
+<li>Go to the Launcher, global platform search, all apps in your environment, additional support resources, and your user preferences.</li>
+</ul>
+<p><img alt="Dock: top" src="https://dt-cdn.net/images/dock-all-4-top-280-e15e9030df.png" /></p>
+<p>The upper part of the Dock includes:</p>
+<ul>
+<li><a href="#dynatrace"><strong>Dynatrace</strong></a> is your home.</li>
+<li><a href="#search"><strong>Search</strong></a> enables you to search the platform.</li>
+<li><a href="#apps"><strong>Apps</strong></a></li>
+<li><a href="#pinned">Pinned and active apps</a>, depending on your configuration and activity. In this example, the <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.">Notebooks</a>, <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Dashboards</a>, and <img alt="Segments" src="https://dt-cdn.net/images/segments-256-8e66310720.webp" title="Segments" /> <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a> apps are all listed.</li>
+</ul>
+<p><img alt="Dock: bottom" src="https://dt-cdn.net/images/dock-all-4-bottom-280-1767392d75.png" /></p>
+<p>The lower part of the Dock includes:</p>
+<ul>
+<li>and  to <a href="#collapse-and-expand">hide or display the Dock</a></li>
+<li>to access <a href="#support">support links</a></li>
+<li><strong>[your initials] [your name]</strong> to access <a href="#user">user-specific links</a></li>
+</ul>
+<h2 id="dynatrace">Dynatrace<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h2>
+<p><img alt="Dock: Dynatrace" src="https://dt-cdn.net/images/dock-all-4-top-dynatrace-280-f021988a23.png" /></p>
+<p>Select  <strong>Dynatrace</strong> in the upper-left corner to go to your Dynatrace home page.</p>
+<ul>
+<li>The default <strong>Getting started with Dynatrace</strong> "launchpad" page gives you a quick overview of prominent features to start using the platform. It's focused on introducing you to key aspects of the platform and reducing your learning curve.</li>
+<li>You can create additional launchpads (custom home pages) with handpicked lists of apps, documents, links, and informational text. For more information, see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads" title="Build and manage custom start pages with launchpads.">Launchpads</a>.</li>
+</ul>
+<h2 id="search_1">Search<a class="headerlink" href="#search_1" title="Permanent link">&para;</a></h2>
+<p><img alt="Dock: Search" src="https://dt-cdn.net/images/dock-all-4-top-search-280-ab9aaa4258.png" /></p>
+<p>The  <strong>Search</strong> option is always available in the Dock.</p>
+<ul>
+<li>If you collapse the Dock, you'll only see the  icon.</li>
+<li>The keyboard shortcut for <strong>Search</strong> is <strong>CTRL</strong>+<strong>K</strong> or <strong>CMD</strong>+<strong>K</strong>.</li>
+</ul>
+<p>Dynatrace platform search provides you with customizable options and features to help you filter search results. For details on advanced search features, see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/search" title="Dynatrace platform search provides you with customizable options and features to help you filter search results and find resources you're looking for.">Platform search</a>.</p>
+<h2 id="apps">Apps<a class="headerlink" href="#apps" title="Permanent link">&para;</a></h2>
+<p><img alt="Dock: Apps" src="https://dt-cdn.net/images/dock-all-4-top-apps-280-4e7b6d0d7c.png" /></p>
+<p>Select  <strong>Apps</strong> to list and launch your installed apps. (If you collapse the Dock, you'll only see the  icon.)</p>
+<ul>
+<li>Browse apps by category.</li>
+<li>Use the filter bar to search by app name</li>
+<li>Select <img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /> <strong>Explore more</strong> to find more apps on Dynatrace Hub</li>
+</ul>
+<h2 id="pinned-and-active-apps">Pinned and active apps<a class="headerlink" href="#pinned-and-active-apps" title="Permanent link">&para;</a></h2>
+<p><img alt="Dock: pinned and active apps" src="https://dt-cdn.net/images/dock-all-4-top-pinned-280-39e97c223b.png" /></p>
+<p>The middle section of the Dock lists default apps and any other apps that you have pinned to the Dock or have recently used. Pin your favorite apps here to customize the Dock for quick access.</p>
+<p>To pin an app to the Dock</p>
+<ol>
+<li>Use  <a href="#search">Search</a> or  <a href="#apps">Apps</a> to find and select the app you want to pin. The app icon and name will be displayed in the Dock.</li>
+<li>In the Dock, hover over the app and select  <strong>Pin to dock</strong>.<br />
+   A pinned app will remain in the Dock until you remove it (hover over the app and select  <strong>Unpin from dock</strong>).</li>
+</ol>
+<h2 id="collapse-and-expand">Collapse and Expand<a class="headerlink" href="#collapse-and-expand" title="Permanent link">&para;</a></h2>
+<p><img alt="Dock: Collapse" src="https://dt-cdn.net/images/dock-all-4-bottom-collapse-280-0a6e0c1306.png" /></p>
+<ul>
+<li>
+<p><strong>Collapse</strong> hides the labels and displays only a narrow column of icons.</p>
+</li>
+<li>
+<p>This frees screen space for the display of your data.</p>
+</li>
+<li>Icons might be all you need for frequently used apps and functions.</li>
+<li><strong>Expand</strong> displays the full Dock again so you can read labels.</li>
+</ul>
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<p><img alt="Dock: Support" src="https://dt-cdn.net/images/dock-all-4-bottom-support-280-b11b4ae9b9.png" /></p>
+<p>If you need some extra information, you can always select  <strong>Support</strong> in the lower-left corner to display links one of the support and developer resources described below.</p>
+<h3 id="support-resources">Support resources<a class="headerlink" href="#support-resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Documentation</strong> provides easy access to the documentation and will give you an overview of everything thatâs new, app documentation, and anything else you need to know.</li>
+<li><strong>Release notes</strong> links directly to the release notes.</li>
+<li><strong>Community</strong> takes you straight to the <a href="https://community.dynatrace.com">Dynatrace Communityï»¿</a>, where you can ask us questions, give us feedback, and share your ideas. Learn from top Dynatrace users.</li>
+<li><strong>University</strong> takes you to <a href="https://university.dynatrace.com">Dynatrace Universityï»¿</a>, where you can build your skills and advance your career with on-demand learning, live training, and certifications from Dynatrace experts.</li>
+<li><strong>Live chat</strong> puts you in touch with a Dynatrace product expert (a real human!) for live assistance.</li>
+</ul>
+<h3 id="developer-resources">Developer resources<a class="headerlink" href="#developer-resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dynatrace Developer</strong> takes you to <a href="https://dt-url.net/developers">Dynatrace Developerï»¿</a>, a fantastic resource for tutorials, how-to guides, and technical references to get started with building apps.</li>
+<li><strong>Dynatrace API</strong> takes you to an API browser. From there, select a API definition from the <strong>Select a definition</strong> list to find the Dynatrace API you need. If you're familiar with Swagger, you'll feel at home.</li>
+<li><strong>Developer Forum</strong> takes you straight to the <a href="https://dt-url.net/rf23801">Dynatrace Developer forumï»¿</a> in the Dynatrace Community, where you can share some knowledge, ask questions, find the best answers, connect with others, and explore the best practices for creating apps on the Dynatrace Platform.</li>
+</ul>
+<h2 id="user-menu">User menu<a class="headerlink" href="#user-menu" title="Permanent link">&para;</a></h2>
+<p><img alt="Dock: User menu" src="https://dt-cdn.net/images/dock-all-4-bottom-user-280-46267f092c.png" /></p>
+<p>To open the user menu, select your name in the lower-left corner, at the bottom of the <a href="#dock">Dock</a>.</p>
+<ul>
+<li><strong>[your name]</strong> <img alt="Configurable" src="https://dt-cdn.net/images/configurable-490-8b015913d4.svg" title="Configurable" /> displays <strong>User settings</strong>, where you can change settings such as the display language, timezone, and light mode/dark mode.</li>
+<li><strong>Environments</strong> lists links to your available environments.</li>
+<li><strong>Appearance</strong> offers a quick switch to light, dark, or browser theme mode.</li>
+<li><strong>Account Management</strong> opens <a href="/docs/manage/account-management" title="Manage your Dynatrace license, subscriptions, and platform adoption and environment health.">Account Management</a> in a new tab.</li>
+<li><strong>Latest Dynatrace</strong> toggles the latest Dynatrace on and off.</li>
+<li><strong>Sign out</strong> signs you out of Dynatrace.</li>
+</ul>
+<h2 id="previous-dynatrace">Previous Dynatrace<a class="headerlink" href="#previous-dynatrace" title="Permanent link">&para;</a></h2>
+<p>If you haven't upgraded to the latest Dynatrace, the following sections describe basic navigation for the previous Dynatrace.</p>
+<p>Filter the menu</p>
+<p>Use the filter box above the menu to find and select Dynatrace pages.</p>
+<ol>
+<li>Enter a partial search string.</li>
+</ol>
+<p><img alt="Filter the menu" src="https://dt-cdn.net/images/filter-265-fc8901c349.png" />
+2. Select the best match.</p>
+<p><img alt="Select a menu item from the filter results" src="https://dt-cdn.net/images/filter-and-select-266-ac5a5c8210.png" /></p>
+<p>Save your favorites</p>
+<ul>
+<li>To add a Dynatrace page to your favorites, hover over the page name and select the star</li>
+</ul>
+<p><img alt="Add menu item to Favorites" src="https://dt-cdn.net/images/favorite-add-266-7262cf1304.png" />
+* To access a favorite, expand the <strong>Favorites</strong> section and select the page</p>
+<p><img alt="Select a menu item from Favorites" src="https://dt-cdn.net/images/favorite-select-266-ca63c732de.png" />
+* To remove a page from your favorites, select the star again</p>
+<p><img alt="Remove menu item from Favorites" src="https://dt-cdn.net/images/favorite-remove-264-6eb91e3ff5.png" /></p>
+<p>Expand and collapse menu sections</p>
+<ul>
+<li>To show the contents of a menu section, select the expand button.</li>
+</ul>
+<p><img alt="Expand menu section" src="https://dt-cdn.net/images/section-expand-261-70573d8144.png" />
+* To hide the contents of a menu section, select the collapse button.</p>
+<p><img alt="Collapse menu section" src="https://dt-cdn.net/images/section-collapse-261-d51061df78.png" /></p>
+<p>Hide or show the menu</p>
+<ul>
+<li>To hide the menu, select the arrow button above the menu.</li>
+</ul>
+<p><img alt="Hide menu" src="https://dt-cdn.net/images/menu-hide-2-271-588d75e5e9.png" />
+* To display the menu, select the menu button in the upper-left corner.</p>
+<p><img alt="Display the hidden menu" src="https://dt-cdn.net/images/menu-display-235-ba2b8a386f.png" /></p>
+<p>User menu</p>
+<p><img alt="Display the user menu" src="https://dt-cdn.net/images/user-menu-86-9ab2cd2961.png" /></p>
+<p>The contents of this user menu depend on your deployment type, configuration, and permissions.</p>
+<ul>
+<li>Go to the user menu for your own account information, to sign out, to switch between environments, and to get the latest Dynatrace news.</li>
+<li>If you have administration rights, select <strong>Account settings</strong> on the user menu to manage user, group, and account settings.</li>
+</ul>
+<hr />
+<h2 id="source-monitoring-environmentmd">Source: monitoring-environment.md<a class="headerlink" href="#source-monitoring-environmentmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: What is a monitoring environment?
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
+scraped: 2026-02-15T21:10:34.048339</p>
+<hr />
+<h1 id="what-is-a-monitoring-environment">What is a monitoring environment?<a class="headerlink" href="#what-is-a-monitoring-environment" title="Permanent link">&para;</a></h1>
+<h1 id="what-is-a-monitoring-environment_1">What is a monitoring environment?<a class="headerlink" href="#what-is-a-monitoring-environment_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>4-min read</li>
+<li>Published Dec 05, 2017</li>
+</ul>
+<p>Your Dynatrace monitoring environment is where all your Dynatrace performance analysis takes place. <a href="/docs/platform/oneagent" title="Learn the monitoring capabilities of OneAgent.">Dynatrace OneAgent</a> sends all captured monitoring data to your monitoring environment for analysis. A monitoring environment is analogous to an analysis server that provides all Dynatrace application-performance analysis functionality, including all dashboards, charts, reports and other tools.</p>
+<p><img alt="Dynatrace architecture" src="https://dt-cdn.net/images/dynatrace-architecture-1743-fab92236e8.png" /></p>
+<h2 id="monitoring-environment-location">Monitoring environment location<a class="headerlink" href="#monitoring-environment-location" title="Permanent link">&para;</a></h2>
+<p>Your monitoring environment location depends on your deployment type.</p>
+<table>
+<thead>
+<tr>
+<th>Deployment type</th>
+<th>Monitoring environment location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard SaaS</td>
+<td>In the Dynatrace cloud</td>
+</tr>
+<tr>
+<td>On-premises</td>
+<td>In your own data center</td>
+</tr>
+<tr>
+<td>Dynatrace for Government</td>
+<td>In the cloud with FedRAMP moderate authorization</td>
+</tr>
+</tbody>
+</table>
+<h2 id="environment-id">Environment ID<a class="headerlink" href="#environment-id" title="Permanent link">&para;</a></h2>
+<p>All external access to your Dynatrace monitoring environment relies on two credential types: an <em>environment ID</em> and an <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens" title="Learn the concept of an access token and its scopes.">access token</a>.</p>
+<p>Each environment that you monitor with Dynatrace is identified with a unique character stringâthe environment ID. The Dynatrace API relies heavily on environment IDs to ensure that it pulls monitoring data from and pushes relevant external events to the correct Dynatrace environments.</p>
+<ul>
+<li>In Dynatrace SaaS, your environment ID is the first part of your Dynatrace environment's URL:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://{your-environment-id}.live.dynatrace.com/
+</code></pre></div>
+<p>For example, for the Dynatrace environment <code>https://abc123a.dynatrace.com</code>, the environment ID is <code>abc123a</code>.</p>
+<p>You can also find your environment ID in <a href="/docs/manage/account-management" title="Manage your Dynatrace license, subscriptions, and platform adoption and environment health.">Account Management</a>.</p>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a>. If you have more than one account, select the account you want to manage.</li>
+<li>
+<p>Select <strong>Settings</strong> &gt; <strong>Environments</strong>.</p>
+<p>You can find the environment ID in the <strong>Environment</strong> column.</p>
+</li>
+</ol>
+<p>For example, for the URL address <code>https://managed-cluster/e/abc123a</code>, the environment ID is <code>abc123a</code>.</p>
+<h2 id="multiple-monitoring-environments">Multiple monitoring environments<a class="headerlink" href="#multiple-monitoring-environments" title="Permanent link">&para;</a></h2>
+<p>You can set up and monitor separate Dynatrace monitoring environments with a single Dynatrace account.</p>
+<p>When you set up multiple monitoring environments:</p>
+<ul>
+<li>Each monitoring environment shares the same user base and other account settings.</li>
+<li>The data collected from each monitoring environment is kept separate.</li>
+<li>It's easy to switch between monitoring views for separate environments to track the performance and availability of each environment.</li>
+</ul>
+<h3 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h3>
+<p>There are several reasons people choose to create separate monitoring environments.</p>
+<p>For example:</p>
+<ul>
+<li>You may want to monitor your organization's development, staging, and production environments separately.</li>
+<li>You may want to maintain a separate monitoring environment for each of your organization's data centers.</li>
+</ul>
+<h3 id="set-up-multiple-monitoring-environments">Set up multiple monitoring environments<a class="headerlink" href="#set-up-multiple-monitoring-environments" title="Permanent link">&para;</a></h3>
+<p>How you set up different monitoring environments depends on whether you use Dynatrace SaaS, Dynatrace Managed, or Dynatrace for Government.</p>
+<table>
+<thead>
+<tr>
+<th>Deployment type</th>
+<th>How set up different monitoring environments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SaaS</td>
+<td>Contact a Dynatrace product expert via live chat within your Dynatrace environment; the product expert will make sure you get the assistance you need.</td>
+</tr>
+<tr>
+<td>Managed</td>
+<td>You can use the Cluster Management Console. For details, see <a href="https://docs.dynatrace.com/managed/shortlink/managed-monitoring-environment">Managed - managed-monitoring-environmentï»¿</a>.</td>
+</tr>
+<tr>
+<td>Dynatrace for Government</td>
+<td>Contact your Dynatrace representative.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="connect-my-multiple-environments">Connect my multiple environments<a class="headerlink" href="#connect-my-multiple-environments" title="Permanent link">&para;</a></h3>
+<p>With multiple environments, monitoring data is strictly separated by design. Environments do not automatically receive information one from another.</p>
+<p>In some scenarios, however, you might need to connect your environments. For example:</p>
+<ul>
+<li>To trace calls between services monitored in different Dynatrace environments, you can configure cross-environment tracing. For details, see <a href="/docs/observe/application-observability/distributed-traces/analysis/connect-environments" title="Analyze requests across environment boundaries.">Set up cross-environment tracing</a>.</li>
+<li>To display metrics from remote environments on your local environment's dashboards, you can set up cross-environment dashboard tiles. For details, see <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment" title="Create dashboards that display data from multiple Dynatrace environments.">Create remote/multi-environment Dynatrace dashboards</a>.</li>
+</ul>
+<hr />
+<h2 id="source-serverless-monitoringmd">Source: serverless-monitoring.md<a class="headerlink" href="#source-serverless-monitoringmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Serverless monitoring
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
+scraped: 2026-02-15T21:12:54.143233</p>
+<hr />
+<h1 id="serverless-monitoring">Serverless monitoring<a class="headerlink" href="#serverless-monitoring" title="Permanent link">&para;</a></h1>
+<h1 id="serverless-monitoring_1">Serverless monitoring<a class="headerlink" href="#serverless-monitoring_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>3-min read</li>
+<li>Updated on Jan 28, 2026</li>
+</ul>
+<p>The term <strong>serverless</strong> defines the cloud services that share common characteristics:</p>
+<ul>
+<li>Heavily abstracted and <strong>not requiring the management of underlying infrastructure</strong></li>
+<li>Highly available and <strong>scaling elastically</strong> with your needs</li>
+<li>Billed on a <strong>pay-per-use</strong> (consumption) model</li>
+</ul>
+<p>While often used as a synonym for Functions-As-A-Service (FaaS), serverless cloud services span all sorts of services. The three most important categories are:</p>
+<ul>
+<li><strong>Serverless compute</strong>, including functions and containers, as well as managed Kubernetes</li>
+<li><strong>Serverless PaaS</strong> such as API gateways, messaging systems, or queues</li>
+<li><strong>Serverless databases</strong> and caches</li>
+</ul>
+<h2 id="observability-challenges">Observability challenges<a class="headerlink" href="#observability-challenges" title="Permanent link">&para;</a></h2>
+<p>The nature of serverless technologies creates some challenges for the effective observability of such cloud services:</p>
+<ul>
+<li>Heavily distributed, which makes distributed tracing a critical capability.</li>
+<li>Sandboxed environments, with limited capabilities to modify.</li>
+<li>Many different ways to capture telemetry.</li>
+<li>
+<p>Limitations of cloud provider native monitoring services</p>
+</li>
+<li>
+<p>Gaining an understanding of system behavior can be difficult, as telemetry is provided from many data sources and spread across multiple places.</p>
+</li>
+<li>Obtaining an end-to-end view can be difficult, especially when using hybrid or multi-cloud and third-party applications.</li>
+<li>Limited capabilities, missing critical capabilities such as real user monitoring, or profiling requiring additional tools.</li>
+<li>
+<p>New problem patterns:</p>
+</li>
+<li>
+<p>Cold start behavior</p>
+</li>
+<li>Cloud service provisioning optimizations</li>
+<li>Complex service limits and quotas</li>
+<li>Transient faults</li>
+</ul>
+<h2 id="serverless-observability-with-dynatrace">Serverless observability with Dynatrace<a class="headerlink" href="#serverless-observability-with-dynatrace" title="Permanent link">&para;</a></h2>
+<p>Through integrations with the three major public cloud service providers, Dynatrace is able to unify metric, metadata, event, log, and trace data, providing data-in-context and end-to-end visibility, while the power of Dynatrace Intelligence makes analysis of this data possible.</p>
+<p><img alt="Unified serverless telemetry" src="https://dt-cdn.net/images/unified-service-descr-630-f2484fd514.png" /></p>
+<p>With over <a href="https://www.dynatrace.com/hub/">600+ integrations, extensions, and technology-specific supportï»¿</a>, Dynatrace provides extensive monitoring support, including your <a href="/docs/ingest-from/technology-support/serverless-compute-services" title="Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS).">serverless technologies</a> running on AWS, Azure, or Google Cloud.</p>
+<h2 id="getting-started-with-serverless-monitoring">Getting started with serverless monitoring<a class="headerlink" href="#getting-started-with-serverless-monitoring" title="Permanent link">&para;</a></h2>
+<p>[<img alt="Step 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Step 1" /></p>
+<p><strong>Turn on cloud service monitoring</strong>](/docs/discover-dynatrace/get-started/serverless-monitoring#services "Serverless observability with Dynatrace")[<img alt="Step 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Step 2" /></p>
+<p><strong>Enable Dynatrace extensions on cloud services</strong>](/docs/discover-dynatrace/get-started/serverless-monitoring#extensions "Serverless observability with Dynatrace")[<img alt="Step 3" src="https://dt-cdn.net/images/step-3-350cf6c19a.svg" title="Step 3" /></p>
+<p><strong>Advanced visibility</strong>](/docs/discover-dynatrace/get-started/serverless-monitoring#advanced "Serverless observability with Dynatrace")</p>
+<h3 id="step-1-turn-on-cloud-service-monitoring">Step 1 Turn on cloud service monitoring<a class="headerlink" href="#step-1-turn-on-cloud-service-monitoring" title="Permanent link">&para;</a></h3>
+<p>With a single integration per cloud vendor, Dynatrace automatically discovers your cloud services and monitors the services to provide you with out-of-the-box service health and availability monitoring:</p>
+<ul>
+<li><a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics" title="Integrate metrics from Amazon CloudWatch.">Amazon CloudWatch integration</a></li>
+<li><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide" title="Set up and configure Azure monitoring in Dynatrace.">Azure Monitor integration</a></li>
+<li><a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new" title="Monitor Google Cloud services with Dynatrace and view available metrics.">Google Cloud operations suite integration</a></li>
+</ul>
+<h3 id="step-2-enable-dynatrace-extensions-on-cloud-services-that-provide-a-native-extensibility-mechanism">Step 2 Enable Dynatrace extensions on cloud services that provide a native extensibility mechanism<a class="headerlink" href="#step-2-enable-dynatrace-extensions-on-cloud-services-that-provide-a-native-extensibility-mechanism" title="Permanent link">&para;</a></h3>
+<p>Several cloud compute services allow a simple integration without the need to redeploy your service. This makes it easy to add deep service instrumentation for additional visibility.</p>
+<p>Visit Dynatrace Hub to see all services with a <a href="https://www.dynatrace.com/hub/?query=cloud-extension">cloud-native integrationï»¿</a>.</p>
+<h3 id="step-3-advanced-visibility">Step 3 Advanced visibility<a class="headerlink" href="#step-3-advanced-visibility" title="Permanent link">&para;</a></h3>
+<p>For instructions on how to integrate Dynatrace into your container image, or how to make use of OpenTelemetry or advanced visibility to enable additional details via logs and other telemetry events, see the service-specific tutorials in our documentation:</p>
+<ul>
+<li><a href="/docs/ingest-from/amazon-web-services" title="Set up and configure monitoring for Amazon Web Services.">Amazon Web Services</a></li>
+<li><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations" title="Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.">Azure Services</a></li>
+<li><a href="/docs/ingest-from/google-cloud-platform/gcp-integrations" title="Set up and configure Dynatrace on Google Cloud.">Google Cloud Services</a></li>
+</ul>
+<p>Be sure to watch for the recommendations within the Dynatrace web UI to enable additional telemetry sources that will improve the observability of your services. For example:</p>
+<p><img alt="Observability recommendations" src="https://dt-cdn.net/images/observability-hints-871-dd9d927caa.png" /></p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

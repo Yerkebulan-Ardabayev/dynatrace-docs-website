@@ -1,0 +1,1929 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/dynatrace-api__configuration-api/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dynatrace Documentation: dynatrace-api/configuration-api - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-documentation-dynatrace-apiconfiguration-api" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace Documentation: dynatrace-api/configuration-api
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-aws-privatelinkmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: aws-privatelink.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dynatrace-documentation-dynatrace-apiconfiguration-api">Dynatrace Documentation: dynatrace-api/configuration-api<a class="headerlink" href="#dynatrace-documentation-dynatrace-apiconfiguration-api" title="Permanent link">&para;</a></h1>
+<p>Generated: 2026-02-16</p>
+<p>Files combined: 10</p>
+<hr />
+<h2 id="source-aws-privatelinkmd">Source: aws-privatelink.md<a class="headerlink" href="#source-aws-privatelinkmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: AWS PrivateLink API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/aws-privatelink
+scraped: 2026-02-15T21:24:45.349664</p>
+<hr />
+<h1 id="aws-privatelink-api">AWS PrivateLink API<a class="headerlink" href="#aws-privatelink-api" title="Permanent link">&para;</a></h1>
+<h1 id="aws-privatelink-api_1">AWS PrivateLink API<a class="headerlink" href="#aws-privatelink-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Nov 19, 2020</li>
+</ul>
+<p>[### View configuration</p>
+<p>Get an overview of AWS PrivateLink.](/docs/dynatrace-api/configuration-api/aws-privatelink/get-configuration "Read the configuration of AWS PrivateLink via Dynatrace API.")[### Update configuration</p>
+<p>Update configuration of AWS PrivateLink.](/docs/dynatrace-api/configuration-api/aws-privatelink/put-configuration "Update the configuration of AWS PrivateLink via Dynatrace API.")</p>
+<p>[### View allowlist</p>
+<p>View accounts in the AWS PrivateLink allowlist.](/docs/dynatrace-api/configuration-api/aws-privatelink/get-allowlist "View the AWS PrivateLink allowlist via Dynatrace API.")[### Add to allowlist</p>
+<p>Add an account to the AWS PrivateLink allowlist.](/docs/dynatrace-api/configuration-api/aws-privatelink/put-allowlist "Add your AWS account to the AWS PrivateLink allowlist via Dynatrace API.")[### Remove from allowlist</p>
+<p>Remove and account from the AWS PrivateLink allowlist.](/docs/dynatrace-api/configuration-api/aws-privatelink/delete-allowlist "Remove your AWS account from the AWS PrivateLink allowlist via Dynatrace API.")</p>
+<hr />
+<h2 id="source-calculated-metricsmd">Source: calculated-metrics.md<a class="headerlink" href="#source-calculated-metricsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Calculated metrics API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/calculated-metrics
+scraped: 2026-02-15T21:15:12.128685</p>
+<hr />
+<h1 id="calculated-metrics-api">Calculated metrics API<a class="headerlink" href="#calculated-metrics-api" title="Permanent link">&para;</a></h1>
+<h1 id="calculated-metrics-api_1">Calculated metrics API<a class="headerlink" href="#calculated-metrics-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Apr 16, 2020</li>
+</ul>
+<h3 id="mobile-apps">Mobile apps<a class="headerlink" href="#mobile-apps" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics/get-all" title="View all calculated mobile apps metrics of your environment via the Dynatrace API.">View all mobile apps metrics</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics/get-metric" title="View a calculated mobile apps metric via the Dynatrace API.">View a mobile apps metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics/put-metric" title="Edit a calculated mobile apps metric via the Dynatrace API.">Edit a mobile apps metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics/del-metric" title="Delete a calculated mobile apps metric via the Dynatrace API.">Delete a mobile apps metric</a></li>
+</ul>
+<h3 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics/get-all" title="View all calculated service metrics of your environment via the Dynatrace API.">View all service metrics</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics/get-calculated-metric" title="View a calculated service metric via the Dynatrace API.">View a service metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics/post-calculated-metric" title="Create a calculated service metric via the Dynatrace API.">Create a service metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics/put-calculated-metric" title="Update a calculated service metric via the Dynatrace API.">Edit a service metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics/del-calculated-metric" title="Delete a calculated service metric via the Dynatrace API.">Delete a service metric</a></li>
+</ul>
+<h4 id="metrics-on-grail">Metrics on Grail<a class="headerlink" href="#metrics-on-grail" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics/get-metrics-on-grail" title="View calculated service metrics enabled on Grail via the Dynatrace API.">View all metrics on Grail</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics/put-metric-on-grail" title="Enable or disable a calculated service metric via the Dynatrace API.">Edit a metric on Grail</a></li>
+</ul>
+<h3 id="synthetic">Synthetic<a class="headerlink" href="#synthetic" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/get-all" title="View all calculated synthetic metrics of your environment via the Dynatrace API.">View all synthetic metrics</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/get-metric" title="View a calculated synthetic metric via the Dynatrace API.">View a synthetic metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/post-metric" title="Create a calculated synthetic metric via the Dynatrace API.">Create a synthetic metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/put-metric" title="Edit a calculated synthetic metric via the Dynatrace API.">Edit a synthetic metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/del-metric" title="Delete a calculated synthetic metric via the Dynatrace API.">Delete a synthetic metric</a></li>
+</ul>
+<h3 id="web-application">Web application<a class="headerlink" href="#web-application" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/rum-metrics/get-all" title="View all calculated web application metrics of your environment via the Dynatrace API.">View all web application metrics</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/rum-metrics/get-metric" title="View a calculated web application metric via the Dynatrace API.">View a web application metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/rum-metrics/put-metric" title="Edit a calculated web application metric via the Dynatrace API.">Edit a web application metric</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/calculated-metrics/rum-metrics/del-metric" title="Delete a calculated web application metric via the Dynatrace API.">Delete a web application metric</a></li>
+</ul>
+<hr />
+<h2 id="source-put-monitoring-configurationmd">Source: put-monitoring-configuration.md<a class="headerlink" href="#source-put-monitoring-configurationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: OneAgent monitoring configuration API - PUT configuration
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-monitoring/put-monitoring-configuration
+scraped: 2026-02-06T16:31:13.607418</p>
+<hr />
+<h1 id="oneagent-monitoring-configuration-api-put-configuration">OneAgent monitoring configuration API - PUT configuration<a class="headerlink" href="#oneagent-monitoring-configuration-api-put-configuration" title="Permanent link">&para;</a></h1>
+<h1 id="oneagent-monitoring-configuration-api-put-configuration_1">OneAgent monitoring configuration API - PUT configuration<a class="headerlink" href="#oneagent-monitoring-configuration-api-put-configuration_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Updated on Jun 23, 2022</li>
+<li>Deprecated</li>
+</ul>
+<p>This API is deprecated. Use the <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a> with the <strong>Monitoring</strong> (<code>builtin:host.monitoring</code>) schema instead.</p>
+<p>Updates the monitoring configuration of OneAgent on the specified host.</p>
+<p>The request consumes an <code>application/json</code> payload.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUT</td>
+<td>SaaS</td>
+<td><code>https://{your-environment-id}.live.dynatrace.com/api/config/v1/hosts/{id}/monitoring</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Environment ActiveGate</td>
+<td><code>https://{your-activegate-domain}:9999/e/{your-environment-id}/api/config/v1/hosts/{id}/monitoring</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<p>To execute this request, you need an access token with <code>WriteConfig</code> scope.</p>
+<p>To learn how to obtain and use it, see <a href="/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication">Tokens and authentication</a>.</p>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>In</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The Dynatrace entity ID of the required host.</td>
+<td>path</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>body</td>
+<td><a href="#openapi-definition-MonitoringConfig">MonitoringConfig</a></td>
+<td>The JSON body of the request. Contains OneAgent monitoring parameters.</td>
+<td>body</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-body-objects">Request body objects<a class="headerlink" href="#request-body-objects" title="Permanent link">&para;</a></h3>
+<h4 id="the-monitoringconfig-object">The <code>MonitoringConfig</code> object<a class="headerlink" href="#the-monitoringconfig-object" title="Permanent link">&para;</a></h4>
+<p>Monitoring configuration of OneAgent.</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autoInjectionEnabled</td>
+<td>boolean</td>
+<td>Code modules will be injected automatically into monitored applications if this setting is enabled. This setting won't apply if auto-injection is disabled via oneagentctl (see https://dt-url.net/oneagentctl).</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The Dynatrace entity ID of the host where OneAgent is deployed.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td><a href="#openapi-definition-ConfigurationMetadata">ConfigurationMetadata</a></td>
+<td>Metadata useful for debugging</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>monitoringEnabled</td>
+<td>boolean</td>
+<td>The monitoring is enabled (<code>true</code>) or disabled (<code>false</code>).</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>monitoringMode</td>
+<td>string</td>
+<td>The monitoring mode for the host: full stack or infrastructure only. The element can hold these values * <code>CLOUD_INFRASTRUCTURE</code> * <code>DISCOVERY</code> * <code>FULL_STACK</code></td>
+<td>Required</td>
+</tr>
+</tbody>
+</table>
+<h4 id="the-configurationmetadata-object">The <code>ConfigurationMetadata</code> object<a class="headerlink" href="#the-configurationmetadata-object" title="Permanent link">&para;</a></h4>
+<p>Metadata useful for debugging</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clusterVersion</td>
+<td>string</td>
+<td>Dynatrace version.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>configurationVersions</td>
+<td>integer[]</td>
+<td>A sorted list of the version numbers of the configuration.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>currentConfigurationVersions</td>
+<td>string[]</td>
+<td>A sorted list of version numbers of the configuration.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-body-json-model">Request body JSON model<a class="headerlink" href="#request-body-json-model" title="Permanent link">&para;</a></h3>
+<p>This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>&quot;autoInjectionEnabled&quot;: true,
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>&quot;id&quot;: &quot;HOST-0123456789ABCDE&quot;,
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;metadata&quot;: {
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>&quot;clusterVersion&quot;: &quot;1.192.1&quot;,
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>&quot;configurationVersions&quot;: [
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>4,
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>2
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>],
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>&quot;currentConfigurationVersions&quot;: [
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>&quot;1.0.4&quot;,
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>&quot;1.23&quot;
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>]
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>},
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>&quot;monitoringEnabled&quot;: true,
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>&quot;monitoringMode&quot;: &quot;FULL_STACK&quot;
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>}
+</code></pre></div>
+<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
+<h3 id="response-codes">Response codes<a class="headerlink" href="#response-codes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>204</strong></td>
+<td>-</td>
+<td>Success. The configuration has been updated. Response doesn't have a body.</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td><a href="#openapi-definition-ErrorEnvelope">ErrorEnvelope</a></td>
+<td>Failed. The input is invalid</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-body-objects">Response body objects<a class="headerlink" href="#response-body-objects" title="Permanent link">&para;</a></h3>
+<h4 id="the-errorenvelope-object">The <code>ErrorEnvelope</code> object<a class="headerlink" href="#the-errorenvelope-object" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td><a href="#openapi-definition-Error">Error</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="the-error-object">The <code>Error</code> object<a class="headerlink" href="#the-error-object" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>The HTTP status code</td>
+</tr>
+<tr>
+<td>constraintViolations</td>
+<td><a href="#openapi-definition-ConstraintViolation">ConstraintViolation[]</a></td>
+<td>A list of constraint violations</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>The error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="the-constraintviolation-object">The <code>ConstraintViolation</code> object<a class="headerlink" href="#the-constraintviolation-object" title="Permanent link">&para;</a></h4>
+<p>A list of constraint violations</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td>string</td>
+<td>-</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>-</td>
+</tr>
+<tr>
+<td>parameterLocation</td>
+<td>string</td>
+<td>-The element can hold these values * <code>HEADER</code> * <code>PATH</code> * <code>PAYLOAD_BODY</code> * <code>QUERY</code></td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-body-json-models">Response body JSON models<a class="headerlink" href="#response-body-json-models" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&quot;error&quot;: {
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>&quot;code&quot;: 1,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&quot;constraintViolations&quot;: [
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>{
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>&quot;location&quot;: &quot;string&quot;,
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>&quot;message&quot;: &quot;string&quot;,
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>&quot;parameterLocation&quot;: &quot;HEADER&quot;,
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>&quot;path&quot;: &quot;string&quot;
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>}
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>],
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>&quot;message&quot;: &quot;string&quot;
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>}
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>}
+</code></pre></div>
+<h2 id="validate-payload">Validate payload<a class="headerlink" href="#validate-payload" title="Permanent link">&para;</a></h2>
+<p>We recommend that you validate the payload before submitting it with an actual request. A response code of <strong>204</strong> indicates a valid payload.</p>
+<p>The request consumes an <code>application/json</code> payload.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>SaaS</td>
+<td><code>https://{your-environment-id}.live.dynatrace.com/api/config/v1/hosts/{id}/monitoring/validator</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Environment ActiveGate</td>
+<td><code>https://{your-activegate-domain}:9999/e/{your-environment-id}/api/config/v1/hosts/{id}/monitoring/validator</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="authentication_1">Authentication<a class="headerlink" href="#authentication_1" title="Permanent link">&para;</a></h3>
+<p>To execute this request, you need an access token with <code>WriteConfig</code> scope.</p>
+<p>To learn how to obtain and use it, see <a href="/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication">Tokens and authentication</a>.</p>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
+<h4 id="response-codes_1">Response codes<a class="headerlink" href="#response-codes_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>204</strong></td>
+<td>-</td>
+<td>Validated. The submitted configuration is valid. Response doesn't have a body.</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td><a href="#openapi-definition-ErrorEnvelope">ErrorEnvelope</a></td>
+<td>Failed. The input is invalid</td>
+</tr>
+</tbody>
+</table>
+<h4 id="response-body-objects_1">Response body objects<a class="headerlink" href="#response-body-objects_1" title="Permanent link">&para;</a></h4>
+<h4 id="the-errorenvelope-object_1">The <code>ErrorEnvelope</code> object<a class="headerlink" href="#the-errorenvelope-object_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td><a href="#openapi-definition-Error">Error</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="the-error-object_1">The <code>Error</code> object<a class="headerlink" href="#the-error-object_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>The HTTP status code</td>
+</tr>
+<tr>
+<td>constraintViolations</td>
+<td><a href="#openapi-definition-ConstraintViolation">ConstraintViolation[]</a></td>
+<td>A list of constraint violations</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>The error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="the-constraintviolation-object_1">The <code>ConstraintViolation</code> object<a class="headerlink" href="#the-constraintviolation-object_1" title="Permanent link">&para;</a></h4>
+<p>A list of constraint violations</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td>string</td>
+<td>-</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>-</td>
+</tr>
+<tr>
+<td>parameterLocation</td>
+<td>string</td>
+<td>-The element can hold these values * <code>HEADER</code> * <code>PATH</code> * <code>PAYLOAD_BODY</code> * <code>QUERY</code></td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="response-body-json-models_1">Response body JSON models<a class="headerlink" href="#response-body-json-models_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&quot;error&quot;: {
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>&quot;code&quot;: 1,
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&quot;constraintViolations&quot;: [
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>{
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>&quot;location&quot;: &quot;string&quot;,
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>&quot;message&quot;: &quot;string&quot;,
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>&quot;parameterLocation&quot;: &quot;HEADER&quot;,
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>&quot;path&quot;: &quot;string&quot;
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>}
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>],
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>&quot;message&quot;: &quot;string&quot;
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>}
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>}
+</code></pre></div>
+<hr />
+<h2 id="source-content-resourcesmd">Source: content-resources.md<a class="headerlink" href="#source-content-resourcesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Content resources API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/content-resources
+scraped: 2026-02-15T21:23:03.229016</p>
+<hr />
+<h1 id="content-resources-api">Content resources API<a class="headerlink" href="#content-resources-api" title="Permanent link">&para;</a></h1>
+<h1 id="content-resources-api_1">Content resources API<a class="headerlink" href="#content-resources-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Sep 23, 2020</li>
+</ul>
+<p>The <strong>Content resources</strong> API enables you to manage the configuration of content providers. You can also manage the same configuration in the Dynatrace UI at <strong>Settings &gt; Web and mobile monitoring &gt; Content resources</strong>.</p>
+<p>[### View configuration</p>
+<p>Get an overview of content providers configuration.](/docs/dynatrace-api/configuration-api/rum/content-resources/get-configuration "Read the configuration of content providers via the Dynatrace API.")[### Update configuration</p>
+<p>Update configuration of content providers.](/docs/dynatrace-api/configuration-api/rum/content-resources/put-configuration "Update the configuration of content providers via the Dynatrace API.")</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/observe/digital-experience/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web" title="Manually define third-party and CDN providers along with auto-detected providers for your web applications.">Configure first-party, third-party, and CDN resource detection for web applications</a></li>
+<li><a href="/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-third-party-and-cdn-content-detection-mobile" title="Manually define third-party and CDN providers along with auto-detected providers for your mobile applications.">Configure first-party, third-party, and CDN resource detection for mobile applications</a></li>
+<li><a href="/docs/observe/digital-experience/custom-applications/additional-configuration/configure-third-party-and-cdn-content-detection-custom" title="Manually define third-party and CDN providers along with auto-detected providers for your custom applications.">Configure first-party, third-party, and CDN resource detection for custom applications</a></li>
+</ul>
+<hr />
+<h2 id="source-geographic-regions-ip-addressmd">Source: geographic-regions-ip-address.md<a class="headerlink" href="#source-geographic-regions-ip-addressmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Geographic regions - IP address mapping rules API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address
+scraped: 2026-02-15T09:06:33.210172</p>
+<hr />
+<h1 id="geographic-regions-ip-address-mapping-rules-api">Geographic regions - IP address mapping rules API<a class="headerlink" href="#geographic-regions-ip-address-mapping-rules-api" title="Permanent link">&para;</a></h1>
+<h1 id="geographic-regions-ip-address-mapping-rules-api_1">Geographic regions - IP address mapping rules API<a class="headerlink" href="#geographic-regions-ip-address-mapping-rules-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Sep 24, 2020</li>
+</ul>
+<p>The <strong>Geographic regions - IP address mapping rules</strong> API enables you to manage the configuration of IP address mapping to geographic locations. You can also manage the same configuration in the Dynatrace UI at <strong>Settings &gt; Web and mobile monitoring &gt; Map IP addresses to locations</strong>.</p>
+<p>[### View configuration</p>
+<p>Get an overview of IP address mappings.](/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address/get-configuration "Read the configuration of IP address mapping via the Dynatrace API.")[### Update configuration</p>
+<p>Update configuration of IP address mappings.](/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address/put-configuration "Update the configuration of IP address mapping via the Dynatrace API.")</p>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web" title="Configure Dynatrace to use local addresses to understand where the users of your web applications are.">Map internal IP addresses to locations for web applications</a></li>
+<li><a href="/docs/observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile" title="Configure Dynatrace to use local addresses to understand where the users of your mobile applications are.">Map internal IP addresses to locations for mobile applications</a></li>
+<li><a href="/docs/observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom" title="Configure Dynatrace to use local addresses to understand where the users of your custom applications are.">Map internal IP addresses to locations for custom applications</a></li>
+</ul>
+<hr />
+<h2 id="source-geographic-regions-ip-headermd">Source: geographic-regions-ip-header.md<a class="headerlink" href="#source-geographic-regions-ip-headermd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Geographic regions - IP mapping headers API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-header
+scraped: 2026-02-15T21:22:41.001266</p>
+<hr />
+<h1 id="geographic-regions-ip-mapping-headers-api">Geographic regions - IP mapping headers API<a class="headerlink" href="#geographic-regions-ip-mapping-headers-api" title="Permanent link">&para;</a></h1>
+<h1 id="geographic-regions-ip-mapping-headers-api_1">Geographic regions - IP mapping headers API<a class="headerlink" href="#geographic-regions-ip-mapping-headers-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Sep 24, 2020</li>
+</ul>
+<p>The <strong>Geographic regions - IP mapping headers</strong> API enables you to manage the configuration of IP address mapping to geographic locations. You can also manage the same configuration in the Dynatrace UI at <strong>Settings &gt; Web and mobile monitoring &gt; IP determination</strong>.</p>
+<p>[### View configuration</p>
+<p>Get an overview of IP address mappings.](/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-header/get-configuration "Read the configuration of IP mapping headers via the Dynatrace API.")[### Update configuration</p>
+<p>Update configuration of IP address mappings.](/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-header/put-configuration "Update the configuration of IP mapping headers via the Dynatrace API.")</p>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/observe/digital-experience/web-applications/additional-configuration/customize-ip-address-detection-web" title="Change the way Dynatrace determines client IP addresses for your web applications.">Customize IP address detection for web applications</a></li>
+<li><a href="/docs/observe/digital-experience/mobile-applications/additional-configuration/customize-ip-address-detection-mobile" title="Change the way Dynatrace determines client IP addresses for your mobile applications.">Customize IP address detection for mobile applications</a></li>
+<li><a href="/docs/observe/digital-experience/custom-applications/additional-configuration/customize-ip-address-detectio-custom" title="Change the way Dynatrace determines client IP addresses for your custom applications.">Customize IP address detection for custom applications</a></li>
+</ul>
+<hr />
+<h2 id="source-mobile-custom-app-configurationmd">Source: mobile-custom-app-configuration.md<a class="headerlink" href="#source-mobile-custom-app-configurationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Mobile and custom app API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration
+scraped: 2026-02-15T21:28:59.613866</p>
+<hr />
+<h1 id="mobile-and-custom-app-api">Mobile and custom app API<a class="headerlink" href="#mobile-and-custom-app-api" title="Permanent link">&para;</a></h1>
+<h1 id="mobile-and-custom-app-api_1">Mobile and custom app API<a class="headerlink" href="#mobile-and-custom-app-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Nov 05, 2020</li>
+</ul>
+<p>[### List all apps</p>
+<p>Get an overview of all mobile and custom apps.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/get-all "List all mobile and custom apps applications via the Dynatrace API.")[### View an app</p>
+<p>Get parameters of an app by its ID.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/get-app "View parameters of a mobile or custom app via the Dynatrace API.")</p>
+<p>[### Create an app</p>
+<p>Create a new mobile or custom app with the exact parameters you need.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/post-app "Create a mobile or custom app via the Dynatrace API.")[### Edit an app</p>
+<p>Update an existing mobile or custom application or create a new app with the specified ID.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/put-app "Update parameters of a mobile or custom app via the Dynatrace API.")[### Delete an app</p>
+<p>Delete an app you don't need anymore.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/delete-app "Delete a mobile or custom app via the Dynatrace API.")</p>
+<p>[### View key user actions</p>
+<p>Get the list of key user actions in the specified application.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/get-configuration "View key user actions of a mobile or custom app via the Dynatrace API.")[### Edit key user actions list</p>
+<p>Mark a user action as the key action in the specified application.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/post-configuration "Add a key user action to a mobile or custom app via the Dynatrace API.")[### Delete a key user action</p>
+<p>Remove a user action from the list of key actions in the specified application.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/del-configuration "Remove a key user action from a mobile or custom app via the Dynatrace API.")</p>
+<p>[### List all user session properties</p>
+<p>Get an overview of all session properties of an app.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/get-all "View all user session properties a mobile or custom app via the Dynatrace API.")[### View a user session property</p>
+<p>Get parameters of a session property its ID.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/get-property "View user session property a mobile or custom app via the Dynatrace API.")</p>
+<p>[### Create a user session property</p>
+<p>Create a new user session property for your mobile or custom app.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/post-property "Create user session property a mobile or custom app via the Dynatrace API.")[### Edit a user session property</p>
+<p>Update an existing user session property for your mobile or custom app.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/put-property "Update user session property a mobile or custom app via the Dynatrace API.")[### Delete a user session property</p>
+<p>Delete a user session property you don't need anymore.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/delete-property "Delete user session property a mobile or custom app via the Dynatrace API.")</p>
+<hr />
+<h2 id="source-detection-rulesmd">Source: detection-rules.md<a class="headerlink" href="#source-detection-rulesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Service detection API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/detection-rules
+scraped: 2026-02-15T21:15:39.332416</p>
+<hr />
+<h1 id="service-detection-api">Service detection API<a class="headerlink" href="#service-detection-api" title="Permanent link">&para;</a></h1>
+<h1 id="service-detection-api_1">Service detection API<a class="headerlink" href="#service-detection-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Jun 19, 2019</li>
+</ul>
+<p>The <strong>Rule-based service detection</strong> API enables you to manage the configuration of service detection rules.</p>
+<h3 id="list-all">List all<a class="headerlink" href="#list-all" title="Permanent link">&para;</a></h3>
+<p>Get an overview of all service detection rules for:</p>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/get-all" title="View all service detection rules for full web requests via the Dynatrace API.">Full web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/get-all" title="View all service detection rules for opaque and external web requests via the Dynatrace API.">Opaque web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/get-all" title="View all service detection rules for full web services via the Dynatrace API.">Full web services</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/get-all" title="View all service detection rules for external and opaque web services via the Dynatrace API.">Opaque web services</a></li>
+</ul>
+<h3 id="view-a-rule">View a rule<a class="headerlink" href="#view-a-rule" title="Permanent link">&para;</a></h3>
+<p>Get parameters of a service detection rule for:</p>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/get-a-rule" title="View a service detection rule for full web requests via the Dynatrace API.">Full web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/get-a-rule" title="View a service detection rule for opaque and external web requests via the Dynatrace API.">Opaque web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/get-a-rule" title="View a service detection rule for full web services via the Dynatrace API.">Full web services</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/get-rule" title="View a service detection rule for external and opaque web services via the Dynatrace API.">Opaque web services</a></li>
+</ul>
+<h3 id="reorder-rules">Reorder rules<a class="headerlink" href="#reorder-rules" title="Permanent link">&para;</a></h3>
+<p>Service detection rules are evaluated one after another. The first matching rule is applied and further processing stops. Reorder service detection rules to achieve the order of evaluation you need.</p>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/reorder-rules" title="Reorder service detection rules for full web requests via the Dynatrace API.">Full web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/reorder-rules" title="Reorder service detection rules for opaque and external web requests via the Dynatrace API.">Opaque web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/reorder-rules" title="Reorder service detection rules for full web services via the Dynatrace API.">Full web services</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/reorder-rules" title="Reorder service detection rules for external and opaque web services via the Dynatrace API.">Opaque web services</a></li>
+</ul>
+<h3 id="create-a-rule">Create a rule<a class="headerlink" href="#create-a-rule" title="Permanent link">&para;</a></h3>
+<p>Create a new service detection rule for:</p>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/post-a-rule" title="Create a service detection rule for full web requests via the Dynatrace API.">Full web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/post-a-rule" title="Create a service detection rule for opaque and external web requests via the Dynatrace API.">Opaque web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/post-a-rule" title="Create a service detection rule for full web services via the Dynatrace API.">Full web services</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/post-rule" title="Create a service detection rule for external and opaque web services via the Dynatrace API.">Opaque web services</a></li>
+</ul>
+<h3 id="edit-a-rule">Edit a rule<a class="headerlink" href="#edit-a-rule" title="Permanent link">&para;</a></h3>
+<p>Update an existing service detection rule or create a new rule with the specified ID.</p>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/put-a-rule" title="Edit a service detection rule for full web requests via the Dynatrace API.">Full web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/put-a-rule" title="Edit a service detection rule for opaque and external web requests via the Dynatrace API.">Opaque web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/put-a-rule" title="Edit a service detection rule for full web services via the Dynatrace API.">Full web services</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/put-rule" title="Edit a service detection rule for external and opaque web services via the Dynatrace API.">Opaque web services</a></li>
+</ul>
+<h3 id="delete-a-rule">Delete a rule<a class="headerlink" href="#delete-a-rule" title="Permanent link">&para;</a></h3>
+<p>Delete a service detection rule you don't need anymore.</p>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/del-a-rule" title="Delete a service detection rule for full web requests via the Dynatrace API.">Full web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/del-a-rule" title="Delete a service detection rule for opaque and external web requests via the Dynatrace API.">Opaque web requests</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/del-a-rule" title="Delete a service detection rule for full web services via the Dynatrace API.">Full web services</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/delete-rule" title="Delete a service detection rule for external and opaque web services via the Dynatrace API.">Opaque web services</a></li>
+</ul>
+<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/observe/application-observability/services/service-detection/service-detection-v1" title="Find out how Dynatrace Service Detection v1 detects and names different types of services.">Service Detection v1</a></li>
+</ul>
+<hr />
+<h2 id="source-failure-detectionmd">Source: failure-detection.md<a class="headerlink" href="#source-failure-detectionmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Failure detection API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/failure-detection
+scraped: 2026-02-15T09:11:33.434930</p>
+<hr />
+<h1 id="failure-detection-api">Failure detection API<a class="headerlink" href="#failure-detection-api" title="Permanent link">&para;</a></h1>
+<h1 id="failure-detection-api_1">Failure detection API<a class="headerlink" href="#failure-detection-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Jan 11, 2021</li>
+</ul>
+<p>[### List all parameter sets</p>
+<p>Get an overview of all parameter sets for failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-all "View all failure detection parameter sets of your monitoring environment via the Dynatrace API.")[### View a parameter set</p>
+<p>View the configuration of all parameter sets for failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-parameter-set "View a failure detection parameter set via the Dynatrace API.")</p>
+<p>[### Create a parameter set</p>
+<p>Create a new parameter set for failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/post-parameter-set "Create a failure detection parameter set via the Dynatrace API.")</p>
+<h3 id="edit-a-parameter-set">Edit a parameter set<a class="headerlink" href="#edit-a-parameter-set" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/put-parameter-set" title="Edit a failure detection parameter set via the Dynatrace API.">Update an existing parameter set</a> for failure detection rules.</li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/change-id" title="Change the ID of a failure detection parameter set via the Dynatrace API.">Change the ID</a> of a parameter set.</li>
+</ul>
+<p>[### Delete a parameter set</p>
+<p>Delete a parameter set for failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/delete-parameter-set "Delete a failure detection parameter set via the Dynatrace API.")</p>
+<p>[### List all rules</p>
+<p>Get an overview of all failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-all "View all failure detection rules of your monitoring environment via the Dynatrace API.")[### View a rule</p>
+<p>View the configuration of a failure detection rule.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-rule "View a failure detection rule via the Dynatrace API.")[### Reorder rules</p>
+<p>Failure detection rules are evaluated one after another. The first matching rule is applied, and further processing stops.</p>
+<p>Reorder the rules to achieve the order of evaluation you need.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/reorder-rules "Change the order of failure detection rules via the Dynatrace API.")[### Create a rule</p>
+<p>Create a new failure detection rule.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/post-rule "Create a failure detection rule via the Dynatrace API.")</p>
+<h3 id="edit-a-rule_1">Edit a rule<a class="headerlink" href="#edit-a-rule_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/put-rule" title="Edit a failure detection rule via the Dynatrace API.">Update an existing</a> failure detection rule.</li>
+<li><a href="/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/change-id" title="Change the ID of a failure detection rule via the Dynatrace API.">Change the ID</a> of a rule.</li>
+</ul>
+<p>[### Delete a rule</p>
+<p>Delete a failure detection rule you don't need anymore.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/delete-rule "Delete a failure detection rule via the Dynatrace API.")</p>
+<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection" title="Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.">Configure service failure detection</a></li>
+</ul>
+<hr />
+<h2 id="source-request-attributes-apimd">Source: request-attributes-api.md<a class="headerlink" href="#source-request-attributes-apimd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Request attributes API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/request-attributes-api
+scraped: 2026-02-15T21:15:10.892876</p>
+<hr />
+<h1 id="request-attributes-api">Request attributes API<a class="headerlink" href="#request-attributes-api" title="Permanent link">&para;</a></h1>
+<h1 id="request-attributes-api_1">Request attributes API<a class="headerlink" href="#request-attributes-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Dec 05, 2018</li>
+</ul>
+<p>The <strong>Request attributes</strong> API enables you to manage the configuration of <a href="/docs/observe/application-observability/services/request-attributes" title="Understand what request attributes are and learn how to use them across all levels of all service-analysis views.">request attributes</a>.</p>
+<p>[### List all</p>
+<p>Get an overview of all request attributes.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/get-all "View all request attributes of your environment via the Dynatrace API.")[### View a request attribute</p>
+<p>Get parameters of a request attribute by its ID.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/get-request-attribute "View a request attribute via the Dynatrace API.")</p>
+<p>[### Create a request attribute</p>
+<p>Create a new request attribute with the exact parameters you need.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/post-request-attribute "Create a request attribute via the Dynatrace API.")[### Edit a request attribute</p>
+<p>Update an existing request attribute or create a new request attribute with the specified ID.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/put-request-attribute "Update a request attribute via the Dynatrace API.")[### Delete a request attribute</p>
+<p>Delete a request attribute you don't need anymore.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/del-request-attribute "Delete a request attribute via the Dynatrace API.")</p>
+<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/observe/application-observability/services/request-attributes" title="Understand what request attributes are and learn how to use them across all levels of all service-analysis views.">Request attributes</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

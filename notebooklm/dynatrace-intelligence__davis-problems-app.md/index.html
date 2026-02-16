@@ -1,0 +1,1428 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/dynatrace-intelligence__davis-problems-app.md/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dynatrace Documentation: dynatrace-intelligence/davis-problems-app.md - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-documentation-dynatrace-intelligencedavis-problems-appmd" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace Documentation: dynatrace-intelligence/davis-problems-app.md
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-davis-problems-appmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: davis-problems-app.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dynatrace-documentation-dynatrace-intelligencedavis-problems-appmd">Dynatrace Documentation: dynatrace-intelligence/davis-problems-app.md<a class="headerlink" href="#dynatrace-documentation-dynatrace-intelligencedavis-problems-appmd" title="Permanent link">&para;</a></h1>
+<p>Generated: 2026-02-16</p>
+<p>Files combined: 1</p>
+<hr />
+<h2 id="source-davis-problems-appmd">Source: davis-problems-app.md<a class="headerlink" href="#source-davis-problems-appmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Problems app
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
+scraped: 2026-02-15T21:08:18.691739</p>
+<hr />
+<h1 id="problems-app">Problems app<a class="headerlink" href="#problems-app" title="Permanent link">&para;</a></h1>
+<h1 id="problems-app_1">Problems app<a class="headerlink" href="#problems-app_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>App</li>
+<li>15-min read</li>
+<li>Updated on Jan 28, 2026</li>
+</ul>
+<p>Quickly triaging, investigating, and remediating incoming incidents is the core challenge for operations teams. <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> supports them by automatically analyzing complex incidents, collecting all the context, and presenting the root cause and impact within a consistent view.</p>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>, backed by data from Grail and Dynatrace Intelligence analysis, helps operational and site reliability teams reduce the mean time to repair (MTTR) by presenting every aspect of the incident.</p>
+<p>Prerequisites</p>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
+<p>The following table describes the required permissions.</p>
+<p>Permission</p>
+<p>Description</p>
+<p>business-analytics:business-flows:read</p>
+<p>Read evaluation of affected Business Flows</p>
+<p>davis-copilot:conversations:execute</p>
+<p>Execute copilot conversations</p>
+<p>davis-copilot:document-search:execute</p>
+<p>Execute copilot document search</p>
+<p>davis:analyzers:execute</p>
+<p>Execute problem details analyzer</p>
+<p>document:documents:read</p>
+<p>Read documents from Doc workflow</p>
+<p>document:documents:write</p>
+<p>Write documents in Doc workflow</p>
+<p>document:documents:delete</p>
+<p>Delete documents from Doc workflow</p>
+<p>notification:notifications:read</p>
+<p>Read notifications for alerting on saved filters</p>
+<p>notification:notifications:write</p>
+<p>Save notifications for alerting on saved filters</p>
+<p>settings:objects:read</p>
+<p>Read settings objects from Environment API</p>
+<p>10</p>
+<p>rows per page</p>
+<p>Page</p>
+<p>1</p>
+<p>of 1</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Make sure the app is <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">installed in your environment</a>.</p>
+<p>Get started</p>
+<p>Use cases</p>
+<h2 id="aim-and-context">Aim and context<a class="headerlink" href="#aim-and-context" title="Permanent link">&para;</a></h2>
+<p>This page shows you how to use <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> to triage detected problems and investigate their root cause and impact.</p>
+<h2 id="target-audience">Target audience<a class="headerlink" href="#target-audience" title="Permanent link">&para;</a></h2>
+<p>This page is written for:</p>
+<ul>
+<li>Operations engineers</li>
+<li>Pipeline engineers</li>
+<li>Systems engineers</li>
+<li>Site reliability engineers (SREs)</li>
+<li>Build automation engineers</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p><strong>Problems</strong> <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> streamlines triage, analysis, and remediation of active incidents by reducing the MTTR. It allows you to focus on AI-detected problems and quickly navigate to their root cause.</p>
+<ul>
+<li>The data provided by Grail and DQL makes it possible to slice and dice all problem-related information for huge amounts of problems and events.</li>
+<li>Integration with context-specific Dynatrace apps allows you to analyze problems without the need to switch the context.</li>
+</ul>
+<h2 id="investigate-and-remediate-active-problems">Investigate and remediate active problems<a class="headerlink" href="#investigate-and-remediate-active-problems" title="Permanent link">&para;</a></h2>
+<h3 id="set-focus-and-triage">Set focus and triage<a class="headerlink" href="#set-focus-and-triage" title="Permanent link">&para;</a></h3>
+<p>By default, <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> shows:</p>
+<ul>
+<li>A feed of all problems in the last 2 hours. To help operation teams spot open problems regardless of which filter is set, open problems remain on top of the feed no matter how long they are open.</li>
+<li>A problem chart at the top visualizes any abnormality with a high number of problems in the past. Select a peak on the chart to drill into it and investigate further.</li>
+</ul>
+<p><img alt="Problems app - problem feed view" src="https://dt-cdn.net/images/problem-table-1920-1ff1983035.webp" /></p>
+<h4 id="filtering">Filtering<a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h4>
+<p>To focus on your domain and triage problems that affect it, set filters. The two most common filtersâ<strong>Status</strong> and <strong>Category</strong>âhave selectable settings to the left of the table for quick access. To set other filters, use the filter bar above the table.</p>
+<ul>
+<li>
+<p><strong>Status</strong>âCan be <code>Active</code> or <code>Closed</code>.</p>
+</li>
+<li>
+<p>If this is not set, all problems (active or closed) are listed.</p>
+</li>
+<li>If you select a status in the controls on the left, the corresponding filter is also displayed in the filter bar.</li>
+<li>
+<p><strong>Category</strong>âIndicates the nature of the incident, such as slowdowns, errors, resource-related issues, or availability incidents.</p>
+</li>
+<li>
+<p>If you select one or more categories in the controls on the left, the corresponding filters are also displayed in the filter bar.</p>
+</li>
+</ul>
+<p>Filtering with the filter bar allows you to focus your feed on problems based on multiple criteria, such as status, number of affected entities, root cause entity, and more. Place your cursor in the input field to see all the available options. By default, filtering criteria are combined by the <strong>AND</strong> logic. For each criterion, Dynatrace Intelligence provides a list of suggested values, based on your problem feed.</p>
+<p>For example, to see problems that are raised due to an increase of JavaScript errors and that persist for longer than 1 hour, use the following filter criteria:</p>
+<ul>
+<li><code>Status=ACTIVE</code></li>
+<li><code>Duration&gt;1h</code></li>
+<li><code>Category=Error</code></li>
+<li><code>Name=JavaScript error rate increase</code></li>
+</ul>
+<p>The problem filter bar supports Boolean logic filters. This allows you to combine <strong>AND</strong> and <strong>OR</strong> criteria and create complex filters using parentheses to group Boolean terms. You can see a Boolean logic filter statement within <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> app in the example below.</p>
+<p><img alt="Powerful Boolean Filters within the Problems Filter Bar." src="https://dt-cdn.net/images/complex-problem-filters-1920-db9346a85b.png" /></p>
+<h4 id="leverage-predefined-team-segments-to-increase-operational-productivity">Leverage predefined Team Segments to increase operational productivity<a class="headerlink" href="#leverage-predefined-team-segments-to-increase-operational-productivity" title="Permanent link">&para;</a></h4>
+<p>Segments are predefined filters used for quickly filtering the data to include only the relevant entries. In the context of <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>, you or your team can utilize a predefined set of team-specific segments  to filter your problem tables instead of having to create your own problem filters.</p>
+<p>The following example shows how to use segments to filter problems connected to easyTravel.</p>
+<p><img alt="Filter by segments in the Problems app." src="https://dt-cdn.net/images/problems-filter-by-segments-1920-c5610b610e.png" /></p>
+<p>In addition, using segments in <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> allows you to:</p>
+<ul>
+<li>Create sets of filters that can be reused by you and shared to the whole team.</li>
+<li>Save time on recreating filters applied during the previous sessions.</li>
+<li>Increase productivity by quickly filtering relevant problems.</li>
+<li>Quickly check the status of your service by creating and applying service-specific segments.</li>
+</ul>
+<p>Since problems are stored as events in Grail, segments created for filtering problems must define an event filter. For example, if you want to filter problems that were raised in a specific cloud region, you can create a segment with the following event filter:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cloud.region = &quot;us-east-1c&quot; AND event.kind = &quot;DAVIS_PROBLEM&quot;
+</code></pre></div>
+<p>Screenshot example of defining a segment for Problems filtering</p>
+<p><img alt="An example of defining a segment for filtering problems in the Problems app." src="https://dt-cdn.net/images/problems-segment-definition-1512-4649153a97.png" /></p>
+<p>Segment filters are directly applied to the problem Grail records. Consequently, no entity filters are applied to the problem unless the entity ID is chosen as a primary field of the filtered problem.</p>
+<p>For more information on segments and how they work, see <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a> <img alt="Segments" src="https://dt-cdn.net/images/segments-256-8e66310720.webp" title="Segments" />.</p>
+<h3 id="activate-auto-refresh">Activate auto refresh<a class="headerlink" href="#activate-auto-refresh" title="Permanent link">&para;</a></h3>
+<p>To make sure you always catch incoming problems, use the refresh settings <img alt="Refresh" src="https://dt-cdn.net/images/dashboards-app-refresh-33a794c2f1.svg" title="Refresh" /> <img alt="Expand menu" src="https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg" title="Expand menu" /> in the upper-right corner of <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.</p>
+<ul>
+<li>To automatically refresh the problem feed, select <img alt="Expand menu" src="https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg" title="Expand menu" /> and choose a refresh rate (or select <code>Off</code> to turn off automatic refresh)</li>
+<li>To manually refresh the problem feed at any time, regardless of the automatic refresh setting, select <img alt="Refresh" src="https://dt-cdn.net/images/dashboards-app-refresh-33a794c2f1.svg" title="Refresh" /></li>
+</ul>
+<h3 id="investigate-and-compare-problems">Investigate and compare problems<a class="headerlink" href="#investigate-and-compare-problems" title="Permanent link">&para;</a></h3>
+<p>To see the details of a problem</p>
+<ol>
+<li>In the table, select the problem ID in the <strong>ID</strong> column.</li>
+<li>Review the details page.</li>
+</ol>
+<p>The problems details page provides all available details about the problem, highlighting the root cause entity with a red mark, to guide your attention to the right things. The example below shows details of a problem with user action degradationâincluding the root cause entity (<code>easyTravelBusiness</code> service) and a chart of abnormal response time of that service.</p>
+<p><img alt="Example of the problem detail view in the Problems app." src="https://dt-cdn.net/images/problems-details-view-page-1920-3d5f2bb781.png" /></p>
+<p>All entities affected by the problem are listed in the <strong>Affected entities</strong> section, along with information about entity type and the number of events, detected during the analysis.</p>
+<ul>
+<li>As a suggestion for the starting point of the investigation, Dynatrace Intelligence marks the entity that it determined to be the root cause of the problem.</li>
+<li>To review details about an affected entity, select it in the table.</li>
+</ul>
+<h4 id="compare-multiple-problems">Compare multiple problems<a class="headerlink" href="#compare-multiple-problems" title="Permanent link">&para;</a></h4>
+<p>If all the filters are applied and you still have multiple problems to investigate, you can select and compare the details of multiple problems.</p>
+<ol>
+<li>In the table, use the checkboxes to select two or more problems.</li>
+<li>Select <strong>Show details</strong>.</li>
+</ol>
+<p>This preloads the details of all selected problems and adds controls to the upper-right corner of the problem details page so you can quickly switch between each selected problem.</p>
+<h3 id="read-event-properties-for-additional-information">Read event properties for additional information<a class="headerlink" href="#read-event-properties-for-additional-information" title="Permanent link">&para;</a></h3>
+<p>Dynatrace receives events from multiple event sources, such as OneAgent, Synthetic, extensions, and ingestion APIs. Dynatrace accepts and understands various properties (also referred to as fields) of those events that provide additional information about the event.</p>
+<p>Event sources can be customized to provide the information you need to analyze and remediate problems caused by the events. For example, linking the configuration that detected the event (<code>dt.settings.schema_id</code> and <code>dt.settings.object_id</code>) helps you to quickly adapt the threshold or baseline if such action is necessary.</p>
+<p>Another example is adjusting the sensitivity of the custom alert that triggered the event by modifying the detector's configuration in the settings.</p>
+<p>Since available event properties depend on the event's source, events that are not generated by custom alerts don't contain links to relevant event settings. If you want an event to link to a settings object, you can do so by attaching a <code>dt.settings.object_id</code> property to events ingested via API and/or extensions.</p>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> displays all event properties for each collected event in a table and provides intent links, such as direct navigation to a custom alert's configuration, as shown below.</p>
+<p><img alt="Problems app offering a direct link to settings object." src="https://dt-cdn.net/images/problems-app-settings-direct-link-1920-b7ded7d7d3.png" /></p>
+<p>Examples of powerful event properties include:</p>
+<ul>
+<li>Event description (<code>event.description</code>). The event description supports Markdown-formatted text, enabling you to include links to resources that can help to remediate the problem.</li>
+<li>DQL query (<code>dt.query</code>) allows you to rebuild the event's chart in a notebook or at a dashboard or to copy the raw value of a property.</li>
+<li>Related entities (<code>dt.entity.*</code>) allow you to directly navigate to entities through the <code>dt.entity.*</code> properties.</li>
+<li>Link to a settings object (<code>dt.settings.object_id</code>) and settings schema (<code>dt.settings.schema_id</code>).</li>
+</ul>
+<p>To learn more about the semantics and syntax of event properties and how they can be used across Dynatrace, see <a href="/docs/semantic-dictionary/fields" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">Semantic Dictionary</a>.</p>
+<h3 id="analyze-problems-with-your-own-tools-by-exporting-csv">Analyze problems with your own tools by exporting CSV<a class="headerlink" href="#analyze-problems-with-your-own-tools-by-exporting-csv" title="Permanent link">&para;</a></h3>
+<p>For cases when your software tools create integration gaps preventing you from effective usage of Dynatrace data, we provide the ability to export problem feed data in the CSV format. You can later use this data in various tools, including spreadsheet programs, databases, and data analysis tools.</p>
+<p>As illustrated below, you can export problem related-data from the problem feed table. You can also export it from <strong>Notebooks</strong> and <strong>Dashboards</strong> within all table visualizations.</p>
+<p><img alt="Export selected problems as a CSV file." src="https://dt-cdn.net/images/problems-app-csv-export-1920-c5d456c07a.png" /></p>
+<p>You can export all loaded problems (up to a limit of 1000) or use the multi-select feature to choose specific problems. Additionally, the filter bar above the table allows you to filter through larger subsets of problems. The <strong>Select all</strong> checkbox helps you to export all problems in the filtered set of entries.</p>
+<h3 id="check-the-root-cause-without-leaving-your-context">Check the root cause without leaving your context<a class="headerlink" href="#check-the-root-cause-without-leaving-your-context" title="Permanent link">&para;</a></h3>
+<p>Depending on your team's responsibility, you might want to focus your attention on Kubernetes clusters, cloud resources, and workloads of critical services. To minimize context switching, Dynatrace offers consistent root cause information across multiple apps. No matter where your investigation starts, you don't have to switch to <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> to see the root cause.</p>
+<p>In the example below, the <strong>Kubernetes</strong> app displays information about a problem affecting a workload.</p>
+<p><img alt="Problem information integrated into the Kubernetes app." src="https://dt-cdn.net/images/dynatrace-intelligence-in-k8s-app-1920-2da55950a8.png" /></p>
+<h3 id="investigate-all-problem-relevant-logs">Investigate all problem relevant logs<a class="headerlink" href="#investigate-all-problem-relevant-logs" title="Permanent link">&para;</a></h3>
+<p>A Davis-analyzed problem highlights the root cause of an incident and shows all the incident-relevant log lines across multiple entities in the problem details.</p>
+<p>To access the log lines that were collected during the incident, select the <strong>Logs</strong> tab. Additionally, you're able to see their log level across all entities affected by the problem, allowing you to save time on manual investigations and filtering logs of relevant entities separately.</p>
+<p>The <strong>Logs</strong> tab also includes references to the affected entities and information about all related entities, such as parent hosts. To verify which entities are affected by the problem event, you can refer to all the event properties that start with the <code>dt.entity.</code> prefix.</p>
+<p>See how <strong>Logs</strong> tab summarizes all problem-relevant logs in the image below.</p>
+<p><img alt="Dynatrace Intelligence Problems app log count." src="https://dt-cdn.net/images/problems-log-count-1920-330dd46337.png" /></p>
+<p>The image below illustrates the further sorting of the log lines with the help of a DQL query.</p>
+<p><img alt="Dynatrace Intelligence Problems app error log lines." src="https://dt-cdn.net/images/problems-error-log-lines-1920-cb4599df02.png" /></p>
+<h3 id="visually-notify-and-automate-to-speed-up-remediation">Visually notify and automate to speed up remediation<a class="headerlink" href="#visually-notify-and-automate-to-speed-up-remediation" title="Permanent link">&para;</a></h3>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> features a global problem indicator that shows the number of active problems within the environment and is always visible in the Dock. When the Dock is collapsed, a red dot is displayed next to the app icon instead of a number.</p>
+<p>To personalize the indicator and the number of the displayed active issues, select filters in <strong>Category</strong> and save the filter configuration by selecting the  icon. The saved filter will automatically apply to the global problem indicator, reducing the number of problems counted for the user, as shown below. Selecting the <strong>Default filter</strong> button restores the last saved configuration.</p>
+<p><img alt="Saving filter configuration in Problems app." src="https://dt-cdn.net/images/problems-app-notifications-config-save-1920-af4147c3c1.png" /></p>
+<p>While a problem filter is active, the indicator number will only show active problems from your chosen categories. The indicator updates on a one-minute schedule, which means that after the filter is updated, it can take some time for the indicator to adapt.</p>
+<p>You can also set up email notifications for filtered problems using your email address by selecting the  icon, as shown below:</p>
+<p><img alt="Turning on email notifications for the filters applied in the Problems app." src="https://dt-cdn.net/images/problems-app-turn-on-notifications-1920-6806895778.png" /></p>
+<p>The email notification is your personal setting, so you can enable it without the need for configuration permissions or the risk of impacting other users within the same environment.</p>
+<p>The email notification is directly triggered within OpenPipeline, meaning only simple filters can be applied. Workflows that query <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> through DQL can use the complete feature set of Grail queries, such as joining tables.</p>
+<p>If you need to send out customized email messages or have more complex automation and integration needs, you should apply a complete workflow along with the problem trigger.</p>
+<h3 id="visualize-affected-deployments-to-gather-additional-insights">Visualize affected deployments to gather additional insights<a class="headerlink" href="#visualize-affected-deployments-to-gather-additional-insights" title="Permanent link">&para;</a></h3>
+<p>The <strong>Deployment</strong> perspective equips operations teams with deeper insight into the infrastructure and cloud resources impacted by large-scale incidents. The root cause analysis feature automatically collects and visualizes affected deployments and related resources.</p>
+<p>The additional context provided by related resources allows you to:</p>
+<ul>
+<li>Quickly understand where an affected resource resides, for example, a specific cloud region or Kubernetes cluster.</li>
+<li>Gather additional insight for multicloud deployments by showing an app's deployment across clouds, regions, and technology boundaries.</li>
+</ul>
+<p><strong>Deployment</strong> view uses a diagram similar to a Unified Modeling Language (UML) deployment diagram and follows a top-down approach, starting with the largest container element at the top and becoming more detailed as you drill down. The deployment structure is visualized as collapsible cards with horizontally overlapping elements, for example, services running in multiple regions. In this case, cards representing such services are duplicated and shown in multiple deployment stacks.</p>
+<p>The deployment containing the root cause is automatically expanded and tagged with a red root cause badge, while all other deployments are collapsed by default. The deployment hierarchy is focused on a maximum of 5 levels, starting with the hierarchy leaf nodes at the bottom of the diagram upwards, seen in the example below:</p>
+<p><img alt="Dynatrace Intelligence Problems Deployment view with highlighted root cause." src="https://dt-cdn.net/images/problem-deployment-view-1920-e646972d40.png" /></p>
+<p>Interactivity is a crucial feature of the deployment view. On the right side, you can click on any element to visualize findings, such as events related to the problem, along with a direct link to the selected entity. This structured approach allows you and your operations team to reduce the time needed to respond to incidents by navigating a familiar visual representation.</p>
+<p>Not all incident-relevant related elements may show information on the right. Some elements, like the cloud region, are displayed for better context but may not necessarily show problem-relevant events.</p>
+<h3 id="define-custom-problem-fields">Define custom problem fields<a class="headerlink" href="#define-custom-problem-fields" title="Permanent link">&para;</a></h3>
+<p>Dynatrace Intelligence causal AI root-cause detection identifies and reports issues triggered by one or more events within a Dynatrace environment, and saves the results in the form of a problem record in Grail.</p>
+<p>The problem record includes an array of event IDs (<code>dt.davis.event_ids</code>) that represents all the events collected and merged during the root-cause analysis. Event-related <strong>Problems</strong> table fields such as category, name, description, status, start, and end are derived from these events, which allows you to efficiently filter and sort all incoming problem records.</p>
+<p>By default, Dynatrace propagates a set of built-in problem fields along with record-level permission fields, such as <code>dt.host_group.id</code>, <code>k8s.namespace.name</code>, <code>k8s.cluster.name</code>, onto problems. For the full list of built-in problem fields, see <a href="/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record" title="Find out how to assign permissions to buckets and tables in Grail.">Record level permissions in Grail</a>.</p>
+<p>Other built-in and custom event fields are not automatically propagated to avoid an excessive number of problem records.</p>
+<p>In Davis events, permission policies based on Grail record-level permissions work as expected because the fields contain single values. However, when multiple events are aggregated into a problem, the values of the same field are combined into an array. Due to the current implementation of Grail record-level permission filters, only <code>dt.security_context</code> supports filtering array values. Other permission fields can't be used with array-based filters in permission policies.</p>
+<p>This behavior differs from the DQL filter functionality, where array filters on array fields are fully supported. While this limitation may impact the flexibility of permission filters, itâs important to consider when you're managing permission policies.</p>
+<ul>
+<li>Dynatrace doesn't allow you to define problem field names that repeat existing <a href="/docs/semantic-dictionary/model/davis#davis-ai-events" title="Get to know the Semantic Dictionary models related to Davis AI.">Semantic Dictionary</a> event field names.</li>
+<li>You can only define problem fields for source fields with values of type <code>string</code>. Fields that contain values of other types aren't supported.</li>
+</ul>
+<h4 id="custom-problem-fields-modification">Custom problem fields modification<a class="headerlink" href="#custom-problem-fields-modification" title="Permanent link">&para;</a></h4>
+<p>To view or change the fields automatically propagated from events to problems, go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Root cause analysis</strong> &gt; <strong>Problem fields</strong>. By modifying these problem fields, you can:</p>
+<ul>
+<li>Subscribe to custom record fields to be automatically propagated from all single events to any detected problem.</li>
+<li>Rename existing problem fields.</li>
+<li>Remove problem fields.</li>
+</ul>
+<p>Renaming existing problem fields and removing problem fields changes current and future Grail problem records and may break your DQL queries.</p>
+<p>To learn more about custom problem fields use cases, see <a href="/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples" title="Explore scenarios of how you can use custom problem fields in Problems.">Dynatrace Intelligence Problems use cases</a>.</p>
+<h3 id="create-a-troubleshooting-guide">Create a troubleshooting guide<a class="headerlink" href="#create-a-troubleshooting-guide" title="Permanent link">&para;</a></h3>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> allows you to create troubleshooting guides using <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> or <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> to document your investigation and the steps taken to resolve the problem. The guide is based on a predefined template and contains two types of sections:</p>
+<ul>
+<li>Sections with information extracted directly from the problem.</li>
+<li>Template sections (such as <code>Initial Response &amp; Detection</code>, <code>Troubleshooting</code>, and <code>Remediation steps</code>) that you can edit to describe the process and steps followed to resolve the problem.</li>
+</ul>
+<p>To create a troubleshooting guide</p>
+<ol>
+<li>Go to <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> and open the problem you need to resolve.</li>
+<li>On the problem details page, select <strong>Troubleshooting</strong>.</li>
+<li>
+<p>Select  <strong>New</strong>.</p>
+</li>
+<li>
+<p>Select  <strong>Notebooks</strong> to create a new document in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</p>
+</li>
+<li>Select  <strong>Dashboards</strong> to create a new document in <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>Follow the instructions in the template to document the details for your troubleshooting guide.</li>
+</ol>
+<p>If you share a troubleshooting guide with all users in your environment, and you have enabled document suggestions based on vector similarity, Dynatrace Intelligence generative AI will index your document and proactively suggest it to your team to help them remediate similar problems faster. To learn more about Dynatrace Intelligence generative AI document suggestions, see <a href="/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides" title="Learn how Dynatrace Intelligence generative AI can suggest troubleshooting guides for problem remediation.">Find relevant documents with Dynatrace Intelligence generative AI</a>.</p>
+<p>The ability to create and share troubleshooting guides allows DevOps teams to:</p>
+<ul>
+<li>Share and spread their domain knowledge about specific business logic, software implementation, and infrastructure.</li>
+<li>Enrich the Dynatrace AI in their environment with shared knowledge for a more streamlined, tailored experience during problem investigation and remediation.</li>
+<li>Enrich the Dynatrace AI in their environment.</li>
+</ul>
+<h3 id="resolve-the-cases-of-missing-events">Resolve the cases of missing events<a class="headerlink" href="#resolve-the-cases-of-missing-events" title="Permanent link">&para;</a></h3>
+<p>Dynatrace offers a wide range of tools suited for your needs, such as configuring user group permissions, Dynatrace Intelligence alerting rules, or OpenPipeline ingestion rules. Due to the rich customization options, however, there are cases that might lead to events not being visible in <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> and differences in the number of affected entities in the available tabs. The most common reasons for events "missing" from <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> are:</p>
+<ul>
+<li>Difference in bucket retention period: you can configure your bucket retention period for the monitored data to last longer, so that the events related to the problem will be visible regardless of how long the problem has been in the open state. To learn more about configuring bucket retention period for monitored data, see <a href="/docs/observe/application-observability/distributed-tracing/data-retention" title="Create and assign buckets with custom data retention for your trace data in Grail.">Retain trace data for long periods</a>.</li>
+<li>Missing permissions necessary for viewing the event: check with your Dynatrace support group and ensure that you have necessary permissions. Ask the administrator to adjust permissions, so the event becomes visible to you.</li>
+<li>OpenPipeline ingestion rules dropping records: you can adjust OpenPipeline ingestion rules to prevent it from dropping any records or broaden the rules to keep records that might be connected to the alerted problem. To learn more about configuring OpenPipeline ingestion rules, see <a href="/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline" title="Process logs using Dynatrace OpenPipeline.">Log processing with OpenPipeline</a>.</li>
+</ul>
+<h3 id="streamline-problem-resolution-with-problems-specific-drill-down-options">Streamline problem resolution with problems-specific drill-down options<a class="headerlink" href="#streamline-problem-resolution-with-problems-specific-drill-down-options" title="Permanent link">&para;</a></h3>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> provides drill-down options that are designed to guide you toward the most relevant actions for resolving detected problems and help you streamline problem resolution.</p>
+<p>Drill-down options available to you are displayed within the problem details view and depend on the type of the affected entity (such as service, Kubernetes workload, host, or AWS availability zone).</p>
+<p>Some of the available drill-down options are:</p>
+<ul>
+<li>Analyze failures: Perform a focused failure analysis to identify the root cause of failure rates, error patterns, or performance issues.</li>
+<li>View related logs: Investigate relevant log entries directly within <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.</li>
+<li>View failed traces: Analyze failed traces in <img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong> to understand the root cause of failures.</li>
+<li>View <code>app</code>: Navigate to the associated app's details page. The exact name is specific to the affected entity (such as View service, View Kubernetes workload, or View host).</li>
+</ul>
+<p>To access drill-down options</p>
+<ol>
+<li>In <strong>Dynatrace</strong>, go to <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.</li>
+<li>Select the problem you want to investigate from the <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> overview. This opens a problem details page.</li>
+<li>Optional On the left side of the problem details page, select the affected entity or infrastructure you want to investigate further. Usually, when you open the problem details page, the affected entity is pre-selected for you.</li>
+<li>
+<p>From the affected entity details on the right, select the preferred option for further investigation.</p>
+</li>
+<li>
+<p>Select  &gt; <strong>View related logs</strong> to continue the investigation without leaving <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.</p>
+</li>
+<li>Select  &gt; <strong>View failed traces</strong> to continue the investigation in the <a href="/docs/observe/application-observability/distributed-tracing" title="Trace and analyze in real time highly distributed systems with Grail."><img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong></a>.</li>
+<li>Select  &gt; <strong>View</strong> <code>app</code> to continue the investigation in one of the available Dynatrace apps.</li>
+<li>Select  &gt; <strong>Open with</strong> to see all available investigation options.</li>
+</ol>
+<p>Drill-down options provide you with seamless navigation between <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> and other Dynatrace apps to ensure focus and continuity in problem resolution.</p>
+<h3 id="review-problem-overview">Review problem overview<a class="headerlink" href="#review-problem-overview" title="Permanent link">&para;</a></h3>
+<p>The <strong>Overview</strong> is a concise, executive summary of a detected problem.</p>
+<p>To view a problem overview</p>
+<ol>
+<li>Go to <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> and open the problem you need to resolve.</li>
+<li>On the problem details page, select <strong>Overview</strong>.</li>
+</ol>
+<p><strong>Example</strong>:</p>
+<p><img alt="Example problem details Overview tab" src="https://dt-cdn.net/images/problems-screenshot-with-overview-1920-6c68de3f34.png" /></p>
+<p>The <strong>Overview</strong> has four sections:</p>
+<p>Section</p>
+<p>Description</p>
+<p><a href="#overview-impact">Impact</a></p>
+<p>Displays all impacted Smartscape entities (for example, services, processes, and hosts) along with brief issue details for each entity.</p>
+<p><a href="#overview-root-cause">Root cause</a></p>
+<p>Focuses on the root cause of the issue, including detailed information about the affected deployment stack.</p>
+<p><a href="#overview-visual-resolution-path">Visual resolution path</a></p>
+<p>Graphically illustrates the relationships between frontends, services, and backends involved in the issue.</p>
+<p><a href="#overview-automation-and-remediation">Automation and remediation</a></p>
+<p>Lists all automation workflows triggered by the problem, such as notifications, remediations, and external integrations.</p>
+<p>Customize the layout</p>
+<p>You can move these sections around to personalize your view of the <strong>Overview</strong>.</p>
+<ol>
+<li>In the header of the section you want to move, select  and drag the section.</li>
+<li>Drop the section where you want it to appear in the layout.</li>
+</ol>
+<p>These changes are saved per user. Your layout changes don't affect how others see the overview.</p>
+<h3 id="impact">Impact<a class="headerlink" href="#impact" title="Permanent link">&para;</a></h3>
+<p>The <strong>Impact</strong> section displays all impacted <a href="/docs/analyze-explore-automate/smartscape-classic" title="Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.">Smartscape</a> entities (for example, services, processes, and hosts) along with brief issue details for each entity.</p>
+<p>The <strong>Impact</strong> section is categorized by:</p>
+<ul>
+<li><strong>Frontends</strong></li>
+<li><strong>Services</strong></li>
+<li><strong>Infrastructure</strong></li>
+<li><strong>Synthetic monitoring</strong></li>
+<li><strong>Environment</strong></li>
+</ul>
+<h3 id="root-cause">Root cause<a class="headerlink" href="#root-cause" title="Permanent link">&para;</a></h3>
+<p>The <strong>Root cause</strong> section focuses on the root cause of the issue, including detailed information about the affected deployment stack. This may include:</p>
+<ul>
+<li>The process and host where the root-cause service is running.</li>
+<li>The Kubernetes workload serving the impacted service.</li>
+</ul>
+<p>To ensure consistency, the root-cause entity is also listed in the <strong>Impact</strong> table.</p>
+<h3 id="visual-resolution-path">Visual resolution path<a class="headerlink" href="#visual-resolution-path" title="Permanent link">&para;</a></h3>
+<p>The <strong>Visual resolution path</strong> section graphically illustrates the relationships between frontends, services, and backends involved in the issue.</p>
+<ul>
+<li>Each node represents a <a href="/docs/analyze-explore-automate/smartscape-classic" title="Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.">Smartscape</a> entity (frontend, service, or backend) where a health issue was detected.</li>
+<li>Gray nodes indicate related entities used in the analysis but not directly impacted.</li>
+</ul>
+<p>This graph helps explain how Dynatrace AI identified the root-cause backend service.</p>
+<p>To maximize your view of the graph, select  <strong>Maximize</strong>.</p>
+<h3 id="automation-and-remediation">Automation and remediation<a class="headerlink" href="#automation-and-remediation" title="Permanent link">&para;</a></h3>
+<p>The <strong>Automation and remediation</strong> section lists all automation workflows triggered by the problem. These workflows may include:</p>
+<ul>
+<li>Alert notifications sent to response teams.</li>
+<li>Remediation flows and runbooks for auto-remediation.</li>
+<li>External AI agent triggers, such as cloud platform SRE agents, to gather further insights or resolve issues within cloud vendor infrastructure.</li>
+</ul>
+<p>The table provides key details for each workflow, including:</p>
+<ul>
+<li>The last trigger time (as workflows may run multiple times during problem updates).</li>
+<li>The execution state (for example, success or failure).</li>
+</ul>
+<p>Workflow execution details are based on standard workflow execution events, which can also be queried using DQL in <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> and <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time."><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong></a>.</p>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>Only users with system event read permissions can view workflow executions. Without these permissions, the table is empty and a message indicates the missing access.</li>
+<li>Workflows not shared with your user are listed but shown in gray without direct links, indicating restricted access.</li>
+</ul>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h2 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h2>
+<p>Triage, investigate, and remediate incidences directly in <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.](https://www.dynatrace.com/hub/detail/problems/)</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

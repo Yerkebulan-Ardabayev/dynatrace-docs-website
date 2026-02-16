@@ -1,0 +1,2229 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/analyze-explore-automate__metrics/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dynatrace Documentation: analyze-explore-automate/metrics - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-documentation-analyze-explore-automatemetrics" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace Documentation: analyze-explore-automate/metrics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-dql-examplesmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: dql-examples.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dynatrace-documentation-analyze-explore-automatemetrics">Dynatrace Documentation: analyze-explore-automate/metrics<a class="headerlink" href="#dynatrace-documentation-analyze-explore-automatemetrics" title="Permanent link">&para;</a></h1>
+<p>Generated: 2026-02-16</p>
+<p>Files combined: 5</p>
+<hr />
+<h2 id="source-dql-examplesmd">Source: dql-examples.md<a class="headerlink" href="#source-dql-examplesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: DQL timeseries examples
+source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/dql-examples
+scraped: 2026-02-15T21:14:54.046424</p>
+<hr />
+<h1 id="dql-timeseries-examples">DQL timeseries examples<a class="headerlink" href="#dql-timeseries-examples" title="Permanent link">&para;</a></h1>
+<h1 id="dql-timeseries-examples_1">DQL timeseries examples<a class="headerlink" href="#dql-timeseries-examples_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>8-min read</li>
+<li>Updated on Oct 17, 2025</li>
+</ul>
+<p>Metrics on Grail enable you to pinpoint and retrieve any metric data with the help of <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a>. After reviewing the <a href="/docs/platform/grail/dynatrace-query-language/dql-guide#metrics" title="Find out how DQL works and what are DQL key concepts.">fundamentals of DQL queries</a> and the <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands" title="DQL metric commands">timeseries command</a>, use the examples on this page to start getting answers from your metrics.</p>
+<h3 id="example-1-average-cpu-usage-across-all-hosts">Example 1: Average CPU usage across all hosts<a class="headerlink" href="#example-1-average-cpu-usage-across-all-hosts" title="Permanent link">&para;</a></h3>
+<p>In this example, you'll query the average CPU usage across all monitored hosts in your environment.</p>
+<p>OneAgent collects CPU measurements from its host machine. These metrics are accessible through metric keys beginning with <code>dt.host.cpu</code>.</p>
+<p>Observing the aggregate CPU usage across all hosts can help you visually confirm how your infrastructure responds to and recovers from usage spikes or slow, imperceptible growth trends over time.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>timeseries usage=avg(dt.host.cpu.usage)
+</code></pre></div>
+<h3 id="example-2-average-cpu-usage-by-host-limit-to-top-3-hosts">Example 2: Average CPU usage by host, limit to top 3 hosts<a class="headerlink" href="#example-2-average-cpu-usage-by-host-limit-to-top-3-hosts" title="Permanent link">&para;</a></h3>
+<p>In this example, you get every monitored host's average CPU usage and focus on the three hosts with the highest usage.</p>
+<p>OneAgent collects CPU measurements from its host machine. These metrics are accessible through metric keys beginning with <code>dt.host.cpu</code>.</p>
+<p>Charting individual hosts' CPU usage helps to visualize normal and outlier usage. By focusing on the three hosts with highest CPU usage, you can begin investigating under-provisioned applications. Likewise, focusing on hosts with the lowest CPU usage may reveal over-provisioning and lead to cost-saving opportunities.</p>
+<ol>
+<li>Query the data.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>timeseries usage=avg(dt.host.cpu.usage), usage_summary=avg(dt.host.cpu.usage, scalar:true), by:{dt.entity.host}
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| fieldsAdd entityName(dt.entity.host)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>| sort usage_summary desc
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>| limit 3
+</code></pre></div>
+2. Simplify results.</p>
+<p>A table can be easier to read than a line chart in some situations. Let's query data that works best with table output by focusing on the columns we most care about: <code>dt.entity.host</code> and <code>usage</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>timeseries usage=avg(dt.host.cpu.usage, scalar:true), by:{dt.entity.host}
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>| fieldsAdd entityName(dt.entity.host)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>| sort usage desc
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>| limit 3
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>| fields dt.entity.host, dt.entity.host.name, usage
+</code></pre></div>
+<p>This is essentially the same query as above, without the series.</p>
+<h3 id="example-3-average-cpu-usage-by-host-ip-address">Example 3: Average CPU usage by host IP Address<a class="headerlink" href="#example-3-average-cpu-usage-by-host-ip-address" title="Permanent link">&para;</a></h3>
+<p>In this example, you'll use an <code>in</code> condition to query hosts based on their IP address.</p>
+<p>By using the <code>in</code> operator with <code>classicEntitySelector</code>, you can filter on <code>ipAddress</code> and other host attributes.</p>
+<p>Using the timeseries <code>filter</code> parameter is more performant than chaining <code>timeseries</code> with the <code>filter</code> command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>timeseries usage=avg(dt.host.cpu.usage),
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>filter: {in(
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>dt.entity.host,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>classicEntitySelector(&quot;type(host),ipAddress(\&quot;10.102.39.126\&quot;)&quot;)
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>)}
+</code></pre></div>
+<h3 id="example-4-number-of-hosts-sending-cpu-usage-data">Example 4: Number of hosts sending CPU usage data<a class="headerlink" href="#example-4-number-of-hosts-sending-cpu-usage-data" title="Permanent link">&para;</a></h3>
+<p>In this example, you'll learn how to chain <code>timeseries</code> with <code>summarize</code>. You'll first query hosts sending CPU usage data, and then count the number of hosts in the result.</p>
+<p>Other DQL commands can also be chained with <code>timeseries</code> as demonstrated in previous examples, but unlike those examples, <code>summarize</code> further aggregates the dataset returned by <code>timeseries</code>. You'll find this two-step aggregation helpful as your questions become more complex and nuanced.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>timeseries usage=avg(dt.host.cpu.usage), by:{dt.entity.host}
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>| summarize count()
+</code></pre></div>
+<h3 id="example-5-top-hosts-by-bytes-read-with-corresponding-bytes-written">Example 5: Top hosts by bytes read with corresponding bytes written<a class="headerlink" href="#example-5-top-hosts-by-bytes-read-with-corresponding-bytes-written" title="Permanent link">&para;</a></h3>
+<p>In this example, you'll enrich a single result with context from another metric.</p>
+<p>Even when focused on disk read operations, the corresponding disk writes can provide helpful context.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>timeseries by:{dt.entity.host}, {
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>bytes_read=sum(dt.host.disk.bytes_read, scalar:true),
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>bytes_written=sum(dt.host.disk.bytes_written, scalar:true)
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>}
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>| sort bytes_read desc
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>| limit 3
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>| fields
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>dt.entity.host,
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>entityName(dt.entity.host),
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>bytes_read,
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>bytes_written
+</code></pre></div>
+<h3 id="example-6-available-cpu-by-kubernetes-node">Example 6: Available CPU by Kubernetes Node<a class="headerlink" href="#example-6-available-cpu-by-kubernetes-node" title="Permanent link">&para;</a></h3>
+<p>In this example, you'll calculate the available CPU on all nodes of your hypothetical "openfeature" cluster.</p>
+<p>To return a timeseries instead of a single value, we use the <code>[]</code> operator to take the difference of individual timeseries values. The result is another timeseries that you can visualize with a line chart.</p>
+<p>The available CPU is integral for efficient resource utilization and avoiding resource contention. A timeseries visualized with a line chart is one way to show how the available CPU changes over time.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>timeseries {
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>cpu_allocatable = min(dt.kubernetes.node.cpu_allocatable),
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>requests_cpu = max(dt.kubernetes.container.requests_cpu)
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>},
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>by:{dt.entity.kubernetes_cluster, dt.entity.kubernetes_node}
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>| fieldsAdd  // add friendly names
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>entityName(dt.entity.kubernetes_cluster),
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>entityName(dt.entity.kubernetes_node)
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>| fieldsAdd result = cpu_allocatable[] - requests_cpu[]
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>| fieldsRemove cpu_allocatable, requests_cpu
+</code></pre></div>
+<h3 id="example-7-average-host-cpu-usage-by-host-size">Example 7: Average host CPU usage by host size<a class="headerlink" href="#example-7-average-host-cpu-usage-by-host-size" title="Permanent link">&para;</a></h3>
+<p>In this example, you'll learn how to use a <a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-attr" title="A list of DQL general functions."><code>entityAttr</code> command</a> to analyze host CPU usage by host size.</p>
+<p>OneAgent collects local context from its host: information such as how many CPUs are installed and how much memory it has. You can add this information to your query with the <code>entityAttr</code> function.</p>
+<p>Host-level information can sometimes be too fine-grained and difficult to interpret. In these situations, a well-chosen entity attribute can help you explore and analyze how individual hosts contribute to broader trends.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>timeseries usage=avg(dt.host.cpu.usage, scalar:true), by:{dt.entity.host}
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>| fieldsAdd cpuCores = entityAttr(dt.entity.host, &quot;cpuCores&quot;)
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>| summarize by:{cpuCores}, avg(usage), count_hosts=count()
+</code></pre></div>
+<h3 id="example-8-query-multiple-cpu-usage-metrics-with-a-single-query">Example 8: Query multiple CPU usage metrics with a single query<a class="headerlink" href="#example-8-query-multiple-cpu-usage-metrics-with-a-single-query" title="Permanent link">&para;</a></h3>
+<p>In this example, you'll learn how to use the <a href="/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#append" title="DQL correlation and join commands"><code>append</code> command</a> to return multiple CPU metrics with a single query.</p>
+<p>Combining queries into one command can be useful for comparing measurements from different contexts, as they will be charted together.</p>
+<p>As you query many metrics from a single host and perform no arithmetic, the <code>append</code> command here is preferred to querying multiple metrics with a single <code>timeseries</code> command. The <code>append</code> command is a comparatively more flexible option, as it doesn't require equivalent <code>by</code> or <code>filter</code> arguments, for example. Additionally, chaining <code>append</code> is more efficient from a DQL perspective.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>timeseries idle=avg(dt.host.cpu.idle),
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>by:{dt.entity.host},
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>filter:{dt.entity.host == &quot;HOST-EFAB6D2FE7274823&quot;}
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>| append [
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>timeseries system=avg(dt.host.cpu.system),
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>by:{dt.entity.host},
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>filter:{dt.entity.host == &quot;HOST-EFAB6D2FE7274823&quot;}
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>]
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>| append [
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>timeseries user=avg(dt.host.cpu.user),
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>by:{dt.entity.host},
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>filter:{dt.entity.host == &quot;HOST-EFAB6D2FE7274823&quot;}
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>]
+</code></pre></div>
+<h3 id="example-9-connection-failure-rate-by-host">Example 9: Connection failure rate by host<a class="headerlink" href="#example-9-connection-failure-rate-by-host" title="Permanent link">&para;</a></h3>
+<p>In this example, you'll apply what you've learned from previous examples to calculate the failure rate and find hosts running processes with many failed connections.</p>
+<p>This example uses the <code>default</code> parameter to control for the case where there are no failures. It inserts a <code>0</code> value anywhere data is missing.</p>
+<p>Failure rate calculations are common and critical for monitoring service-level objectives. Spotting persistent or recurring high failure rates in testing environments could indicate a deployment problem before the application reaches production.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>timeseries {
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>new = sum(dt.process.network.sessions.new),
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>reset = sum(dt.process.network.sessions.reset, default:0),
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>timeout = sum(dt.process.network.sessions.timeout, default:0)
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>},
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>by:{dt.entity.host}
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>| fieldsAdd result = 100 * (reset[] + timeout[]) / new[]
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>| filter arrayAvg(result) &gt; 0
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>| sort arrayAvg(result) desc
+</code></pre></div>
+<h3 id="example-10-monitoring-host-availability">Example 10: Monitoring host availability<a class="headerlink" href="#example-10-monitoring-host-availability" title="Permanent link">&para;</a></h3>
+<p>In this example you will monitor the availability of hosts and count those that are currently up.</p>
+<p>You can use the timeseries command with the <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#expand--nonempty-parameter--1" title="DQL metric commands"><code>nonempty</code> parameter</a> to calculate host availability. This parameter ensures that you get a result even when no data match the filterâsuch as when no hosts are up. This provides a more accurate representation of host availability.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>timeseries availability = sum(dt.host.availability, default:0),
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>nonempty:true,
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>filter:{availability.state == &quot;up&quot;}
+</code></pre></div>
+<h3 id="example-11-readiness-probe">Example 11: Readiness probe<a class="headerlink" href="#example-11-readiness-probe" title="Permanent link">&para;</a></h3>
+<p>In this example you'll query <a href="/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics" title="Create metrics based on log data and use them throughout Dynatrace like any other metric.">log metrics</a> to count successful and failed readiness probes by host.</p>
+<p>You can use the <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#union" title="DQL metric commands"><code>union</code> parameter</a> to capture all hosts, including those with no failures or no successes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>timeseries
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>failure_count=sum(log.readiness_probe.failure_count, default:0),
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>success_count=sum(log.readiness_probe.success_count, default:0),
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>by:{dt.entity.host},
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>union:true
+</code></pre></div>
+<p>The <code>union:true</code> argument captures all hosts, even if they had no failures or no successes.</p>
+<h3 id="example-12-failure-rate">Example 12: Failure rate<a class="headerlink" href="#example-12-failure-rate" title="Permanent link">&para;</a></h3>
+<p>In this example, you will query the per-second failure rate for a specific endpoint ("/api/accounts"). By using the <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#rate" title="DQL metric commands"><code>rate</code> parameter</a>, you can normalize the timeseries data to a specific duration.</p>
+<p>Monitoring request failure rates is crucial for understanding application performance, identifying bottlenecks, and ensuring optimal user experience.</p>
+<p>Dynatrace shows the per-minute request count by default, as Dynatrace service metrics collect one-minute granularity request data.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>timeseries sum(dt.service.request.failure_count, rate:1s),
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>filter:{startsWith(endpoint.name, &quot;/api/accounts&quot;)}
+</code></pre></div>
+<h3 id="example-13-capacity-planning">Example 13: Capacity planning<a class="headerlink" href="#example-13-capacity-planning" title="Permanent link">&para;</a></h3>
+<p>In this example, you will query current host-disk availability and use the <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#shift" title="DQL metric commands"><code>shift</code></a> parameter to compare it to usage 7 days ago.</p>
+<p>Monitoring host-disk availability helps with capacity planning. If today's disk space usage is consistently higher than 7 days ago, it may signal the need for additional storage resources. Conversely, a decrease in usage might allow for resource optimization.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>timeseries avail=avg(dt.host.disk.avail), by:{dt.entity.host}, from:-24h
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>| append [
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>timeseries avail.yesterday=avg(dt.host.disk.avail), by:{dt.entity.host}, shift:-168h
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>]
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>| filter startsWith(entityName(dt.entity.host), &quot;prod-&quot;)
+</code></pre></div>
+<h3 id="example-14-verify-host-availability-and-redundance">Example 14: Verify host availability and redundance<a class="headerlink" href="#example-14-verify-host-availability-and-redundance" title="Permanent link">&para;</a></h3>
+<p>In this example you'll use the <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries-count" title="DQL metric commands"><code>count</code> aggregation</a> to track the number of hosts monitored in each AZ of AWS region us-east-1.</p>
+<p>Applications frequently deploy hosts across multiple availability zones (AZs) to ensure high availability. Counting hosts in each AZ helps verify that the distribution is balanced and, should one AZ experience network disruptions or other issues, the workload can fail over to another AZ.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>timeseries num_hosts = count(dt.host.cpu.usage),
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>by:{aws.availability_zone},
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>filter:{startsWith(aws.availability_zone, &quot;us-east-1&quot;)}
+</code></pre></div>
+<h3 id="example-15-performance-optimization">Example 15: Performance optimization<a class="headerlink" href="#example-15-performance-optimization" title="Permanent link">&para;</a></h3>
+<p>In this example you'll use the <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries-percentile" title="DQL metric commands"><code>percentile</code> aggregation</a> to track the 90th percentile response time of the contrived /api/accounts endpoint.</p>
+<p>Tracking the service response time <a href="https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/">percentilesï»¿</a> helps identify bottlenecks and areas for improvement. If a specific transaction consistently exceeds this threshold, you can decide if it warrants investigation and additional optimization.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>timeseries p90 = percentile(dt.service.request.response_time, 90),
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>filter:{startsWith(endpoint.name, &quot;/api/accounts&quot;)}
+</code></pre></div>
+<h3 id="example-16-right-sizing-deployments">Example 16: Right-sizing deployments<a class="headerlink" href="#example-16-right-sizing-deployments" title="Permanent link">&para;</a></h3>
+<p>In this example you'll use the <a href="/docs/platform/grail/dynatrace-query-language/functions/conditional-functions#if" title="A list of DQL conditional functions."><code>if</code> function</a> to label underused host-disk pairs.</p>
+<p>Identifying overprovisioned deployments helps reduce operating costs. By removing overprovisioned infrastructure, you can determine the right size deployment for your application.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>timeseries avail=avg(dt.host.disk.avail, scalar:true),
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>by:{dt.entity.disk, dt.entity.host},
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>filter:{startsWith(dt.entity.host, &quot;my-app-&quot;)}
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>| fieldsAdd disk_usage=if(avail&gt;450000000000, &quot;underused&quot;, else: &quot;optimal&quot;)
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>| limit 3
+</code></pre></div>
+<h3 id="example-17-split-cpu-usage-by-kubernetes-annotations">Example 17: Split CPU usage by kubernetes annotations<a class="headerlink" href="#example-17-split-cpu-usage-by-kubernetes-annotations" title="Permanent link">&para;</a></h3>
+<p>In this example you'll split CPU usage by kubernetes annotation.</p>
+<p>You can use kubernetes annotation <code>app.kubernetes.io/component</code> to evaluate the performance of your application components. Annotations are cloud application attributes and aren't typically ingested with a metric. You should split by the cloud application and look up the relevant annotation.</p>
+<p>Many <a href="/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize" title="DQL aggregation commands"><code>summarize</code> command functions</a> accept iterative expressions like <code>cpu_usage[]</code> to preserve the timeseries.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>timeseries cpu_usage = sum(dt.kubernetes.container.cpu_usage, rollup:max),
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>by:{dt.entity.cloud_application}
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>| fieldsAdd annotations = entityAttr(dt.entity.cloud_application, &quot;kubernetesAnnotations&quot;)
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>| fieldsAdd component = annotations[`app.kubernetes.io/component`]
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>| summarize cpu_usage = sum(cpu_usage[]),
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>by:{timeframe, interval, component}
+</code></pre></div>
+<hr />
+<h2 id="source-histogramsmd">Source: histograms.md<a class="headerlink" href="#source-histogramsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Histogram metrics
+source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/histograms
+scraped: 2026-02-15T09:07:01.567875</p>
+<hr />
+<h1 id="histogram-metrics">Histogram metrics<a class="headerlink" href="#histogram-metrics" title="Permanent link">&para;</a></h1>
+<h1 id="histogram-metrics_1">Histogram metrics<a class="headerlink" href="#histogram-metrics_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Explanation</li>
+<li>7-min read</li>
+<li>Published Jul 09, 2025</li>
+</ul>
+<p>Histogram metrics are a powerful way to capture the distribution of values for a given measurement, such as response times, request sizes, or durations. Compared to a counter that measures the overall total in a single value, a histogram counts the number of occurrences at different thresholds (called buckets). It is a multi-value counter, aggregating data into buckets, allowing you to analyze percentiles, averages, and the overall shape of your data.</p>
+<h2 id="histogram-metrics-use-cases">Histogram metrics use cases<a class="headerlink" href="#histogram-metrics-use-cases" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Measure response time distributions for services or endpoints</li>
+<li>Track request or payload sizes</li>
+<li>Analyze latency or duration metrics in distributed systems</li>
+</ul>
+<p>For a deeper dive into histograms and their advantages, see the following series of the OpenTelemetry blog posts:</p>
+<ul>
+<li><a href="https://opentelemetry.io/blog/2023/why-histograms/">Why histograms?ï»¿</a></li>
+<li><a href="https://opentelemetry.io/blog/2023/histograms-vs-summaries/">Histograms vs. summariesï»¿</a></li>
+<li><a href="https://opentelemetry.io/blog/2023/exponential-histograms/">Exponential histogramsï»¿</a></li>
+</ul>
+<h2 id="ingest-histogram-metrics">Ingest histogram metrics<a class="headerlink" href="#ingest-histogram-metrics" title="Permanent link">&para;</a></h2>
+<p>No special configuration is needed to ingest histograms from OpenTelemetry (OTLP ingest API) or Prometheus sources (Dynatrace Operator). Histogram metrics are sent automatically when your environment receives OpenTelemetry or Kubernetes data.</p>
+<p>The OpenTelemetry Exponential Histogram is not supported as a histogram: the histogram's <code>min|max|sum|count</code> are ingested but the buckets aren't.</p>
+<p>If any of below happens, the OpenTelemetry ingest API returns the <code>400</code> or <code>200 with partial success</code> responses.</p>
+<ul>
+<li>Cumulative histograms aren't ingested (similarly to cumulative counters).</li>
+<li>Histogram data points without <code>sum</code> aren't ingested. This happens when negative values are recorded.</li>
+<li>Histogram buckets are not sorted.</li>
+<li>Histogram bucket boundary values of <code>NaN</code> or <code>Infinite</code> are invalid.</li>
+</ul>
+<h2 id="query-percentiles-using-dql">Query percentiles using DQL<a class="headerlink" href="#query-percentiles-using-dql" title="Permanent link">&para;</a></h2>
+<p>Dynatrace Query Language (DQL) allows you to analyze histogram metrics using the percentile aggregation. It calculates the requested percentile across all the buckets for each time slot.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>timeseries percentile(http_request_duration_seconds_bucket, 99)
+</code></pre></div>
+<p>The query calculates the 99th percentile of values based on the ingested histogram buckets.</p>
+<p>Histograms represent data as a series of buckets, each containing the count of values that fall within a specific range. For example, <code>http_request_duration_seconds_bucket</code> contains counts of request durations grouped by predefined ranges (<code>le</code> dimension).</p>
+<p>The <code>percentile</code> function uses the bucket data to estimate the requested percentile (for example, the 99th percentile). It interpolates the value at which 99% of the observed data points fall below, based on the cumulative counts in the histogram buckets.</p>
+<p>This query is particularly useful for analyzing latency or performance metrics, as percentiles provide insights into the worst-case scenarios experienced by users.</p>
+<h2 id="visualization-examples-and-important-warnings">Visualization examples and important warnings<a class="headerlink" href="#visualization-examples-and-important-warnings" title="Permanent link">&para;</a></h2>
+<p>You can visualize histogram metrics in Dynatrace Notebooks or Dashboards using DQL queries. However, be aware of the following limitations:</p>
+<ul>
+<li>Dynatrace currently visualizes histogram metrics <strong>as percentiles with line charts over time</strong> (using the <code>timeseries</code> command). Visualizing the distribution of occurrences across buckets for a given period of time (typically using a bar chart visualization) is <strong>NOT</strong> supported at this time.</li>
+</ul>
+<p>For more information, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.">Edit visualizations for Notebooks and Dashboards</a>.</p>
+<h2 id="licensing-and-billing">Licensing and billing<a class="headerlink" href="#licensing-and-billing" title="Permanent link">&para;</a></h2>
+<p>The <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries_percentile" title="DQL metric commands">timeseries percentile</a> function, which is necessary to query histograms, is only available to DPS customers with the <strong>Metrics powered by Grail</strong> rate card. For more information, see <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail overview (DPS)</a>.</p>
+<hr />
+<h2 id="source-metrics-security-contextmd">Source: metrics-security-context.md<a class="headerlink" href="#source-metrics-security-contextmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Set up Grail permissions for Metrics
+source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/metrics-security-context
+scraped: 2026-02-15T21:22:25.902555</p>
+<hr />
+<h1 id="set-up-grail-permissions-for-metrics">Set up Grail permissions for Metrics<a class="headerlink" href="#set-up-grail-permissions-for-metrics" title="Permanent link">&para;</a></h1>
+<h1 id="set-up-grail-permissions-for-metrics_1">Set up Grail permissions for Metrics<a class="headerlink" href="#set-up-grail-permissions-for-metrics_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>2-min read</li>
+<li>Updated on Nov 20, 2025</li>
+</ul>
+<p>Dynatrace has a <a href="/docs/platform/grail/organize-data/assign-permissions-in-grail" title="Find out how to assign permissions to buckets and tables in Grail.">permission model for Grail</a>. This applies to all telemetry data, such as metrics, events, spans, and logs.</p>
+<p>We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable <a href="/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record" title="Find out how to assign permissions to buckets and tables in Grail.">record-level permissions</a>.</p>
+<p>For Kubernetes-based deployments, make sure Dynatrace Operator has <a href="/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment" title="Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.">metadata enrichment</a> enabled.</p>
+<p>If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.</p>
+<p>For more control in Dynatrace, you can set up policy boundaries with more granular restrictions on a data level. By default, you can use the following attributes:</p>
+<ul>
+<li><code>dt.host_group.id</code></li>
+<li><code>k8s.cluster.name</code></li>
+<li><code>k8s.namespace.name</code></li>
+<li>Any other attribute listed in the <a href="/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record" title="Find out how to assign permissions to buckets and tables in Grail.">permission model</a></li>
+</ul>
+<p>Dynatrace provides a comprehensive permission model for Grail that applies to all telemetry data-including metrics, logs, spans, and events.</p>
+<h2 id="set-up-security-context">Set up security context<a class="headerlink" href="#set-up-security-context" title="Permanent link">&para;</a></h2>
+<p>If the permissions on deployment-level attributes or the bucket level are insufficient, Dynatrace allows you to set up fine-grained permissions by adding a <code>dt.security_context</code> attribute to your data. This context can represent your security architecture and could even be hierarchical by encoding this into a string such as <code>department-A/department-AB/team-C</code>.</p>
+<p>To use <code>dt.security_context</code> and other attributes for permissions, make sure these attributes are present in your telemetry data.</p>
+<h3 id="leverage-existing-tags-at-the-source">Leverage existing tags at the source<a class="headerlink" href="#leverage-existing-tags-at-the-source" title="Permanent link">&para;</a></h3>
+<p>You can define the security context at the source via <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-security-context" title="Learn how to set up Grail permissions for OneAgent.">OneAgent</a>, <a href="/docs/ingest-from/opentelemetry/opentelemetry-security-context" title="Set up Grail permissions for OpenTelemetry.">OpenTelemetry</a>, or <a href="/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment" title="Guides for telemetry enrichment on Kubernetes">Kubernetes labels or annotations</a>. This allows you to use your existing labels and tags to facilitate permissions in Dynatrace.</p>
+<h2 id="set-up-the-security-context-in-openpipeline">Set up the security context in OpenPipeline<a class="headerlink" href="#set-up-the-security-context-in-openpipeline" title="Permanent link">&para;</a></h2>
+<p>You can define a security context based on existing resource attributes for your data within OpenPipeline. Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>OpenPipeline</strong>: &gt; <strong>Metrics</strong> &gt; <strong>Pipelines</strong> and after configuring your pipeline, on the <strong>Permission</strong> tab, use the <strong>Set Security Context processors</strong> option.</p>
+<p>To define the <code>dt.security_context</code> attribute</p>
+<ol>
+<li>Define a matching condition to filter metric records to assign the security context, such as:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>matchesValue(metric.key, &quot;http.server.request.duration_bucket&quot;) and matchesValue(http.route, &quot;/basket&quot;)
+</code></pre></div>
+2. Add the <code>dt.security_context</code> for those metric records. The value of this attribute can be a literal value such as <code>TeamA</code>, or a value copied from another field present on the metric record.
+3. Verify your security context is set correctly.</p>
+<p>When new metric data arrives, the OpenPipeline security context processors add a <code>dt.security_context</code> attribute with the value <code>TeamA</code> to the matching metric records. To confirm that your security context processors handled the metric records, open <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and run a DQL query such as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>timeseries median(http.server.request.duration_bucket), by:{http.route, dt.security_context} | filter matchesValue(dt.security_context, &quot;TeamA&quot;)
+</code></pre></div>
+<p>Based on the created attribute, you can enforce security-related user and group policies.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/dynatrace-oneagent/oneagent-security-context" title="Learn how to set up Grail permissions for OneAgent.">Set up Grail permissions for OneAgent</a></li>
+<li><a href="/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment" title="Guides for telemetry enrichment on Kubernetes">Metadata enrichment of all telemetry originating from Kubernetes</a></li>
+<li><a href="/docs/analyze-explore-automate/logs/lma-security-context" title="Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.">Set up Grail permissions for logs</a></li>
+<li><a href="/docs/observe/application-observability/distributed-tracing/permissions" title="Manage permissions for Distributed Tracing powered by Grail.">Set up Grail permissions for Distributed Tracing</a></li>
+<li><a href="/docs/platform/openpipeline/use-cases/processing-examples" title="Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.">OpenPipeline processing examples</a></li>
+</ul>
+<hr />
+<h2 id="source-kubernetes-metric-migrationmd">Source: kubernetes-metric-migration.md<a class="headerlink" href="#source-kubernetes-metric-migrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Kubernetes metrics migration guide
+source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/kubernetes-metric-migration
+scraped: 2026-02-15T21:28:20.050229</p>
+<hr />
+<h1 id="kubernetes-metrics-migration-guide">Kubernetes metrics migration guide<a class="headerlink" href="#kubernetes-metrics-migration-guide" title="Permanent link">&para;</a></h1>
+<h1 id="kubernetes-metrics-migration-guide_1">Kubernetes metrics migration guide<a class="headerlink" href="#kubernetes-metrics-migration-guide_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>5-min read</li>
+<li>Updated on Jun 24, 2025</li>
+</ul>
+<p>This guide provides insights into migrating Kubernetes metrics to Grail. Typically, a Grail metric is equivalent to a Metrics Classic metric. In some cases, however, there's no one-to-one relation:</p>
+<ul>
+<li>Convergent: a single Grail metric represents multiple Metrics Classic metrics of a similar scope or an increased level of detail.</li>
+<li>Replacement: a different Grail metric represents the Metrics Classic metric.</li>
+<li>Divergent/Calculated: the Classic metric is not represented 1:1 as Grail metric but can be calculated from other Grail metrics</li>
+</ul>
+<h2 id="identity">Identity<a class="headerlink" href="#identity" title="Permanent link">&para;</a></h2>
+<p>Classic Metrics and Grail Metrics have the same level of detail and dimensions available. The only difference is the metric key.</p>
+<p>Metric key (Grail)</p>
+<p>Metric key (Classic)</p>
+<p>dt.kubernetes.cluster.readyz</p>
+<p>builtin:kubernetes.cluster.readyz</p>
+<p>dt.kubernetes.container.oom_kills</p>
+<p>builtin:kubernetes.container.oom_kills</p>
+<p>dt.kubernetes.container.restarts</p>
+<p>builtin:kubernetes.container.restarts</p>
+<p>dt.kubernetes.node.conditions</p>
+<p>builtin:kubernetes.node.conditions</p>
+<p>dt.kubernetes.node.cpu_allocatable</p>
+<p>builtin:kubernetes.node.cpu_allocatable</p>
+<p>dt.kubernetes.node.memory_allocatable</p>
+<p>builtin:kubernetes.node.memory_allocatable</p>
+<p>dt.kubernetes.node.pods_allocatable</p>
+<p>builtin:kubernetes.node.pods_allocatable</p>
+<p>dt.kubernetes.nodes</p>
+<p>builtin:kubernetes.nodes</p>
+<p>dt.kubernetes.persistentvolumeclaim.available</p>
+<p>builtin:kubernetes.persistentvolumeclaim.available</p>
+<p>dt.kubernetes.persistentvolumeclaim.capacity</p>
+<p>builtin:kubernetes.persistentvolumeclaim.capacity</p>
+<p>dt.kubernetes.persistentvolumeclaim.used</p>
+<p>builtin:kubernetes.persistentvolumeclaim.used</p>
+<p>dt.kubernetes.resourcequota.limits_cpu</p>
+<p>builtin:kubernetes.resourcequota.limits_cpu</p>
+<p>dt.kubernetes.resourcequota.limits_cpu_used</p>
+<p>builtin:kubernetes.resourcequota.limits_cpu_used</p>
+<p>dt.kubernetes.resourcequota.limits_memory</p>
+<p>builtin:kubernetes.resourcequota.limits_memory</p>
+<p>dt.kubernetes.resourcequota.limits_memory_used</p>
+<p>builtin:kubernetes.resourcequota.limits_memory_used</p>
+<p>dt.kubernetes.resourcequota.pods</p>
+<p>builtin:kubernetes.resourcequota.pods</p>
+<p>dt.kubernetes.resourcequota.pods_used</p>
+<p>builtin:kubernetes.resourcequota.pods_used</p>
+<p>dt.kubernetes.resourcequota.requests_cpu</p>
+<p>builtin:kubernetes.resourcequota.requests_cpu</p>
+<p>dt.kubernetes.resourcequota.requests_cpu_used</p>
+<p>builtin:kubernetes.resourcequota.requests_cpu_used</p>
+<p>dt.kubernetes.resourcequota.requests_memory</p>
+<p>builtin:kubernetes.resourcequota.requests_memory</p>
+<p>dt.kubernetes.resourcequota.requests_memory_used</p>
+<p>builtin:kubernetes.resourcequota.requests_memory_used</p>
+<p>dt.kubernetes.workload.conditions</p>
+<p>builtin:kubernetes.workload.conditions</p>
+<p>dt.kubernetes.workload.pods_desired</p>
+<p>builtin:kubernetes.workload.pods_desired</p>
+<p>dt.kubernetes.workloads</p>
+<p>builtin:kubernetes.workloads</p>
+<h2 id="convergent-metrics">Convergent metrics<a class="headerlink" href="#convergent-metrics" title="Permanent link">&para;</a></h2>
+<p>The following metrics have been consolidated. The Grail metrics that supersede the Classic metrics offer an increased level of detail compared to the Classic metrics.</p>
+<p>To achieve this decreased level of detail, the Grail metrics are first aggregated to the granularity of the Classic metric. From there the same set of filters can be applied and the output between Classic metrics and Grail metrics is identical.</p>
+<p>The following list of metrics contains the pod and container count metrics and the Kubernetes event count metric that was available at a lower level of detail as Classic metric.</p>
+<p>Kubernetes events and container/pod count metrics</p>
+<p>Metric key (Grail)</p>
+<p>Metric key (Classic)</p>
+<p>dt.kubernetes.containers</p>
+<p>builtin:kubernetes.containers</p>
+<p>dt.kubernetes.pod.containers_desired</p>
+<p>builtin:kubernetes.workload.containers_desired</p>
+<p>dt.kubernetes.events</p>
+<p>builtin:kubernetes.events</p>
+<p>dt.kubernetes.pods</p>
+<p>builtin:kubernetes.node.pods<br />
+builtin:kubernetes.pods</p>
+<p>The following table contains the workload and node resource metrics that have been available as separate workload- and node- level Classic metrics.
+With Grail, there is a single metric at the container level.</p>
+<p><strong>Example:</strong> The following DQL query returns the amount of memory consumed on the workload level based on aggregated container-level data.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>timeseries memory_working_set = sum(dt.kubernetes.container.memory_working_set)
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>by: {
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>k8s.cluster.name,
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>k8s.namespace.name,
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>k8s.workload.name
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>}
+</code></pre></div>
+<p>Workload- and node- level resource consumption metrics</p>
+<p>Metric key (Grail)</p>
+<p>Metric key (Classic)</p>
+<p>dt.kubernetes.container.cpu_usage</p>
+<p>builtin:kubernetes.node.cpu_usage<br />
+builtin:kubernetes.workload.cpu_usage</p>
+<p>dt.kubernetes.container.cpu_throttled</p>
+<p>builtin:kubernetes.node.cpu_throttled<br />
+builtin:kubernetes.workload.cpu_throttled</p>
+<p>dt.kubernetes.container.requests_cpu</p>
+<p>builtin:kubernetes.node.requests_cpu<br />
+builtin:kubernetes.workload.requests_cpu</p>
+<p>dt.kubernetes.container.limits_cpu</p>
+<p>builtin:kubernetes.node.limits_cpu<br />
+builtin:kubernetes.workload.limits_cpu</p>
+<p>dt.kubernetes.container.memory_working_set</p>
+<p>builtin:kubernetes.node.memory_working_set<br />
+builtin:kubernetes.workload.memory_working_set</p>
+<p>dt.kubernetes.container.requests_memory</p>
+<p>builtin:kubernetes.node.requests_memory<br />
+builtin:kubernetes.workload.requests_memory</p>
+<p>dt.kubernetes.container.limits_memory</p>
+<p>builtin:kubernetes.node.limits_memory<br />
+builtin:kubernetes.workload.limits_memory</p>
+<h2 id="replaced-metrics">Replaced metrics<a class="headerlink" href="#replaced-metrics" title="Permanent link">&para;</a></h2>
+<p>This group of metrics consists of Classic metric keys that have never been made available as Grail metrics.
+Instead the most similar Classic metric is used to then determine the Grail metric replacement for these deprecated metrics.
+The reason for the deprecation is a cleanup of duplicate metric keys. In the case of the following metrics, a complete identity of the values between the Classic Metric and Grail Metric is not feasible, but they are closely related and do not deviate very much.</p>
+<p>Metric key (Grail)</p>
+<p>Metric key (Classic)</p>
+<p>Superseding Classic Metric</p>
+<p>dt.kubernetes.container.limits_cpu</p>
+<p>builtin:containers.cpu.limit</p>
+<p>n.a.</p>
+<p>dt.kubernetes.container.oom_kills</p>
+<p>builtin:kubernetes.container.outOfMemoryKills</p>
+<p>builtin:kubernetes.container.oom_kills</p>
+<h2 id="calculated-metrics">Calculated metrics<a class="headerlink" href="#calculated-metrics" title="Permanent link">&para;</a></h2>
+<p>The following set of Classic container metrics is superseded by Grail container metrics.
+For most of the CPU metrics in this section the Classic metrics have the unit millicores, while the Grail metrics have the unit nanoseconds/minute. To get
+to the same values, the Grail metric needs to be divided by the number of nanoseconds in a minute.
+(The number of nanoseconds per minute is 60 * 1000 * 1000 * 1000)</p>
+<p>This is the case for the following Grail metrics.</p>
+<p>builtin:containers.cpu.throttledMilliCores</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>timeseries {
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>throttled_time = avg(dt.containers.cpu.throttled_time, rollup: sum, rate: 1m)
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>}
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>| fieldsAdd
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>ns_per_min = 60 * 1000 * 1000 * 1000
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>, milli_core_per_core = 1000
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>
+<a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>| fieldsAdd
+<a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>
+<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a>
+<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>
+<a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>throttled_milli_cores = throttled_time[] * milli_core_per_core / ns_per_min
+<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a>
+<a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a>
+<a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a>
+<a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a>| summarize {
+<a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a>
+<a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a>
+<a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a>
+<a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a>throttled_milli_cores = sum(throttled_milli_cores[] )
+<a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a>
+<a id="__codelineno-22-39" name="__codelineno-22-39" href="#__codelineno-22-39"></a>
+<a id="__codelineno-22-40" name="__codelineno-22-40" href="#__codelineno-22-40"></a>
+<a id="__codelineno-22-41" name="__codelineno-22-41" href="#__codelineno-22-41"></a>}, by: { timeframe, interval }
+</code></pre></div>
+<p>builtin:containers.cpu.usageUserMilliCores</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>timeseries { usage_user_time = avg(dt.containers.cpu.usage_user_time)
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>}
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>| fieldsAdd
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>ns_per_min = 60 * 1000 * 1000 * 1000
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>, milli_core_per_core = 1000
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>| fieldsAdd
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>usage_user_milli_cores = usage_user_time[] * milli_core_per_core / ns_per_min
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>
+<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>| summarize { usage_user_milli_cores = sum(usage_user_milli_cores[] )
+<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a>
+<a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a>
+<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>
+<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>}, by: { timeframe, interval }
+</code></pre></div>
+<p>builtin:containers.cpu.usageSystemMilliCores</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>timeseries {
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>usage_system_time = avg(dt.containers.cpu.usage_system_time)
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>}
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>| fieldsAdd
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>ns_per_min = 60 * 1000 * 1000 * 1000
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>, milli_core_per_core = 1000
+<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>
+<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>
+<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a>
+<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>| fieldsAdd
+<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>
+<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a>
+<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>
+<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a>usage_system_milli_cores = usage_system_time[] * milli_core_per_core / ns_per_min
+<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>
+<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a>
+<a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a>
+<a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a>| summarize {
+<a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a>
+<a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a>
+<a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a>
+<a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a>usage_system_milli_cores = sum(usage_system_milli_cores[] )
+<a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a>
+<a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a>
+<a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a>
+<a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a>}, by: { timeframe, interval }
+</code></pre></div>
+<p>builtin:containers.cpu.usageMilliCores</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>timeseries {
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>usage_user_time = avg(dt.containers.cpu.usage_user_time)
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>, usage_system_time = avg(dt.containers.cpu.usage_system_time)
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>}
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>| fieldsAdd
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>ns_per_min = 60 * 1000 * 1000 * 1000
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>, milli_core_per_core = 1000
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a>
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>| fieldsAdd
+<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a>
+<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a>
+<a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a>
+<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a>usage_milli_cores = (usage_user_time[] + usage_system_time[] )
+<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a>
+<a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a>
+<a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a>
+<a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a>* milli_core_per_core / ns_per_min
+<a id="__codelineno-25-38" name="__codelineno-25-38" href="#__codelineno-25-38"></a>
+<a id="__codelineno-25-39" name="__codelineno-25-39" href="#__codelineno-25-39"></a>
+<a id="__codelineno-25-40" name="__codelineno-25-40" href="#__codelineno-25-40"></a>
+<a id="__codelineno-25-41" name="__codelineno-25-41" href="#__codelineno-25-41"></a>| summarize {
+<a id="__codelineno-25-42" name="__codelineno-25-42" href="#__codelineno-25-42"></a>
+<a id="__codelineno-25-43" name="__codelineno-25-43" href="#__codelineno-25-43"></a>
+<a id="__codelineno-25-44" name="__codelineno-25-44" href="#__codelineno-25-44"></a>
+<a id="__codelineno-25-45" name="__codelineno-25-45" href="#__codelineno-25-45"></a>usage_milli_cores = sum(usage_milli_cores[] )
+<a id="__codelineno-25-46" name="__codelineno-25-46" href="#__codelineno-25-46"></a>
+<a id="__codelineno-25-47" name="__codelineno-25-47" href="#__codelineno-25-47"></a>
+<a id="__codelineno-25-48" name="__codelineno-25-48" href="#__codelineno-25-48"></a>
+<a id="__codelineno-25-49" name="__codelineno-25-49" href="#__codelineno-25-49"></a>}, by: { timeframe, interval }
+</code></pre></div>
+<p>builtin:containers.cpu.usagePercent</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>timeseries {
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>// for total usage, user and system cpu usage are added
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>userCpuUsage = avg(dt.containers.cpu.usage_user_time)
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>, systemCpuUsage = avg(dt.containers.cpu.usage_system_time)
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>// cpu logical counts are the fallback, if the throttling ratio doesn&#39;t exist
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>, cpuLogicalCount = avg(dt.containers.cpu.logical_cores)
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>
+<a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>
+<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>}
+<a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a>
+<a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a>
+<a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>
+<a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a>// filter statement ...
+<a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a>
+<a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a>
+<a id="__codelineno-26-32" name="__codelineno-26-32" href="#__codelineno-26-32"></a>
+<a id="__codelineno-26-33" name="__codelineno-26-33" href="#__codelineno-26-33"></a>// leftOuter join allows the throttling ratio to be null
+<a id="__codelineno-26-34" name="__codelineno-26-34" href="#__codelineno-26-34"></a>
+<a id="__codelineno-26-35" name="__codelineno-26-35" href="#__codelineno-26-35"></a>
+<a id="__codelineno-26-36" name="__codelineno-26-36" href="#__codelineno-26-36"></a>
+<a id="__codelineno-26-37" name="__codelineno-26-37" href="#__codelineno-26-37"></a>| join [
+<a id="__codelineno-26-38" name="__codelineno-26-38" href="#__codelineno-26-38"></a>
+<a id="__codelineno-26-39" name="__codelineno-26-39" href="#__codelineno-26-39"></a>
+<a id="__codelineno-26-40" name="__codelineno-26-40" href="#__codelineno-26-40"></a>
+<a id="__codelineno-26-41" name="__codelineno-26-41" href="#__codelineno-26-41"></a>timeseries {
+<a id="__codelineno-26-42" name="__codelineno-26-42" href="#__codelineno-26-42"></a>
+<a id="__codelineno-26-43" name="__codelineno-26-43" href="#__codelineno-26-43"></a>
+<a id="__codelineno-26-44" name="__codelineno-26-44" href="#__codelineno-26-44"></a>
+<a id="__codelineno-26-45" name="__codelineno-26-45" href="#__codelineno-26-45"></a>throttlingRatio = avg(dt.containers.cpu.throttling_ratio)
+<a id="__codelineno-26-46" name="__codelineno-26-46" href="#__codelineno-26-46"></a>
+<a id="__codelineno-26-47" name="__codelineno-26-47" href="#__codelineno-26-47"></a>
+<a id="__codelineno-26-48" name="__codelineno-26-48" href="#__codelineno-26-48"></a>
+<a id="__codelineno-26-49" name="__codelineno-26-49" href="#__codelineno-26-49"></a>// same filter statement as above ...
+<a id="__codelineno-26-50" name="__codelineno-26-50" href="#__codelineno-26-50"></a>
+<a id="__codelineno-26-51" name="__codelineno-26-51" href="#__codelineno-26-51"></a>
+<a id="__codelineno-26-52" name="__codelineno-26-52" href="#__codelineno-26-52"></a>
+<a id="__codelineno-26-53" name="__codelineno-26-53" href="#__codelineno-26-53"></a>}
+<a id="__codelineno-26-54" name="__codelineno-26-54" href="#__codelineno-26-54"></a>
+<a id="__codelineno-26-55" name="__codelineno-26-55" href="#__codelineno-26-55"></a>
+<a id="__codelineno-26-56" name="__codelineno-26-56" href="#__codelineno-26-56"></a>
+<a id="__codelineno-26-57" name="__codelineno-26-57" href="#__codelineno-26-57"></a>], on: { interval, timeframe}, fields: { throttlingRatio}, kind:leftOuter
+<a id="__codelineno-26-58" name="__codelineno-26-58" href="#__codelineno-26-58"></a>
+<a id="__codelineno-26-59" name="__codelineno-26-59" href="#__codelineno-26-59"></a>
+<a id="__codelineno-26-60" name="__codelineno-26-60" href="#__codelineno-26-60"></a>
+<a id="__codelineno-26-61" name="__codelineno-26-61" href="#__codelineno-26-61"></a>| fieldsAdd
+<a id="__codelineno-26-62" name="__codelineno-26-62" href="#__codelineno-26-62"></a>
+<a id="__codelineno-26-63" name="__codelineno-26-63" href="#__codelineno-26-63"></a>
+<a id="__codelineno-26-64" name="__codelineno-26-64" href="#__codelineno-26-64"></a>
+<a id="__codelineno-26-65" name="__codelineno-26-65" href="#__codelineno-26-65"></a>// sum of system and user cpu usage
+<a id="__codelineno-26-66" name="__codelineno-26-66" href="#__codelineno-26-66"></a>
+<a id="__codelineno-26-67" name="__codelineno-26-67" href="#__codelineno-26-67"></a>
+<a id="__codelineno-26-68" name="__codelineno-26-68" href="#__codelineno-26-68"></a>
+<a id="__codelineno-26-69" name="__codelineno-26-69" href="#__codelineno-26-69"></a>numerator = userCpuUsage[] + systemCpuUsage[]
+<a id="__codelineno-26-70" name="__codelineno-26-70" href="#__codelineno-26-70"></a>
+<a id="__codelineno-26-71" name="__codelineno-26-71" href="#__codelineno-26-71"></a>
+<a id="__codelineno-26-72" name="__codelineno-26-72" href="#__codelineno-26-72"></a>
+<a id="__codelineno-26-73" name="__codelineno-26-73" href="#__codelineno-26-73"></a>// throttling ratio, or as a fallback cpu logical count.
+<a id="__codelineno-26-74" name="__codelineno-26-74" href="#__codelineno-26-74"></a>
+<a id="__codelineno-26-75" name="__codelineno-26-75" href="#__codelineno-26-75"></a>
+<a id="__codelineno-26-76" name="__codelineno-26-76" href="#__codelineno-26-76"></a>
+<a id="__codelineno-26-77" name="__codelineno-26-77" href="#__codelineno-26-77"></a>, denominator = coalesce(throttlingRatio, cpuLogicalCount)
+<a id="__codelineno-26-78" name="__codelineno-26-78" href="#__codelineno-26-78"></a>
+<a id="__codelineno-26-79" name="__codelineno-26-79" href="#__codelineno-26-79"></a>
+<a id="__codelineno-26-80" name="__codelineno-26-80" href="#__codelineno-26-80"></a>
+<a id="__codelineno-26-81" name="__codelineno-26-81" href="#__codelineno-26-81"></a>, nanoseconds_per_minute  = 60 * 1000 * 1000 * 1000
+<a id="__codelineno-26-82" name="__codelineno-26-82" href="#__codelineno-26-82"></a>
+<a id="__codelineno-26-83" name="__codelineno-26-83" href="#__codelineno-26-83"></a>
+<a id="__codelineno-26-84" name="__codelineno-26-84" href="#__codelineno-26-84"></a>
+<a id="__codelineno-26-85" name="__codelineno-26-85" href="#__codelineno-26-85"></a>| fields
+<a id="__codelineno-26-86" name="__codelineno-26-86" href="#__codelineno-26-86"></a>
+<a id="__codelineno-26-87" name="__codelineno-26-87" href="#__codelineno-26-87"></a>
+<a id="__codelineno-26-88" name="__codelineno-26-88" href="#__codelineno-26-88"></a>
+<a id="__codelineno-26-89" name="__codelineno-26-89" href="#__codelineno-26-89"></a>interval, timeframe
+<a id="__codelineno-26-90" name="__codelineno-26-90" href="#__codelineno-26-90"></a>
+<a id="__codelineno-26-91" name="__codelineno-26-91" href="#__codelineno-26-91"></a>
+<a id="__codelineno-26-92" name="__codelineno-26-92" href="#__codelineno-26-92"></a>
+<a id="__codelineno-26-93" name="__codelineno-26-93" href="#__codelineno-26-93"></a>, cpuUsagePercent = 100.0 * numerator[] / ( denominator[] * nanoseconds_per_minute)
+</code></pre></div>
+<p>builtin:containers.cpu.usageTime</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>timeseries {
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>usageUserTime = avg(dt.containers.cpu.usage_user_time)
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>, usageSystemTime = avg(dt.containers.cpu.usage_system_time)
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>}
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>, by: { dt.entity.container_group_instance},
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>| fields
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>
+<a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>
+<a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>interval, timeframe
+<a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>
+<a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>
+<a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a>
+<a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>, usageTime = usageSystemTime[] + usageUserTime[]
+</code></pre></div>
+<p>builtin:containers.memory.limitPercent</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>timeseries {
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>limit_bytes = avg(dt.containers.memory.limit_bytes),
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>physical_total_bytes = avg(dt.containers.memory.physical_total_bytes)
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>}
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>| fieldsAdd
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>
+<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>
+<a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>
+<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>limit_percent = (limit_bytes[] / physical_total_bytes[] ) * 100
+<a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a>
+<a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a>
+<a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a>
+<a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a>| summarize {
+<a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a>
+<a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a>
+<a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a>
+<a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a>limit_percent = sum(limit_percent[] )
+<a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a>
+<a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a>
+<a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a>
+<a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a>}, by: { timeframe, interval }
+</code></pre></div>
+<p>builtin:containers.memory.usagePercent</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>timeseries {
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>memoryLimits = avg(dt.containers.memory.limit_bytes)
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>, totalPhysicalMemory = avg(dt.containers.memory.physical_total_bytes)
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>, residentSetBytes = avg(dt.containers.memory.resident_set_bytes)
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>}
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>
+<a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a>, by: { dt.entity.container_group_instance}
+<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>
+<a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a>
+<a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a>
+<a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>| fieldsAdd
+<a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a>
+<a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a>
+<a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a>
+<a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a>denominator = if (
+<a id="__codelineno-29-30" name="__codelineno-29-30" href="#__codelineno-29-30"></a>
+<a id="__codelineno-29-31" name="__codelineno-29-31" href="#__codelineno-29-31"></a>
+<a id="__codelineno-29-32" name="__codelineno-29-32" href="#__codelineno-29-32"></a>
+<a id="__codelineno-29-33" name="__codelineno-29-33" href="#__codelineno-29-33"></a>arrayFirst(memoryLimits) &gt; 0,
+<a id="__codelineno-29-34" name="__codelineno-29-34" href="#__codelineno-29-34"></a>
+<a id="__codelineno-29-35" name="__codelineno-29-35" href="#__codelineno-29-35"></a>
+<a id="__codelineno-29-36" name="__codelineno-29-36" href="#__codelineno-29-36"></a>
+<a id="__codelineno-29-37" name="__codelineno-29-37" href="#__codelineno-29-37"></a>then: memoryLimits,
+<a id="__codelineno-29-38" name="__codelineno-29-38" href="#__codelineno-29-38"></a>
+<a id="__codelineno-29-39" name="__codelineno-29-39" href="#__codelineno-29-39"></a>
+<a id="__codelineno-29-40" name="__codelineno-29-40" href="#__codelineno-29-40"></a>
+<a id="__codelineno-29-41" name="__codelineno-29-41" href="#__codelineno-29-41"></a>else: totalPhysicalMemory
+<a id="__codelineno-29-42" name="__codelineno-29-42" href="#__codelineno-29-42"></a>
+<a id="__codelineno-29-43" name="__codelineno-29-43" href="#__codelineno-29-43"></a>
+<a id="__codelineno-29-44" name="__codelineno-29-44" href="#__codelineno-29-44"></a>
+<a id="__codelineno-29-45" name="__codelineno-29-45" href="#__codelineno-29-45"></a>)
+<a id="__codelineno-29-46" name="__codelineno-29-46" href="#__codelineno-29-46"></a>
+<a id="__codelineno-29-47" name="__codelineno-29-47" href="#__codelineno-29-47"></a>
+<a id="__codelineno-29-48" name="__codelineno-29-48" href="#__codelineno-29-48"></a>
+<a id="__codelineno-29-49" name="__codelineno-29-49" href="#__codelineno-29-49"></a>| fields
+<a id="__codelineno-29-50" name="__codelineno-29-50" href="#__codelineno-29-50"></a>
+<a id="__codelineno-29-51" name="__codelineno-29-51" href="#__codelineno-29-51"></a>
+<a id="__codelineno-29-52" name="__codelineno-29-52" href="#__codelineno-29-52"></a>
+<a id="__codelineno-29-53" name="__codelineno-29-53" href="#__codelineno-29-53"></a>dt.entity.container_group_instance
+<a id="__codelineno-29-54" name="__codelineno-29-54" href="#__codelineno-29-54"></a>
+<a id="__codelineno-29-55" name="__codelineno-29-55" href="#__codelineno-29-55"></a>
+<a id="__codelineno-29-56" name="__codelineno-29-56" href="#__codelineno-29-56"></a>
+<a id="__codelineno-29-57" name="__codelineno-29-57" href="#__codelineno-29-57"></a>, interval, timeframe
+<a id="__codelineno-29-58" name="__codelineno-29-58" href="#__codelineno-29-58"></a>
+<a id="__codelineno-29-59" name="__codelineno-29-59" href="#__codelineno-29-59"></a>
+<a id="__codelineno-29-60" name="__codelineno-29-60" href="#__codelineno-29-60"></a>
+<a id="__codelineno-29-61" name="__codelineno-29-61" href="#__codelineno-29-61"></a>, memoryUsagePercent = 100 * residentSetBytes[] / denominator[]
+</code></pre></div>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/platform/grail/dynatrace-query-language/dql-guide" title="Find out how DQL works and what are DQL key concepts.">Use DQL queries</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.">Notebooks</a></li>
+</ul>
+<hr />
+<h2 id="source-rum-metric-migrationmd">Source: rum-metric-migration.md<a class="headerlink" href="#source-rum-metric-migrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: RUM metrics migration
+source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration
+scraped: 2026-02-15T21:26:49.011392</p>
+<hr />
+<h1 id="rum-metrics-migration">RUM metrics migration<a class="headerlink" href="#rum-metrics-migration" title="Permanent link">&para;</a></h1>
+<h1 id="rum-metrics-migration_1">RUM metrics migration<a class="headerlink" href="#rum-metrics-migration_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>5-min read</li>
+<li>Updated on Jan 23, 2026</li>
+</ul>
+<p>Looking for the New RUM Experience metrics documentation?</p>
+<p>You can access the full list of available metrics and their details directly in the latest Dynatrace. Press <strong>CTRL</strong>/<strong>CMD</strong>+<strong>K</strong>, type <code>dt.frontend</code> and select <strong>Show more</strong>.</p>
+<p>The <a href="/docs/observe/digital-experience/new-rum-experience" title="Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.">New RUM Experience</a>, which brings RUM to Grail, introduces numerous built-in metrics with the prefix <code>dt.frontend</code>. Because it uses a different data model than RUM Classic, there are no direct equivalents for <a href="/docs/analyze-explore-automate/metrics-classic/built-in-metrics#applications" title="Explore the complete list of built-in Dynatrace metrics.">RUM Classic metrics</a>, which use the prefix <code>builtin:apps</code>. However, many metrics have replacements that serve an analogous purpose, as shown in the table below. Note that metrics with the prefix <code>builtin:apps</code> that do not appear in the table have no replacement.</p>
+<p>Differences in metric values between the <code>builtin:apps</code> metrics and their replacements are expected and result from underlying data model changes.</p>
+<p>RUM Classic metric</p>
+<p>Replacement in the New RUM Experience</p>
+<p>builtin:apps.web.actionCount.*</p>
+<p>builtin:apps.other.uaCount.*</p>
+<p>dt.frontend.user_action.count</p>
+<p>builtin:apps.web.actionDuration.*</p>
+<p>builtin:apps.other.uaDuration.*</p>
+<p>dt.frontend.user_action.duration</p>
+<p>builtin:apps.other.crashCount.*</p>
+<p>builtin:apps.web.countOfErrors*</p>
+<p>builtin:apps.web.jsErrors*</p>
+<p>builtin:apps.other.requestErrorCount.*</p>
+<p>builtin:apps.web.countOfStandaloneErrors</p>
+<p>builtin:apps.mobile.reportedErrorCount</p>
+<p>dt.frontend.error.count</p>
+<p>builtin:apps.other.requestErrorRate.*</p>
+<p>dt.frontend.error.count</p>
+<p>dt.frontend.request.count</p>
+<p>builtin:apps.web.cumulativeLayoutShift.load.*</p>
+<p>dt.frontend.web.page.cumulative_layout_shift</p>
+<p>builtin:apps.web.domInteractive.load.*</p>
+<p>dt.frontend.web.navigation.dom_interactive</p>
+<p>builtin:apps.web.firstInputDelay.load.*</p>
+<p>dt.frontend.web.page.first_input_delay</p>
+<p>builtin:apps.web.interactionToNextPaint</p>
+<p>dt.frontend.web.page.interaction_to_next_paint</p>
+<p>builtin:apps.web.largestContentfulPaint.load.*</p>
+<p>dt.frontend.web.page.largest_contentful_paint</p>
+<p>builtin:apps.web.loadEventEnd.*</p>
+<p>dt.frontend.web.navigation.load_event_end</p>
+<p>builtin:apps.other.requestCount.*</p>
+<p>dt.frontend.request.count</p>
+<p>builtin:apps.other.requestTimes.*</p>
+<p>dt.frontend.request.duration</p>
+<p>builtin:apps.web.activeSessions</p>
+<p>builtin:apps.mobile.sessionCount</p>
+<p>builtin:apps.other.sessionCount.*</p>
+<p>dt.frontend.session.active.estimated_count</p>
+<p>builtin:apps.web.firstByte.load.*</p>
+<p>dt.frontend.web.navigation.time_to_first_byte</p>
+<p>builtin:apps.other.userCount.*</p>
+<p>builtin:apps.web.activeUsersEst</p>
+<p>dt.frontend.user.active.estimated_count</p>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/observe/digital-experience/new-rum-experience" title="Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.">New Real User Monitoring Experience</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

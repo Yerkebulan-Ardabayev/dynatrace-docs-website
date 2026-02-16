@@ -1,0 +1,1811 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/notebooklm/deliver__test-pipeline-observability.md/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dynatrace Documentation: deliver/test-pipeline-observability.md - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-documentation-delivertest-pipeline-observabilitymd" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace Documentation: deliver/test-pipeline-observability.md
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-test-pipeline-observabilitymd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: test-pipeline-observability.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dynatrace-documentation-delivertest-pipeline-observabilitymd">Dynatrace Documentation: deliver/test-pipeline-observability.md<a class="headerlink" href="#dynatrace-documentation-delivertest-pipeline-observabilitymd" title="Permanent link">&para;</a></h1>
+<p>Generated: 2026-02-16</p>
+<p>Files combined: 1</p>
+<hr />
+<h2 id="source-test-pipeline-observabilitymd">Source: test-pipeline-observability.md<a class="headerlink" href="#source-test-pipeline-observabilitymd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Test pipeline observability
+source: https://www.dynatrace.com/docs/deliver/test-pipeline-observability
+scraped: 2026-02-15T09:11:05.757329</p>
+<hr />
+<h1 id="test-pipeline-observability">Test pipeline observability<a class="headerlink" href="#test-pipeline-observability" title="Permanent link">&para;</a></h1>
+<h1 id="test-pipeline-observability_1">Test pipeline observability<a class="headerlink" href="#test-pipeline-observability_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Tutorial</li>
+<li>9-min read</li>
+<li>Updated on Oct 07, 2024</li>
+</ul>
+<p>This guide presents a straightforward method for utilizing Dynatrace to observe and analyze test pipelines effectively. Aimed at both technical and non-technical stakeholders, it focuses on how to efficiently monitor test activities, enabling teams to concentrate on critical aspects of the testing process.</p>
+<p>Using observability tools from Dynatrace, redundant data is minimized, allowing for a clear focus on relevant and impactful test events. This approach helps to simplify the testing workflow, leading to a more streamlined and focused operation. Discover how Dynatrace can help you gain clearer insights into your test pipelines, enhancing overall efficiency and productivity.</p>
+<h2 id="target-audience">Target audience<a class="headerlink" href="#target-audience" title="Permanent link">&para;</a></h2>
+<p>This article is primarily designed for development teams, DevOps engineers, and quality assurance (QA) professionals who are involved in managing and monitoring test pipelines.</p>
+<p>Ideal readers are those who are familiar with basic testing processes and have a general understanding of software development practices. While deep expertise in Dynatrace is not required, a fundamental knowledge of its observability tools will be beneficial.</p>
+<p>This guide aims to assist those responsible for ensuring the efficiency and effectiveness of testing procedures in their organizations, particularly those looking to enhance their monitoring capabilities and gain more insightful data from their test pipelines.</p>
+<h2 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
+<p>In a fast-paced software development environment, a team of developers and QA engineers faces the challenge of efficiently managing and monitoring their test pipelines. Their current setup involves multiple testing as well as pipeline tools and frameworks, leading to fragmented data and difficulty in obtaining a comprehensive view of the testing lifecycle. This fragmentation hinders their ability to quickly identify and address failing tests, impacting the overall efficiency of the development process.</p>
+<p>The team seeks a solution that allows them to centralize test-related data, providing a clear overview of the entire testing pipeline. They want to be alerted only about significant test failures or anomalies, reducing the noise from routine test results. The ideal solution would automatically notify responsible team members about failing tests, offering insights into potential root causes and suggested actions for remediation. Additionally, they aim to minimize manual monitoring of test pipelines, enabling developers and QA engineers to focus more on addressing critical issues rather than sifting through test data.</p>
+<p>By implementing the Test Pipeline Observability solution from Dynatrace, the team can achieve these objectives. This approach will allow them to ingest test execution data and metadata from various tools into a centralized platform. With analytics provided by Dynatrace, they can set up dashboards for real-time monitoring and automate the detection of test anomalies. The solution will provide clear visibility into test results, trends, and potential issues, enhancing the team's ability to maintain high-quality software releases.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Make sure all of these are true before you start:</p>
+<h3 id="access-and-permissions">Access and permissions<a class="headerlink" href="#access-and-permissions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>You should have the necessary permissions to configure and access monitoring tools within Dynatrace.</li>
+<li>You should have access and utilize test execution data from various testing tools for ingestion into Dynatrace.</li>
+<li>You can integrate Dynatrace with various testing tools and frameworks used in your pipeline.</li>
+</ul>
+<h3 id="knowledge">Knowledge<a class="headerlink" href="#knowledge" title="Permanent link">&para;</a></h3>
+<ul>
+<li>You understand how Dynatrace works.</li>
+<li>You know how to set up <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Dynatrace Dashboards</a> and alerting systems.</li>
+<li>You know how to ingest test-related events and metadata into Dynatrace, particularly using the Dynatrace API or similar data ingestion methods.</li>
+<li>You know how to set up automated <a href="/docs/analyze-explore-automate/workflows" title="Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.">workflows</a> in Dynatrace for automating responses to test pipeline events.</li>
+<li>You have basic understanding of software testing processes and the typical structure of test pipelines in a software development environment.</li>
+<li>You have knowledge of network and data security practices to ensure safe and secure data transmission and storage within the Dynatrace environment.</li>
+</ul>
+<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
+<p>Disclaimer</p>
+<p>The following steps use business events to implement the test pipeline observability use case. This approach is valid for now, but we plan a new event kind for events occurring during the software development lifecycle of a software component. This new event kind will replace business events in the future.</p>
+<ol>
+<li>Gather and ingest test execution data</li>
+</ol>
+<p>Based on your source test pipeline tools and frameworks, collect test execution data. Ingest this data as business events into Dynatrace using the <a href="/docs/observe/business-observability/bo-api-ingest" title="Set up authentication for and ingest business events via API.">Business events API</a>. For example, you can code helpers or post to business events API directly.</p>
+<p>Show me a code example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>#!groovy
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>/**
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>* Sends biz_event to a given Dynatrace environment.
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>* @param monitoringTenant url to monitoring environment
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>* @param oauthClientId OAuth client id
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>* @param oauthClientSecret OAuth client secret
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>* @param payload biz_event payload
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>* @return
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>*/
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>def call(
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>def monitoringTenant,
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>def oauthClientId,
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>def oauthClientSecret,
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>def payload
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>) {
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>// Get Access Token via OAuth - see https://developer.dynatrace.com/develop/access-platform-apis-from-outside/ for reference
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>def ssoResponse = sh(script: &quot;&quot;&quot;
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>set +x
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>curl --location --request POST &#39;https://sso.dynatrace.com/sso/oauth2/token&#39; \\
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>--header &#39;Content-Type: application/x-www-form-urlencoded&#39; \\
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>--data-urlencode &#39;grant_type=client_credentials&#39; \\
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>--data-urlencode &#39;client_id=${oauthClientId}&#39; \\
+<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>--data-urlencode &#39;client_secret=${oauthClientSecret}&#39; \\
+<a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>
+<a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>
+<a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>
+<a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a>--data-urlencode &#39;scope=storage:events:write&#39;
+<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>
+<a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>
+<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>
+<a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a>set -x
+<a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>
+<a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>
+<a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>
+<a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>&quot;&quot;&quot;, returnStdout: true).trim()
+<a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a>
+<a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a>
+<a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a>
+<a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a>// Note: readJSON needs pipeline-utility-steps -&gt; https://www.jenkins.io/doc/pipeline/steps/pipeline-utility-steps/#readjson-read-json-from-files-in-the-workspace
+<a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a>
+<a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a>
+<a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a>
+<a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a>def ssoResponseJSON = readJSON(text: ssoResponse)
+<a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a>
+<a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a>
+<a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a>
+<a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a>if (ssoResponseJSON.errorCode) {
+<a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a>
+<a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a>
+<a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a>
+<a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a>error(message: &quot;Authentication failed: ${ssoResponse}&quot;)
+<a id="__codelineno-0-118" name="__codelineno-0-118" href="#__codelineno-0-118"></a>
+<a id="__codelineno-0-119" name="__codelineno-0-119" href="#__codelineno-0-119"></a>
+<a id="__codelineno-0-120" name="__codelineno-0-120" href="#__codelineno-0-120"></a>
+<a id="__codelineno-0-121" name="__codelineno-0-121" href="#__codelineno-0-121"></a>}
+<a id="__codelineno-0-122" name="__codelineno-0-122" href="#__codelineno-0-122"></a>
+<a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a>
+<a id="__codelineno-0-124" name="__codelineno-0-124" href="#__codelineno-0-124"></a>
+<a id="__codelineno-0-125" name="__codelineno-0-125" href="#__codelineno-0-125"></a>def accessToken = ssoResponseJSON.access_token
+<a id="__codelineno-0-126" name="__codelineno-0-126" href="#__codelineno-0-126"></a>
+<a id="__codelineno-0-127" name="__codelineno-0-127" href="#__codelineno-0-127"></a>
+<a id="__codelineno-0-128" name="__codelineno-0-128" href="#__codelineno-0-128"></a>
+<a id="__codelineno-0-129" name="__codelineno-0-129" href="#__codelineno-0-129"></a>// Ingest BizEvent
+<a id="__codelineno-0-130" name="__codelineno-0-130" href="#__codelineno-0-130"></a>
+<a id="__codelineno-0-131" name="__codelineno-0-131" href="#__codelineno-0-131"></a>
+<a id="__codelineno-0-132" name="__codelineno-0-132" href="#__codelineno-0-132"></a>
+<a id="__codelineno-0-133" name="__codelineno-0-133" href="#__codelineno-0-133"></a>println(&quot;Sending BizEvent: ${payload}&quot;)
+<a id="__codelineno-0-134" name="__codelineno-0-134" href="#__codelineno-0-134"></a>
+<a id="__codelineno-0-135" name="__codelineno-0-135" href="#__codelineno-0-135"></a>
+<a id="__codelineno-0-136" name="__codelineno-0-136" href="#__codelineno-0-136"></a>
+<a id="__codelineno-0-137" name="__codelineno-0-137" href="#__codelineno-0-137"></a>sh(script: &quot;&quot;&quot;
+<a id="__codelineno-0-138" name="__codelineno-0-138" href="#__codelineno-0-138"></a>
+<a id="__codelineno-0-139" name="__codelineno-0-139" href="#__codelineno-0-139"></a>
+<a id="__codelineno-0-140" name="__codelineno-0-140" href="#__codelineno-0-140"></a>
+<a id="__codelineno-0-141" name="__codelineno-0-141" href="#__codelineno-0-141"></a>set +x
+<a id="__codelineno-0-142" name="__codelineno-0-142" href="#__codelineno-0-142"></a>
+<a id="__codelineno-0-143" name="__codelineno-0-143" href="#__codelineno-0-143"></a>
+<a id="__codelineno-0-144" name="__codelineno-0-144" href="#__codelineno-0-144"></a>
+<a id="__codelineno-0-145" name="__codelineno-0-145" href="#__codelineno-0-145"></a>curl --location --request POST &#39;${monitoringTenant}/platform/classic/environment-api/v2/bizevents/ingest&#39; \\
+<a id="__codelineno-0-146" name="__codelineno-0-146" href="#__codelineno-0-146"></a>
+<a id="__codelineno-0-147" name="__codelineno-0-147" href="#__codelineno-0-147"></a>
+<a id="__codelineno-0-148" name="__codelineno-0-148" href="#__codelineno-0-148"></a>
+<a id="__codelineno-0-149" name="__codelineno-0-149" href="#__codelineno-0-149"></a>--header &#39;Content-Type: application/json&#39; \\
+<a id="__codelineno-0-150" name="__codelineno-0-150" href="#__codelineno-0-150"></a>
+<a id="__codelineno-0-151" name="__codelineno-0-151" href="#__codelineno-0-151"></a>
+<a id="__codelineno-0-152" name="__codelineno-0-152" href="#__codelineno-0-152"></a>
+<a id="__codelineno-0-153" name="__codelineno-0-153" href="#__codelineno-0-153"></a>--header &#39;Authorization: Bearer ${accessToken}&#39; \\
+<a id="__codelineno-0-154" name="__codelineno-0-154" href="#__codelineno-0-154"></a>
+<a id="__codelineno-0-155" name="__codelineno-0-155" href="#__codelineno-0-155"></a>
+<a id="__codelineno-0-156" name="__codelineno-0-156" href="#__codelineno-0-156"></a>
+<a id="__codelineno-0-157" name="__codelineno-0-157" href="#__codelineno-0-157"></a>--data-raw &#39;${payload}&#39;
+<a id="__codelineno-0-158" name="__codelineno-0-158" href="#__codelineno-0-158"></a>
+<a id="__codelineno-0-159" name="__codelineno-0-159" href="#__codelineno-0-159"></a>
+<a id="__codelineno-0-160" name="__codelineno-0-160" href="#__codelineno-0-160"></a>
+<a id="__codelineno-0-161" name="__codelineno-0-161" href="#__codelineno-0-161"></a>set -x
+<a id="__codelineno-0-162" name="__codelineno-0-162" href="#__codelineno-0-162"></a>
+<a id="__codelineno-0-163" name="__codelineno-0-163" href="#__codelineno-0-163"></a>
+<a id="__codelineno-0-164" name="__codelineno-0-164" href="#__codelineno-0-164"></a>
+<a id="__codelineno-0-165" name="__codelineno-0-165" href="#__codelineno-0-165"></a>&quot;&quot;&quot;)
+<a id="__codelineno-0-166" name="__codelineno-0-166" href="#__codelineno-0-166"></a>
+<a id="__codelineno-0-167" name="__codelineno-0-167" href="#__codelineno-0-167"></a>
+<a id="__codelineno-0-168" name="__codelineno-0-168" href="#__codelineno-0-168"></a>
+<a id="__codelineno-0-169" name="__codelineno-0-169" href="#__codelineno-0-169"></a>}
+</code></pre></div>
+<p>The data submitted in events depends on your specific goal. You can send each test execution results as a business event, adding the critical information as the payload. This way, you're able to trigger workflows and Grail will store all your important text execution to be queried by DQL for ad-hoc analysis in Notebooks or as input for your dashboards.
+2. Create a <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">dashboard</a></p>
+<p>Use DQL to present your data using available visualizations.
+3. Set up a workflow</p>
+<p>The workflow can be <a href="/docs/analyze-explore-automate/workflows/trigger" title="Introduction to workflow automation triggers for workflows.">triggered</a> on sending a business event after a test execution. Then, you can create follow-up actions based on the ingested test data. For instance, you can determine the owners of the failing property using the <a href="/docs/deliver/ownership-app" title="It provides custom actions to define workflows integrating entity owners and their contact information.">Ownership</a> action and then notify the test owners about test results via a <a href="/docs/analyze-explore-automate/workflows/actions/slack" title="Send messages to Slack Workspaces">workflow Slack</a> action.</p>
+<p>Here's an example of a simple workflow sending the test execution results to a Slack channel:</p>
+<ol>
+<li>Trigger the execution on a regular interval using CRON</li>
+<li>
+<p>Query the data ingested through the business event you set at the beginning of the tutorial Use the <strong>Execute DQL query</strong> built-in action. The DQL below fetches the data from <code>CS_TEST_EXECUTION_EVENT</code> events executed in the last 24 hours. The results are filtered to tests tagged as <code>data-quality-checks</code>.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fetch bizevents, from:now() - 24h
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| filter event.type == &quot;CS_TEST_EXECUTION_EVENT&quot;
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>| filter contains(test.tags, &quot;data-quality-checks&quot;)
+</code></pre></div>
+   3. Run the custom JavaScript code to generate the message containing the data retrieved in the previous step.</p>
+<p>Show me code</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>// optional import of sdk modules
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>import { execution } from &#39;@dynatrace-sdk/automation-utils&#39;;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>export default async function ({ executionId }) {
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>// your code goes here
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>// e.g. get the current execution
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>const ex = await execution(executionId);
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>const res = await ex.result(&quot;query_biz_events&quot;);
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>const records = res.records;
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>var message = &quot;EXECUTED TESTS:&quot;;
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>records.forEach((record, index) =&gt; {
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>if (record[&quot;test.execution.result&quot;] == &quot;Success&quot;) {
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>message += &quot;\n &quot; + &quot;[ Owner: &quot; + record[&quot;test.owner.name&quot;] + &quot; ] [ Team: &quot; + record[&quot;test.owner.team&quot;] + &quot; ] [ Departement: &quot; + record[&quot;test.owner.capability&quot;] + &quot; ]&quot;
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>message += &quot;\n * &quot; + record[&quot;test.name&quot;] + &quot; [&quot; + record[&quot;test.execution.stage&quot;] + &quot;]&quot; + &quot; - :green_heavy_check_mark: *Success*&quot;;
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>message += &quot;\n * &quot; + &quot;Pipeline URL: &quot; + record[&quot;sdlc.pipeline.run.url&quot;];
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>}
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>});
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>return message;
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a>}
+</code></pre></div>
+<p>The code will generate a message as in the example below</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>EXECUTED TESTS:
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>[ Owner: john.doe ] [ Team: my-team ] [ Departement: My departement ]
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>* runtimeVulnerabilityAnalyticsTest [sprint] - :green_heavy_check_mark: *Success*
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>* Pipeline URL: https://yourserver.org/build/52435771
+</code></pre></div>
+   4. Use the Slack action to send the message to the test owner.</p>
+<p><img alt="Slack action" src="https://dt-cdn.net/images/slack-736-cf40fdbb69.png" /></p>
+<p>Show me the workflow template</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>metadata:
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>version: &quot;1&quot;
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>dependencies:
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>apps:
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>- id: dynatrace.automations
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>version: ^1.269.0
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>- id: dynatrace.slack
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>version: ^1.3.6
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>inputs:
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>- type: connection
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>schema: app:dynatrace.slack:connection
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>targets:
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>- tasks.send_message.connection
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>workflow:
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>title: E2E Test slack notifications
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>tasks:
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>send_message:
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>name: send_message
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a>
+<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a>description: Send a message to a Slack workspace
+<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a>
+<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a>
+<a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a>
+<a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a>action: dynatrace.slack:slack-send-message
+<a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a>
+<a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a>
+<a id="__codelineno-4-80" name="__codelineno-4-80" href="#__codelineno-4-80"></a>
+<a id="__codelineno-4-81" name="__codelineno-4-81" href="#__codelineno-4-81"></a>input:
+<a id="__codelineno-4-82" name="__codelineno-4-82" href="#__codelineno-4-82"></a>
+<a id="__codelineno-4-83" name="__codelineno-4-83" href="#__codelineno-4-83"></a>
+<a id="__codelineno-4-84" name="__codelineno-4-84" href="#__codelineno-4-84"></a>
+<a id="__codelineno-4-85" name="__codelineno-4-85" href="#__codelineno-4-85"></a>channel: C05UMMXSZ2R
+<a id="__codelineno-4-86" name="__codelineno-4-86" href="#__codelineno-4-86"></a>
+<a id="__codelineno-4-87" name="__codelineno-4-87" href="#__codelineno-4-87"></a>
+<a id="__codelineno-4-88" name="__codelineno-4-88" href="#__codelineno-4-88"></a>
+<a id="__codelineno-4-89" name="__codelineno-4-89" href="#__codelineno-4-89"></a>message: &#39;{{ result(&quot;generate_message&quot;) }}&#39;
+<a id="__codelineno-4-90" name="__codelineno-4-90" href="#__codelineno-4-90"></a>
+<a id="__codelineno-4-91" name="__codelineno-4-91" href="#__codelineno-4-91"></a>
+<a id="__codelineno-4-92" name="__codelineno-4-92" href="#__codelineno-4-92"></a>
+<a id="__codelineno-4-93" name="__codelineno-4-93" href="#__codelineno-4-93"></a>reaction: []
+<a id="__codelineno-4-94" name="__codelineno-4-94" href="#__codelineno-4-94"></a>
+<a id="__codelineno-4-95" name="__codelineno-4-95" href="#__codelineno-4-95"></a>
+<a id="__codelineno-4-96" name="__codelineno-4-96" href="#__codelineno-4-96"></a>
+<a id="__codelineno-4-97" name="__codelineno-4-97" href="#__codelineno-4-97"></a>connection: &quot;&quot;
+<a id="__codelineno-4-98" name="__codelineno-4-98" href="#__codelineno-4-98"></a>
+<a id="__codelineno-4-99" name="__codelineno-4-99" href="#__codelineno-4-99"></a>
+<a id="__codelineno-4-100" name="__codelineno-4-100" href="#__codelineno-4-100"></a>
+<a id="__codelineno-4-101" name="__codelineno-4-101" href="#__codelineno-4-101"></a>workflowID: &quot;{{ execution().workflow.id }}&quot;
+<a id="__codelineno-4-102" name="__codelineno-4-102" href="#__codelineno-4-102"></a>
+<a id="__codelineno-4-103" name="__codelineno-4-103" href="#__codelineno-4-103"></a>
+<a id="__codelineno-4-104" name="__codelineno-4-104" href="#__codelineno-4-104"></a>
+<a id="__codelineno-4-105" name="__codelineno-4-105" href="#__codelineno-4-105"></a>channelType: id
+<a id="__codelineno-4-106" name="__codelineno-4-106" href="#__codelineno-4-106"></a>
+<a id="__codelineno-4-107" name="__codelineno-4-107" href="#__codelineno-4-107"></a>
+<a id="__codelineno-4-108" name="__codelineno-4-108" href="#__codelineno-4-108"></a>
+<a id="__codelineno-4-109" name="__codelineno-4-109" href="#__codelineno-4-109"></a>executionID: &quot;{{ execution().id }}&quot;
+<a id="__codelineno-4-110" name="__codelineno-4-110" href="#__codelineno-4-110"></a>
+<a id="__codelineno-4-111" name="__codelineno-4-111" href="#__codelineno-4-111"></a>
+<a id="__codelineno-4-112" name="__codelineno-4-112" href="#__codelineno-4-112"></a>
+<a id="__codelineno-4-113" name="__codelineno-4-113" href="#__codelineno-4-113"></a>executionDate: &quot;{{ execution().started_at }}&quot;
+<a id="__codelineno-4-114" name="__codelineno-4-114" href="#__codelineno-4-114"></a>
+<a id="__codelineno-4-115" name="__codelineno-4-115" href="#__codelineno-4-115"></a>
+<a id="__codelineno-4-116" name="__codelineno-4-116" href="#__codelineno-4-116"></a>
+<a id="__codelineno-4-117" name="__codelineno-4-117" href="#__codelineno-4-117"></a>appendToThread: false
+<a id="__codelineno-4-118" name="__codelineno-4-118" href="#__codelineno-4-118"></a>
+<a id="__codelineno-4-119" name="__codelineno-4-119" href="#__codelineno-4-119"></a>
+<a id="__codelineno-4-120" name="__codelineno-4-120" href="#__codelineno-4-120"></a>
+<a id="__codelineno-4-121" name="__codelineno-4-121" href="#__codelineno-4-121"></a>selectedRequestType: 0
+<a id="__codelineno-4-122" name="__codelineno-4-122" href="#__codelineno-4-122"></a>
+<a id="__codelineno-4-123" name="__codelineno-4-123" href="#__codelineno-4-123"></a>
+<a id="__codelineno-4-124" name="__codelineno-4-124" href="#__codelineno-4-124"></a>
+<a id="__codelineno-4-125" name="__codelineno-4-125" href="#__codelineno-4-125"></a>attachmentToggleValue: none
+<a id="__codelineno-4-126" name="__codelineno-4-126" href="#__codelineno-4-126"></a>
+<a id="__codelineno-4-127" name="__codelineno-4-127" href="#__codelineno-4-127"></a>
+<a id="__codelineno-4-128" name="__codelineno-4-128" href="#__codelineno-4-128"></a>
+<a id="__codelineno-4-129" name="__codelineno-4-129" href="#__codelineno-4-129"></a>position:
+<a id="__codelineno-4-130" name="__codelineno-4-130" href="#__codelineno-4-130"></a>
+<a id="__codelineno-4-131" name="__codelineno-4-131" href="#__codelineno-4-131"></a>
+<a id="__codelineno-4-132" name="__codelineno-4-132" href="#__codelineno-4-132"></a>
+<a id="__codelineno-4-133" name="__codelineno-4-133" href="#__codelineno-4-133"></a>x: 0
+<a id="__codelineno-4-134" name="__codelineno-4-134" href="#__codelineno-4-134"></a>
+<a id="__codelineno-4-135" name="__codelineno-4-135" href="#__codelineno-4-135"></a>
+<a id="__codelineno-4-136" name="__codelineno-4-136" href="#__codelineno-4-136"></a>
+<a id="__codelineno-4-137" name="__codelineno-4-137" href="#__codelineno-4-137"></a>y: 3
+<a id="__codelineno-4-138" name="__codelineno-4-138" href="#__codelineno-4-138"></a>
+<a id="__codelineno-4-139" name="__codelineno-4-139" href="#__codelineno-4-139"></a>
+<a id="__codelineno-4-140" name="__codelineno-4-140" href="#__codelineno-4-140"></a>
+<a id="__codelineno-4-141" name="__codelineno-4-141" href="#__codelineno-4-141"></a>predecessors:
+<a id="__codelineno-4-142" name="__codelineno-4-142" href="#__codelineno-4-142"></a>
+<a id="__codelineno-4-143" name="__codelineno-4-143" href="#__codelineno-4-143"></a>
+<a id="__codelineno-4-144" name="__codelineno-4-144" href="#__codelineno-4-144"></a>
+<a id="__codelineno-4-145" name="__codelineno-4-145" href="#__codelineno-4-145"></a>- generate_message
+<a id="__codelineno-4-146" name="__codelineno-4-146" href="#__codelineno-4-146"></a>
+<a id="__codelineno-4-147" name="__codelineno-4-147" href="#__codelineno-4-147"></a>
+<a id="__codelineno-4-148" name="__codelineno-4-148" href="#__codelineno-4-148"></a>
+<a id="__codelineno-4-149" name="__codelineno-4-149" href="#__codelineno-4-149"></a>conditions:
+<a id="__codelineno-4-150" name="__codelineno-4-150" href="#__codelineno-4-150"></a>
+<a id="__codelineno-4-151" name="__codelineno-4-151" href="#__codelineno-4-151"></a>
+<a id="__codelineno-4-152" name="__codelineno-4-152" href="#__codelineno-4-152"></a>
+<a id="__codelineno-4-153" name="__codelineno-4-153" href="#__codelineno-4-153"></a>states:
+<a id="__codelineno-4-154" name="__codelineno-4-154" href="#__codelineno-4-154"></a>
+<a id="__codelineno-4-155" name="__codelineno-4-155" href="#__codelineno-4-155"></a>
+<a id="__codelineno-4-156" name="__codelineno-4-156" href="#__codelineno-4-156"></a>
+<a id="__codelineno-4-157" name="__codelineno-4-157" href="#__codelineno-4-157"></a>generate_message: OK
+<a id="__codelineno-4-158" name="__codelineno-4-158" href="#__codelineno-4-158"></a>
+<a id="__codelineno-4-159" name="__codelineno-4-159" href="#__codelineno-4-159"></a>
+<a id="__codelineno-4-160" name="__codelineno-4-160" href="#__codelineno-4-160"></a>
+<a id="__codelineno-4-161" name="__codelineno-4-161" href="#__codelineno-4-161"></a>generate_message:
+<a id="__codelineno-4-162" name="__codelineno-4-162" href="#__codelineno-4-162"></a>
+<a id="__codelineno-4-163" name="__codelineno-4-163" href="#__codelineno-4-163"></a>
+<a id="__codelineno-4-164" name="__codelineno-4-164" href="#__codelineno-4-164"></a>
+<a id="__codelineno-4-165" name="__codelineno-4-165" href="#__codelineno-4-165"></a>name: generate_message
+<a id="__codelineno-4-166" name="__codelineno-4-166" href="#__codelineno-4-166"></a>
+<a id="__codelineno-4-167" name="__codelineno-4-167" href="#__codelineno-4-167"></a>
+<a id="__codelineno-4-168" name="__codelineno-4-168" href="#__codelineno-4-168"></a>
+<a id="__codelineno-4-169" name="__codelineno-4-169" href="#__codelineno-4-169"></a>description: Build a custom task running js Code
+<a id="__codelineno-4-170" name="__codelineno-4-170" href="#__codelineno-4-170"></a>
+<a id="__codelineno-4-171" name="__codelineno-4-171" href="#__codelineno-4-171"></a>
+<a id="__codelineno-4-172" name="__codelineno-4-172" href="#__codelineno-4-172"></a>
+<a id="__codelineno-4-173" name="__codelineno-4-173" href="#__codelineno-4-173"></a>action: dynatrace.automations:run-javascript
+<a id="__codelineno-4-174" name="__codelineno-4-174" href="#__codelineno-4-174"></a>
+<a id="__codelineno-4-175" name="__codelineno-4-175" href="#__codelineno-4-175"></a>
+<a id="__codelineno-4-176" name="__codelineno-4-176" href="#__codelineno-4-176"></a>
+<a id="__codelineno-4-177" name="__codelineno-4-177" href="#__codelineno-4-177"></a>input:
+<a id="__codelineno-4-178" name="__codelineno-4-178" href="#__codelineno-4-178"></a>
+<a id="__codelineno-4-179" name="__codelineno-4-179" href="#__codelineno-4-179"></a>
+<a id="__codelineno-4-180" name="__codelineno-4-180" href="#__codelineno-4-180"></a>
+<a id="__codelineno-4-181" name="__codelineno-4-181" href="#__codelineno-4-181"></a>script: &gt;-
+<a id="__codelineno-4-182" name="__codelineno-4-182" href="#__codelineno-4-182"></a>
+<a id="__codelineno-4-183" name="__codelineno-4-183" href="#__codelineno-4-183"></a>
+<a id="__codelineno-4-184" name="__codelineno-4-184" href="#__codelineno-4-184"></a>
+<a id="__codelineno-4-185" name="__codelineno-4-185" href="#__codelineno-4-185"></a>// optional import of sdk modules
+<a id="__codelineno-4-186" name="__codelineno-4-186" href="#__codelineno-4-186"></a>
+<a id="__codelineno-4-187" name="__codelineno-4-187" href="#__codelineno-4-187"></a>
+<a id="__codelineno-4-188" name="__codelineno-4-188" href="#__codelineno-4-188"></a>
+<a id="__codelineno-4-189" name="__codelineno-4-189" href="#__codelineno-4-189"></a>import { execution } from &#39;@dynatrace-sdk/automation-utils&#39;;
+<a id="__codelineno-4-190" name="__codelineno-4-190" href="#__codelineno-4-190"></a>
+<a id="__codelineno-4-191" name="__codelineno-4-191" href="#__codelineno-4-191"></a>
+<a id="__codelineno-4-192" name="__codelineno-4-192" href="#__codelineno-4-192"></a>
+<a id="__codelineno-4-193" name="__codelineno-4-193" href="#__codelineno-4-193"></a>export default async function ({ executionId }) {
+<a id="__codelineno-4-194" name="__codelineno-4-194" href="#__codelineno-4-194"></a>
+<a id="__codelineno-4-195" name="__codelineno-4-195" href="#__codelineno-4-195"></a>
+<a id="__codelineno-4-196" name="__codelineno-4-196" href="#__codelineno-4-196"></a>
+<a id="__codelineno-4-197" name="__codelineno-4-197" href="#__codelineno-4-197"></a>// your code goes here
+<a id="__codelineno-4-198" name="__codelineno-4-198" href="#__codelineno-4-198"></a>
+<a id="__codelineno-4-199" name="__codelineno-4-199" href="#__codelineno-4-199"></a>
+<a id="__codelineno-4-200" name="__codelineno-4-200" href="#__codelineno-4-200"></a>
+<a id="__codelineno-4-201" name="__codelineno-4-201" href="#__codelineno-4-201"></a>// e.g. get the current execution
+<a id="__codelineno-4-202" name="__codelineno-4-202" href="#__codelineno-4-202"></a>
+<a id="__codelineno-4-203" name="__codelineno-4-203" href="#__codelineno-4-203"></a>
+<a id="__codelineno-4-204" name="__codelineno-4-204" href="#__codelineno-4-204"></a>
+<a id="__codelineno-4-205" name="__codelineno-4-205" href="#__codelineno-4-205"></a>const ex = await execution(executionId);
+<a id="__codelineno-4-206" name="__codelineno-4-206" href="#__codelineno-4-206"></a>
+<a id="__codelineno-4-207" name="__codelineno-4-207" href="#__codelineno-4-207"></a>
+<a id="__codelineno-4-208" name="__codelineno-4-208" href="#__codelineno-4-208"></a>
+<a id="__codelineno-4-209" name="__codelineno-4-209" href="#__codelineno-4-209"></a>const res = await ex.result(&quot;query_biz_events&quot;);
+<a id="__codelineno-4-210" name="__codelineno-4-210" href="#__codelineno-4-210"></a>
+<a id="__codelineno-4-211" name="__codelineno-4-211" href="#__codelineno-4-211"></a>
+<a id="__codelineno-4-212" name="__codelineno-4-212" href="#__codelineno-4-212"></a>
+<a id="__codelineno-4-213" name="__codelineno-4-213" href="#__codelineno-4-213"></a>const records = res.records;
+<a id="__codelineno-4-214" name="__codelineno-4-214" href="#__codelineno-4-214"></a>
+<a id="__codelineno-4-215" name="__codelineno-4-215" href="#__codelineno-4-215"></a>
+<a id="__codelineno-4-216" name="__codelineno-4-216" href="#__codelineno-4-216"></a>
+<a id="__codelineno-4-217" name="__codelineno-4-217" href="#__codelineno-4-217"></a>var message = &quot;EXECUTED TESTS:&quot;;
+<a id="__codelineno-4-218" name="__codelineno-4-218" href="#__codelineno-4-218"></a>
+<a id="__codelineno-4-219" name="__codelineno-4-219" href="#__codelineno-4-219"></a>
+<a id="__codelineno-4-220" name="__codelineno-4-220" href="#__codelineno-4-220"></a>
+<a id="__codelineno-4-221" name="__codelineno-4-221" href="#__codelineno-4-221"></a>records.forEach((record, index) =&gt; {
+<a id="__codelineno-4-222" name="__codelineno-4-222" href="#__codelineno-4-222"></a>
+<a id="__codelineno-4-223" name="__codelineno-4-223" href="#__codelineno-4-223"></a>
+<a id="__codelineno-4-224" name="__codelineno-4-224" href="#__codelineno-4-224"></a>
+<a id="__codelineno-4-225" name="__codelineno-4-225" href="#__codelineno-4-225"></a>if (record[&quot;test.execution.result&quot;] == &quot;Success&quot;) {
+<a id="__codelineno-4-226" name="__codelineno-4-226" href="#__codelineno-4-226"></a>
+<a id="__codelineno-4-227" name="__codelineno-4-227" href="#__codelineno-4-227"></a>
+<a id="__codelineno-4-228" name="__codelineno-4-228" href="#__codelineno-4-228"></a>
+<a id="__codelineno-4-229" name="__codelineno-4-229" href="#__codelineno-4-229"></a>message += &quot;\n &quot; + &quot;[ Owner: &quot; + record[&quot;test.owner.name&quot;] + &quot; ] [ Team: &quot; + record[&quot;test.owner.team&quot;] + &quot; ] [ Departement: &quot; + record[&quot;test.owner.capability&quot;] + &quot; ]&quot;
+<a id="__codelineno-4-230" name="__codelineno-4-230" href="#__codelineno-4-230"></a>
+<a id="__codelineno-4-231" name="__codelineno-4-231" href="#__codelineno-4-231"></a>
+<a id="__codelineno-4-232" name="__codelineno-4-232" href="#__codelineno-4-232"></a>
+<a id="__codelineno-4-233" name="__codelineno-4-233" href="#__codelineno-4-233"></a>message += &quot;\n * &quot; + record[&quot;test.name&quot;] + &quot; [&quot; + record[&quot;test.execution.stage&quot;] + &quot;]&quot; + &quot; - :green_heavy_check_mark: *Success*&quot;;
+<a id="__codelineno-4-234" name="__codelineno-4-234" href="#__codelineno-4-234"></a>
+<a id="__codelineno-4-235" name="__codelineno-4-235" href="#__codelineno-4-235"></a>
+<a id="__codelineno-4-236" name="__codelineno-4-236" href="#__codelineno-4-236"></a>
+<a id="__codelineno-4-237" name="__codelineno-4-237" href="#__codelineno-4-237"></a>message += &quot;\n * &quot; + &quot;Pipeline URL: &quot; + record[&quot;sdlc.pipeline.run.url&quot;];
+<a id="__codelineno-4-238" name="__codelineno-4-238" href="#__codelineno-4-238"></a>
+<a id="__codelineno-4-239" name="__codelineno-4-239" href="#__codelineno-4-239"></a>
+<a id="__codelineno-4-240" name="__codelineno-4-240" href="#__codelineno-4-240"></a>
+<a id="__codelineno-4-241" name="__codelineno-4-241" href="#__codelineno-4-241"></a>}
+<a id="__codelineno-4-242" name="__codelineno-4-242" href="#__codelineno-4-242"></a>
+<a id="__codelineno-4-243" name="__codelineno-4-243" href="#__codelineno-4-243"></a>
+<a id="__codelineno-4-244" name="__codelineno-4-244" href="#__codelineno-4-244"></a>
+<a id="__codelineno-4-245" name="__codelineno-4-245" href="#__codelineno-4-245"></a>});
+<a id="__codelineno-4-246" name="__codelineno-4-246" href="#__codelineno-4-246"></a>
+<a id="__codelineno-4-247" name="__codelineno-4-247" href="#__codelineno-4-247"></a>
+<a id="__codelineno-4-248" name="__codelineno-4-248" href="#__codelineno-4-248"></a>
+<a id="__codelineno-4-249" name="__codelineno-4-249" href="#__codelineno-4-249"></a>return message;
+<a id="__codelineno-4-250" name="__codelineno-4-250" href="#__codelineno-4-250"></a>
+<a id="__codelineno-4-251" name="__codelineno-4-251" href="#__codelineno-4-251"></a>
+<a id="__codelineno-4-252" name="__codelineno-4-252" href="#__codelineno-4-252"></a>
+<a id="__codelineno-4-253" name="__codelineno-4-253" href="#__codelineno-4-253"></a>}
+<a id="__codelineno-4-254" name="__codelineno-4-254" href="#__codelineno-4-254"></a>
+<a id="__codelineno-4-255" name="__codelineno-4-255" href="#__codelineno-4-255"></a>
+<a id="__codelineno-4-256" name="__codelineno-4-256" href="#__codelineno-4-256"></a>
+<a id="__codelineno-4-257" name="__codelineno-4-257" href="#__codelineno-4-257"></a>position:
+<a id="__codelineno-4-258" name="__codelineno-4-258" href="#__codelineno-4-258"></a>
+<a id="__codelineno-4-259" name="__codelineno-4-259" href="#__codelineno-4-259"></a>
+<a id="__codelineno-4-260" name="__codelineno-4-260" href="#__codelineno-4-260"></a>
+<a id="__codelineno-4-261" name="__codelineno-4-261" href="#__codelineno-4-261"></a>x: 0
+<a id="__codelineno-4-262" name="__codelineno-4-262" href="#__codelineno-4-262"></a>
+<a id="__codelineno-4-263" name="__codelineno-4-263" href="#__codelineno-4-263"></a>
+<a id="__codelineno-4-264" name="__codelineno-4-264" href="#__codelineno-4-264"></a>
+<a id="__codelineno-4-265" name="__codelineno-4-265" href="#__codelineno-4-265"></a>y: 2
+<a id="__codelineno-4-266" name="__codelineno-4-266" href="#__codelineno-4-266"></a>
+<a id="__codelineno-4-267" name="__codelineno-4-267" href="#__codelineno-4-267"></a>
+<a id="__codelineno-4-268" name="__codelineno-4-268" href="#__codelineno-4-268"></a>
+<a id="__codelineno-4-269" name="__codelineno-4-269" href="#__codelineno-4-269"></a>predecessors:
+<a id="__codelineno-4-270" name="__codelineno-4-270" href="#__codelineno-4-270"></a>
+<a id="__codelineno-4-271" name="__codelineno-4-271" href="#__codelineno-4-271"></a>
+<a id="__codelineno-4-272" name="__codelineno-4-272" href="#__codelineno-4-272"></a>
+<a id="__codelineno-4-273" name="__codelineno-4-273" href="#__codelineno-4-273"></a>- query_biz_events
+<a id="__codelineno-4-274" name="__codelineno-4-274" href="#__codelineno-4-274"></a>
+<a id="__codelineno-4-275" name="__codelineno-4-275" href="#__codelineno-4-275"></a>
+<a id="__codelineno-4-276" name="__codelineno-4-276" href="#__codelineno-4-276"></a>
+<a id="__codelineno-4-277" name="__codelineno-4-277" href="#__codelineno-4-277"></a>conditions:
+<a id="__codelineno-4-278" name="__codelineno-4-278" href="#__codelineno-4-278"></a>
+<a id="__codelineno-4-279" name="__codelineno-4-279" href="#__codelineno-4-279"></a>
+<a id="__codelineno-4-280" name="__codelineno-4-280" href="#__codelineno-4-280"></a>
+<a id="__codelineno-4-281" name="__codelineno-4-281" href="#__codelineno-4-281"></a>states:
+<a id="__codelineno-4-282" name="__codelineno-4-282" href="#__codelineno-4-282"></a>
+<a id="__codelineno-4-283" name="__codelineno-4-283" href="#__codelineno-4-283"></a>
+<a id="__codelineno-4-284" name="__codelineno-4-284" href="#__codelineno-4-284"></a>
+<a id="__codelineno-4-285" name="__codelineno-4-285" href="#__codelineno-4-285"></a>query_biz_events: OK
+<a id="__codelineno-4-286" name="__codelineno-4-286" href="#__codelineno-4-286"></a>
+<a id="__codelineno-4-287" name="__codelineno-4-287" href="#__codelineno-4-287"></a>
+<a id="__codelineno-4-288" name="__codelineno-4-288" href="#__codelineno-4-288"></a>
+<a id="__codelineno-4-289" name="__codelineno-4-289" href="#__codelineno-4-289"></a>query_biz_events:
+<a id="__codelineno-4-290" name="__codelineno-4-290" href="#__codelineno-4-290"></a>
+<a id="__codelineno-4-291" name="__codelineno-4-291" href="#__codelineno-4-291"></a>
+<a id="__codelineno-4-292" name="__codelineno-4-292" href="#__codelineno-4-292"></a>
+<a id="__codelineno-4-293" name="__codelineno-4-293" href="#__codelineno-4-293"></a>name: query_biz_events
+<a id="__codelineno-4-294" name="__codelineno-4-294" href="#__codelineno-4-294"></a>
+<a id="__codelineno-4-295" name="__codelineno-4-295" href="#__codelineno-4-295"></a>
+<a id="__codelineno-4-296" name="__codelineno-4-296" href="#__codelineno-4-296"></a>
+<a id="__codelineno-4-297" name="__codelineno-4-297" href="#__codelineno-4-297"></a>description: Executes DQL query
+<a id="__codelineno-4-298" name="__codelineno-4-298" href="#__codelineno-4-298"></a>
+<a id="__codelineno-4-299" name="__codelineno-4-299" href="#__codelineno-4-299"></a>
+<a id="__codelineno-4-300" name="__codelineno-4-300" href="#__codelineno-4-300"></a>
+<a id="__codelineno-4-301" name="__codelineno-4-301" href="#__codelineno-4-301"></a>action: dynatrace.automations:execute-dql-query
+<a id="__codelineno-4-302" name="__codelineno-4-302" href="#__codelineno-4-302"></a>
+<a id="__codelineno-4-303" name="__codelineno-4-303" href="#__codelineno-4-303"></a>
+<a id="__codelineno-4-304" name="__codelineno-4-304" href="#__codelineno-4-304"></a>
+<a id="__codelineno-4-305" name="__codelineno-4-305" href="#__codelineno-4-305"></a>input:
+<a id="__codelineno-4-306" name="__codelineno-4-306" href="#__codelineno-4-306"></a>
+<a id="__codelineno-4-307" name="__codelineno-4-307" href="#__codelineno-4-307"></a>
+<a id="__codelineno-4-308" name="__codelineno-4-308" href="#__codelineno-4-308"></a>
+<a id="__codelineno-4-309" name="__codelineno-4-309" href="#__codelineno-4-309"></a>query: |-
+<a id="__codelineno-4-310" name="__codelineno-4-310" href="#__codelineno-4-310"></a>
+<a id="__codelineno-4-311" name="__codelineno-4-311" href="#__codelineno-4-311"></a>
+<a id="__codelineno-4-312" name="__codelineno-4-312" href="#__codelineno-4-312"></a>
+<a id="__codelineno-4-313" name="__codelineno-4-313" href="#__codelineno-4-313"></a>fetch bizevents, from:now() - 24h
+<a id="__codelineno-4-314" name="__codelineno-4-314" href="#__codelineno-4-314"></a>
+<a id="__codelineno-4-315" name="__codelineno-4-315" href="#__codelineno-4-315"></a>
+<a id="__codelineno-4-316" name="__codelineno-4-316" href="#__codelineno-4-316"></a>
+<a id="__codelineno-4-317" name="__codelineno-4-317" href="#__codelineno-4-317"></a>| filter event.type == &quot;CS_TEST_EXECUTION_EVENT&quot;
+<a id="__codelineno-4-318" name="__codelineno-4-318" href="#__codelineno-4-318"></a>
+<a id="__codelineno-4-319" name="__codelineno-4-319" href="#__codelineno-4-319"></a>
+<a id="__codelineno-4-320" name="__codelineno-4-320" href="#__codelineno-4-320"></a>
+<a id="__codelineno-4-321" name="__codelineno-4-321" href="#__codelineno-4-321"></a>| filter contains(test.tags, &quot;data-quality-checks&quot;)
+<a id="__codelineno-4-322" name="__codelineno-4-322" href="#__codelineno-4-322"></a>
+<a id="__codelineno-4-323" name="__codelineno-4-323" href="#__codelineno-4-323"></a>
+<a id="__codelineno-4-324" name="__codelineno-4-324" href="#__codelineno-4-324"></a>
+<a id="__codelineno-4-325" name="__codelineno-4-325" href="#__codelineno-4-325"></a>position:
+<a id="__codelineno-4-326" name="__codelineno-4-326" href="#__codelineno-4-326"></a>
+<a id="__codelineno-4-327" name="__codelineno-4-327" href="#__codelineno-4-327"></a>
+<a id="__codelineno-4-328" name="__codelineno-4-328" href="#__codelineno-4-328"></a>
+<a id="__codelineno-4-329" name="__codelineno-4-329" href="#__codelineno-4-329"></a>x: 0
+<a id="__codelineno-4-330" name="__codelineno-4-330" href="#__codelineno-4-330"></a>
+<a id="__codelineno-4-331" name="__codelineno-4-331" href="#__codelineno-4-331"></a>
+<a id="__codelineno-4-332" name="__codelineno-4-332" href="#__codelineno-4-332"></a>
+<a id="__codelineno-4-333" name="__codelineno-4-333" href="#__codelineno-4-333"></a>y: 1
+<a id="__codelineno-4-334" name="__codelineno-4-334" href="#__codelineno-4-334"></a>
+<a id="__codelineno-4-335" name="__codelineno-4-335" href="#__codelineno-4-335"></a>
+<a id="__codelineno-4-336" name="__codelineno-4-336" href="#__codelineno-4-336"></a>
+<a id="__codelineno-4-337" name="__codelineno-4-337" href="#__codelineno-4-337"></a>predecessors: []
+<a id="__codelineno-4-338" name="__codelineno-4-338" href="#__codelineno-4-338"></a>
+<a id="__codelineno-4-339" name="__codelineno-4-339" href="#__codelineno-4-339"></a>
+<a id="__codelineno-4-340" name="__codelineno-4-340" href="#__codelineno-4-340"></a>
+<a id="__codelineno-4-341" name="__codelineno-4-341" href="#__codelineno-4-341"></a>description: &quot;&quot;
+<a id="__codelineno-4-342" name="__codelineno-4-342" href="#__codelineno-4-342"></a>
+<a id="__codelineno-4-343" name="__codelineno-4-343" href="#__codelineno-4-343"></a>
+<a id="__codelineno-4-344" name="__codelineno-4-344" href="#__codelineno-4-344"></a>
+<a id="__codelineno-4-345" name="__codelineno-4-345" href="#__codelineno-4-345"></a>trigger:
+<a id="__codelineno-4-346" name="__codelineno-4-346" href="#__codelineno-4-346"></a>
+<a id="__codelineno-4-347" name="__codelineno-4-347" href="#__codelineno-4-347"></a>
+<a id="__codelineno-4-348" name="__codelineno-4-348" href="#__codelineno-4-348"></a>
+<a id="__codelineno-4-349" name="__codelineno-4-349" href="#__codelineno-4-349"></a>schedule:
+<a id="__codelineno-4-350" name="__codelineno-4-350" href="#__codelineno-4-350"></a>
+<a id="__codelineno-4-351" name="__codelineno-4-351" href="#__codelineno-4-351"></a>
+<a id="__codelineno-4-352" name="__codelineno-4-352" href="#__codelineno-4-352"></a>
+<a id="__codelineno-4-353" name="__codelineno-4-353" href="#__codelineno-4-353"></a>rule: null
+<a id="__codelineno-4-354" name="__codelineno-4-354" href="#__codelineno-4-354"></a>
+<a id="__codelineno-4-355" name="__codelineno-4-355" href="#__codelineno-4-355"></a>
+<a id="__codelineno-4-356" name="__codelineno-4-356" href="#__codelineno-4-356"></a>
+<a id="__codelineno-4-357" name="__codelineno-4-357" href="#__codelineno-4-357"></a>trigger:
+<a id="__codelineno-4-358" name="__codelineno-4-358" href="#__codelineno-4-358"></a>
+<a id="__codelineno-4-359" name="__codelineno-4-359" href="#__codelineno-4-359"></a>
+<a id="__codelineno-4-360" name="__codelineno-4-360" href="#__codelineno-4-360"></a>
+<a id="__codelineno-4-361" name="__codelineno-4-361" href="#__codelineno-4-361"></a>type: cron
+<a id="__codelineno-4-362" name="__codelineno-4-362" href="#__codelineno-4-362"></a>
+<a id="__codelineno-4-363" name="__codelineno-4-363" href="#__codelineno-4-363"></a>
+<a id="__codelineno-4-364" name="__codelineno-4-364" href="#__codelineno-4-364"></a>
+<a id="__codelineno-4-365" name="__codelineno-4-365" href="#__codelineno-4-365"></a>cron: 0 9 * * *
+<a id="__codelineno-4-366" name="__codelineno-4-366" href="#__codelineno-4-366"></a>
+<a id="__codelineno-4-367" name="__codelineno-4-367" href="#__codelineno-4-367"></a>
+<a id="__codelineno-4-368" name="__codelineno-4-368" href="#__codelineno-4-368"></a>
+<a id="__codelineno-4-369" name="__codelineno-4-369" href="#__codelineno-4-369"></a>timezone: Europe/Vienna
+<a id="__codelineno-4-370" name="__codelineno-4-370" href="#__codelineno-4-370"></a>
+<a id="__codelineno-4-371" name="__codelineno-4-371" href="#__codelineno-4-371"></a>
+<a id="__codelineno-4-372" name="__codelineno-4-372" href="#__codelineno-4-372"></a>
+<a id="__codelineno-4-373" name="__codelineno-4-373" href="#__codelineno-4-373"></a>isActive: true
+<a id="__codelineno-4-374" name="__codelineno-4-374" href="#__codelineno-4-374"></a>
+<a id="__codelineno-4-375" name="__codelineno-4-375" href="#__codelineno-4-375"></a>
+<a id="__codelineno-4-376" name="__codelineno-4-376" href="#__codelineno-4-376"></a>
+<a id="__codelineno-4-377" name="__codelineno-4-377" href="#__codelineno-4-377"></a>isFaulty: false
+<a id="__codelineno-4-378" name="__codelineno-4-378" href="#__codelineno-4-378"></a>
+<a id="__codelineno-4-379" name="__codelineno-4-379" href="#__codelineno-4-379"></a>
+<a id="__codelineno-4-380" name="__codelineno-4-380" href="#__codelineno-4-380"></a>
+<a id="__codelineno-4-381" name="__codelineno-4-381" href="#__codelineno-4-381"></a>nextExecution: 2024-02-01T08:00:00.000Z
+<a id="__codelineno-4-382" name="__codelineno-4-382" href="#__codelineno-4-382"></a>
+<a id="__codelineno-4-383" name="__codelineno-4-383" href="#__codelineno-4-383"></a>
+<a id="__codelineno-4-384" name="__codelineno-4-384" href="#__codelineno-4-384"></a>
+<a id="__codelineno-4-385" name="__codelineno-4-385" href="#__codelineno-4-385"></a>filterParameters: {}
+<a id="__codelineno-4-386" name="__codelineno-4-386" href="#__codelineno-4-386"></a>
+<a id="__codelineno-4-387" name="__codelineno-4-387" href="#__codelineno-4-387"></a>
+<a id="__codelineno-4-388" name="__codelineno-4-388" href="#__codelineno-4-388"></a>
+<a id="__codelineno-4-389" name="__codelineno-4-389" href="#__codelineno-4-389"></a>inputs: {}
+<a id="__codelineno-4-390" name="__codelineno-4-390" href="#__codelineno-4-390"></a>
+<a id="__codelineno-4-391" name="__codelineno-4-391" href="#__codelineno-4-391"></a>
+<a id="__codelineno-4-392" name="__codelineno-4-392" href="#__codelineno-4-392"></a>
+<a id="__codelineno-4-393" name="__codelineno-4-393" href="#__codelineno-4-393"></a>schemaVersion: 3
+</code></pre></div>
+4. Configure anomaly detection</p>
+</li>
+</ol>
+<p>You can also use the <a href="/docs/dynatrace-intelligence/use-cases/davis-for-workflows" title="Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.">AI in Workflows - Predictive maintenance of cloud disks</a> action in your workflow to detect anomalies in test/build executions, such as unusually long durations compared to historical data. This information helps to maintain and optimize test environments.
+5. Validate and optimize the implementation</p>
+<p>After setting up, validate the workflow by running test cases and checking the dashboard for correct data representation. Optimize the setup based on initial observations, ensuring data consistency and accuracy.
+6. Monitor and adjust</p>
+<p>Continuously monitor the system for performance and efficacy. Make adjustments as needed based on feedback and evolving requirements.</p>
+<p>By following these steps, you can effectively implement Dynatraceâs test pipeline observability to enhance testing processes, gain valuable insights, and improve overall efficiency.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>Implementing Test Pipeline Observability with Dynatrace provides a practical solution for enhancing test monitoring. This guide has outlined steps to collect and analyze test data, set up monitoring dashboards, and automate responses to important test events. These actions help reduce the manual effort in monitoring tests and allow teams to focus on critical issues, improving the overall testing process.</p>
+<p>Teams are advised to apply these practices to their testing environments and discover the full potential of Dynatraceâs observability tools. The insights gained from this implementation can lead to ongoing improvements in software development processes. By continuing to use Dynatrace and its features, teams can ensure consistent quality in their software development efforts.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>
