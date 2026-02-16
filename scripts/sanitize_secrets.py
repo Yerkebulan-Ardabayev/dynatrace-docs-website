@@ -30,12 +30,12 @@ SECRET_PATTERNS = [
         r'dt0c01\.[A-Z0-9]{24,}\.[A-Z0-9]{64}',
         '<DYNATRACE_API_TOKEN_PLACEHOLDER>'
     ),
-    # Dynatrace Internal Tokens
+    # Dynatrace Internal Tokens (e.g. dt0s02.XXXXXXXX.YYYY...64chars)
     (
-        r'dt0[a-z]\d{2}\.[a-zA-Z0-9_-]{24,}\.[a-zA-Z0-9_-]{64}',
+        r'dt0[a-z]\d{2}\.[a-zA-Z0-9_-]{4,}\.[a-zA-Z0-9_-]{24,}',
         '<DYNATRACE_TOKEN_PLACEHOLDER>'
     ),
-    # Generic Dynatrace token pattern (shorter)
+    # Generic Dynatrace token pattern (shorter, no second dot segment)
     (
         r'dt0[a-z]\d{2}\.[a-zA-Z0-9_-]{14,}',
         '<DYNATRACE_TOKEN_PLACEHOLDER>'
