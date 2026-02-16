@@ -986,7 +986,7 @@
 
 <h1 id="dynatrace-documentation-secureuse-cases">Dynatrace Documentation: secure/use-cases<a class="headerlink" href="#dynatrace-documentation-secureuse-cases" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 15</p>
+<p>Files combined: 16</p>
 <hr />
 <h2 id="source-ai-remediation-github-copilotmd">Source: ai-remediation-github-copilot.md<a class="headerlink" href="#source-ai-remediation-github-copilotmd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1350,11 +1350,147 @@ This use case demonstrates how to prioritize and remediate vulnerabilities that 
 </ul>
 <p>Once configured, GitHub Copilot will assist with remediating vulnerabilities by suggesting code changes based on new alerts.</p>
 <hr />
+<h2 id="source-ai-remediation-kiro-climd">Source: ai-remediation-kiro-cli.md<a class="headerlink" href="#source-ai-remediation-kiro-climd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace
+source: https://www.dynatrace.com/docs/secure/use-cases/ai-remediation-kiro-cli
+scraped: 2026-02-16T09:32:57.901905</p>
+<hr />
+<h1 id="automate-cloud-misconfiguration-triaging-and-remediation-with-kiro-cli-and-dynatrace">Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace<a class="headerlink" href="#automate-cloud-misconfiguration-triaging-and-remediation-with-kiro-cli-and-dynatrace" title="Permanent link">&para;</a></h1>
+<h1 id="automate-cloud-misconfiguration-triaging-and-remediation-with-kiro-cli-and-dynatrace_1">Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace<a class="headerlink" href="#automate-cloud-misconfiguration-triaging-and-remediation-with-kiro-cli-and-dynatrace_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Tutorial</li>
+<li>Updated on Jan 28, 2026</li>
+<li>Preview</li>
+</ul>
+<h2 id="overview_1">Overview<a class="headerlink" href="#overview_1" title="Permanent link">&para;</a></h2>
+<p>Not every cloud misconfiguration needs to be fixed. Dynatrace helps SREs focus on what matters by verifying cloud misconfigurations with runtime context and streamlining remediation with <a href="https://kiro.dev/cli/">Kiro CLIï»¿</a>. This use case demonstrates how to prioritize and remediate cloud misconfigurations that impact production applications. It supports two implementation paths, depending on where and how you want to triage the issuesâboth powered by Dynatrace and Kiro CLI integrations.</p>
+<h2 id="challenge_1">Challenge<a class="headerlink" href="#challenge_1" title="Permanent link">&para;</a></h2>
+<p>In complex cloud environments, the number of high and critical findings that need to be handled is very high. SREs cannot handle all of them, and they need an effective way to remediate those misconfigurations that risk their environments and introduce compliance issues. Cloud misconfiguration might not have a direct impact on production applications. An additional validation and context is needed for more effective triage and remediation efforts.</p>
+<h2 id="solution_1">Solution<a class="headerlink" href="#solution_1" title="Permanent link">&para;</a></h2>
+<p>Dynatrace integrates with AWS products, such as <a href="https://aws.amazon.com/de/security-hub/">AWS Security Hubï»¿</a>, to enrich their findings with additional runtime context and verify them for production impact.</p>
+<ul>
+<li>Confirmed findings require an immediate fix, which can be automated with the Kiro CLI.</li>
+<li>Unconfirmed findings can be suppressed to remove them from the list of active issues.</li>
+</ul>
+<p>This reduces noise and SRE effort by ensuring only relevant misconfigurations are remediated.</p>
+<p>You can implement this solution in two ways, depending on where you want to triage cloud misconfigurations:</p>
+<ul>
+<li><a href="#kiro-cli-triaging"><strong>Kiro CLI-based triaging</strong></a>: Uses Kiro CLI as the main engagement point, connected to Dynatrace and (natively) AWS MCP servers. Users interact with Kiro CLI to first get the top cloud misconfigurations, contextualize and prioritize with Dynatrace context, and finally, remediate them.</li>
+<li><a href="#dynatrace-triaging"><strong>Dynatrace-driven triaging</strong></a>: Uses <img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong> as the main triaging engine with Dynatrace Intelligence generative AI workflow action to summarize the outcomes into a Jira ticket. The rest of the flow takes place in the Kiro CLI as in the first scenario.</li>
+</ul>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>See below for the <a href="#aws">AWS</a> and <a href="#dt">Dynatrace</a> requirements.</p>
+<h3 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enable AWS Security Hub to monitor your AWS environment.</li>
+<li>Install <a href="https://kiro.dev/cli/">Kiro CLIï»¿</a> and authenticate it with AWS.</li>
+</ul>
+<h3 id="dynatrace">Dynatrace<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><a href="/docs/ingest-from/amazon-web-services" title="Set up and configure monitoring for Amazon Web Services.">Set up Dynatrace AWS monitoring</a> for the desired AWS environment.</p>
+</li>
+<li>
+<p><a href="/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub" title="Ingest AWS Security Hub security findings and analyze them in Dynatrace.">Set up Dynatrace integration with AWS Security Hub</a>.</p>
+</li>
+<li><a href="/docs/whats-new/preview-releases#mcp-server" title="Learn about our Preview releases and how you can participate in them.">Request access to Dynatrace MCP Server</a>.</li>
+<li><a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens" title="Create personalised platform tokens to access Dynatrace services via the API in your user context.">Create a Dynatrace platform token</a> with the proper permissions to both access the MCP server and to query various event types.</li>
+</ul>
+<h2 id="kiro-cli-based-triaging">Kiro CLI-based triaging<a class="headerlink" href="#kiro-cli-based-triaging" title="Permanent link">&para;</a></h2>
+<p>In this scenario, an SRE interacts with Kiro CLI to perform validation and remediation actions with the help of Dynatrace MCP.</p>
+<h3 id="how-it-works-kiro-cli-based-triaging">How it works (Kiro CLI-based triaging)<a class="headerlink" href="#how-it-works-kiro-cli-based-triaging" title="Permanent link">&para;</a></h3>
+<p><img alt="Kiro CLI-based triaging" src="https://dt-cdn.net/images/dd7782f2-aaa7-47db-a2ba-be0d9701e734-1920-c3a5adeea6.png" /></p>
+<ol>
+<li>Detection</li>
+</ol>
+<p>AWS Security Hub identifies cloud misconfigurations.</p>
+<ol>
+<li>
+<p>Verification</p>
+</li>
+<li>
+<p>An SRE interacts with the Kiro CLI to extract top findings.</p>
+</li>
+<li>
+<p>The Dynatrace agent, invoked by the Kiro CLI, utilizes the Dynatrace MCP server to verify whether these findings impact production applications.</p>
+</li>
+<li>
+<p>Remediation</p>
+</li>
+<li>
+<p>SRE remediates confirmed findings via Kiro CLI; others are suppressed.</p>
+</li>
+<li>Findings are resolved and verified in AWS Security Hub.</li>
+</ol>
+<h3 id="get-started-kiro-cli-based-triaging">Get started (Kiro CLI-based triaging)<a class="headerlink" href="#get-started-kiro-cli-based-triaging" title="Permanent link">&para;</a></h3>
+<p>To get started, follow the steps below.</p>
+<ol>
+<li>
+<p>Download the <a href="https://dt-url.net/ov0301d"><code>dynatrace-security-agent.json</code> fileï»¿</a> and place it in <code>.kiro/agents/</code>. It contains the Dynatrace MCP configuration with the proper Dynatrace API Platform Token, and the reference to an instructions file.
+   Make sure to replace:</p>
+</li>
+<li>
+<p><code>&lt;DYNATRACE_TENANT&gt;</code> with your environment, for example <code>mytenant.apps.dynatrace.com</code>.</p>
+</li>
+<li><code>&lt;DYNATRACE_PLATFORM_TOKEN&gt;</code> with the Dynatrace token generated in <a href="#dt">prerequisites</a>.</li>
+<li>Download the <a href="https://dt-url.net/cp2300s"><code>instructions.md</code> fileï»¿</a> and place it in the same <code>.kiro/agents/</code> directory, next to the agent configuration file.</li>
+</ol>
+<h2 id="dynatrace-driven-triaging">Dynatrace-driven triaging<a class="headerlink" href="#dynatrace-driven-triaging" title="Permanent link">&para;</a></h2>
+<p>In this scenario, initial validation and triage are automated in Dynatrace Workflows, and the SRE then acts on the Jira tickets to perform assisted remediation using the Kiro CLI.</p>
+<h3 id="how-it-works-dynatrace-driven-triaging">How it works (Dynatrace-driven triaging)<a class="headerlink" href="#how-it-works-dynatrace-driven-triaging" title="Permanent link">&para;</a></h3>
+<p><img alt="Dynatrace-driven triaging" src="https://dt-cdn.net/images/kiro-cli-2-2088-7ca80c5d12.png" /></p>
+<ol>
+<li>Detection</li>
+</ol>
+<p>AWS Security Hub identifies cloud misconfigurations.</p>
+<ol>
+<li>
+<p>Verification</p>
+</li>
+<li>
+<p>AWS Security Hub integration ingests findings into Dynatrace.</p>
+</li>
+<li>
+<p>A Dynatrace workflow analyzes new critical/high-risk findings and performs the automated verification using the Dynatrace Intelligence generative AI workflow action.</p>
+</li>
+<li>
+<p>Remediation</p>
+</li>
+<li>
+<p>A Jira ticket is created automatically with the summary of the verification results.</p>
+</li>
+<li>An SRE uses Kiro CLI to act on the Jira findings. Confirmed findings are remediated, while the unconfirmed findings can be suppressed.</li>
+<li>Findings are resolved in AWS Security Hub and are no longer in the top findings dashboard in Dynatrace.</li>
+</ol>
+<h3 id="get-started-dynatrace-driven-triaging">Get started (Dynatrace-driven triaging)<a class="headerlink" href="#get-started-dynatrace-driven-triaging" title="Permanent link">&para;</a></h3>
+<p>To get started, follow the steps below.</p>
+<ol>
+<li>
+<p>Download the <a href="https://dt-url.net/ov0301d"><code>dynatrace-security-agent.json</code> fileï»¿</a> and place it in <code>.kiro/agents/</code>. It contains the Dynatrace MCP configuration with the proper Dynatrace API Platform Token, and the reference to an instructions file.
+   Make sure to replace:</p>
+</li>
+<li>
+<p><code>&lt;DYNATRACE_TENANT&gt;</code> with your environment, for example <code>mytenant.apps.dynatrace.com</code>.</p>
+</li>
+<li><code>&lt;DYNATRACE_PLATFORM_TOKEN&gt;</code> with the Dynatrace token generated in <a href="#dt">prerequisites</a>.</li>
+<li>Download the <a href="https://dt-url.net/cp2300s"><code>instructions.md</code> fileï»¿</a> and place it in the same <code>.kiro/agents/</code> directory, next to the agent configuration file.</li>
+<li>Optional Configure the Jira remote MCP as part of the Dynatrace agent or as a global Kiro setting (<code>.kiro/settings/mcp.json</code>). For details, see <a href="https://kiro.dev/docs/cli/mcp/">Model context protocol (MCP)ï»¿</a>.</li>
+<li>
+<p>Deploy the <a href="https://dt-url.net/a9032pe">Dynatrace triaging workflow for AWS Security Hub findingsï»¿</a>.</p>
+</li>
+<li>
+<p>Edit the configuration to set the desired values for Jira parameters (such as project key, issue type, assignee, reporter, and labels), which will be used by the Jira ticket creation action.</p>
+</li>
+<li>Schedule the workflow to run periodically.</li>
+</ol>
+<hr />
 <h2 id="source-analyze-aws-api-gateway-access-logs-with-security-investigatormd">Source: analyze-aws-api-gateway-access-logs-with-security-investigator.md<a class="headerlink" href="#source-analyze-aws-api-gateway-access-logs-with-security-investigatormd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Analyze Amazon API Gateway access logs with Investigations
 source: https://www.dynatrace.com/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator
-scraped: 2026-02-15T21:23:59.576362</p>
+scraped: 2026-02-16T09:27:21.832273</p>
 <hr />
 <h1 id="analyze-amazon-api-gateway-access-logs-with-investigations">Analyze Amazon API Gateway access logs with Investigations<a class="headerlink" href="#analyze-amazon-api-gateway-access-logs-with-investigations" title="Permanent link">&para;</a></h1>
 <h1 id="analyze-amazon-api-gateway-access-logs-with-investigations_1">Analyze Amazon API Gateway access logs with Investigations<a class="headerlink" href="#analyze-amazon-api-gateway-access-logs-with-investigations_1" title="Permanent link">&para;</a></h1>
@@ -1367,7 +1503,7 @@ scraped: 2026-02-15T21:23:59.576362</p>
 <p>In the following, you'll learn how <a href="/docs/secure/investigations" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> can help you monitor and identify errors in your Amazon API Gateway access logs.</p>
 <h2 id="target-audience">Target audience<a class="headerlink" href="#target-audience" title="Permanent link">&para;</a></h2>
 <p>This article is intended for security engineers and site reliability engineers who are involved in maintaining and securing cloud applications in AWS. It shows you how to make the most of the Amazon API Gateway logs ingested to Dynatrace to detect security issues.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Create an <a href="https://dt-url.net/r8c3wk1">Amazon CloudWatch log groupï»¿</a> for the Amazon API Gateway access logs</li>
 <li><a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose" title="Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.">Set up Amazon Data Firehose</a> for the log group to send the logs to Dynatrace</li>
@@ -1835,7 +1971,7 @@ scraped: 2026-02-15T21:23:59.576362</p>
 <hr />
 <p>title: Analyze AWS CloudTrail logs with Investigations
 source: https://www.dynatrace.com/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator
-scraped: 2026-02-15T09:11:35.920220</p>
+scraped: 2026-02-16T09:29:14.631559</p>
 <hr />
 <h1 id="analyze-aws-cloudtrail-logs-with-investigations">Analyze AWS CloudTrail logs with Investigations<a class="headerlink" href="#analyze-aws-cloudtrail-logs-with-investigations" title="Permanent link">&para;</a></h1>
 <h1 id="analyze-aws-cloudtrail-logs-with-investigations_1">Analyze AWS CloudTrail logs with Investigations<a class="headerlink" href="#analyze-aws-cloudtrail-logs-with-investigations_1" title="Permanent link">&para;</a></h1>
@@ -1854,7 +1990,7 @@ scraped: 2026-02-15T09:11:35.920220</p>
 </ul>
 <h2 id="target-audience_1">Target audience<a class="headerlink" href="#target-audience_1" title="Permanent link">&para;</a></h2>
 <p>This article is intended for security engineers and site reliability engineers who are involved in maintaining and securing cloud applications in AWS.</p>
-<h2 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_2">Prerequisites<a class="headerlink" href="#prerequisites_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Store your CloudTrail logs to an S3 bucket or <a href="https://dt-url.net/mr03u6p">CloudWatchï»¿</a>.</li>
 <li>
@@ -2222,7 +2358,7 @@ scraped: 2026-02-15T09:11:35.920220</p>
 <hr />
 <p>title: Automate and orchestrate security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/automate-and-orchestrate-security-findings
-scraped: 2026-02-15T21:12:09.941405</p>
+scraped: 2026-02-16T09:26:10.031795</p>
 <hr />
 <h1 id="automate-and-orchestrate-security-findings">Automate and orchestrate security findings<a class="headerlink" href="#automate-and-orchestrate-security-findings" title="Permanent link">&para;</a></h1>
 <h1 id="automate-and-orchestrate-security-findings_1">Automate and orchestrate security findings<a class="headerlink" href="#automate-and-orchestrate-security-findings_1" title="Permanent link">&para;</a></h1>
@@ -2246,7 +2382,7 @@ scraped: 2026-02-15T21:12:09.941405</p>
 <li>Notification of the relevant stakeholders on the critical findings</li>
 <li>Email reporting on the top findings</li>
 </ul>
-<h2 id="prerequisites_2">Prerequisites<a class="headerlink" href="#prerequisites_2" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_3">Prerequisites<a class="headerlink" href="#prerequisites_3" title="Permanent link">&para;</a></h2>
 <p><a href="/docs/secure/threat-observability/security-events-ingest" title="Ingest external security data into Grail.">Ingest security findings</a> from your third-party product.</p>
 <h2 id="get-started_2">Get started<a class="headerlink" href="#get-started_2" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2301,7 +2437,7 @@ scraped: 2026-02-15T21:27:03.812947</p>
 <li>The security team wants to be notified in Slack only about new critical detections from an actor whose IP address is classified as malicious by the <a href="https://www.abuseipdb.com/">AbuseIPDBï»¿</a> threat intelligence source.</li>
 </ul>
 <p>The same scenario can be applied to other supported integrations for enrichment and security data ingest.</p>
-<h2 id="prerequisites_3">Prerequisites<a class="headerlink" href="#prerequisites_3" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_4">Prerequisites<a class="headerlink" href="#prerequisites_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/secure/threat-observability/security-events-ingest/ingest-amazon-guardduty" title="Ingest Amazon GuardDuty security findings and analyze them in Dynatrace.">Install and configure Amazon GuardDuty integration</a> (or any other <a href="/docs/secure/threat-observability/security-events-ingest#ingest" title="Ingest external security data into Grail.">supported data ingest integration</a>).</li>
 <li><a href="/docs/secure/threat-observability/security-events-ingest/abuseipdb-enrich" title="Enrich threat observables with AbuseIPDB and analyze them in Dynatrace.">Install and configure the AbuseIPDB enrichment</a> (or any other <a href="/docs/secure/threat-observability/security-events-ingest#enrich" title="Ingest external security data into Grail.">supported enrichment integration</a>).</li>
@@ -2367,7 +2503,7 @@ scraped: 2026-02-15T09:07:07.508455</p>
 </ul>
 <h2 id="target-audience_4">Target audience<a class="headerlink" href="#target-audience_4" title="Permanent link">&para;</a></h2>
 <p>This article is intended for security engineers and site reliability engineers who are involved in the maintenance and security of cloud applications in AWS.</p>
-<h2 id="prerequisites_4">Prerequisites<a class="headerlink" href="#prerequisites_4" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_5">Prerequisites<a class="headerlink" href="#prerequisites_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Store your CloudTrail logs to an S3 bucket or <a href="https://dt-url.net/mr03u6p">CloudWatchï»¿</a>.</li>
 <li>
@@ -2773,7 +2909,7 @@ scraped: 2026-02-15T09:07:07.508455</p>
 <hr />
 <p>title: Discover coverage gaps in security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/discover-coverage-gaps-in-security-scans
-scraped: 2026-02-15T21:12:03.287136</p>
+scraped: 2026-02-16T09:26:06.818789</p>
 <hr />
 <h1 id="discover-coverage-gaps-in-security-findings">Discover coverage gaps in security findings<a class="headerlink" href="#discover-coverage-gaps-in-security-findings" title="Permanent link">&para;</a></h1>
 <h1 id="discover-coverage-gaps-in-security-findings_1">Discover coverage gaps in security findings<a class="headerlink" href="#discover-coverage-gaps-in-security-findings_1" title="Permanent link">&para;</a></h1>
@@ -2799,7 +2935,7 @@ scraped: 2026-02-15T21:12:03.287136</p>
 <li>Identifying coverage gaps</li>
 <li>Identifying top contributing products and their ROI</li>
 </ul>
-<h2 id="prerequisites_5">Prerequisites<a class="headerlink" href="#prerequisites_5" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_6">Prerequisites<a class="headerlink" href="#prerequisites_6" title="Permanent link">&para;</a></h2>
 <p><a href="/docs/secure/threat-observability/security-events-ingest" title="Ingest external security data into Grail.">Ingest security findings</a> from your third-party product.</p>
 <h2 id="get-started_5">Get started<a class="headerlink" href="#get-started_5" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2823,7 +2959,7 @@ scraped: 2026-02-15T21:12:03.287136</p>
 <hr />
 <p>title: Ingest and process custom security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/ingest-and-process-custom-security-findings
-scraped: 2026-02-15T21:12:07.517120</p>
+scraped: 2026-02-16T09:25:59.880403</p>
 <hr />
 <h1 id="ingest-and-process-custom-security-findings">Ingest and process custom security findings<a class="headerlink" href="#ingest-and-process-custom-security-findings" title="Permanent link">&para;</a></h1>
 <h1 id="ingest-and-process-custom-security-findings_1">Ingest and process custom security findings<a class="headerlink" href="#ingest-and-process-custom-security-findings_1" title="Permanent link">&para;</a></h1>
@@ -3451,7 +3587,7 @@ scraped: 2026-02-15T21:12:07.517120</p>
 <a id="__codelineno-37-604" name="__codelineno-37-604" href="#__codelineno-37-604"></a>
 <a id="__codelineno-37-605" name="__codelineno-37-605" href="#__codelineno-37-605"></a>}
 </code></pre></div>
-<h2 id="prerequisites_6">Prerequisites<a class="headerlink" href="#prerequisites_6" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_7">Prerequisites<a class="headerlink" href="#prerequisites_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Your <a href="/docs/ingest-from/setup-on-k8s/deployment" title="Deploy Dynatrace Operator on Kubernetes">containers are deployed in Kubernetes and monitored by Dynatrace</a></li>
 <li>Corresponding container images are scanned by a third-party tool (in this case, Trivy)</li>
@@ -4323,7 +4459,7 @@ scraped: 2026-02-15T21:28:06.931389</p>
 <h3 id="2-instant-queries">2. Instant queries<a class="headerlink" href="#2-instant-queries" title="Permanent link">&para;</a></h3>
 <p>Based on the information received, you can immediately respond to discoveries and perform further investigations by running a sequence of DQL queries in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> tailored to the attack type.</p>
 <p>For details, see <a href="#notebook">Instant queries</a>.</p>
-<h2 id="prerequisites_7">Prerequisites<a class="headerlink" href="#prerequisites_7" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_8">Prerequisites<a class="headerlink" href="#prerequisites_8" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Dynatrace version 1.283+</li>
 <li><a href="/docs/analyze-explore-automate/logs" title="Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.">Set up log ingestion</a> (ingests security incidents into Grail).</li>
@@ -4608,7 +4744,7 @@ scraped: 2026-02-15T21:28:06.931389</p>
 <hr />
 <p>title: Monitor suspicious sign-in activity with Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/monitor-sign-in-activity
-scraped: 2026-02-15T21:12:05.866014</p>
+scraped: 2026-02-16T09:26:03.529918</p>
 <hr />
 <h1 id="monitor-suspicious-sign-in-activity-with-dynatrace">Monitor suspicious sign-in activity with Dynatrace<a class="headerlink" href="#monitor-suspicious-sign-in-activity-with-dynatrace" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-suspicious-sign-in-activity-with-dynatrace_1">Monitor suspicious sign-in activity with Dynatrace<a class="headerlink" href="#monitor-suspicious-sign-in-activity-with-dynatrace_1" title="Permanent link">&para;</a></h1>
@@ -4637,7 +4773,7 @@ Microsoft Entra ID sign-in logs are forwarded to Dynatrace and stored in Grail t
 <li>Achieve comprehensive visibility over the cloud environment and user activity through a single pane of glass.</li>
 <li>Demonstrate how to monitor Microsoft Entra ID sign-in logs and user activity to detect potential security issues and anomalous behaviors.</li>
 </ul>
-<h2 id="prerequisites_8">Prerequisites<a class="headerlink" href="#prerequisites_8" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_9">Prerequisites<a class="headerlink" href="#prerequisites_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Knowledge of <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a> and <a href="/docs/platform/grail/dynatrace-query-language/dql-guide" title="Find out how DQL works and what are DQL key concepts.">how to use DQL queries</a>.</li>
 <li>
@@ -4897,7 +5033,7 @@ Microsoft Entra ID sign-in logs are forwarded to Dynatrace and stored in Grail t
 <hr />
 <p>title: CSPM Notification Automation
 source: https://www.dynatrace.com/docs/secure/use-cases/notification-automation
-scraped: 2026-02-15T21:12:02.036694</p>
+scraped: 2026-02-16T09:26:01.838950</p>
 <hr />
 <h1 id="cspm-notification-automation">CSPM Notification Automation<a class="headerlink" href="#cspm-notification-automation" title="Permanent link">&para;</a></h1>
 <h1 id="cspm-notification-automation_1">CSPM Notification Automation<a class="headerlink" href="#cspm-notification-automation_1" title="Permanent link">&para;</a></h1>
@@ -4943,7 +5079,7 @@ scraped: 2026-02-15T21:12:02.036694</p>
 <li>(Actual automation) A predefined <a href="/docs/analyze-explore-automate/workflows" title="Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.">workflow</a> orchestrates the processes of querying, filtering, and grouping data and converts the resulting findings into Jira tickets for remediation. See <a href="#start">Get started</a> for the workflow steps.</li>
 </ol>
 <p><img alt="How CSPM automation works" src="https://dt-cdn.net/images/2024-01-31-15-04-14-470-834fcfc1a2.png" /></p>
-<h2 id="prerequisites_9">Prerequisites<a class="headerlink" href="#prerequisites_9" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_10">Prerequisites<a class="headerlink" href="#prerequisites_10" title="Permanent link">&para;</a></h2>
 <p>See below for the <a href="#aws">AWS</a> and <a href="#dt">Dynatrace</a> requirements.</p>
 <h3 id="aws-requirements">AWS requirements<a class="headerlink" href="#aws-requirements" title="Permanent link">&para;</a></h3>
 <ul>
@@ -6130,7 +6266,7 @@ scraped: 2026-02-15T21:12:02.036694</p>
 <hr />
 <p>title: Runtime contextualization of container findings
 source: https://www.dynatrace.com/docs/secure/use-cases/runtime-contextualization-of-container-findings
-scraped: 2026-02-15T21:12:04.603401</p>
+scraped: 2026-02-16T09:26:05.201029</p>
 <hr />
 <h1 id="runtime-contextualization-of-container-findings">Runtime contextualization of container findings<a class="headerlink" href="#runtime-contextualization-of-container-findings" title="Permanent link">&para;</a></h1>
 <h1 id="runtime-contextualization-of-container-findings_1">Runtime contextualization of container findings<a class="headerlink" href="#runtime-contextualization-of-container-findings_1" title="Permanent link">&para;</a></h1>
@@ -6168,7 +6304,7 @@ scraped: 2026-02-15T21:12:04.603401</p>
 <li>Filter for critical findings in production applications on containers with vulnerable container images</li>
 <li>Create notification automation workflows based on those findings</li>
 </ul>
-<h2 id="prerequisites_10">Prerequisites<a class="headerlink" href="#prerequisites_10" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_11">Prerequisites<a class="headerlink" href="#prerequisites_11" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack" title="Deploy Dynatrace Operator in classic full-stack mode to Kubernetes">Set up Kubernetes observability with Dynatrace Operator</a></li>
 <li><a href="/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data" title="Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.">Ingest Amazon ECR vulnerability findings and scan events</a></li>
@@ -6492,7 +6628,7 @@ scraped: 2026-02-15T21:24:42.657302</p>
 <li>Kubernetes clusters are actively assessed through Kubernetes Security Posture Management against regulatory compliance standards and security best practices.</li>
 <li>Misconfigurations and violations against standards are continuously discovered.</li>
 </ul>
-<h2 id="prerequisites_11">Prerequisites<a class="headerlink" href="#prerequisites_11" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_12">Prerequisites<a class="headerlink" href="#prerequisites_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management" title="Configure and enable Security Posture Management in Kubernetes.">Deploy Kubernetes Security Posture Management</a></li>
 <li>
@@ -6577,7 +6713,7 @@ scraped: 2026-02-15T21:24:42.657302</p>
 <hr />
 <p>title: Threat hunting and forensics
 source: https://www.dynatrace.com/docs/secure/use-cases/threat-hunting
-scraped: 2026-02-15T21:23:14.444802</p>
+scraped: 2026-02-16T09:34:45.595381</p>
 <hr />
 <h1 id="threat-hunting-and-forensics">Threat hunting and forensics<a class="headerlink" href="#threat-hunting-and-forensics" title="Permanent link">&para;</a></h1>
 <h1 id="threat-hunting-and-forensics_1">Threat hunting and forensics<a class="headerlink" href="#threat-hunting-and-forensics_1" title="Permanent link">&para;</a></h1>
@@ -6604,7 +6740,7 @@ scraped: 2026-02-15T21:23:14.444802</p>
 <h2 id="scenario_7">Scenario<a class="headerlink" href="#scenario_7" title="Permanent link">&para;</a></h2>
 <p>In the following, we address a scenario in which you get a notification from an external source about a suspiciously high number of unauthorized requests towards our Kubernetes control plane between <code>2024-02-13 16:00:00</code> and <code>2024-02-13 18:59:59</code>. Your Kubernetes cluster has been set up to AWS EKS cluster, and logs are forwarded to Dynatrace.</p>
 <p>As a security analyst, you want to understand if this is related to malicious activities or if it may be an indication of a cyber security incident. During this investigation, you will follow the trail of your findings to illustrate the nature of threat hunting and incident solving.</p>
-<h2 id="prerequisites_12">Prerequisites<a class="headerlink" href="#prerequisites_12" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_13">Prerequisites<a class="headerlink" href="#prerequisites_13" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack" title="Deploy Dynatrace Operator in classic full-stack mode to Kubernetes">Set up Kubernetes observability with Dynatrace Operator</a></li>
 <li>
@@ -7002,7 +7138,7 @@ Open <a href="/docs/secure/investigations" title="Combine Grail functionalities 
 <hr />
 <p>title: Visualize and analyze security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/visualize-and-analyze-security-findings
-scraped: 2026-02-15T21:12:08.685848</p>
+scraped: 2026-02-16T09:26:08.443347</p>
 <hr />
 <h1 id="visualize-and-analyze-security-findings">Visualize and analyze security findings<a class="headerlink" href="#visualize-and-analyze-security-findings" title="Permanent link">&para;</a></h1>
 <h1 id="visualize-and-analyze-security-findings_1">Visualize and analyze security findings<a class="headerlink" href="#visualize-and-analyze-security-findings_1" title="Permanent link">&para;</a></h1>
@@ -7026,7 +7162,7 @@ scraped: 2026-02-15T21:12:08.685848</p>
 <li>Prioritizing security findings across products</li>
 <li>Identifying top affected assets</li>
 </ul>
-<h2 id="prerequisites_13">Prerequisites<a class="headerlink" href="#prerequisites_13" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites_14">Prerequisites<a class="headerlink" href="#prerequisites_14" title="Permanent link">&para;</a></h2>
 <p>Depending on the ingestion source, follow the appropriate setup:</p>
 <ul>
 <li><strong>Third-party security products</strong>: <a href="/docs/secure/threat-observability/security-events-ingest" title="Ingest external security data into Grail.">Set up a supported integration</a>.</li>

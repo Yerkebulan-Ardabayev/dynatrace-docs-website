@@ -1031,19 +1031,7 @@
 <p>EMERGENCY</p>
 <p>emerg</p>
 <p>EMERGENCY</p>
-<p>A match occurs and severity is determined when</p>
-<ol>
-<li>The keyword found is a single word/phrase from the above list, and it is preceded and followed by a space.</li>
-<li>
-<p>The keyword found is a single word/phrase from the above list, and it is preceded and followed by one of the four predefined non-alphanumeric symbols, as in the example below:</p>
-</li>
-<li>
-<p><code>[error]</code></p>
-</li>
-<li><code>{error}</code></li>
-<li><code>{{error}}</code></li>
-<li><code>&lt;error&gt;</code></li>
-</ol>
+<p>A match occurs and severity is determined when the keyword found is a single word/phrase from the above list, and it is preceded and followed any non-alphanumeric symbol other than <code>/</code> or <code>_</code>.</p>
 <h2 id="transform-all-types-of-logs">Transform all types of logs<a class="headerlink" href="#transform-all-types-of-logs" title="Permanent link">&para;</a></h2>
 <p>Additionally, for each log event, a <code>status</code> attribute is created with a value that is a sum of <code>loglevel</code> values based on the following grouping:</p>
 <p>Included <code>loglevel</code> values</p>

@@ -25,7 +25,7 @@
     
     
       
-        <title>Dynatrace Collector - Dynatrace Managed - Документация</title>
+        <title>Dynatrace OTel Collector - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynatrace-collector" class="md-skip">
+        <a href="#dynatrace-otel-collector" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dynatrace Collector
+              Dynatrace OTel Collector
             
           </span>
         </div>
@@ -965,8 +965,8 @@
 
 
 
-<h1 id="dynatrace-collector">Dynatrace Collector<a class="headerlink" href="#dynatrace-collector" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-collector_1">Dynatrace Collector<a class="headerlink" href="#dynatrace-collector_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-otel-collector">Dynatrace OTel Collector<a class="headerlink" href="#dynatrace-otel-collector" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-otel-collector_1">Dynatrace OTel Collector<a class="headerlink" href="#dynatrace-otel-collector_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Overview</li>
@@ -983,10 +983,10 @@
 <li>You need to have common processing of attributes on your telemetry data.</li>
 </ul>
 <p>The Collector is a relatively lightweight component, so teams can deploy their own to avoid sharing the same configuration.</p>
-<p>The Collector is configured in a single YAML file. This eliminates the need to browse through multiple files and reduces maintenance. You can find more information on the configuration at <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="Configure the OpenTelemetry Collector.">Collector Configuration</a>.</p>
+<p>The Collector is configured in a single YAML file. This eliminates the need to browse through multiple files and reduces maintenance. You can find more information on the configuration at <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="How to configure the OpenTelemetry Collector.">Configure the OpenTelemetry Collector</a>.</p>
 <h2 id="distributions">Distributions<a class="headerlink" href="#distributions" title="Permanent link">&para;</a></h2>
 <p>The Collector comes in different distribution flavors and with different setup and deployment options.</p>
-<h3 id="dynatrace-collector_2">Dynatrace Collector<a class="headerlink" href="#dynatrace-collector_2" title="Permanent link">&para;</a></h3>
+<h3 id="dynatrace-collector">Dynatrace Collector<a class="headerlink" href="#dynatrace-collector" title="Permanent link">&para;</a></h3>
 <p>The Dynatrace distribution of the OpenTelemetry Collector is a customized Collector build provided by Dynatrace and tailored for typical use cases in a Dynatrace context. It ships with an optimized and verified set of Collector components.</p>
 <p>Advantages of Dynatrace Collector</p>
 <p>The Dynatrace Collector offers the following advantages compared to the OpenTelemetry Collector distributions:</p>
@@ -999,10 +999,10 @@
 <p>It is also available as a container image at <a href="https://github.com/Dynatrace/dynatrace-otel-collector/pkgs/container/dynatrace-otel-collector%2Fdynatrace-otel-collector">Github Packagesï»¿</a> and can be pulled using the following Docker command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 </code></pre></div>
-<p>More information about further available container repositories can be found under <a href="/docs/ingest-from/opentelemetry/collector/deployment#container-image-registries" title="Deploy the Dynatrace Collector.">Collector deployment</a>.</p>
+<p>More information about further available container repositories can be found under <a href="/docs/ingest-from/opentelemetry/collector/deployment#container-image-registries" title="How to deploy Dynatrace OTel Collector.">Deploy Dynatrace OTel Collector</a>.</p>
 <p>Dynatrace Collector ships with specific components as described in the Dynatrace Collector's GitHub repo.
 For the full list, see <a href="https://github.com/Dynatrace/dynatrace-otel-collector#components">Componentsï»¿</a>.</p>
-<p>Take a look at <a href="/docs/ingest-from/opentelemetry/collector/use-cases" title="Configure your Collector instance for different use cases.">Collector use cases</a> for concrete use-case and configuration examples for the individual components.</p>
+<p>Take a look at <a href="/docs/ingest-from/opentelemetry/collector/use-cases" title="Configure your Collector instance for different use cases.">OpenTelemetry Collector use cases</a> for concrete use-case and configuration examples for the individual components.</p>
 <h3 id="opentelemetry-distributions">OpenTelemetry Distributions<a class="headerlink" href="#opentelemetry-distributions" title="Permanent link">&para;</a></h3>
 <p>There are two principal OpenTelemetry distributions of the Collector:</p>
 <ul>

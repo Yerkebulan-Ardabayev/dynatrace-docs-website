@@ -25,7 +25,7 @@
     
     
       
-        <title>Ingest NetFlow packets - Dynatrace Managed - Документация</title>
+        <title>Ingest NetFlow with the OpenTelemetry Collector - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ingest-netflow-packets" class="md-skip">
+        <a href="#ingest-netflow-with-the-opentelemetry-collector" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ingest NetFlow packets
+              Ingest NetFlow with the OpenTelemetry Collector
             
           </span>
         </div>
@@ -965,8 +965,8 @@
 
 
 
-<h1 id="ingest-netflow-packets">Ingest NetFlow packets<a class="headerlink" href="#ingest-netflow-packets" title="Permanent link">&para;</a></h1>
-<h1 id="ingest-netflow-packets_1">Ingest NetFlow packets<a class="headerlink" href="#ingest-netflow-packets_1" title="Permanent link">&para;</a></h1>
+<h1 id="ingest-netflow-with-the-opentelemetry-collector">Ingest NetFlow with the OpenTelemetry Collector<a class="headerlink" href="#ingest-netflow-with-the-opentelemetry-collector" title="Permanent link">&para;</a></h1>
+<h1 id="ingest-netflow-with-the-opentelemetry-collector_1">Ingest NetFlow with the OpenTelemetry Collector<a class="headerlink" href="#ingest-netflow-with-the-opentelemetry-collector_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
@@ -980,15 +980,15 @@
 <p>One of the following Collector distributions with the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/receiver/netflowreceiver">NetFlow receiverï»¿</a>:</p>
 </li>
 <li>
-<p><a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace Collector.">The Dynatrace Collector</a></p>
+<p><a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace OTel Collector.">The Dynatrace Collector</a></p>
 </li>
-<li><a href="/docs/ingest-from/opentelemetry/collector#collector-contrib" title="Learn about the Dynatrace Collector.">OpenTelemetry Contrib</a></li>
-<li><a href="/docs/ingest-from/opentelemetry/collector#collector-builder" title="Learn about the Dynatrace Collector.">A custom Builder version</a></li>
+<li><a href="/docs/ingest-from/opentelemetry/collector#collector-contrib" title="Learn about the Dynatrace OTel Collector.">OpenTelemetry Contrib</a></li>
+<li><a href="/docs/ingest-from/opentelemetry/collector#collector-builder" title="Learn about the Dynatrace OTel Collector.">A custom Builder version</a></li>
 <li>The <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">Dynatrace API endpoint URL</a> to which the data should be exported.</li>
 <li>An <a href="/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">API token</a> with the Ingest logs (<code>logs.ingest</code>) scope.</li>
 <li>A NetFlow- or sFlow-capable device that can send NetFlow packets to the Collector instance.</li>
 </ul>
-<p>See <a href="/docs/ingest-from/opentelemetry/collector/deployment" title="Deploy the Dynatrace Collector.">Collector Deployment</a> and <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="Configure the OpenTelemetry Collector.">Collector Configuration</a> on how to set up your Collector with the configuration below.</p>
+<p>See <a href="/docs/ingest-from/opentelemetry/collector/deployment" title="How to deploy Dynatrace OTel Collector.">Collector Deployment</a> and <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="How to configure the OpenTelemetry Collector.">Collector Configuration</a> on how to set up your Collector with the configuration below.</p>
 <h2 id="collector-configuration">Collector configuration<a class="headerlink" href="#collector-configuration" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>receivers:
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -1080,7 +1080,7 @@
 <p>We recommend setting the <code>sockets</code> parameter to match the number of CPU cores available on the Collector instance, and the <code>workers</code> parameter to twice the number of sockets. This configuration allows the Collector to process multiple incoming NetFlow packets concurrently, which improves performance.</p>
 <p>For extremely large volumes of data, you should parallelize the configuration among multiple Collector instances.</p>
 <p>Configuration validation</p>
-<p><a href="/docs/ingest-from/opentelemetry/collector/configuration#validate" title="Configure the OpenTelemetry Collector.">Validate your settings</a> to avoid any configuration issues.</p>
+<p><a href="/docs/ingest-from/opentelemetry/collector/configuration#validate" title="How to configure the OpenTelemetry Collector.">Validate your settings</a> to avoid any configuration issues.</p>
 <h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
 <p>For our configuration, we configure the following components.</p>
 <h3 id="receivers">Receivers<a class="headerlink" href="#receivers" title="Permanent link">&para;</a></h3>
@@ -1153,7 +1153,7 @@ For more information see:</p>
 </ul>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/ingest-from/opentelemetry/collector/use-cases/filelog" title="Configure the OpenTelemetry Collector to ingest log data into Dynatrace.">Ingest data from log files</a></li>
+<li><a href="/docs/ingest-from/opentelemetry/collector/use-cases/filelog" title="Configure the OpenTelemetry Collector to ingest log data into Dynatrace.">Ingest logs from files with the OpenTelemetry Collector</a></li>
 </ul>
 
 

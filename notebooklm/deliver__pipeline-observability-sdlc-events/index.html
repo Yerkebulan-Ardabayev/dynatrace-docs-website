@@ -986,13 +986,13 @@
 
 <h1 id="dynatrace-documentation-deliverpipeline-observability-sdlc-events">Dynatrace Documentation: deliver/pipeline-observability-sdlc-events<a class="headerlink" href="#dynatrace-documentation-deliverpipeline-observability-sdlc-events" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 1</p>
+<p>Files combined: 2</p>
 <hr />
 <h2 id="source-deployment-observability-use-case-argocdmd">Source: deployment-observability-use-case-argocd.md<a class="headerlink" href="#source-deployment-observability-use-case-argocdmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Observe Argo CD deployment and application health with Dashboards and SDLC events
 source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/deployment-observability-use-case-argocd
-scraped: 2026-02-15T21:26:29.807389</p>
+scraped: 2026-02-16T09:34:52.270372</p>
 <hr />
 <h1 id="observe-argo-cd-deployment-and-application-health-with-dashboards-and-sdlc-events">Observe Argo CD deployment and application health with Dashboards and SDLC events<a class="headerlink" href="#observe-argo-cd-deployment-and-application-health-with-dashboards-and-sdlc-events" title="Permanent link">&para;</a></h1>
 <h1 id="observe-argo-cd-deployment-and-application-health-with-dashboards-and-sdlc-events_1">Observe Argo CD deployment and application health with Dashboards and SDLC events<a class="headerlink" href="#observe-argo-cd-deployment-and-application-health-with-dashboards-and-sdlc-events_1" title="Permanent link">&para;</a></h1>
@@ -1375,7 +1375,7 @@ If you have any custom ingest sources, dynamic routes, or pipelines, you'll firs
 </ol>
 <p>Argo CD exposes different sets of Prometheus metrics for different services.
 Configure your Argo CD services to expose this information so that it can be collected by Dynatrace.
-You can use either <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">Dynatrace ActiveGate</a>, which is installed on the Kubernetes cluster that hosts Argo CD, or the <a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace Collector.">Dynatrace Collector</a>.</p>
+You can use either <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">Dynatrace ActiveGate</a>, which is installed on the Kubernetes cluster that hosts Argo CD, or the <a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace OTel Collector.">Dynatrace OTel Collector</a>.</p>
 <p>To use <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">Dynatrace ActiveGate</a></p>
 <ol>
 <li>
@@ -1466,6 +1466,473 @@ You can use either <a href="/docs/ingest-from/dynatrace-activegate" title="Under
 <li><a href="/docs/semantic-dictionary/model/sdlc-events" title="Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.">Software development lifecycle (SDLC) events</a></li>
 <li><a href="/docs/deliver/pipeline-observability-sdlc-events/sdlc-events" title="You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.">Ingest SDLC events</a></li>
 <li><a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update" title="Enable automatic updates of Dynatrace Operator following a GitOps approach.">Auto-update for Dynatrace Operator</a></li>
+</ul>
+<hr />
+<h2 id="source-pipeline-observability-tutorial-jiramd">Source: pipeline-observability-tutorial-jira.md<a class="headerlink" href="#source-pipeline-observability-tutorial-jiramd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Optimize engineering flow metrics using Jira data
+source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira
+scraped: 2026-02-16T09:34:18.177698</p>
+<hr />
+<h1 id="optimize-engineering-flow-metrics-using-jira-data">Optimize engineering flow metrics using Jira data<a class="headerlink" href="#optimize-engineering-flow-metrics-using-jira-data" title="Permanent link">&para;</a></h1>
+<h1 id="optimize-engineering-flow-metrics-using-jira-data_1">Optimize engineering flow metrics using Jira data<a class="headerlink" href="#optimize-engineering-flow-metrics-using-jira-data_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Tutorial</li>
+<li>7-min read</li>
+<li>Published Oct 21, 2025</li>
+<li>Preview</li>
+</ul>
+<p>In this tutorial, you set up the integration between Jira and Dynatrace to ingest a daily snapshot of your Jira epics into Dynatrace.
+You analyze your value delivery system from the highest point of view.
+By default, these are epics in Jira.
+We provide you with a dashboard that you populate with your Jira data, enabling you to optimize your engineering flow by making data-driven decisions that improve focus, predictability, and value delivery lead times.</p>
+<p>Below is a screenshot with highlights from the <strong>Engineering Flow Metrics</strong> dashboard.</p>
+<p><img alt="A screenshot with highlights of sections of the Engineering Flow Metrics dashboard." src="https://dt-cdn.net/images/20251128-engineering-flow-metrics-dashboard-on-playground-highlights-3065-0660cc0d38.png" /></p>
+<h2 id="concepts_1">Concepts<a class="headerlink" href="#concepts_1" title="Permanent link">&para;</a></h2>
+<p>Software Development Lifecycle (SDLC) events
+:   <a href="/docs/deliver/pipeline-observability-sdlc-events#sdlc-events" title="With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.">SDLC events</a> within the Software Development Lifecycle (SDLC) play a pivotal role in achieving effective pipeline observability.
+    They represent key actions that occur throughout the lifecycle â such as releasing a new software version, deploying that version, or successfully passing a performance test.
+    For more information, see <a href="/docs/semantic-dictionary/model/sdlc-events" title="Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.">Semantic Dictionary SDLC events</a></p>
+<h2 id="target-audience_1">Target audience<a class="headerlink" href="#target-audience_1" title="Permanent link">&para;</a></h2>
+<p>The <strong>Engineering Flow Metrics</strong> dashboard is intended for:</p>
+<ul>
+<li>Senior leaders and decision-makers who require a high-level view of the value streams to align business objectives with delivery outcomes.</li>
+<li>Development teams, product owners, product managers, agile coaches, and engineering managers who use Jira to get insights about their team's progress.</li>
+</ul>
+<h2 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Access to the Jira Cloud instance.</li>
+<li>You have an <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token" title="Learn the concept of an access token and its scopes.">access token</a> with the <code>OpenPipeline - Ingest Software Development Lifecycle Events (Built-in)</code> scope.</li>
+</ul>
+<h2 id="how-to_1">How-to<a class="headerlink" href="#how-to_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Jira: Configure a quick filter</li>
+</ol>
+<p>In Jira, configure a quick filter to get a <code>&lt;filter-id&gt;</code> for the scheduled <a href="https://www.atlassian.com/software/jira/guides/automation/overview#board-vs-project">Jira automationï»¿</a>.</p>
+<ol>
+<li>Go to your Jira instance and <a href="https://support.atlassian.com/jira-software-cloud/docs/configure-quick-filters/">configure a Jira quick filterï»¿</a>.</li>
+</ol>
+<p>To monitor epics in Jira, you can use the following JQL query as an example.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>type = Epic AND project = &lt;your-project-name&gt; AND (resolved is EMPTY or resolved &gt; -2w)
+</code></pre></div>
+2. Select <strong>Copy filter</strong>.
+   The <strong>Copy filter</strong> dialog opens.
+3. Enter the name of the filter in <strong>Name</strong>.
+4. Select who can view in the <strong>Viewers</strong> drop-down list.</p>
+<p>The filter needs to be visible to the actor of the automation.
+   To be on the safe side, set the permission so that everybody can see the filter.</p>
+<p>For more information on actors in Jira automation, see <a href="https://support.atlassian.com/cloud-automation/docs/what-is-a-rule-actor/">What is a rule actor?ï»¿</a>.
+5. Select <strong>Save</strong>.
+6. Get the filter ID from the Jira URL.
+   The format is similar to <code>/issues/?filter=&lt;filter-id&gt;</code>, for example, <code>?filter=12345</code></p>
+<ol>
+<li>Dynatrace: Copy Endpoints path</li>
+</ol>
+<p>You need the <strong>Endpoints path</strong> to configure the scheduled Jira automation.</p>
+<p>To find and copy the <strong>Endpoints path</strong>:</p>
+<ol>
+<li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>OpenPipeline</strong> &gt; <strong>Software development lifecycle</strong>.</li>
+<li>In the <strong>Ingest sources</strong> tab &gt; <strong>Endpoints path</strong> tab, hover over the <strong>Endpoints path</strong>.</li>
+<li>
+<p>From the  dot menu of the source, select  <strong>Copy</strong> to copy the <strong>Endpoints path</strong>.</p>
+</li>
+<li>
+<p>Jira: Set up a trigger for scheduled Jira automation</p>
+</li>
+</ol>
+<p>Data is stored as events in Dynatrace.
+Thus, the data is charged as Events powered by Grail.
+For more information on the cost of Events powered by Grail, see <a href="/docs/license/capabilities/events" title="Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Events powered by Grail overview (DPS)</a>.</p>
+<p>To populate Dynatrace with Jira data, set up a Jira automation.</p>
+<ol>
+<li>Go to Jira and open your Jira project.</li>
+<li>Select <strong>Project settings</strong>.</li>
+<li>On the left side, select <strong>Automation</strong>.</li>
+<li>Select <strong>Create rule</strong>.
+   Start with an empty Jira automation rule, allowing you to configure the correct fields.</li>
+<li>Select the <strong>Scheduled</strong> trigger.
+   For more information, see <a href="https://support.atlassian.com/cloud-automation/docs/jira-automation-triggers/">Jira automation triggersï»¿</a> and <a href="https://confluence.atlassian.com/automationkb/automation-set-scheduled-as-a-trigger-and-use-multiple-actions-1388151419.html">Jira Automation: Set 'Scheduled' as a trigger and use multiple actionsï»¿</a>.</li>
+<li>
+<p>In the <strong>Occurrence</strong> field, to trigger nightly, for example, at 4:00 AM.</p>
+</li>
+<li>
+<p>In the <strong>Run rule every</strong> field, set the <strong>Scheduled</strong> trigger to <code>1</code>.</p>
+</li>
+<li>In the <strong>Run rule every</strong> field, select <strong>Days</strong>.</li>
+<li>In the <strong>At</strong> field, set the time to <code>4:00 AM</code>.</li>
+<li>In the <strong>At</strong> field, select the time zone.</li>
+<li>Select the <strong>Run a JQL search and execute actions for each work item in the query</strong> checkbox.</li>
+<li>Required In the <strong>JQL</strong> field, enter the filter you created earlier as <code>filter=&lt;filter-id&gt;</code>.
+   Replace <code>&lt;filter-id&gt;</code> with the ID of the filter that you created earlier.</li>
+</ol>
+<p>Make sure that <strong>Only include work items that have changed since last time</strong> is not selected.
+9. Select <strong>Next</strong> to finish the configuration of the scheduled trigger.</p>
+<ol>
+<li>Jira: Start setting up the Send web request action for Jira automation</li>
+</ol>
+<p>As part of the Jira automation, you need to set up a Jira <strong>Send web request</strong> action.
+This action sends an HTTP request to the URL specified.</p>
+<ol>
+<li>Add a <a href="https://confluence.atlassian.com/automation074/actions-1141481289.html#Actions-sendwebrequest"><strong>Send web request</strong> actionï»¿</a>.</li>
+<li>Enter your <strong>Web request URL</strong> from the <a href="/docs/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira#copy" title="Stabilize your value delivery system by making data-driven decisions that improve focus, predictability, and value delivery lead times.">Dynatrace: Copy Endpoints path step</a>.
+   The pattern is <code>https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/events.sdlc</code>.</li>
+<li>In the <strong>HTTP method</strong> field, select <strong>POST</strong>.</li>
+<li>In the <strong>Web request body</strong>, select <strong>Custom data</strong>.</li>
+<li>
+<p>In the <strong>Headers</strong> section, set the following <strong>Key</strong> and <strong>Value</strong> pairs:</p>
+</li>
+<li>
+<p><strong>Content-Type</strong> to <code>application/json</code>.</p>
+</li>
+<li><strong>Authorization</strong> to <code>Api-Token &lt;your-API-token&gt;</code>.</li>
+<li><strong>accept</strong> to <code>application/json; charset=utf-8</code>.</li>
+<li>
+<p>Replace <code>&lt;your-API-token&gt;</code> with your Dynatrace API access token that you generated in the earlier step.</p>
+</li>
+<li>
+<p>Jira: Find Rank and Team Jira field IDs</p>
+</li>
+</ol>
+<p>You need to find the automatically created <strong>Rank</strong> and <strong>Team</strong> Jira field IDs that are specific to your Jira instance so that you can use them for analytics in the next step.</p>
+<p>In your browser, to find the Jira fields, make a call to the Jira API on any issue in your project.</p>
+<ol>
+<li>Enter the following URL <code>https://&lt;your-endpoint&gt;.atlassian.net/rest/api/2/issue/&lt;your-issue&gt;?expand=names</code> into your browser.
+   Replace <code>&lt;your-endpoint&gt;</code> with your URL.
+   Replace <code>&lt;your-issue&gt;</code> with any of your issue keys.</li>
+<li>Open the URL.
+   This request returns a JSON output to the browser.</li>
+<li>Search for the custom fields <strong>Rank</strong> and <strong>Team</strong>.
+   You can use the custom field ID in the Jira Automation to send the data to your dashboard.</li>
+</ol>
+<p>The field format is <code>customfield_xxxxx</code> where <code>xxxxx</code> is the field ID.
+   The code block below shows an example of the JSON response body, including custom field IDs.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>&quot;expand&quot;: &quot;renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations&quot;,
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>&quot;id&quot;: &quot;10000&quot;,
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>&quot;self&quot;: &quot;https://&lt;your-endpoint&gt;.atlassian.net/rest/api/2/issue/10000&quot;,
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>&quot;key&quot;: &quot;SCRUM-1&quot;,
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>&quot;names&quot;: {
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>&quot;customfield_10001&quot;: &quot;Team&quot;,
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>&quot;customfield_10019&quot;: &quot;Rank&quot;
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>}
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>}
+</code></pre></div>
+<ol>
+<li>Jira: Finish setting up the Send web request action for Jira automation</li>
+</ol>
+<p>Add the custom field IDs of the automatically created <strong>Rank</strong> and <strong>Team</strong> Jira fields to the <strong>Custom data</strong> field of your Jira <strong>Send web request</strong> action.</p>
+<ol>
+<li>Go to your Jira Automation.</li>
+<li>In the <strong>Custom data</strong> field, enter the following template for generating JSON from JIRA issue data:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>&quot;specversion&quot;: &quot;1.0&quot;
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>, &quot;id&quot;: &quot;{{issue.key}}&quot;
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>, &quot;source&quot;: &quot;JIRA&quot;
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>, &quot;day&quot;: &quot;{{now.jiraDate}}&quot;
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>, &quot;version&quot;: &quot;1&quot;
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>, &quot;key&quot;: &quot;{{issue.key}}&quot;
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>, &quot;summary&quot;: {{issue.summary.asJsonString()}}
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>, &quot;type&quot;: &quot;{{issue.issuetype.name}}&quot;
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>{{#exists(issue.assignee)}}
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>, &quot;assignee&quot;: &quot;{{issue.assignee.displayName}}&quot;
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>{{/}}
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>{{#exists(issue.customfield_&lt;your-team-custom-field-id&gt;)}}
+<a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>
+<a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a>
+<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>
+<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>, &quot;team&quot;: &quot;{{issue.customfield_&lt;your-team-custom-field-id&gt;.name}}&quot;
+<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>
+<a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a>
+<a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>
+<a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a>{{/}}
+<a id="__codelineno-8-58" name="__codelineno-8-58" href="#__codelineno-8-58"></a>
+<a id="__codelineno-8-59" name="__codelineno-8-59" href="#__codelineno-8-59"></a>
+<a id="__codelineno-8-60" name="__codelineno-8-60" href="#__codelineno-8-60"></a>
+<a id="__codelineno-8-61" name="__codelineno-8-61" href="#__codelineno-8-61"></a>, &quot;status&quot;: &quot;{{issue.status.name}}&quot;
+<a id="__codelineno-8-62" name="__codelineno-8-62" href="#__codelineno-8-62"></a>
+<a id="__codelineno-8-63" name="__codelineno-8-63" href="#__codelineno-8-63"></a>
+<a id="__codelineno-8-64" name="__codelineno-8-64" href="#__codelineno-8-64"></a>
+<a id="__codelineno-8-65" name="__codelineno-8-65" href="#__codelineno-8-65"></a>, &quot;status_category&quot;: &quot;{{issue.status.statuscategory.name}}&quot;
+<a id="__codelineno-8-66" name="__codelineno-8-66" href="#__codelineno-8-66"></a>
+<a id="__codelineno-8-67" name="__codelineno-8-67" href="#__codelineno-8-67"></a>
+<a id="__codelineno-8-68" name="__codelineno-8-68" href="#__codelineno-8-68"></a>
+<a id="__codelineno-8-69" name="__codelineno-8-69" href="#__codelineno-8-69"></a>{{#exists(issue.resolution)}}
+<a id="__codelineno-8-70" name="__codelineno-8-70" href="#__codelineno-8-70"></a>
+<a id="__codelineno-8-71" name="__codelineno-8-71" href="#__codelineno-8-71"></a>
+<a id="__codelineno-8-72" name="__codelineno-8-72" href="#__codelineno-8-72"></a>
+<a id="__codelineno-8-73" name="__codelineno-8-73" href="#__codelineno-8-73"></a>, &quot;resolution&quot;: &quot;{{issue.resolution.name}}&quot;
+<a id="__codelineno-8-74" name="__codelineno-8-74" href="#__codelineno-8-74"></a>
+<a id="__codelineno-8-75" name="__codelineno-8-75" href="#__codelineno-8-75"></a>
+<a id="__codelineno-8-76" name="__codelineno-8-76" href="#__codelineno-8-76"></a>
+<a id="__codelineno-8-77" name="__codelineno-8-77" href="#__codelineno-8-77"></a>{{/}}
+<a id="__codelineno-8-78" name="__codelineno-8-78" href="#__codelineno-8-78"></a>
+<a id="__codelineno-8-79" name="__codelineno-8-79" href="#__codelineno-8-79"></a>
+<a id="__codelineno-8-80" name="__codelineno-8-80" href="#__codelineno-8-80"></a>
+<a id="__codelineno-8-81" name="__codelineno-8-81" href="#__codelineno-8-81"></a>{{#if(not(issue.labels.isEmpty))}}
+<a id="__codelineno-8-82" name="__codelineno-8-82" href="#__codelineno-8-82"></a>
+<a id="__codelineno-8-83" name="__codelineno-8-83" href="#__codelineno-8-83"></a>
+<a id="__codelineno-8-84" name="__codelineno-8-84" href="#__codelineno-8-84"></a>
+<a id="__codelineno-8-85" name="__codelineno-8-85" href="#__codelineno-8-85"></a>, &quot;labels&quot;: [
+<a id="__codelineno-8-86" name="__codelineno-8-86" href="#__codelineno-8-86"></a>
+<a id="__codelineno-8-87" name="__codelineno-8-87" href="#__codelineno-8-87"></a>
+<a id="__codelineno-8-88" name="__codelineno-8-88" href="#__codelineno-8-88"></a>
+<a id="__codelineno-8-89" name="__codelineno-8-89" href="#__codelineno-8-89"></a>{{#issue.labels}}
+<a id="__codelineno-8-90" name="__codelineno-8-90" href="#__codelineno-8-90"></a>
+<a id="__codelineno-8-91" name="__codelineno-8-91" href="#__codelineno-8-91"></a>
+<a id="__codelineno-8-92" name="__codelineno-8-92" href="#__codelineno-8-92"></a>
+<a id="__codelineno-8-93" name="__codelineno-8-93" href="#__codelineno-8-93"></a>&quot;{{.}}&quot; {{^last}},{{/}}
+<a id="__codelineno-8-94" name="__codelineno-8-94" href="#__codelineno-8-94"></a>
+<a id="__codelineno-8-95" name="__codelineno-8-95" href="#__codelineno-8-95"></a>
+<a id="__codelineno-8-96" name="__codelineno-8-96" href="#__codelineno-8-96"></a>
+<a id="__codelineno-8-97" name="__codelineno-8-97" href="#__codelineno-8-97"></a>{{/}}
+<a id="__codelineno-8-98" name="__codelineno-8-98" href="#__codelineno-8-98"></a>
+<a id="__codelineno-8-99" name="__codelineno-8-99" href="#__codelineno-8-99"></a>
+<a id="__codelineno-8-100" name="__codelineno-8-100" href="#__codelineno-8-100"></a>
+<a id="__codelineno-8-101" name="__codelineno-8-101" href="#__codelineno-8-101"></a>]
+<a id="__codelineno-8-102" name="__codelineno-8-102" href="#__codelineno-8-102"></a>
+<a id="__codelineno-8-103" name="__codelineno-8-103" href="#__codelineno-8-103"></a>
+<a id="__codelineno-8-104" name="__codelineno-8-104" href="#__codelineno-8-104"></a>
+<a id="__codelineno-8-105" name="__codelineno-8-105" href="#__codelineno-8-105"></a>{{/}}
+<a id="__codelineno-8-106" name="__codelineno-8-106" href="#__codelineno-8-106"></a>
+<a id="__codelineno-8-107" name="__codelineno-8-107" href="#__codelineno-8-107"></a>
+<a id="__codelineno-8-108" name="__codelineno-8-108" href="#__codelineno-8-108"></a>
+<a id="__codelineno-8-109" name="__codelineno-8-109" href="#__codelineno-8-109"></a>{{#if(equals(issue.fixVersions.size, 1))}}
+<a id="__codelineno-8-110" name="__codelineno-8-110" href="#__codelineno-8-110"></a>
+<a id="__codelineno-8-111" name="__codelineno-8-111" href="#__codelineno-8-111"></a>
+<a id="__codelineno-8-112" name="__codelineno-8-112" href="#__codelineno-8-112"></a>
+<a id="__codelineno-8-113" name="__codelineno-8-113" href="#__codelineno-8-113"></a>{{#issue.fixVersions}}
+<a id="__codelineno-8-114" name="__codelineno-8-114" href="#__codelineno-8-114"></a>
+<a id="__codelineno-8-115" name="__codelineno-8-115" href="#__codelineno-8-115"></a>
+<a id="__codelineno-8-116" name="__codelineno-8-116" href="#__codelineno-8-116"></a>
+<a id="__codelineno-8-117" name="__codelineno-8-117" href="#__codelineno-8-117"></a>, &quot;fix_version&quot;: &quot;{{name}}&quot;
+<a id="__codelineno-8-118" name="__codelineno-8-118" href="#__codelineno-8-118"></a>
+<a id="__codelineno-8-119" name="__codelineno-8-119" href="#__codelineno-8-119"></a>
+<a id="__codelineno-8-120" name="__codelineno-8-120" href="#__codelineno-8-120"></a>
+<a id="__codelineno-8-121" name="__codelineno-8-121" href="#__codelineno-8-121"></a>, &quot;fix_version.release_date&quot;: &quot;{{releaseDate.format(&quot;yyyy-MM-dd&quot;)}}&quot;
+<a id="__codelineno-8-122" name="__codelineno-8-122" href="#__codelineno-8-122"></a>
+<a id="__codelineno-8-123" name="__codelineno-8-123" href="#__codelineno-8-123"></a>
+<a id="__codelineno-8-124" name="__codelineno-8-124" href="#__codelineno-8-124"></a>
+<a id="__codelineno-8-125" name="__codelineno-8-125" href="#__codelineno-8-125"></a>{{/}}
+<a id="__codelineno-8-126" name="__codelineno-8-126" href="#__codelineno-8-126"></a>
+<a id="__codelineno-8-127" name="__codelineno-8-127" href="#__codelineno-8-127"></a>
+<a id="__codelineno-8-128" name="__codelineno-8-128" href="#__codelineno-8-128"></a>
+<a id="__codelineno-8-129" name="__codelineno-8-129" href="#__codelineno-8-129"></a>{{/}}
+<a id="__codelineno-8-130" name="__codelineno-8-130" href="#__codelineno-8-130"></a>
+<a id="__codelineno-8-131" name="__codelineno-8-131" href="#__codelineno-8-131"></a>
+<a id="__codelineno-8-132" name="__codelineno-8-132" href="#__codelineno-8-132"></a>
+<a id="__codelineno-8-133" name="__codelineno-8-133" href="#__codelineno-8-133"></a>, &quot;created&quot;: &quot;{{issue.created}}&quot;
+<a id="__codelineno-8-134" name="__codelineno-8-134" href="#__codelineno-8-134"></a>
+<a id="__codelineno-8-135" name="__codelineno-8-135" href="#__codelineno-8-135"></a>
+<a id="__codelineno-8-136" name="__codelineno-8-136" href="#__codelineno-8-136"></a>
+<a id="__codelineno-8-137" name="__codelineno-8-137" href="#__codelineno-8-137"></a>, &quot;status_changed_on&quot;: &quot;{{issue.statuscategorychangedate}}&quot;
+<a id="__codelineno-8-138" name="__codelineno-8-138" href="#__codelineno-8-138"></a>
+<a id="__codelineno-8-139" name="__codelineno-8-139" href="#__codelineno-8-139"></a>
+<a id="__codelineno-8-140" name="__codelineno-8-140" href="#__codelineno-8-140"></a>
+<a id="__codelineno-8-141" name="__codelineno-8-141" href="#__codelineno-8-141"></a>, &quot;resolved&quot;: &quot;{{issue.resolved}}&quot;
+<a id="__codelineno-8-142" name="__codelineno-8-142" href="#__codelineno-8-142"></a>
+<a id="__codelineno-8-143" name="__codelineno-8-143" href="#__codelineno-8-143"></a>
+<a id="__codelineno-8-144" name="__codelineno-8-144" href="#__codelineno-8-144"></a>
+<a id="__codelineno-8-145" name="__codelineno-8-145" href="#__codelineno-8-145"></a>, &quot;rank&quot;: &quot;{{issue.customfield_&lt;your-rank-custom-field-id&gt;}}&quot;
+<a id="__codelineno-8-146" name="__codelineno-8-146" href="#__codelineno-8-146"></a>
+<a id="__codelineno-8-147" name="__codelineno-8-147" href="#__codelineno-8-147"></a>
+<a id="__codelineno-8-148" name="__codelineno-8-148" href="#__codelineno-8-148"></a>
+<a id="__codelineno-8-149" name="__codelineno-8-149" href="#__codelineno-8-149"></a>, &quot;project&quot;: &quot;{{issue.project.key}}&quot;
+<a id="__codelineno-8-150" name="__codelineno-8-150" href="#__codelineno-8-150"></a>
+<a id="__codelineno-8-151" name="__codelineno-8-151" href="#__codelineno-8-151"></a>
+<a id="__codelineno-8-152" name="__codelineno-8-152" href="#__codelineno-8-152"></a>
+<a id="__codelineno-8-153" name="__codelineno-8-153" href="#__codelineno-8-153"></a>}
+</code></pre></div>
+<p>This example uses <a href="https://support.atlassian.com/cloud-automation/docs/smart-values-in-jira-automation/">Jira smart valuesï»¿</a> to extract the required information and ingest it into Dynatrace.<br />
+<code>{{#if(equals(issue.fixVersions.size, 1))}}</code> implies that the Jira epic has only one fix version.
+3. Replace <code>&lt;your-rank-custom-field-id&gt;</code> with the <strong>Rank</strong> custom field ID.
+4. Replace <code>&lt;your-team-custom-field-id&gt;</code> with the <strong>Team</strong> custom field ID.
+5. Select <strong>Next</strong> to finish the configuration of the <strong>Send web request</strong> action.
+6. Select <strong>Turn on rule</strong> to save the automation.
+7. Enter the <strong>Name</strong> for the Jira Automation.
+8. Select <strong>Turn on rule</strong> to save.</p>
+<ol>
+<li>Organize data</li>
+</ol>
+<p>To organize the data in Dynatrace, set up a <a href="/docs/platform/grail/organize-data#custom-grail-buckets" title="Insights on the Grail data model consisting of buckets, tables, and views.">custom Grail bucket</a>.</p>
+<ol>
+<li>In Dynatrace, go to <strong>Settings</strong> &gt; <strong>Storage management</strong> &gt; <strong>Bucket storage management</strong>.</li>
+<li>Select  <strong>Bucket</strong>.</li>
+<li>In the <strong>New bucket</strong> dialog, enter the <strong>Bucket name</strong> and the <strong>Display name</strong>. Use <code>jira_events</code> because the sample dashboard expects this name.</li>
+<li>Set the <strong>Bucket table type</strong> to <strong>events</strong>.</li>
+<li>Set the <strong>Retention period</strong> to three years in days which is <code>1095</code> days.</li>
+<li>Select <strong>Create</strong>.</li>
+</ol>
+<p>If the data should be restricted, configure the <a href="/docs/platform/grail/organize-data/assign-permissions-in-grail" title="Find out how to assign permissions to buckets and tables in Grail.">bucket permissions</a>.</p>
+<ol>
+<li>Route data</li>
+</ol>
+<p>To route the data into the custom bucket, set up an SDLC pipeline.</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>OpenPipeline</strong> &gt; <strong>Software development lifecycle</strong>.</li>
+<li>Go to the <strong>Pipelines</strong> tab.</li>
+<li>Select  <strong>Pipeline</strong>.</li>
+<li>Enter a pipeline <strong>Name</strong>.</li>
+<li>Go to the <strong>Storage</strong> tab.</li>
+<li>Select  <strong>Processor</strong> &gt; <strong>Bucket assignment</strong>.</li>
+<li>Enter a <strong>New Processor</strong> <strong>Name</strong>, for example, <code>Jira Daily Snapshot</code>.</li>
+<li>Set the <strong>Matching condition</strong> to <code>source == "JIRA"</code>.</li>
+<li>In the <strong>Storage</strong> drop-down list, select your bucket from the previous step.</li>
+<li>Select <strong>Save</strong>.</li>
+<li>Go to the <strong>Dynamic routing</strong> tab.</li>
+<li>Select  <strong>Dynamic routing</strong>.</li>
+<li>In the <strong>Add a new dynamic route</strong> dialog, enter the <strong>Name</strong> of the new dynamic route.</li>
+<li>In the <strong>Matching condition</strong>, enter <code>source == "JIRA"</code>.</li>
+<li>Select from the <strong>Pipeline</strong> drop-down your custom pipeline.</li>
+<li>Select <strong>Add</strong>.</li>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p>All events created by the Jira automation are added to the bucket.
+For more general information, see <a href="/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process" title="Configure ingest sources, routes, and processing for your data in OpenPipeline.">Configure a processing pipeline</a>.</p>
+<ol>
+<li>Verify setup</li>
+</ol>
+<p>This step is about verifying your Jira and Dynatrace setup.</p>
+<ol>
+<li>Run the Jira automation manually to verify the automation rule.</li>
+<li>
+<p>Query the events via DQL, for example, in <strong>Notebooks</strong>, to verify that your events have been ingested successfully.</p>
+</li>
+<li>
+<p>Go to <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</p>
+</li>
+<li>Choose or create a notebook.</li>
+<li>Select <img alt="Grail" src="https://cdn.bfldr.com/B686QPH3/at/kc3c7k476pbx2pb8cphzktf/Grail.svg?auto=webp&amp;width=72&amp;height=72" title="Grail" /> DQL to add a new section with a DQL query input field.</li>
+<li>
+<p>Enter the following DQL query:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>fetch events
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>| filter dt.system.bucket == &quot;jira_events&quot;
+</code></pre></div>
+</li>
+</ol>
+<p>This query returns data after the automation ran successfully.</p>
+<ol>
+<li>Use the Engineering Flow Metrics dashboard for analysis</li>
+</ol>
+<p>We're providing you with a ready-made dashboard.</p>
+<p>To find and use the dashboard:</p>
+<ol>
+<li>Go to the <a href="https://dt-url.net/e0032zt">Engineering Flow Metrics dashboard on Playgroundï»¿</a>.</li>
+<li><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Download</a> the dashboard.</li>
+<li><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Upload</a> the dashboard to your environment.</li>
+</ol>
+<p>You need to adjust the start date of specific queries to match the start of your data ingestion which we explain in detail in the <strong>Hard-Coded Dates</strong> section of the dashboard.</p>
+<p>The sections <strong>Epic Throughput</strong>, <strong>Lead Time</strong>, and <strong>Implementation Aging Chart</strong> are populated immediately after the first data import.</p>
+<p>After the daily snapshot data is available for at least two weeks, you can do the analysis with the help of different sections of the dashboard, for example, <strong>Epic Burndown</strong>, <strong>Cumulative Flow Diagram</strong>, <strong>Work In Progress</strong>, <strong>Backlog Stability</strong>, and <strong>Changes</strong>.</p>
+<p>The dashboard shows:</p>
+<ul>
+<li><strong>Epic Throughput</strong>:
+     Historical throughput is shown in grey and is based on the <strong>Fix Version</strong>.
+     The epics planned in the future are shown in blue, based on the <strong>Fix Version</strong> year quarters.
+     The thin green line shows the average of the last four complete quarters.
+     The table in the dashboard displays the difference from the average for each quarter.</li>
+<li><strong>Epic Burndown</strong>:
+     The burndown shows Jira epics per status over time.
+     The charts are based on a weekly schedule, using the latest available data point for each week.</li>
+<li><strong>Lead Time</strong>:
+     Time between creation and resolution of the epic.
+     Epics that were closed within a quarter are considered.</li>
+<li><strong>Implementation Aging Chart</strong>:
+     Time in implementation.
+     One month is 30 days.</li>
+<li><strong>Cumulative Flow Diagram</strong>:
+     Number of Jira epics per status over time.
+     Closed epics disappear after two weeks.</li>
+<li><strong>Work In Progress</strong>:
+     Epics <strong>In Progress</strong>.</li>
+<li><strong>Backlog Stability</strong>:
+     Shows the top 35 epics in the backlog.
+     One line represents one epic.
+     A line in the diagram starts when an epic is created, and the line ends as soon as the epic is closed, with the status set to <strong>Closed</strong>.
+     Epics below the top 35 are collapsed into one line at the bottom of the chart.
+     If lines are crossing each other, priorities have changed.</li>
+<li><strong>Changes in the last 2 weeks</strong>:
+     Changes to the fields <strong>Status</strong>, <strong>Fix Version</strong>, and <strong>Assignee</strong> are shown.</li>
+</ul>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>You now have the dashboard, which allows you to view the metrics and start optimizing your value delivery flow.
+The dashboard serves as a starting point; you can extend or refine it based on your specific needs.</p>
+<p>Below is a full screenshot of the <strong>Engineering Flow Metrics</strong> dashboard.</p>
+<p><img alt="A screenshot of the Engineering Flow Metrics dashboard." src="https://dt-cdn.net/images/20251128-engineering-flow-metrics-dashboard-on-playground-3065-68560a9b6d.png" /></p>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/semantic-dictionary/model/sdlc-events" title="Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.">Software development lifecycle (SDLC) events</a></li>
+<li><a href="/docs/deliver/pipeline-observability-sdlc-events/sdlc-events" title="You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.">Ingest SDLC events</a></li>
+<li><a href="/docs/platform/openpipeline/concepts/data-flow" title="Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.">Data flow in OpenPipeline</a></li>
+<li><a href="/docs/platform/openpipeline/reference/api-ingestion-reference" title="Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.">Ingest sources in OpenPipeline</a></li>
+<li><a href="/docs/deliver/pipeline-observability-sdlc-events/pipeline-observability-analyze" title="Analyze your pipeline using data from your software development lifecycle (SDLC) events  using our examples.">Analyze SDLC events from your pipeline</a></li>
 </ul>
 <hr />
 

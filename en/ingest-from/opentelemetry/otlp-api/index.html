@@ -979,7 +979,7 @@
 <li>The Dynatrace SaaS platform</li>
 <li>ActiveGate instances</li>
 </ul>
-<p>Alternatively, you can deploy the <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace Collector.">Dynatrace Collector</a> as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, <a href="/docs/ingest-from/opentelemetry/collector/use-cases/redact" title="Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.">mask sensitive data</a>).</p>
+<p>Alternatively, you can deploy the <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">Dynatrace Collector</a> as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, <a href="/docs/ingest-from/opentelemetry/collector/use-cases/redact" title="Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.">mask sensitive data</a>).</p>
 <h2 id="default-ingest-paths">Default ingest paths<a class="headerlink" href="#default-ingest-paths" title="Permanent link">&para;</a></h2>
 <p>The ingest paths used by Dynatrace for the individual signal types follow the <a href="https://opentelemetry.io/docs/specs/otel/protocol/exporter/#endpoint-urls-for-otlphttp">standard OpenTelemetry pathsï»¿</a>.</p>
 <table>
@@ -1107,11 +1107,11 @@ You can combine scopes in a single token, and also add scopes to an existing tok
 * Your system's certificate trust store is up to date</p>
 <p>To avoid possible SSL certificate issues with expired or missing default root certificates, make sure that your system's certificate trust store is up to date.</p>
 <h2 id="export-to-the-collector">Export to the Collector<a class="headerlink" href="#export-to-the-collector" title="Permanent link">&para;</a></h2>
-<p>Using the Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See <a href="/docs/ingest-from/opentelemetry/collector/use-cases" title="Configure your Collector instance for different use cases.">Collector use cases</a> for more information and sample configurations for popular Collector use cases.</p>
-<p>See <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace Collector.">Dynatrace Collector</a> for more details on how to configure a Collector instance.</p>
+<p>Using the Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See <a href="/docs/ingest-from/opentelemetry/collector/use-cases" title="Configure your Collector instance for different use cases.">OpenTelemetry Collector use cases</a> for more information and sample configurations for popular Collector use cases.</p>
+<p>See <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">Dynatrace OTel Collector</a> for more details on how to configure a Collector instance.</p>
 <p>gRPC conversion</p>
 <p>As Dynatrace currently requires OTLP exports with HTTP, you can use the Collector to convert gRPC exports to HTTP.</p>
-<p>See <a href="/docs/ingest-from/opentelemetry/collector/use-cases/grpc" title="Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.">Transform OTLP gRPC</a> for more details.</p>
+<p>See <a href="/docs/ingest-from/opentelemetry/collector/use-cases/grpc" title="Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.">Transform OTLP gRPC to HTTP with the OpenTelemetry Collector</a> for more details.</p>
 <h3 id="authentication-and-tls">Authentication and TLS<a class="headerlink" href="#authentication-and-tls" title="Permanent link">&para;</a></h3>
 <p>Whether you need to use TLS and authenticate your requests against the Collector depends on your particular Collector setup/configuration. By default, the <a href="https://github.com/open-telemetry/opentelemetry-collector/blob/v0.145.0/receiver/otlpreceiver/README.md">OTLP receiverï»¿</a> is configured for plain-text HTTP and does not require authentication.</p>
 <p>The eventual outbound connection from the Collector to Dynatrace always requires authentication and TLS.</p>

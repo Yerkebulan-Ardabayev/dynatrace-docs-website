@@ -986,7 +986,7 @@
 
 <h1 id="dynatrace-documentation-dynatrace-apiconfiguration-api">Dynatrace Documentation: dynatrace-api/configuration-api<a class="headerlink" href="#dynatrace-documentation-dynatrace-apiconfiguration-api" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 10</p>
+<p>Files combined: 11</p>
 <hr />
 <h2 id="source-aws-privatelinkmd">Source: aws-privatelink.md<a class="headerlink" href="#source-aws-privatelinkmd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1012,7 +1012,7 @@ scraped: 2026-02-15T21:24:45.349664</p>
 <hr />
 <p>title: Calculated metrics API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/calculated-metrics
-scraped: 2026-02-15T21:15:12.128685</p>
+scraped: 2026-02-16T09:22:40.915823</p>
 <hr />
 <h1 id="calculated-metrics-api">Calculated metrics API<a class="headerlink" href="#calculated-metrics-api" title="Permanent link">&para;</a></h1>
 <h1 id="calculated-metrics-api_1">Calculated metrics API<a class="headerlink" href="#calculated-metrics-api_1" title="Permanent link">&para;</a></h1>
@@ -1659,7 +1659,7 @@ scraped: 2026-02-15T09:06:33.210172</p>
 <hr />
 <p>title: Geographic regions - IP mapping headers API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-header
-scraped: 2026-02-15T21:22:41.001266</p>
+scraped: 2026-02-16T09:31:23.266592</p>
 <hr />
 <h1 id="geographic-regions-ip-mapping-headers-api">Geographic regions - IP mapping headers API<a class="headerlink" href="#geographic-regions-ip-mapping-headers-api" title="Permanent link">&para;</a></h1>
 <h1 id="geographic-regions-ip-mapping-headers-api_1">Geographic regions - IP mapping headers API<a class="headerlink" href="#geographic-regions-ip-mapping-headers-api_1" title="Permanent link">&para;</a></h1>
@@ -1709,11 +1709,57 @@ scraped: 2026-02-15T21:28:59.613866</p>
 <p>Update an existing user session property for your mobile or custom app.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/put-property "Update user session property a mobile or custom app via the Dynatrace API.")[### Delete a user session property</p>
 <p>Delete a user session property you don't need anymore.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/delete-property "Delete user session property a mobile or custom app via the Dynatrace API.")</p>
 <hr />
+<h2 id="source-web-application-configuration-apimd">Source: web-application-configuration-api.md<a class="headerlink" href="#source-web-application-configuration-apimd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Web application configuration API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api
+scraped: 2026-02-16T09:31:24.870224</p>
+<hr />
+<h1 id="web-application-configuration-api">Web application configuration API<a class="headerlink" href="#web-application-configuration-api" title="Permanent link">&para;</a></h1>
+<h1 id="web-application-configuration-api_1">Web application configuration API<a class="headerlink" href="#web-application-configuration-api_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>Published Jan 24, 2019</li>
+</ul>
+<p>The <strong>Web application configuration</strong> API enables you to manage configuration of <a href="/docs/discover-dynatrace/get-started/glossary#app" title="Get acquainted with Dynatrace terminology.">web applications</a>.</p>
+<p>This API only supports web applications. For mobile and custom applications, see <a href="/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration" title="Learn what the Dynatrace mobile and custom app config API offers.">Mobile and custom app API</a>.</p>
+<p>[### List all</p>
+<p>Get an overview of all web applications.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/get-all "List all web applications via the Dynatrace API.")[### View a web application</p>
+<p>Get parameters of a web application by its ID.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/get-web-application "View parameters of a web application via the Dynatrace API.")</p>
+<p>[### Create a web application</p>
+<p>Create a new web application with the exact parameters you need.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/post-web-application "Create a web application via the Dynatrace API.")[### Edit a web application</p>
+<p>Update an existing web application or create a new application with the specified ID.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/put-web-application "Update a web application via the Dynatrace API.")[### Delete a web application</p>
+<p>Delete a web application you don't need anymore.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application "Delete a web application via the Dynatrace API.")</p>
+<p>Default application is pre-configured in your Dynatrace environment. By default all traffic goes to this application. After you configure your own <a href="/docs/discover-dynatrace/get-started/glossary#app" title="Get acquainted with Dynatrace terminology.">applications</a>, all the traffic, which doesn't fit to any of your applications, goes to the default one.</p>
+<p>[### View configuration</p>
+<p>Get the parameters of the default web application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/default-application/get-configuration "View configuration of the default web application via the Dynatrace API.")[### Update configuration</p>
+<p>Update the parameters of the default web application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/default-application/put-configuration "Update configuration of the default web application via the Dynatrace API.")</p>
+<h3 id="check-data-privacy">Check data privacy<a class="headerlink" href="#check-data-privacy" title="Permanent link">&para;</a></h3>
+<p>View the data privacy parameters for</p>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-all-web-apps" title="View data privacy configuration of all applications via the Dynatrace API.">All applications</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-web-app" title="View data privacy configuration of an application via the Dynatrace API.">A specific application</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-default-app" title="View data privacy configuration of the default application via the Dynatrace API.">The default application</a></li>
+</ul>
+<h3 id="update-data-privacy">Update data privacy<a class="headerlink" href="#update-data-privacy" title="Permanent link">&para;</a></h3>
+<p>View the data privacy parameters for</p>
+<ul>
+<li><a href="/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-web-app" title="Edit data privacy configuration of an application via the Dynatrace API.">A specific application</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-default-app" title="Edit data privacy configuration of the default application via the Dynatrace API.">The default application</a></li>
+</ul>
+<p>[### View key user actions</p>
+<p>Get the list of key user actions in an application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/get-configuration "View key user actions of a web application via the Dynatrace API.")[### Edit key user actions list</p>
+<p>Mark a user action as the key action in an application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/post-configuration "Add a key user action to a web application via the Dynatrace API.")[### Delete a key user action</p>
+<p>Remove a user action from the list of key actions in an application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/del-configuration "Remove a key user action from a web application via the Dynatrace API.")</p>
+<p>[### View error rules</p>
+<p>Get an overview of error rules configuration.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/get-configuration "Read error rules of an application via the Dynatrace API.")[### Update error rules</p>
+<p>Update configuration of configuration.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/put-configuration "Update error rules of an application via the Dynatrace API.")</p>
+<hr />
 <h2 id="source-detection-rulesmd">Source: detection-rules.md<a class="headerlink" href="#source-detection-rulesmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Service detection API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/detection-rules
-scraped: 2026-02-15T21:15:39.332416</p>
+scraped: 2026-02-16T09:23:40.584651</p>
 <hr />
 <h1 id="service-detection-api">Service detection API<a class="headerlink" href="#service-detection-api" title="Permanent link">&para;</a></h1>
 <h1 id="service-detection-api_1">Service detection API<a class="headerlink" href="#service-detection-api_1" title="Permanent link">&para;</a></h1>
@@ -1779,7 +1825,7 @@ scraped: 2026-02-15T21:15:39.332416</p>
 <hr />
 <p>title: Failure detection API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/failure-detection
-scraped: 2026-02-15T09:11:33.434930</p>
+scraped: 2026-02-16T09:29:12.892784</p>
 <hr />
 <h1 id="failure-detection-api">Failure detection API<a class="headerlink" href="#failure-detection-api" title="Permanent link">&para;</a></h1>
 <h1 id="failure-detection-api_1">Failure detection API<a class="headerlink" href="#failure-detection-api_1" title="Permanent link">&para;</a></h1>
@@ -1821,7 +1867,7 @@ scraped: 2026-02-15T09:11:33.434930</p>
 <hr />
 <p>title: Request attributes API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/request-attributes-api
-scraped: 2026-02-15T21:15:10.892876</p>
+scraped: 2026-02-16T09:22:39.330678</p>
 <hr />
 <h1 id="request-attributes-api">Request attributes API<a class="headerlink" href="#request-attributes-api" title="Permanent link">&para;</a></h1>
 <h1 id="request-attributes-api_1">Request attributes API<a class="headerlink" href="#request-attributes-api_1" title="Permanent link">&para;</a></h1>

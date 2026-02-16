@@ -970,18 +970,19 @@
 <ul>
 <li>Overview</li>
 <li>1-min read</li>
-<li>Updated on Aug 18, 2025</li>
+<li>Updated on Feb 04, 2026</li>
 </ul>
-<p>Service Detection v2 (SDv2) operates according to a single set of rules that are based on attributes. This includes default rules, and you can additionally define your own custom rules.
-SDv2 rules are available for OpenTelemetry services, and a public preview is available for services that are running in Kubernetes and monitored by OneAgent.</p>
-<p>Public preview for SDv2 for Kubernetes</p>
-<p>To join the public preview:</p>
+<p>Service Detection v2 (SDv2) operates according to a single set of rules that are based on attributes. This includes default rules, and you can additionally define your own custom rules. SDv2 rules are generally available for OpenTelemetry services; for services that are running in Kubernetes and monitored by OneAgent, SDv2 rules are available as a Preview release.</p>
+<p>Preview release for OneAgent-instrumented Kubernetes services</p>
+<p>SDv2 is available as a Preview release for services that are running in Kubernetes and monitored by OneAgent. You can join this Preview release via the <strong>Service Detection v2 for OneAgent</strong> settings page.</p>
 <ol>
-<li>Navigate to your Kubernetes namespace or cluster.</li>
-<li>Select <strong>Settings</strong> &gt; <strong>Service detection</strong> &gt; <strong>Services Detection v2 for Kubernetes</strong>.</li>
-<li>Turn on the <strong>Enable Service detection v2</strong> toggle.</li>
+<li>Go to <img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" /> <strong>Kubernetes Classic</strong>.</li>
+<li>Find and select your Kubernetes cluster. When required, also select the namespace.</li>
+<li>In the upper-right corner of the cluster or namespace overview page, select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Settings</strong>.</li>
+<li>Go to <strong>Service detection</strong> &gt; <strong>Service Detection v2 for OneAgent</strong>.</li>
+<li>Turn on <strong>Enable Service detection v2 for Kubernetes workloads</strong>.</li>
 </ol>
-<p>As part of the public preview, you can use the following attributes to further restrict where the new SDv2 rules should be applied.</p>
+<p>As part of the Preview release, you can use the following attributes to further restrict where the new SDv2 rules should be applied.</p>
 <ul>
 <li><code>dt.agent.module.type</code></li>
 <li><code>k8s.cluster.name</code></li>
@@ -990,18 +991,17 @@ SDv2 rules are available for OpenTelemetry services, and a public preview is ava
 <li><code>dt.host_group.id</code></li>
 </ul>
 <p>These are customized within your Kubernetes namespace or cluster settings.</p>
-<p>Currently, Java is the only supported language, and you need to keep the default matching condition as <code>dt.agent.module.type == "java"</code>.
-Support for additional languages is currently planned and will be announced via release notes.</p>
+<p>Currently, Java is the only supported language, and you need to keep the default matching condition as <code>dt.agent.module.type == "java"</code>. Support for additional languages is currently planned and will be announced via release notes.</p>
 <p>SDv2 provides:</p>
 <ul>
 <li>Service detection and naming based on resource attributes and conditions.</li>
-<li>Endpoint detection based on span and resource and attributes.</li>
+<li>Endpoint detection based on span and resource attributes.</li>
 <li>Service splitting based on resource attributes.</li>
 <li>Failure detection based on HTTP or gRPC codes or other span and resource attributes.</li>
 </ul>
 <p>SDv2 behavior can be configured via:</p>
 <ul>
-<li>The Dynatrace web UI, as described in these pages.</li>
+<li>The Dynatrace web UI, as described in the pages within this section.</li>
 <li>The <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a>.</li>
 </ul>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>

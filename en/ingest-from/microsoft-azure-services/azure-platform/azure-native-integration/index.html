@@ -1,0 +1,1365 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Azure Native Dynatrace Service - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-native-dynatrace-service" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure Native Dynatrace Service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="azure-native-dynatrace-service">Azure Native Dynatrace Service<a class="headerlink" href="#azure-native-dynatrace-service" title="Permanent link">&para;</a></h1>
+<h1 id="azure-native-dynatrace-service_1">Azure Native Dynatrace Service<a class="headerlink" href="#azure-native-dynatrace-service_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Explanation</li>
+<li>17-min read</li>
+<li>Updated on Jul 23, 2024</li>
+</ul>
+<p>Azure Marketplace integration enables you to build a streamlined experience for purchasing, configuring, and managing Dynatrace directly inside the Azure portal. After setting up the integration, Dynatrace appears as an Azure native service, and you can manage its configuration from Azure Portal.</p>
+<p>Capabilities and limitations</p>
+<p><strong>Capabilities:</strong></p>
+<ul>
+<li>
+<p><strong>Seamless onboarding:</strong> Easy onboarding to Dynatrace SaaS as an integrated service on Azure via Azure Marketplace. To set up the integration:</p>
+</li>
+<li>
+<p>No event hubs, cloud functions, or configurations are required</p>
+</li>
+<li>
+<p><strong>Unified billing:</strong> Get a single bill for all the resources you consume on Azure, including all Dynatrace SaaS consumption.</p>
+</li>
+<li><strong>Single sign-on:</strong> You don't need separate credentials for the Dynatrace portal. Sign in once on the Azure portal and seamlessly transition to Dynatrace when needed.</li>
+<li>
+<p><strong>Log monitoring:</strong> Enables forwarding of subscription activity and resource logs to Dynatrace. For details, see <a href="/docs/analyze-explore-automate/log-monitoring" title="Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.">Log Monitoring Classic</a>.</p>
+</li>
+<li>
+<p><strong>OneAgent deployment:</strong> You get a unified management experience of Dynatrace OneAgents. You can install and uninstall Dynatrace OneAgents as extensions on Azure Virtual Machines and Azure App Services.</p>
+</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>The integration will create a new Dynatrace environment and account; it can't run on an existing Dynatrace environment.</li>
+</ul>
+<p>Azure Marketplace</p>
+<p>The Azure Native Dynatrace service is available via the <a href="https://dt-url.net/9n039mv">Azure marketplaceï»¿</a>.</p>
+<p>For getting a customized private offer for the Azure Native Dynatrace Service, reach out to Dynatrace sales via email to <a href="mailto:sales@dynatrace.com">sales@dynatrace.com</a>.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Activate the private plan for Azure Native Dynatrace Service</p>
+<p>The Azure Native Dynatrace Service is available via a <a href="https://dt-url.net/3d03xln">private planï»¿</a>. To have Dynatrace create a private plan for you, <a href="https://dt-url.net/m003xf1">contact Dynatraceï»¿</a>. Once you accept the offer, the private plan for Azure Native Dynatrace Service will be accessible on Azure Marketplace.</p>
+<p>Register the Dynatrace resource provider</p>
+<p>To create and manage the Dynatrace resources using the Azure Portal, you need to register a Dynatrace resource provider named <code>Dynatrace.Observability</code> in your Azure subscription.</p>
+<p>How to register the Dynatrace resource provider</p>
+<p>On the Azure Portal</p>
+<p>Using the Azure CLI</p>
+<p>Follow the instructions on <a href="https://dt-url.net/fu03x5j">Azure resource providers and typesï»¿</a>.</p>
+<p>Run the command below, making sure to replace <code>&lt;subscription-id&gt;</code> with your own subscription ID.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>az provider register --namespace Dynatrace.Observability --subscription &lt;subscription-id&gt;
+</code></pre></div>
+<p>Set up permissions</p>
+<h4 id="general-permissions">General permissions<a class="headerlink" href="#general-permissions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>You need a <code>Contributor</code> permission to the Azure subscription.</li>
+</ul>
+<p>The first user creating the first Dynatrace resource and environment in a subscription becomes the Dynatrace account owner of the Dynatrace account that is created during the integration deployment. For all subsequent Dynatrace resources and environments that are created in the same subscription by other users, the account owner will also have full permissions.</p>
+<h4 id="sso-permissions">SSO permissions<a class="headerlink" href="#sso-permissions" title="Permanent link">&para;</a></h4>
+<p>If you use Microsoft Entra ID as your identity provider, you can establish single sign-on (SSO) from the Azure portal to Dynatrace. If you use a different identity provider or you don't want to establish SSO, you can skip this section.</p>
+<p>To enable single sign-on authentication for your Dynatrace resource, you need to <a href="/docs/manage/identity-access-management/user-and-group-management/access-saml/idp-specific/saml-azure#configuration" title="Learn how to configure Dynatrace SSO in Azure.">set up SSO in Microsoft Entra ID</a>.</p>
+<p>After setting up SSO in Active Directory, you can enable SSO during or after the Azure integration deployment.</p>
+<h2 id="set-up-the-integration">Set up the integration<a class="headerlink" href="#set-up-the-integration" title="Permanent link">&para;</a></h2>
+<p>When you first deploy the Azure Native Dynatrace Service, a new Dynatrace environment hosted on a new Dynatrace resource is created.</p>
+<ul>
+<li>The Dynatrace resource is created in the Azure subscription and resource group that you select during the installation deployment. You can configure, manage, and troubleshoot issues on your Dynatrace resource from the Azure Portal.</li>
+<li>
+<p>The Dynatrace environment is created in the same Azure region in which you create the Dynatrace resource. In this new environment:</p>
+</li>
+<li>
+<p>After you <a href="#oa">install OneAgent</a>, you can start monitoring <a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">metrics</a> from your Azure resources. You can also collect metrics from the <a href="/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration#default" title="Set and configure your Dynatrace SaaS environment using Azure Marketplace.">default services</a></p>
+</li>
+<li>You can collect <a href="/docs/analyze-explore-automate/log-monitoring" title="Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.">logs</a> from your Azure resources</li>
+<li>You do not need an environment ActiveGate for this integration.</li>
+</ul>
+<p>To set up the integration</p>
+<ol>
+<li>Go to the Azure subscription where you want to create the Dynatrace resource.</li>
+<li>Select <strong>Resources</strong>, and then select <strong>Create</strong>.</li>
+<li>Search for <strong>Azure Native Dynatrace Service</strong>. You should see the message that a private product is available.</li>
+<li>Select the tile <strong>Azure Native Dynatrace Service</strong>.</li>
+<li>In the list for choosing a plan, select the private plan that you accepted in <a href="#step-1">Activate the private plan for Azure Native Dynatrace Service</a> and then select <strong>Subscribe</strong>.</li>
+<li>On <strong>Create a new Dynatrace environment</strong>, select <strong>Create</strong>.</li>
+<li>In <strong>Basics</strong>, for <strong>Resource group</strong>, specify whether to create a new resource group or use an existing one.</li>
+</ol>
+<p>A resource group is a container that holds related resources for an Azure solution. For more information, see <a href="https://dt-url.net/xv43x96">Azure Resource Group overviewï»¿</a>.
+8. Enter a <strong>Resource name</strong> for the Dynatrace resource, and then select a <strong>Region</strong> from the dropdown menu. The Dynatrace resource in Azure and the Dynatrace environment will be created in the selected region.
+9. Select your <strong>Pricing plan</strong>, and then select <strong>Next: Metrics and Logs</strong>.
+10. Optional Select whether to <strong>Send subscription activity logs</strong> and/or <strong>Send Azure resource logs</strong>. For details, see <a href="#metrics-logs">Configure metrics and logs</a>.</p>
+<div class="highlight"><pre><span></span><code>If you select **Send Azure resource logs for all defined services**, Azure resource logs are sent for all defined resources by default, which means logs are collected for all supported resources. To filter the specific set of Azure resources sending logs to Dynatrace, you can use Azure resource tags. Tag rules are:
+
+* Azure resources with `Include` tags send logs to Dynatrace.
+* Azure resources with `Exclude` tags don&#39;t send logs to Dynatrace.
+* If there&#39;s a conflict between inclusion and exclusion rules, exclusion takes priority.
+
+  There is a limit of 20 entries for either `Include` or `Exclude` tags.
+</code></pre></div>
+<ol>
+<li>Select <strong>Next: Single sign-on</strong>.</li>
+<li>
+<p>Optional Choose whether to <strong>Enable SSO through Microsoft Entra ID</strong>.</p>
+<ul>
+<li>If you don't want to enable this feature, select <strong>Next: Tags</strong>.</li>
+<li>If you want to enable this feature, select it, select the Dynatrace application ID that is displayed, and then select <strong>Next: Tags</strong>.</li>
+<li>Optional <a href="#tags">Specify tags</a> for the new Dynatrace resource, and then select <strong>Next: Review + create</strong>.</li>
+<li>Verify if the information submitted is correct, and then select <strong>Create</strong>. When the deployment is complete, you can select <strong>Go to resource</strong> to navigate to the specific Dynatrace resource.</li>
+</ul>
+</li>
+</ol>
+<h2 id="link-multiple-azure-subscriptions-to-one-dynatrace-environment-optional">Link multiple Azure subscriptions to one Dynatrace environment Optional<a class="headerlink" href="#link-multiple-azure-subscriptions-to-one-dynatrace-environment-optional" title="Permanent link">&para;</a></h2>
+<p>Ensure that your Azure account has access to the Dynatrace account with the following permissions:</p>
+<ul>
+<li>View Account</li>
+<li>View Environment</li>
+<li>Install OneAgent</li>
+<li>Manage Monitoring Settings</li>
+</ul>
+<p>For more details, see <a href="/docs/manage/identity-access-management/permission-management/role-based-permissions#environment" title="Role-based permissions">Environment permissions</a>.</p>
+<p>After deploying the Azure integration, you can:</p>
+<ul>
+<li>Link more Azure subscriptions to your newly created Dynatrace environment.</li>
+<li>Link more Dynatrace environments to a single Azure subscription.</li>
+</ul>
+<p>When linking multiple Azure subscriptions and creating the resource, you must have Dynatrace Account privileges <code>tenant-manage-settings</code> and <code>tenant-agent-install</code> permissions. For more information on how to configure these permissions, see <a href="/docs/manage/identity-access-management/permission-management/role-based-permissions" title="Role-based permissions">Role-based permissions</a>.</p>
+<p>Follow the steps below, making sure to repeat the procedure for every subscription that you want to link.</p>
+<ol>
+<li>Go to Azure Portal and search for <code>Azure Native Dynatrace Service</code> from the top search bar.</li>
+<li>Select <strong>Azure Native Dynatrace Service</strong>.</li>
+<li>Select <strong>Create</strong>.</li>
+<li>In <strong>Basics</strong>, for <strong>Resource group</strong>, specify whether to create a new resource group or use an existing one.</li>
+</ol>
+<p>A resource group is a container that holds related resources for an Azure solution. For more information, see <a href="https://dt-url.net/xv43x96">Azure Resource Group overviewï»¿</a>.
+5. Enter a <strong>Resource name</strong> and then select a <strong>Region</strong> from the dropdown menu.</p>
+<p>The Dynatrace environment to link and your new Dynatrace resource must be in the same region.
+6. Select the <strong>Dynatrace environment</strong> to link to the Azure subscription, and then select <strong>Next: Metrics and Logs</strong>.
+7. Optional Select whether to <strong>Send subscription activity logs</strong> and/or <strong>Send Azure resource logs</strong>. For details, see <a href="#metrics-logs">Configure metrics and logs</a>.</p>
+<p>If you select <strong>Send Azure resource logs for all defined services</strong>, Azure resource logs are sent for all defined resources by default, which means that logs are collected for all supported resources. To filter the specific set of Azure resources sending logs to Dynatrace, you can use Azure resource tags. Tag rules are:</p>
+<ul>
+<li>Azure resources with <code>Include</code> tags send logs to Dynatrace.</li>
+<li>Azure resources with <code>Exclude</code> tags don't send logs to Dynatrace.</li>
+<li>If there's a conflict between inclusion and exclusion rules, exclusion takes priority.</li>
+<li>Skip <strong>Next: Single sign-on</strong> (you can only configure SSO after deployment) and then select <strong>Next: Tags</strong>.</li>
+<li>Optional <a href="#tags">Specify tags</a> for the new Dynatrace resource, and then select <strong>Next: Review + create</strong>.</li>
+<li>Verify if the information submitted is correct, and then select <strong>Create</strong>. When the deployment is complete, you can select <strong>Go to resource</strong> to navigate to the specific Dynatrace resource.</li>
+</ul>
+<h2 id="access-your-dynatrace-environment">Access your Dynatrace environment<a class="headerlink" href="#access-your-dynatrace-environment" title="Permanent link">&para;</a></h2>
+<p>After you set up the integration, you can access your Dynatrace environment directly from Azure Portal.</p>
+<p>In Azure Portal, go to your Dynatrace resource and select <strong>Overview</strong>. All details of your Dynatrace environment will appear there, including direct links to the following web UI pages:</p>
+<ul>
+<li><strong>Dashboards</strong> - For details, see <a href="/docs/analyze-explore-automate/dashboards-classic" title="Learn how to create, manage, and use Dynatrace Dashboards Classic.">Dashboards Classic</a>.</li>
+<li><strong>Log Viewer</strong> - For details, see <a href="/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer" title="Learn how to use Dynatrace log viewer to analyze log data.">Log viewer (Logs Classic)</a>.</li>
+<li><strong>Smartscape topology</strong> - For details, see <a href="/docs/analyze-explore-automate/smartscape-classic" title="Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.">Visualize your environment through Smartscape Classic</a>.</li>
+</ul>
+<h2 id="configure-metrics-and-logs">Configure metrics and logs<a class="headerlink" href="#configure-metrics-and-logs" title="Permanent link">&para;</a></h2>
+<h3 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h3>
+<ul>
+<li>You can activate <a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">metrics</a> after the Azure integration deployment.</li>
+</ul>
+<p>Collect metrics from Virtual Machines and App Services</p>
+<p>To start collecting metrics from your Virtual Machines and App Services, you need to <a href="#oa">install Dynatrace OneAgent on these resources as an extension</a> .</p>
+<p>Collect metrics from cloud services</p>
+<p>All services and metrics are enabled by default. You can disable them if needed by selecting the delete button from the list of services.
+After Dynatrace connects to your Azure environment, it immediately starts monitoring Azure's built-in services for the service principal you have defined. <a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics" title="The list of classic metrics Dynatrace collects by default for Azure monitoring.">Classic (formerly 'built-in') Azure metrics</a> lists the metrics of Azure cloud services monitored by default.</p>
+<h3 id="manage-cloud-services">Manage cloud services<a class="headerlink" href="#manage-cloud-services" title="Permanent link">&para;</a></h3>
+<p>All cloud services are monitored by default, but you can quickly disable them from the list or re-enable them as needed.</p>
+<p>To add services to monitoring</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Cloud and virtualization</strong> &gt; <strong>Azure</strong>.</li>
+<li>On the Azure overview page, find the connection that you want to change and select <strong>Edit</strong> <img alt="Edit" src="https://dt-cdn.net/images/edit-icon-a083c62c49.svg" title="Edit" /> in that row.</li>
+<li>Under <strong>Services</strong>, select <strong>Manage services</strong>.</li>
+<li>For each service that you want to add: select <strong>Add service</strong>, select the service from the list, and then select <strong>Add service</strong>.</li>
+<li>Select <strong>Save changes</strong> to save your configuration.</li>
+</ol>
+<p>Configuration of collected metrics per service</p>
+<p>After you add a service, Dynatrace automatically starts collecting a set of metrics for that service.</p>
+<p>Recommended metrics:</p>
+<ul>
+<li>Are enabled by default and can't be disabled.</li>
+<li>Can come with recommended dimensions (enabled by default, can't be disabled) and optional dimensions (disabled by default, can be enabled).</li>
+</ul>
+<p>Apart from the recommended metrics, most services offer the possibility of enabling optional metrics that can be added and configured manually.</p>
+<p>List of Azure cloud services and collected metrics</p>
+<p>To see the complete list of Azure cloud services and learn about the metrics collected for each of them, see <a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics" title="Monitor Azure services with Dynatrace and view available metrics.">All Azure cloud services</a>.</p>
+<p>Alternatively, you can check the list of supported Azure services within in-product Dynatrace Hub (search for <strong>Azure</strong>) or in the <a href="https://www.dynatrace.com/hub/?query=azure">web version of Dynatrace Hubï»¿</a>.</p>
+<p>To add and configure metrics</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Cloud and virtualization</strong> &gt; <strong>Azure</strong>.</li>
+<li>On the Azure overview page, find the connection that you want to change and select <strong>Edit</strong> <img alt="Edit" src="https://dt-cdn.net/images/edit-icon-a083c62c49.svg" title="Edit" /> in that row.</li>
+<li>Under <strong>Services</strong>, select <strong>Manage services</strong>.</li>
+<li>Select the service for which you want to add metrics. The service details page lists the metrics you are already monitoring for that service.</li>
+<li>Select <strong>Add metric</strong>.</li>
+<li>From the <strong>Add new metric</strong> list, select the metric and then select <strong>Add metric</strong>.</li>
+<li>Select <img alt="Expand row" src="https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg" title="Expand row" /> to expand the metric details and configure the metric.</li>
+<li>Select <strong>Apply</strong> to save your configuration.</li>
+</ol>
+<p>After you select the cloud services and save your changes, monitoring of the newly added services starts automatically.</p>
+<h3 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>You can activate <a href="/docs/analyze-explore-automate/log-monitoring" title="Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.">logs</a> either <a href="#setup">during the Azure integration deployment</a> or <a href="#how-to-logs">after deployment</a>.</li>
+</ul>
+<p>You can set up two types of logs from Azure to Dynatrace: <a href="#activity">subscription activity logs</a> and <a href="#resource">Azure resource logs</a>.</p>
+<h4 id="subscription-activity-logs">Subscription activity logs<a class="headerlink" href="#subscription-activity-logs" title="Permanent link">&para;</a></h4>
+<p>Subscription activity logs provide insights into the operations (PUT, POST, DELETE) performed on each Azure resource in your subscription (the management plane). For each Azure subscription, there's a single activity log.</p>
+<h4 id="azure-resource-logs">Azure resource logs<a class="headerlink" href="#azure-resource-logs" title="Permanent link">&para;</a></h4>
+<p>Azure resource logs provide insights into operations that were performed within an Azure resource (the data plane), such as getting a secret from a key vault or making a request to a database. The content of resource logs varies by the Azure service and resource type.</p>
+<p>All Azure services in the <a href="https://dt-url.net/fja38sr">Azure Monitor log categoriesï»¿</a> ingest logs, including Microsoft Entra ID and <a href="https://dt-url.net/dpc38am">Azure Monitor Integration Serviceï»¿</a>.</p>
+<p>For a list of Azure resource logs, see <a href="https://dt-url.net/ea03xvn">Supported categories for Azure Monitor resource logsï»¿</a>.</p>
+<h4 id="how-to-activate-logs-after-deployment">How to activate logs after deployment<a class="headerlink" href="#how-to-activate-logs-after-deployment" title="Permanent link">&para;</a></h4>
+<p>Activate subscription activity logs</p>
+<p>Activate Azure resource logs</p>
+<ol>
+<li>On the Azure Portal, go to your Dynatrace resource and select <strong>Metrics and logs</strong>.</li>
+<li>Select <strong>Send subscription activity logs</strong>.</li>
+<li>
+<p>Select <strong>Save</strong>.</p>
+</li>
+<li>
+<p>On the Azure Portal, go to your Dynatrace resource and select <strong>Metrics and logs</strong>.</p>
+</li>
+<li>Select <strong>Send Azure resource logs for all defined sources</strong>.</li>
+</ol>
+<p>When selecting this option, Azure resource logs are sent for all defined resources by default, which means that logs are collected for all supported resources.
+3. Optional If you want to filter the specific set of Azure resources sending logs to Dynatrace, you can use Azure resource tags. Tag rules are:</p>
+<ul>
+<li>Azure resources with <code>Include</code> tags send logs to Dynatrace.</li>
+<li>Azure resources with <code>Exclude</code> tags don't send logs to Dynatrace.</li>
+<li>If there's a conflict between inclusion and exclusion rules, exclusion takes priority.</li>
+<li>Select <strong>Save</strong>.</li>
+</ul>
+<p>Azure Native Dynatrace Service automatically enables log forwarding in the Azure subscription where the Dynatrace resource is enabled. Log forwarding is enabled for all supported services and resources. Tag filtering rules can be defined to include or exclude certain Azure resources from sending logs.</p>
+<p>Azure Native Dynatrace Service uses Dynatrace access token called <code>azure-native-integration</code> which is rotated every 24 hours.</p>
+<h2 id="create-tags">Create tags<a class="headerlink" href="#create-tags" title="Permanent link">&para;</a></h2>
+<ul>
+<li>You can create <a href="/docs/manage/tags-and-metadata/setup/how-to-define-tags" title="Find out how to define and apply tags manually and automatically.">tags</a> either <a href="#setup">during the Azure integration deployment</a> or <a href="#how-to-tags">after deployment</a>.</li>
+</ul>
+<p>You can apply tags to your Azure resources, resource groups, and subscriptions to logically organize them into a taxonomy. You can specify tags for the new Dynatrace resource in Azure by adding custom key/value pairs:</p>
+<ul>
+<li>For <strong>Name</strong>, enter the name of the tag corresponding to the Azure Dynatrace resource (for example, <code>owner</code>).</li>
+<li>For <strong>Value</strong>, enter the value of the tag corresponding to the Azure Dynatrace resource (for example, the owner's email account).</li>
+</ul>
+<p>If you don't set any tags, all logs from the monitored resources on your Azure subscription are sent to Dynatrace.</p>
+<h3 id="how-to-create-tags-after-deployment">How to create tags after deployment<a class="headerlink" href="#how-to-create-tags-after-deployment" title="Permanent link">&para;</a></h3>
+<p>On the Azure Portal, go to your new Dynatrace resource, and then select <strong>Tags</strong>. Alternatively, you can select <strong>Monitored resources</strong>, and then select <strong>Edit tags</strong> for the desired resources.</p>
+<h2 id="manage-monitored-resources-in-azure-portal">Manage monitored resources in Azure Portal<a class="headerlink" href="#manage-monitored-resources-in-azure-portal" title="Permanent link">&para;</a></h2>
+<p>After deploying the Azure Native Dynatrace Service, you can view, manage, and monitor your Azure resources, and you can install OneAgent on your Azure Virtual Machines and Azure App Services.</p>
+<p>To view your list of resources, on the Azure Portal, go to your Dynatrace resource and select <strong>Monitored resources</strong>. You can filter the list of resources displayed by <strong>Resource name</strong> (Azure resource name), <strong>Resource type</strong> (Azure resource type), <strong>Resource group</strong> (resource group name for the Azure resource), <strong>Region</strong> (location of the Azure resource), and <strong>Logs to Dynatrace</strong> (whether the resource is sending logs to Dynatrace).</p>
+<h2 id="deploy-oneagent-on-azure-virtual-machines-and-azure-app-services">Deploy OneAgent on Azure Virtual Machines and Azure App Services<a class="headerlink" href="#deploy-oneagent-on-azure-virtual-machines-and-azure-app-services" title="Permanent link">&para;</a></h2>
+<ul>
+<li>You can deploy OneAgent after the Azure integration deployment.</li>
+</ul>
+<p>To monitor your Azure Virtual Machines or Azure App Services, you can install Dynatrace OneAgent on these resources as an extension.</p>
+<p>Install OneAgent on Virtual Machine</p>
+<p>Install OneAgent on App Service</p>
+<ol>
+<li>On the Azure Portal, go to your Dynatrace resource and select <strong>Virtual Machines</strong>.</li>
+<li>Select a Virtual Machine from the list, on which you want to install the OneAgent extension.</li>
+<li>Select <strong>Install extension</strong>.</li>
+<li>Optional Select whether to enable log analytics.</li>
+<li>Optional Provide a <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups" title="Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.">host group</a> for OneAgent.</li>
+<li>Select <strong>OK</strong> to start the installation process.</li>
+<li>
+<p>When the installation is complete, the <strong>OneAgent status</strong> for the selected Virtual Machine displays <strong>Installed</strong>.</p>
+</li>
+<li>
+<p>To see details about the installed OneAgent, select your Virtual Machine and go to <strong>Extensions</strong>.</p>
+</li>
+<li>
+<p>To uninstall OneAgent, select your Virtual Machine, and then select <strong>Uninstall extension</strong>.</p>
+</li>
+<li>
+<p>On the Azure Portal, go to your Dynatrace resource and select <strong>App Services</strong>.</p>
+</li>
+<li>From the list, select the App Service on which you want to install the OneAgent extension.</li>
+<li>Select <strong>Install extension</strong>.</li>
+<li>Optional Select whether to enable log analytics.</li>
+<li>Optional Provide a <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups" title="Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.">host group</a> for OneAgent.</li>
+<li>Select <strong>OK</strong> to start the installation process.</li>
+<li>
+<p>When the installation is complete, the <strong>OneAgent status</strong> for the selected Virtual Machine displays <strong>Installed</strong>.</p>
+</li>
+<li>
+<p>To see details about the installed OneAgent, select your App Service and go to <strong>Extensions</strong>.</p>
+</li>
+<li>To uninstall OneAgent, select your App Service, and then select <strong>Uninstall extension</strong>.</li>
+</ol>
+<p>If you cannot see the App Service in Dynatrace after enabling the integration, restart your App Service plan.</p>
+<p>To run OneAgent on Virtual Machine Scale Sets with Dynatrace Azure integration, use the <a href="#vm">Dynatrace OneAgent extension for Virtual Machines</a> and create a <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token" title="Learn the concept of an access token and its scopes.">PaaS token</a>.</p>
+<h2 id="uninstall-the-azure-native-dynatrace-service">Uninstall the Azure Native Dynatrace Service<a class="headerlink" href="#uninstall-the-azure-native-dynatrace-service" title="Permanent link">&para;</a></h2>
+<p>To uninstall the Azure Native Dynatrace Service, you need to delete the Dynatrace resource. When the Dynatrace resource is deleted from Azure, logs and metrics are no longer sent to Dynatrace and all billing for Dynatrace through Azure Marketplace stops.</p>
+<p>To delete the Dynatrace resource</p>
+<ol>
+<li>On the Azure Portal, go to your Dynatrace resource and select <strong>Overview</strong>.</li>
+<li>Select <strong>Delete</strong>.</li>
+<li>Enter the name of the application you want to delete, then select <strong>Delete</strong>.</li>
+</ol>
+<h2 id="how-to-request-new-features">How to request new features<a class="headerlink" href="#how-to-request-new-features" title="Permanent link">&para;</a></h2>
+<p>If you have a feature request, use the <a href="https://dt-url.net/po239hy">Microsoft Developer Communityï»¿</a> to suggest new features.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://dt-url.net/tq237c7">I can't enable SSO integrationï»¿</a></li>
+<li><a href="https://dt-url.net/3o038vp">I don't have permissions to configure SSO for a linked Dynatrace environmentï»¿</a></li>
+<li><a href="https://dt-url.net/4rc37kk">How can I get logs from an Azure subscription in another Azure tenant?ï»¿</a></li>
+<li><a href="https://dt-url.net/il438i2">Azure resources not forwarding logs to Dynatraceï»¿</a></li>
+</ul>
+<h2 id="log-ingest-faq">Log ingest FAQ<a class="headerlink" href="#log-ingest-faq" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://dt-url.net/ine37te">What are the limits for Azure Native Dynatrace Service log ingest?ï»¿</a></li>
+<li><a href="https://dt-url.net/da2380g">How does the Azure Native Dynatrace Service logging impact Azure costs?ï»¿</a></li>
+<li><a href="https://dt-url.net/bp038gb">Isn't it cheaper to send data with the existing Dynatrace Azure log forwarding to Dynatrace SaaS in AWS rather than to use Azure Native Dynatrace Service?ï»¿</a></li>
+</ul>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations" title="Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.">Microsoft Azure Integrations</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

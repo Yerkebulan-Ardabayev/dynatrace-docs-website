@@ -957,10 +957,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#source-version-detection-strategiesmd" class="md-nav__link">
+  <a href="#source-issue-tracking-integrationmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Source: version-detection-strategies.md
+        Source: issue-tracking-integration.md
       
     </span>
   </a>
@@ -986,7 +986,148 @@
 
 <h1 id="dynatrace-documentation-deliverrelease-monitoring">Dynatrace Documentation: deliver/release-monitoring<a class="headerlink" href="#dynatrace-documentation-deliverrelease-monitoring" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 1</p>
+<p>Files combined: 3</p>
+<hr />
+<h2 id="source-issue-tracking-integrationmd">Source: issue-tracking-integration.md<a class="headerlink" href="#source-issue-tracking-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Issue-tracking integration
+source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
+scraped: 2026-02-16T09:34:14.608250</p>
+<hr />
+<h1 id="issue-tracking-integration">Issue-tracking integration<a class="headerlink" href="#issue-tracking-integration" title="Permanent link">&para;</a></h1>
+<h1 id="issue-tracking-integration_1">Issue-tracking integration<a class="headerlink" href="#issue-tracking-integration_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>2-min read</li>
+<li>Published Sep 14, 2020</li>
+</ul>
+<p>To get statistics about release issues for your monitored entities and configure dynamic queries, you can integrate your issue-tracking system with Dynatrace.</p>
+<h2 id="supported-integrations">Supported integrations<a class="headerlink" href="#supported-integrations" title="Permanent link">&para;</a></h2>
+<p>Dynatrace currently supports integration with</p>
+<ul>
+<li>Jira on-premises</li>
+<li>Jira cloud</li>
+<li>GitHub</li>
+<li>GitLab</li>
+<li>ServiceNow</li>
+</ul>
+<h2 id="integrate-your-issue-tracking-system">Integrate your issue-tracking system<a class="headerlink" href="#integrate-your-issue-tracking-system" title="Permanent link">&para;</a></h2>
+<p>To integrate your issue-tracking system</p>
+<ol>
+<li>Go to <strong>Settings Classic</strong> &gt; <strong>Cloud Automation</strong> &gt; <strong>Issue-tracking for releases</strong>.</li>
+<li>Select <strong>Add issue-tracking query</strong>.</li>
+<li>Enter the information required (<strong>Issue label</strong>, <a href="#query"><strong>Issue query</strong></a>, <strong>Issue type</strong>, <strong>Issue-tracking system</strong>, <strong>Target URL</strong><a href="#fn-1-1-def">1</a>, <a href="#credentials"><strong>Username</strong>, and <strong>Password</strong> or <strong>Token</strong></a>).</li>
+<li>If there are configuration errors, an error message will be displayed at the bottom of the page (<code>Please resolve errors before saving...</code>). Select <strong>Show errors</strong> to view the configuration errors (marked in red).</li>
+<li>Optional Select <strong>Check configuration</strong> to check connectivity between Dynatrace and the issue-tracking system.</li>
+<li>Select <strong>Save changes</strong> to save your configuration.</li>
+</ol>
+<p>1</p>
+<p>For GitLab, to define queries to multiple projects, you can enter the <code>/groups</code> API endpoint.</p>
+<p>Example configuration</p>
+<p><img alt="Add tracker" src="https://dt-cdn.net/images/2021-04-26-08-06-21-1478-2c90218945.png" /></p>
+<h3 id="issue-query">Issue query<a class="headerlink" href="#issue-query" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Issue query</strong> field, you can specify queries with placeholders that are resolved at runtime (for dynamic filtering).<br />
+Examples:</p>
+<ul>
+<li><strong>Jira on-premises/Jira cloud:</strong> <code>issueType = Bug and component in ({PRODUCT}) and affectedVersion in ({VERSION})</code></li>
+<li><strong>GitHub:</strong> <code>is:issue is:open label:{PRODUCT} label:{VERSION}</code></li>
+<li><strong>GitLab:</strong> <code>search={PRODUCT} {VERSION}&amp;state=opened&amp;scope=issues</code></li>
+</ul>
+<h4 id="exception">Exception<a class="headerlink" href="#exception" title="Permanent link">&para;</a></h4>
+<p>For <strong>ServiceNow</strong>, placeholders aren't supported. You can query incidents by incident attribute values using the format <code>&lt;col_name&gt;&lt;operator&gt;&lt;value&gt;</code>.<br />
+Example: <code>correlation_displayLIKEDYNATRACE^active=true</code>. In this case, filtering will apply for records that contain <code>DYNATRACE</code> within the <code>correlation_display</code> column and that are currently active.<br />
+For other operators, consult the <a href="https://dt-url.net/0w03qc9">ServiceNow API documentationï»¿</a>.</p>
+<p>Any query that can be written as a <code>sysparm_query</code> request parameter is supported.</p>
+<h3 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">&para;</a></h3>
+<p>The <strong>Username</strong>, <strong>Password</strong>, and <strong>Token</strong> fields are required as follows:</p>
+<ul>
+<li>For <strong>GitHub</strong>, enter a username and an OAuthToken</li>
+<li>For <strong>GitLab</strong>, enter an API token with read permissions</li>
+<li>For <strong>Jira on-premises</strong>, enter a username and a password</li>
+<li>For <strong>Jira cloud</strong>, enter a username and an OAuthToken</li>
+<li>For <strong>ServiceNow</strong>, enter a username and a password</li>
+</ul>
+<p>Once you add your issue tracker to Dynatrace, you can see issue statistics related to the monitored entities in the <strong>Release inventory</strong> on the <strong>Releases</strong> page. For example, if the release inventory shows entries for the application <strong>Cassandra</strong> with version <code>3.11</code>, the issue-tracking integration will provide the count of bugs for Cassandra version 3.11.</p>
+<p>Example issue tracker integration</p>
+<p><img alt="Example integration" src="https://dt-cdn.net/images/2021-04-26-08-20-46-1549-374692d0dd.png" /></p>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<p>You can create a maximum of 20 issue-tracking configurations.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>The following is a solution to a problem some people had with <a href="https://dt-url.net/5o038bi">Automated release monitoring issue-tracking integration: no query results matching the filterï»¿</a>.</p>
+<hr />
+<h2 id="source-monitor-releases-with-dynatracemd">Source: monitor-releases-with-dynatrace.md<a class="headerlink" href="#source-monitor-releases-with-dynatracemd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Monitor releases with Dynatrace
+source: https://www.dynatrace.com/docs/deliver/release-monitoring/monitor-releases-with-dynatrace
+scraped: 2026-02-16T09:31:50.612722</p>
+<hr />
+<h1 id="monitor-releases-with-dynatrace">Monitor releases with Dynatrace<a class="headerlink" href="#monitor-releases-with-dynatrace" title="Permanent link">&para;</a></h1>
+<h1 id="monitor-releases-with-dynatrace_1">Monitor releases with Dynatrace<a class="headerlink" href="#monitor-releases-with-dynatrace_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>4-min read</li>
+<li>Updated on Aug 11, 2025</li>
+</ul>
+<p>Once you <a href="/docs/deliver/release-monitoring/version-detection-strategies" title="Metadata for version detection in different technologies">configure environment variables for version detection</a> and, optionally, <a href="/docs/deliver/release-monitoring/issue-tracking-integration" title="Integrate your issue tracker into Dynatrace to pull statistics for monitored entities.">integrate your issue-tracking system and configure dynamic queries</a>, you can start analyzing data related to each release version of your software.</p>
+<h2 id="list-releases">List releases<a class="headerlink" href="#list-releases" title="Permanent link">&para;</a></h2>
+<p>To list the software releases in your environment, go to <strong>Releases</strong>.</p>
+<p>Example Releases page</p>
+<p><img alt="Release list" src="https://dt-cdn.net/images/2021-05-25-12-02-34-1641-8ea61fbf08.png" /></p>
+<p><strong>Release version</strong> sorting uses lexicographic (string) sorting rather than semantic version sorting. In lexicographic sorting, numbers are treated as individual characters, and the ordering is determined based on these characters' ASCII or Unicode values. <strong>Release version</strong> sorting uses lexicographic sorting because there's no pattern for the release versions, and users can enter any value.</p>
+<p>The <strong>Releases</strong> page displays the following information about the listed releases:</p>
+<h3 id="release-inventory">Release inventory<a class="headerlink" href="#release-inventory" title="Permanent link">&para;</a></h3>
+<p>Shows all detected releases. Each entry represents processes, process group instances, grouped by release and build versions, stage, and product to which they logically belong.</p>
+<h3 id="release-events">Release events<a class="headerlink" href="#release-events" title="Permanent link">&para;</a></h3>
+<p>Shows all events corresponding to the releases, such as process restart and deployment events.</p>
+<h3 id="tracked-issues">Tracked issues<a class="headerlink" href="#tracked-issues" title="Permanent link">&para;</a></h3>
+<p>Shows issues from the external issue trackers related to the releases.</p>
+<h2 id="filters">Filters<a class="headerlink" href="#filters" title="Permanent link">&para;</a></h2>
+<ul>
+<li>To set simple filters, use the quick filters on the left side of the page.</li>
+<li>To set more detailed filters, use the filter bar above the table.<br />
+  For example, you can use the <code>tag</code> filter to search by the tag of a process group instance.</li>
+<li>
+<p>To see only releases that are impacted by problems, select <strong>Apply filter</strong> above the <strong>Release inventory</strong> table.</p>
+</li>
+<li>
+<p>Filtering for a specific release shows an overview of stages and product contexts in which the release is deployed.</p>
+</li>
+<li>Filtering for a stage shows an overview of all releases deployed at that stage.</li>
+</ul>
+<h2 id="list-release-details">List release details<a class="headerlink" href="#list-release-details" title="Permanent link">&para;</a></h2>
+<p>To see details about a release, select a link in the <strong>Name</strong> column of the <strong>Releases</strong> page.</p>
+<p>Example Release details page</p>
+<p><img alt="Release details" src="https://dt-cdn.net/images/2021-05-25-12-41-08-1636-73e6cdccd9.png" /></p>
+<p>The <strong>Release details</strong> page displays the following information about the selected release:</p>
+<h3 id="release-name">Release name<a class="headerlink" href="#release-name" title="Permanent link">&para;</a></h3>
+<p>Shows a summary of captured metadata (process group name, version, stage, product, technologies, instances, throughput, problems, and third-party vulnerabilities) and links to the process group where the release is deployed.</p>
+<ul>
+<li><strong>Instances</strong> shows the number of deployments of this release in a specific stage in the context of a specific product.</li>
+<li><strong>Throughput</strong> shows how much traffic is routed to the selected release.</li>
+<li><strong>Problems</strong> shows the number of open impacted problems related to the process group instance of the release.</li>
+</ul>
+<p>If Dynatrace detects problems in the release, <strong>Problems</strong> is displayed in red. Select it to display the <strong>Problems</strong> page and gather more information. See <a href="/docs/dynatrace-intelligence/root-cause-analysis/concepts" title="Get acquainted with root cause analysis concepts.">Problem overview</a> for details.
+* <strong>Third-party vulnerabilities</strong> shows the number of third-party vulnerabilities related to the selected release. This helps you check if, for example, a new release would introduce a known vulnerability and, based on this, decide on its impact on and relevance to your release schedule.</p>
+<p>If Dynatrace detects vulnerabilities in the release, <strong>Third-party vulnerabilities</strong> is displayed in red. Select it to display the <strong>Security</strong> page and gather more information. See <a href="/docs/secure/application-security" title="Access the Dynatrace Application Security functionalities.">Application Security monitoring</a> for details.</p>
+<h3 id="process-details">Process details<a class="headerlink" href="#process-details" title="Permanent link">&para;</a></h3>
+<p>Shows hosts with basic metrics where the release is deployed and links to the host page for further analysis.</p>
+<h3 id="release-events_1">Release events<a class="headerlink" href="#release-events_1" title="Permanent link">&para;</a></h3>
+<p>Shows all events corresponding to the selected release, such as process restart and deployment events.</p>
+<h3 id="tracked-issues_1">Tracked issues<a class="headerlink" href="#tracked-issues_1" title="Permanent link">&para;</a></h3>
+<p>Shows issues from the external issue trackers related to the selected release.</p>
+<h3 id="release-validation">Release validation<a class="headerlink" href="#release-validation" title="Permanent link">&para;</a></h3>
+<p>To optimize the release inventory table, when no Cloud Automation instance is provisioned, the column to display a release validation result is not shown.</p>
+<p>Lists release validations detected within the global timeframe.</p>
+<ul>
+<li>You can sort the list by score and evaluation end time.</li>
+<li>Select any release validation in the list to navigate to the heatmap of the corresponding evaluation on your Cloud Automation instance.</li>
+</ul>
+<p>In addition, a graph displays the latest 20 release validation results:</p>
+<ul>
+<li>The y-axis displays the score</li>
+<li>The x-axis displays the end time of each quality gate evaluation</li>
+<li>The bar color indicates the quality gate status (<code>Failed</code>, <code>Warning</code>, or <code>Passed</code>)</li>
+</ul>
 <hr />
 <h2 id="source-version-detection-strategiesmd">Source: version-detection-strategies.md<a class="headerlink" href="#source-version-detection-strategiesmd" title="Permanent link">&para;</a></h2>
 <hr />

@@ -986,7 +986,7 @@
 
 <h1 id="dynatrace-documentation-analyze-explore-automateworkflows">Dynatrace Documentation: analyze-explore-automate/workflows<a class="headerlink" href="#dynatrace-documentation-analyze-explore-automateworkflows" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 20</p>
+<p>Files combined: 26</p>
 <hr />
 <h2 id="source-emailmd">Source: email.md<a class="headerlink" href="#source-emailmd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -2012,7 +2012,7 @@ scraped: 2026-02-15T09:09:19.331883</p>
 <hr />
 <p>title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-15T21:26:55.238458</p>
+scraped: 2026-02-16T09:30:27.480932</p>
 <hr />
 <h1 id="set-up-github-connector">Set up GitHub Connector<a class="headerlink" href="#set-up-github-connector" title="Permanent link">&para;</a></h1>
 <h1 id="set-up-github-connector_1">Set up GitHub Connector<a class="headerlink" href="#set-up-github-connector_1" title="Permanent link">&para;</a></h1>
@@ -2073,11 +2073,591 @@ scraped: 2026-02-15T21:26:55.238458</p>
 <li><a href="/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions" title="Integrate Workflows with GitHub services to utilize GitHub Connector actions.">Actions for GitHub Connector</a></li>
 </ul>
 <hr />
+<h2 id="source-githubmd">Source: github.md<a class="headerlink" href="#source-githubmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: GitHub Connector
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
+scraped: 2026-02-16T09:27:34.606779</p>
+<hr />
+<h1 id="github-connector">GitHub Connector<a class="headerlink" href="#github-connector" title="Permanent link">&para;</a></h1>
+<h1 id="github-connector_1">GitHub Connector<a class="headerlink" href="#github-connector_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Overview</li>
+<li>1-min read</li>
+<li>Updated on Feb 13, 2025</li>
+</ul>
+<p>GitHub Connector <img alt="GitHub" src="https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png" title="GitHub" /> enables your Dynatrace environment to integrate with GitHub repositories. With this integration, you can automate issues and pull requests based on monitoring data and events within a dedicated <a href="/docs/analyze-explore-automate/workflows" title="Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.">workflow</a>.</p>
+<p>[<img alt="GitHub" src="https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png" title="GitHub" /></p>
+<h3 id="set-up-github-connector_2">Set up GitHub Connector<a class="headerlink" href="#set-up-github-connector_2" title="Permanent link">&para;</a></h3>
+<p>Set up and configure GitHub Connector.](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")[<img alt="GitHub" src="https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png" title="GitHub" /></p>
+<h3 id="github-connector-actions">GitHub Connector actions<a class="headerlink" href="#github-connector-actions" title="Permanent link">&para;</a></h3>
+<p>Learn about available actions used by GitHub Connector integration for automating issues and pull requests on your monitoring data and events.](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")</p>
+<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions" title="Integrate Workflows with GitHub services to utilize GitHub Connector actions.">Actions for GitHub Connector</a></li>
+<li><a href="/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup" title="Learn how to set up GitHub Connector.">Set up GitHub Connector</a></li>
+</ul>
+<hr />
+<h2 id="source-gitlab-workflows-actionsmd">Source: gitlab-workflows-actions.md<a class="headerlink" href="#source-gitlab-workflows-actionsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Actions for GitLab Connector
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
+scraped: 2026-02-16T09:35:42.726047</p>
+<hr />
+<h1 id="actions-for-gitlab-connector">Actions for GitLab Connector<a class="headerlink" href="#actions-for-gitlab-connector" title="Permanent link">&para;</a></h1>
+<h1 id="actions-for-gitlab-connector_1">Actions for GitLab Connector<a class="headerlink" href="#actions-for-gitlab-connector_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>9-min read</li>
+<li>Updated on Jan 14, 2025</li>
+</ul>
+<p>The following workflow actions are available for the GitLab Connector <img alt="GitLab for Workflows" src="https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg" title="GitLab for Workflows" /> integration. Each action corresponds to an endpoint of the GitLab Connector API.</p>
+<p>For details on creating workflows, refer to <a href="/docs/analyze-explore-automate/workflows/building#create" title="Create and edit workflows in Dynatrace Workflows.">Create workflows in Dynatrace Workflows</a>.</p>
+<p>The actions are listed under the following categories:</p>
+<ul>
+<li><a href="#create-file">Repository files APIs</a></li>
+<li><a href="#create-merge-request">Merge requests APIs</a></li>
+<li><a href="#create-new-issue">Issues APIs</a></li>
+<li><a href="#get-pipeline-status">Jobs APIs</a></li>
+</ul>
+<h2 id="create-file">Create file<a class="headerlink" href="#create-file" title="Permanent link">&para;</a></h2>
+<p>Creates a new file in a new branch based on the specified base branch.</p>
+<p>The action can only act on one file, resulting in the creation of a new branch. The GitLab API doesn't allow the reuse of existing branches. Any attempt to do so results in the GitLab API throwing an error.</p>
+<h3 id="inputs_1">Inputs<a class="headerlink" href="#inputs_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Start branch</strong></td>
+<td>The starting branch to base the new branch on.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Branch</strong></td>
+<td>The name of the new branch.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>File path</strong></td>
+<td>The relative path to the file to be created.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>File content</strong></td>
+<td>The content of the new file.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Commit message</strong></td>
+<td>The commit message for the new file.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Author name</strong></td>
+<td>The name of the author of the resulting commit.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_12">Output<a class="headerlink" href="#output_12" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/7o43w88">Repository files API - Create new file in repositoryï»¿</a> GitLab documentation.</p>
+<h2 id="get-file">Get file<a class="headerlink" href="#get-file" title="Permanent link">&para;</a></h2>
+<p>Gets a file from a repository.</p>
+<p>This action should only be used to retrieve the contents of a plain-text file.</p>
+<h3 id="inputs_2">Inputs<a class="headerlink" href="#inputs_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>File path</strong></td>
+<td>The relative path of the file.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Ref</strong></td>
+<td>The reference from which to retrieve the file. It can be a branch name or a commit hash.</td>
+<td>Required</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_13">Output<a class="headerlink" href="#output_13" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/l863wwz">Repository files API - Get file from repositoryï»¿</a> GitLab documentation.</p>
+<h2 id="update-file">Update file<a class="headerlink" href="#update-file" title="Permanent link">&para;</a></h2>
+<p>Updates a file in your GitLab repository. This action creates a new branch based on the specified base branch.</p>
+<p>The action can only act on one file, resulting in the creation of a new branch. The GitLab API doesn't allow the reuse of existing branches. Any attempt to do so results in the GitLab API throwing an error.</p>
+<h3 id="inputs_3">Inputs<a class="headerlink" href="#inputs_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Start branch</strong></td>
+<td>The starting branch to base the new branch on.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Branch</strong></td>
+<td>The name of the new branch.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>File path</strong></td>
+<td>The relative path to the file to be updated.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>File content</strong></td>
+<td>The updated content of the file.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Commit message</strong></td>
+<td>The commit message for the edit.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Author name</strong></td>
+<td>The name of the author of the resulting commit.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_14">Output<a class="headerlink" href="#output_14" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/6o83wg0">Repository files API - Update existing file in repositoryï»¿</a> GitLab documentation.</p>
+<h2 id="delete-file_1">Delete file<a class="headerlink" href="#delete-file_1" title="Permanent link">&para;</a></h2>
+<p>Deletes a file in your GitLab repository. This action creates a new branch based on the specified base branch.</p>
+<p>The action can only act on one file, resulting in the creation of a new branch. The GitLab API doesn't allow the reuse of existing branches. Any attempt to do so results in the GitLab API throwing an error.</p>
+<h3 id="inputs_4">Inputs<a class="headerlink" href="#inputs_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Start branch</strong></td>
+<td>The starting branch to base the new branch on.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Branch</strong></td>
+<td>The name of the new branch.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>File path</strong></td>
+<td>The relative path to the file to be deleted.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Commit message</strong></td>
+<td>The commit message for the deletion.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Author name</strong></td>
+<td>The name of the author of the resulting commit.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_15">Output<a class="headerlink" href="#output_15" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/xfa3w6o">Repository files API - Delete existing file in repositoryï»¿</a> GitLab documentation.</p>
+<h2 id="create-merge-request">Create merge request<a class="headerlink" href="#create-merge-request" title="Permanent link">&para;</a></h2>
+<p>Creates a merge request in your GitLab repository.</p>
+<h3 id="inputs_5">Inputs<a class="headerlink" href="#inputs_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source Branch</strong></td>
+<td>The name of the source branch.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Target Branch</strong></td>
+<td>The name of the target branch.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>The title of the new merge request.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The description of this merge request.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_16">Output<a class="headerlink" href="#output_16" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/uyc3wjd">Merge requests API - Create MRï»¿</a> GitLab documentation.</p>
+<h2 id="get-merge-request">Get merge request<a class="headerlink" href="#get-merge-request" title="Permanent link">&para;</a></h2>
+<p>Gets a single merge request in GitLab.</p>
+<h3 id="inputs_6">Inputs<a class="headerlink" href="#inputs_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internal ID</strong></td>
+<td>The GitLab internal identifier of the merge request.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Commits behind the target branch</strong></td>
+<td>Toggle the switch on to include the commits behind the target branch.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Rebase operation in progress</strong></td>
+<td>Toggle the switch on to include any rebase operation in progress.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_17">Output<a class="headerlink" href="#output_17" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/u8e3wkb">Merge requests API - Get single MRï»¿</a> GitLab documentation.</p>
+<h2 id="list-merge-requests">List merge requests<a class="headerlink" href="#list-merge-requests" title="Permanent link">&para;</a></h2>
+<p>Gets a list of merge requests in your GitLab repository.</p>
+<h3 id="inputs_7">Inputs<a class="headerlink" href="#inputs_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Author</strong></td>
+<td>The name of the user who authored the merge requests.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>State</strong></td>
+<td>The status of merge requests you're interested in.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_18">Output<a class="headerlink" href="#output_18" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/42g3w9v">Merge requests API - List merge requestsï»¿</a> GitLab documentation.</p>
+<h2 id="merge-a-merge-request">Merge a merge request<a class="headerlink" href="#merge-a-merge-request" title="Permanent link">&para;</a></h2>
+<p>Merges a merge request in your GitLab repository.</p>
+<h3 id="inputs_8">Inputs<a class="headerlink" href="#inputs_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Merge request</strong></td>
+<td>The merge request to merge.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>SHA</strong></td>
+<td>The hash of the presumptive last commit in the merge request. If the actual last commit differs, the action fails.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Enable squash merge</strong></td>
+<td>Toggle the switch on to use the squash merge strategy or off to use the merge commit strategy.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_19">Output<a class="headerlink" href="#output_19" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/myi3wx9">Merge requests API - Merge a merge requestï»¿</a> GitLab documentation.</p>
+<h2 id="update-merge-request">Update merge request<a class="headerlink" href="#update-merge-request" title="Permanent link">&para;</a></h2>
+<p>Updates an existing merge request in your GitLab repository.</p>
+<h3 id="inputs_9">Inputs<a class="headerlink" href="#inputs_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Merge request</strong></td>
+<td>The merge request to be updated.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Branch</strong></td>
+<td>The name of the target branch.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>The new title of the merge request.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The description of this merge request.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_20">Output<a class="headerlink" href="#output_20" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/b7k3wms">Merge requests API - Update MRï»¿</a> GitLab documentation.</p>
+<h2 id="create-merge-request-note">Create merge request note<a class="headerlink" href="#create-merge-request-note" title="Permanent link">&para;</a></h2>
+<p>Creates a new note for a single merge request in GitLab.</p>
+<h3 id="inputs_10">Inputs<a class="headerlink" href="#inputs_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Merge request</strong></td>
+<td>The merge request to which the note will be posted.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Content of the note</strong></td>
+<td>The content of the note.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>SHA</strong></td>
+<td>The hash of the presumptive last commit in the merge request. If the actual last commit differs, the action fails.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_21">Output<a class="headerlink" href="#output_21" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/f903w51">Merge requests API - Create MR Noteï»¿</a> GitLab documentation.</p>
+<h2 id="create-new-issue">Create new issue<a class="headerlink" href="#create-new-issue" title="Permanent link">&para;</a></h2>
+<p>Creates a new issue in your GitLab repository.</p>
+<h3 id="inputs_11">Inputs<a class="headerlink" href="#inputs_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Title</strong></td>
+<td>The title of the new issue.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Labels</strong></td>
+<td>A comma-separated list of labels to add to the issue.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Issue type</strong></td>
+<td>The type of the issue.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The description of the issue.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Assignees</strong></td>
+<td>The user to assign this issue. If not set, the issue will be unassigned.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_22">Output<a class="headerlink" href="#output_22" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/n1m3wi7">Issues API - New issueï»¿</a> GitLab documentation.</p>
+<h2 id="edit-issue">Edit issue<a class="headerlink" href="#edit-issue" title="Permanent link">&para;</a></h2>
+<p>Edits an issue in your GitLab repository.</p>
+<h3 id="inputs_12">Inputs<a class="headerlink" href="#inputs_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Title</strong></td>
+<td>The new title of the issue.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Labels</strong></td>
+<td>A comma-separated list of labels to apply to the issue.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Issue type</strong></td>
+<td>The type of the issue.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The description of the issue.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Close/Reopen</strong></td>
+<td>Select to change the issue status.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_23">Output<a class="headerlink" href="#output_23" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/fuo3was">Issues API - Edit an issueï»¿</a> GitLab documentation.</p>
+<h2 id="list-issues">List issues<a class="headerlink" href="#list-issues" title="Permanent link">&para;</a></h2>
+<p>Gets a list of issues from your GitLab repository.</p>
+<h3 id="inputs_13">Inputs<a class="headerlink" href="#inputs_13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Issue Ids</strong></td>
+<td>Show only issues with the specified, comma-separated list of IDs.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Title or Description</strong></td>
+<td>Show only issues that contain the specified text in their title or description.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Issue type</strong></td>
+<td>Show only issues of the specified type.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>Labels</strong></td>
+<td>Show only issues with all of the comma-separated labels assigned to them.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><strong>State</strong></td>
+<td>Set whether you want to retrieve a list of open or closed issues.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_24">Output<a class="headerlink" href="#output_24" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/kqq3wj6">Issues API - List issuesï»¿</a> GitLab documentation.</p>
+<h2 id="get-pipeline-status">Get pipeline status<a class="headerlink" href="#get-pipeline-status" title="Permanent link">&para;</a></h2>
+<p>Gets the status of a pipeline running in your GitLab repository.</p>
+<h3 id="inputs_14">Inputs<a class="headerlink" href="#inputs_14" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Branch</strong></td>
+<td>The name of the branch.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Pipeline</strong></td>
+<td>The GitLab internal identifier of the pipeline.</td>
+<td>Required</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_25">Output<a class="headerlink" href="#output_25" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/vss3wqf">Jobs API - Get a single jobï»¿</a> GitLab documentation.</p>
+<h2 id="trigger-a-new-pipeline">Trigger a new pipeline<a class="headerlink" href="#trigger-a-new-pipeline" title="Permanent link">&para;</a></h2>
+<p>Triggers a new run of a pipeline in your GitLab repository.</p>
+<h3 id="inputs_15">Inputs<a class="headerlink" href="#inputs_15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Branch</strong></td>
+<td>The name of the branch for which the pipeline should be triggered.</td>
+<td>Required</td>
+</tr>
+</tbody>
+</table>
+<p>You can also set any number of build parameters.</p>
+<h3 id="output_26">Output<a class="headerlink" href="#output_26" title="Permanent link">&para;</a></h3>
+<p>Returns fields as described in the <a href="https://dt-url.net/leu3wbq">Jobs API - Run a jobï»¿</a> GitLab documentation.</p>
+<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/analyze-explore-automate/workflows/actions/gitlab" title="Integrate Workflows with GitLab.">GitLab Connector</a></li>
+<li><a href="/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup" title="Set up GitLab Connector.">Set up GitLab Connector</a></li>
+</ul>
+<hr />
 <h2 id="source-gitlab-workflows-setupmd">Source: gitlab-workflows-setup.md<a class="headerlink" href="#source-gitlab-workflows-setupmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-02-15T09:11:50.139815</p>
+scraped: 2026-02-16T09:35:49.107387</p>
 <hr />
 <h1 id="set-up-gitlab-connector">Set up GitLab Connector<a class="headerlink" href="#set-up-gitlab-connector" title="Permanent link">&para;</a></h1>
 <h1 id="set-up-gitlab-connector_1">Set up GitLab Connector<a class="headerlink" href="#set-up-gitlab-connector_1" title="Permanent link">&para;</a></h1>
@@ -2131,7 +2711,7 @@ scraped: 2026-02-15T09:11:50.139815</p>
 <p>The GitLab token needs the scopes <code>api</code>, <code>read_repository</code>, <code>read_user</code>, and <code>write_repository</code>.
 Scopes can be skipped if related actions are not used.
 Refer to the GitLab documentation for details on which scope is needed for which action.</p>
-<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions" title="List of available actions in GitLab Connector.">Actions for GitLab Connector</a></li>
 <li><a href="/docs/analyze-explore-automate/workflows/actions/gitlab" title="Integrate Workflows with GitLab.">GitLab Connector</a></li>
@@ -2141,7 +2721,7 @@ Refer to the GitLab documentation for details on which scope is needed for which
 <hr />
 <p>title: GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab
-scraped: 2026-02-15T21:26:21.861314</p>
+scraped: 2026-02-16T09:31:38.803125</p>
 <hr />
 <h1 id="gitlab-connector">GitLab Connector<a class="headerlink" href="#gitlab-connector" title="Permanent link">&para;</a></h1>
 <h1 id="gitlab-connector_1">GitLab Connector<a class="headerlink" href="#gitlab-connector_1" title="Permanent link">&para;</a></h1>
@@ -2157,6 +2737,64 @@ scraped: 2026-02-15T21:26:21.861314</p>
 <p>Set up and configure GitLab.](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup "Set up GitLab Connector.")[<img alt="GitLab for Workflows" src="https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg" title="GitLab for Workflows" /></p>
 <h3 id="actions-in-gitlab-connector">Actions in GitLab Connector<a class="headerlink" href="#actions-in-gitlab-connector" title="Permanent link">&para;</a></h3>
 <p>Learn about available actions used by GitLab Connector integration for automating issues and merge requests on your monitoring data and events.](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions "List of available actions in GitLab Connector.")</p>
+<hr />
+<h2 id="source-jenkins-workflows-setupmd">Source: jenkins-workflows-setup.md<a class="headerlink" href="#source-jenkins-workflows-setupmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Set up Jenkins Connector
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
+scraped: 2026-02-16T09:32:51.023168</p>
+<hr />
+<h1 id="set-up-jenkins-connector">Set up Jenkins Connector<a class="headerlink" href="#set-up-jenkins-connector" title="Permanent link">&para;</a></h1>
+<h1 id="set-up-jenkins-connector_1">Set up Jenkins Connector<a class="headerlink" href="#set-up-jenkins-connector_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>2-min read</li>
+<li>Updated on May 07, 2025</li>
+</ul>
+<h3 id="step-1-add-a-new-host-pattern-in-external-requests_2">Step 1 Add a New host pattern in External requests<a class="headerlink" href="#step-1-add-a-new-host-pattern-in-external-requests_2" title="Permanent link">&para;</a></h3>
+<p>External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.</p>
+<ol>
+<li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>General</strong> &gt; <strong>External requests</strong>.</li>
+<li>Select  <strong>New host pattern</strong>.</li>
+<li>Add the domain names.</li>
+<li>Select <strong>Add</strong>.</li>
+</ol>
+<p>This way you can granularly control the web services your functions can connect to.</p>
+<h3 id="step-2-grant-permissions-to-workflows_2">Step 2 Grant permissions to Workflows<a class="headerlink" href="#step-2-grant-permissions-to-workflows_2" title="Permanent link">&para;</a></h3>
+<p>Some permissions are required by Workflows to run actions on your behalf.
+Other permissions are required by actions that come bundled with Jenkins Connector itself.</p>
+<p>To fine-tune permissions granted to Workflows</p>
+<ol>
+<li>Go to <strong>Workflows</strong> and select <strong>Settings</strong> &gt; <strong>Authorization settings</strong>.</li>
+<li>
+<p>Select the following permissions besides the general Workflows permission.</p>
+</li>
+<li>
+<p>Permissions needed for Jenkins workflow actions:</p>
+</li>
+<li>
+<p><code>app-settings:objects:read</code></p>
+</li>
+</ol>
+<p>For more on general Workflows user permissions, see <a href="/docs/analyze-explore-automate/workflows/security#user-permission" title="Guide on security aspects of workflow automation in Dynatrace Workflows">User permissions for workflows</a>.</p>
+<h3 id="step-3-configure-jenkins-connection">Step 3 Configure Jenkins connection<a class="headerlink" href="#step-3-configure-jenkins-connection" title="Permanent link">&para;</a></h3>
+<p>You need a configured connection for each of your Jenkins environments.</p>
+<p>To configure a connection</p>
+<ol>
+<li>Open <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> and go to <strong>Connections</strong> &gt; <strong>Jenkins</strong>.</li>
+<li>Select  <strong>Connection</strong>.</li>
+<li>
+<p>Describe your Jenkins connection.</p>
+</li>
+<li>
+<p><strong>Connection name</strong>: Provide a meaningful name for your connection.</p>
+</li>
+<li><strong>Jenkins URL</strong>: Add the URL of your Jenkins environment.</li>
+<li><strong>Username</strong>: Provide your Jenkins username.</li>
+<li><strong>Password</strong>: Provide your Jenkins password.</li>
+<li>Select <strong>Create</strong>.</li>
+</ol>
 <hr />
 <h2 id="source-jiramd">Source: jira.md<a class="headerlink" href="#source-jiramd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -2187,7 +2825,7 @@ scraped: 2026-02-15T21:28:18.766756</p>
 <li><a href="https://dt-url.net/ix2388q">Insufficient permissions error in Jira Connectorï»¿</a></li>
 <li><a href="https://dt-url.net/ru038v6">Why does Jira ticket creation fail for Jira Connector?ï»¿</a></li>
 </ul>
-<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-setup" title="Learn how to set up Jira Connector.">Set up Jira Connector</a></li>
 <li><a href="/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-get-started" title="Learn how to get started with Jira Connector actions.">Get started with Jira Connector</a></li>
@@ -2482,11 +3120,135 @@ scraped: 2026-02-15T21:22:46.035361</p>
 <li><a href="https://dt-url.net/2e23837">PagerDuty: Insufficient permissions errorï»¿</a></li>
 </ul>
 <hr />
+<h2 id="source-redhat-ansiblemd">Source: redhat-ansible.md<a class="headerlink" href="#source-redhat-ansiblemd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Red Hat Ansible Automation
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible
+scraped: 2026-02-16T09:28:25.860361</p>
+<hr />
+<h1 id="red-hat-ansible-automation">Red Hat Ansible Automation<a class="headerlink" href="#red-hat-ansible-automation" title="Permanent link">&para;</a></h1>
+<h1 id="red-hat-ansible-automation_1">Red Hat Ansible Automation<a class="headerlink" href="#red-hat-ansible-automation_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>4-min read</li>
+<li>Updated on Oct 16, 2025</li>
+<li>Preview</li>
+</ul>
+<p>Preview</p>
+<p>When you integrate your Dynatrace environment with Red Hat Ansible Automation controller using Red Hat Ansible Connector <img alt="Red Hat Ansible for Workflows" src="https://dt-cdn.net/images/red-hat-ansible-for-workflows-257-cfabd1452d.png" title="Red Hat Ansible for Workflows" />, you can automatically start job templates based on your monitoring data.</p>
+<h2 id="configure-the-integration_1">Configure the integration<a class="headerlink" href="#configure-the-integration_1" title="Permanent link">&para;</a></h2>
+<p>[<img alt="Step 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Step 1" /></p>
+<p><strong>Grant permissions to Workflows</strong>](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#permissions "Automate running of Ansible jobs based on your monitoring data and events.")[<img alt="Step 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Step 2" /></p>
+<p><strong>Create Red Hat Ansible API key</strong>](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#api-key "Automate running of Ansible jobs based on your monitoring data and events.")[<img alt="Step 3" src="https://dt-cdn.net/images/step-3-350cf6c19a.svg" title="Step 3" /></p>
+<p><strong>Configure Red Hat Ansible Automation connection</strong>](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#connection "Automate running of Ansible jobs based on your monitoring data and events.")[<img alt="Step 4 optional" src="https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg" title="Step 4 optional" /></p>
+<p><strong>Configure Red Hat Ansible Automation connection</strong>](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#edgeconnect "Automate running of Ansible jobs based on your monitoring data and events.")</p>
+<h3 id="step-1-grant-permissions-to-workflows_1">Step 1 Grant permissions to Workflows<a class="headerlink" href="#step-1-grant-permissions-to-workflows_1" title="Permanent link">&para;</a></h3>
+<p>Some permissions are required by Workflows to run actions on your behalf.</p>
+<p>To fine-tune permissions granted to Workflows</p>
+<ol>
+<li>Go to <strong>Workflows</strong> and select <strong>Settings</strong> &gt; <strong>Authorization settings</strong>.</li>
+<li>
+<p>Select the following permissions besides the general Workflows permission.</p>
+</li>
+<li>
+<p><code>app-settings:objects:read</code></p>
+</li>
+<li><code>state:app-states:read</code></li>
+<li><code>state:app-states:write</code></li>
+<li><code>state:app-states:delete</code></li>
+</ol>
+<p>For more on general Workflows user permissions, see <a href="/docs/analyze-explore-automate/workflows/security#user-permission" title="Guide on security aspects of workflow automation in Dynatrace Workflows">User permissions for workflows</a>.</p>
+<h3 id="step-2-create-red-hat-ansible-api-key">Step 2 Create Red Hat Ansible API key<a class="headerlink" href="#step-2-create-red-hat-ansible-api-key" title="Permanent link">&para;</a></h3>
+<p>To interact with Red Hat Ansible Automation Controller, you need an API key. To learn how to obtain it, see the <a href="https://dt-url.net/q60398k">Red Hat official documentationï»¿</a>.</p>
+<h3 id="step-3-configure-red-hat-ansible-connection">Step 3 Configure Red Hat Ansible connection<a class="headerlink" href="#step-3-configure-red-hat-ansible-connection" title="Permanent link">&para;</a></h3>
+<p>You need a configured connection for of your Red Hat Automation environments.</p>
+<p>To configure a connection for <strong>Red Hat Ansible Automation Controller</strong></p>
+<ol>
+<li>Go to <strong>Settings</strong> and select <strong>Connections</strong> &gt; <strong>Connectors</strong> &gt; <strong>Red Hat Ansible</strong>.</li>
+<li>Select the tab <strong>Automation Controller</strong>.</li>
+<li>Select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" /> <strong>Connection</strong>.</li>
+<li>Provide a meaningful name for your connection.</li>
+<li>Provide the Red Hat Ansible API URL. For example, <code>http://your-ansible-host.com/api/v2</code> (must include the <code>api/v2</code>, no trailing slash).</li>
+<li>Provide your Red Hat Ansible API key.</li>
+<li>Select <strong>Create</strong>.</li>
+</ol>
+<h3 id="step-4-optional-configure-edgeconnect">Step 4 optional Configure EdgeConnect<a class="headerlink" href="#step-4-optional-configure-edgeconnect" title="Permanent link">&para;</a></h3>
+<p>If you connect to a self-hosted Red Hat Ansible Automation Controller or AWX instance, you might require EdgeConnect to establish a connection behind your firewall.</p>
+<p>To configure an EdgeConnect connection</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt;  <strong>General</strong> &gt; <strong>External Requests</strong> &gt; <strong>EdgeConnect</strong>.</li>
+<li>Select  <strong>New EdgeConnect</strong>.</li>
+<li>Enter <strong>Name</strong> for your EdgeConnect.</li>
+<li>Enter <strong>Host pattern</strong> which is a URL.</li>
+<li>Select <strong>Create</strong>.</li>
+</ol>
+<p>You have a new EdgeConnect connection.</p>
+<h2 id="available-actions_1">Available actions<a class="headerlink" href="#available-actions_1" title="Permanent link">&para;</a></h2>
+<p>The following workflow actions are available for the Red Hat Ansible Automation integration.
+Each action corresponds to an endpoint of the Red Hat Ansible API. For details on endpoints, see the <a href="https://dt-url.net/0w4392o">Ansible Tower API Reference Guideï»¿</a>.</p>
+<p>Action</p>
+<p>Description</p>
+<p>Red Hat Ansible API endpoint</p>
+<p>Launch job template</p>
+<p>Launch a job template on Red Hat Ansible</p>
+<p><code>POST /api/v2/job_templates/{id}/launch/</code> <br />
+Launch a Job Template</p>
+<p>List job status</p>
+<p>List job status on Red Hat Ansible</p>
+<p><code>GET /api/v2/jobs/{id}/</code> <br />
+Retrieve a Job Host Summary</p>
+<p>Relaunch job</p>
+<p>Relaunch a job on Red Hat Ansible</p>
+<p><code>POST /api/v2/jobs/{id}/relaunch/</code> <br />
+Relaunch a Job</p>
+<h2 id="launch-a-job-template">Launch a job template<a class="headerlink" href="#launch-a-job-template" title="Permanent link">&para;</a></h2>
+<p>To launch a job template, you need to provide the information listed below.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TemplateId</td>
+<td>The ID of the template that you want to launch</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>ExtraVars</td>
+<td>Extra variables to be used in the job template</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<p>For details on the parameters, see the <a href="https://dt-url.net/0w4392o">Ansible Tower API Reference Guideï»¿</a> (<code>/api/v2/job_templates/{id}/launch/</code> "Launch a Job Template").</p>
+<p>To create a workflow that launches a job template</p>
+<ol>
+<li>Go to <strong>Workflows</strong> <img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> and select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" /> to create a new workflow.</li>
+<li>In the <strong>Choose trigger</strong> panel, select the trigger best suited to your needs.</li>
+<li>On the trigger node, select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" /> to browse available actions.</li>
+<li>On one of the information-extracting nodes, select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" />, search for <code>Ansible</code>, and select <strong>Launch job template</strong>.</li>
+<li>On each of the remaining information-extracting nodes, select <img alt="Add" src="https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg" title="Add" /> and drag the line to the <strong>Launch job template</strong> action.</li>
+<li>In the <strong>Launch job template</strong> action, select the <a href="#connection">connection</a> to your <strong>Red Hat Ansible Automation Controller</strong>.</li>
+<li>Configure the input fields as needed. To learn how to use the output of information-extracting notes, see <a href="/docs/analyze-explore-automate/workflows/reference" title="Get to know the workflows expression">Expression reference</a>.</li>
+<li>To test your workflow, select <strong>Run</strong>.</li>
+</ol>
+<h2 id="troubleshooting_2">Troubleshooting<a class="headerlink" href="#troubleshooting_2" title="Permanent link">&para;</a></h2>
+<p>The following are solutions to problems some people have.</p>
+<ul>
+<li><a href="https://dt-url.net/sq237zw">Red Hat Ansible for Workflows: Missing required fields errorï»¿</a></li>
+<li><a href="https://dt-url.net/3e63842">Red Hat Ansible for Workflows: Insufficient permissions errorï»¿</a></li>
+</ul>
+<hr />
 <h2 id="source-service-nowmd">Source: service-now.md<a class="headerlink" href="#source-service-nowmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-15T21:18:23.623731</p>
+scraped: 2026-02-16T09:22:15.326593</p>
 <hr />
 <h1 id="servicenow">ServiceNow<a class="headerlink" href="#servicenow" title="Permanent link">&para;</a></h1>
 <h1 id="servicenow_1">ServiceNow<a class="headerlink" href="#servicenow_1" title="Permanent link">&para;</a></h1>
@@ -2497,12 +3259,12 @@ scraped: 2026-02-15T21:18:23.623731</p>
 </ul>
 <p>Your Dynatrace environment can integrate with a ServiceNow environment using ServiceNow Connector <img alt="ServiceNow for Workflows" src="https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png" title="ServiceNow for Workflows" />, enabling you to create incidents based on your monitoring data and events automatically.
 Furthermore, you can retrieve groups from ServiceNow and import them as <a href="/docs/deliver/ownership/ownership-teams#import-teams" title="Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.">Ownership teams</a>.</p>
-<h2 id="configure-the-integration_1">Configure the integration<a class="headerlink" href="#configure-the-integration_1" title="Permanent link">&para;</a></h2>
+<h2 id="configure-the-integration_2">Configure the integration<a class="headerlink" href="#configure-the-integration_2" title="Permanent link">&para;</a></h2>
 <p>[<img alt="Step 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Step 1" /></p>
 <p><strong>Grant permissions to Workflows</strong>](/docs/analyze-explore-automate/workflows/actions/service-now#permissions "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[<img alt="Step 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Step 2" /></p>
 <p><strong>Create ServiceNow authentication credentials</strong>](/docs/analyze-explore-automate/workflows/actions/service-now#authentication "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[<img alt="Step 3" src="https://dt-cdn.net/images/step-3-350cf6c19a.svg" title="Step 3" /></p>
 <p><strong>Configure ServiceNow connection</strong>](/docs/analyze-explore-automate/workflows/actions/service-now#connection "Automate creation of incidents in ServiceNow based on your monitoring data and events.")</p>
-<h3 id="step-1-grant-permissions-to-workflows_1">Step 1 Grant permissions to Workflows<a class="headerlink" href="#step-1-grant-permissions-to-workflows_1" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-grant-permissions-to-workflows_2">Step 1 Grant permissions to Workflows<a class="headerlink" href="#step-1-grant-permissions-to-workflows_2" title="Permanent link">&para;</a></h3>
 <p>Some permissions are required by Workflows to run actions on your behalf. Other permissions are required by actions that come bundled with ServiceNow Connector itself.</p>
 <p>To fine-tune permissions granted to Workflows</p>
 <ol>
@@ -2550,7 +3312,7 @@ Furthermore, you can retrieve groups from ServiceNow and import them as <a href=
 </ul>
 </li>
 </ol>
-<h2 id="available-actions_1">Available actions<a class="headerlink" href="#available-actions_1" title="Permanent link">&para;</a></h2>
+<h2 id="available-actions_2">Available actions<a class="headerlink" href="#available-actions_2" title="Permanent link">&para;</a></h2>
 <p>The following workflow actions are available for the ServiceNow integration. Each action corresponds to an endpoint of the ServiceNow API.</p>
 <p>Action</p>
 <p>Description</p>
@@ -3005,7 +3767,7 @@ Furthermore, you can retrieve groups from ServiceNow and import them as <a href=
 </tbody>
 </table>
 <p>For more details, see the <a href="https://dt-url.net/vc039n0">official ServiceNow documentationï»¿</a>.</p>
-<h2 id="troubleshooting_2">Troubleshooting<a class="headerlink" href="#troubleshooting_2" title="Permanent link">&para;</a></h2>
+<h2 id="troubleshooting_3">Troubleshooting<a class="headerlink" href="#troubleshooting_3" title="Permanent link">&para;</a></h2>
 <p>The following is a solution to a problem some people have.</p>
 <ul>
 <li><a href="https://dt-url.net/hj637wm">ServiceNow for Workflows: Insufficient permissions errorï»¿</a></li>
@@ -3015,7 +3777,7 @@ Furthermore, you can retrieve groups from ServiceNow and import them as <a href=
 <hr />
 <p>title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-15T09:06:37.953372</p>
+scraped: 2026-02-16T09:37:03.310789</p>
 <hr />
 <h1 id="slack-connector">Slack Connector<a class="headerlink" href="#slack-connector" title="Permanent link">&para;</a></h1>
 <h1 id="slack-connector_1">Slack Connector<a class="headerlink" href="#slack-connector_1" title="Permanent link">&para;</a></h1>
@@ -3035,7 +3797,7 @@ scraped: 2026-02-15T09:06:37.953372</p>
 <li>Select <strong>Add</strong>.</li>
 </ol>
 <p>This way you can granularly control the web services your functions can connect to.</p>
-<h3 id="step-2-grant-permissions-to-workflows_2">Step 2 Grant permissions to Workflows<a class="headerlink" href="#step-2-grant-permissions-to-workflows_2" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-grant-permissions-to-workflows_3">Step 2 Grant permissions to Workflows<a class="headerlink" href="#step-2-grant-permissions-to-workflows_3" title="Permanent link">&para;</a></h3>
 <p>Some permissions are required by Workflows to run actions on your behalf. Other permissions are required by actions that come bundled with <strong>Slack</strong> Connector itself.</p>
 <p>To fine-tune permissions granted to Workflows</p>
 <ol>
@@ -3961,7 +4723,7 @@ Expressions will be resolved at execution time, creating a static card payload t
 7. Provide a message body.
    Format your message using <a href="https://api.slack.com/reference/surfaces/formatting#basics">Slack Markdownï»¿</a>. It is also possible to use <a href="/docs/analyze-explore-automate/workflows/reference" title="Get to know the workflows expression">workflow expressions</a> as input.
 8. To test your workflow, select <strong>Run</strong>.</p>
-<h2 id="troubleshooting_3">Troubleshooting<a class="headerlink" href="#troubleshooting_3" title="Permanent link">&para;</a></h2>
+<h2 id="troubleshooting_4">Troubleshooting<a class="headerlink" href="#troubleshooting_4" title="Permanent link">&para;</a></h2>
 <p>The following are solutions to problems some people had with Slack integration.</p>
 <ul>
 <li><a href="https://dt-url.net/2503800">Invalid connection error for Slackï»¿</a></li>
@@ -3970,7 +4732,7 @@ Expressions will be resolved at execution time, creating a static card payload t
 <li><a href="https://dt-url.net/09438li">Insufficient permissions error in Slackï»¿</a></li>
 <li><a href="https://dt-url.net/z423x5i">Text file attachment shown as a binary fileï»¿</a></li>
 </ul>
-<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack" title="Learn how to send Slack notifications for problems using a simple workflow.">Send Slack notifications for problems</a></li>
 </ul>
@@ -4005,7 +4767,7 @@ Should the expression evaluation result yield an action input that is not consid
 <p>In the official Jinja documentation, read more about <a href="https://jinja.palletsprojects.com/en/stable/templates/#escaping">escape mechanismsï»¿</a>.</p>
 <h2 id="set-json-value">Set JSON value<a class="headerlink" href="#set-json-value" title="Permanent link">&para;</a></h2>
 <p>Configures a JSON file.</p>
-<h3 id="inputs_1">Inputs<a class="headerlink" href="#inputs_1" title="Permanent link">&para;</a></h3>
+<h3 id="inputs_16">Inputs<a class="headerlink" href="#inputs_16" title="Permanent link">&para;</a></h3>
 <p>Field</p>
 <p>Description</p>
 <p>Required</p>
@@ -4129,7 +4891,7 @@ The first name was changed to Michael.</p>
 <h2 id="set-yaml-value">Set YAML value<a class="headerlink" href="#set-yaml-value" title="Permanent link">&para;</a></h2>
 <p>Manipulates a YAML.
 Supports multi-document YAML files.</p>
-<h3 id="inputs_2">Inputs<a class="headerlink" href="#inputs_2" title="Permanent link">&para;</a></h3>
+<h3 id="inputs_17">Inputs<a class="headerlink" href="#inputs_17" title="Permanent link">&para;</a></h3>
 <p>Field</p>
 <p>Description</p>
 <p>Required</p>
@@ -4398,11 +5160,35 @@ Supports multi-document YAML files.</p>
 <a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>}
 </code></pre></div>
 <hr />
+<h2 id="source-text-processingmd">Source: text-processing.md<a class="headerlink" href="#source-text-processingmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Text Processing
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
+scraped: 2026-02-16T09:28:12.035511</p>
+<hr />
+<h1 id="text-processing">Text Processing<a class="headerlink" href="#text-processing" title="Permanent link">&para;</a></h1>
+<h1 id="text-processing_1">Text Processing<a class="headerlink" href="#text-processing_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Overview</li>
+<li>1-min read</li>
+<li>Published Oct 08, 2025</li>
+</ul>
+<p>Text Processing provides <code>set</code> and <code>get</code> actions, which you can use to create, modify, or retrieve properties from JSON or YAML content.
+The YAML actions support multi-document YAML files through an optional document index parameter.</p>
+<p>You can combine the Text Processing actions with other Connector actions, for example, with <a href="/docs/analyze-explore-automate/workflows/actions/github" title="Integrate Workflows with GitHub for handling common developer tasks.">GitHub Connector action</a> or <a href="/docs/analyze-explore-automate/workflows/actions/gitlab" title="Integrate Workflows with GitLab.">GitLab Connector action</a> to fetch JSON or YAML files from a repository/project, manipulate them with the Text Processing Connector actions, and update them via a pull request or merge request.</p>
+<p>For more information on how to start a workflow to use Text Processing, see <a href="/docs/analyze-explore-automate/workflows/quickstart" title="Build and run your first workflow.">Workflows quick start guide</a>.</p>
+<h2 id="related-topics_8">Related topics<a class="headerlink" href="#related-topics_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions" title="Learn about the type of actions you use as part of a workflow for text processing a JSON or YAML file.">Actions for Text Processing Connector</a></li>
+<li><a href="/docs/analyze-explore-automate/workflows/actions" title="Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.">Workflows Connectors</a></li>
+</ul>
+<hr />
 <h2 id="source-actionsmd">Source: actions.md<a class="headerlink" href="#source-actionsmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-15T21:18:22.166064</p>
+scraped: 2026-02-16T09:22:12.004416</p>
 <hr />
 <h1 id="workflows-connectors">Workflows Connectors<a class="headerlink" href="#workflows-connectors" title="Permanent link">&para;</a></h1>
 <h1 id="workflows-connectors_1">Workflows Connectors<a class="headerlink" href="#workflows-connectors_1" title="Permanent link">&para;</a></h1>
@@ -4421,7 +5207,7 @@ scraped: 2026-02-15T21:18:22.166064</p>
 <p>The <strong>AWS</strong> Connector actions enable your Dynatrace environment to integrate with an AWS environment.](/docs/analyze-explore-automate/workflows/actions/aws "The AWS Connector integration provides powerful actions for various Amazon Web Services such as EC2, Autoscaling and S3.")[<img alt="Slack Connector" src="https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png" title="Slack Connector" /></p>
 <h3 id="slack-connector_2">Slack Connector<a class="headerlink" href="#slack-connector_2" title="Permanent link">&para;</a></h3>
 <p>Slack workflow actions come bundled with <strong>Slack</strong> Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces")[<img alt="GitHub" src="https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png" title="GitHub" /></p>
-<h3 id="github-connector">GitHub Connector<a class="headerlink" href="#github-connector" title="Permanent link">&para;</a></h3>
+<h3 id="github-connector_2">GitHub Connector<a class="headerlink" href="#github-connector_2" title="Permanent link">&para;</a></h3>
 <p>GitHub workflow actions come bundled with <strong>GitHub Connector</strong>, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/github "Integrate Workflows with GitHub for handling common developer tasks.")[<img alt="Jira for Workflows" src="https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png" title="Jira for Workflows" /></p>
 <h3 id="jira-connector_2">Jira Connector<a class="headerlink" href="#jira-connector_2" title="Permanent link">&para;</a></h3>
 <p>Jira workflow actions come bundled with <strong>Jira Connector</strong>, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/jira "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.")[<img alt="Microsoft 365 for Workflows" src="https://dt-cdn.net/images/microsoft-365-for-workflows-sztyvk4-257-484266710c.png" title="Microsoft 365 for Workflows" /></p>
@@ -4455,8 +5241,29 @@ scraped: 2026-02-15T21:18:22.166064</p>
 <h3 id="synthetic-for-workflows">Synthetic for Workflows<a class="headerlink" href="#synthetic-for-workflows" title="Permanent link">&para;</a></h3>
 <p>Enhance your automation capabilities with Synthetic Monitoring. <strong>Synthetic for Workflows</strong> allows you to execute synthetic monitors on demand at selected locations within your workflows.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows "Enhance your automation capabilities with Synthetic Monitoring.")[### Business Observability</p>
 <p>Generate business events from automated tasks to connect monitoring and observability data with business information.](/docs/observe/business-observability/bo-events-capturing "Capture business events for Dynatrace Business Observability.")[<img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /></p>
-<h3 id="text-processing">Text Processing<a class="headerlink" href="#text-processing" title="Permanent link">&para;</a></h3>
+<h3 id="text-processing_2">Text Processing<a class="headerlink" href="#text-processing_2" title="Permanent link">&para;</a></h3>
 <p>Text Processing provides a set of <code>set</code> and <code>get</code> actions for manipulating content in JSON and YAML file types.](/docs/analyze-explore-automate/workflows/actions/text-processing "Automate text processing in JSON and YAML files for your workflows.")</p>
+<hr />
+<h2 id="source-dql-query-workflow-actionmd">Source: dql-query-workflow-action.md<a class="headerlink" href="#source-dql-query-workflow-actionmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: DQL query action for Workflows
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
+scraped: 2026-02-16T09:36:42.597396</p>
+<hr />
+<h1 id="dql-query-action-for-workflows">DQL query action for Workflows<a class="headerlink" href="#dql-query-action-for-workflows" title="Permanent link">&para;</a></h1>
+<h1 id="dql-query-action-for-workflows_1">DQL query action for Workflows<a class="headerlink" href="#dql-query-action-for-workflows_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>1-min read</li>
+<li>Published Apr 02, 2024</li>
+</ul>
+<p>The <strong>Execute DQL Query</strong> action for Workflows enables you to use DQL queries in a workflow. In <strong>DQL query</strong>, enter your <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">DQL query</a>. In <strong>Segment</strong>, you can optionally select a filter segment.</p>
+<p>You can find the results in the <strong>Result</strong> tab of the <strong>Execution</strong> that you could use in subsequent tasks.</p>
+<h2 id="related-topics_9">Related topics<a class="headerlink" href="#related-topics_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
+</ul>
 <hr />
 <h2 id="source-http-request-workflow-actionmd">Source: http-request-workflow-action.md<a class="headerlink" href="#source-http-request-workflow-actionmd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -4791,7 +5598,7 @@ Various workflow context information is also available in the Dynatrace JavaScri
 <hr />
 <p>title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-02-15T21:28:28.263568</p>
+scraped: 2026-02-16T09:29:43.234414</p>
 <hr />
 <h1 id="access-workflow-management-functionality">Access workflow management functionality<a class="headerlink" href="#access-workflow-management-functionality" title="Permanent link">&para;</a></h1>
 <h1 id="access-workflow-management-functionality_1">Access workflow management functionality<a class="headerlink" href="#access-workflow-management-functionality_1" title="Permanent link">&para;</a></h1>
@@ -4821,7 +5628,7 @@ scraped: 2026-02-15T21:28:28.263568</p>
 <li><strong>Delete workflow</strong>âdeletes the selected workflow and any <strong>Draft</strong> available.</li>
 <li><strong>Delete draft</strong>âsee <a href="/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode" title="Undeploy your workflow or download as Workflow or as a template.">deletes only the workflow draft</a>.</li>
 </ol>
-<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_10">Related topics<a class="headerlink" href="#related-topics_10" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/workflows/manage-workflows/workflows-upload" title="Upload your workflow or your template.">Upload a workflow or a workflow template</a></li>
 <li><a href="/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download" title="Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.">Download a workflow or template</a></li>
@@ -4835,7 +5642,7 @@ scraped: 2026-02-15T21:28:28.263568</p>
 <hr />
 <p>title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-15T09:09:33.290038</p>
+scraped: 2026-02-16T09:37:25.429478</p>
 <hr />
 <h1 id="manage-live-or-draft-workflows">Manage live or draft workflows<a class="headerlink" href="#manage-live-or-draft-workflows" title="Permanent link">&para;</a></h1>
 <h1 id="manage-live-or-draft-workflows_1">Manage live or draft workflows<a class="headerlink" href="#manage-live-or-draft-workflows_1" title="Permanent link">&para;</a></h1>
@@ -4862,7 +5669,7 @@ scraped: 2026-02-15T09:09:33.290038</p>
 <li><strong>Undeploy workflow</strong>âthe workflow becomes draft only, any existing <strong>Draft</strong> will be replaced. It won't be triggered automatically anymore.</li>
 <li><strong>Delete draft</strong>âdeletes only the <strong>Draft</strong> of the workflow.</li>
 </ol>
-<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_11">Related topics<a class="headerlink" href="#related-topics_11" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download" title="Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.">Download a workflow or template</a></li>
 <li><a href="/docs/analyze-explore-automate/workflows/manage-workflows" title="Manage your workflows">Manage workflows</a></li>
@@ -4872,7 +5679,7 @@ scraped: 2026-02-15T09:09:33.290038</p>
 <hr />
 <p>title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-15T09:06:29.574632</p>
+scraped: 2026-02-16T09:40:07.852390</p>
 <hr />
 <h1 id="get-notified-about-workflow-changes">Get notified about workflow changes<a class="headerlink" href="#get-notified-about-workflow-changes" title="Permanent link">&para;</a></h1>
 <h1 id="get-notified-about-workflow-changes_1">Get notified about workflow changes<a class="headerlink" href="#get-notified-about-workflow-changes_1" title="Permanent link">&para;</a></h1>
@@ -4912,7 +5719,7 @@ scraped: 2026-02-15T09:06:29.574632</p>
 This ensures awareness about potential interruptions in workflow execution.</p>
 <h2 id="turn-off-notifications">Turn off notifications<a class="headerlink" href="#turn-off-notifications" title="Permanent link">&para;</a></h2>
 <p>To turn off notifications for workflow, select  &gt; <strong>Turn off notifications</strong>.</p>
-<h2 id="related-topics_8">Related topics<a class="headerlink" href="#related-topics_8" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_12">Related topics<a class="headerlink" href="#related-topics_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/workflows/quickstart" title="Build and run your first workflow.">Workflows quick start guide</a></li>
 <li><a href="/docs/analyze-explore-automate/workflows/building" title="Create and edit workflows in Dynatrace Workflows.">Create workflows in Dynatrace Workflows</a></li>
@@ -4928,7 +5735,7 @@ This ensures awareness about potential interruptions in workflow execution.</p>
 <hr />
 <p>title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-02-15T21:22:44.842187</p>
+scraped: 2026-02-16T09:38:27.113957</p>
 <hr />
 <h1 id="user-permissions-for-workflows">User permissions for workflows<a class="headerlink" href="#user-permissions-for-workflows" title="Permanent link">&para;</a></h1>
 <h1 id="user-permissions-for-workflows_1">User permissions for workflows<a class="headerlink" href="#user-permissions-for-workflows_1" title="Permanent link">&para;</a></h1>
@@ -5332,7 +6139,7 @@ This setup helps to ensure that your team is immediately informed about critical
 <li>Adding auto remediation steps to your workflow.</li>
 </ul>
 <p>This workflow is a great starting point for automating incident response and improving operational awareness.</p>
-<h2 id="related-topics_9">Related topics<a class="headerlink" href="#related-topics_9" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_13">Related topics<a class="headerlink" href="#related-topics_13" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/workflows/simple-workflow" title="Build and run a simple workflow.">Create a simple workflow in Dynatrace Workflows</a></li>
 <li><a href="/docs/dynatrace-intelligence/davis-problems-app" title="Use the Problems app to quickly get to the root cause of incidents in your environment.">Problems app</a></li>

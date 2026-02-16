@@ -25,7 +25,7 @@
     
     
       
-        <title>Scrape data from Prometheus - Dynatrace Managed - Документация</title>
+        <title>Scrape Promethus metrics with the OpenTelemetry Collector - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scrape-data-from-prometheus" class="md-skip">
+        <a href="#scrape-promethus-metrics-with-the-opentelemetry-collector" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Scrape data from Prometheus
+              Scrape Promethus metrics with the OpenTelemetry Collector
             
           </span>
         </div>
@@ -965,8 +965,8 @@
 
 
 
-<h1 id="scrape-data-from-prometheus">Scrape data from Prometheus<a class="headerlink" href="#scrape-data-from-prometheus" title="Permanent link">&para;</a></h1>
-<h1 id="scrape-data-from-prometheus_1">Scrape data from Prometheus<a class="headerlink" href="#scrape-data-from-prometheus_1" title="Permanent link">&para;</a></h1>
+<h1 id="scrape-promethus-metrics-with-the-opentelemetry-collector">Scrape Promethus metrics with the OpenTelemetry Collector<a class="headerlink" href="#scrape-promethus-metrics-with-the-opentelemetry-collector" title="Permanent link">&para;</a></h1>
+<h1 id="scrape-promethus-metrics-with-the-opentelemetry-collector_1">Scrape Promethus metrics with the OpenTelemetry Collector<a class="headerlink" href="#scrape-promethus-metrics-with-the-opentelemetry-collector_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
@@ -981,14 +981,14 @@
 <p>One of the following Collector distributions with the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/receiver/prometheusreceiver">Prometheus receiverï»¿</a>, the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/metricstarttimeprocessor">metric start time processorï»¿</a>, and the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor">cumulative-to-delta processorï»¿</a>:</p>
 </li>
 <li>
-<p>The <a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace Collector.">Dynatrace Collector</a></p>
+<p>The <a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace OTel Collector.">Dynatrace Collector</a></p>
 </li>
-<li>OpenTelemetry <a href="/docs/ingest-from/opentelemetry/collector#collector-contrib" title="Learn about the Dynatrace Collector.">Contrib</a></li>
-<li>A <a href="/docs/ingest-from/opentelemetry/collector#collector-builder" title="Learn about the Dynatrace Collector.">custom Builder version</a></li>
+<li>OpenTelemetry <a href="/docs/ingest-from/opentelemetry/collector#collector-contrib" title="Learn about the Dynatrace OTel Collector.">Contrib</a></li>
+<li>A <a href="/docs/ingest-from/opentelemetry/collector#collector-builder" title="Learn about the Dynatrace OTel Collector.">custom Builder version</a></li>
 <li>The <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">Dynatrace API endpoint URL</a> to which the data should be exported</li>
 <li>An <a href="/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">API token</a> with the relevant access scope (only required for SaaS and ActiveGate)</li>
 </ul>
-<p>See <a href="/docs/ingest-from/opentelemetry/collector/deployment" title="Deploy the Dynatrace Collector.">Collector Deployment</a> and <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="Configure the OpenTelemetry Collector.">Collector Configuration</a> on how to set up your Collector with the configuration below.</p>
+<p>See <a href="/docs/ingest-from/opentelemetry/collector/deployment" title="How to deploy Dynatrace OTel Collector.">Collector Deployment</a> and <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="How to configure the OpenTelemetry Collector.">Collector Configuration</a> on how to set up your Collector with the configuration below.</p>
 <h2 id="demo-configuration">Demo configuration<a class="headerlink" href="#demo-configuration" title="Permanent link">&para;</a></h2>
 <p>Dynatrace Collector v0.41.0+</p>
 <p>The example pipeline below uses the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/metricstarttimeprocessor"><code>metricstarttime</code> processorï»¿</a>, which is required to convert the metrics to delta temporality.</p>
@@ -1215,7 +1215,7 @@ Prometheus receiver:</p>
 <a id="__codelineno-2-105" name="__codelineno-2-105" href="#__codelineno-2-105"></a>exporters: [otlp_http]
 </code></pre></div>
 <p>Configuration validation</p>
-<p><a href="/docs/ingest-from/opentelemetry/collector/configuration#validate" title="Configure the OpenTelemetry Collector.">Validate your settings</a> to avoid any configuration issues.</p>
+<p><a href="/docs/ingest-from/opentelemetry/collector/configuration#validate" title="How to configure the OpenTelemetry Collector.">Validate your settings</a> to avoid any configuration issues.</p>
 <p>Cumulativetodelta processor recommendation</p>
 <p>It is recommended to set the <code>max_staleness</code> parameter of the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor">cumulativetodelta processorï»¿</a> to a value higher than how often the collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.</p>
 <h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
@@ -1224,7 +1224,7 @@ Prometheus receiver:</p>
 <p>Under <code>receivers</code>, we specify the <code>prometheus</code> receiver as active receiver component for our Collector instance. We configure the receiver with the two jobs <code>node-exporter</code> and <code>opentelemetry-collector</code> under <code>scrape_configs</code>, to fetch data from the specified hosts once a minute (<code>scrape_interval: 60s</code>).</p>
 <p>For a full list of configuration parameters, see the <a href="https://github.com/prometheus/prometheus/blob/v2.28.1/docs/configuration/configuration.md">Prometheus documentationï»¿</a>.</p>
 <h3 id="processors">Processors<a class="headerlink" href="#processors" title="Permanent link">&para;</a></h3>
-<p>Under <code>processors</code>, we specify the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor"><code>cumulativetodelta</code> processorï»¿</a> to convert the metrics emitted by the Prometheus receiver to their <a href="/docs/ingest-from/opentelemetry/collector/configuration#delta-metrics" title="Configure the OpenTelemetry Collector.">delta aggregation format</a>.</p>
+<p>Under <code>processors</code>, we specify the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor"><code>cumulativetodelta</code> processorï»¿</a> to convert the metrics emitted by the Prometheus receiver to their <a href="/docs/ingest-from/opentelemetry/collector/configuration#delta-metrics" title="How to configure the OpenTelemetry Collector.">delta aggregation format</a>.</p>
 <p>In Dynatrace Collector v0.41.0+, we specify the
 <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/metricstarttimeprocessor"><code>metricstarttime</code>
 processorï»¿</a>
@@ -1251,7 +1251,7 @@ For more information see:</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">Enrich ingested data with Dynatrace-specific dimensions</a></li>
-<li><a href="/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich" title="Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.">Enrich from Kubernetes</a></li>
+<li><a href="/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich" title="Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.">Enrich OTLP requests with Kubernetes data</a></li>
 </ul>
 
 

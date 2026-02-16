@@ -1008,7 +1008,7 @@
 <p><code>.csidriver.server.livenessProbe.timeoutSeconds</code></p>
 </li>
 <li>
-<p>You will now receive a warning if you enable <code>.spec.telemetryIngest</code> without specifiying <code>.spec.templates.openTelemetryCollector.imageRef</code>. The Dynatrace Operator will continue to use the <code>latest</code> image from the Dynatrace public ECR registry for the <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace Collector.">OpenTelemetry collector</a>. However, using <code>latest</code> tags is an anti-pattern that should be avoided. Specifying the image will become mandatory in a future version.</p>
+<p>You will now receive a warning if you enable <code>.spec.telemetryIngest</code> without specifiying <code>.spec.templates.openTelemetryCollector.imageRef</code>. The Dynatrace Operator will continue to use the <code>latest</code> image from the Dynatrace public ECR registry for the <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">OpenTelemetry collector</a>. However, using <code>latest</code> tags is an anti-pattern that should be avoided. Specifying the image will become mandatory in a future version.</p>
 </li>
 <li>
 <p>Dynatrace Operator uses an API token with a set of <a href="/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions#operatorToken" title="Configure tokens and permissions to monitor your Kubernetes cluster">scopes</a> to interact with the Dynatrace platform. With this release, the following changes have been made to the token scope requirements:</p>

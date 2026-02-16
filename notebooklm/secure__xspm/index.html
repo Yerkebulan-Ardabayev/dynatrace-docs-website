@@ -986,13 +986,13 @@
 
 <h1 id="dynatrace-documentation-securexspm">Dynatrace Documentation: secure/xspm<a class="headerlink" href="#dynatrace-documentation-securexspm" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 2</p>
+<p>Files combined: 4</p>
 <hr />
 <h2 id="source-assess-coveragemd">Source: assess-coverage.md<a class="headerlink" href="#source-assess-coveragemd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/xspm/assess-coverage
-scraped: 2026-02-15T21:23:12.946223</p>
+scraped: 2026-02-16T09:39:10.473294</p>
 <hr />
 <h1 id="assess-coverage">Assess coverage<a class="headerlink" href="#assess-coverage" title="Permanent link">&para;</a></h1>
 <h1 id="assess-coverage_1">Assess coverage<a class="headerlink" href="#assess-coverage_1" title="Permanent link">&para;</a></h1>
@@ -1063,6 +1063,213 @@ scraped: 2026-02-15T21:23:12.946223</p>
 <li><a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management" title="Configure and enable Security Posture Management in Kubernetes.">Kubernetes Security Posture Management</a></li>
 </ul>
 <hr />
+<h2 id="source-conceptsmd">Source: concepts.md<a class="headerlink" href="#source-conceptsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Security Posture Management concepts
+source: https://www.dynatrace.com/docs/secure/xspm/concepts
+scraped: 2026-02-16T09:27:32.979457</p>
+<hr />
+<h1 id="security-posture-management-concepts">Security Posture Management concepts<a class="headerlink" href="#security-posture-management-concepts" title="Permanent link">&para;</a></h1>
+<h1 id="security-posture-management-concepts_1">Security Posture Management concepts<a class="headerlink" href="#security-posture-management-concepts_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Explanation</li>
+<li>Updated on Sep 23, 2025</li>
+</ul>
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
+<p><strong>Results</strong> are findings from Dynatrace in relation to your security and compliance posture, based on the rules of the <a href="/docs/secure/application-security/security-posture-management-hub#support" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">supported compliance standards</a>.</p>
+<p><strong>Rules</strong> are specific configuration and other process requirements defined in the compliance standards.</p>
+<p>Results consist of</p>
+<ul>
+<li>Rules that were assessed automatically (labeled <code>Failed</code>, <code>Passed</code>, and <code>Not relevant</code>)</li>
+<li>Rules that couldn't be assessed automatically (labeled <code>Manual</code>)</li>
+</ul>
+<p>Learn below about each result type.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Result type</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Failed</td>
+<td>The assessed resource doesn't follow the recommendations specified in the rule. In this case, a reason for failure is provided, based on which you can fix the issue. For details, see <a href="/docs/secure/xspm/gain-insights" title="Drill into results that can help you fix misconfigurations and noncompliance.">Gain insights</a>.</td>
+</tr>
+<tr>
+<td>Passed</td>
+<td>The assessed resource follows the recommendations specified in the rule (there are no misconfigurations violating the specified recommendations).</td>
+</tr>
+<tr>
+<td>Manual<a href="#fn-1-1-def">1</a></td>
+<td>The resource cannot be automatically assessed, as Dynatrace can't determine whether the resource is compliant (for example, when, due to physical security, Dynatrace can't get the configuration data from the clusters and nodes).</td>
+</tr>
+<tr>
+<td>Not relevant</td>
+<td>The assessed resource doesn't meet a specific criteria for assessment, such as a specific version. These results can be skipped.</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Manual results aren't currently actionable.</p>
+<p>To increase the number of results based on automatic assessment, we recommend that you <a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management" title="Configure and enable Security Posture Management in Kubernetes.">deploy Kubernetes Security Posture Management</a>.</p>
+<h3 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h3>
+<p>Results are displayed for all your monitored systems on which <a href="/docs/secure/application-security/security-posture-management-hub" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">Security Posture Management</a> is enabled.</p>
+<ul>
+<li>The <strong>Overview</strong> page shows the total number of failed, manual, and passed rules per monitored system.</li>
+<li>The <strong>Assessment results</strong> page shows a table with all results, sorted automatically in descending order, starting from the ones deserving the most attention (failed rules with critical severity) to those less important (not relevant rules with low severity).</li>
+</ul>
+<p>See below the result calculation based on the aggregation of finding events into rules.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Rule result</strong></th>
+<th><strong>Aggregation of resource states</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Failed</td>
+<td>At least one assessed resource has a <code>Failed</code> result.</td>
+</tr>
+<tr>
+<td>Passed</td>
+<td>At least one assessed resource has a <code>Passed</code> result, but none <code>Failed</code> nor <code>Manual</code>.</td>
+</tr>
+<tr>
+<td>Manual</td>
+<td>At least one assessed resource has a <code>Manual</code> result, but none <code>Failed</code>.</td>
+</tr>
+<tr>
+<td>Not relevant</td>
+<td>All assessed resources have a <code>Not relevant</code> result.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="categorize-assessment-results">Categorize assessment results<a class="headerlink" href="#categorize-assessment-results" title="Permanent link">&para;</a></h3>
+<p>You can filter and sort results based on different criteria of interest. For details, see <a href="/docs/secure/xspm/review-findings" title="Search for relevant information to analyze security and compliance findings efficiently.">Review findings</a>.</p>
+<h3 id="explore">Explore<a class="headerlink" href="#explore" title="Permanent link">&para;</a></h3>
+<p>To view result details</p>
+<ol>
+<li>Go to the <strong>Assessment results</strong> page.</li>
+<li>Select a rule.</li>
+</ol>
+<p>This opens a side window with more information that can help you understand the context and fix potential issues. For details, see <a href="/docs/secure/xspm/gain-insights" title="Drill into results that can help you fix misconfigurations and noncompliance.">Gain insights</a>.</p>
+<h2 id="severity">Severity<a class="headerlink" href="#severity" title="Permanent link">&para;</a></h2>
+<p>Information regarding severity is provided by the compliance standards and mapped to Dynatrace as <code>Critical</code>, <code>High</code>, <code>Medium</code>, and <code>Low</code>, following the compliance standard recommendations.</p>
+<h3 id="view_1">View<a class="headerlink" href="#view_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>The <strong>Overview</strong> page shows</p>
+</li>
+<li>
+<p>The total number of rules per compliance standard and how many of them are passed, manual, and failed (see the compliance standard cards)</p>
+</li>
+<li>The total number of failed rules per system based on severity (see <strong>My systems</strong> table)</li>
+<li>The <strong>Assessment results</strong> page shows a table with all results and the associated severity, sorted automatically in descending order, starting from the ones deserving the most attention (failed rules with critical severity) to those less important (not relevant rules with low severity).</li>
+</ul>
+<h3 id="categorize-assessment-results_1">Categorize assessment results<a class="headerlink" href="#categorize-assessment-results_1" title="Permanent link">&para;</a></h3>
+<p>You can filter and sort results based on severity. For details, see <a href="/docs/secure/xspm/review-findings" title="Search for relevant information to analyze security and compliance findings efficiently.">Review findings</a>.</p>
+<hr />
+<h2 id="source-gain-insightsmd">Source: gain-insights.md<a class="headerlink" href="#source-gain-insightsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Gain insights
+source: https://www.dynatrace.com/docs/secure/xspm/gain-insights
+scraped: 2026-02-16T09:35:37.484000</p>
+<hr />
+<h1 id="gain-insights">Gain insights<a class="headerlink" href="#gain-insights" title="Permanent link">&para;</a></h1>
+<h1 id="gain-insights_1">Gain insights<a class="headerlink" href="#gain-insights_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>Updated on Jan 28, 2026</li>
+</ul>
+<p>On the <strong>Assessment results</strong> page, selecting a rule opens a side window that enables you to:</p>
+<p><strong>Review key information:</strong></p>
+<ul>
+<li><a href="#rule">The rule</a></li>
+<li><a href="#resources">Related system resources</a></li>
+<li><a href="#configuration">Resource configuration</a></li>
+</ul>
+<p><strong>Initiate deeper analysis:</strong></p>
+<ul>
+<li><a href="#explain">Explain assessment</a></li>
+</ul>
+<p>This context can help you fix issues on your system.</p>
+<h2 id="insights-about-the-rule">Insights about the rule<a class="headerlink" href="#insights-about-the-rule" title="Permanent link">&para;</a></h2>
+<p>On the <strong>Rule details</strong> tab, you can</p>
+<ul>
+<li>
+<p>View relevant details about the rule such as</p>
+</li>
+<li>
+<p>Rule version used for assessment</p>
+</li>
+<li>Rule severity</li>
+<li>Compliance standard issuing the rule</li>
+<li>Navigate to the original documentation resource for the full description of the rule</li>
+</ul>
+<p><img alt="Insights about the rule" src="https://dt-cdn.net/images/2024-11-17-18-05-08-896-899014266d.png" /></p>
+<h2 id="insights-about-resources">Insights about resources<a class="headerlink" href="#insights-about-resources" title="Permanent link">&para;</a></h2>
+<p>On the <strong>Assessed resources</strong> tab, you can examine the resources that must comply to the rule. This can help you identify the resources affected by a compliance violation or by security relevant misconfiguration.</p>
+<p>Assessed resources with <code>Not relevant</code> status are filtered out by default.</p>
+<p>You can</p>
+<ul>
+<li>View the system on which the rule applies together with all the system resources</li>
+<li>
+<p>Use the filter bar to filter for resources that</p>
+</li>
+<li>
+<p>Require your attention (<code>Failed</code>)</p>
+</li>
+<li>Are compliant (<code>Passed</code>)</li>
+<li>Can't be automatically assessed (<code>Manual</code>)</li>
+<li>Don't meet a specific criteria for the rule assessment (<code>Not relevant</code>)</li>
+<li>Use the search bar to search for a specific resource (full or partial match)</li>
+<li>Hover over the system chart bar to see the compliance status of the system resources</li>
+</ul>
+<p><img alt="compliance node status" src="https://dt-cdn.net/images/2024-11-13-06-06-14-471-e22dd6056b.png" />
+* Identify the resource type and last assessment date in <strong>Rule assessment</strong> &gt; <strong>Resource</strong></p>
+<p><img alt="resource type" src="https://dt-cdn.net/images/2024-11-17-18-13-15-537-4dcd8fcd4b.png" /></p>
+<h2 id="insights-about-configuration">Insights about configuration<a class="headerlink" href="#insights-about-configuration" title="Permanent link">&para;</a></h2>
+<p>On the <strong>Assessed resources</strong> tab, go to <strong>Rule assessment</strong> &gt; <strong>Relevant configuration properties</strong> for information about resource configuration.</p>
+<p>This can help you identify the current misconfiguration for a selected resource that is contributing to a rule violation.</p>
+<ul>
+<li><strong>Example</strong>: A <code>Failed</code> rule <code>1.2.19 Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate</code> reports that a node on the control plane doesn't have <code>--audit-log-maxsize</code> configured. This means that, in case security investigation would be needed, it's not guaranteed that there will be enough logs to carry out investigation due to this misconfiguration.</li>
+</ul>
+<p><img alt="rule example 1" src="https://dt-cdn.net/images/2024-11-17-18-32-42-446-e03c9462e5.png" /></p>
+<p>For <code>Manual</code> rules, where automatic assessment isn't possible, hints are provided about what information is needed to complete the assessment.</p>
+<p>For details about <code>manual</code> rules, see <a href="/docs/secure/xspm/concepts#concept-results" title="Concepts that are specific to the Dynatrace Security Posture Management app.">Results</a>.</p>
+<ul>
+<li><strong>Example</strong>: A <code>Manual</code> rule <code>The Kubernetes kubelet staticPodPath must not enable static pods</code> reports that Dynatrace can't check configuration because Kubernetes Node Configuration Collector is missing.</li>
+</ul>
+<p><img alt="ncc missing example" src="https://dt-cdn.net/images/2024-11-17-19-11-42-473-231173eb9b.png" /></p>
+<h2 id="explain-assessment">Explain assessment<a class="headerlink" href="#explain-assessment" title="Permanent link">&para;</a></h2>
+<p>To use this generative AI feature, make sure:</p>
+<ul>
+<li>Dynatrace Intelligence generative AI is enabled for your environment. See <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot" title="Learn how to set up Dynatrace Intelligence generative AI.">Enable Dynatrace Intelligence generative AI</a>.</li>
+<li>You have permission to use it. See <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions" title="Learn how to set up Dynatrace Intelligence generative AI.">User permissions</a>.</li>
+</ul>
+<p>Dynatrace Intelligence generative AI can provide contextual, plain-language explanations of rule assessments to accelerate understanding and remediation.</p>
+<p>To access the functionality</p>
+<ol>
+<li>In <a href="/docs/secure/xspm" title="Detect, manage, and take action on security and compliance findings."><img alt="xSPM" src="https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png" title="xSPM" /> <strong>Security Posture Management</strong></a>, on the <strong>Assessment results</strong> page, select a rule.</li>
+<li>On the <strong>Assessed resources</strong> tab, select  <strong>Explain assessment</strong>.</li>
+</ol>
+<p>When selected, Dynatrace Intelligence generative AI analyzes the technical details of a rule assessment and generates a structured summary that may include:</p>
+<ul>
+<li><strong>What the assessment means</strong>: Explains the compliance rule (for example, CIS Kubernetes Benchmark requirements) and its purpose in securing environments.</li>
+<li><strong>Why it matters</strong>: Highlights severity levels and priority, and describes potential implications such as misconfigurations leading to unauthorized access, privilege escalation, or cluster compromise.</li>
+<li><strong>How to remediate</strong>: Where applicable, recommends remediation steps such as updating file permissions, applying configuration fixes, restarting services, or enabling continuous monitoring across clusters and cloud accounts.</li>
+</ul>
+<p>The structure and depth of generative AI's explanation may vary depending on the rule type and available context. While Dynatrace Intelligence generative AI aims to provide detailed insights, not all assessments will include every element listed above.</p>
+<p>Dynatrace Intelligence generative AI explanations are tailored to the nature of each rule assessment, providing relevant, actionable insights that accelerate triage and support informed decision-making, even for users without deep security expertise.</p>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management" title="Configure and enable Security Posture Management in Kubernetes.">Kubernetes Security Posture Management</a></li>
+</ul>
+<hr />
 <h2 id="source-share-findingsmd">Source: share-findings.md<a class="headerlink" href="#source-share-findingsmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Collaborate with apps and share findings
@@ -1114,7 +1321,7 @@ scraped: 2026-02-15T21:27:41.500681</p>
 <li>On the upper-right of the vulnerabilities table, select  &gt; <strong>Download as CSV</strong> &gt; <strong>All</strong>.</li>
 </ol>
 <p><img alt="download as csv" src="https://dt-cdn.net/images/2024-11-17-12-40-34-1865-7ac81cfa63.png" /></p>
-<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management" title="Configure and enable Security Posture Management in Kubernetes.">Kubernetes Security Posture Management</a></li>
 </ul>

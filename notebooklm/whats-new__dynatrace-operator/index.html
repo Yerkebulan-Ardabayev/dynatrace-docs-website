@@ -986,7 +986,7 @@
 
 <h1 id="dynatrace-documentation-whats-newdynatrace-operator">Dynatrace Documentation: whats-new/dynatrace-operator<a class="headerlink" href="#dynatrace-documentation-whats-newdynatrace-operator" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 7</p>
+<p>Files combined: 8</p>
 <hr />
 <h2 id="source-dto-fix-0-10-0md">Source: dto-fix-0-10-0.md<a class="headerlink" href="#source-dto-fix-0-10-0md" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1142,7 +1142,7 @@ scraped: 2026-02-15T21:30:10.930960</p>
 <hr />
 <p>title: Dynatrace Operator release notes version 1.7.0
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-0
-scraped: 2026-02-15T21:22:33.059648</p>
+scraped: 2026-02-16T09:28:29.199692</p>
 <hr />
 <h1 id="dynatrace-operator-release-notes-version-170">Dynatrace Operator release notes version 1.7.0<a class="headerlink" href="#dynatrace-operator-release-notes-version-170" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-operator-release-notes-version-170_1">Dynatrace Operator release notes version 1.7.0<a class="headerlink" href="#dynatrace-operator-release-notes-version-170_1" title="Permanent link">&para;</a></h1>
@@ -1187,7 +1187,7 @@ scraped: 2026-02-15T21:22:33.059648</p>
 <p><code>.csidriver.server.livenessProbe.timeoutSeconds</code></p>
 </li>
 <li>
-<p>You will now receive a warning if you enable <code>.spec.telemetryIngest</code> without specifiying <code>.spec.templates.openTelemetryCollector.imageRef</code>. The Dynatrace Operator will continue to use the <code>latest</code> image from the Dynatrace public ECR registry for the <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace Collector.">OpenTelemetry collector</a>. However, using <code>latest</code> tags is an anti-pattern that should be avoided. Specifying the image will become mandatory in a future version.</p>
+<p>You will now receive a warning if you enable <code>.spec.telemetryIngest</code> without specifiying <code>.spec.templates.openTelemetryCollector.imageRef</code>. The Dynatrace Operator will continue to use the <code>latest</code> image from the Dynatrace public ECR registry for the <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">OpenTelemetry collector</a>. However, using <code>latest</code> tags is an anti-pattern that should be avoided. Specifying the image will become mandatory in a future version.</p>
 </li>
 <li>
 <p>Dynatrace Operator uses an API token with a set of <a href="/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions#operatorToken" title="Configure tokens and permissions to monitor your Kubernetes cluster">scopes</a> to interact with the Dynatrace platform. With this release, the following changes have been made to the token scope requirements:</p>
@@ -1312,23 +1312,24 @@ scraped: 2026-02-15T21:22:33.059648</p>
 <h2 id="upgrade-from-dynatrace-operator-version-16">Upgrade from Dynatrace Operator version 1.6<a class="headerlink" href="#upgrade-from-dynatrace-operator-version-16" title="Permanent link">&para;</a></h2>
 <p>Starting with this version, it is no longer possible to deploy a DynaKube with API versions <code>v1beta1</code> or <code>v1beta2</code>. Please update your DynaKube to the latest API version, <code>v1beta5</code>, before upgrading your Dynatrace Operator installation. For more information, see <a href="/docs/ingest-from/setup-on-k8s/guides/migration/dynakube" title="Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.">Migration guide for DynaKube API versions</a>.</p>
 <hr />
-<h2 id="source-dto-fix-1-7-2md">Source: dto-fix-1-7-2.md<a class="headerlink" href="#source-dto-fix-1-7-2md" title="Permanent link">&para;</a></h2>
+<h2 id="source-dto-fix-1-7-1md">Source: dto-fix-1-7-1.md<a class="headerlink" href="#source-dto-fix-1-7-1md" title="Permanent link">&para;</a></h2>
 <hr />
-<p>title: Dynatrace Operator release notes version 1.7.2
-source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-2
-scraped: 2026-02-15T21:24:25.312331</p>
+<p>title: Dynatrace Operator release notes version 1.7.1
+source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-1
+scraped: 2026-02-16T09:37:23.820736</p>
 <hr />
-<h1 id="dynatrace-operator-release-notes-version-172">Dynatrace Operator release notes version 1.7.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-172" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-operator-release-notes-version-172_1">Dynatrace Operator release notes version 1.7.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-172_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-operator-release-notes-version-171">Dynatrace Operator release notes version 1.7.1<a class="headerlink" href="#dynatrace-operator-release-notes-version-171" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-operator-release-notes-version-171_1">Dynatrace Operator release notes version 1.7.1<a class="headerlink" href="#dynatrace-operator-release-notes-version-171_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Release notes</li>
 <li>Updated on Jan 22, 2026</li>
 </ul>
-<p>Release date: November 12th, 2025</p>
+<p>Release date: September 20th, 2025</p>
+<p>This page provides an overview of the patches included in Dynatrace Operator version 1.7.1. For detailed information on new features and other enhancements, see the <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-7-0" title="Release notes for Dynatrace Operator, version 1.7.0">release notes for version 1.7</a>.</p>
 <h2 id="resolved-issues_5">Resolved issues<a class="headerlink" href="#resolved-issues_5" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The OpenTelemetry Collector used for <a href="/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest" title="Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.">telemetry ingest</a> now automatically includes the local ActiveGate service URL in its no-proxy configuration, ensuring that connections to the local ActiveGate bypass any configured proxies and avoiding unnecessary proxy hops or related connection issues.</li>
+<li>Reintroduced the <code>mark for termination</code> event, which was previously removed in <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-6-0#removal-and-deprecation-notices" title="Release notes for Dynatrace Operator, version 1.6.0">Dynatrace Operator version 1.6.0</a>, to address <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-7-0#known-issues" title="Release notes for Dynatrace Operator, version 1.7.0">challenges</a> in reliably detecting node terminations in setups facilitating auto-scaler. This feature requires your API token to have the <code>DataExport</code> token scope.</li>
 </ul>
 <h2 id="known-issues_2">Known issues<a class="headerlink" href="#known-issues_2" title="Permanent link">&para;</a></h2>
 <p>We have identified the following known issues with Dynatrace Operator versions 1.7.0â1.7.2. For other known issues, see <a href="/docs/ingest-from/technology-support/support-model-and-issues#well-known-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Dynatrace Operator support and known issues</a>.</p>
@@ -1358,7 +1359,7 @@ scraped: 2026-02-15T21:24:25.312331</p>
 </code></pre></div>
 <ul>
 <li>
-<p>The following API versions of the DynaKube CustomResourceDefinition have been removed in Dynatrace Operator version 1.7.0:</p>
+<p>The following API versions of the DynaKube CustomResourceDefinition have been removed in Dynatrace Operator version v1.7:</p>
 </li>
 <li>
 <p><code>v1beta1</code></p>
@@ -1388,72 +1389,31 @@ scraped: 2026-02-15T21:24:25.312331</p>
 <li>
 <p>CSI sidecar binaries, located in <code>/usr/local/bin/csi-node-driver-registrar</code> and <code>/usr/local/bin/livenessprobe</code>, are now deprecated and will be removed in a future version of Dynatrace Operator.</p>
 </li>
-<li><a href="/docs/ingest-from/technology-support/support-model-and-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Support for OpenShift 4.10 and 4.11</a> ended in March 2025. As a result, Dynatrace Operator 1.7.0 will no longer support these versions.</li>
+<li><a href="/docs/ingest-from/technology-support/support-model-and-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Support for OpenShift 4.10 and 4.11</a> ended in March 2025. As a result, Dynatrace Operator 1.7 will no longer support these versions.</li>
 </ul>
 <h2 id="upgrade-from-dynatrace-operator-version-16_1">Upgrade from Dynatrace Operator version 1.6<a class="headerlink" href="#upgrade-from-dynatrace-operator-version-16_1" title="Permanent link">&para;</a></h2>
 <p>In Dynatrace Operator version 1.7, the DynaKube API versions <code>v1beta1</code> and <code>v1beta2</code> are no longer served. Applying DynaKube resources using these versions will fail. Update your DynaKube manifests to <code>v1beta5</code> before upgrading the Dynatrace Operator. For more information, see <a href="/docs/ingest-from/setup-on-k8s/guides/migration/dynakube" title="Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.">Migration guide for DynaKube API versions</a>.</p>
 <hr />
-<h2 id="source-dto-fix-1-7-3md">Source: dto-fix-1-7-3.md<a class="headerlink" href="#source-dto-fix-1-7-3md" title="Permanent link">&para;</a></h2>
+<h2 id="source-dto-fix-1-7-2md">Source: dto-fix-1-7-2.md<a class="headerlink" href="#source-dto-fix-1-7-2md" title="Permanent link">&para;</a></h2>
 <hr />
-<p>title: Dynatrace Operator release notes version 1.7.3
-source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-3
-scraped: 2026-02-15T21:29:14.807134</p>
+<p>title: Dynatrace Operator release notes version 1.7.2
+source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-2
+scraped: 2026-02-15T21:24:25.312331</p>
 <hr />
-<h1 id="dynatrace-operator-release-notes-version-173">Dynatrace Operator release notes version 1.7.3<a class="headerlink" href="#dynatrace-operator-release-notes-version-173" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-operator-release-notes-version-173_1">Dynatrace Operator release notes version 1.7.3<a class="headerlink" href="#dynatrace-operator-release-notes-version-173_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-operator-release-notes-version-172">Dynatrace Operator release notes version 1.7.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-172" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-operator-release-notes-version-172_1">Dynatrace Operator release notes version 1.7.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-172_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Release notes</li>
-<li>Updated on Jan 15, 2026</li>
+<li>Updated on Jan 22, 2026</li>
 </ul>
-<p>Release date: January 19th, 2025</p>
+<p>Release date: November 12th, 2025</p>
 <h2 id="resolved-issues_6">Resolved issues<a class="headerlink" href="#resolved-issues_6" title="Permanent link">&para;</a></h2>
-<h3 id="handling-removed-api-versions-during-dyntrace-operator-upgrade">Handling removed API versions during Dyntrace Operator upgrade<a class="headerlink" href="#handling-removed-api-versions-during-dyntrace-operator-upgrade" title="Permanent link">&para;</a></h3>
-<p>Kubernetes records CRD versions in <code>.status.storedVersions</code>, but doesnât remove entries when versions are deleted, so old versions accumulate and can block upgrades.</p>
-<p>In Dynatrace Operator versions &lt; 1.4, deprecated <code>v1beta1</code> and <code>v1beta2</code> were automatically added to <code>.status.storedVersions</code> and never cleaned up. Thus, any cluster that had been running versions before 1.4 is affected. If these versions remain during a future upgrade, CRD installation will fail. This release introduces a two-step solution to ensure smooth upgrades:</p>
-<ol>
-<li>Helm hook for CRD cleanup</li>
-</ol>
-<p>During upgrade, a Helm hook starts a Kubernetes Job that erases obsolete API versions from the DynaKube CRD's <code>status.storedVersions</code> field. The job only keeps the latest API version that is available in the Dynatrace Operator version installed <strong>before</strong> the upgrade. This step ensures a smooth upgrade to the new CRD during the Helm upgrade process. See <a href="/docs/ingest-from/setup-on-k8s/reference/security#upgrade-support" title="This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require">Dynatrace Operator security</a> for information regarding required permissions.
-2. Dynatrace Operator startup migration</p>
-<p><strong>After</strong> the upgrade was successful and the new Dynatrace Operator version 1.7.3 is operational, it migrates all existing DynaKubes to the latest supported API version <code>v1beta5</code>. After the DynaKube migration, the <code>status.storedVersions</code> field in the DynaKube CRD is updated to hold only the latest API version <code>v1beta5</code> to ensure consistency.</p>
-<p>Important notice for clusters that have been running Dynatrace Operator version &lt; 1.4.0 in the past</p>
 <ul>
-<li><strong>If you have used Dynatrace Operator version &lt;= 1.2 upgrading to Dynatrace Operator version 1.7.3 is mandatory as an intermediate step before upgrading to later releases to ensures a smooth and reliable transition.</strong> As a general rule, skipping versions is not recommended.</li>
-<li>Helm based installation</li>
+<li>The OpenTelemetry Collector used for <a href="/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest" title="Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.">telemetry ingest</a> now automatically includes the local ActiveGate service URL in its no-proxy configuration, ensuring that connections to the local ActiveGate bypass any configured proxies and avoiding unnecessary proxy hops or related connection issues.</li>
 </ul>
-<p>When <strong>using Helm</strong> to install or upgrade from a Dynatrace Operator version &gt;=1.3.0, no further action is required on your part. The required adjustments will be automatically handled by a Helm pre-upgrade hook during the upgrade progress.
-* Alternative installation methods</p>
-<p><strong>If you are relying on one of the alternative deployment methods listed below upgrading to Dynatrace Operator version 1.7.3 is mandatory as an intermediate step before upgrading to later releases to ensures a smooth and reliable transition.</strong></p>
-<ul>
-<li>Red Hat OpenShift OperatorHub</li>
-<li>OperatorHub.io</li>
-<li>Google Marketplace</li>
-<li>Plain Kubernetes manifests</li>
-<li>Manual approach</li>
-</ul>
-<p>Instead of upgrading to version 1.7.3, you can manually perform the required adjustments to the CRD</p>
-<ol>
-<li>
-<p>Run the following command to list stored versions in the CRD of your cluster.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl -n dynatrace get crd dynakubes.dynatrace.com -o jsonpath=&#39;{.status.storedVersions}&#39;
-</code></pre></div>
-  2. Continue the procedure if <code>v1beta1</code> or <code>v1beta2</code> are listed in the stored versions of the CRD in your cluster.
-  3. Identify the currently active version:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>storage_version=$(kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath=&#39;{.spec.versions[?(@.storage==true)].name}&#39;)
-</code></pre></div>
-  4. Convert all DynaKubes to the active version:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl get dynakube -n dynatrace -o yaml | kubectl apply -f -
-</code></pre></div>
-  5. Remove all previous versions while keeping the active version:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource=&#39;status&#39; --type=&#39;merge&#39; -p &quot;{\&quot;status\&quot;:{\&quot;storedVersions\&quot;:[\&quot;${storage_version}\&quot;]}}&quot;
-</code></pre></div>
-</li>
-</ol>
-<p>Ensuring that the CRD's <code>.status.storedVersions</code> field is properly cleaned up is crucial to avoid issues with future upgrades.</p>
-<p>ArgoCD may display resources that are still using an old API version as "out-of-sync".</p>
 <h2 id="known-issues_3">Known issues<a class="headerlink" href="#known-issues_3" title="Permanent link">&para;</a></h2>
-<p>We have identified the following known issues with Dynatrace Operator versions 1.7.0â1.7.3. For other known issues, see <a href="/docs/ingest-from/technology-support/support-model-and-issues#well-known-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Dynatrace Operator support and known issues</a>.</p>
+<p>We have identified the following known issues with Dynatrace Operator versions 1.7.0â1.7.2. For other known issues, see <a href="/docs/ingest-from/technology-support/support-model-and-issues#well-known-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Dynatrace Operator support and known issues</a>.</p>
 <ul>
 <li>
 <p>Due to optimization of the injected mounts (combining them under <code>/var/lib/dynatrace</code>), Dynatrace components can no longer be injected with the OneAgent.</p>
@@ -1472,11 +1432,11 @@ scraped: 2026-02-15T21:29:14.807134</p>
   please update the URL to <code>dynatrace/dynatrace-operator</code> or switch to the OCI registry-based approach. Update the Helm repository URL with the following commands:</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>helm repo remove dynatrace
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>helm repo add dynatrace https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>helm repo remove dynatrace
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>helm repo add dynatrace https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable
 </code></pre></div>
 <ul>
 <li>
@@ -1513,6 +1473,128 @@ scraped: 2026-02-15T21:29:14.807134</p>
 <li><a href="/docs/ingest-from/technology-support/support-model-and-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Support for OpenShift 4.10 and 4.11</a> ended in March 2025. As a result, Dynatrace Operator 1.7.0 will no longer support these versions.</li>
 </ul>
 <h2 id="upgrade-from-dynatrace-operator-version-16_2">Upgrade from Dynatrace Operator version 1.6<a class="headerlink" href="#upgrade-from-dynatrace-operator-version-16_2" title="Permanent link">&para;</a></h2>
+<p>In Dynatrace Operator version 1.7, the DynaKube API versions <code>v1beta1</code> and <code>v1beta2</code> are no longer served. Applying DynaKube resources using these versions will fail. Update your DynaKube manifests to <code>v1beta5</code> before upgrading the Dynatrace Operator. For more information, see <a href="/docs/ingest-from/setup-on-k8s/guides/migration/dynakube" title="Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.">Migration guide for DynaKube API versions</a>.</p>
+<hr />
+<h2 id="source-dto-fix-1-7-3md">Source: dto-fix-1-7-3.md<a class="headerlink" href="#source-dto-fix-1-7-3md" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Dynatrace Operator release notes version 1.7.3
+source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-3
+scraped: 2026-02-15T21:29:14.807134</p>
+<hr />
+<h1 id="dynatrace-operator-release-notes-version-173">Dynatrace Operator release notes version 1.7.3<a class="headerlink" href="#dynatrace-operator-release-notes-version-173" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-operator-release-notes-version-173_1">Dynatrace Operator release notes version 1.7.3<a class="headerlink" href="#dynatrace-operator-release-notes-version-173_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Release notes</li>
+<li>Updated on Jan 15, 2026</li>
+</ul>
+<p>Release date: January 19th, 2025</p>
+<h2 id="resolved-issues_7">Resolved issues<a class="headerlink" href="#resolved-issues_7" title="Permanent link">&para;</a></h2>
+<h3 id="handling-removed-api-versions-during-dyntrace-operator-upgrade">Handling removed API versions during Dyntrace Operator upgrade<a class="headerlink" href="#handling-removed-api-versions-during-dyntrace-operator-upgrade" title="Permanent link">&para;</a></h3>
+<p>Kubernetes records CRD versions in <code>.status.storedVersions</code>, but doesnât remove entries when versions are deleted, so old versions accumulate and can block upgrades.</p>
+<p>In Dynatrace Operator versions &lt; 1.4, deprecated <code>v1beta1</code> and <code>v1beta2</code> were automatically added to <code>.status.storedVersions</code> and never cleaned up. Thus, any cluster that had been running versions before 1.4 is affected. If these versions remain during a future upgrade, CRD installation will fail. This release introduces a two-step solution to ensure smooth upgrades:</p>
+<ol>
+<li>Helm hook for CRD cleanup</li>
+</ol>
+<p>During upgrade, a Helm hook starts a Kubernetes Job that erases obsolete API versions from the DynaKube CRD's <code>status.storedVersions</code> field. The job only keeps the latest API version that is available in the Dynatrace Operator version installed <strong>before</strong> the upgrade. This step ensures a smooth upgrade to the new CRD during the Helm upgrade process. See <a href="/docs/ingest-from/setup-on-k8s/reference/security#upgrade-support" title="This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require">Dynatrace Operator security</a> for information regarding required permissions.
+2. Dynatrace Operator startup migration</p>
+<p><strong>After</strong> the upgrade was successful and the new Dynatrace Operator version 1.7.3 is operational, it migrates all existing DynaKubes to the latest supported API version <code>v1beta5</code>. After the DynaKube migration, the <code>status.storedVersions</code> field in the DynaKube CRD is updated to hold only the latest API version <code>v1beta5</code> to ensure consistency.</p>
+<p>Important notice for clusters that have been running Dynatrace Operator version &lt; 1.4.0 in the past</p>
+<ul>
+<li><strong>If you have used Dynatrace Operator version &lt;= 1.2 upgrading to Dynatrace Operator version 1.7.3 is mandatory as an intermediate step before upgrading to later releases to ensures a smooth and reliable transition.</strong> As a general rule, skipping versions is not recommended.</li>
+<li>Helm based installation</li>
+</ul>
+<p>When <strong>using Helm</strong> to install or upgrade from a Dynatrace Operator version &gt;=1.3.0, no further action is required on your part. The required adjustments will be automatically handled by a Helm pre-upgrade hook during the upgrade progress.
+* Alternative installation methods</p>
+<p><strong>If you are relying on one of the alternative deployment methods listed below upgrading to Dynatrace Operator version 1.7.3 is mandatory as an intermediate step before upgrading to later releases to ensures a smooth and reliable transition.</strong></p>
+<ul>
+<li>Red Hat OpenShift OperatorHub</li>
+<li>OperatorHub.io</li>
+<li>Google Marketplace</li>
+<li>Plain Kubernetes manifests</li>
+<li>Manual approach</li>
+</ul>
+<p>Instead of upgrading to version 1.7.3, you can manually perform the required adjustments to the CRD</p>
+<ol>
+<li>
+<p>Run the following command to list stored versions in the CRD of your cluster.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl -n dynatrace get crd dynakubes.dynatrace.com -o jsonpath=&#39;{.status.storedVersions}&#39;
+</code></pre></div>
+  2. Continue the procedure if <code>v1beta1</code> or <code>v1beta2</code> are listed in the stored versions of the CRD in your cluster.
+  3. Identify the currently active version:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>storage_version=$(kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath=&#39;{.spec.versions[?(@.storage==true)].name}&#39;)
+</code></pre></div>
+  4. Convert all DynaKubes to the active version:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl get dynakube -n dynatrace -o yaml | kubectl apply -f -
+</code></pre></div>
+  5. Remove all previous versions while keeping the active version:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource=&#39;status&#39; --type=&#39;merge&#39; -p &quot;{\&quot;status\&quot;:{\&quot;storedVersions\&quot;:[\&quot;${storage_version}\&quot;]}}&quot;
+</code></pre></div>
+</li>
+</ol>
+<p>Ensuring that the CRD's <code>.status.storedVersions</code> field is properly cleaned up is crucial to avoid issues with future upgrades.</p>
+<p>ArgoCD may display resources that are still using an old API version as "out-of-sync".</p>
+<h2 id="known-issues_4">Known issues<a class="headerlink" href="#known-issues_4" title="Permanent link">&para;</a></h2>
+<p>We have identified the following known issues with Dynatrace Operator versions 1.7.0â1.7.3. For other known issues, see <a href="/docs/ingest-from/technology-support/support-model-and-issues#well-known-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Dynatrace Operator support and known issues</a>.</p>
+<ul>
+<li>
+<p>Due to optimization of the injected mounts (combining them under <code>/var/lib/dynatrace</code>), Dynatrace components can no longer be injected with the OneAgent.</p>
+</li>
+<li>
+<p>Classic full-stack and metadata enrichment are not compatible and cannot be used to inject the same application pods.</p>
+</li>
+</ul>
+<h2 id="removal-and-deprecation-notices_3">Removal and deprecation notices<a class="headerlink" href="#removal-and-deprecation-notices_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>The deprecated Dynatrace OneAgent Operator has been removed from the operatorhub.io catalog. Please use our <a href="/docs/ingest-from/setup-on-k8s/quickstart#deploy-dynatrace-operator" title="Deploy Dynatrace Operator on Kubernetes">Dynatrace Operator</a> instead.</p>
+</li>
+<li>
+<p>The Helm repository located in <code>dynatrace/helm-charts</code> is deprecated and will stop receiving updates in a future release! If you are still using it,
+  please update the URL to <code>dynatrace/dynatrace-operator</code> or switch to the OCI registry-based approach. Update the Helm repository URL with the following commands:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>helm repo remove dynatrace
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>helm repo add dynatrace https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable
+</code></pre></div>
+<ul>
+<li>
+<p>The following API versions of the DynaKube CustomResourceDefinition have been removed in Dynatrace Operator version 1.7.0:</p>
+</li>
+<li>
+<p><code>v1beta1</code></p>
+</li>
+<li><code>v1beta2</code></li>
+<li>
+<p>The following API versions of the DynaKube CustomResourceDefinition are marked for deprecation and will be removed in the specified Dynatrace Operator versions:</p>
+</li>
+<li>
+<p><code>v1beta3</code> will be removed with Dynatrace Operator version 1.8</p>
+</li>
+<li>
+<p>To prevent potential disruptions, we strongly advise keeping your DynaKube API version up to date. Once a version is deprecated and removed, updates may become significantly more complex and time-sensitive.</p>
+</li>
+<li>
+<p>More information about the deprecation process of the DynaKube API versions can be found in the <a href="/docs/ingest-from/setup-on-k8s/guides/migration/dynakube#deprecation" title="Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.">migration guide</a>.</p>
+</li>
+<li>
+<p>The DynaKube field <code>.spec.oneagent.(cloudNativeFullStack|classicFullStack|hostMonitoring).autoUpdate</code> is deprecated and should no longer be used. The flag will be removed in a future version of the Dynatrace Operator. Do one of the following:</p>
+</li>
+<li>
+<p>Pin the OneAgent version on your tenant to control all connected Kubernetes clusters at once.</p>
+</li>
+<li>
+<p>Use the <code>.spec.oneagent.(cloudNativeFullStack|classicFullStack|hostMonitoring).version</code> field to pin the version on a per-DynaKube basis.</p>
+</li>
+<li>
+<p>CSI sidecar binaries, located in <code>/usr/local/bin/csi-node-driver-registrar</code> and <code>/usr/local/bin/livenessprobe</code>, are now deprecated and will be removed in a future version of Dynatrace Operator.</p>
+</li>
+<li><a href="/docs/ingest-from/technology-support/support-model-and-issues" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">Support for OpenShift 4.10 and 4.11</a> ended in March 2025. As a result, Dynatrace Operator 1.7.0 will no longer support these versions.</li>
+</ul>
+<h2 id="upgrade-from-dynatrace-operator-version-16_3">Upgrade from Dynatrace Operator version 1.6<a class="headerlink" href="#upgrade-from-dynatrace-operator-version-16_3" title="Permanent link">&para;</a></h2>
 <p>In Dynatrace Operator version 1.7, the DynaKube API versions <code>v1beta1</code> and <code>v1beta2</code> are no longer served. Applying DynaKube resources using these versions will fail. Update your DynaKube manifests to <code>v1beta5</code> before upgrading the Dynatrace Operator. For more information, see <a href="/docs/ingest-from/setup-on-k8s/guides/migration/dynakube" title="Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.">Migration guide for DynaKube API versions</a>.</p>
 <hr />
 

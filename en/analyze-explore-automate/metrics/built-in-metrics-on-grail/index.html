@@ -1,0 +1,5257 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/analyze-explore-automate/metrics/built-in-metrics-on-grail/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Built-in Metrics on Grail - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#built-in-metrics-on-grail" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Built-in Metrics on Grail
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="built-in-metrics-on-grail">Built-in Metrics on Grail<a class="headerlink" href="#built-in-metrics-on-grail" title="Permanent link">&para;</a></h1>
+<h1 id="built-in-metrics-on-grail_1">Built-in Metrics on Grail<a class="headerlink" href="#built-in-metrics-on-grail_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>39-min read</li>
+<li>Updated on Feb 10, 2026</li>
+</ul>
+<p>Metrics on Grail supports many of the existing <a href="/docs/analyze-explore-automate/metrics-classic/built-in-metrics" title="Explore the complete list of built-in Dynatrace metrics.">built-in metrics</a> as identified below.</p>
+<p>The expandable sections below describe differences in built-in metrics on Grail when compared to similar Metrics Classic metrics.</p>
+<p>Renamed metric keys</p>
+<p>Metrics on Grail introduces guidelines to improve clarity, consistency, and readability for Dynatrace-provided metrics, dimensions, and entities across the Dynatrace Platform:</p>
+<ul>
+<li>Replacing the <code>builtin:</code> prefix with <code>dt.</code> to clearly denote Dynatrace-provided metrics and entities.</li>
+<li>Preferring snake case (<code>capacity_units</code>) to camel case (<code>capacityUnits</code>) to improve readability.</li>
+<li>Improving specificity to reflect underlying measurements.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.host.uptime</td>
+<td>builtin:host.uptime</td>
+</tr>
+<tr>
+<td>dt.host.disk.used.percent</td>
+<td>builtin:host.disk.usedPct</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.reset_local</td>
+<td>builtin:tech.generic.network.sessions.resetLocal</td>
+</tr>
+</tbody>
+</table>
+<p>New and missing metric keys</p>
+<p>By taking advantage of the improved scalability in Grail, it's no longer necessary to split, distribute, or pre-aggregate your data.</p>
+<p>The Metrics Classic metric <code>builtin:host.net.bytesRx</code> represents bytes received by hosts in your environment, measured in bytes per second. It's a pre-aggregated metric based on <code>builtin:host.net.nic.bytesRx</code>, which measures bytes received by host-network interface pairs. Pre-aggregating the metric helps you to optimize queries and helps classic metrics distribute query load.</p>
+<p>Consequently, the following two metric selectors return equivalent results with Metrics Classic metrics, but the query on <code>builtin:host.net.bytesRx</code> is faster (especially in large environments) because the host-level aggregation has already taken place.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// queries pre-aggregated host-level data
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>builtin:host.net.bytesRx:splitBy(&quot;dt.entity.host&quot;):avg
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>// queries host- and network interface-level data
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>builtin:host.net.nic.bytesRx:splitBy(&quot;dt.entity.host&quot;):avg
+</code></pre></div>
+<p>Grail, however, is already optimized for such high cardinality queries. Since the pre-aggregated metric <code>builtin:host.net.bytesRx</code> is no longer necessary, only <code>builtin:host.net.nic.bytesRx</code> is supported by metrics on Grail, and it can be queried as</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>timeseries avg(dt.host.net.nic.bytes_rx), by:{dt.entity.host}
+</code></pre></div>
+<p>Querying extension metrics in Grail</p>
+<p>There are three kinds of Metrics Classic extension metrics to consider:</p>
+<ol>
+<li>Extensions with a <code>builtin:tech</code> prefix</li>
+<li>Extensions with an <code>ext:</code> prefix</li>
+<li>Extensions with no common prefix</li>
+</ol>
+<p>For details, see below.</p>
+<h4 id="type-1-extension-metrics-with-the-builtintech-prefix">Type 1: Extension metrics with the <code>builtin:tech</code> prefix<a class="headerlink" href="#type-1-extension-metrics-with-the-builtintech-prefix" title="Permanent link">&para;</a></h4>
+<p><a href="/docs/ingest-from/extensions/develop-your-extensions" title="Develop your own Extensions in Dynatrace.">Extension 1.0</a> metrics appear in Metrics Classic metrics with the prefix <code>builtin:tech</code>. These metrics appear in Grail instead with a <code>legacy</code> prefix. For example:</p>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>legacy.cassandra.KeyCache.Hit.Rate</td>
+<td>builtin:tech.cassandra.KeyCache.Hit.Rate</td>
+</tr>
+</tbody>
+</table>
+<p>This renaming applies to all <a href="/docs/ingest-from/extensions/develop-your-extensions" title="Develop your own Extensions in Dynatrace.">Extension 1.0</a> metrics with the prefix <code>builtin:tech</code>, except for the following:</p>
+<ul>
+<li><a href="#processes">Generic process metrics</a>, including all metrics with the prefix <code>builtin:tech.generic</code>.</li>
+<li><a href="#websphere-application-server">WebSphere metrics</a>, including all metrics with the prefix <code>builtin:tech.websphere</code>.</li>
+</ul>
+<p>This renaming does not apply to Metrics Classic technology metrics, which can be upgraded to Grail <a href="#runtimes">runtime metrics</a>, including metrics prefixed with <code>builtin:tech.jvm</code>, <code>builtin:tech.go</code>, and more.</p>
+<h4 id="type-2-extension-metrics-with-the-ext-prefix">Type 2: Extension metrics with the <code>ext:</code> prefix<a class="headerlink" href="#type-2-extension-metrics-with-the-ext-prefix" title="Permanent link">&para;</a></h4>
+<p>Extension metrics with the <code>ext:</code> prefix are either provided by OneAgent or ActiveGate extensions, or are <a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics" title="Integrate metrics from Amazon CloudWatch.">classic metrics for AWS integration</a>.
+Regardless of the source, they behave the same way.</p>
+<p>These can be found in Grail according to the following renaming rules:</p>
+<ol>
+<li>Remove the <code>ext:</code> prefix.</li>
+<li>Convert <code>camelCase</code> to <code>snake_case</code>.</li>
+</ol>
+<p>As shown in the following examples, snake case renaming depends on the context. AWS's <code>route53resolver</code> and other components are proper nouns and are not renamed:</p>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cloud.aws.dx.connection_error_count</td>
+<td>ext:cloud.aws.dx.connectionErrorCount</td>
+</tr>
+<tr>
+<td>cloud.aws.route53resolver.inbound_query_volume_sum</td>
+<td>ext:cloud.aws.route53resolver.inboundQueryVolumeSum</td>
+</tr>
+</tbody>
+</table>
+<h4 id="type-3-extension-metrics-with-no-common-prefix">Type 3: Extension metrics with no common prefix<a class="headerlink" href="#type-3-extension-metrics-with-no-common-prefix" title="Permanent link">&para;</a></h4>
+<p>These have no special renaming and can be queried as is in many cases.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cloud.gcp.cloudfunctions_googleapis_com.function.active_instances:splitBy():avg
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>timeseries avg(cloud.gcp.cloudfunctions_googleapis_com.function.active_instances)
+</code></pre></div>
+<p>Extension metrics with <a href="/docs/platform/grail/dynatrace-query-language/dql-reference#field-naming-rules" title="Dynatrace Query Language syntax reference.">special characters</a> are an exception. Escape these metrics with backticks (<code>``</code>) to use them in DQL.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>com.dynatrace.extension.snmp-generic-cisco-device.cpm.cpu.loadavg.&quot;5min&quot;:splitBy():avg
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>timeseries avg(`com.dynatrace.extension.snmp-generic-cisco-device.cpm.cpu.loadavg.5min`)
+</code></pre></div>
+<p>Querying custom metrics on Grail</p>
+<p>If you can't find your custom metric in Grail, try querying your metric key without the <code>.count</code> suffix.</p>
+<p>You can query custom metrics with both <a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector" title="Configure the metric selector for the Metric v2 API.">metric selectors</a> and DQL. However, your custom metric key might have a different name in DQL queries. For example, if you ingest a count metric with the <code>coffees.brewed</code> key, as shown below using the <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol" title="Learn how the data ingestion protocol for Dynatrace Metrics API works.">metric ingest protocol</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>coffees.brewing count,delta=2
+</code></pre></div>
+<p>Dynatrace creates and stores two metrics:</p>
+<ul>
+<li>Classic metric <code>coffees.brewing.count</code></li>
+<li>Grail metric <code>coffees.brewing</code></li>
+</ul>
+<p>You can query the Grail metric via DQL using the original metric key:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>timeseries sum(coffees.brewing)
+</code></pre></div>
+<p>This is different from Metrics Classic, <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#format" title="Learn how the data ingestion protocol for Dynatrace Metrics API works.">which automatically appends count metrics with the <code>.count</code> suffix</a>. You still need to use the <code>coffees.brewing.count</code> metric key to query the Metrics Classic metric.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>coffees.brewing.count:splitBy():value
+</code></pre></div>
+<p>Querying calculated metrics in Grail</p>
+<p>While <a href="#calc-service">calculated service metrics</a> are supported, other calculated metrics are not yet supported on Grail.</p>
+<ul>
+<li><a href="/docs/observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web" title="Create calculated metrics as well as custom charts based on calculated metrics for your web applications.">Calculated RUM metrics</a> (metrics with the prefix <code>calc:apps</code>) are not supported on Grail.</li>
+<li>Calculated Log v1 metrics (metrics with the prefix <code>calc:log</code>) are not supported on Grail. See <a href="/docs/analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma" title="Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.">Upgrade Log Monitoring Classic to Log Management and Analytics</a>.</li>
+</ul>
+<h2 id="billing">Billing<a class="headerlink" href="#billing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.billing.foundation_and_discovery.usage</td>
+<td>builtin:billing.foundation_and_discovery.usage</td>
+</tr>
+<tr>
+<td>dt.billing.full_stack_monitoring.usage</td>
+<td>builtin:billing.full_stack_monitoring.usage</td>
+</tr>
+<tr>
+<td>dt.billing.infrastructure_monitoring.usage</td>
+<td>builtin:billing.infrastructure_monitoring.usage</td>
+</tr>
+<tr>
+<td>dt.billing.runtime_application_protection.usage</td>
+<td>builtin:billing.runtime_application_protection.usage</td>
+</tr>
+<tr>
+<td>dt.billing.runtime_vulnerability_analytics.usage</td>
+<td>builtin:billing.runtime_vulnerability_analytics.usage</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cloud">Cloud<a class="headerlink" href="#cloud" title="Permanent link">&para;</a></h2>
+<h3 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
+<p>Which Metrics Classic AWS metrics are not supported on Grail?</p>
+<ul>
+<li>builtin:cloud.aws.cloudwatch.asg.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.asg.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.asg.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.asg.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.asg.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.asg.number</li>
+<li>builtin:cloud.aws.cloudwatch.az.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.az.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.az.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.az.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.az.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.az.number</li>
+<li>builtin:cloud.aws.cloudwatch.beanstalk.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.beanstalk.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.beanstalk.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.beanstalk.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.beanstalk.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.beanstalk.number</li>
+<li>builtin:cloud.aws.cloudwatch.billing</li>
+<li>builtin:cloud.aws.cloudwatch.cloudwatch.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.cloudwatch.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.cloudwatch.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.cloudwatch.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.cloudwatch.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.cloudwatch.latedata</li>
+<li>builtin:cloud.aws.cloudwatch.dynamoDb.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.dynamoDb.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.dynamoDb.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.dynamoDb.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.dynamoDb.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.dynamoDb.number</li>
+<li>builtin:cloud.aws.cloudwatch.ebs.api.failed</li>
+<li>builtin:cloud.aws.cloudwatch.ebs.api.ok</li>
+<li>builtin:cloud.aws.cloudwatch.ebs.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.ebs.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.ebs.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.ebs.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.ebs.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.ebs.number</li>
+<li>builtin:cloud.aws.cloudwatch.ec2.api.failed</li>
+<li>builtin:cloud.aws.cloudwatch.ec2.api.ok</li>
+<li>builtin:cloud.aws.cloudwatch.ec2.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.ec2.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.ec2.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.ec2.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.ec2.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.ec2.number</li>
+<li>builtin:cloud.aws.cloudwatch.elb.api.failed</li>
+<li>builtin:cloud.aws.cloudwatch.elb.api.ok</li>
+<li>builtin:cloud.aws.cloudwatch.elb.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.elb.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.elb.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.elb.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.elb.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.elb.number</li>
+<li>builtin:cloud.aws.cloudwatch.lambda.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.lambda.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.lambda.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.lambda.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.lambda.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.lambda.number</li>
+<li>builtin:cloud.aws.cloudwatch.polling.failures</li>
+<li>builtin:cloud.aws.cloudwatch.polling.infrastructure</li>
+<li>builtin:cloud.aws.cloudwatch.polling.metrics</li>
+<li>builtin:cloud.aws.cloudwatch.rds.api.failed</li>
+<li>builtin:cloud.aws.cloudwatch.rds.api.ok</li>
+<li>builtin:cloud.aws.cloudwatch.rds.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.rds.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.rds.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.rds.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.rds.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.rds.number</li>
+<li>builtin:cloud.aws.cloudwatch.s3.errors.connect</li>
+<li>builtin:cloud.aws.cloudwatch.s3.errors.lostData</li>
+<li>builtin:cloud.aws.cloudwatch.s3.errors.notauth</li>
+<li>builtin:cloud.aws.cloudwatch.s3.errors.service</li>
+<li>builtin:cloud.aws.cloudwatch.s3.errors.throttling</li>
+<li>builtin:cloud.aws.cloudwatch.s3.number</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.cloud.aws.alb.bytes</td>
+<td>builtin:cloud.aws.alb.bytes</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.connections.active</td>
+<td>builtin:cloud.aws.alb.connections.active</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.connections.new</td>
+<td>builtin:cloud.aws.alb.connections.new</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.errors.alb.http4xx</td>
+<td>builtin:cloud.aws.alb.errors.alb.http4xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.errors.alb.http5xx</td>
+<td>builtin:cloud.aws.alb.errors.alb.http5xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.errors.rej_con</td>
+<td>builtin:cloud.aws.alb.errors.rejCon</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.errors.targ_conn</td>
+<td>builtin:cloud.aws.alb.errors.targConn</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.errors.target.http4xx</td>
+<td>builtin:cloud.aws.alb.errors.target.http4xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.errors.target.http5xx</td>
+<td>builtin:cloud.aws.alb.errors.target.http5xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.errors.tls_neg</td>
+<td>builtin:cloud.aws.alb.errors.tlsNeg</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.lcus</td>
+<td>builtin:cloud.aws.alb.lcus</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.requests</td>
+<td>builtin:cloud.aws.alb.requests</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.alb.resp_time</td>
+<td>builtin:cloud.aws.alb.respTime</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.asg.running</td>
+<td>builtin:cloud.aws.asg.running</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.asg.stopped</td>
+<td>builtin:cloud.aws.asg.stopped</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.asg.terminated</td>
+<td>builtin:cloud.aws.asg.terminated</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.az.running</td>
+<td>builtin:cloud.aws.az.running</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.az.stopped</td>
+<td>builtin:cloud.aws.az.stopped</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.az.terminated</td>
+<td>builtin:cloud.aws.az.terminated</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.capacity_units.consumed.read</td>
+<td>builtin:cloud.aws.dynamo.capacityUnits.consumed.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.capacity_units.consumed.write</td>
+<td>builtin:cloud.aws.dynamo.capacityUnits.consumed.write</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.capacity_units.provisioned.read</td>
+<td>builtin:cloud.aws.dynamo.capacityUnits.provisioned.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.capacity_units.provisioned.write</td>
+<td>builtin:cloud.aws.dynamo.capacityUnits.provisioned.write</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.capacity_units.read</td>
+<td>builtin:cloud.aws.dynamo.capacityUnits.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.capacity_units.write</td>
+<td>builtin:cloud.aws.dynamo.capacityUnits.write</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.errors.system</td>
+<td>builtin:cloud.aws.dynamo.errors.system</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.errors.user</td>
+<td>builtin:cloud.aws.dynamo.errors.user</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.requests.latency</td>
+<td>builtin:cloud.aws.dynamo.requests.latency</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.requests.returned_items</td>
+<td>builtin:cloud.aws.dynamo.requests.returnedItems</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.requests.throttled</td>
+<td>builtin:cloud.aws.dynamo.requests.throttled</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.tables</td>
+<td>builtin:cloud.aws.dynamo.tables</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.throttled_events.read</td>
+<td>builtin:cloud.aws.dynamo.throttledEvents.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.dynamo.throttled_events.write</td>
+<td>builtin:cloud.aws.dynamo.throttledEvents.write</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.idle_time</td>
+<td>builtin:cloud.aws.ebs.idleTime</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.latency.read</td>
+<td>builtin:cloud.aws.ebs.latency.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.latency.write</td>
+<td>builtin:cloud.aws.ebs.latency.write</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.ops.consumed</td>
+<td>builtin:cloud.aws.ebs.ops.consumed</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.ops.read</td>
+<td>builtin:cloud.aws.ebs.ops.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.ops.write</td>
+<td>builtin:cloud.aws.ebs.ops.write</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.queue</td>
+<td>builtin:cloud.aws.ebs.queue</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.throughput.percent</td>
+<td>builtin:cloud.aws.ebs.throughput.percent</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.throughput.read</td>
+<td>builtin:cloud.aws.ebs.throughput.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ebs.throughput.write</td>
+<td>builtin:cloud.aws.ebs.throughput.write</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ec2.cpu.usage</td>
+<td>builtin:cloud.aws.ec2.cpu.usage</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ec2.disk.read_ops</td>
+<td>builtin:cloud.aws.ec2.disk.readOps</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ec2.disk.read_rate</td>
+<td>builtin:cloud.aws.ec2.disk.readRate</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ec2.disk.write_ops</td>
+<td>builtin:cloud.aws.ec2.disk.writeOps</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ec2.disk.write_rate</td>
+<td>builtin:cloud.aws.ec2.disk.writeRate</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ec2.net.rx</td>
+<td>builtin:cloud.aws.ec2.net.rx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.ec2.net.tx</td>
+<td>builtin:cloud.aws.ec2.net.tx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.errors.frontend</td>
+<td>builtin:cloud.aws.elb.errors.frontend</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.errors.backend.connection</td>
+<td>builtin:cloud.aws.elb.errors.backend.connection</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.errors.backend.http2xx</td>
+<td>builtin:cloud.aws.elb.errors.backend.http2xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.errors.backend.http3xx</td>
+<td>builtin:cloud.aws.elb.errors.backend.http3xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.errors.backend.http4xx</td>
+<td>builtin:cloud.aws.elb.errors.backend.http4xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.errors.backend.http5xx</td>
+<td>builtin:cloud.aws.elb.errors.backend.http5xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.errors.elb.http4xx</td>
+<td>builtin:cloud.aws.elb.errors.elb.http4xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.errors.elb.http5xx</td>
+<td>builtin:cloud.aws.elb.errors.elb.http5xx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.hosts.healthy</td>
+<td>builtin:cloud.aws.elb.hosts.healthy</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.hosts.unhealthy</td>
+<td>builtin:cloud.aws.elb.hosts.unhealthy</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.latency</td>
+<td>builtin:cloud.aws.elb.latency</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.elb.req_compl</td>
+<td>builtin:cloud.aws.elb.reqCompl</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.lambda.conc_executions</td>
+<td>builtin:cloud.aws.lambda.concExecutions</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.lambda.duration</td>
+<td>builtin:cloud.aws.lambda.duration</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.lambda.errors</td>
+<td>builtin:cloud.aws.lambda.errors</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.lambda.errors_rate</td>
+<td>builtin:cloud.aws.lambda.errorsRate</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.lambda.invocations</td>
+<td>builtin:cloud.aws.lambda.invocations</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.lambda.prov_conc_executions</td>
+<td>builtin:cloud.aws.lambda.provConcExecutions</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.lambda.prov_conc_invocations</td>
+<td>builtin:cloud.aws.lambda.provConcInvocations</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.lambda.prov_conc_spillover_invocations</td>
+<td>builtin:cloud.aws.lambda.provConcSpilloverInvocations</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.lambda.throttlers</td>
+<td>builtin:cloud.aws.lambda.throttlers</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.nlb.bytes</td>
+<td>builtin:cloud.aws.nlb.bytes</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.nlb.flow.active</td>
+<td>builtin:cloud.aws.nlb.flow.active</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.nlb.flow.new</td>
+<td>builtin:cloud.aws.nlb.flow.new</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.nlb.lcus</td>
+<td>builtin:cloud.aws.nlb.lcus</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.nlb.tcp.reset.client</td>
+<td>builtin:cloud.aws.nlb.tcp.reset.client</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.nlb.tcp.reset.elb</td>
+<td>builtin:cloud.aws.nlb.tcp.reset.elb</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.nlb.tcp.reset.target</td>
+<td>builtin:cloud.aws.nlb.tcp.reset.target</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.connections</td>
+<td>builtin:cloud.aws.rds.connections</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.cpu.usage</td>
+<td>builtin:cloud.aws.rds.cpu.usage</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.free</td>
+<td>builtin:cloud.aws.rds.free</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.latency.read</td>
+<td>builtin:cloud.aws.rds.latency.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.latency.write</td>
+<td>builtin:cloud.aws.rds.latency.write</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.memory.freeable</td>
+<td>builtin:cloud.aws.rds.memory.freeable</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.memory.swap</td>
+<td>builtin:cloud.aws.rds.memory.swap</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.net.rx</td>
+<td>builtin:cloud.aws.rds.net.rx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.net.tx</td>
+<td>builtin:cloud.aws.rds.net.tx</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.ops.read</td>
+<td>builtin:cloud.aws.rds.ops.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.ops.write</td>
+<td>builtin:cloud.aws.rds.ops.write</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.restarts</td>
+<td>builtin:cloud.aws.rds.restarts</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.throughput.read</td>
+<td>builtin:cloud.aws.rds.throughput.read</td>
+</tr>
+<tr>
+<td>dt.cloud.aws.rds.throughput.write</td>
+<td>builtin:cloud.aws.rds.throughput.write</td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h3>
+<p>Which Metrics Classic Azure metrics are not supported on Grail?</p>
+<ul>
+<li>builtin:cloud.azure.AzureStatistics.amountOfAzureResourceType</li>
+<li>builtin:cloud.azure.azureEventsWebhook.invalidRequests</li>
+<li>builtin:cloud.azure.azureEventsWebhook.okRequests</li>
+<li>builtin:cloud.azure.azureEventsWebhook.throttledRequests</li>
+<li>builtin:cloud.azure.azureEventsWebhook.unauthorizedRequests</li>
+<li>builtin:cloud.azure.azureEventsWebhook.unsupportedRequests</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.cloud.azure.api_mgmt.capacity</td>
+<td>builtin:cloud.azure.apiMgmt.capacity</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.api_mgmt.duration</td>
+<td>builtin:cloud.azure.apiMgmt.duration</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.api_mgmt.requests.failed</td>
+<td>builtin:cloud.azure.apiMgmt.requests.failed</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.api_mgmt.requests.other</td>
+<td>builtin:cloud.azure.apiMgmt.requests.other</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.api_mgmt.requests.successful</td>
+<td>builtin:cloud.azure.apiMgmt.requests.successful</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.api_mgmt.requests.total</td>
+<td>builtin:cloud.azure.apiMgmt.requests.total</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.api_mgmt.requests.unauth</td>
+<td>builtin:cloud.azure.apiMgmt.requests.unauth</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_gateway.backend.settings.pool.host.healthy</td>
+<td>builtin:cloud.azure.appGateway.backend.settings.pool.host.healthy</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_gateway.backend.settings.pool.host.unhealthy</td>
+<td>builtin:cloud.azure.appGateway.backend.settings.pool.host.unhealthy</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_gateway.backend.settings.traffic.requests.failed</td>
+<td>builtin:cloud.azure.appGateway.backend.settings.traffic.requests.failed</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_gateway.backend.settings.traffic.requests.total</td>
+<td>builtin:cloud.azure.appGateway.backend.settings.traffic.requests.total</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_gateway.http.status.response</td>
+<td>builtin:cloud.azure.appGateway.http.status.response</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_gateway.network.connections.count</td>
+<td>builtin:cloud.azure.appGateway.network.connections.count</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_gateway.network.throughput</td>
+<td>builtin:cloud.azure.appGateway.network.throughput</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.application_queue.requests</td>
+<td>builtin:cloud.azure.appService.applicationQueue.requests</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.application_queue.requests</td>
+<td>builtin:cloud.azure.appService.functions.applicationQueue.requests</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.execution.count</td>
+<td>builtin:cloud.azure.appService.functions.execution.count</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.execution.units_count</td>
+<td>builtin:cloud.azure.appService.functions.execution.unitsCount</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.http.status.http5xx</td>
+<td>builtin:cloud.azure.appService.functions.http.status.http5xx</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.io.operations.other</td>
+<td>builtin:cloud.azure.appService.functions.io.operations.other</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.io.operations.read</td>
+<td>builtin:cloud.azure.appService.functions.io.operations.read</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.io.operations.write</td>
+<td>builtin:cloud.azure.appService.functions.io.operations.write</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.io.other</td>
+<td>builtin:cloud.azure.appService.functions.io.other</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.io.read</td>
+<td>builtin:cloud.azure.appService.functions.io.read</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.io.write</td>
+<td>builtin:cloud.azure.appService.functions.io.write</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.traffic.bytes_received</td>
+<td>builtin:cloud.azure.appService.functions.traffic.bytesReceived</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.functions.traffic.bytes_sent</td>
+<td>builtin:cloud.azure.appService.functions.traffic.bytesSent</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.http.status.http2xx</td>
+<td>builtin:cloud.azure.appService.http.status.http2xx</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.http.status.http403</td>
+<td>builtin:cloud.azure.appService.http.status.http403</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.http.status.http5xx</td>
+<td>builtin:cloud.azure.appService.http.status.http5xx</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.io.operations.other</td>
+<td>builtin:cloud.azure.appService.io.operations.other</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.io.operations.read</td>
+<td>builtin:cloud.azure.appService.io.operations.read</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.io.operations.write</td>
+<td>builtin:cloud.azure.appService.io.operations.write</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.io.other</td>
+<td>builtin:cloud.azure.appService.io.other</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.io.read</td>
+<td>builtin:cloud.azure.appService.io.read</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.io.write</td>
+<td>builtin:cloud.azure.appService.io.write</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.response.avg</td>
+<td>builtin:cloud.azure.appService.response.avg</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.traffic.bytes_received</td>
+<td>builtin:cloud.azure.appService.traffic.bytesReceived</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.traffic.bytes_sent</td>
+<td>builtin:cloud.azure.appService.traffic.bytesSent</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.app_service.traffic.requests</td>
+<td>builtin:cloud.azure.appService.traffic.requests</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.available_storage</td>
+<td>builtin:cloud.azure.cosmos.availableStorage</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.data_usage</td>
+<td>builtin:cloud.azure.cosmos.dataUsage</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.document_count</td>
+<td>builtin:cloud.azure.cosmos.documentCount</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.document_quota</td>
+<td>builtin:cloud.azure.cosmos.documentQuota</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.index_usage</td>
+<td>builtin:cloud.azure.cosmos.indexUsage</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.metadata_requests</td>
+<td>builtin:cloud.azure.cosmos.metadataRequests</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.normalized_ruconsumption</td>
+<td>builtin:cloud.azure.cosmos.normalizedRUConsumption</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.provisioned_throughput</td>
+<td>builtin:cloud.azure.cosmos.provisionedThroughput</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.replication_latency</td>
+<td>builtin:cloud.azure.cosmos.replicationLatency</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.request_units</td>
+<td>builtin:cloud.azure.cosmos.requestUnits</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.requests</td>
+<td>builtin:cloud.azure.cosmos.requests</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.cosmos.service_availability</td>
+<td>builtin:cloud.azure.cosmos.serviceAvailability</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.capture.backlog</td>
+<td>builtin:cloud.azure.eventHub.capture.backlog</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.capture.bytes</td>
+<td>builtin:cloud.azure.eventHub.capture.bytes</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.capture.msg</td>
+<td>builtin:cloud.azure.eventHub.capture.msg</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.errors.quota_exceeded</td>
+<td>builtin:cloud.azure.eventHub.errors.quotaExceeded</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.errors.server</td>
+<td>builtin:cloud.azure.eventHub.errors.server</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.errors.user</td>
+<td>builtin:cloud.azure.eventHub.errors.user</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.requests.incoming</td>
+<td>builtin:cloud.azure.eventHub.requests.incoming</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.requests.successful</td>
+<td>builtin:cloud.azure.eventHub.requests.successful</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.requests.throttled</td>
+<td>builtin:cloud.azure.eventHub.requests.throttled</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.traffic.bytes_in</td>
+<td>builtin:cloud.azure.eventHub.traffic.bytesIn</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.traffic.bytes_out</td>
+<td>builtin:cloud.azure.eventHub.traffic.bytesOut</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.traffic.msg_in</td>
+<td>builtin:cloud.azure.eventHub.traffic.msgIn</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub.traffic.msg_out</td>
+<td>builtin:cloud.azure.eventHub.traffic.msgOut</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub_namespace.connections.active</td>
+<td>builtin:cloud.azure.eventHubNamespace.connections.active</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub_namespace.connections.closed</td>
+<td>builtin:cloud.azure.eventHubNamespace.connections.closed</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.event_hub_namespace.connections.opened</td>
+<td>builtin:cloud.azure.eventHubNamespace.connections.opened</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.command.abandoned</td>
+<td>builtin:cloud.azure.iotHub.command.abandoned</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.command.completed</td>
+<td>builtin:cloud.azure.iotHub.command.completed</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.command.rejected</td>
+<td>builtin:cloud.azure.iotHub.command.rejected</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.device.connected</td>
+<td>builtin:cloud.azure.iotHub.device.connected</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.device.daily_throughput_throttling</td>
+<td>builtin:cloud.azure.iotHub.device.dailyThroughputThrottling</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.device.data_usage</td>
+<td>builtin:cloud.azure.iotHub.device.dataUsage</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.device.registered</td>
+<td>builtin:cloud.azure.iotHub.device.registered</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.event_hub.average_latency_ms</td>
+<td>builtin:cloud.azure.iotHub.eventHub.averageLatencyMs</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.event_hub.built_in_event_hub.average_latency_ms</td>
+<td>builtin:cloud.azure.iotHub.eventHub.builtInEventHub.averageLatencyMs</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.event_hub.built_in_event_hub.messages.delivered</td>
+<td>builtin:cloud.azure.iotHub.eventHub.builtInEventHub.messages.delivered</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.event_hub.messages.delivered</td>
+<td>builtin:cloud.azure.iotHub.eventHub.messages.delivered</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.messages.dropped</td>
+<td>builtin:cloud.azure.iotHub.messages.dropped</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.messages.invalid_for_all_endpoints</td>
+<td>builtin:cloud.azure.iotHub.messages.invalidForAllEndpoints</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.messages.orphaned</td>
+<td>builtin:cloud.azure.iotHub.messages.orphaned</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.messages.send_attempts</td>
+<td>builtin:cloud.azure.iotHub.messages.sendAttempts</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.messages.sent</td>
+<td>builtin:cloud.azure.iotHub.messages.sent</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.messages.sent_to_fallback</td>
+<td>builtin:cloud.azure.iotHub.messages.sentToFallback</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.service_bus.queues.average_latency_ms</td>
+<td>builtin:cloud.azure.iotHub.serviceBus.queues.averageLatencyMs</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.service_bus.queues.messages_delivered</td>
+<td>builtin:cloud.azure.iotHub.serviceBus.queues.messagesDelivered</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.service_bus.topics.average_latency_ms</td>
+<td>builtin:cloud.azure.iotHub.serviceBus.topics.averageLatencyMs</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.service_bus.topics.messages_delivered</td>
+<td>builtin:cloud.azure.iotHub.serviceBus.topics.messagesDelivered</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.storage_endpoints.avg_latency_ms</td>
+<td>builtin:cloud.azure.iotHub.storageEndpoints.avgLatencyMs</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.storage_endpoints.blobs_written</td>
+<td>builtin:cloud.azure.iotHub.storageEndpoints.blobsWritten</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.storage_endpoints.bytes_written</td>
+<td>builtin:cloud.azure.iotHub.storageEndpoints.bytesWritten</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.iot_hub.storage_endpoints.message_delivered</td>
+<td>builtin:cloud.azure.iotHub.storageEndpoints.messageDelivered</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.availability.dip_tcp</td>
+<td>builtin:cloud.azure.loadbalancer.availability.dipTcp</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.availability.dip_udp</td>
+<td>builtin:cloud.azure.loadbalancer.availability.dipUdp</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.availability.vip</td>
+<td>builtin:cloud.azure.loadbalancer.availability.vip</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.snat_connection.est</td>
+<td>builtin:cloud.azure.loadbalancer.snatConnection.est</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.snat_connection.pending</td>
+<td>builtin:cloud.azure.loadbalancer.snatConnection.pending</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.snat_connection.rej</td>
+<td>builtin:cloud.azure.loadbalancer.snatConnection.rej</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.traffic.byte_in</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.byteIn</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.traffic.byte_out</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.byteOut</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.traffic.packet_in</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.packetIn</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.traffic.packet_out</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.packetOut</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.traffic.packet_syn_in</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.packetSynIn</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.loadbalancer.traffic.packet_syn_out</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.packetSynOut</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.cache.hits</td>
+<td>builtin:cloud.azure.redis.cache.hits</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.cache.misses</td>
+<td>builtin:cloud.azure.redis.cache.misses</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.cache.read</td>
+<td>builtin:cloud.azure.redis.cache.read</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.cache.write</td>
+<td>builtin:cloud.azure.redis.cache.write</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.commands.get</td>
+<td>builtin:cloud.azure.redis.commands.get</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.commands.set</td>
+<td>builtin:cloud.azure.redis.commands.set</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.commands.total</td>
+<td>builtin:cloud.azure.redis.commands.total</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.connected</td>
+<td>builtin:cloud.azure.redis.connected</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.keys.evicted</td>
+<td>builtin:cloud.azure.redis.keys.evicted</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.keys.expired</td>
+<td>builtin:cloud.azure.redis.keys.expired</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.keys.total</td>
+<td>builtin:cloud.azure.redis.keys.total</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.load</td>
+<td>builtin:cloud.azure.redis.load</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.memory.used</td>
+<td>builtin:cloud.azure.redis.memory.used</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.memory.used_rss</td>
+<td>builtin:cloud.azure.redis.memory.usedRss</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.redis.processor_time</td>
+<td>builtin:cloud.azure.redis.processorTime</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.region.vms.initializing</td>
+<td>builtin:cloud.azure.region.vms.initializing</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.region.vms.running</td>
+<td>builtin:cloud.azure.region.vms.running</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.region.vms.stopped</td>
+<td>builtin:cloud.azure.region.vms.stopped</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.connections.active</td>
+<td>builtin:cloud.azure.serviceBus.namespace.connections.active</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.cpu</td>
+<td>builtin:cloud.azure.serviceBus.namespace.cpu</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.errors.server</td>
+<td>builtin:cloud.azure.serviceBus.namespace.errors.server</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.errors.user</td>
+<td>builtin:cloud.azure.serviceBus.namespace.errors.user</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.memory</td>
+<td>builtin:cloud.azure.serviceBus.namespace.memory</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.messages.count</td>
+<td>builtin:cloud.azure.serviceBus.namespace.messages.count</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.messages.count_active</td>
+<td>builtin:cloud.azure.serviceBus.namespace.messages.countActive</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.messages.count_dead_lettered</td>
+<td>builtin:cloud.azure.serviceBus.namespace.messages.countDeadLettered</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.messages.count_scheduled</td>
+<td>builtin:cloud.azure.serviceBus.namespace.messages.countScheduled</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.messages.incoming</td>
+<td>builtin:cloud.azure.serviceBus.namespace.messages.incoming</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.messages.outgoing</td>
+<td>builtin:cloud.azure.serviceBus.namespace.messages.outgoing</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.requests.incoming</td>
+<td>builtin:cloud.azure.serviceBus.namespace.requests.incoming</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.requests.successful</td>
+<td>builtin:cloud.azure.serviceBus.namespace.requests.successful</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.requests.throttled</td>
+<td>builtin:cloud.azure.serviceBus.namespace.requests.throttled</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.namespace.size</td>
+<td>builtin:cloud.azure.serviceBus.namespace.size</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.errors.server</td>
+<td>builtin:cloud.azure.serviceBus.queue.errors.server</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.errors.user</td>
+<td>builtin:cloud.azure.serviceBus.queue.errors.user</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.messages.count</td>
+<td>builtin:cloud.azure.serviceBus.queue.messages.count</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.messages.count_active</td>
+<td>builtin:cloud.azure.serviceBus.queue.messages.countActive</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.messages.count_dead_lettered</td>
+<td>builtin:cloud.azure.serviceBus.queue.messages.countDeadLettered</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.messages.count_scheduled</td>
+<td>builtin:cloud.azure.serviceBus.queue.messages.countScheduled</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.messages.incoming</td>
+<td>builtin:cloud.azure.serviceBus.queue.messages.incoming</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.messages.outgoing</td>
+<td>builtin:cloud.azure.serviceBus.queue.messages.outgoing</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.requests.incoming</td>
+<td>builtin:cloud.azure.serviceBus.queue.requests.incoming</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.requests.successful</td>
+<td>builtin:cloud.azure.serviceBus.queue.requests.successful</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.requests.throttled</td>
+<td>builtin:cloud.azure.serviceBus.queue.requests.throttled</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.queue.size</td>
+<td>builtin:cloud.azure.serviceBus.queue.size</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.errors.server</td>
+<td>builtin:cloud.azure.serviceBus.topic.errors.server</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.errors.user</td>
+<td>builtin:cloud.azure.serviceBus.topic.errors.user</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.messages.count</td>
+<td>builtin:cloud.azure.serviceBus.topic.messages.count</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.messages.count_active</td>
+<td>builtin:cloud.azure.serviceBus.topic.messages.countActive</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.messages.count_dead_lettered</td>
+<td>builtin:cloud.azure.serviceBus.topic.messages.countDeadLettered</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.messages.count_scheduled</td>
+<td>builtin:cloud.azure.serviceBus.topic.messages.countScheduled</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.messages.incoming</td>
+<td>builtin:cloud.azure.serviceBus.topic.messages.incoming</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.messages.outgoing</td>
+<td>builtin:cloud.azure.serviceBus.topic.messages.outgoing</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.requests.incoming</td>
+<td>builtin:cloud.azure.serviceBus.topic.requests.incoming</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.requests.successful</td>
+<td>builtin:cloud.azure.serviceBus.topic.requests.successful</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.requests.throttled</td>
+<td>builtin:cloud.azure.serviceBus.topic.requests.throttled</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.service_bus.topic.size</td>
+<td>builtin:cloud.azure.serviceBus.topic.size</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.connections.blocked_by_firewall</td>
+<td>builtin:cloud.azure.sqlDatabase.connections.blockedByFirewall</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.connections.failed</td>
+<td>builtin:cloud.azure.sqlDatabase.connections.failed</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.connections.successful</td>
+<td>builtin:cloud.azure.sqlDatabase.connections.successful</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.cpu_percent</td>
+<td>builtin:cloud.azure.sqlDatabase.cpuPercent</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.deadlocks</td>
+<td>builtin:cloud.azure.sqlDatabase.deadlocks</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.dtu.consumption_perc</td>
+<td>builtin:cloud.azure.sqlDatabase.dtu.consumptionPerc</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.dtu.limit.count</td>
+<td>builtin:cloud.azure.sqlDatabase.dtu.limit.count</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.dtu.limit.used</td>
+<td>builtin:cloud.azure.sqlDatabase.dtu.limit.used</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.io.data_read</td>
+<td>builtin:cloud.azure.sqlDatabase.io.dataRead</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.io.log_write</td>
+<td>builtin:cloud.azure.sqlDatabase.io.logWrite</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.sessions</td>
+<td>builtin:cloud.azure.sqlDatabase.sessions</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.storage.percent</td>
+<td>builtin:cloud.azure.sqlDatabase.storage.percent</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.storage.total_bytes</td>
+<td>builtin:cloud.azure.sqlDatabase.storage.totalBytes</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.storage.xtp_percent</td>
+<td>builtin:cloud.azure.sqlDatabase.storage.xtpPercent</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_database.workers</td>
+<td>builtin:cloud.azure.sqlDatabase.workers</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.cpu_percent</td>
+<td>builtin:cloud.azure.sqlElasticPool.cpuPercent</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.dtu.consumption</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.consumption</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.dtu.storage.limit_bytes</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.storage.limitBytes</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.dtu.storage.percent</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.storage.percent</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.dtu.storage.used_bytes</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.storage.usedBytes</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.dtu.storage.xtp_percent</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.storage.xtpPercent</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.edtu.limit</td>
+<td>builtin:cloud.azure.sqlElasticPool.edtu.limit</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.edtu.used</td>
+<td>builtin:cloud.azure.sqlElasticPool.edtu.used</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.io.data_read</td>
+<td>builtin:cloud.azure.sqlElasticPool.io.dataRead</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.io.log_write</td>
+<td>builtin:cloud.azure.sqlElasticPool.io.logWrite</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.sessions</td>
+<td>builtin:cloud.azure.sqlElasticPool.sessions</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.sql_elastic_pool.workers</td>
+<td>builtin:cloud.azure.sqlElasticPool.workers</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.blob.capacity</td>
+<td>builtin:cloud.azure.storage.blob.capacity</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.blob.containers</td>
+<td>builtin:cloud.azure.storage.blob.containers</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.blob.entities</td>
+<td>builtin:cloud.azure.storage.blob.entities</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.blob.transactions</td>
+<td>builtin:cloud.azure.storage.blob.transactions</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.blob.transactions.network.egress</td>
+<td>builtin:cloud.azure.storage.blob.transactions.network.egress</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.blob.transactions.network.ingress</td>
+<td>builtin:cloud.azure.storage.blob.transactions.network.ingress</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.blob.transactions.network.latency.success.e2e</td>
+<td>builtin:cloud.azure.storage.blob.transactions.network.latency.success.e2e</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.blob.transactions.network.latency.success.server</td>
+<td>builtin:cloud.azure.storage.blob.transactions.network.latency.success.server</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.file.capacity</td>
+<td>builtin:cloud.azure.storage.file.capacity</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.file.containers</td>
+<td>builtin:cloud.azure.storage.file.containers</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.file.entities</td>
+<td>builtin:cloud.azure.storage.file.entities</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.file.transactions</td>
+<td>builtin:cloud.azure.storage.file.transactions</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.file.transactions.network.egress</td>
+<td>builtin:cloud.azure.storage.file.transactions.network.egress</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.file.transactions.network.ingress</td>
+<td>builtin:cloud.azure.storage.file.transactions.network.ingress</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.file.transactions.network.latency.success.e2e</td>
+<td>builtin:cloud.azure.storage.file.transactions.network.latency.success.e2e</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.file.transactions.network.latency.success.server</td>
+<td>builtin:cloud.azure.storage.file.transactions.network.latency.success.server</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.queue.capacity</td>
+<td>builtin:cloud.azure.storage.queue.capacity</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.queue.containers</td>
+<td>builtin:cloud.azure.storage.queue.containers</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.queue.entities</td>
+<td>builtin:cloud.azure.storage.queue.entities</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.queue.transactions</td>
+<td>builtin:cloud.azure.storage.queue.transactions</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.queue.transactions.network.egress</td>
+<td>builtin:cloud.azure.storage.queue.transactions.network.egress</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.queue.transactions.network.ingress</td>
+<td>builtin:cloud.azure.storage.queue.transactions.network.ingress</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.queue.transactions.network.latency.success.e2e</td>
+<td>builtin:cloud.azure.storage.queue.transactions.network.latency.success.e2e</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.queue.transactions.network.latency.success.server</td>
+<td>builtin:cloud.azure.storage.queue.transactions.network.latency.success.server</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.table.capacity</td>
+<td>builtin:cloud.azure.storage.table.capacity</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.table.containers</td>
+<td>builtin:cloud.azure.storage.table.containers</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.table.entities</td>
+<td>builtin:cloud.azure.storage.table.entities</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.table.transactions</td>
+<td>builtin:cloud.azure.storage.table.transactions</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.table.transactions.network.egress</td>
+<td>builtin:cloud.azure.storage.table.transactions.network.egress</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.table.transactions.network.ingress</td>
+<td>builtin:cloud.azure.storage.table.transactions.network.ingress</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.table.transactions.network.latency.success.server</td>
+<td>builtin:cloud.azure.storage.table.transactions.network.latency.success.server</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.storage.table.transactions.network.latency.success.server.e2e</td>
+<td>builtin:cloud.azure.storage.table.transactions.network.latency.success.server.e2e</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm.cpu_usage</td>
+<td>builtin:cloud.azure.vm.cpuUsage</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm.disk.read</td>
+<td>builtin:cloud.azure.vm.disk.read</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm.disk.read_ops</td>
+<td>builtin:cloud.azure.vm.disk.readOps</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm.disk.write</td>
+<td>builtin:cloud.azure.vm.disk.write</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm.disk.write_ops</td>
+<td>builtin:cloud.azure.vm.disk.writeOps</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm.network.bytes_in</td>
+<td>builtin:cloud.azure.vm.network.bytesIn</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm.network.bytes_out</td>
+<td>builtin:cloud.azure.vm.network.bytesOut</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.cpu_usage</td>
+<td>builtin:cloud.azure.vmScaleSet.cpuUsage</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.disk.read</td>
+<td>builtin:cloud.azure.vmScaleSet.disk.read</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.disk.read_ops</td>
+<td>builtin:cloud.azure.vmScaleSet.disk.readOps</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.disk.write</td>
+<td>builtin:cloud.azure.vmScaleSet.disk.write</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.disk.write_ops</td>
+<td>builtin:cloud.azure.vmScaleSet.disk.writeOps</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.network.bytes_in</td>
+<td>builtin:cloud.azure.vmScaleSet.network.bytesIn</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.network.bytes_out</td>
+<td>builtin:cloud.azure.vmScaleSet.network.bytesOut</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.vms.initializing</td>
+<td>builtin:cloud.azure.vmScaleSet.vms.initializing</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.vms.running</td>
+<td>builtin:cloud.azure.vmScaleSet.vms.running</td>
+</tr>
+<tr>
+<td>dt.cloud.azure.vm_scale_set.vms.stopped</td>
+<td>builtin:cloud.azure.vmScaleSet.vms.stopped</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloud-foundry">Cloud Foundry<a class="headerlink" href="#cloud-foundry" title="Permanent link">&para;</a></h3>
+<p>Which Metrics Classic Cloud Foundry metrics are not supported on Grail?</p>
+<ul>
+<li>builtin:cloud.cloudfoundry.auctioneer.lprFailed</li>
+<li>builtin:cloud.cloudfoundry.auctioneer.lprStarted</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.cloud.cloudfoundry.auctioneer.fetch_duration</td>
+<td>builtin:cloud.cloudfoundry.auctioneer.fetchDuration</td>
+</tr>
+<tr>
+<td>dt.cloud.cloudfoundry.auctioneer.task_failed</td>
+<td>builtin:cloud.cloudfoundry.auctioneer.taskFailed</td>
+</tr>
+<tr>
+<td>dt.cloud.cloudfoundry.http.bad_gateways</td>
+<td>builtin:cloud.cloudfoundry.http.badGateways</td>
+</tr>
+<tr>
+<td>dt.cloud.cloudfoundry.http.latency</td>
+<td>builtin:cloud.cloudfoundry.http.latency</td>
+</tr>
+<tr>
+<td>dt.cloud.cloudfoundry.http.responses5xx</td>
+<td>builtin:cloud.cloudfoundry.http.responses5xx</td>
+</tr>
+<tr>
+<td>dt.cloud.cloudfoundry.http.total_requests</td>
+<td>builtin:cloud.cloudfoundry.http.totalRequests</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vmware">VMware<a class="headerlink" href="#vmware" title="Permanent link">&para;</a></h3>
+<p>Which Metrics Classic VMware metrics are not supported on Grail?</p>
+<ul>
+<li>builtin:cloud.vmware.hypervisor.availability</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.cloud.vmware.hypervisor.cpu.usage</td>
+<td>builtin:cloud.vmware.hypervisor.cpu.usage</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.disk.usage</td>
+<td>builtin:cloud.vmware.hypervisor.disk.usage</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.hostdisk.commands_aborted</td>
+<td>builtin:cloud.vmware.hypervisor.hostdisk.commandsAborted</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.hostdisk.queue_latency</td>
+<td>builtin:cloud.vmware.hypervisor.hostdisk.queueLatency</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.hostdisk.r_iops</td>
+<td>builtin:cloud.vmware.hypervisor.hostdisk.rIops</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.hostdisk.read_latency</td>
+<td>builtin:cloud.vmware.hypervisor.hostdisk.readLatency</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.hostdisk.read_rate</td>
+<td>builtin:cloud.vmware.hypervisor.hostdisk.readRate</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.hostdisk.w_iops</td>
+<td>builtin:cloud.vmware.hypervisor.hostdisk.wIops</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.hostdisk.write_latency</td>
+<td>builtin:cloud.vmware.hypervisor.hostdisk.writeLatency</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.hostdisk.write_rate</td>
+<td>builtin:cloud.vmware.hypervisor.hostdisk.writeRate</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.mem.compression_rate</td>
+<td>builtin:cloud.vmware.hypervisor.mem.compressionRate</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.mem.consumed</td>
+<td>builtin:cloud.vmware.hypervisor.mem.consumed</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.mem.decompression_rate</td>
+<td>builtin:cloud.vmware.hypervisor.mem.decompressionRate</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.mem.swap_in</td>
+<td>builtin:cloud.vmware.hypervisor.mem.swapIn</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.mem.swap_out</td>
+<td>builtin:cloud.vmware.hypervisor.mem.swapOut</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.net.rx</td>
+<td>builtin:cloud.vmware.hypervisor.net.rx</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.net.tx</td>
+<td>builtin:cloud.vmware.hypervisor.net.tx</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.nic.data_rx</td>
+<td>builtin:cloud.vmware.hypervisor.nic.dataRx</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.nic.data_tx</td>
+<td>builtin:cloud.vmware.hypervisor.nic.dataTx</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.nic.packets_rx_dropped</td>
+<td>builtin:cloud.vmware.hypervisor.nic.packetsRxDropped</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.nic.packets_tx_dropped</td>
+<td>builtin:cloud.vmware.hypervisor.nic.packetsTxDropped</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.vms.count</td>
+<td>builtin:cloud.vmware.hypervisor.vms.count</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.vms.power_off</td>
+<td>builtin:cloud.vmware.hypervisor.vms.powerOff</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.hypervisor.vms.suspended</td>
+<td>builtin:cloud.vmware.hypervisor.vms.suspended</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.cpu.ready_perc</td>
+<td>builtin:cloud.vmware.vm.cpu.readyPerc</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.cpu.swap_wait</td>
+<td>builtin:cloud.vmware.vm.cpu.swapWait</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.cpu.usage</td>
+<td>builtin:cloud.vmware.vm.cpu.usage</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.cpu.usage_perc</td>
+<td>builtin:cloud.vmware.vm.cpu.usagePerc</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.disk.usage</td>
+<td>builtin:cloud.vmware.vm.disk.usage</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.mem.active</td>
+<td>builtin:cloud.vmware.vm.mem.active</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.mem.compression_rate</td>
+<td>builtin:cloud.vmware.vm.mem.compressionRate</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.mem.consumed</td>
+<td>builtin:cloud.vmware.vm.mem.consumed</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.mem.decompression_rate</td>
+<td>builtin:cloud.vmware.vm.mem.decompressionRate</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.mem.swap_in</td>
+<td>builtin:cloud.vmware.vm.mem.swapIn</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.mem.swap_out</td>
+<td>builtin:cloud.vmware.vm.mem.swapOut</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.net.rx</td>
+<td>builtin:cloud.vmware.vm.net.rx</td>
+</tr>
+<tr>
+<td>dt.cloud.vmware.vm.net.tx</td>
+<td>builtin:cloud.vmware.vm.net.tx</td>
+</tr>
+</tbody>
+</table>
+<h2 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h2>
+<p>New container metrics are now available for <a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">DPS</a>-enabled customers. The new metrics are subject to a new licensing model, as distinct from the current full-stack host units model.</p>
+<p>Metric availability:</p>
+<ul>
+<li>The Metrics Classic metrics have been discontinued.</li>
+<li>The new metrics are immediately available with OneAgent deployment.</li>
+</ul>
+<p>More information:</p>
+<ul>
+<li><a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">License Dynatrace</a></li>
+<li><a href="https://dt-url.net/c7038ec">Unlock the Power of DevSecOps with Newly Released Kubernetes Experience for Platform Engineeringï»¿</a></li>
+<li><a href="https://dt-url.net/882385r">Dynatrace Launches New Kubernetes Experience for Platform Engineering Teamsï»¿</a></li>
+</ul>
+<p>Which Metrics Classic container metrics are not supported on Grail?</p>
+<ul>
+<li>builtin:containers.cpu.limit</li>
+<li>builtin:containers.cpu.throttledMilliCores</li>
+<li>builtin:containers.cpu.usageMilliCores</li>
+<li>builtin:containers.cpu.usagePercent</li>
+<li>builtin:containers.cpu.usageSystemMilliCores</li>
+<li>builtin:containers.cpu.usageTime</li>
+<li>builtin:containers.cpu.usageUserMilliCores</li>
+<li>builtin:containers.memory.limitPercent</li>
+<li>builtin:containers.memory.outOfMemoryKills</li>
+<li>builtin:containers.memory.usagePercent</li>
+</ul>
+<p>Additionally, the following Classic <a href="/docs/ingest-from/extensions/develop-your-extensions" title="Develop your own Extensions in Dynatrace.">Extension 1.0</a> metrics are deprecated and likewise not supported on Grail:</p>
+<ul>
+<li>builtin:containers.bytes_rx2</li>
+<li>builtin:containers.bytes_tx2</li>
+<li>builtin:containers.cpu_usage2</li>
+<li>builtin:containers.devicemapper_data_space_available</li>
+<li>builtin:containers.devicemapper_data_space_used</li>
+<li>builtin:containers.devicemapper_metadata_space_available</li>
+<li>builtin:containers.devicemapper_metadata_space_used</li>
+<li>builtin:containers.memory_percent</li>
+<li>builtin:containers.memory_usage2</li>
+<li>builtin:containers.no_of_containers_launched</li>
+<li>builtin:containers.no_of_containers_per_pgi</li>
+<li>builtin:containers.no_of_containers_running</li>
+<li>builtin:containers.no_of_containers_terminated</li>
+<li>builtin:containers.throttled_time2</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.containers.cpu.logical_cores</td>
+<td>builtin:containers.cpu.logicalCores</td>
+</tr>
+<tr>
+<td>dt.containers.cpu.shares</td>
+<td>builtin:containers.cpu.shares</td>
+</tr>
+<tr>
+<td>dt.containers.cpu.throttled_time</td>
+<td>builtin:containers.cpu.throttledTime</td>
+</tr>
+<tr>
+<td>dt.containers.cpu.throttling_ratio</td>
+<td>builtin:containers.cpu.throttlingRatio</td>
+</tr>
+<tr>
+<td>dt.containers.cpu.usage_system_time</td>
+<td>builtin:containers.cpu.usageSystemTime</td>
+</tr>
+<tr>
+<td>dt.containers.cpu.usage_user_time</td>
+<td>builtin:containers.cpu.usageUserTime</td>
+</tr>
+<tr>
+<td>dt.containers.memory.cache_bytes</td>
+<td>builtin:containers.memory.cacheBytes</td>
+</tr>
+<tr>
+<td>dt.containers.memory.limit_bytes</td>
+<td>builtin:containers.memory.limitBytes</td>
+</tr>
+<tr>
+<td>dt.containers.memory.physical_total_bytes</td>
+<td>builtin:containers.memory.physicalTotalBytes</td>
+</tr>
+<tr>
+<td>dt.containers.memory.resident_set_bytes</td>
+<td>builtin:containers.memory.residentSetBytes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="infrastructure">Infrastructure<a class="headerlink" href="#infrastructure" title="Permanent link">&para;</a></h2>
+<p>For a detailed list of the host metrics and their availability, refer to <a href="/docs/observe/infrastructure-observability/hosts/reference/metrics" title="Metrics and metrics classic measured for host monitoring">Host metrics</a>.</p>
+<h3 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.host.cpu.ent_config</td>
+<td>builtin:host.cpu.entConfig</td>
+</tr>
+<tr>
+<td>dt.host.cpu.entc</td>
+<td>builtin:host.cpu.entc</td>
+</tr>
+<tr>
+<td>dt.host.cpu.idle</td>
+<td>builtin:host.cpu.idle</td>
+</tr>
+<tr>
+<td>dt.host.cpu.iowait</td>
+<td>builtin:host.cpu.iowait</td>
+</tr>
+<tr>
+<td>dt.host.cpu.load</td>
+<td>builtin:host.cpu.load</td>
+</tr>
+<tr>
+<td>dt.host.cpu.load15m</td>
+<td>builtin:host.cpu.load15m</td>
+</tr>
+<tr>
+<td>dt.host.cpu.load5m</td>
+<td>builtin:host.cpu.load5m</td>
+</tr>
+<tr>
+<td>dt.host.cpu.other</td>
+<td>builtin:host.cpu.other</td>
+</tr>
+<tr>
+<td>dt.host.cpu.physc</td>
+<td>builtin:host.cpu.physc</td>
+</tr>
+<tr>
+<td>dt.host.cpu.steal</td>
+<td>builtin:host.cpu.steal</td>
+</tr>
+<tr>
+<td>dt.host.cpu.system</td>
+<td>builtin:host.cpu.system</td>
+</tr>
+<tr>
+<td>dt.host.cpu.usage</td>
+<td>builtin:host.cpu.usage</td>
+</tr>
+<tr>
+<td>dt.host.cpu.user</td>
+<td>builtin:host.cpu.user</td>
+</tr>
+<tr>
+<td>dt.host.kernel_threads.blocked</td>
+<td>builtin:host.kernelThreads.blocked</td>
+</tr>
+<tr>
+<td>dt.host.kernel_threads.io_event_wait</td>
+<td>builtin:host.kernelThreads.ioEventWait</td>
+</tr>
+<tr>
+<td>dt.host.kernel_threads.io_message_wait</td>
+<td>builtin:host.kernelThreads.ioMessageWait</td>
+</tr>
+<tr>
+<td>dt.host.kernel_threads.running</td>
+<td>builtin:host.kernelThreads.running</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h3>
+<p>Which Metrics Classic DNS metrics are not supported on Grail?</p>
+<ul>
+<li>builtin:host.dns.singleQueryTime</li>
+<li>builtin:host.dns.singleQueryTimeByDnsIp</li>
+<li>builtin:host.dns.singleQueryTimeByHost</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.host.dns.errors</td>
+<td>builtin:host.dns.errorCount</td>
+</tr>
+<tr>
+<td>dt.host.dns.queries</td>
+<td>builtin:host.dns.queryCount</td>
+</tr>
+<tr>
+<td>dt.host.dns.query_time</td>
+<td>builtin:host.dns.queryTime</td>
+</tr>
+<tr>
+<td>dt.host.dns.orphan_count</td>
+<td>builtin:host.dns.orphanCount</td>
+</tr>
+</tbody>
+</table>
+<h3 id="disk">Disk<a class="headerlink" href="#disk" title="Permanent link">&para;</a></h3>
+<p>Which Metrics Classic disk metrics are not supported on Grail?</p>
+<ul>
+<li>builtin:host.disk.throughput.read</li>
+<li>builtin:host.disk.throughput.write</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.host.disk.avail</td>
+<td>builtin:host.disk.avail</td>
+</tr>
+<tr>
+<td>dt.host.disk.bytes_read</td>
+<td>builtin:host.disk.bytesRead</td>
+</tr>
+<tr>
+<td>dt.host.disk.bytes_written</td>
+<td>builtin:host.disk.bytesWritten</td>
+</tr>
+<tr>
+<td>dt.host.disk.free</td>
+<td>builtin:host.disk.free</td>
+</tr>
+<tr>
+<td>dt.host.disk.inodes_avail</td>
+<td>builtin:host.disk.inodesAvail</td>
+</tr>
+<tr>
+<td>dt.host.disk.inodes_total</td>
+<td>builtin:host.disk.inodesTotal</td>
+</tr>
+<tr>
+<td>dt.host.disk.queue_length</td>
+<td>builtin:host.disk.queueLength</td>
+</tr>
+<tr>
+<td>dt.host.disk.read_ops</td>
+<td>builtin:host.disk.readOps</td>
+</tr>
+<tr>
+<td>dt.host.disk.read_time</td>
+<td>builtin:host.disk.readTime</td>
+</tr>
+<tr>
+<td>dt.host.disk.used</td>
+<td>builtin:host.disk.used</td>
+</tr>
+<tr>
+<td>dt.host.disk.used.percent</td>
+<td>builtin:host.disk.usedPct</td>
+</tr>
+<tr>
+<td>dt.host.disk.util_time</td>
+<td>builtin:host.disk.utilTime</td>
+</tr>
+<tr>
+<td>dt.host.disk.write_ops</td>
+<td>builtin:host.disk.writeOps</td>
+</tr>
+<tr>
+<td>dt.host.disk.write_time</td>
+<td>builtin:host.disk.writeTime</td>
+</tr>
+</tbody>
+</table>
+<h3 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h3>
+<p>Which Metrics Classic memory metrics are not supported on Grail?</p>
+<ul>
+<li>builtin:host.mem.total</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.host.memory.avail.bytes</td>
+<td>builtin:host.mem.avail.bytes</td>
+</tr>
+<tr>
+<td>dt.host.memory.avail.percent</td>
+<td>builtin:host.mem.avail.pct</td>
+</tr>
+<tr>
+<td>dt.host.memory.avail.pfps</td>
+<td>builtin:host.mem.avail.pfps</td>
+</tr>
+<tr>
+<td>dt.host.memory.kernel</td>
+<td>builtin:host.mem.kernel</td>
+</tr>
+<tr>
+<td>dt.host.memory.recl</td>
+<td>builtin:host.mem.recl</td>
+</tr>
+<tr>
+<td>dt.host.memory.swap.avail</td>
+<td>builtin:host.mem.swap.avail</td>
+</tr>
+<tr>
+<td>dt.host.memory.swap.total</td>
+<td>builtin:host.mem.swap.total</td>
+</tr>
+<tr>
+<td>dt.host.memory.swap.used</td>
+<td>builtin:host.mem.swap.used</td>
+</tr>
+<tr>
+<td>dt.host.memory.usage</td>
+<td>builtin:host.mem.usage</td>
+</tr>
+<tr>
+<td>dt.host.memory.used</td>
+<td>builtin:host.mem.used</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h3>
+<p>Which Metrics Classic network metrics are not supported on Grail?</p>
+<p>Many Classic host-level network metrics can be reproduced using Grail NIC-level network metrics. Learn more in the above <a href="#new-and-missing-metric-keys">section on new and missing metric keys</a>.</p>
+<p>The following Classic network metrics are planned but not yet supported on Grail:</p>
+<ul>
+<li>builtin:host.net.nic.connectivity</li>
+<li>builtin:host.net.nic.retransmission</li>
+<li>builtin:host.net.nic.retransmissionIn</li>
+<li>builtin:host.net.nic.retransmissionOut</li>
+<li>builtin:host.net.packets.lossRate</li>
+</ul>
+<p>The following Classic network metrics are not supported on Grail:</p>
+<ul>
+<li>builtin:host.net.nic.packets.dropped</li>
+<li>builtin:host.net.nic.packets.errors</li>
+<li>builtin:host.net.nic.packets.traffic</li>
+<li>builtin:host.net.nic.traffic</li>
+<li>builtin:host.net.nic.trafficIn</li>
+<li>builtin:host.net.nic.trafficOut</li>
+<li>
+<p>builtin:host.net.sessions.connFail</p>
+</li>
+<li>
+<p>builtin:host.net.bytesRx</p>
+</li>
+<li>builtin:host.net.bytesTx</li>
+<li>builtin:host.net.packets.rxBaseReceived</li>
+<li>builtin:host.net.packets.rxBaseSent</li>
+<li>builtin:host.net.packets.rxReceived</li>
+<li>builtin:host.net.packets.rxSent</li>
+<li>builtin:host.net.sessions.errRst</li>
+<li>builtin:host.net.sessions.errTmout</li>
+<li>builtin:host.net.sessions.local.errRst</li>
+<li>builtin:host.net.sessions.local.errTmout</li>
+<li>builtin:host.net.sessions.local.new</li>
+<li>builtin:host.net.sessions.new</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.host.net.nic.bytes_rx</td>
+<td>builtin:host.net.nic.bytesRx</td>
+</tr>
+<tr>
+<td>dt.host.net.nic.bytes_tx</td>
+<td>builtin:host.net.nic.bytesTx</td>
+</tr>
+<tr>
+<td>dt.host.net.nic.link_util_rx</td>
+<td>builtin:host.net.nic.linkUtilRx</td>
+</tr>
+<tr>
+<td>dt.host.net.nic.link_util_tx</td>
+<td>builtin:host.net.nic.linkUtilTx</td>
+</tr>
+<tr>
+<td>dt.host.net.nic.packets.dropped_rx</td>
+<td>builtin:host.net.nic.packets.droppedRx</td>
+</tr>
+<tr>
+<td>dt.host.net.nic.packets.dropped_tx</td>
+<td>builtin:host.net.nic.packets.droppedTx</td>
+</tr>
+<tr>
+<td>dt.host.net.nic.packets.errors_rx</td>
+<td>builtin:host.net.nic.packets.errorsRx</td>
+</tr>
+<tr>
+<td>dt.host.net.nic.packets.errors_tx</td>
+<td>builtin:host.net.nic.packets.errorsTx</td>
+</tr>
+<tr>
+<td>dt.host.net.nic.packets.rx</td>
+<td>builtin:host.net.nic.packets.rx</td>
+</tr>
+<tr>
+<td>dt.host.net.nic.packets.tx</td>
+<td>builtin:host.net.nic.packets.tx</td>
+</tr>
+</tbody>
+</table>
+<h3 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.host.availability</td>
+<td>builtin:host.availability.state</td>
+</tr>
+<tr>
+<td>dt.host.uptime</td>
+<td>builtin:host.uptime</td>
+</tr>
+<tr>
+<td>dt.osservice.availability</td>
+<td>builtin:osservice.availability</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
+<p>What remaining Metrics Classic infrastructure metrics are not supported on Grail?</p>
+<p>The following Metrics Classic infrastructure metrics are planned but not yet supported on Grail:</p>
+<ul>
+<li>builtin:host.osProcessStats.osProcessCount</li>
+<li>builtin:host.osProcessStats.pgiCount</li>
+<li>builtin:host.osProcessStats.pgiReportedCount</li>
+</ul>
+<p>The following Classic infrastructure metrics are not supported on Grail:</p>
+<ul>
+<li>builtin:host.availability</li>
+<li>builtin:host.la.growth</li>
+<li>builtin:host.la.po</li>
+<li>builtin:host.la.to</li>
+<li>builtin:host.osService.availability</li>
+<li>builtin:host.processVisibility.topProcessesRecognizedCount</li>
+<li>builtin:host.processVisibility.topProcessesSentCount</li>
+<li>builtin:host.processVisibility.triggerCount</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.host.handles.file_descriptors_max</td>
+<td>builtin:host.handles.fileDescriptorsMax</td>
+</tr>
+<tr>
+<td>dt.host.handles.file_descriptors_used</td>
+<td>builtin:host.handles.fileDescriptorsUsed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
+<p>ActiveGate version 1.279+</p>
+<p>New Kubernetes metrics are now available for <a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">DPS</a>-enabled customers with the launch of the new Kubernetes app. The new metrics are subject to a new licensing model, as distinct from the current full-stack host units model.</p>
+<p>Metric availability:</p>
+<ul>
+<li>The old Kubernetes metrics are not available on Grail.</li>
+<li>The new Kubernetes metrics are available as soon as you start monitoring your cluster with the <a href="/docs/observe/infrastructure-observability/kubernetes-app" title="Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.">new Kubernetes app</a>. For more information on enabling this for your Kubernetes clusters, see <a href="/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience" title="Enable Kubernetes experience for existing clusters or start monitoring new clusters.">Getting started with Kubernetes experience</a>.</li>
+<li>Some of the new Kubernetes metrics are only available on Grail. They have no equivalent as Classic metrics.</li>
+</ul>
+<p>More information:</p>
+<ul>
+<li><a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">License Dynatrace</a></li>
+<li><a href="https://dt-url.net/c7038ec">Unlock the Power of DevSecOps with Newly Released Kubernetes Experience for Platform Engineeringï»¿</a></li>
+<li><a href="https://dt-url.net/882385r">Dynatrace Launches New Kubernetes Experience for Platform Engineering Teamsï»¿</a></li>
+<li><a href="/docs/analyze-explore-automate/metrics/upgrade/kubernetes-metric-migration" title="Learn more about Kubernetes metrics migration from Classic to Grail.">Kubernetes metric migration guide</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.kubernetes.container.requests_cpu</td>
+<td>builtin:kubernetes.workload.requests_cpu, builtin:kubernetes.node.requests_cpu</td>
+</tr>
+<tr>
+<td>dt.kubernetes.container.limits_cpu</td>
+<td>builtin:kubernetes.workload.limits_cpu, builtin:kubernetes.node.limits_cpu</td>
+</tr>
+<tr>
+<td>dt.kubernetes.container.requests_memory</td>
+<td>builtin:kubernetes.workload.requests_memory, builtin:kubernetes.node.requests_memory</td>
+</tr>
+<tr>
+<td>dt.kubernetes.container.limits_memory</td>
+<td>builtin:kubernetes.workload.limits_memory, builtin:kubernetes.node.limits_memory</td>
+</tr>
+<tr>
+<td>dt.kubernetes.container.cpu_usage</td>
+<td>builtin:kubernetes.workload.cpu_usage, builtin:kubernetes.node.cpu_usage</td>
+</tr>
+<tr>
+<td>dt.kubernetes.container.cpu_throttled</td>
+<td>builtin:kubernetes.workload.cpu_throttled, builtin:kubernetes.node.cpu_throttled</td>
+</tr>
+<tr>
+<td>dt.kubernetes.container.memory_working_set</td>
+<td>builtin:kubernetes.workload.memory_working_set, builtin:kubernetes.node.memory_working_set</td>
+</tr>
+<tr>
+<td>dt.kubernetes.nodes</td>
+<td>builtin:kubernetes.nodes</td>
+</tr>
+<tr>
+<td>dt.kubernetes.workloads</td>
+<td>builtin:kubernetes.workloads</td>
+</tr>
+<tr>
+<td>dt.kubernetes.pods</td>
+<td>builtin:kubernetes.pods, builtin:kubernetes.node.pods</td>
+</tr>
+<tr>
+<td>dt.kubernetes.containers</td>
+<td>builtin:kubernetes.containers</td>
+</tr>
+<tr>
+<td>dt.kubernetes.workload.pods_desired</td>
+<td>builtin:kubernetes.workload.pods_desired</td>
+</tr>
+<tr>
+<td>dt.kubernetes.pod.containers_desired</td>
+<td>builtin:kubernetes.workload.containers_desired</td>
+</tr>
+<tr>
+<td>dt.kubernetes.events</td>
+<td>builtin:kubernetes.events</td>
+</tr>
+<tr>
+<td>dt.kubernetes.node.cpu_allocatable</td>
+<td>builtin:kubernetes.node.cpu_allocatable</td>
+</tr>
+<tr>
+<td>dt.kubernetes.node.memory_allocatable</td>
+<td>builtin:kubernetes.node.memory_allocatable</td>
+</tr>
+<tr>
+<td>dt.kubernetes.node.pods_allocatable</td>
+<td>builtin:kubernetes.node.pods_allocatable</td>
+</tr>
+<tr>
+<td>dt.kubernetes.node.conditions</td>
+<td>builtin:kubernetes.node.conditions</td>
+</tr>
+<tr>
+<td>dt.kubernetes.workload.conditions</td>
+<td>builtin:kubernetes.workload.conditions</td>
+</tr>
+<tr>
+<td>dt.kubernetes.cluster.readyz</td>
+<td>builtin:kubernetes.cluster.readyz</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.requests_cpu</td>
+<td>builtin:kubernetes.resourcequota.requests_cpu</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.requests_cpu_used</td>
+<td>builtin:kubernetes.resourcequota.requests_cpu_used</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.limits_cpu</td>
+<td>builtin:kubernetes.resourcequota.limits_cpu</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.limits_cpu_used</td>
+<td>builtin:kubernetes.resourcequota.limits_cpu_used</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.requests_memory</td>
+<td>builtin:kubernetes.resourcequota.requests_memory</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.requests_memory_used</td>
+<td>builtin:kubernetes.resourcequota.requests_memory_used</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.limits_memory</td>
+<td>builtin:kubernetes.resourcequota.limits_memory</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.limits_memory_used</td>
+<td>builtin:kubernetes.resourcequota.limits_memory_used</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.pods</td>
+<td>builtin:kubernetes.resourcequota.pods</td>
+</tr>
+<tr>
+<td>dt.kubernetes.resourcequota.pods_used</td>
+<td>builtin:kubernetes.resourcequota.pods_used</td>
+</tr>
+<tr>
+<td>dt.kubernetes.container.oom_kills</td>
+<td>builtin:kubernetes.container.oom_kills</td>
+</tr>
+<tr>
+<td>dt.kubernetes.container.restarts</td>
+<td>builtin:kubernetes.container.restarts</td>
+</tr>
+<tr>
+<td>dt.kubernetes.persistentvolumeclaim.available</td>
+<td>builtin:kubernetes.persistentvolumeclaim.available</td>
+</tr>
+<tr>
+<td>dt.kubernetes.persistentvolumeclaim.capacity</td>
+<td>builtin:kubernetes.persistentvolumeclaim.capacity</td>
+</tr>
+<tr>
+<td>dt.kubernetes.persistentvolumeclaim.used</td>
+<td>builtin:kubernetes.persistentvolumeclaim.used</td>
+</tr>
+</tbody>
+</table>
+<p>The following Kubernetes-related metrics are only available on Grail.</p>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.kubernetes.pod.network_received_data</td>
+</tr>
+<tr>
+<td>dt.kubernetes.pod.network_received_errors</td>
+</tr>
+<tr>
+<td>dt.kubernetes.pod.network_received_packets_dropped</td>
+</tr>
+<tr>
+<td>dt.kubernetes.pod.network_transmitted_data</td>
+</tr>
+<tr>
+<td>dt.kubernetes.pod.network_transmitted_errors</td>
+</tr>
+<tr>
+<td>dt.kubernetes.pod.network_transmitted_packets_dropped</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mainframe">Mainframe<a class="headerlink" href="#mainframe" title="Permanent link">&para;</a></h2>
+<h3 id="host-logical-partition">Host (Logical partition)<a class="headerlink" href="#host-logical-partition" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.host.zos.gcp_time</td>
+<td>builtin:host.zos.gcpu_time</td>
+</tr>
+<tr>
+<td>dt.host.zos.gcp_usage</td>
+<td>builtin:host.cpu.gcpu.usage</td>
+</tr>
+<tr>
+<td>dt.host.zos.msu_capacity</td>
+<td>builtin:host.cpu.msu.capacity</td>
+</tr>
+<tr>
+<td>dt.host.zos.msu_hours</td>
+<td>builtin:host.zos.msu_hours</td>
+</tr>
+<tr>
+<td>dt.host.zos.msu_r4ha</td>
+<td>builtin:host.cpu.msu.avg</td>
+</tr>
+<tr>
+<td>dt.host.zos.ziip_eligible_time</td>
+<td>builtin:host.cpu.ziip.eligible</td>
+</tr>
+<tr>
+<td>dt.host.zos.ziip_time</td>
+<td>builtin:host.zos.ziip_time</td>
+</tr>
+<tr>
+<td>dt.host.zos.ziip_usage</td>
+<td>builtin:host.zos.ziip_usage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="process-subsystem">Process (Subsystem)<a class="headerlink" href="#process-subsystem" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.process.zos.gcp_time</td>
+<td>builtin:tech.generic.gcpu.time</td>
+</tr>
+<tr>
+<td>dt.process.zos.gcp_usage</td>
+<td>builtin:tech.generic.gcpu.usage</td>
+</tr>
+<tr>
+<td>dt.process.zos.service_units</td>
+<td>builtin:tech.zos.consumed_service_units</td>
+</tr>
+<tr>
+<td>dt.process.zos.ziip_eligible_time</td>
+<td>builtin:tech.generic.ziipEligible</td>
+</tr>
+<tr>
+<td>dt.process.zos.ziip_time</td>
+<td>builtin:tech.generic.ziip</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jvm">JVM<a class="headerlink" href="#jvm" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.jvm.classes.loaded</td>
+<td>builtin:tech.jvm.classes.loaded</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.classes.total</td>
+<td>builtin:tech.jvm.classes.total</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.classes.unloaded</td>
+<td>builtin:tech.jvm.classes.unloaded</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.collection_count</td>
+<td>builtin:tech.jvm.memory.pool.collectionCount</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.collection_time</td>
+<td>builtin:tech.jvm.memory.pool.collectionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.suspension_time</td>
+<td>builtin:tech.jvm.memory.gc.suspensionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.total_activation_count</td>
+<td>builtin:tech.jvm.memory.gc.activationCount</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.total_collection_time</td>
+<td>builtin:tech.jvm.memory.gc.collectionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory.free</td>
+<td>builtin:tech.jvm.memory.runtime.free</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory.max</td>
+<td>builtin:tech.jvm.memory.runtime.max</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory_pool.committed</td>
+<td>builtin:tech.jvm.memory.pool.committed</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory_pool.max</td>
+<td>builtin:tech.jvm.memory.pool.max</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory_pool.used</td>
+<td>builtin:tech.jvm.memory.pool.used</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory.total</td>
+<td>builtin:tech.jvm.memory.runtime.total</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.pgi.cpu_time_suspension</td>
+<td>builtin:tech.generic.cpu.groupSuspensionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.threads.count</td>
+<td>builtin:tech.jvm.threads.count</td>
+</tr>
+</tbody>
+</table>
+<h3 id="websphere-application-server">WebSphere Application Server<a class="headerlink" href="#websphere-application-server" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.websphere.connectionpool.concurrent_waiters</td>
+<td>builtin:tech.websphere.connectionPool.connectionPoolModule.WaitingThreadCount</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.connectionpool.free_pool_size</td>
+<td>builtin:tech.websphere.connectionPool.connectionPoolModule.FreePoolSize</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.connectionpool.in_use_time</td>
+<td>builtin:tech.websphere.connectionPool.connectionPoolModule.UseTime</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.connectionpool.percent_used</td>
+<td>builtin:tech.websphere.connectionPool.connectionPoolModule.PercentUsed</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.connectionpool.pool_size</td>
+<td>builtin:tech.websphere.connectionPool.connectionPoolModule.PoolSize</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.connectionpool.wait_time</td>
+<td>builtin:tech.websphere.connectionPool.connectionPoolModule.WaitTime</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.threadpool.active_threads</td>
+<td>builtin:tech.websphere.threadPoolModule.ActiveCount</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.threadpool.pool_size</td>
+<td>builtin:tech.websphere.threadPoolModule.PoolSize</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.servlet.live_sessions</td>
+<td>builtin:tech.websphere.servletSessionsModule.LiveCount</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.servlet.requests</td>
+<td>builtin:tech.websphere.webAppModule.RequestCountV2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="websphere-liberty-zos-connect">WebSphere Liberty / z/OS Connect<a class="headerlink" href="#websphere-liberty-zos-connect" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.websphere.connectionpool.in_use_time</td>
+<td>builtin:tech.liberty.connectionPool.InUseTime</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.connectionpool.liberty.connection_handles</td>
+<td>builtin:tech.liberty.connectionPool.ConnectionHandleCount</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.connectionpool.liberty.free_connections</td>
+<td>builtin:tech.liberty.connectionPool.FreeConnectionCount</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.connectionpool.liberty.managed_connections</td>
+<td>builtin:tech.liberty.connectionPool.ManagedConnectionCount</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.connectionpool.wait_time</td>
+<td>builtin:tech.liberty.connectionPool.WaitTime</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.threadpool.active_threads</td>
+<td>builtin:tech.liberty.ActiveThreads</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.threadpool.pool_size</td>
+<td>builtin:tech.liberty.poolsize</td>
+</tr>
+<tr>
+<td>dt.runtime.websphere.servlet.requests</td>
+<td>builtin:tech.liberty.RequestCount</td>
+</tr>
+</tbody>
+</table>
+<h2 id="runtimes">Runtimes<a class="headerlink" href="#runtimes" title="Permanent link">&para;</a></h2>
+<p>OneAgent version 1.283+</p>
+<p>We modified the availability of technology-specific metrics in Grail, which might affect the direct relation between Metrics Classic and Grail metric keys. Select  to learn more about the change.</p>
+<h3 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.apache.connections.socket_waiting_time</td>
+<td>builtin:tech.webserver.connections.socketWaitingTime</td>
+</tr>
+<tr>
+<td>dt.runtime.apache.requests</td>
+<td>builtin:tech.webserver.requests</td>
+</tr>
+<tr>
+<td>dt.runtime.apache.threads.active</td>
+<td>builtin:tech.webserver.threads.active</td>
+</tr>
+<tr>
+<td>dt.runtime.apache.threads.idle</td>
+<td>builtin:tech.webserver.threads.idle</td>
+</tr>
+<tr>
+<td>dt.runtime.apache.threads.max</td>
+<td>builtin:tech.webserver.threads.max</td>
+</tr>
+<tr>
+<td>dt.runtime.apache.traffic</td>
+<td>builtin:tech.webserver.traffic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="go">Go<a class="headerlink" href="#go" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.go.cf.auctioneer_fetch_states_duration</td>
+<td>builtin:cloud.cloudfoundry.auctioneer.fetchDuration (filtered by process type Go)</td>
+</tr>
+<tr>
+<td>dt.runtime.go.cf.auctioneer_lrp_auctions</td>
+<td>builtin:cloud.cloudfoundry.auctioneer.lprFailed (filtered by process type Go)   builtin:cloud.cloudfoundry.auctioneer.lprStarted (filtered by process type Go)</td>
+</tr>
+<tr>
+<td>dt.runtime.go.cf.auctioneer_task_auctions_failed</td>
+<td>builtin:cloud.cloudfoundry.auctioneer.taskFailed (filtered by process type Go)</td>
+</tr>
+<tr>
+<td>dt.runtime.go.gc.collection_count</td>
+<td>builtin:tech.go.memory.gcCount</td>
+</tr>
+<tr>
+<td>dt.runtime.go.gc.collection_time</td>
+<td>builtin:tech.jvm.memory.gc.collectionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.go.gc.suspension_time</td>
+<td>builtin:tech.jvm.memory.gc.suspensionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.go.http.latency</td>
+<td>builtin:tech.go.http.latency</td>
+</tr>
+<tr>
+<td>dt.runtime.go.http.requests</td>
+<td>builtin:tech.go.http.badGateways   builtin:tech.go.http.responses5xx   builtin:tech.go.http.totalRequests</td>
+</tr>
+<tr>
+<td>dt.runtime.go.memory.committed</td>
+<td>builtin:tech.go.memory.pool.committed</td>
+</tr>
+<tr>
+<td>dt.runtime.go.memory.heap</td>
+<td>builtin:tech.go.memory.heap.idle   builtin:tech.go.memory.heap.live</td>
+</tr>
+<tr>
+<td>dt.runtime.go.memory.heap.object_count</td>
+<td>builtin:tech.go.memory.heap.objCount</td>
+</tr>
+<tr>
+<td>dt.runtime.go.memory.used</td>
+<td>builtin:tech.go.memory.pool.used</td>
+</tr>
+<tr>
+<td>dt.runtime.go.cgo_calls</td>
+<td>builtin:tech.go.native.cgoCalls</td>
+</tr>
+<tr>
+<td>dt.runtime.go.sys_calls</td>
+<td>builtin:tech.go.native.sysCalls</td>
+</tr>
+<tr>
+<td>dt.process.go.scheduling.g.avg_num_of_active_routines</td>
+<td>builtin:tech.go.scheduling.g.avgNumOfActiveRoutines</td>
+</tr>
+<tr>
+<td>dt.process.go.scheduling.g.avg_num_of_inactive_routines</td>
+<td>builtin:tech.go.scheduling.g.avgNumOfInactiveRoutines</td>
+</tr>
+<tr>
+<td>dt.runtime.go.scheduler.context.idle_count</td>
+<td>builtin:tech.go.scheduling.p.idleCount</td>
+</tr>
+<tr>
+<td>dt.runtime.go.scheduler.goroutine_count</td>
+<td>builtin:tech.go.scheduling.g.runningCount   builtin:tech.go.scheduling.g.systemCount</td>
+</tr>
+<tr>
+<td>dt.runtime.go.scheduler.queue_size</td>
+<td>builtin:tech.go.scheduling.globalQSize</td>
+</tr>
+<tr>
+<td>dt.runtime.go.scheduler.worker_thread_count</td>
+<td>builtin:tech.go.scheduling.m.count   builtin:tech.go.scheduling.m.idlingCount   builtin:tech.go.scheduling.m.spinningCount</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iis">IIS<a class="headerlink" href="#iis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.iis.connections.socket_waiting_time</td>
+<td>builtin:tech.webserver.connections.socketWaitingTime</td>
+</tr>
+<tr>
+<td>dt.runtime.iis.requests</td>
+<td>builtin:tech.webserver.requests</td>
+</tr>
+<tr>
+<td>dt.runtime.iis.threads.active</td>
+<td>builtin:tech.webserver.threads.active</td>
+</tr>
+<tr>
+<td>dt.runtime.iis.threads.idle</td>
+<td>builtin:tech.webserver.threads.idle</td>
+</tr>
+<tr>
+<td>dt.runtime.iis.threads.idle</td>
+<td>builtin:tech.webserver.threads.max</td>
+</tr>
+<tr>
+<td>dt.runtime.iis.traffic</td>
+<td>builtin:tech.webserver.traffic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.jvm.classes.loaded</td>
+<td>builtin:tech.jvm.classes.loaded</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.classes.total</td>
+<td>builtin:tech.jvm.classes.total</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.classes.unloaded</td>
+<td>builtin:tech.jvm.classes.unloaded</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.collection_count</td>
+<td>builtin:tech.jvm.memory.pool.collectionCount</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.collection_time</td>
+<td>builtin:tech.jvm.memory.pool.collectionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.suspension_time</td>
+<td>builtin:tech.jvm.memory.gc.suspensionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.total_activation_count</td>
+<td>builtin:tech.jvm.memory.gc.activationCount</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.gc.total_collection_time</td>
+<td>builtin:tech.jvm.memory.gc.collectionTime</td>
+</tr>
+<tr>
+<td>dt.profiling.jvm.memory.allocation_bytes</td>
+<td>builtin:tech.jvm.memory.memAllocationBytes</td>
+</tr>
+<tr>
+<td>dt.profiling.jvm.memory.allocation_count</td>
+<td>builtin:tech.jvm.memory.memAllocationCount</td>
+</tr>
+<tr>
+<td>dt.profiling.jvm.memory.survivor_bytes</td>
+<td>builtin:tech.jvm.memory.memSurvivorsBytes</td>
+</tr>
+<tr>
+<td>dt.profiling.jvm.memory.survivor_count</td>
+<td>builtin:tech.jvm.memory.memSurvivorsCount</td>
+</tr>
+<tr>
+<td>dt.profiling.jvm.threads.active</td>
+<td>builtin:tech.jvm.threads.avgActiveThreadCount</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory_pool.committed</td>
+<td>builtin:tech.jvm.memory.pool.committed</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory.free</td>
+<td>builtin:tech.jvm.memory.runtime.free</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory.max</td>
+<td>builtin:tech.jvm.memory.runtime.max</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory_pool.max</td>
+<td>builtin:tech.jvm.memory.pool.max</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory_pool.used</td>
+<td>builtin:tech.jvm.memory.pool.used</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.memory.total</td>
+<td>builtin:tech.jvm.memory.runtime.total</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.pgi.cpu_time_suspension</td>
+<td>builtin:tech.generic.cpu.groupSuspensionTime</td>
+</tr>
+<tr>
+<td>dt.profiling.jvm.threads.inactive</td>
+<td>builtin:tech.jvm.threads.avgInactiveThreadCount</td>
+</tr>
+<tr>
+<td>dt.runtime.jvm.threads.count</td>
+<td>builtin:tech.jvm.threads.count</td>
+</tr>
+<tr>
+<td>dt.profiling.jvm.threads.cpu_time</td>
+<td>builtin:tech.jvm.threads.totalCpuTime</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nginx">NGINX<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.nginx.connections.dropped</td>
+<td>builtin:tech.webserver.connections.dropped</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.connections.handled</td>
+<td>builtin:tech.webserver.connections.handled</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.connections.reading</td>
+<td>builtin:tech.webserver.connections.reading</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.connections.waiting</td>
+<td>builtin:tech.webserver.connections.waiting</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.connections.writing</td>
+<td>builtin:tech.webserver.connections.writing</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.cache.hits</td>
+<td>builtin:tech.nginx.cache.hits</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.cache.max_space</td>
+<td>builtin:tech.nginx.cache.freeSpace</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.cache.misses</td>
+<td>builtin:tech.nginx.cache.misses</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.cache.used_space</td>
+<td>builtin:tech.nginx.cache.usedSpace</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.server_zones.requests</td>
+<td>builtin:tech.nginx.serverZones.requests</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.server_zones.traffic_in</td>
+<td>builtin:tech.nginx.serverZones.trafficIn</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.server_zones.traffic_out</td>
+<td>builtin:tech.nginx.serverZones.trafficOut</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.upstream.healthy</td>
+<td>builtin:tech.nginx.upstream.healthy</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.upstream.requests</td>
+<td>builtin:tech.nginx.upstream.requests</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.upstream.traffic_in</td>
+<td>builtin:tech.nginx.upstream.trafficIn</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.upstream.traffic_out</td>
+<td>builtin:tech.nginx.upstream.trafficOut</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.plus.upstream.unhealthy</td>
+<td>builtin:tech.nginx.upstream.unhealthy</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.requests</td>
+<td>builtin:tech.webserver.requests</td>
+</tr>
+<tr>
+<td>dt.runtime.nginx.traffic</td>
+<td>builtin:tech.webserver.traffic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="net">.NET<a class="headerlink" href="#net" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.clr.gc.collection_count</td>
+<td>builtin:tech.dotnet.gc.gen0Collections   builtin:tech.dotnet.gc.gen1Collections   builtin:tech.dotnet.gc.gen2Collections</td>
+</tr>
+<tr>
+<td>dt.runtime.clr.gc.collection_time</td>
+<td>builtin:tech.jvm.memory.gc.collectionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.clr.gc.suspension_time</td>
+<td>builtin:tech.jvm.memory.gc.suspensionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.clr.gc.time_percentage</td>
+<td>builtin:tech.dotnet.gc.timePercentage</td>
+</tr>
+<tr>
+<td>dt.runtime.clr.jit.time_percentage</td>
+<td>builtin:tech.dotnet.jit.timePercentage</td>
+</tr>
+<tr>
+<td>dt.profiling.clr.threads.count</td>
+<td>builtin:tech.dotnet.managedThreads.avgNumOfActiveThreads</td>
+</tr>
+<tr>
+<td>dt.runtime.clr.memory.consumption</td>
+<td>builtin:tech.dotnet.memory.gen0Consumption   builtin:tech.dotnet.memory.gen1Consumption   builtin:tech.dotnet.memory.gen2Consumption   builtin:tech.dotnet.memory.LOHConsumption</td>
+</tr>
+<tr>
+<td>dt.runtime.clr.threadpool.queued_work_items</td>
+<td>builtin:tech.dotnet.threadpool.queuedWorkItems</td>
+</tr>
+<tr>
+<td>dt.runtime.clr.threadpool.threads</td>
+<td>builtin:tech.dotnet.threadpool.ioCompletionThreads   builtin:tech.dotnet.threadpool.workerThreads</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nodejs">Node.js<a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.process.nodejs.avg_number_of_active_threads</td>
+<td>builtin:tech.nodejs.avgNumberOfActiveThreads</td>
+</tr>
+<tr>
+<td>dt.runtime.nodejs.eventloop.active_handles</td>
+<td>builtin:tech.nodejs.uvLoop.activeHandles</td>
+</tr>
+<tr>
+<td>dt.runtime.nodejs.eventloop.utilization</td>
+<td>builtin:tech.nodejs.uvLoop.utilization</td>
+</tr>
+<tr>
+<td>dt.runtime.nodejs.gc.collection_time</td>
+<td>builtin:tech.jvm.memory.pool.collectionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.nodejs.gc.suspension_time</td>
+<td>builtin:tech.jvm.memory.gc.suspensionTime</td>
+</tr>
+<tr>
+<td>dt.runtime.nodejs.memory.used</td>
+<td>builtin:tech.nodejs.v8heap.used</td>
+</tr>
+<tr>
+<td>dt.runtime.nodejs.memory.total</td>
+<td>builtin:tech.nodejs.v8heap.total</td>
+</tr>
+</tbody>
+</table>
+<h3 id="php">PHP<a class="headerlink" href="#php" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.runtime.php.gc.collected_count</td>
+<td>builtin:tech.php.phpGc.collectedCount</td>
+</tr>
+<tr>
+<td>dt.runtime.php.gc.duration_ms</td>
+<td>builtin:tech.php.phpGc.durationMs</td>
+</tr>
+<tr>
+<td>dt.runtime.php.gc.effectiveness</td>
+<td>builtin:tech.php.phpGc.effectiveness</td>
+</tr>
+<tr>
+<td>dt.runtime.php.jit.buffer_free</td>
+<td>builtin:tech.php.phpOpcache.jit.bufferFree</td>
+</tr>
+<tr>
+<td>dt.runtime.php.jit.buffer_size</td>
+<td>builtin:tech.php.phpOpcache.jit.bufferSize</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.blocklist_misses</td>
+<td>builtin:tech.php.phpOpcache.statistics.blocklistMisses</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.cached_keys</td>
+<td>builtin:tech.php.phpOpcache.statistics.cachedKeys</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.cached_scripts</td>
+<td>builtin:tech.php.phpOpcache.statistics.cachedScripts</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.hits</td>
+<td>builtin:tech.php.phpOpcache.statistics.hits</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.max_cached_keys</td>
+<td>builtin:tech.php.phpOpcache.statistics.maxCachedCachedKeys</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.memory.free</td>
+<td>builtin:tech.php.phpOpcache.memory.free</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.memory.used</td>
+<td>builtin:tech.php.phpOpcache.memory.used</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.memory.wasted</td>
+<td>builtin:tech.php.phpOpcache.memory.wasted</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.misses</td>
+<td>builtin:tech.php.phpOpcache.statistics.misses</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.number_of_strings</td>
+<td>builtin:tech.php.phpOpcache.strings.numberOfStrings</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.restarts_hash</td>
+<td>builtin:tech.php.phpOpcache.restarts.hash</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.restarts_manual</td>
+<td>builtin:tech.php.phpOpcache.restarts.manual</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.restarts_out_of_memory</td>
+<td>builtin:tech.php.phpOpcache.restarts.outOfMemory</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.strings_buffer_size</td>
+<td>builtin:tech.php.phpOpcache.strings.bufferSize</td>
+</tr>
+<tr>
+<td>dt.runtime.php.opcache.strings_used_memory</td>
+<td>builtin:tech.php.phpOpcache.strings.usedMemory</td>
+</tr>
+<tr>
+<td>dt.process.php.threads.avg_num_of_active_threads</td>
+<td>builtin:tech.php.threads.avgNumOfActiveThreads</td>
+</tr>
+<tr>
+<td>dt.process.php.threads.avg_num_of_inactive_threads</td>
+<td>builtin:tech.php.threads.avgNumOfInactiveThreads</td>
+</tr>
+</tbody>
+</table>
+<h2 id="processes">Processes<a class="headerlink" href="#processes" title="Permanent link">&para;</a></h2>
+<p>Process metrics replace Metrics Classic generic technology metrics with the prefix <code>builtin:tech.generic</code>.</p>
+<p>Which Metrics Classic generic technology metrics are not supported on Grail?</p>
+<p>The following Metrics Classic generic technology metrics are planned but not yet supported on Grail:</p>
+<ul>
+<li>builtin:tech.generic.network.packets.retransmission</li>
+<li>builtin:tech.generic.network.packets.retransmissionIn</li>
+<li>builtin:tech.generic.network.packets.retransmissionOut</li>
+<li>builtin:tech.generic.network.sessions.connectivity</li>
+</ul>
+<p>The following Metrics Classic generic technology metrics are not supported on Grail:</p>
+<ul>
+<li>builtin:tech.generic.network.traffic.traffic</li>
+<li>builtin:tech.generic.network.traffic.trafficIn</li>
+<li>
+<p>builtin:tech.generic.network.traffic.trafficOut</p>
+</li>
+<li>
+<p>builtin:process.bytesReceived</p>
+</li>
+<li>builtin:process.bytesSent</li>
+<li>builtin:process.cpu</li>
+<li>builtin:process.memory</li>
+<li>builtin:tech.customDevice.count</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.process.availability</td>
+<td>builtin:pgi.availability.state</td>
+</tr>
+<tr>
+<td>dt.process.cpu.usage</td>
+<td>builtin:tech.generic.cpu.usage</td>
+</tr>
+<tr>
+<td>dt.process.handles.file_descriptors_max</td>
+<td>builtin:tech.generic.handles.fileDescriptorsMax</td>
+</tr>
+<tr>
+<td>dt.process.handles.file_descriptors_percent_used</td>
+<td>builtin:tech.generic.handles.fileDescriptorsPercentUsed</td>
+</tr>
+<tr>
+<td>dt.process.handles.file_descriptors_used</td>
+<td>builtin:tech.generic.handles.fileDescriptorsUsed</td>
+</tr>
+<tr>
+<td>dt.process.io.bytes_read</td>
+<td>builtin:tech.generic.io.bytesRead</td>
+</tr>
+<tr>
+<td>dt.process.io.bytes_written</td>
+<td>builtin:tech.generic.io.bytesWritten</td>
+</tr>
+<tr>
+<td>dt.process.io.bytes_total</td>
+<td>builtin:tech.generic.io.bytesTotal</td>
+</tr>
+<tr>
+<td>dt.process.io.req_bytes_read</td>
+<td>builtin:tech.generic.io.reqBytesRead</td>
+</tr>
+<tr>
+<td>dt.process.io.req_bytes_write</td>
+<td>builtin:tech.generic.io.reqBytesWrite</td>
+</tr>
+<tr>
+<td>dt.process.memory.exhausted_memory</td>
+<td>builtin:tech.generic.mem.exhaustedMem</td>
+</tr>
+<tr>
+<td>dt.process.memory.page_faults</td>
+<td>builtin:tech.generic.mem.pageFaults</td>
+</tr>
+<tr>
+<td>dt.process.memory.usage</td>
+<td>builtin:tech.generic.mem.usage</td>
+</tr>
+<tr>
+<td>dt.process.memory.working_set_size</td>
+<td>builtin:tech.generic.mem.workingSetSize</td>
+</tr>
+<tr>
+<td>dt.process.network.bytes_rx</td>
+<td>builtin:tech.generic.network.bytesRx</td>
+</tr>
+<tr>
+<td>dt.process.network.bytes_tx</td>
+<td>builtin:tech.generic.network.bytesTx</td>
+</tr>
+<tr>
+<td>dt.process.network.latency</td>
+<td>builtin:tech.generic.network.latency</td>
+</tr>
+<tr>
+<td>dt.process.network.load</td>
+<td>builtin:tech.generic.network.load</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.base_re_rx</td>
+<td>builtin:tech.generic.network.packets.baseReRx</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.base_re_rx_aggr</td>
+<td>builtin:tech.generic.network.packets.baseReRxAggr</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.base_re_tx</td>
+<td>builtin:tech.generic.network.packets.baseReTx</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.base_re_tx_aggr</td>
+<td>builtin:tech.generic.network.packets.baseReTxAggr</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.re_rx</td>
+<td>builtin:tech.generic.network.packets.reRx</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.re_rx_aggr</td>
+<td>builtin:tech.generic.network.packets.reRxAggr</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.re_tx</td>
+<td>builtin:tech.generic.network.packets.reTx</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.re_tx_aggr</td>
+<td>builtin:tech.generic.network.packets.reTxAggr</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.rx</td>
+<td>builtin:tech.generic.network.packets.rx</td>
+</tr>
+<tr>
+<td>dt.process.network.packets.tx</td>
+<td>builtin:tech.generic.network.packets.tx</td>
+</tr>
+<tr>
+<td>dt.process.network.round_trip</td>
+<td>builtin:tech.generic.network.roundTrip</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.new</td>
+<td>builtin:tech.generic.network.sessions.new</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.new_aggr</td>
+<td>builtin:tech.generic.network.sessions.newAggr</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.new_local</td>
+<td>builtin:tech.generic.network.sessions.newLocal</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.reset</td>
+<td>builtin:tech.generic.network.sessions.reset</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.reset_aggr</td>
+<td>builtin:tech.generic.network.sessions.resetAggr</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.reset_local</td>
+<td>builtin:tech.generic.network.sessions.resetLocal</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.timeout</td>
+<td>builtin:tech.generic.network.sessions.timeout</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.timeout_aggr</td>
+<td>builtin:tech.generic.network.sessions.timeoutAggr</td>
+</tr>
+<tr>
+<td>dt.process.network.sessions.timeout_local</td>
+<td>builtin:tech.generic.network.sessions.timeoutLocal</td>
+</tr>
+<tr>
+<td>dt.process.network.throughput</td>
+<td>builtin:tech.generic.network.throughput</td>
+</tr>
+<tr>
+<td>dt.process.threads_exhausted</td>
+<td>builtin:tech.generic.threadsExhausted</td>
+</tr>
+<tr>
+<td>dt.process.process_count</td>
+<td>builtin:tech.generic.processCount</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nettracer">Nettracer<a class="headerlink" href="#nettracer" title="Permanent link">&para;</a></h3>
+<p>Which Metrics Classic nettracer metrics are not supported on Grail?</p>
+<p>The following Metrics Classic nettracer metrics are planned but not yet supported on Grail:</p>
+<ul>
+<li>builtin:tech.nettracer.retr_percentage</li>
+</ul>
+<p>The following Metrics Classic nettracer metrics are not supported on Grail:</p>
+<ul>
+<li>builtin:tech.nettracer.traffic</li>
+<li>builtin:tech.nettracer.traffic_rx</li>
+<li>builtin:tech.nettracer.traffic_tx</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.process.nettracer.bytes_rx</td>
+<td>builtin:tech.nettracer.bytes_rx</td>
+</tr>
+<tr>
+<td>dt.process.nettracer.bytes_tx</td>
+<td>builtin:tech.nettracer.bytes_tx</td>
+</tr>
+<tr>
+<td>dt.process.nettracer.pkts_retr</td>
+<td>builtin:tech.nettracer.pkts_retr</td>
+</tr>
+<tr>
+<td>dt.process.nettracer.pkts_rx</td>
+<td>builtin:tech.nettracer.pkts_rx</td>
+</tr>
+<tr>
+<td>dt.process.nettracer.pkts_tx</td>
+<td>builtin:tech.nettracer.pkts_tx</td>
+</tr>
+<tr>
+<td>dt.process.nettracer.rtt</td>
+<td>builtin:tech.nettracer.rtt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<p>Security metrics have been replaced with <a href="/docs/secure/threat-observability/concepts#security-events" title="Basic concepts related to Threat Observability">security events</a>. Consequently, security metrics are not supported on Grail. This affects all metrics with the prefix <code>builtin:security</code>.</p>
+<h2 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h2>
+<p>We modified the availability of service metrics in Grail, which might affect the direct relation between Metrics Classic and Grail metric keys. Select  to learn more about the change.</p>
+<h3 id="calculated-service-metrics">Calculated service metrics<a class="headerlink" href="#calculated-service-metrics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service.<code>&lt;my_calculated_service_metric&gt;</code></td>
+<td>calc:service:<code>&lt;my_calculated_service_metric&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Dimensions in Grail</p>
+<p>With the upgrade of calculated service metrics to Grail, the existing dimension is mantained and any placeholders used in the dimension value are separated into additional distinct metric dimensions, that allow you to do querying in a simplified and more powerful way. The following sections list the availability of dimensions once you enable a calculated service metric in Grail.</p>
+<h4 id="new-dimensions">New dimensions<a class="headerlink" href="#new-dimensions" title="Permanent link">&para;</a></h4>
+<p>The following dimensions are added to calculated service metrics in Grail. They apply only to full requests, unless specified differently.</p>
+<ul>
+<li>aws.tags.*</li>
+<li>azure.tags.*</li>
+<li>dt.cost.costcenter <a href="#fn-1-1-def">1</a></li>
+<li>dt.cost.product <a href="#fn-1-1-def">1</a></li>
+<li>dt.entity.kubernetes_cluster</li>
+<li>dt.entity.process_group <a href="#fn-1-1-def">1</a></li>
+<li>dt.host_group.id</li>
+<li>dt.security_context <a href="#fn-1-1-def">1</a></li>
+<li>dt.service.name <a href="#fn-1-1-def">1</a></li>
+<li>failed (<code>true</code> or <code>false</code>) <a href="#fn-1-1-def">1</a></li>
+<li>gcp.tags.*</li>
+<li>k8s.cluster.name</li>
+<li>k8s.cluster.uid</li>
+<li>k8s.namespace.annotation.*</li>
+<li>k8s.namespace.label.*</li>
+<li>k8s.namespace.name</li>
+<li>k8s.pod.annotation.*</li>
+<li>k8s.pod.label.*</li>
+<li>k8s.workload.name</li>
+<li>k8s.workload.annotation.*</li>
+<li>k8s.workload.kind</li>
+<li>k8s.workload.label.*</li>
+<li>primary_tags.*</li>
+<li>service.name</li>
+</ul>
+<p>1</p>
+<p>Applicable to both full and external requests. To learn more about requests types, see <a href="/docs/discover-dynatrace/get-started/glossary#request" title="Get acquainted with Dynatrace terminology.">Glossary - request</a>.</p>
+<h4 id="dimensions-automatically-converted-from-classic-metric-placeholders">Dimensions automatically converted from Classic metric placeholders<a class="headerlink" href="#dimensions-automatically-converted-from-classic-metric-placeholders" title="Permanent link">&para;</a></h4>
+<p>In Grail, placeholders used in the <a href="/docs/observe/application-observability/services/calculated-service-metric#create" title="Learn how to create a calculated metric based on web requests."><strong>Dimension value pattern</strong></a> are mapped to distinct dimension keys, allowing more flexibility and powerful querying. The following Grail dimension keys are automatically created from the placeholders contained in your Classic dimension, according to <a href="/docs/semantic-dictionary/fields" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">Global field reference</a>.</p>
+<p><strong>Metric dimension (Grail)</strong>: <strong>Metric placeholder (Classic)</strong></p>
+<ul>
+<li>cics.transaction.system_id: CICS:SystemId</li>
+<li>cics.transaction.task_id: CICS:TaskId (INTEGER)</li>
+<li>cics.transaction.user_id: CICS:UserId</li>
+<li>code.function: RMI:Method</li>
+<li>code.namespace: RMI:Class</li>
+<li>ctg.request.gateway_url: CTG:GatewayURL</li>
+<li>ctg.request.server_id: CTG:ServerName</li>
+<li>custom_service.method: CustomService:Method</li>
+<li>custom_service.name: CustomService:Class</li>
+<li>db.connection_string: Database:URL</li>
+<li>db.namespace: Database:Name</li>
+<li>db.query.text: Database-Statement</li>
+<li>db.system: Database:Type</li>
+<li>deployment.release_build_version: Request:ApplicationBuildVersion</li>
+<li>deployment.release_product: Request:ApplicationProduct</li>
+<li>deployment.release_stage: Request:ApplicationStage</li>
+<li>deployment.release_version: Request:ApplicationReleaseVersion</li>
+<li>endpoint.name: Request:Name</li>
+<li>exception.message: Exception:Message</li>
+<li>exception.type: Exception:Class</li>
+<li>http.request.method: HTTP-Method</li>
+<li>http.response.status_code: HTTP-Status</li>
+<li>http.server_name: Service:WebServerName</li>
+<li>ibm.cics.program: CICS:ProgramName</li>
+<li>messaging.akka.actor.path: AKKA:ActorPath</li>
+<li>messaging.akka.actor.system: AKKA:ActorSystem</li>
+<li>messaging.akka.actor.type: AKKA:ActorClassName</li>
+<li>messaging.akka.message.type: AKKA:ActorMessageType</li>
+<li>messaging.source.kind: Messaging:DestinationType</li>
+<li>messaging.source.name: Messaging:QueueName</li>
+<li>messaging.source.temporary: Messaging:IsTemporary</li>
+<li>messaging.system: Messaging:QueueVendor</li>
+<li>request_attribute.<strong>attribute_name</strong>: RequestAttribute:, BEGINS_WITH</li>
+<li>rpc.method: Remote:Method</li>
+<li>rpc.namespace: Service:WebServiceNamespace</li>
+<li>rpc.service: Service:WebServiceName</li>
+<li>server.address: Database:Host</li>
+<li>servlet.context.name: Service:WebApplicationId</li>
+<li>servlet.context.path: Service:WebContextRoot</li>
+<li>url.domain: URL:Host</li>
+<li>url.full: URL</li>
+<li>url.path: URL:Path</li>
+<li>url.port: URL:Port</li>
+<li>url.query: URL:Query</li>
+<li>zos.transaction.id: CICS:TransactionId</li>
+<li>zos.transaction.id: CTG:TransactionId</li>
+<li>zos.transaction.id: IMS:TransactionId</li>
+</ul>
+<h4 id="unsupported-placeholders">Unsupported placeholders<a class="headerlink" href="#unsupported-placeholders" title="Permanent link">&para;</a></h4>
+<p>The following placeholders are not mapped to distinct Grail metric dimension keys because they either do not align with the Dynatrace Semantic Dictionary used in Grail or represent concepts that are no longer relevant within the context of Grail metrics. Placeholder values remain accessible through the dimension created when the calculated service metric was initially defined. If needed, you can use string operations to extract and work with the specific placeholder values.</p>
+<ul>
+<li>AzureFunctions:FunctionName</li>
+<li>AzureFunctions:SiteName</li>
+<li>ESB:ApplicationName</li>
+<li>ESB:LibraryName</li>
+<li>ESB:MessageFlowName</li>
+<li>HTTP-StatusClass</li>
+</ul>
+<p>Go to <strong>Settings Classic</strong> and modify the metric definition to use <code>HTTP-Status</code> instead. These placeholders are then automatically converted.
+* IMS:ProgramName
+* IMS:UserId
+* Remote:Endpoint
+* Request:Failure
+* Request:IsKeyRequest
+* Request:Type
+* Relative-URL</p>
+<p>Go to <strong>Settings Classic</strong> and modify the metric definition to use <code>URL:Path</code> and <code>URL:Query</code> instead. These placeholders are then automatically converted.
+* Service:Istance
+* Service:Name</p>
+<p>In <strong>Notebooks</strong>, use <code>entityName(dt.entity.service)</code> to obtain comparable results.
+* Service:Port
+* Service:PublicDomainName
+* WebService:Endpoint</p>
+<p>In <strong>Notebooks</strong>, use <code>entityName(dt.entity.service)</code> to obtain comparable results.
+* WebService:Method</p>
+<p>Go to <strong>Settings Classic</strong> and modify the metric definition to use <code>Request:Name</code> instead. This placeholder is then automatically converted.</p>
+<h3 id="message-processing">Message processing<a class="headerlink" href="#message-processing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+<th>Description</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.service.messaging.publish.count</td>
+<td>None</td>
+<td>The number of messages sent to queues or topics.</td>
+<td>count</td>
+</tr>
+<tr>
+<td>dt.service.messaging.receive.count</td>
+<td>None</td>
+<td>The number of messages received from queues or topics.</td>
+<td>count</td>
+</tr>
+<tr>
+<td>dt.service.messaging.process.count</td>
+<td>None</td>
+<td>The number of messages successfully processed.</td>
+<td>count</td>
+</tr>
+<tr>
+<td>dt.service.messaging.process.failure_count</td>
+<td>None</td>
+<td>The number of messages that failed processing.</td>
+<td>count</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dimensions-in-grail">Dimensions in Grail<a class="headerlink" href="#dimensions-in-grail" title="Permanent link">&para;</a></h3>
+<p>The new metrics for queues support the following dimensions.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>messaging.destination.name</td>
+<td>The name of the queue or topic</td>
+<td><code>authorQueue</code>, <code>orderEvents</code></td>
+</tr>
+<tr>
+<td>dt.entity.service</td>
+<td>The service identifier</td>
+<td><code>spring-kafka-producer</code></td>
+</tr>
+<tr>
+<td>messaging.system</td>
+<td>The messaging platform</td>
+<td><code>kafka</code>, <code>rabbitmq</code>, <code>aws_sqs</code></td>
+</tr>
+<tr>
+<td>aws.account.id</td>
+<td>The AWS account identifier</td>
+<td><code>123456789012</code></td>
+</tr>
+<tr>
+<td>aws.region</td>
+<td>The AWS region</td>
+<td><code>us-east-1</code></td>
+</tr>
+<tr>
+<td>k8s.cluster.name</td>
+<td>The name of the Kubernetes cluster</td>
+<td><code>prod-cluster</code></td>
+</tr>
+<tr>
+<td>k8s.namespace.name</td>
+<td>The name of the Kubernetes namespace</td>
+<td><code>payment-services</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h3>
+<p>Metric key (Grail)</p>
+<p>Metric key (Classic)</p>
+<p>dt.service.request.count</p>
+<p>builtin:service.errors.client.successCount <br />
+builtin:service.errors.fivexx.count <br />
+builtin:service.errors.fivexx.rate <br />
+builtin:service.errors.fivexx.successCount <br />
+builtin:service.errors.fourxx.count <br />
+builtin:service.errors.fourxx.rate <br />
+builtin:service.errors.fourxx.successCount <br />
+builtin:service.errors.server.count <br />
+builtin:service.errors.server.rate <br />
+builtin:service.errors.server.successCount <br />
+builtin:service.errors.total.rate <br />
+builtin:service.errors.total.successCount <br />
+builtin:service.keyRequest.count.client <br />
+builtin:service.keyRequest.count.server <br />
+builtin:service.keyRequest.count.total <br />
+builtin:service.keyRequest.errors.client.successCount <br />
+builtin:service.keyRequest.errors.fivexx.count <br />
+builtin:service.keyRequest.errors.fivexx.rate <br />
+builtin:service.keyRequest.errors.fivexx.successCount <br />
+builtin:service.keyRequest.errors.fourxx.count <br />
+builtin:service.keyRequest.errors.fourxx.rate <br />
+builtin:service.keyRequest.errors.fourxx.successCount <br />
+builtin:service.keyRequest.errors.server.count <br />
+builtin:service.keyRequest.errors.server.rate <br />
+builtin:service.keyRequest.errors.server.successCount <br />
+builtin:service.keyRequest.successes.server.rate <br />
+builtin:service.request.count<br />
+builtin:service.request.count_chart<br />
+builtin:service.request.count_service_aggregation<br />
+builtin:service.requestCount.client<br />
+builtin:service.requestCount.server<br />
+builtin:service.requestCount.total<br />
+builtin:service.successes.server.rate</p>
+<p>dt.service.request.failure_count</p>
+<p>builtin:service.errors.client.count<br />
+builtin:service.errors.client.rate<br />
+builtin:service.errors.total.count<br />
+builtin:service.keyRequest.errors.client.count <br />
+builtin:service.keyRequest.errors.client.rate <br />
+builtin:service.request.failure_count<br />
+builtin:service.request.failure_count_chart<br />
+builtin:service.request.failure_count_service_aggregation</p>
+<p>dt.service.request.response_time</p>
+<p>builtin:service.keyRequest.response.client<br />
+builtin:service.keyRequest.response.server<br />
+builtin:service.keyRequest.response.time<br />
+builtin:service.request.response_time<br />
+builtin:service.request.response_time_chart<br />
+builtin:service.request.response_time_service_aggregation<br />
+builtin:service.response.client<br />
+builtin:service.response.server<br />
+builtin:service.response.time</p>
+<h3 id="message-processing_1">Message processing<a class="headerlink" href="#message-processing_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+<th>Description</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.service.messaging.publish.count</td>
+<td>None</td>
+<td>The number of messages sent to queues or topics.</td>
+<td>count</td>
+</tr>
+<tr>
+<td>dt.service.messaging.receive.count</td>
+<td>None</td>
+<td>The number of messages received from queues or topics.</td>
+<td>count</td>
+</tr>
+<tr>
+<td>dt.service.messaging.process.count</td>
+<td>None</td>
+<td>The number of messages successfully processed.</td>
+<td>count</td>
+</tr>
+<tr>
+<td>dt.service.messaging.process.failure_count</td>
+<td>None</td>
+<td>The number of messages that failed processing.</td>
+<td>count</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dimensions-in-grail_1">Dimensions in Grail<a class="headerlink" href="#dimensions-in-grail_1" title="Permanent link">&para;</a></h3>
+<p>The new metrics for queues support the following dimensions.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>messaging.destination.name</td>
+<td>The name of the queue or topic</td>
+<td><code>authorQueue</code>, <code>orderEvents</code></td>
+</tr>
+<tr>
+<td>dt.entity.service</td>
+<td>The service identifier</td>
+<td><code>spring-kafka-producer</code></td>
+</tr>
+<tr>
+<td>messaging.system</td>
+<td>The messaging platform</td>
+<td><code>kafka</code>, <code>rabbitmq</code>, <code>aws_sqs</code></td>
+</tr>
+<tr>
+<td>aws.account.id</td>
+<td>The AWS account identifier</td>
+<td><code>123456789012</code></td>
+</tr>
+<tr>
+<td>aws.region</td>
+<td>The AWS region</td>
+<td><code>us-east-1</code></td>
+</tr>
+<tr>
+<td>k8s.cluster.name</td>
+<td>The name of the Kubernetes cluster</td>
+<td><code>prod-cluster</code></td>
+</tr>
+<tr>
+<td>k8s.namespace.name</td>
+<td>The name of the Kubernetes namespace</td>
+<td><code>payment-services</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="service-mesh">Service mesh<a class="headerlink" href="#service-mesh" title="Permanent link">&para;</a></h3>
+<p>Metric key (Grail)</p>
+<p>Metric key (Classic)</p>
+<p>dt.service.request.service_mesh.count</p>
+<p>builtin:service.request.service_mesh.count<br />
+builtin:service.request.service_mesh.count_service_aggregation</p>
+<p>dt.service.request.service_mesh.failure_count</p>
+<p>builtin:service.request.service_mesh.failure_count<br />
+builtin:service.request.service_mesh.failure_count_service_aggregation</p>
+<p>dt.service.request.service_mesh.response_time</p>
+<p>builtin:service.request.service_mesh.response_time<br />
+builtin:service.request.service_mesh.response_time_service_aggregation</p>
+<h2 id="synthetic-monitoring">Synthetic Monitoring<a class="headerlink" href="#synthetic-monitoring" title="Permanent link">&para;</a></h2>
+<h3 id="http-monitor-metrics">HTTP monitor metrics<a class="headerlink" href="#http-monitor-metrics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.synthetic.http.response_size</td>
+<td>builtin:synthetic.http.responseSize.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.duration</td>
+<td>builtin:synthetic.http.duration.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.dns</td>
+<td>builtin:synthetic.http.dns.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.tcp_connect_time</td>
+<td>builtin:synthetic.http.tcpConnectTime.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.tls_handshake_time</td>
+<td>builtin:synthetic.http.tlsHandshakeTime.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.time_to_first_byte</td>
+<td>builtin:synthetic.http.timeToFirstByte.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.redirects_count</td>
+<td>builtin:synthetic.http.redirectsCount.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.redirects_time</td>
+<td>builtin:synthetic.http.redirectsTime.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.executions</td>
+<td>builtin:synthetic.http.execution.status</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.duration_threshold</td>
+<td>builtin:synthetic.http.durationThreshold</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.duration</td>
+<td>builtin:synthetic.http.request.duration.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.response_size</td>
+<td>builtin:synthetic.http.request.responseSize.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.tcp_connect_time</td>
+<td>builtin:synthetic.http.request.tcpConnectTime.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.tls_handshake_time</td>
+<td>builtin:synthetic.http.request.tlsHandshakeTime.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.time_to_first_byte</td>
+<td>builtin:synthetic.http.request.timeToFirstByte.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.dns</td>
+<td>builtin:synthetic.http.request.dns.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.redirects_count</td>
+<td>builtin:synthetic.http.request.redirectsCount.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.redirects_time</td>
+<td>builtin:synthetic.http.request.redirectsTime.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.duration_threshold</td>
+<td>builtin:synthetic.http.request.durationThreshold</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.executions</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.availability</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.waiting_time</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dt.synthetic.http.request.waiting_time</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="browser-monitor-metrics">Browser monitor metrics<a class="headerlink" href="#browser-monitor-metrics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.synthetic.browser.executions</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dt.synthetic.browser.event.executions</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dt.synthetic.browser.availability</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dt.synthetic.browser.event.duration</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dt.synthetic.browser.duration</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="third-party-metrics">Third party metrics<a class="headerlink" href="#third-party-metrics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.synthetic.third_party.response_time</td>
+<td>builtin:synthetic.external.responseTime.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.third_party.quality</td>
+<td>builtin:synthetic.external.quality.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.third_party.step.response_time</td>
+<td>builtin:synthetic.external.step.responseTime.geo</td>
+</tr>
+<tr>
+<td>dt.synthetic.third_party.executions</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dt.synthetic.third_party.step.executions</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dt.synthetic.third_party.availability</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-availability-monitors-metrics">Network availability monitors metrics<a class="headerlink" href="#network-availability-monitors-metrics" title="Permanent link">&para;</a></h3>
+<h4 id="common-monitor-metrics">Common monitor metrics<a class="headerlink" href="#common-monitor-metrics" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.synthetic.multi_protocol.execution_time</td>
+<td>builtin:synthetic.multiProtocol.executionTime</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.success_rate</td>
+<td>builtin:synthetic.multiProtocol.successRate</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.availability</td>
+<td>builtin:synthetic.multiProtocol.availability</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.executions</td>
+<td>builtin:synthetic.multiProtocol.executions</td>
+</tr>
+</tbody>
+</table>
+<h4 id="common-step-metrics">Common step metrics<a class="headerlink" href="#common-step-metrics" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.synthetic.multi_protocol.step.execution_time</td>
+<td>builtin:synthetic.multiProtocol.step.executionTime</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.step.success_rate</td>
+<td>builtin:synthetic.multiProtocol.step.successRate</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.step.availability</td>
+<td>builtin:synthetic.multiProtocol.step.availability</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.step.executions</td>
+<td>builtin:synthetic.multiProtocol.step.executions</td>
+</tr>
+</tbody>
+</table>
+<h4 id="common-request-metrics">Common request metrics<a class="headerlink" href="#common-request-metrics" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.synthetic.multi_protocol.request.availability</td>
+<td>builtin:synthetic.multiProtocol.request.availability</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.request.executions</td>
+<td>builtin:synthetic.multiProtocol.request.executions</td>
+</tr>
+</tbody>
+</table>
+<h4 id="icmp-metrics">ICMP metrics<a class="headerlink" href="#icmp-metrics" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.synthetic.multi_protocol.icmp.success_rate</td>
+<td>builtin:synthetic.multiProtocol.icmp.successRate</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.icmp.packets_sent</td>
+<td>builtin:synthetic.multiProtocol.icmp.packetsSent</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.icmp.packets_received</td>
+<td>builtin:synthetic.multiProtocol.icmp.packetsReceived</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.icmp.round_trip_time</td>
+<td>builtin:synthetic.multiProtocol.icmp.roundTripTime</td>
+</tr>
+<tr>
+<td>dt.synthetic.multi_protocol.icmp.request_execution_time</td>
+<td>builtin:synthetic.multiProtocol.icmp.requestExecutionTime</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tcp-metrics">TCP metrics<a class="headerlink" href="#tcp-metrics" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.synthetic.multi_protocol.tcp.connection_time</td>
+<td>builtin:synthetic.multiProtocol.tcp.connectionTime</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dns-metrics">DNS metrics<a class="headerlink" href="#dns-metrics" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Metric key (Grail)</th>
+<th>Metric key (Classic)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dt.synthetic.multi_protocol.dns.resolution_time</td>
+<td>builtin:synthetic.multiProtocol.dns.resolutionTime</td>
+</tr>
+</tbody>
+</table>
+<h2 id="unsupported-metrics">Unsupported metrics<a class="headerlink" href="#unsupported-metrics" title="Permanent link">&para;</a></h2>
+<p>The following categories of Metrics Classic metrics are not supported on Grail:</p>
+<ul>
+<li><strong>A2TM</strong> metrics, including all metrics with the prefix <code>builtin:a2tm</code>.</li>
+<li><strong>Lima</strong> metrics, including all metrics with the prefix <code>builtin:lima</code>.</li>
+<li><strong>Classic Logs</strong> metrics, including all metrics with the prefix <code>builtin:log</code>.</li>
+<li><strong>NAM</strong> metrics, including all metrics with the prefix <code>builtin:nam</code>.</li>
+<li><strong>Span</strong> metrics, including all metrics with the prefix <code>builtin:span</code>.</li>
+<li><strong>RUM Classic</strong> metrics, including all metrics with the prefix <code>builtin:apps</code>. For details, see <a href="/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration" title="See how RUM Classic metrics map to their logical equivalents in Grail.">RUM metrics migration</a>.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

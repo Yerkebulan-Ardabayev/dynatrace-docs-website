@@ -986,13 +986,13 @@
 
 <h1 id="dynatrace-documentation-manageidentity-access-management">Dynatrace Documentation: manage/identity-access-management<a class="headerlink" href="#dynatrace-documentation-manageidentity-access-management" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 11</p>
+<p>Files combined: 13</p>
 <hr />
 <h2 id="source-access-tokensmd">Source: access-tokens.md<a class="headerlink" href="#source-access-tokensmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Access tokens classic
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens
-scraped: 2026-02-15T21:21:14.219764</p>
+scraped: 2026-02-16T09:22:07.175320</p>
 <hr />
 <h1 id="access-tokens-classic">Access tokens classic<a class="headerlink" href="#access-tokens-classic" title="Permanent link">&para;</a></h1>
 <h1 id="access-tokens-classic_1">Access tokens classic<a class="headerlink" href="#access-tokens-classic_1" title="Permanent link">&para;</a></h1>
@@ -1398,7 +1398,7 @@ scraped: 2026-02-15T09:06:25.796733</p>
 <hr />
 <p>title: Identity and Access Management limits
 source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-limits
-scraped: 2026-02-15T21:26:00.378921</p>
+scraped: 2026-02-16T09:28:48.694109</p>
 <hr />
 <h1 id="identity-and-access-management-limits">Identity and Access Management limits<a class="headerlink" href="#identity-and-access-management-limits" title="Permanent link">&para;</a></h1>
 <h1 id="identity-and-access-management-limits_1">Identity and Access Management limits<a class="headerlink" href="#identity-and-access-management-limits_1" title="Permanent link">&para;</a></h1>
@@ -1495,7 +1495,7 @@ scraped: 2026-02-15T21:26:00.378921</p>
 <hr />
 <p>title: Policy boundaries
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries
-scraped: 2026-02-15T21:24:37.190901</p>
+scraped: 2026-02-16T09:28:15.568879</p>
 <hr />
 <h1 id="policy-boundaries">Policy boundaries<a class="headerlink" href="#policy-boundaries" title="Permanent link">&para;</a></h1>
 <h1 id="policy-boundaries_1">Policy boundaries<a class="headerlink" href="#policy-boundaries_1" title="Permanent link">&para;</a></h1>
@@ -1673,7 +1673,7 @@ scraped: 2026-02-15T21:24:37.190901</p>
 <hr />
 <p>title: Manage IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt
-scraped: 2026-02-15T21:12:00.444032</p>
+scraped: 2026-02-16T09:26:42.704801</p>
 <hr />
 <h1 id="manage-iam-policies">Manage IAM policies<a class="headerlink" href="#manage-iam-policies" title="Permanent link">&para;</a></h1>
 <h1 id="manage-iam-policies_1">Manage IAM policies<a class="headerlink" href="#manage-iam-policies_1" title="Permanent link">&para;</a></h1>
@@ -1819,7 +1819,7 @@ scraped: 2026-02-15T21:20:10.171652</p>
 <hr />
 <p>title: Management-zone rules
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules
-scraped: 2026-02-15T09:13:32.622060</p>
+scraped: 2026-02-16T09:34:41.855356</p>
 <hr />
 <h1 id="management-zone-rules">Management-zone rules<a class="headerlink" href="#management-zone-rules" title="Permanent link">&para;</a></h1>
 <h1 id="management-zone-rules_1">Management-zone rules<a class="headerlink" href="#management-zone-rules_1" title="Permanent link">&para;</a></h1>
@@ -2402,11 +2402,188 @@ scraped: 2026-02-15T21:27:14.155315</p>
 <p>I have accidentally deleted a SCIM synchronized user in Dynatrace my account. Is it possible to re-synchronize the user via SCIM in Azure?</p>
 <p>Yes, you can restart SCIM synchronization. To do this, go to the SCIM application's <strong>Overview</strong> tab and select <strong>Restart provisioning</strong>.</p>
 <hr />
+<h2 id="source-scim-oktamd">Source: scim-okta.md<a class="headerlink" href="#source-scim-oktamd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Okta SCIM configuration for Dynatrace
+source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-okta
+scraped: 2026-02-16T09:29:36.576899</p>
+<hr />
+<h1 id="okta-scim-configuration-for-dynatrace">Okta SCIM configuration for Dynatrace<a class="headerlink" href="#okta-scim-configuration-for-dynatrace" title="Permanent link">&para;</a></h1>
+<h1 id="okta-scim-configuration-for-dynatrace_1">Okta SCIM configuration for Dynatrace<a class="headerlink" href="#okta-scim-configuration-for-dynatrace_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>1-min read</li>
+<li>Published May 14, 2020</li>
+</ul>
+<p>This page describes the IdP (<strong>Okta</strong>) end of your <strong>SCIM</strong> SSO configuration, not the Dynatrace end. Use it as part of the entire <a href="/docs/manage/identity-access-management/user-and-group-management/access-scim" title="SCIM">SCIM configuration procedure</a> for Dynatrace SaaS if you're using Okta.</p>
+<p>While we do our best to provide you with current information, Dynatrace has no control over changes that may be made by third-party providers. Always refer to official third-party documentation from your IdP as your primary source of information for third-party products.</p>
+<p>To integrate Dynatrace SCIM in Okta, you will need the Dynatrace SCIM Base URL and a secret token you got in the <a href="/docs/manage/identity-access-management/user-and-group-management/access-scim#scim-endpoint-secret-token" title="SCIM">Get Dynatrace SCIM endpoint and create secret token</a> procedure.</p>
+<p>Okta provides two possibilities of SCIM integration:</p>
+<ol>
+<li><a href="https://help.okta.com/en/prod/Content/Topics/Apps/Apps_App_Integration_Wizard_SCIM.htm">Add SCIM provisioning to already integrated Okta app with Dynatrace SSOï»¿</a></li>
+<li>
+<p><a href="https://developer.okta.com/docs/guides/build-provisioning-integration/prepare-app/">Integrate Dynatrace SCIM in separate SCIM Okta Appï»¿</a></p>
+</li>
+<li>
+<p>You can use either <a href="https://www.okta.com/integrations/scim-2-0-test-app-header-auth">SCIM 2.0 Test App (Header Auth)ï»¿</a> or <a href="https://www.okta.com/integrations/scim-2-0-test-app-oauth-bearer-token">SCIM 2.0 Test App (OAuth Bearer Token)ï»¿</a></p>
+</li>
+</ol>
+<p>Dynatrace SCIM supports only bearer token authentication. Depending on the Okta application type, while configuring API Credentials the token should be provided with the <strong>Bearer</strong> prefix.</p>
+<hr />
+<h2 id="source-access-scimmd">Source: access-scim.md<a class="headerlink" href="#source-access-scimmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: SCIM
+source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim
+scraped: 2026-02-16T09:36:52.684026</p>
+<hr />
+<h1 id="scim">SCIM<a class="headerlink" href="#scim" title="Permanent link">&para;</a></h1>
+<h1 id="scim_1">SCIM<a class="headerlink" href="#scim_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>6-min read</li>
+<li>Updated on Jun 30, 2025</li>
+</ul>
+<p>System for Cross-domain Identity Management (SCIM) is an open standard for automating the exchange of user identity information between identity domains or IT systems. You can configure Dynatrace SaaS to be provided with user identity information automatically from your organization's identity provider (IdP) through SCIM.</p>
+<h2 id="benefits-of-using-scim-with-dynatrace-sso">Benefits of using SCIM with Dynatrace SSO<a class="headerlink" href="#benefits-of-using-scim-with-dynatrace-sso" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Users in your IdP will automatically be synchronized with Dynatrace, so there is no need to invite them manually</p>
+</li>
+<li>
+<p>if a user is disabled or removed from the IdP, it will also disable the user in Dynatrace</p>
+</li>
+<li>
+<p>Groups in your IdP will automatically be synchronized with Dynatrace</p>
+</li>
+<li>
+<p>All groups created by SCIM will be of type <code>SCIM</code> in Account Management</p>
+</li>
+<li>Users will be assigned to groups in Dynatrace mirroring the relationship within the IdP</li>
+</ul>
+<h2 id="scim-notice-and-limitations">SCIM notice and limitations<a class="headerlink" href="#scim-notice-and-limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>SCIM synchronization is one-way from the IdP to Dynatrace. This is because technically the IdP is the owner of both the users and groups and changes in Dynatrace will never transpire to the IdP.</li>
+<li>Dynatrace will only accept users with domains, which were verified within the account</li>
+<li>Groups of type <code>SCIM</code> are managed by SCIM only and cannot be removed or modified through Account Management</li>
+<li>
+<p>Permissions to SCIM groups still have to be assigned manually in Dynatrace</p>
+</li>
+<li>
+<p>It is possible to use <a href="/docs/dynatrace-api/account-management-api" title="Explore endpoints of the Account Management API.">Account Management API</a> to manage the permissions programmatically</p>
+</li>
+<li>If your SCIM client does not support dynamic external id changes, email/login change will cause SCIM integration to stop working for such users. Requests will be rejected due to invalid username (in SCIM it is email)</li>
+<li>The scope of users and groups synchronized into Dynatrace with SCIM can be narrowed within the SCIM application in your IdP</li>
+<li>Users in SCIM groups are not listed in the web UI for sharing a document (dashboard or notebook) to specific users or groups unless you add those users to local Dynatrace groups.</li>
+<li>A user cannot be assigned to an account if the account has already reached its <a href="/docs/manage/identity-access-management/iam-limits" title="IAM limits for Dynatrace SaaS">maximum number of assigned users</a>.</li>
+<li>A user cannot be added to a group if they have already reached the <a href="/docs/manage/identity-access-management/iam-limits" title="IAM limits for Dynatrace SaaS">maximum number of groups they can be assigned to</a>.</li>
+</ul>
+<h2 id="scim-requirements-and-supported-features">SCIM requirements and supported features<a class="headerlink" href="#scim-requirements-and-supported-features" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Dynatrace supports <strong>SCIM 2.0</strong> and <strong>GET</strong>, <strong>POST</strong>, <strong>PATCH</strong>, <strong>PUT</strong>, and <strong>DELETE</strong> operations for both <strong>User</strong> and <strong>Group</strong> resources.</li>
+<li>For authentication, SCIM requires <strong>Bearer token</strong> in <strong>Authorization header</strong>.</li>
+<li>SCIM is configured for the account and domain scopes. At least one domain ownership verification is required for the account.</li>
+<li>Only users whose email domains have been verified for ownership can be synchronized with Dynatrace via SCIM.</li>
+<li>Required and supported SCIM attributes:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>SCIM Attribute</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userName</td>
+<td>email format</td>
+</tr>
+<tr>
+<td>name.givenName</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name.familyName</td>
+<td>string</td>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>* <strong>userName</strong> must be persistent. Dynatrace does not support user email change.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="verify-your-ownership-of-the-domain">Verify your ownership of the domain<a class="headerlink" href="#verify-your-ownership-of-the-domain" title="Permanent link">&para;</a></h2>
+<p>Before you can proceed with SCIM configuration, you need to prove ownership of the domain. Verification is based on a DNS TXT Record check.</p>
+<p>For the account, it is sufficient to verify the domain once. If a domain has been verified for SAML, it will be valid for SCIM as well.</p>
+<p>To verify ownership of a domain</p>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a>. If you have more than one account, select the account you want to manage.</li>
+<li>Go to <strong>Identity &amp; access management</strong> &gt; <strong>Domain verification</strong>.</li>
+<li>In the <strong>Add domain</strong> section, enter the domain (for example, <code>mycompanyname.com</code>) for which you want to set up SCIM and select <strong>Add</strong> to add it to the <strong>Pending domains</strong> table.</li>
+</ol>
+<p>Multiple domains</p>
+<p>If users in your organization use more than one domain to sign in (for example, <code>@mycompanyname.com</code> and <code>@uk.mycompanyname.com</code>), you can add additional domains in additional rows and start verifying them all in parallel. Enter each domain in a different row.
+4. For each domain you are verifying, in the <strong>Pending domains</strong> table, select <strong>Copy</strong> (in the <strong>Value</strong> column) and add the copied TXT resource record to your domainâs DNS configuration.
+5. For each domain you are verifying, in the <strong>Pending domains</strong> table, select <strong>Actions</strong> &gt; <strong>Verify</strong> so that Dynatrace can verify that the record was added to your domainâs DNS.</p>
+<p>Propagation time</p>
+<p>It typically takes a few minutes for a record to propagate through the DNS system and the value to become available for Dynatrace to verify. In some cases, it may take up to 24 hours.
+6. Each verified domain is added to the <strong>Verified domains</strong> table.</p>
+<h2 id="get-dynatrace-scim-endpoint-and-create-secret-token">Get Dynatrace SCIM endpoint and create secret token<a class="headerlink" href="#get-dynatrace-scim-endpoint-and-create-secret-token" title="Permanent link">&para;</a></h2>
+<p>Use this procedure to get the Dynatrace SCIM Base URL for your account and create a secret token.</p>
+<p>The token is revealed only once during generation time. Copy and paste it into a secure location. If you lose it, you have to generate a new one and replace it in your application.</p>
+<ol>
+<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>SCIM configuration</strong>.</li>
+<li>In the <strong>Generate new token</strong> section, optionally enter a token <strong>Description</strong> (or you can add a description for the token later).</li>
+<li>Select <strong>Generate token</strong></li>
+<li>Next to <strong>Token value</strong>, select <strong>Copy</strong> to copy the token to your clipboard, and then paste it into a secure location for later use.</li>
+</ol>
+<p>Dynatrace SCIM supports Bearer Token Authentication only. Example:</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Bearer <DYNATRACE_TOKEN_PLACEHOLDER></td>
+</tr>
+</tbody>
+</table>
+<p>The SCIM endpoint required for SCIM configuration in your application is added to the <strong>List of tokens</strong>.</p>
+<h2 id="example-idp-specific-instructions">Example IdP-specific instructions<a class="headerlink" href="#example-idp-specific-instructions" title="Permanent link">&para;</a></h2>
+<p>To continue integrating Dynatrace SCIM with your IdP, select the procedure appropriate for your IdP:</p>
+<ul>
+<li><a href="/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure" title="Learn how to configure Dynatrace SCIM in Azure.">Azure</a></li>
+<li><a href="/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-okta" title="Learn how to configure Dynatrace SCIM in Okta.">Okta</a></li>
+</ul>
+<h2 id="faq_1">FAQ<a class="headerlink" href="#faq_1" title="Permanent link">&para;</a></h2>
+<p>Is a change of email address supported?</p>
+<p>No, an email address can't be changed by SCIM. Any requests to update an email address are ignored.</p>
+<p>How many SCIM authentication tokens can I generate?</p>
+<p>You can generate up to 10 SCIM authentication tokens. For security reasons, we strongly recommend that you delete all unused tokens.</p>
+<p>Can I provision users from different email domains?</p>
+<p>Yes, you can provision as many users from different email domains as you need, as long as all of their domains have been verified. You can verify multiple domains for a single account.</p>
+<p>It is possible to create more than one group with the same name?</p>
+<p>No, some IdPs, like Azure AD, allow multiple groups with the same name in a single account. For Dynatrace SSO, however, each group name in an account must be unique.</p>
+<p>Is it possible to set group <code>description</code> during provisioning?</p>
+<p>No, we're limited by the SCIM protocol specification, so additional fields, such as <code>description</code>, can't be set during provisioning.</p>
+<h3 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h3>
+<p>I have accidentally deleted a SCIM synchronized user in Dynatrace my account. Is it possible to re-synchronize the user via SCIM in Azure?</p>
+<p>Yes, you can restart SCIM synchronization. To do this, go to the SCIM application's <strong>Overview</strong> tab and select <strong>Restart provisioning</strong>.</p>
+<hr />
 <h2 id="source-access-service-usersmd">Source: access-service-users.md<a class="headerlink" href="#source-access-service-usersmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Service users
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-service-users
-scraped: 2026-02-15T21:26:51.698869</p>
+scraped: 2026-02-16T09:30:03.994665</p>
 <hr />
 <h1 id="service-users">Service users<a class="headerlink" href="#service-users" title="Permanent link">&para;</a></h1>
 <h1 id="service-users_1">Service users<a class="headerlink" href="#service-users_1" title="Permanent link">&para;</a></h1>

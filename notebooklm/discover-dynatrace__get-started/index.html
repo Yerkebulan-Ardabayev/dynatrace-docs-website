@@ -986,7 +986,7 @@
 
 <h1 id="dynatrace-documentation-discover-dynatraceget-started">Dynatrace Documentation: discover-dynatrace/get-started<a class="headerlink" href="#dynatrace-documentation-discover-dynatraceget-started" title="Permanent link">&para;</a></h1>
 <p>Generated: 2026-02-16</p>
-<p>Files combined: 9</p>
+<p>Files combined: 10</p>
 <hr />
 <h2 id="source-accessibilitymd">Source: accessibility.md<a class="headerlink" href="#source-accessibilitymd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1052,7 +1052,7 @@ scraped: 2026-02-15T21:28:17.395512</p>
 <hr />
 <p>title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-15T21:17:00.690638</p>
+scraped: 2026-02-16T09:35:00.811004</p>
 <hr />
 <h1 id="launchpads">Launchpads<a class="headerlink" href="#launchpads" title="Permanent link">&para;</a></h1>
 <h1 id="launchpads_1">Launchpads<a class="headerlink" href="#launchpads_1" title="Permanent link">&para;</a></h1>
@@ -1193,7 +1193,7 @@ scraped: 2026-02-15T21:24:57.994483</p>
 <hr />
 <p>title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-15T21:09:36.929299</p>
+scraped: 2026-02-16T09:15:27.854670</p>
 <hr />
 <h1 id="share-documents">Share documents<a class="headerlink" href="#share-documents" title="Permanent link">&para;</a></h1>
 <h1 id="share-documents_1">Share documents<a class="headerlink" href="#share-documents_1" title="Permanent link">&para;</a></h1>
@@ -1589,7 +1589,7 @@ For example:</p>
 <hr />
 <p>title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-15T21:13:49.232236</p>
+scraped: 2026-02-16T09:18:00.661682</p>
 <hr />
 <h1 id="filter-field">Filter field<a class="headerlink" href="#filter-field" title="Permanent link">&para;</a></h1>
 <h1 id="filter-field_1">Filter field<a class="headerlink" href="#filter-field_1" title="Permanent link">&para;</a></h1>
@@ -1784,7 +1784,7 @@ For more details, see <a href="#escaping-values">Escaping values</a> in filter e
 <hr />
 <p>title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-15T21:24:15.029034</p>
+scraped: 2026-02-16T09:36:54.362238</p>
 <hr />
 <h1 id="navigate-the-dynatrace-platform">Navigate the Dynatrace platform<a class="headerlink" href="#navigate-the-dynatrace-platform" title="Permanent link">&para;</a></h1>
 <h1 id="navigate-the-dynatrace-platform_1">Navigate the Dynatrace platform<a class="headerlink" href="#navigate-the-dynatrace-platform_1" title="Permanent link">&para;</a></h1>
@@ -1935,7 +1935,7 @@ scraped: 2026-02-15T21:24:15.029034</p>
 <hr />
 <p>title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-15T21:10:34.048339</p>
+scraped: 2026-02-16T09:13:11.757637</p>
 <hr />
 <h1 id="what-is-a-monitoring-environment">What is a monitoring environment?<a class="headerlink" href="#what-is-a-monitoring-environment" title="Permanent link">&para;</a></h1>
 <h1 id="what-is-a-monitoring-environment_1">What is a monitoring environment?<a class="headerlink" href="#what-is-a-monitoring-environment_1" title="Permanent link">&para;</a></h1>
@@ -2035,11 +2035,411 @@ scraped: 2026-02-15T21:10:34.048339</p>
 <li>To display metrics from remote environments on your local environment's dashboards, you can set up cross-environment dashboard tiles. For details, see <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment" title="Create dashboards that display data from multiple Dynatrace environments.">Create remote/multi-environment Dynatrace dashboards</a>.</li>
 </ul>
 <hr />
+<h2 id="source-platform-engineeringmd">Source: platform-engineering.md<a class="headerlink" href="#source-platform-engineeringmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Platform Engineering
+source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/platform-engineering
+scraped: 2026-02-16T09:35:50.782539</p>
+<hr />
+<h1 id="platform-engineering">Platform Engineering<a class="headerlink" href="#platform-engineering" title="Permanent link">&para;</a></h1>
+<h1 id="platform-engineering_1">Platform Engineering<a class="headerlink" href="#platform-engineering_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>24-min read</li>
+<li>Published Jan 18, 2024</li>
+</ul>
+<p>Gartner<a href="#fn-1-1-def">1</a> predicts that by 2026, 80% of large software engineering organizations will establish platform engineering teams as internal providers of reusable services, components, and tools for application delivery, up from 45% in 2022.</p>
+<h2 id="what-is-platform-engineering">What is platform engineering?<a class="headerlink" href="#what-is-platform-engineering" title="Permanent link">&para;</a></h2>
+<p>Platform engineering is a modern, core engineering discipline that has emerged to accelerate the development and deployment of software that is resilient and effective at scale.</p>
+<p>The goal is to operationalize DevSecOps and SRE practices by providing an internal self-service platform with development workspace templates to reduce the cognitive load on engineering teams and provide fast development feedback cycles out of the box.</p>
+<p>An internal developer platform (IDP) encompasses a set of tools, services, and infrastructure that enables developers to build, test, and deploy software applications. These platforms are tailored specifically to an organization's needs, demands, and goals.</p>
+<p>Through the development, deployment, and maintenance of these IDPs, platform engineering teams deliver:</p>
+<ul>
+<li>Increased innovation and development speed</li>
+<li>Better developer experience</li>
+<li>Higher developer productivity</li>
+<li>Reduced infrastructure costs</li>
+<li>And more</li>
+</ul>
+<p>IDPs allow teams to shift more of their time and effort to delivering best-in-class products to their end customers.</p>
+<h2 id="effective-idps">Effective IDPs<a class="headerlink" href="#effective-idps" title="Permanent link">&para;</a></h2>
+<p>The majority of IDPs are containerized and built on top of Kubernetes-centric infrastructure with a core set of technologies. The diagram below maps out what a basic IDP should include.</p>
+<p>Features of a strong and effective IDP:</p>
+<p>Crucial capabilities of an IDP are provided as self-service to development teams. Some of these self-service capabilities might include:</p>
+<ul>
+<li>Platform services (service mesh, data storage, security vaults, policy agents)</li>
+<li>Delivery services (continuous integration, continuous delivery, Git, GitOps)</li>
+<li>Observability services for monitoring, automation, and security</li>
+<li>Templates for development workspaces including all the above</li>
+</ul>
+<p>Platform engineering also offers the ability to:</p>
+<ul>
+<li>Automate key workflows like validation</li>
+<li>Achieve optimal performance and security</li>
+<li>Ensure the platform is working as expected and resources are being used in an optimal manner</li>
+</ul>
+<p><img alt="Platform Engineering" src="https://dt-cdn.net/images/image001-1268-955bdd4f04.webp" /></p>
+<p>Source: <a href="https://tag-app-delivery.cncf.io/whitepapers/platforms/#capabilities-of-platforms">https://tag-app-delivery.cncf.io/whitepapers/platforms/ï»¿</a></p>
+<h2 id="treat-your-platform-as-a-product">Treat your platform as a product<a class="headerlink" href="#treat-your-platform-as-a-product" title="Permanent link">&para;</a></h2>
+<p>A key aspect of platform engineering is approaching your platform with a product management mentality. Every aspect should be meticulously designed and optimized for the benefit of the user: the developer.</p>
+<h3 id="looking-at-an-idp-with-a-product-management-lens">Looking at an IDP with a product management lens<a class="headerlink" href="#looking-at-an-idp-with-a-product-management-lens" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>The product</strong>: An internal development platform (IDP) built to provide self-service for infrastructure, services, and support for the development teams as they build, test, and deploy applications at scale</li>
+<li><strong>The customer</strong>: Development teams who want to accelerate the production of high-quality, resilient apps â with low effort for onboarding for new applications and new developers</li>
+</ul>
+<h2 id="maturing-devops-with-platform-engineering">Maturing DevOps with platform engineering<a class="headerlink" href="#maturing-devops-with-platform-engineering" title="Permanent link">&para;</a></h2>
+<p><strong>You build it, you run it doesnât scale anymore.</strong></p>
+<p>DevOps alone doesnât meet the demands of cloud-native software development. Platform engineering is DevOps applied at cloud-native scale.</p>
+<p>Effective DevOps supports cross-functional cooperation and boosts efficiency. Platform engineering builds on traditional DevOps practices but goes a step further.</p>
+<p>By providing a framework and techstack to apply DevOps principles at scale with Kubernetes-centric infrastructure, platform engineering allows organizations to realize many of the benefits DevOps promised to deliver.</p>
+<p>In practice, maturing DevOps into platform engineering involves providing centrally maintained development tooling, templates for CI/CD toolchains, processes, and application lifecycle orchestration solutions via a unified platform that development teams can use for greater efficiency. It enables a frictionless developer experience with minimum overhead, reducing cognitive load and providing fast feedback out of the box.</p>
+<p>Platform engineeringâs standardized processes and technologies across development and operations teams lead to significant gains in developer productivity and improvements in developer experience.</p>
+<p>Additionally, the platform engineering approach allows organizations to take advantage of economies of scale, consolidating sprawling tech stacks to:</p>
+<ul>
+<li>Manage cost</li>
+<li>Optimize resource usage</li>
+<li>Improve governance</li>
+</ul>
+<h3 id="cloud-native-platforms-require-a-new-approach-to-observability">Cloud-native platforms require a new approach to observability<a class="headerlink" href="#cloud-native-platforms-require-a-new-approach-to-observability" title="Permanent link">&para;</a></h3>
+<p>To be broadly adopted by internal development teams and deliver on its promise of unlocking DevSecOps at scale, a Kubernetes-centric IDP requires other services and components to tackle challenges related to:</p>
+<ul>
+<li>Visibility</li>
+<li>Resource utilization</li>
+<li>Security</li>
+<li>Orchestration</li>
+<li>Collaboration</li>
+</ul>
+<p>Top engineering teams unlock faster deployments and fewer errors by empowering developers to manage their own deployments. Enabling self-service requires developers to be able to debug code quickly, which isnât easy in complex environments. Observability makes all the difference.</p>
+<p>Observability isnât just about the user-facing application. Effective platform engineeringâas DevOps at cloud-native scaleâenables self-service for developers or development teams, and that self-service often requires automation in the background. To provide guard rails and make the system governable, it must be observable.</p>
+<p>When implemented properly, platform engineering brings end-to-end observability to the full software development lifecycle, from development to release, to operation, and eventually to retirement.</p>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<p>Fortunately, organizations donât have to replace every tool, vendor, and practice to implement platform engineering. DevOps and cloud-native processes often continue managing systems and pipelines and working on automation and self-service.</p>
+<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
+<h4 id="accelerate-development-and-support-developer-productivity">Accelerate development and support developer productivity<a class="headerlink" href="#accelerate-development-and-support-developer-productivity" title="Permanent link">&para;</a></h4>
+<p>More than two-thirds of all organizations (68%) implementing platform engineering have already realized an increase in development velocity.</p>
+<p>Organizations with platform engineering teams see various benefits to their speed and efficiency. They report a variety of benefits, notably:</p>
+<ol>
+<li>Improved system reliability</li>
+<li>Improved efficiency and productivity of work</li>
+<li>Faster delivery time</li>
+</ol>
+<h4 id="improve-developer-experience">Improve developer experience<a class="headerlink" href="#improve-developer-experience" title="Permanent link">&para;</a></h4>
+<p>A best-in-class developer experience gives your organization a strategic
+advantage.</p>
+<ul>
+<li>Reduces the cognitive load of the developer</li>
+<li>Reduces overall burden on the operations team</li>
+<li>Improves quality of services from internal IT operations resources, processes, and practices</li>
+<li>Provides a more efficient path for product delivery</li>
+<li>Provides fast feedback cycles to developers</li>
+</ul>
+<h4 id="optimize-resources-and-mitigate-cost">Optimize resources and mitigate cost<a class="headerlink" href="#optimize-resources-and-mitigate-cost" title="Permanent link">&para;</a></h4>
+<p>With a shared pool of resources for all projects, standardized practices, and the power of AI, platform engineering optimizes resource usage, leverages economies of scales, and mitigates cost.</p>
+<h4 id="standardize-tech-stack-to-minimize-risk-and-increase-governance">Standardize tech stack to minimize risk and increase governance<a class="headerlink" href="#standardize-tech-stack-to-minimize-risk-and-increase-governance" title="Permanent link">&para;</a></h4>
+<p>Effective platform engineering enables teams to keep complexity low, standardize delivery, and still allow for autonomy and freedom.</p>
+<ul>
+<li>Security and compliance are built in by design of the platform components and services.</li>
+<li>Golden Path templates standardize delivery â providing governance.</li>
+<li>Identification and remediation of issues or misconfigurations across templatized and standardized services becomes quick and easy.</li>
+</ul>
+<h2 id="the-minimum-viable-platform-back-stack-observability">The minimum viable platform: BACK stack + observability<a class="headerlink" href="#the-minimum-viable-platform-back-stack-observability" title="Permanent link">&para;</a></h2>
+<p>If you were to start from scratch, only with a Git and CI tool in place, a simple beginning could be to work with the BACK stack:</p>
+<p>Backstage
+:   <a href="https://backstage.io/">Graphical user interface (web portal)ï»¿</a></p>
+<p>Argo
+:   <a href="https://argo-cd.readthedocs.io/en/stable/">Delivery of artifactsï»¿</a></p>
+<p>Crossplane
+:   <a href="https://www.crossplane.io/">APIs and CLIs for configuration automationï»¿</a></p>
+<p>Kyverno
+:   <a href="https://kyverno.io/">Scan artifacts and enforce policiesï»¿</a></p>
+<p>The BACK stack includes the artifact delivery and security as well as the configuration and developer portal, but thatâs not all it takes. Observing the workloads is equally important and must be included in a minimum viable platform.</p>
+<p>To feed the observability and security data back to the developers, we offer a <a href="/docs/deliver/backstage-integration" title="Learn how to integrate Dynatrace into Backstage">Backstage integration</a> with Kubernetes support by default and customizable queries.</p>
+<p>OpenTelemetry offers open-source observability, and Dynatrace can be used for observability either out of the box with our proprietary OneAgent or by easily ingesting and using the data provided through OpenTelemetry.</p>
+<h2 id="core-platform-observability-and-security-principles">Core platform observability and security principles<a class="headerlink" href="#core-platform-observability-and-security-principles" title="Permanent link">&para;</a></h2>
+<p>Kubernetes is a good starting point for building a platform, allowing platform engineering teams to provide self-service capabilities and features to their DevSecOps teams. However, it also introduces complexity to the cloud environment.</p>
+<p>Organizations need the automatic answers and insights that observability and security analytics provide to manage and overcome the complexity introduced by todayâs business needs and complex multi-cloud-native environments.</p>
+<p>Follow these core principles when building your Internal Developer Platform (IDP) to manage an application or service throughout its Software Development Lifecycle (SDLC).</p>
+<h3 id="1-core-platform-observability">1. Core platform observability<a class="headerlink" href="#1-core-platform-observability" title="Permanent link">&para;</a></h3>
+<p>A critical first step in achieving actionable platform insights is
+ensuring monitoring of the artifact (service or application) as well as
+the full software development lifecycle and the underlying IDP:</p>
+<ul>
+<li><strong>Artifact</strong>: How does my product behave in various environments (staging, testing, production)?</li>
+<li><strong>Platform Toolstack</strong>: What is the health and utilization of the tools in use (e.g. BACK stack)?</li>
+</ul>
+<p>Treating (critical) platform services like any other business-critical service allows for easy and effective incident triage, issue resolution, and improved developer experience.</p>
+<h4 id="some-aspects-of-core-platform-observability">Some aspects of core platform observability<a class="headerlink" href="#some-aspects-of-core-platform-observability" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Ensuring resiliency, availability, and security</strong> by applying the same practices to all platform services</li>
+<li><strong>Optimizing usage, performance, and licensing</strong> to positively impact the application lifecycle and reduce cost</li>
+<li><strong>Detecting misconfiguration or misuse</strong> by discovering upcoming problems and issues, used to educate users.</li>
+</ul>
+<h3 id="2-release-information">2. Release information<a class="headerlink" href="#2-release-information" title="Permanent link">&para;</a></h3>
+<p>Attaching the current version and stage information to services allows for easy triaging and resolution of issues. This can be done by promoting the version and stage information to Kubernetes containers as environment variables or annotations.</p>
+<h3 id="3-pipeline-efficiency">3. Pipeline efficiency<a class="headerlink" href="#3-pipeline-efficiency" title="Permanent link">&para;</a></h3>
+<p>While the platform tool stack monitoring outlined in the previous paragraph covers the health of the IDP, it does not yet cover the efficiency of the pipeline. This is where logs, events, and telemetry data from pipeline or workflow executions come in.</p>
+<p>By analyzing pipeline or workflow logs, events, and traces, itâs possible to create metrics (for example, DORA metrics) that can be used for benchmarking and deciding where to invest time or resources for improvement.</p>
+<p>Most used tools in a cloud-native environment already emit events or telemetry data, but this area currently lacks dedicated standards and semantic conventions.</p>
+<h3 id="4-ownership-information">4. Ownership information<a class="headerlink" href="#4-ownership-information" title="Permanent link">&para;</a></h3>
+<p>When looking at artifacts, responsibility is a critical piece of information. Who is responsible for an application or service in production, and who owns security?</p>
+<p>This was often maintained in CMDBs, Excel sheets, or active directories. However, it's wise to manage this information proactively and automatically in cloud-native environments with constant updates and changes.</p>
+<p>One way to do this is through Kubernetes labels and annotations, ensuring out-of-the-box availability of this critical information across the lifecycle.</p>
+<h3 id="5-ai-observability">5. AI Observability<a class="headerlink" href="#5-ai-observability" title="Permanent link">&para;</a></h3>
+<p>With the rise of generative AI in DevOps Portals and IDP tools, providing observability for these systems is growing to efficiently drive the experience they provide while keeping costs in check.</p>
+<h2 id="platform-engineering-use-cases">Platform Engineering use cases<a class="headerlink" href="#platform-engineering-use-cases" title="Permanent link">&para;</a></h2>
+<p>With effective platform engineering, everything is available in self-service through Golden Paths (templates). Self-service provides autonomy for rapid, secure innovation while maintaining guard rails for consistency and enabling governance.</p>
+<p>We have categorized use cases with a product-lifecycle-centric view, rather than a platform-centric view, to emphasize the ease of adoption of use cases for platform engineering teams and cases in which no formal platform engineering team has been established.</p>
+<p><strong>Develop - Release - Operate - Predict - Prevent - Resolve - Protect - Improve</strong></p>
+<p>All of the following use cases are available to the platform engineering team to make their work observable and easier, or for the platform engineering team to provide automation and self-service capabilities to their usersâthe development teams.</p>
+<h3 id="develop">Develop<a class="headerlink" href="#develop" title="Permanent link">&para;</a></h3>
+<p>This category contains all activities around planning, developing, building, and testing services and applications on an Internal Developer Platform (IDP) provided by a platform engineering team.</p>
+<h4 id="test-pipeline-observability-test-pipeline-observability">Test pipeline observability Test pipeline observability<a class="headerlink" href="#test-pipeline-observability-test-pipeline-observability" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   From millions of test events to a single source of truth.</p>
+<p>Provide observability into test results automatically across different used tools and ensure all test results are available in a single source of truth.</p>
+<ul>
+<li>Increase efficiency and insights through test observability</li>
+<li>Ingest test events and metadata into a single unified observability platform</li>
+<li>Visualize test results and KPIs in one central view or dashboard</li>
+<li>Identify long lasting tests to easily optimize for faster test feedback</li>
+</ul>
+<p>Try it yourself: <a href="/docs/deliver/test-pipeline-observability" title="Utilize Dynatrace to observe and analyze test pipelines effectively">Test pipeline observability</a>.</p>
+<h4 id="continuous-testing-validation-continuous-testing-validation">Continuous testing validation Continuous testing validation<a class="headerlink" href="#continuous-testing-validation-continuous-testing-validation" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   120X reduction in evaluation times from days to minutes.</p>
+<p>Testing is often highly automated already, but teams still frequently test in siloes.</p>
+<p>To ensure high quality customer experience automatically and proactively:</p>
+<ul>
+<li>Combine, continuously evaluate, and baseline test results from testing tools</li>
+<li>Incorporate SLOs, security findings and synthetic tests</li>
+<li>Reduce the number of manual operations by engineers to verify quality of new release</li>
+<li>Easily integrate CI/CD delivery pipeline with tools like Dynatrace Synthetic Monitoring to ensure that new releases where all critical user journeys work as expected</li>
+</ul>
+<h4 id="observability-driven-development-observability-driven-development">Observability-driven development Observability-driven development<a class="headerlink" href="#observability-driven-development-observability-driven-development" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Mean Time to Observability reduction from hours to seconds.</p>
+<p>In the previous section, we outlined the importance of covering ownership and release information early in the lifecycle by extending the provided metadata to include observability and security rules, SLOs, and even automation and remediation steps.</p>
+<p>Standardizing these based on technology, team, or criticality of service enables the use of simple as-code templates as Golden Paths, ensuring consistency and governance across the lifecycle.</p>
+<p>Standardizing across teams can:</p>
+<ul>
+<li>Bring observability and transparency to development teams out-of-the-box</li>
+<li>Provide real-time insights into what's happening</li>
+<li>Conduct observability and reliability checks at an early stage to enable faster reaction to potential issues before they reach production</li>
+<li>Increase accountability of application teams and empower them to get early insights in their implementations</li>
+<li>Provide autonomy while having consistent rules for the same criticality of service</li>
+</ul>
+<h3 id="release">Release<a class="headerlink" href="#release" title="Permanent link">&para;</a></h3>
+<p>This category contains all activities around releasing and deploying in environments along the Software Development Lifecycle (SDLC).</p>
+<h4 id="continuous-testing-validation-release-validation">Continuous testing validation Release validation<a class="headerlink" href="#continuous-testing-validation-release-validation" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Reduce change failure rate and reduce production deployment lead time by up to 99%</p>
+<p>Automatically validate new releases â taking downstream and upstream dependencies into account â based on baselining, observability data, SLOs, and security information. Use the results to drive meaningful follow-up actions. Providing release validation templates as part of every delivery process enables fast feedback regarding any negative side-effects of a new version. Faster feedback leads to better developer experience, higher release quality, and higher innovation pace.</p>
+<p>Try it yourself: <a href="/docs/deliver/quality-gates" title="Validate the releases of your business-critical services">Release validation</a>.</p>
+<h4 id="progressive-delivery-progressive-delivery">Progressive delivery Progressive delivery<a class="headerlink" href="#progressive-delivery-progressive-delivery" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   90-99% reduced problem exposure with progressive delivery.</p>
+<p>Releasing updates and new versions of an application or service in a gradual and controlled manner can help teams provide fast, secure, and high-quality services without disrupting business.</p>
+<p>Based on the observability data, including SLO trends and synthetic checks, an automated progressive delivery release like canary or blue/green can be established.</p>
+<ul>
+<li>Automated workflow execution to control the software delivery</li>
+<li>Direct Kubernetes interactions to apply configuration changes</li>
+<li>Governance for the delivery process by leveraging events</li>
+<li>Targeted notifications to inform the team in charge of the delivery process</li>
+</ul>
+<h4 id="pipeline-observability-pipeline-observability">Pipeline observability Pipeline observability<a class="headerlink" href="#pipeline-observability-pipeline-observability" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   100% real-time standardized coverage of your software lifecycle health.</p>
+<p>People often say, you canât manage what you canât measure. The statement holds true for the software development lifecycle as well. To calculate critical metrics, such as lead time for change, it's
+important to take note of the pipeline telemetry data.</p>
+<p>Using pipeline observability, the data (for example failed builds, lead time) can be calculated and acted upon automatically. With automated data, these metricsâlike the DORA metrics lead time for change, deployment frequency, change failure rate, and mean time to resolveâare readily available in several dimensions, including application/service, platform service/pipeline, and technology and
+ownership.</p>
+<p>In addition to metrics, logs and traces of pipeline runs can help debug erroneous pipelines or identify time-consuming hotspots that can be optimized for more efficient pipelines.</p>
+<h3 id="operate">Operate<a class="headerlink" href="#operate" title="Permanent link">&para;</a></h3>
+<p>This category contains activities around monitoring and operating services and applications in production environments.</p>
+<h4 id="data-driven-cloud-tuning-cloud-cost-optimization">Data-driven cloud tuning Cloud cost optimization<a class="headerlink" href="#data-driven-cloud-tuning-cloud-cost-optimization" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Reduce cross-zone network traffic by up to 55%.</p>
+<p>By combining network data with infrastructure and billing information, top cost contributors can be identified and analyzed, leading to improvements by pinpointed adoption of network compression or other hyperscaler tools.</p>
+<p>Try it yourself: <a href="/docs/observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs" title="Manage your cloud deployment using Grail and your cloud vendor-provided data in context.">Data-driven cloud tuning</a>.</p>
+<h4 id="ai-observability-generative-ai-observability">AI Observability Generative AI observability<a class="headerlink" href="#ai-observability-generative-ai-observability" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Increase reliability while keeping costs from surging.</p>
+<p>With the rise of generative AI in DevOps Portals and IDP tools, tracking usage and consumption is becoming increasingly important, allowing streamlined access and managing cost effectively.</p>
+<p>Using observability data further allows the proper sizing and configuration of generative AI tools, increasing experience and productivity for development teams.</p>
+<p>Try it yourself:</p>
+<ul>
+<li><a href="/docs/observe/dynatrace-for-ai-observability" title="Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.">AI and LLM Observability</a></li>
+</ul>
+<h4 id="infrastructure-observability-observability-for-infrastructure">Infrastructure observability Observability for infrastructure<a class="headerlink" href="#infrastructure-observability-observability-for-infrastructure" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   30% reduced MTTR by breaking down data silos.</p>
+<p>For IT operations teams, the central challenge in ensuring the health of the IT infrastructure lies in the daunting task of pinpointing the exact root cause of issues.</p>
+<p>By applying Golden Paths and as-code templates, users can quickly trace performance issues to their source by "following the red" to the problematic infrastructure entity. This approach allows an immediate understanding of how entities such as hosts, processes, and their associated relationships contribute to the identified issue.</p>
+<h4 id="kubernetes-monitoring">Kubernetes monitoring<a class="headerlink" href="#kubernetes-monitoring" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Manage your platform with 30+ out-of-the-box health alerts.</p>
+<p>Establishing scalable cluster lifecycle management within a diverse multi-cluster environment featuring various distributions requires a centralized repository with a single source of truth.</p>
+<p>This centralized view:</p>
+<ul>
+<li>Serves as the hub for ingesting, visualizing, and analyzing telemetry data from different layers of the Kubernetes stack</li>
+<li>Enables the execution of configuration actions based on observability insights, such as resource consumption and performance management across all clusters</li>
+<li>Offers extended centralized monitoring and alerting capabilities, particularly for node failure incidents</li>
+</ul>
+<h3 id="predict">Predict<a class="headerlink" href="#predict" title="Permanent link">&para;</a></h3>
+<p>Many incidents that used to result in wake-up calls for people on standby can now be addressed before they become major issues by using predictive AI and forecasting.</p>
+<h4 id="predictive-operations-predictive-kubernetes-operations">Predictive operations Predictive Kubernetes operations<a class="headerlink" href="#predictive-operations-predictive-kubernetes-operations" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Reduce overprovisioning and storage needs by up to 75%.</p>
+<p>Within cloud-native environments, resizing disks can happen frequently. Predictive AI for forecasting enables automatic and timely resizing of disks, avoiding system outages while keeping costs low.</p>
+<p>Try it yourself: <a href="/docs/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations" title="Proactively manage disk space within Kubernetes environments">Predictive Kubernetes operations</a>.</p>
+<h4 id="forecasting-in-data-analytics-forecasting-in-data-analytics">Forecasting in data analytics Forecasting in data analytics<a class="headerlink" href="#forecasting-in-data-analytics-forecasting-in-data-analytics" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Zero disk-resize related after-hour alerts for SREs.</p>
+<p>Anticipatory management of cloud resources within highly dynamic IT systems is a critical success factor for modern companies. Operators must closely observe business-critical resources such as storage, CPU, and memory to avoid resource-driven outages.</p>
+<h4 id="forecasting-in-workflows-forecasting-in-workflow-automation">Forecasting in workflows Forecasting in workflow automation<a class="headerlink" href="#forecasting-in-workflows-forecasting-in-workflow-automation" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Reduce up to 100% of recurring manual efforts with prediction-driven automation.</p>
+<p>Predictive AI in workflow automation makes it possible to proactively raise tickets and act automatically before problems arise.</p>
+<p>Try it yourself: <a href="/docs/dynatrace-intelligence/use-cases/davis-for-workflows" title="Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.">AI in Workflows - Predictive maintenance of cloud disks</a>.</p>
+<h3 id="prevent">Prevent<a class="headerlink" href="#prevent" title="Permanent link">&para;</a></h3>
+<p>Even when AI canât predict issues, it can often prevent them using observability and security data.</p>
+<h4 id="bug-prevention-preventing-customer-facing-bugs">Bug prevention Preventing customer-facing bugs<a class="headerlink" href="#bug-prevention-preventing-customer-facing-bugs" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Reduce end-user-facing bugs by up to 36%.</p>
+<p>Ingesting and automatically analyzing application log data from production makes it easy to issue tickets with context and create and assign work to the respective development teams, allowing them to act and resolve bugs before end-users encounter them.</p>
+<p>Try it yourself: <a href="/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies" title="Explore a Log Management and Analytics use case for resolving team dependencies.">Automated bug triaging and ticketing</a>.</p>
+<h4 id="unified-exposure-protection-unified-exposure-protection">Unified exposure protection Unified exposure protection<a class="headerlink" href="#unified-exposure-protection-unified-exposure-protection" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Cut risk remediation from 96 hours to 4 hours â 95% faster.</p>
+<p>Observability and security are converging to facilitate prioritization and risk assessment of security findings, resolving the most common frustration with existing tools, specifically during the software development stages. Combining this with automation leads to effective engagements with the teams who need to act on those security findings.</p>
+<h4 id="continuous-security-posture-awareness-continuous-security-posture-awareness">Continuous security posture awareness Continuous security posture awareness<a class="headerlink" href="#continuous-security-posture-awareness-continuous-security-posture-awareness" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Instant live security reports.</p>
+<p>Get a unified and prioritized view of different exposures across your different application tiers and your production and pre-production environments.</p>
+<ul>
+<li>Prioritize vulnerabilities with a custom risk specific to your organization</li>
+<li>Learn what remediation activities prioritize for impactâand let automation handle it</li>
+<li>Learn the details of a vulnerability, such as which entities are impacted and whether thereâs any link to databases.</li>
+</ul>
+<h3 id="resolve">Resolve<a class="headerlink" href="#resolve" title="Permanent link">&para;</a></h3>
+<p>Once an incident occurs, it's important to take the right steps immediately. Sometimes, the first step is to inform the right team with the required information. At other times, issues can be remediated and resolved automatically.</p>
+<h4 id="incident-auto-routing-incident-triaging-and-response">Incident auto-routing Incident triaging and response<a class="headerlink" href="#incident-auto-routing-incident-triaging-and-response" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Improve MTTR by up to 99%.</p>
+<p>Using observability and security data combined with context and further metadata (such as ownership information), it becomes easy to automatically triage issues as they arise and follow through with the
+proper response.</p>
+<p>The proper response could be any automated action available, such as informing stakeholders through communication tools, opening incident tickets, triggering configuration management tools, or remediating directly by executing Kubernetes jobs or creating pull requests.</p>
+<h4 id="business-impact-resolving-critical-business-impact">Business impact Resolving critical business impact<a class="headerlink" href="#business-impact-resolving-critical-business-impact" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Linking IT alerts to business impact provides prioritization.</p>
+<p>Combining IDP observability data with the impact an IDP has on business transactions and footprints allows organizations to prioritize based on the highest-impact issues first.</p>
+<h4 id="error-budget-alerting-error-budget-alerting">Error budget alerting Error budget alerting<a class="headerlink" href="#error-budget-alerting-error-budget-alerting" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Increase triaging efficiency by 90%.</p>
+<p>If you have 99 problems, how do you prioritize?</p>
+<p>An easy way to focus on the right problems is to look at those actively impacting Service-Level Objectives (SLOs). If the number of issues in an environment still calls for further prioritization, automatically triage and inform stakeholders easily by alerting them on the SLO error budget burn rate (how fast the SLO error budget is consumed).</p>
+<h3 id="protect">Protect<a class="headerlink" href="#protect" title="Permanent link">&para;</a></h3>
+<p>All environments, infrastructures, and applications must be protected â with the right measures. Organizations can protect their assets more easily with a consistent Internal Developer Platform (IDP), providing governance and security.</p>
+<h4 id="security-alert-noise-reduction-security-operations-center-soc-noise-reduction">Security alert noise reduction Security Operations Center (SOC) noise reduction<a class="headerlink" href="#security-alert-noise-reduction-security-operations-center-soc-noise-reduction" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Reduce security event storms by 99%</p>
+<p>Avoiding fatigue due to the myriad of security events emitted by hyperscaler tools every single day by deduplication and consolidation combined with automatic ticket creation and assignment based on development and security ownership.</p>
+<p>Try it yourself: <a href="/docs/secure/use-cases/notification-automation" title="Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.">CSPM Notification Automation</a>.</p>
+<h4 id="security-as-a-service-automate-security-findings-at-scale">Security as a service Automate security findings at scale<a class="headerlink" href="#security-as-a-service-automate-security-findings-at-scale" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Strive towards zero false positives.</p>
+<p>Understand the threat posed by your code, third party, and open-source libraries and block malicious requests attempting to exploit code weaknesses in these.</p>
+<ul>
+<li>Precisely detect &amp; block attacks</li>
+<li>While applications keep serving their users</li>
+<li>Integrated with OneAgent &amp; available at the flip of a switch</li>
+</ul>
+<h4 id="continuous-security-posture-awareness-contextualized-threat-detection-and-incident-response">Continuous security posture awareness Contextualized threat detection and incident response<a class="headerlink" href="#continuous-security-posture-awareness-contextualized-threat-detection-and-incident-response" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   From threat hypothesis to tangible evidence in minutes.</p>
+<p>Today, security takes everyone in your organization, and all your data is relevant for security. That's why it needs to be easy to ingest any data and have it available for manual detailed security analytics. At the pace of cybersecurity attacks today, there is no way around automation. By the time your valuable security analysts get in front of an incident or investigate a malicious pattern - you want to ensure it's worth their time. With data contextualization, workflow actions, and dedicated security analytics apps, you have all the tools to be proactive about security. Finding whether you have a bad actor in your system, what they are up to, and preventing them from being successful â with the merge of observability and security, it's easy to understand how to elevate your analysts by leveling up the security incident first, fully contextualizing the incident, and prioritizing based on
+importance.</p>
+<ul>
+<li>Stop attackers in their tracks</li>
+<li>Leverage observability and security data in context to see every detail of your environment</li>
+<li>All the data is consolidated at your fingertips</li>
+<li>Automation actions easily combined into a workflow elevate your analysts whenever they need to look at an incident</li>
+</ul>
+<h3 id="improve">Improve<a class="headerlink" href="#improve" title="Permanent link">&para;</a></h3>
+<p>Continuous improvement of resources drives business. These improvements can range from cost- to time-savings to always ensuring best-in-class customer experiences.</p>
+<h4 id="always-on-app-profiling-always-on-app-profiling">Always-on app profiling Always-on app profiling<a class="headerlink" href="#always-on-app-profiling-always-on-app-profiling" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   5x faster performance bottleneck issue resolution</p>
+<p>With observability data around CPU, thread, and memory usage, it's easy to quickly identify the biggest performance bottlenecks and flag them for improvement. Such bottlenecks could manifest themselves as inefficient string operations leading to high memory allocation and pressure on the garbage collector, which can, in turn, lead to scalability and performance issues.</p>
+<p>Try it yourself: <a href="/docs/observe/application-observability/services/always-on-app-profiling" title="Optimize your code and find performance problems">Always-on app profiling</a>.</p>
+<h4 id="kubernetes-utilization-improvement-kubernetes-utilization-improvement">Kubernetes utilization improvement Kubernetes utilization improvement<a class="headerlink" href="#kubernetes-utilization-improvement-kubernetes-utilization-improvement" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Automated K8s utilization improvement reduces spend up to 25%.</p>
+<p>Continuously update and improve k8s requests and limits automatically, reducing cognitive load on developers and providing peace of mind for platform engineers.</p>
+<p>By analyzing Kubernetes metrics and SLOs for resource allocation and utilization, it's possible to set environment configuration avoiding any misalignment.</p>
+<h4 id="business-alignment-business-alignment">Business alignment Business alignment<a class="headerlink" href="#business-alignment-business-alignment" title="Permanent link">&para;</a></h4>
+<p>Goal
+:   Bring in context to your business processes and accelerate collaboration.</p>
+<p>It's critical to align platform engineering initiatives and work with the primary value stream. Aligning initiatives to assets allows for easier prioritization of improvement work and communication with the line of business.</p>
+<h2 id="measuring-platform-success">Measuring platform success<a class="headerlink" href="#measuring-platform-success" title="Permanent link">&para;</a></h2>
+<h3 id="governance-and-consistency-at-scale">Governance and consistency at scale<a class="headerlink" href="#governance-and-consistency-at-scale" title="Permanent link">&para;</a></h3>
+<p>Golden Paths guide developers, saving time and reducing risks. But they're not one-size-fits-all â flexibility exists for individual customization and exploration.</p>
+<p>The result? A platform that scales effortlessly, where standardized efficiency works with developer autonomy to offer governance and consistency.</p>
+<p>Applying product management principles and observability to the IDP makes it possible to provide meaningful insights into platform infrastructure, tools, and services. Golden Paths adoption and efficiency regarding feedback for developers.</p>
+<h3 id="dora-metrics">DORA metrics<a class="headerlink" href="#dora-metrics" title="Permanent link">&para;</a></h3>
+<p>Googleâs DevOps Research and Assessment (DORA) team established the DORA metrics to provide key metrics on the performance of a software development team.</p>
+<p>The established four keys include:</p>
+<p>Deployment frequency
+:   Measures how often a team successfully releases to production</p>
+<p>Lead time for change
+:   Measures the time it takes for committed code to get into production.</p>
+<p>Change failure rate
+:   Measures the percentage of deployments that result in a failure in production that requires a bug fix or roll-back.</p>
+<p>Mean time to restore service (MTTR)
+:   Measures how long it takes an organization to recover from a failure in production.</p>
+<p>The DORA team extended these metrics by adding a fifth one in 2021:</p>
+<p>Reliability
+:   Representing availability, latency, performance, and scalability</p>
+<p>Benchmarking in real-time and across dimensions (such as technologies and teams) provides crucial benefits or a platform engineering team.</p>
+<h3 id="developer-experience">Developer experience<a class="headerlink" href="#developer-experience" title="Permanent link">&para;</a></h3>
+<p>Platform engineering is ultimately about driving developer productivity. But how do you define and measure developer productivity and satisfaction? It canât be reduced to a single metric, but the SPACE framework captures critical dimensions of developer productivity:</p>
+<ul>
+<li>Satisfaction</li>
+<li>Performance</li>
+<li>Activity</li>
+<li>Communication and collaboration</li>
+<li>Efficiency and flow</li>
+</ul>
+<p>The SPACE framework doesn't provide a ready-to-use list of metrics like the DORA metrics, but instead guides in providing categories to consider.</p>
+<h2 id="dynatrace-and-opentelemetry">Dynatrace and OpenTelemetry<a class="headerlink" href="#dynatrace-and-opentelemetry" title="Permanent link">&para;</a></h2>
+<p><a href="/docs/ingest-from/opentelemetry" title="Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.">OpenTelemetry</a> (also referred to as OTel) is an open-source observability framework made up of a collection of tools, APIs, and SDKs.</p>
+<ul>
+<li>OTel enables IT teams to instrument, generate, collect, and export telemetry data for analysis and understanding software performance and behavior.</li>
+</ul>
+<p>As a Cloud Native Computing Foundation (CNCF) incubating project, OTel aims to provide unified sets of vendor-agnostic libraries and APIs, mainly for collecting data and transferring it somewhere.
+* Dynatrace, which is committed to making observability seamless for technical teams, is the only observability solution that combines high-fidelity distributed tracing, code-level visibility, and advanced diagnostics across cloud-native architectures. Data plus context are critical to supercharging observability.</p>
+<p>By integrating OTel data seamlessly, Dynatraceâs distributed tracing technology automatically picks up OTel data and provides the instrumentation for all the essential frameworks beyond the scope of OTel.</p>
+<p><img alt="Platform Engineering" src="https://dt-cdn.net/images/image003-960-07f1ef33d5.png" /></p>
+<h2 id="take-action">Take action!<a class="headerlink" href="#take-action" title="Permanent link">&para;</a></h2>
+<p>Implementing DevOps and platform engineering is not optional for organizations serious about transforming their ability to deliver value in the cloud. These practices are crucial, not just beneficial, for boosting productivity and achieving success in today's tech landscape.</p>
+<p>Dynatraceâs purpose-built solution for platform engineering reduces complexity through automated workflows, including auto-scaling, deployment validation, and anomaly remediation.</p>
+<p>By leveraging the power of the Dynatrace platform and the new Kubernetes experience, platform engineers are empowered to implement the following best practices, enabling their development teams to deliver best-in-class applications and services to their customers.</p>
+<p>Centralize and standardize
+:   The ability to effectively manage multi-cluster infrastructure is critical to consistent and scalable service delivery.</p>
+<p>Provide self-service platform services with dedicated UI
+:   for development teams to improve developer experience and increase speed of delivery.</p>
+<p>Automation, automation, automation
+:   Adoption of GitOps practices enables platform provisioning at scale.</p>
+<p>Context
+:   Get access to not just data, but answers â reaching the right stakeholders at the right time.</p>
+<p>1</p>
+<p>Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe, and Arun Chandrasekaran, 16 October 2023. GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and is used herein with permission. All rights reserved.</p>
+<hr />
 <h2 id="source-serverless-monitoringmd">Source: serverless-monitoring.md<a class="headerlink" href="#source-serverless-monitoringmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-02-15T21:12:54.143233</p>
+scraped: 2026-02-16T09:26:37.743790</p>
 <hr />
 <h1 id="serverless-monitoring">Serverless monitoring<a class="headerlink" href="#serverless-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="serverless-monitoring_1">Serverless monitoring<a class="headerlink" href="#serverless-monitoring_1" title="Permanent link">&para;</a></h1>
