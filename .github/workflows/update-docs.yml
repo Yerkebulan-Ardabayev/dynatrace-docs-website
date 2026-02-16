@@ -63,6 +63,13 @@ jobs:
           timeout 1740 python translate_docs_groq.py || echo "Translation timed out (partial translation saved)"
           echo "Translation step completed!"
 
+      - name: Generate NotebookLM sources
+        if: steps.scrape.outcome == 'success'
+        run: |
+          echo "Generating combined docs for Google NotebookLM RAG..."
+          python scripts/generate_notebooklm.py
+          echo "NotebookLM sources generated!"
+
       - name: Sanitize secrets from scraped content
         if: steps.scrape.outcome == 'success'
         run: |
