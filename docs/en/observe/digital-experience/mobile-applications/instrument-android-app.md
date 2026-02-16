@@ -1,7 +1,7 @@
 ---
 title: Instrument Android apps
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-android-app
-scraped: 2026-02-15T21:21:07.143139
+scraped: 2026-02-16T09:20:18.532012
 ---
 
 # Instrument Android apps

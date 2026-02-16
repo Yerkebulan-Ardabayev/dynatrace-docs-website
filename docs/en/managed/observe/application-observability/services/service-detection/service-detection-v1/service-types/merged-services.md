@@ -1,7 +1,7 @@
 ---
 title: Merged services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/merged-services
-scraped: 2026-02-15T09:13:55.797924
+scraped: 2026-02-16T09:30:17.346463
 ---
 
 # Merged services

@@ -1,7 +1,7 @@
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-15T21:13:17.873277
+scraped: 2026-02-16T09:25:14.099487
 ---
 
 # NVIDIA NIM
@@ -32,7 +32,7 @@ Afterwards, add the following annotations to your NVIDIA NIM deployments:
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8000"`
 
-Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.") to deploy a collector.
+Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy a collector.
 With the following config, the collector will scrape AI metrics every 10 seconds from the `<NIM-endpoint>:8000` endpoint.
 
 ```

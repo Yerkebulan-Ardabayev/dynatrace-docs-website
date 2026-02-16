@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Digital Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience
-scraped: 2026-02-15T21:08:27.881265
+scraped: 2026-02-16T09:14:30.530089
 ---
 
 # Digital Experience

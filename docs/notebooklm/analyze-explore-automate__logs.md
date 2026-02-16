@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 43
+Files combined: 46
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 43
 ---
 title: Log alerts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/alerting-on-logs
-scraped: 2026-02-15T21:12:12.473015
+scraped: 2026-02-16T09:18:12.059517
 ---
 
 # Log alerts
@@ -99,7 +99,7 @@ For detailed instructions, see [Create log alerts for a log event or summary of 
 ---
 title: Log content analysis
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-analysis
-scraped: 2026-02-15T21:13:46.690511
+scraped: 2026-02-16T09:19:00.210687
 ---
 
 # Log content analysis
@@ -157,7 +157,7 @@ With enriched log data, you can check for the specific user inside your applicat
 ---
 title: Log Management and Analytics best practices
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-best-practices
-scraped: 2026-02-15T21:22:10.988484
+scraped: 2026-02-16T09:26:58.404318
 ---
 
 # Log Management and Analytics best practices
@@ -555,7 +555,7 @@ This step grants users access to only specific buckets.
 ---
 title: Configure data storage and retention for logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-bucket-assignment
-scraped: 2026-02-15T21:12:19.100425
+scraped: 2026-02-16T09:18:23.712970
 ---
 
 # Configure data storage and retention for logs
@@ -675,13 +675,756 @@ For more information, see [Log Management and Analytics best practices](/docs/an
 ---
 
 
+## Source: lma-log-processing-matcher.md
+
+
+---
+title: DQL matcher in logs
+source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher
+scraped: 2026-02-16T09:29:53.951086
+---
+
+# DQL matcher in logs
+
+# DQL matcher in logs
+
+* Latest Dynatrace
+* Reference
+* 1-min read
+* Updated on Oct 15, 2025
+
+With [Dynatrace on Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
+
+The matcher filters the ingested data and reduces the scope of data processed by the rule that you create. You can use the matcher in log and event processing, log metrics, log events, and log buckets to:
+
+* Filter records containing a specified phrase.
+* Search log data for a specific value in a given attribute.
+* Test if a value is NULL.
+* Use logical operators to connect two or more expressions.
+
+  To learn about the use of logical operators in DQL, see [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.").
+
+## Functions
+
+### matchesPhrase
+
+Filters records containing a specified phrase. Returns only matching records. This function is case insensitive for ASCII characters, it works with multi-value attributes (matching any of the values), and the asterisk character (`*`) is a wildcard only referring to a single term, not the whole field value.
+
+* **Validation**  
+  The `matchesPhrase` function performs case-insensitive [contains](/docs/platform/grail/dynatrace-query-language/functions#contains "A list of DQL functions.") for the whole query string and doesn't support mid-string wildcards.
+  For found results, additional validation takes place:
+
+  + if the query starts with a word character, the preceding character must be a non-word character.
+  + if the query ends with a word character, the succeeding character must be a non-word character.
+  + if the query starts with an asterisk, no validation of the preceding character is performed.
+  + if the query ends with an asterisk, no validation of the succeeding character is performed.
+* **Syntax**  
+  `matchesPhrase(expression, phrase [, caseSensitive])`
+* **Parameters**
+
+  Name
+
+  Type
+
+  Mandatory
+
+  Default
+
+  Constraints
+
+  Description
+
+  expression
+
+  string, array
+
+  yes
+
+  The expression (string or array of strings) that should be checked.
+
+  phrase
+
+  string
+
+  yes
+
+  The phrase to search for.
+
+  caseSensitive
+
+  boolean
+
+  no
+
+  false
+
+  This optional parameter (`caseSensitive`) is not supported by the matcher. The `matchesPhrase` function in the matcher performs only case insensitive search.
+
+  Whether the match should be done case-sensitive.
+* **Example**  
+  In this example, you add a filter that matches log records that contain `error` phrase in their content.
+
+  ```
+  matchesPhrase(content, "error")
+  ```
+
+  ### Examples of event processing using DQL matchesPhrase function
+
+  Part of the input event
+
+  Processing query
+
+  Match result
+
+  Description
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, "192.168.0.1")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  Exact match by single term.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.123"`
+
+  `matchesPhrase(attribute, "192.168.0.1")`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  Non-word character is expected after character `1`.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.123"`
+
+  `matchesPhrase(attribute, "192.168.0.1*")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The query would match all IPs with the last octet between `100` and `199`.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, "failed to login")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  Exact phrase match.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, "failed to log")`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  `log` is not a full word, non-word character is expected after `log`.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, "failed to log*")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  If the query ends with a wildcard character, the validation of the succeeding character is skipped.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, "ed to login")`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  `ed` is not a full word, the preceding character `l` is a part of the word.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, "*ed to login")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  If the query starts with a wildcard character, the validation of the preceding character is skipped.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, "*ed to log*")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  If the query starts and ends with a wildcard character, the validation of the preceding and succeeding characters is skipped.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, "kÃ¤Ã¤rmanÃ¼ failed")`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  There should be an apostrophe (`'`) character between `kÃ¤Ã¤rmanÃ¼` and `failed`.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, "rmanÃ¼' failed")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  Non-ASCII character `Ã¤` is treated as non-word character.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesPhrase(attribute, " 'kÃ¤Ã¤rmanÃ¼' failed")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  If the query starts with non-word character, the validation of the preceding character is skipped.
+
+  `attribute="Failed to assign monitoring configuration for com.dynatrace.extension"`
+
+  `matchesPhrase(attribute, "configuration for")`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  There is a space in the query and a tabulator in the attribute value.
+
+  `attribute="Failed to assign monitoring configuration for com.dynatrace.extension"`
+
+  `matchesPhrase(attribute, "failed to")`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  There is a single space in the query and a double space in the attribute value
+
+  `attribute="Failed to assign monitoring configuration for com.dynatrace.extension"`
+
+  `matchesPhrase(attribute, "failed to")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  It is possible to search with multiple spaces.
+
+  `attribute=["Gdansk, Poland", "Linz, Austria", "Klagenfurt, Austria"]`
+
+  `matchesPhrase(attribute, "Austria")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The function handles multi-value attributes in "any-match" manner, in this case `Austria` is matched in second and third value.
+
+  `attribute=["Gdansk, Poland", "Linz, Austria", "Klagenfurt, Austria"]`
+
+  `matchesPhrase(attribute, "Pol*")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  Wildcard can be used also when dealing with multi-value attributes.
+
+### matchesValue
+
+Searches the records for a specific value in a given attribute. Returns only matching records. This function is case insensitive for ASCII characters, it works with multi-value attributes (matching any of the values), and it doesn't support mid-value wildcards.
+
+* **Syntax**  
+  `matchesValue(expression, value [, caseSensitive])`
+* **Parameters**
+
+  Name
+
+  Type
+
+  Mandatory
+
+  Default
+
+  Constraints
+
+  Description
+
+  expression
+
+  string, array
+
+  yes
+
+  The expression (value or array of values) that should be checked.
+
+  value
+
+  string
+
+  yes
+
+  The value to search for.
+
+  caseSensitive
+
+  boolean
+
+  no
+
+  false
+
+  This optional parameter (`caseSensitive`) is not supported by the matcher. The `matchesValue` function in the matcher performs only case insensitive search.
+
+  Whether the match should be done case-sensitive.
+* **Example**  
+  In this example, you add a filter record where `process.technology` attribute contains `nginx` value.
+
+  ```
+  matchesValue(process.technology, "nginx")
+  ```
+
+  ### Examples of event processing using DQL matchesValue function
+
+  Part of the input event
+
+  Processing query
+
+  Match result
+
+  Description
+
+  `attribute="Dynatrace"`
+
+  `matchesValue(attribute, "dynaTrace")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  Case insensitive equality.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesValue(attribute, "192.168.0.1")`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  The whole attribute value is considered.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesValue(attribute, "*192.168.0.1")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The value ends with `192.168.0.1`.
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesValue(attribute, "user*")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The value starts with `user` (case-insensitively).
+
+  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
+
+  `matchesValue(attribute, "*failed to log*")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The value contains the string `failed to log`.
+
+  `attribute="Ãsterreich"`
+
+  `matchesValue(attribute, "Ã¶sterreich")`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  Case insensitive only for ASCII characters.
+
+  `attribute="Ãsterreich"`
+
+  `matchesValue(attribute, "Ãsterreich")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  Exact match.
+
+  `attribute=["Java", "DOCKER", "k8s"]`
+
+  `matchesValue(attribute, "docker")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The function handles multi-value attributes in "any-match" manner, in this case, `docker` is matched in the second value.
+
+  `attribute=["Java11", "java17"]`
+
+  `matchesValue(attribute, "java")`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  None of the values is equal to string java.
+
+  `attribute=["Java11", "java17"]`
+
+  `matchesValue(attribute, "java*")`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  Both values start with a string `java`.
+
+### isNotNull
+
+Tests if a value is not NULL.
+
+* **Syntax**  
+  `isNotNull(<value>)`
+* **Example**  
+  In this example, we filter (select) data where the `host.name` field contains a value.
+
+  ```
+  isNotNull(`host.name`)
+  ```
+
+  timestamp
+
+  content
+
+  event.type
+
+  host.name
+
+  `2022-08-03 11:27:19`
+
+  `2022-08-03 09:27:19.836 [QueueProcessor] RemoteReporter...`
+
+  `LOG`
+
+  `HOST-AF-710319`
+
+  **Examples of event processing using DQL isNotNull function.**
+
+  Part of the input event
+
+  Processing query
+
+  Match result
+
+  Description
+
+  ```
+  {
+
+
+
+  attribute="Dynatrace"
+
+
+
+  }
+  ```
+
+  `isNotNull(other)`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  The `other` attribute does not exists
+
+  ```
+  {
+
+
+
+  attribute="Dynatrace"
+
+
+
+  }
+  ```
+
+  `isNotNull(attribute)`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The `attribute` has non-null value.
+
+  ```
+  {
+
+
+
+  attribute=null
+
+
+
+  }
+  ```
+
+  `isNotNull(attribute)`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  The `attribute` has null value.
+
+### isNull
+
+Tests if a value is NULL.
+
+* **Syntax**  
+  `isNull(<value>)`
+* **Example**  
+  In this example, we filter (select) data where the `host.name` field doesn't contain a value.
+
+  ```
+  filter isNull(`host.name`)
+  ```
+
+  timestamp
+
+  content
+
+  event.type
+
+  host.name
+
+  `2022-08-03 12:53:26`
+
+  `2022-08-03T10:52:31Z localhost haproxy[12529]: 192.168.19.100:38440`
+
+  `LOG`
+
+  ### Examples of event processing using DQL isNull function.
+
+  Part of the input event
+
+  Processing query
+
+  Match result
+
+  Description
+
+  ```
+  {
+
+
+
+  attribute="Dynatrace"
+
+
+
+  }
+  ```
+
+  `isNull(other)`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The `other` attribute does not exists.
+
+  ```
+  {
+
+
+
+  attribute="Dynatrace"
+
+
+
+  }
+  ```
+
+  `isNull(attribute)`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  The `attribute` has non-null value.
+
+  ```
+  {
+
+
+
+  attribute=null
+
+
+
+  }
+  ```
+
+  `isNull(attribute)`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The `attribute` has null value.
+
+## Operators
+
+Logical operators can be used to connect two or more expressions. Check out [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.") to find out more about the behavior of logical operators in DQL.
+
+### OR
+
+Logical addition.
+
+* **Syntax**  
+  `<expression_1> or <expression_2>`
+* **Example**  
+  In this example, you add a matcher to filter records where the content contains either `timestamp` phrase or `trigger` phrase.
+
+  ```
+  matchesPhrase(content, "timestamp") or matchesPhrase(content, "trigger")
+  ```
+
+### AND
+
+Logical multiplication.
+
+* **Syntax**  
+  `<expression_1> and <expression_2>`
+* **Example**  
+  In this example, you add a matcher to filter records where the content contains `timestamp` phrase and `trigger` phrase.
+
+  ```
+  matchesPhrase(content, "timestamp") and matchesPhrase(content, "trigger")
+  ```
+
+### NOT
+
+Logical negation.
+
+* **Syntax**  
+  `not <expression>`
+* **Example**  
+  In this example, you add a matcher to filter records where the content doesn't contain `timestamp` phrase.
+
+  ```
+  not matchesPhrase(content, "timestamp")
+  ```
+
+### Strict equality
+
+[Logical operator](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.") (`==`) indicating an exact match.
+
+Data types need to be identical. However, if the decimal value is `0`, floating numbers can be compared with integer data. For example, `1==1.0`  
+For strings, the search is case-sensitive.
+
+Contrary to `matchesValue` function, `strict equality` operator performs case-sensitive comparison, doesn't support wildcards and doesn't operate on elements being part of multi-value attributes.
+
+* **Syntax**  
+  `<expression1> == <expression2>`
+* **Examples**
+
+  Examples of using the strict equality operator.
+
+  Part of the input event
+
+  Processing query
+
+  Match result
+
+  Description
+
+  ```
+  {
+
+
+
+  attribute="Dynatrace"
+
+
+
+  }
+  ```
+
+  `attribute == "Dynatrace"`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  The attribute is of the string type and has the same value.
+
+  ```
+  {
+
+
+
+  attribute="Dynatrace"
+
+
+
+  }
+  ```
+
+  `attribute == "dynatrace"`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  The strict equality is case-sensitive.
+
+  ```
+  {
+
+
+
+  attribute="1"
+
+
+
+  }
+  ```
+
+  `attribute == 1`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  The attributes have different data types
+
+  ```
+  {
+
+
+
+  attribute="1.0"
+
+
+
+  }
+  ```
+
+  `attribute == 1`
+
+  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+
+  Floating numbers can be compared to integer values if their decimals equal 0
+
+  ```
+  {
+
+
+
+  attribute=["Java", "DOCKER", "k8s"]
+
+
+
+  }
+  ```
+
+  `attribute == "Java"`
+
+  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+  The attributes have different data types.
+
+## Grouping
+
+You can create conditional grouping with brackets `( )`.
+
+```
+matchesValue(process.technology, "nginx") and ( matchesPhrase(content, "error") or matchesPhrase(content, "warn") )
+```
+
+## Reuse expressions
+
+All the matcher expressions used in either log events, metrics, processing or bucket configurations are valid DQL. That means you can also use these expressions together with DQL filter command, for example, in the [log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
+
+## Related topics
+
+* [Conversion to DQL for Logs](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Convert your current log monitoring rules to DQL.")
+
+
+---
+
+
 ## Source: lma-classic-log-processing.md
 
 
 ---
 title: Log processing with classic pipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing
-scraped: 2026-02-15T21:19:46.827160
+scraped: 2026-02-16T09:15:47.573018
 ---
 
 # Log processing with classic pipeline
@@ -784,7 +1527,7 @@ To create a log processing rule
 ---
 title: Log Management and Analytics default limits
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-limits
-scraped: 2026-02-15T21:19:45.584777
+scraped: 2026-02-16T09:15:52.940250
 ---
 
 # Log Management and Analytics default limits
@@ -967,7 +1710,7 @@ If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 20
 ---
 title: Connect log data to traces
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-enrichment
-scraped: 2026-02-15T21:09:09.254801
+scraped: 2026-02-16T09:14:04.621760
 ---
 
 # Connect log data to traces
@@ -2162,7 +2905,7 @@ format: winston.format.simple()
 ---
 title: Syslog ingestion with ActiveGate
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog
-scraped: 2026-02-15T21:30:18.186413
+scraped: 2026-02-16T09:28:13.956911
 ---
 
 # Syslog ingestion with ActiveGate
@@ -2223,7 +2966,7 @@ To enable syslog ingestion
 
    If your syslog producers use the default ports per supported protocols, your syslog-enabled ActiveGate should receive syslog records right away.
 
-   If your syslog producers send events on custom ports or the syslog protocol is RFC 3164, modify the syslog receiver configuration. For details, see [Ingest syslog data using OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
+   If your syslog producers send events on custom ports or the syslog protocol is RFC 3164, modify the syslog receiver configuration. For details, see [Ingest syslog data with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
 
    Default syslog receiver configuration
 
@@ -4013,7 +4756,7 @@ For multi-value attributes, the attribute key contributes to billing only once, 
 ---
 title: Automatic log enrichment
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation
-scraped: 2026-02-15T21:24:20.015640
+scraped: 2026-02-16T09:32:02.165659
 ---
 
 # Automatic log enrichment
@@ -5166,7 +5909,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 ---
 title: Automatic log enrichment
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa
-scraped: 2026-02-15T21:15:52.458899
+scraped: 2026-02-16T09:24:20.175826
 ---
 
 # Automatic log enrichment
@@ -5279,15 +6022,7 @@ emerg
 
 EMERGENCY
 
-A match occurs and severity is determined when
-
-1. The keyword found is a single word/phrase from the above list, and it is preceded and followed by a space.
-2. The keyword found is a single word/phrase from the above list, and it is preceded and followed by one of the four predefined non-alphanumeric symbols, as in the example below:
-
-* `[error]`
-* `{error}`
-* `{{error}}`
-* `<error>`
+A match occurs and severity is determined when the keyword found is a single word/phrase from the above list, and it is preceded and followed any non-alphanumeric symbol other than `/` or `_`.
 
 ## Transform all types of logs
 
@@ -9178,7 +9913,7 @@ To create a timestamp configuration using the API
 ---
 title: Log ingestion via OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa
-scraped: 2026-02-15T21:30:23.742781
+scraped: 2026-02-16T09:28:19.326007
 ---
 
 # Log ingestion via OneAgent
@@ -9985,13 +10720,198 @@ An example JSON response is shown in the code block below.
 ---
 
 
+## Source: lma-send-syslogs-via-fluentd.md
+
+
+---
+title: Stream syslog to Dynatrace with Fluentd
+source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-send-syslogs-via-fluentd
+scraped: 2026-02-16T09:36:07.386257
+---
+
+# Stream syslog to Dynatrace with Fluentd
+
+# Stream syslog to Dynatrace with Fluentd
+
+* Latest Dynatrace
+* Tutorial
+* 4-min read
+* Updated on Jan 28, 2026
+
+Recommended syslog ingestion
+
+Stream syslog via Fluentd if you already collect logs with it or if a specific use case requires an additional component, for example, forwarding logs to different targets. If you want to benefit from a secure, trusted edge component with enterprise support and life-cycle management, see [Syslog ingestion with ActiveGate](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.").
+
+In the case where Linux system syslog observability is the main focus, we recommend deploying OneAgent, which [autodiscovers host syslog data](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-autodiscovery#oneagent-log-configuration-flow "Dynatrace automatically discovers all new log files that meet specific requirements."), preserves topology context, and requires minimal configuration and maintenance.
+
+You can send Syslog to Dynatrace using Fluentd. Configure Fluentd to send Syslog to Dynatrace Log ingestion API.
+
+![Diagram showing the flow of Syslog ingest via Fluentd](https://dt-cdn.net/images/syslog-fluentd-1486-41dd7cc63c.png)
+
+## Capabilities
+
+* Syslog is a standard protocol for message logging and system logs management. Routers, printers, hosts, switches and other devices across platforms use Syslog to log users' activity, system and software lifecycle events, status, or diagnostics.
+* During network monitoring, the remote Syslog server listens to the client's log messages and consolidates the logging data that can be then processed using the capabilities of Dynatrace Log Management and Analytics powered by Grail and Dynatrace AI-driven root cause analysis.
+
+## Configuration
+
+Set up the flow from Syslog producer over Fluentd to Dynatrace with the following steps:
+
+1. Get a [Dynatrace API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
+2. Deploy Fluentd according to your preferences.
+
+   * [Deploy Fluentdï»¿](https://dt-url.net/o9034h3). Fluentd can also run as a [DaemonSet in a Kubernetes clusterï»¿](https://dt-url.net/t2234xz). Built-in resiliency ensures data completeness and consistency even if Fluentd or an endpoint service temporarily goes down.
+3. Enable Fluentd to accept incoming Syslog messages.
+
+   * The [in\_syslogï»¿](https://dt-url.net/t00343n) input plugin enables Fluentd to retrieve records via the Syslog protocol on UDP or TCP. It is included in Fluentd's core so no additional installation is needed in this step.
+4. Use the Dynatrace [Fluentd pluginï»¿](https://dt-url.net/gb23475) to stream logs to the Dynatrace cluster. The open-source Dynatrace Fluentd plugin uses [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.") to send logs to Dynatrace.
+5. Point your devices to send syslogs to Fluentd.
+
+## Send syslogs to a remote endpoint
+
+In the examples below, you can send syslogs to a remote endpoint, which is Fluentd.
+
+### Example 1
+
+Configure Rsyslog on Linux Ubuntu to forward syslogs to a remote server, Fluentd.
+You need to add the following line to the syslog daemon configuration file `/etc/rsyslog.conf` (UDP protocol):
+
+```
+*.* @<fluentd host IP>:5140
+```
+
+* The `*.*` instructs the daemon to forward all messages to the specified Fluentd instance listening on port 5140. `<fluentd host IP>` needs to point to the IP address of Fluentd.
+* If you use TCP, type two `@` symbols, ( `@@`), as follows:
+
+```
+*.* @@<fluentd host IP>:5140
+```
+
+### Example 2
+
+Configure the F5 BIG-IP system to log to a remote syslog server (11.x - 17.x).
+Refer to the [F5 BIG-IP documentationï»¿](https://dt-url.net/080348q) for procedures regarding remote Syslog configuration.
+
+## Add attributes to syslogs in Fluentd
+
+The Dynatrace software intelligence platform and Dynatrace Intelligence depend on context-rich, quality data. You can provide the context for your data ingested via Log ingestion API that supports a set of [keys and semantic attributes](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs#parameters "Push custom logs to Dynatrace via the Log Monitoring API v2."). You can also provide custom attributes that don't require indexing in [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.").
+
+### Example 1
+
+Add the `log.source` attribute based on the source of syslogs in Fluentd.  
+The syslog message often needs additional context to differentiate sources during analysis. In this example, there are two separate syslog endpoints exposed in Fluentd: one for the Linux syslogs, and the other one for F5 syslogs. This helps decorate log streams with meaningful `log.source attribute`. The Fluentd configuration file needs to look like this:
+
+```
+<source>
+
+
+
+@type syslog
+
+
+
+port 5140
+
+
+
+bind 0.0.0.0
+
+
+
+tag system-linux
+
+
+
+</source>
+
+
+
+<source>
+
+
+
+@type syslog
+
+
+
+port 5141
+
+
+
+bind 0.0.0.0
+
+
+
+tag system-f5
+
+
+
+</source>
+```
+
+You need to add `log.source` attribute based on the fluentd tag.
+
+```
+<filter system-linux.**>
+
+
+
+@type record_transformer
+
+
+
+<record>
+
+
+
+log.source "linux syslogs"
+
+
+
+</record>
+
+
+
+</filter>
+
+
+
+<filter system-f5.**>
+
+
+
+@type record_transformer
+
+
+
+<record>
+
+
+
+log.source "f5 syslogs"
+
+
+
+</record>
+
+
+
+</filter>
+```
+
+Refer to the [Fluentd record\_transformer filter plugin documentationï»¿](https://dt-url.net/ac2345m) for more details.
+
+
+---
+
+
 ## Source: lma-stream-logs-fluentd-k8s.md
 
 
 ---
 title: Stream logs to Dynatrace with Fluentd on Kubernetes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s
-scraped: 2026-02-15T21:11:55.128315
+scraped: 2026-02-16T09:25:54.599582
 ---
 
 # Stream logs to Dynatrace with Fluentd on Kubernetes
@@ -10216,7 +11136,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Log ingestion
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion
-scraped: 2026-02-15T21:12:17.733524
+scraped: 2026-02-16T09:18:13.722799
 ---
 
 # Log ingestion
@@ -10348,7 +11268,7 @@ You can use the local `http://localhost:<port>/v2/logs/ingest` API endpoint to p
 ---
 title: Automatic log processing at ingestion
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-automatic-processing
-scraped: 2026-02-15T21:27:40.156725
+scraped: 2026-02-16T09:36:51.069247
 ---
 
 # Automatic log processing at ingestion
@@ -10421,7 +11341,7 @@ Log Monitoring API automatically process ingested logs by:
 ---
 title: Log processing with OpenPipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline
-scraped: 2026-02-15T21:10:26.757406
+scraped: 2026-02-16T09:12:29.587266
 ---
 
 # Log processing with OpenPipeline
@@ -10659,7 +11579,7 @@ Check the following use cases to learn how to leverage log processing with OpenP
 ---
 title: Log pre-processing with OpenPipeline with ready-made bundles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing
-scraped: 2026-02-15T21:27:11.615758
+scraped: 2026-02-16T09:32:05.659784
 ---
 
 # Log pre-processing with OpenPipeline with ready-made bundles
@@ -10789,7 +11709,7 @@ None
 ---
 title: Log processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing
-scraped: 2026-02-15T21:12:11.301650
+scraped: 2026-02-16T09:18:20.472907
 ---
 
 # Log processing
@@ -10847,7 +11767,7 @@ We recommend utilizing log processing with OpenPipeline as a scalable, powerful 
 ---
 title: Filter with facets
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/facets
-scraped: 2026-02-15T21:10:43.968741
+scraped: 2026-02-16T09:14:37.090164
 ---
 
 # Filter with facets
@@ -10927,7 +11847,7 @@ If you have previously modified the facets, to revert to the default settings fo
 ---
 title: Limits in Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/limits
-scraped: 2026-02-15T21:10:42.728579
+scraped: 2026-02-16T09:14:32.130702
 ---
 
 # Limits in Logs
@@ -10977,7 +11897,7 @@ To adjust the limits for your queries in ![Logs](https://dt-cdn.net/images/logs-
 ---
 title: Spot trends with the log distribution chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart
-scraped: 2026-02-15T21:10:46.299901
+scraped: 2026-02-16T09:14:41.908251
 ---
 
 # Spot trends with the log distribution chart
@@ -11043,7 +11963,7 @@ The log distribution chart may be based on sampled data, which means the display
 ---
 title: Adjust the log message
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/message
-scraped: 2026-02-15T21:10:41.494787
+scraped: 2026-02-16T09:14:33.840405
 ---
 
 # Adjust the log message
@@ -11289,7 +12209,7 @@ The log message is detected in a key/value pair for the following keys:
 ---
 title: Query and filter logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter
-scraped: 2026-02-15T21:10:45.144896
+scraped: 2026-02-16T09:14:40.274027
 ---
 
 # Query and filter logs
@@ -11406,7 +12326,7 @@ Note that suggestions are presented based on actual values queried in the backgr
 ---
 title: View surrounding logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs
-scraped: 2026-02-15T21:10:48.925255
+scraped: 2026-02-16T09:14:38.670659
 ---
 
 # View surrounding logs
@@ -11446,7 +12366,7 @@ The surrounding logs are shown for the context provided by the log record.
 ---
 title: Logs app
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app
-scraped: 2026-02-15T21:08:22.743574
+scraped: 2026-02-16T09:12:19.172759
 ---
 
 # Logs app
@@ -11613,7 +12533,7 @@ Find relevant log records without writing DQL queries.](https://www.dynatrace.co
 ---
 title: Log ingestion warnings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-troubleshooting/lma-ingest-warnings
-scraped: 2026-02-15T21:24:55.340083
+scraped: 2026-02-16T09:35:26.081800
 ---
 
 # Log ingestion warnings
@@ -11710,7 +12630,7 @@ processing\_prepare\_input\_error
 ---
 title: Troubleshooting Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-troubleshooting
-scraped: 2026-02-15T09:07:04.124628
+scraped: 2026-02-16T09:28:47.066007
 ---
 
 # Troubleshooting Log Management and Analytics
@@ -11765,7 +12685,7 @@ If OneAgent is not ingesting log records from a log file despite a log file is c
 ---
 title: Set up alerts based on events extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events
-scraped: 2026-02-15T21:28:38.986659
+scraped: 2026-02-16T09:28:59.648138
 ---
 
 # Set up alerts based on events extracted from logs
@@ -11896,7 +12816,7 @@ More information about event properties is available at:
 ---
 title: Set up custom alerts based on metrics extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics
-scraped: 2026-02-15T21:28:46.036494
+scraped: 2026-02-16T09:34:02.946118
 ---
 
 # Set up custom alerts based on metrics extracted from logs
@@ -12261,7 +13181,7 @@ Otherwise, your next step should be to contact the team responsible for maintain
 ---
 title: Create log metric
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric
-scraped: 2026-02-15T21:15:53.886166
+scraped: 2026-02-16T09:22:28.096662
 ---
 
 # Create log metric
@@ -12392,7 +13312,7 @@ To view the result in Data Explorer
 ---
 title: Observe your logs in real time
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql
-scraped: 2026-02-15T21:12:15.151426
+scraped: 2026-02-16T09:18:16.956741
 ---
 
 # Observe your logs in real time
@@ -12472,13 +13392,242 @@ For more information, check the **Related topics** section and see [Log Manageme
 ---
 
 
+## Source: lma-log-query-dashboard.md
+
+
+---
+title: Optimize performance and costs of dashboards running log queries
+source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-log-query-dashboard
+scraped: 2026-02-16T09:36:18.947391
+---
+
+# Optimize performance and costs of dashboards running log queries
+
+# Optimize performance and costs of dashboards running log queries
+
+* Latest Dynatrace
+* Tutorial
+* 8-min read
+* Published Jun 11, 2025
+
+Logs are an essential monitoring signal.
+Many teams build their own dashboards that rely on logs.
+
+Letâs look at the following dashboard that analyzes error logs generated by Kubernetes workloads running in a namespace.
+
+![Dashboard to analyze error logs generated by Kubernetes workloads running in a namespace](https://dt-cdn.net/images/k8s-log-dashboard-2884-c3fd02fff9.png)
+
+This dashboard uses two types of log queries:
+
+* Queries that aggregate log records
+
+  + using the `makeTimeseries` command.
+
+    ```
+    fetch logs
+
+
+
+    | filter k8s.namespace.name == "obslab-log-problem-detection"
+
+
+
+    | filter status == "ERROR"
+
+
+
+    | makeTimeseries  count = count()
+    ```
+
+    Run in Playground
+  + using the `summarize` command.
+
+    ```
+    fetch logs
+
+
+
+    | filter k8s.namespace.name == "obslab-log-problem-detection"
+
+
+
+    | filter status == "ERROR"
+
+
+
+    | summarize count = count(), by: { k8s.deployment.name } | sort count desc
+    ```
+
+    Run in Playground
+* A query that fetches logs to get log records in raw form.
+
+  ```
+  fetch logs
+
+
+
+  | filter k8s.namespace.name == "obslab-log-problem-detection"
+
+
+
+  | filter status == "ERROR"
+  ```
+
+  Run in Playground
+
+Team wants to know
+
+* Which components generate the most errors.
+* How the errors are distributed over time.
+* What are the sample records.
+
+In this guide you will learn different techniques to get this information while optimizing your dashboard for performance and costs.
+
+## How to optimize queries
+
+Letâs look what you can do to optimize different types of queries.
+
+### Convert queries to metrics based on logs
+
+When you are interested in aggregated values like sums, or counts spitted by a low cardinality dimension, follow the guide to [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.").
+
+In our example this is the required configuration for your metric extraction:
+
+* **Name**: `errors in obslab-log-problem-detection`
+* **Matching condition**: `k8s.namespace.name == "obslab-log-problem-detection" AND status == "ERROR"`
+* **Metric key**: `log.k8s.obslab.errors`
+* **Dimensions**: `k8s.workload.name`
+
+Then you have to adjust the DQL statement on the dashboard tile.
+
+```
+timeseries count = count(log.obslab.errors)
+```
+
+Once you have adjusted the two tiles, there will be no query cost generated on rendering the two tiles.
+Log-based metrics are licensed like any other [Custom Metric powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+
+Itâs not always possible to extract metrics from any DQL query.
+Be aware of dimensional cardinality, and specific commands like `dedup` or `join`.
+If you can't extract metrics, you will need to optimize your DQL query and dashboard configuration.
+
+### Optimize DQL queries that can't be converted to metrics
+
+Our dashboard example presents a log records content field.
+This is a high-cardinality field and as such it's not suitable for metric dimension.
+
+The first thing you can do is to set the timeframe, segment, or bucketâif possible.
+This will increase the performance and decrease costs right away.
+To do so, simply edit the dashboard tile.
+
+* Set timeframe: Select the **Custom timeframe** toggle and choose the timeframe via the drop-down menu.
+* Set segment: Select the **Custom segments** toggle and choose the segment via the drop-down menu.
+* Set bucket: Add the following line to the DQL query.
+
+  ```
+  | filter dt.system.bucket == "default_logs"
+  ```
+
+More DQL best practices for queries optimization are at [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.").
+
+### Optimize the order of query commands
+
+Looking at our query we can also filter early and set fields.
+
+```
+fetch logs
+
+
+
+| filter dt.system.bucket == "default_logs"
+
+
+
+| filter k8s.namespace.name == "obslab-log-problem-detection"
+
+
+
+| filter status == "ERROR"
+
+
+
+| fields timestamp, content, k8s.workload.name
+```
+
+If your use case allows, you can also set query limits.
+Scroll to **Edit tile** > **Query limits**.
+You can then configure
+
+* **Read data limit (GB)**.
+* **Record limit**.
+* **Result size limit (MB)**.
+* **Sampling**.
+
+When you change the read data limit and record limit, users who need more results should use the **Open with** functionality and analyze logs in ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
+
+Reducing the sampling size reduces the amount of data that is scanned, and returns more diverse samples in large data sets.
+Sampling is useful for:
+
+* Performance Optimization: Use sampling to analyze large datasets efficiently without processing all the data.
+* Anomaly Detection: Use sampling to quickly identify unusual patterns or outliers in real-time.
+* Trend Analysis: Use sampling to understand overall trends without examining every data point.
+
+In situations when you count records (like using the `summarize` command), remember to multiply the result by sampling rate to get a better approximation of the result.
+
+Sampling isnât a good idea when you care about accuracy or scan small datasets.
+
+### Configure bucket to use Retain with Included Queries
+
+If many users frequently open a dashboard and they query shorter time ranges (data that is less than 35 days old), consider using the [Retain with Included Queries](/docs/license/capabilities/log-analytics#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") pricing model and set the appropriate [IAM permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#included-queries "Find out how to assign permissions to buckets and tables in Grail.").
+
+For the detailed instructions on the bucket configuration, see [Take control of log query costs using Retain with Included Queries](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries "How to use the Retain with Included Queries capability to control and predict log consumption.").
+
+### Turn off auto-refresh
+
+When your dashboard is automatically refreshed every minute, all your queries will be executed.
+If you are using log queries, you are charged per execution.
+
+Consider switching off the auto-refresh functionality via the  drop-down menu and selecting **Off**.
+
+## Conclusion
+
+By using the techniques mentioned above, we reduced the size of the scanned data for a 24-hour timeframe from 12.3 GB to 147 MB.
+Your results may vary.
+
+Best practices:
+
+* If possible, use metrics based on logs as described in [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.").
+  Metrics are faster, have longer and cheaper retention, queries for metrics are not charged, you can drop the log records contributing to a metric and save on retention costs, can metrics be used for alerting.
+
+  To extract metrics, [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.") with OpenPipeline.
+* If your use case requires that log content (or other high-cardinality data) is presented via dashboards, optimize your DQL queries by setting timeframe, segments, buckets, query limits, and disable auto-refresh.
+
+## Learn more
+
+* [Logs use case: Observe cloud network traffic with logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-observability "Observability using logs, metrics and dashboards.")
+* [Start exploration journey with Dashboardsï»¿](https://www.dynatrace.com/news/blog/start-your-exploration-journey-with-dashboards/)
+* [Transform data into insights with Dynatrace Dashboards and Notebooksï»¿](https://www.dynatrace.com/news/blog/transform-data-into-insights-with-dynatrace-dashboards-and-notebooks/)
+* [Dynatrace Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
+* [Learn more about DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Use OpenPipeline to extract metrics from log records](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
+
+## Related topics
+
+* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
+* [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
+
+
+---
+
+
 ## Source: lma-use-cases.md
 
 
 ---
 title: Log Management and Analytics use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases
-scraped: 2026-02-15T21:12:20.464473
+scraped: 2026-02-16T09:18:15.360478
 ---
 
 # Log Management and Analytics use cases
@@ -12580,7 +13729,7 @@ Using a combination of metrics based on logs and [custom alerts](/docs/dynatrace
 ---
 title: Log on Grail examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-on-grail-examples
-scraped: 2026-02-15T21:12:16.546092
+scraped: 2026-02-16T09:18:18.858997
 ---
 
 # Log on Grail examples
@@ -13500,7 +14649,7 @@ In this use case, you need to automate anomaly detection. See how you can extrac
 ---
 title: Upgrade Log Monitoring Classic to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma
-scraped: 2026-02-15T21:26:42.183722
+scraped: 2026-02-16T09:33:59.729532
 ---
 
 # Upgrade Log Monitoring Classic to Log Management and Analytics

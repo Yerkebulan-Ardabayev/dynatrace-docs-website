@@ -1,7 +1,7 @@
 ---
 title: Data centers
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers
-scraped: 2026-02-15T21:13:04.648887
+scraped: 2026-02-16T09:18:28.513643
 ---
 
 # Data centers

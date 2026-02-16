@@ -1,7 +1,7 @@
 ---
 title: Services API - GET baseline
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-baseline
-scraped: 2026-02-15T21:21:35.983678
+scraped: 2026-02-16T09:19:20.198407
 ---
 
 # Services API - GET baseline

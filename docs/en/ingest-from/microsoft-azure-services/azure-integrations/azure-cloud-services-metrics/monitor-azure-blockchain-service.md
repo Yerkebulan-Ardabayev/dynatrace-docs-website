@@ -1,7 +1,7 @@
 ---
 title: Azure Blockchain monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-blockchain-service
-scraped: 2026-02-15T09:13:03.479801
+scraped: 2026-02-16T09:34:23.149104
 ---
 
 # Azure Blockchain monitoring

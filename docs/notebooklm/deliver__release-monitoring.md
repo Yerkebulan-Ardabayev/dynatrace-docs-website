@@ -2,7 +2,207 @@
 
 Generated: 2026-02-16
 
-Files combined: 1
+Files combined: 3
+
+---
+
+
+## Source: issue-tracking-integration.md
+
+
+---
+title: Issue-tracking integration
+source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
+scraped: 2026-02-16T09:34:14.608250
+---
+
+# Issue-tracking integration
+
+# Issue-tracking integration
+
+* How-to guide
+* 2-min read
+* Published Sep 14, 2020
+
+To get statistics about release issues for your monitored entities and configure dynamic queries, you can integrate your issue-tracking system with Dynatrace.
+
+## Supported integrations
+
+Dynatrace currently supports integration with
+
+* Jira on-premises
+* Jira cloud
+* GitHub
+* GitLab
+* ServiceNow
+
+## Integrate your issue-tracking system
+
+To integrate your issue-tracking system
+
+1. Go to **Settings Classic** > **Cloud Automation** > **Issue-tracking for releases**.
+2. Select **Add issue-tracking query**.
+3. Enter the information required (**Issue label**, [**Issue query**](#query), **Issue type**, **Issue-tracking system**, **Target URL**[1](#fn-1-1-def), [**Username**, and **Password** or **Token**](#credentials)).
+4. If there are configuration errors, an error message will be displayed at the bottom of the page (`Please resolve errors before saving...`). Select **Show errors** to view the configuration errors (marked in red).
+5. Optional Select **Check configuration** to check connectivity between Dynatrace and the issue-tracking system.
+6. Select **Save changes** to save your configuration.
+
+1
+
+For GitLab, to define queries to multiple projects, you can enter the `/groups` API endpoint.
+
+Example configuration
+
+![Add tracker](https://dt-cdn.net/images/2021-04-26-08-06-21-1478-2c90218945.png)
+
+### Issue query
+
+In the **Issue query** field, you can specify queries with placeholders that are resolved at runtime (for dynamic filtering).  
+Examples:
+
+* **Jira on-premises/Jira cloud:** `issueType = Bug and component in ({PRODUCT}) and affectedVersion in ({VERSION})`
+* **GitHub:** `is:issue is:open label:{PRODUCT} label:{VERSION}`
+* **GitLab:** `search={PRODUCT} {VERSION}&state=opened&scope=issues`
+
+#### Exception
+
+For **ServiceNow**, placeholders aren't supported. You can query incidents by incident attribute values using the format `<col_name><operator><value>`.  
+Example: `correlation_displayLIKEDYNATRACE^active=true`. In this case, filtering will apply for records that contain `DYNATRACE` within the `correlation_display` column and that are currently active.  
+For other operators, consult the [ServiceNow API documentationï»¿](https://dt-url.net/0w03qc9).
+
+Any query that can be written as a `sysparm_query` request parameter is supported.
+
+### Credentials
+
+The **Username**, **Password**, and **Token** fields are required as follows:
+
+* For **GitHub**, enter a username and an OAuthToken
+* For **GitLab**, enter an API token with read permissions
+* For **Jira on-premises**, enter a username and a password
+* For **Jira cloud**, enter a username and an OAuthToken
+* For **ServiceNow**, enter a username and a password
+
+Once you add your issue tracker to Dynatrace, you can see issue statistics related to the monitored entities in the **Release inventory** on the **Releases** page. For example, if the release inventory shows entries for the application **Cassandra** with version `3.11`, the issue-tracking integration will provide the count of bugs for Cassandra version 3.11.
+
+Example issue tracker integration
+
+![Example integration](https://dt-cdn.net/images/2021-04-26-08-20-46-1549-374692d0dd.png)
+
+## Limitations
+
+You can create a maximum of 20 issue-tracking configurations.
+
+## Troubleshooting
+
+The following is a solution to a problem some people had with [Automated release monitoring issue-tracking integration: no query results matching the filterï»¿](https://dt-url.net/5o038bi).
+
+
+---
+
+
+## Source: monitor-releases-with-dynatrace.md
+
+
+---
+title: Monitor releases with Dynatrace
+source: https://www.dynatrace.com/docs/deliver/release-monitoring/monitor-releases-with-dynatrace
+scraped: 2026-02-16T09:31:50.612722
+---
+
+# Monitor releases with Dynatrace
+
+# Monitor releases with Dynatrace
+
+* How-to guide
+* 4-min read
+* Updated on Aug 11, 2025
+
+Once you [configure environment variables for version detection](/docs/deliver/release-monitoring/version-detection-strategies "Metadata for version detection in different technologies") and, optionally, [integrate your issue-tracking system and configure dynamic queries](/docs/deliver/release-monitoring/issue-tracking-integration "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities."), you can start analyzing data related to each release version of your software.
+
+## List releases
+
+To list the software releases in your environment, go to **Releases**.
+
+Example Releases page
+
+![Release list](https://dt-cdn.net/images/2021-05-25-12-02-34-1641-8ea61fbf08.png)
+
+**Release version** sorting uses lexicographic (string) sorting rather than semantic version sorting. In lexicographic sorting, numbers are treated as individual characters, and the ordering is determined based on these characters' ASCII or Unicode values. **Release version** sorting uses lexicographic sorting because there's no pattern for the release versions, and users can enter any value.
+
+The **Releases** page displays the following information about the listed releases:
+
+### Release inventory
+
+Shows all detected releases. Each entry represents processes, process group instances, grouped by release and build versions, stage, and product to which they logically belong.
+
+### Release events
+
+Shows all events corresponding to the releases, such as process restart and deployment events.
+
+### Tracked issues
+
+Shows issues from the external issue trackers related to the releases.
+
+## Filters
+
+* To set simple filters, use the quick filters on the left side of the page.
+* To set more detailed filters, use the filter bar above the table.  
+  For example, you can use the `tag` filter to search by the tag of a process group instance.
+* To see only releases that are impacted by problems, select **Apply filter** above the **Release inventory** table.
+
+  + Filtering for a specific release shows an overview of stages and product contexts in which the release is deployed.
+  + Filtering for a stage shows an overview of all releases deployed at that stage.
+
+## List release details
+
+To see details about a release, select a link in the **Name** column of the **Releases** page.
+
+Example Release details page
+
+![Release details](https://dt-cdn.net/images/2021-05-25-12-41-08-1636-73e6cdccd9.png)
+
+The **Release details** page displays the following information about the selected release:
+
+### Release name
+
+Shows a summary of captured metadata (process group name, version, stage, product, technologies, instances, throughput, problems, and third-party vulnerabilities) and links to the process group where the release is deployed.
+
+* **Instances** shows the number of deployments of this release in a specific stage in the context of a specific product.
+* **Throughput** shows how much traffic is routed to the selected release.
+* **Problems** shows the number of open impacted problems related to the process group instance of the release.
+
+  If Dynatrace detects problems in the release, **Problems** is displayed in red. Select it to display the **Problems** page and gather more information. See [Problem overview](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") for details.
+* **Third-party vulnerabilities** shows the number of third-party vulnerabilities related to the selected release. This helps you check if, for example, a new release would introduce a known vulnerability and, based on this, decide on its impact on and relevance to your release schedule.
+
+  If Dynatrace detects vulnerabilities in the release, **Third-party vulnerabilities** is displayed in red. Select it to display the **Security** page and gather more information. See [Application Security monitoring](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.") for details.
+
+### Process details
+
+Shows hosts with basic metrics where the release is deployed and links to the host page for further analysis.
+
+### Release events
+
+Shows all events corresponding to the selected release, such as process restart and deployment events.
+
+### Tracked issues
+
+Shows issues from the external issue trackers related to the selected release.
+
+### Release validation
+
+To optimize the release inventory table, when no Cloud Automation instance is provisioned, the column to display a release validation result is not shown.
+
+Lists release validations detected within the global timeframe.
+
+* You can sort the list by score and evaluation end time.
+* Select any release validation in the list to navigate to the heatmap of the corresponding evaluation on your Cloud Automation instance.
+
+In addition, a graph displays the latest 20 release validation results:
+
+* The y-axis displays the score
+* The x-axis displays the end time of each quality gate evaluation
+* The bar color indicates the quality gate status (`Failed`, `Warning`, or `Passed`)
+
 
 ---
 

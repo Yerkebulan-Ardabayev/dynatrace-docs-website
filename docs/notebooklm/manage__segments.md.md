@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Segments
 source: https://www.dynatrace.com/docs/manage/segments
-scraped: 2026-02-15T21:09:25.706857
+scraped: 2026-02-16T09:12:42.615944
 ---
 
 # Segments

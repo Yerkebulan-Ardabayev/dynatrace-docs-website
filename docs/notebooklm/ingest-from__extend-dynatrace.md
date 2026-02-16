@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 22
+Files combined: 26
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 22
 ---
 title: Enrich ingested data with Dynatrace-specific dimensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-data
-scraped: 2026-02-15T09:10:54.008075
+scraped: 2026-02-16T09:35:02.435053
 ---
 
 # Enrich ingested data with Dynatrace-specific dimensions
@@ -156,13 +156,980 @@ The example code initializes an empty dictionary for the imported attributes. It
 ---
 
 
+## Source: extend-events.md
+
+
+---
+title: Extend event observability
+source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-events
+scraped: 2026-02-16T09:35:24.449879
+---
+
+# Extend event observability
+
+# Extend event observability
+
+* Latest Dynatrace
+* 3-min read
+* Published Apr 04, 2024
+
+Dynatrace provides a dedicated REST API for the ingestion and management of custom events. The API is available in two principal locations:
+
+* ActiveGate, for event ingestion and querying of existing events
+* OneAgent, for event ingestion only
+
+The full API documentation is available at [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.").
+
+## Manage events with ActiveGate
+
+Dynatrace supports the following API endpoints for querying and ingesting custom events:
+
+| ActiveGate Type | Base URL |
+| --- | --- |
+| Dynatrace SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/events` |
+| Environment ActiveGate[1](#fn-1-1-def) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/events` |
+| Containerized Environment ActiveGate | `https://{your-activegate-domain}/e/{your-environment-id}/api/v2/events` |
+
+1
+
+Environment ActiveGates listen by default on port `9999`. If you changed that port, adjust the port in the URL accordingly.
+
+Be sure to specify your [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") at the correct location in the URL.
+
+### Authentication
+
+Authentication is handled using an API access token and the [`Authorization`ï»¿](https://developer.mozilla.org/docs/Web/HTTP/Headers/Authorization) HTTP header.
+
+```
+Authorization: Api-Token dt.....
+```
+
+To obtain an access token, in Dynatrace, go to **Access Tokens**. Depending on whether you want to query or ingest events, your token needs the scopes `events.read` or `events.ingest`, respectively. You can also combine scopes.
+
+For more information on access tokens, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+
+### Network requirements
+
+* **Unfiltered network ports**
+
+  Make sure the TCP ports used by ActiveGate (either 443 or 9999) are not blocked by a firewall or any other network management solution.
+* **Up-to-date SSL trust store**
+
+  To avoid SSL certificate issues with expired or missing root certificates, make sure your system's certificate trust store is up to date.
+
+### curl sample commands
+
+See [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.") for a full list of ActiveGate examples for the different request types.
+
+## Send events to OneAgent
+
+In addition to ActiveGate, OneAgent also provides a dedicated HTTP (not HTTPS) endpoint for local-only event ingestion. The following restrictions apply:
+
+* It is a local-only endpoint, exclusively reachable at 127.0.0.1 (localhost)
+* Only event ingestion is supported (`POST` request)
+
+Content encoding support
+
+OneAgent does not support content compression using the HTTP header Content-Encoding yet. If you need to use content compression, please export to ActiveGate.
+
+To send events to OneAgent, you first need to enable the Extension Execution Controller (EEC). You can do this globally for the whole environment, for host groups, or only for specific hosts.
+
+Enable at the environment level
+
+1. Go to **Settings** and select **Preferences** > **Extension Execution Controller**.
+2. Turn on **Enable Extension Execution Controller**.
+3. Turn on **Enable local HTTP Metric, Log and Event Ingest API**.
+
+Enable for a host group
+
+1. Go to ![Deployment Status](https://dt-cdn.net/images/deploy-status-512-c91e319ae5.png "Deployment Status") **Deployment Status** > **OneAgents**.
+2. On the **OneAgent deployment** page, turn off **Show new OneAgent deployments**.
+3. In the **Filter by** field, enter **Host group**, and then select the host group you want to configure from the dropdown list.
+
+   The host list is now filtered by the selected host group. Each listed host has a **Host group:** `<group name>` link, where `<group name>` is the name of the host group that you want to configure.
+
+   The **Host group** property is not displayed when the selected host doesn't belong to any host group.
+4. Select the host group name in any row.
+
+   As you have filtered by host group, all displayed hosts go to the same host group.
+
+5. In the host group settings, select **Extension Execution Controller**.
+6. Turn on **Enable Extension Execution Controller**.
+
+Enable for a single host
+
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+2. Find and select your host to display the host overview page.
+3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+
+4. In the host settings, select **Extension Execution Controller**.
+5. Turn on **Enable Extension Execution Controller**.
+
+With EEC enabled, the OneAgent installations on the respective hosts will start accepting requests at the URL `http://localhost:14499/v2/events/ingest`.
+
+OneAgent uses by default the TCP port 14499 for this endpoint. You can change the port with [`oneagentctl`](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api#communication-port "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+
+EEC unavailable on container setups
+
+The EEC ingestion endpoint is only available with Full-Stack and Infrastructure Monitoring deployments. It is not available with containerized setups. Use ActiveGate as the export endpoint for container applications.
+
+### Authentication
+
+Being a local-only endpoint, OneAgent does not require authentication.
+
+### Network requirements
+
+* **Unfiltered network ports**
+
+  Being a local-only endpoint, there should not be much network configuration required unless you have restricted local network communication, in which case you need to make sure any such restrictions do not apply to the used TCP port (default 14499).
+
+### curl sample command
+
+The following curl command sends a `POST` request to the local OneAgent endpoint at `/v2/events/ingest`, indicates a JSON content type, and provides the [JSON event data](/docs/dynatrace-api/environment-api/events-v2/post-event#request-body-objects "Ingests an event via the Dynatrace API.") using the `--data` parameter.
+
+```
+curl --request POST --url http://localhost:14499/v2/events/ingest --header "Content-type: application/json" --data "{ \"eventType\": \"AVAILABILITY_EVENT\", \"title\": \"Demo title\" }"
+```
+
+## Related topics
+
+* [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.")
+
+
+---
+
+
+## Source: oneagent-log-ingest-api.md
+
+
+---
+title: OneAgent log ingest API
+source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api
+scraped: 2026-02-16T09:29:16.249870
+---
+
+# OneAgent log ingest API
+
+# OneAgent log ingest API
+
+* Latest Dynatrace
+* 2-min read
+* Updated on Jul 01, 2025
+
+You can use the local `http://localhost:<port>/v2/logs/ingest` API endpoint to push locally retrieved logs to Dynatrace over a secure and authenticated channel. This endpoint is available only to local clients and cannot be reached from remote hosts.
+
+The OneAgent log ingest endpoint mimics the behavior of the public [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.") endpoint.
+
+## Enable the log ingest API
+
+You need to enable the OneAgent log ingest API at the environment or host level. Note that the host-level configuration overrides the environment configuration.
+
+Enable at the environment level
+
+1. Go to **Settings** and select **Preferences** > **Extension Execution Controller**.
+2. Turn on **Enable Extension Execution Controller**.
+3. Turn on **Enable local HTTP Metric, Log and Event Ingest API**.
+
+Enable for a single host
+
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+2. Find and select your host to display the host overview page.
+3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+
+4. In the host settings, select **Extension Execution Controller**.
+5. Turn on **Enable Extension Execution Controller**.
+
+Enable for a host group
+
+1. Go to ![Deployment Status](https://dt-cdn.net/images/deploy-status-512-c91e319ae5.png "Deployment Status") **Deployment Status** > **OneAgents**.
+2. On the **OneAgent deployment** page, turn off **Show new OneAgent deployments**.
+3. In the **Filter by** field, enter **Host group**, and then select the host group you want to configure from the dropdown list.
+
+   The host list is now filtered by the selected host group. Each listed host has a **Host group:** `<group name>` link, where `<group name>` is the name of the host group that you want to configure.
+
+   The **Host group** property is not displayed when the selected host doesn't belong to any host group.
+4. Select the host group name in any row.
+
+   As you have filtered by host group, all displayed hosts go to the same host group.
+
+5. In the host group settings, select **Extension Execution Controller**.
+6. Turn on **Enable Extension Execution Controller**.
+
+## Log event format
+
+The request consumes an `application/json` payload with the `charset=utf-8` character set. For more information on the format, see [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+
+## Limits
+
+The log events pushed to Dynatrace using the OneAgent log ingest API are subject to the same limits as those for the public [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs#request-body-objects "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+
+## Example
+
+With this `curl` command, you'll ingest the `Exception: Custom error log sent via OneAgent log ingest` event, with the severity set to `error` and a custom attribute set to `attribute value`. As the timestamp isn't provided, the event is automatically timestamped with the event reading time. You'll be able to access the event in [Log viewer (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
+
+```
+curl -i -X POST "http://127.0.0.1:14499/v2/logs/ingest" -H "Content-Type: application/json; charset=utf-8" -d "{\"content\":\"Exception: Custom error log sent via Generic Log Ingest\",\"custom.attribute\":\"attribute value\",\"severity\": \"error\"}"
+```
+
+Successful response returns the `204` code.
+
+```
+HTTP/1.1 204 No Content
+
+
+
+Content-Type: application/json
+
+
+
+Server: EEC
+
+
+
+Content-Length: 116
+```
+
+## Communication port
+
+Starting with OneAgent version 1.267+, AIX systems also support metric ingestion.
+
+The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+
+### Check the ingestion port
+
+Use the `--get-extensions-ingest-port` parameter to show the current local ingestion port, `14499` by default.
+
+* **Linux**, **AIX**:
+  `./oneagentctl --get-extensions-ingest-port`
+* **Windows**:
+  `.\oneagentctl.exe --get-extensions-ingest-port`
+
+### Set a custom ingestion port
+
+Use the `--set-extensions-ingest-port=<arg>` parameter to set a custom local ingestion port.
+
+* **Linux**, **AIX**:
+  `./oneagentctl --set-extensions-ingest-port=14499 --restart-service`
+* **Windows**:
+  `.\oneagentctl.exe --set-extensions-ingest-port=14499 --restart-service`
+
+### Configure proxy
+
+Configure your host proxy to allow localhost traffic going to the metric ingestion port, `14499` by default.
+
+Note that changing the port for the OneAgent log ingest API also affects [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Metric scripting integration](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration."), and [Telegraf metrics integration](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace.").
+
+
+---
+
+
+## Source: customize-jmx-extensions.md
+
+
+---
+title: Customize JMX extensions
+source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions/customize-jmx-extensions
+scraped: 2026-02-16T09:32:04.030843
+---
+
+# Customize JMX extensions
+
+# Customize JMX extensions
+
+* Latest Dynatrace
+* 10-min read
+* Published Feb 16, 2020
+
+JMX extensions are defined by JSON files.
+
+An extension definition consists of three main elements: `metadata`, `metrics`, and `UI`.
+
+```
+The basic format is as follows:
+
+
+
+{
+
+
+
+"version": "1.0",
+
+
+
+"name": "custom.jmx.hornetq",
+
+
+
+"type": "JMX",
+
+
+
+"entity": "PROCESS_GROUP_INSTANCE",
+
+
+
+"metricGroup": "tech.HornetQ",
+
+
+
+"configUI" : {
+
+
+
+"displayName": "HornetQ JMX"
+
+
+
+},
+
+
+
+"metrics": [ ],
+
+
+
+"ui": {
+
+
+
+"keycharts" : [ ],
+
+
+
+"charts": [ ]
+
+
+
+}
+
+
+
+}
+```
+
+## Metadata
+
+Each JMX extension has the following mandatory properties:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `version` | String | The extension version, in format `d.dd`, must be updated whenever the extension definition is updated |
+| `name` | String | A unique extension name in Java package format. Custom JMX extension names should follow the `custom.jmx.name` rule. You can only user letters, numbers, and "-", "\_" characters. For example, `custom.jmx.newPlugin-Ver2` |
+| `type` | String | Always use `JMX` |
+| `entity` | String | Always use `PROCESS_GROUP_INSTANCE` |
+| `metricGroup` | String | Metric group is used for grouping custom metrics into a hierarchical namespace where different sources, for example multiple extensions, can contribute. Moreover, the metric group becomes a primary part of the metric key. Hence, once defined, it can't be changed. Allowed characters are letters, numbers, and "-", "\_" characters. |
+| `configUI.displayName` | String | Human-readable extension name. This name is displayed on the Dynatrace **Monitoring extensions** page once the extension is uploaded. |
+
+## Metrics
+
+This part of the JSON defines which metrics are collected by the extension. Each metric is defined by JSON in a format similar to the following:
+
+```
+{
+
+
+
+"timeseries": {
+
+
+
+"key": "Queue.ConsumerCount",
+
+
+
+"unit": "Count",
+
+
+
+"displayname": "Queue Consumer Count",
+
+
+
+"dimensions": [
+
+
+
+"rx_pid"
+
+
+
+]
+
+
+
+},
+
+
+
+"alert_settings": [
+
+
+
+{
+
+
+
+"alert_id": "too_many_consumers",
+
+
+
+"event_type": "PERFORMANCE_EVENT",
+
+
+
+"event_name": "Too many consumers",
+
+
+
+"description": "The {metricname} of {severity} is {alert_condition} the threshold of {threshold}",
+
+
+
+"threshold": 35.0,
+
+
+
+"alert_condition": "ABOVE",
+
+
+
+"samples":5,
+
+
+
+"violating_samples":3,
+
+
+
+"dealerting_samples":5,
+
+
+
+"value_extractor": "MAX"
+
+
+
+}
+
+
+
+],
+
+
+
+"source": {
+
+
+
+"domain": "org.hornetq",
+
+
+
+"keyProperties": {
+
+
+
+"type": "Queue"
+
+
+
+},
+
+
+
+"attribute": "ConsumerCount"
+
+
+
+}
+
+
+
+}
+```
+
+### Timeseries
+
+This part specifies the metadata of a metric.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `key` | String | Metric name. Must be unique within this extension. Only letters, numbers, and "-" , "\_" characters are allowed. |
+| `unit` | String | Metric unit. Must be one of the available units described below |
+| `dimensions` | String array | Must contain `rx_pid` at index `0`. This ensures that JMX attributes get the system process ID (PID) as a dimension. Additional dimensions can be used to, for example, provide one metric per JMX `ObjectName` key property value (for example, `QueueName`, `ThreadPoolName`, or `ConnectionPoolName`). Only letters, numbers, and "-" , "\_" characters are allowed. |
+| `displayname` | String | Metric display name representing the metric in Dynatrace. This field is obligatory. It must be different than the metric key. |
+
+Available units:
+`NanoSecond`, `MicroSecond`, `MilliSecond`, `Second`, `Byte`, `KiloByte`, `MegaByte`, `BytePerSecond`, `BytePerMinute`, `KiloBytePerSecond`, `KiloBytePerMinute`, `MegaBytePerSecond`, `MegaBytePerMinute`, `Count`, `PerSecond`, `PerMinute`
+
+### Alert settings
+
+This part specifies the configuration of one or more alerts for a given timeseries.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `alert_id` | String | Unique alert ID. Only letters, numbers, and "-" , "\_" characters are allowed. |
+| `event_type` | String | Allowed types: `PERFORMANCE_EVENT`, `ERROR_EVENT`, `AVAILABILITY_EVENT`. |
+| `description` | String | Description defines alert message, following code snippets could be used: `{threshold}` the value of the custom threshold that was violated, `{severity}` the violating value, `{entityname}` the display name of the entity where the metric violated, `{violating_samples}` the number of violating samples that led to that event, `{dimensions}` a string containing the violating dimensions of the metric, `{alert_condition}` a string showing if above or below threshold is alerting |
+| `event_name` | String | Event name displayed on UI pages. |
+| `threshold` | Float | The value of the threshold. |
+| `alert_condition` | String | ABOVE or BELOW. |
+| `samples` | Integer | Size of the âwindowâ in which violating\_samples are counted. |
+| `violating_samples` | Integer | The number of violating samples that rise an alert. |
+| `dealerting_samples` | Integer | The number of not violating samples that deactivate the alert. |
+| `value_extractor` | String | Dynatrace captures a value every 10 seconds but only sends one aggregate value per minute. This specifies how to aggregate these 10 second values. Possible values: `MIN`, `MAX`, `SUM`, `COUNT`, `AVG`, `MEDIAN`, `P90`. Default value is `AVG` |
+
+### Source
+
+This part specifies how a metric is collected using JMX. The following attributes are required for all metrics:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `domain` | String | Domain name of the MBean |
+| `keyProperties` | Key, Value pairs | Key properties of the MBean. Values can contain wildcards (`*`) |
+| `attribute` | String | Name of attribute that contains the metric value. |
+
+Optional attributes are:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `attributePath` | String | See [CompositeData](#compositedata) |
+| `allowAdditionalKeys` | Boolean | If false, the keyProperties need to match exactly. Additional keys in the name will lead to a mismatch. If true, then additional key properties beside those specified in "keyProperties" are allowed and ignored. |
+| `calculateDelta` | bool | If true, calculate the change in values of the given attribute. Value = attribute(t) - attribute(t-1). This is useful for monotonically increasing values. |
+| `calculateRate` | bool | If true, calculate the rate of changes per seconds. This is used in combination with calculateDelta to convert an absolute attribute (eg. Request Count) to a rate (eg. Requests per Second). Value = attribute / query interval |
+| `aggregation` | String | It is used to aggregate multiple values if more than 1 MBean matches the domain and key property filter. Possible values: SUM, AVG, MIN, MAX |
+| `splitting` | Object | Set [Splitting](#splitting) |
+
+#### Splitting
+
+Splittings can be used to define an additional dimension for a metric. This dimension must be defined in the `dimension` property of the timeseries and the `splitting` property of the source.
+
+```
+"splitting": {
+
+
+
+"name": "name",
+
+
+
+"type": "keyProperty",
+
+
+
+"keyProperty": "name"
+
+
+
+}
+```
+
+To define multiple splittings, use the following format:
+
+```
+"splittings":[
+
+
+
+{
+
+
+
+"name":"name",
+
+
+
+"type":"keyProperty",
+
+
+
+"keyProperty":"name"
+
+
+
+},
+
+
+
+{
+
+
+
+"name":"context",
+
+
+
+"type":"keyProperty",
+
+
+
+"keyProperty":"context"
+
+
+
+}
+
+
+
+]
+```
+
+The following attributes must be present for each splitting:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `name` | String | Must match the dimension name defined for the timeseries |
+| `type` | String | Must always be `keyProperty` |
+| `keyProperty` | String | Defines which key property of the `ObjectName` of an MBean is used for splitting. |
+
+#### Example of a metric with an additional splitting
+
+The following example shows how to define a metric that provides multiple timeseries within a single metric:
+
+```
+{
+
+
+
+"timeseries": {
+
+
+
+"key": "XY.Size",
+
+
+
+"unit": "Count",
+
+
+
+"displayname": "Queue Consumer Count",
+
+
+
+"dimensions": [
+
+
+
+"rx_pid",
+
+
+
+"name"
+
+
+
+]
+
+
+
+}
+
+
+
+"source": {
+
+
+
+"domain": "com.sample",
+
+
+
+"keyProperties": {
+
+
+
+"type": "XY",
+
+
+
+"name": "*"
+
+
+
+},
+
+
+
+"attribute": "Size",
+
+
+
+"splitting": {
+
+
+
+"name": "name",
+
+
+
+"type": "keyProperty",
+
+
+
+"keyProperty": "name"
+
+
+
+}
+
+
+
+}
+
+
+
+}
+```
+
+For example, `MBeans com.sample:type=XY,name=A and com.sample:type=XY,name=B` will result in two timeseries, the first for "A" and the second for "B".
+
+#### CompositeData
+
+To extract values of individual keys returned as `CompositeData` type by an attribute, you need to use the `attributePath` mechanism and point to the key you're interested in.
+
+For example, let's say you want to extract the value of `used` from the `HeapMemoryUsage` attribute. `HeapMemoryUsage` is a `CompositeData` type that returns the following list of value-key pairs:
+
+```
+{
+
+
+
+committed: integer,
+
+
+
+init: integer,
+
+
+
+max: integer,
+
+
+
+used: integer
+
+
+
+}
+```
+
+Define the metric that points to the MBean with the `HeapMemoryUsage` attribute and, in the `source` section, point the `attributePath` to the `used` key. For example:
+
+```
+"source": {
+
+
+
+"domain": "java.lang",
+
+
+
+"keyProperties": {
+
+
+
+"type": "Memory",
+
+
+
+},
+
+
+
+"attribute": "HeapMemoryUsage",
+
+
+
+"attributePath": "get(\"used\")"
+
+
+
+}
+```
+
+## UI config
+
+This part of the JSON defines how metrics are charted on the process page. It contains a mandatory charts section and an optional keycharts section. Each section has the same format and looks like this:
+
+```
+{
+
+
+
+"ui": {
+
+
+
+"keymetrics" : [
+
+
+
+{
+
+
+
+"key" : "requestCount",
+
+
+
+"aggregation" : "avg",
+
+
+
+"mergeaggregation" : "sum",
+
+
+
+"displayname" : "Requests"
+
+
+
+}
+
+
+
+],
+
+
+
+"keycharts" : [ ],
+
+
+
+"charts": [ ]
+
+
+
+}
+
+
+
+}
+```
+
+The `keymetrics` section is completely optional and allows you to define up to two metrics that should be part of the Process infographic. It has the following attributes:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `key` | String | The key for the time series to put into the graphic. Only letters, numbers, and "-" , "\_" characters are allowed. |
+| `aggregation` | String | Aggregation defines the method to aggregate the minute values when working with longer timeframes. Dynatrace captures a value every 10 seconds but only sends one aggregate value per minute. This specifies how to aggregate these 10 second values. |
+| `mergeaggregation` | String | If the metric contains multiple dimensions, this defines how to aggregate the dimension values into a single dimension. |
+| `displayname` | String | The name to display in the infographic |
+
+Each chart section has the same format and looks like this:
+
+```
+{
+
+
+
+"group": "Section Name",
+
+
+
+"title": "Chart Name",
+
+
+
+"series": [
+
+
+
+{
+
+
+
+"key": "MetricName",
+
+
+
+"aggregation": "avg",
+
+
+
+"displayname": "Display name for metric",
+
+
+
+"seriestype": "area"
+
+
+
+},
+
+
+
+{
+
+
+
+"key": "Other Metric Name",
+
+
+
+"aggregation": "avg",
+
+
+
+"displayname": "Display name for metric",
+
+
+
+"color": "rgba(42, 182, 244, 0.6)",
+
+
+
+"seriestype": "area"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+The charts section describes how to chart each metric in the details section of the process page (available by selecting **Further details**).
+
+Both sections allow an array of charts to be defined. A chart has the following required attributes:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `group` | String | The section name that the chart should be placed in |
+| `title` | String | The name of the chart |
+| `series` | Array | An array of timeseries and charting definitions. One chart can contain multiple metrics. |
+
+A series has the following attributes:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `key` | String | The key for the time series to chart |
+| `displayname` | String | Display name to display for the metric. Overwrites the metric displayname. Default: metric displayname. |
+| `aggregation` | String | How multiple minute values should be aggregated in charts when viewing a longer time frame. Possible values: `SUM`, `AVG`, `MIN`, `MAX` |
+| `mergeaggregation` | String | Key charts don't show multiple dimensions. If the metric contains multiple dimensions, this defines how to aggregate the dimension values into a single dimension. |
+| `color` | String | HTML notation of a color (RGB or RGBA). |
+| `seriestype` | String | Chart type. Possible values are: `line`, `area`, and `bar` |
+| `rightaxis` | Boolean | If true, the metric will be placed on the right axis instead of the left axis. Note that Dynatrace supports dual-axis charts. |
+| `stacked` | Boolean | When true, multiple metrics are stacked upon each other. This only works for area and bar charts. |
+
+
+---
+
+
 ## Source: jmx-extensions.md
 
 
 ---
 title: JMX extensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions
-scraped: 2026-02-15T21:11:52.603515
+scraped: 2026-02-16T09:25:48.300835
 ---
 
 # JMX extensions
@@ -421,7 +1388,7 @@ The JMX extension listed below initially consume each monitored host's quota of 
 ---
 title: Send Micrometer metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer
-scraped: 2026-02-15T21:11:34.553740
+scraped: 2026-02-16T09:25:45.050952
 ---
 
 # Send Micrometer metrics to Dynatrace
@@ -430,7 +1397,7 @@ scraped: 2026-02-15T21:11:34.553740
 
 * Latest Dynatrace
 * 7-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 09, 2026
 
 [Micrometerï»¿](https://dt-url.net/7u039ck) is an open source instrumentation framework for JVM-based application metrics. It's used by [Spring Bootï»¿](https://dt-url.net/ba239ye) to record a wide range of metrics. You can ingest Micrometer and Spring Boot metrics and analyze them with Dynatrace Intelligence end-to-end in the context of your trace, log, and diagnostics data. With Dynatrace, you get intelligent AI-based observability and automatic root cause analysis for Spring Boot, 15+ pre-instrumented JVM-based frameworks and servers, and custom metrics.
 
@@ -529,7 +1496,7 @@ You can use one of the following ingestion channels to send your Micrometer metr
 Micrometer uses the concept of a registry to export metrics to monitoring systems.
 
 * For Micrometer version 1.8.0 or later, [Dynatrace Registry v2ï»¿](https://micrometer.io/docs/registry/dynatrace) is available. It exports metrics via the [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API."). All new integrations of Micrometer and Dynatrace must use this version.
-* For Micrometer version 1.8.0 or earlier, the legacy Dynatrace Micrometer registry v1 is available. For instructions, see [Dynatrace Micrometer registry v1 (legacy)](#registry-v1) below.
+* Older Micrometer versions are no longer supported (see [Dynatrace Micrometer registry v1 (legacy)](#registry-v1) below).
 
 ## Ingest metrics from Spring Boot apps
 
@@ -1640,177 +2607,11 @@ Starting with Micrometer version 1.9.x, specialized instruments are used in the 
 * They are available from version 1.9.0 and are used as a drop-in replacement by default. No action is needed from users upgrading to 1.9.0.
 * If there's a discrepancy in the observed metrics, it's possible to return to the previous behavior by setting the `useDynatraceSummaryInstruments` toggle to `false`.
 
-## Dynatrace Micrometer registry v1 (legacy)
+## Dynatrace Micrometer registry v1 Deprecated
 
-If the **apiVersion** property is set to `V1`, the registry sends data via the [Timeseries API v1](/docs/dynatrace-api/environment-api/metric-v1/custom-metrics "Manage custom metrics via the Timeseries v1 API."). For backward compatibility, it defaults to `V1` if a **deviceId** is specified, because this property is required in `V1` and is not used in `V2`.
+Timeseries v1 API deprecation
 
-Existing setups will continue to work when updating to newer versions of Micrometer. The reported metrics will be assigned to custom devices in Dynatrace.
-
-For the `V1` API, you only need to specify the base URL of your environment (for example, `https://mySampleEnv.live.dynatrace.com`).
-
-Spring Boot
-
-```
-management.dynatrace.metrics.export:
-
-
-
-# For v1 export, do not append a path to the endpoint URL. For example:
-
-
-
-# For SaaS: https://{your-environment-id}.live.dynatrace.com
-
-
-
-# For Managed deployments: https://{your-domain}/e/{your-environment-id}
-
-
-
-uri: https://{your-environment-id}.live.dynatrace.com
-
-
-
-# Should be read from a secure source
-
-
-
-api-token: MY_TOKEN
-
-
-
-# When setting the device id, metrics will be exported to the v1 timeseries endpoint
-
-
-
-# Using just device-id (without the v1 prefix) is deprecated, but will work to maintain backwards compatibility.
-
-
-
-v1:
-
-
-
-device-id: sample
-
-
-
-# To disable Dynatrace publishing (for example, in a local development profile), use:
-
-
-
-# enabled: false
-
-
-
-# The interval at which metrics are sent to Dynatrace. The default is 1 minute.
-
-
-
-step: 1m
-```
-
-Directly in Micrometer
-
-```
-DynatraceConfig dynatraceConfig = new DynatraceConfig() {
-
-
-
-@Override
-
-
-
-public String uri() {
-
-
-
-// The Dynatrace environment URI without any path. For example:
-
-
-
-// https://{your-environment-id}.live.dynatrace.com
-
-
-
-return MY_DYNATRACE_URI;
-
-
-
-}
-
-
-
-@Override
-
-
-
-public String apiToken() {
-
-
-
-// Should be read from a secure source
-
-
-
-return MY_TOKEN;
-
-
-
-}
-
-
-
-@Override
-
-
-
-public String deviceId() {
-
-
-
-return MY_DEVICE_ID;
-
-
-
-}
-
-
-
-@Override
-
-
-
-@Nullable
-
-
-
-public String get(String k) {
-
-
-
-return null;
-
-
-
-}
-
-
-
-};
-
-
-
-DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build();
-
-
-
-// Add the Dynatrace registry to Micrometers global registry.
-
-
-
-Metrics.addRegistry(registry);
-```
+The [Timeseries v1 API](/docs/dynatrace-api/environment-api/metric-v1 "Retrieve metric information via Timeseries v1 API.") is deprecated and no longer accepts data. Please migrate to the supported exporter as described on this page.
 
 
 ---
@@ -1822,7 +2623,7 @@ Metrics.addRegistry(registry);
 ---
 title: OneAgent metric API
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api
-scraped: 2026-02-15T21:11:46.394170
+scraped: 2026-02-16T09:25:36.644829
 ---
 
 # OneAgent metric API
@@ -1972,7 +2773,7 @@ However, to have events raised for a selected host and have Dynatrace Intelligen
 ---
 title: Metric scripting integration
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe
-scraped: 2026-02-15T21:11:31.743541
+scraped: 2026-02-16T09:25:57.810016
 ---
 
 # Metric scripting integration
@@ -2246,7 +3047,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Prometheus
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus
-scraped: 2026-02-15T21:11:41.173600
+scraped: 2026-02-16T09:25:51.417367
 ---
 
 # Prometheus
@@ -2297,7 +3098,7 @@ For environments that require greater customization, Dynatrace allows the ingest
 ---
 title: Send StatsD metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd
-scraped: 2026-02-15T21:11:51.315142
+scraped: 2026-02-16T09:21:45.166508
 ---
 
 # Send StatsD metrics to Dynatrace
@@ -2918,7 +3719,7 @@ Note that changing the port for Telegraf ingested metrics also affects OneAgent 
 ---
 title: Custom metric metadata
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata
-scraped: 2026-02-15T21:27:33.958849
+scraped: 2026-02-16T09:39:35.839736
 ---
 
 # Custom metric metadata
@@ -3396,7 +4197,7 @@ You can retrieve the metadata of a metric via the [GET metric descriptor](/docs/
 ---
 title: Metric ingestion protocol
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol
-scraped: 2026-02-15T21:23:24.222038
+scraped: 2026-02-16T09:39:54.597612
 ---
 
 # Metric ingestion protocol
@@ -3627,13 +4428,198 @@ See [POST ingest data points](/docs/dynatrace-api/environment-api/metric-v2/post
 ---
 
 
+## Source: extend-metrics.md
+
+
+---
+title: Extend metric observability
+source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics
+scraped: 2026-02-16T09:31:32.140432
+---
+
+# Extend metric observability
+
+# Extend metric observability
+
+* Latest Dynatrace
+* 4-min read
+* Published Feb 04, 2022
+
+You can extend the data collected out of the box with data provided by the following frameworks and standards:
+
+[![OpenTelemetry](https://dt-cdn.net/images/techn-icon-opentelemetry-345d0f8b0e.svg "OpenTelemetry")
+
+### OpenTelemetry
+
+Send OpenTelemetry metrics to Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")[![Micrometer](https://dt-cdn.net/images/mircrometer-d91d5ac640.svg "Micrometer")
+
+### Micrometer
+
+Collect Micrometer metrics from JVM applications](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace.")[![Prometheus](https://dt-cdn.net/images/prometheus-b1fab729ac.svg "Prometheus")
+
+### Prometheus
+
+Send Prometheus metrics to Dynatrace](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus "Learn how to extend observability in Dynatrace with Prometheus metrics.")[![StatsD](https://dt-cdn.net/images/statsd-icon-bigger-800-72b34b3823.png "StatsD")
+
+### StatsD
+
+Send StatsD metrics to Dynatrace](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.")[![Telegraf](https://dt-cdn.net/images/techn-icon-telegraf-ba9e70e8d6.svg "Telegraf")
+
+### Telegraf
+
+Send Telegraf metrics to Dynatrace](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace.")[### Oracle Database
+
+Extend your application observability into data acquired directly from your Oracle Database layer.](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
+
+### Microsoft SQL Server Database
+
+Extend your application observability into data acquired directly from your Microsoft SQL Server layer.](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![SNMP](https://dt-cdn.net/images/techn-icon-snmp-43de4f1139.svg "SNMP")
+
+### SNMP
+
+Learn how to monitor your network devices using SNMP.](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![WMI](https://dt-cdn.net/images/techn-icon-microsoft-e15d516aaf.svg "WMI")
+
+### WMI
+
+Learn how to monitor your devices exposing Windows Management Instrumentation using WMI.](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")[![JMX](https://dt-cdn.net/images/techn-icon-java-3016283f6a.svg "JMX")
+
+### JMX
+
+Extend observability of your Java applications with JMX metrics.](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions "Learn how to extend Dynatrace monitoring to include applications you've instrumented with JMX.")[### Scripting integration
+
+Extend metric observability via Dynatrace' scripting integration.](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration.")[### Metric ingestion API
+
+Extend metric observability via Dynatrace's open Metric APIs.](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")
+
+## Access ingested metrics
+
+You can access your ingested metrics via the Metric API v2 and in Data Explorer for custom charting.
+
+### Metrics API
+
+Use the [GET metric data points](/docs/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.") call of the Metrics API v2 to retrieve ingested data points.
+
+### Data Explorer
+
+Select **Create custom chart** and then select **Try it out** in the top banner. For more information, see [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+
+You can search the metric keys of all available metrics, select the metrics you want to chart, define how youâd like to analyze and chart them, and then pin your charts to a dashboard.
+
+## Events
+
+The custom metric ingest channel allows for ingestion of all types of metric measurements, regardless of the number of entities they relate to. The way an event is raised depends on whether there's no entity, a single entity, or multiple entities assigned to a custom metric. For more information, see [Topology awareness](/docs/dynatrace-intelligence/anomaly-detection/metric-events#topology "Learn about metric events in Dynatrace").
+
+## Metric alerts
+
+You can also create custom alerts based on the ingested metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a metric using its key and define your alert. For more information, see [Metric events for alerting](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+
+## Custom metric ingestion affects your DDU consumption
+
+Only limited custom metric ingestion and analysis is included in out-of-the-box Dynatrace technology support. Custom metrics typically consume Davis data units, but custom metrics from OneAgent-monitored hosts are first deducted from your quota of [included metrics per host unit](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."), so they won't necessarily consume DDUs. This applies to metrics that are assigned to a host either automatically or by adding the `dt.entity.host` dimension.
+
+For details, see [DDUs for custom metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+
+* Each ingested metric that is subject to DDU consumption (in other words, not assigned to a host) generates one or more **metric data points**. These data points consume DDUs with a weight of 0.001. Therefore, a simple metric reported once each minute for a full year will consume 526 DDUs (`525,600 minutes Ã 0.001 â 526 DDUs`).
+* To check the DDU consumption of an environment, go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > **License** / **Subscription** > **Overview**.
+
+### Metric dimensions also affect DDU Consumption
+
+There are two additional factors to consider in determining which ingested metrics will consume DDUs and when:
+
+* **Tuples**: Unique combinations of metric-dimension pairs (see examples below).
+
+  + Metrics classic
+    Each environment can support a maximum of 50,000,000 unique tuples monthly.
+
+  + Metrics powered by Grail
+    Each tuple counts toward your environment's [cardinality limit](/docs/analyze-explore-automate/metrics/limits "Reference of metrics powered by Grail").
+* **Timeframe**: When the same metric is ingested with unique dimension tuples **within a 1-minute timeframe, each additional tuple results in the consumption of another metric data point.**
+
+#### Examples
+
+For the following examples, assume that all metrics are ingested once per minute.
+
+* In this first example, the same distinct dimension tuple is reported twice within a one-minute interval. Therefore, only one (aggregated) data point is consumed (`1 data point Ã 0.001 DDUs`).
+
+  ```
+  cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
+
+
+
+  cpu.temp,cpu=cpu1,cpu_type="INTEL" 75
+  ```
+* Here two distinct dimension pairs are reported within a 1-minute interval. Therefore two data points are consumed (`2 Ã 0.001 DDUs`). From a consumption perspective, this is effectively two different metrics. A two-dimension tuple like this consumes `526 Ã 2 = 1,052` DDUs per year.
+
+  ```
+  cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
+
+
+
+  cpu.temp,cpu=cpu2,cpu_type="INTEL" 75
+  ```
+* Here, four distinct dimension pairs are reported within a 1-minute interval. Therefore, four data points are consumed (`4 Ã 0.001 DDUs`). From a consumption perspective, this is effectively four different metrics. A four-dimension tuple like this consumes `526 Ã 4 = 2,104` DDUs per year.
+
+  ```
+  cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
+
+
+
+  cpu.temp,cpu=cpu2,cpu_type="INTEL" 75
+
+
+
+  cpu.temp,cpu=cpu3,cpu_type="INTEL" 55
+
+
+
+  cpu.temp,cpu=cpu4,cpu_type="INTEL" 75
+  ```
+
+Each dimensional value (in this example, each network card) generates an individual time series within the chart. Therefore, for purposes of [calculating custom-metric consumption](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."), each dimensional value is counted as a separate custom metric.
+
+## Limits
+
+The following limits apply to metric ingestion using a common ingestion channel. For API ingested metrics, if any limit is exceeded, the API call returns the **400** response code, with details in the response body.
+
+| Entity | Limit | Description |
+| --- | --- | --- |
+| Metric key length, characters | 250 | The total length of the metric key, including the prefix. |
+| Dimension key length, characters | 100 | The total length of the dimension key. |
+| Dimension value length, characters | 250 | The total length of the dimension value. |
+| Number of dimensions per line | 50 | The number of dimensions in a single line of the payload. |
+| Total number of possible metric keys per environment | 100,000 | The maximum number of metric keys that can be registered in Dynatrace. |
+| Number of tuples per month per metric | 1,000,000 | The maximum number of tuples (unique metric-dimension key-dimension value-payload type combinations) for each metric key for the last 30 days. |
+| Number of tuples per month for all custom metrics | 50,000,000 | The maximum number of tuples (unique metric-dimension key-dimension value-payload type combinations) for all custom metrics for the last 30 days. |
+| Length of line, characters | 50,000 | The maximum length of a single line of the payload. |
+
+There's also a limit to the number of metrics that Dynatrace can ingest.
+
+Channel
+
+Limit
+
+[OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")
+
+Per minute per OneAgent instance:
+
+OneAgent version 1.213 and earlier 1,000  
+OneAgent version 1.215+ 100,000
+
+[Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.")
+
+There's no limit to the metric number, but [API throttling](/docs/dynatrace-api/basics/access-limit#throttling "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.") applies.
+
+
+---
+
+
 ## Source: events-entity-extraction.md
 
 
 ---
 title: Event topology extraction and mapping
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/events-entity-extraction
-scraped: 2026-02-15T21:30:16.664254
+scraped: 2026-02-16T09:30:37.220689
 ---
 
 # Event topology extraction and mapping
@@ -3775,7 +4761,7 @@ If the remapping fails, you can retrieve the diagnostic information on an event 
 ---
 title: Generic network topology
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/network-topology
-scraped: 2026-02-15T21:18:15.556965
+scraped: 2026-02-16T09:18:31.487290
 ---
 
 # Generic network topology
@@ -8494,7 +9480,7 @@ Not yet, but this capability is expected to be available soon, at which point th
 ---
 title: Custom topology model
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology
-scraped: 2026-02-15T21:11:29.256774
+scraped: 2026-02-16T09:25:46.656246
 ---
 
 # Custom topology model
@@ -8631,7 +9617,7 @@ See [Define custom topology](/docs/ingest-from/extend-dynatrace/extend-topology/
 ---
 title: OneAgent SDK
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk
-scraped: 2026-02-15T21:11:37.446326
+scraped: 2026-02-16T09:18:56.950532
 ---
 
 # OneAgent SDK
@@ -8712,7 +9698,7 @@ The Dynatrace OneAgent SDK is published directly to GitHub together with the tec
 ---
 title: OpenTracing
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/opentracing
-scraped: 2026-02-15T21:11:53.985605
+scraped: 2026-02-16T09:24:18.566106
 ---
 
 # OpenTracing
@@ -8903,7 +9889,7 @@ Dynatrace integrates traces from any OpenTracing instrumentations. We have posit
 ---
 title: Span settings
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings
-scraped: 2026-02-15T21:08:51.447692
+scraped: 2026-02-16T09:13:37.743674
 ---
 
 # Span settings
@@ -9053,7 +10039,7 @@ To define rules to enable context propagation for specific spans
 ---
 title: Extend distributed tracing
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing
-scraped: 2026-02-15T21:09:01.169129
+scraped: 2026-02-16T09:14:00.999395
 ---
 
 # Extend distributed tracing
@@ -9086,7 +10072,7 @@ Learn how to extend distributed tracing observability in Dynatrace with the OneA
 ---
 title: Extend built-in unified analysis pages
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui/extend-unified-analysis-pages
-scraped: 2026-02-15T21:27:19.923959
+scraped: 2026-02-16T09:28:07.293142
 ---
 
 # Extend built-in unified analysis pages
@@ -9323,7 +10309,7 @@ chartsCards:
 ---
 title: Unified analysis pages
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui/unified-analysis
-scraped: 2026-02-15T09:13:23.222313
+scraped: 2026-02-16T09:31:10.710800
 ---
 
 # Unified analysis pages
@@ -9470,7 +10456,7 @@ The exploratory analysis analyzes only the metrics from the graph charts that ar
 ---
 title: Extend Dynatrace with domain-specific web UI
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui
-scraped: 2026-02-15T21:11:47.629525
+scraped: 2026-02-16T09:25:53.028854
 ---
 
 # Extend Dynatrace with domain-specific web UI
@@ -9501,7 +10487,7 @@ Extend the Dynatrace web UI using your data-tailored dashboards.](/docs/ingest-f
 ---
 title: Extend user experience and behavior data
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/openkit
-scraped: 2026-02-15T21:11:42.420060
+scraped: 2026-02-16T09:25:56.183078
 ---
 
 # Extend user experience and behavior data

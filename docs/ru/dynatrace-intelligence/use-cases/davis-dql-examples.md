@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-15T21:14:46.378640
+scraped: 2026-02-16T09:23:03.793508
 ---
 
 # Dynatrace Intelligence DQL examples
@@ -326,41 +326,36 @@ fetch dt.davis.problems
 
 ## Chart the number of CPU saturation and high-memory events in the last 7 days
 
+* Извлекает таблицу `dt.davis.events` за последние 7 дней.
+* Считает в разрешении 60-минутных интервалов.
 
-
-* Fetches table `dt.davis.events` for the last 7 days.
-* Counts in a resolution of 60-minute bins.
-
-```
+``` 
 fetch dt.davis.events, from:now()-7d, to:now()
 
-
-
+ 
 | filter event.kind == "DAVIS_EVENT"
 
-
-
+ 
 | filter event.type == "OSI_HIGH_CPU" or event.type == "OSI_HIGH_MEMORY"
 
-
-
+ 
 | makeTimeseries count =  count(default: 0)
 ```
 
-**Query result**
+**Результат запроса**
 
-60min interval
+60-минутный интервал
 
 count
 
-5/25/2023, 3:00 PM
+25.05.2023, 15:00
 
 146
 
-5/25/2023, 4:00 PM
+25.05.2023, 16:00
 
 312
 
-5/25/2023, 5:00 PM
+25.05.2023, 17:00
 
 201

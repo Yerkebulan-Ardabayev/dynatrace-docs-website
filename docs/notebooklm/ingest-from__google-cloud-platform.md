@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 45
+Files combined: 52
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 45
 ---
 title: Google Cloud Run monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun/cloud-run-monitoring
-scraped: 2026-02-15T21:30:15.275268
+scraped: 2026-02-16T09:32:47.825645
 ---
 
 # Google Cloud Run monitoring
@@ -73,7 +73,7 @@ The following feature sets are available for Google Cloud Run.
 ---
 title: Monitor Google Cloud Run managed
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun
-scraped: 2026-02-15T21:14:27.933194
+scraped: 2026-02-16T09:24:35.890786
 ---
 
 # Monitor Google Cloud Run managed
@@ -862,7 +862,7 @@ The following feature sets are available for Google Cloud Functions.
 ---
 title: Integrate on Google Cloud Functions .NET
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet
-scraped: 2026-02-15T09:06:13.899114
+scraped: 2026-02-16T09:29:48.734924
 ---
 
 # Integrate on Google Cloud Functions .NET
@@ -1108,7 +1108,7 @@ Because code running outside the function execution can be terminated at any tim
 ---
 title: Integrate on Google Cloud Functions Node.js
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs
-scraped: 2026-02-15T21:26:12.114283
+scraped: 2026-02-16T09:39:03.682284
 ---
 
 # Integrate on Google Cloud Functions Node.js
@@ -1844,7 +1844,7 @@ Because code running outside the function execution can be terminated at any tim
 ---
 title: Set up OpenTelemetry monitoring for Google Cloud Functions
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf
-scraped: 2026-02-15T21:28:32.081577
+scraped: 2026-02-16T09:31:53.777059
 ---
 
 # Set up OpenTelemetry monitoring for Google Cloud Functions
@@ -1929,7 +1929,7 @@ The Dynatrace Google Cloud Functions integration doesn't capture the IP addresse
 ---
 title: Trace Google Cloud Functions in Go with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go
-scraped: 2026-02-15T09:06:10.148364
+scraped: 2026-02-16T09:28:56.438392
 ---
 
 # Trace Google Cloud Functions in Go with OpenTelemetry
@@ -3063,7 +3063,7 @@ To view your custom attributes, you need to allow them in the Dynatrace web UI f
 ---
 title: Trace Google Cloud Functions with OpenTelemetry JavaScript
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-nodejs
-scraped: 2026-02-15T21:28:12.378337
+scraped: 2026-02-16T09:35:10.873753
 ---
 
 # Trace Google Cloud Functions with OpenTelemetry JavaScript
@@ -3955,7 +3955,7 @@ To view your custom attributes, you need to allow them in the Dynatrace web UI f
 ---
 title: Google Cloud Functions monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions
-scraped: 2026-02-15T21:14:32.213223
+scraped: 2026-02-16T09:24:47.763443
 ---
 
 # Google Cloud Functions monitoring
@@ -3988,6 +3988,930 @@ For Google Cloud Functions, monitoring consumption is based on Davis data units.
 
 * [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
+
+
+---
+
+
+## Source: deploy-k8.md
+
+
+---
+title: Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8
+scraped: 2026-02-16T09:37:27.353857
+---
+
+# Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
+
+# Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
+
+* Latest Dynatrace
+* How-to guide
+* 15-min read
+* Updated on Oct 08, 2024
+
+Dynatrace version 1.230+
+
+Follow the instructions below to set up Google Cloud monitoring for metrics and logs on a new GKE Autopilot cluster, using Google Cloud Shell. During setup, a new Pub/Sub subscription will be created. GKE will run two containers: a metric forwarder and a log forwarder. After installation, you'll get metrics, logs, dashboards, and alerts for your configured services in Dynatrace.
+
+If you prefer to run the deployment script on an existing standard GKE or GKE Autopilot cluster, see [Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster "Deploy log and metric monitoring for Google Cloud services on an existing standard GKE or GKE Autopilot cluster").
+
+For other deployment options, see [Alternative deployment scenarios](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide "Other options to set up log and/or metric monitoring for Google Cloud services").
+
+This page describes how to install version 1.0 of the GCP integration on a GKE cluster.
+
+* If you already have an [earlier version](/docs/ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy "Set up log and metric monitoring for GCP services in a Kubernetes container.") installed, you need to [migrate](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.").
+
+## Limitations
+
+Dynatrace GCP log integration supports up to 8 GB of data processing per hour (with base resourcesâwithout scaling). With bigger loads, messages will start to be retained in the PubSub Subscription. To measure latency, look for these metrics: `Oldest unacked message age` and `Unacked messages`. For scaling recommendations, see the [scaling guide](#scalingguide) below.
+
+Dynatrace GCP metric integration supports up to 50 GCP projects with the standard deployment. To monitor larger environments, you need to enable metrics scope. See [Monitor multiple GCP projects - Large environments](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Push metrics to Dynatrace from multiple Google Cloud projects.").
+
+## Prerequisites
+
+To deploy the integration, you need to make sure the following requirements are met on the machine where you are running the installation.
+
+* Linux OS only
+* Internet access
+* GKE Cluster access
+* Dynatrace environment access
+
+  You need to configure the Dynatrace endpoint (environment, cluster or ActiveGate URL) to which the GKE cluster should send metrics and logs. Make sure that you have direct network access or, if there is a proxy or any other component present in between, that communication is not affected.
+
+### Tools
+
+You can deploy the Dynatrace GCP integration in Google Cloud Shell or in bash.
+
+If you use bash, you need to install:
+
+* [Google Cloud SDKï»¿](https://dt-url.net/e8110336)
+* [kubectlï»¿](https://kubernetes.io/docs/tasks/tools/)
+* [helmï»¿](https://helm.sh/docs/intro/install/)
+* [jq (version 1.6)ï»¿](https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64)
+* [yq (version 4.9.x+)ï»¿](https://github.com/mikefarah/yq/releases/download/v4.9.8/yq_linux_amd64)
+* curl
+* unzip
+
+### GCP permissions
+
+Running the deployment script requires a list of permissions. You can create a custom role (see below) and use it to deploy `dynatrace-gcp-monitor`.
+
+1. Create a YAML file named `dynatrace-gcp-monitor-helm-deployment-role.yaml` with the following content:
+
+dynatrace-gcp-monitor-helm-deployment-role.yaml
+
+```
+title: Dynatrace GCP Monitor helm deployment role
+
+
+
+description: Role for Dynatrace GCP Monitor helm and pubsub deployment
+
+
+
+stage: GA
+
+
+
+includedPermissions:
+
+
+
+- container.clusters.get
+
+
+
+- container.configMaps.create
+
+
+
+- container.configMaps.delete
+
+
+
+- container.configMaps.get
+
+
+
+- container.configMaps.update
+
+
+
+- container.deployments.create
+
+
+
+- container.deployments.delete
+
+
+
+- container.deployments.get
+
+
+
+- container.deployments.update
+
+
+
+- container.namespaces.create
+
+
+
+- container.namespaces.get
+
+
+
+- container.pods.get
+
+
+
+- container.pods.list
+
+
+
+- container.secrets.create
+
+
+
+- container.secrets.delete
+
+
+
+- container.secrets.get
+
+
+
+- container.secrets.list
+
+
+
+- container.secrets.update
+
+
+
+- container.serviceAccounts.create
+
+
+
+- container.serviceAccounts.delete
+
+
+
+- container.serviceAccounts.get
+
+
+
+- iam.roles.create
+
+
+
+- iam.roles.list
+
+
+
+- iam.roles.update
+
+
+
+- iam.serviceAccounts.actAs
+
+
+
+- iam.serviceAccounts.create
+
+
+
+- iam.serviceAccounts.getIamPolicy
+
+
+
+- iam.serviceAccounts.list
+
+
+
+- iam.serviceAccounts.setIamPolicy
+
+
+
+- pubsub.subscriptions.create
+
+
+
+- pubsub.subscriptions.get
+
+
+
+- pubsub.subscriptions.list
+
+
+
+- pubsub.topics.attachSubscription
+
+
+
+- pubsub.topics.create
+
+
+
+- pubsub.topics.getIamPolicy
+
+
+
+- pubsub.topics.list
+
+
+
+- pubsub.topics.setIamPolicy
+
+
+
+- pubsub.topics.update
+
+
+
+- resourcemanager.projects.get
+
+
+
+- resourcemanager.projects.getIamPolicy
+
+
+
+- resourcemanager.projects.setIamPolicy
+
+
+
+- serviceusage.services.enable
+
+
+
+- serviceusage.services.get
+
+
+
+- serviceusage.services.list
+
+
+
+- serviceusage.services.use
+```
+
+Each group of permissions is used to handle the different resources included in the integration. Creation and access are for new resources, update is for reusing existing resources, and deletion is for uninstalling.
+
+* container.configMaps: for mapping secrets and other variables used by the containers.
+* container.deployments: for the K8s' deployment within the cluster (which includes the pods, containers, etc.).
+* container.namespaces: for the K8s namespace in which we are deploying the resources.
+* container.pods: for the K8s pods.
+* container.secrets: for the K8s secrets in which to store the data-sensitive variables.
+* container.serviceAccounts: for the SA to be taken in the K8s context.
+* iam.roles: for the necessary permissions for data collection.
+* iam.serviceAccounts: for the general context SA.
+* resourcemanager.projects: for handling the project in which we are deploying our integration.
+* serviceusage.services: for handling the services' APIs.
+* pubsub.subscriptions: for the PubSub subscription we are using to collect and ingest logs.
+* pubsub.topics: for the PubSub topic we are using to collect and ingest logs.
+
+2. Run the command below, replacing `<your_project_ID>` with the project ID where you want to deploy the Dynatrace GCP integration.
+
+```
+gcloud iam roles create dynatrace_monitor.helm_deployment --project=<your_project_ID> --file=dynatrace-gcp-monitor-helm-deployment-role.yaml
+```
+
+Be sure to add this role to your GCP user. For details, see [Grant or revoke a single roleï»¿](https://dt-url.net/vx03vid).
+
+### Configure log export
+
+1. Run the following shell script in the GCP project you've selected for deployment.
+
+Be sure to replace `<your-subscription-name>` and `<your-topic-name>` with your own values.
+
+```
+wget https://raw.githubusercontent.com/dynatrace-oss/dynatrace-gcp-monitor/master/scripts/deploy-pubsub.sh
+
+
+
+chmod +x deploy-pubsub.sh
+
+
+
+./deploy-pubsub.sh --topic-name <your-topic-name> --subscription-name <your-subscription-name>
+```
+
+2. Configure [log exportï»¿](https://dt-url.net/4743r02) to send the desired logs to the GCP Pub/Sub topic created above.
+
+### Dynatrace permissions
+
+You need to create a token with a set of permissions.
+
+1. Go to **Access tokens**.
+2. Select **Generate new token**.
+3. Enter a name for your token.
+4. Under **Template**, select `GCP Services Monitoring`.
+5. Select **Generate**.
+6. Copy the generated token to the clipboard. Store the token in a password manager for future use.
+
+Alternatively, you can create the token and add permissions manually.
+
+Add manually
+
+[Create an API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and [enable the following permissions](/docs/dynatrace-api/basics/dynatrace-api-authentication#token-permissions "Find out how to get authenticated to use the Dynatrace API."):
+
+* API v1:
+
+  + **Read configuration**
+  + **Write configuration**
+* API v2:
+
+  + **Ingest metrics**
+  + **Read extensions**
+  + **Write extensions**
+  + **Read extensions monitoring configuration**
+  + **Write extensions monitoring configuration**
+  + **Read extensions environment configuration**
+  + **Write extensions environment configuration**
+  + **Ingest logs**
+  + **Manage metadata of Hub items**
+  + **Read Hub related data**
+  + **Install and update Hub items**
+
+To monitor logs from multiple projects, you need to create **Log Routing Sinks** in each source project selecting as a destination for your main project (in which you also deployed the integration and the PubSub Topic and Subscription).
+For more information, see [Route logs to supported destinationsï»¿](https://dt-url.net/cl038gj).
+
+### Log ingestion
+
+* Determine where log ingestion will be performed, according to your deployment. This distinction is important when configuring the [parameters](#param) for this integration.
+
+  + **For SaaS deployments:** SaaS log ingest, where log ingestion is performed directly through the Cluster API. Recommended
+  + **For Managed deployments:** You can use an existing ActiveGate for log ingestion. For information on how to deploy it, see [ActiveGate installation](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate").
+
+Because of GCP's implementation of Cloud Function 2nd gen, logs from those resources will be linked to the underlying Cloud Run instances. Both extensions will have to be enabled.
+
+To learn more, visit [Google Cloud Functions version comparisonï»¿](https://dt-url.net/b6038q5).
+
+## Install
+
+Complete the steps below to finish your setup.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Download the Helm deployment package in Google Cloud Shell**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#dwld "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Configure parameter values**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#param "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Run the deployment script**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#script "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+### Step 1 Download the Helm deployment package in Google Cloud Shell
+
+```
+wget -q "https://github.com/dynatrace-oss/dynatrace-gcp-monitor/releases/latest/download/helm-deployment-package.tar"; tar -xvf helm-deployment-package.tar; chmod +x helm-deployment-package/deploy-helm.sh
+```
+
+### Step 2 Configure parameter values
+
+1. The Helm deployment package contains a `values.yaml` file with the necessary configuration for this deployment. Go to `helm-deployment-package/dynatrace-gcp-monitor` and edit the `values.yaml` file, setting the required and optional parameter values as follows.
+
+   You might want to store this file somewhere for future updates, since it will be needed in case of redeployments. Also, keep in mind that its schema can change. In such case, you should use the new file and only copy over the parameter values.
+
+   **Parameter name**
+
+   **Description**
+
+   **Default value**
+
+   `parallelProcesses`
+
+   Optional Number of parallel processes to run the whole log monitoring loop
+
+   `1`
+
+   `numberOfConcurrentLogForwardingLoops`
+
+   Optional Number of workers pulling logs from pubsub concurrently and pushing them to Dynatrace
+
+   `5`
+
+   `numberOfConcurrentMessagePullCoroutines`
+
+   Optional Number of concurrent coroutines to pull messages from pub/sub
+
+   `10`
+
+   `numberOfConcurrentPushCoroutines`
+
+   Optional Number of concurrent coroutines to push messages to Dynatrace
+
+   `5`
+
+   `gcpProjectId`
+
+   Required The ID of the GCP project you've selected for deployment.
+
+   Your current project ID
+
+   `deploymentType`
+
+   Required Leave to `all`.
+
+   `all`
+
+   `dynatraceAccessKey`
+
+   Required Your [Dynatrace API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with the [required permissions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#api "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+   `dynatraceUrl`
+
+   RequiredFor SaaS log/metric ingestion, it's your environment URL (`https://<your-environment-id>.live.dynatrace.com`).
+
+   `logsSubscriptionId`
+
+   Required The ID of your log Sink Pub/Sub subscription. For details, see [Configure log export](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#pubsub "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+   `dynatraceLogIngestUrl`
+
+   Optional You can set it if you want to ingest logs separately from metrics.For SaaS log ingestion, it's your environment URL (`https://<your_environment_ID>.live.dynatrace.com`).
+
+   `dynatraceAccessKeySecretName`
+
+   Optional You can specify the key to fetch the endpoint from GCP Secret Manager, instead of using `dynatraceAccessKey`.
+
+   `dynatraceUrlSecretName`
+
+   Optional You can specify the key to fetch the endpoint from GCP Secret Manager, instead of using `dynatraceUrl`.
+
+   `dynatraceLogIngestUrlSecretName`
+
+   Optional You can specify the key to fetch the endpoint from GCP Secret Manager, instead of using `dynatraceLogIngestUrl`.
+
+   `dtSecurityContext`
+
+   Optional Assign the attribute value used for data segmentation, analysis, and permission mapping within the Dynatrace platform. Refer to [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context") for more information. If left empty, the value of `gcpProjectId` will be assigned automatically.
+
+   Value of `gcpProjectId`
+
+   `requireValidCertificate`
+
+   Optional If set to `true`, Dynatrace requires the SSL certificate of your Dynatrace environment.For SaaS log ingestion, we recommend leaving the default value.
+
+   `true`
+
+   `selfMonitoringEnabled`
+
+   Optional Send custom metrics to GCP to quickly diagnose if `dynatrace-gcp-monitor` processes and sends metrics/logs to Dynatrace properly. For details, see [Self-monitoring metrics for the Dynatrace GCP integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.").
+
+   `false`
+
+   `serviceAccount`
+
+   Optional Name of the service account to be created
+
+   `dockerImage`
+
+   OptionalDynatrace GCP Monitor docker image. We recommend using the default value, but you can adapt it if needed.
+
+   `dynatrace/dynatrace-gcp-monitor:v1-latest`
+
+   `logIngestContentMaxLength`
+
+   Optional The maximum content length of a log event. Should be less than or equal to the setting on your Dynatrace environment.
+
+   `8192`
+
+   `logIngestAttributeValueMaxLength`
+
+   Optional The maximum length of the log event attribute value. If it exceeds the server limit, content will be truncated.
+
+   `250`
+
+   `logIngestRequestMaxEvents`
+
+   Optional The maximum number of log events in a single payload to the logs ingestion endpoint. If it exceeds the server limit, payload will be rejected with code `413`.
+
+   `5000`
+
+   `logIngestRequestMaxSize`
+
+   Optional The maximum size in bytes of a single payload to the logs ingestion endpoint. If it exceeds the server limit, payload will be rejected with code `413`.
+
+   `1048576`
+
+   `logIngestEventMaxAgeSeconds`
+
+   Optional Determines the maximum age of a forwarded log event. Should be less than or equal to the setting on your Dynatrace environment.
+
+   `86400`
+
+   `printMetricIngestInput`
+
+   Optional If set to `true`, the GCP Monitor outputs the lines of metrics to stdout.
+
+   `false`
+
+   `serviceUsageBooking`
+
+   Optional Service usage booking is used for metrics and determines a caller-specified project for quota and billing purposes. If set to `source`, monitoring API calls are booked in the project where the Kubernetes container is running. If set to `destination`, monitoring API calls are booked in the project that is monitored. For details, see [Monitor multiple GCP projects - Standard environments - Step 4](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Push metrics to Dynatrace from multiple Google Cloud projects.").
+
+   `source`
+
+   `useProxy`
+
+   Optional Depending on the value you set for this flag, the GCP Monitor will use the following proxy settings: Dynatrace (set to `DT_ONLY`), GCP API (set to `GCP_ONLY`), or both (set to `ALL`).
+
+   By default, proxy settings are not used.
+
+   `httpProxy`
+
+   Optional The proxy HTTP address; use this flag in conjunction with `USE_PROXY`.
+
+   `httpsProxy`
+
+   Optional The proxy HTTPS address; use this flag in conjunction with `USE_PROXY`.
+
+   `gcpServicesYaml`
+
+   Optional Configuration file for GCP services.
+
+   `queryInterval`
+
+   Optional Metrics polling interval in minutes. Allowed values: `1` - `6`
+
+   `3`
+
+   `vpcNetwork`
+
+   Optional Existing VPC Network where the autopilot cluster will be deployed. Shared VPC is not supported.
+
+   `default`
+
+   `useCustomSubnet`
+
+   Optional Set to `true` only if you want to use a custom mode VPC network.If set to `true`, you'll need to pass the `customSubnetName` parameter.
+
+   `false`
+
+   `customSubnetName`
+
+   Required Only if `useCustomSubnet` is set to `true`.  
+   Set this value to the subnet name you want to deploy the Google Cloud Monitor in.
+
+   `""`
+
+   `scopingProjectSupportEnabled`
+
+   Optional Set to `true` when metrics scope is configured, so metrics will be collected from all projects added to the metrics scope. For details, see [Monitor multiple GCP projects - Large environments](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Push metrics to Dynatrace from multiple Google Cloud projects.").
+
+   `false`
+
+   `excludedProjects`
+
+   Optional Comma-separated list of projects to be excluded from monitoring (for example, `<project_A>,<project_B>`)
+
+   `excludedMetricsAndDimensions`
+
+   Optional Yaml formatted list of metrics and their dimensions to be excluded for monitoring.
+
+   `metricAutodiscovery`
+
+   Optional If set to `true`, the GCP Monitor will run metric auto-discovery mode, expanding your options for selecting metrics to monitor. For more information, see [Monitor GCP projects using auto-discovery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/gcp-autodiscovery "Push any metrics to Dynatrace from Google Cloud projects.").
+
+   `false`
+
+   `clusterIpv4Cidr`
+
+   Optional Set the IP address range for the pods in this cluster in CIDR notation, if you want to use a custom range.
+
+   `servicesIpv4Cidr`
+
+   Optional Set the IP range for the services IPs. It can be specified as a netmask size or as in the CIDR notion.
+
+   `useCustomMasterCidr`
+
+   Optional If set to `true`, you can specify the IPv4 CIDR range to use for the master network.
+
+   `false`
+
+   `masterIpv4Cidr`
+
+   Optional IPv4 CIDR range requires the `useCustomMasterCidr` value to be `true` in order to use for the master network.
+2. Choose which services you want Dynatrace to monitor.
+
+   By default, the Dynatrace GCP integration starts monitoring a set of selected services. Go to [Google Cloud supported services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.") for a list of supported services.
+
+For DDU consumption information, see [Monitoring consumption](#ddu).
+
+### Step 3 Run the deployment script
+
+The deployment script will automatically create the new GKE Autopilot cluster named `dynatrace-gcp-monitor` and deploy the installation to it. The latest versions of GCP extensions will be uploaded.
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh --create-autopilot-cluster
+```
+
+To set a different name for the new cluster, run the command below instead, making sure to replace the placeholder (`<name-of-new-cluster>`) with your preferred name.
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh --create-autopilot-cluster --autopilot-cluster-name <name-of-new-cluster>
+```
+
+To keep the existing versions of present extensions and install the latest versions for the rest of the selected extensions, if they are not present, run the command below instead.
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh --create-autopilot-cluster --without-extensions-upgrade
+```
+
+## Verify installation
+
+To check whether installation was successful
+
+1. Check if the container is running.
+
+   After the installation, it may take couple of minutes until the container is up and running.
+
+   ```
+   kubectl -n dynatrace get pods
+   ```
+2. Check the container logs for errors or exceptions. You have two options:
+
+   In the Kubernetes CLI
+
+   In your GCP console
+
+   Run the following commands.
+
+   ```
+   kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-metrics
+
+
+
+   kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-logs
+   ```
+
+   To check the container logs for errors in your GCP console
+
+   1. Go to **Logs explorer**.
+   2. Use the filters below to get metric and/or log ingest logs from the Kubernetes container:
+
+   * `resource.type="k8s_container"`
+   * `resource.labels.container_name="dynatrace-gcp-monitor-metrics"` (for metric ingest logs)
+   * `resource.labels.container_name="dynatrace-gcp-monitor-logs"` (for log ingest logs)
+3. Check if dashboards are imported.
+
+   Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and filter by **Tag** for `Google Cloud`. A number of dashboards for Google Cloud Services should be available.
+
+## Choose services for metrics monitoring
+
+### Services enabled by default
+
+Monitoring of following services will be enabled during deployment of GCP Monitor:
+
+* [Google APIs](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apis-monitoring "Monitor Google Cloud APIs and view available metrics.")
+* [Google App Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine/app-engine-monitoring "Monitor Google App Engine and view available metrics.")
+* [Google BigQuery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigquery-monitoring "Monitor Google BigQuery and view available metrics.")
+* [Google Cloud Functions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/cloud-functions-monitoring "Monitor Google Cloud Functions and view available metrics.")
+* [Google Cloud Run](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun/cloud-run-monitoring "Monitor Google Cloud Run and view available metrics.")
+* [Google Cloud Storage](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-storage-monitoring "Monitor Google Cloud Storage and view available metrics.")
+* [Google Compute Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine/compute-engine-monitoring "Monitor Google Compute Engine and view available metrics.")
+* [Google Firestore in Datastore mode](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-in-datastore-mode-monitoring "Monitor Google Cloud Firestore in Datastore mode and view available metrics.")
+* [Google Filestore](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-monitoring "Monitor Google Filestore and view available metrics.")
+* [Google Kubernetes Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke/google-kubernetes-engine-monitoring "Monitor Google Kubernetes Engine and view available metrics.")
+* [Google Cloud Load Balancing](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-load-balancing-monitoring "Monitor Google Cloud Load Balancing and view available metrics.")
+* [Google Cloud Pub/Sub](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-monitoring "Monitor Google Cloud Pub/Sub and view available metrics.")
+* [Google Cloud Pub/Sub Lite](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-lite-monitoring "Monitor Google Cloud Pub/Sub Lite and view available metrics.")
+* [Google Cloud SQL](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-sql "Monitor Google Cloud SQL and view available metrics.")
+
+There are more service integrations available, but need to be enabled. Go to [Google Cloud supported services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.") for a list of supported services. The next section describes how to manage them. For an alternative approach, consider leveraging [auto-discovery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/gcp-autodiscovery "Push any metrics to Dynatrace from Google Cloud projects.") to extend your metric coverage.
+
+### Manage enabled services
+
+You can manage enabled services via Dynatrace Hub.
+
+Filter for "gcp"âyou'll find annotations in the results for items that are already available in your environment.
+
+To enable a new service, select it in Hub and then install it.
+
+You can also disable a service via Dynatrace Hub.
+
+To see if the services need updating, open them in Hub and check release notes. The updates can include new metrics, new assets like dashboards, or other changes.
+
+All changes to enabled services are applied to GCP Monitor within few minutes.
+
+#### Feature sets & available metrics
+
+To see what metrics are included for specific service, check [Google Cloud supported services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics."). By default, only `defaultMetrics` feature set is enabled. To enable additional feature sets, you have to uncomment them in `values.yaml` file and redeploy whole GCP Monitor.
+
+Current configuration of feature sets can be found in cluster's ConfigMap named `dynatrace-gcp-function-config`.
+
+#### Advanced scope management
+
+To further refine monitoring scope, you can use `filter_conditions` field in `values.yaml` file. This requires GCP Monitor to be redeployed. See [GCP Monitoring filtersï»¿](https://cloud.google.com/monitoring/api/v3/filters?hl=en_US) for syntax.
+
+Example:
+
+```
+filter_conditions:
+
+
+
+resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = "dynatrace"
+```
+
+## Enable alerting
+
+To activate alerting, you need to enable metric events for alerting in Dynatrace.
+
+To enable metric events
+
+1. Go to **Settings**.
+2. In **Anomaly detection**, select **Metric events**.
+3. Filter for GCP alerts and turn on **On/Off** for the alerts you want to activate.
+
+## View metrics and logs
+
+After deploying the integration, you can:
+
+* See metrics from monitored services: go to **Metrics** and filter by `gcp`.
+* View and analyze GCP logs: go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** and, to look for GCP logs, filter by `cloud.provider: gcp`.
+
+## Change deployment settings
+
+### Change parameters from `values.yaml`
+
+To load a new `values.yaml` file, you need to upgrade your Helm release.
+
+To update your Helm release
+
+1. Find out what Helm release version you're using.
+
+   ```
+   helm ls -n dynatrace
+   ```
+2. Run the command below, making sure to replace `<your-helm-release>` with value from previous step.
+
+   ```
+   helm upgrade <your-helm-release> dynatrace-gcp-monitor -n dynatrace
+   ```
+
+For details, see [Helm upgradeï»¿](https://helm.sh/docs/helm/helm_upgrade/).
+
+### Change deployment type
+
+To change the deployment type (`all`, `metrics`, or `logs`)
+
+1. Find out what helm release version you're using.
+
+   ```
+   helm ls -n dynatrace
+   ```
+2. Uninstall the release.
+
+   Be sure to replace `<your-helm-release>` with the release name from the previous output.
+
+   ```
+   helm uninstall <your-helm-release> -n dynatrace
+   ```
+3. Edit `deploymentType` in `values.yaml` with the new value and save the file.
+4. Run the deployment command again. For details, see [Run the deployment script](#script).
+
+## Verification
+
+To investigate potential deployment and connectivity issues
+
+1. [Verify installation](#verify)
+2. [Enable self-monitoring](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.") Optional
+3. Check the `dynatrace_gcp_<date_time>.log` log file created during the installation process.
+
+* This file will be created each time the installation script runs.
+* The debug information won't contain sensitive data such as the Dynatrace access key.
+* If you are contacting a Dynatrace product expert via live chat:
+
+  + Make sure to provide the `dynatrace_gcp_<date_time>.log` log file described in the previous step.
+  + Provide version information.
+
+    - For issues during installation, check the `version.txt` file.
+    - For issues during runtime, [check container logs](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.").
+
+## Scaling guide for logs
+
+The default container with 1.25vCPU and 1Gi (with default configuration) can handle 8 GB of log throughput per hour. Achieving more throughput requires allocating more resources to the container (scale up), increasing the number of container replicas (scale out), and changing configuration numbers to use allocated resources efficiently. All config variables can be found and changed in `dynatrace-gcp-monitor-config`.
+
+The following table presents tested configuration and achieved throughput with scaled up&out containers:
+
+Achieved throughput
+
+Machine resources
+
+Replica sets
+
+Config variable values
+
+~8MB/s => ~480MB/min
+
+4vCPU 4Gi RAM
+
+1
+
+`PARALLEL_PROCESSES=4`,  
+ `NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30`,  
+ `NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20`
+
+~25MB/s => ~1.5GB/min => ~2TB/day
+
+4vCPU 4Gi RAM
+
+4
+
+`PARALLEL_PROCESSES=4`,  
+ `NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30`,  
+ `NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20`
+
+~46MB/s => ~2.7GB/min => ~4TB/day
+
+4vCPU 4Gi RAM
+
+6
+
+`PARALLEL_PROCESSES=4`,  
+ `NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30`,  
+ `NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20`
+
+## Autoscaling guide for logs
+
+Autoscaling works only for `logs` type of deployment, not `all`.
+
+We recommend manually scaling the container to have a 4vCPU 4Gi machine and then enabling autoscaling.
+
+GCP provides autoscaling of containers in both directions: **horizontal** and **vertical**. However, Dynatrace recommends only **horizontal** scaling.
+
+If you have a 4vCPU 4Gi machine, you can enable autoscaling **horizontally**. However, we **don't** recommend scaling horizontally with the base resources of the container (1.25vCPU, 1Gi). It hasn't been proven to be efficient during testing. One 4vCPU machine does better than four 1vCPU machines. To enable autoscaling horizontally, use the horizontal autoscaling command:
+
+```
+kubectl autoscale deployment dynatrace-gcp-monitor --namespace dynatrace --cpu-percent=90 --min=1 --max=6
+```
+
+Autoscaling is recommended only when you have a minimum of 450 MB/min throughput and can provide a 4vCPU 4Gi RAM machine. Autoscaling is only scaling out, not scaling the machine up.
+
+We **don't** recommend scaling **vertically** because every time a machine is scaled up, an environment variable needs to be changed to create more processes corresponding to machine cores.
+
+## Uninstall
+
+1. Find out what Helm release version you're using.
+
+```
+helm ls -n dynatrace
+```
+
+2. Uninstall the release.
+
+Be sure to replace `<your-helm-release>` with the release name from the previous output.
+
+```
+helm uninstall <your-helm-release> -n dynatrace
+```
+
+Alternatively, you can delete the namespace.
+
+```
+kubectl delete namespace dynatrace
+```
+
+3. To remove all monitoring assets (such as dashboards and alerts) from Dynatrace, you need to remove all GCP extensions.
+
+You can find and delete relevant extensions via Dynatrace Hub.
+
+Make sure to uninstall the following resources manually:
+
+* The initial Role created and attached to the Service Account that you used to deploy the integration.
+* The PubSub Topic.
+* The PubSub Subscription.
+* The LogRoute Sink.
+
+## Monitoring consumption
+
+### Metric ingestion
+
+All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+
+### Log ingestion
+
+DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+
+## Related topics
+
+* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Google Cloud Monitor Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Google-Cloud-Monitor-Troubleshooting/ta-p/243796)
 
 
 ---
@@ -4478,7 +5402,7 @@ All cloud services consume DDUs. The amount of DDU consumption per service insta
 ---
 title: Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only
-scraped: 2026-02-15T21:27:25.675767
+scraped: 2026-02-16T09:33:08.569761
 ---
 
 # Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)
@@ -5255,13 +6179,1705 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 
 
+## Source: set-up-gcp-integration-metrics-only.md
+
+
+---
+title: Set up the Dynatrace Google Cloud metric integration on a GKE cluster
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only
+scraped: 2026-02-16T09:34:08.163861
+---
+
+# Set up the Dynatrace Google Cloud metric integration on a GKE cluster
+
+# Set up the Dynatrace Google Cloud metric integration on a GKE cluster
+
+* Latest Dynatrace
+* How-to guide
+* 15-min read
+* Updated on Oct 08, 2024
+
+Dynatrace version 1.230+
+
+As an alternative to the [main deployment](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster."), that provides Google Cloud monitoring for both metrics and logs, you can choose to set up monitoring for metrics only. In this scenario, you'll run the deployment script in Google Cloud Shell. Instructions will depend on the location where you want the deployment script to run:
+
+* On a new GKE Autopilot cluster created automatically Recommended
+* On an existing GKE standard or GKE Autopilot cluster
+
+During setup, GKE will run a metric forwarder container. After installation, you'll get metrics, dashboards, and alerts for your configured services in Dynatrace.
+
+For other deployment options, see [Alternative deployment scenarios](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide "Other options to set up log and/or metric monitoring for Google Cloud services").
+
+This page describes how to install version 1.0 of the Google Cloud integration on a GKE cluster.
+
+* If you already have an [earlier version](/docs/ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy "Set up log and metric monitoring for GCP services in a Kubernetes container.") installed, you need to [migrate](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.").
+
+## Limitations
+
+Dynatrace Google Cloud metric integration supports up to 50 Google Cloud projects with the standard deployment. To monitor larger environments, you need to enable metrics scope. See [Monitor multiple Google Cloud projects - Large environments](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Push metrics to Dynatrace from multiple Google Cloud projects.").
+
+## Prerequisites
+
+To deploy the integration, you need to make sure the following requirements are met on the machine where you are running the installation.
+
+* Linux OS only
+* Internet access
+* GKE Cluster access
+* Dynatrace environment access
+
+  You need to configure the Dynatrace endpoint (environment, cluster or ActiveGate URL) to which the GKE cluster should send metrics and logs. Make sure that you have direct network access or, if there is a proxy or any other component present in between, that communication is not affected.
+
+### Tools
+
+You can deploy the Dynatrace GCP integration in Google Cloud Shell or in bash.
+
+If you use bash, you need to install:
+
+* [Google Cloud SDKï»¿](https://dt-url.net/e8110336)
+* [kubectlï»¿](https://kubernetes.io/docs/tasks/tools/)
+* [helmï»¿](https://helm.sh/docs/intro/install/)
+* [jq (version 1.6)ï»¿](https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64)
+* [yq (version 4.9.x+)ï»¿](https://github.com/mikefarah/yq/releases/download/v4.9.8/yq_linux_amd64)
+* curl
+* unzip
+
+### Google Cloud permissions
+
+Running the deployment script requires a list of permissions. You need to create a custom role (see below) and use it to deploy `dynatrace-gcp-monitor`.
+
+1. Create a YAML file named `dynatrace-gcp-monitor-helm-deployment-role.yaml` with the following content:
+
+dynatrace-gcp-monitor-helm-deployment-role.yaml
+
+```
+title: Dynatrace GCP Monitor helm deployment role
+
+
+
+description: Role for Dynatrace GCP Monitor helm and pubsub deployment
+
+
+
+stage: GA
+
+
+
+includedPermissions:
+
+
+
+- container.clusters.get
+
+
+
+- container.configMaps.create
+
+
+
+- container.configMaps.delete
+
+
+
+- container.configMaps.get
+
+
+
+- container.configMaps.update
+
+
+
+- container.deployments.create
+
+
+
+- container.deployments.delete
+
+
+
+- container.deployments.get
+
+
+
+- container.deployments.update
+
+
+
+- container.namespaces.create
+
+
+
+- container.namespaces.get
+
+
+
+- container.pods.get
+
+
+
+- container.pods.list
+
+
+
+- container.secrets.create
+
+
+
+- container.secrets.delete
+
+
+
+- container.secrets.get
+
+
+
+- container.secrets.list
+
+
+
+- container.secrets.update
+
+
+
+- container.serviceAccounts.create
+
+
+
+- container.serviceAccounts.delete
+
+
+
+- container.serviceAccounts.get
+
+
+
+- iam.roles.create
+
+
+
+- iam.roles.list
+
+
+
+- iam.roles.update
+
+
+
+- iam.serviceAccounts.actAs
+
+
+
+- iam.serviceAccounts.create
+
+
+
+- iam.serviceAccounts.getIamPolicy
+
+
+
+- iam.serviceAccounts.list
+
+
+
+- iam.serviceAccounts.setIamPolicy
+
+
+
+- resourcemanager.projects.get
+
+
+
+- resourcemanager.projects.getIamPolicy
+
+
+
+- resourcemanager.projects.setIamPolicy
+
+
+
+- serviceusage.services.enable
+
+
+
+- serviceusage.services.get
+
+
+
+- serviceusage.services.list
+
+
+
+- serviceusage.services.use
+```
+
+Each group of permissions is used to handle the different resources included in the integration. Creation and access are for new resources, update is for reusing existing resources, and deletion is for uninstalling.
+
+* container.configMaps: for mapping secrets and other variables used by the containers.
+* container.deployments: for the K8s' deployment within the cluster (which includes the pods, containers, etc.).
+* container.namespaces: for the K8s namespace in which we are deploying the resources.
+* container.pods: for the K8s pods.
+* container.secrets: for the K8s secrets in which to store the data-sensitive variables.
+* container.serviceAccounts: for the SA to be taken in the K8s context.
+* iam.roles: for the necessary permissions for metrics collection.
+* iam.serviceAccounts: for the general context SA.
+* resourcemanager.projects: for handling the project in which we are deploying our integration.
+* serviceusage.services: for handling the services' APIs.
+
+2. Run the command below, replacing `<your_project_ID>` with the project ID where you want to deploy the Dynatrace integration.
+
+```
+gcloud iam roles create dynatrace_monitor.helm_deployment --project=<your_project_ID> --file=dynatrace-gcp-monitor-helm-deployment-role.yaml
+```
+
+Be sure to add this role to your Google Cloud user. For details, see [Grant or revoke a single roleï»¿](https://dt-url.net/vx03vid).
+
+### Google Cloud settings
+
+The location where you deploy the integration determines whether you need to change additional settings.
+
+#### Deploy on a GKE Autopilot cluster
+
+If you deploy the integration on an existing GKE Autopilot cluster or on a new Autopilot cluster that will be automatically created by the deployment script, you don't need to make any additional settings.
+
+#### Deploy on a GKE standard cluster
+
+If you deploy the integration on an existing GKE standard cluster, you need to:
+
+* [Enable Workload Identity on a cluster.ï»¿](https://dt-url.net/2j23qqv)
+* [Enable `GKE_METADATA` on the GKE node pools.ï»¿](https://dt-url.net/an43q2s)
+
+### Dynatrace permissions
+
+You need to create a token with a set of permissions.
+
+1. Go to **Access tokens**.
+2. Select **Generate new token**.
+3. Enter a name for your token.
+4. Under **Template**, select `GCP Services Monitoring`.
+5. Select **Generate**.
+6. Copy the generated token to the clipboard. Store the token in a password manager for future use.
+
+Alternatively, you can create the token and add permissions manually.
+
+Add manually
+
+[Create an API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and [enable the following permissions](/docs/dynatrace-api/basics/dynatrace-api-authentication#token-permissions "Find out how to get authenticated to use the Dynatrace API."):
+
+* API v1:
+
+  + **Read configuration**
+  + **Write configuration**
+* API v2:
+
+  + **Ingest metrics**
+  + **Read extensions**
+  + **Write extensions**
+  + **Read extensions monitoring configuration**
+  + **Write extensions monitoring configuration**
+  + **Read extensions environment configuration**
+  + **Write extensions environment configuration**
+  + **Manage metadata of Hub items**
+  + **Read Hub related data**
+  + **Install and update Hub items**
+
+## Install
+
+Complete the steps below to finish your setup.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Download the Helm deployment package in Google Cloud Shell**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only#dwld "Set up metric monitoring for Google Cloud services on a GKE cluster.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Configure parameter values**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only#params "Set up metric monitoring for Google Cloud services on a GKE cluster.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Connect your Kubernetes cluster**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only#connect "Set up metric monitoring for Google Cloud services on a GKE cluster.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+
+**Run the deployment script**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only#script "Set up metric monitoring for Google Cloud services on a GKE cluster.")
+
+### Step 1 Download the Helm deployment package in Google Cloud Shell
+
+```
+wget -q "https://github.com/dynatrace-oss/dynatrace-gcp-monitor/releases/latest/download/helm-deployment-package.tar"; tar -xvf helm-deployment-package.tar; chmod +x helm-deployment-package/deploy-helm.sh
+```
+
+### Step 2 Configure parameter values
+
+1. The Helm deployment package contains a `values.yaml` file with the necessary configuration for this deployment. Go to `helm-deployment-package/dynatrace-gcp-monitor`and edit the `values.yaml` file, setting the required and optional parameter values as follows.
+
+   You might want to store this file somewhere for future updates, since it will be needed in case of redeployments. Also, keep in mind that its schema can change. In such case, you should use the new file and only copy over the parameter values.
+
+   **Parameter name**
+
+   **Description**
+
+   **Default value**
+
+   `gcpProjectId`
+
+   Required The ID of the Google Cloud project you've selected for deployment.
+
+   Your current project ID
+
+   `deploymentType`
+
+   Required Set to `metrics`.
+
+   `all`
+
+   `dynatraceAccessKey`
+
+   Required Your [Dynatrace API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with the [required permissions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#api "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+   `dynatraceAccessKeySecretName`
+
+   Optional You can specify the key to fetch the endpoint from Google Cloud Secret Manager, instead of using `dynatraceAccessKey`.
+
+   `dynatraceUrlSecretName`
+
+   Optional You can specify the key to fetch the endpoint from Google Cloud Secret Manager, instead of using `dynatraceUrl`.
+
+   `dtSecurityContext`
+
+   Optional Assign the attribute value used for data segmentation, analysis, and permission mapping within the Dynatrace platform. Refer to [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context") for more information. If left empty, the value of `gcpProjectId` will be assigned automatically.
+
+   Value of `gcpProjectId`
+
+   `dynatraceUrl`
+
+   Required For SaaS log ingestion, it's your environment URL (`https://<your-environment-id>.live.dynatrace.com`).
+
+   `requireValidCertificate`
+
+   Optional If set to `true`, Dynatrace requires the SSL certificate of your Dynatrace environment.  
+   For SaaS log ingestion, we recommend leaving the default value.
+
+   `true`
+
+   `selfMonitoringEnabled`
+
+   Optional Send custom metrics to Google Cloud to quickly diagnose if `dynatrace-gcp-monitor` processes and sends logs to Dynatrace properly.For details, see [Self-monitoring metrics for the Dynatrace Google Cloud integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.").
+
+   `false`
+
+   `serviceAccount`
+
+   Optional Name of the service account to be created.
+
+   `dockerImage`
+
+   OptionalDynatrace Google Cloud Monitor Docker image. We recommend using the default value, but you can adapt it if needed.
+
+   `dynatrace/dynatrace-gcp-monitor:v1-latest`
+
+   `printMetricIngestInput`
+
+   Optional If set to `true`, the Google Cloud Monitor outputs the lines of metrics to stdout.
+
+   `false`
+
+   `serviceUsageBooking`
+
+   Optional Service usage booking is used for metrics and determines a caller-specified project for quota and billing purposes.If set to `source`, monitoring API calls are booked in the project where the Kubernetes container is running.If set to `destination`, monitoring API calls are booked in the project that is monitored.For details, see [Monitor multiple Google Cloud projects - Standard environments - Step 4](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Push metrics to Dynatrace from multiple Google Cloud projects.").
+
+   `source`
+
+   `useProxy`
+
+   Optional Depending on the value you set for this flag, the Google Cloud Monitor will use the following proxy settings: Dynatrace (set to `DT_ONLY`), Google Cloud API (set to `GCP_ONLY`), or both (set to `ALL`).
+
+   By default, proxy settings are not used.
+
+   `httpProxy`
+
+   Optional The proxy HTTP address; use this flag in conjunction with `USE_PROXY`.
+
+   `httpsProxy`
+
+   Optional The proxy HTTPS address; use this flag in conjunction with `USE_PROXY`.
+
+   `gcpServicesYaml`
+
+   Optional Configuration file for Google Cloud services.
+
+   `queryInterval`
+
+   Optional Metrics polling interval in minutes. Allowed values: `1` - `6`
+
+   `3`
+
+   `scopingProjectSupportEnabled`
+
+   Optional Set to `true` when metrics scope is configured, so metrics will be collected from all projects added to the metrics scope. For details, see [Monitor multiple Google Cloud projects - Large environments](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Push metrics to Dynatrace from multiple Google Cloud projects.").
+
+   `false`
+
+   `excludedProjects`
+
+   Optional Comma-separated list of projects to be excluded from monitoring (for example, `<project_A>,<project_B>`)
+
+   `excludedMetricsAndDimensions`
+
+   Optional Yaml formatted list of metrics and their dimensions to be excluded for monitoring.
+
+   `metricAutodiscovery`
+
+   Optional If set to `true`, the Google Cloud Monitor will run in metric auto-discovery mode, expanding your options for selecting metrics to monitor. For more information, see [Monitor Google Cloud projects using auto-discovery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/gcp-autodiscovery "Push any metrics to Dynatrace from Google Cloud projects.").
+
+   `clusterIpv4Cidr`
+
+   Optional Set the IP address range for the pods in this cluster in CIDR notation, if you want to use a custom range.
+
+   `servicesIpv4Cidr`
+
+   Optional Set the IP range for the services IPs. It can be specified as a netmask size or as in the CIDR notion.
+
+   `useCustomMasterCidr`
+
+   Optional If set to `true`, you can specify the IPv4 CIDR range to use for the master network.
+
+   `false`
+
+   `masterIpv4Cidr`
+
+   Optional IPv4 CIDR range to use for the master network requires the `useCustomMasterCidr` value to be true.
+2. Choose which services you want Dynatrace to monitor.
+
+   By default, the Dynatrace Google Cloud integration starts monitoring a set of selected services. Go to [Google Cloud supported services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.") for a list of supported services.
+
+For DDU consumption information, see [Monitoring consumption](#ddu).
+
+### Step 3 Connect your Kubernetes cluster
+
+* If you want to have a new GKE Autopilot cluster created by the deployment script, add `--create-autopilot-cluster` to the script. Setting up a connection to the cluster will happen automatically in this case and you can proceed to [step 4](#script).
+* If you run the deployment script on an existing standard GKE or GKE Autopilot cluster, you can connect to your cluster from the Google Cloud console or via terminal. Follow the instructions below.
+
+From the Google Cloud console
+
+Via terminal
+
+1. In your Google Cloud console, go to your Kubernetes Engine.
+2. Select **Clusters**, and then select **Connect**.
+3. Select **Run in Cloud Shell**.
+
+Run the command below, making sure to replace
+
+* `<cluster>` with your cluster name
+* `<region>` with the region where your cluster is running
+* `<project>` with the project ID where your cluster is running
+
+```
+gcloud container clusters get-credentials <cluster> --region <region> --project <project>
+```
+
+For details, see [Configuring cluster access for kubectlï»¿](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry).
+
+### Step 4 Run the deployment script
+
+* If you run the deployment script on an existing standard GKE or GKE Autopilot cluster, the deployment script will create an IAM service account with the necessary roles and deploy `dynatrace-gcp-monitor` to your Kubernetes cluster.
+* If you run the deployment script with the `--create-autopilot-cluster` option, the deployment script will automatically create the new GKE Autopilot cluster and deploy `dynatrace-gcp-monitor` to it.
+
+To run the deployment script, follow the instructions below.
+
+Run on existing cluster
+
+Run on new cluster
+
+The latest versions of Google Cloud extensions will be uploaded. You have two options:
+
+* Run the deployment script without parameters if you want to use the default values provided (`dynatrace-gcp-monitor-sa` for the IAM service account name and `dynatrace_monitor` for the IAM role name prefix):
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh
+```
+
+* Run the deployment script with parameters if you want to set your own values (be sure to replace the placeholders with your desired values):
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh [--role-name <role-to-be-created/updated>]
+```
+
+To keep the existing versions of present extensions and install the latest versions for the rest of the selected extensions, if they are not present, run the command below instead.
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh --without-extensions-upgrade
+```
+
+Run the command below. The latest versions of extensions will be uploaded.
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh --create-autopilot-cluster
+```
+
+To set a different name for the new cluster, run the command below instead, making sure to replace the placeholder (`<name-of-new-cluster>`) with your preferred name.
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh --create-autopilot-cluster --autopilot-cluster-name <name-of-new-cluster>
+```
+
+To keep the existing versions of present extensions and install the latest versions for the rest of the selected extensions, if they are not present, run the command below instead.
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh --create-autopilot-cluster --without-extensions-upgrade
+```
+
+## Verify installation
+
+To check whether installation was successful
+
+1. Check if the container is running.
+
+   After the installation, it may take a couple of minutes before the container is up and running.
+
+   ```
+   kubectl -n dynatrace get pods
+   ```
+2. Check the container logs for errors or exceptions. You have two options:
+
+In the Kubernetes CLI
+
+In your Google Cloud console
+
+Run the following command.
+
+```
+kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-metrics
+```
+
+To check the container logs for errors in your Google Cloud console
+
+1. Go to **Logs explorer**.
+2. Use the filters below to get metric and/or log ingest logs from the Kubernetes container:
+
+   * `resource.type="k8s_container"`
+   * `resource.labels.container_name="dynatrace-gcp-monitor-metrics"`
+
+3. Check if dashboards are imported.
+
+   Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and filter by **Tag** for `Google Cloud`. A number of dashboards for Google Cloud Services should be available.
+
+## Choose services for metrics monitoring
+
+### Services enabled by default
+
+Monitoring of following services will be enabled during deployment of Google Cloud Monitor:
+
+* [Google APIs](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apis-monitoring "Monitor Google Cloud APIs and view available metrics.")
+* [Google App Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine/app-engine-monitoring "Monitor Google App Engine and view available metrics.")
+* [Google BigQuery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigquery-monitoring "Monitor Google BigQuery and view available metrics.")
+* [Google Cloud Functions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/cloud-functions-monitoring "Monitor Google Cloud Functions and view available metrics.")
+* [Google Cloud Run](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun/cloud-run-monitoring "Monitor Google Cloud Run and view available metrics.")
+* [Google Cloud Storage](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-storage-monitoring "Monitor Google Cloud Storage and view available metrics.")
+* [Google Compute Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine/compute-engine-monitoring "Monitor Google Compute Engine and view available metrics.")
+* [Google Firestore in Datastore mode](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-in-datastore-mode-monitoring "Monitor Google Cloud Firestore in Datastore mode and view available metrics.")
+* [Google Filestore](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-monitoring "Monitor Google Filestore and view available metrics.")
+* [Google Kubernetes Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke/google-kubernetes-engine-monitoring "Monitor Google Kubernetes Engine and view available metrics.")
+* [Google Cloud Load Balancing](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-load-balancing-monitoring "Monitor Google Cloud Load Balancing and view available metrics.")
+* [Google Cloud Pub/Sub](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-monitoring "Monitor Google Cloud Pub/Sub and view available metrics.")
+* [Google Cloud Pub/Sub Lite](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-lite-monitoring "Monitor Google Cloud Pub/Sub Lite and view available metrics.")
+* [Google Cloud SQL](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-sql "Monitor Google Cloud SQL and view available metrics.")
+
+There are more service integrations available, but need to be enabled. Go to [Google Cloud supported services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.") for a list of supported services. The next section describes how to manage them. For an alternative approach, consider leveraging [auto-discovery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/gcp-autodiscovery "Push any metrics to Dynatrace from Google Cloud projects.") to extend your metric coverage.
+
+### Manage enabled services
+
+You can manage enabled services via Dynatrace Hub.
+
+Filter for "gcp"âyou'll find annotations in the results for items that are already available in your environment.
+
+To enable a new service, select it in Hub and then install it.
+
+You can also disable a service via Dynatrace Hub.
+
+To see if the services need updating, open them in Hub and check release notes. The updates can include new metrics, new assets like dashboards, or other changes.
+
+All changes to enabled services are applied to Google Cloud Monitor within few minutes.
+
+#### Feature sets & available metrics
+
+To see what metrics are included for specific service, check [Google Cloud supported services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics."). By default, only `defaultMetrics` feature set is enabled. To enable additional feature sets, you have to uncomment them in `values.yaml` file and redeploy whole Google Cloud Monitor.
+
+Current configuration of feature sets can be found in cluster's ConfigMap named `dynatrace-gcp-function-config`.
+
+#### Advanced scope management
+
+To further refine monitoring scope, you can use `filter_conditions` field in `values.yaml` file. This requires Google Cloud Monitor to be redeployed. See [Google Cloud Monitoring filtersï»¿](https://cloud.google.com/monitoring/api/v3/filters?hl=en_US) for syntax.
+
+Example:
+
+```
+filter_conditions:
+
+
+
+resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = "dynatrace"
+```
+
+## Enable alerting
+
+To activate alerting, you need to enable metric events for alerting in Dynatrace.
+
+To enable metric events
+
+1. Go to **Settings**.
+2. In **Anomaly detection**, select **Metric events**.
+3. Filter for Google Cloud alerts and turn on **On/Off** for the alerts you want to activate.
+
+## View metrics
+
+After deploying the integration, you can see metrics from monitored services (go to **Metrics** and filter by `gcp`).
+
+## Change deployment settings
+
+### Change parameters from `values.yaml`
+
+To load a new `values.yaml` file, you need to upgrade your Helm release.
+
+To update your Helm release
+
+1. Find out what Helm release version you're using.
+
+   ```
+   helm ls -n dynatrace
+   ```
+2. Run the command below, making sure to replace `<your-helm-release>` with the value from the previous step.
+
+   ```
+   helm upgrade <your-helm-release> dynatrace-gcp-monitor -n dynatrace
+   ```
+
+For details, see [Helm upgradeï»¿](https://helm.sh/docs/helm/helm_upgrade/).
+
+### Change deployment type
+
+To change the deployment type (`all`, `metrics`, or `logs`)
+
+1. Find out what helm release version you're using.
+
+   ```
+   helm ls -n dynatrace
+   ```
+2. Uninstall the release.
+
+   Be sure to replace `<your-helm-release>` with the release name from the previous output.
+
+   ```
+   helm uninstall <your-helm-release> -n dynatrace
+   ```
+3. Edit `deploymentType` in `values.yaml` with the new value and save the file.
+4. Run the deployment command again. For details, see [Run the deployment script](#script).
+
+## Verification
+
+To investigate potential deployment and connectivity issues
+
+1. [Verify installation](#verify)
+2. [Enable self-monitoring](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.") Optional
+3. Check the `dynatrace_gcp_<date_time>.log` log file created during the installation process.
+
+* This file will be created each time the installation script runs.
+* The debug information won't contain sensitive data such as the Dynatrace access key.
+* If you are contacting a Dynatrace product expert via live chat:
+
+  + Make sure to provide the `dynatrace_gcp_<date_time>.log` log file described in the previous step.
+  + Provide version information.
+
+    - For issues during installation, check the `version.txt` file.
+    - For issues during runtime, [check container logs](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.").
+
+## Uninstall
+
+1. Find out what Helm release version you're using.
+
+```
+helm ls -n dynatrace
+```
+
+2. Uninstall the release.
+
+Be sure to replace `<your-helm-release>` with the release name from the previous output.
+
+```
+helm uninstall <your-helm-release> -n dynatrace
+```
+
+Alternatively, you can delete the namespace.
+
+```
+kubectl delete namespace dynatrace
+```
+
+3. To remove all monitoring assets (such as dashboards and alerts) from Dynatrace, you need to remove all Google Cloud extensions.
+
+You can find and delete relevant extensions via Dynatrace Hub.
+
+Make sure to uninstall the initial Role created and attached to the Service Account that you used to deploy the integration.
+
+## Monitoring consumption
+
+All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+
+## Related topics
+
+* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Google Cloud Monitor Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Google-Cloud-Monitor-Troubleshooting/ta-p/243796)
+
+
+---
+
+
+## Source: set-up-gcp-integration-on-existing-cluster.md
+
+
+---
+title: Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster
+scraped: 2026-02-16T09:37:39.252707
+---
+
+# Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster
+
+# Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster
+
+* Latest Dynatrace
+* How-to guide
+* 15-min read
+* Updated on Oct 08, 2024
+
+Dynatrace version 1.230+
+
+As an alternative to the [main deployment](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster."), where the deployment script runs in a new automatically created GKE Autopilot cluster, you can choose to run the deployment script on an existing standard GKE or GKE Autopilot cluster. In this scenario, you will set up Google Cloud monitoring for metrics and logs in Google Cloud Shell. During setup, a new Pub/Sub subscription will be created. GKE will run two containers: a metric forwarder and a log forwarder. After installation, you'll get metrics, logs, dashboards, and alerts for your configured services in Dynatrace.
+
+For other deployment options, see [Alternative deployment scenarios](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide "Other options to set up log and/or metric monitoring for Google Cloud services").
+
+Dynatrace version 1.230+
+
+This page describes how to install version 1.0 of the Google Cloud integration on a GKE cluster.
+
+* If you already have an [earlier version](/docs/ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy "Set up log and metric monitoring for GCP services in a Kubernetes container.") installed, you need to [migrate](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.").
+
+## Limitations
+
+Dynatrace Google Cloud log integration supports up to 8 GB of data processing per hour (with base resourcesâwithout scaling). With bigger loads, messages will start to be retained in the PubSub Subscription. To measure latency, look for these metrics: `Oldest unacked message age` and `Unacked messages`. For scaling recommendations, see the [scaling guide](#scalingguide) below.
+
+Dynatrace Google Cloud metric integration supports up to 50 Google Cloud projects with the standard deployment. To monitor larger environments, you need to enable metrics scope. See [Monitor multiple Google Cloud projects - Large environments](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Push metrics to Dynatrace from multiple Google Cloud projects.").
+
+## Prerequisites
+
+To deploy the integration, you need to make sure the following requirements are met on the machine where you are running the installation.
+
+* Linux OS only
+* Internet access
+* GKE Cluster access
+* Dynatrace environment access
+
+  You need to configure the Dynatrace endpoint (environment, cluster or ActiveGate URL) to which the GKE cluster should send metrics and logs. Make sure that you have direct network access or, if there is a proxy or any other component present in between, that communication is not affected.
+
+### Tools
+
+You can deploy the Dynatrace GCP integration in Google Cloud Shell or in bash.
+
+If you use bash, you need to install:
+
+* [Google Cloud SDKï»¿](https://dt-url.net/e8110336)
+* [kubectlï»¿](https://kubernetes.io/docs/tasks/tools/)
+* [helmï»¿](https://helm.sh/docs/intro/install/)
+* [jq (version 1.6)ï»¿](https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64)
+* [yq (version 4.9.x+)ï»¿](https://github.com/mikefarah/yq/releases/download/v4.9.8/yq_linux_amd64)
+* curl
+* unzip
+
+### Google Cloud permissions
+
+Running the deployment script requires a list of permissions. You need to create a custom role (see below) and use it to deploy `dynatrace-gcp-monitor`.
+
+1. Create a YAML file named `dynatrace-gcp-monitor-helm-deployment-role.yaml` with the following content:
+
+dynatrace-gcp-monitor-helm-deployment-role.yaml
+
+```
+title: Dynatrace GCP Monitor helm deployment role
+
+
+
+description: Role for Dynatrace GCP Monitor helm and pubsub deployment
+
+
+
+stage: GA
+
+
+
+includedPermissions:
+
+
+
+- container.clusters.get
+
+
+
+- container.configMaps.create
+
+
+
+- container.configMaps.delete
+
+
+
+- container.configMaps.get
+
+
+
+- container.configMaps.update
+
+
+
+- container.deployments.create
+
+
+
+- container.deployments.delete
+
+
+
+- container.deployments.get
+
+
+
+- container.deployments.update
+
+
+
+- container.namespaces.create
+
+
+
+- container.namespaces.get
+
+
+
+- container.pods.get
+
+
+
+- container.pods.list
+
+
+
+- container.secrets.create
+
+
+
+- container.secrets.delete
+
+
+
+- container.secrets.get
+
+
+
+- container.secrets.list
+
+
+
+- container.secrets.update
+
+
+
+- container.serviceAccounts.create
+
+
+
+- container.serviceAccounts.delete
+
+
+
+- container.serviceAccounts.get
+
+
+
+- iam.roles.create
+
+
+
+- iam.roles.list
+
+
+
+- iam.roles.update
+
+
+
+- iam.serviceAccounts.actAs
+
+
+
+- iam.serviceAccounts.create
+
+
+
+- iam.serviceAccounts.getIamPolicy
+
+
+
+- iam.serviceAccounts.list
+
+
+
+- iam.serviceAccounts.setIamPolicy
+
+
+
+- pubsub.subscriptions.create
+
+
+
+- pubsub.subscriptions.get
+
+
+
+- pubsub.subscriptions.list
+
+
+
+- pubsub.topics.attachSubscription
+
+
+
+- pubsub.topics.create
+
+
+
+- pubsub.topics.getIamPolicy
+
+
+
+- pubsub.topics.list
+
+
+
+- pubsub.topics.setIamPolicy
+
+
+
+- pubsub.topics.update
+
+
+
+- resourcemanager.projects.get
+
+
+
+- resourcemanager.projects.getIamPolicy
+
+
+
+- resourcemanager.projects.setIamPolicy
+
+
+
+- serviceusage.services.enable
+
+
+
+- serviceusage.services.get
+
+
+
+- serviceusage.services.list
+
+
+
+- serviceusage.services.use
+```
+
+Each group of permissions is used to handle the different resources included in the integration. Creation and access are for new resources, update is for reusing existing resources, and deletion is for uninstalling.
+
+* container.configMaps: for mapping secrets and other variables used by the containers.
+* container.deployments: for the K8s' deployment within the cluster (which includes the pods, containers, etc.).
+* container.namespaces: for the K8s namespace in which we are deploying the resources.
+* container.pods: for the K8s pods.
+* container.secrets: for the K8s secrets in which to store the data-sensitive variables.
+* container.serviceAccounts: for the SA to be taken in the K8s context.
+* iam.roles: for the necessary permissions for data collection.
+* iam.serviceAccounts: for the general context SA.
+* resourcemanager.projects: for handling the project in which we are deploying our integration.
+* serviceusage.services: for handling the services' APIs.
+* pubsub.subscriptions: for the PubSub subscription we are using to collect and ingest logs.
+* pubsub.topics: for the PubSub topic we are using to collect and ingest logs.
+
+2. Run the command below, replacing `<your_project_ID>` with the project ID where you want to deploy the Dynatrace integration.
+
+```
+gcloud iam roles create dynatrace_monitor.helm_deployment --project=<your_project_ID> --file=dynatrace-gcp-monitor-helm-deployment-role.yaml
+```
+
+Be sure to add this role to your Google Cloud user. For details, see [Grant or revoke a single roleï»¿](https://dt-url.net/vx03vid).
+
+### Google Cloud settings
+
+The location where you deploy the integration determines whether you need make any additional settings.
+
+#### Deploy on an existing GKE Autopilot cluster
+
+If you deploy the integration on an existing GKE Autopilot cluster, you don't need to make any additional settings.
+
+#### Deploy on an existing GKE standard cluster
+
+If you deploy the integration on an existing GKE standard cluster, you need to
+
+* [Enable Workload Identity on a clusterï»¿](https://dt-url.net/2j23qqv)
+* [Enable `GKE_METADATA` on the GKE node poolsï»¿](https://dt-url.net/an43q2s)
+
+### Configure log export
+
+1. Run the following shell script in the Google Cloud project you've selected for deployment.
+
+Be sure to replace `<your-subscription-name>` and `<your-topic-name>` with your own values.
+
+```
+wget https://raw.githubusercontent.com/dynatrace-oss/dynatrace-gcp-monitor/master/scripts/deploy-pubsub.sh
+
+
+
+chmod +x deploy-pubsub.sh
+
+
+
+./deploy-pubsub.sh --topic-name <your-topic-name> --subscription-name <your-subscription-name>
+```
+
+2. Configure [log exportï»¿](https://dt-url.net/4743r02) to send the desired logs to the Google Cloud Pub/Sub topic created above.
+
+### Dynatrace permissions
+
+You need to create a token with a set of permissions.
+
+1. Go to **Access tokens**.
+2. Select **Generate new token**.
+3. Enter a name for your token.
+4. Under **Template**, select `GCP Services Monitoring`.
+5. Select **Generate**.
+6. Copy the generated token to the clipboard. Store the token in a password manager for future use.
+
+Alternatively, you can create the token and add permissions manually.
+
+Add manually
+
+[Create an API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and [enable the following permissions](/docs/dynatrace-api/basics/dynatrace-api-authentication#token-permissions "Find out how to get authenticated to use the Dynatrace API."):
+
+* API v1:
+
+  + **Read configuration**
+  + **Write configuration**
+* API v2:
+
+  + **Ingest metrics**
+  + **Read extensions**
+  + **Write extensions**
+  + **Read extensions monitoring configuration**
+  + **Write extensions monitoring configuration**
+  + **Read extensions environment configuration**
+  + **Write extensions environment configuration**
+  + **Ingest logs**
+  + **Manage metadata of Hub items**
+  + **Read Hub related data**
+  + **Install and update Hub items**
+
+To monitor logs from multiple projects, you need to create **Log Routing Sinks** in each source project selecting as a destination for your main project (in which you also deployed the integration and the PubSub Topic and Subscription).
+For more information, see [Route logs to supported destinationsï»¿](https://dt-url.net/cl038gj).
+
+### Log ingestion
+
+* Determine where log ingestion will be performed, according to your deployment. This distinction is important when configuring the [parameters](#param) for this integration.
+
+  + **For SaaS deployments:** SaaS log ingest, where log ingestion is performed directly through the Cluster API. Recommended
+  + **For Managed deployments:** You can use an existing ActiveGate for log ingestion. For information on how to deploy it, see [ActiveGate installation](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate").
+
+Because of GCP's implementation of Cloud Function 2nd gen, logs from those resources will be linked to the underlying Cloud Run instances. Both extensions will have to be enabled.
+
+To learn more, visit [Google Cloud Functions version comparisonï»¿](https://dt-url.net/b6038q5).
+
+## Install
+
+Complete the steps below to finish your setup.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Download the Helm deployment package in Google Cloud Shell**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster#dwld "Deploy log and metric monitoring for Google Cloud services on an existing standard GKE or GKE Autopilot cluster")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Configure parameter values**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster#param "Deploy log and metric monitoring for Google Cloud services on an existing standard GKE or GKE Autopilot cluster")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Connect your Kubernetes cluster**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster#connect "Deploy log and metric monitoring for Google Cloud services on an existing standard GKE or GKE Autopilot cluster")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+
+**Run the deployment script**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster#script "Deploy log and metric monitoring for Google Cloud services on an existing standard GKE or GKE Autopilot cluster")
+
+### Step 1 Download the Helm deployment package in Google Cloud Shell
+
+```
+wget -q "https://github.com/dynatrace-oss/dynatrace-gcp-monitor/releases/latest/download/helm-deployment-package.tar"; tar -xvf helm-deployment-package.tar; chmod +x helm-deployment-package/deploy-helm.sh
+```
+
+### Step 2 Configure parameter values
+
+1. The Helm deployment package contains a `values.yaml` file with the necessary configuration for this deployment. Go to `helm-deployment-package/dynatrace-gcp-monitor`and edit the `values.yaml` file, setting the required and optional parameter values as follows.
+
+   You might want to store this file somewhere for future updates, since it will be needed in case of redeployments. Also, keep in mind that its schema can change. In such case, you should use the new file and only copy over the parameter values.
+
+   **Parameter name**
+
+   **Description**
+
+   **Default value**
+
+   `parallelProcesses`
+
+   Optional Number of parallel processes to run the whole log monitoring loop
+
+   `1`
+
+   `numberOfConcurrentLogForwardingLoops`
+
+   Optional Number of workers pulling logs from pubsub concurrently and pushing them to Dynatrace
+
+   `5`
+
+   `numberOfConcurrentMessagePullCoroutines`
+
+   Optional Number of concurrent coroutines to pull messages from pub/sub
+
+   `10`
+
+   `numberOfConcurrentPushCoroutines`
+
+   Optional Number of concurrent coroutines to push messages to Dynatrace
+
+   `5`
+
+   `gcpProjectId`
+
+   Required The ID of the GCP project you've selected for deployment.
+
+   Your current project ID
+
+   `deploymentType`
+
+   Required Leave to `all`.
+
+   `all`
+
+   `dynatraceAccessKey`
+
+   Required Your [Dynatrace API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with the [required permissions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#api "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+   `dynatraceUrl`
+
+   Required For SaaS log/metric ingestion, it's your environment URL (`https://<your-environment-id>.live.dynatrace.com`).
+
+   `logsSubscriptionId`
+
+   Required The ID of your log Sink Pub/Sub subscription. For details, see [Configure log export](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#pubsub "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+   `dynatraceLogIngestUrl`
+
+   Optional You can set it if you want to ingest logs separately from metrics.For SaaS log ingestion, it's your environment URL (`https://<your_environment_ID>.live.dynatrace.com`).
+
+   `dynatraceAccessKeySecretName`
+
+   Optional You can specify the key to fetch the endpoint from GCP Secret Manager, instead of using `dynatraceAccessKey`.
+
+   `dynatraceUrlSecretName`
+
+   Optional You can specify the key to fetch the endpoint from GCP Secret Manager, instead of using `dynatraceUrl`.
+
+   `dtSecurityContext`
+
+   Optional Assign the attribute value used for data segmentation, analysis, and permission mapping within the Dynatrace platform. Refer to [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context") for more information. If left empty, the value of `gcpProjectId` will be assigned automatically.
+
+   Value of `gcpProjectId`
+
+   `dynatraceLogIngestUrlSecretName`
+
+   Optional You can specify the key to fetch the endpoint from GCP Secret Manager, instead of using `dynatraceLogIngestUrl`.
+
+   `requireValidCertificate`
+
+   Optional If set to `true`, Dynatrace requires the SSL certificate of your Dynatrace environment.For SaaS log ingestion, we recommend leaving the default value.
+
+   `true`
+
+   `selfMonitoringEnabled`
+
+   Optional Send custom metrics to GCP to quickly diagnose if `dynatrace-gcp-monitor` processes and sends metrics/logs to Dynatrace properly.For details, see [Self-monitoring metrics for the Dynatrace GCP integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.").
+
+   `false`
+
+   `serviceAccount`
+
+   Optional Name of the service account to be created.
+
+   `dockerImage`
+
+   OptionalDynatrace GCP Monitor docker image. We recommend using the default value, but you can adapt it if needed.
+
+   `dynatrace/dynatrace-gcp-monitor:v1-latest`
+
+   `logIngestContentMaxLength`
+
+   Optional The maximum content length of a log event. Should be less than or equal to the setting on your Dynatrace environment.
+
+   `8192`
+
+   `logIngestAttributeValueMaxLength`
+
+   Optional The maximum length of the log event attribute value. If it exceeds the server limit, content will be truncated.
+
+   `250`
+
+   `logIngestRequestMaxEvents`
+
+   Optional The maximum number of log events in a single payload to the logs ingestion endpoint. If it exceeds the server limit, payload will be rejected with code `413`.
+
+   `5000`
+
+   `logIngestRequestMaxSize`
+
+   Optional The maximum size in bytes of a single payload to the logs ingestion endpoint. If it exceeds the server limit, payload will be rejected with code `413`.
+
+   `1048576`
+
+   `logIngestEventMaxAgeSeconds`
+
+   Optional Determines the maximum age of a forwarded log event. Should be less than or equal to the setting on your Dynatrace environment.
+
+   `86400`
+
+   `printMetricIngestInput`
+
+   Optional If set to `true`, the GCP Monitor outputs the lines of metrics to stdout.
+
+   `false`
+
+   `serviceUsageBooking`
+
+   Optional Service usage booking is used for metrics and determines a caller-specified project for quota and billing purposes. If set to `source`, monitoring API calls are booked in the project where the Kubernetes container is running. If set to `destination`, monitoring API calls are booked in the project that is monitored. For details, see [Monitor multiple GCP projects - Standard environments - Step 4](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Push metrics to Dynatrace from multiple Google Cloud projects.").
+
+   `source`
+
+   `useProxy`
+
+   Optional Depending on the value you set for this flag, the GCP Monitor will use the following proxy settings: Dynatrace (set to `DT_ONLY`), GCP API (set to `GCP_ONLY`), or both (set to `ALL`).
+
+   By default, proxy settings are not used.
+
+   `httpProxy`
+
+   Optional The proxy HTTP address; use this flag in conjunction with `USE_PROXY`.
+
+   `httpsProxy`
+
+   Optional The proxy HTTPS address; use this flag in conjunction with `USE_PROXY`.
+
+   `gcpServicesYaml`
+
+   Optional Configuration file for GCP services.
+
+   `queryInterval`
+
+   Optional Metrics polling interval in minutes. Allowed values: `1` - `6`
+
+   `3`
+
+   `scopingProjectSupportEnabled`
+
+   Optional Set to `true` when metrics scope is configured, so metrics will be collected from all projects added to the metrics scope.For details, see [Monitor multiple GCP projects - Large environments](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Push metrics to Dynatrace from multiple Google Cloud projects.").
+
+   `false`
+
+   `excludedProjects`
+
+   Optional Comma-separated list of projects to be excluded from monitoring (for example, `<project_A>,<project_B>`)
+
+   `excludedMetricsAndDimensions`
+
+   Optional Yaml formatted list of metrics and their dimensions to be excluded for monitoring.
+
+   `metricAutodiscovery`
+
+   Optional If set to `true`, the GCP Monitor will run metric auto-discovery mode, expanding your options for selecting metrics to monitor. For more information, see [Monitor GCP projects using auto-discovery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/gcp-autodiscovery "Push any metrics to Dynatrace from Google Cloud projects.").
+
+   `false`
+2. Choose which services you want Dynatrace to monitor.
+
+   By default, the Dynatrace Google Cloud integration starts monitoring a set of selected services. Go to [Google Cloud supported services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.") for a list of supported services.
+
+For DDU consumption information, see [Monitoring consumption](#ddu).
+
+### Step 3 Connect your Kubernetes cluster
+
+To connect to your existing GKE standard cluster or existing GKE Autopilot cluster, run the command below, making sure to replace
+
+* `<cluster>` with your cluster name
+* `<region>` with the region where your cluster is running
+* `<project>` with the project ID where your cluster is running
+
+```
+gcloud container clusters get-credentials <cluster> --region <region> --project <project>
+```
+
+For details, see [Configuring cluster access for kubectlï»¿](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry).
+
+### Step 4 Run the deployment script
+
+The deployment script will create an IAM service account with the necessary roles and deploy `dynatrace-gcp-monitor` to your GKE cluster. The latest versions of Google Cloud extensions will be uploaded.
+
+You have two options:
+
+* Run the deployment script without parameters if you want to use the default values provided (`dynatrace-gcp-monitor-sa` for the IAM service account name and `dynatrace_monitor` for the IAM role name prefix):
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh
+```
+
+* Run the deployment script with parameters if you want to set your own values (be sure to replace the placeholders with your desired values):
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh [--role-name <role-to-be-created/updated>]
+```
+
+To keep the existing versions of present extensions and install the latest versions for the rest of the selected extensions, if they are not present, run the command below instead.
+
+```
+cd helm-deployment-package
+
+
+
+./deploy-helm.sh --without-extensions-upgrade
+```
+
+## Verify installation
+
+To check whether installation was successful
+
+1. Check if the container is running.
+
+   After the installation, it may take couple of minutes until the container is up and running.
+
+   ```
+   kubectl -n dynatrace get pods
+   ```
+2. Check the container logs for errors or exceptions. You have two options:
+
+In the Kubernetes CLI
+
+In your Google Cloud console
+
+Run the following commands.
+
+```
+kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-metrics
+
+
+
+kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-logs
+```
+
+To check the container logs for errors in your Google Cloud console
+
+1. Go to **Logs explorer**.
+2. Use the filters below to get metric and/or log ingest logs from the Kubernetes container:
+
+   * `resource.type="k8s_container"`
+   * `resource.labels.container_name="dynatrace-gcp-monitor-metrics"` (for metric ingest logs)
+   * `resource.labels.container_name="dynatrace-gcp-monitor-logs"` (for log ingest logs)
+
+3. Check if dashboards are imported.
+
+   Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and filter by **Tag** for `Google Cloud`. A number of dashboards for Google Cloud Services should be available.
+
+## Choose services for metrics monitoring
+
+### Services enabled by default
+
+Monitoring of following services will be enabled during deployment of Google Cloud Monitor:
+
+* [Google APIs](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apis-monitoring "Monitor Google Cloud APIs and view available metrics.")
+* [Google App Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine/app-engine-monitoring "Monitor Google App Engine and view available metrics.")
+* [Google BigQuery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigquery-monitoring "Monitor Google BigQuery and view available metrics.")
+* [Google Cloud Functions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/cloud-functions-monitoring "Monitor Google Cloud Functions and view available metrics.")
+* [Google Cloud Run](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun/cloud-run-monitoring "Monitor Google Cloud Run and view available metrics.")
+* [Google Cloud Storage](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-storage-monitoring "Monitor Google Cloud Storage and view available metrics.")
+* [Google Compute Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine/compute-engine-monitoring "Monitor Google Compute Engine and view available metrics.")
+* [Google Firestore in Datastore mode](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-in-datastore-mode-monitoring "Monitor Google Cloud Firestore in Datastore mode and view available metrics.")
+* [Google Filestore](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-monitoring "Monitor Google Filestore and view available metrics.")
+* [Google Kubernetes Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke/google-kubernetes-engine-monitoring "Monitor Google Kubernetes Engine and view available metrics.")
+* [Google Cloud Load Balancing](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-load-balancing-monitoring "Monitor Google Cloud Load Balancing and view available metrics.")
+* [Google Cloud Pub/Sub](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-monitoring "Monitor Google Cloud Pub/Sub and view available metrics.")
+* [Google Cloud Pub/Sub Lite](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-lite-monitoring "Monitor Google Cloud Pub/Sub Lite and view available metrics.")
+* [Google Cloud SQL](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-sql "Monitor Google Cloud SQL and view available metrics.")
+
+There are more service integrations available, but need to be enabled. Go to [Google Cloud supported services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.") for a list of supported services. Next section describes how to manage them. For an alternative approach, consider leveraging [auto-discovery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/gcp-autodiscovery "Push any metrics to Dynatrace from Google Cloud projects.") to extend your metric coverage.
+
+### Manage enabled services
+
+You can manage enabled services via Dynatrace Hub.
+
+Filter for "gcp"âyou'll find annotations in the results for items that are already available in your environment.
+
+To enable a new service, select it in Hub and then install it.
+
+You can also disable a service via Dynatrace Hub.
+
+To see if the services need updating, open them in Hub and check release notes. The updates can include new metrics, new assets like dashboards, or other changes.
+
+All changes to enabled services are applied to Google Cloud Monitor within few minutes.
+
+#### Feature sets & available metrics
+
+To see what metrics are included for specific service, check [Google Cloud supported services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics."). By default, only `defaultMetrics` feature set is enabled. To enable additional feature sets, you have to uncomment them in `values.yaml` file and redeploy whole Google Cloud Monitor.
+
+Current configuration of feature sets can be found in cluster's ConfigMap named `dynatrace-gcp-function-config`.
+
+#### Advanced scope management
+
+To further refine monitoring scope, you can use `filter_conditions` field in `values.yaml` file. This requires Google Cloud Monitor to be redeployed. See [Google Cloud Monitoring filtersï»¿](https://cloud.google.com/monitoring/api/v3/filters?hl=en_US) for syntax.
+
+Example:
+
+```
+filter_conditions:
+
+
+
+resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = "dynatrace"
+```
+
+## Enable alerting
+
+To activate alerting, you need to enable metric events for alerting in Dynatrace.
+
+To enable metric events
+
+1. Go to **Settings**.
+2. Select **Anomaly detection** > **Metric events**.
+3. Filter for Google Cloud alerts and turn on **On/Off** for the alerts you want to activate.
+
+## View metrics and logs
+
+After deploying the integration, depending on your deployment type, you can:
+
+* See metrics from monitored services: go to **Metrics** and filter by `gcp`.
+* View and analyze Google Cloud logs: in Dynatrace, go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** and, to look for Google Cloud logs, filter by `cloud.provider: gcp`.
+
+## Change deployment settings
+
+### Change parameters from `values.yaml`
+
+To load a new `values.yaml` file, you need to upgrade your Helm release.
+
+To update your Helm release
+
+1. Find out what helm release version you're using.
+
+   ```
+   helm ls -n dynatrace
+   ```
+2. Run the command below, making sure to replace `<your-helm-release>` with the value from the previous step.
+
+   ```
+   helm upgrade <your-helm-release> dynatrace-gcp-monitor -n dynatrace
+   ```
+
+For details, see [Helm upgradeï»¿](https://helm.sh/docs/helm/helm_upgrade/).
+
+### Change deployment type
+
+To change the deployment type (`all`, `metrics`, or `logs`)
+
+1. Find out what Helm release version you're using.
+
+   ```
+   helm ls -n dynatrace
+   ```
+2. Uninstall the release.
+
+   Be sure to replace `<your-helm-release>` with the release name from the previous output.
+
+   ```
+   helm uninstall <your-helm-release> -n dynatrace
+   ```
+3. Edit `deploymentType` in `values.yaml` with the new value and save the file.
+4. Run the deployment command again. For details, see [Run the deployment script](#script).
+
+## Verification
+
+To investigate potential deployment and connectivity issues
+
+1. [Verify installation](#verify)
+2. [Enable self-monitoring](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.") Optional
+3. Check the `dynatrace_gcp_<date_time>.log` log file created during the installation process.
+
+* This file will be created each time the installation script runs.
+* The debug information won't contain sensitive data such as the Dynatrace access key.
+* If you are contacting a Dynatrace product expert via live chat:
+
+  + Make sure to provide the `dynatrace_gcp_<date_time>.log` log file described in the previous step.
+  + Provide version information.
+
+    - For issues during installation, check the `version.txt` file.
+    - For issues during runtime, [check container logs](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.").
+
+## Scaling guide for logs
+
+The default container with 1.25vCPU and 1Gi (with default configuration) can handle 8 GB of log throughput per hour. Achieving more throughput requires allocating more resources to the container (scale up), increasing the number of container replicas (scale out), and changing configuration numbers to use allocated resources efficiently. All config variables can be found and changed in `dynatrace-gcp-monitor-config`.
+
+The following table presents tested configuration and achieved throughput with scaled up&out containers:
+
+Achieved throughput
+
+Machine resources
+
+Replica sets
+
+Config variable values
+
+~8MB/s => ~480MB/min
+
+4vCPU 4Gi RAM
+
+1
+
+`PARALLEL_PROCESSES=4`,  
+ `NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30`,  
+ `NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20`
+
+~25MB/s => ~1.5GB/min => ~2TB/day
+
+4vCPU 4Gi RAM
+
+4
+
+`PARALLEL_PROCESSES=4`,  
+ `NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30`,  
+ `NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20`
+
+~46MB/s => ~2.7GB/min => ~4TB/day
+
+4vCPU 4Gi RAM
+
+6
+
+`PARALLEL_PROCESSES=4`,  
+ `NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30`,  
+ `NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20`
+
+## Autoscaling guide for logs
+
+Autoscaling works only for `logs` type of deployment, not `all`.
+
+We recommend manually scaling the container to have a 4vCPU 4Gi machine and then enabling autoscaling.
+
+GCP provides autoscaling of containers in both directions: **horizontal** and **vertical**. However, Dynatrace recommends only **horizontal** scaling.
+
+If you have a 4vCPU 4Gi machine, you can enable autoscaling **horizontally**. However, we **don't** recommend scaling horizontally with the base resources of the container (1.25vCPU, 1Gi). It hasn't been proven to be efficient during testing. One 4vCPU machine does better than four 1vCPU machines. To enable autoscaling horizontally, use the horizontal autoscaling command:
+
+```
+kubectl autoscale deployment dynatrace-gcp-monitor --namespace dynatrace --cpu-percent=90 --min=1 --max=6
+```
+
+Autoscaling is recommended only when you have a minimum of 450 MB/min throughput and can provide a 4vCPU 4Gi RAM machine. Autoscaling is only scaling out, not scaling the machine up.
+
+We **don't** recommend scaling **vertically** because every time a machine is scaled up, an environment variable needs to be changed to create more processes corresponding to machine cores.
+
+## Uninstall
+
+1. Find out what Helm release version you're using.
+
+```
+helm ls -n dynatrace
+```
+
+2. Uninstall the release.
+
+Be sure to replace `<your-helm-release>` with the release name from the previous output.
+
+```
+helm uninstall <your-helm-release> -n dynatrace
+```
+
+Alternatively, you can delete the namespace.
+
+```
+kubectl delete namespace dynatrace
+```
+
+3. To remove all monitoring assets (such as dashboards and alerts) from Dynatrace, you need to remove all Google Cloud extensions.
+
+You can find and delete relevant extensions via Dynatrace Hub.
+
+Make sure to uninstall the following resources manually:
+
+* The initial Role created and attached to the Service Account that you used to deploy the integration.
+* The PubSub Topic.
+* The PubSub Subscription.
+* The LogRoute Sink.
+
+## Monitoring consumption
+
+### Metric ingestion
+
+All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+
+### Log ingestion
+
+DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+
+## Related topics
+
+* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Google Cloud Monitor Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Google-Cloud-Monitor-Troubleshooting/ta-p/243796)
+
+
+---
+
+
 ## Source: gcp-guide.md
 
 
 ---
 title: End-to-end guide for monitoring Google Cloud services integrating Operations Suite
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide
-scraped: 2026-02-15T21:23:31.009169
+scraped: 2026-02-16T09:39:12.053946
 ---
 
 # End-to-end guide for monitoring Google Cloud services integrating Operations Suite
@@ -5315,6 +7931,69 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ## Related topics
 
 * [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+
+
+---
+
+
+## Source: gcp-apigee-monitoring.md
+
+
+---
+title: Google Cloud Apigee monitoring
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apigee-monitoring
+scraped: 2026-02-16T09:34:27.936218
+---
+
+# Google Cloud Apigee monitoring
+
+# Google Cloud Apigee monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Jan 17, 2022
+
+Dynatrace Google Cloud integration leverages data collected from the Google Operation API to constantly monitor health and performance of Google Cloud Services. While combining all relevant data into dashboards, it also enables alerting and event tracking.
+
+## Prerequisites
+
+[Set up integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+## Add services and feature sets Optional
+
+After integration, Dynatrace automatically monitors a number of preset Google Cloud services and feature sets (metrics). Besides these, you can add more services or feature sets to monitoring. For details, see [Add or remove services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+For a list of feature sets available for this service, see [Metric table](#table).
+
+## View metrics
+
+After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+
+## Metric table
+
+The following feature sets are available for Google Cloud Apigee.
+
+| Feature set | Name | Unit | GCP metric identifier |
+| --- | --- | --- | --- |
+| apigee\_googleapis\_com\_Environment/default\_metrics | Apigee anomaly event count | Count | apigee.googleapis.com/environment/anomaly\_count |
+| apigee\_googleapis\_com\_Proxy/default\_metrics | Apigee policy response latencies | MilliSecond | apigee.googleapis.com/policy/latencies |
+| apigee\_googleapis\_com\_Proxy/default\_metrics | Apigee proxy response latencies | MilliSecond | apigee.googleapis.com/proxy/latencies |
+| apigee\_googleapis\_com\_Proxy/default\_metrics | Apigee proxy request cumulative count | Count | apigee.googleapis.com/proxy/request\_count |
+| apigee\_googleapis\_com\_Proxy/default\_metrics | Apigee proxy response cumulative count | Count | apigee.googleapis.com/proxy/response\_count |
+| apigee\_googleapis\_com\_Proxy/default\_metrics | Apigee target response latencies | MilliSecond | apigee.googleapis.com/target/latencies |
+| apigee\_googleapis\_com\_Proxy/default\_metrics | Apigee target request cumulative count | Count | apigee.googleapis.com/target/request\_count |
+| apigee\_googleapis\_com\_Proxy/default\_metrics | Apigee target response cumulative count | Count | apigee.googleapis.com/target/response\_count |
+| Deprecated apigee\_googleapis\_com\_ProxyV2/default\_metrics | Percentile of Apigee policy response latencies | MilliSecond | apigee.googleapis.com/policyv2/latencies\_percentile |
+| Deprecated apigee\_googleapis\_com\_ProxyV2/default\_metrics | Percentile of Apigee proxy response latencies | MilliSecond | apigee.googleapis.com/proxyv2/latencies\_percentile |
+| Deprecated apigee\_googleapis\_com\_ProxyV2/default\_metrics | Apigee proxy request cumulative count | Count | apigee.googleapis.com/proxyv2/request\_count |
+| Deprecated apigee\_googleapis\_com\_ProxyV2/default\_metrics | Apigee proxy response cumulative count | Count | apigee.googleapis.com/proxyv2/response\_count |
+| Deprecated apigee\_googleapis\_com\_ProxyV2/default\_metrics | Apigee target request cumulative count | Count | apigee.googleapis.com/targetv2/request\_count |
+| Deprecated apigee\_googleapis\_com\_ProxyV2/default\_metrics | Apigee target response cumulative count | Count | apigee.googleapis.com/targetv2/response\_count |
+
+## Related topics
+
+* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
 
 
 ---
@@ -5380,7 +8059,7 @@ The following feature sets are available for Google Cloud Assistant Smart Home.
 ---
 title: Google Cloud Bigtable monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigtable-monitoring
-scraped: 2026-02-15T09:09:35.706771
+scraped: 2026-02-16T09:32:20.844858
 ---
 
 # Google Cloud Bigtable monitoring
@@ -5448,7 +8127,7 @@ The following feature sets are available for Google Cloud Bigtable.
 ---
 title: Google Cloud Composer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-composer-monitoring
-scraped: 2026-02-15T09:13:08.203485
+scraped: 2026-02-16T09:39:20.654753
 ---
 
 # Google Cloud Composer monitoring
@@ -5514,7 +8193,7 @@ The following feature sets are available for Google Cloud Composer.
 ---
 title: Google Cloud Data Loss Prevention monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-data-loss-prevention-monitoring
-scraped: 2026-02-15T21:30:13.910015
+scraped: 2026-02-16T09:36:47.557826
 ---
 
 # Google Cloud Data Loss Prevention monitoring
@@ -5570,7 +8249,7 @@ The following feature sets are available for Google Cloud Data Loss Prevention.
 ---
 title: Google Cloud DNS monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-dns-monitoring
-scraped: 2026-02-15T09:07:10.753915
+scraped: 2026-02-16T09:28:58.033291
 ---
 
 # Google Cloud DNS monitoring
@@ -5675,7 +8354,7 @@ The following feature sets are available for Google Cloud Firestore.
 ---
 title: Google Cloud Load Balancing monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-load-balancing-monitoring
-scraped: 2026-02-15T09:08:28.200016
+scraped: 2026-02-16T09:35:45.918996
 ---
 
 # Google Cloud Load Balancing monitoring
@@ -5870,7 +8549,7 @@ The following feature sets are available for Google Cloud SQL.
 ---
 title: Google Cloud Storage monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-storage-monitoring
-scraped: 2026-02-15T09:09:24.940018
+scraped: 2026-02-16T09:28:42.212585
 ---
 
 # Google Cloud Storage monitoring
@@ -5930,7 +8609,7 @@ The following feature sets are available for Google Cloud Storage.
 ---
 title: Google Cloud Tasks monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-tasks-monitoring
-scraped: 2026-02-15T09:11:36.975677
+scraped: 2026-02-16T09:31:52.194573
 ---
 
 # Google Cloud Tasks monitoring
@@ -5968,6 +8647,79 @@ The following feature sets are available for Google Cloud Tasks.
 | cloud\_tasks\_queue/default\_metrics | Queue depth | Count | cloudtasks.googleapis.com/queue/depth |
 | cloud\_tasks\_queue/default\_metrics | Task attempt count | Count | cloudtasks.googleapis.com/queue/task\_attempt\_count |
 | cloud\_tasks\_queue/default\_metrics | Task attempt delays | MilliSecond | cloudtasks.googleapis.com/queue/task\_attempt\_delays |
+
+## Related topics
+
+* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+
+
+---
+
+
+## Source: gcp-dataflow-monitoring.md
+
+
+---
+title: Google Cloud Dataflow monitoring
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-dataflow-monitoring
+scraped: 2026-02-16T09:29:21.363102
+---
+
+# Google Cloud Dataflow monitoring
+
+# Google Cloud Dataflow monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Published Jan 17, 2022
+
+Dynatrace Google Cloud integration leverages data collected from the Google Operation API to constantly monitor health and performance of Google Cloud Services. While combining all relevant data into dashboards, it also enables alerting and event tracking.
+
+## Prerequisites
+
+[Set up integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+## Add services and feature sets Optional
+
+After integration, Dynatrace automatically monitors a number of preset Google Cloud services and feature sets (metrics). Besides these, you can add more services or feature sets to monitoring. For details, see [Add or remove services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+For a list of feature sets available for this service, see [Metric table](#table).
+
+## View metrics
+
+After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+
+## Metric table
+
+The following feature sets are available for Google Cloud Dataflow.
+
+| Feature set | Name | Unit | GCP metric identifier |
+| --- | --- | --- | --- |
+| dataflow\_job/default\_metrics | Billable shuffle data processed | Byte | dataflow.googleapis.com/job/billable\_shuffle\_data\_processed |
+| dataflow\_job/default\_metrics | Current number of vCPUs in use | Count | dataflow.googleapis.com/job/current\_num\_vcpus |
+| dataflow\_job/default\_metrics | Current shuffle slots in use | Count | dataflow.googleapis.com/job/current\_shuffle\_slots |
+| dataflow\_job/default\_metrics | Data watermark lag | Second | dataflow.googleapis.com/job/data\_watermark\_age |
+| dataflow\_job/default\_metrics | Elapsed time | Second | dataflow.googleapis.com/job/elapsed\_time |
+| dataflow\_job/default\_metrics | Element count | Count | dataflow.googleapis.com/job/element\_count |
+| dataflow\_job/default\_metrics | Elements Produced | Count | dataflow.googleapis.com/job/elements\_produced\_count |
+| dataflow\_job/default\_metrics | Estimated byte count | Byte | dataflow.googleapis.com/job/estimated\_byte\_count |
+| dataflow\_job/default\_metrics | Estimated Bytes Produced | Count | dataflow.googleapis.com/job/estimated\_bytes\_produced\_count |
+| dataflow\_job/default\_metrics | Failed | Count | dataflow.googleapis.com/job/is\_failed |
+| dataflow\_job/default\_metrics | Per-stage data watermark lag | Second | dataflow.googleapis.com/job/per\_stage\_data\_watermark\_age |
+| dataflow\_job/default\_metrics | Per-stage system lag | Second | dataflow.googleapis.com/job/per\_stage\_system\_lag |
+| dataflow\_job/default\_metrics | PubsubIO.Read requests from Dataflow jobs | Count | dataflow.googleapis.com/job/pubsub/read\_count |
+| dataflow\_job/default\_metrics | Pub/Sub Pull Request Latencies | MilliSecond | dataflow.googleapis.com/job/pubsub/read\_latencies |
+| dataflow\_job/default\_metrics | Pub/Sub Publish Requests | Count | dataflow.googleapis.com/job/pubsub/write\_count |
+| dataflow\_job/default\_metrics | Pub/Sub Publish Request Latencies | MilliSecond | dataflow.googleapis.com/job/pubsub/write\_latencies |
+| dataflow\_job/default\_metrics |  |  | dataflow.googleapis.com/job/status |
+| dataflow\_job/default\_metrics | System lag | Second | dataflow.googleapis.com/job/system\_lag |
+| dataflow\_job/default\_metrics | Total memory usage time | GigaByte | dataflow.googleapis.com/job/total\_memory\_usage\_time |
+| dataflow\_job/default\_metrics | Total PD usage time | GigaByte | dataflow.googleapis.com/job/total\_pd\_usage\_time |
+| dataflow\_job/default\_metrics | Total shuffle data processed | Byte | dataflow.googleapis.com/job/total\_shuffle\_data\_processed |
+| dataflow\_job/default\_metrics | Total streaming data processed | Byte | dataflow.googleapis.com/job/total\_streaming\_data\_processed |
+| dataflow\_job/default\_metrics | Total vCPU time | Second | dataflow.googleapis.com/job/total\_vcpu\_time |
+| dataflow\_job/default\_metrics | User Counter | Count | dataflow.googleapis.com/job/user\_counter |
 
 ## Related topics
 
@@ -6107,7 +8859,7 @@ The following feature sets are available for Google Cloud Firestore in Datastore
 ---
 title: Google Cloud Filestore monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-monitoring
-scraped: 2026-02-15T21:27:59.214156
+scraped: 2026-02-16T09:30:07.286070
 ---
 
 # Google Cloud Filestore monitoring
@@ -6170,7 +8922,7 @@ The following feature sets are available for Google Cloud Filestore.
 ---
 title: Google Cloud Firebase monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-firebase-monitoring
-scraped: 2026-02-15T21:26:24.554458
+scraped: 2026-02-16T09:36:05.810974
 ---
 
 # Google Cloud Firebase monitoring
@@ -6237,7 +8989,7 @@ The following feature sets are available for Google Cloud Firebase.
 ---
 title: Google Cloud Hybrid Connectivity monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-hybrid-connectivity-monitoring
-scraped: 2026-02-15T21:22:21.846589
+scraped: 2026-02-16T09:35:31.017264
 ---
 
 # Google Cloud Hybrid Connectivity monitoring
@@ -6319,13 +9071,93 @@ The following feature sets are available for Google Cloud Hybrid Connectivity.
 ---
 
 
+## Source: gcp-memorystore-monitoring.md
+
+
+---
+title: Google Cloud Memorystore monitoring
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-memorystore-monitoring
+scraped: 2026-02-16T09:27:36.220790
+---
+
+# Google Cloud Memorystore monitoring
+
+# Google Cloud Memorystore monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Published Jan 17, 2022
+
+Dynatrace Google Cloud integration leverages data collected from the Google Operation API to constantly monitor health and performance of Google Cloud Services. While combining all relevant data into dashboards, it also enables alerting and event tracking.
+
+## Prerequisites
+
+[Set up integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+## Add services and feature sets Optional
+
+After integration, Dynatrace automatically monitors a number of preset Google Cloud services and feature sets (metrics). Besides these, you can add more services or feature sets to monitoring. For details, see [Add or remove services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+For a list of feature sets available for this service, see [Metric table](#table).
+
+## View metrics
+
+After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+
+## Metric table
+
+The following feature sets are available for Google Cloud Memorystore.
+
+| Feature set | Name | Unit | GCP metric identifier |
+| --- | --- | --- | --- |
+| redis\_instance/default\_metrics | Blocked Clients | Count | redis.googleapis.com/clients/blocked |
+| redis\_instance/default\_metrics | Connected Clients | Count | redis.googleapis.com/clients/connected |
+| redis\_instance/default\_metrics | Calls | Count | redis.googleapis.com/commands/calls |
+| redis\_instance/default\_metrics | Total Time of Calls | MicroSecond | redis.googleapis.com/commands/total\_time |
+| redis\_instance/default\_metrics | Time per Call | Count | redis.googleapis.com/commands/usec\_per\_call |
+| redis\_instance/default\_metrics | Average TTL | MilliSecond | redis.googleapis.com/keyspace/avg\_ttl |
+| redis\_instance/default\_metrics | Keys | Count | redis.googleapis.com/keyspace/keys |
+| redis\_instance/default\_metrics | Expirable Keys | Count | redis.googleapis.com/keyspace/keys\_with\_expiration |
+| redis\_instance/default\_metrics | Persisting RDB | Count | redis.googleapis.com/persistence/rdb/bgsave\_in\_progress |
+| redis\_instance/default\_metrics | Bytes lagging | Byte | redis.googleapis.com/replication/master/slaves/lag |
+| redis\_instance/default\_metrics | Replication byte offset (Replica) | Byte | redis.googleapis.com/replication/master/slaves/offset |
+| redis\_instance/default\_metrics | Replication byte offset (Master) | Byte | redis.googleapis.com/replication/master\_repl\_offset |
+| redis\_instance/default\_metrics | Bytes pending replication | Byte | redis.googleapis.com/replication/offset\_diff |
+| redis\_instance/default\_metrics | Node Role | Count | redis.googleapis.com/replication/role |
+| redis\_instance/default\_metrics | Uptime | Second | redis.googleapis.com/server/uptime |
+| redis\_instance/default\_metrics | Cache Hit ratio | Count | redis.googleapis.com/stats/cache\_hit\_ratio |
+| redis\_instance/default\_metrics | Total Connections Received | Count | redis.googleapis.com/stats/connections/total |
+| redis\_instance/default\_metrics | CPU seconds | Second | redis.googleapis.com/stats/cpu\_utilization |
+| redis\_instance/default\_metrics | Evicted Keys | Count | redis.googleapis.com/stats/evicted\_keys |
+| redis\_instance/default\_metrics | Expired Keys | Count | redis.googleapis.com/stats/expired\_keys |
+| redis\_instance/default\_metrics | Hits | Count | redis.googleapis.com/stats/keyspace\_hits |
+| redis\_instance/default\_metrics | Misses | Count | redis.googleapis.com/stats/keyspace\_misses |
+| redis\_instance/default\_metrics | Maximum Memory | Byte | redis.googleapis.com/stats/memory/maxmemory |
+| redis\_instance/default\_metrics | Time in system memory overload | MicroSecond | redis.googleapis.com/stats/memory/system\_memory\_overload\_duration |
+| redis\_instance/default\_metrics | System Memory Usage Ratio | Count | redis.googleapis.com/stats/memory/system\_memory\_usage\_ratio |
+| redis\_instance/default\_metrics | Used Memory | Byte | redis.googleapis.com/stats/memory/usage |
+| redis\_instance/default\_metrics | Memory Usage Ratio | Count | redis.googleapis.com/stats/memory/usage\_ratio |
+| redis\_instance/default\_metrics | Total traffic to Redis | Byte | redis.googleapis.com/stats/network\_traffic |
+| redis\_instance/default\_metrics | Pubsub Channels | Count | redis.googleapis.com/stats/pubsub/channels |
+| redis\_instance/default\_metrics | Pubsub Patterns | Count | redis.googleapis.com/stats/pubsub/patterns |
+| redis\_instance/default\_metrics | Rejected Connections | Count | redis.googleapis.com/stats/reject\_connections\_count |
+
+## Related topics
+
+* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+
+
+---
+
+
 ## Source: gcp-netapp-monitoring.md
 
 
 ---
 title: NetApp on Google Cloud monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-netapp-monitoring
-scraped: 2026-02-15T09:09:10.729630
+scraped: 2026-02-16T09:37:32.135432
 ---
 
 # NetApp on Google Cloud monitoring
@@ -6389,7 +9221,7 @@ The following feature sets are available for NetApp on Google Cloud.
 ---
 title: Google Cloud Network Security monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-network-security-monitoring
-scraped: 2026-02-15T21:27:49.874290
+scraped: 2026-02-16T09:36:02.449484
 ---
 
 # Google Cloud Network Security monitoring
@@ -6560,7 +9392,7 @@ The following feature sets are available for Google Cloud Operations suite.
 ---
 title: Google Cloud Pub/Sub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-monitoring
-scraped: 2026-02-15T21:29:31.747529
+scraped: 2026-02-16T09:34:01.352217
 ---
 
 # Google Cloud Pub/Sub monitoring
@@ -6772,7 +9604,7 @@ The following feature sets are available for Google Cloud Router.
 ---
 title: Google Cloud Spanner monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-spanner-monitoring
-scraped: 2026-02-15T09:09:36.768026
+scraped: 2026-02-16T09:36:34.243204
 ---
 
 # Google Cloud Spanner monitoring
@@ -6836,7 +9668,7 @@ The following feature sets are available for Google Cloud Spanner.
 ---
 title: Google Cloud Storage Transfer Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-storage-transfer-service-monitoring
-scraped: 2026-02-15T09:12:44.506524
+scraped: 2026-02-16T09:38:20.577152
 ---
 
 # Google Cloud Storage Transfer Service monitoring
@@ -6887,7 +9719,7 @@ The following feature sets are available for Google Cloud Storage Transfer Servi
 ---
 title: Google Cloud Virtual Private Cloud (VPC) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-virtual-private-cloud-monitoring
-scraped: 2026-02-15T21:27:55.087122
+scraped: 2026-02-16T09:35:22.855723
 ---
 
 # Google Cloud Virtual Private Cloud (VPC) monitoring
@@ -6942,7 +9774,7 @@ The following feature sets are available for Google Cloud VPC.
 ---
 title: Google Cloud supported services
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new
-scraped: 2026-02-15T21:14:17.362056
+scraped: 2026-02-16T09:24:54.659502
 ---
 
 # Google Cloud supported services
@@ -7295,7 +10127,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: Google App Engine with Operations suite metrics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine/app-engine-monitoring
-scraped: 2026-02-15T21:25:47.947741
+scraped: 2026-02-16T09:28:50.335098
 ---
 
 # Google App Engine with Operations suite metrics monitoring
@@ -7482,7 +10314,7 @@ Every time you want to update your version of Dynatrace OneAgent, you must redep
 ---
 title: Monitor Google Compute Engine
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine
-scraped: 2026-02-15T21:14:07.747475
+scraped: 2026-02-16T09:21:21.669570
 ---
 
 # Monitor Google Compute Engine
@@ -7517,7 +10349,7 @@ You can update OneAgent by running regular [Linux](/docs/ingest-from/dynatrace-o
 ---
 title: Google Kubernetes Engine monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke/google-kubernetes-engine-monitoring
-scraped: 2026-02-15T21:27:12.866062
+scraped: 2026-02-16T09:34:57.603846
 ---
 
 # Google Kubernetes Engine monitoring
@@ -7682,7 +10514,7 @@ The following feature sets are available for Google Kubernetes Engine.
 ---
 title: Monitor Google Kubernetes Engine (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke
-scraped: 2026-02-15T21:14:25.152365
+scraped: 2026-02-16T09:21:13.513930
 ---
 
 # Monitor Google Kubernetes Engine (GKE)
@@ -7716,7 +10548,7 @@ Refer to the [Google Marketplaceï»¿](https://www.dynatrace.com/news/blog/60-s
 ---
 title: Google Cloud integrations
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations
-scraped: 2026-02-15T21:20:28.765641
+scraped: 2026-02-16T09:21:02.286881
 ---
 
 # Google Cloud integrations
@@ -7748,6 +10580,149 @@ Dynatrace OneAgent provides full-stack monitoring on Google Compute Engine and G
 
 * [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
+
+
+---
+
+
+## Source: gcp-supported-service-metrics-legacy.md
+
+
+---
+title: Google Cloud supported service metrics (legacy)
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/legacy/gcp-supported-service-metrics-legacy
+scraped: 2026-02-16T09:32:19.226874
+---
+
+# Google Cloud supported service metrics (legacy)
+
+# Google Cloud supported service metrics (legacy)
+
+* Latest Dynatrace
+* How-to guide
+* 7-min read
+* Published Apr 12, 2021
+* Deprecated
+
+This page refers to the GCP supported service metrics for version 0.1 of the GCP integration, which is scheduled for deprecation.
+For a list of supported services and their metrics for version 1.0 of the GCP integration, see [Google Cloud service metrics (new)](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.").
+
+Dynatrace supports all metrics available in the Google Operations API.
+
+## Prerequisites
+
+Deploy Dynatrace integration [as a GCP function](/docs/ingest-from/google-cloud-platform/legacy/deploy-with-google-cloud-function-legacy "Set up monitoring for Google Cloud services using a Google Cloud Function.") or [in a Kubernetes container](/docs/ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy "Set up log and metric monitoring for GCP services in a Kubernetes container.").
+
+## Supported services
+
+After deploying the Dynatrace integration, you can start monitoring the GCP supported services. The table below shows available metrics configurations[1](#fn-1-1-def) per service, including [Davis data units (DDUs)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") consumption[2](#fn-1-2-def) per instance per minute.
+
+1
+
+**Metrics configuration** refers to groups of metrics that can be ingested. Use the **Configuration ID** when adjusting the monitoring scope of your setup.
+
+2
+
+**DDU consumption** is an estimation that may vary depending on characteristics of your environment. We recommend that you check your weekly DDU consumptions for more accurate budgeting.
+
+| Service name | Preset dashboard | Configuration name | Configuration ID | DDUs per minute per instance |
+| --- | --- | --- | --- | --- |
+| Google Cloud Function | Applicable |  | cloud\_function/default | 0.073 DDU |
+| Cloud SQL | Applicable | Database | cloudsql\_database/default | 0.066 DDU |
+| Google Cloud APIs | Applicable |  | api/default | 0.086 DDU |
+| Google Cloud Pub/Sub | Applicable | Snapshot | pubsub\_snapshot/default | 0.021 DDU |
+|  |  | Subscription | pubsub\_subscription/default | 0.166 DDU |
+|  |  | Topic | pubsub\_topic/default | 0.049 DDU |
+| Google Pub/Sub Lite |  | Subscription Partition | pubsublite\_subscription\_partition/default | 0.006 DDU |
+|  |  | Topic Partition | pubsublite\_topic\_partition/default | 0.013 DDU |
+| Cloud Load Balancing | Applicable | Google Internal HTTP/S Load Balancing Rule | internal\_http\_lb\_rule/default | 0.405 DDU |
+|  |  | Google Internal TCP Load Balancer Rule | internal\_tcp\_lb\_rule/default | 0.135 DDU |
+|  |  | Google Internal UDP Load Balancer Rule | internal\_udp\_lb\_rule/default | 0.108 DDU |
+|  |  | Google Cloud Network UDP Load Balancer Rule | udp\_lb\_rule/default | 0.036 DDU |
+|  |  | Google Cloud HTTP/S Load Balancing Rule | https\_lb\_rule/default | 3.897 DDU |
+|  |  | Google Cloud Network TCP Load Balancer Rule | tcp\_lb\_rule/default | 0.045 DDU |
+|  |  | Google Cloud TCP/SSL Proxy Rule | tcp\_ssl\_proxy\_rule/default | 0.054 DDU |
+| Google Kubernetes Engine | Applicable | Container Agent | k8s\_container/agent | 0.021 DDU |
+|  |  | Container Apigee | k8s\_container/apigee | 0.268 DDU |
+|  |  | Container NGINX | k8s\_container/nginx | 0.017 DDU |
+|  |  | Container | k8s\_container/default | 0.024 DDU |
+|  |  | Container | gke\_container/default | 0.109 DDU |
+|  |  | Cluster | k8s\_cluster/default | 0.009 DDU |
+|  |  | Node | k8s\_node/default | 0.039 DDU |
+| Google Cloud Datastore | Applicable |  | datastore\_request/default | 0.025 DDU |
+| Google Filestore | Applicable | Instance | filestore\_instance/default | 0.048 DDU |
+| Google Cloud Storage | Applicable | bucket | gcs\_bucket/default | 0.185 DDU |
+| Google VM Instance |  |  | gce\_instance/appenginee | 0.108 DDU |
+|  |  | Instance | gce\_instance/default | 2.828 DDU |
+|  |  | Agent | gce\_instance/agent | 2.794 DDU |
+|  |  | Firewall Insights | gce\_instance/firewallinsights | 0.18 DDU |
+|  |  | Google Cloud Router | gce\_router/default | 0.032 DDU |
+|  |  | Google Zone Network Health | gce\_zone\_network\_health/default | 0.243 DDU |
+|  |  | Uptime Checks | gce\_instance/uptime\_check | 2.187 DDU |
+| Google Cloud Spanner |  | Instance | spanner\_instance/default | 0.223 DDU |
+| Google Cloud BigQuery |  | BI Engine Model | bigquery\_biengine\_model/default | 0.055 DDU |
+|  |  | Dataset | bigquery\_dataset/default | 0.147 DDU |
+|  |  | Project | bigquery\_project/default | 0.085 DDU |
+| Google Interconnect |  | Default | interconnect/default | 0.03 DDU |
+|  |  | Attachment | interconnect\_attachment/default | 0.005 DDU |
+| Google Cloud Memorystore |  | Instance | redis\_instance/default | 0.169 DDU |
+| Google Apigee |  | Proxy (v2) | apigee.googleapis.com/ProxyV2/default | 0.246 DDU |
+|  |  | Environment | apigee.googleapis.com/Environment/default | 0.027 DDU |
+|  |  | Proxy | apigee.googleapis.com/Proxy/default | 0.207 DDU |
+| Google Consumer Quota |  |  | consumer\_quota/default | 0.021 DDU |
+| Google Cloud NAT Gateway |  |  | nat\_gateway/default | 0.04 DDU |
+| Google Transfer Service Agent |  |  | transfer\_service\_agent/default | 0.002 DDU |
+| Google Cloud DNS Query |  |  | dns\_query/default | 0.003 DDU |
+| Google Cloud Run for Anthos Trigger |  |  | knative\_trigger/default | 0.57 DDU |
+|  |  | Google Cloud Run for Anthos Broker | knative\_broker/default | 0.27 DDU |
+|  |  | Google Cloud Run for Anthos Revision | knative\_revision/default | 0.547 DDU |
+| Google Instance Group |  |  | instance\_group/default | 0.001 DDU |
+| Google App Engine |  | Application - Uptime Checks | gae\_app\_uptime\_check/default | 2.916 DDU |
+|  |  | Application | gae\_app/default | 0.101 DDU |
+|  |  | Instance | gae\_instance/default | 0.005 DDU |
+| Google Compute Engine Autoscaler |  | Google Autoscaler | autoscaler/default | 0.006 DDU |
+| Google Dataflow |  | Job | dataflow\_job/default | 3.397 DDU |
+| Google Network Security Policy |  |  | network\_security\_policy/default | 0.018 DDU |
+| Google Cloud Logging |  | export sink | logging\_sink/default | 0.003 DDU |
+| Google VPC Access Connector |  |  | vpc\_access\_connector/default | 0.004 DDU |
+| Google Cloud ML |  | Job | cloudml\_job/default | 0.162 DDU |
+|  |  | Model Version | cloudml\_model\_version/default | 0.038 DDU |
+| Google Cloud Bigtable |  | Cluster | bigtable\_cluster/default | 0.018 DDU |
+|  |  | Table | bigtable\_table/default | 0.111 DDU |
+| Google Cloud Amazon EC2 Instance (via GCP) |  |  | cloud\_tasks\_queue/default | 0.014 DDU |
+| Google Cloud Composer |  | Environment | cloud\_composer\_environment/default | 0.129 DDU |
+| Google Cloud Data Loss Prevention |  | Project | cloud\_dlp\_project/default | 0.019 DDU |
+| Google Cloud Dataproc |  | Cluster | cloud\_dataproc\_cluster/default | 0.081 DDU |
+| Google Cloud Run Revision |  |  | cloud\_run\_revision/default | 0.059 DDU |
+| Google Cloud Trace |  |  | cloudtrace.googleapis.com/CloudtraceProject/default | 0.003 DDU |
+| Google Cloud TPU |  | Worker | tpu\_worker/default | 0.013 DDU |
+| Google reCAPTCHA |  | Key | recaptchaenterprise.googleapis.com/Key/default | 0.003 DDU |
+| Google Firestore |  | Instance | firestore\_instance/default | 0.324 DDU |
+| Google NetApp CVS-SO |  |  | cloudvolumesgcp-api.netapp.com/NetAppCloudVolumeSO/default | 0.013 DDU |
+| Google NetApp Cloud Volume |  |  | netapp\_cloud\_volume/default | 0.032 DDU |
+| Google Assistant Smart Home |  | Google Assistant Action Project | assistant\_action\_project/default | 0.567 DDU |
+| Google Firebase Hosting |  | Google Firebase Realtime Database | firebase\_namespace/default | 0.104 DDU |
+|  |  | Site Domain | firebase\_domain/default | 1.921 DDU |
+| Google Cloud IoT Registry |  |  | cloudiot\_device\_registry/default | 0.026 DDU |
+| Google Consumed API |  |  | consumed\_api/default | 0.084 DDU |
+| Google Cloud Microsoft Active Directory Domain |  |  | microsoft\_ad\_domain/default | 0.028 DDU |
+| Google IAM Service Account |  |  | iam\_service\_account/default | 0.04 DDU |
+| Google Producer Quota |  |  | producer\_quota/default | 0.012 DDU |
+| Google Uptime Check URL |  |  | uptime\_url/default | 2.916 DDU |
+| Google Cloud VPN Tunnel |  |  | vpn\_gatewayv/ | 0.09 DDU |
+
+## View GCP service metrics
+
+Dynatrace provides preset dashboards for a number of GCP services. You can see which GCP services have preset dashboards in the list of GCP supported services above.  
+After deploying the Dynatrace integration, you can view these preset dashboards in ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
+
+**Example preset dashboard:**
+
+![GCP dash](https://dt-cdn.net/images/gcp-api-dashboard-2744-cef7a39830.png)
+
+## Related topics
+
+* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
 
 
 ---

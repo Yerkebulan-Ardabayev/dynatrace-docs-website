@@ -1,12 +1,12 @@
 ---
-title: Ingest NetFlow packets
+title: Ingest NetFlow with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/netflow
-scraped: 2026-02-15T09:11:04.418737
+scraped: 2026-02-16T09:36:41.035749
 ---
 
-# Ingest NetFlow packets
+# Ingest NetFlow with the OpenTelemetry Collector
 
-# Ingest NetFlow packets
+# Ingest NetFlow with the OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -19,14 +19,14 @@ The following configuration example shows how to configure a Collector instance 
 
 * One of the following Collector distributions with the [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/receiver/netflowreceiver):
 
-  + [The Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace Collector.")
-  + [OpenTelemetry Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace Collector.")
-  + [A custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace Collector.")
+  + [The Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
+  + [OpenTelemetry Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace OTel Collector.")
+  + [A custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace OTel Collector.")
 * The [Dynatrace API endpoint URL](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.
 * An [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the Ingest logs (`logs.ingest`) scope.
 * A NetFlow- or sFlow-capable device that can send NetFlow packets to the Collector instance.
 
-See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Collector configuration
 
@@ -126,7 +126,7 @@ For extremely large volumes of data, you should parallelize the configuration am
 
 Configuration validation
 
-[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "Configure the OpenTelemetry Collector.") to avoid any configuration issues.
+[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
 
 ## Components
 
@@ -219,4 +219,4 @@ For more information see:
 
 ## Related topics
 
-* [Ingest data from log files](/docs/ingest-from/opentelemetry/collector/use-cases/filelog "Configure the OpenTelemetry Collector to ingest log data into Dynatrace.")
+* [Ingest logs from files with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/filelog "Configure the OpenTelemetry Collector to ingest log data into Dynatrace.")

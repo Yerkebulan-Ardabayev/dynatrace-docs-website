@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Data Loss Prevention monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-data-loss-prevention-monitoring
-scraped: 2026-02-15T21:30:13.910015
+scraped: 2026-02-16T09:36:47.557826
 ---
 
 # Google Cloud Data Loss Prevention monitoring

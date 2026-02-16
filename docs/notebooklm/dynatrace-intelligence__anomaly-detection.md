@@ -177,7 +177,7 @@ To configure detection sensitivity on the global level
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-15T21:16:51.519788
+scraped: 2026-02-16T09:38:02.121100
 ---
 
 # Anomaly Detection status types
@@ -642,7 +642,7 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 ---
 title: Anomaly Detection app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
-scraped: 2026-02-15T21:12:49.085858
+scraped: 2026-02-16T09:17:52.210377
 ---
 
 # Anomaly Detection app
@@ -942,7 +942,7 @@ You can provide additional parameters as key-value pairs. For a list of possible
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-02-15T21:16:54.083029
+scraped: 2026-02-16T09:39:29.029281
 ---
 
 # Auto-adaptive thresholds for anomaly detection
@@ -1204,7 +1204,7 @@ Two types of filters are available:
 ---
 title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-02-15T21:13:45.342130
+scraped: 2026-02-16T09:18:58.623529
 ---
 
 # Metric events
@@ -1780,7 +1780,7 @@ You have learned how to set up and configure a custom alert via API. Now you can
 ---
 title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-02-15T21:16:55.457046
+scraped: 2026-02-16T09:31:12.279172
 ---
 
 # Static thresholds for anomaly detection

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Operator release notes version 1.7.0
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-0
-scraped: 2026-02-15T21:22:33.059648
+scraped: 2026-02-16T09:28:29.199692
 ---
 
 # Dynatrace Operator release notes version 1.7.0
@@ -51,7 +51,7 @@ As Dynatrace extends its coverage of Kubernetes objects, the ActiveGate requires
   + `.csidriver.server.livenessProbe.successThreshold`
   + `.csidriver.server.livenessProbe.timeoutSeconds`
 
-* You will now receive a warning if you enable `.spec.telemetryIngest` without specifiying `.spec.templates.openTelemetryCollector.imageRef`. The Dynatrace Operator will continue to use the `latest` image from the Dynatrace public ECR registry for the [OpenTelemetry collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace Collector."). However, using `latest` tags is an anti-pattern that should be avoided. Specifying the image will become mandatory in a future version.
+* You will now receive a warning if you enable `.spec.telemetryIngest` without specifiying `.spec.templates.openTelemetryCollector.imageRef`. The Dynatrace Operator will continue to use the `latest` image from the Dynatrace public ECR registry for the [OpenTelemetry collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector."). However, using `latest` tags is an anti-pattern that should be avoided. Specifying the image will become mandatory in a future version.
 
 * Dynatrace Operator uses an API token with a set of [scopes](/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions#operatorToken "Configure tokens and permissions to monitor your Kubernetes cluster") to interact with the Dynatrace platform. With this release, the following changes have been made to the token scope requirements:
 

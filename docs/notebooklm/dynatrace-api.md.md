@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api
-scraped: 2026-02-15T21:11:38.651727
+scraped: 2026-02-16T09:24:00.749170
 ---
 
 # Dynatrace API
@@ -320,7 +320,7 @@ Account Management
 
 [Request naming](/docs/dynatrace-api/configuration-api/service-api/request-naming-api "Learn what the Dynatrace request naming config API offers.")
 
-[Service detection rules](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace services detection rules config API offers.")
+[Service detection rules](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace service detection rules config API offers.")
 
 [### User management
 

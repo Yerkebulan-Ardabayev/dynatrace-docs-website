@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions
-scraped: 2026-02-15T21:09:44.494714
+scraped: 2026-02-16T09:12:49.117716
 ---
 
 # Extensions

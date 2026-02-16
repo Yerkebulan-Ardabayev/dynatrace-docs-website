@@ -13,7 +13,7 @@ Files combined: 11
 ---
 title: AI Observability (preview)
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-02-15T21:28:40.177657
+scraped: 2026-02-16T09:30:14.087852
 ---
 
 # AI Observability (preview)
@@ -254,7 +254,7 @@ Review all observable AI technologies in the Dynatrace Hub.](https://www.dynatra
 ---
 title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-15T09:11:31.037588
+scraped: 2026-02-16T09:30:35.599898
 ---
 
 # Kong AI Gateway
@@ -287,7 +287,7 @@ Afterwards, add the following annotations to your Kong Deployments:
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8100"`
 
-Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.") to deploy a collector.
+Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy a collector.
 With the following config, the collector will scrape AI LLM metrics every 10 seconds from the `kong-metrics.kong:8100` endpoint.
 
 ```
@@ -519,7 +519,7 @@ Additionally, the following metrics are reported.
 ---
 title: AI data governance with Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/data-governance
-scraped: 2026-02-15T21:29:50.271540
+scraped: 2026-02-16T09:27:48.219653
 ---
 
 # AI data governance with Amazon Bedrock
@@ -708,7 +708,7 @@ Now you can:
 ---
 title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability
-scraped: 2026-02-15T21:30:32.941357
+scraped: 2026-02-16T09:35:54.096725
 ---
 
 # OpenAI Observability
@@ -958,7 +958,7 @@ In the example below, Dynatrace Intelligence automatically reported a slowdown o
 ---
 title: Get started
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started
-scraped: 2026-02-15T21:13:16.677077
+scraped: 2026-02-16T09:25:07.288443
 ---
 
 # Get started
@@ -1100,7 +1100,7 @@ The Dynatrace full-stack observability platform combined with Traceloop's OpenLL
 ---
 title: Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock
-scraped: 2026-02-15T21:13:20.364110
+scraped: 2026-02-16T09:25:04.061409
 ---
 
 # Amazon Bedrock
@@ -1162,7 +1162,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-15T21:13:17.873277
+scraped: 2026-02-16T09:25:14.099487
 ---
 
 # NVIDIA NIM
@@ -1193,7 +1193,7 @@ Afterwards, add the following annotations to your NVIDIA NIM deployments:
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8000"`
 
-Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.") to deploy a collector.
+Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy a collector.
 With the following config, the collector will scrape AI metrics every 10 seconds from the `<NIM-endpoint>:8000` endpoint.
 
 ```
@@ -1375,7 +1375,7 @@ Additionally, the following metrics are reported.
 ---
 title: Ollama
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama
-scraped: 2026-02-15T21:13:19.117677
+scraped: 2026-02-16T09:25:05.616464
 ---
 
 # Ollama
@@ -1428,7 +1428,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: OpenAI
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai
-scraped: 2026-02-15T21:13:15.259047
+scraped: 2026-02-16T09:25:10.792126
 ---
 
 # OpenAI
@@ -1880,7 +1880,7 @@ The screenshot below shows a Data Explorer visualization of the accuracy metric 
 ---
 title: LangChain
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain
-scraped: 2026-02-15T21:13:12.277406
+scraped: 2026-02-16T09:25:12.424347
 ---
 
 # LangChain

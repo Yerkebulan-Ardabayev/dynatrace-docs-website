@@ -13,7 +13,7 @@ Files combined: 6
 ---
 title: Available tiles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles
-scraped: 2026-02-15T09:10:07.331936
+scraped: 2026-02-16T09:37:05.420068
 ---
 
 # Available tiles
@@ -1513,7 +1513,7 @@ Edit the dashboard JSON in your preferred development environment. For JSON synt
 ---
 title: Dynatrace dashboard timeframe and management zone settings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe
-scraped: 2026-02-15T21:21:57.277325
+scraped: 2026-02-16T09:19:56.681887
 ---
 
 # Dynatrace dashboard timeframe and management zone settings
@@ -1702,7 +1702,7 @@ To set a tile management zone that overrides the dashboard management zone
 ---
 title: Create remote/multi-environment Dynatrace dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment
-scraped: 2026-02-15T21:21:16.659628
+scraped: 2026-02-16T09:22:05.709203
 ---
 
 # Create remote/multi-environment Dynatrace dashboards

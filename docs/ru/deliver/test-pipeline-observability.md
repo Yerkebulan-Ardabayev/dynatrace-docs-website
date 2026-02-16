@@ -1,7 +1,7 @@
 ---
 title: Test pipeline observability
 source: https://www.dynatrace.com/docs/deliver/test-pipeline-observability
-scraped: 2026-02-15T09:11:05.757329
+scraped: 2026-02-16T09:27:11.947699
 ---
 
 # Test pipeline observability
@@ -768,8 +768,8 @@ By following these steps, you can effectively implement Dynatraceâs test pi
 
 
 
-## Вывод
+## Conclusion
 
-Реализация наблюдаемости конвейера тестирования с помощью Dynatrace обеспечивает практическое решение для улучшения мониторинга тестирования. Этот справочник изложил шаги по сбору и анализу данных тестирования, настройке панелей мониторинга и автоматизации ответов на важные события тестирования. Эти действия помогают уменьшить ручной труд при мониторинге тестов и позволяют командам сосредоточиться на критических проблемах, улучшая общий процесс тестирования.
+Implementing Test Pipeline Observability with Dynatrace provides a practical solution for enhancing test monitoring. This guide has outlined steps to collect and analyze test data, set up monitoring dashboards, and automate responses to important test events. These actions help reduce the manual effort in monitoring tests and allow teams to focus on critical issues, improving the overall testing process.
 
-Командам рекомендуется применять эти практики в своих средах тестирования и открыть для себя полный потенциал инструментов наблюдаемости Dynatrace. Полученные знания из этой реализации могут привести к постоянным улучшениям в процессах разработки программного обеспечения. Продолжая использовать Dynatrace и его функции, команды могут обеспечить постоянное качество в своих усилиях по разработке программного обеспечения.
+Teams are advised to apply these practices to their testing environments and discover the full potential of Dynatraceâs observability tools. The insights gained from this implementation can lead to ongoing improvements in software development processes. By continuing to use Dynatrace and its features, teams can ensure consistent quality in their software development efforts.

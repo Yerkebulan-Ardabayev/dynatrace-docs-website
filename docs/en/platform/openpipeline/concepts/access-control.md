@@ -1,7 +1,7 @@
 ---
 title: Owner-based access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/access-control
-scraped: 2026-02-15T21:24:17.693501
+scraped: 2026-02-16T09:27:29.822911
 ---
 
 # Owner-based access control in OpenPipeline

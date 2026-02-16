@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 18
+Files combined: 20
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 18
 ---
 title: What is Dynatrace Grail?
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-grail
-scraped: 2026-02-15T21:08:47.564759
+scraped: 2026-02-16T09:14:02.605591
 ---
 
 # What is Dynatrace Grail?
@@ -433,7 +433,7 @@ For additional insights into DPL Architect, see
 ---
 title: Dynatrace Pattern Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language
-scraped: 2026-02-15T21:11:56.507173
+scraped: 2026-02-16T09:25:00.675052
 ---
 
 # Dynatrace Pattern Language
@@ -636,7 +636,7 @@ If the engine encounters data for which it is unable to find a match, it resets 
 ---
 title: DQL commands
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/commands
-scraped: 2026-02-15T21:14:57.124713
+scraped: 2026-02-16T09:23:16.038256
 ---
 
 # DQL commands
@@ -848,7 +848,7 @@ Traverses source nodes to target nodes in the specified direction, following edg
 ---
 title: DQL data types
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/data-types
-scraped: 2026-02-15T21:14:58.360102
+scraped: 2026-02-16T09:23:12.742682
 ---
 
 # DQL data types
@@ -1263,7 +1263,7 @@ A set of key-value pair data whose value can be any DQL data type.
 ---
 title: DQL best practices
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-best-practices
-scraped: 2026-02-15T21:15:55.362328
+scraped: 2026-02-16T09:22:29.775129
 ---
 
 # DQL best practices
@@ -1521,7 +1521,7 @@ Similarly, if you need to sort by a field named 'not':
 ---
 title: DQL compared to SQL and more
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-comparison
-scraped: 2026-02-15T21:14:49.637905
+scraped: 2026-02-16T09:23:14.405613
 ---
 
 # DQL compared to SQL and more
@@ -1929,7 +1929,7 @@ events
 ---
 title: Use DQL queries
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-guide
-scraped: 2026-02-15T21:14:45.043648
+scraped: 2026-02-16T09:16:17.886702
 ---
 
 # Use DQL queries
@@ -2132,7 +2132,7 @@ You can learn DQL through hands-on experience with interactive tutorials in the 
 ---
 title: DQL language reference
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-reference
-scraped: 2026-02-15T21:14:52.509395
+scraped: 2026-02-16T09:23:17.669030
 ---
 
 # DQL language reference
@@ -2335,7 +2335,7 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
 ---
 title: DQL use cases
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-use-cases
-scraped: 2026-02-15T21:28:22.963551
+scraped: 2026-02-16T09:29:09.692716
 ---
 
 # DQL use cases
@@ -2675,7 +2675,7 @@ In this use case, you perform queries using [![Investigations](https://dt-cdn.ne
 ---
 title: String functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions/string-functions
-scraped: 2026-02-15T21:15:04.934008
+scraped: 2026-02-16T09:23:55.604764
 ---
 
 # String functions
@@ -5691,7 +5691,7 @@ upper(content)
 ---
 title: DQL functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions
-scraped: 2026-02-15T21:14:55.671460
+scraped: 2026-02-16T09:23:06.823404
 ---
 
 # DQL functions
@@ -6693,7 +6693,7 @@ Creates a record from the keys and values of the parameter.
 ---
 title: DQL operators
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/operators
-scraped: 2026-02-15T21:14:48.188325
+scraped: 2026-02-16T09:23:09.241561
 ---
 
 # DQL operators
@@ -7731,7 +7731,7 @@ Only strings allow patterns.
 ---
 title: Dynatrace Query Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language
-scraped: 2026-02-15T21:08:56.846607
+scraped: 2026-02-16T09:13:40.674699
 ---
 
 # Dynatrace Query Language
@@ -7788,7 +7788,7 @@ Use DQL to query your metric observability data.](/docs/analyze-explore-automate
 ---
 title: Lookup data in Grail
 source: https://www.dynatrace.com/docs/platform/grail/lookup-data
-scraped: 2026-02-15T09:09:38.019963
+scraped: 2026-02-16T09:29:50.460968
 ---
 
 # Lookup data in Grail
@@ -8142,13 +8142,113 @@ fetch spans
 ---
 
 
+## Source: advanced-permission-setup.md
+
+
+---
+title: Configure advanced permissions with security context
+source: https://www.dynatrace.com/docs/platform/grail/organize-data/advanced-permission-setup
+scraped: 2026-02-16T09:31:21.671417
+---
+
+# Configure advanced permissions with security context
+
+# Configure advanced permissions with security context
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Updated on Nov 20, 2025
+
+This guide outlines Dynatrace permission set up for your data-from basic access controls to advanced configurations such as enriching data with `dt.security_context`, applying OpenPipeline processors for conditional access, and managing IAM policies with boundaries and templates for scalable control.
+
+Dynatrace has a [permission model for Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
+
+We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
+
+For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+
+If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.
+
+For more control in Dynatrace, you can set up policy boundaries with more granular restrictions on a data level. By default, you can use the following attributes:
+
+* `dt.host_group.id`
+* `k8s.cluster.name`
+* `k8s.namespace.name`
+* Any other attribute listed in the [permission model](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
+
+Dynatrace provides a comprehensive permission model for Grail that applies to all telemetry data-including metrics, logs, spans, and events.
+
+## General permission setup
+
+You can set up access controls for your data and entities using the guides below.
+
+* [OneAgent permission setup](/docs/ingest-from/dynatrace-oneagent/oneagent-security-context "Learn how to set up Grail permissions for OneAgent.")
+* [Kubernetes permission setup](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment#security-context-and-cost-allocation "Guides for telemetry enrichment on Kubernetes")
+
+* [Logs permission setup](/docs/analyze-explore-automate/logs/lma-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
+* [Traces permission setup](/docs/observe/application-observability/distributed-tracing/permissions "Manage permissions for Distributed Tracing powered by Grail.")
+* [Entities permission setup](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context")
+* [OpenPipeline permission setup](/docs/platform/grail/organize-data/advanced-permission-setup#set-up-the-security-context-in-openpipeline "Configure advanced permissions with security context.")
+
+## Set up the security context
+
+If the permissions on deployment-level attributes or the bucket level are insufficient, Dynatrace allows you to set up fine-grained permissions by adding a `dt.security_context` attribute to your specific data.
+
+### Set up the security context in OpenPipeline
+
+You can define a security context based on existing resource attributes to your [data within OpenPipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+After configuring your pipeline, add `Set Security Context` processors on the `Permission` tab.
+
+To define the `dt.security_context` attribute
+
+1. Define a matching condition to filter records to assign the security context.
+
+   For example: `matchesValue(http.route, â/basketâ)`
+2. Add the `dt.security_context` for those records. The value of this attribute can be a literal value, for example `TeamA`, or a value copied from another field present on the record.
+3. Verify your security context is set correctly.
+
+   When new data arrives, the security context processors of OpenPipeline assign a `dt.security_context` attribute with the value `TeamA`. Open a Notebook to confirm that your security context processors handled the records. To verify, use a DQL query such as:
+
+   `fetch logs | filter matchesValue(dt.security_context, "TeamA")`
+4. Repeat this configuration for all the applicable data types (logs, metrics, spans).
+
+Based on the created attribute, you can enforce security-related user and group policies, as described in the next section.
+
+## Enforce access controls
+
+You can [enforce access controls](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.") to ensure that teams only access data that is relevant to them by using policy statements such as:
+
+```
+ALLOW storage:buckets:read WHERE storage:bucket-name MATCH (â*-database-*â);
+
+
+
+ALLOW storage:logs:read WHERE storage:dt.security_context = "TeamA" AND storage:dt.host_group.id MATCH ("shared_host_*");
+```
+
+You can also use [policy boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.") or [policy templating](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policy-templating "Policy templating") for easier management of your access controls.
+
+## Related topics
+
+* [Set up Grail permissions for OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-security-context "Learn how to set up Grail permissions for OneAgent.")
+* [Metadata enrichment of all telemetry originating from Kubernetes](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment "Guides for telemetry enrichment on Kubernetes")
+* [Set up Grail permissions for logs](/docs/analyze-explore-automate/logs/lma-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
+* [Set up Grail permissions for Distributed Tracing](/docs/observe/application-observability/distributed-tracing/permissions "Manage permissions for Distributed Tracing powered by Grail.")
+* [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context")
+* [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
+
+
+---
+
+
 ## Source: assign-permissions-in-grail.md
 
 
 ---
 title: Permissions in Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
-scraped: 2026-02-15T21:11:57.838153
+scraped: 2026-02-16T09:16:01.565357
 ---
 
 # Permissions in Grail
@@ -8894,7 +8994,7 @@ ALLOW storage:system:read;
 ---
 title: Organize data
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
-scraped: 2026-02-15T21:11:59.233896
+scraped: 2026-02-16T09:16:04.704220
 ---
 
 # Organize data
@@ -9075,13 +9175,1460 @@ See when to [create custom buckets and how to allow access to them](/docs/platfo
 ---
 
 
+## Source: querying-monitored-entities.md
+
+
+---
+title: Query monitored entities in Grail
+source: https://www.dynatrace.com/docs/platform/grail/querying-monitored-entities
+scraped: 2026-02-16T09:39:34.182665
+---
+
+# Query monitored entities in Grail
+
+# Query monitored entities in Grail
+
+* Latest Dynatrace
+* Reference
+* 13-min read
+* Updated on Oct 13, 2025
+
+This is a guide to effectively using Dynatrace Query Language (DQL) to query monitored entities. This involves using generic DQL features such as expanding arrays, joining data using the `lookup` command, and using the built-in parse functionality.
+
+## Query entity types
+
+To query monitored entities by their respective type, you can use the `dt.entity.*` views.
+
+To initiate the query, start with a blank query in your notebooks and enter `fetch dt.entity`. This triggers an auto-complete dialog where you can select the desired entity type.
+
+![Example of auto-complete for entity types.](https://dt-cdn.net/images/ft-entity-2-1439-af70ed8841.png)
+
+For example, executing the `fetch dt.entity.host` query retrieves all host entities. By default, entity records include the ID and entity name.
+
+```
+fetch dt.entity.host
+```
+
+`entity.name`
+
+`id`
+
+HOST-1
+
+HOST-123
+
+HOST-2
+
+HOST-456
+
+HOST-3
+
+HOST-789
+
+HOST-4
+
+HOST-101
+
+HOST-5
+
+HOST-111
+
+HOST-6
+
+HOST-131
+
+HOST-7
+
+HOST-141
+
+To include additional details, you can use the `fieldsAdd` command. As you start typing, the auto-complete feature suggests available fields for the entity type.
+
+Another way to get started is to use one of the built-in topology query snippets.
+
+![Example of how to get started by using built-in topology query snippets.](https://dt-cdn.net/images/topology-1447-687b6417ca.png)
+
+## Query relationships
+
+Relationships are exposed as fields and can be added similarly to other fields. For instance, you can add the `runs` relationship to your host records to obtain a list of all entities running on the host.
+
+```
+fetch dt.entity.host
+
+
+
+| fieldsAdd runs
+```
+
+`entity.name`
+
+`id`
+
+`runs`
+
+HOST-1
+
+HOST-123
+
+runs: Complex record
+
+HOST-2
+
+HOST-456
+
+runs: Complex record
+
+HOST-3
+
+HOST-789
+
+runs: Complex record
+
+The `runs` field is a nested record that contains a field for each entity type running on a specific host. Depending on the cardinality, these fields are either strings representing a single entity ID or arrays of strings representing a list of entity IDs. In notebooks, select a nested record in the results list to see its contents.
+
+If you only want to see process groups running on that host, you can specify this in the `fieldsAdd` command. The auto-complete feature will provide a list of possible identifier types.
+
+Selecting a type refines the query to only return an array containing the process group IDs.
+
+```
+fetch dt.entity.host
+
+
+
+| fieldsAdd runs[dt.entity.process_group]
+```
+
+`entity.name`
+
+`id`
+
+`runs[dt.entity.process_group]`
+
+HOST-1
+
+HOST-123
+
+runs: PROCESS\_GROUP-D123, PROCESS\_GROUP-567, PROCESS\_GROUP-012
+
+HOST-2
+
+HOST-456
+
+runs: PROCESS\_GROUP-D234, PROCESS\_GROUP-234, PROCESS\_GROUP-F10
+
+HOST-3
+
+HOST-789
+
+runs: PROCESS\_GROUP-D567, PROCESS\_GROUP-789, PROCESS\_GROUP-123
+
+The field names for relationships differ from the original relationship names in the previous Dynatrace. Instead of using a single name prefixed with `fromRelationship` and `toRelationship`, the fields have different names on both sides.
+
+See the [relationship mapping table](#relationship-mapping-table) below to understand how second-generation relationships are represented as DQL fields.
+
+Note that 1:n relationships only return 100 entity IDs per type, per record. In such cases, we recommend using `classicEntitySelector()` instead.
+
+## Entity lookups
+
+You can use the `lookup` command to join data from related entities.
+
+For example, to include the host tags with your service instances, you can access the host from a service instance by following the `runs_on` relationship.
+
+```
+fetch dt.entity.service_instance
+
+
+
+| fieldsAdd runs_on[dt.entity.host]
+```
+
+`entity.name`
+
+`id`
+
+`runs_on[dt.entity.host]`
+
+Mapped Instance for answer\_queue on ActiveMQ Artemis
+
+SERVICE\_INSTANCE-1AB2
+
+HOST-1
+
+Mapped Instance for Requests executed in the background threads of eT-demo-1-BussinessBackend
+
+SERVICE\_INSTANCE-A123
+
+HOST-2
+
+It's important to note that service instances always run on a single host, which means that you obtain a single host ID per service instance record. This allows you to use the `lookup` command to add the hostname to your records. The hostname is added as the `lookup.entity.name` field.
+
+```
+fetch dt.entity.service_instance
+
+
+
+| fieldsAdd runs_on[dt.entity.host]
+
+
+
+| lookup sourceField:`runs_on[dt.entity.host]`, lookupField:id, [ fetch dt.entity.host ]
+```
+
+`entity.name`
+
+`id`
+
+`runs_on[dt.entity.host]`
+
+`lookup.entity.name`
+
+`lookup.id`
+
+Mapped Instance for answer\_queue on ActiveMQ Artemis
+
+SERVICE\_INSTANCE-2AB1
+
+HOST-1
+
+AB1-abc
+
+HOST-1
+
+Mapped Instance for Requests executed in the background threads of eT-demo-1-BussinessBackend
+
+SERVICE\_INSTANCE-B123
+
+HOST-2
+
+BA1-cba
+
+HOST-2
+
+Mapped Instance for :80
+
+SERVICE\_INSTANCE-C321
+
+HOST-3
+
+BA1-cba
+
+HOST-2
+
+## Expand relationships
+
+Hosts can run multiple service instances, so the `runs[dt.entity.service_instance]` field is an array of entity IDs.
+
+```
+fetch dt.entity.host
+
+
+
+| fieldsAdd runs[dt.entity.service_instance]
+```
+
+`entity.name`
+
+`id`
+
+`runs[dt.entity.service_instance]`
+
+dw123
+
+HOST-1
+
+SERVICE\_INSTANCE-AB123
+
+dw123
+
+HOST-1
+
+SERVICE\_INSTANCE-CB123
+
+dw123
+
+HOST-1
+
+SERVICE\_INSTANCE-DB123
+
+abc/123
+
+HOST-2
+
+SERVICE\_INSTANCE-AB902
+
+The `lookup` command doesn't apply to arrays of IDs, so you need to use the `expand` command first to retrieve individual records per service instance ID.
+
+```
+fetch dt.entity.host
+
+
+
+| fieldsAdd runs[dt.entity.service_instance]
+
+
+
+| expand runs[dt.entity.service_instance]
+```
+
+`entity.name`
+
+`id`
+
+`runs[dt.entity.service_instance]`
+
+dw123
+
+HOST-1
+
+SERVICE\_INSTANCE-DB123
+
+dw456
+
+HOST-2
+
+SERVICE\_INSTANCE-BA987
+
+dw789
+
+HOST-3
+
+SERVICE\_INSTANCE-CA687
+
+dw652
+
+HOST-4
+
+SERVICE\_INSTANCE-1AB2
+
+In this example, the first record expands into three. Now you can use the `lookup` command to get the service instance details that you include in the `lookup` field.
+
+```
+fetch dt.entity.host
+
+
+
+| fieldsAdd runs[dt.entity.service_instance]
+
+
+
+| expand runs[dt.entity.service_instance]
+
+
+
+| lookup sourceField:`runs[dt.entity.service_instance]`, lookupField:id, [ fetch dt.entity.service_instance]
+```
+
+`entity.name`
+
+`id`
+
+`runs[dt.entity.service_instance]`
+
+`lookup.entity.name`
+
+`lookup.id`
+
+dw123
+
+HOST-1
+
+SERVICE\_INSTANCE-AB123
+
+Mapped instance for easytravelazure-weather-service
+
+SERVICE\_INSTANCE-AB123
+
+dw123
+
+HOST-1
+
+SERVICE\_INSTANCE-CB123
+
+Mapped Instance for weather-service-restify
+
+SERVICE\_INSTANCE-CB123
+
+dw123
+
+HOST-1
+
+SERVICE\_INSTANCE-DB123
+
+Mapped Instance for easytravelazure-weather-express
+
+SERVICE\_INSTANCE-DB123
+
+abc/123
+
+HOST-2
+
+SERVICE\_INSTANCE-AB902
+
+Mapped Instance for easytravel-frontend
+
+SERVICE\_INSTANCE-AB902
+
+## Entity tags
+
+Entity tags consist of up to three values: context, key, and value. Dynatrace creates a string representation of these values in the following format:
+
+`[<context>]<key>:<value>`
+
+* All occurrences of the `[`, `]`, and `:` characters need to be escaped using the `\` character.
+* The `tags` field returns the string representations of these fields.
+
+The following query example retrieves a list of host entity tags.
+
+```
+fetch dt.entity.host
+
+
+
+| expand tags, alias:tag
+
+
+
+| fields tag
+```
+
+`tag`
+
+AppSec:Node.js
+
+[Azure]tenant:CustomerA
+
+HostName:dw123
+
+AppSec:.NET
+
+[AWS]created\_at:2023-07-07T12:20:10Z
+
+[Environment]tema:cpn
+
+You can use the `expand` command to optimize tag filtering. This example filters hosts based on a specific cluster name.
+
+```
+fetch dt.entity.host
+
+
+
+| expand tags
+
+
+
+| filter contains(tags, "[Environment]Cluster.Name:prod-eu-west-6-ireland")
+```
+
+`entity.name`
+
+`id`
+
+`tags`
+
+HOST-1
+
+HOST-C2
+
+tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
+
+HOST-2
+
+HOST-C3
+
+tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
+
+HOST-3
+
+HOST-C4
+
+tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
+
+HOST-4
+
+HOST-C5
+
+tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
+
+HOST-5
+
+HOST-C6
+
+tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
+
+If you need structured access to the key, context, or value, you can use the following DPL parse expression to split the string representation into individual fields.
+
+```
+fetch dt.entity.host
+
+
+
+| expand tags, alias:tag_string
+
+
+
+| parse tag_string, """(('['LD:tag_context ']' LD:tag_key (!<<'\\' ':') LD:tag_value)|(LD:tag_key (!<<'\\' ':') LD:tag_value)|LD:tag_key)"""
+```
+
+`entity.name`
+
+`id`
+
+`tag_string`
+
+`tag_context`
+
+`tag_key`
+
+`tag_value`
+
+HOST-1
+
+HOST-73
+
+Maxk:WebService2-ABC
+
+undefined
+
+Maxk:WebService2-ABC
+
+undefined
+
+HOST-1
+
+HOST-73
+
+testtests:testspreiser
+
+undefined
+
+testtests:testspreiser
+
+undefined
+
+HOST-1
+
+HOST-73
+
+Maxk:WebService3-ABC
+
+undefined
+
+Maxk:WebService3-ABC
+
+undefined
+
+## List fields and relationships
+
+Use the `describe` command to obtain a list of fields and relationships for each entity view.
+
+For example, to retrieve a list of all fields and relationships for the `service_instance` entity view, enter `describe dt.entity.service_instance`:
+
+```
+describe dt.entity.service_instance
+```
+
+Take this information into account when working with different fields:
+
+* Most entity fields have the same names as in the API v2 environment (for example, gcpZone and oneAgentCustomName).
+* The first and last observation timestamp of an entity is stored in the lifetime field, represented as a timeframe type comprising a start and end timestamp. The lifetime of an entity needs to overlap with the query timeframe for the entity to be included in the query.
+* Several entity names are prefixed with 'entity.' (for example, `entity.conditional_name`)
+* Relationships are returned as records, to learn more about them, see [entity relationships](/docs/semantic-dictionary/model/dt-entities#entity-relationships "Get to know the Semantic Dictionary models related to topology.").
+
+The `describe` command is a valuable tool to explore the Grail data schema.
+
+```
+describe dt.entity.service_instance
+
+
+
+| filter in(data_types, "record")
+```
+
+`field`
+
+`data_types`
+
+belongs\_to
+
+record
+
+runs\_on
+
+record
+
+sends\_to
+
+record
+
+icon
+
+record
+
+receives\_from
+
+record
+
+instance\_of
+
+record
+
+## Permissions
+
+You need the `storage:entities:read` permission to query entities.
+
+Grail doesn't apply management zone filters. Users having the `storage:entities:read` permission can query all entities.
+
+## Entity selectors
+
+You can use the `classicEntitySelector()` function to simplify starting DQL entity queries. This command takes an entity selector as a string argument and provides a list of entity IDs in return. You can use this list to filter entities based on ID.
+
+For example, you can filter service instances running on hosts with a specific tag.
+
+```
+fetch dt.entity.service
+
+
+
+| filter in(id, classicEntitySelector("type(service), fromRelationship.runsOnHost(type(host), tag([AWS]Category:ABC))"))
+```
+
+`entity.name`
+
+`id`
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+You can also obtain this result using native DQL with the following query.
+
+```
+fetch dt.entity.service
+
+
+
+| fieldsAdd host.id = runs_on[dt.entity.host]
+
+
+
+| expand host.id
+
+
+
+| lookup sourceField:host.id, lookupField: id, fields:host.tags=tags, [ fetch dt.entity.host]
+
+
+
+| expand host.tags
+
+
+
+| filter host.tags == "[AWS]Category:ABC"
+```
+
+`entity.name`
+
+`id`
+
+`host.id`
+
+`host.tags`
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+123
+
+This query has limitations, such as returning only 100 hosts per service entity, and is generally more complex than the previous example using the `classicEntitySelector` function.
+
+### Filtering along relationships
+
+When your query evaluates relationships, we recommend using the [`classicEntitySelector`](/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector "A list of DQL general functions.") function instead of native DQL queries.
+
+In the following examples, the native DQL query will be slower and might yield incomplete results compared to the `classicEntitySelector` query:
+
+```
+// fetch all hosts that run Java processes
+
+
+
+// using native DQL
+
+
+
+fetch dt.entity.host
+
+
+
+| expand pgi=contains[dt.entity.process_group_instance]
+
+
+
+| filter pgi in [
+
+
+
+fetch dt.entity.process_group_instance
+
+
+
+| filter matchesValue(softwareTechnologies, "*JAVA*")
+
+
+
+| fields id
+
+
+
+]
+```
+
+```
+// fetch all hosts that run Java processes
+
+
+
+// using classicEntitySelector()
+
+
+
+fetch dt.entity.host
+
+
+
+| filter in (id, classicEntitySelector("type(host),toRelationship.isProcessOf(type(PROCESS_GROUP_INSTANCE),softwareTechnologies(JAVA))"))
+```
+
+### Combine `classicEntitySelector` with native DQL filters
+
+If you already use the `classicEntitySelector` function, it is better to add all filter criteria into the function call rather than add additional native filter statements. The mixed query is slower than the query that contains all filter conditions in the entity selector.
+
+```
+// fetch all LINUX hosts that run Java processes
+
+
+
+// using a mix of classicEntitySelector and native DQL filters
+
+
+
+fetch dt.entity.host
+
+
+
+| filter in (id, classicEntitySelector("type(host),toRelationship.isProcessOf(type(PROCESS_GROUP_INSTANCE),softwareTechnologies(JAVA))"))
+
+
+
+| fieldsAdd osType
+
+
+
+| filter osType == "LINUX"
+```
+
+```
+// fetch all LINUX hosts that run Java processes
+
+
+
+// using only classicEntitySelector
+
+
+
+fetch dt.entity.host
+
+
+
+| filter in (id, classicEntitySelector("type(host),osType(LINUX),toRelationship.isProcessOf(type(PROCESS_GROUP_INSTANCE),softwareTechnologies(JAVA))"))
+
+
+
+| fieldsAdd osType
+```
+
+## Relationship mapping table
+
+Entity relationships in the previous Dynatrace (for example, the environment API v2) are mapped to the new names in DQL records according to the following table.
+
+Relationship name
+
+From > To
+
+To > From
+
+belongsTo
+
+belongs\_to
+
+contains
+
+calls
+
+calls
+
+called\_by
+
+candidateTalksWith
+
+called\_by
+
+calls
+
+hostsComputeNode
+
+hosts
+
+hosted\_by
+
+indirectlySendsToQueue
+
+indirectly\_sends\_to
+
+indirectly\_receives\_from
+
+isAccessibleBy
+
+accessible\_by
+
+can\_access
+
+isApplicationMethodOf
+
+belongs\_to
+
+contains
+
+isApplicationMethodOfGroup
+
+belongs\_to
+
+contains
+
+isApplicationOfSyntheticTest
+
+monitored\_by
+
+monitors
+
+isAzrAppServicePlanOf
+
+contains
+
+belongs\_to
+
+isAzrEventHubNamespaceOfEventHub
+
+contains
+
+belongs\_to
+
+isAzrMgmtGroupOfAzrTenant
+
+belongs\_to
+
+contains
+
+isAzrServiceBusNamespaceOfQueue
+
+contains
+
+belongs\_to
+
+isAzrServiceBusNamespaceOfTopic
+
+contains
+
+belongs\_to
+
+isAzrSQLDatabaseOfElasticPool
+
+belongs\_to
+
+contains
+
+isAzrSqlServerOfDatabase
+
+contains
+
+belongs\_to
+
+isAzrSqlServerOfElasticPool
+
+belongs\_to
+
+contains
+
+isAzrStorageAccountOfAzrEventHub
+
+contains
+
+belongs\_to
+
+isAzrSubscriptionOfAzrMgmtGroup
+
+belongs\_to
+
+contains
+
+isAzrSubscriptionOfAzrTenant
+
+belongs\_to
+
+contains
+
+isAzrSubscriptionOfCredentials
+
+contains
+
+belongs\_to
+
+isBalancedBy
+
+balanced\_by
+
+balances
+
+isBoshDeploymentOfHost
+
+contains
+
+belongs\_to
+
+isCfFoundationOfHost
+
+contains
+
+belongs\_to
+
+isCgiOfCa
+
+belongs\_to
+
+contains
+
+isCgiOfCai
+
+belongs\_to
+
+contains
+
+isCgiOfCluster
+
+belongs\_to
+
+contains
+
+isCgiOfHost
+
+belongs\_to
+
+contains
+
+isCgiOfNamespace
+
+belongs\_to
+
+contains
+
+isChildOf
+
+child\_of
+
+parent\_of
+
+isClusterOfCa
+
+cluster\_of
+
+clustered\_by
+
+isClusterOfCai
+
+cluster\_of
+
+clustered\_by
+
+isClusterOfCni
+
+cluster\_of
+
+clustered\_by
+
+isClusterOfHost
+
+cluster\_of
+
+clustered\_by
+
+isClusterOfKubernetesSvc
+
+cluster\_of
+
+clustered\_by
+
+isClusterOfNamespace
+
+cluster\_of
+
+clustered\_by
+
+isClusterOfNode
+
+cluster\_of
+
+isClusterOfPg
+
+clustered\_by
+
+cluster\_of
+
+clustered\_by
+
+isCnpOfCai
+
+belongs\_to
+
+contains
+
+isDatastoreOf
+
+belongs\_to
+
+contains
+
+isDeviceApplicationMethodOf
+
+belongs\_to
+
+contains
+
+isDeviceApplicationMethodOfGroup
+
+belongs\_to
+
+contains
+
+isDiskOf
+
+belongs\_to
+
+contains
+
+isDockerContainerOf
+
+contains
+
+belongs\_to
+
+isDockerContainerOfPg
+
+contains
+
+belongs\_to
+
+isEbsVolumeOf
+
+belongs\_to
+
+contains
+
+isGroupOf
+
+group\_of
+
+groups
+
+isHostGroupOf
+
+group\_of
+
+groups
+
+isHostOfContainer
+
+hosts
+
+hosted\_by
+
+isInstanceOf
+
+instance\_of
+
+instantiates
+
+isKubernetesSvcOfCa
+
+balances
+
+balanced\_by
+
+isKubernetesSvcOfCai
+
+balances
+
+balanced\_by
+
+isLocatedIn
+
+belongs\_to
+
+contains
+
+isMainPgiOfCgi
+
+belongs\_to
+
+contains
+
+isMemberOf
+
+belongs\_to
+
+contains
+
+isMemberOfScalingGroup
+
+belongs\_to
+
+contains
+
+isNamespaceOfCa
+
+contains
+
+belongs\_to
+
+isNamespaceOfCai
+
+contains
+
+belongs\_to
+
+isNamespaceOfCni
+
+contains
+
+belongs\_to
+
+isNamespaceOfCnp
+
+contains
+
+belongs\_to
+
+isNamespaceOfKubernetesSvc
+
+contains
+
+belongs\_to
+
+isNamespaceOfPg
+
+contains
+
+belongs\_to
+
+isNamespaceOfService
+
+contains
+
+belongs\_to
+
+isNetworkClientOf
+
+calls
+
+called\_by
+
+isNetworkClientOfHost
+
+calls
+
+called\_by
+
+isNetworkClientOfProcessGroup
+
+calls
+
+called\_by
+
+isNetworkInterfaceOf
+
+belongs\_to
+
+contains
+
+isNodeOfHost
+
+belongs\_to
+
+contains
+
+isOpenstackAvZoneOf
+
+belongs\_to
+
+contains
+
+isPartOf
+
+belongs\_to
+
+contains
+
+isPgAppOf
+
+belongs\_to
+
+contains
+
+isPgiOfCgi
+
+belongs\_to
+
+contains
+
+isPgOfCa
+
+belongs\_to
+
+contains
+
+isPgOfCai
+
+belongs\_to
+
+contains
+
+isPgOfCg
+
+belongs\_to
+
+contains
+
+isProcessOf
+
+belongs\_to
+
+contains
+
+isProcessRunningOpenstackVm
+
+belongs\_to
+
+contains
+
+isRuntimeComponentOf
+
+belongs\_to
+
+contains
+
+isSameAs
+
+same\_as
+
+same\_as
+
+isServedByDcrumService
+
+served\_by
+
+serves
+
+isServiceMethodOf
+
+belongs\_to
+
+contains
+
+isServiceMethodOfService
+
+belongs\_to
+
+contains
+
+isServiceOf
+
+belongs\_to
+
+contains
+
+isServiceOfProcessGroup
+
+belongs\_to
+
+contains
+
+isSiteOf
+
+contains
+
+belongs\_to
+
+isSoftwareComponentOfPgi
+
+belongs\_to
+
+contains
+
+isStepOf
+
+belongs\_to
+
+contains
+
+isUserActionOf
+
+belongs\_to
+
+contains
+
+listensOnQueue
+
+belongs\_to
+
+contains
+
+manages
+
+manages
+
+managed\_by
+
+monitors
+
+monitors
+
+monitored\_by
+
+propagatesTo
+
+propagates\_to
+
+propagated\_from
+
+receivesFromQueue
+
+receives\_from
+
+sends\_to
+
+runsOn
+
+runs\_on
+
+runs
+
+runsOnHost
+
+runs\_on
+
+runs
+
+runsOnProcessGroupInstance
+
+runs\_on
+
+runs
+
+runsOnResource
+
+runs\_on
+
+runs
+
+sendsToQueue
+
+sends\_to
+
+receives\_from
+
+talksWithCandidate
+
+calls
+
+called\_by
+
+affects
+
+affects
+
+affected\_by
+
+isRelatedTo
+
+related\_to
+
+related\_to
+
+## Troubleshooting
+
+* **The DQL query returns different or fewer entities than API v2 environment**
+  Verify that you are using the same query timeframe `fetch dt.entity.*`. The `classicEntitySelector()` function only returns entities that have a lifetime that overlaps with the query timeframe. By default, DQL queries are executed for the last 2 hours, whereas the default timeframe in the API environment is 72 hours.
+
+## Related topics
+
+* [What is Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
+* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
+* [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.")
+* [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.")
+* [Environment API v2 - Entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")
+
+
+---
+
+
 ## Source: smartscape-on-grail.md
 
 
 ---
 title: Smartscape on Grail
 source: https://www.dynatrace.com/docs/platform/grail/smartscape-on-grail
-scraped: 2026-02-15T21:16:11.471259
+scraped: 2026-02-16T09:18:05.626928
 ---
 
 # Smartscape on Grail

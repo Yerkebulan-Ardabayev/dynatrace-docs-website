@@ -1,7 +1,7 @@
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-02-15T21:09:18.438076
+scraped: 2026-02-16T09:15:20.840313
 ---
 
 # Add code to a dashboard
@@ -162,7 +162,7 @@ const environment = "https://{your-environment}"
 
 
 
-const token = "<DYNATRACE_TOKEN_PLACEHOLDER>.F6QEWJT7VHQXY3KGNWG32ZIV3XLWL55000000000000000000000000";
+const token = "<DYNATRACE_TOKEN_PLACEHOLDER>";
 
 
 

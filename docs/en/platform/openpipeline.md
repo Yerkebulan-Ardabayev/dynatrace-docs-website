@@ -1,7 +1,7 @@
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-15T21:08:36.978082
+scraped: 2026-02-16T09:12:44.230169
 ---
 
 # OpenPipeline

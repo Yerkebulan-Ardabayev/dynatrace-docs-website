@@ -1,7 +1,7 @@
 ---
 title: AWS Elemental MediaConnect monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediaconnect
-scraped: 2026-02-15T09:07:03.066067
+scraped: 2026-02-16T09:29:47.069289
 ---
 
 # AWS Elemental MediaConnect monitoring

@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 60
+Files combined: 66
 
 ---
 
@@ -782,7 +782,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 ---
 title: Vulnerabilities API - GET remediation item entities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-item-entities
-scraped: 2026-02-15T21:24:52.626268
+scraped: 2026-02-16T09:37:42.566406
 ---
 
 # Vulnerabilities API - GET remediation item entities
@@ -3118,7 +3118,7 @@ https://mySampleEnv.live.dynatracelabs.com/api/v2/securityProblems/7412525767433
 ---
 title: Vulnerabilities API - GET vulnerable functions
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerable-functions
-scraped: 2026-02-15T21:28:21.509920
+scraped: 2026-02-16T09:27:44.664793
 ---
 
 # Vulnerabilities API - GET vulnerable functions
@@ -3971,7 +3971,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/mute
 ---
 title: Vulnerabilities API - POST unmute vulnerabilities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-problems-unmute
-scraped: 2026-02-15T09:12:29.908416
+scraped: 2026-02-16T09:30:15.778545
 ---
 
 # Vulnerabilities API - POST unmute vulnerabilities
@@ -4344,6 +4344,650 @@ Note that unmuting a vulnerability can take up to one minute.
 ---
 
 
+## Source: post-remediation-item-tracking-link.md
+
+
+---
+title: Vulnerabilities API - POST remediation item tracking links
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-item-tracking-link
+scraped: 2026-02-16T09:36:37.678022
+---
+
+# Vulnerabilities API - POST remediation item tracking links
+
+# Vulnerabilities API - POST remediation item tracking links
+
+* Reference
+* Updated on Sep 25, 2024
+
+Adds, edits, or deletes the tracking links of [remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, of remediation tracking Kubernetes nodes).
+
+The request produces an `application/json` payload.
+
+|  |  |  |
+| --- | --- | --- |
+| POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/trackingLinks` |
+| POST | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems/trackingLinks` |
+
+## Authentication
+
+To execute this request, you need an access token with `securityProblems.write` scope.
+
+To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+## Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| id | string | The ID of the requested third-party security problem. | path | Required |
+| body | [RemediationItemsBulkUpdateDeleteDto](#openapi-definition-RemediationItemsBulkUpdateDeleteDto) | Contains the external tracking link associations to be set or deleted on the remediation items of the security problem.  * Links to be set should be submitted in the `updates` object. * Links to be deleted should be submitted in the `deletes` array.  The request must contain at least one entry to set or delete to be valid.  Conflicting changes for the same remediation item (ID appears both in the `deletes` and `updates` field) cannot be submitted.  Note that all tracking link updates for the security problem should be submitted in one request. | body | Optional |
+
+### Request body objects
+
+#### The `RemediationItemsBulkUpdateDeleteDto` object
+
+Contains the external tracking link associations to be applied to the remediation items of the security problem.
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| deletes | string[] | Tracking links to remove from the security problem.  List of remediation item IDs of the security problem for which to remove the tracking links. | Optional |
+| updates | object | Tracking links to set for the security problem.  Map of remediation item ID to tracking link objects.  Keys must be valid remediation item IDs of the security problem, the associated value must contain the link to set for the item. | Optional |
+
+#### The `TrackingLinkUpdate` object
+
+External tracking link URL association to be set for the remediable entity of the security problem.
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| displayName | string | The desired tracking link display name (title) set for the remediation item, e.g. 'ISSUE-123'. | Required |
+| url | string | The desired tracking link url set for the remediation item, e.g. https://example.com/ISSUE-123  Note that only valid URLs with 'http' or 'https' protocols are supported. | Required |
+
+### Request body JSON model
+
+This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
+
+```
+{
+
+
+
+"deletes": [
+
+
+
+"string"
+
+
+
+],
+
+
+
+"updates": {}
+
+
+
+}
+```
+
+## Response
+
+### Response codes
+
+| Code | Type | Description |
+| --- | --- | --- |
+| **204** | - | Success. The requested tracking links have been updated. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
+
+### Response body objects
+
+#### The `ErrorEnvelope` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| error | [Error](#openapi-definition-Error) | - |
+
+#### The `Error` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| code | integer | The HTTP status code |
+| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| message | string | The error message |
+
+#### The `ConstraintViolation` object
+
+A list of constraint violations
+
+| Element | Type | Description |
+| --- | --- | --- |
+| location | string | - |
+| message | string | - |
+| parameterLocation | string | -The element can hold these values * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| path | string | - |
+
+### Response body JSON models
+
+```
+{
+
+
+
+"error": {
+
+
+
+"code": 1,
+
+
+
+"constraintViolations": [
+
+
+
+{
+
+
+
+"location": "string",
+
+
+
+"message": "string",
+
+
+
+"parameterLocation": "HEADER",
+
+
+
+"path": "string"
+
+
+
+}
+
+
+
+],
+
+
+
+"message": "string"
+
+
+
+}
+
+
+
+}
+```
+
+## Examples
+
+### Set tracking links
+
+Setup: There's an automation in place that creates a ticket for each remediable entity automatically.
+
+Goal: Make the endpoint link the ticket with the remediation item. The following tracking links will be set:
+
+* `https://example.com/TICKET-46C0E12D9B0EF2D9` for `"PROCESS_GROUP-46C0E12D9B0EF2D9"`
+* `https://example.com/TICKET-549E6AD75BD598EC` for `"PROCESS_GROUP-549E6AD75BD598EC"`
+
+#### Curl
+
+```
+curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/trackingLinks' \
+
+
+
+-H 'accept: */*' \
+
+
+
+-H 'Authorization: Api-Token [your_token]' \
+
+
+
+-H 'Content-Type: application/json; charset=utf-8' \
+
+
+
+-d '{
+
+
+
+"updates": {
+
+
+
+"PROCESS_GROUP-46C0E12D9B0EF2D9": {
+
+
+
+"displayName": "TICKET-46C0E12D9B0EF2D9",
+
+
+
+"url": "https://example.com/TICKET-46C0E12D9B0EF2D9"
+
+
+
+},
+
+
+
+"PROCESS_GROUP-549E6AD75BD598EC": {
+
+
+
+"displayName": "TICKET-549E6AD75BD598EC",
+
+
+
+"url": "https://example.com/TICKET-549E6AD75BD598EC"
+
+
+
+}
+
+
+
+}
+
+
+
+}'
+```
+
+#### Request URL
+
+```
+https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/trackingLinks
+```
+
+#### Request body
+
+```
+{
+
+
+
+"updates": {
+
+
+
+"PROCESS_GROUP-46C0E12D9B0EF2D9": {
+
+
+
+"displayName": "TICKET-46C0E12D9B0EF2D9",
+
+
+
+"url": "https://example.com/TICKET-46C0E12D9B0EF2D9"
+
+
+
+},
+
+
+
+"PROCESS_GROUP-549E6AD75BD598EC": {
+
+
+
+"displayName": "TICKET-549E6AD75BD598EC",
+
+
+
+"url": "https://example.com/TICKET-549E6AD75BD598EC"
+
+
+
+}
+
+
+
+}
+
+
+
+}
+```
+
+#### Response code
+
+200
+
+### Delete tracking links
+
+Remove tracking links from `"PROCESS_GROUP-46C0E12D9B0EF2D9"` and `"PROCESS_GROUP-549E6AD75BD598EC"`.
+
+#### Curl
+
+```
+curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/trackingLinks' \
+
+
+
+-H 'accept: */*' \
+
+
+
+-H 'Authorization: Api-Token [your_token]' \
+
+
+
+-H 'Content-Type: application/json; charset=utf-8' \
+
+
+
+-d '{
+
+
+
+"deletes": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
+
+
+
+}
+
+
+
+}'
+```
+
+#### Request URL
+
+```
+https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/trackingLinks
+```
+
+#### Request body
+
+```
+{
+
+
+
+"deletes": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
+
+
+
+}
+```
+
+#### Response code
+
+200
+
+## Related topics
+
+* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
+* [Remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+
+
+---
+
+
+## Source: put-remediation-items.md
+
+
+---
+title: Vulnerabilities API - PUT mute or unmute a remediation item
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/put-remediation-items
+scraped: 2026-02-16T09:31:40.455157
+---
+
+# Vulnerabilities API - PUT mute or unmute a remediation item
+
+# Vulnerabilities API - PUT mute or unmute a remediation item
+
+* Reference
+* Updated on May 03, 2022
+
+Set the mute status of a [remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process group or, in the case of Kubernetes vulnerabilities, of a remediation tracking Kubernetes node, to `mute` or `unmute`.
+
+The request consumes an `application/json` payload.
+
+|  |  |  |
+| --- | --- | --- |
+| PUT | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/{remediationItemId}/muteState` |
+| PUT | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems/{remediationItemId}/muteState` |
+
+## Authentication
+
+To execute this request, you need an access token with `securityProblems.write` scope.
+
+To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+## Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| id | string | The ID of the requested third-party security problem. | path | Required |
+| remediationItemId | string | The ID of the remediation item. | path | Required |
+| body | [RemediationItemMuteStateChange](#openapi-definition-RemediationItemMuteStateChange) | The JSON body of the request. Contains the mute state information to be applied. | body | Optional |
+
+### Request body objects
+
+#### The `RemediationItemMuteStateChange` object
+
+An updated configuration of the remediation item's mute state.
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| comment | string | A comment about the mute state change reason. | Required |
+| muted | boolean | The desired mute state of the remediation item. | Required |
+| reason | string | The reason for the mute state change. The element can hold these values * `AFFECTED` * `CONFIGURATION_NOT_AFFECTED` * `FALSE_POSITIVE` * `IGNORE` * `INITIAL_STATE` * `OTHER` * `VULNERABLE_CODE_NOT_IN_USE` | Required |
+
+### Request body JSON model
+
+This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
+
+```
+{
+
+
+
+"comment": "string",
+
+
+
+"muted": true,
+
+
+
+"reason": "IGNORE"
+
+
+
+}
+```
+
+## Response
+
+### Response codes
+
+| Code | Type | Description |
+| --- | --- | --- |
+| **200** | - | Success. The requested mute state has been applied to the remediation item. |
+| **204** | - | Not executed. The remediation item was previously put into the requested mute state by the same user with the same reason and comment. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
+
+### Response body objects
+
+#### The `ErrorEnvelope` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| error | [Error](#openapi-definition-Error) | - |
+
+#### The `Error` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| code | integer | The HTTP status code |
+| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| message | string | The error message |
+
+#### The `ConstraintViolation` object
+
+A list of constraint violations
+
+| Element | Type | Description |
+| --- | --- | --- |
+| location | string | - |
+| message | string | - |
+| parameterLocation | string | -The element can hold these values * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| path | string | - |
+
+### Response body JSON models
+
+```
+{
+
+
+
+"error": {
+
+
+
+"code": 1,
+
+
+
+"constraintViolations": [
+
+
+
+{
+
+
+
+"location": "string",
+
+
+
+"message": "string",
+
+
+
+"parameterLocation": "HEADER",
+
+
+
+"path": "string"
+
+
+
+}
+
+
+
+],
+
+
+
+"message": "string"
+
+
+
+}
+
+
+
+}
+```
+
+## Example
+
+Mute the `PROCESS_GROUP-70DF2C1374244F5A` remediation item of the `8788643471842202915` vulnerability from the [GET request example](/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-items#example "View the list of remediation items of a vulnerability via Dynatrace API."). The response code of **200** indicates a successful request.
+
+#### Curl
+
+```
+curl --request PUT \
+
+
+
+--url https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/8788643471842202915/remediationItems/PROCESS_GROUP-70DF2C1374244F5A/muteState \
+
+
+
+--header 'Authorization: Api-Token [your_token]' \
+
+
+
+--header 'Content-Type: application/json' \
+
+
+
+--data '{
+
+
+
+"muted": true,
+
+
+
+"reason": "OTHER",
+
+
+
+"comment": "API test"
+
+
+
+}'
+```
+
+#### Request URL
+
+```
+https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/8788643471842202915/remediationItems/PROCESS_GROUP-70DF2C1374244F5A/muteState
+```
+
+#### Request body
+
+```
+{
+
+
+
+"muted": true,
+
+
+
+"reason": "OTHER",
+
+
+
+"comment": "API test"
+
+
+
+}
+```
+
+#### Response code
+
+200
+
+## Related topics
+
+* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
+* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
+* [Remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+
+
+---
+
+
 ## Source: credential-vault.md
 
 
@@ -4385,13 +5029,90 @@ Delete the configuration of credentials you no longer need.](/docs/dynatrace-api
 ---
 
 
+## Source: get-latest-image.md
+
+
+---
+title: Deployment API - GET the latest available ActiveGate image version
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/activegate/get-latest-image
+scraped: 2026-02-16T09:29:19.743752
+---
+
+# Deployment API - GET the latest available ActiveGate image version
+
+# Deployment API - GET the latest available ActiveGate image version
+
+* Reference
+* Published Nov 22, 2023
+
+Get the latest available ActiveGate image version.
+
+The request produces an `application/json` payload.
+
+|  |  |  |
+| --- | --- | --- |
+| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/image/gateway/latest` |
+| GET | Environment ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v1/deployment/image/gateway/latest` |
+
+## Authentication
+
+To execute this request, you need an access token with `InstallerDownload` scope.
+
+To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+## Parameters
+
+The request doesn't provide any configurable parameters.
+
+## Response
+
+### Response codes
+
+| Code | Type | Description |
+| --- | --- | --- |
+| **200** | [ImageDto](#openapi-definition-ImageDto) | Success |
+| **404** | - | No ActiveGate image found |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
+
+### Response body objects
+
+#### The `ImageDto` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| source | string | Image location |
+| tag | string | Image tag |
+
+### Response body JSON models
+
+```
+{
+
+
+
+"source": "string",
+
+
+
+"tag": "string"
+
+
+
+}
+```
+
+
+---
+
+
 ## Source: get-arns-for-lambda-layers.md
 
 
 ---
 title: Deployment API - View ARNs for AWS Lambda layers
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/oneagent/get-arns-for-lambda-layers
-scraped: 2026-02-15T09:08:24.509395
+scraped: 2026-02-16T09:34:06.327232
 ---
 
 # Deployment API - View ARNs for AWS Lambda layers
@@ -4516,7 +5237,7 @@ Latest information about available AWS lambda layers
 ---
 title: Deployment API - View the latest OneAgent version for AWS Lambda Classic
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/oneagent/get-latest-version-lambda-classic
-scraped: 2026-02-15T09:10:42.743318
+scraped: 2026-02-16T09:38:05.836620
 ---
 
 # Deployment API - View the latest OneAgent version for AWS Lambda Classic
@@ -5165,13 +5886,393 @@ You can use the negated criteria as part of complicated selectors, just like any
 ---
 
 
+## Source: security-context.md
+
+
+---
+title: Monitored entities API - security context
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2/security-context
+scraped: 2026-02-16T09:33:25.800014
+---
+
+# Monitored entities API - security context
+
+# Monitored entities API - security context
+
+* Reference
+* Updated on Jun 06, 2025
+* Deprecated
+
+This API is deprecated. Use the [Management zones](/docs/dynatrace-api/environment-api/settings/schemas/builtin-management-zones "View builtin:management-zones settings schema table of your monitoring environment via the Dynatrace API.") schema (`builtin:management-zones`) of the Settings API instead.
+
+Create or delete security context for monitored entities.
+
+Matching entities will have a management zone assigned if the given security context matches the name of an already existing management zone. This endpoint does not create a new management zone if there is no management zone with the provided name.
+
+Management zone rules will not apply to entities with a set security context. To be able to apply them again, you need to delete the security context.
+
+For more information on security context, see [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
+
+## Create the security context
+
+The request consumes and produces an `application/json` payload.
+
+|  |  |  |
+| --- | --- | --- |
+| POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/entities/securityContext` |
+| POST | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/entities/securityContext` |
+
+## Authentication
+
+To execute this request, you need an access token with `settings.write` scope.
+
+To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+### Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| entitySelector | string | Defines the scope of the entities to set the security context for. Only entities that can have management zones are considered for this operation  You must set one of these criteria:  * Entity type: `type("TYPE")` * Dynatrace entity ID: `entityId("id")`. You can specify several IDs, separated by a comma (`entityId("id-1","id-2")`). All requested entities must be of the same type.  You can add one or more of the following criteria. Values are case-sensitive and the `EQUALS` operator is used unless otherwise specified.  * Tag: `tag("value")`. Tags in `[context]key:value`, `key:value`, and `value` formats are detected and parsed automatically. Any colons (`:`) that are part of the key or value must be escaped with a backslash(`\`). Otherwise, it will be interpreted as the separator between the key and the value. All tag values are case-sensitive. * Management zone ID: `mzId(123)` * Management zone name: `mzName("value")` * Entity name: + `entityName.equals`: performs a non-casesensitive `EQUALS` query.   + `entityName.startsWith`: changes the operator to `BEGINS WITH`.   + `entityName.in`: enables you to provide multiple values. The `EQUALS` operator applies.   + `caseSensitive(entityName.equals("value"))`: takes any entity name criterion as an argument and makes the value case-sensitive. * Health state (HEALTHY,UNHEALTHY): `healthState("HEALTHY")` * First seen timestamp: `firstSeenTms.<operator>(now-3h)`. Use any timestamp format from the **from**/**to** parameters.   The following operators are available: + `lte`: earlier than or at the specified time   + `lt`: earlier than the specified time   + `gte`: later than or at the specified time   + `gt`: later than the specified time * Entity attribute: `<attribute>("value1","value2")` and `<attribute>.exists()`. To fetch the list of available attributes, execute the [GET entity typeï»¿](https://dt-url.net/2ka3ivt) request and check the **properties** field of the response. * Relationships: `fromRelationships.<relationshipName>()` and `toRelationships.<relationshipName>()`. This criterion takes an entity selector as an attribute. To fetch the list of available relationships, execute the [GET entity typeï»¿](https://dt-url.net/2ka3ivt) request and check the **fromRelationships** and **toRelationships** fields. * Negation: `not(<criterion>)`. Inverts any criterion except for **type**.  For more information, see [Entity selectorï»¿](https://dt-url.net/apientityselector) in Dynatrace Documentation.  To set several criteria, separate them with a comma (`,`). For example, `type("HOST"),healthState("HEALTHY")`. Only results matching **all** criteria are included in the response.  The maximum string length is 2,000 characters. | query | Required |
+| from | string | The start of the requested timeframe.  You can use one of the following formats:  * Timestamp in UTC milliseconds. * Human-readable format of `2021-01-25T05:57:01.123+01:00`. If no time zone is specified, UTC is used. You can use a space character instead of the `T`. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The format is `now-NU/A`, where `N` is the amount of time, `U` is the unit of time, and `A` is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, `now-1y/w` is one year back, aligned by a week.   You can also specify relative timeframe without an alignment: `now-NU`.   Supported time units for the relative timeframe are: + `m`: minutes   + `h`: hours   + `d`: days   + `w`: weeks   + `M`: months   + `y`: years  If not set, the relative timeframe of three days is used (`now-3d`). | query | Optional |
+| to | string | The end of the requested timeframe.  You can use one of the following formats:  * Timestamp in UTC milliseconds. * Human-readable format of `2021-01-25T05:57:01.123+01:00`. If no time zone is specified, UTC is used. You can use a space character instead of the `T`. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The format is `now-NU/A`, where `N` is the amount of time, `U` is the unit of time, and `A` is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, `now-1y/w` is one year back, aligned by a week.   You can also specify relative timeframe without an alignment: `now-NU`.   Supported time units for the relative timeframe are: + `m`: minutes   + `h`: hours   + `d`: days   + `w`: weeks   + `M`: months   + `y`: years  If not set, the current timestamp is used. | query | Optional |
+| body | [SecurityContextDtoImpl](#openapi-definition-SecurityContextDtoImpl) | The JSON body of the request. Contains security context to be set for the matching entities. | body | Optional |
+
+### Request body objects
+
+#### The `SecurityContextDtoImpl` object
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| securityContext | string[] | The security context, that will be set for matching entities. If there exists a management zone with this name, it will be set for all matching entities, overriding all automatic management zone rules. | Optional |
+
+### Request body JSON model
+
+This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
+
+```
+{
+
+
+
+"securityContext": [
+
+
+
+"string"
+
+
+
+]
+
+
+
+}
+```
+
+### Response
+
+### Response codes
+
+| Code | Type | Description |
+| --- | --- | --- |
+| **200** | [SecurityContextResultDto](#openapi-definition-SecurityContextResultDto) | Success |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
+
+### Response body objects
+
+#### The `SecurityContextResultDto` object
+
+The response payload holding the result of the security context application.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| entityIds | string[] | The entity ids that matched the entity selector and now have the supplied security context set. |
+| managementZoneIds | integer[] | The management zone ids that is applied to the entity ids, if the security context matched an existing management zone's name, otherwise null. |
+
+#### The `ErrorEnvelope` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| error | [Error](#openapi-definition-Error) | - |
+
+#### The `Error` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| code | integer | The HTTP status code |
+| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| message | string | The error message |
+
+#### The `ConstraintViolation` object
+
+A list of constraint violations
+
+| Element | Type | Description |
+| --- | --- | --- |
+| location | string | - |
+| message | string | - |
+| parameterLocation | string | -The element can hold these values * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| path | string | - |
+
+### Response body JSON models
+
+```
+{
+
+
+
+"entityIds": [
+
+
+
+"string"
+
+
+
+],
+
+
+
+"managementZoneIds": [
+
+
+
+1
+
+
+
+]
+
+
+
+}
+```
+
+```
+{
+
+
+
+"error": {
+
+
+
+"code": 1,
+
+
+
+"constraintViolations": [
+
+
+
+{
+
+
+
+"location": "string",
+
+
+
+"message": "string",
+
+
+
+"parameterLocation": "HEADER",
+
+
+
+"path": "string"
+
+
+
+}
+
+
+
+],
+
+
+
+"message": "string"
+
+
+
+}
+
+
+
+}
+```
+
+## Delete the security context
+
+|  |  |  |
+| --- | --- | --- |
+| DELETE | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/entities/securityContext` |
+| DELETE | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/entities/securityContext` |
+
+## Authentication
+
+To execute this request, you need an access token with `settings.write` scope.
+
+To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+### Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| entitySelector | string | Defines the scope of the entities to set the security context for. Only entities that can have management zones are considered for this operation  You must set one of these criteria:  * Entity type: `type("TYPE")` * Dynatrace entity ID: `entityId("id")`. You can specify several IDs, separated by a comma (`entityId("id-1","id-2")`). All requested entities must be of the same type.  You can add one or more of the following criteria. Values are case-sensitive and the `EQUALS` operator is used unless otherwise specified.  * Tag: `tag("value")`. Tags in `[context]key:value`, `key:value`, and `value` formats are detected and parsed automatically. Any colons (`:`) that are part of the key or value must be escaped with a backslash(`\`). Otherwise, it will be interpreted as the separator between the key and the value. All tag values are case-sensitive. * Management zone ID: `mzId(123)` * Management zone name: `mzName("value")` * Entity name: + `entityName.equals`: performs a non-casesensitive `EQUALS` query.   + `entityName.startsWith`: changes the operator to `BEGINS WITH`.   + `entityName.in`: enables you to provide multiple values. The `EQUALS` operator applies.   + `caseSensitive(entityName.equals("value"))`: takes any entity name criterion as an argument and makes the value case-sensitive. * Health state (HEALTHY,UNHEALTHY): `healthState("HEALTHY")` * First seen timestamp: `firstSeenTms.<operator>(now-3h)`. Use any timestamp format from the **from**/**to** parameters.   The following operators are available: + `lte`: earlier than or at the specified time   + `lt`: earlier than the specified time   + `gte`: later than or at the specified time   + `gt`: later than the specified time * Entity attribute: `<attribute>("value1","value2")` and `<attribute>.exists()`. To fetch the list of available attributes, execute the [GET entity typeï»¿](https://dt-url.net/2ka3ivt) request and check the **properties** field of the response. * Relationships: `fromRelationships.<relationshipName>()` and `toRelationships.<relationshipName>()`. This criterion takes an entity selector as an attribute. To fetch the list of available relationships, execute the [GET entity typeï»¿](https://dt-url.net/2ka3ivt) request and check the **fromRelationships** and **toRelationships** fields. * Negation: `not(<criterion>)`. Inverts any criterion except for **type**.  For more information, see [Entity selectorï»¿](https://dt-url.net/apientityselector) in Dynatrace Documentation.  To set several criteria, separate them with a comma (`,`). For example, `type("HOST"),healthState("HEALTHY")`. Only results matching **all** criteria are included in the response.  The maximum string length is 2,000 characters. | query | Required |
+| from | string | The start of the requested timeframe.  You can use one of the following formats:  * Timestamp in UTC milliseconds. * Human-readable format of `2021-01-25T05:57:01.123+01:00`. If no time zone is specified, UTC is used. You can use a space character instead of the `T`. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The format is `now-NU/A`, where `N` is the amount of time, `U` is the unit of time, and `A` is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, `now-1y/w` is one year back, aligned by a week.   You can also specify relative timeframe without an alignment: `now-NU`.   Supported time units for the relative timeframe are: + `m`: minutes   + `h`: hours   + `d`: days   + `w`: weeks   + `M`: months   + `y`: years  If not set, the relative timeframe of three days is used (`now-3d`). | query | Optional |
+| to | string | The end of the requested timeframe.  You can use one of the following formats:  * Timestamp in UTC milliseconds. * Human-readable format of `2021-01-25T05:57:01.123+01:00`. If no time zone is specified, UTC is used. You can use a space character instead of the `T`. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The format is `now-NU/A`, where `N` is the amount of time, `U` is the unit of time, and `A` is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, `now-1y/w` is one year back, aligned by a week.   You can also specify relative timeframe without an alignment: `now-NU`.   Supported time units for the relative timeframe are: + `m`: minutes   + `h`: hours   + `d`: days   + `w`: weeks   + `M`: months   + `y`: years  If not set, the current timestamp is used. | query | Optional |
+
+### Response
+
+### Response codes
+
+| Code | Type | Description |
+| --- | --- | --- |
+| **200** | [SecurityContextResultDto](#openapi-definition-SecurityContextResultDto) | Success |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
+
+### Response body objects
+
+#### The `SecurityContextResultDto` object
+
+The response payload holding the result of the security context application.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| entityIds | string[] | The entity ids that matched the entity selector and now have the supplied security context set. |
+| managementZoneIds | integer[] | The management zone ids that is applied to the entity ids, if the security context matched an existing management zone's name, otherwise null. |
+
+#### The `ErrorEnvelope` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| error | [Error](#openapi-definition-Error) | - |
+
+#### The `Error` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| code | integer | The HTTP status code |
+| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| message | string | The error message |
+
+#### The `ConstraintViolation` object
+
+A list of constraint violations
+
+| Element | Type | Description |
+| --- | --- | --- |
+| location | string | - |
+| message | string | - |
+| parameterLocation | string | -The element can hold these values * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| path | string | - |
+
+### Response body JSON models
+
+```
+{
+
+
+
+"entityIds": [
+
+
+
+"string"
+
+
+
+],
+
+
+
+"managementZoneIds": [
+
+
+
+1
+
+
+
+]
+
+
+
+}
+```
+
+```
+{
+
+
+
+"error": {
+
+
+
+"code": 1,
+
+
+
+"constraintViolations": [
+
+
+
+{
+
+
+
+"location": "string",
+
+
+
+"message": "string",
+
+
+
+"parameterLocation": "HEADER",
+
+
+
+"path": "string"
+
+
+
+}
+
+
+
+],
+
+
+
+"message": "string"
+
+
+
+}
+
+
+
+}
+```
+
+
+---
+
+
 ## Source: entity-v2.md
 
 
 ---
 title: Monitored entities API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2
-scraped: 2026-02-15T21:19:41.674830
+scraped: 2026-02-16T09:16:16.210215
 ---
 
 # Monitored entities API
@@ -5999,7 +7100,7 @@ Get the details of an event property.](/docs/dynatrace-api/environment-api/event
 ---
 title: Log Monitoring API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/log-monitoring-v2
-scraped: 2026-02-15T21:22:43.652293
+scraped: 2026-02-16T09:31:00.836234
 ---
 
 # Log Monitoring API v2
@@ -6043,7 +7144,7 @@ Push custom log records to Dynatrace.](/docs/dynatrace-api/environment-api/log-m
 ---
 title: Metrics API - Metric expressions
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-expressions
-scraped: 2026-02-15T21:29:25.584050
+scraped: 2026-02-16T09:35:12.884759
 ---
 
 # Metrics API - Metric expressions
@@ -7361,7 +8462,7 @@ Metric Expressions
 ---
 title: Metrics API - FAQ
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-faq
-scraped: 2026-02-15T21:28:44.803902
+scraped: 2026-02-16T09:32:08.907013
 ---
 
 # Metrics API - FAQ
@@ -11784,7 +12885,7 @@ You must apply an [aggregation transformation](#aggregation) before using the un
 ---
 title: Metrics API - POST ingest data points
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics
-scraped: 2026-02-15T21:28:54.355081
+scraped: 2026-02-16T09:33:34.301286
 ---
 
 # Metrics API - POST ingest data points
@@ -12018,7 +13119,7 @@ curl -L -X POST 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/ingest' \
 ---
 title: Metrics API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2
-scraped: 2026-02-15T21:22:12.152451
+scraped: 2026-02-16T09:26:56.637596
 ---
 
 # Metrics API v2
@@ -12154,7 +13255,7 @@ The result of a unit conversion.
 ---
 title: Network zones API - GET a network zone
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/network-zones/get-network-zone
-scraped: 2026-02-15T21:19:37.945357
+scraped: 2026-02-16T09:16:09.630863
 ---
 
 # Network zones API - GET a network zone
@@ -12364,7 +13465,7 @@ A list of constraint violations
 ---
 title: Network zones API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/network-zones
-scraped: 2026-02-15T21:27:52.447492
+scraped: 2026-02-16T09:35:44.309310
 ---
 
 # Network zones API
@@ -13596,7 +14697,7 @@ A list of constraint violations
 ---
 title: Problems API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/problems-v2
-scraped: 2026-02-15T09:08:40.543658
+scraped: 2026-02-16T09:37:01.468416
 ---
 
 # Problems API v2
@@ -13631,6 +14732,54 @@ Delete a comment from a specified problem.](/docs/dynatrace-api/environment-api/
 ## Related topics
 
 * [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.")
+
+
+---
+
+
+## Source: remote-configuration.md
+
+
+---
+title: Remote configuration management API
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/remote-configuration
+scraped: 2026-02-16T09:29:11.273866
+---
+
+# Remote configuration management API
+
+# Remote configuration management API
+
+* Reference
+* Published Oct 06, 2022
+
+### OneAgent
+
+[Start a job](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/post-config-job "Start a new configuration job for OneAgents remotely using the Dynatrace API.")
+
+[Preview a job](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/post-job-preview "Preview a configuration job for OneAgents using the Dynatrace API.")
+
+[View current job](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/get-current-job "View parameters of a current configuration job for OneAgents using the Dynatrace API.")
+
+[List completed jobs](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/get-finished-jobs "Get an overview of completed configuration jobs for OneAgents using the Dynatrace API.")
+
+[View a job](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/get-job "View parameters of a configuration job for OneAgents using the Dynatrace API.")
+
+### ActiveGate
+
+[Start a job](/docs/dynatrace-api/environment-api/remote-configuration/activegate/post-config-job "Start a new configuration job for ActiveGates remotely using the Dynatrace API.")
+
+[Preview a job](/docs/dynatrace-api/environment-api/remote-configuration/activegate/post-job-preview "Preview a configuration job for ActiveGates using the Dynatrace API.")
+
+[View current job](/docs/dynatrace-api/environment-api/remote-configuration/activegate/get-current-job "View parameters of a current configuration job for ActiveGates using the Dynatrace API.")
+
+[List completed jobs](/docs/dynatrace-api/environment-api/remote-configuration/activegate/get-finished-jobs "Get an overview of completed configuration jobs for ActiveGates using the Dynatrace API.")
+
+[View a job](/docs/dynatrace-api/environment-api/remote-configuration/activegate/get-job "View parameters of a configuration job for ActiveGates using the Dynatrace API.")
+
+## Related topics
+
+* [Remote configuration management of OneAgents and ActiveGates](/docs/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.")
 
 
 ---
@@ -13831,7 +14980,7 @@ A list of constraint violations
 ---
 title: GET inline code
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-inline-code
-scraped: 2026-02-15T21:28:08.173235
+scraped: 2026-02-16T09:28:33.887130
 ---
 
 # GET inline code
@@ -13863,6 +15012,51 @@ To learn how to obtain and use it, see [Tokens and authentication](/docs/discove
 ## Response
 
 The response includes a `text/plain` payload containing the most recent version of the [inline code](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+
+
+---
+
+
+## Source: get-javascript-tag.md
+
+
+---
+title: GET JavaScript tag
+source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag
+scraped: 2026-02-16T09:28:08.850642
+---
+
+# GET JavaScript tag
+
+# GET JavaScript tag
+
+* Reference
+* Updated on Sep 18, 2025
+
+Returns the most recent [JavaScript tag](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes a reference to an external file that contains both the monitoring code and its configuration.
+
+|  |  |  |
+| --- | --- | --- |
+| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/rum/javaScriptTag/{applicationId}` |
+| GET | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/rum/javaScriptTag/{applicationId}` |
+
+## Authentication
+
+To execute this request, you need an access token with `rumManualInsertionTags.read` scope.
+
+To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+## Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| applicationId | string | The ID of the web application. | path | Required |
+| scriptExecutionAttribute | string | Specifies the script execution attribute: async, defer, or none. If specified, this overrides the configured value. The element can hold these values * `ASYNC` * `DEFER` * `NONE` | query | Optional |
+| crossOriginAnonymous | boolean | Indicates whether to add the crossorigin="anonymous" attribute to the tag. If specified, this overrides the configured value. | query | Optional |
+
+## Response
+
+The response includes a `text/plain` payload containing the most recent version of the [JavaScript tag](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
 
 
 ---
@@ -13962,7 +15156,7 @@ The response includes a `text/plain` payload containing the most recent version 
 ---
 title: RUM manual insertion tags API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags
-scraped: 2026-02-15T09:09:52.672876
+scraped: 2026-02-16T09:30:23.905254
 ---
 
 # RUM manual insertion tags API
@@ -14296,7 +15490,7 @@ A list of constraint violations
 ---
 title: Settings API - POST an object
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/objects/post-object
-scraped: 2026-02-15T21:15:32.265311
+scraped: 2026-02-16T09:22:51.961086
 ---
 
 # Settings API - POST an object
@@ -14703,7 +15897,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 ---
 title: Settings API - OneAgent features schema table
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features
-scraped: 2026-02-15T21:15:36.614828
+scraped: 2026-02-16T09:22:50.277107
 ---
 
 # Settings API - OneAgent features schema table
@@ -14751,7 +15945,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 ---
 title: Settings API - GET a schema
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/get-schema
-scraped: 2026-02-15T21:15:35.361866
+scraped: 2026-02-16T09:22:47.075744
 ---
 
 # Settings API - GET a schema
@@ -15717,7 +16911,7 @@ A list of constraint violations
 ---
 title: Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings
-scraped: 2026-02-15T21:15:30.737682
+scraped: 2026-02-16T09:22:48.685337
 ---
 
 # Settings API
@@ -15797,7 +16991,7 @@ Delete an ActiveGate token your environment doesn't need anymore.](/docs/dynatra
 ---
 title: Tenant tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens
-scraped: 2026-02-15T09:11:06.806440
+scraped: 2026-02-16T09:28:43.818412
 ---
 
 # Tenant tokens API
@@ -15831,7 +17025,7 @@ Cancel rotation of the tenant token.](/docs/dynatrace-api/environment-api/tokens
 ---
 title: Applications API - GET all apps
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-all
-scraped: 2026-02-15T21:21:34.558816
+scraped: 2026-02-16T09:19:35.417002
 ---
 
 # Applications API - GET all apps
@@ -16633,7 +17827,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications
 ---
 title: Applications API - GET an application
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-an-app
-scraped: 2026-02-15T21:21:41.717299
+scraped: 2026-02-16T09:19:18.556340
 ---
 
 # Applications API - GET an application
@@ -17163,7 +18357,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 ---
 title: Applications API - GET baseline
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-baseline
-scraped: 2026-02-15T21:21:43.095777
+scraped: 2026-02-16T09:19:29.858679
 ---
 
 # Applications API - GET baseline
@@ -17498,7 +18692,7 @@ A list of constraint violations
 ---
 title: Applications API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/post-tags
-scraped: 2026-02-15T21:21:45.746282
+scraped: 2026-02-16T09:19:37.084930
 ---
 
 # Applications API - POST tags
@@ -17765,7 +18959,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 ---
 title: Create custom device via the Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/create-custom-device-via-dynatrace-api
-scraped: 2026-02-15T21:21:44.454473
+scraped: 2026-02-16T09:19:02.020143
 ---
 
 # Create custom device via the Dynatrace API
@@ -18275,7 +19469,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfm
 ---
 title: Report custom device metric via Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/report-custom-device-metric-via-rest-api
-scraped: 2026-02-15T21:21:33.108161
+scraped: 2026-02-16T09:19:08.498360
 ---
 
 # Report custom device metric via Dynatrace API
@@ -18921,7 +20115,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfm
 ---
 title: Hosts API - GET a host
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-a-host
-scraped: 2026-02-15T21:21:28.912120
+scraped: 2026-02-16T09:19:33.537096
 ---
 
 # Hosts API - GET a host
@@ -20077,7 +21271,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 ---
 title: Hosts API - GET all hosts
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-all
-scraped: 2026-02-15T21:21:37.639833
+scraped: 2026-02-16T09:19:24.343238
 ---
 
 # Hosts API - GET all hosts
@@ -21506,7 +22700,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts
 ---
 title: Hosts API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/post-tags
-scraped: 2026-02-15T21:21:38.852446
+scraped: 2026-02-16T09:19:10.152525
 ---
 
 # Hosts API - POST tags
@@ -21773,7 +22967,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 ---
 title: Process groups API - GET a process group
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-a-process-group
-scraped: 2026-02-15T21:21:54.890555
+scraped: 2026-02-16T09:19:16.839152
 ---
 
 # Process groups API - GET a process group
@@ -24286,7 +25480,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 ---
 title: Process groups API - GET all process groups
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-all
-scraped: 2026-02-15T21:21:51.051403
+scraped: 2026-02-16T09:19:06.775531
 ---
 
 # Process groups API - GET all process groups
@@ -27006,7 +28200,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 ---
 title: Process groups API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/post-tags
-scraped: 2026-02-15T21:21:30.423444
+scraped: 2026-02-16T09:19:31.493707
 ---
 
 # Process groups API - POST tags
@@ -27265,7 +28459,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 ---
 title: Processes API - GET a process
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-a-process
-scraped: 2026-02-15T21:21:49.131558
+scraped: 2026-02-16T09:19:14.208345
 ---
 
 # Processes API - GET a process
@@ -29984,7 +31178,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/processes/PR
 ---
 title: Processes API - GET all processes
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-all
-scraped: 2026-02-15T21:21:53.028842
+scraped: 2026-02-16T09:19:04.376900
 ---
 
 # Processes API - GET all processes
@@ -32893,7 +34087,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/processes?re
 ---
 title: Services API - GET a service
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-a-service
-scraped: 2026-02-15T21:21:47.177579
+scraped: 2026-02-16T09:19:26.164197
 ---
 
 # Services API - GET a service
@@ -33605,7 +34799,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 ---
 title: Services API - GET all services
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-all
-scraped: 2026-02-15T21:21:27.429544
+scraped: 2026-02-16T09:19:28.037852
 ---
 
 # Services API - GET all services
@@ -34459,7 +35653,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services?relativeTime=5mins
 ---
 title: Services API - GET baseline
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-baseline
-scraped: 2026-02-15T21:21:35.983678
+scraped: 2026-02-16T09:19:20.198407
 ---
 
 # Services API - GET baseline
@@ -34692,7 +35886,7 @@ A list of constraint violations
 ---
 title: Services API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/post-tags
-scraped: 2026-02-15T21:21:31.721888
+scraped: 2026-02-16T09:19:11.917609
 ---
 
 # Services API - POST tags
@@ -34951,7 +36145,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 ---
 title: Topology and Smartscape API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape
-scraped: 2026-02-15T21:10:36.530303
+scraped: 2026-02-16T09:13:02.311657
 ---
 
 # Topology and Smartscape API

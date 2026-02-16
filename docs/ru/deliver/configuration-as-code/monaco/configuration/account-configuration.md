@@ -1,7 +1,7 @@
 ---
 title: Account configuration for Monaco account management
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/account-configuration
-scraped: 2026-02-15T21:23:25.755060
+scraped: 2026-02-16T09:30:22.332747
 ---
 
 # Account configuration for Monaco account management
@@ -603,8 +603,6 @@ In this example, we define these objects.
 
 ## Commands
 
+Поскольку конфигурация на уровне учетной записи обычно отличается от конфигурации на уровне среды и меняется реже, существующие команды, такие как `monaco deploy`, игнорируют любую конфигурацию учетной записи, которая может быть определена в файле манифеста.
 
-
-Because account-level configuration is usually distinct from environment-level configuration and changes less frequently, existing commands like `monaco deploy` ignore any account configuration that may be defined in a manifest file.
-
-Dedicated commands exist for account resources: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "How to use the Monaco CLI application, including arguments and options.").
+Существуют специальные команды для ресурсов учетной записи: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "Как использовать приложение Monaco CLI, включая аргументы и опции.").

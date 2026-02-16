@@ -1,7 +1,7 @@
 ---
 title: AWS Transfer Family monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-transfer-family
-scraped: 2026-02-15T09:13:59.821451
+scraped: 2026-02-16T09:32:37.741553
 ---
 
 # AWS Transfer Family monitoring

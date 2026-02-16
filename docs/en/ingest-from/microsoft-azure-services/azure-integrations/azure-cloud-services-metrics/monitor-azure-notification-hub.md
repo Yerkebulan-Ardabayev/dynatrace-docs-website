@@ -1,7 +1,7 @@
 ---
 title: Azure Notification Hub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-notification-hub
-scraped: 2026-02-15T21:25:23.180831
+scraped: 2026-02-16T09:27:06.857347
 ---
 
 # Azure Notification Hub monitoring

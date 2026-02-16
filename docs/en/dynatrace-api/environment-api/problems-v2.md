@@ -1,7 +1,7 @@
 ---
 title: Problems API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/problems-v2
-scraped: 2026-02-15T09:08:40.543658
+scraped: 2026-02-16T09:37:01.468416
 ---
 
 # Problems API v2

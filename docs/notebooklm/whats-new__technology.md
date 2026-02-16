@@ -13,7 +13,7 @@ Files combined: 2
 ---
 title: End-of-life announcements
 source: https://www.dynatrace.com/docs/whats-new/technology/end-of-life-announcements
-scraped: 2026-02-15T21:28:49.856710
+scraped: 2026-02-16T09:32:49.413341
 ---
 
 # End-of-life announcements
@@ -132,7 +132,7 @@ For assistance with transitioning or setting up integrations, please see the Doc
 ---
 title: End-of-support announcements
 source: https://www.dynatrace.com/docs/whats-new/technology/end-of-support-news
-scraped: 2026-02-15T21:10:53.657003
+scraped: 2026-02-16T09:14:46.108058
 ---
 
 # End-of-support announcements

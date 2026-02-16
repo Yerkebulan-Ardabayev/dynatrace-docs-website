@@ -1,7 +1,7 @@
 ---
 title: Adaptive Traffic Management for distributed tracing
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management
-scraped: 2026-02-15T21:13:52.003360
+scraped: 2026-02-16T09:22:18.520740
 ---
 
 # Adaptive Traffic Management for distributed tracing

@@ -1,7 +1,7 @@
 ---
 title: Amazon SNS (Simple Notification Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-notification-service-sns
-scraped: 2026-02-15T21:30:04.000423
+scraped: 2026-02-16T09:30:59.232425
 ---
 
 # Amazon SNS (Simple Notification Service) monitoring

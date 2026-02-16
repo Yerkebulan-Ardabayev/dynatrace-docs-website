@@ -1,7 +1,7 @@
 ---
 title: JMX data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx
-scraped: 2026-02-15T09:08:15.175969
+scraped: 2026-02-16T09:34:59.167729
 ---
 
 # JMX data source

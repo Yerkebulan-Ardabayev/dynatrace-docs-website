@@ -1,7 +1,7 @@
 ---
 title: Deployment API - View ARNs for AWS Lambda layers
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/oneagent/get-arns-for-lambda-layers
-scraped: 2026-02-15T09:08:24.509395
+scraped: 2026-02-16T09:34:06.327232
 ---
 
 # Deployment API - View ARNs for AWS Lambda layers

@@ -1,7 +1,7 @@
 ---
 title: Waterfall graphs
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs
-scraped: 2026-02-15T09:08:12.726450
+scraped: 2026-02-16T09:29:02.985102
 ---
 
 # Waterfall graphs

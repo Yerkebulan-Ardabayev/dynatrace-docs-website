@@ -2,7 +2,382 @@
 
 Generated: 2026-02-16
 
-Files combined: 2
+Files combined: 5
+
+---
+
+
+## Source: address-remediation.md
+
+
+---
+title: Address remediation
+source: https://www.dynatrace.com/docs/secure/vulnerabilities/address-remediation
+scraped: 2026-02-16T09:39:57.892514
+---
+
+# Address remediation
+
+# Address remediation
+
+* Latest Dynatrace
+* How-to guide
+* Updated on Jan 28, 2026
+
+In the following, you'll learn how to manage remediation of entities affected by or related to a vulnerability. You can
+
+* [Apply fix recommendations from Snyk](#snyk) Third-party vulnerabilities
+* [Apply fixes from Security Advisor](#dsa) Third-party vulnerabilities
+* [Connect affected entities to your ticketing system and track the remediation progress](#remediation-tracking)
+* [Drill down into the source of vulnerabilities](#source)
+* [Change the mute status of affected entities](#mute-entities)
+* [Initiate deeper analysis with Dynatrace Intelligence generative AI](#explain)
+
+## Apply fix recommendations from Snyk
+
+Third-party vulnerabilities
+
+For vulnerabilities based on the [Snykï»¿](https://snyk.io/) feed, a fix recommendation is displayed if one is available. It consists of a library upgrade suggestion to solve the vulnerability.
+
+1. On the **Prioritization** page, select a vulnerability.
+2. In the side panel, go to **Details** and look for **Fix recommendation**.
+
+Make sure to restart processes after upgrading a library.
+
+## Apply fixes from Security Advisor
+
+Third-party vulnerabilities
+
+With Security Advisor, you can determine
+
+* Which patches and upgrades in the monitored technologies to apply for maximum remediation impact
+* How many vulnerabilities you can solve by updating a specific library
+* How many of the total solvable vulnerabilities are the most severe
+
+To filter by Security Advisor fixes
+
+1. On the **Prioritization** page, on the upper-left of the vulnerabilities table, select **Security Advisor**. This opens a side window with a list of fixes.
+2. Select ![Filter for](https://dt-cdn.net/images/filter-for-efd104354d.svg "Filter for") for the desired library. This filters the vulnerabilities table by the total number of vulnerabilities for a selected library that would be fixed by upgrading the library.
+
+Make sure to restart processes after upgrading a library.
+
+* You can add as many Security Advisor filters as you want.
+* To remove a filter, select  next to the desired library.
+* To remove all filters, select **Clear all**.
+
+### Further reading
+
+To learn more about Security Advisor, see [Concepts: Security Advisor](/docs/secure/vulnerabilities/concepts#dsa "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+
+## Track remediation progress
+
+You can add links to tickets created in your issue tracking system for [affected entities](/docs/secure/vulnerabilities/concepts#affected "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+
+Adding a tracking link allows you to
+
+* Navigate to the associated URL
+* Track the remediation progress of the selected entities
+
+You can easily check, for example, if someone is already working on fixing the vulnerability.
+
+### Set up tracking links
+
+You can add, edit, or delete tracking links individually or in bulk.
+
+Individually
+
+In bulk
+
+1. On the **Prioritization** page, select a vulnerability.
+2. In the side panel, go to **Affected entities**.
+3. Select **View all process groups** (**View all Kubernetes nodes**) to navigate to the process group (or Kubernetes node) overview page related to the vulnerability.
+4. You have the following options:
+
+   * To add a tracking link, in the **Tracking link** column, select **Set link** for the desired entity.
+   * To edit or delete a link, in the **Tracking link** column, select ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") next to the tracking link for the desired entity, and then select **Edit tracking link** or **Delete tracking link**.
+
+1. On the **Prioritization** page, select a vulnerability.
+2. In the side panel, go to **Affected entities**.
+3. Select **View all process groups** (**View all Kubernetes nodes**) to navigate to the process group (or Kubernetes node) overview page related to the vulnerability.
+4. You have the following options:
+
+   * To add a tracking link, select the desired entities, and then select **Set tracking links**.
+   * To edit or delete a tracking link, select the desired entities, and then select **Change tracking links** > **Edit tracking links** or **Delete tracking links**.
+
+## Drill down into the source of vulnerabilities
+
+To fix vulnerabilities you need to find the root cause. You can examine
+
+* [Vulnerable components](#vulnerable-component) Third-party vulnerabilities
+* [Entry points](#entry-points) Code-level vulnerabilities
+* [Code location](#code-location) Code-level vulnerabilities
+
+### Examine vulnerable components
+
+Third-party vulnerabilities
+
+Identify which libraries contain the vulnerability and how many affected process groups (or Kubernetes nodes) are impacted.
+
+1. On the **Prioritization** page, select a vulnerability.
+2. In the side panel, go to **Affected entities** and look for **Vulnerable components**.
+
+You can also view vulnerable components on the overview page of process groups or Kubernetes nodes:
+
+1. On the **Prioritization** page, select a vulnerability.
+2. In the side panel, go to **Affected entities**.
+3. Under **Process group overview** (or **Kubernetes node overview**), either select a specific process group (or Kubernetes node), or select **View all process groups** (**View all Kubernetes nodes**) to open the related overview page.
+4. From there, select an affected entity to view details, including the name of the vulnerable component.
+
+**Further reading**
+
+* [FAQ: Why is a fixed vulnerability still showing as open?](/docs/secure/faq#open "Frequently asked questions about Dynatrace Application Security.")
+* [Concepts: Vulnerable component](/docs/secure/vulnerabilities/concepts#vulnerable-component "Concepts that are specific to the Dynatrace Vulnerabilities app.")
+* [Vulnerability evaluation: Third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation#tpv "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
+
+### Examine entry points
+
+Code-level vulnerabilities
+
+Analyze entry points to determine how the vulnerability could be exploited and identify potential attack paths.
+
+1. On the **Prioritization** page, select a vulnerability.
+2. In the side panel, go to **Details** and look for **Entry points**.
+
+If the same vulnerability is reachable by multiple HTTP paths, multiple entry point entries are listed. To save memory and network traffic, a limited number of entries is displayed.
+
+If a code-level vulnerability is resolved or is about to be resolved in the next 30 minutes, the entry points are no longer open (vulnerable).
+
+**Further reading**
+
+* [Concepts: Entry points](/docs/secure/vulnerabilities/concepts#entry-points "Concepts that are specific to the Dynatrace Vulnerabilities app.")
+
+### Examine code location
+
+Code-level vulnerabilities
+
+View the source of the vulnerable function call to quickly assess its impact and origin.
+
+1. On the **Prioritization** page, select a vulnerability.
+2. In the side panel, go to **Details** and look for **Code location**.
+
+## Change the mute status of affected entities
+
+You can change the mute status of [affected entities](/docs/secure/vulnerabilities/concepts#affected "Concepts that are specific to the Dynatrace Vulnerabilities app.") according to your findings and needs. For example, you can set the status of an affected entity to `Muted (...)` **if you wish to ignore the vulnerability for this particular entity**:
+
+* It could be a false flag, meeting some additional conditions that make the vulnerability irrelevant.
+* Or maybe there's no remediation available and a workaround has been applied.
+
+Muting all affected entities of a vulnerability sets the vulnerability status to `Muted`. For details, see [Vulnerability status](/docs/secure/vulnerabilities/concepts#status "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+
+You can change the status of affected entities individually or in bulk.
+
+Individually
+
+In bulk
+
+1. On the **Prioritization** page, select a vulnerability.
+2. In the side panel, go to **Affected entities**.
+3. Select **View all process groups** (**View all Kubernetes nodes**) to navigate to the process group (or Kubernetes node) overview page related to the vulnerability.
+4. In the **Mute status** column, select the current value for the desired entity.
+5. Enter the new status and select **Save**.
+
+1. On the **Prioritization** page, select a vulnerability.
+2. In the side panel, go to **Affected entities**.
+3. Select **View all process groups** (**View all Kubernetes nodes**) to navigate to the process group (or Kubernetes node) overview page related to the vulnerability.
+4. Select the desired entities.
+5. Select **Change status**.
+6. Enter the new status and select **Save**.
+
+Mute status and remediation decisions depend on vulnerability monitoring scope. Vulnerabilities on hosts or processes excluded from monitoring rules won't appear here.  
+For visibility into overall monitoring coverage and exposure trends, see [Assess coverage](/docs/secure/vulnerabilities/assess-coverage "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+
+## Initiate deeper analysis with Dynatrace Intelligence generative AI
+
+To use this generative AI functionality, ensure the following:
+
+* Dynatrace Intelligence generative AI has been enabled at the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence generative AI.").
+* You have permissions to access it. For details, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence generative AI.").
+
+Dynatrace Intelligence generative AI can provide contextual, plain-language explanations of vulnerabilities to accelerate understanding and remediation.
+
+To access the functionality
+
+1. In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments."), select a vulnerability.
+2. In the upper-right corner of the vulnerability details pane, select  **Explain vulnerability**.
+
+When selected, Dynatrace Intelligence generative AI analyzes the technical details of a vulnerability and generates a structured summary that may include:
+
+* **What the vulnerability means**: Explains the nature of the issue (for example, SQL injection in application code, CCS Injection in OpenSSL, insecure configuration) and how it arises in thirdâparty libraries, dependencies, or code.
+* **Why it matters**: Highlights severity levels and risk scores, and describes potential implications including unauthorized data access, session hijacking, manâinâtheâmiddle attacks, or system compromise.
+* **What to investigate**: Points to affected functions, entry points, components, or libraries. Suggests reviewing exposure (for example, whether entities are accessible via public networks), reachable data assets, exploit availability (public or private), and whether vulnerable thirdâparty libraries (such as outdated OpenSSL or Node.js builds) are in use.
+* **How to respond**: Recommends remediation steps such as patching code, upgrading dependencies or runtimes, restricting access, monitoring suspicious activity, and reviewing other applications that may rely on vulnerable components.
+
+The structure and depth of generative AI's explanation may vary depending on the vulnerability type and available context. While Dynatrace Intelligence generative AI aims to provide detailed insights, not all vulnerabilities will include every element listed above.
+
+Dynatrace Intelligence generative AI explanations are tailored to the nature of each vulnerabilityâwhether it's cross-site scripting, denial-of-service, remote code execution, or similar security weaknessesâproviding relevant, actionable insights that accelerate triage and support informed decision-making, even for users without deep security expertise.
+
+
+---
+
+
+## Source: assess-coverage.md
+
+
+---
+title: Assess coverage
+source: https://www.dynatrace.com/docs/secure/vulnerabilities/assess-coverage
+scraped: 2026-02-16T09:37:07.061713
+---
+
+# Assess coverage
+
+# Assess coverage
+
+* Latest Dynatrace
+* Explanation
+* Published Dec 18, 2025
+
+To gain insights into your environment's [Runtime Vulnerability Analytics (RVA)](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") coverage and pinpoint areas of exposure, you can use the readyâmade **Vulnerability coverage** dashboard.
+
+The dashboard currently addresses library vulnerability coverage in runtime. Support for additional types, such as codeâlevel vulnerabilities, Kubernetes, and runtime coverage, is planned for upcoming releases.
+
+## Overview
+
+The **Vulnerability coverage** dashboard supports your workflows for managing results and prioritizing remediation by providing a clear overview of vulnerability concentration and how coverage evolves over time. It helps you
+
+* Highlight monitoring gaps by showing processes not monitored, aggregated to the host level.
+* Surface the most affected entities to support prioritization.
+* Track trends in findings and scans over time.
+
+Dashboard example
+
+![Vulnerability coverage](https://dt-cdn.net/images/2025-12-04-15-16-56-1920-49c53cbfda.png)
+
+### Prerequisites
+
+Before using the dashboard, ensure the following prerequisites are met:
+
+* Review the [supported technologies](/docs/secure/application-security#rva-tech "Access the Dynatrace Application Security functionalities.").
+* [Set up Dynatrace Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics#start "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
+* [Set up the required permissions](/docs/secure/vulnerabilities#permissions "Prioritize and efficiently manage vulnerabilities in your monitored environments.").
+
+### Access the dashboard
+
+You can open the dashboard either from ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** or ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+
+* From ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**:
+
+  1. In the ![Help](https://dt-cdn.net/images/image-6c69427243.svg "Help") help menu on the upper-right of the **Prioritization** page, select **About this app**.
+  2. Go to the **Contents** tab and select **Vulnerability coverage**.
+* From ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**:
+
+  1. On the **Dashboards** page, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Ready-made**.
+  2. Search for and open **Vulnerability coverage**.
+
+### Host coverage calculation
+
+Host coverage is derived from process monitoring. A host is considered covered if at least one of its processes is monitored.
+
+The following explains how host coverage is determined for library vulnerabilities.
+
+1. Dynatrace first collects all monitored processes.
+2. Monitoring rules are applied to processes. If a process is excluded by your [monitoring rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes."), the corresponding host is not considered covered, which decreases overall host coverage.
+
+### Improve host coverage
+
+To increase host coverage for thirdâparty vulnerabilities, focus on ensuring that processes are monitored.
+
+Steps to improve coverage:
+
+1. [Enable Third-party Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics#enable-tpva "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") globally.
+2. Enable all the [supported technologies](/docs/secure/application-security/vulnerability-analytics#tech-tpv "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") you want Dynatrace to monitor. Only hosts running processes on listed and enabled technologies are reflected in coverage.
+3. Adjust your [monitoring rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.") to include the processes you want monitored. Excluding processes reduces host coverage.
+
+## Use cases
+
+With the **Vulnerability coverage** dashboard, you can accomplish various use cases, such as:
+
+* **Validate monitoring coverage**: Ensure critical processes are monitored and reflected at the host level.
+* **Support prioritization**: Identify the most affected processes and their corresponding hosts before deciding remediation steps.
+* **Track exposure trends**: Monitor how vulnerability findings evolve and whether scans are keeping pace.
+* **Communicate risk**: Share highâlevel coverage and severity insights with stakeholders.
+
+
+---
+
+
+## Source: collaborate-with-apps.md
+
+
+---
+title: Integrate vulnerability insights across Dynatrace and external apps
+source: https://www.dynatrace.com/docs/secure/vulnerabilities/collaborate-with-apps
+scraped: 2026-02-16T09:36:44.209210
+---
+
+# Integrate vulnerability insights across Dynatrace and external apps
+
+# Integrate vulnerability insights across Dynatrace and external apps
+
+* Latest Dynatrace
+* How-to guide
+* Updated on Sep 09, 2025
+
+Dynatrace doesn't just detect vulnerabilities; it helps you act on them. You can navigate across Dynatrace apps for deeper context, share findings with external tools, and automate remediation workflows to accelerate response and reduce risk.
+
+## Cross-app navigation
+
+Clickable elements in ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**, such as related entities, affected process groups, Kubernetes nodes, or reachable data assets, serve as entry points into other Dynatrace apps, allowing you to explore related context and take informed action.
+
+* **Examples**:
+
+  + When viewing the **Exploit attempts** section of a code-level vulnerability in ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**, you can either select an individual exploit attempt or use the **View all related exploit attempts** button to access detailed information in [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts."). This enables you to investigate technical details, correlate runtime evidence, and determine whether the vulnerability is being actively targeted, helping you prioritize remediation based on actual risk.
+  + When viewing a vulnerability tied to a Kubernetes node in ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**, you can select the affected node from the Kubernetes node overview to jump directly into [![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads."), where you can assess its health, dependencies, and workload impact.
+
+Navigation also works in reverse. When exploring entities in other Dynatrace apps, such as ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** or ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**, you may encounter vulnerability indicators or links that guide you directly to ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** for deeper analysis.
+
+* **Examples**:
+
+  + From [![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads."), selecting a vulnerability in the **Vulnerabilities** section of a node or workload opens ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**, pre-filtered to that specific vulnerability.
+  + From [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance."), selecting the vulnerability indicator in the upper-right corner of the page opens ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**, filtered by that host.
+
+This bidirectional navigation ensures you're always one click away from full security context.
+
+## Share and automate with external apps
+
+Use [Workflow connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.") to share vulnerability data with external platforms and automate remediation tasks.
+
+* **Examples**:
+
+  + Automatically create Jira issues when new vulnerabilities are detected or when thresholds are breached using [Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.").
+  + Send real-time alerts to specific channels or people using [Slack Connector](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces") or [Microsoft Teams Connector](/docs/analyze-explore-automate/workflows/actions/microsoft-teams "Send messages to Microsoft Teams").
+  + Trigger remediation workflows using [Red Hat Ansible Connector](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible "Automate running of Ansible jobs based on your monitoring data and events.") or [Jenkins Connector](/docs/analyze-explore-automate/workflows/actions/jenkins "Automate pipelines in Jenkins.").
+
+These integrations help ensure that the right teams receive timely, actionable information, without manual effort.
+
+## Automate remediation workflows
+
+Use the [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") app to automate actions based on vulnerability severity, type, or affected entities.
+
+* **Examples**:
+
+  + Auto-assign remediation tasks in Jira.
+  + Send alerts to specific channels in Slack.
+  + Launch custom scripts or CI/CD jobs using connectors like Ansible or Jenkins.
+
+This enables proactive, scalable vulnerability management across your environment.
+
+## Download vulnerability data as CSV
+
+You can download data in the vulnerabilities table as a CSV file for external analysis or reporting.
+
+To download:
+
+1. On the **Prioritization** page, apply any filters to narrow down the results.
+2. Select ![Download table](https://dt-cdn.net/images/download-table-data-ebb09d49cd.svg "Download table") to save the current view as a CSV file.
+
+The downloaded file reflects the filters applied at the time of download.
+
 
 ---
 
@@ -13,7 +388,7 @@ Files combined: 2
 ---
 title: Vulnerabilities concepts
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/concepts
-scraped: 2026-02-15T21:26:39.536442
+scraped: 2026-02-16T09:28:40.572461
 ---
 
 # Vulnerabilities concepts
@@ -515,7 +890,7 @@ For details on how normalization works, see [Severity and score normalization](/
 ---
 title: Explore findings
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/explore-findings
-scraped: 2026-02-15T21:25:10.526328
+scraped: 2026-02-16T09:38:40.689884
 ---
 
 # Explore findings

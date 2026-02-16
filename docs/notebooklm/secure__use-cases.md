@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 15
+Files combined: 16
 
 ---
 
@@ -360,13 +360,146 @@ Once configured, GitHub Copilot will assist with remediating vulnerabilities by 
 ---
 
 
+## Source: ai-remediation-kiro-cli.md
+
+
+---
+title: Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace
+source: https://www.dynatrace.com/docs/secure/use-cases/ai-remediation-kiro-cli
+scraped: 2026-02-16T09:32:57.901905
+---
+
+# Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace
+
+# Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace
+
+* Latest Dynatrace
+* Tutorial
+* Updated on Jan 28, 2026
+* Preview
+
+## Overview
+
+Not every cloud misconfiguration needs to be fixed. Dynatrace helps SREs focus on what matters by verifying cloud misconfigurations with runtime context and streamlining remediation with [Kiro CLIï»¿](https://kiro.dev/cli/). This use case demonstrates how to prioritize and remediate cloud misconfigurations that impact production applications. It supports two implementation paths, depending on where and how you want to triage the issuesâboth powered by Dynatrace and Kiro CLI integrations.
+
+## Challenge
+
+In complex cloud environments, the number of high and critical findings that need to be handled is very high. SREs cannot handle all of them, and they need an effective way to remediate those misconfigurations that risk their environments and introduce compliance issues. Cloud misconfiguration might not have a direct impact on production applications. An additional validation and context is needed for more effective triage and remediation efforts.
+
+## Solution
+
+Dynatrace integrates with AWS products, such as [AWS Security Hubï»¿](https://aws.amazon.com/de/security-hub/), to enrich their findings with additional runtime context and verify them for production impact.
+
+* Confirmed findings require an immediate fix, which can be automated with the Kiro CLI.
+* Unconfirmed findings can be suppressed to remove them from the list of active issues.
+
+This reduces noise and SRE effort by ensuring only relevant misconfigurations are remediated.
+
+You can implement this solution in two ways, depending on where you want to triage cloud misconfigurations:
+
+* [**Kiro CLI-based triaging**](#kiro-cli-triaging): Uses Kiro CLI as the main engagement point, connected to Dynatrace and (natively) AWS MCP servers. Users interact with Kiro CLI to first get the top cloud misconfigurations, contextualize and prioritize with Dynatrace context, and finally, remediate them.
+* [**Dynatrace-driven triaging**](#dynatrace-triaging): Uses ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** as the main triaging engine with Dynatrace Intelligence generative AI workflow action to summarize the outcomes into a Jira ticket. The rest of the flow takes place in the Kiro CLI as in the first scenario.
+
+## Prerequisites
+
+See below for the [AWS](#aws) and [Dynatrace](#dt) requirements.
+
+### AWS
+
+* Enable AWS Security Hub to monitor your AWS environment.
+* Install [Kiro CLIï»¿](https://kiro.dev/cli/) and authenticate it with AWS.
+
+### Dynatrace
+
+* [Set up Dynatrace AWS monitoring](/docs/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.") for the desired AWS environment.
+
+* [Set up Dynatrace integration with AWS Security Hub](/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub "Ingest AWS Security Hub security findings and analyze them in Dynatrace.").
+* [Request access to Dynatrace MCP Server](/docs/whats-new/preview-releases#mcp-server "Learn about our Preview releases and how you can participate in them.").
+* [Create a Dynatrace platform token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.") with the proper permissions to both access the MCP server and to query various event types.
+
+## Kiro CLI-based triaging
+
+In this scenario, an SRE interacts with Kiro CLI to perform validation and remediation actions with the help of Dynatrace MCP.
+
+### How it works (Kiro CLI-based triaging)
+
+![Kiro CLI-based triaging](https://dt-cdn.net/images/dd7782f2-aaa7-47db-a2ba-be0d9701e734-1920-c3a5adeea6.png)
+
+1. Detection
+
+AWS Security Hub identifies cloud misconfigurations.
+
+2. Verification
+
+* An SRE interacts with the Kiro CLI to extract top findings.
+* The Dynatrace agent, invoked by the Kiro CLI, utilizes the Dynatrace MCP server to verify whether these findings impact production applications.
+
+3. Remediation
+
+* SRE remediates confirmed findings via Kiro CLI; others are suppressed.
+* Findings are resolved and verified in AWS Security Hub.
+
+### Get started (Kiro CLI-based triaging)
+
+To get started, follow the steps below.
+
+1. Download the [`dynatrace-security-agent.json` fileï»¿](https://dt-url.net/ov0301d) and place it in `.kiro/agents/`. It contains the Dynatrace MCP configuration with the proper Dynatrace API Platform Token, and the reference to an instructions file.
+   Make sure to replace:
+
+   * `<DYNATRACE_TENANT>` with your environment, for example `mytenant.apps.dynatrace.com`.
+   * `<DYNATRACE_PLATFORM_TOKEN>` with the Dynatrace token generated in [prerequisites](#dt).
+2. Download the [`instructions.md` fileï»¿](https://dt-url.net/cp2300s) and place it in the same `.kiro/agents/` directory, next to the agent configuration file.
+
+## Dynatrace-driven triaging
+
+In this scenario, initial validation and triage are automated in Dynatrace Workflows, and the SRE then acts on the Jira tickets to perform assisted remediation using the Kiro CLI.
+
+### How it works (Dynatrace-driven triaging)
+
+![Dynatrace-driven triaging](https://dt-cdn.net/images/kiro-cli-2-2088-7ca80c5d12.png)
+
+1. Detection
+
+AWS Security Hub identifies cloud misconfigurations.
+
+2. Verification
+
+* AWS Security Hub integration ingests findings into Dynatrace.
+* A Dynatrace workflow analyzes new critical/high-risk findings and performs the automated verification using the Dynatrace Intelligence generative AI workflow action.
+
+3. Remediation
+
+* A Jira ticket is created automatically with the summary of the verification results.
+* An SRE uses Kiro CLI to act on the Jira findings. Confirmed findings are remediated, while the unconfirmed findings can be suppressed.
+* Findings are resolved in AWS Security Hub and are no longer in the top findings dashboard in Dynatrace.
+
+### Get started (Dynatrace-driven triaging)
+
+To get started, follow the steps below.
+
+1. Download the [`dynatrace-security-agent.json` fileï»¿](https://dt-url.net/ov0301d) and place it in `.kiro/agents/`. It contains the Dynatrace MCP configuration with the proper Dynatrace API Platform Token, and the reference to an instructions file.
+   Make sure to replace:
+
+   * `<DYNATRACE_TENANT>` with your environment, for example `mytenant.apps.dynatrace.com`.
+   * `<DYNATRACE_PLATFORM_TOKEN>` with the Dynatrace token generated in [prerequisites](#dt).
+2. Download the [`instructions.md` fileï»¿](https://dt-url.net/cp2300s) and place it in the same `.kiro/agents/` directory, next to the agent configuration file.
+3. Optional Configure the Jira remote MCP as part of the Dynatrace agent or as a global Kiro setting (`.kiro/settings/mcp.json`). For details, see [Model context protocol (MCP)ï»¿](https://kiro.dev/docs/cli/mcp/).
+4. Deploy the [Dynatrace triaging workflow for AWS Security Hub findingsï»¿](https://dt-url.net/a9032pe).
+
+* Edit the configuration to set the desired values for Jira parameters (such as project key, issue type, assignee, reporter, and labels), which will be used by the Jira ticket creation action.
+* Schedule the workflow to run periodically.
+
+
+---
+
+
 ## Source: analyze-aws-api-gateway-access-logs-with-security-investigator.md
 
 
 ---
 title: Analyze Amazon API Gateway access logs with Investigations
 source: https://www.dynatrace.com/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator
-scraped: 2026-02-15T21:23:59.576362
+scraped: 2026-02-16T09:27:21.832273
 ---
 
 # Analyze Amazon API Gateway access logs with Investigations
@@ -915,7 +1048,7 @@ Follow the steps below to continue debugging integration errors.
 ---
 title: Analyze AWS CloudTrail logs with Investigations
 source: https://www.dynatrace.com/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator
-scraped: 2026-02-15T09:11:35.920220
+scraped: 2026-02-16T09:29:14.631559
 ---
 
 # Analyze AWS CloudTrail logs with Investigations
@@ -1351,7 +1484,7 @@ These are some of the use cases that can be solved using CloudTrail logs and Dyn
 ---
 title: Automate and orchestrate security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/automate-and-orchestrate-security-findings
-scraped: 2026-02-15T21:12:09.941405
+scraped: 2026-02-16T09:26:10.031795
 ---
 
 # Automate and orchestrate security findings
@@ -1931,7 +2064,7 @@ To see if such events are present in your CloudTrail logs
 ---
 title: Discover coverage gaps in security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/discover-coverage-gaps-in-security-scans
-scraped: 2026-02-15T21:12:03.287136
+scraped: 2026-02-16T09:26:06.818789
 ---
 
 # Discover coverage gaps in security findings
@@ -1994,7 +2127,7 @@ For a better understanding of how to build your queries, see [DQL query examples
 ---
 title: Ingest and process custom security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/ingest-and-process-custom-security-findings
-scraped: 2026-02-15T21:12:07.517120
+scraped: 2026-02-16T09:25:59.880403
 ---
 
 # Ingest and process custom security findings
@@ -3892,7 +4025,7 @@ You can use the above instructions as building blocks to automate common steps i
 ---
 title: Monitor suspicious sign-in activity with Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/monitor-sign-in-activity
-scraped: 2026-02-15T21:12:05.866014
+scraped: 2026-02-16T09:26:03.529918
 ---
 
 # Monitor suspicious sign-in activity with Dynatrace
@@ -4216,7 +4349,7 @@ Monitoring sign-in activities in cloud environments is essential for detecting a
 ---
 title: CSPM Notification Automation
 source: https://www.dynatrace.com/docs/secure/use-cases/notification-automation
-scraped: 2026-02-15T21:12:02.036694
+scraped: 2026-02-16T09:26:01.838950
 ---
 
 # CSPM Notification Automation
@@ -5472,7 +5605,7 @@ CSPM Notification Automation with Dynatrace
 ---
 title: Runtime contextualization of container findings
 source: https://www.dynatrace.com/docs/secure/use-cases/runtime-contextualization-of-container-findings
-scraped: 2026-02-15T21:12:04.603401
+scraped: 2026-02-16T09:26:05.201029
 ---
 
 # Runtime contextualization of container findings
@@ -5944,7 +6077,7 @@ Use [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c
 ---
 title: Threat hunting and forensics
 source: https://www.dynatrace.com/docs/secure/use-cases/threat-hunting
-scraped: 2026-02-15T21:23:14.444802
+scraped: 2026-02-16T09:34:45.595381
 ---
 
 # Threat hunting and forensics
@@ -6385,7 +6518,7 @@ From here on, the complexity of the investigation will only grow, and the abilit
 ---
 title: Visualize and analyze security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/visualize-and-analyze-security-findings
-scraped: 2026-02-15T21:12:08.685848
+scraped: 2026-02-16T09:26:08.443347
 ---
 
 # Visualize and analyze security findings

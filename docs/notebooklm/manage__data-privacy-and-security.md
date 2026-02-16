@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 7
+Files combined: 9
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 7
 ---
 title: Configure data privacy settings
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
-scraped: 2026-02-15T21:14:03.564455
+scraped: 2026-02-16T09:23:02.080011
 ---
 
 # Configure data privacy settings
@@ -255,7 +255,7 @@ When turned on, the RUM JavaScript sets a persistent cookie in end-user browsers
 ---
 title: Adaptive Data Retention
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/adaptive-data-retention
-scraped: 2026-02-15T21:25:07.479772
+scraped: 2026-02-16T09:37:18.990323
 ---
 
 # Adaptive Data Retention
@@ -406,7 +406,7 @@ Dynatrace also provides multi-layered [security controls](/docs/manage/data-priv
 ---
 title: Data retention periods
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods
-scraped: 2026-02-15T21:15:38.006918
+scraped: 2026-02-16T09:16:07.940100
 ---
 
 # Data retention periods
@@ -970,6 +970,415 @@ The most likely cause of failed scans is misconfigured permissions for the servi
 ---
 
 
+## Source: user-privacy-for-android.md
+
+
+---
+title: Data safety guidance for Android
+source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-android
+scraped: 2026-02-16T09:38:58.838246
+---
+
+# Data safety guidance for Android
+
+# Data safety guidance for Android
+
+* Latest Dynatrace
+* 5-min read
+* Updated on Sep 15, 2025
+
+Starting July 20, 2022, Google requires you to provide your users with information on how your mobile app collects, protects, and shares their data. This also includes data collected by third-party partners like Dynatrace.
+
+This page can help you with completing the [Data safety formï»¿](https://support.google.com/googleplay/android-developer/answer/10787469#complete_form_steps) in Google Play Console. The questions and data types reflect the Data safety form, but note that the answers reflect the out-of-the-box, default state.
+
+OneAgent might capture additional data through your [manual instrumentation](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk "Learn what OneAgent SDK for Android is."). If you instrument your app to collect additional data, make sure you reflect this in the **Data safety** section in Google Play Console.
+
+To fill out the Data safety form
+
+1. Sign in to Google Play Console, and select the required mobile app.
+2. From the menu on the left, go to **Policy** > **App content**.
+3. Under **Data safety**, select **Manage**.
+4. Complete the Data safety form using the information provided on this page.
+
+## Data collection and security
+
+Use the table below to answer the questions in this section.
+
+Question
+
+Answer
+
+Note
+
+Does your app collect or share any of the required user data types?
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")Yes
+
+Is all of the user data collected by your app encrypted in transit?
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")Yes
+
+Which of the following methods of account creation does your app support?
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") My app does not allow users to create an account
+
+Dynatrace does not provide user accounts
+
+Can users login to your app with accounts created outside of the app?
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")No
+
+Do you provide a way for users to request that their data is deleted?
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")No
+
+## Data types
+
+Select all types of data that your mobile app collects or shares.
+
+The table below contains all data that OneAgent captures by default.
+
+Category
+
+Data type
+
+Captured by default?
+
+Note
+
+Location
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Select **Approximate location** if you've enabled [location monitoring](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#location-monitoring "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") and your mobile app has the permission to use the device's geolocation information.
+
+Dynatrace can capture the [approximate location](/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-ip-and-gps "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names."), but it never collects a precise location.
+
+Personal info
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Select **User IDs** or other personal information data types if you collect your users' personal information via [user tagging](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android#tag-specific-users "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.").
+
+Financial info
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Health and fitness
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Messages
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Photos and videos
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Audio files
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Files and docs
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Calendar
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Contacts
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+App activity
+
+App interactions
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") Yes
+
+Dynatrace captures user interactions, for example, app launches or taps, and reports them as user actions.
+
+See [User action monitoring](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#action-monitoring "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") and [Lifecycle monitoring](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#lifecycle-monitoring "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") for information on how to configure or disable these features.
+
+Web browsing
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+App info and performance
+
+Crash logs
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") Yes
+
+Dynatrace captures information on [crashes](/docs/observe/digital-experience/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace."). If you've also enabled [Session Replay on crashes](/docs/observe/digital-experience/session-replay/session-replay-android "Set up Session Replay for your Android apps to learn which actions your users perform."), Dynatrace collects several screenshots before a crash occurs.
+
+Clear **Crash logs** if you've disabled [crash reporting](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#crash-reporting "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.").
+
+App info and performance
+
+Diagnostics
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") Yes
+
+Dynatrace collects some performance information, for example, loading time of applications and activities or travel time of web requests.
+
+App info and performance
+
+Other app performance data
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") Yes
+
+Dynatrace captures some app performance data, for example, a device's battery level or screen resolution. In Google Play Console, you cannot specify what app performance data is collected.
+
+App performance data collected by Dynatrace
+
+* Battery level
+* Built-in RAM
+* Free RAM
+* Device model
+* CPU type
+* Carrier name
+* Network connection type, for example, mobile, WiFi, or LAN
+* Network technology, for example, 2G, 3G, 4G, 5G, 802.11x
+* Screen resolution
+* Orientation (portrait or landscape)
+* App version
+* App name
+* User language
+* Android version
+* New user (for the first session)
+
+Device or other IDs
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Dynatrace does not capture or report any device ID. We suggest that you avoid reporting device IDs via manual instrumentation.
+
+## Data usage and handling
+
+You also need to provide the information on how the data is used and handled for each data type that you've selected in the **Data types** section. Select **Start** to proceed.
+
+Use the table below for all data types captured by OneAgent.
+
+Question
+
+Answer
+
+Note
+
+Is this data collected, shared or both?
+
+Collected
+
+Is this data processed ephemerally?
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Is this data required for your app, or can users choose whether it's collected?
+
+Data collected is required (users can't turn off this data collection)
+
+Select **Users can choose whether this data is collected** if you've enabled the [user opt-in](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") for your mobile app.
+
+Why is this user data collected?
+
+Analytics
+
+## Related topics
+
+* [Preparing for Google Play's new safety sectionï»¿](https://android-developers.googleblog.com/2021/07/new-google-play-safety-section.html)
+* [Provide information for Google Play's Data safety sectionï»¿](https://support.google.com/googleplay/android-developer/answer/10787469)
+* [Configure data privacy settings for mobile applications](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.")
+
+
+---
+
+
+## Source: user-privacy-for-ios.md
+
+
+---
+title: User privacy for iOS
+source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-ios
+scraped: 2026-02-16T09:32:27.643838
+---
+
+# User privacy for iOS
+
+# User privacy for iOS
+
+* Latest Dynatrace
+* 3-min read
+* Updated on Nov 21, 2024
+
+Starting December 8, 2020, Apple requires you to provide information about your app's privacy practices, including the practices of third-party partners like Dynatrace.
+
+On this page, you'll find information about what kind of data [Dynatrace OneAgent for iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") captures by default. The data categories and types reflect the Apple questionnaire, but note that the answers reflect the out-of-the-box, default state. For a detailed description of individual data types, see [App privacy details on the App Storeï»¿](https://developer.apple.com/app-store/app-privacy-details/) on the Apple developer portal.
+
+OneAgent may capture additional data through your [manual instrumentation](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios "Enrich mobile user experience monitoring using OneAgent SDK for iOS."). If you instrument your app to capture additional data, make sure you reflect it in your app privacy questionnaire.
+
+Category
+
+Data type
+
+Captured by default?
+
+Notes
+
+Contact Info
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Health & Fitness
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Financial Info
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Location
+
+Precise Location
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+By default, [location monitoring](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#location "Explore the list of features that are available after you instrument your application with OneAgent.") is disabled.
+
+If you've set the [`DTXInstrumentGPSLocation` configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#privacy-and-security "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `true`, select this data type.
+
+Precise Location
+
+Coarse Location
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Sensitive Info
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Contacts
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+User Content
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Browsing History
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Search History
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Identifiers
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Purchases
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Usage Data
+
+Product Interaction
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") Yes
+
+If you use auto-instrumentation for iOS, taps and clicks the users perform in your mobile app are reported as [user actions](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#user-actions "Explore the list of features that are available after you instrument your application with OneAgent."). Also, Dynatrace captures [rage taps](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#rage-taps "Explore the list of features that are available after you instrument your application with OneAgent."). You can configure the capturing of product interaction data via the [configuration keys related to user actions](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#user-actions "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.").
+
+If you've set the [`DTXInstrumentAutoUserAction`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#user-actions "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") and [`DTXDetectRageTaps`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#user-actions "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") configuration keys to `false`, don't select this data type.
+
+Usage Data
+
+Advertising Data
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Usage Data
+
+Other Usage Data
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Diagnostics
+
+Crash Data
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") Yes
+
+By default, [crash reposting](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#crashes "Explore the list of features that are available after you instrument your application with OneAgent.") is enabled. If you use [Session Replay](/docs/observe/digital-experience/session-replay/session-replay-ios "Prerequisites and the procedure for enabling Session Replay for your iOS apps."), OneAgent also captures masked screenshots and reports several screenshots captured before the crash.
+
+If you've set the [`DTXCrashReportingEnabled` configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#privacy-and-security "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `false` and disabled Session Replay, don't select this data type.
+
+Diagnostics
+
+Performance Data
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") Yes
+
+By default, monitoring of [lifecycle events](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#lifecycle "Explore the list of features that are available after you instrument your application with OneAgent."), [web requests](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#web-requests "Explore the list of features that are available after you instrument your application with OneAgent."), and [user actions](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#user-actions "Explore the list of features that are available after you instrument your application with OneAgent.") is enabled. You can configure the capturing of performance data data via the configuration keys related to [user actions](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#user-actions "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."), [web requests](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#web-requests "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."), and
+[lifecycle monitoring](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#lifecycle-monitoring "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.").
+
+If you've set all of the following [configuration keys](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `false`, don't select this data type.
+
+* `DTXInstrumentLifecycleMonitoring`
+* `DTXInstrumentWebRequestTiming`
+* `DTXInstrumentWebViewTiming`
+* `DTXInstrumentAutoUserAction`
+
+Diagnostics
+
+Other Diagnostic Data
+
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") Yes
+
+OneAgent captures the following diagnostic data:
+
+* Battery level
+* Built-in RAM
+* Free RAM
+* Device model
+* CPU type
+* Carrier name
+* Network connection type, for example, mobile, WiFi, or LAN
+* Network technology, for example, 2G, 3G, 4G, 5G, 802.11x
+* Screen resolution
+* Orientation (portrait or landscape)
+* App version
+* App name
+* User language
+* iOS version
+* New user (on the first session)
+
+Diagnostics
+
+`shareLogsFile`
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+The `shareLogsFile` API allows you to share locally stored log files via an iOS sharing sheet (`UIActivityViewController`). For more information, see [Log sharing](/docs/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#log-sharing "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
+
+Surroundings
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Body
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+Other Data
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") No
+
+
+---
+
+
 ## Source: data-security-controls.md
 
 
@@ -1165,7 +1574,7 @@ Third party and code level vulnerabilities are [detected in real time and automa
 ---
 title: Secure development controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/secure-development-controls
-scraped: 2026-02-15T21:25:34.876307
+scraped: 2026-02-16T09:29:55.547925
 ---
 
 # Secure development controls

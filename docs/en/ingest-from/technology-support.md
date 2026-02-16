@@ -1,7 +1,7 @@
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-02-15T21:10:32.647693
+scraped: 2026-02-16T09:13:09.987538
 ---
 
 # Technology support
@@ -711,7 +711,7 @@ Tracing is only supported via JMS.
 | WebLogic RMI-IIOP | All versions supported |
 | WebSphere Liberty RMI-IIOP | All versions supported |
 | WebSphere RMI-IIOP | All versions supported |
-| [gRPCï»¿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.78[4](#fn-remoting-frameworks-4-def) |
+| [gRPCï»¿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.79[4](#fn-remoting-frameworks-4-def) |
 
 1
 
@@ -803,13 +803,9 @@ Dynatrace supports .NET applications written in C#. Limited support for .NET app
 | --- | --- |
 | ASP.NET Core | All versions supported |
 | ASP.NET Owin/Katana | 3.0.0+ |
-| [HttpClientï»¿](https://docs.microsoft.com/en-us/previous-versions/visualstudio/hh193681(v=vs.118)) | All versions supported[1](#fn-web-framework-1-def) |
+| [HttpClientï»¿](https://docs.microsoft.com/en-us/previous-versions/visualstudio/hh193681(v=vs.118)) | All versions supported |
 | [HttpListenerï»¿](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/httplistener) | All versions supported |
-| [HttpWebRequestï»¿](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=netframework-4.8) | All versions supported[1](#fn-web-framework-1-def) |
-
-1
-
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+| [HttpWebRequestï»¿](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=netframework-4.8) | All versions supported |
 
 | Web service | Versions |
 | --- | --- |
@@ -817,58 +813,38 @@ Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-a
 
 | Remoting framework | Versions |
 | --- | --- |
-| Amazon AWS Lambda SDK | 3.5.0+[1](#fn-remoting-framework-1-def) |
-| Amazon AWS SDK | 3.5.0+[1](#fn-remoting-framework-1-def) |
-| [gRPCï»¿](https://www.nuget.org/packages/Grpc.AspNetCore) | 2.23.2+[1](#fn-remoting-framework-1-def) |
-
-1
-
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+| Amazon AWS Lambda SDK | 3.5.0+ |
+| Amazon AWS SDK | 3.5.0+ |
+| [gRPCï»¿](https://www.nuget.org/packages/Grpc.AspNetCore) | 2.23.2+ |
 
 | Database framework | Versions |
 | --- | --- |
-| ADO.NET | SQL Server[1](#fn-database-framework-1-def), SQL CE[1](#fn-database-framework-1-def), Oracle using Oracle.DataAccess.dll[1](#fn-database-framework-1-def) |
-| Amazon DynamoDB | 3.5.0+[1](#fn-database-framework-1-def) |
-| Azure Cosmos DB | 3.18+[1](#fn-database-framework-1-def) |
-| [MongoDB .NET driverï»¿](https://mongodb.github.io/mongo-csharp-driver/) | 2.3 - 2.7[1](#fn-database-framework-1-def), 2.8+[1](#fn-database-framework-1-def) |
-
-1
-
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+| ADO.NET | SQL Server, SQL CE, Oracle using Oracle.DataAccess.dll |
+| Amazon DynamoDB | 3.5.0+ |
+| Azure Cosmos DB | 3.18+ |
+| [MongoDB .NET driverï»¿](https://mongodb.github.io/mongo-csharp-driver/) | 2.3 - 2.7, 2.8+ |
 
 | Messaging client | Versions |
 | --- | --- |
-| Amazon EventBridge | 3.5.0+[1](#fn-messaging-client-1-def) |
-| Amazon SNS | 3.5.0+[1](#fn-messaging-client-1-def) |
-| Amazon SQS | 3.5.0+[1](#fn-messaging-client-1-def) |
-| [Azure Messaging Service Busï»¿](https://www.nuget.org/packages/Azure.Messaging.ServiceBus) | 7+[1](#fn-messaging-client-1-def) |
-| [Confluent Kafka client libraryï»¿](https://www.nuget.org/packages/Confluent.Kafka/) | 1.4.0+[1](#fn-messaging-client-1-def) |
-| [IBM MQ clientï»¿](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q029250_.htm) | 8.0 - 9.1[1](#fn-messaging-client-1-def) |
-| [MassTransitï»¿](https://www.nuget.org/packages/MassTransit) | 7.0 - 8.3.1[1](#fn-messaging-client-1-def), 8.3.2+[1](#fn-messaging-client-1-def) |
-| [Microsoft Azure Service Bus client for .NETï»¿](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/) | 2.0.0 - 5.2.0[1](#fn-messaging-client-1-def) |
-| [RabbitMQ clientï»¿](https://www.nuget.org/packages/RabbitMQ.Client) | 4.1 - 6.x[1](#fn-messaging-client-1-def), 7.x+[1](#fn-messaging-client-1-def) |
-
-1
-
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+| Amazon EventBridge | 3.5.0+ |
+| Amazon SNS | 3.5.0+ |
+| Amazon SQS | 3.5.0+ |
+| [Azure Messaging Service Busï»¿](https://www.nuget.org/packages/Azure.Messaging.ServiceBus) | 7+ |
+| [Confluent Kafka client libraryï»¿](https://www.nuget.org/packages/Confluent.Kafka/) | 1.4.0+ |
+| [IBM MQ clientï»¿](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q029250_.htm) | 8.0 - 9.1 |
+| [MassTransitï»¿](https://www.nuget.org/packages/MassTransit) | 7.0 - 8.3.1, 8.3.2+ |
+| [Microsoft Azure Service Bus client for .NETï»¿](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/) | 2.0.0 - 5.2.0 |
+| [RabbitMQ clientï»¿](https://www.nuget.org/packages/RabbitMQ.Client) | 4.1 - 6.x, 7.x+ |
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+[1](#fn-monitoring-framework-1-def), 1.1+[1](#fn-monitoring-framework-1-def) |
-
-1
-
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+, 1.1+ |
 
 | Logging framework | Versions |
 | --- | --- |
-| [Microsoft Logging Extensionsï»¿](https://docs.microsoft.com/en-us/dotnet/core/extensions/logging) | 3.0.0+[1](#fn-logging-framework-1-def) |
-| [Serilogï»¿](https://serilog.net/) | 2.9+[1](#fn-logging-framework-1-def) |
-| [log4netï»¿](https://logging.apache.org/log4net/) | 2.0.6+[1](#fn-logging-framework-1-def) |
-
-1
-
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+| [Microsoft Logging Extensionsï»¿](https://docs.microsoft.com/en-us/dotnet/core/extensions/logging) | 3.0.0+ |
+| [Serilogï»¿](https://serilog.net/) | 2.9+ |
+| [log4netï»¿](https://logging.apache.org/log4net/) | 2.0.6+ |
 
 See also [OneAgent SDK for .NET](/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
 

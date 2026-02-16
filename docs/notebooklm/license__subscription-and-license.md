@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Subscription and license management (DPS pre-April 2023)
 source: https://www.dynatrace.com/docs/license/subscription-and-license/subscription-and-license-dps
-scraped: 2026-02-15T21:15:18.193866
+scraped: 2026-02-16T09:23:27.870654
 ---
 
 # Subscription and license management (DPS pre-April 2023)

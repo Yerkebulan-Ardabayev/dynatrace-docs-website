@@ -1,7 +1,7 @@
 ---
 title: Get started with OpenTelemetry and Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/getting-started
-scraped: 2026-02-15T21:09:17.233861
+scraped: 2026-02-16T09:13:59.411678
 ---
 
 # Get started with OpenTelemetry and Dynatrace
@@ -21,7 +21,7 @@ The Dynatrace OTLP API endpoints and token scopes needed to configure telemetry 
 
 Instrument your apps to send OpenTelemetry data to Dynatrace API endpoints.](/docs/ingest-from/opentelemetry/walkthroughs "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")[### Dynatrace Collector
 
-The customized Collector build, provided by Dynatrace and tailored for typical use cases in a Dynatrace context.](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace Collector.")[### Istio and Envoy
+The customized Collector build, provided by Dynatrace and tailored for typical use cases in a Dynatrace context.](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.")[### Istio and Envoy
 
 Configure Istio and Envoy for OpenTelemetry exports to Dynatrace.](/docs/ingest-from/opentelemetry/integrations "Learn how to integrate OpenTelemetry and Dynatrace with Istio and Envoy.")[### Ensuring success
 

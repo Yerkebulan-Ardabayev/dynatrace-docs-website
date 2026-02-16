@@ -1,12 +1,12 @@
 ---
-title: Collector use cases
+title: OpenTelemetry Collector use cases
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases
-scraped: 2026-02-15T21:29:24.034118
+scraped: 2026-02-16T09:28:03.971920
 ---
 
-# Collector use cases
+# OpenTelemetry Collector use cases
 
-# Collector use cases
+# OpenTelemetry Collector use cases
 
 * Latest Dynatrace
 * How-to guide
@@ -27,7 +27,7 @@ When using the Collector, we recommend using the following features in the basic
 
 Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.](/docs/ingest-from/opentelemetry/collector/use-cases/batch "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.")[### Enrich with OneAgent
 
-Configure the OpenTelemetry Collector to enrich data with OneAgent.](/docs/ingest-from/opentelemetry/collector/use-cases/enrich "Configure the OpenTelemetry Collector to enrich OTLP requests.")[![FluentD](https://dt-cdn.net/images/untitled-300-c72685245e.png "FluentD")
+Configure the OpenTelemetry Collector to enrich data with OneAgent.](/docs/ingest-from/opentelemetry/collector/use-cases/enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with OneAgent host data.")[![FluentD](https://dt-cdn.net/images/untitled-300-c72685245e.png "FluentD")
 
 ### FluentD
 
@@ -41,7 +41,7 @@ Configure the OpenTelemetry Collector to compute bucket summaries for histogram 
 
 Configure the OpenTelemetry Collector to ingest and transform Jaeger data into Dynatrace.](/docs/ingest-from/opentelemetry/collector/use-cases/jaeger "Configure the OpenTelemetry Collector to ingest and convert Jaeger data into Dynatrace.")[### Kafka
 
-Configure the OpenTelemetry Collector to integrate with Apache Kafka.](/docs/ingest-from/opentelemetry/collector/use-cases/kafka "Configure the OpenTelemetry Collector to ingest data via Kafka into Dynatrace.")[### Kubernetes Enrichment
+Configure the OpenTelemetry Collector to integrate with Apache Kafka.](/docs/ingest-from/opentelemetry/collector/use-cases/kafka "How to configure the OpenTelemetry Collector to buffer data via Kafka.")[### Kubernetes Enrichment
 
 Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes "Configure the OpenTelemetry Collector to ingest Kubernetes data into Dynatrace.")[### Log files
 

@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Data Explorer FAQ
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer/explorer-troubleshooting
-scraped: 2026-02-15T09:09:56.222881
+scraped: 2026-02-16T09:37:56.785102
 ---
 
 # Data Explorer FAQ

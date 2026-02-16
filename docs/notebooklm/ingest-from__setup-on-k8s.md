@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 35
+Files combined: 39
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 35
 ---
 title: Get started with Kubernetes platform monitoring + Application observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/application-observability
-scraped: 2026-02-15T21:21:10.034883
+scraped: 2026-02-16T09:21:58.837734
 ---
 
 # Get started with Kubernetes platform monitoring + Application observability
@@ -1177,13 +1177,699 @@ To install the Dynatrace Operator add-on for AWS EKS through the CLI
 ---
 
 
+## Source: ag-in-vm.md
+
+
+---
+title: Deploy ActiveGate in a VM
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm
+scraped: 2026-02-16T09:34:04.712118
+---
+
+# Deploy ActiveGate in a VM
+
+# Deploy ActiveGate in a VM
+
+* Latest Dynatrace
+* 5-min read
+* Updated on Jan 22, 2026
+
+If you want to monitor several Kubernetes clusters with one ActiveGate and don't need to separate networks for administrative or operational traffic, you can install an ActiveGate on a virtual machine using a conventional installer to connect your clusters to Dynatrace as described below.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Start installation**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#start-installation "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Download the installer**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#download-installer "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Run the installer**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#run-installer "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+
+**Connect your Kubernetes clusters to Dynatrace**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#connect-clusters-to-dynatrace "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")
+
+## Step 1 Start installation
+
+1. In Dynatrace Hub, select **ActiveGate**.
+2. Select **Set up**.
+
+3. On the **Install Environment ActiveGate** page, select **Linux**.
+
+## Step 2 Download the installer
+
+How you download your installer depends on your setup and needs. You can choose to download an installer directly to the server where you plan to install Environment ActiveGate or you can download an installer to a different machine and then transfer the installer to the server.
+
+1. Select [Route OneAgent traffic](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate.") as an [ActiveGate purpose](/docs/ingest-from/dynatrace-activegate#purposes "Understand the basic concepts related to ActiveGate.").
+2. Provide an access token with [`PaaS Integration - InstallerDownload`](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") scope. This token is required to download the ActiveGate installer from your environment. If you don't have an access token, you can create one right in the UI. The token is automatically appended to the download and installation commands you'll use later.
+3. Select **Download installer**. There are two options:
+
+   * Download via shell command. Copy and run the `wget` command.
+   * Select the link to download the ActiveGate installer.
+4. Verify the signature.
+   Wait for the download to complete, and then verify the signature by copying the command from the second **Verify signature** text box and pasting the command into your terminal window.
+
+## Step 3 Run the installer
+
+An install parameter (determined by the ActiveGate purpose you selected) is automatically set for the command to run the installer. Make sure you use the command displayed in Dynatrace that reflects the ActiveGate purpose.
+Copy the installation script command from the **Run the installer with root rights** step and paste it into your terminal.
+
+### Add the Kubernetes CA certificate to the truststore Recommended
+
+For instructions on how to add the certificate to the truststore file, see [Trusted root certificates for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate "Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.").
+
+### Customize installation
+
+You can add additional [parameters](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate "Learn about the command-line parameters that you can use with ActiveGate on Linux.") to the installation command to customize your installation. For example, to install ActiveGate in a different directory, use the `INSTALL=<path>` parameter:
+
+```
+[root@host]# /bin/bash Dynatrace-ActiveGate-Linux-x86-1.0.0.sh INSTALL=/hosted_app/dynatrace
+```
+
+### Default installation settings
+
+For installation defaults, including default directories, see [ActiveGate default settings for Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-default-settings "Learn about the default settings with which ActiveGate is installed on Linux").
+
+## Step 4 Connect your Kubernetes clusters to Dynatrace
+
+To connect the Kubernetes API to Dynatrace, follow the instructions that apply to your Kubernetes version.
+
+1. Create a service account and cluster role.
+
+   Create a `kubernetes-monitoring-service-account.yaml` file with the following content.
+
+   kubernetes-monitoring-service-account.yaml
+
+   ```
+   apiVersion: v1
+
+
+
+   kind: ServiceAccount
+
+
+
+   metadata:
+
+
+
+   name: dynatrace-monitoring
+
+
+
+   namespace: dynatrace
+
+
+
+   ---
+
+
+
+   apiVersion: rbac.authorization.k8s.io/v1
+
+
+
+   kind: ClusterRole
+
+
+
+   metadata:
+
+
+
+   name: dynatrace-monitoring-cluster
+
+
+
+   rules:
+
+
+
+   - apiGroups:
+
+
+
+   - ""
+
+
+
+   resources:
+
+
+
+   - nodes
+
+
+
+   - pods
+
+
+
+   - namespaces
+
+
+
+   - replicationcontrollers
+
+
+
+   - events
+
+
+
+   - resourcequotas
+
+
+
+   - pods/proxy
+
+
+
+   - nodes/proxy
+
+
+
+   - nodes/metrics
+
+
+
+   - services
+
+
+
+   - persistentvolumeclaims
+
+
+
+   - persistentvolumes
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - apiGroups:
+
+
+
+   - batch
+
+
+
+   resources:
+
+
+
+   - jobs
+
+
+
+   - cronjobs
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - apiGroups:
+
+
+
+   - apps
+
+
+
+   resources:
+
+
+
+   - deployments
+
+
+
+   - replicasets
+
+
+
+   - statefulsets
+
+
+
+   - daemonsets
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - apiGroups:
+
+
+
+   - apps.openshift.io
+
+
+
+   resources:
+
+
+
+   - deploymentconfigs
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - apiGroups:
+
+
+
+   - config.openshift.io
+
+
+
+   resources:
+
+
+
+   - clusterversions
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - apiGroups:
+
+
+
+   - dynatrace.com
+
+
+
+   resources:
+
+
+
+   - dynakubes
+
+
+
+   - edgeconnects
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - apiGroups:
+
+
+
+   - apiextensions.k8s.io
+
+
+
+   resources:
+
+
+
+   - customresourcedefinitions
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - apiGroups:
+
+
+
+   - networking.k8s.io
+
+
+
+   resources:
+
+
+
+   - ingresses
+
+
+
+   - networkpolicies
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - apiGroups:
+
+
+
+   - discovery.k8s.io
+
+
+
+   resources:
+
+
+
+   - endpointslices
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - apiGroups:
+
+
+
+   - autoscaling
+
+
+
+   resources:
+
+
+
+   - horizontalpodautoscalers
+
+
+
+   verbs:
+
+
+
+   - list
+
+
+
+   - watch
+
+
+
+   - get
+
+
+
+   - nonResourceURLs:
+
+
+
+   - /metrics
+
+
+
+   - /version
+
+
+
+   - /readyz
+
+
+
+   - /livez
+
+
+
+   verbs:
+
+
+
+   - get
+
+
+
+   ---
+
+
+
+   apiVersion: rbac.authorization.k8s.io/v1
+
+
+
+   kind: ClusterRoleBinding
+
+
+
+   metadata:
+
+
+
+   name: dynatrace-monitoring-cluster
+
+
+
+   roleRef:
+
+
+
+   apiGroup: rbac.authorization.k8s.io
+
+
+
+   kind: ClusterRole
+
+
+
+   name: dynatrace-monitoring-cluster
+
+
+
+   subjects:
+
+
+
+   - kind: ServiceAccount
+
+
+
+   name: dynatrace-monitoring
+
+
+
+   namespace: dynatrace
+   ```
+2. Apply the file.
+
+   ```
+   kubectl apply -f kubernetes-monitoring-service-account.yaml
+   ```
+3. Get the Kubernetes API URL.
+
+   ```
+   $ kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}'
+   ```
+4. Kubernetes version 1.24+ Create a file named `token-secret.yaml` with the following content.
+
+   ```
+   apiVersion: v1
+
+
+
+   kind: Secret
+
+
+
+   metadata:
+
+
+
+   name: dynatrace-monitoring
+
+
+
+   annotations:
+
+
+
+   kubernetes.io/service-account.name: "dynatrace-monitoring"
+
+
+
+   type: kubernetes.io/service-account-token
+   ```
+5. Kubernetes version 1.24+ Apply the file to create the `dynatrace-monitoring` secret.
+
+   ```
+   kubectl apply -n dynatrace -f token-secret.yaml
+   ```
+6. Get the bearer token.
+
+   Kubernetes version 1.24+
+
+   ```
+   kubectl get secret dynatrace-monitoring -o jsonpath='{.data.token}' -n dynatrace | base64 --decode
+   ```
+
+   Kubernetes versions 1.23 and lower
+
+   ```
+   kubectl get secret $(kubectl get sa dynatrace-monitoring -o jsonpath='{.secrets[0].name}' -n dynatrace) -o jsonpath='{.data.token}' -n dynatrace | base64 --decode
+   ```
+
+   Special instructions for Rancher distributions to get the API URL and the bearer token
+
+   For **Rancher distributions** of Kubernetes, you need to use the bearer token and API URL **of the Rancher server**, because this server manages and secures traffic to the Kubernetes API server. Follow the steps below.
+
+   1. Get the **Kubernetes API URL**.
+
+      ```
+      kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}'
+      ```
+   2. Configure a user.
+
+      In the Rancher web UI, either create a new user or use an existing user to associate with the token. We recommend creating a new user.
+   3. Set permissions.
+
+      Make sure the user has either **Owner** or **Custom** permissions to the cluster you want to monitor.
+
+      **Recommended**: select **Custom** permissions, and be sure to select these two roles: **View all Projects** and **View Nodes**.
+   4. Create an API key.
+
+      Go to **API & Keys** and create a key either for your specific account (enter your cluster name) or for all clusters (enter **No scope**). For security reasons, we recommend selecting the first option.
+
+      Newly created keys display four fields. Make sure to use the content of the field called **Bearer token** to set up the connection to the Kubernetes API described in the next section.
+7. Go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
+8. Select **Connect manually**.
+9. Provide a **Name**, the **Kubernetes API URL target**, and the **Kubernetes bearer token** for the Kubernetes cluster.
+10. Make sure **Monitor events** and **Monitor Kubernetes namespaces, services, workloads, and pods** are turned on.
+
+Disabling certificate validation isn't recommended because it imposes security risks. However, if you still want to disable certificate validation for test environments, make sure to disable **Require valid certificates for communication with the API server (recommended)** and **Verify hostname in certificate against Kubernetes API URL**.
+
+11. Select **Save changes** to save your configuration.
+
+To update ActiveGate, see [Update ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/update-activegate "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.").
+
+
+---
+
+
 ## Source: supported-technologies.md
 
 
 ---
 title: Supported distributions
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/supported-technologies
-scraped: 2026-02-15T21:21:11.367889
+scraped: 2026-02-16T09:20:40.640166
 ---
 
 # Supported distributions
@@ -1660,7 +2346,7 @@ No specific configuration is required.
 ---
 title: Deployment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
-scraped: 2026-02-15T21:14:20.263983
+scraped: 2026-02-16T09:24:27.035002
 ---
 
 # Deployment
@@ -1957,7 +2643,7 @@ See release notes for Dynatrace Operator.](/docs/whats-new/dynatrace-operator "R
 ---
 title: Enable automatic OpenTelemetry OTLP exporter configuration
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config
-scraped: 2026-02-15T09:13:21.044036
+scraped: 2026-02-16T09:36:36.008067
 ---
 
 # Enable automatic OpenTelemetry OTLP exporter configuration
@@ -3050,7 +3736,7 @@ The permissions are aggregated immediately after applying the ClusterRole and ta
 ---
 title: Provision EdgeConnect for Dynatrace environment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect-provision
-scraped: 2026-02-15T21:23:58.188313
+scraped: 2026-02-16T09:38:13.725014
 ---
 
 # Provision EdgeConnect for Dynatrace environment
@@ -3355,7 +4041,7 @@ sample-edge-connect-name   <environment-id>.apps.dynatrace.com   Running   16m
 ---
 title: Deploy Dynatrace alongside Istio
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment
-scraped: 2026-02-15T21:14:23.996244
+scraped: 2026-02-16T09:24:44.503286
 ---
 
 # Deploy Dynatrace alongside Istio
@@ -3839,7 +4525,7 @@ If not, check if `enableIstio` is set to `true` in the DynaKube.
 ---
 title: Instrument ingress-nginx
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx
-scraped: 2026-02-15T21:15:51.253742
+scraped: 2026-02-16T09:24:05.689022
 ---
 
 # Instrument ingress-nginx
@@ -4349,7 +5035,7 @@ ActiveGate is updated automatically on pod restart whenever there is a new versi
 ---
 title: Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits
-scraped: 2026-02-15T09:07:14.292980
+scraped: 2026-02-16T09:37:35.754081
 ---
 
 # Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
@@ -5050,7 +5736,7 @@ Renovate automates the updating of dependencies in Git repositories. Integrating
 ---
 title: Manage Dynatrace deployments using GitOps
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops
-scraped: 2026-02-15T21:14:22.699041
+scraped: 2026-02-16T09:24:46.174150
 ---
 
 # Manage Dynatrace deployments using GitOps
@@ -5448,7 +6134,7 @@ For configuring automatic updates for Dynatrace Operator, see [Auto-update of Dy
 ---
 title: Metadata enrichment of all telemetry originating from Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment
-scraped: 2026-02-15T21:14:05.135237
+scraped: 2026-02-16T09:22:55.495278
 ---
 
 # Metadata enrichment of all telemetry originating from Kubernetes
@@ -6172,7 +6858,7 @@ k8s.namespace.label.domain: finance
 ## Related topics
 
 * [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
-* [Enrich from Kubernetes](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
+* [Enrich OTLP requests with Kubernetes data](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
 * [Configure enrichment directory](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.")
 
 
@@ -6185,7 +6871,7 @@ k8s.namespace.label.domain: finance
 ---
 title: Configure enrichment directory
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment
-scraped: 2026-02-15T21:13:58.503092
+scraped: 2026-02-16T09:22:58.804043
 ---
 
 # Configure enrichment directory
@@ -8429,7 +9115,7 @@ The CSI driver is now used when installed as part of the Dynatrace Operator inst
 ---
 title: Migration of DynaKube v1beta3 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta5
-scraped: 2026-02-15T09:06:28.468065
+scraped: 2026-02-16T09:38:25.570498
 ---
 
 # Migration of DynaKube v1beta3 to v1beta5
@@ -8833,7 +9519,7 @@ The `spec.extensions` field was moved to `spec.extensions.prometheus` to accommo
 ---
 title: Migrate from classic full-stack to application monitoring mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-app-monitoring
-scraped: 2026-02-15T21:27:56.445718
+scraped: 2026-02-16T09:34:29.618811
 ---
 
 # Migrate from classic full-stack to application monitoring mode
@@ -9857,6 +10543,212 @@ OpenShift
 ---
 
 
+## Source: migrate-to-dto.md
+
+
+---
+title: Migrate from OneAgent Operator to Dynatrace Operator
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/migrate-to-dto
+scraped: 2026-02-16T09:38:22.271974
+---
+
+# Migrate from OneAgent Operator to Dynatrace Operator
+
+# Migrate from OneAgent Operator to Dynatrace Operator
+
+* Latest Dynatrace
+* 5-min read
+* Published Apr 01, 2021
+
+## Understand and configure the DynaKube custom resource
+
+The DynaKube custom resource (CR) replaces the OneAgent custom resource. The DynaKube CR follows the "don't repeat yourself" (DRY) principle to deploy a number of different components to your Kubernetes cluster.
+
+Each section includes an illustration of the differences between the two custom resources, what changes from the old custom resource to the new one (marked with green), and what stays the same in both custom resource (marked with blue).
+
+Changing operators will change the host ID calculations for monitored hosts, which will lead to monitoring anomalies in the Dynatrace UI.
+
+### Classic full-stack migration
+
+Follow the instructions below to migrate from OneAgent Operator to Dynatrace Operator for classic full-stack injection.
+
+![Migration of properties](https://dt-cdn.net/images/classicfullstackmigration-600-fb8529d001.png)
+
+What stays the same
+
+What changes
+
+**Global parameters (`spec`)**  
+The following settings are global, shared by every component, and located under `spec`.
+
+* `apiUrl`
+* `tokens`[1](#fn-1-1-def)
+* `skipCertCheck`
+* `proxy`
+* `trustedCAs`
+* `networkZone`
+* `customPullSecret`
+* `enableIstio`
+
+1
+
+**Tokens must point to an existing secret.**
+
+**ClassicFullStack parameters (`.spec.oneAgent.classicFullStack`)**  
+A new section for the full-stack OneAgent is located at `.spec.oneAgent.classicFullStack`:
+
+* `image`
+* ~~`autoUpdate`~~[1](#fn-2-1-def)
+* `version`[2](#fn-2-2-def)
+
+1
+
+Previously, this was `disableAgentUpdate` in the OneAgent CR.  
+The `autoUpdate` field has been removed. [Pin the OneAgent version on your tenant to configure auto-update](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").  
+Auto-update is disabled when either the `version` or `image` fields are set.
+
+2
+
+This was `agentVersion` in the OneAgent CR.
+
+All the other OneAgent parameters (such as tolerations, arguments, DNS, and resource settings) are also located in the `.spec.oneAgent.classicFullStack` section and are unique to the full-stack installation.
+
+### Application-only migration
+
+Follow the instructions below to migrate from OneAgent Operator to Dynatrace Operator for automatic application-only injection.
+
+![Cloud native app only](https://dt-cdn.net/images/cloudnativeappo-600-de0c984048.png)
+
+What stays the same
+
+What changes
+
+**Global parameters (`spec`)**  
+The following settings are global, shared by every component, and located under `spec`.
+
+* `apiUrl`
+* `tokens`[1](#fn-3-1-def)
+* `skipCertCheck`
+* `proxy`
+* `trustedCAs`
+* `networkZone`
+* `customPullSecret`
+* `enableIstio`
+
+1
+
+**Tokens must point to an existing secret.**
+
+**ApplicationMonitoring parameters (`.spec.oneAgent.applicationMonitoring`)**  
+A new section for the full-stack OneAgent is located at `.spec.oneAgent.applicationMonitoring`:
+
+* `version`[1](#fn-4-1-def)
+* `useCSIDriver`[2](#fn-4-2-def)
+
+1
+
+This was `agentVersion` in the OneAgent CR.
+
+2
+
+This new parameter will deliver binaries to pods automatically and eliminate storage requirements on pods. This is in preview only and defaults to `false`.
+
+The `image` parameter is no longer available. The functionality will be reintroduced in future. For now, all pods download from the API URL.
+
+## Migrate from OneAgent Operator to Dynatrace Operator
+
+You can migrate from the deprecated OneAgent Operator to the new Dynatrace Operator that manages the lifecycle of several Dynatrace components such as OneAgent, routing, and Kubernetes API Monitor. Additional components will be added as new observability features become available.
+
+Select **one of the following options**, depending on your deployment methods.
+
+[**Manifest**](#manifest)[![Helm](https://dt-cdn.net/images/helm-1-f86d0c89ed.svg "Helm")
+
+**Helm**](#helm)
+
+### Migrate manifests
+
+Kubernetes
+
+OpenShift
+
+1. Delete OneAgent Operator and the `dynatrace` namespace/project.
+
+   ```
+   kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/<version>/kubernetes.yaml
+
+
+
+   kubectl delete namespace dynatrace
+   ```
+2. [Set up monitoring with Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+
+1. Delete OneAgent Operator and the `dynatrace` namespace/project.
+
+   ```
+   oc delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/<version>/openshift.yaml
+
+
+
+   oc delete project dynatrace
+   ```
+2. [Set up monitoring with Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+
+### Migrate with Helm
+
+Kubernetes
+
+OpenShift
+
+1. Remove OneAgent Operator, the Helm repository, and the `dynatrace` namespace/project.
+
+   ```
+   helm uninstall dynatrace-oneagent-operator
+
+
+
+   kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/v0.10.2/dynatrace.com_oneagentapms.yaml
+
+
+
+   kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/v0.10.2/dynatrace.com_oneagents.yaml
+
+
+
+   helm repo remove dynatrace
+
+
+
+   kubectl delete namespace dynatrace
+   ```
+2. [Set up monitoring with Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+
+1. Remove OneAgent Operator, the Helm repository, and the `dynatrace` namespace/project.
+
+   ```
+   helm uninstall dynatrace-oneagent-operator
+
+
+
+   oc delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/v0.10.2/dynatrace.com_oneagentapms.yaml
+
+
+
+   oc delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/v0.10.2/dynatrace.com_oneagents.yaml
+
+
+
+   helm repo remove dynatrace
+
+
+
+   oc delete project dynatrace
+   ```
+2. [Set up monitoring with Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+
+
+---
+
+
 ## Source: migration.md
 
 
@@ -10396,7 +11288,7 @@ To configure a server TLS certificate for the ActiveGate:
 ---
 title: Guides
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides
-scraped: 2026-02-15T21:23:52.881787
+scraped: 2026-02-16T09:34:48.808356
 ---
 
 # Guides
@@ -10433,7 +11325,7 @@ Automate and optimize your system's metadata management.](/docs/ingest-from/setu
 ---
 title: Full-stack observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack
-scraped: 2026-02-15T21:20:45.976841
+scraped: 2026-02-16T09:22:02.284300
 ---
 
 # Full-stack observability
@@ -10494,7 +11386,7 @@ The following components are deployed by applying a DynaKube with full-stack obs
 ---
 title: Classic Full-Stack monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack
-scraped: 2026-02-15T21:20:27.606747
+scraped: 2026-02-16T09:20:20.107080
 ---
 
 # Classic Full-Stack monitoring
@@ -10542,13 +11434,72 @@ Classic full-stack injection requires *write access* from the OneAgent Pod to th
 ---
 
 
+## Source: how-it-works.md
+
+
+---
+title: How it works
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works
+scraped: 2026-02-16T09:30:45.618036
+---
+
+# How it works
+
+# How it works
+
+* Latest Dynatrace
+* 1-min read
+* Published May 10, 2022
+
+This section provides an in-depth look at how Dynatrace components are deployed and how they interact with Kubernetes clusters and entities.
+
+## Deployment modes
+
+[#### Kubernetes platform monitoring
+
+In-depth description of Kubernetes platform monitoring using Dynatrace Operator.
+
+Kubernetes platform monitoring](/docs/ingest-from/setup-on-k8s/how-it-works/kubernetes-monitoring)[#### Application observability
+
+In-depth description of Application observability using the Dynatrace Operator.
+
+Application observability](/docs/ingest-from/setup-on-k8s/how-it-works/application-monitoring)[#### Full-stack observability
+
+In-depth description of full-stack observability using Dynatrace Operator.
+
+Full-stack observability](/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack)
+
+### Other
+
+[#### Classic Full-Stack monitoring
+
+In-depth description of Classic Full-Stack monitoring using Dynatrace Operator.
+
+Classic Full-Stack monitoring](/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack)[#### Host monitoring
+
+In-depth description of Host monitoring using Dynatrace Operator.
+
+Host monitoring](/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/host-monitoring)
+
+## Components
+
+[#### Dynatrace Operator
+
+Components of Dynatrace Operator
+
+Dynatrace Operator](/docs/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator)
+
+
+---
+
+
 ## Source: dynakube-parameters.md
 
 
 ---
 title: DynaKube parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-scraped: 2026-02-15T09:11:59.500996
+scraped: 2026-02-16T09:38:08.852569
 ---
 
 # DynaKube parameters for Dynatrace Operator
@@ -12540,7 +13491,7 @@ A custom certificate is required for this capability. See the `tlsSecretName` pa
 ---
 title: EdgeConnect parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters
-scraped: 2026-02-15T21:22:39.813775
+scraped: 2026-02-16T09:34:36.511335
 ---
 
 # EdgeConnect parameters for Dynatrace Operator
@@ -12681,6 +13632,784 @@ v1alpha2
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `enabled` | Enables Kubernetes Automation. | `false` | bool |
+
+
+---
+
+
+## Source: security.md
+
+
+---
+title: Dynatrace Operator security
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/security
+scraped: 2026-02-16T09:39:00.739725
+---
+
+# Dynatrace Operator security
+
+# Dynatrace Operator security
+
+* Latest Dynatrace
+* 16-min read
+* Updated on Jan 16, 2026
+
+Kubernetes observability relies on components with different purposes, default configurations, and permissions. These different components need permissions to perform and maintain operational function of Dynatrace within your cluster.
+
+While Dynatrace permissions adhere to the principle of least privilege, make sure to secure the `dynatrace` namespace and limit access to a closed group of administrators and operators.
+
+## Permission list
+
+### Dynatrace Operator
+
+**Purpose:** Maintains the lifecycle of Dynatrace components. Replaces OneAgent Operator.
+
+**Default configuration:** `1-replica-per-cluster`
+
+**RBAC objects**:
+
+* Service Account `dynatrace-operator`
+* Cluster-Role `dynatrace-operator`
+* Role `dynatrace-operator`
+
+#### Cluster-wide permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `nodes` | `""` | Get/List/Watch |  |
+| `namespaces` | `""` | Get/List/Watch/Update |  |
+| `secrets` | `""` | Create |  |
+| `secrets` | `""` | Get/Update/Delete/List | `dynatrace-dynakube-config` `dynatrace-bootstrapper-config` `dynatrace-bootstrapper-certs` `dynatrace-metadata-enrichment-endpoint` `dynatrace-otlp-exporter-config` `dynatrace-otlp-exporter-certs` |
+| `mutatingwebhookconfigurations` | `admissionregistration.k8s.io` | Get/Update | `dynatrace-webhook` |
+| `validatingwebhookconfigurations` | `admissionregistration.k8s.io` | Get/Update | `dynatrace-webhook` |
+| `customresourcedefinitions` | `apiextensions.k8s.io` | Get/Update | `dynakubes.dynatrace.com` `edgeconnects.dynatrace.com` |
+| `customresourcedefinitions/status` | `apiextensions.k8s.io` | Get/Update | `dynakubes.dynatrace.com` `edgeconnects.dynatrace.com` |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` `nonroot-v2` |
+
+#### Namespace `dynatrace` permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `dynakubes` | `dynatrace.com` | Get/List/Watch/Update |  |
+| `edgeconnects` | `dynatrace.com` | Get/List/Watch/Update |  |
+| `dynakubes/finalizers` | `dynatrace.com` | Update |  |
+| `edgeconnects/finalizers` | `dynatrace.com` | Update |  |
+| `dynakubes/status` | `dynatrace.com` | Update |  |
+| `edgeconnects/status` | `dynatrace.com` | Update |  |
+| `statefulsets` | `apps` | Get/List/Watch/Create/Update/Delete |  |
+| `daemonsets` | `apps` | Get/List/Watch/Create/Update/Delete |  |
+| `replicasets` | `apps` | Get/List/Watch/Create/Update/Delete |  |
+| `deployments` | `apps` | Get/List/Watch/Create/Update/Delete |  |
+| `deployments/finalizers` | `apps` | Update |  |
+| `configmaps` | `""` | Get/List/Watch/Create/Update/Delete |  |
+| `pods` | `""` | Get/List/Watch |  |
+| `secrets` | `""` | Get/List/Watch/Create/Update/Delete |  |
+| `events` | `""` | Create/Get/List/Patch |  |
+| `services` | `""` | Create/Update/Delete/Get/List/Watch |  |
+| `serviceentries` | `networking.istio.io` | Get/List/Create/Update/Delete |  |
+| `virtualservices` | `networking.istio.io` | Get/List/Create/Update/Delete |  |
+| `leases` | `coordination.k8s.io` | Get/Update/Create |  |
+
+### Dynatrace Operator Webhook Server
+
+**Purposes**:
+
+* Modifies pod definitions to include Dynatrace code modules for application observability
+* Validates DynaKube custom resources
+* Handles the DynaKube conversion between versions
+
+**Default configuration**: `1-replica-per-cluster`, can be scaled
+
+**RBAC objects**:
+
+* Service Account `dynatrace-webhook`
+* Cluster-Role `dynatrace-webhook`
+* Role `dynatrace-webhook`
+
+#### Cluster-wide permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `namespaces` | `""` | Get/List/Watch/Update |  |
+| `secrets` | `""` | Create |  |
+| `secrets` | `""` | Get/List/Watch/Update | `dynatrace-dynakube-config` `dynatrace-bootstrapper-config` `dynatrace-bootstrapper-certs` `dynatrace-metadata-enrichment-endpoint` `dynatrace-otlp-exporter-config` `dynatrace-otlp-exporter-certs` |
+| `replicationcontrollers` | `""` | Get |  |
+| `replicasets` | `apps` | Get |  |
+| `statefulsets` | `apps` | Get |  |
+| `daemonsets` | `apps` | Get |  |
+| `deployments` | `apps` | Get |  |
+| `jobs` | `batch` | Get |  |
+| `cronjobs` | `batch` | Get |  |
+| `deploymentconfigs` | `apps.openshift.io` | Get |  |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` `nonroot-v2` |
+
+#### Namespace `dynatrace` permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `events` | `""` | Create/Patch |  |
+| `secrets` | `""` | Get/List/Watch |  |
+| `pods` | `""` | Get/List/Watch |  |
+| `configmaps` | `""` | Get/List/Watch |  |
+| `dynakubes` | `dynatrace.com` | Get/List/Watch |  |
+
+### Dynatrace Operator CSI driver
+
+**Purpose**:
+
+* For `applicationMonitoring` configurations, it provides the necessary OneAgent binary for application monitoring to the pods on each node.
+* For `hostMonitoring` configurations, it provides a writable folder for the OneAgent configurations when a read-only host file system is used.
+* For `cloudNativeFullStack`, it provides both of the above.
+
+**Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
+
+**RBAC objects**:
+
+* Service Account `dynatrace-oneagent-csi-driver`
+* Cluster-Role `dynatrace-oneagent-csi-driver`
+* Role `dynatrace-oneagent-csi-driver`
+
+#### Cluster-wide permission
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
+
+#### Namespace `dynatrace` permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `dynakubes` | `dynatrace.com` | Get/List/Watch |  |
+| `secrets` | `""` | Get/List/Watch |  |
+| `configmaps` | `""` | Get/List/Watch |  |
+| `dynakubes/finalizers` | `dynatrace.com` | Update |  |
+| `jobs` | `batch` | Get/List/Create/Delete/Watch |  |
+| `events` | `""` | Create/Patch |  |
+
+### ActiveGate
+
+#### Kubernetes Platform Monitoring
+
+**Purpose**: collects cluster and workload metrics, events, and status from the Kubernetes API.
+
+**Default configuration**: `1-replica-per-cluster`, can be scaled
+
+**RBAC objects**:
+
+* Service Account: `dynatrace-kubernetes`
+* Cluster-Roles:
+
+  + `dynatrace-kubernetes-monitoring`
+
+    - Used to aggregate all ClusterRoles with the label `rbac.dynatrace.com/aggregate-to-monitoring: "true"`
+  + `dynatrace-kubernetes-monitoring-default`
+
+    - Aggregated by `dynatrace-kubernetes-monitoring`, more details can be found in the [ClusterRole aggregation documentation](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.")
+
+##### Cluster-wide permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `nodes` | `""` | List/Watch/Get |  |
+| `pods` | `""` | List/Watch/Get |  |
+| `namespaces` | `""` | List/Watch/Get |  |
+| `replicationcontrollers` | `""` | List/Watch/Get |  |
+| `events` | `""` | List/Watch/Get |  |
+| `resourcequotas` | `""` | List/Watch/Get |  |
+| `pods/proxy` | `""` | List/Watch/Get |  |
+| `nodes/proxy` | `""` | List/Watch/Get |  |
+| `nodes/metrics` | `""` | List/Watch/Get |  |
+| `services` | `""` | List/Watch/Get |  |
+| `persistentvolumeclaims` | `""` | List/Watch/Get |  |
+| `persistentvolumes` | `""` | List/Watch/Get |  |
+| `jobs` | `batch` | List/Watch/Get |  |
+| `cronjobs` | `batch` | List/Watch/Get |  |
+| `deployments` | `apps` | List/Watch/Get |  |
+| `replicasets` | `apps` | List/Watch/Get |  |
+| `statefulsets` | `apps` | List/Watch/Get |  |
+| `daemonsets` | `apps` | List/Watch/Get |  |
+| `deploymentconfigs` | `apps.openshift.io` | List/Watch/Get |  |
+| `clusterversions` | `config.openshift.io` | List/Watch/Get |  |
+| `dynakubes` | `dynatrace.com` | List/Watch/Get |  |
+| `edgeconnects` | `dynatrace.com` | List/Watch/Get |  |
+| `customresourcedefinitions` | `apiextensions.k8s.io` | List/Watch/Get |  |
+| `ingresses` | `networking.k8s.io` | List/Watch/Get |  |
+| `networkpolicies` | `networking.k8s.io` | List/Watch/Get |  |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` `nonroot-v2` |
+
+#### Dynatrace Kubernetes Security Posture Management (KSPM)
+
+**Purposes**: [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.") detects, analyzes, and continuously watches for
+misconfigurations, security hardening guidelines, and potential compliance violations in Kubernetes.
+
+**Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
+
+**RBAC objects**:
+
+* Service Account `dynatrace-node-config-collector`
+* Cluster-Role `dynatrace-kubernetes-monitoring-kspm`
+
+  + Aggregated by the `dynatrace-kubernetes-monitoring` ClusterRole, more details can be found in the [ClusterRole aggregation documentation](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.")
+
+##### Cluster-wide permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `namespaces` | `""` | Get/List/Watch |  |
+| `nodes` | `""` | Get/List/Watch |  |
+| `pods` | `""` | Get/List/Watch |  |
+| `replicationcontrollers` | `""` | Get/List/Watch |  |
+| `serviceaccounts` | `""` | Get/List/Watch |  |
+| `services` | `""` | Get/List/Watch |  |
+| `cronjobs` | `batch` | Get/List/Watch |  |
+| `jobs` | `batch` | Get/List/Watch |  |
+| `daemonsets` | `apps` | Get/List/Watch |  |
+| `deployments` | `apps` | Get/List/Watch |  |
+| `replicasets` | `apps` | Get/List/Watch |  |
+| `statefulsets` | `apps` | Get/List/Watch |  |
+| `networkpolicies` | `networking.k8s.io` | Get/List/Watch |  |
+| `clusterrolebindings` | `rbac.authorization.k8s.io` | Get/List/Watch |  |
+| `clusterroles` | `rbac.authorization.k8s.io` | Get/List/Watch |  |
+| `rolebindings` | `rbac.authorization.k8s.io` | Get/List/Watch |  |
+| `roles` | `rbac.authorization.k8s.io` | Get/List/Watch |  |
+
+### OneAgent
+
+**Purposes**:
+
+* Collects host metrics from Kubernetes nodes.
+* Detects new containers and injects Dynatrace code modules into application pods using classic full-stack injection. Optional
+* Collects container logs from Kubernetes nodes.
+
+**Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
+
+**RBAC objects**:
+
+* Service Account `dynatrace-dynakube-oneagent`
+* Cluster-Role `dynatrace-dynakube-oneagent`
+* Cluster-Role `dynatrace-logmonitoring`
+
+**Policy settings**: Allows **HostNetwork**, **HostPID**, to use any volume types.
+
+**Necessary capabilities**: `CHOWN`, `DAC_OVERRIDE`, `DAC_READ_SEARCH`, `FOWNER`, `FSETID`, `KILL`, `NET_ADMIN`, `NET_RAW`, `SETFCAP`, `SETGID`, `SETUID`, `SYS_ADMIN`, `SYS_CHROOT`, `SYS_PTRACE`, `SYS_RESOURCE`
+
+#### Cluster-wide permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `nodes/proxy` | `""` | Get |  |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
+
+### Dynatrace Log Module
+
+**Purposes**:
+
+* Collects container logs from Kubernetes nodes.
+
+**Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
+
+**RBAC objects**:
+
+* Service Account `dynatrace-logmonitoring`
+* Cluster-Role `dynatrace-logmonitoring`
+
+#### Cluster-wide permissions
+
+Log monitoring requires [the same cluster-wide permissions as OneAgent](#oneagent-permissions).
+
+### Dynatrace telemetry ingest
+
+**Purposes**:
+
+* Enable [Dynatrace telemetry endpoints](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") in Kubernetes for cluster-local data ingest
+
+  + Ingest data via [OTLPï»¿](https://opentelemetry.io/docs/specs/otel/protocol/), [Jaegerï»¿](https://www.jaegertracing.io/), [StatsDï»¿](https://github.com/statsd/statsd) or [Zipkinï»¿](https://zipkin.io/) endpoints
+* Analyze context-rich data with built-in apps, DQL, Notebooks and Dashboards
+
+**RBAC objects**:
+
+* Service Accounts
+
+  + `dynatrace-otel-collector`
+* Cluster-Roles
+
+  + `dynatrace-telemetry-ingest`
+
+#### Cluster-wide permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `pods` | `""` | Get/Watch/List |  |
+| `namespaces` | `""` | Get/Watch/List |  |
+| `nodes` | `""` | Get/Watch/List |  |
+| `replicasets` | `apps` | Get/List/Watch |  |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
+
+### Extensions
+
+**Purposes**:
+
+* Extensions extend Dynatrace analytics capabilities by ingesting data from various sources, such as third-party applications, services, and custom metrics. See [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") for more information.
+
+**Default configuration**:
+
+The following components are required, regardless of which extensions are used:
+
+* Extension Execution Controller (EEC): `1-replica-per-cluster`
+
+**RBAC objects**:
+
+Depending on the used extension, the following RBAC objects are required.
+
+* Service Accounts
+
+  + `dynatrace-extension-controller-prometheus`
+  + `dynatrace-extension-controller-database`
+* Roles
+
+  + `dynatrace-extension-controller-prometheus`
+  + `dynatrace-extension-controller-database`
+
+##### Namespace `dynatrace` permissions
+
+*Prometheus extension*
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
+
+*Database extension*
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `pods` | `""` | List |  |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `nonroot-v2` |
+
+#### Prometheus extension
+
+**Purpose**:
+
+* Collects metrics from Prometheus endpoints in your cluster.
+
+**Default configuration**:
+
+* Prometheus datasource: `replicas-set-in-dynakube` (no default, replicas set in the DynaKube)
+
+**RBAC objects**:
+
+* Service Accounts
+
+  + `dynatrace-otel-collector`
+* Cluster-Roles
+
+  + `dynatrace-extensions-prometheus`
+
+##### Cluster-wide permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `pods` | `""` | Get/List/Watch |  |
+| `namespaces` | `""` | Get/List/Watch |  |
+| `endpoints` | `""` | Get/List/Watch |  |
+| `services` | `""` | Get/List/Watch |  |
+| `nodes` | `""` | Get/List/Watch |  |
+| `nodes/metrics` | `""` | Get/List/Watch |  |
+| `deployments` | `apps` | Get/List/Watch |  |
+| `daemonsets` | `apps` | Get/List/Watch |  |
+| `replicasets` | `apps` | Get/List/Watch |  |
+| `statefulsets` | `apps` | Get/List/Watch |  |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
+
+#### Database extension
+
+**Purpose**:
+
+* Collects metrics from database endpoints in your cluster.
+
+**Default configuration**:
+
+* SQL Extension Executor: `replicas-set-in-dynakube` (no default, replicas set in the DynaKube)
+
+**RBAC objects**:
+
+* Service Accounts
+
+  + `dynatrace-sql-ext-exec`
+* Roles
+
+  + `dynatrace-sql-ext-exec`
+
+##### Namespace `dynatrace` permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `pods` | `""` | List |  |
+
+### Dynatrace Operator supportability
+
+**Purposes**:
+
+* Allow Dynatrace Operator to execute [the support-archive command](/docs/ingest-from/setup-on-k8s/deployment/troubleshooting#support-archive "This page will assist you in navigating any challenges you may encounter while working with the Dynatrace Operator and its various components."). Necessary for troubleshooting Operator related issues.
+
+**RBAC objects**:
+
+* Role `dynatrace-operator-supportability`
+
+**Opt-out**:
+
+* You can opt out of this feature by setting the Dynatrace Operator Helm chart value `rbac.supportability` to `false`.
+
+Disabling this feature will make it harder to provide the necessary information when opening support cases regarding Dynatrace Operator.
+
+#### Namespace `dynatrace` permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `pods/log` | `""` | Get |  |
+| `pods/exec` | `""` | Create |  |
+| `jobs` | `batch` | Get/List |  |
+
+### Dynatrace Operator API upgrade support
+
+**Purposes**:
+
+* Start `dynatrace-operator-crd-storage-migration` Job for automatic cleanup of removed Dynakube API versions in `pre-upgrade` Helm hook.
+
+**RBAC objects**:
+
+* ClusterRole `dynatrace-crd-storage-migration`
+* Role `dynatrace-crd-storage-migration`
+* ServiceAccount `dynatrace-crd-storage-migration`
+
+**Opt-in**:
+
+* You can opt-out of this feature by setting the Dynatrace Operator Helm chart value `crdStorageMigrationJob` to `false`.
+
+#### Cluster wide permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `customresourcedefinitions` | `apiextensions.k8s.io` | Get/Update | `dynakubes.dynatrace.com` `edgeconnects.dynatrace.com` |
+| `customresourcedefinitions/status` | `apiextensions.k8s.io` | Get/Update | `dynakubes.dynatrace.com` `edgeconnects.dynatrace.com` |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `nonroot-v2` |
+
+#### Namespace `dynatrace` permissions
+
+| Resources accessed | API group | APIs used | Resource names |
+| --- | --- | --- | --- |
+| `dynakubes` | `dynatrace.com` | Get/List/Watch/Update |  |
+| `edgeconnects` | `dynatrace.com` | Get/List/Watch/Update |  |
+
+## Security Controls of Dynatrace Operator components
+
+The following table presents a detailed analysis of the security controls for Kubernetes components: Dynatrace Operator, Dynatrace Operator webhook, and Dynatrace Operator CSI driver. This report is based on:
+
+* [CIS Benchmarkï»¿](https://dt-url.net/zd0368p), a globally recognized standard for securing Kubernetes deployments.
+* [POD Security Standard policiesï»¿](https://dt-url.net/mp0345l).
+* Best practices.
+
+| Security Control | Standard (\*) | Operator | Webhook | CSI driver | OneAgent | Extensions Controller | Dynatrace Collector | ActiveGate | EdgeConnect | KSPM |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Disallow privileged containers | CIS [1](#fn-1-1-def) 5.2.2 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Required [5](#fn-1-5-def) | Required [10](#fn-1-10-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Disallow privilege escalation | CIS [1](#fn-1-1-def) 5.2.6 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Required [5](#fn-1-5-def) | Required [11](#fn-1-11-def) | Satisfied | Required [16](#fn-1-16-def) | Satisfied | Satisfied | Satisfied |
+| Disallow containers running as root | CIS [1](#fn-1-1-def) 5.2.7 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Required [6](#fn-1-6-def) | Required [10](#fn-1-10-def) | Satisfied | Required [16](#fn-1-16-def) | Required [18](#fn-1-18-def) | Satisfied | Required [19](#fn-1-19-def) |
+| Disallow use of too many or insecure capabilities | CIS [1](#fn-1-1-def) 5.2.8 / 5.2.9 / 5.2.10 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Satisfied | Required [12](#fn-1-12-def) | Satisfied | Satisfied | Required [18](#fn-1-18-def) | Satisfied | Required [24](#fn-1-24-def) |
+| Limit access to secrets (RBAC) | CIS [1](#fn-1-1-def) 5.1.4 | Planned improvement [22](#fn-1-22-def) | Planned improvement [22](#fn-1-22-def) | Planned improvement [22](#fn-1-22-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Disallow use of HostPath volumes | CIS [1](#fn-1-1-def) 5.2.12 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Required [7](#fn-1-7-def) | Required [10](#fn-1-10-def) | Satisfied | Satisfied | Satisfied | Satisfied | Required [20](#fn-1-20-def) |
+| Disallow use of HostPorts | CIS [1](#fn-1-1-def) 5.2.13 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Disallow access to host network | CIS [1](#fn-1-1-def) 5.2.5 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Required [13](#fn-1-13-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Disallow use of host PID | CIS [1](#fn-1-1-def) 5.2.3 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Required [14](#fn-1-14-def) | Satisfied | Satisfied | Satisfied | Satisfied | Required [23](#fn-1-23-def) |
+| Disallow use of host IPC | CIS [1](#fn-1-1-def) 5.2.4 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Require readOnlyRootFilesystem | Best practice | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Require Resource limits | Best practice | Satisfied | Satisfied | Satisfied [9](#fn-1-9-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Demand seccomp to be used (at least default/runtime) | CIS [1](#fn-1-1-def) 5.7.2 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Satisfied | Required [15](#fn-1-15-def) | Satisfied | Satisfied | Required [18](#fn-1-18-def) | Required [21](#fn-1-21-def) | Required [19](#fn-1-19-def) |
+| Disallow Secrets mounted as env variable | CIS [1](#fn-1-1-def) 5.4.1 | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Planned improvement [17](#fn-1-17-def) | Satisfied | Satisfied | Satisfied |
+| Restrict sysctls | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Restrict AppArmor | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Disallow SELinux | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Required [8](#fn-1-8-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Restrict automounting of service account token | CIS [1](#fn-1-1-def) 5.1.6 | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) |
+| /proc Mount Type | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+
+**Standard**:
+
+1
+
+[Center for Internet Security (CIS) Kubernetes benchmarkï»¿](https://dt-url.net/zd0368p).
+
+2
+
+[POD Security Standards Baseline profileï»¿](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline).
+
+3
+
+[POD Security Standards Restricted profileï»¿](https://dt-url.net/ut4387d).
+
+**General**:
+
+4
+
+Component needs to communicate with the Kubernetes API.
+
+**CSI**:
+
+5
+
+CSI driver requires elevated permissions to create and manage mounts on the host system. For more details, see [CSI driver privileges](/docs/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#csidriver-privileges "Components of Dynatrace Operator").
+
+6
+
+CSI driver communicates with kubelet using a socket on the host, to access this socket the CSI driver needs to run as root.
+
+7
+
+CSI driver stores/caches the OneAgent binaries on the host's filesystem, in order to do that it needs a hostVolume mount.
+
+8
+
+CSI driver needs seLinux level s0 for the application pods to see files from the volume created by the CSI driver.
+
+9
+
+CSI driver provisioner has no resources limits by default in order to provide the best [performance during provisioning](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits#customize-resource-limits "Set resource limits for Dynatrace Operator components."); limits can be set via Helm chart values.
+
+**OneAgent**:
+
+10
+
+OneAgent DaemonSet runs with host-level privileges for full-stack visibility (network, processes, file system).
+
+11
+
+Required for init containers that instrument processes before startup.
+
+12
+
+Requires limited Linux capabilities (e.g., NET\_RAW) for network observability.
+
+13
+
+Uses host network namespace to monitor network traffic.
+
+14
+
+Uses host PID namespace to correlate process metrics.
+
+15
+
+Uses default runtime seccomp profile; explicit setting planned.
+
+**Extension Execution Controller / Dynatrace Collector**:
+
+16
+
+Dynatrace Collector and Extensions controller may require root or elevated privileges for metrics collection and sidecar operations.
+
+17
+
+Dynatrace Collector currently uses environment variables for tokens; migrating to secret files is planned.
+
+**ActiveGate / EdgeConnect / KSPM**:
+
+18
+
+ActiveGate runs with minimal elevated privileges to manage inbound connections.
+
+19
+
+KSPM mounts the host root filesystem `/` to perform configuration and security scans; hostPath restriction evaluation is planned.
+
+20
+
+KSPM mounts the entire host filesystem for node-level scanning; improvement under review to restrict mounted paths.
+
+21
+
+EdgeConnect currently lacks an explicit seccomp profile; addition is planned in future releases. This control is being addressed in upcoming releases.
+
+22
+
+Namespace-scoped Roles for the Operator, Webhook, and CSI driver currently allow access to all secrets within their namespace. Improvement planned to restrict these Roles to specific secret names, consistent with ClusterRole configuration.
+
+23
+
+KSPM requires host PID namespace access for the node collector to gather process-level data. This requirement will be documented.
+
+24
+
+KSPM requires specific Linux capabilities to scan and collect system configuration and security data; this is by design and cannot be removed.
+
+## Security Controls of components managed by Dynatrace Operator
+
+The following table presents a detailed analysis of the security controls for Kubernetes components managed by Dynatrace Operator: ActiveGate, [OneAgent (CloudNative)](/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack "In-depth description of full-stack observability using Dynatrace Operator."), LogAgent. This report is based on:
+
+* [CIS Benchmarkï»¿](https://dt-url.net/zd0368p), a globally recognized standard for securing Kubernetes deployments.
+* [POD Security Standard policiesï»¿](https://dt-url.net/mp0345l).
+* Best practices.
+
+| Security Control | Standard (\*) | ActiveGate | OneAgent CloudNative | OneAgent Log Module |
+| --- | --- | --- | --- | --- |
+| Disallow privileged containers | CIS [1](#fn-2-1-def) 5.2.2 / PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Required [15](#fn-2-15-def) |
+| Disallow privilege escalation | CIS [1](#fn-2-1-def) 5.2.6 / PSSR [3](#fn-2-3-def) | Satisfied | Required [6](#fn-2-6-def) | Required [16](#fn-2-16-def) |
+| Disallow containers running as root | CIS [1](#fn-2-1-def) 5.2.7 / PSSR [3](#fn-2-3-def) | Satisfied | Satisfied | Satisfied |
+| Disallow usage of too many or insecure capabilities | CIS [1](#fn-2-1-def) 5.2.8 / 5.2.9 / 5.2.10 / PSSR [3](#fn-2-3-def) | Satisfied | Required [7](#fn-2-7-def) | Required [17](#fn-2-17-def) |
+| Disallow usage of HostPath volumes | CIS [1](#fn-2-1-def) 5.2.12 / PSSB [2](#fn-2-2-def) | Satisfied | Required [8](#fn-2-8-def) | Required [18](#fn-2-18-def) |
+| Disallow usage of HostPorts | CIS [1](#fn-2-1-def) 5.2.13 / PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+| Disallow access to host network | CIS [1](#fn-2-1-def) 5.2.5 / PSSB [2](#fn-2-2-def) | Satisfied | Required [9](#fn-2-9-def) | Satisfied |
+| Disallow usage of host PID | CIS [1](#fn-2-1-def) 5.2.3 / PSSB [2](#fn-2-2-def) | Satisfied | Required [10](#fn-2-10-def) | Satisfied |
+| Disallow usage of host IPC | CIS [1](#fn-2-1-def) 5.2.4 / PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+| Require readOnlyRootFilesystem | Best practice | Satisfied | Satisfied | Satisfied |
+| Require Resource limits | Best practice | Configurable [5](#fn-2-5-def) | Configurable [11](#fn-2-11-def) | Configurable [19](#fn-2-19-def) |
+| Demand seccomp to be used (at least default/runtime) | CIS [1](#fn-2-1-def) 5.7.2 / PSSR [3](#fn-2-3-def) | Satisfied | Required [12](#fn-2-12-def) | Required [20](#fn-2-20-def) |
+| Disallow Secrets mounted as env variable | CIS [1](#fn-2-1-def) 5.4.1 | Satisfied | Satisfied | Satisfied |
+| Restrict sysctls | PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+| Restrict AppArmor | PSSB [2](#fn-2-2-def) | Satisfied | Required [13](#fn-2-13-def) | Satisfied |
+| Disallow SELinux | PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+| Restrict automounting of service account token | CIS [1](#fn-2-1-def) 5.1.6 | Required [4](#fn-2-4-def) | Configurable [14](#fn-2-14-def) | Required [4](#fn-2-4-def) |
+| /proc Mount Type | PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+
+**Standard**:
+
+1
+
+[Center for Internet Security (CIS) Kubernetes benchmarkï»¿](https://dt-url.net/zd0368p).
+
+2
+
+[POD Security Standards Baseline profileï»¿](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline).
+
+3
+
+[POD Security Standards Restricted profileï»¿](https://dt-url.net/ut4387d).
+
+**General**:
+
+4
+
+Component needs to communicate with the Kubernetes API.
+
+**ActiveGate**
+
+5
+
+The limits are highly dependent on the amount of data processed. Can be set via DynaKube.
+
+**OneAgent**
+
+6
+
+Privilege escalation is needed for processes inside OneAgent container to get Linux capabilities.
+
+7
+
+[Monitoring actions](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux#operation "Learn about Dynatrace OneAgent security and modifications to your Linux-based system") executed by OneAgent processes need the following [capabilities](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged#linux-system-capabilities "Find out when Dynatrace OneAgent requires root privileges on Linux.").
+
+8
+
+Mounted host's root filesystem is accessed by all OneAgent modules and allows for log files access, disk metrics, and other host and process monitoring capabilities.
+
+9
+
+OneAgent needs access to host network namespace to provide host-level and process-level network health monitoring.
+
+10
+
+OneAgent needs access to host process table to collect performance metrics for all processes running on the host.
+
+11
+
+The limits are highly dependent on the amount of data processed. Can be set via DynaKube.
+
+12
+
+OneAgent needs access to kernel syscalls beyond the RuntimeDefault set for monitoring purposes.
+
+13
+
+OneAgent needs access to the mount command which is blocked by the default AppArmor profile.
+
+14
+
+OneAgent component needs to communicate with the kubelet `/pods` endpoint. The K8s token is not mounted to the Pod if LogMonitoring is turned off via Helm values.
+
+**OneAgent Log Module**:
+
+15
+
+LogAgent needs to run as privileged container on OCP cluster to access its persistent storage. [OCP persistent storage using hostPathï»¿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/storage/configuring-persistent-storage#persistent-storage-using-hostpath).
+
+16
+
+AllowPrivilegeEscalation is always true when the container is run as privileged. [Configure a Security Context for a Pod or Containerï»¿](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/).
+
+17
+
+LogAgent needs additional capability to get access to all monitored log files.
+
+18
+
+Needs access to log files on the host's filesystem.
+
+19
+
+The limits are highly dependent on the amount of data processed. Can be set via DynaKube.
+
+20
+
+The seccomp profile can be set via DynaKube in order to run in secure computing mode.
+
+## Pod security policies
+
+These permissions used to be managed using a **PodSecurityPolicy** (PSP), but [in Kubernetes version 1.25 PSPs will be removedï»¿](https://dt-url.net/2403pxy) from the following components:
+
+* [Dynatrace Operatorï»¿](https://dt-url.net/d7034gj) version 0.2.2
+* **LEGACY** [Dynatrace OneAgent Operatorï»¿](https://dt-url.net/3023pvs) version 0.11.0
+* [Corresponding Helm chartsï»¿](https://dt-url.net/rp43pl1)
+
+**Dynatrace Operator version 0.2.1** is the last version in which PSPs are applied by default, so it's up to you to enforce these rules. As PSP alternatives, you can use other policy enforcement tools such as:
+
+* [k-railï»¿](https://dt-url.net/qx63p3n)
+* [Kyvernoï»¿](https://dt-url.net/6m83ppk)
+* [Gatekeeperï»¿](https://dt-url.net/aha3ps4)
+
+If you choose to use a PSP alternative, be sure to provide the necessary permissions to the Dynatrace components.
+
+## Dynatrace Operator security context constraints
+
+Dynatrace Operator version 0.12.0+
+
+Starting with Dynatrace Operator version 0.12.0, the built-in creation of custom security context constraints (SCCs) has been removed for Dynatrace Operator and Dynatrace Operatorâmanaged components. This change was made to reduce complications caused by custom SCCs in unique OpenShift setups.
+
+Despite this update, the components maintain the same permissions and security requirements as before.
+
+The following tables show the SCCs used in different versions of Dynatrace Operator and OpenShift.
+
+| Resources accessed | Custom SCC used in Dynatrace Operator versions earlier than 0.12.0 | SCC in Dynatrace Operator version 0.12.0+ and OpenShift earlier than 4.11 |
+| --- | --- | --- |
+| Dynatrace Operator | `dynatrace-operator` | `privileged`[1](#fn-3-1-def) |
+| Dynatrace Operator Webhook Server | `dynatrace-webhook` | `privileged`[1](#fn-3-1-def) |
+| Dynatrace Operator CSI driver | `dynatrace-oneagent-csi-driver` | `privileged`[1](#fn-3-1-def) |
+| ActiveGate | `dynatrace-activegate` | `privileged`[1](#fn-3-1-def) |
+| OneAgent | `dynatrace-dynakube-oneagent-privileged` `dynatrace-dynakube-oneagent-unprivileged` | `privileged`[1](#fn-3-1-def) |
+
+| Resources accessed | Custom SCC used in Dynatrace Operator versions earlier than 0.12.0 | SCC in Dynatrace Operator version 0.12.0+ and OpenShift 4.11+ |
+| --- | --- | --- |
+| Dynatrace Operator | `dynatrace-operator` | `nonroot-v2` |
+| Dynatrace Operator Webhook Server | `dynatrace-webhook` | `nonroot-v2` |
+| Dynatrace Operator CSI driver | `dynatrace-oneagent-csi-driver` | `privileged`[1](#fn-3-1-def) |
+| ActiveGate | `dynatrace-activegate` | `nonroot-v2` |
+| OneAgent | `dynatrace-dynakube-oneagent-privileged` `dynatrace-dynakube-oneagent-unprivileged` | `privileged`[1](#fn-3-1-def) |
+
+1
+
+This SCC is the only built-in OpenShift SCC that allows usage of seccomp, which our components have set by default, and also the usage of CSI volumes.
+
+It is still possible to create your own more permissive or restrictive SCCs that take your specific setup into consideration. You can safely remove the old SCCs that were created by a previous Dynatrace Operator version.
+
+To remove the old SCCs, use the following command:
+
+```
+oc delete scc <scc-name>
+```
 
 
 ---

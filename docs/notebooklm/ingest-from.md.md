@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Ingest data
 source: https://www.dynatrace.com/docs/ingest-from
-scraped: 2026-02-15T21:13:02.087574
+scraped: 2026-02-16T09:24:37.511317
 ---
 
 # Ingest data

@@ -1,7 +1,7 @@
 ---
 title: User and error events
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/user-and-error-events
-scraped: 2026-02-15T09:12:34.058982
+scraped: 2026-02-16T09:30:55.259585
 ---
 
 # User and error events

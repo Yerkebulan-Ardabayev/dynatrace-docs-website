@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Semantic Dictionary
 source: https://www.dynatrace.com/docs/semantic-dictionary
-scraped: 2026-02-15T21:15:06.100291
+scraped: 2026-02-16T09:23:57.193397
 ---
 
 # Semantic Dictionary

@@ -1,7 +1,7 @@
 ---
 title: Enable Kubernetes experience for existing clusters
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters
-scraped: 2026-02-15T21:10:28.013138
+scraped: 2026-02-16T09:15:34.705746
 ---
 
 # Enable Kubernetes experience for existing clusters

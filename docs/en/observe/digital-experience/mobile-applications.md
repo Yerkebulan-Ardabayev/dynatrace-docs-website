@@ -1,7 +1,7 @@
 ---
 title: Mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications
-scraped: 2026-02-15T21:11:20.633381
+scraped: 2026-02-16T09:26:47.522011
 ---
 
 # Mobile applications

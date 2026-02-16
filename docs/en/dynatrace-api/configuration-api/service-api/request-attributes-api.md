@@ -1,7 +1,7 @@
 ---
 title: Request attributes API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/request-attributes-api
-scraped: 2026-02-15T21:15:10.892876
+scraped: 2026-02-16T09:22:39.330678
 ---
 
 # Request attributes API

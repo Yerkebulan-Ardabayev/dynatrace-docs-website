@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 40
+Files combined: 49
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 40
 ---
 title: Monitor AWS App Runner
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/app-runner
-scraped: 2026-02-15T21:14:26.444866
+scraped: 2026-02-16T09:24:34.076194
 ---
 
 # Monitor AWS App Runner
@@ -219,7 +219,7 @@ For AWS App Runner, monitoring consumption is based on host units. See [Applicat
 ---
 title: Amazon API Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-api-gateway
-scraped: 2026-02-15T21:27:17.385980
+scraped: 2026-02-16T09:36:59.901741
 ---
 
 # Amazon API Gateway monitoring
@@ -2743,7 +2743,7 @@ The default or primary workgroup for Amazon Athena doesn't support gathering met
 ---
 title: Amazon Aurora monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-aurora
-scraped: 2026-02-15T09:08:04.435282
+scraped: 2026-02-16T09:31:18.414056
 ---
 
 # Amazon Aurora monitoring
@@ -3885,7 +3885,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Billing monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-billing
-scraped: 2026-02-15T21:29:37.441979
+scraped: 2026-02-16T09:34:43.835061
 ---
 
 # AWS Billing monitoring
@@ -4667,6 +4667,851 @@ To check the availability of preset dashboards for each AWS service, see the lis
 | --- | --- | --- | --- | --- | --- |
 | EstimatedCharges | The estimated charges for current month | Count | Multi | ServiceName, Currency | Applicable |
 | EstimatedCharges |  | Count | Multi | Region, Currency | Applicable |
+
+
+---
+
+
+## Source: aws-service-cloudfront.md
+
+
+---
+title: Amazon CloudFront monitoring
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cloudfront
+scraped: 2026-02-16T09:39:05.614874
+---
+
+# Amazon CloudFront monitoring
+
+# Amazon CloudFront monitoring
+
+* How-to guide
+* 2-min read
+* Published Oct 15, 2020
+
+Dynatrace ingests metrics for multiple preselected namespaces, including Amazon CloudFront. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+To enable monitoring for this service, you need
+
+* ActiveGate version 1.181+, as follows:
+
+  + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
+  + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
+
+    For role-based access (whether in a [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+* Dynatrace version 1.182+
+* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+
+JSON predefined policy for all supporting services
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"acm-pca:ListCertificateAuthorities",
+
+
+
+"apigateway:GET",
+
+
+
+"apprunner:ListServices",
+
+
+
+"appstream:DescribeFleets",
+
+
+
+"appsync:ListGraphqlApis",
+
+
+
+"athena:ListWorkGroups",
+
+
+
+"autoscaling:DescribeAutoScalingGroups",
+
+
+
+"cloudformation:ListStackResources",
+
+
+
+"cloudfront:ListDistributions",
+
+
+
+"cloudhsm:DescribeClusters",
+
+
+
+"cloudsearch:DescribeDomains",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"codebuild:ListProjects",
+
+
+
+"datasync:ListTasks",
+
+
+
+"dax:DescribeClusters",
+
+
+
+"directconnect:DescribeConnections",
+
+
+
+"dms:DescribeReplicationInstances",
+
+
+
+"dynamodb:ListTables",
+
+
+
+"dynamodb:ListTagsOfResource",
+
+
+
+"ec2:DescribeAvailabilityZones",
+
+
+
+"ec2:DescribeInstances",
+
+
+
+"ec2:DescribeNatGateways",
+
+
+
+"ec2:DescribeSpotFleetRequests",
+
+
+
+"ec2:DescribeTransitGateways",
+
+
+
+"ec2:DescribeVolumes",
+
+
+
+"ec2:DescribeVpnConnections",
+
+
+
+"ecs:ListClusters",
+
+
+
+"eks:ListClusters",
+
+
+
+"elasticache:DescribeCacheClusters",
+
+
+
+"elasticbeanstalk:DescribeEnvironmentResources",
+
+
+
+"elasticbeanstalk:DescribeEnvironments",
+
+
+
+"elasticfilesystem:DescribeFileSystems",
+
+
+
+"elasticloadbalancing:DescribeInstanceHealth",
+
+
+
+"elasticloadbalancing:DescribeListeners",
+
+
+
+"elasticloadbalancing:DescribeLoadBalancers",
+
+
+
+"elasticloadbalancing:DescribeRules",
+
+
+
+"elasticloadbalancing:DescribeTags",
+
+
+
+"elasticloadbalancing:DescribeTargetHealth",
+
+
+
+"elasticmapreduce:ListClusters",
+
+
+
+"elastictranscoder:ListPipelines",
+
+
+
+"es:ListDomainNames",
+
+
+
+"events:ListEventBuses",
+
+
+
+"firehose:ListDeliveryStreams",
+
+
+
+"fsx:DescribeFileSystems",
+
+
+
+"gamelift:ListFleets",
+
+
+
+"glue:GetJobs",
+
+
+
+"inspector:ListAssessmentTemplates",
+
+
+
+"kafka:ListClusters",
+
+
+
+"kinesis:ListStreams",
+
+
+
+"kinesisanalytics:ListApplications",
+
+
+
+"kinesisvideo:ListStreams",
+
+
+
+"lambda:ListFunctions",
+
+
+
+"lambda:ListTags",
+
+
+
+"lex:GetBots",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"mediaconnect:ListFlows",
+
+
+
+"mediaconvert:DescribeEndpoints",
+
+
+
+"mediapackage-vod:ListPackagingConfigurations",
+
+
+
+"mediapackage:ListChannels",
+
+
+
+"mediatailor:ListPlaybackConfigurations",
+
+
+
+"opsworks:DescribeStacks",
+
+
+
+"qldb:ListLedgers",
+
+
+
+"rds:DescribeDBClusters",
+
+
+
+"rds:DescribeDBInstances",
+
+
+
+"rds:DescribeEvents",
+
+
+
+"rds:ListTagsForResource",
+
+
+
+"redshift:DescribeClusters",
+
+
+
+"robomaker:ListSimulationJobs",
+
+
+
+"route53:ListHostedZones",
+
+
+
+"route53resolver:ListResolverEndpoints",
+
+
+
+"s3:ListAllMyBuckets",
+
+
+
+"sagemaker:ListEndpoints",
+
+
+
+"sns:ListTopics",
+
+
+
+"sqs:ListQueues",
+
+
+
+"storagegateway:ListGateways",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"swf:ListDomains",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"transfer:ListServers",
+
+
+
+"workmail:ListOrganizations",
+
+
+
+"workspaces:DescribeWorkspaces"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+
+Permissions required for AWS monitoring integration:
+
+* `"cloudwatch:GetMetricData"`
+* `"cloudwatch:GetMetricStatistics"`
+* `"cloudwatch:ListMetrics"`
+* `"sts:GetCallerIdentity"`
+* `"tag:GetResources"`
+* `"tag:GetTagKeys"`
+* `"ec2:DescribeAvailabilityZones"`
+
+### Complete list of permissions for cloud services
+
+| Name | Permissions |
+| --- | --- |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
+| Amazon MQ |  |
+| Amazon API Gateway | `apigateway:GET` |
+| AWS App Runner | `apprunner:ListServices` |
+| Amazon AppStream | `appstream:DescribeFleets` |
+| AWS AppSync | `appsync:ListGraphqlApis` |
+| Amazon Athena | `athena:ListWorkGroups` |
+| Amazon Aurora | `rds:DescribeDBClusters` |
+| Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| AWS Billing |  |
+| Amazon Keyspaces |  |
+| AWS Chatbot |  |
+| Amazon CloudFront | `cloudfront:ListDistributions` |
+| AWS CloudHSM | `cloudhsm:DescribeClusters` |
+| Amazon CloudSearch | `cloudsearch:DescribeDomains` |
+| AWS CodeBuild | `codebuild:ListProjects` |
+| Amazon Cognito |  |
+| Amazon Connect |  |
+| Amazon Elastic Kubernetes Service (EKS) | `eks:ListClusters` |
+| AWS DataSync | `datasync:ListTasks` |
+| Amazon DynamoDB Accelerator (DAX) | `dax:DescribeClusters` |
+| AWS Database Migration Service (AWS DMS) | `dms:DescribeReplicationInstances` |
+| Amazon DocumentDB | `rds:DescribeDBClusters` |
+| AWS Direct Connect | `directconnect:DescribeConnections` |
+| Amazon DynamoDB | `dynamodb:ListTables` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon EBS | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EC2 API |  |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
+| Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
+| Amazon ECS Container Insights | `ecs:ListClusters` |
+| Amazon ElastiCache (EC) | `elasticache:DescribeCacheClusters` |
+| AWS Elastic Beanstalk | `elasticbeanstalk:DescribeEnvironments` |
+| Amazon Elastic File System (EFS) | `elasticfilesystem:DescribeFileSystems` |
+| Amazon Elastic Inference |  |
+| Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
+| Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
+| Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon EventBridge | `events:ListEventBuses` |
+| Amazon FSx | `fsx:DescribeFileSystems` |
+| Amazon GameLift | `gamelift:ListFleets` |
+| AWS Glue | `glue:GetJobs` |
+| Amazon Inspector | `inspector:ListAssessmentTemplates` |
+| AWS Internet of Things (IoT) |  |
+| AWS IoT Analytics |  |
+| Amazon Managed Streaming for Kafka | `kafka:ListClusters` |
+| Amazon Kinesis Data Analytics | `kinesisanalytics:ListApplications` |
+| Amazon Data Firehose | `firehose:ListDeliveryStreams` |
+| Amazon Kinesis Data Streams | `kinesis:ListStreams` |
+| Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
+| AWS Lambda | `lambda:ListFunctions` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| Amazon Lex | `lex:GetBots` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
+| AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
+| AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
+| AWS Elemental MediaPackage Live | `mediapackage:ListChannels` |
+| AWS Elemental MediaPackage Video on Demand | `mediapackage-vod:ListPackagingConfigurations` |
+| AWS Elemental MediaTailor | `mediatailor:ListPlaybackConfigurations` |
+| Amazon VPC NAT Gateways | `ec2:DescribeNatGateways` |
+| Amazon Neptune | `rds:DescribeDBClusters` |
+| AWS OpsWorks | `opsworks:DescribeStacks` |
+| Amazon Polly |  |
+| Amazon QLDB | `qldb:ListLedgers` |
+| Amazon RDS | `rds:DescribeDBInstances` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon Redshift | `redshift:DescribeClusters` |
+| Amazon Rekognition |  |
+| AWS RoboMaker | `robomaker:ListSimulationJobs` |
+| Amazon Route 53 | `route53:ListHostedZones` |
+| Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
+| Amazon S3 | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon SageMaker Batch Transform Jobs |  |
+| Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Ground Truth |  |
+| Amazon SageMaker Processing Jobs |  |
+| Amazon SageMaker Training Jobs |  |
+| AWS Service Catalog |  |
+| Amazon Simple Email Service (SES) |  |
+| Amazon Simple Notification Service (SNS) | `sns:ListTopics` |
+| Amazon Simple Queue Service (SQS) | `sqs:ListQueues` |
+| AWS Systems Manager - Run Command |  |
+| AWS Step Functions |  |
+| AWS Storage Gateway | `storagegateway:ListGateways` |
+| Amazon SWF | `swf:ListDomains` |
+| Amazon Textract |  |
+| AWS IoT Things Graph |  |
+| AWS Transfer Family | `transfer:ListServers` |
+| AWS Transit Gateway | `ec2:DescribeTransitGateways` |
+| Amazon Translate |  |
+| AWS Trusted Advisor |  |
+| AWS API Usage |  |
+| AWS Site-to-Site VPN | `ec2:DescribeVpnConnections` |
+| AWS WAF Classic |  |
+| AWS WAF |  |
+| Amazon WorkMail | `workmail:ListOrganizations` |
+| Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
+
+Example of JSON policy for one single service.
+
+JSON policy for Amazon API Gateway
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"apigateway:GET",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"ec2:DescribeAvailabilityZones"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+In this example, from the complete list of permissions you need to select
+
+* `"apigateway:GET"` for **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` for **All AWS cloud services**.
+
+### AWS endpoints that need to be reachable from ActiveGate with corresponding AWS services
+
+| Endpoint | Service |
+| --- | --- |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
+| `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
+| `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
+| `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
+| `appstream2.<REGION>.amazonaws.com` | Amazon AppStream |
+| `appsync.<REGION>.amazonaws.com` | AWS AppSync |
+| `athena.<REGION>.amazonaws.com` | Amazon Athena |
+| `cloudfront.amazonaws.com` | Amazon CloudFront |
+| `cloudhsmv2.<REGION>.amazonaws.com` | AWS CloudHSM |
+| `cloudsearch.<REGION>.amazonaws.com` | Amazon CloudSearch |
+| `codebuild.<REGION>.amazonaws.com` | AWS CodeBuild |
+| `datasync.<REGION>.amazonaws.com` | AWS DataSync |
+| `dax.<REGION>.amazonaws.com` | Amazon DynamoDB Accelerator (DAX) |
+| `dms.<REGION>.amazonaws.com` | AWS Database Migration Service (AWS DMS) |
+| `directconnect.<REGION>.amazonaws.com` | AWS Direct Connect |
+| `ecs.<REGION>.amazonaws.com` | Amazon Elastic Container Service (ECS), Amazon ECS Container Insights |
+| `elasticfilesystem.<REGION>.amazonaws.com` | Amazon Elastic File System (EFS) |
+| `eks.<REGION>.amazonaws.com` | Amazon Elastic Kubernetes Service (EKS) |
+| `elasticache.<REGION>.amazonaws.com` | Amazon ElastiCache (EC) |
+| `elasticbeanstalk.<REGION>.amazonaws.com` | AWS Elastic Beanstalk |
+| `elastictranscoder.<REGION>.amazonaws.com` | Amazon Elastic Transcoder |
+| `es.<REGION>.amazonaws.com` | Amazon Elasticsearch Service (ES) |
+| `events.<REGION>.amazonaws.com` | Amazon EventBridge |
+| `fsx.<REGION>.amazonaws.com` | Amazon FSx |
+| `gamelift.<REGION>.amazonaws.com` | Amazon GameLift |
+| `glue.<REGION>.amazonaws.com` | AWS Glue |
+| `inspector.<REGION>.amazonaws.com` | Amazon Inspector |
+| `kafka.<REGION>.amazonaws.com` | Amazon Managed Streaming for Kafka |
+| `models.lex.<REGION>.amazonaws.com` | Amazon Lex |
+| `logs.<REGION>.amazonaws.com` | Amazon CloudWatch Logs |
+| `api.mediatailor.<REGION>.amazonaws.com` | AWS Elemental MediaTailor |
+| `mediaconnect.<REGION>.amazonaws.com` | AWS Elemental MediaConnect |
+| `mediapackage.<REGION>.amazonaws.com` | AWS Elemental MediaPackage Live |
+| `mediapackage-vod.<REGION>.amazonaws.com` | AWS Elemental MediaPackage Video on Demand |
+| `opsworks.<REGION>.amazonaws.com` | AWS OpsWorks |
+| `qldb.<REGION>.amazonaws.com` | Amazon QLDB |
+| `redshift.<REGION>.amazonaws.com` | Amazon Redshift |
+| `robomaker.<REGION>.amazonaws.com` | AWS RoboMaker |
+| `route53.amazonaws.com` | Amazon Route 53 |
+| `route53resolver.<REGION>.amazonaws.com` | Amazon Route 53 Resolver |
+| `api.sagemaker.<REGION>.amazonaws.com` | Amazon SageMaker Endpoints, Amazon SageMaker Endpoint Instances |
+| `sns.<REGION>.amazonaws.com` | Amazon Simple Notification Service (SNS) |
+| `sqs.<REGION>.amazonaws.com` | Amazon Simple Queue Service (SQS) |
+| `storagegateway.<REGION>.amazonaws.com` | AWS Storage Gateway |
+| `swf.<REGION>.amazonaws.com` | Amazon SWF |
+| `transfer.<REGION>.amazonaws.com` | AWS Transfer Family |
+| `workmail.<REGION>.amazonaws.com` | Amazon WorkMail |
+| `workspaces.<REGION>.amazonaws.com` | Amazon WorkSpaces |
+
+CloudFront is a global service; metrics are available only in the `us-east-1` region. Credentials must have at least the following permissions set for the `us-east-1` region:
+
+* `"ec2:DescribeAvailabilityZones"`
+* `"cloudwatch:GetMetricData"`
+* `"cloudwatch:ListMetrics"`
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.").
+
+To check the availability of preset dashboards for each AWS service, see the list below.
+
+### Preset dashboard availability list
+
+| AWS service | Preset dashboard |
+| --- | --- |
+| Amazon EC2 Auto Scaling (built-in) | Not applicable |
+| AWS Lambda (built-in) | Not applicable |
+| Amazon Application and Network Load Balancer (built-in) | Not applicable |
+| Amazon DynamoDB (built-in) | Not applicable |
+| Amazon EBS (built-in) | Not applicable |
+| Amazon EC2 (built-in) | Not applicable |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Not applicable |
+| Amazon RDS (built-in) | Not applicable |
+| Amazon S3 (built-in) | Not applicable |
+| AWS Certificate Manager Private Certificate Authority | Not applicable |
+| All monitored Amazon services | Not applicable |
+| Amazon API Gateway | Not applicable |
+| AWS App Runner | Not applicable |
+| Amazon AppStream | Applicable |
+| AWS AppSync | Applicable |
+| Amazon Athena | Applicable |
+| Amazon Aurora | Not applicable |
+| Amazon EC2 Auto Scaling | Applicable |
+| AWS Billing | Applicable |
+| Amazon Keyspaces | Applicable |
+| AWS Chatbot | Applicable |
+| Amazon CloudFront | Not applicable |
+| AWS CloudHSM | Applicable |
+| Amazon CloudSearch | Applicable |
+| AWS CodeBuild | Applicable |
+| Amazon Cognito | Not applicable |
+| Amazon Connect | Applicable |
+| AWS DataSync | Applicable |
+| Amazon DynamoDB Accelerator (DAX) | Applicable |
+| AWS Database Migration Service (AWS DMS) | Applicable |
+| Amazon DocumentDB | Applicable |
+| AWS Direct Connect | Applicable |
+| Amazon DynamoDB | Not applicable |
+| Amazon EBS | Not applicable |
+| Amazon EC2 Spot Fleet | Not applicable |
+| Amazon EC2 API | Applicable |
+| Amazon Elastic Container Service (ECS) | Not applicable |
+| Amazon ECS Container Insights | Applicable |
+| Amazon Elastic File System (EFS) | Not applicable |
+| Amazon Elastic Kubernetes Service (EKS) | Applicable |
+| Amazon ElastiCache (EC) | Not applicable |
+| AWS Elastic Beanstalk | Applicable |
+| Amazon Elastic Inference | Applicable |
+| Amazon Elastic Transcoder | Applicable |
+| Amazon Elastic Map Reduce (EMR) | Not applicable |
+| Amazon Elasticsearch Service (ES) | Not applicable |
+| Amazon EventBridge | Applicable |
+| Amazon FSx | Applicable |
+| Amazon GameLift | Applicable |
+| AWS Glue | Not applicable |
+| Amazon Inspector | Applicable |
+| AWS Internet of Things (IoT) | Not applicable |
+| AWS IoT Things Graph | Applicable |
+| AWS IoT Analytics | Applicable |
+| Amazon Managed Streaming for Kafka | Applicable |
+| Amazon Kinesis Data Analytics | Not applicable |
+| Amazon Data Firehose | Not applicable |
+| Amazon Kinesis Data Streams | Not applicable |
+| Amazon Kinesis Video Streams | Not applicable |
+| AWS Lambda | Not applicable |
+| Amazon Lex | Applicable |
+| Amazon CloudWatch Logs | Applicable |
+| AWS Elemental MediaTailor | Applicable |
+| AWS Elemental MediaConnect | Applicable |
+| AWS Elemental MediaConvert | Applicable |
+| AWS Elemental MediaPackage Live | Applicable |
+| AWS Elemental MediaPackage Video on Demand | Applicable |
+| Amazon MQ | Applicable |
+| Amazon VPC NAT Gateways | Not applicable |
+| Amazon Neptune | Applicable |
+| AWS OpsWorks | Applicable |
+| Amazon Polly | Applicable |
+| Amazon QLDB | Applicable |
+| Amazon RDS | Not applicable |
+| Amazon Redshift | Not applicable |
+| Amazon Rekognition | Applicable |
+| AWS RoboMaker | Applicable |
+| Amazon Route 53 | Applicable |
+| Amazon Route 53 Resolver | Applicable |
+| Amazon S3 | Not applicable |
+| Amazon SageMaker Batch Transform Jobs | Not applicable |
+| Amazon SageMaker Endpoints | Not applicable |
+| Amazon SageMaker Endpoint Instances | Not applicable |
+| Amazon SageMaker Ground Truth | Not applicable |
+| Amazon SageMaker Processing Jobs | Not applicable |
+| Amazon SageMaker Training Jobs | Not applicable |
+| AWS Service Catalog | Applicable |
+| Amazon Simple Email Service (SES) | Not applicable |
+| Amazon Simple Notification Service (SNS) | Not applicable |
+| Amazon Simple Queue Service (SQS) | Not applicable |
+| AWS Systems Manager - Run Command | Applicable |
+| AWS Step Functions | Applicable |
+| AWS Storage Gateway | Applicable |
+| Amazon SWF | Applicable |
+| Amazon Textract | Applicable |
+| AWS Transfer Family | Applicable |
+| AWS Transit Gateway | Applicable |
+| Amazon Translate | Applicable |
+| AWS Trusted Advisor | Applicable |
+| AWS API Usage | Applicable |
+| AWS Site-to-Site VPN | Applicable |
+| AWS WAF Classic | Applicable |
+| AWS WAF | Applicable |
+| Amazon WorkMail | Applicable |
+| Amazon WorkSpaces | Applicable |
+
+## Available metrics
+
+`DistributionId` is the main dimension.
+
+| Name | Description | Unit | Statistics | Dimensions | Recommended |
+| --- | --- | --- | --- | --- | --- |
+| 4xxErrorRate | The percentage of all viewer requests for which the responseâs HTTP status code is `4xx` | Percent | Average | DistributionId, Region |  |
+| 5xxErrorRate | The percentage of all viewer requests for which the responseâs HTTP status code is `5xx` | Percent | Average | DistributionId, Region |  |
+| BytesDownloaded | The total number of bytes downloaded by viewers for `GET`, `HEAD`, and `OPTIONS` requests | None | Sum | DistributionId, Region |  |
+| BytesUploaded | The total number of bytes that viewers uploaded to your origin with CloudFront using `POST` and `PUT` requests | None | Sum | DistributionId, Region |  |
+| Requests | The total number of viewer requests received by CloudFront for all HTTP methods and for both HTTP and HTTPS requests | None | Sum | DistributionId, Region | Applicable |
+| TotalErrorRate | The percentage of all viewer requests for which the HTTP status code response is `4xx` or `5xx` | Percent | Average | DistributionId, Region | Applicable |
 
 
 ---
@@ -5524,13 +6369,1655 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 
 
+## Source: aws-service-cognito.md
+
+
+---
+title: Amazon Cognito monitoring
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cognito
+scraped: 2026-02-16T09:30:25.863477
+---
+
+# Amazon Cognito monitoring
+
+# Amazon Cognito monitoring
+
+* How-to guide
+* 1-min read
+* Updated on Sep 29, 2023
+
+Dynatrace ingests metrics for multiple preselected namespaces, including Amazon Cognito. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+To enable monitoring for this service, you need
+
+* ActiveGate version 1.181+, as follows:
+
+  + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
+  + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
+
+    For role-based access (whether in a [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+* Dynatrace version 1.182+
+* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+
+JSON predefined policy for all supporting services
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"acm-pca:ListCertificateAuthorities",
+
+
+
+"apigateway:GET",
+
+
+
+"apprunner:ListServices",
+
+
+
+"appstream:DescribeFleets",
+
+
+
+"appsync:ListGraphqlApis",
+
+
+
+"athena:ListWorkGroups",
+
+
+
+"autoscaling:DescribeAutoScalingGroups",
+
+
+
+"cloudformation:ListStackResources",
+
+
+
+"cloudfront:ListDistributions",
+
+
+
+"cloudhsm:DescribeClusters",
+
+
+
+"cloudsearch:DescribeDomains",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"codebuild:ListProjects",
+
+
+
+"datasync:ListTasks",
+
+
+
+"dax:DescribeClusters",
+
+
+
+"directconnect:DescribeConnections",
+
+
+
+"dms:DescribeReplicationInstances",
+
+
+
+"dynamodb:ListTables",
+
+
+
+"dynamodb:ListTagsOfResource",
+
+
+
+"ec2:DescribeAvailabilityZones",
+
+
+
+"ec2:DescribeInstances",
+
+
+
+"ec2:DescribeNatGateways",
+
+
+
+"ec2:DescribeSpotFleetRequests",
+
+
+
+"ec2:DescribeTransitGateways",
+
+
+
+"ec2:DescribeVolumes",
+
+
+
+"ec2:DescribeVpnConnections",
+
+
+
+"ecs:ListClusters",
+
+
+
+"eks:ListClusters",
+
+
+
+"elasticache:DescribeCacheClusters",
+
+
+
+"elasticbeanstalk:DescribeEnvironmentResources",
+
+
+
+"elasticbeanstalk:DescribeEnvironments",
+
+
+
+"elasticfilesystem:DescribeFileSystems",
+
+
+
+"elasticloadbalancing:DescribeInstanceHealth",
+
+
+
+"elasticloadbalancing:DescribeListeners",
+
+
+
+"elasticloadbalancing:DescribeLoadBalancers",
+
+
+
+"elasticloadbalancing:DescribeRules",
+
+
+
+"elasticloadbalancing:DescribeTags",
+
+
+
+"elasticloadbalancing:DescribeTargetHealth",
+
+
+
+"elasticmapreduce:ListClusters",
+
+
+
+"elastictranscoder:ListPipelines",
+
+
+
+"es:ListDomainNames",
+
+
+
+"events:ListEventBuses",
+
+
+
+"firehose:ListDeliveryStreams",
+
+
+
+"fsx:DescribeFileSystems",
+
+
+
+"gamelift:ListFleets",
+
+
+
+"glue:GetJobs",
+
+
+
+"inspector:ListAssessmentTemplates",
+
+
+
+"kafka:ListClusters",
+
+
+
+"kinesis:ListStreams",
+
+
+
+"kinesisanalytics:ListApplications",
+
+
+
+"kinesisvideo:ListStreams",
+
+
+
+"lambda:ListFunctions",
+
+
+
+"lambda:ListTags",
+
+
+
+"lex:GetBots",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"mediaconnect:ListFlows",
+
+
+
+"mediaconvert:DescribeEndpoints",
+
+
+
+"mediapackage-vod:ListPackagingConfigurations",
+
+
+
+"mediapackage:ListChannels",
+
+
+
+"mediatailor:ListPlaybackConfigurations",
+
+
+
+"opsworks:DescribeStacks",
+
+
+
+"qldb:ListLedgers",
+
+
+
+"rds:DescribeDBClusters",
+
+
+
+"rds:DescribeDBInstances",
+
+
+
+"rds:DescribeEvents",
+
+
+
+"rds:ListTagsForResource",
+
+
+
+"redshift:DescribeClusters",
+
+
+
+"robomaker:ListSimulationJobs",
+
+
+
+"route53:ListHostedZones",
+
+
+
+"route53resolver:ListResolverEndpoints",
+
+
+
+"s3:ListAllMyBuckets",
+
+
+
+"sagemaker:ListEndpoints",
+
+
+
+"sns:ListTopics",
+
+
+
+"sqs:ListQueues",
+
+
+
+"storagegateway:ListGateways",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"swf:ListDomains",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"transfer:ListServers",
+
+
+
+"workmail:ListOrganizations",
+
+
+
+"workspaces:DescribeWorkspaces"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+
+Permissions required for AWS monitoring integration:
+
+* `"cloudwatch:GetMetricData"`
+* `"cloudwatch:GetMetricStatistics"`
+* `"cloudwatch:ListMetrics"`
+* `"sts:GetCallerIdentity"`
+* `"tag:GetResources"`
+* `"tag:GetTagKeys"`
+* `"ec2:DescribeAvailabilityZones"`
+
+### Complete list of permissions for cloud services
+
+| Name | Permissions |
+| --- | --- |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
+| Amazon MQ |  |
+| Amazon API Gateway | `apigateway:GET` |
+| AWS App Runner | `apprunner:ListServices` |
+| Amazon AppStream | `appstream:DescribeFleets` |
+| AWS AppSync | `appsync:ListGraphqlApis` |
+| Amazon Athena | `athena:ListWorkGroups` |
+| Amazon Aurora | `rds:DescribeDBClusters` |
+| Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| AWS Billing |  |
+| Amazon Keyspaces |  |
+| AWS Chatbot |  |
+| Amazon CloudFront | `cloudfront:ListDistributions` |
+| AWS CloudHSM | `cloudhsm:DescribeClusters` |
+| Amazon CloudSearch | `cloudsearch:DescribeDomains` |
+| AWS CodeBuild | `codebuild:ListProjects` |
+| Amazon Cognito |  |
+| Amazon Connect |  |
+| Amazon Elastic Kubernetes Service (EKS) | `eks:ListClusters` |
+| AWS DataSync | `datasync:ListTasks` |
+| Amazon DynamoDB Accelerator (DAX) | `dax:DescribeClusters` |
+| AWS Database Migration Service (AWS DMS) | `dms:DescribeReplicationInstances` |
+| Amazon DocumentDB | `rds:DescribeDBClusters` |
+| AWS Direct Connect | `directconnect:DescribeConnections` |
+| Amazon DynamoDB | `dynamodb:ListTables` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon EBS | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EC2 API |  |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
+| Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
+| Amazon ECS Container Insights | `ecs:ListClusters` |
+| Amazon ElastiCache (EC) | `elasticache:DescribeCacheClusters` |
+| AWS Elastic Beanstalk | `elasticbeanstalk:DescribeEnvironments` |
+| Amazon Elastic File System (EFS) | `elasticfilesystem:DescribeFileSystems` |
+| Amazon Elastic Inference |  |
+| Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
+| Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
+| Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon EventBridge | `events:ListEventBuses` |
+| Amazon FSx | `fsx:DescribeFileSystems` |
+| Amazon GameLift | `gamelift:ListFleets` |
+| AWS Glue | `glue:GetJobs` |
+| Amazon Inspector | `inspector:ListAssessmentTemplates` |
+| AWS Internet of Things (IoT) |  |
+| AWS IoT Analytics |  |
+| Amazon Managed Streaming for Kafka | `kafka:ListClusters` |
+| Amazon Kinesis Data Analytics | `kinesisanalytics:ListApplications` |
+| Amazon Data Firehose | `firehose:ListDeliveryStreams` |
+| Amazon Kinesis Data Streams | `kinesis:ListStreams` |
+| Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
+| AWS Lambda | `lambda:ListFunctions` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| Amazon Lex | `lex:GetBots` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
+| AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
+| AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
+| AWS Elemental MediaPackage Live | `mediapackage:ListChannels` |
+| AWS Elemental MediaPackage Video on Demand | `mediapackage-vod:ListPackagingConfigurations` |
+| AWS Elemental MediaTailor | `mediatailor:ListPlaybackConfigurations` |
+| Amazon VPC NAT Gateways | `ec2:DescribeNatGateways` |
+| Amazon Neptune | `rds:DescribeDBClusters` |
+| AWS OpsWorks | `opsworks:DescribeStacks` |
+| Amazon Polly |  |
+| Amazon QLDB | `qldb:ListLedgers` |
+| Amazon RDS | `rds:DescribeDBInstances` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon Redshift | `redshift:DescribeClusters` |
+| Amazon Rekognition |  |
+| AWS RoboMaker | `robomaker:ListSimulationJobs` |
+| Amazon Route 53 | `route53:ListHostedZones` |
+| Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
+| Amazon S3 | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon SageMaker Batch Transform Jobs |  |
+| Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Ground Truth |  |
+| Amazon SageMaker Processing Jobs |  |
+| Amazon SageMaker Training Jobs |  |
+| AWS Service Catalog |  |
+| Amazon Simple Email Service (SES) |  |
+| Amazon Simple Notification Service (SNS) | `sns:ListTopics` |
+| Amazon Simple Queue Service (SQS) | `sqs:ListQueues` |
+| AWS Systems Manager - Run Command |  |
+| AWS Step Functions |  |
+| AWS Storage Gateway | `storagegateway:ListGateways` |
+| Amazon SWF | `swf:ListDomains` |
+| Amazon Textract |  |
+| AWS IoT Things Graph |  |
+| AWS Transfer Family | `transfer:ListServers` |
+| AWS Transit Gateway | `ec2:DescribeTransitGateways` |
+| Amazon Translate |  |
+| AWS Trusted Advisor |  |
+| AWS API Usage |  |
+| AWS Site-to-Site VPN | `ec2:DescribeVpnConnections` |
+| AWS WAF Classic |  |
+| AWS WAF |  |
+| Amazon WorkMail | `workmail:ListOrganizations` |
+| Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
+
+Example of JSON policy for one single service.
+
+JSON policy for Amazon API Gateway
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"apigateway:GET",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"ec2:DescribeAvailabilityZones"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+In this example, from the complete list of permissions you need to select
+
+* `"apigateway:GET"` for **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` for **All AWS cloud services**.
+
+* To collect metrics, you need to enable audit mode for your Amazon Cognito instance. In audit mode, the advanced security features publish metrics to Amazon CloudWatch.
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.").
+
+To check the availability of preset dashboards for each AWS service, see the list below.
+
+### Preset dashboard availability list
+
+| AWS service | Preset dashboard |
+| --- | --- |
+| Amazon EC2 Auto Scaling (built-in) | Not applicable |
+| AWS Lambda (built-in) | Not applicable |
+| Amazon Application and Network Load Balancer (built-in) | Not applicable |
+| Amazon DynamoDB (built-in) | Not applicable |
+| Amazon EBS (built-in) | Not applicable |
+| Amazon EC2 (built-in) | Not applicable |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Not applicable |
+| Amazon RDS (built-in) | Not applicable |
+| Amazon S3 (built-in) | Not applicable |
+| AWS Certificate Manager Private Certificate Authority | Not applicable |
+| All monitored Amazon services | Not applicable |
+| Amazon API Gateway | Not applicable |
+| AWS App Runner | Not applicable |
+| Amazon AppStream | Applicable |
+| AWS AppSync | Applicable |
+| Amazon Athena | Applicable |
+| Amazon Aurora | Not applicable |
+| Amazon EC2 Auto Scaling | Applicable |
+| AWS Billing | Applicable |
+| Amazon Keyspaces | Applicable |
+| AWS Chatbot | Applicable |
+| Amazon CloudFront | Not applicable |
+| AWS CloudHSM | Applicable |
+| Amazon CloudSearch | Applicable |
+| AWS CodeBuild | Applicable |
+| Amazon Cognito | Not applicable |
+| Amazon Connect | Applicable |
+| AWS DataSync | Applicable |
+| Amazon DynamoDB Accelerator (DAX) | Applicable |
+| AWS Database Migration Service (AWS DMS) | Applicable |
+| Amazon DocumentDB | Applicable |
+| AWS Direct Connect | Applicable |
+| Amazon DynamoDB | Not applicable |
+| Amazon EBS | Not applicable |
+| Amazon EC2 Spot Fleet | Not applicable |
+| Amazon EC2 API | Applicable |
+| Amazon Elastic Container Service (ECS) | Not applicable |
+| Amazon ECS Container Insights | Applicable |
+| Amazon Elastic File System (EFS) | Not applicable |
+| Amazon Elastic Kubernetes Service (EKS) | Applicable |
+| Amazon ElastiCache (EC) | Not applicable |
+| AWS Elastic Beanstalk | Applicable |
+| Amazon Elastic Inference | Applicable |
+| Amazon Elastic Transcoder | Applicable |
+| Amazon Elastic Map Reduce (EMR) | Not applicable |
+| Amazon Elasticsearch Service (ES) | Not applicable |
+| Amazon EventBridge | Applicable |
+| Amazon FSx | Applicable |
+| Amazon GameLift | Applicable |
+| AWS Glue | Not applicable |
+| Amazon Inspector | Applicable |
+| AWS Internet of Things (IoT) | Not applicable |
+| AWS IoT Things Graph | Applicable |
+| AWS IoT Analytics | Applicable |
+| Amazon Managed Streaming for Kafka | Applicable |
+| Amazon Kinesis Data Analytics | Not applicable |
+| Amazon Data Firehose | Not applicable |
+| Amazon Kinesis Data Streams | Not applicable |
+| Amazon Kinesis Video Streams | Not applicable |
+| AWS Lambda | Not applicable |
+| Amazon Lex | Applicable |
+| Amazon CloudWatch Logs | Applicable |
+| AWS Elemental MediaTailor | Applicable |
+| AWS Elemental MediaConnect | Applicable |
+| AWS Elemental MediaConvert | Applicable |
+| AWS Elemental MediaPackage Live | Applicable |
+| AWS Elemental MediaPackage Video on Demand | Applicable |
+| Amazon MQ | Applicable |
+| Amazon VPC NAT Gateways | Not applicable |
+| Amazon Neptune | Applicable |
+| AWS OpsWorks | Applicable |
+| Amazon Polly | Applicable |
+| Amazon QLDB | Applicable |
+| Amazon RDS | Not applicable |
+| Amazon Redshift | Not applicable |
+| Amazon Rekognition | Applicable |
+| AWS RoboMaker | Applicable |
+| Amazon Route 53 | Applicable |
+| Amazon Route 53 Resolver | Applicable |
+| Amazon S3 | Not applicable |
+| Amazon SageMaker Batch Transform Jobs | Not applicable |
+| Amazon SageMaker Endpoints | Not applicable |
+| Amazon SageMaker Endpoint Instances | Not applicable |
+| Amazon SageMaker Ground Truth | Not applicable |
+| Amazon SageMaker Processing Jobs | Not applicable |
+| Amazon SageMaker Training Jobs | Not applicable |
+| AWS Service Catalog | Applicable |
+| Amazon Simple Email Service (SES) | Not applicable |
+| Amazon Simple Notification Service (SNS) | Not applicable |
+| Amazon Simple Queue Service (SQS) | Not applicable |
+| AWS Systems Manager - Run Command | Applicable |
+| AWS Step Functions | Applicable |
+| AWS Storage Gateway | Applicable |
+| Amazon SWF | Applicable |
+| Amazon Textract | Applicable |
+| AWS Transfer Family | Applicable |
+| AWS Transit Gateway | Applicable |
+| Amazon Translate | Applicable |
+| AWS Trusted Advisor | Applicable |
+| AWS API Usage | Applicable |
+| AWS Site-to-Site VPN | Applicable |
+| AWS WAF Classic | Applicable |
+| AWS WAF | Applicable |
+| Amazon WorkMail | Applicable |
+| Amazon WorkSpaces | Applicable |
+
+## Available metrics
+
+| Name | Description | Unit | Statistics | Dimensions | Recommended |
+| --- | --- | --- | --- | --- | --- |
+| AccountTakeOverRisk | Requests where Amazon Cognito detected account takeover risk | Count | Sum | Region, RiskLevel | Applicable |
+| CompromisedCredentialsRisk | Requests where Amazon Cognito detected compromised credentials | Count | Sum | Region, Operation, UserPoolId, RiskLevel | Applicable |
+| NoRisk | Requests where Amazon Cognito didn't identify any risk | Count | Sum | Region, Operation, UserPoolId | Applicable |
+| OverrideBlock | Requests that Amazon Cognito blocked because of the configuration provided by the developer | Count | Sum | Region, RiskLevel | Applicable |
+| Risk | Requests that Amazon Cognito marked as risky | Count | Sum | Region, Operation, UserPoolId | Applicable |
+
+
+---
+
+
+## Source: aws-service-datasync.md
+
+
+---
+title: AWS DataSync monitoring
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-datasync
+scraped: 2026-02-16T09:33:32.673300
+---
+
+# AWS DataSync monitoring
+
+# AWS DataSync monitoring
+
+* How-to guide
+* 2-min read
+* Published Jul 06, 2020
+
+Dynatrace ingests metrics for multiple preselected namespaces, including AWS DataSync. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+To enable monitoring for this service, you need
+
+* ActiveGate version 1.197+
+
+  + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
+  + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
+
+    For role-based access (whether in a [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+* Dynatrace version 1.203+
+* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+
+JSON predefined policy for all supporting services
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"acm-pca:ListCertificateAuthorities",
+
+
+
+"apigateway:GET",
+
+
+
+"apprunner:ListServices",
+
+
+
+"appstream:DescribeFleets",
+
+
+
+"appsync:ListGraphqlApis",
+
+
+
+"athena:ListWorkGroups",
+
+
+
+"autoscaling:DescribeAutoScalingGroups",
+
+
+
+"cloudformation:ListStackResources",
+
+
+
+"cloudfront:ListDistributions",
+
+
+
+"cloudhsm:DescribeClusters",
+
+
+
+"cloudsearch:DescribeDomains",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"codebuild:ListProjects",
+
+
+
+"datasync:ListTasks",
+
+
+
+"dax:DescribeClusters",
+
+
+
+"directconnect:DescribeConnections",
+
+
+
+"dms:DescribeReplicationInstances",
+
+
+
+"dynamodb:ListTables",
+
+
+
+"dynamodb:ListTagsOfResource",
+
+
+
+"ec2:DescribeAvailabilityZones",
+
+
+
+"ec2:DescribeInstances",
+
+
+
+"ec2:DescribeNatGateways",
+
+
+
+"ec2:DescribeSpotFleetRequests",
+
+
+
+"ec2:DescribeTransitGateways",
+
+
+
+"ec2:DescribeVolumes",
+
+
+
+"ec2:DescribeVpnConnections",
+
+
+
+"ecs:ListClusters",
+
+
+
+"eks:ListClusters",
+
+
+
+"elasticache:DescribeCacheClusters",
+
+
+
+"elasticbeanstalk:DescribeEnvironmentResources",
+
+
+
+"elasticbeanstalk:DescribeEnvironments",
+
+
+
+"elasticfilesystem:DescribeFileSystems",
+
+
+
+"elasticloadbalancing:DescribeInstanceHealth",
+
+
+
+"elasticloadbalancing:DescribeListeners",
+
+
+
+"elasticloadbalancing:DescribeLoadBalancers",
+
+
+
+"elasticloadbalancing:DescribeRules",
+
+
+
+"elasticloadbalancing:DescribeTags",
+
+
+
+"elasticloadbalancing:DescribeTargetHealth",
+
+
+
+"elasticmapreduce:ListClusters",
+
+
+
+"elastictranscoder:ListPipelines",
+
+
+
+"es:ListDomainNames",
+
+
+
+"events:ListEventBuses",
+
+
+
+"firehose:ListDeliveryStreams",
+
+
+
+"fsx:DescribeFileSystems",
+
+
+
+"gamelift:ListFleets",
+
+
+
+"glue:GetJobs",
+
+
+
+"inspector:ListAssessmentTemplates",
+
+
+
+"kafka:ListClusters",
+
+
+
+"kinesis:ListStreams",
+
+
+
+"kinesisanalytics:ListApplications",
+
+
+
+"kinesisvideo:ListStreams",
+
+
+
+"lambda:ListFunctions",
+
+
+
+"lambda:ListTags",
+
+
+
+"lex:GetBots",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"mediaconnect:ListFlows",
+
+
+
+"mediaconvert:DescribeEndpoints",
+
+
+
+"mediapackage-vod:ListPackagingConfigurations",
+
+
+
+"mediapackage:ListChannels",
+
+
+
+"mediatailor:ListPlaybackConfigurations",
+
+
+
+"opsworks:DescribeStacks",
+
+
+
+"qldb:ListLedgers",
+
+
+
+"rds:DescribeDBClusters",
+
+
+
+"rds:DescribeDBInstances",
+
+
+
+"rds:DescribeEvents",
+
+
+
+"rds:ListTagsForResource",
+
+
+
+"redshift:DescribeClusters",
+
+
+
+"robomaker:ListSimulationJobs",
+
+
+
+"route53:ListHostedZones",
+
+
+
+"route53resolver:ListResolverEndpoints",
+
+
+
+"s3:ListAllMyBuckets",
+
+
+
+"sagemaker:ListEndpoints",
+
+
+
+"sns:ListTopics",
+
+
+
+"sqs:ListQueues",
+
+
+
+"storagegateway:ListGateways",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"swf:ListDomains",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"transfer:ListServers",
+
+
+
+"workmail:ListOrganizations",
+
+
+
+"workspaces:DescribeWorkspaces"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+
+Permissions required for AWS monitoring integration:
+
+* `"cloudwatch:GetMetricData"`
+* `"cloudwatch:GetMetricStatistics"`
+* `"cloudwatch:ListMetrics"`
+* `"sts:GetCallerIdentity"`
+* `"tag:GetResources"`
+* `"tag:GetTagKeys"`
+* `"ec2:DescribeAvailabilityZones"`
+
+### Complete list of permissions for cloud services
+
+| Name | Permissions |
+| --- | --- |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
+| Amazon MQ |  |
+| Amazon API Gateway | `apigateway:GET` |
+| AWS App Runner | `apprunner:ListServices` |
+| Amazon AppStream | `appstream:DescribeFleets` |
+| AWS AppSync | `appsync:ListGraphqlApis` |
+| Amazon Athena | `athena:ListWorkGroups` |
+| Amazon Aurora | `rds:DescribeDBClusters` |
+| Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| AWS Billing |  |
+| Amazon Keyspaces |  |
+| AWS Chatbot |  |
+| Amazon CloudFront | `cloudfront:ListDistributions` |
+| AWS CloudHSM | `cloudhsm:DescribeClusters` |
+| Amazon CloudSearch | `cloudsearch:DescribeDomains` |
+| AWS CodeBuild | `codebuild:ListProjects` |
+| Amazon Cognito |  |
+| Amazon Connect |  |
+| Amazon Elastic Kubernetes Service (EKS) | `eks:ListClusters` |
+| AWS DataSync | `datasync:ListTasks` |
+| Amazon DynamoDB Accelerator (DAX) | `dax:DescribeClusters` |
+| AWS Database Migration Service (AWS DMS) | `dms:DescribeReplicationInstances` |
+| Amazon DocumentDB | `rds:DescribeDBClusters` |
+| AWS Direct Connect | `directconnect:DescribeConnections` |
+| Amazon DynamoDB | `dynamodb:ListTables` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon EBS | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EC2 API |  |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
+| Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
+| Amazon ECS Container Insights | `ecs:ListClusters` |
+| Amazon ElastiCache (EC) | `elasticache:DescribeCacheClusters` |
+| AWS Elastic Beanstalk | `elasticbeanstalk:DescribeEnvironments` |
+| Amazon Elastic File System (EFS) | `elasticfilesystem:DescribeFileSystems` |
+| Amazon Elastic Inference |  |
+| Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
+| Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
+| Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon EventBridge | `events:ListEventBuses` |
+| Amazon FSx | `fsx:DescribeFileSystems` |
+| Amazon GameLift | `gamelift:ListFleets` |
+| AWS Glue | `glue:GetJobs` |
+| Amazon Inspector | `inspector:ListAssessmentTemplates` |
+| AWS Internet of Things (IoT) |  |
+| AWS IoT Analytics |  |
+| Amazon Managed Streaming for Kafka | `kafka:ListClusters` |
+| Amazon Kinesis Data Analytics | `kinesisanalytics:ListApplications` |
+| Amazon Data Firehose | `firehose:ListDeliveryStreams` |
+| Amazon Kinesis Data Streams | `kinesis:ListStreams` |
+| Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
+| AWS Lambda | `lambda:ListFunctions` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| Amazon Lex | `lex:GetBots` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
+| AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
+| AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
+| AWS Elemental MediaPackage Live | `mediapackage:ListChannels` |
+| AWS Elemental MediaPackage Video on Demand | `mediapackage-vod:ListPackagingConfigurations` |
+| AWS Elemental MediaTailor | `mediatailor:ListPlaybackConfigurations` |
+| Amazon VPC NAT Gateways | `ec2:DescribeNatGateways` |
+| Amazon Neptune | `rds:DescribeDBClusters` |
+| AWS OpsWorks | `opsworks:DescribeStacks` |
+| Amazon Polly |  |
+| Amazon QLDB | `qldb:ListLedgers` |
+| Amazon RDS | `rds:DescribeDBInstances` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon Redshift | `redshift:DescribeClusters` |
+| Amazon Rekognition |  |
+| AWS RoboMaker | `robomaker:ListSimulationJobs` |
+| Amazon Route 53 | `route53:ListHostedZones` |
+| Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
+| Amazon S3 | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon SageMaker Batch Transform Jobs |  |
+| Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Ground Truth |  |
+| Amazon SageMaker Processing Jobs |  |
+| Amazon SageMaker Training Jobs |  |
+| AWS Service Catalog |  |
+| Amazon Simple Email Service (SES) |  |
+| Amazon Simple Notification Service (SNS) | `sns:ListTopics` |
+| Amazon Simple Queue Service (SQS) | `sqs:ListQueues` |
+| AWS Systems Manager - Run Command |  |
+| AWS Step Functions |  |
+| AWS Storage Gateway | `storagegateway:ListGateways` |
+| Amazon SWF | `swf:ListDomains` |
+| Amazon Textract |  |
+| AWS IoT Things Graph |  |
+| AWS Transfer Family | `transfer:ListServers` |
+| AWS Transit Gateway | `ec2:DescribeTransitGateways` |
+| Amazon Translate |  |
+| AWS Trusted Advisor |  |
+| AWS API Usage |  |
+| AWS Site-to-Site VPN | `ec2:DescribeVpnConnections` |
+| AWS WAF Classic |  |
+| AWS WAF |  |
+| Amazon WorkMail | `workmail:ListOrganizations` |
+| Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
+
+See the example of JSON policy for one single service below.
+
+JSON policy for Amazon API Gateway
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"apigateway:GET",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"ec2:DescribeAvailabilityZones"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+In this example, from the complete list of permissions you need to select
+
+* `"apigateway:GET"` for **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` for **All AWS cloud services**.
+
+* minimum [one agentï»¿](https://docs.aws.amazon.com/datasync/latest/userguide/create-agent-cli.html)
+
+### AWS endpoints that need to be reachable from ActiveGate with corresponding AWS services
+
+| Endpoint | Service |
+| --- | --- |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
+| `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
+| `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
+| `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
+| `appstream2.<REGION>.amazonaws.com` | Amazon AppStream |
+| `appsync.<REGION>.amazonaws.com` | AWS AppSync |
+| `athena.<REGION>.amazonaws.com` | Amazon Athena |
+| `cloudfront.amazonaws.com` | Amazon CloudFront |
+| `cloudhsmv2.<REGION>.amazonaws.com` | AWS CloudHSM |
+| `cloudsearch.<REGION>.amazonaws.com` | Amazon CloudSearch |
+| `codebuild.<REGION>.amazonaws.com` | AWS CodeBuild |
+| `datasync.<REGION>.amazonaws.com` | AWS DataSync |
+| `dax.<REGION>.amazonaws.com` | Amazon DynamoDB Accelerator (DAX) |
+| `dms.<REGION>.amazonaws.com` | AWS Database Migration Service (AWS DMS) |
+| `directconnect.<REGION>.amazonaws.com` | AWS Direct Connect |
+| `ecs.<REGION>.amazonaws.com` | Amazon Elastic Container Service (ECS), Amazon ECS Container Insights |
+| `elasticfilesystem.<REGION>.amazonaws.com` | Amazon Elastic File System (EFS) |
+| `eks.<REGION>.amazonaws.com` | Amazon Elastic Kubernetes Service (EKS) |
+| `elasticache.<REGION>.amazonaws.com` | Amazon ElastiCache (EC) |
+| `elasticbeanstalk.<REGION>.amazonaws.com` | AWS Elastic Beanstalk |
+| `elastictranscoder.<REGION>.amazonaws.com` | Amazon Elastic Transcoder |
+| `es.<REGION>.amazonaws.com` | Amazon Elasticsearch Service (ES) |
+| `events.<REGION>.amazonaws.com` | Amazon EventBridge |
+| `fsx.<REGION>.amazonaws.com` | Amazon FSx |
+| `gamelift.<REGION>.amazonaws.com` | Amazon GameLift |
+| `glue.<REGION>.amazonaws.com` | AWS Glue |
+| `inspector.<REGION>.amazonaws.com` | Amazon Inspector |
+| `kafka.<REGION>.amazonaws.com` | Amazon Managed Streaming for Kafka |
+| `models.lex.<REGION>.amazonaws.com` | Amazon Lex |
+| `logs.<REGION>.amazonaws.com` | Amazon CloudWatch Logs |
+| `api.mediatailor.<REGION>.amazonaws.com` | AWS Elemental MediaTailor |
+| `mediaconnect.<REGION>.amazonaws.com` | AWS Elemental MediaConnect |
+| `mediapackage.<REGION>.amazonaws.com` | AWS Elemental MediaPackage Live |
+| `mediapackage-vod.<REGION>.amazonaws.com` | AWS Elemental MediaPackage Video on Demand |
+| `opsworks.<REGION>.amazonaws.com` | AWS OpsWorks |
+| `qldb.<REGION>.amazonaws.com` | Amazon QLDB |
+| `redshift.<REGION>.amazonaws.com` | Amazon Redshift |
+| `robomaker.<REGION>.amazonaws.com` | AWS RoboMaker |
+| `route53.amazonaws.com` | Amazon Route 53 |
+| `route53resolver.<REGION>.amazonaws.com` | Amazon Route 53 Resolver |
+| `api.sagemaker.<REGION>.amazonaws.com` | Amazon SageMaker Endpoints, Amazon SageMaker Endpoint Instances |
+| `sns.<REGION>.amazonaws.com` | Amazon Simple Notification Service (SNS) |
+| `sqs.<REGION>.amazonaws.com` | Amazon Simple Queue Service (SQS) |
+| `storagegateway.<REGION>.amazonaws.com` | AWS Storage Gateway |
+| `swf.<REGION>.amazonaws.com` | Amazon SWF |
+| `transfer.<REGION>.amazonaws.com` | AWS Transfer Family |
+| `workmail.<REGION>.amazonaws.com` | Amazon WorkMail |
+| `workspaces.<REGION>.amazonaws.com` | Amazon WorkSpaces |
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+After you add the service to monitoring, a preset dashboard containing all recommended metrics is automatically listed on your **Dashboards** page. To look for specific dashboards, filter by **Preset** and then by **Name**.
+
+![AWS presets](https://dt-cdn.net/images/image-26-1645-389f58aa89.png)
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **AWS**, select the desired AWS instance, and then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
+
+To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide AWS](https://dt-cdn.net/images/2020-12-10-15-04-09-1502-b899a29d73.png)
+
+To check the availability of preset dashboards for each AWS service, see the list below.
+
+### Preset dashboard availability list
+
+| AWS service | Preset dashboard |
+| --- | --- |
+| Amazon EC2 Auto Scaling (built-in) | Not applicable |
+| AWS Lambda (built-in) | Not applicable |
+| Amazon Application and Network Load Balancer (built-in) | Not applicable |
+| Amazon DynamoDB (built-in) | Not applicable |
+| Amazon EBS (built-in) | Not applicable |
+| Amazon EC2 (built-in) | Not applicable |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Not applicable |
+| Amazon RDS (built-in) | Not applicable |
+| Amazon S3 (built-in) | Not applicable |
+| AWS Certificate Manager Private Certificate Authority | Not applicable |
+| All monitored Amazon services | Not applicable |
+| Amazon API Gateway | Not applicable |
+| AWS App Runner | Not applicable |
+| Amazon AppStream | Applicable |
+| AWS AppSync | Applicable |
+| Amazon Athena | Applicable |
+| Amazon Aurora | Not applicable |
+| Amazon EC2 Auto Scaling | Applicable |
+| AWS Billing | Applicable |
+| Amazon Keyspaces | Applicable |
+| AWS Chatbot | Applicable |
+| Amazon CloudFront | Not applicable |
+| AWS CloudHSM | Applicable |
+| Amazon CloudSearch | Applicable |
+| AWS CodeBuild | Applicable |
+| Amazon Cognito | Not applicable |
+| Amazon Connect | Applicable |
+| AWS DataSync | Applicable |
+| Amazon DynamoDB Accelerator (DAX) | Applicable |
+| AWS Database Migration Service (AWS DMS) | Applicable |
+| Amazon DocumentDB | Applicable |
+| AWS Direct Connect | Applicable |
+| Amazon DynamoDB | Not applicable |
+| Amazon EBS | Not applicable |
+| Amazon EC2 Spot Fleet | Not applicable |
+| Amazon EC2 API | Applicable |
+| Amazon Elastic Container Service (ECS) | Not applicable |
+| Amazon ECS Container Insights | Applicable |
+| Amazon Elastic File System (EFS) | Not applicable |
+| Amazon Elastic Kubernetes Service (EKS) | Applicable |
+| Amazon ElastiCache (EC) | Not applicable |
+| AWS Elastic Beanstalk | Applicable |
+| Amazon Elastic Inference | Applicable |
+| Amazon Elastic Transcoder | Applicable |
+| Amazon Elastic Map Reduce (EMR) | Not applicable |
+| Amazon Elasticsearch Service (ES) | Not applicable |
+| Amazon EventBridge | Applicable |
+| Amazon FSx | Applicable |
+| Amazon GameLift | Applicable |
+| AWS Glue | Not applicable |
+| Amazon Inspector | Applicable |
+| AWS Internet of Things (IoT) | Not applicable |
+| AWS IoT Things Graph | Applicable |
+| AWS IoT Analytics | Applicable |
+| Amazon Managed Streaming for Kafka | Applicable |
+| Amazon Kinesis Data Analytics | Not applicable |
+| Amazon Data Firehose | Not applicable |
+| Amazon Kinesis Data Streams | Not applicable |
+| Amazon Kinesis Video Streams | Not applicable |
+| AWS Lambda | Not applicable |
+| Amazon Lex | Applicable |
+| Amazon CloudWatch Logs | Applicable |
+| AWS Elemental MediaTailor | Applicable |
+| AWS Elemental MediaConnect | Applicable |
+| AWS Elemental MediaConvert | Applicable |
+| AWS Elemental MediaPackage Live | Applicable |
+| AWS Elemental MediaPackage Video on Demand | Applicable |
+| Amazon MQ | Applicable |
+| Amazon VPC NAT Gateways | Not applicable |
+| Amazon Neptune | Applicable |
+| AWS OpsWorks | Applicable |
+| Amazon Polly | Applicable |
+| Amazon QLDB | Applicable |
+| Amazon RDS | Not applicable |
+| Amazon Redshift | Not applicable |
+| Amazon Rekognition | Applicable |
+| AWS RoboMaker | Applicable |
+| Amazon Route 53 | Applicable |
+| Amazon Route 53 Resolver | Applicable |
+| Amazon S3 | Not applicable |
+| Amazon SageMaker Batch Transform Jobs | Not applicable |
+| Amazon SageMaker Endpoints | Not applicable |
+| Amazon SageMaker Endpoint Instances | Not applicable |
+| Amazon SageMaker Ground Truth | Not applicable |
+| Amazon SageMaker Processing Jobs | Not applicable |
+| Amazon SageMaker Training Jobs | Not applicable |
+| AWS Service Catalog | Applicable |
+| Amazon Simple Email Service (SES) | Not applicable |
+| Amazon Simple Notification Service (SNS) | Not applicable |
+| Amazon Simple Queue Service (SQS) | Not applicable |
+| AWS Systems Manager - Run Command | Applicable |
+| AWS Step Functions | Applicable |
+| AWS Storage Gateway | Applicable |
+| Amazon SWF | Applicable |
+| Amazon Textract | Applicable |
+| AWS Transfer Family | Applicable |
+| AWS Transit Gateway | Applicable |
+| Amazon Translate | Applicable |
+| AWS Trusted Advisor | Applicable |
+| AWS API Usage | Applicable |
+| AWS Site-to-Site VPN | Applicable |
+| AWS WAF Classic | Applicable |
+| AWS WAF | Applicable |
+| Amazon WorkMail | Applicable |
+| Amazon WorkSpaces | Applicable |
+
+![Datasynk dash](https://dt-cdn.net/images/2021-03-12-09-11-10-1890-529045d305.png)
+
+## Available metrics
+
+`TaskId` is the main dimension.
+
+| Name | Description | Unit | Statistics | Dimensions | Recommended |
+| --- | --- | --- | --- | --- | --- |
+| BytesPreparedDestination | The total number of bytes of data that are prepared at the destination location | Bytes | Sum | TaskId |  |
+| BytesPreparedSource | The total number of bytes of data that are prepared at the source location | Bytes | Sum | TaskId |  |
+| BytesTransferred | The total number of bytes that are transferred over the network when the agent reads from the source location to the destination location | Bytes | Sum | TaskId | Applicable |
+| BytesTransferred |  | Bytes | Sum | Region, AgentId |  |
+| BytesVerifiedDestination | The total number of bytes of data that are verified at the destination location | Bytes | Sum | TaskId |  |
+| BytesVerifiedSource | The total number of bytes of data that are verified at the source location | Bytes | Sum | TaskId |  |
+| BytesWritten | The total logical size of all files that have been transferred to the destination location | Bytes | Sum | TaskId | Applicable |
+| BytesWritten |  | Bytes | Sum | Region, AgentId |  |
+| FilesPreparedDestination | The total number of files that are prepared at the destination location | Count | Sum | TaskId |  |
+| FilesPreparedSource | The total number of files that are prepared at the source location | Count | Sum | TaskId |  |
+| FilesTransferred | The actual number of files or metadata that were transferred over the network | Count | Sum | TaskId | Applicable |
+| FilesTransferred |  | Count | Sum | Region, AgentId |  |
+| FilesVerifiedDestination | The total number of files that are verified at the destination location | Count | Sum | TaskId | Applicable |
+| FilesVerifiedSource | The total number of files that are verified at the source location | Count | Sum | TaskId |  |
+
+
+---
+
+
 ## Source: aws-service-dynamodb.md
 
 
 ---
 title: Amazon DynamoDB Accelerator (DAX) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamodb
-scraped: 2026-02-15T21:27:23.048856
+scraped: 2026-02-16T09:31:30.522502
 ---
 
 # Amazon DynamoDB Accelerator (DAX) monitoring
@@ -7434,13 +9921,894 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 
 
+## Source: aws-service-elasticsearch-service-es.md
+
+
+---
+title: Amazon ES (Elasticsearch Service) monitoring
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticsearch-service-es
+scraped: 2026-02-16T09:28:31.188912
+---
+
+# Amazon ES (Elasticsearch Service) monitoring
+
+# Amazon ES (Elasticsearch Service) monitoring
+
+* How-to guide
+* 6-min read
+* Published Oct 15, 2020
+
+Dynatrace ingests metrics for multiple preselected namespaces, including Amazon Elasticsearch Service (ES). You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+To enable monitoring for this service, you need
+
+* ActiveGate version 1.181+, as follows:
+
+  + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
+  + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
+
+    For role-based access (whether in a [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+* Dynatrace version 1.182+
+* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+
+JSON predefined policy for all supporting services
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"acm-pca:ListCertificateAuthorities",
+
+
+
+"apigateway:GET",
+
+
+
+"apprunner:ListServices",
+
+
+
+"appstream:DescribeFleets",
+
+
+
+"appsync:ListGraphqlApis",
+
+
+
+"athena:ListWorkGroups",
+
+
+
+"autoscaling:DescribeAutoScalingGroups",
+
+
+
+"cloudformation:ListStackResources",
+
+
+
+"cloudfront:ListDistributions",
+
+
+
+"cloudhsm:DescribeClusters",
+
+
+
+"cloudsearch:DescribeDomains",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"codebuild:ListProjects",
+
+
+
+"datasync:ListTasks",
+
+
+
+"dax:DescribeClusters",
+
+
+
+"directconnect:DescribeConnections",
+
+
+
+"dms:DescribeReplicationInstances",
+
+
+
+"dynamodb:ListTables",
+
+
+
+"dynamodb:ListTagsOfResource",
+
+
+
+"ec2:DescribeAvailabilityZones",
+
+
+
+"ec2:DescribeInstances",
+
+
+
+"ec2:DescribeNatGateways",
+
+
+
+"ec2:DescribeSpotFleetRequests",
+
+
+
+"ec2:DescribeTransitGateways",
+
+
+
+"ec2:DescribeVolumes",
+
+
+
+"ec2:DescribeVpnConnections",
+
+
+
+"ecs:ListClusters",
+
+
+
+"eks:ListClusters",
+
+
+
+"elasticache:DescribeCacheClusters",
+
+
+
+"elasticbeanstalk:DescribeEnvironmentResources",
+
+
+
+"elasticbeanstalk:DescribeEnvironments",
+
+
+
+"elasticfilesystem:DescribeFileSystems",
+
+
+
+"elasticloadbalancing:DescribeInstanceHealth",
+
+
+
+"elasticloadbalancing:DescribeListeners",
+
+
+
+"elasticloadbalancing:DescribeLoadBalancers",
+
+
+
+"elasticloadbalancing:DescribeRules",
+
+
+
+"elasticloadbalancing:DescribeTags",
+
+
+
+"elasticloadbalancing:DescribeTargetHealth",
+
+
+
+"elasticmapreduce:ListClusters",
+
+
+
+"elastictranscoder:ListPipelines",
+
+
+
+"es:ListDomainNames",
+
+
+
+"events:ListEventBuses",
+
+
+
+"firehose:ListDeliveryStreams",
+
+
+
+"fsx:DescribeFileSystems",
+
+
+
+"gamelift:ListFleets",
+
+
+
+"glue:GetJobs",
+
+
+
+"inspector:ListAssessmentTemplates",
+
+
+
+"kafka:ListClusters",
+
+
+
+"kinesis:ListStreams",
+
+
+
+"kinesisanalytics:ListApplications",
+
+
+
+"kinesisvideo:ListStreams",
+
+
+
+"lambda:ListFunctions",
+
+
+
+"lambda:ListTags",
+
+
+
+"lex:GetBots",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"mediaconnect:ListFlows",
+
+
+
+"mediaconvert:DescribeEndpoints",
+
+
+
+"mediapackage-vod:ListPackagingConfigurations",
+
+
+
+"mediapackage:ListChannels",
+
+
+
+"mediatailor:ListPlaybackConfigurations",
+
+
+
+"opsworks:DescribeStacks",
+
+
+
+"qldb:ListLedgers",
+
+
+
+"rds:DescribeDBClusters",
+
+
+
+"rds:DescribeDBInstances",
+
+
+
+"rds:DescribeEvents",
+
+
+
+"rds:ListTagsForResource",
+
+
+
+"redshift:DescribeClusters",
+
+
+
+"robomaker:ListSimulationJobs",
+
+
+
+"route53:ListHostedZones",
+
+
+
+"route53resolver:ListResolverEndpoints",
+
+
+
+"s3:ListAllMyBuckets",
+
+
+
+"sagemaker:ListEndpoints",
+
+
+
+"sns:ListTopics",
+
+
+
+"sqs:ListQueues",
+
+
+
+"storagegateway:ListGateways",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"swf:ListDomains",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"transfer:ListServers",
+
+
+
+"workmail:ListOrganizations",
+
+
+
+"workspaces:DescribeWorkspaces"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+
+Permissions required for AWS monitoring integration:
+
+* `"cloudwatch:GetMetricData"`
+* `"cloudwatch:GetMetricStatistics"`
+* `"cloudwatch:ListMetrics"`
+* `"sts:GetCallerIdentity"`
+* `"tag:GetResources"`
+* `"tag:GetTagKeys"`
+* `"ec2:DescribeAvailabilityZones"`
+
+### Complete list of permissions for cloud services
+
+| Name | Permissions |
+| --- | --- |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
+| Amazon MQ |  |
+| Amazon API Gateway | `apigateway:GET` |
+| AWS App Runner | `apprunner:ListServices` |
+| Amazon AppStream | `appstream:DescribeFleets` |
+| AWS AppSync | `appsync:ListGraphqlApis` |
+| Amazon Athena | `athena:ListWorkGroups` |
+| Amazon Aurora | `rds:DescribeDBClusters` |
+| Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| AWS Billing |  |
+| Amazon Keyspaces |  |
+| AWS Chatbot |  |
+| Amazon CloudFront | `cloudfront:ListDistributions` |
+| AWS CloudHSM | `cloudhsm:DescribeClusters` |
+| Amazon CloudSearch | `cloudsearch:DescribeDomains` |
+| AWS CodeBuild | `codebuild:ListProjects` |
+| Amazon Cognito |  |
+| Amazon Connect |  |
+| Amazon Elastic Kubernetes Service (EKS) | `eks:ListClusters` |
+| AWS DataSync | `datasync:ListTasks` |
+| Amazon DynamoDB Accelerator (DAX) | `dax:DescribeClusters` |
+| AWS Database Migration Service (AWS DMS) | `dms:DescribeReplicationInstances` |
+| Amazon DocumentDB | `rds:DescribeDBClusters` |
+| AWS Direct Connect | `directconnect:DescribeConnections` |
+| Amazon DynamoDB | `dynamodb:ListTables` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon EBS | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EC2 API |  |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
+| Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
+| Amazon ECS Container Insights | `ecs:ListClusters` |
+| Amazon ElastiCache (EC) | `elasticache:DescribeCacheClusters` |
+| AWS Elastic Beanstalk | `elasticbeanstalk:DescribeEnvironments` |
+| Amazon Elastic File System (EFS) | `elasticfilesystem:DescribeFileSystems` |
+| Amazon Elastic Inference |  |
+| Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
+| Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
+| Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon EventBridge | `events:ListEventBuses` |
+| Amazon FSx | `fsx:DescribeFileSystems` |
+| Amazon GameLift | `gamelift:ListFleets` |
+| AWS Glue | `glue:GetJobs` |
+| Amazon Inspector | `inspector:ListAssessmentTemplates` |
+| AWS Internet of Things (IoT) |  |
+| AWS IoT Analytics |  |
+| Amazon Managed Streaming for Kafka | `kafka:ListClusters` |
+| Amazon Kinesis Data Analytics | `kinesisanalytics:ListApplications` |
+| Amazon Data Firehose | `firehose:ListDeliveryStreams` |
+| Amazon Kinesis Data Streams | `kinesis:ListStreams` |
+| Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
+| AWS Lambda | `lambda:ListFunctions` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| Amazon Lex | `lex:GetBots` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
+| AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
+| AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
+| AWS Elemental MediaPackage Live | `mediapackage:ListChannels` |
+| AWS Elemental MediaPackage Video on Demand | `mediapackage-vod:ListPackagingConfigurations` |
+| AWS Elemental MediaTailor | `mediatailor:ListPlaybackConfigurations` |
+| Amazon VPC NAT Gateways | `ec2:DescribeNatGateways` |
+| Amazon Neptune | `rds:DescribeDBClusters` |
+| AWS OpsWorks | `opsworks:DescribeStacks` |
+| Amazon Polly |  |
+| Amazon QLDB | `qldb:ListLedgers` |
+| Amazon RDS | `rds:DescribeDBInstances` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon Redshift | `redshift:DescribeClusters` |
+| Amazon Rekognition |  |
+| AWS RoboMaker | `robomaker:ListSimulationJobs` |
+| Amazon Route 53 | `route53:ListHostedZones` |
+| Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
+| Amazon S3 | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon SageMaker Batch Transform Jobs |  |
+| Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Ground Truth |  |
+| Amazon SageMaker Processing Jobs |  |
+| Amazon SageMaker Training Jobs |  |
+| AWS Service Catalog |  |
+| Amazon Simple Email Service (SES) |  |
+| Amazon Simple Notification Service (SNS) | `sns:ListTopics` |
+| Amazon Simple Queue Service (SQS) | `sqs:ListQueues` |
+| AWS Systems Manager - Run Command |  |
+| AWS Step Functions |  |
+| AWS Storage Gateway | `storagegateway:ListGateways` |
+| Amazon SWF | `swf:ListDomains` |
+| Amazon Textract |  |
+| AWS IoT Things Graph |  |
+| AWS Transfer Family | `transfer:ListServers` |
+| AWS Transit Gateway | `ec2:DescribeTransitGateways` |
+| Amazon Translate |  |
+| AWS Trusted Advisor |  |
+| AWS API Usage |  |
+| AWS Site-to-Site VPN | `ec2:DescribeVpnConnections` |
+| AWS WAF Classic |  |
+| AWS WAF |  |
+| Amazon WorkMail | `workmail:ListOrganizations` |
+| Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
+
+Example of JSON policy for one single service.
+
+JSON policy for Amazon API Gateway
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"apigateway:GET",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"ec2:DescribeAvailabilityZones"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+In this example, from the complete list of permissions you need to select
+
+* `"apigateway:GET"` for **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` for **All AWS cloud services**.
+
+### AWS endpoints that need to be reachable from ActiveGate with corresponding AWS services
+
+| Endpoint | Service |
+| --- | --- |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
+| `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
+| `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
+| `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
+| `appstream2.<REGION>.amazonaws.com` | Amazon AppStream |
+| `appsync.<REGION>.amazonaws.com` | AWS AppSync |
+| `athena.<REGION>.amazonaws.com` | Amazon Athena |
+| `cloudfront.amazonaws.com` | Amazon CloudFront |
+| `cloudhsmv2.<REGION>.amazonaws.com` | AWS CloudHSM |
+| `cloudsearch.<REGION>.amazonaws.com` | Amazon CloudSearch |
+| `codebuild.<REGION>.amazonaws.com` | AWS CodeBuild |
+| `datasync.<REGION>.amazonaws.com` | AWS DataSync |
+| `dax.<REGION>.amazonaws.com` | Amazon DynamoDB Accelerator (DAX) |
+| `dms.<REGION>.amazonaws.com` | AWS Database Migration Service (AWS DMS) |
+| `directconnect.<REGION>.amazonaws.com` | AWS Direct Connect |
+| `ecs.<REGION>.amazonaws.com` | Amazon Elastic Container Service (ECS), Amazon ECS Container Insights |
+| `elasticfilesystem.<REGION>.amazonaws.com` | Amazon Elastic File System (EFS) |
+| `eks.<REGION>.amazonaws.com` | Amazon Elastic Kubernetes Service (EKS) |
+| `elasticache.<REGION>.amazonaws.com` | Amazon ElastiCache (EC) |
+| `elasticbeanstalk.<REGION>.amazonaws.com` | AWS Elastic Beanstalk |
+| `elastictranscoder.<REGION>.amazonaws.com` | Amazon Elastic Transcoder |
+| `es.<REGION>.amazonaws.com` | Amazon Elasticsearch Service (ES) |
+| `events.<REGION>.amazonaws.com` | Amazon EventBridge |
+| `fsx.<REGION>.amazonaws.com` | Amazon FSx |
+| `gamelift.<REGION>.amazonaws.com` | Amazon GameLift |
+| `glue.<REGION>.amazonaws.com` | AWS Glue |
+| `inspector.<REGION>.amazonaws.com` | Amazon Inspector |
+| `kafka.<REGION>.amazonaws.com` | Amazon Managed Streaming for Kafka |
+| `models.lex.<REGION>.amazonaws.com` | Amazon Lex |
+| `logs.<REGION>.amazonaws.com` | Amazon CloudWatch Logs |
+| `api.mediatailor.<REGION>.amazonaws.com` | AWS Elemental MediaTailor |
+| `mediaconnect.<REGION>.amazonaws.com` | AWS Elemental MediaConnect |
+| `mediapackage.<REGION>.amazonaws.com` | AWS Elemental MediaPackage Live |
+| `mediapackage-vod.<REGION>.amazonaws.com` | AWS Elemental MediaPackage Video on Demand |
+| `opsworks.<REGION>.amazonaws.com` | AWS OpsWorks |
+| `qldb.<REGION>.amazonaws.com` | Amazon QLDB |
+| `redshift.<REGION>.amazonaws.com` | Amazon Redshift |
+| `robomaker.<REGION>.amazonaws.com` | AWS RoboMaker |
+| `route53.amazonaws.com` | Amazon Route 53 |
+| `route53resolver.<REGION>.amazonaws.com` | Amazon Route 53 Resolver |
+| `api.sagemaker.<REGION>.amazonaws.com` | Amazon SageMaker Endpoints, Amazon SageMaker Endpoint Instances |
+| `sns.<REGION>.amazonaws.com` | Amazon Simple Notification Service (SNS) |
+| `sqs.<REGION>.amazonaws.com` | Amazon Simple Queue Service (SQS) |
+| `storagegateway.<REGION>.amazonaws.com` | AWS Storage Gateway |
+| `swf.<REGION>.amazonaws.com` | Amazon SWF |
+| `transfer.<REGION>.amazonaws.com` | AWS Transfer Family |
+| `workmail.<REGION>.amazonaws.com` | Amazon WorkMail |
+| `workspaces.<REGION>.amazonaws.com` | Amazon WorkSpaces |
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.").
+
+To check the availability of preset dashboards for each AWS service, see the list below.
+
+### Preset dashboard availability list
+
+| AWS service | Preset dashboard |
+| --- | --- |
+| Amazon EC2 Auto Scaling (built-in) | Not applicable |
+| AWS Lambda (built-in) | Not applicable |
+| Amazon Application and Network Load Balancer (built-in) | Not applicable |
+| Amazon DynamoDB (built-in) | Not applicable |
+| Amazon EBS (built-in) | Not applicable |
+| Amazon EC2 (built-in) | Not applicable |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Not applicable |
+| Amazon RDS (built-in) | Not applicable |
+| Amazon S3 (built-in) | Not applicable |
+| AWS Certificate Manager Private Certificate Authority | Not applicable |
+| All monitored Amazon services | Not applicable |
+| Amazon API Gateway | Not applicable |
+| AWS App Runner | Not applicable |
+| Amazon AppStream | Applicable |
+| AWS AppSync | Applicable |
+| Amazon Athena | Applicable |
+| Amazon Aurora | Not applicable |
+| Amazon EC2 Auto Scaling | Applicable |
+| AWS Billing | Applicable |
+| Amazon Keyspaces | Applicable |
+| AWS Chatbot | Applicable |
+| Amazon CloudFront | Not applicable |
+| AWS CloudHSM | Applicable |
+| Amazon CloudSearch | Applicable |
+| AWS CodeBuild | Applicable |
+| Amazon Cognito | Not applicable |
+| Amazon Connect | Applicable |
+| AWS DataSync | Applicable |
+| Amazon DynamoDB Accelerator (DAX) | Applicable |
+| AWS Database Migration Service (AWS DMS) | Applicable |
+| Amazon DocumentDB | Applicable |
+| AWS Direct Connect | Applicable |
+| Amazon DynamoDB | Not applicable |
+| Amazon EBS | Not applicable |
+| Amazon EC2 Spot Fleet | Not applicable |
+| Amazon EC2 API | Applicable |
+| Amazon Elastic Container Service (ECS) | Not applicable |
+| Amazon ECS Container Insights | Applicable |
+| Amazon Elastic File System (EFS) | Not applicable |
+| Amazon Elastic Kubernetes Service (EKS) | Applicable |
+| Amazon ElastiCache (EC) | Not applicable |
+| AWS Elastic Beanstalk | Applicable |
+| Amazon Elastic Inference | Applicable |
+| Amazon Elastic Transcoder | Applicable |
+| Amazon Elastic Map Reduce (EMR) | Not applicable |
+| Amazon Elasticsearch Service (ES) | Not applicable |
+| Amazon EventBridge | Applicable |
+| Amazon FSx | Applicable |
+| Amazon GameLift | Applicable |
+| AWS Glue | Not applicable |
+| Amazon Inspector | Applicable |
+| AWS Internet of Things (IoT) | Not applicable |
+| AWS IoT Things Graph | Applicable |
+| AWS IoT Analytics | Applicable |
+| Amazon Managed Streaming for Kafka | Applicable |
+| Amazon Kinesis Data Analytics | Not applicable |
+| Amazon Data Firehose | Not applicable |
+| Amazon Kinesis Data Streams | Not applicable |
+| Amazon Kinesis Video Streams | Not applicable |
+| AWS Lambda | Not applicable |
+| Amazon Lex | Applicable |
+| Amazon CloudWatch Logs | Applicable |
+| AWS Elemental MediaTailor | Applicable |
+| AWS Elemental MediaConnect | Applicable |
+| AWS Elemental MediaConvert | Applicable |
+| AWS Elemental MediaPackage Live | Applicable |
+| AWS Elemental MediaPackage Video on Demand | Applicable |
+| Amazon MQ | Applicable |
+| Amazon VPC NAT Gateways | Not applicable |
+| Amazon Neptune | Applicable |
+| AWS OpsWorks | Applicable |
+| Amazon Polly | Applicable |
+| Amazon QLDB | Applicable |
+| Amazon RDS | Not applicable |
+| Amazon Redshift | Not applicable |
+| Amazon Rekognition | Applicable |
+| AWS RoboMaker | Applicable |
+| Amazon Route 53 | Applicable |
+| Amazon Route 53 Resolver | Applicable |
+| Amazon S3 | Not applicable |
+| Amazon SageMaker Batch Transform Jobs | Not applicable |
+| Amazon SageMaker Endpoints | Not applicable |
+| Amazon SageMaker Endpoint Instances | Not applicable |
+| Amazon SageMaker Ground Truth | Not applicable |
+| Amazon SageMaker Processing Jobs | Not applicable |
+| Amazon SageMaker Training Jobs | Not applicable |
+| AWS Service Catalog | Applicable |
+| Amazon Simple Email Service (SES) | Not applicable |
+| Amazon Simple Notification Service (SNS) | Not applicable |
+| Amazon Simple Queue Service (SQS) | Not applicable |
+| AWS Systems Manager - Run Command | Applicable |
+| AWS Step Functions | Applicable |
+| AWS Storage Gateway | Applicable |
+| Amazon SWF | Applicable |
+| Amazon Textract | Applicable |
+| AWS Transfer Family | Applicable |
+| AWS Transit Gateway | Applicable |
+| Amazon Translate | Applicable |
+| AWS Trusted Advisor | Applicable |
+| AWS API Usage | Applicable |
+| AWS Site-to-Site VPN | Applicable |
+| AWS WAF Classic | Applicable |
+| AWS WAF | Applicable |
+| Amazon WorkMail | Applicable |
+| Amazon WorkSpaces | Applicable |
+
+## Available metrics
+
+`DomainName` is the main dimension.
+
+| Name | Description | Unit | Statistics | Dimensions | Recommended |
+| --- | --- | --- | --- | --- | --- |
+| 2xx |  | Count | Sum | ClientId, DomainName |  |
+| 3xx |  | Count | Sum | ClientId, DomainName |  |
+| 4xx |  | Count | Sum | ClientId, DomainName |  |
+| 5xx |  | Count | Sum | ClientId, DomainName |  |
+| AutomatedSnapshotFailure | The number of failed automated snapshots for the cluster. A value of `1` indicates that no automated snapshot of the domain has been taken for the last 36 hours. | Count | Minimum | DomainName, ClientId |  |
+| AutomatedSnapshotFailure |  | Count | Maximum | DomainName, ClientId |  |
+| CPUCreditBalance | The remaining CPU credits available for data nodes in the cluster. A CPU credit provides the performance of a full CPU core for one minute. This metric is available only for the T2 instance types. | Count | Minimum | DomainName, ClientId |  |
+| CPUUtilization | The percentage of CPU usage for data nodes in the cluster. Maximum shows the node with the highest CPU usage. Average represents all nodes in the cluster. This metric is also available for individual nodes. | Percent | Average | ClientId, DomainName, NodeId |  |
+| CPUUtilization |  | Percent | Average | DomainName, ClientId | Applicable |
+| CPUUtilization |  | Percent | Maximum | ClientId, DomainName, NodeId |  |
+| CPUUtilization |  | Percent | Maximum | DomainName, ClientId | Applicable |
+| ClusterIndexWritesBlocked | Indicates whether your cluster is accepting or blocking incoming write requests. A value of `0` means that the cluster is accepting requests. A value of `1` means that the cluster is blocking requests. | Count | Maximum | DomainName, ClientId |  |
+| ClusterStatus.green | A value of `1` indicates that all index shards are allocated to nodes in the cluster | Count | Minimum | DomainName, ClientId | Applicable |
+| ClusterStatus.green |  | Count | Maximum | DomainName, ClientId |  |
+| ClusterStatus.red | A value of `1` indicates that the primary and replica shards for at least one index aren't allocated to nodes in the cluster | Count | Minimum | DomainName, ClientId |  |
+| ClusterStatus.red |  | Count | Maximum | DomainName, ClientId | Applicable |
+| ClusterStatus.yellow | A value of `1` indicates that the primary shards for all indices are allocated to nodes in the cluster, but replica shards for at least one index aren't allocated to nodes in the cluster | Count | Minimum | DomainName, ClientId |  |
+| ClusterStatus.yellow |  | Count | Maximum | DomainName, ClientId | Applicable |
+| ClusterUsedSpace | The total used space for the cluster | Megabytes | Minimum | DomainName, ClientId |  |
+| ClusterUsedSpace |  | Megabytes | Maximum | DomainName, ClientId |  |
+| DeletedDocuments | The total number of documents marked for deletion across all data nodes in the cluster. These documents no longer appear in search results, but Elasticsearch only removes deleted documents from disk during segment merges. This metric increases after delete requests and decreases after segment merges. | Count | Multi | DomainName, ClientId |  |
+| DiskQueueDepth | The number of pending input and output (I/O) requests for an EBS volume | Count | Multi | DomainName, ClientId |  |
+| ElasticsearchRequests | The number of requests made to the Elasticsearch cluster | Count | Sum | DomainName, ClientId | Applicable |
+| FreeStorageSpace | The free space for data nodes in the cluster | Megabytes | Multi | ClientId, DomainName, NodeId |  |
+| FreeStorageSpace |  | Megabytes | Multi | DomainName, ClientId | Applicable |
+| FreeStorageSpace |  | Megabytes | Sum | DomainName, ClientId |  |
+| FreeStorageSpace |  | Megabytes | Sum | ClientId, DomainName, NodeId |  |
+| InvalidHostHeaderRequests | The number of HTTP requests made to the Elasticsearch cluster that included an invalid (or missing) host header | Count | Sum | DomainName, ClientId |  |
+| JVMMemoryPressure | The maximum percentage of the Java heap used for all data nodes in the cluster | Percent | Maximum | DomainName, ClientId |  |
+| KMSKeyError | A value of `1` indicates that the KMS customer master key used to encrypt data at rest has been disabled | Count | Minimum | DomainName, ClientId |  |
+| KMSKeyError |  | Count | Maximum | DomainName, ClientId |  |
+| KMSKeyInaccessible | A value of `1` indicates that the KMS customer master key used to encrypt data at rest has been deleted or revoked its grants to Amazon ES | Count | Minimum | DomainName, ClientId |  |
+| KMSKeyInaccessible |  | Count | Maximum | DomainName, ClientId |  |
+| KibanaHealthyNodes | A health check for Kibana. A value of `1` indicates normal behavior. A value of `0` indicates that Kibana is inaccessible. In most cases, the health of Kibana mirrors the health of the cluster. | Count | Minimum | DomainName, ClientId |  |
+| MasterCPUCreditBalance | The remaining CPU credits available for dedicated master nodes in the cluster. A CPU credit provides the performance of a full CPU core for one minute. | Count | Minimum | DomainName, ClientId |  |
+| MasterCPUUtilization | The maximum percentage of CPU resources used by the dedicated master nodes | Percent | Average | DomainName, ClientId | Applicable |
+| MasterJVMMemoryPressure | The maximum percentage of the Java heap used for all dedicated master nodes in the cluster | Percent | Maximum | DomainName, ClientId |  |
+| MasterReachableFromNode | A health check for MasterNotDiscovered exceptions. A value of `1` indicates normal behavior. A value of `0` indicates that `/\_cluster/health/`` is failing. | Count | Minimum | DomainName, ClientId |  |
+| Nodes | The number of nodes in the Amazon ES cluster, including dedicated master nodes and UltraWarm nodes | Count | Multi | DomainName, ClientId | Applicable |
+| ReadIOPS | The number of input and output (I/O) operations per second for read operations on EBS volumes | Count/Second | Multi | DomainName, ClientId |  |
+| ReadLatency | The latency for read operations on EBS volumes | Seconds | Multi | DomainName, ClientId |  |
+| ReadThroughput | The throughput for read operations on EBS volumes | Bytes/Second | Multi | DomainName, ClientId |  |
+| RequestCount | The number of requests made to the Elasticsearch cluster | Count | Sum | DomainName, ClientId |  |
+| SearchLatency |  | Milliseconds | Multi | ClientId, DomainName |  |
+| SearchableDocuments | The total number of searchable documents across all data nodes in the cluster | Count | Multi | DomainName, ClientId |  |
+| WriteIOPS | The number of input and output (I/O) operations per second for write operations on EBS volumes | Count/Second | Multi | DomainName, ClientId |  |
+| WriteLatency | The latency for write operations on EBS volumes | Seconds | Multi | DomainName, ClientId |  |
+| WriteThroughput | The throughput for write operations on EBS volumes | Bytes/Second | Multi | DomainName, ClientId |  |
+
+
+---
+
+
 ## Source: aws-service-gamelift.md
 
 
 ---
 title: Amazon GameLift monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-gamelift
-scraped: 2026-02-15T21:24:59.616585
+scraped: 2026-02-16T09:37:58.866715
 ---
 
 # Amazon GameLift monitoring
@@ -10033,7 +13401,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS IoT Things Graph monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-iot-things-graph
-scraped: 2026-02-15T09:13:19.652322
+scraped: 2026-02-16T09:38:18.977375
 ---
 
 # AWS IoT Things Graph monitoring
@@ -12487,7 +15855,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Lex monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-lex
-scraped: 2026-02-15T09:06:46.657193
+scraped: 2026-02-16T09:40:01.525397
 ---
 
 # Amazon Lex monitoring
@@ -13352,7 +16720,7 @@ Dynatrace entities of this AWS service are not enriched with the ARN property.
 ---
 title: Amazon Redshift monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-redshift
-scraped: 2026-02-15T21:23:16.088503
+scraped: 2026-02-16T09:29:24.951751
 ---
 
 # Amazon Redshift monitoring
@@ -15109,13 +18477,803 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 
 
+## Source: aws-service-service-catalog.md
+
+
+---
+title: AWS Service Catalog monitoring
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-service-catalog
+scraped: 2026-02-16T09:35:19.671525
+---
+
+# AWS Service Catalog monitoring
+
+# AWS Service Catalog monitoring
+
+* How-to guide
+* 1-min read
+* Published Jul 06, 2020
+
+Dynatrace ingests metrics for multiple preselected namespaces, including AWS Service Catalog. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+To enable monitoring for this service, you need
+
+* ActiveGate version 1.197+
+
+  + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
+  + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
+
+    For role-based access (whether in a [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+* Dynatrace version 1.203+
+* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+
+JSON predefined policy for all supporting services
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"acm-pca:ListCertificateAuthorities",
+
+
+
+"apigateway:GET",
+
+
+
+"apprunner:ListServices",
+
+
+
+"appstream:DescribeFleets",
+
+
+
+"appsync:ListGraphqlApis",
+
+
+
+"athena:ListWorkGroups",
+
+
+
+"autoscaling:DescribeAutoScalingGroups",
+
+
+
+"cloudformation:ListStackResources",
+
+
+
+"cloudfront:ListDistributions",
+
+
+
+"cloudhsm:DescribeClusters",
+
+
+
+"cloudsearch:DescribeDomains",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"codebuild:ListProjects",
+
+
+
+"datasync:ListTasks",
+
+
+
+"dax:DescribeClusters",
+
+
+
+"directconnect:DescribeConnections",
+
+
+
+"dms:DescribeReplicationInstances",
+
+
+
+"dynamodb:ListTables",
+
+
+
+"dynamodb:ListTagsOfResource",
+
+
+
+"ec2:DescribeAvailabilityZones",
+
+
+
+"ec2:DescribeInstances",
+
+
+
+"ec2:DescribeNatGateways",
+
+
+
+"ec2:DescribeSpotFleetRequests",
+
+
+
+"ec2:DescribeTransitGateways",
+
+
+
+"ec2:DescribeVolumes",
+
+
+
+"ec2:DescribeVpnConnections",
+
+
+
+"ecs:ListClusters",
+
+
+
+"eks:ListClusters",
+
+
+
+"elasticache:DescribeCacheClusters",
+
+
+
+"elasticbeanstalk:DescribeEnvironmentResources",
+
+
+
+"elasticbeanstalk:DescribeEnvironments",
+
+
+
+"elasticfilesystem:DescribeFileSystems",
+
+
+
+"elasticloadbalancing:DescribeInstanceHealth",
+
+
+
+"elasticloadbalancing:DescribeListeners",
+
+
+
+"elasticloadbalancing:DescribeLoadBalancers",
+
+
+
+"elasticloadbalancing:DescribeRules",
+
+
+
+"elasticloadbalancing:DescribeTags",
+
+
+
+"elasticloadbalancing:DescribeTargetHealth",
+
+
+
+"elasticmapreduce:ListClusters",
+
+
+
+"elastictranscoder:ListPipelines",
+
+
+
+"es:ListDomainNames",
+
+
+
+"events:ListEventBuses",
+
+
+
+"firehose:ListDeliveryStreams",
+
+
+
+"fsx:DescribeFileSystems",
+
+
+
+"gamelift:ListFleets",
+
+
+
+"glue:GetJobs",
+
+
+
+"inspector:ListAssessmentTemplates",
+
+
+
+"kafka:ListClusters",
+
+
+
+"kinesis:ListStreams",
+
+
+
+"kinesisanalytics:ListApplications",
+
+
+
+"kinesisvideo:ListStreams",
+
+
+
+"lambda:ListFunctions",
+
+
+
+"lambda:ListTags",
+
+
+
+"lex:GetBots",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"mediaconnect:ListFlows",
+
+
+
+"mediaconvert:DescribeEndpoints",
+
+
+
+"mediapackage-vod:ListPackagingConfigurations",
+
+
+
+"mediapackage:ListChannels",
+
+
+
+"mediatailor:ListPlaybackConfigurations",
+
+
+
+"opsworks:DescribeStacks",
+
+
+
+"qldb:ListLedgers",
+
+
+
+"rds:DescribeDBClusters",
+
+
+
+"rds:DescribeDBInstances",
+
+
+
+"rds:DescribeEvents",
+
+
+
+"rds:ListTagsForResource",
+
+
+
+"redshift:DescribeClusters",
+
+
+
+"robomaker:ListSimulationJobs",
+
+
+
+"route53:ListHostedZones",
+
+
+
+"route53resolver:ListResolverEndpoints",
+
+
+
+"s3:ListAllMyBuckets",
+
+
+
+"sagemaker:ListEndpoints",
+
+
+
+"sns:ListTopics",
+
+
+
+"sqs:ListQueues",
+
+
+
+"storagegateway:ListGateways",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"swf:ListDomains",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"transfer:ListServers",
+
+
+
+"workmail:ListOrganizations",
+
+
+
+"workspaces:DescribeWorkspaces"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+
+Permissions required for AWS monitoring integration:
+
+* `"cloudwatch:GetMetricData"`
+* `"cloudwatch:GetMetricStatistics"`
+* `"cloudwatch:ListMetrics"`
+* `"sts:GetCallerIdentity"`
+* `"tag:GetResources"`
+* `"tag:GetTagKeys"`
+* `"ec2:DescribeAvailabilityZones"`
+
+### Complete list of permissions for cloud services
+
+| Name | Permissions |
+| --- | --- |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
+| Amazon MQ |  |
+| Amazon API Gateway | `apigateway:GET` |
+| AWS App Runner | `apprunner:ListServices` |
+| Amazon AppStream | `appstream:DescribeFleets` |
+| AWS AppSync | `appsync:ListGraphqlApis` |
+| Amazon Athena | `athena:ListWorkGroups` |
+| Amazon Aurora | `rds:DescribeDBClusters` |
+| Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| AWS Billing |  |
+| Amazon Keyspaces |  |
+| AWS Chatbot |  |
+| Amazon CloudFront | `cloudfront:ListDistributions` |
+| AWS CloudHSM | `cloudhsm:DescribeClusters` |
+| Amazon CloudSearch | `cloudsearch:DescribeDomains` |
+| AWS CodeBuild | `codebuild:ListProjects` |
+| Amazon Cognito |  |
+| Amazon Connect |  |
+| Amazon Elastic Kubernetes Service (EKS) | `eks:ListClusters` |
+| AWS DataSync | `datasync:ListTasks` |
+| Amazon DynamoDB Accelerator (DAX) | `dax:DescribeClusters` |
+| AWS Database Migration Service (AWS DMS) | `dms:DescribeReplicationInstances` |
+| Amazon DocumentDB | `rds:DescribeDBClusters` |
+| AWS Direct Connect | `directconnect:DescribeConnections` |
+| Amazon DynamoDB | `dynamodb:ListTables` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon EBS | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EC2 API |  |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
+| Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
+| Amazon ECS Container Insights | `ecs:ListClusters` |
+| Amazon ElastiCache (EC) | `elasticache:DescribeCacheClusters` |
+| AWS Elastic Beanstalk | `elasticbeanstalk:DescribeEnvironments` |
+| Amazon Elastic File System (EFS) | `elasticfilesystem:DescribeFileSystems` |
+| Amazon Elastic Inference |  |
+| Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
+| Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
+| Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon EventBridge | `events:ListEventBuses` |
+| Amazon FSx | `fsx:DescribeFileSystems` |
+| Amazon GameLift | `gamelift:ListFleets` |
+| AWS Glue | `glue:GetJobs` |
+| Amazon Inspector | `inspector:ListAssessmentTemplates` |
+| AWS Internet of Things (IoT) |  |
+| AWS IoT Analytics |  |
+| Amazon Managed Streaming for Kafka | `kafka:ListClusters` |
+| Amazon Kinesis Data Analytics | `kinesisanalytics:ListApplications` |
+| Amazon Data Firehose | `firehose:ListDeliveryStreams` |
+| Amazon Kinesis Data Streams | `kinesis:ListStreams` |
+| Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
+| AWS Lambda | `lambda:ListFunctions` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| Amazon Lex | `lex:GetBots` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
+| AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
+| AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
+| AWS Elemental MediaPackage Live | `mediapackage:ListChannels` |
+| AWS Elemental MediaPackage Video on Demand | `mediapackage-vod:ListPackagingConfigurations` |
+| AWS Elemental MediaTailor | `mediatailor:ListPlaybackConfigurations` |
+| Amazon VPC NAT Gateways | `ec2:DescribeNatGateways` |
+| Amazon Neptune | `rds:DescribeDBClusters` |
+| AWS OpsWorks | `opsworks:DescribeStacks` |
+| Amazon Polly |  |
+| Amazon QLDB | `qldb:ListLedgers` |
+| Amazon RDS | `rds:DescribeDBInstances` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon Redshift | `redshift:DescribeClusters` |
+| Amazon Rekognition |  |
+| AWS RoboMaker | `robomaker:ListSimulationJobs` |
+| Amazon Route 53 | `route53:ListHostedZones` |
+| Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
+| Amazon S3 | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon SageMaker Batch Transform Jobs |  |
+| Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Ground Truth |  |
+| Amazon SageMaker Processing Jobs |  |
+| Amazon SageMaker Training Jobs |  |
+| AWS Service Catalog |  |
+| Amazon Simple Email Service (SES) |  |
+| Amazon Simple Notification Service (SNS) | `sns:ListTopics` |
+| Amazon Simple Queue Service (SQS) | `sqs:ListQueues` |
+| AWS Systems Manager - Run Command |  |
+| AWS Step Functions |  |
+| AWS Storage Gateway | `storagegateway:ListGateways` |
+| Amazon SWF | `swf:ListDomains` |
+| Amazon Textract |  |
+| AWS IoT Things Graph |  |
+| AWS Transfer Family | `transfer:ListServers` |
+| AWS Transit Gateway | `ec2:DescribeTransitGateways` |
+| Amazon Translate |  |
+| AWS Trusted Advisor |  |
+| AWS API Usage |  |
+| AWS Site-to-Site VPN | `ec2:DescribeVpnConnections` |
+| AWS WAF Classic |  |
+| AWS WAF |  |
+| Amazon WorkMail | `workmail:ListOrganizations` |
+| Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
+
+See the example of JSON policy for one single service below.
+
+JSON policy for Amazon API Gateway
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"apigateway:GET",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"ec2:DescribeAvailabilityZones"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+In this example, from the complete list of permissions you need to select
+
+* `"apigateway:GET"` for **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` for **All AWS cloud services**.
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+After you add the service to monitoring, a preset dashboard containing all recommended metrics is automatically listed on your **Dashboards** page. To look for specific dashboards, filter by **Preset** and then by **Name**.
+
+![AWS presets](https://dt-cdn.net/images/image-26-1645-389f58aa89.png)
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **AWS**, select the desired AWS instance, and then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
+
+To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide AWS](https://dt-cdn.net/images/2020-12-10-15-04-09-1502-b899a29d73.png)
+
+To check the availability of preset dashboards for each AWS service, see the list below.
+
+### Preset dashboard availability list
+
+| AWS service | Preset dashboard |
+| --- | --- |
+| Amazon EC2 Auto Scaling (built-in) | Not applicable |
+| AWS Lambda (built-in) | Not applicable |
+| Amazon Application and Network Load Balancer (built-in) | Not applicable |
+| Amazon DynamoDB (built-in) | Not applicable |
+| Amazon EBS (built-in) | Not applicable |
+| Amazon EC2 (built-in) | Not applicable |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Not applicable |
+| Amazon RDS (built-in) | Not applicable |
+| Amazon S3 (built-in) | Not applicable |
+| AWS Certificate Manager Private Certificate Authority | Not applicable |
+| All monitored Amazon services | Not applicable |
+| Amazon API Gateway | Not applicable |
+| AWS App Runner | Not applicable |
+| Amazon AppStream | Applicable |
+| AWS AppSync | Applicable |
+| Amazon Athena | Applicable |
+| Amazon Aurora | Not applicable |
+| Amazon EC2 Auto Scaling | Applicable |
+| AWS Billing | Applicable |
+| Amazon Keyspaces | Applicable |
+| AWS Chatbot | Applicable |
+| Amazon CloudFront | Not applicable |
+| AWS CloudHSM | Applicable |
+| Amazon CloudSearch | Applicable |
+| AWS CodeBuild | Applicable |
+| Amazon Cognito | Not applicable |
+| Amazon Connect | Applicable |
+| AWS DataSync | Applicable |
+| Amazon DynamoDB Accelerator (DAX) | Applicable |
+| AWS Database Migration Service (AWS DMS) | Applicable |
+| Amazon DocumentDB | Applicable |
+| AWS Direct Connect | Applicable |
+| Amazon DynamoDB | Not applicable |
+| Amazon EBS | Not applicable |
+| Amazon EC2 Spot Fleet | Not applicable |
+| Amazon EC2 API | Applicable |
+| Amazon Elastic Container Service (ECS) | Not applicable |
+| Amazon ECS Container Insights | Applicable |
+| Amazon Elastic File System (EFS) | Not applicable |
+| Amazon Elastic Kubernetes Service (EKS) | Applicable |
+| Amazon ElastiCache (EC) | Not applicable |
+| AWS Elastic Beanstalk | Applicable |
+| Amazon Elastic Inference | Applicable |
+| Amazon Elastic Transcoder | Applicable |
+| Amazon Elastic Map Reduce (EMR) | Not applicable |
+| Amazon Elasticsearch Service (ES) | Not applicable |
+| Amazon EventBridge | Applicable |
+| Amazon FSx | Applicable |
+| Amazon GameLift | Applicable |
+| AWS Glue | Not applicable |
+| Amazon Inspector | Applicable |
+| AWS Internet of Things (IoT) | Not applicable |
+| AWS IoT Things Graph | Applicable |
+| AWS IoT Analytics | Applicable |
+| Amazon Managed Streaming for Kafka | Applicable |
+| Amazon Kinesis Data Analytics | Not applicable |
+| Amazon Data Firehose | Not applicable |
+| Amazon Kinesis Data Streams | Not applicable |
+| Amazon Kinesis Video Streams | Not applicable |
+| AWS Lambda | Not applicable |
+| Amazon Lex | Applicable |
+| Amazon CloudWatch Logs | Applicable |
+| AWS Elemental MediaTailor | Applicable |
+| AWS Elemental MediaConnect | Applicable |
+| AWS Elemental MediaConvert | Applicable |
+| AWS Elemental MediaPackage Live | Applicable |
+| AWS Elemental MediaPackage Video on Demand | Applicable |
+| Amazon MQ | Applicable |
+| Amazon VPC NAT Gateways | Not applicable |
+| Amazon Neptune | Applicable |
+| AWS OpsWorks | Applicable |
+| Amazon Polly | Applicable |
+| Amazon QLDB | Applicable |
+| Amazon RDS | Not applicable |
+| Amazon Redshift | Not applicable |
+| Amazon Rekognition | Applicable |
+| AWS RoboMaker | Applicable |
+| Amazon Route 53 | Applicable |
+| Amazon Route 53 Resolver | Applicable |
+| Amazon S3 | Not applicable |
+| Amazon SageMaker Batch Transform Jobs | Not applicable |
+| Amazon SageMaker Endpoints | Not applicable |
+| Amazon SageMaker Endpoint Instances | Not applicable |
+| Amazon SageMaker Ground Truth | Not applicable |
+| Amazon SageMaker Processing Jobs | Not applicable |
+| Amazon SageMaker Training Jobs | Not applicable |
+| AWS Service Catalog | Applicable |
+| Amazon Simple Email Service (SES) | Not applicable |
+| Amazon Simple Notification Service (SNS) | Not applicable |
+| Amazon Simple Queue Service (SQS) | Not applicable |
+| AWS Systems Manager - Run Command | Applicable |
+| AWS Step Functions | Applicable |
+| AWS Storage Gateway | Applicable |
+| Amazon SWF | Applicable |
+| Amazon Textract | Applicable |
+| AWS Transfer Family | Applicable |
+| AWS Transit Gateway | Applicable |
+| Amazon Translate | Applicable |
+| AWS Trusted Advisor | Applicable |
+| AWS API Usage | Applicable |
+| AWS Site-to-Site VPN | Applicable |
+| AWS WAF Classic | Applicable |
+| AWS WAF | Applicable |
+| Amazon WorkMail | Applicable |
+| Amazon WorkSpaces | Applicable |
+
+![Serv cat](https://dt-cdn.net/images/dashboard-73-706-adce12fb6c.png)
+
+## Available metrics
+
+| Name | Description | Unit | Statistics | Dimensions | Recommended |
+| --- | --- | --- | --- | --- | --- |
+| ProvisionedProductLaunch | The number of provisioned products launched for a given product and provisioning artifact in a specified time period | Count | Sum | Region | Applicable |
+| ProvisionedProductLaunch |  | Count | Sum | Region, ProductId | Applicable |
+| ProvisionedProductLaunch |  | Count | Sum | Region, State | Applicable |
+| ProvisionedProductLaunch |  | Count | Sum | Region, ProvisioningArtifactId | Applicable |
+
+
+---
+
+
 ## Source: aws-service-simple-email-service-ses.md
 
 
 ---
 title: Amazon SES (Simple Email Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-email-service-ses
-scraped: 2026-02-15T21:29:47.057046
+scraped: 2026-02-16T09:36:57.873711
 ---
 
 # Amazon SES (Simple Email Service) monitoring
@@ -15900,7 +20058,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon SNS (Simple Notification Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-notification-service-sns
-scraped: 2026-02-15T21:30:04.000423
+scraped: 2026-02-16T09:30:59.232425
 ---
 
 # Amazon SNS (Simple Notification Service) monitoring
@@ -16788,6 +20946,857 @@ When CloudWatch displays your `SMSMonthToDateSpentUSD` metric as `Metrics with n
 ---
 
 
+## Source: aws-service-simple-queue-service-sqs.md
+
+
+---
+title: Amazon SQS (Simple Queue Service) monitoring
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-queue-service-sqs
+scraped: 2026-02-16T09:39:17.482233
+---
+
+# Amazon SQS (Simple Queue Service) monitoring
+
+# Amazon SQS (Simple Queue Service) monitoring
+
+* How-to guide
+* 2-min read
+* Published Oct 16, 2020
+
+Dynatrace ingests metrics for multiple preselected namespaces, including Amazon Simple Queue Service (Amazon SQS). You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+To enable monitoring for this service, you need
+
+* ActiveGate version 1.181+, as follows:
+
+  + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
+  + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
+
+    For role-based access (whether in a [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+* Dynatrace version 1.182+
+* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+
+JSON predefined policy for all supporting services
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"acm-pca:ListCertificateAuthorities",
+
+
+
+"apigateway:GET",
+
+
+
+"apprunner:ListServices",
+
+
+
+"appstream:DescribeFleets",
+
+
+
+"appsync:ListGraphqlApis",
+
+
+
+"athena:ListWorkGroups",
+
+
+
+"autoscaling:DescribeAutoScalingGroups",
+
+
+
+"cloudformation:ListStackResources",
+
+
+
+"cloudfront:ListDistributions",
+
+
+
+"cloudhsm:DescribeClusters",
+
+
+
+"cloudsearch:DescribeDomains",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"codebuild:ListProjects",
+
+
+
+"datasync:ListTasks",
+
+
+
+"dax:DescribeClusters",
+
+
+
+"directconnect:DescribeConnections",
+
+
+
+"dms:DescribeReplicationInstances",
+
+
+
+"dynamodb:ListTables",
+
+
+
+"dynamodb:ListTagsOfResource",
+
+
+
+"ec2:DescribeAvailabilityZones",
+
+
+
+"ec2:DescribeInstances",
+
+
+
+"ec2:DescribeNatGateways",
+
+
+
+"ec2:DescribeSpotFleetRequests",
+
+
+
+"ec2:DescribeTransitGateways",
+
+
+
+"ec2:DescribeVolumes",
+
+
+
+"ec2:DescribeVpnConnections",
+
+
+
+"ecs:ListClusters",
+
+
+
+"eks:ListClusters",
+
+
+
+"elasticache:DescribeCacheClusters",
+
+
+
+"elasticbeanstalk:DescribeEnvironmentResources",
+
+
+
+"elasticbeanstalk:DescribeEnvironments",
+
+
+
+"elasticfilesystem:DescribeFileSystems",
+
+
+
+"elasticloadbalancing:DescribeInstanceHealth",
+
+
+
+"elasticloadbalancing:DescribeListeners",
+
+
+
+"elasticloadbalancing:DescribeLoadBalancers",
+
+
+
+"elasticloadbalancing:DescribeRules",
+
+
+
+"elasticloadbalancing:DescribeTags",
+
+
+
+"elasticloadbalancing:DescribeTargetHealth",
+
+
+
+"elasticmapreduce:ListClusters",
+
+
+
+"elastictranscoder:ListPipelines",
+
+
+
+"es:ListDomainNames",
+
+
+
+"events:ListEventBuses",
+
+
+
+"firehose:ListDeliveryStreams",
+
+
+
+"fsx:DescribeFileSystems",
+
+
+
+"gamelift:ListFleets",
+
+
+
+"glue:GetJobs",
+
+
+
+"inspector:ListAssessmentTemplates",
+
+
+
+"kafka:ListClusters",
+
+
+
+"kinesis:ListStreams",
+
+
+
+"kinesisanalytics:ListApplications",
+
+
+
+"kinesisvideo:ListStreams",
+
+
+
+"lambda:ListFunctions",
+
+
+
+"lambda:ListTags",
+
+
+
+"lex:GetBots",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"mediaconnect:ListFlows",
+
+
+
+"mediaconvert:DescribeEndpoints",
+
+
+
+"mediapackage-vod:ListPackagingConfigurations",
+
+
+
+"mediapackage:ListChannels",
+
+
+
+"mediatailor:ListPlaybackConfigurations",
+
+
+
+"opsworks:DescribeStacks",
+
+
+
+"qldb:ListLedgers",
+
+
+
+"rds:DescribeDBClusters",
+
+
+
+"rds:DescribeDBInstances",
+
+
+
+"rds:DescribeEvents",
+
+
+
+"rds:ListTagsForResource",
+
+
+
+"redshift:DescribeClusters",
+
+
+
+"robomaker:ListSimulationJobs",
+
+
+
+"route53:ListHostedZones",
+
+
+
+"route53resolver:ListResolverEndpoints",
+
+
+
+"s3:ListAllMyBuckets",
+
+
+
+"sagemaker:ListEndpoints",
+
+
+
+"sns:ListTopics",
+
+
+
+"sqs:ListQueues",
+
+
+
+"storagegateway:ListGateways",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"swf:ListDomains",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"transfer:ListServers",
+
+
+
+"workmail:ListOrganizations",
+
+
+
+"workspaces:DescribeWorkspaces"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+
+Permissions required for AWS monitoring integration:
+
+* `"cloudwatch:GetMetricData"`
+* `"cloudwatch:GetMetricStatistics"`
+* `"cloudwatch:ListMetrics"`
+* `"sts:GetCallerIdentity"`
+* `"tag:GetResources"`
+* `"tag:GetTagKeys"`
+* `"ec2:DescribeAvailabilityZones"`
+
+### Complete list of permissions for cloud services
+
+| Name | Permissions |
+| --- | --- |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
+| Amazon MQ |  |
+| Amazon API Gateway | `apigateway:GET` |
+| AWS App Runner | `apprunner:ListServices` |
+| Amazon AppStream | `appstream:DescribeFleets` |
+| AWS AppSync | `appsync:ListGraphqlApis` |
+| Amazon Athena | `athena:ListWorkGroups` |
+| Amazon Aurora | `rds:DescribeDBClusters` |
+| Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| AWS Billing |  |
+| Amazon Keyspaces |  |
+| AWS Chatbot |  |
+| Amazon CloudFront | `cloudfront:ListDistributions` |
+| AWS CloudHSM | `cloudhsm:DescribeClusters` |
+| Amazon CloudSearch | `cloudsearch:DescribeDomains` |
+| AWS CodeBuild | `codebuild:ListProjects` |
+| Amazon Cognito |  |
+| Amazon Connect |  |
+| Amazon Elastic Kubernetes Service (EKS) | `eks:ListClusters` |
+| AWS DataSync | `datasync:ListTasks` |
+| Amazon DynamoDB Accelerator (DAX) | `dax:DescribeClusters` |
+| AWS Database Migration Service (AWS DMS) | `dms:DescribeReplicationInstances` |
+| Amazon DocumentDB | `rds:DescribeDBClusters` |
+| AWS Direct Connect | `directconnect:DescribeConnections` |
+| Amazon DynamoDB | `dynamodb:ListTables` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon EBS | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EC2 API |  |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
+| Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
+| Amazon ECS Container Insights | `ecs:ListClusters` |
+| Amazon ElastiCache (EC) | `elasticache:DescribeCacheClusters` |
+| AWS Elastic Beanstalk | `elasticbeanstalk:DescribeEnvironments` |
+| Amazon Elastic File System (EFS) | `elasticfilesystem:DescribeFileSystems` |
+| Amazon Elastic Inference |  |
+| Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
+| Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
+| Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon EventBridge | `events:ListEventBuses` |
+| Amazon FSx | `fsx:DescribeFileSystems` |
+| Amazon GameLift | `gamelift:ListFleets` |
+| AWS Glue | `glue:GetJobs` |
+| Amazon Inspector | `inspector:ListAssessmentTemplates` |
+| AWS Internet of Things (IoT) |  |
+| AWS IoT Analytics |  |
+| Amazon Managed Streaming for Kafka | `kafka:ListClusters` |
+| Amazon Kinesis Data Analytics | `kinesisanalytics:ListApplications` |
+| Amazon Data Firehose | `firehose:ListDeliveryStreams` |
+| Amazon Kinesis Data Streams | `kinesis:ListStreams` |
+| Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
+| AWS Lambda | `lambda:ListFunctions` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| Amazon Lex | `lex:GetBots` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
+| AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
+| AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
+| AWS Elemental MediaPackage Live | `mediapackage:ListChannels` |
+| AWS Elemental MediaPackage Video on Demand | `mediapackage-vod:ListPackagingConfigurations` |
+| AWS Elemental MediaTailor | `mediatailor:ListPlaybackConfigurations` |
+| Amazon VPC NAT Gateways | `ec2:DescribeNatGateways` |
+| Amazon Neptune | `rds:DescribeDBClusters` |
+| AWS OpsWorks | `opsworks:DescribeStacks` |
+| Amazon Polly |  |
+| Amazon QLDB | `qldb:ListLedgers` |
+| Amazon RDS | `rds:DescribeDBInstances` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon Redshift | `redshift:DescribeClusters` |
+| Amazon Rekognition |  |
+| AWS RoboMaker | `robomaker:ListSimulationJobs` |
+| Amazon Route 53 | `route53:ListHostedZones` |
+| Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
+| Amazon S3 | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon SageMaker Batch Transform Jobs |  |
+| Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Ground Truth |  |
+| Amazon SageMaker Processing Jobs |  |
+| Amazon SageMaker Training Jobs |  |
+| AWS Service Catalog |  |
+| Amazon Simple Email Service (SES) |  |
+| Amazon Simple Notification Service (SNS) | `sns:ListTopics` |
+| Amazon Simple Queue Service (SQS) | `sqs:ListQueues` |
+| AWS Systems Manager - Run Command |  |
+| AWS Step Functions |  |
+| AWS Storage Gateway | `storagegateway:ListGateways` |
+| Amazon SWF | `swf:ListDomains` |
+| Amazon Textract |  |
+| AWS IoT Things Graph |  |
+| AWS Transfer Family | `transfer:ListServers` |
+| AWS Transit Gateway | `ec2:DescribeTransitGateways` |
+| Amazon Translate |  |
+| AWS Trusted Advisor |  |
+| AWS API Usage |  |
+| AWS Site-to-Site VPN | `ec2:DescribeVpnConnections` |
+| AWS WAF Classic |  |
+| AWS WAF |  |
+| Amazon WorkMail | `workmail:ListOrganizations` |
+| Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
+
+Example of JSON policy for one single service.
+
+JSON policy for Amazon API Gateway
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"apigateway:GET",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"ec2:DescribeAvailabilityZones"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+In this example, from the complete list of permissions you need to select
+
+* `"apigateway:GET"` for **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` for **All AWS cloud services**.
+
+### AWS endpoints that need to be reachable from ActiveGate with corresponding AWS services
+
+| Endpoint | Service |
+| --- | --- |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
+| `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
+| `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
+| `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
+| `appstream2.<REGION>.amazonaws.com` | Amazon AppStream |
+| `appsync.<REGION>.amazonaws.com` | AWS AppSync |
+| `athena.<REGION>.amazonaws.com` | Amazon Athena |
+| `cloudfront.amazonaws.com` | Amazon CloudFront |
+| `cloudhsmv2.<REGION>.amazonaws.com` | AWS CloudHSM |
+| `cloudsearch.<REGION>.amazonaws.com` | Amazon CloudSearch |
+| `codebuild.<REGION>.amazonaws.com` | AWS CodeBuild |
+| `datasync.<REGION>.amazonaws.com` | AWS DataSync |
+| `dax.<REGION>.amazonaws.com` | Amazon DynamoDB Accelerator (DAX) |
+| `dms.<REGION>.amazonaws.com` | AWS Database Migration Service (AWS DMS) |
+| `directconnect.<REGION>.amazonaws.com` | AWS Direct Connect |
+| `ecs.<REGION>.amazonaws.com` | Amazon Elastic Container Service (ECS), Amazon ECS Container Insights |
+| `elasticfilesystem.<REGION>.amazonaws.com` | Amazon Elastic File System (EFS) |
+| `eks.<REGION>.amazonaws.com` | Amazon Elastic Kubernetes Service (EKS) |
+| `elasticache.<REGION>.amazonaws.com` | Amazon ElastiCache (EC) |
+| `elasticbeanstalk.<REGION>.amazonaws.com` | AWS Elastic Beanstalk |
+| `elastictranscoder.<REGION>.amazonaws.com` | Amazon Elastic Transcoder |
+| `es.<REGION>.amazonaws.com` | Amazon Elasticsearch Service (ES) |
+| `events.<REGION>.amazonaws.com` | Amazon EventBridge |
+| `fsx.<REGION>.amazonaws.com` | Amazon FSx |
+| `gamelift.<REGION>.amazonaws.com` | Amazon GameLift |
+| `glue.<REGION>.amazonaws.com` | AWS Glue |
+| `inspector.<REGION>.amazonaws.com` | Amazon Inspector |
+| `kafka.<REGION>.amazonaws.com` | Amazon Managed Streaming for Kafka |
+| `models.lex.<REGION>.amazonaws.com` | Amazon Lex |
+| `logs.<REGION>.amazonaws.com` | Amazon CloudWatch Logs |
+| `api.mediatailor.<REGION>.amazonaws.com` | AWS Elemental MediaTailor |
+| `mediaconnect.<REGION>.amazonaws.com` | AWS Elemental MediaConnect |
+| `mediapackage.<REGION>.amazonaws.com` | AWS Elemental MediaPackage Live |
+| `mediapackage-vod.<REGION>.amazonaws.com` | AWS Elemental MediaPackage Video on Demand |
+| `opsworks.<REGION>.amazonaws.com` | AWS OpsWorks |
+| `qldb.<REGION>.amazonaws.com` | Amazon QLDB |
+| `redshift.<REGION>.amazonaws.com` | Amazon Redshift |
+| `robomaker.<REGION>.amazonaws.com` | AWS RoboMaker |
+| `route53.amazonaws.com` | Amazon Route 53 |
+| `route53resolver.<REGION>.amazonaws.com` | Amazon Route 53 Resolver |
+| `api.sagemaker.<REGION>.amazonaws.com` | Amazon SageMaker Endpoints, Amazon SageMaker Endpoint Instances |
+| `sns.<REGION>.amazonaws.com` | Amazon Simple Notification Service (SNS) |
+| `sqs.<REGION>.amazonaws.com` | Amazon Simple Queue Service (SQS) |
+| `storagegateway.<REGION>.amazonaws.com` | AWS Storage Gateway |
+| `swf.<REGION>.amazonaws.com` | Amazon SWF |
+| `transfer.<REGION>.amazonaws.com` | AWS Transfer Family |
+| `workmail.<REGION>.amazonaws.com` | Amazon WorkMail |
+| `workspaces.<REGION>.amazonaws.com` | Amazon WorkSpaces |
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.").
+
+To check the availability of preset dashboards for each AWS service, see the list below.
+
+### Preset dashboard availability list
+
+| AWS service | Preset dashboard |
+| --- | --- |
+| Amazon EC2 Auto Scaling (built-in) | Not applicable |
+| AWS Lambda (built-in) | Not applicable |
+| Amazon Application and Network Load Balancer (built-in) | Not applicable |
+| Amazon DynamoDB (built-in) | Not applicable |
+| Amazon EBS (built-in) | Not applicable |
+| Amazon EC2 (built-in) | Not applicable |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Not applicable |
+| Amazon RDS (built-in) | Not applicable |
+| Amazon S3 (built-in) | Not applicable |
+| AWS Certificate Manager Private Certificate Authority | Not applicable |
+| All monitored Amazon services | Not applicable |
+| Amazon API Gateway | Not applicable |
+| AWS App Runner | Not applicable |
+| Amazon AppStream | Applicable |
+| AWS AppSync | Applicable |
+| Amazon Athena | Applicable |
+| Amazon Aurora | Not applicable |
+| Amazon EC2 Auto Scaling | Applicable |
+| AWS Billing | Applicable |
+| Amazon Keyspaces | Applicable |
+| AWS Chatbot | Applicable |
+| Amazon CloudFront | Not applicable |
+| AWS CloudHSM | Applicable |
+| Amazon CloudSearch | Applicable |
+| AWS CodeBuild | Applicable |
+| Amazon Cognito | Not applicable |
+| Amazon Connect | Applicable |
+| AWS DataSync | Applicable |
+| Amazon DynamoDB Accelerator (DAX) | Applicable |
+| AWS Database Migration Service (AWS DMS) | Applicable |
+| Amazon DocumentDB | Applicable |
+| AWS Direct Connect | Applicable |
+| Amazon DynamoDB | Not applicable |
+| Amazon EBS | Not applicable |
+| Amazon EC2 Spot Fleet | Not applicable |
+| Amazon EC2 API | Applicable |
+| Amazon Elastic Container Service (ECS) | Not applicable |
+| Amazon ECS Container Insights | Applicable |
+| Amazon Elastic File System (EFS) | Not applicable |
+| Amazon Elastic Kubernetes Service (EKS) | Applicable |
+| Amazon ElastiCache (EC) | Not applicable |
+| AWS Elastic Beanstalk | Applicable |
+| Amazon Elastic Inference | Applicable |
+| Amazon Elastic Transcoder | Applicable |
+| Amazon Elastic Map Reduce (EMR) | Not applicable |
+| Amazon Elasticsearch Service (ES) | Not applicable |
+| Amazon EventBridge | Applicable |
+| Amazon FSx | Applicable |
+| Amazon GameLift | Applicable |
+| AWS Glue | Not applicable |
+| Amazon Inspector | Applicable |
+| AWS Internet of Things (IoT) | Not applicable |
+| AWS IoT Things Graph | Applicable |
+| AWS IoT Analytics | Applicable |
+| Amazon Managed Streaming for Kafka | Applicable |
+| Amazon Kinesis Data Analytics | Not applicable |
+| Amazon Data Firehose | Not applicable |
+| Amazon Kinesis Data Streams | Not applicable |
+| Amazon Kinesis Video Streams | Not applicable |
+| AWS Lambda | Not applicable |
+| Amazon Lex | Applicable |
+| Amazon CloudWatch Logs | Applicable |
+| AWS Elemental MediaTailor | Applicable |
+| AWS Elemental MediaConnect | Applicable |
+| AWS Elemental MediaConvert | Applicable |
+| AWS Elemental MediaPackage Live | Applicable |
+| AWS Elemental MediaPackage Video on Demand | Applicable |
+| Amazon MQ | Applicable |
+| Amazon VPC NAT Gateways | Not applicable |
+| Amazon Neptune | Applicable |
+| AWS OpsWorks | Applicable |
+| Amazon Polly | Applicable |
+| Amazon QLDB | Applicable |
+| Amazon RDS | Not applicable |
+| Amazon Redshift | Not applicable |
+| Amazon Rekognition | Applicable |
+| AWS RoboMaker | Applicable |
+| Amazon Route 53 | Applicable |
+| Amazon Route 53 Resolver | Applicable |
+| Amazon S3 | Not applicable |
+| Amazon SageMaker Batch Transform Jobs | Not applicable |
+| Amazon SageMaker Endpoints | Not applicable |
+| Amazon SageMaker Endpoint Instances | Not applicable |
+| Amazon SageMaker Ground Truth | Not applicable |
+| Amazon SageMaker Processing Jobs | Not applicable |
+| Amazon SageMaker Training Jobs | Not applicable |
+| AWS Service Catalog | Applicable |
+| Amazon Simple Email Service (SES) | Not applicable |
+| Amazon Simple Notification Service (SNS) | Not applicable |
+| Amazon Simple Queue Service (SQS) | Not applicable |
+| AWS Systems Manager - Run Command | Applicable |
+| AWS Step Functions | Applicable |
+| AWS Storage Gateway | Applicable |
+| Amazon SWF | Applicable |
+| Amazon Textract | Applicable |
+| AWS Transfer Family | Applicable |
+| AWS Transit Gateway | Applicable |
+| Amazon Translate | Applicable |
+| AWS Trusted Advisor | Applicable |
+| AWS API Usage | Applicable |
+| AWS Site-to-Site VPN | Applicable |
+| AWS WAF Classic | Applicable |
+| AWS WAF | Applicable |
+| Amazon WorkMail | Applicable |
+| Amazon WorkSpaces | Applicable |
+
+## Available metrics
+
+`QueueName` is the main dimension.
+
+| Name | Description | Unit | Statistics | Dimensions | Recommended |
+| --- | --- | --- | --- | --- | --- |
+| ApproximateAgeOfOldestMessage | The approximate age of the oldest non-deleted message in the queue | Seconds | Multi | QueueName | Applicable |
+| ApproximateAgeOfOldestMessage |  | Seconds | Sum | QueueName |  |
+| ApproximateNumberOfMessagesDelayed | The number of messages in the queue that are delayed and not available for reading immediately | Count | Multi | QueueName |  |
+| ApproximateNumberOfMessagesDelayed |  | Count | Sum | QueueName |  |
+| ApproximateNumberOfMessagesNotVisible | The number of messages that are in flight. Messages are considered to be in flight if they have been sent to a client but haven't yet been deleted or haven't yet reached the end of their visibility window. | Count | Multi | QueueName |  |
+| ApproximateNumberOfMessagesNotVisible |  | Count | Sum | QueueName | Applicable |
+| ApproximateNumberOfMessagesVisible | The number of messages available for retrieval from the queue | Count | Multi | QueueName |  |
+| ApproximateNumberOfMessagesVisible |  | Count | Sum | QueueName |  |
+| NumberOfEmptyReceives | The number of `ReceiveMessage` API calls that didn't return a message | Count | Multi | QueueName |  |
+| NumberOfEmptyReceives |  | Count | Sum | QueueName |  |
+| NumberOfMessagesDeleted | The number of messages deleted from the queue | Count | Multi | QueueName |  |
+| NumberOfMessagesDeleted |  | Count | Sum | QueueName |  |
+| NumberOfMessagesReceived | The number of messages returned by calls to the `ReceiveMessage` action | Count | Multi | QueueName |  |
+| NumberOfMessagesReceived |  | Count | Sum | QueueName | Applicable |
+| NumberOfMessagesSent | The number of messages added to a queue | Count | Multi | QueueName |  |
+| NumberOfMessagesSent |  | Count | Sum | QueueName | Applicable |
+| SentMessageSize | The size of messages added to a queue | Bytes | Multi | QueueName |  |
+| SentMessageSize |  | Bytes | Sum | QueueName |  |
+
+
+---
+
+
 ## Source: aws-service-simple-storage-service-s3.md
 
 
@@ -17606,7 +22615,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Textract monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-textract
-scraped: 2026-02-15T21:22:31.783497
+scraped: 2026-02-16T09:33:39.712370
 ---
 
 # Amazon Textract monitoring
@@ -18395,6 +23404,1596 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ## Limitations
 
 Because Amazon Textract provides OCR APIs, there is no **Main Dimension**.
+
+
+---
+
+
+## Source: aws-service-translate.md
+
+
+---
+title: Amazon Translate monitoring
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-translate
+scraped: 2026-02-16T09:31:28.429767
+---
+
+# Amazon Translate monitoring
+
+# Amazon Translate monitoring
+
+* How-to guide
+* 1-min read
+* Published Jul 06, 2020
+
+Dynatrace ingests metrics for multiple preselected namespaces, including Amazon Translate. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+To enable monitoring for this service, you need
+
+* ActiveGate version 1.197+
+
+  + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
+  + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
+
+    For role-based access (whether in a [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+* Dynatrace version 1.203+
+* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+
+JSON predefined policy for all supporting services
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"acm-pca:ListCertificateAuthorities",
+
+
+
+"apigateway:GET",
+
+
+
+"apprunner:ListServices",
+
+
+
+"appstream:DescribeFleets",
+
+
+
+"appsync:ListGraphqlApis",
+
+
+
+"athena:ListWorkGroups",
+
+
+
+"autoscaling:DescribeAutoScalingGroups",
+
+
+
+"cloudformation:ListStackResources",
+
+
+
+"cloudfront:ListDistributions",
+
+
+
+"cloudhsm:DescribeClusters",
+
+
+
+"cloudsearch:DescribeDomains",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"codebuild:ListProjects",
+
+
+
+"datasync:ListTasks",
+
+
+
+"dax:DescribeClusters",
+
+
+
+"directconnect:DescribeConnections",
+
+
+
+"dms:DescribeReplicationInstances",
+
+
+
+"dynamodb:ListTables",
+
+
+
+"dynamodb:ListTagsOfResource",
+
+
+
+"ec2:DescribeAvailabilityZones",
+
+
+
+"ec2:DescribeInstances",
+
+
+
+"ec2:DescribeNatGateways",
+
+
+
+"ec2:DescribeSpotFleetRequests",
+
+
+
+"ec2:DescribeTransitGateways",
+
+
+
+"ec2:DescribeVolumes",
+
+
+
+"ec2:DescribeVpnConnections",
+
+
+
+"ecs:ListClusters",
+
+
+
+"eks:ListClusters",
+
+
+
+"elasticache:DescribeCacheClusters",
+
+
+
+"elasticbeanstalk:DescribeEnvironmentResources",
+
+
+
+"elasticbeanstalk:DescribeEnvironments",
+
+
+
+"elasticfilesystem:DescribeFileSystems",
+
+
+
+"elasticloadbalancing:DescribeInstanceHealth",
+
+
+
+"elasticloadbalancing:DescribeListeners",
+
+
+
+"elasticloadbalancing:DescribeLoadBalancers",
+
+
+
+"elasticloadbalancing:DescribeRules",
+
+
+
+"elasticloadbalancing:DescribeTags",
+
+
+
+"elasticloadbalancing:DescribeTargetHealth",
+
+
+
+"elasticmapreduce:ListClusters",
+
+
+
+"elastictranscoder:ListPipelines",
+
+
+
+"es:ListDomainNames",
+
+
+
+"events:ListEventBuses",
+
+
+
+"firehose:ListDeliveryStreams",
+
+
+
+"fsx:DescribeFileSystems",
+
+
+
+"gamelift:ListFleets",
+
+
+
+"glue:GetJobs",
+
+
+
+"inspector:ListAssessmentTemplates",
+
+
+
+"kafka:ListClusters",
+
+
+
+"kinesis:ListStreams",
+
+
+
+"kinesisanalytics:ListApplications",
+
+
+
+"kinesisvideo:ListStreams",
+
+
+
+"lambda:ListFunctions",
+
+
+
+"lambda:ListTags",
+
+
+
+"lex:GetBots",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"mediaconnect:ListFlows",
+
+
+
+"mediaconvert:DescribeEndpoints",
+
+
+
+"mediapackage-vod:ListPackagingConfigurations",
+
+
+
+"mediapackage:ListChannels",
+
+
+
+"mediatailor:ListPlaybackConfigurations",
+
+
+
+"opsworks:DescribeStacks",
+
+
+
+"qldb:ListLedgers",
+
+
+
+"rds:DescribeDBClusters",
+
+
+
+"rds:DescribeDBInstances",
+
+
+
+"rds:DescribeEvents",
+
+
+
+"rds:ListTagsForResource",
+
+
+
+"redshift:DescribeClusters",
+
+
+
+"robomaker:ListSimulationJobs",
+
+
+
+"route53:ListHostedZones",
+
+
+
+"route53resolver:ListResolverEndpoints",
+
+
+
+"s3:ListAllMyBuckets",
+
+
+
+"sagemaker:ListEndpoints",
+
+
+
+"sns:ListTopics",
+
+
+
+"sqs:ListQueues",
+
+
+
+"storagegateway:ListGateways",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"swf:ListDomains",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"transfer:ListServers",
+
+
+
+"workmail:ListOrganizations",
+
+
+
+"workspaces:DescribeWorkspaces"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+
+Permissions required for AWS monitoring integration:
+
+* `"cloudwatch:GetMetricData"`
+* `"cloudwatch:GetMetricStatistics"`
+* `"cloudwatch:ListMetrics"`
+* `"sts:GetCallerIdentity"`
+* `"tag:GetResources"`
+* `"tag:GetTagKeys"`
+* `"ec2:DescribeAvailabilityZones"`
+
+### Complete list of permissions for cloud services
+
+| Name | Permissions |
+| --- | --- |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
+| Amazon MQ |  |
+| Amazon API Gateway | `apigateway:GET` |
+| AWS App Runner | `apprunner:ListServices` |
+| Amazon AppStream | `appstream:DescribeFleets` |
+| AWS AppSync | `appsync:ListGraphqlApis` |
+| Amazon Athena | `athena:ListWorkGroups` |
+| Amazon Aurora | `rds:DescribeDBClusters` |
+| Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| AWS Billing |  |
+| Amazon Keyspaces |  |
+| AWS Chatbot |  |
+| Amazon CloudFront | `cloudfront:ListDistributions` |
+| AWS CloudHSM | `cloudhsm:DescribeClusters` |
+| Amazon CloudSearch | `cloudsearch:DescribeDomains` |
+| AWS CodeBuild | `codebuild:ListProjects` |
+| Amazon Cognito |  |
+| Amazon Connect |  |
+| Amazon Elastic Kubernetes Service (EKS) | `eks:ListClusters` |
+| AWS DataSync | `datasync:ListTasks` |
+| Amazon DynamoDB Accelerator (DAX) | `dax:DescribeClusters` |
+| AWS Database Migration Service (AWS DMS) | `dms:DescribeReplicationInstances` |
+| Amazon DocumentDB | `rds:DescribeDBClusters` |
+| AWS Direct Connect | `directconnect:DescribeConnections` |
+| Amazon DynamoDB | `dynamodb:ListTables` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon EBS | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EC2 API |  |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
+| Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
+| Amazon ECS Container Insights | `ecs:ListClusters` |
+| Amazon ElastiCache (EC) | `elasticache:DescribeCacheClusters` |
+| AWS Elastic Beanstalk | `elasticbeanstalk:DescribeEnvironments` |
+| Amazon Elastic File System (EFS) | `elasticfilesystem:DescribeFileSystems` |
+| Amazon Elastic Inference |  |
+| Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
+| Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
+| Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon EventBridge | `events:ListEventBuses` |
+| Amazon FSx | `fsx:DescribeFileSystems` |
+| Amazon GameLift | `gamelift:ListFleets` |
+| AWS Glue | `glue:GetJobs` |
+| Amazon Inspector | `inspector:ListAssessmentTemplates` |
+| AWS Internet of Things (IoT) |  |
+| AWS IoT Analytics |  |
+| Amazon Managed Streaming for Kafka | `kafka:ListClusters` |
+| Amazon Kinesis Data Analytics | `kinesisanalytics:ListApplications` |
+| Amazon Data Firehose | `firehose:ListDeliveryStreams` |
+| Amazon Kinesis Data Streams | `kinesis:ListStreams` |
+| Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
+| AWS Lambda | `lambda:ListFunctions` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| Amazon Lex | `lex:GetBots` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
+| AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
+| AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
+| AWS Elemental MediaPackage Live | `mediapackage:ListChannels` |
+| AWS Elemental MediaPackage Video on Demand | `mediapackage-vod:ListPackagingConfigurations` |
+| AWS Elemental MediaTailor | `mediatailor:ListPlaybackConfigurations` |
+| Amazon VPC NAT Gateways | `ec2:DescribeNatGateways` |
+| Amazon Neptune | `rds:DescribeDBClusters` |
+| AWS OpsWorks | `opsworks:DescribeStacks` |
+| Amazon Polly |  |
+| Amazon QLDB | `qldb:ListLedgers` |
+| Amazon RDS | `rds:DescribeDBInstances` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon Redshift | `redshift:DescribeClusters` |
+| Amazon Rekognition |  |
+| AWS RoboMaker | `robomaker:ListSimulationJobs` |
+| Amazon Route 53 | `route53:ListHostedZones` |
+| Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
+| Amazon S3 | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon SageMaker Batch Transform Jobs |  |
+| Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Ground Truth |  |
+| Amazon SageMaker Processing Jobs |  |
+| Amazon SageMaker Training Jobs |  |
+| AWS Service Catalog |  |
+| Amazon Simple Email Service (SES) |  |
+| Amazon Simple Notification Service (SNS) | `sns:ListTopics` |
+| Amazon Simple Queue Service (SQS) | `sqs:ListQueues` |
+| AWS Systems Manager - Run Command |  |
+| AWS Step Functions |  |
+| AWS Storage Gateway | `storagegateway:ListGateways` |
+| Amazon SWF | `swf:ListDomains` |
+| Amazon Textract |  |
+| AWS IoT Things Graph |  |
+| AWS Transfer Family | `transfer:ListServers` |
+| AWS Transit Gateway | `ec2:DescribeTransitGateways` |
+| Amazon Translate |  |
+| AWS Trusted Advisor |  |
+| AWS API Usage |  |
+| AWS Site-to-Site VPN | `ec2:DescribeVpnConnections` |
+| AWS WAF Classic |  |
+| AWS WAF |  |
+| Amazon WorkMail | `workmail:ListOrganizations` |
+| Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
+
+See the example of JSON policy for one single service below.
+
+JSON policy for Amazon API Gateway
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"apigateway:GET",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"ec2:DescribeAvailabilityZones"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+In this example, from the complete list of permissions you need to select
+
+* `"apigateway:GET"` for **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` for **All AWS cloud services**.
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+For Amazon Translate, there are no instances (custom devices) on the custom device group overview page. The service metrics are under the **Further details** section of the custom device group overview page.
+
+### View metrics on your dashboard
+
+After you add the service to monitoring, a preset dashboard containing all recommended metrics is automatically listed on your **Dashboards** page. To look for specific dashboards, filter by **Preset** and then by **Name**.
+
+![AWS presets](https://dt-cdn.net/images/image-26-1645-389f58aa89.png)
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **AWS**, select the desired AWS instance, and then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
+
+To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide AWS](https://dt-cdn.net/images/2020-12-10-15-04-09-1502-b899a29d73.png)
+
+To check the availability of preset dashboards for each AWS service, see the list below.
+
+### Preset dashboard availability list
+
+| AWS service | Preset dashboard |
+| --- | --- |
+| Amazon EC2 Auto Scaling (built-in) | Not applicable |
+| AWS Lambda (built-in) | Not applicable |
+| Amazon Application and Network Load Balancer (built-in) | Not applicable |
+| Amazon DynamoDB (built-in) | Not applicable |
+| Amazon EBS (built-in) | Not applicable |
+| Amazon EC2 (built-in) | Not applicable |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Not applicable |
+| Amazon RDS (built-in) | Not applicable |
+| Amazon S3 (built-in) | Not applicable |
+| AWS Certificate Manager Private Certificate Authority | Not applicable |
+| All monitored Amazon services | Not applicable |
+| Amazon API Gateway | Not applicable |
+| AWS App Runner | Not applicable |
+| Amazon AppStream | Applicable |
+| AWS AppSync | Applicable |
+| Amazon Athena | Applicable |
+| Amazon Aurora | Not applicable |
+| Amazon EC2 Auto Scaling | Applicable |
+| AWS Billing | Applicable |
+| Amazon Keyspaces | Applicable |
+| AWS Chatbot | Applicable |
+| Amazon CloudFront | Not applicable |
+| AWS CloudHSM | Applicable |
+| Amazon CloudSearch | Applicable |
+| AWS CodeBuild | Applicable |
+| Amazon Cognito | Not applicable |
+| Amazon Connect | Applicable |
+| AWS DataSync | Applicable |
+| Amazon DynamoDB Accelerator (DAX) | Applicable |
+| AWS Database Migration Service (AWS DMS) | Applicable |
+| Amazon DocumentDB | Applicable |
+| AWS Direct Connect | Applicable |
+| Amazon DynamoDB | Not applicable |
+| Amazon EBS | Not applicable |
+| Amazon EC2 Spot Fleet | Not applicable |
+| Amazon EC2 API | Applicable |
+| Amazon Elastic Container Service (ECS) | Not applicable |
+| Amazon ECS Container Insights | Applicable |
+| Amazon Elastic File System (EFS) | Not applicable |
+| Amazon Elastic Kubernetes Service (EKS) | Applicable |
+| Amazon ElastiCache (EC) | Not applicable |
+| AWS Elastic Beanstalk | Applicable |
+| Amazon Elastic Inference | Applicable |
+| Amazon Elastic Transcoder | Applicable |
+| Amazon Elastic Map Reduce (EMR) | Not applicable |
+| Amazon Elasticsearch Service (ES) | Not applicable |
+| Amazon EventBridge | Applicable |
+| Amazon FSx | Applicable |
+| Amazon GameLift | Applicable |
+| AWS Glue | Not applicable |
+| Amazon Inspector | Applicable |
+| AWS Internet of Things (IoT) | Not applicable |
+| AWS IoT Things Graph | Applicable |
+| AWS IoT Analytics | Applicable |
+| Amazon Managed Streaming for Kafka | Applicable |
+| Amazon Kinesis Data Analytics | Not applicable |
+| Amazon Data Firehose | Not applicable |
+| Amazon Kinesis Data Streams | Not applicable |
+| Amazon Kinesis Video Streams | Not applicable |
+| AWS Lambda | Not applicable |
+| Amazon Lex | Applicable |
+| Amazon CloudWatch Logs | Applicable |
+| AWS Elemental MediaTailor | Applicable |
+| AWS Elemental MediaConnect | Applicable |
+| AWS Elemental MediaConvert | Applicable |
+| AWS Elemental MediaPackage Live | Applicable |
+| AWS Elemental MediaPackage Video on Demand | Applicable |
+| Amazon MQ | Applicable |
+| Amazon VPC NAT Gateways | Not applicable |
+| Amazon Neptune | Applicable |
+| AWS OpsWorks | Applicable |
+| Amazon Polly | Applicable |
+| Amazon QLDB | Applicable |
+| Amazon RDS | Not applicable |
+| Amazon Redshift | Not applicable |
+| Amazon Rekognition | Applicable |
+| AWS RoboMaker | Applicable |
+| Amazon Route 53 | Applicable |
+| Amazon Route 53 Resolver | Applicable |
+| Amazon S3 | Not applicable |
+| Amazon SageMaker Batch Transform Jobs | Not applicable |
+| Amazon SageMaker Endpoints | Not applicable |
+| Amazon SageMaker Endpoint Instances | Not applicable |
+| Amazon SageMaker Ground Truth | Not applicable |
+| Amazon SageMaker Processing Jobs | Not applicable |
+| Amazon SageMaker Training Jobs | Not applicable |
+| AWS Service Catalog | Applicable |
+| Amazon Simple Email Service (SES) | Not applicable |
+| Amazon Simple Notification Service (SNS) | Not applicable |
+| Amazon Simple Queue Service (SQS) | Not applicable |
+| AWS Systems Manager - Run Command | Applicable |
+| AWS Step Functions | Applicable |
+| AWS Storage Gateway | Applicable |
+| Amazon SWF | Applicable |
+| Amazon Textract | Applicable |
+| AWS Transfer Family | Applicable |
+| AWS Transit Gateway | Applicable |
+| Amazon Translate | Applicable |
+| AWS Trusted Advisor | Applicable |
+| AWS API Usage | Applicable |
+| AWS Site-to-Site VPN | Applicable |
+| AWS WAF Classic | Applicable |
+| AWS WAF | Applicable |
+| Amazon WorkMail | Applicable |
+| Amazon WorkSpaces | Applicable |
+
+![Transl](https://dt-cdn.net/images/dashboard-74-2560-8ceeb95f5c.png)
+
+## Available metrics
+
+| Name | Description | Unit | Statistics | Dimensions | Recommended |
+| --- | --- | --- | --- | --- | --- |
+| CharacterCount | The number of billable characters in requests | Count | Sum | Region, LanguagePair, Operation | Applicable |
+| ResponseTime | The time that it took to respond to a request | Milliseconds | Multi | Region, LanguagePair, Operation | Applicable |
+| ServerErrorCount | The number of server errors. The HTTP response code range for a server error is `500`-`599` | Count | Sum | Region, Operation | Applicable |
+| SuccessfulRequestCount | The number of successful translation requests. The response code for a successful request is `200`-`299` | Count | Sum | Region, Operation | Applicable |
+| ThrottledCount | The number of requests subject to throttling | Count | Sum | Region, Operation | Applicable |
+| UserErrorCount | The number of user errors that occurred. The HTTP response code range for a user error is `400`-`499` | Count | Sum | Region, Operation | Applicable |
+
+
+---
+
+
+## Source: aws-service-trusted-advisor.md
+
+
+---
+title: AWS Trusted Advisor monitoring
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-trusted-advisor
+scraped: 2026-02-16T09:33:46.594372
+---
+
+# AWS Trusted Advisor monitoring
+
+# AWS Trusted Advisor monitoring
+
+* How-to guide
+* 1-min read
+* Updated on Jun 20, 2022
+
+Dynatrace ingests metrics for multiple preselected namespaces, including AWS Trusted Advisor. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+To enable monitoring for this service, you need
+
+* ActiveGate version 1.197+
+
+  + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
+  + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
+
+    For role-based access (whether in a [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+* Dynatrace version 1.203+
+* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+
+JSON predefined policy for all supporting services
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"acm-pca:ListCertificateAuthorities",
+
+
+
+"apigateway:GET",
+
+
+
+"apprunner:ListServices",
+
+
+
+"appstream:DescribeFleets",
+
+
+
+"appsync:ListGraphqlApis",
+
+
+
+"athena:ListWorkGroups",
+
+
+
+"autoscaling:DescribeAutoScalingGroups",
+
+
+
+"cloudformation:ListStackResources",
+
+
+
+"cloudfront:ListDistributions",
+
+
+
+"cloudhsm:DescribeClusters",
+
+
+
+"cloudsearch:DescribeDomains",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"codebuild:ListProjects",
+
+
+
+"datasync:ListTasks",
+
+
+
+"dax:DescribeClusters",
+
+
+
+"directconnect:DescribeConnections",
+
+
+
+"dms:DescribeReplicationInstances",
+
+
+
+"dynamodb:ListTables",
+
+
+
+"dynamodb:ListTagsOfResource",
+
+
+
+"ec2:DescribeAvailabilityZones",
+
+
+
+"ec2:DescribeInstances",
+
+
+
+"ec2:DescribeNatGateways",
+
+
+
+"ec2:DescribeSpotFleetRequests",
+
+
+
+"ec2:DescribeTransitGateways",
+
+
+
+"ec2:DescribeVolumes",
+
+
+
+"ec2:DescribeVpnConnections",
+
+
+
+"ecs:ListClusters",
+
+
+
+"eks:ListClusters",
+
+
+
+"elasticache:DescribeCacheClusters",
+
+
+
+"elasticbeanstalk:DescribeEnvironmentResources",
+
+
+
+"elasticbeanstalk:DescribeEnvironments",
+
+
+
+"elasticfilesystem:DescribeFileSystems",
+
+
+
+"elasticloadbalancing:DescribeInstanceHealth",
+
+
+
+"elasticloadbalancing:DescribeListeners",
+
+
+
+"elasticloadbalancing:DescribeLoadBalancers",
+
+
+
+"elasticloadbalancing:DescribeRules",
+
+
+
+"elasticloadbalancing:DescribeTags",
+
+
+
+"elasticloadbalancing:DescribeTargetHealth",
+
+
+
+"elasticmapreduce:ListClusters",
+
+
+
+"elastictranscoder:ListPipelines",
+
+
+
+"es:ListDomainNames",
+
+
+
+"events:ListEventBuses",
+
+
+
+"firehose:ListDeliveryStreams",
+
+
+
+"fsx:DescribeFileSystems",
+
+
+
+"gamelift:ListFleets",
+
+
+
+"glue:GetJobs",
+
+
+
+"inspector:ListAssessmentTemplates",
+
+
+
+"kafka:ListClusters",
+
+
+
+"kinesis:ListStreams",
+
+
+
+"kinesisanalytics:ListApplications",
+
+
+
+"kinesisvideo:ListStreams",
+
+
+
+"lambda:ListFunctions",
+
+
+
+"lambda:ListTags",
+
+
+
+"lex:GetBots",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"mediaconnect:ListFlows",
+
+
+
+"mediaconvert:DescribeEndpoints",
+
+
+
+"mediapackage-vod:ListPackagingConfigurations",
+
+
+
+"mediapackage:ListChannels",
+
+
+
+"mediatailor:ListPlaybackConfigurations",
+
+
+
+"opsworks:DescribeStacks",
+
+
+
+"qldb:ListLedgers",
+
+
+
+"rds:DescribeDBClusters",
+
+
+
+"rds:DescribeDBInstances",
+
+
+
+"rds:DescribeEvents",
+
+
+
+"rds:ListTagsForResource",
+
+
+
+"redshift:DescribeClusters",
+
+
+
+"robomaker:ListSimulationJobs",
+
+
+
+"route53:ListHostedZones",
+
+
+
+"route53resolver:ListResolverEndpoints",
+
+
+
+"s3:ListAllMyBuckets",
+
+
+
+"sagemaker:ListEndpoints",
+
+
+
+"sns:ListTopics",
+
+
+
+"sqs:ListQueues",
+
+
+
+"storagegateway:ListGateways",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"swf:ListDomains",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"transfer:ListServers",
+
+
+
+"workmail:ListOrganizations",
+
+
+
+"workspaces:DescribeWorkspaces"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+
+Permissions required for AWS monitoring integration:
+
+* `"cloudwatch:GetMetricData"`
+* `"cloudwatch:GetMetricStatistics"`
+* `"cloudwatch:ListMetrics"`
+* `"sts:GetCallerIdentity"`
+* `"tag:GetResources"`
+* `"tag:GetTagKeys"`
+* `"ec2:DescribeAvailabilityZones"`
+
+### Complete list of permissions for cloud services
+
+| Name | Permissions |
+| --- | --- |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
+| Amazon MQ |  |
+| Amazon API Gateway | `apigateway:GET` |
+| AWS App Runner | `apprunner:ListServices` |
+| Amazon AppStream | `appstream:DescribeFleets` |
+| AWS AppSync | `appsync:ListGraphqlApis` |
+| Amazon Athena | `athena:ListWorkGroups` |
+| Amazon Aurora | `rds:DescribeDBClusters` |
+| Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| AWS Billing |  |
+| Amazon Keyspaces |  |
+| AWS Chatbot |  |
+| Amazon CloudFront | `cloudfront:ListDistributions` |
+| AWS CloudHSM | `cloudhsm:DescribeClusters` |
+| Amazon CloudSearch | `cloudsearch:DescribeDomains` |
+| AWS CodeBuild | `codebuild:ListProjects` |
+| Amazon Cognito |  |
+| Amazon Connect |  |
+| Amazon Elastic Kubernetes Service (EKS) | `eks:ListClusters` |
+| AWS DataSync | `datasync:ListTasks` |
+| Amazon DynamoDB Accelerator (DAX) | `dax:DescribeClusters` |
+| AWS Database Migration Service (AWS DMS) | `dms:DescribeReplicationInstances` |
+| Amazon DocumentDB | `rds:DescribeDBClusters` |
+| AWS Direct Connect | `directconnect:DescribeConnections` |
+| Amazon DynamoDB | `dynamodb:ListTables` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon EBS | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EC2 API |  |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
+| Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
+| Amazon ECS Container Insights | `ecs:ListClusters` |
+| Amazon ElastiCache (EC) | `elasticache:DescribeCacheClusters` |
+| AWS Elastic Beanstalk | `elasticbeanstalk:DescribeEnvironments` |
+| Amazon Elastic File System (EFS) | `elasticfilesystem:DescribeFileSystems` |
+| Amazon Elastic Inference |  |
+| Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
+| Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
+| Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon EventBridge | `events:ListEventBuses` |
+| Amazon FSx | `fsx:DescribeFileSystems` |
+| Amazon GameLift | `gamelift:ListFleets` |
+| AWS Glue | `glue:GetJobs` |
+| Amazon Inspector | `inspector:ListAssessmentTemplates` |
+| AWS Internet of Things (IoT) |  |
+| AWS IoT Analytics |  |
+| Amazon Managed Streaming for Kafka | `kafka:ListClusters` |
+| Amazon Kinesis Data Analytics | `kinesisanalytics:ListApplications` |
+| Amazon Data Firehose | `firehose:ListDeliveryStreams` |
+| Amazon Kinesis Data Streams | `kinesis:ListStreams` |
+| Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
+| AWS Lambda | `lambda:ListFunctions` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| Amazon Lex | `lex:GetBots` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
+| AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
+| AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
+| AWS Elemental MediaPackage Live | `mediapackage:ListChannels` |
+| AWS Elemental MediaPackage Video on Demand | `mediapackage-vod:ListPackagingConfigurations` |
+| AWS Elemental MediaTailor | `mediatailor:ListPlaybackConfigurations` |
+| Amazon VPC NAT Gateways | `ec2:DescribeNatGateways` |
+| Amazon Neptune | `rds:DescribeDBClusters` |
+| AWS OpsWorks | `opsworks:DescribeStacks` |
+| Amazon Polly |  |
+| Amazon QLDB | `qldb:ListLedgers` |
+| Amazon RDS | `rds:DescribeDBInstances` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon Redshift | `redshift:DescribeClusters` |
+| Amazon Rekognition |  |
+| AWS RoboMaker | `robomaker:ListSimulationJobs` |
+| Amazon Route 53 | `route53:ListHostedZones` |
+| Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
+| Amazon S3 | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon SageMaker Batch Transform Jobs |  |
+| Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
+| Amazon SageMaker Ground Truth |  |
+| Amazon SageMaker Processing Jobs |  |
+| Amazon SageMaker Training Jobs |  |
+| AWS Service Catalog |  |
+| Amazon Simple Email Service (SES) |  |
+| Amazon Simple Notification Service (SNS) | `sns:ListTopics` |
+| Amazon Simple Queue Service (SQS) | `sqs:ListQueues` |
+| AWS Systems Manager - Run Command |  |
+| AWS Step Functions |  |
+| AWS Storage Gateway | `storagegateway:ListGateways` |
+| Amazon SWF | `swf:ListDomains` |
+| Amazon Textract |  |
+| AWS IoT Things Graph |  |
+| AWS Transfer Family | `transfer:ListServers` |
+| AWS Transit Gateway | `ec2:DescribeTransitGateways` |
+| Amazon Translate |  |
+| AWS Trusted Advisor |  |
+| AWS API Usage |  |
+| AWS Site-to-Site VPN | `ec2:DescribeVpnConnections` |
+| AWS WAF Classic |  |
+| AWS WAF |  |
+| Amazon WorkMail | `workmail:ListOrganizations` |
+| Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
+
+See the example of JSON policy for one single service below.
+
+JSON policy for Amazon API Gateway
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Sid": "VisualEditor0",
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"apigateway:GET",
+
+
+
+"cloudwatch:GetMetricData",
+
+
+
+"cloudwatch:GetMetricStatistics",
+
+
+
+"cloudwatch:ListMetrics",
+
+
+
+"sts:GetCallerIdentity",
+
+
+
+"tag:GetResources",
+
+
+
+"tag:GetTagKeys",
+
+
+
+"ec2:DescribeAvailabilityZones"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+In this example, from the complete list of permissions you need to select
+
+* `"apigateway:GET"` for **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` for **All AWS cloud services**.
+
+For AWS Trusted Advisor, there are no instances (custom devices) on the custom device group overview page. The service metrics are under the **Further details** section of the custom device group overview page.
+
+AWS Trusted Advisor CloudWatch metrics are available **only** for Business and Enterprise Support plans.
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+After you add the service to monitoring, a preset dashboard containing all recommended metrics is automatically listed on your **Dashboards** page. To look for specific dashboards, filter by **Preset** and then by **Name**.
+
+![AWS presets](https://dt-cdn.net/images/image-26-1645-389f58aa89.png)
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **AWS**, select the desired AWS instance, and then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
+
+To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide AWS](https://dt-cdn.net/images/2020-12-10-15-04-09-1502-b899a29d73.png)
+
+To check the availability of preset dashboards for each AWS service, see the list below.
+
+### Preset dashboard availability list
+
+| AWS service | Preset dashboard |
+| --- | --- |
+| Amazon EC2 Auto Scaling (built-in) | Not applicable |
+| AWS Lambda (built-in) | Not applicable |
+| Amazon Application and Network Load Balancer (built-in) | Not applicable |
+| Amazon DynamoDB (built-in) | Not applicable |
+| Amazon EBS (built-in) | Not applicable |
+| Amazon EC2 (built-in) | Not applicable |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Not applicable |
+| Amazon RDS (built-in) | Not applicable |
+| Amazon S3 (built-in) | Not applicable |
+| AWS Certificate Manager Private Certificate Authority | Not applicable |
+| All monitored Amazon services | Not applicable |
+| Amazon API Gateway | Not applicable |
+| AWS App Runner | Not applicable |
+| Amazon AppStream | Applicable |
+| AWS AppSync | Applicable |
+| Amazon Athena | Applicable |
+| Amazon Aurora | Not applicable |
+| Amazon EC2 Auto Scaling | Applicable |
+| AWS Billing | Applicable |
+| Amazon Keyspaces | Applicable |
+| AWS Chatbot | Applicable |
+| Amazon CloudFront | Not applicable |
+| AWS CloudHSM | Applicable |
+| Amazon CloudSearch | Applicable |
+| AWS CodeBuild | Applicable |
+| Amazon Cognito | Not applicable |
+| Amazon Connect | Applicable |
+| AWS DataSync | Applicable |
+| Amazon DynamoDB Accelerator (DAX) | Applicable |
+| AWS Database Migration Service (AWS DMS) | Applicable |
+| Amazon DocumentDB | Applicable |
+| AWS Direct Connect | Applicable |
+| Amazon DynamoDB | Not applicable |
+| Amazon EBS | Not applicable |
+| Amazon EC2 Spot Fleet | Not applicable |
+| Amazon EC2 API | Applicable |
+| Amazon Elastic Container Service (ECS) | Not applicable |
+| Amazon ECS Container Insights | Applicable |
+| Amazon Elastic File System (EFS) | Not applicable |
+| Amazon Elastic Kubernetes Service (EKS) | Applicable |
+| Amazon ElastiCache (EC) | Not applicable |
+| AWS Elastic Beanstalk | Applicable |
+| Amazon Elastic Inference | Applicable |
+| Amazon Elastic Transcoder | Applicable |
+| Amazon Elastic Map Reduce (EMR) | Not applicable |
+| Amazon Elasticsearch Service (ES) | Not applicable |
+| Amazon EventBridge | Applicable |
+| Amazon FSx | Applicable |
+| Amazon GameLift | Applicable |
+| AWS Glue | Not applicable |
+| Amazon Inspector | Applicable |
+| AWS Internet of Things (IoT) | Not applicable |
+| AWS IoT Things Graph | Applicable |
+| AWS IoT Analytics | Applicable |
+| Amazon Managed Streaming for Kafka | Applicable |
+| Amazon Kinesis Data Analytics | Not applicable |
+| Amazon Data Firehose | Not applicable |
+| Amazon Kinesis Data Streams | Not applicable |
+| Amazon Kinesis Video Streams | Not applicable |
+| AWS Lambda | Not applicable |
+| Amazon Lex | Applicable |
+| Amazon CloudWatch Logs | Applicable |
+| AWS Elemental MediaTailor | Applicable |
+| AWS Elemental MediaConnect | Applicable |
+| AWS Elemental MediaConvert | Applicable |
+| AWS Elemental MediaPackage Live | Applicable |
+| AWS Elemental MediaPackage Video on Demand | Applicable |
+| Amazon MQ | Applicable |
+| Amazon VPC NAT Gateways | Not applicable |
+| Amazon Neptune | Applicable |
+| AWS OpsWorks | Applicable |
+| Amazon Polly | Applicable |
+| Amazon QLDB | Applicable |
+| Amazon RDS | Not applicable |
+| Amazon Redshift | Not applicable |
+| Amazon Rekognition | Applicable |
+| AWS RoboMaker | Applicable |
+| Amazon Route 53 | Applicable |
+| Amazon Route 53 Resolver | Applicable |
+| Amazon S3 | Not applicable |
+| Amazon SageMaker Batch Transform Jobs | Not applicable |
+| Amazon SageMaker Endpoints | Not applicable |
+| Amazon SageMaker Endpoint Instances | Not applicable |
+| Amazon SageMaker Ground Truth | Not applicable |
+| Amazon SageMaker Processing Jobs | Not applicable |
+| Amazon SageMaker Training Jobs | Not applicable |
+| AWS Service Catalog | Applicable |
+| Amazon Simple Email Service (SES) | Not applicable |
+| Amazon Simple Notification Service (SNS) | Not applicable |
+| Amazon Simple Queue Service (SQS) | Not applicable |
+| AWS Systems Manager - Run Command | Applicable |
+| AWS Step Functions | Applicable |
+| AWS Storage Gateway | Applicable |
+| Amazon SWF | Applicable |
+| Amazon Textract | Applicable |
+| AWS Transfer Family | Applicable |
+| AWS Transit Gateway | Applicable |
+| Amazon Translate | Applicable |
+| AWS Trusted Advisor | Applicable |
+| AWS API Usage | Applicable |
+| AWS Site-to-Site VPN | Applicable |
+| AWS WAF Classic | Applicable |
+| AWS WAF | Applicable |
+| Amazon WorkMail | Applicable |
+| Amazon WorkSpaces | Applicable |
+
+![Trusted](https://dt-cdn.net/images/2021-03-12-10-16-15-1493-7377e86387.png)
+
+## Available metrics
+
+| Name | Unit | Statistics | Dimensions | Recommended |
+| --- | --- | --- | --- | --- |
+| GreenChecks | Count | Sum | Region, Category |  |
+| RedChecks | Count | Sum | Region, Category | Applicable |
+| RedResources | Count | Sum | Region, CheckName | Applicable |
+| ServiceLimitUsage | Percent | Multi | Region, ServiceLimit, ServiceName | Applicable |
+| YellowChecks | Count | Sum | Region, Category | Applicable |
+| YellowResources | Count | Sum | Region, CheckName | Applicable |
 
 
 ---
@@ -19508,7 +26107,7 @@ For more limitations, see [Amazon CloudWatch troubleshooting pageï»¿](https:/
 ---
 title: Amazon EC2 API
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-api
-scraped: 2026-02-15T21:23:39.031152
+scraped: 2026-02-16T09:32:14.137043
 ---
 
 # Amazon EC2 API
@@ -21173,7 +27772,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon ECS Container Insights CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ecs/ecs-container-insights
-scraped: 2026-02-15T21:29:48.871738
+scraped: 2026-02-16T09:39:52.918034
 ---
 
 # Amazon ECS Container Insights CloudWatch metrics
@@ -22114,7 +28713,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Monitor Amazon Elastic Container Service (ECS) with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ecs
-scraped: 2026-02-15T21:30:05.656057
+scraped: 2026-02-16T09:34:31.586509
 ---
 
 # Monitor Amazon Elastic Container Service (ECS) with CloudWatch metrics
@@ -22951,7 +29550,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Custom SSL certificate for ActiveGate
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate
-scraped: 2026-02-15T09:09:11.982610
+scraped: 2026-02-16T09:29:52.122137
 ---
 
 # Custom SSL certificate for ActiveGate
@@ -24150,7 +30749,7 @@ By default, all sensors of the z/OS Java module are enabled. In case of problems
 ---
 title: OneAgent configuration via command-line interface
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface
-scraped: 2026-02-15T21:18:58.852565
+scraped: 2026-02-16T09:37:33.982664
 ---
 
 # OneAgent configuration via command-line interface
@@ -25001,7 +31600,7 @@ Set the `--set-osagent-cap-setuid-enabled` parameter to `true` or `false` to dis
 ---
 title: OneAgent diagnostics
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics
-scraped: 2026-02-15T09:08:35.994480
+scraped: 2026-02-16T09:39:44.099443
 ---
 
 # OneAgent diagnostics
@@ -25303,7 +31902,7 @@ OneAgent diagnostics uploads the diagnostic data to the Dynatrace S3 bucket that
 ---
 title: Send Telegraf metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf
-scraped: 2026-02-15T21:11:50.129984
+scraped: 2026-02-16T09:25:41.472998
 ---
 
 # Send Telegraf metrics to Dynatrace
@@ -25732,7 +32331,7 @@ The following feature sets are available for Google Managed Microsoft AD.
 ---
 title: Monitor Google App Engine
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine
-scraped: 2026-02-15T21:14:42.667275
+scraped: 2026-02-16T09:21:11.942743
 ---
 
 # Monitor Google App Engine
@@ -25824,6 +32423,157 @@ Every time you want to update your version of Dynatrace OneAgent, you must redep
 ---
 
 
+## Source: monitor-azure-hdinsight.md
+
+
+---
+title: Azure HDInsight monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight
+scraped: 2026-02-16T09:30:18.986664
+---
+
+# Azure HDInsight monitoring
+
+# Azure HDInsight monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 4-min read
+* Updated on Jan 22, 2026
+
+Dynatrace ingests metrics from Azure Metrics API for Azure HDInsight. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.  
+On the Azure HDInsights dashboard, you get holistic insights into your Hadoop, Spark, and Kafka resources and can cover all angles of your big data monitoring in one place.
+
+## Prerequisites
+
+* Dynatrace version 1.196+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## Install OneAgent Optional
+
+For additional Hadoop, Spark, and Kafka insights, you can install OneAgent on Azure HDInsight cluster nodes.
+
+How to install OneAgent on Azure HDInsight cluster (Linux)
+
+Follow the steps below to install OneAgent on Azure HDInsight cluster (Linux).
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Create an install script**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-1 "Monitor Azure HDInsight and view available metrics.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Create an HDInsight cluster**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-2 "Monitor Azure HDInsight and view available metrics.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Restart the processes**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-3 "Monitor Azure HDInsight and view available metrics.")
+
+### Step 1 Create an install script
+
+1. In Dynatrace Hub, select **OneAgent**.
+2. Select **Set up** > **Linux**.
+
+3. On the **Install Dynatrace OneAgent on your Linux hosts** page, copy the command below **Use this command on the target host** and the command below **And run the installer with root rights** into a plain text document called `installdynatrace.sh`, and save it to your local machine.
+
+**Example of install script**
+
+```
+wget  -O Dynatrace-OneAgent-Linux-1.137.163.sh "https://YOURTENANT.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?Api-Token=YOURAPITOKEN&arch=x86&flavor=default"
+
+
+
+/bin/sh Dynatrace-OneAgent-Linux-1.137.163.sh  --set-app-log-content-access=1
+```
+
+3. Go to Microsoft Azure Storage Explorer and upload the Dynatrace installation file `installdynatrace.sh` to an accessible Blob Storage Container.
+4. Click right on `installdynatrace.sh` and select **Set public access level**. In the pop-up window, set the access level to **Public read access for container and blobs**, and click **Apply**.
+5. On the top menu of the Microsoft Azure Storage Explorer window, click on "Copy URL" and save it locally for later access.
+
+### Step 2 Create an HDInsight cluster
+
+1. Login to Microsoft Azure portal and select **HDInsight clusters** on the left-side menu.
+2. Select **Create hdinsight cluster**.
+3. Select **Custom** installation.
+4. Follow the creating wizard to configure basic settings, set storage settings, applications and cluster size.
+5. In the **Advanced settings** menu, select **Script Actions**.
+6. Select **Submit new**.
+7. In the **Submit script action** menu, enter **Custom** for the script type, choose a name, for instance **Install Dynatrace**, and paste the URL of the script you copied previously in the **Bash script URI** field. If you want to install Dynatrace OneAgent on all the nodes, select all node types (**Head**, **Worker**, **Zookeeper**).
+8. Select **Create** to save the changes and create the HDInsight cluster.
+
+### Step 3 Restart the processes
+
+Once the installation is completed, make sure to restart the processes.
+
+1. Select your newly created cluster on the MicrosoftAzure portal. On the **Overview** menu, click on your cluster URL.
+2. For each node where you chose to install Dynatrace, go to **Service Actions** and select **Restart All**.
+
+As soon as processes are restarted, Dynatrace will start collecting metrics.
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Hdinsights azure](https://dt-cdn.net/images/hdinsights-custom-dashboard-1898-9e1893ad04.png)
+
+### Set up a management zone
+
+To import a dashboard for Azure HDInsight, you need to [set up a management zone](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to cluster nodes only and exclude other hosts not relevant to the service.
+
+When you create a management zone for this dashboard:
+
+1. Create a rule that identifies hosts based on a common property:
+
+   * Host name contains the `hdi` string
+2. Create a rule that identifies custom devices based on a common property:
+
+   * Custom device group contains the `HDInsight` string.
+3. Create a rule that identifies services based on a common property:
+
+   * Service technology: `Apache Hadoop`
+   * Service technology: `Apache Hadoop Distributed File System`
+   * Service technology: `Spark`
+
+Example
+
+![Azure management zone](https://dt-cdn.net/images/hdinsightmanagementzone-2629-26e6039169.webp)
+
+After you create the management zone, assign it to your dashboard (from the dashboard, select **Edit** > **Settings** > **Default management zone**). For more information, see [Dashboard timeframe and management zone](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
+
+## Available metrics
+
+| Name | Description | Dimensions | Unit | Recommended |
+| --- | --- | --- | --- | --- |
+| CategorizedGatewayRequests | Number of gateway requests by categories (1xx/2xx/3xx/4xx/5xx) | HttpStatus | Count |  |
+| GatewayRequests | Number of gateway requests | HttpStatus | Count | Applicable |
+| NumActiveWorkers | Number of active workers | MetricName | Count | Applicable |
+
+
+---
+
+
 ## Source: monitor-azure-sql-managed-instance.md
 
 
@@ -25905,7 +32655,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Kubernetes Security Posture Management
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/security-posture-management
-scraped: 2026-02-15T21:23:28.400973
+scraped: 2026-02-16T09:36:15.676154
 ---
 
 # Kubernetes Security Posture Management
@@ -26419,7 +33169,7 @@ Up to 100 nodes and 3,000 pods per Kubernetes cluster can be covered by Kubernet
 ---
 title: Application observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/application-monitoring
-scraped: 2026-02-15T21:20:37.272243
+scraped: 2026-02-16T09:20:38.920109
 ---
 
 # Application observability

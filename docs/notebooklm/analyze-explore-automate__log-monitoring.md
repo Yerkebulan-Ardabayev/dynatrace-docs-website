@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 19
+Files combined: 26
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 19
 ---
 title: Log sources and storage (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2
-scraped: 2026-02-15T21:25:32.252924
+scraped: 2026-02-16T09:34:34.757711
 ---
 
 # Log sources and storage (Logs Classic)
@@ -78,7 +78,7 @@ No. After the change, all old configurations are wiped out, so be sure before yo
 ---
 title: Stream Kubernetes logs with Fluent Bit (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-fluent-bit-logs-k8s
-scraped: 2026-02-15T21:26:45.107753
+scraped: 2026-02-16T09:32:41.214115
 ---
 
 # Stream Kubernetes logs with Fluent Bit (Logs Classic)
@@ -888,7 +888,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 ---
 title: Automatic log enrichment (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation
-scraped: 2026-02-15T21:28:10.810246
+scraped: 2026-02-16T09:33:30.627710
 ---
 
 # Automatic log enrichment (Logs Classic)
@@ -2042,13 +2042,1299 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 
 
+## Source: log-storage.md
+
+
+---
+title: Log ingest rules (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage
+scraped: 2026-02-16T09:32:59.837883
+---
+
+# Log ingest rules (Logs Classic)
+
+# Log ingest rules (Logs Classic)
+
+* Tutorial
+* 16-min read
+* Updated on Jan 18, 2023
+
+Log Monitoring Classic
+
+Dynatrace version 1.252+ OneAgent version 1.243+
+
+For the newest Dynatrace version, see [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.").
+
+If you use a OneAgent version earlier than 1.243 and Dynatrace Cluster version earlier than 1.252, go to [Log Sources and Storage](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-file-sources "Learn how to include and exclude log sources for analysis.").
+
+Dynatrace allows you to include and exclude specific log sources for your analysis. Using [Dynatrace identity and access management (IAM) framework](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies"), you can control which user can change configurations on which scope.
+
+The configuration is based on rules that use matchers for hierarchy, log path, and process groups. These rules determine which log files among those detected by OneAgent, either automatically or defined as custom log sources, are ingested.
+
+## Log ingest rule
+
+1. Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
+2. Select **Add rule** and provide the name for your configuration.  
+   By default, the **Include in storage** button is turned on, indicating that items configured by this rule will be stored in Dynatrace. Alternatively, you can select the **Exclude from storage** rule type.
+3. Expand **Details** of your new rule and select **Add matcher** to create a specific match for this rule.  
+   Multiple matchers can be included in one rule.
+
+   Other than the **Log source** attribute in Windows (due to file paths being case insensitive), matchers are case-sensitive.
+4. Select the matching attribute:
+
+Attribute
+
+Description
+
+Search dropdown logic
+
+**Process group**
+
+Matching is based on the process group ID. The process group is determined by the detection rules described in [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection"). If a process changes its process group, log ingestion for that process may start or stop based on the changes made.
+
+Attributes visible in the last 3 days are listed.
+
+**Log source**
+
+Matching is based on a log path or a Windows event log full name; wildcards are supported in form of an asterisk. Autocompletion for **Log source** is only partial. You can either choose one of the predefined values or enter your log source.
+
+Can be entered manually. No time limit.
+
+**Log source origin**[1](#fn-1-1-def)
+
+Matching is based on the detector used by the log agent to discover the log file. Available options include:
+
+* **Custom log source configuration**: Log source provided by the user through custom configuration.
+* **Open log file detector**: Logs discovered automatically by the log module's autodetection mechanism.
+* **System log detector**: Includes Windows application log or `/var/log/syslog` for Linux.
+* **Container output**: Autodetected Kubernetes or Docker logs.
+* **IIS log detector**: Logs detected by the IIS detector.
+
+Can be entered manually. No time limit.
+
+**Log content**
+
+Matching is based on the content of the log; wildcards are supported in form of an asterisk.
+
+Can be entered manually. No time limit.
+
+**Log record level**[2](#fn-1-2-def)[3](#fn-1-3-def)
+
+Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
+
+Can be entered manually. No time limit.
+
+**journald unit**[4](#fn-1-4-def)
+
+Matching is based on any of the selected journald units. Unless you enrich other log sources with a `journald.unit` attribute, you should also add a `log.source` or `log.source.origin` matcher to the ingest rule to boost the Log Module performance.
+
+Can be entered manually. No time limit.
+
+**Host tag**[5](#fn-1-5-def)[6](#fn-1-6-def)
+
+Matching is based on the host tag. The attribute only supports the tags set with the [OneAgent command line tool](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") or with the [Remote configuration](/docs/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") in a `key=value` pair format. They can be distinguished by the `[Environment]` prefix on the UI, but you should use the value without the prefix.
+Multiple tags can be specified in a single matcher, but each tag needs to have the same key, such as `logscope=frontend`, `logscope=backend`.
+
+Can be entered manually. No time limit.
+
+**Kubernetes container name**
+
+Matching is based on the name of the Kubernetes container.
+
+Attributes visible in the last 90 days are listed.
+
+**Kubernetes namespace name**
+
+Matching is based on the name of the Kubernetes namespace.
+
+Attributes visible in the last 90 days are listed.
+
+**Kubernetes deployment name**
+
+Matching is based on any of the selected deployments. It is deprecated for the OneAgent Log Module managed by Dynatrace Operator or when the **Collect all container logs** feature flag is enabled.
+
+Can be entered manually.
+
+**Kubernetes pod annotation**[4](#fn-1-4-def)[7](#fn-1-7-def)
+
+Matching is based on any of the selected pod annotations. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container** logs feature flag to be enabled.
+
+Can be entered manually.
+
+**Kubernetes pod label**[4](#fn-1-4-def)[7](#fn-1-7-def)
+
+Matching is based on any of the selected pod labels. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
+
+Can be entered manually.
+
+**Kubernetes workload name**[4](#fn-1-4-def)[7](#fn-1-7-def)
+
+Matching is based on any of the selected workload names. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
+
+Attributes visible in the last 90 days are listed.
+
+**Kubernetes workload kind**[4](#fn-1-4-def)[7](#fn-1-7-def)
+
+Matching is based on any of the selected workload kinds. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
+
+Can be entered manually.
+
+**Docker container name**
+
+Matching is based on the name of the container.
+
+Attributes visible in the last 90 days are listed.
+
+**DT entity container group ID**
+
+Matching is based on any of the selected container groups.
+
+Can be entered manually. No time limit.
+
+**Process technology**
+
+Matching is based on the technology name.
+
+Can be entered manually. No time limit.
+
+**Windows log record event ID**[3](#fn-1-3-def)
+
+Matching is based on any of the selected event ID attribute.
+
+Can be entered manually. No time limit.
+
+**Windows log record source**[3](#fn-1-3-def)
+
+Matching is based on any of the selected source attributes.
+
+Can be entered manually. No time limit.
+
+**Windows log record task category**[3](#fn-1-3-def)
+
+Matching is based on any of the selected task category attributes.
+
+Can be entered manually. No time limit.
+
+**Windows log record operational code**[3](#fn-1-3-def)
+
+Matching is based on any of the selected operational code attribute.
+
+Can be entered manually. No time limit.
+
+**Windows log record user name**[8](#fn-1-8-def)
+
+Matching is based on any of the selected user name attributes.
+
+Can be entered manually. No time limit.
+
+**Windows log record keywords**[8](#fn-1-8-def)
+
+Matching is based on any of the selected keywords attributes.
+
+Can be entered manually. No time limit.
+
+1
+
+OneAgent version 1.295+
+
+2
+
+Log record level attribute, transformed by OneAgent, is different than log `status` attribute transformed by Dynatrace server.
+
+3
+
+OneAgent version 1.273+
+
+4
+
+OneAgent version 1.309+
+
+5
+
+[Manually or automatically applied tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
+
+6
+
+OneAgent version 1.289+
+
+7
+
+Dynatrace Operator version 1.4.2+
+
+8
+
+OneAgent version 1.305+
+
+The wildcard is supported for any attribute value, and might be used multiple times in a single value. However, some attributes, for example Process Group, have a limited, predefined list of possible values that are selected from an auto-complete list.
+
+If no wildcard is used in the value, then the matcher looks for an exact fit to the value. If a wildcard is used, the matcher looks for the exact match. For example, the value `INFO` results in sending only the log data having the exact `INFO` string, but the value `*INFO*` (using the wildcards) matches log data that contain the `INFO` string in its content.
+
+1. Select **Add value** and, from the **Values**, select the detected log data items (log files or process groups that contain log data). Multiple values can be added to the selected attribute. You can have one matcher that indicates log source and matches values **/var/log/syslog** and **Windows Application Log**.
+2. **Save changes**.
+
+Defined rules can be reordered and are executed in the order in which they appear on the **Log storage** page.
+
+7. To activate your rule, turn on the **Active** toggle.
+
+The **Active** toggle
+
+Starting with OneAgent version 1.249, you can activate/inactivate your rules by turning on/off the **Active** toggle. To manage your rules effectively, we recommend that you upgrade your OneAgent to version 1.249. If you have any rules set on the host with OneAgent version earlier than 249, you will not be able to inactivate them, in which case you need to remove such rules by selecting **Delete** on the rule level or via the REST API.
+
+## Matching a list of rules to log data
+
+Matching occurs in a predefined hierarchy and rules are executed from top to bottom. This means that if a rule above on the list matches certain log data, then the lower ones will be omitted. Items matched in the higher-level configurations are overwritten in the lower-level configurations if they match the same log data. If no rule is matched, the file is not sent. The matching hierarchy is as follows:
+
+1. Host configuration rules
+2. Host group configuration rules
+3. Tenant configuration rules
+
+## Configuration scopes
+
+Three hierarchy scopes are supported: host, host group, and tenant. The scope with the least possible set of rules has priority over larger sets.
+
+![Log ingest rules priority](https://dt-cdn.net/images/log-storage-rule-priority-white-1491-d1d8126129.png)
+
+1. Log storage rules configured for a host take precedence over log storage rules configured for a host group.
+2. Log storage rules configured for a host group take precedence over log storage rules configured for a tenant.
+
+### Host scope
+
+The host scope can be accessed through the **Host settings** for a specific host.
+
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+2. Find and select your host to display the host overview page.
+3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+
+4. From the host settings, go to **Log Monitoring** > **Log ingest rules**.
+5. Configure storage upload by adding rules with a set of attributes that matches the log data to be stored by Dynatrace.
+
+### Host group scope
+
+The host group scope can be accessed via the **Host** page.
+
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host that interests you.
+2. On the host overview page, select **Properties and tags**.
+3. On the **Properties and tags** panel, find the **Host group** property to see the name of the host group to which the selected host belongs.
+
+   The **Host group** property is not displayed when the selected host doesn't belong to any host group.
+4. Select the host group name to list all hosts in that host group. This displays the **OneAgent deployment** page filtered by the selected host group. Each listed host has a **Host group:** `<group name>` link, where `<group name>` is the name of the host group that you want to configure.
+5. Select the host group name in any row.
+
+6. In the host group settings, select **Log Monitoring** > **Log ingest rules**.
+7. Configure storage upload by adding rules with a set of attributes that matches the log data to be stored by Dynatrace.
+
+### Tenant scope
+
+The tenant scope is available in the settings menu.
+
+1. Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
+2. Configure storage upload by adding rules with a set of attributes that matches the log data to be stored by Dynatrace.
+
+### List hosts and host groups with overriding rules
+
+The table on **Settings** > **Log Monitoring** > **Log ingest rules** lists all log storage rules that you have set at the tenant level. However, you may want to see where you have set log storage rules for hosts and host groups that override the tenant-level rules.
+
+To list all entities (hosts and host groups) to which more specific log storage rules are applied
+
+1. Go to **Settings** > **Log Monitoring** > **Log ingest rules**.
+2. In the upper-right corner of the **Log ingest rules** page, select **More** (**â¦**) > **Hierarchy and overrides**. A searchable **Hierarchy and overrides** panel lists all entities (hosts and host groups) on which you have set log storage rules that override the tenant-level rules listed on **Settings** > **Log Monitoring** > **Log ingest rules**.
+3. Select an entity name to go to that entity's **Log ingest rules** page.
+
+## Example upload
+
+In this example, we configure the tenant storage upload for `c:\inetpub\logs\LogFiles\ex_*.log` files in two process groups: `IIS (PROCESS_GROUP-3D9D854163F8F07A)` and `IIS (PROCESS_GROUP-4A7B47FDB53137AE)`. The log storage rule consists of two matchers: the first matcher finds the process groups and the second matcher matches only for the defined log source.
+
+1. Go to **Settings** > **Log Monitoring** > **Log ingest rules**.
+2. Select **Add rule** and provide the title for your configuration.
+3. Select **Add matcher**. This is the first matcher to match two specified process groups.
+4. From the **Attribute** list, select **Process group**.
+5. Select **Add value** and type IIS, and then, from the suggestion list, select `IIS (PROCESS_GROUP-3D9D854163F8F07A)`.
+6. Select **Add value** again, type `IIS` and select the second process group from the suggestion list: `IIS (PROCESS_GROUP-4A7B47FDB53137AE)`.
+7. Select **Add matcher** again. This is the second matcher to match the specified log data source.
+8. From the **Attribute** list, select **Log source**.
+9. Select **Add value** and enter `c:\inetpub\logs\LogFiles\ex_*.log` as the value.
+10. Save changes.
+
+## Example exclude
+
+In this example, we configure the tenant storage upload for all log sources except `c:\inetpub\logs\LogFiles\ex_*.log` files in a process group `IIS (PROCESS_GROUP-4A7B47FDB53137AE)`.
+
+1. Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
+2. Select **Add rule** and provide the title for your configuration.
+3. Turn off **Send to storage**.
+4. Select **Add matcher**. This is the first matcher to match the specified process group.
+5. From the **Attribute** list, select `Process group`.
+6. Select **Add value** and type IIS, and then, from the suggestion list, select `IIS (PROCESS_GROUP-3D9D854163F8F07A)`.
+7. Select **Add matcher** again. This is the second matcher to exclude the specified log data source.
+8. From the **Attribute** list select **Log source**.
+9. Select **Add value** and enter `c:\inetpub\logs\LogFiles\ex_*.log` as a value.
+10. Save changes.
+
+## REST API
+
+You can use the Settings API to manage your log ingest rules:
+
+* View schema
+* List stored configuration objects
+* View single configuration object
+* Create new, edit, or remove existing configuration object
+
+To check the current schema version for log ingest rules, list all available schemas and look for the `builtin:logmonitoring.log-storage-settings` schema identifier.
+
+Log ingest rules can be configured for the following scopes:
+
+* `tenant` â configuration object affects all hosts on a given tenant.
+* `host_group` â configuration object affects all hosts assigned to a given host group.
+* `host` â configuration object affects only the given host.
+
+To create a log ingest rule using the API:
+
+1. [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
+2. Use the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The log storage configuration schema identifier (`schemaId`) is `builtin:logmonitoring.log-storage-settings`. Here is an example JSON payload with the log storage configuration:
+
+   ```
+   [
+
+
+
+   {
+
+
+
+   "insertAfter":"uAAZ0ZW5hbnQABnRlbmFudAAkMGUzYmY2ZmYtMDc2ZC0zNzFmLhXaq0",
+
+
+
+   "schemaId": "builtin:logmonitoring.log-storage-settings",
+
+
+
+   "schemaVersion": "0.1.0",
+
+
+
+   "scope": "tenant",
+
+
+
+   "value": {
+
+
+
+   "config-item-title": "Added from REST API",
+
+
+
+   "send-to-storage": true,
+
+
+
+   "matchers": [
+
+
+
+   {
+
+
+
+   "attribute": "dt.entity.process_group",
+
+
+
+   "operator": "MATCHES",
+
+
+
+   "values": [
+
+
+
+   "PROCESS_GROUP-05F00CBACF39EBD1"
+
+
+
+   ]
+
+
+
+   },
+
+
+
+   {
+
+
+
+   "attribute": "log.source",
+
+
+
+   "operator": "MATCHES",
+
+
+
+   "values": [
+
+
+
+   "Windows System Log",
+
+
+
+   "Windows Security Log"
+
+
+
+   ]
+
+
+
+   }
+
+
+
+   ]
+
+
+
+   }
+
+
+
+   }
+
+
+
+   ]
+   ```
+3. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+
+## Examples
+
+The examples that follow show the results of various combinations of rules and matchers.
+
+### Example 1: Multiple rules
+
+In this example, there are two rules:
+
+* Rule 1 is an Exclude rule and has two matchers: the process group attribute is Apache, and the Log source attribute is `access.log`).
+* Rule 2 is an Include rule and has one matcher: the process group attribute is Apache.
+
+Results: `access.log` is not sent, `error.log` (of Apache) is sent, and `error.log` (of other PG) is not sent.
+
+* `access.log` written by Apache matches the first rule, which has `send-to-storage: false`, so it is not sent.
+* `access.log` not written by Apache doesn't match the first rule (due to incorrect process group), and doesn't match the second rule, so it is not sent.
+* `error.log` written by Apache does not match the first rule (due to incorrect source), but it matches the second rule, which has `send-to-storage: true`, so it is sent.
+* `error.log` not written by Apache doesn't match the first rule (due to both incorrect process group and log source), and doesn't match the second rule, so it is not sent.
+
+```
+{
+
+
+
+"send-to-storage": false,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "log.source",
+
+
+
+"values": [
+
+
+
+"/path/to/access.log"
+
+
+
+]
+
+
+
+},
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-APACHEID"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+},
+
+
+
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-APACHEID"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+}
+```
+
+### Example 2: Send logs written by Apache and containing 'ERROR'
+
+This task requires setting one rule with two matchers.
+
+```
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "log.content",
+
+
+
+"values": [
+
+
+
+"*ERROR*"
+
+
+
+]
+
+
+
+},
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-APACHEID"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+}
+```
+
+### Example 3: Send logs written by Apache or containing 'ERROR'
+
+This task requires setting two rules with one matcher each.
+
+```
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "log.content",
+
+
+
+"values": [
+
+
+
+"*ERROR*"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+},
+
+
+
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-APACHEID"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+}
+```
+
+### Example 4: Send logs written by Apache, and containing 'ERROR' and 'Customer'
+
+This task requires setting one rule with three matchers, with one value each.
+
+```
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "log.content",
+
+
+
+"values": [
+
+
+
+"*ERROR*"
+
+
+
+]
+
+
+
+},
+
+
+
+{
+
+
+
+"attribute": "log.content",
+
+
+
+"values": [
+
+
+
+"*Customer*"
+
+
+
+]
+
+
+
+},
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-APACHEID"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+}
+```
+
+### Example 5: Send logs written by Apache, and containing 'ERROR' or 'Customer'
+
+This task requires setting one rule with two matchers: a matcher with the process group value, and a matcher with two content values.
+
+```
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "log.content",
+
+
+
+"values": [
+
+
+
+"*ERROR*", "*Customer*"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+},
+
+
+
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-APACHEID"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+}
+```
+
+### Example 6: Send logs written by Apache or MySQL
+
+This task requires setting two rules, or one rule with one matcher having two values.  
+Rules with two matchers will not work here.
+
+Setting two rules:
+
+```
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-MYSQL"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+},
+
+
+
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-APACHEID"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+}
+```
+
+Setting one rule with one matcher having two values:
+
+```
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+}
+```
+
+### Example 7: Send all logs
+
+This task requires setting a rule without any matchers.
+
+```
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+}
+```
+
+### Example 8: Send all logs except Apache and MySQL logs
+
+This task requires setting two rules.
+
+* The first rule is an Exclude rule with one matcher having two values.
+* The second rule does not contain any matchers.
+
+The rules have to be executed in the order indicated below.
+
+```
+{
+
+
+
+"send-to-storage": false,
+
+
+
+"matchers": [
+
+
+
+{
+
+
+
+"attribute": "dt.entity.process_group",
+
+
+
+"values": [
+
+
+
+"PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+},
+
+
+
+{
+
+
+
+"send-to-storage": true,
+
+
+
+"matchers": [
+
+
+
+],
+
+
+
+"enabled": true
+
+
+
+}
+```
+
+## FAQ
+
+Will older OneAgents work with this solution?
+
+OneAgent versions earlier than `1.243` won't send any data; they will get an empty whitelist in response.
+
+Why don't I see any configuration on the global page after migration from the hosts' perspective?
+
+All host perspective configs are migrated to the corresponding host scope.
+
+Are log ingest rules the same as/part of the autodiscovery process?
+
+No. Autodiscovery is a mechanism of OneAgent that detects logs, but it doesn't mean that log files are sent to storage automatically. A configuration page for autodiscovery is planned for a future release. To learn more about autodiscovery, see [Log content autodiscovery (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-content-auto-discovery-v2 "Learn about autodiscovery of log content and requirements for autodiscovery to occur.")
+
+Is the order of configuration items important?
+
+Yes, configuration items are matched from top to bottom, meaning that the top value is the most important.
+
+How long do I need to wait for the configuration to be applied to the host?
+
+It is applied within 90 seconds.
+
+Does adding a content matcher reduce the number of log events sent to Dynatrace?
+
+Yes. A content matcher narrows down the scope of log events (log entries) according to the criteria set (for example, searching only for error logs).
+
+Where is filtering carried out, in Dynatrace and or in OneAgent?
+
+* Filtering (narrowing down the scope according to the criteria set) is carried out in OneAgent.
+* Setting limits (for example, the log events per minute limit or the attribute values limit) is conducted in Dynatrace.
+
+Does filtering the content reduce DDU cost and/or network usage?
+
+Yes. Content filtering conducted on OneAgent reduces both DDU costs and network usage. You can calculate the cost and network use reduction by determining your total data consumption and deducting the GB size of data that was filtered out. For details on how DDUs costs are calculated, see:
+
+* [Log Monitoring DDU calculation](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
+
+* [Log Management and analytics powered by Grail DDU calculation](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.")
+
+
+---
+
+
 ## Source: logs-classic-ingestion-api.md
 
 
 ---
 title: Log ingestion API (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api
-scraped: 2026-02-15T21:11:33.110650
+scraped: 2026-02-16T09:25:38.245720
 ---
 
 # Log ingestion API (Logs Classic)
@@ -2200,7 +3486,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Stream logs to Dynatrace with Fluentd on Kubernetes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-fluentd-k8s
-scraped: 2026-02-15T21:24:56.629962
+scraped: 2026-02-16T09:37:28.932924
 ---
 
 # Stream logs to Dynatrace with Fluentd on Kubernetes (Logs Classic)
@@ -2329,7 +3615,7 @@ api_key => "${API_KEY}"
 ---
 title: Stream logs to Dynatrace with Fluent Bit (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-with-fluent-bit
-scraped: 2026-02-15T09:11:47.736001
+scraped: 2026-02-16T09:31:20.065788
 ---
 
 # Stream logs to Dynatrace with Fluent Bit (Logs Classic)
@@ -3271,7 +4557,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Log ingest & process (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data
-scraped: 2026-02-15T21:26:19.189800
+scraped: 2026-02-16T09:29:29.917830
 ---
 
 # Log ingest & process (Logs Classic)
@@ -3347,7 +4633,7 @@ Dynatrace Log Monitoring incorporates reshaping the incoming log data into the f
 ---
 title: Log custom attributes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes
-scraped: 2026-02-15T21:29:08.429081
+scraped: 2026-02-16T09:30:02.376295
 ---
 
 # Log custom attributes (Logs Classic)
@@ -3453,13 +4739,503 @@ Then you will create a custom log attribute and use it for creating a log metric
 ---
 
 
+## Source: log-events.md
+
+
+---
+title: Log events (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events
+scraped: 2026-02-16T09:36:25.800022
+---
+
+# Log events (Logs Classic)
+
+# Log events (Logs Classic)
+
+* Tutorial
+* 5-min read
+* Updated on Oct 08, 2025
+
+Log Monitoring Classic
+
+Dynatrace Log Monitoring gives you the ability to create log events based on log data and use them in problem detection.
+
+Log event pricing is based on the Davis data units (DDUs) model. Check [DDUs for custom Davis events](/docs/license/monitoring-consumption-classic/davis-data-units/ddu-events "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.") to find out how you can estimate and track DDU consumption for log events.
+
+When Dynatrace ingests log data, it applies the query specified in the log event definition. Every matched occurrence triggers a log event that can be configured to individually create a problem for each triggered log event or can be merged into one problem.
+
+## Create a log event
+
+1. Go to **Settings** > **Log Monitoring** > **Events extraction** and select **Add log event**.
+2. Enter the **Summary**.  
+   The summary acts as the display name of the log event configuration. The summary must be unique for all configurations.
+3. Enter the **Matcher**.  
+   Enter the Log Monitoring query to filter the log data for your log event. For details, see [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
+
+   I switched to Grail
+
+   If you switched to [Dynatrace Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you may begin using the [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") functions in your Log Monitoring queries. For details, see [Log processing with classic pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+4. Configure the **Event template**.
+
+   * Provide the **Title** of the event to trigger. If this log event triggers a problem, this title will also be the title of the problem.
+   * Provide the **Description** of the event. Note that you can have one or more placeholders in the description (see [Placeholders](#placeholders) below for details).
+   * Select the **Event Type**. Event types indicate the severity of the event. See [Settings API - Log events schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-events "View builtin:logmonitoring.log-events settings schema table of your monitoring environment via the Dynatrace API.").
+5. Choose whether to **Allow merge**.  
+   If two or more events are triggered, Dynatrace could merge these events into a single problem. This option lets you choose to disable this behavior, which can result in more reported problems.
+
+   The `dt.event.allow_davis_merge` property does **not** split problems for the same log event configuration. It only prevents merging with problems from other log event configurations or other problem domains (such as custom alerts).  
+   If you want to split problems for the same log event configuration, the `event.unique_identifier` property must be **present in the actual log data**. You can then use a placeholder in your log event configuration to reference this property.  
+   For example, to create a separate problem for each log line message, use `event.unique_identifier={content}`.
+6. Add **Properties**.
+   A property is a key/value pair that is set on every triggered event. You can have one or more placeholders as a value that will be extracted from the log data. For example, a property with **Key** set to `PGI` and a **Value** of placeholder `{dt.entity.process_group_instance}` will extract the process group instance value from log data once the event is triggered. If the placeholder substitution fails, both the key and the value will not be available.  
+   To see how to get the full list of properties, go to [Events API v2 - GET all event properties](/docs/dynatrace-api/environment-api/events-v2/get-event-properties "List all event properties via the Dynatrace API."). The `description` field in the API response body explains how each property works. For [example](/docs/dynatrace-api/environment-api/events-v2/get-event-properties#exampledesc "List all event properties via the Dynatrace API."): In the `dt.event.allow_davis_merge`, the description says :`"Allow Davis AI to merge this event into existing problems (true) or force creating a new problem (false)"`.
+
+### Set a timeout for a log event
+
+Log events have a default timeout of 15 minutes. The timeout defines how frequently the event source must refresh the log event to keep it active. The maximum time allowed for a log event is six hours.
+
+* A log event is kept active if the event source sends a refresh before the event times out (default: `15` minutes).
+* An event automatically closes if no refresh is sent within the timeout period.
+* You can customize the timeout.
+
+To set a custom timeout
+
+1. When you create or edit a log event, select **Add property**.
+2. Set **Key** to `dt.event.timeout`.
+3. Set **Value** to the number of minutes (for example, `12`).
+
+To verify that a custom timeout was added for an event triggered on the host level
+
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select the host name.
+2. Scroll down to **Events** and expand **Details** for the event.
+
+### Placeholders
+
+Placeholders are log entry attributes that can be used to extract the actual value from the log data.
+
+* You can use any attribute listed in the log viewer for a given log entry as a placeholder to extract that attribute value.
+* You can use additional log entry attributes in the log viewer as placeholders for the values they represent in the log data. Enclose placeholder values in brackets (for example, `{dt.process.name}`).
+
+Log viewer showing additional log entry attributes
+
+![Additional event attributes in log viewer.](https://dt-cdn.net/images/screenshot-log-viewer-attributes-903-2a2d4d157f.png)
+
+## Example
+
+In this example, we create a log event based on ingested log data. This log event will be triggered when the ingested log entry matches the input from the **Matcher** field. The matcher will search for status `error` on the `555f5555-555a-5dd5-55f555a5b55d` host. We add log event properties (attributes) that will extract values from the log data and include it in the problem summary.
+
+1. Go to **Settings** > **Log Monitoring** > **Events extraction** and select **Add log event**.
+2. Set the following:
+
+   * **Summary:** `syslog-agent log event`
+   * **Matcher:** `status="error" AND host.name="555f5555-555a-5dd5-55f555a5b55d"`
+   * **Event template** - **Title:** `[Log] log events demo`
+   * **Event template** - **Description:** `{content}`
+   * **Event template** - **Event type:** `Custom alert`
+3. Turn off **Allow merge**.
+4. For **Properties**, add the following two properties:
+
+   * Key `K8 Id` with value `{dt.kubernetes.config.id}`
+   * Key `Process Name` with value `The process name is -> {dt.process.name}`
+5. Save your changes and wait for log data to be ingested.
+
+Log events example page
+
+![Settings screen for configuring log events.](https://dt-cdn.net/images/screenshot-log-events-settings-641-583e83f210.png)
+
+Logs can have attributes with long values, up to 32kB. Such attribute can be added as part of the **Event template** section. In such case, the events are created, but those values are trimmed to 4096.
+
+If a match is found, this log event will create a problem with each triggered log event.
+
+![Problem created by defined log events.](https://dt-cdn.net/images/screenshot-log-events-problem-845-dc714350b6.png)
+
+The problem created as a result of a triggered log event will contain the information mapped from your log event configuration. The problem title is the **Event title** and the impact section reflects your **Event type** settings and additional information you configured in the description and properties of the log event.
+
+Note that, in this example, while we have configured two properties (`K8 Id` and `Process Name`), only one appears on the problem page. This is because only the `{dt.process.name}` placeholder had a value in the ingested log data. The `{dt.kubernetes.config.id}` value was not found in that particular log entry and the defined property was ignored.
+
+
+---
+
+
+## Source: log-metrics.md
+
+
+---
+title: Log metrics (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics
+scraped: 2026-02-16T09:34:38.135176
+---
+
+# Log metrics (Logs Classic)
+
+# Log metrics (Logs Classic)
+
+* Tutorial
+* 7-min read
+* Updated on Jan 18, 2023
+
+Log Monitoring Classic
+
+Dynatrace Log Monitoring gives you the ability not only to view and analyze logs, but also to create metrics based on log data and use them throughout Dynatrace like any other metric. You can add them to your dashboard, include them in an analysis, and even create custom alerts.
+
+Log metric pricing is based on the Davis data units (DDUs) model. Check [DDUs for metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") to find out how you can estimate and track DDU consumption for log metrics.
+
+Depending on the options you select during log metric creation, the new metric value can represent:
+
+* **Occurrence of log records** (available in Dynatrace version 1.206+)  
+  The metric value will represent a count of occurrences of log records that match the query.
+* **Attribute value** (available in Dynatrace version 1.229+)  
+  The metric value can represent one of the aggregations that you can specify in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+
+When Dynatrace ingests log data, it applies the defined query to the log data and, based on your log metric **Measure** selection, the metric value will therefore represent either a count of the log records that match the query or one of the following values for the specified attribute: `Average`, `Count`, `Maximum`, `Minimum`, `Sum`, `Median`, `Percentile 10th`, `Percentile 75th`, or `Percentile 90th`. The specified attribute must be of numeric type. Dynatrace will attempt to convert string type attributes to numbers as long as they match the following pattern:  
+`123`  
+`123.`  
+`123.456`  
+`.456`  
+`-.456`  
+`+.456`  
+`+123.456`  
+`-123.456`  
+`123.4e+5`  
+`-123.4E-5`  
+`1234e+5`  
+`1234e5`
+
+Attributes holding more than one value are not converted to attribute-based metrics.
+
+## Creating log metric
+
+All metrics based on a Log Monitoring matcher have a metric key with the `log.` prefix.
+
+Log metric availability in Dynatrace
+
+A created log metric is available only when new log data is ingested, and it matches the input from the **Matcher** field defined during log metric creation. Ensure that new log data has been ingested before utilizing the log metric in other areas of Dynatrace.
+
+The range of a timestamp for accepting data that is used in metric creation is between **1 hour** in the past and **10 minutes** in the future. If no timestamp is provided, the current timestamp of the server is used.
+
+There are two ways to create a metric based on log data:
+
+### Create metric using settings
+
+1. Go to **Settings** > **Log Monitoring** > **Metrics extraction** and select **Add log metric**.
+2. In **Metric key**, append the metric name to the `log.` metric key.
+3. In **Matcher**, enter the Log Monitoring query to filter the log data for your metric. For details, see [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
+
+   I switched to Grail
+
+   If you switched to [Dynatrace Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you may begin using the [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") functions in your Log Monitoring queries. For details, see [Log processing with classic pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+4. Select a **Measure**:
+
+   * **Occurrence of log records**âa count of occurrences of log records that match the query.
+   * **Attribute value**âthe collection of measures for the attribute value of log records that match the query. If you select this option, you need to also set **Attribute** to the attribute whose values will be gauged.
+5. Optional Select **Add dimension** one or more times to add dimensions for your query result.  
+   Adding dimensions allows you to split the log metric occurrences by a specific log data attribute. If the attribute contains more than one value, the first attribute value will act as the metric dimension. For details, see [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
+6. Select **Save changes** to create the log metric.
+
+### Create metric using log viewer
+
+1. Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
+2. Create a log viewer query or use log viewer **Available attributes** to extract the log data that interests you. For details, see [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
+
+Advanced query
+
+In the advanced mode, you can specify more complex criteria for log events by using combinations of keywords, phrases, logical operators, and parentheses. If you use an advanced query and manually modify the query, select **Run query** to update the results table.
+
+3. Select **Create metric**. Your log viewer query is now displayed on the **Log metrics** page.
+4. Optionally, add dimensions for your query result.  
+   Adding dimensions allows you to split the log metric occurrences according to specific log data attribute.
+   For details, see [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
+5. Append the metric name to the metric key `log.` and save changes to create the log metric.
+
+### Unique dimensions limits
+
+If you create metrics with high cardinality (a lot of unique dimensions), you can reach your environment's [cardinality limit](/docs/analyze-explore-automate/metrics/limits "Reference of metrics powered by Grail"). To mitigate these limitations, you can:
+
+* Narrow the query to decrease the number of logs in a metric.
+* Lower the cardinality of your dimensions.
+* Disable a metric that exceeds the limit.  
+  It is recommended to add more filters to reduce the number of unique dimensions first.
+
+## Create metrics from dropped logs
+
+Logs often contain valuable metric data, but you may not want to store the original log data. To get the metric data from logs and discard the original log data, you can create a metric from dropped logs. For example, consider the following log content:
+
+```
+2023-06-15T13:02:56Z localhost haproxy[12528]: 10.10.10.10:48064 http-in~ local/local0 3605/0/0/61/3666 HTTP_STATUS 200 138 - - ---- 7416/7413/400/401/0 0/0 {574|||domain.com} {|} "POST /communication HTTP/1.1"
+```
+
+You may be interested only in the active session total time from HAPproxy and you would like to discard the rest of the log data.
+
+To do that
+
+1. Ingest the log data via OneAgent and API.
+
+   * [Log ingestion via OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+   * [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+2. Extract the metric from the ingested log data.
+
+   * [Log processing with classic pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.")
+3. Create the log metric.
+
+   * [Log metrics](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics#log-metrics-create-rule "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
+
+## Editing log metric
+
+To list, enable, disable, delete, or modify metrics created from log data, go to **Settings** > **Log Monitoring** > **Metrics extraction**.
+
+Editing a metric key will generate a new metric. As a result, historical data will be accessible only with the old metric key.
+
+## Example
+
+In this example, we create and chart a log metric, save it to a dashboard, and create an alert.
+
+1. Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** to display the log viewer.
+2. Create a query that filters the data that you are interested in. For this example, to filter all log entries for `error`, enter this query: `status="error"`
+3. Select **Create metric**.  
+   The **Log metrics** page is displayed with **Matcher** set to your query.
+4. Type in the metric key (a unique name for the metric). By default, each metric key begins with `log.` prefix. All log metrics based on logs must have a key starting with this prefix.  
+   For this example, set key to: `log.error_PGI`
+5. Select **Add dimension** and then select the `dt.entityprocess_group_instance` dimension from the list.
+
+   If you saved the metric without adding a dimension, Dynatrace would count errors globally. But in this example, we want to see how the error status is distributed across process group instances. Adding the `dt.entityprocess_group_instance` dimension will make Dynatrace count the number of error statuses for each process group instance. This allows you to view precisely where the error status occurred and to create an alert for a particular dimension.
+6. **Save changes**.
+
+Now that you have defined the metric, you can chart it, pin it to a dashboard, and even create an alert based on it.
+
+* **Chart:** Go to **Data Explorer**, set **Select metricâ¦** to `log.error_PGI`, and select **Run query**.
+* **Dashboard:** After you create a chart, select **Pin to dashboard** to add the chart to one of your classic dashboards. For details, see [Pin tiles to your dashboard](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Alert:** Go to **Settings** > **Anomaly detection** > **Metric events**, select **Add metric event**, and create a custom event based on `log.error_PGI`.
+
+
+---
+
+
+## Source: log-viewer.md
+
+
+---
+title: Log viewer (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer
+scraped: 2026-02-16T09:35:08.881078
+---
+
+# Log viewer (Logs Classic)
+
+# Log viewer (Logs Classic)
+
+* Explanation
+* 9-min read
+* Updated on Jan 18, 2023
+
+Log Monitoring Classic
+
+The log viewer enables you to browse logs within a certain timeframe using detected aspects of the log content. You can use **Available attributes** to narrow down your log view and focus on a specific aspect of the log content.
+
+To access the log viewer, go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**. The log viewer has four sections:
+
+## Search
+
+In **Filter by**, you can set filters to narrow down the log events that are displayed in the results table. Select **Advanced query** to edit the query manually.
+
+* With **Filter by** displayed (the default), the filter is in autocomplete mode, where you select from a set of detected log data fields to filter the results (limit of 10 different attributes). For filters with the same attributes, only one statement needs to be true. For filters with different attributes, all statements need to be true. While in the auto-complete mode, selected filters and **Available attributes** are synchronized automatically.
+
+  When using a search query in the simple mode:
+
+  + If the searched attribute names are the same, the **OR** operator is applied. The search results include items that match any of the specified attribute names. It provides a broader search, allowing for variations in attribute names.
+  + If the searched attribute names differ, the **AND** operator is applied. The search results include only items that simultaneously match **all** of the specified attribute names. It narrows down the search to items that match multiple criteria.
+* With **Advanced query** selected, you can specify more complex criteria for log events by using combinations of keywords, phrases, logical operators, and parentheses (limit of 10 different attributes). The Dynatrace search query language provides you with complete flexibility over searches through log content. You can use the query entry to quickly text search the content of the log data. Any string entered in the query text box without specifying the log data attribute will be treated as a simple text search on the log data content.
+
+When filtering over log content, you can only use full tokens. The log content is split into tokens according to rules from the [Unicode Text Segmentationï»¿](https://unicode.org/reports/tr29/). Alternatively, you can use the wildcard \* at the end of the token.
+
+You can turn **Advanced query** on and off to switch between the auto-complete and advanced modes. Dynatrace will transform the auto-complete filters to a query and vice versa provided that the query in the advanced mode can be transformed. Some complex queries with logical operators cannot be converted to auto-complete filters, in which case switching to auto-complete mode becomes unavailable.
+
+In the advanced mode, you can run an empty query to return unfiltered log data.
+
+Dynatrace search query language
+
+Category
+
+Description
+
+Example
+
+Text search
+
+Text searches help you find individual word occurrences. You can search text without any syntax (as long as no special characters or keywords are present, such as `OR` `"` `=` `\` ) In this text search we identify words and ignore any non alphanumeric (whitespaces, interpunction) characters between them.
+
+Spaces are interpreted as AND operators:  
+`search words` is equivalent to `content="search" AND content="words"`.
+
+Also, this mode allows you to use double quotes:  
+`"search phrase" more` is equivalent to `content="search phrase" AND content="more"`.
+
+Searches are case-sensitive for attribute names, and case-insensitive for attribute values.
+`content="SEARCH"` is equivalent to `content="search"`, but `MyAttribute="MyValue"` in NOT equivalent to `myattribute="MyValue"`.
+
+The query has a limit of 20 relations: logical operators (AND, OR) or comparison operators (`=`, `!=`).
+
+```
+error
+
+
+
+search words
+
+
+
+"search phrase" more
+
+
+
+content="SEARCH"
+```
+
+Attributes
+
+Search for records that have a specified attribute with a specified value.  
+Search for records that do not have a specified attribute with a specified value.  
+Search for records that do not contain a specified phrase in the content field.  
+You can write numbers without quotes, including positive and negative decimals (for example, -123.34)
+
+```
+host.name="HOST1"
+
+
+
+host.name!="HOST1"
+
+
+
+content!="search text"
+
+
+
+http.code=123
+```
+
+Phrases
+
+A phrase is a group of words surrounded by double quotes. Phrases are treated just like single-word terms in queries. This allows you to search log data for a specified phrase in the content field. It returns only those records in which the entire phrase matches. In this example, the word `search` must be immediately followed by the word `text`.
+
+Keep in mind that using a phrase search for content takes into account only alphanumeric characters in the same manner as the text search described above.
+
+```
+content="search text"
+```
+
+Boolean operators
+
+Allowed operators are `AND`, `OR` and can be written in either uppercase or lowercase. Log data matches `AND` when it contains both surrounding strings. Log data matches `OR` when it contains at least one of the surrounding strings. The logical operator `AND` is automatically inserted between single-word terms that are not surrounded by parentheses.  
+**Precedence**: `AND`, `OR`
+
+```
+status="INFO" AND host.name="HOST1"
+```
+
+```
+status="INFO" OR host.name="HOST1"
+```
+
+Grouping
+
+Parentheses `( )` can be used to group clauses into sub-queries.
+
+```
+status="INFO" AND
+
+
+
+(host.name="HOST1" OR host.name="HOST2")
+```
+
+Wildcards
+
+Wildcards can be used to represent a variable or unknown alphanumeric characters in search terms. An asterisk `*` can be used to represent any string composed of alphanumeric characters. The `*` wildcard is only acceptable at the end of the search term. The search term cannot start with the `*` wildcard and the `*` wildcard cannot be used within the search term itself.
+
+```
+host.name="host*"
+```
+
+Special characters
+
+Escaping special characters in attribute names or attribute values:
+
+For attribute names:  
+An attribute can contain any chars but `"=!\` or white space. If an attribute contains any of the special characters or keywords (like `AND` or `OR`), you need to wrap the whole name in backticks (`). Additionally, if an attribute name contains a backtick, you need to escape it with a backslash (\).
+
+For attribute values:  
+Special chars: `*` `"` `\` must be escaped with `\`.
+
+For free text search mode:  
+Wrap keywords with double quotes.
+
+Values that contain special characters must be wrapped with double quotes and special characters must be escaped with `\`
+
+```
+`attri=bute`="\"abc"
+```
+
+Entity Selector[1](#fn-1-1-def)
+
+Search for records using entity selector.
+
+For more information, see [Environment API v2 - Entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.").
+
+```
+attribute inEntitySelector "$(entitySelector)"
+```
+
+```
+dt.source_entity inEntitySelector "type(\"HOST\")"
+```
+
+1
+
+Not applicable for log events, log metrics, and processing.
+
+## Chart
+
+The log chart is a histogram of log events over time that gives you a quick overview of logs and their severity within the selected timeframe.
+
+## Results table
+
+The results table under the chart displays the log events that match the provided query and filter within the selected timeframe. Each row in the table represents a log record and can be expanded for detailed log data. The first 100 matching records are displayed, but you can view more results by selecting **Show 100 more** at the bottom of the table.
+
+By default, ingested log records are sorted according to timestamp and then according to the order that is maintained in the log source, where a log source is a remote process writing to a REST API endpoint or a remote process on which logs are detected.
+
+By default, the log viewer displays a maximum of 1,000 log events. If you don't see expected results, run a more exact query or narrow down the timeframe to see better focused log data.
+
+To show or hide specific columns in the result table
+
+1. Select **Format table**.  
+   This lists Dynatrace generated and reserved log attributes that you can add to the results table for visibility and use as dimensions when creating a log metric. For example, you can use the `dt.entity.process_group` attribute to display the process group instance for which the log event occurred.
+2. Select or clear checkboxes to display or hide the corresponding columns in the table.
+
+To export table data
+
+1. Select **Actions**.
+2. Select **Download table (JSON)** or **Download table (CSV)**, depending on the format you need.
+   While your search query may return more than 1,000 log records, the result table will display only the first 1,000 log records. As a result, the exported table data will contain only the 1,000 log records visible in the table. The exported log records will include complete log data for each record, even if it is not displayed in the table column.
+
+## Available attributes
+
+**Available attributes** (displayed to the left of the table) provide you with an overview and the ability to filter the log data. **Available attributes** are automatically detected attributes of the data presented in the table. You can use them to quickly filter the result table data for a specific log data attribute. Each available attribute displays up to ten most popular values for that attribute. To filter all values for a particular attribute, create and run a query in the log viewer search.
+
+## Log details
+
+Unique log data attributes (high-cardinality attributes) such as `span_id` and `trace_id` generate unnecessarily excessive lists of available attributes that may impact log viewer performance. Because of this, they aren't listed in **Available attributes**. You can still use them in an advanced search query.
+
+
+---
+
+
 ## Source: management-zones-and-log-monitoring.md
 
 
 ---
 title: Management zones and ingested log data (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring
-scraped: 2026-02-15T21:29:02.129801
+scraped: 2026-02-16T09:30:44.031260
 ---
 
 # Management zones and ingested log data (Logs Classic)
@@ -3512,7 +5288,7 @@ If you need to filter logs by other attributes, you can add a [rule for includin
 ---
 title: Log ingestion warnings (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting/lmc-ingest-warnings
-scraped: 2026-02-15T09:09:48.865676
+scraped: 2026-02-16T09:39:08.859177
 ---
 
 # Log ingestion warnings (Logs Classic)
@@ -3611,7 +5387,7 @@ processing\_prepare\_input\_error
 ---
 title: Connecting log data to traces (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment
-scraped: 2026-02-15T21:09:10.847385
+scraped: 2026-02-16T09:13:57.831509
 ---
 
 # Connecting log data to traces (Logs Classic)
@@ -4797,7 +6573,7 @@ For details on configuration, see [Instrument your Python application with OpenT
 ---
 title: Sensitive data masking (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/sensitive-data-masking
-scraped: 2026-02-15T21:29:34.805448
+scraped: 2026-02-16T09:30:57.182828
 ---
 
 # Sensitive data masking (Logs Classic)
@@ -5821,13 +7597,557 @@ Be aware of the following limitations to sensitive data masking:
 ---
 
 
+## Source: timestamp-data-format.md
+
+
+---
+title: Supported timestamp formats (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format
+scraped: 2026-02-16T09:34:33.187949
+---
+
+# Supported timestamp formats (Logs Classic)
+
+# Supported timestamp formats (Logs Classic)
+
+* 3-min read
+* Updated on Sep 18, 2025
+
+Log Monitoring Classic
+
+Timestampâincluding date, time, timezone, and offsetâis searched for in the first 64 characters of the log content (this value is configurable via **Log Monitoring** > **Timestamp/Splitting patterns**). If an offset or timezone is not found, the local timezone of a host is used.
+
+For the newest Dynatrace version, see [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics.").
+
+During log processing, each line where a supported timestamp is detected starts a new log record. A line without a timestamp is considered to be a continuation of an existing log record and appended to a line that contains a timestamp.  
+If no timestamp is present in a log file or a timestamp is not recognized due to unsupported format, each line not starting with whitespace characters, such as `space` or `tab`, starts a new log record. Each line starting with whitespace characters, such as `space` or `tab`, is treated as a log record continuation.  
+Due to multiple formats of incoming log data, Log Monitoring also enables you to define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record. For more details on defining date format, see [Log timestamp configuration](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.").
+
+The supported [timestamp formatsï»¿](https://dt-url.net/6e034iy) include:
+
+* ISO 8601 format: `%Y-%m-%d %H:%M:%S`  
+  Example: `2022-04-17 11:25:12.345`
+* RFC 3339 format: `%Y-%m-%dT%H:%M:%S`  
+  Example: `2022-04-17T11:25:12.345`
+* Unix Epoch format, providing the number of milliseconds that have elapsed since January 1, 1970
+  Example: `1652088888997`
+* RFC 3164 format: `%b %d %H:%M:%S`  
+  Example: `Apr 17 11:25:12`
+* Db2 (IBM database 2) format: `%Y-%m-%d-%H.%M.%S`  
+  Example: `2022-05-17-11.25.12.114000-300`
+* IIS format: `%m/%d/%Y, %H:%M:%S`  
+  Example: `04/17/2022, 11:25:12.345`
+* W3C (World Wide Web Consortium) format: `%Y-%m-%d %H:%M:%S`  
+  Example: `2022-04-17 11:25:12.345` specified in the UTC timezone
+* Klog and Golang/glog format: `[IWEF]%m%d %H:%M:%S`
+  Example: `I0408 06:40:02.634162`
+* Other common formats:
+
+  + `%d %b %Y %H:%M:%S` (example: `17 Apr 2022 11:25:12.345`)
+  + `%Y %b %d %H:%M:%S` (example: `2022 Apr 17 11:25:12.345`)
+  + `%d/%b/%Y:%H:%M:%S` (example: `17/Apr/2022:11:25:12.345`)
+
+JSON files are supported for Docker only. If the `log` tag is detected in a JSON file, then the corresponding message is ingested and analyzed. Within the message, the timestamp of one of the supported formats is searched. If no supported file format is found, the `time` tag is searched. For example:
+
+```
+{
+
+
+
+"log":"2020-11-24 11:01:36,484 CRIT Supervisor running as root (no user in config file)\n",
+
+
+
+"stream":"stdout",
+
+
+
+"time":"2020-11-24T11:01:36.484996713Z"
+
+
+
+}
+
+
+
+{
+
+
+
+"log":"2020-11-24 11:01:36,500 INFO RPC interface 'supervisor' initialized\n",
+
+
+
+"stream":"stdout",
+
+
+
+"time":"2020-11-24T11:01:36.50065223Z"
+
+
+
+}
+```
+
+### Examples of valid log file time formats
+
+Most of the supported timestamp formats are coupled with automatic timezone format detection. The following time zone formats are recognized:
+
+* Offset to UTC zone  
+  Examples:
+
+  `2022-04-17 11:25:12.345 +01:00`  
+  `2022-04-17 11:25:12.345 +0100`  
+  `2022-04-17 11:25:12.345Z -01:00`  
+  `2022-04-17 11:25:12.345Z-0100`  
+  `2022-04-17 11:25:12.345 UTC-01:00`  
+  `2022-04-17 11:25:12.345 GMT-0100`
+* Full [IANAï»¿](https://dt-url.net/jq034g6) timezone name.  
+  Example:  
+  `2022-04-17 11:25:12.345 Europe/Warsaw`
+* Timezone name abbreviation  
+  Examples:  
+  `2022-04-17 11:25:12.345 CEST`  
+  `2022-12-17 11:25:12.345 CET`  
+  `2022-04-17 11:25:12.345Z`  
+  `2022-04-17 11:25:12.345UTC+0100`
+
+If no time zone indicator is found in the log line, the time zone used when parsing a timestamp is by default set to the one configured in
+**Settings** > **Log Monitoring** > **Advanced log settings** > **Default timezone for agents**.
+
+### Override the timezone
+
+In case automatic timezone format detection fails, you can add a rule overriding time zone in the [Log timestamp configuration page](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration#createrule "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.").
+
+## Default used timezone
+
+When processing timestamps, OneAgent follows both local timezone patterns and UTC patterns.
+
+### Local timezone patterns
+
+When no timezone is specified in the log content, the following timestamp formats default to the **local timezone** of the host:
+
+* ISO 8601 (`%Y-%m-%d %H:%M:%S`)
+* RFC 3164 (`%b %d %H:%M:%S`)
+* IIS (`%m/%d/%Y, %H:%M:%S`)
+* Klog and Golang/glog (`[IWEF]%m%d %H:%M:%S`)
+* `%d %b %Y %H:%M:%S`
+* `%Y %b %d %H:%M:%S`
+* `%d/%b/%Y:%H:%M:%S`
+
+### UTC timezone patterns
+
+When no timezone is specified in the log content, the following timestamp formats default to **UTC**:
+
+* RFC 3339 (`%Y-%m-%dT%H:%M:%S`)
+* Db2 (`%Y-%m-%d-%H.%M.%S`)
+* W3C (`%Y-%m-%d %H:%M:%S`)
+* Unix time
+
+To verify which timezone was used for timestamp parsing, search the OneAgent logs (`oneagent-logmon-detailed.log`) for `Diagnostic statistics for LGI`.
+
+
+---
+
+
+## Source: log-monitoring-configuration.md
+
+
+---
+title: Log Monitoring configuration (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration
+scraped: 2026-02-16T09:37:15.430491
+---
+
+# Log Monitoring configuration (Logs Classic)
+
+# Log Monitoring configuration (Logs Classic)
+
+* 5-min read
+* Updated on Jan 18, 2023
+
+Log Monitoring Classic
+
+By default, Log Monitoring is activated in your Dynatrace environment. To start ingesting logs, depending on your use case, you need to either configure log storage rules on OneAgents or send logs to ingest APIs.
+
+* [Log ingest rules (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage "Configure storage of log files that are already known to OneAgent.")
+* [Log ingestion API (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+
+You can confirm that Log Monitoring is enabled or you can enable it globally or on a host level, but checking the status and enabling or disabling Log Monitoring is optional in most cases. If you plan to use Log Monitoring, you can focus on OneAgent settings that directly affect how Log Monitoring is operating.
+
+* [OneAgent settings](#lm-oneagent-settings).
+
+## Check Log Monitoring status
+
+Optional
+
+You can check if Log Monitoring is enabled in your Dynatrace environment globally (Dynatrace web UI), or you can check if Log Monitoring is enabled on a host level (OneAgent CLI).
+
+* To check if Dynatrace Log Monitoring is enabled globally:
+
+  1. Go to **Settings** > **Monitoring** > **Monitored technologies**.
+  2. Find **Log Monitoring** in the list of supported technologies, and select **Edit** (pencil icon).
+  3. Check if **Monitor Log Monitoring on every host** option is enabled.
+* To check if Dynatrace Log Monitoring is enabled on a host level:  
+  Use OneAgent CLI and execute the `oneagentctl` command with the `--get-app-log-content-access` parameter to check whether Log Monitoring is enabled:
+
+  + Linux: `./oneagentctl --get-app-log-content-access`
+  + Windows: `.\oneagentctl.exe --get-app-log-content-access`
+
+## Enable or disable Log Monitoring
+
+Optional
+
+Similarly to checking Log Monitoring status, you can enable or disable Log Monitoring in your Dynatrace environment globally (Dynatrace web UI), or on a host level (OneAgent CLI).
+
+* To activate Dynatrace Log Monitoring globally:
+
+  1. Go to **Settings** > **Monitoring** > **Monitored technologies**.
+  2. Find **Log Monitoring** in the list of supported technologies, and select **Edit** (pencil icon).
+  3. Turn on **Monitor Log Monitoring on every host**.
+* To enable or disable Dynatrace Log Monitoring on a host level:  
+  Use OneAgent CLI and execute the `oneagentctl` command-line interface to execute the following command at the individual host level.  
+  Set the `--set-app-log-content-access` parameter to `true` or `false` to disable or enable Log Monitoring:
+
+  + Linux: `./oneagentctl --set-app-log-content-access=true`
+  + Windows: `.\oneagentctl.exe --set-app-log-content-access=true`
+
+  Restart OneAgent service to apply changes.
+
+## OneAgent settings
+
+Dynatrace Log Monitoring uses the [OneAgent log module](/docs/discover-dynatrace/get-started/glossary#glossary-oneagent-log-module "Get acquainted with Dynatrace terminology.") enabled by default with all OneAgent installations. While Log Monitoring does not require any specific configuration, you can modify some of the options available for the OneAgent log module.
+
+You can adjust:
+
+* Enable and disable automatic log detection for different technologies.
+* Define default timezone in containers.
+* Enable defining the storage configuration by a configuration file on the host.
+* Define specific location where the timestamp and severity occur in your incoming log data.
+* Define the maximum number of log group instances per entity.
+
+### Global OneAgent settings for Log Monitoring
+
+1. Go to **Settings** > **Log Monitoring** > **OneAgent settings**.
+2. Adjust settings and **Save changes**.
+
+### Host-specific OneAgent settings for Log Monitoring
+
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic** and select your Linux host.
+2. On the host overview page, select **More** (**â¦**) > **Settings** in the upper-right corner of the page.
+3. On the **Host settings** page, select **Log Monitoring** and **Advanced log settings**.
+4. Adjust settings and **Save changes**.
+
+## Default OneAgent settings
+
+Setting
+
+Description
+
+Default
+
+**Detect open log files**
+
+This option automatically detects logs written by important processes.
+
+enabled
+
+**Detect IIS logs**
+
+This option allows the detection of logs and event logs written by the Microsoft IIS server.
+
+enabled
+
+**Detect system logs**
+
+Linux: Detects syslogs, and message logs.
+Windows: Detects system, application, and security event logs.
+
+enabled
+
+**Detect logs on network file systems**
+
+This option detects logs stored on the Network File System server. This applies for Linux only
+
+disabled
+
+**Allow OneAgent to monitor OneAgent logs**
+
+This option allows OneAgent to monitor own logs.
+
+disabled
+
+**Detect logs of containerized applications**
+
+This option allows the detection of log messages written to the containerized application's stdout/stderr streams. It also detects Kubernetes pod logs.
+
+enabled
+
+**Set UTC as default timezone in containers**
+
+This sets the default timezone of the containers as UTC.
+
+enabled
+
+**Timestamp search limit**
+
+Set the timestamp search.
+
+`64` bytes
+
+**Severity search chars limit**
+
+Set the severity search characters limit.
+
+`100` bytes
+
+**Severity search lines limit**
+
+Set the severity search lines limit.
+
+`2`
+
+**Maximum of log group instances per entity limit - count**
+
+Set the upper limit for log group instances per entry.
+
+`200`
+
+## Configuration file Optional
+
+The configuration file located on each OneAgent is used to set three options. For security reasons, these options can only be set on the host level and are available only by creating a JSON file in a specific location:
+
+* Linux: `/var/lib/dynatrace/oneagent/agent/config/`
+* Windows: `%PROGRAMDATA%\dynatrace\oneagent\agent\config\`
+
+The configuration file name must have the `json` extension; the file name is otherwise unrestricted.
+
+By default, these options are set for the OneAgent log module to operate properly and to auto-detect log files on the specific host. Modifying this configuration file is not required.
+
+### Multiple configuration files
+
+You can have multiple JSON configuration files in the configuration folder. Files are evaluated in alphabetical order. Options from the last evaluated file takes priority.
+
+### Preexisting configuration files
+
+If your OneAgent installation is upgraded, you may find a `_migratedloganalytics.conf.json` file that contains your configuration migrated from the `ruxitagentloganalytics.conf` on your host.
+
+During installation, the OneAgent installer may create `_loganalyticsconf.ctl.json`, which will contain options used during the installation. The same file will be used to store relevant options set by the OneAgentCtl tool.
+
+### Available options
+
+* `AppLogContentAccess`  
+  Enables access to the log file content on this host. If set to `false`, the log file will be displayed in the user interface, but the content won't be accessible. Note that the OneAgent will still auto-detect log files unless the flag `AppLogAutoDetection` is set to `false`.
+* `AppLogRemoteConfiguration`  
+  Enables the manual configuration of logs to be accessed and monitored. If set to `false`, it won't be possible to add logs manually using the settings interface.
+* `AppLogAutoDetection`  
+  Enables auto-detection of log files on this host. If set to `false`, logs won't be auto-detected.
+
+### Example
+
+```
+{
+
+
+
+"agent-configuration": [
+
+
+
+{
+
+
+
+"AppLogRemoteConfiguration": true,
+
+
+
+"AppLogContentAccess": true,
+
+
+
+"AppLogAutoDetection": true
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+
+---
+
+
+## Source: log-monitoring-limits.md
+
+
+---
+title: Log Monitoring default limits (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-limits
+scraped: 2026-02-16T09:33:24.021812
+---
+
+# Log Monitoring default limits (Logs Classic)
+
+# Log Monitoring default limits (Logs Classic)
+
+* 1-min read
+* Updated on Feb 02, 2026
+
+Log Monitoring Classic
+
+This page lists default limits for the latest version of Dynatrace Log Monitoring.
+
+The current limitations apply to both log file ingestion and generic log ingestion via API.
+
+## Log ingestion limits
+
+The table below summarizes the most important default limits related to log ingest. All presented limits refer to UTF-8 encoded data.
+
+| Type | Limit | Description |
+| --- | --- | --- |
+| Content | 8 kB | The maximum size of log entry body |
+| Attribute key | 100 bytes | The key of an attribute value |
+| Attribute value length | 250 bytes | The maximum length of an attribute value |
+| Number of log attributes | 50 | The maximum number of attributes a log can contain |
+| Log events per minute | 1M/min | The maximum number of log events in a minute |
+| Log age | 24 hours | The maximum age of log entries when ingested |
+| Logs with future dates | No restriction[1](#fn-1-1-def) | How far into the future log entries can reach |
+| Values per attribute | 32 values | The maximum number of individual values an attribute can contain |
+| Request size | 10 MB | The maximum size of the payload data |
+| Number of log records | 50,000 records | The maximum number of log records per request |
+| Nested objects | 5 levels | The maximum number of levels ingested with nested objects |
+
+1
+
+There is no ingestion limitation on log entries with future timestamps, but entries with timestamps further than 10 minutes into the future have their timestamps set to the moment of ingestion.
+
+## Unsupported autodiscovery scenarios
+
+Scenarios that are not supported in the rotated log autodiscovery process include:
+
+* Rotated log generation with a directory change. This process could lead to the creation of numerous non-aggregated and/or incomplete logs, as well as to resource overuse.
+* Rotated log generation with immediate compression, where the application addresses a file with the same name. If a rotation criterion is met (for example, the required file size is reached), the file is moved to another location and immediately compressed.
+  Example: `/var/log/application.log -> /var/log/application.log.1.gz -> /var/log/application.log.2.gz -> /var/log/application.log.3.gz`. This process might again lead to incomplete log creation.
+
+## Limits for your log autodiscovery when using OneAgent
+
+Log files in OneAgent:
+
+* cannot be deleted earlier than a minute after creation.
+* must be appended (old content is not updated).
+* must have text content.
+* must be opened constantly (not just for short periods of adding log entries).
+* must be opened in write mode.
+* must not be smaller than the configured size threshold (default: 500 bytes) to be checked for binary content.
+
+The default maximum number of log sources per process group instance is 200. This value is configurable via the **Maximum number of log sources per process group instance** option in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Log Monitoring** > **Advanced log settings**.
+
+In standard environments, OneAgent log module supports up to 10,000 files in one directory with logs and 200 MB of new log content per minute. If you have more data, especially a higher level of magnitude, there's a high chance that the OneAgent log module supports it. Contact the Dynatrace support team to review your setup beforehand.
+
+In special cases, such as very poor hardware performance, the OneAgent log module's limitations might be more strict.
+
+## Log rotation limits
+
+Scenarios that are not supported in the rotated log monitoring process include:
+
+Type
+
+Description
+
+Rotated log generation with a directory change
+
+The potential consequence is the creation of duplicates and/or incomplete logs.
+
+Rotated log generation with immediate compression
+
+If a rotation criterion is met (for example, the required file size is reached), the file is moved to another location and immediately compressed. Example: `/var/log/application.log -> /var/log/application.log.1.gz -> /var/log/application.log.2.gz -> /var/log/application.log.3.gz`. This process might again lead to incomplete log ingest. There should be at least one uncompressed rotated file.
+
+Rotated log generation with queue logic
+
+The oldest log records are removed whenever new content is added to a file, resulting in a relatively constant log file size. This scenario can be easily replaced with a supported rotation scheme by, for example, starting a new file when the current file reaches a predefined size.
+
+## Log record accepted time range
+
+The following rules apply to all log event sources, such as OneAgent and the generic log ingestion API.
+
+Log record timestamp
+
+Description
+
+The current time minus 24 hours for log records.
+
+The event is dropped if the log event contains a timestamp before the current time minus 24 hours.
+If the record is ingested via the generic Log Ingestion API, it can return the following:
+
+`400` - if all log events in the payload have timestamps earlier than the current time minus 24 hours.
+Message in response: `All logs are out of correct time range.`
+
+`200` - in case some of the events in the payload have timestamps earlier than the current time minus 24 hours.
+Example message in response: `2 events were not ingested because of timestamp out of correct time range`.
+
+`204` - (No Content) in case of success.
+
+The current time minus two hours for log metrics and events.
+
+The data point is dropped if the log metric data point timestamp is before the current time minus two hours.
+
+Current time plus ten minutes
+
+The time stamp is reset to current time.
+
+## High-cardinality attributes
+
+Unique log data attributes (high-cardinality attributes) such as `span_id` and `trace_id` generate unnecessarily excessive facet lists that may impact log viewer performance. Because of this, they aren't listed in log viewer facets. You can still use them in a log viewer advanced search query.
+
+## Log ingestion API request objects
+
+In addition to generic Dynatrace API limitations ([Dynatrace API - Access limit](/docs/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")) the following log ingestion API specific limits apply:
+
+* `LogMessagePlain plain` text object.  
+  The length of the message is limited to 8,192 characters. Any content exceeding the limit is trimmed.
+* `LogMessageJson` JSON object.  
+  The object might contain the following types of keys (the possible key values are listed below):
+
+  + Timestamp. The following formats are supported: UTC milliseconds, RFC3339, and RFC3164. If not set, the current timestamp is used.
+  + Severity. If not set, NONE is used.
+  + Content. If the content key is not set, the whole JSON is parsed as the content.
+  + Semantic attribute. Only values of the String type are supported. Semantic attributes are indexed and can be used in queries. These are also displayed in aggregations (facets). If an unsupported key occurs it is not indexed and cannot be used in indexing and aggregations.
+
+  The length of the value is limited. Any content exceeding the limit is trimmed. Default limits:
+
+  + Content: 8,192 characters.
+  + Semantic attribute value: 250 characters.
+
+## Sensitive data masking limits
+
+Be aware of the following limitations to sensitive data masking:
+
+* If the masking process takes too much time, the log file affected is blocked until the restart of OneAgent or any configuration change, and then you get the `File not monitored - incorrect sensitive data masking rule` message.
+
+## Active Gate throughput
+
+If you are using the SaaS endpoint, you don't have to worry about the Active Gate throughput. The throughput is the same as for Grail.
+If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 200 ms.
+
+
+---
+
+
 ## Source: log-processing-examples.md
 
 
 ---
 title: Log processing examples (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples
-scraped: 2026-02-15T21:27:45.992578
+scraped: 2026-02-16T09:31:49.013024
 ---
 
 # Log processing examples (Logs Classic)
@@ -7451,7 +9771,7 @@ To create a log processing rule
 ---
 title: Upgrade to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma
-scraped: 2026-02-15T21:11:11.700377
+scraped: 2026-02-16T09:18:22.099757
 ---
 
 # Upgrade to Log Management and Analytics
