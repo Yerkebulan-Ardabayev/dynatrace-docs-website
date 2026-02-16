@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-15T21:10:52.208434
+scraped: 2026-02-16T09:14:44.177946
 ---
 
 # New Documentation articles
@@ -13,6 +13,31 @@ scraped: 2026-02-15T21:10:52.208434
 * Updated on Jan 28, 2026
 
 This page lists all new or significantly changed Dynatrace Documentation topics, sorted by week of publication.
+
+## Feb 16, 2026
+
+* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape concepts](/docs/analyze-explore-automate/smartscape/smartscape-concepts "Learn about Smartscape-specific concepts and UI capabilities.")
+* [Automate vulnerability remediation with Atlassian Rovo Dev and Dynatrace](/docs/secure/use-cases/ai-remediation-atlassian-rovo-dev "Prioritize and remediate vulnerabilities with Atlassian Rovo Dev and Dynatrace.")
+* [Dynatrace Operator release notes version 1.8.1](/docs/whats-new/dynatrace-operator/dto-fix-1-8-1 "Release notes for Dynatrace Operator, version 1.8.1")
+* [Smartscape modals](/docs/analyze-explore-automate/smartscape/smartscape-modals "Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies")
+* [View topology](/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology "Visualize the topology around the selected entity to gain insights on service dependencies and relationships between the nodes.")
+* [Visual Resolution Path](/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path "Access the problem resolution path directly from any Dynatrace app to gain insights into a problem and event timeline without leaving the current context.")
+* [AWS EC2 ecosystem overview](/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview "Visualize your AWS EC2 ecosystem and resource relationships.")
+* [Smartscape views](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.")
+* [Infrastructure overview](/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview "Visualize call-type relationships between components and gain insights into process dependencies and workload distribution.")
+* [Kubernetes overview](/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview "Get a high-level overview of your Kubernetes environment to navigate dependencies and identify misconfigurations.")
+* [Problem graph](/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.")
+* [Service dependency graph](/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph "Visualize relationships between services in your environment to identify dependency chains and and uncover critical dependencies.")
+* [Smartscape on Grail view](/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view "Discover all entities and relationships in your environment and select relevant segments with the help of Grail.")
+* [Adaptive Traffic Management concepts](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-concepts "Basic concepts related to Adaptive Traffic Management.")
+* [Span and trace context propagation in Distributed Traces Classic](/docs/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.")
+* [Log pre-processing with OpenPipeline with ready-made bundles](/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing "Streamline log analysis by enriching and normalizing data using ready-made technology bundles for popular technologies before it enters OpenPipeline.")
+* [JSON log processing with unescaped nested JSON strings](/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing/lma-pre-processing-json "JSON log pre-processing detects escape characters in JSON strings and converts them into structured JSON objects for further processing and analysis.")
+* [Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")
+* [Configure the beacon origin allowlist](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/configure-beacon-origin-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.")
+* [Finalize the initial setup for your agentless frontend](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-agentless "Verify and complete the initial setup for your agentless frontend.")
+* [Finalize the initial setup for your auto-injected frontend](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-auto-injection "Verify and complete the initial setup for your auto-injected frontend.")
 
 ## Feb 02, 2026
 
@@ -343,7 +368,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 * [Threats & Exploits](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.")
 * [Microsoft Power BI](/docs/observe/business-observability/extensions/microsoft-power-bi "Fuel up Microsoft Power BI dashboards and reports with data from Grail.")
-* [Enrich with OneAgent (non-containerized)](/docs/ingest-from/opentelemetry/collector/use-cases/enrich "Configure the OpenTelemetry Collector to enrich OTLP requests.")
+* [Enrich with OneAgent (non-containerized)](/docs/ingest-from/opentelemetry/collector/use-cases/enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with OneAgent host data.")
 
 ## Mar 31, 2025
 
@@ -711,9 +736,9 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [OpenTelemetry troubleshooting](/docs/ingest-from/opentelemetry/troubleshooting "Troubleshoot common issues in the context of OpenTelemetry and data ingestion.")
 * [Metrics on Grail examples](/docs/analyze-explore-automate/metrics/dql-examples "DQL timeseries examples")
 * [Configure and deploy EdgeConnect](/docs/ingest-from/edgeconnect "Use EdgeConnect to control how your apps and workflows interact with your internal systems.")
-* [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.")
-* [Collector deployment](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.")
-* [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace Collector.")
+* [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.")
+* [Collector deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.")
+* [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.")
 * [Collector References](/docs/ingest-from/opentelemetry/collector/references "Link to more about the OpenTelemetry Collector.")
 * [Troubleshooting RUM for custom applications](/docs/observe/digital-experience/custom-applications/troubleshooting "Fix issues related to RUM for your custom applications.")
 * [Troubleshooting RUM for mobile apps](/docs/observe/digital-experience/mobile-applications/troubleshooting "Troubleshoot and fix issues related to RUM for your mobile applications.")
@@ -1041,7 +1066,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [OpenTelemetry traces FAQ](/docs/ingest-from/opentelemetry/troubleshooting "Troubleshoot common issues in the context of OpenTelemetry and data ingestion.")
 * [Send metrics via AWS Distro for OpenTelemetry](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
 * [Send metrics via the Dynatrace OpenTelemetry metrics exporter](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Send metrics via the OpenTelemetry collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace Collector.")
+* [Send metrics via the OpenTelemetry collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.")
 * [Send metrics via OTLP (OpenTelemetry Protocol) metrics exporter](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
 * [Alert on common Kubernetes/OpenShift issues](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.")
 
@@ -1144,7 +1169,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Jun 20, 2022
 
-* [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace Collector.")
+* [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.")
 * [OpenTelemetry metric concepts](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")
 * [Best practices for OpenTelemetry traces](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")
 * [Instrument .NET applications with OpenTelemetry Metrics](/docs/ingest-from/opentelemetry/walkthroughs/dotnet "Learn how to instrument your .NET application using OpenTelemetry and Dynatrace.")
@@ -1714,7 +1739,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [HA - Get proxy configurations for all data centersï»¿](https://docs.dynatrace.com/managed/shortlink/api-cluster-proxy-get-config-ha-all)
 * [Delete cluster proxy configurationï»¿](https://docs.dynatrace.com/managed/shortlink/api-cluster-proxy-delete-config)
 * [HA - Delete proxy configuration in specific data centerï»¿](https://docs.dynatrace.com/managed/shortlink/api-cluster-proxy-delete-config-ha)
-* [Service detection rules API](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace services detection rules config API offers.")
+* [Service detection rules API](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace service detection rules config API offers.")
 * [Mobile and custom app API](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Learn what the Dynatrace mobile and custom app config API offers.")
 
 ## Nov 16, 2020

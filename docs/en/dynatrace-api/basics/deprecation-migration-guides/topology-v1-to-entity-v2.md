@@ -1,7 +1,7 @@
 ---
 title: Migrate from Topology and Smartscape API to Monitored entities API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/topology-v1-to-entity-v2
-scraped: 2026-02-15T21:21:40.345302
+scraped: 2026-02-16T09:19:22.224339
 ---
 
 # Migrate from Topology and Smartscape API to Monitored entities API

@@ -1,7 +1,7 @@
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-15T21:08:03.448320
+scraped: 2026-02-16T09:12:02.581280
 ---
 
 # Get started with Dynatrace

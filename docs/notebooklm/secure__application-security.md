@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 18
+Files combined: 19
 
 ---
 
@@ -97,7 +97,7 @@ You can edit, disable, enable, or remove rules at any time.
 ---
 title: Runtime Application Protection
 source: https://www.dynatrace.com/docs/secure/application-security/application-protection
-scraped: 2026-02-15T21:13:25.969512
+scraped: 2026-02-16T09:26:21.401256
 ---
 
 # Runtime Application Protection
@@ -224,7 +224,7 @@ Runtime Application Protection is licensed based on the consumption of [GiB-hour
 ---
 title: Security Posture Management
 source: https://www.dynatrace.com/docs/secure/application-security/security-posture-management-hub
-scraped: 2026-02-15T21:13:31.085106
+scraped: 2026-02-16T09:26:24.799146
 ---
 
 # Security Posture Management
@@ -535,7 +535,7 @@ Set up the Dynatrace [integration with Runecast Analyzer](/docs/secure/threat-ob
 ---
 title: Metrics Classic for Dynatrace Runtime Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/app-sec-metrics
-scraped: 2026-02-15T21:29:54.069550
+scraped: 2026-02-16T09:27:25.048553
 ---
 
 # Metrics Classic for Dynatrace Runtime Vulnerability Analytics
@@ -1048,6 +1048,39 @@ To review how your monitoring rules affect overall coverage, see [Assess coverag
 ---
 
 
+## Source: code-level-vulnerabilities.md
+
+
+---
+title: Code-level vulnerabilities
+source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/code-level-vulnerabilities
+scraped: 2026-02-16T09:33:22.377493
+---
+
+# Code-level vulnerabilities
+
+# Code-level vulnerabilities
+
+* Latest Dynatrace
+* Overview
+* Published Feb 13, 2023
+
+[![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities")
+
+Improve your environment's security by quickly addressing vulnerabilities and remediation actions with ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**.](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments.")
+
+[### Monitoring rules
+
+Define code-level vulnerability detection on a process group level.](/docs/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv "Define rules based on specific process groups")
+
+## Related topics
+
+* [Application Security FAQ](/docs/secure/faq "Frequently asked questions about Dynatrace Application Security.")
+
+
+---
+
+
 ## Source: email-integration.md
 
 
@@ -1456,7 +1489,7 @@ To verify that your integration is set up correctly
 ---
 title: Davis Security Advisor calculations
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor
-scraped: 2026-02-15T21:21:17.890395
+scraped: 2026-02-16T09:20:08.398783
 ---
 
 # Davis Security Advisor calculations
@@ -1512,7 +1545,7 @@ To filter by recommended fixes, see [Filter third-party vulnerabilities by recom
 ---
 title: Davis Security Score calculations
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score
-scraped: 2026-02-15T21:21:20.413861
+scraped: 2026-02-16T09:20:05.137066
 ---
 
 # Davis Security Score calculations
@@ -1623,7 +1656,7 @@ Thus, the DSS (score and risk level) for vulnerabilities on Grail-powered apps c
 ---
 title: Monitoring rules - Third-party Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv
-scraped: 2026-02-15T21:21:21.938531
+scraped: 2026-02-16T09:20:12.132278
 ---
 
 # Monitoring rules - Third-party Vulnerability Analytics
@@ -2911,7 +2944,7 @@ New monitoring rules Classic monitoring rules
 ---
 title: Filter or change status of third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities
-scraped: 2026-02-15T21:21:25.909284
+scraped: 2026-02-16T09:19:59.937409
 ---
 
 # Filter or change status of third-party vulnerabilities
@@ -3084,7 +3117,7 @@ The last five status changes of the vulnerability are logged in the **Vulnerabil
 ---
 title: Manage third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities
-scraped: 2026-02-15T21:21:23.422505
+scraped: 2026-02-16T09:20:03.539681
 ---
 
 # Manage third-party vulnerabilities
@@ -3524,7 +3557,7 @@ Lists and links to the top five process groups, sorted by status (`Affected`, th
 ---
 title: Remediation tracking
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking
-scraped: 2026-02-15T21:21:19.238081
+scraped: 2026-02-16T09:20:10.149219
 ---
 
 # Remediation tracking
@@ -4176,7 +4209,7 @@ The order of the monitoring rules is important: As soon as a rule matches an ent
 ---
 title: Third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities
-scraped: 2026-02-15T21:10:35.279436
+scraped: 2026-02-16T09:13:05.538990
 ---
 
 # Third-party vulnerabilities
@@ -4221,7 +4254,7 @@ Create, modify, and delete custom monitoring rules for Dynatrace-monitored proce
 ---
 title: Runtime Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics
-scraped: 2026-02-15T21:13:29.733620
+scraped: 2026-02-16T09:26:28.172811
 ---
 
 # Runtime Vulnerability Analytics

@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 20
+Files combined: 26
 
 ---
 
@@ -954,7 +954,7 @@ Select scopes > repo (Full control of private repositories).
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-15T21:26:55.238458
+scraped: 2026-02-16T09:30:27.480932
 ---
 
 # Set up GitHub Connector
@@ -1028,13 +1028,351 @@ We strongly recommend that you limit the permissions of your personal access tok
 ---
 
 
+## Source: github.md
+
+
+---
+title: GitHub Connector
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
+scraped: 2026-02-16T09:27:34.606779
+---
+
+# GitHub Connector
+
+# GitHub Connector
+
+* Latest Dynatrace
+* Overview
+* 1-min read
+* Updated on Feb 13, 2025
+
+GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") enables your Dynatrace environment to integrate with GitHub repositories. With this integration, you can automate issues and pull requests based on monitoring data and events within a dedicated [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+
+[![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub")
+
+### Set up GitHub Connector
+
+Set up and configure GitHub Connector.](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")[![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub")
+
+### GitHub Connector actions
+
+Learn about available actions used by GitHub Connector integration for automating issues and pull requests on your monitoring data and events.](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
+
+## Related topics
+
+* [Actions for GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
+* [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")
+
+
+---
+
+
+## Source: gitlab-workflows-actions.md
+
+
+---
+title: Actions for GitLab Connector
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
+scraped: 2026-02-16T09:35:42.726047
+---
+
+# Actions for GitLab Connector
+
+# Actions for GitLab Connector
+
+* Latest Dynatrace
+* Reference
+* 9-min read
+* Updated on Jan 14, 2025
+
+The following workflow actions are available for the GitLab Connector ![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows") integration. Each action corresponds to an endpoint of the GitLab Connector API.
+
+For details on creating workflows, refer to [Create workflows in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/building#create "Create and edit workflows in Dynatrace Workflows.").
+
+The actions are listed under the following categories:
+
+* [Repository files APIs](#create-file)
+* [Merge requests APIs](#create-merge-request)
+* [Issues APIs](#create-new-issue)
+* [Jobs APIs](#get-pipeline-status)
+
+## Create file
+
+Creates a new file in a new branch based on the specified base branch.
+
+The action can only act on one file, resulting in the creation of a new branch. The GitLab API doesn't allow the reuse of existing branches. Any attempt to do so results in the GitLab API throwing an error.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Start branch** | The starting branch to base the new branch on. | Required |
+| **Branch** | The name of the new branch. | Required |
+| **File path** | The relative path to the file to be created. | Required |
+| **File content** | The content of the new file. | Required |
+| **Commit message** | The commit message for the new file. | Required |
+| **Author name** | The name of the author of the resulting commit. | Optional |
+
+### Output
+
+Returns fields as described in the [Repository files API - Create new file in repositoryï»¿](https://dt-url.net/7o43w88) GitLab documentation.
+
+## Get file
+
+Gets a file from a repository.
+
+This action should only be used to retrieve the contents of a plain-text file.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **File path** | The relative path of the file. | Required |
+| **Ref** | The reference from which to retrieve the file. It can be a branch name or a commit hash. | Required |
+
+### Output
+
+Returns fields as described in the [Repository files API - Get file from repositoryï»¿](https://dt-url.net/l863wwz) GitLab documentation.
+
+## Update file
+
+Updates a file in your GitLab repository. This action creates a new branch based on the specified base branch.
+
+The action can only act on one file, resulting in the creation of a new branch. The GitLab API doesn't allow the reuse of existing branches. Any attempt to do so results in the GitLab API throwing an error.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Start branch** | The starting branch to base the new branch on. | Optional |
+| **Branch** | The name of the new branch. | Required |
+| **File path** | The relative path to the file to be updated. | Required |
+| **File content** | The updated content of the file. | Required |
+| **Commit message** | The commit message for the edit. | Required |
+| **Author name** | The name of the author of the resulting commit. | Optional |
+
+### Output
+
+Returns fields as described in the [Repository files API - Update existing file in repositoryï»¿](https://dt-url.net/6o83wg0) GitLab documentation.
+
+## Delete file
+
+Deletes a file in your GitLab repository. This action creates a new branch based on the specified base branch.
+
+The action can only act on one file, resulting in the creation of a new branch. The GitLab API doesn't allow the reuse of existing branches. Any attempt to do so results in the GitLab API throwing an error.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Start branch** | The starting branch to base the new branch on. | Required |
+| **Branch** | The name of the new branch. | Required |
+| **File path** | The relative path to the file to be deleted. | Required |
+| **Commit message** | The commit message for the deletion. | Required |
+| **Author name** | The name of the author of the resulting commit. | Optional |
+
+### Output
+
+Returns fields as described in the [Repository files API - Delete existing file in repositoryï»¿](https://dt-url.net/xfa3w6o) GitLab documentation.
+
+## Create merge request
+
+Creates a merge request in your GitLab repository.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Source Branch** | The name of the source branch. | Required |
+| **Target Branch** | The name of the target branch. | Required |
+| **Title** | The title of the new merge request. | Required |
+| **Description** | The description of this merge request. | Optional |
+
+### Output
+
+Returns fields as described in the [Merge requests API - Create MRï»¿](https://dt-url.net/uyc3wjd) GitLab documentation.
+
+## Get merge request
+
+Gets a single merge request in GitLab.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Internal ID** | The GitLab internal identifier of the merge request. | Required |
+| **Commits behind the target branch** | Toggle the switch on to include the commits behind the target branch. | Optional |
+| **Rebase operation in progress** | Toggle the switch on to include any rebase operation in progress. | Optional |
+
+### Output
+
+Returns fields as described in the [Merge requests API - Get single MRï»¿](https://dt-url.net/u8e3wkb) GitLab documentation.
+
+## List merge requests
+
+Gets a list of merge requests in your GitLab repository.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Author** | The name of the user who authored the merge requests. | Optional |
+| **State** | The status of merge requests you're interested in. | Optional |
+
+### Output
+
+Returns fields as described in the [Merge requests API - List merge requestsï»¿](https://dt-url.net/42g3w9v) GitLab documentation.
+
+## Merge a merge request
+
+Merges a merge request in your GitLab repository.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Merge request** | The merge request to merge. | Required |
+| **SHA** | The hash of the presumptive last commit in the merge request. If the actual last commit differs, the action fails. | Optional |
+| **Enable squash merge** | Toggle the switch on to use the squash merge strategy or off to use the merge commit strategy. | Optional |
+
+### Output
+
+Returns fields as described in the [Merge requests API - Merge a merge requestï»¿](https://dt-url.net/myi3wx9) GitLab documentation.
+
+## Update merge request
+
+Updates an existing merge request in your GitLab repository.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Merge request** | The merge request to be updated. | Required |
+| **Branch** | The name of the target branch. | Required |
+| **Title** | The new title of the merge request. | Optional |
+| **Description** | The description of this merge request. | Optional |
+
+### Output
+
+Returns fields as described in the [Merge requests API - Update MRï»¿](https://dt-url.net/b7k3wms) GitLab documentation.
+
+## Create merge request note
+
+Creates a new note for a single merge request in GitLab.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Merge request** | The merge request to which the note will be posted. | Required |
+| **Content of the note** | The content of the note. | Required |
+| **SHA** | The hash of the presumptive last commit in the merge request. If the actual last commit differs, the action fails. | Optional |
+
+### Output
+
+Returns fields as described in the [Merge requests API - Create MR Noteï»¿](https://dt-url.net/f903w51) GitLab documentation.
+
+## Create new issue
+
+Creates a new issue in your GitLab repository.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Title** | The title of the new issue. | Required |
+| **Labels** | A comma-separated list of labels to add to the issue. | Optional |
+| **Issue type** | The type of the issue. | Optional |
+| **Description** | The description of the issue. | Optional |
+| **Assignees** | The user to assign this issue. If not set, the issue will be unassigned. | Optional |
+
+### Output
+
+Returns fields as described in the [Issues API - New issueï»¿](https://dt-url.net/n1m3wi7) GitLab documentation.
+
+## Edit issue
+
+Edits an issue in your GitLab repository.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Title** | The new title of the issue. | Optional |
+| **Labels** | A comma-separated list of labels to apply to the issue. | Optional |
+| **Issue type** | The type of the issue. | Optional |
+| **Description** | The description of the issue. | Optional |
+| **Close/Reopen** | Select to change the issue status. | Optional |
+
+### Output
+
+Returns fields as described in the [Issues API - Edit an issueï»¿](https://dt-url.net/fuo3was) GitLab documentation.
+
+## List issues
+
+Gets a list of issues from your GitLab repository.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Issue Ids** | Show only issues with the specified, comma-separated list of IDs. | Optional |
+| **Title or Description** | Show only issues that contain the specified text in their title or description. | Optional |
+| **Issue type** | Show only issues of the specified type. | Optional |
+| **Labels** | Show only issues with all of the comma-separated labels assigned to them. | Optional |
+| **State** | Set whether you want to retrieve a list of open or closed issues. | Optional |
+
+### Output
+
+Returns fields as described in the [Issues API - List issuesï»¿](https://dt-url.net/kqq3wj6) GitLab documentation.
+
+## Get pipeline status
+
+Gets the status of a pipeline running in your GitLab repository.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Branch** | The name of the branch. | Required |
+| **Pipeline** | The GitLab internal identifier of the pipeline. | Required |
+
+### Output
+
+Returns fields as described in the [Jobs API - Get a single jobï»¿](https://dt-url.net/vss3wqf) GitLab documentation.
+
+## Trigger a new pipeline
+
+Triggers a new run of a pipeline in your GitLab repository.
+
+### Inputs
+
+| Field | Description | Required |
+| --- | --- | --- |
+| **Branch** | The name of the branch for which the pipeline should be triggered. | Required |
+
+You can also set any number of build parameters.
+
+### Output
+
+Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.net/leu3wbq) GitLab documentation.
+
+## Related topics
+
+* [GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab "Integrate Workflows with GitLab.")
+* [Set up GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup "Set up GitLab Connector.")
+
+
+---
+
+
 ## Source: gitlab-workflows-setup.md
 
 
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-02-15T09:11:50.139815
+scraped: 2026-02-16T09:35:49.107387
 ---
 
 # Set up GitLab Connector
@@ -1110,7 +1448,7 @@ Refer to the GitLab documentation for details on which scope is needed for which
 ---
 title: GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab
-scraped: 2026-02-15T21:26:21.861314
+scraped: 2026-02-16T09:31:38.803125
 ---
 
 # GitLab Connector
@@ -1133,6 +1471,71 @@ Set up and configure GitLab.](/docs/analyze-explore-automate/workflows/actions/g
 ### Actions in GitLab Connector
 
 Learn about available actions used by GitLab Connector integration for automating issues and merge requests on your monitoring data and events.](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions "List of available actions in GitLab Connector.")
+
+
+---
+
+
+## Source: jenkins-workflows-setup.md
+
+
+---
+title: Set up Jenkins Connector
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
+scraped: 2026-02-16T09:32:51.023168
+---
+
+# Set up Jenkins Connector
+
+# Set up Jenkins Connector
+
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Updated on May 07, 2025
+
+### Step 1 Add a New host pattern in External requests
+
+External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.
+
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **General** > **External requests**.
+2. Select  **New host pattern**.
+3. Add the domain names.
+4. Select **Add**.
+
+This way you can granularly control the web services your functions can connect to.
+
+### Step 2 Grant permissions to Workflows
+
+Some permissions are required by Workflows to run actions on your behalf.
+Other permissions are required by actions that come bundled with Jenkins Connector itself.
+
+To fine-tune permissions granted to Workflows
+
+1. Go to **Workflows** and select **Settings** > **Authorization settings**.
+2. Select the following permissions besides the general Workflows permission.
+
+* Permissions needed for Jenkins workflow actions:
+
+  + `app-settings:objects:read`
+
+For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+
+### Step 3 Configure Jenkins connection
+
+You need a configured connection for each of your Jenkins environments.
+
+To configure a connection
+
+1. Open ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** and go to **Connections** > **Jenkins**.
+2. Select  **Connection**.
+3. Describe your Jenkins connection.
+
+   * **Connection name**: Provide a meaningful name for your connection.
+   * **Jenkins URL**: Add the URL of your Jenkins environment.
+   * **Username**: Provide your Jenkins username.
+   * **Password**: Provide your Jenkins password.
+4. Select **Create**.
 
 
 ---
@@ -1484,13 +1887,161 @@ The following are solutions to problems some people have.
 ---
 
 
+## Source: redhat-ansible.md
+
+
+---
+title: Red Hat Ansible Automation
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible
+scraped: 2026-02-16T09:28:25.860361
+---
+
+# Red Hat Ansible Automation
+
+# Red Hat Ansible Automation
+
+* Latest Dynatrace
+* How-to guide
+* 4-min read
+* Updated on Oct 16, 2025
+* Preview
+
+Preview
+
+When you integrate your Dynatrace environment with Red Hat Ansible Automation controller using Red Hat Ansible Connector ![Red Hat Ansible for Workflows](https://dt-cdn.net/images/red-hat-ansible-for-workflows-257-cfabd1452d.png "Red Hat Ansible for Workflows"), you can automatically start job templates based on your monitoring data.
+
+## Configure the integration
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#permissions "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Create Red Hat Ansible API key**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#api-key "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Configure Red Hat Ansible Automation connection**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#connection "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
+
+**Configure Red Hat Ansible Automation connection**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#edgeconnect "Automate running of Ansible jobs based on your monitoring data and events.")
+
+### Step 1 Grant permissions to Workflows
+
+Some permissions are required by Workflows to run actions on your behalf.
+
+To fine-tune permissions granted to Workflows
+
+1. Go to **Workflows** and select **Settings** > **Authorization settings**.
+2. Select the following permissions besides the general Workflows permission.
+
+* `app-settings:objects:read`
+* `state:app-states:read`
+* `state:app-states:write`
+* `state:app-states:delete`
+
+For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+
+### Step 2 Create Red Hat Ansible API key
+
+To interact with Red Hat Ansible Automation Controller, you need an API key. To learn how to obtain it, see the [Red Hat official documentationï»¿](https://dt-url.net/q60398k).
+
+### Step 3 Configure Red Hat Ansible connection
+
+You need a configured connection for of your Red Hat Automation environments.
+
+To configure a connection for **Red Hat Ansible Automation Controller**
+
+1. Go to **Settings** and select **Connections** > **Connectors** > **Red Hat Ansible**.
+2. Select the tab **Automation Controller**.
+3. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Connection**.
+4. Provide a meaningful name for your connection.
+5. Provide the Red Hat Ansible API URL. For example, `http://your-ansible-host.com/api/v2` (must include the `api/v2`, no trailing slash).
+6. Provide your Red Hat Ansible API key.
+7. Select **Create**.
+
+### Step 4 optional Configure EdgeConnect
+
+If you connect to a self-hosted Red Hat Ansible Automation Controller or AWX instance, you might require EdgeConnect to establish a connection behind your firewall.
+
+To configure an EdgeConnect connection
+
+1. Go to **Settings** >  **General** > **External Requests** > **EdgeConnect**.
+2. Select  **New EdgeConnect**.
+3. Enter **Name** for your EdgeConnect.
+4. Enter **Host pattern** which is a URL.
+5. Select **Create**.
+
+You have a new EdgeConnect connection.
+
+## Available actions
+
+The following workflow actions are available for the Red Hat Ansible Automation integration.
+Each action corresponds to an endpoint of the Red Hat Ansible API. For details on endpoints, see the [Ansible Tower API Reference Guideï»¿](https://dt-url.net/0w4392o).
+
+Action
+
+Description
+
+Red Hat Ansible API endpoint
+
+Launch job template
+
+Launch a job template on Red Hat Ansible
+
+`POST /api/v2/job_templates/{id}/launch/`   
+Launch a Job Template
+
+List job status
+
+List job status on Red Hat Ansible
+
+`GET /api/v2/jobs/{id}/`   
+Retrieve a Job Host Summary
+
+Relaunch job
+
+Relaunch a job on Red Hat Ansible
+
+`POST /api/v2/jobs/{id}/relaunch/`   
+Relaunch a Job
+
+## Launch a job template
+
+To launch a job template, you need to provide the information listed below.
+
+| Field | Description | Required |
+| --- | --- | --- |
+| TemplateId | The ID of the template that you want to launch | Required |
+| ExtraVars | Extra variables to be used in the job template | Optional |
+
+For details on the parameters, see the [Ansible Tower API Reference Guideï»¿](https://dt-url.net/0w4392o) (`/api/v2/job_templates/{id}/launch/` "Launch a Job Template").
+
+To create a workflow that launches a job template
+
+1. Go to **Workflows** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") and select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") to create a new workflow.
+2. In the **Choose trigger** panel, select the trigger best suited to your needs.
+3. On the trigger node, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") to browse available actions.
+4. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `Ansible`, and select **Launch job template**.
+5. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Launch job template** action.
+6. In the **Launch job template** action, select the [connection](#connection) to your **Red Hat Ansible Automation Controller**.
+7. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+8. To test your workflow, select **Run**.
+
+## Troubleshooting
+
+The following are solutions to problems some people have.
+
+* [Red Hat Ansible for Workflows: Missing required fields errorï»¿](https://dt-url.net/sq237zw)
+* [Red Hat Ansible for Workflows: Insufficient permissions errorï»¿](https://dt-url.net/3e63842)
+
+
+---
+
+
 ## Source: service-now.md
 
 
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-15T21:18:23.623731
+scraped: 2026-02-16T09:22:15.326593
 ---
 
 # ServiceNow
@@ -1821,7 +2372,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-15T09:06:37.953372
+scraped: 2026-02-16T09:37:03.310789
 ---
 
 # Slack Connector
@@ -3310,13 +3861,47 @@ Supports multi-document YAML files.
 ---
 
 
+## Source: text-processing.md
+
+
+---
+title: Text Processing
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
+scraped: 2026-02-16T09:28:12.035511
+---
+
+# Text Processing
+
+# Text Processing
+
+* Latest Dynatrace
+* Overview
+* 1-min read
+* Published Oct 08, 2025
+
+Text Processing provides `set` and `get` actions, which you can use to create, modify, or retrieve properties from JSON or YAML content.
+The YAML actions support multi-document YAML files through an optional document index parameter.
+
+You can combine the Text Processing actions with other Connector actions, for example, with [GitHub Connector action](/docs/analyze-explore-automate/workflows/actions/github "Integrate Workflows with GitHub for handling common developer tasks.") or [GitLab Connector action](/docs/analyze-explore-automate/workflows/actions/gitlab "Integrate Workflows with GitLab.") to fetch JSON or YAML files from a repository/project, manipulate them with the Text Processing Connector actions, and update them via a pull request or merge request.
+
+For more information on how to start a workflow to use Text Processing, see [Workflows quick start guide](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.").
+
+## Related topics
+
+* [Actions for Text Processing Connector](/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions "Learn about the type of actions you use as part of a workflow for text processing a JSON or YAML file.")
+* [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.")
+
+
+---
+
+
 ## Source: actions.md
 
 
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-15T21:18:22.166064
+scraped: 2026-02-16T09:22:12.004416
 ---
 
 # Workflows Connectors
@@ -3417,6 +4002,36 @@ Generate business events from automated tasks to connect monitoring and observab
 ### Text Processing
 
 Text Processing provides a set of `set` and `get` actions for manipulating content in JSON and YAML file types.](/docs/analyze-explore-automate/workflows/actions/text-processing "Automate text processing in JSON and YAML files for your workflows.")
+
+
+---
+
+
+## Source: dql-query-workflow-action.md
+
+
+---
+title: DQL query action for Workflows
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
+scraped: 2026-02-16T09:36:42.597396
+---
+
+# DQL query action for Workflows
+
+# DQL query action for Workflows
+
+* Latest Dynatrace
+* Reference
+* 1-min read
+* Published Apr 02, 2024
+
+The **Execute DQL Query** action for Workflows enables you to use DQL queries in a workflow. In **DQL query**, enter your [DQL query](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). In **Segment**, you can optionally select a filter segment.
+
+You can find the results in the **Result** tab of the **Execution** that you could use in subsequent tasks.
+
+## Related topics
+
+* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
 
 
 ---
@@ -3821,7 +4436,7 @@ console.log( ex.params.event);
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-02-15T21:28:28.263568
+scraped: 2026-02-16T09:29:43.234414
 ---
 
 # Access workflow management functionality
@@ -3869,7 +4484,7 @@ To access various workflow management commands:
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-15T09:09:33.290038
+scraped: 2026-02-16T09:37:25.429478
 ---
 
 # Manage live or draft workflows
@@ -3910,7 +4525,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-15T09:06:29.574632
+scraped: 2026-02-16T09:40:07.852390
 ---
 
 # Get notified about workflow changes
@@ -3986,7 +4601,7 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-02-15T21:22:44.842187
+scraped: 2026-02-16T09:38:27.113957
 ---
 
 # User permissions for workflows

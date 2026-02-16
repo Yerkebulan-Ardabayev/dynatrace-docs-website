@@ -1,7 +1,7 @@
 ---
 title: Monitor AWS Elastic Beanstalk
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk
-scraped: 2026-02-15T21:14:33.516987
+scraped: 2026-02-16T09:24:42.792213
 ---
 
 # Monitor AWS Elastic Beanstalk

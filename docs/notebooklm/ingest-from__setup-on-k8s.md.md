@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Set up Dynatrace on Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s
-scraped: 2026-02-15T21:13:34.945456
+scraped: 2026-02-16T09:21:53.669945
 ---
 
 # Set up Dynatrace on Kubernetes

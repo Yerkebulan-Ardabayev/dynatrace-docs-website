@@ -1,7 +1,7 @@
 ---
 title: Syslog ingestion with ActiveGate
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog
-scraped: 2026-02-15T21:30:18.186413
+scraped: 2026-02-16T09:28:13.956911
 ---
 
 # Syslog ingestion with ActiveGate
@@ -62,7 +62,7 @@ To enable syslog ingestion
 
    If your syslog producers use the default ports per supported protocols, your syslog-enabled ActiveGate should receive syslog records right away.
 
-   If your syslog producers send events on custom ports or the syslog protocol is RFC 3164, modify the syslog receiver configuration. For details, see [Ingest syslog data using OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
+   If your syslog producers send events on custom ports or the syslog protocol is RFC 3164, modify the syslog receiver configuration. For details, see [Ingest syslog data with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
 
    Default syslog receiver configuration
 

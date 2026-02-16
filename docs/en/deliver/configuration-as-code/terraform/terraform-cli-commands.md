@@ -1,7 +1,7 @@
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-15T21:28:02.843972
+scraped: 2026-02-16T09:36:08.992491
 ---
 
 # Terraform CLI commands

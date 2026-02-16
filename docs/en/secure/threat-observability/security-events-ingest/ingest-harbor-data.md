@@ -1,7 +1,7 @@
 ---
 title: Ingest Harbor vulnerability findings, scans, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-harbor-data
-scraped: 2026-02-15T21:17:10.993564
+scraped: 2026-02-16T09:17:35.741049
 ---
 
 # Ingest Harbor vulnerability findings, scans, and audit logs

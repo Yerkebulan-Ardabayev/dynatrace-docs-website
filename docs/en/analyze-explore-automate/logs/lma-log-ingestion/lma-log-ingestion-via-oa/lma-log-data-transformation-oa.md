@@ -1,7 +1,7 @@
 ---
 title: Automatic log enrichment
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa
-scraped: 2026-02-15T21:15:52.458899
+scraped: 2026-02-16T09:24:20.175826
 ---
 
 # Automatic log enrichment
@@ -114,15 +114,7 @@ emerg
 
 EMERGENCY
 
-A match occurs and severity is determined when
-
-1. The keyword found is a single word/phrase from the above list, and it is preceded and followed by a space.
-2. The keyword found is a single word/phrase from the above list, and it is preceded and followed by one of the four predefined non-alphanumeric symbols, as in the example below:
-
-* `[error]`
-* `{error}`
-* `{{error}}`
-* `<error>`
+A match occurs and severity is determined when the keyword found is a single word/phrase from the above list, and it is preceded and followed any non-alphanumeric symbol other than `/` or `_`.
 
 ## Transform all types of logs
 

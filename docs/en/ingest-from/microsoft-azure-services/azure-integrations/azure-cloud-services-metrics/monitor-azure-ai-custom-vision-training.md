@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Custom Vision monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-custom-vision-training
-scraped: 2026-02-15T09:09:00.352826
+scraped: 2026-02-16T09:33:10.253387
 ---
 
 # Azure AI - Custom Vision monitoring

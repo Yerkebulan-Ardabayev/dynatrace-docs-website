@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-15T21:08:18.691739
+scraped: 2026-02-16T09:12:09.245826
 ---
 
 # Problems app

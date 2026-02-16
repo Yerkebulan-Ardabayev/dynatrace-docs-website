@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 5
+Files combined: 6
 
 ---
 
@@ -106,6 +106,43 @@ You can create, edit, list, delete, and evaluate your SLOs via API.
 4. In the upper right corner, go to **Select a definition**.
 5. From the drop-down list, choose the endpoint.
 6. Authenticate with your API token. For more details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+
+
+---
+
+
+## Source: service-level-objective-permissions.md
+
+
+---
+title: Permissions for service-level objective (SLO) tiles in a dashboard
+source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
+scraped: 2026-02-16T09:39:15.579926
+---
+
+# Permissions for service-level objective (SLO) tiles in a dashboard
+
+# Permissions for service-level objective (SLO) tiles in a dashboard
+
+* Latest Dynatrace
+* 1-min read
+* Published Nov 24, 2024
+
+You need the following permissions for service-level objective (SLO) tiles in a dashboard
+
+For **Edit**
+
+* `slo:slos:read` ârequired for reading all SLOs to show them in the dropdown selector
+* `slo:slos:write` ârequired for showing the  **Service-level objective** button
+* `slo:slos:write`, `slo:slos:read`, and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+
+For SLO tile evaluation
+
+* `slo:slos:read` and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+
+For the SLO details view
+
+* `slo:slos:read`, `slo:objective-templates:read`, and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
 
 
 ---
@@ -317,7 +354,7 @@ To copy and paste multiple tiles simultaneously
 ---
 title: View the details of a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-view
-scraped: 2026-02-15T21:27:24.314268
+scraped: 2026-02-16T09:33:54.599505
 ---
 
 # View the details of a service-level objective (SLO) tile in a dashboard
@@ -352,7 +389,7 @@ You can view details of your SLO tile in your dashboard.
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-02-15T09:10:33.171175
+scraped: 2026-02-16T09:33:01.517200
 ---
 
 # Upgrade Classic SLOs

@@ -1,7 +1,7 @@
 ---
 title: Metrics API - POST ingest data points
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics
-scraped: 2026-02-15T21:28:54.355081
+scraped: 2026-02-16T09:33:34.301286
 ---
 
 # Metrics API - POST ingest data points

@@ -1,7 +1,7 @@
 ---
 title: Manage PostgreSQL extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql
-scraped: 2026-02-15T09:11:32.198523
+scraped: 2026-02-16T09:32:07.259119
 ---
 
 # Manage PostgreSQL extensions

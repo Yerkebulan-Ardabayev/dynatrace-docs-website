@@ -1,7 +1,7 @@
 ---
 title: Observe Argo CD deployment and application health with Dashboards and SDLC events
 source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/deployment-observability-use-case-argocd
-scraped: 2026-02-15T21:26:29.807389
+scraped: 2026-02-16T09:34:52.270372
 ---
 
 # Observe Argo CD deployment and application health with Dashboards and SDLC events
@@ -397,7 +397,7 @@ To generate an access token:
 
 Argo CD exposes different sets of Prometheus metrics for different services.
 Configure your Argo CD services to expose this information so that it can be collected by Dynatrace.
-You can use either [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."), which is installed on the Kubernetes cluster that hosts Argo CD, or the [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace Collector.").
+You can use either [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."), which is installed on the Kubernetes cluster that hosts Argo CD, or the [Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
 
 To use [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.")
 

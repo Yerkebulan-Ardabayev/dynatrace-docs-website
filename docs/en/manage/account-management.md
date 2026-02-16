@@ -1,7 +1,7 @@
 ---
 title: Account Management
 source: https://www.dynatrace.com/docs/manage/account-management
-scraped: 2026-02-15T21:21:15.493729
+scraped: 2026-02-16T09:22:08.788060
 ---
 
 # Account Management

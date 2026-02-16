@@ -1,12 +1,12 @@
 ---
-title: Scrape data from Prometheus
+title: Scrape Promethus metrics with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/prometheus
-scraped: 2026-02-15T09:06:36.632208
+scraped: 2026-02-16T09:30:40.521569
 ---
 
-# Scrape data from Prometheus
+# Scrape Promethus metrics with the OpenTelemetry Collector
 
-# Scrape data from Prometheus
+# Scrape Promethus metrics with the OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -20,13 +20,13 @@ The following configuration example shows how you configure a Collector instance
 * A Prometheus instance running on port 8888
 * One of the following Collector distributions with the [Prometheus receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/receiver/prometheusreceiver), the [metric start time processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/metricstarttimeprocessor), and the [cumulative-to-delta processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor):
 
-  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace Collector.")
-  + OpenTelemetry [Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace Collector.")
-  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace Collector.")
+  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
+  + OpenTelemetry [Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace OTel Collector.")
+  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace OTel Collector.")
 * The [Dynatrace API endpoint URL](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported
 * An [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate)
 
-See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Demo configuration
 
@@ -266,7 +266,7 @@ exporters: [otlp_http]
 
 Configuration validation
 
-[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "Configure the OpenTelemetry Collector.") to avoid any configuration issues.
+[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
 
 Cumulativetodelta processor recommendation
 
@@ -284,7 +284,7 @@ For a full list of configuration parameters, see the [Prometheus documentationï
 
 ### Processors
 
-Under `processors`, we specify the [`cumulativetodelta` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor) to convert the metrics emitted by the Prometheus receiver to their [delta aggregation format](/docs/ingest-from/opentelemetry/collector/configuration#delta-metrics "Configure the OpenTelemetry Collector.").
+Under `processors`, we specify the [`cumulativetodelta` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor) to convert the metrics emitted by the Prometheus receiver to their [delta aggregation format](/docs/ingest-from/opentelemetry/collector/configuration#delta-metrics "How to configure the OpenTelemetry Collector.").
 
 In Dynatrace Collector v0.41.0+, we specify the
 [`metricstarttime`
@@ -321,4 +321,4 @@ The [Target Allocatorï»¿](https://opentelemetry.io/docs/platforms/kubernetes/
 ## Related topics
 
 * [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
-* [Enrich from Kubernetes](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
+* [Enrich OTLP requests with Kubernetes data](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")

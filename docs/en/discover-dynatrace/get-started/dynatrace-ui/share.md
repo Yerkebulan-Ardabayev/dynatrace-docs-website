@@ -1,7 +1,7 @@
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-15T21:09:36.929299
+scraped: 2026-02-16T09:15:27.854670
 ---
 
 # Share documents

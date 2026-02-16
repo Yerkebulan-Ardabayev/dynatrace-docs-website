@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Ownership
 source: https://www.dynatrace.com/docs/deliver/ownership-app
-scraped: 2026-02-15T21:30:30.594884
+scraped: 2026-02-16T09:33:58.084174
 ---
 
 # Ownership

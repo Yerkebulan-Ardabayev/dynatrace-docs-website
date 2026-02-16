@@ -1,7 +1,7 @@
 ---
 title: Service Detection v1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1
-scraped: 2026-02-15T21:09:07.791094
+scraped: 2026-02-16T09:13:48.704972
 ---
 
 # Service Detection v1
@@ -75,5 +75,5 @@ See [Configure service failure detection](/docs/observe/application-observabilit
 ## Related topics
 
 * [Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")
-* [Service detection API](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace services detection rules config API offers.")
+* [Service detection API](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace service detection rules config API offers.")
 * [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection")

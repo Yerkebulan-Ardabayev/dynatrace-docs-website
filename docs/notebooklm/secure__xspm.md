@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 2
+Files combined: 4
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 2
 ---
 title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/xspm/assess-coverage
-scraped: 2026-02-15T21:23:12.946223
+scraped: 2026-02-16T09:39:10.473294
 ---
 
 # Assess coverage
@@ -96,6 +96,215 @@ See below for the potential reasons why, on the **Overview** page, in **My syste
 * Security Posture Management isn't enabled on that system. In this case, the system is labeled `Not enabled`. Select **Enable SPM** to navigate to the Settings page of that system and enable Security Posture Management.
 
 * The initial assessment is still in progress. In this case, the system is labeled `No data`. Please allow around one hour for the assessment to finish. For details of the assessment mechanism, see [How it works](/docs/secure/application-security/security-posture-management-hub#mechanism "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+
+## Related topics
+
+* [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")
+
+
+---
+
+
+## Source: concepts.md
+
+
+---
+title: Security Posture Management concepts
+source: https://www.dynatrace.com/docs/secure/xspm/concepts
+scraped: 2026-02-16T09:27:32.979457
+---
+
+# Security Posture Management concepts
+
+# Security Posture Management concepts
+
+* Latest Dynatrace
+* Explanation
+* Updated on Sep 23, 2025
+
+## Results
+
+**Results** are findings from Dynatrace in relation to your security and compliance posture, based on the rules of the [supported compliance standards](/docs/secure/application-security/security-posture-management-hub#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+
+**Rules** are specific configuration and other process requirements defined in the compliance standards.
+
+Results consist of
+
+* Rules that were assessed automatically (labeled `Failed`, `Passed`, and `Not relevant`)
+* Rules that couldn't be assessed automatically (labeled `Manual`)
+
+Learn below about each result type.
+
+| **Result type** | **Definition** |
+| --- | --- |
+| Failed | The assessed resource doesn't follow the recommendations specified in the rule. In this case, a reason for failure is provided, based on which you can fix the issue. For details, see [Gain insights](/docs/secure/xspm/gain-insights "Drill into results that can help you fix misconfigurations and noncompliance."). |
+| Passed | The assessed resource follows the recommendations specified in the rule (there are no misconfigurations violating the specified recommendations). |
+| Manual[1](#fn-1-1-def) | The resource cannot be automatically assessed, as Dynatrace can't determine whether the resource is compliant (for example, when, due to physical security, Dynatrace can't get the configuration data from the clusters and nodes). |
+| Not relevant | The assessed resource doesn't meet a specific criteria for assessment, such as a specific version. These results can be skipped. |
+
+1
+
+Manual results aren't currently actionable.
+
+To increase the number of results based on automatic assessment, we recommend that you [deploy Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.").
+
+### View
+
+Results are displayed for all your monitored systems on which [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
+
+* The **Overview** page shows the total number of failed, manual, and passed rules per monitored system.
+* The **Assessment results** page shows a table with all results, sorted automatically in descending order, starting from the ones deserving the most attention (failed rules with critical severity) to those less important (not relevant rules with low severity).
+
+See below the result calculation based on the aggregation of finding events into rules.
+
+| **Rule result** | **Aggregation of resource states** |
+| --- | --- |
+| Failed | At least one assessed resource has a `Failed` result. |
+| Passed | At least one assessed resource has a `Passed` result, but none `Failed` nor `Manual`. |
+| Manual | At least one assessed resource has a `Manual` result, but none `Failed`. |
+| Not relevant | All assessed resources have a `Not relevant` result. |
+
+### Categorize assessment results
+
+You can filter and sort results based on different criteria of interest. For details, see [Review findings](/docs/secure/xspm/review-findings "Search for relevant information to analyze security and compliance findings efficiently.").
+
+### Explore
+
+To view result details
+
+1. Go to the **Assessment results** page.
+2. Select a rule.
+
+   This opens a side window with more information that can help you understand the context and fix potential issues. For details, see [Gain insights](/docs/secure/xspm/gain-insights "Drill into results that can help you fix misconfigurations and noncompliance.").
+
+## Severity
+
+Information regarding severity is provided by the compliance standards and mapped to Dynatrace as `Critical`, `High`, `Medium`, and `Low`, following the compliance standard recommendations.
+
+### View
+
+* The **Overview** page shows
+
+  + The total number of rules per compliance standard and how many of them are passed, manual, and failed (see the compliance standard cards)
+  + The total number of failed rules per system based on severity (see **My systems** table)
+* The **Assessment results** page shows a table with all results and the associated severity, sorted automatically in descending order, starting from the ones deserving the most attention (failed rules with critical severity) to those less important (not relevant rules with low severity).
+
+### Categorize assessment results
+
+You can filter and sort results based on severity. For details, see [Review findings](/docs/secure/xspm/review-findings "Search for relevant information to analyze security and compliance findings efficiently.").
+
+
+---
+
+
+## Source: gain-insights.md
+
+
+---
+title: Gain insights
+source: https://www.dynatrace.com/docs/secure/xspm/gain-insights
+scraped: 2026-02-16T09:35:37.484000
+---
+
+# Gain insights
+
+# Gain insights
+
+* Latest Dynatrace
+* How-to guide
+* Updated on Jan 28, 2026
+
+On the **Assessment results** page, selecting a rule opens a side window that enables you to:
+
+**Review key information:**
+
+* [The rule](#rule)
+* [Related system resources](#resources)
+* [Resource configuration](#configuration)
+
+**Initiate deeper analysis:**
+
+* [Explain assessment](#explain)
+
+This context can help you fix issues on your system.
+
+## Insights about the rule
+
+On the **Rule details** tab, you can
+
+* View relevant details about the rule such as
+
+  + Rule version used for assessment
+  + Rule severity
+  + Compliance standard issuing the rule
+* Navigate to the original documentation resource for the full description of the rule
+
+  ![Insights about the rule](https://dt-cdn.net/images/2024-11-17-18-05-08-896-899014266d.png)
+
+## Insights about resources
+
+On the **Assessed resources** tab, you can examine the resources that must comply to the rule. This can help you identify the resources affected by a compliance violation or by security relevant misconfiguration.
+
+Assessed resources with `Not relevant` status are filtered out by default.
+
+You can
+
+* View the system on which the rule applies together with all the system resources
+* Use the filter bar to filter for resources that
+
+  + Require your attention (`Failed`)
+  + Are compliant (`Passed`)
+  + Can't be automatically assessed (`Manual`)
+  + Don't meet a specific criteria for the rule assessment (`Not relevant`)
+* Use the search bar to search for a specific resource (full or partial match)
+* Hover over the system chart bar to see the compliance status of the system resources
+
+  ![compliance node status](https://dt-cdn.net/images/2024-11-13-06-06-14-471-e22dd6056b.png)
+* Identify the resource type and last assessment date in **Rule assessment** > **Resource**
+
+  ![resource type](https://dt-cdn.net/images/2024-11-17-18-13-15-537-4dcd8fcd4b.png)
+
+## Insights about configuration
+
+On the **Assessed resources** tab, go to **Rule assessment** > **Relevant configuration properties** for information about resource configuration.
+
+This can help you identify the current misconfiguration for a selected resource that is contributing to a rule violation.
+
+* **Example**: A `Failed` rule `1.2.19 Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate` reports that a node on the control plane doesn't have `--audit-log-maxsize` configured. This means that, in case security investigation would be needed, it's not guaranteed that there will be enough logs to carry out investigation due to this misconfiguration.
+
+  ![rule example 1](https://dt-cdn.net/images/2024-11-17-18-32-42-446-e03c9462e5.png)
+
+For `Manual` rules, where automatic assessment isn't possible, hints are provided about what information is needed to complete the assessment.
+
+For details about `manual` rules, see [Results](/docs/secure/xspm/concepts#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.").
+
+* **Example**: A `Manual` rule `The Kubernetes kubelet staticPodPath must not enable static pods` reports that Dynatrace can't check configuration because Kubernetes Node Configuration Collector is missing.
+
+  ![ncc missing example](https://dt-cdn.net/images/2024-11-17-19-11-42-473-231173eb9b.png)
+
+## Explain assessment
+
+To use this generative AI feature, make sure:
+
+* Dynatrace Intelligence generative AI is enabled for your environment. See [Enable Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence generative AI.").
+* You have permission to use it. See [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence generative AI.").
+
+Dynatrace Intelligence generative AI can provide contextual, plain-language explanations of rule assessments to accelerate understanding and remediation.
+
+To access the functionality
+
+1. In [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](/docs/secure/xspm "Detect, manage, and take action on security and compliance findings."), on the **Assessment results** page, select a rule.
+2. On the **Assessed resources** tab, select  **Explain assessment**.
+
+When selected, Dynatrace Intelligence generative AI analyzes the technical details of a rule assessment and generates a structured summary that may include:
+
+* **What the assessment means**: Explains the compliance rule (for example, CIS Kubernetes Benchmark requirements) and its purpose in securing environments.
+* **Why it matters**: Highlights severity levels and priority, and describes potential implications such as misconfigurations leading to unauthorized access, privilege escalation, or cluster compromise.
+* **How to remediate**: Where applicable, recommends remediation steps such as updating file permissions, applying configuration fixes, restarting services, or enabling continuous monitoring across clusters and cloud accounts.
+
+The structure and depth of generative AI's explanation may vary depending on the rule type and available context. While Dynatrace Intelligence generative AI aims to provide detailed insights, not all assessments will include every element listed above.
+
+Dynatrace Intelligence generative AI explanations are tailored to the nature of each rule assessment, providing relevant, actionable insights that accelerate triage and support informed decision-making, even for users without deep security expertise.
 
 ## Related topics
 

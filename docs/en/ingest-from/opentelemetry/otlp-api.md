@@ -1,7 +1,7 @@
 ---
 title: Dynatrace OTLP API endpoints
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api
-scraped: 2026-02-15T21:16:02.681702
+scraped: 2026-02-16T09:24:15.354720
 ---
 
 # Dynatrace OTLP API endpoints
@@ -20,7 +20,7 @@ Dynatrace provides native OTLP endpoints with the following services:
 * The Dynatrace SaaS platform
 * ActiveGate instances
 
-Alternatively, you can deploy the [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace Collector.") as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, [mask sensitive data](/docs/ingest-from/opentelemetry/collector/use-cases/redact "Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.")).
+Alternatively, you can deploy the [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, [mask sensitive data](/docs/ingest-from/opentelemetry/collector/use-cases/redact "Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.")).
 
 ## Default ingest paths
 
@@ -165,15 +165,15 @@ Verify that the following are true:
 
 ## Export to the Collector
 
-Using the Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See [Collector use cases](/docs/ingest-from/opentelemetry/collector/use-cases "Configure your Collector instance for different use cases.") for more information and sample configurations for popular Collector use cases.
+Using the Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See [OpenTelemetry Collector use cases](/docs/ingest-from/opentelemetry/collector/use-cases "Configure your Collector instance for different use cases.") for more information and sample configurations for popular Collector use cases.
 
-See [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace Collector.") for more details on how to configure a Collector instance.
+See [Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") for more details on how to configure a Collector instance.
 
 gRPC conversion
 
 As Dynatrace currently requires OTLP exports with HTTP, you can use the Collector to convert gRPC exports to HTTP.
 
-See [Transform OTLP gRPC](/docs/ingest-from/opentelemetry/collector/use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.") for more details.
+See [Transform OTLP gRPC to HTTP with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.") for more details.
 
 ### Authentication and TLS
 

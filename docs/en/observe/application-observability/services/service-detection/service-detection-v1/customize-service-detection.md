@@ -1,7 +1,7 @@
 ---
 title: Service detection rules
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection
-scraped: 2026-02-15T21:15:46.334535
+scraped: 2026-02-16T09:23:44.187862
 ---
 
 # Service detection rules
@@ -1098,5 +1098,5 @@ When you create, edit, or delete a rule, data monitored after the change in serv
 
 * [Merged services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/merged-services "Consolidate multiple web-request services of the same process group into one service.")
 * [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
-* [Service detection API](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace services detection rules config API offers.")
+* [Service detection API](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace service detection rules config API offers.")
 * [[Blog] New Dynatrace API enhances automatic service detection - with concrete examplesï»¿](https://www.dynatrace.com/news/blog/new-dynatrace-api-enhances-automatic-service-detection/#how-to-use-the-new-api)

@@ -1,7 +1,7 @@
 ---
 title: Monitor Kubernetes/OpenShift workloads
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes
-scraped: 2026-02-15T21:19:56.108530
+scraped: 2026-02-16T09:38:10.454999
 ---
 
 # Monitor Kubernetes/OpenShift workloads

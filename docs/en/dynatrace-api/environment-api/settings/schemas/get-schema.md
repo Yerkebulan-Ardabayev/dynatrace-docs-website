@@ -1,7 +1,7 @@
 ---
 title: Settings API - GET a schema
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/get-schema
-scraped: 2026-02-15T21:15:35.361866
+scraped: 2026-02-16T09:22:47.075744
 ---
 
 # Settings API - GET a schema

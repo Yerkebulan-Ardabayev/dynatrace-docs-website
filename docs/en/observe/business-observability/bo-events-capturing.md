@@ -1,7 +1,7 @@
 ---
 title: Business event capture
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-capturing
-scraped: 2026-02-15T21:11:01.663097
+scraped: 2026-02-16T09:25:25.065611
 ---
 
 # Business event capture

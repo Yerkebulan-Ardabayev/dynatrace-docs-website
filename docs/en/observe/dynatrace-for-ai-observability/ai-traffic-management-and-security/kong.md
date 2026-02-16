@@ -1,7 +1,7 @@
 ---
 title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-15T09:11:31.037588
+scraped: 2026-02-16T09:30:35.599898
 ---
 
 # Kong AI Gateway
@@ -34,7 +34,7 @@ Afterwards, add the following annotations to your Kong Deployments:
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8100"`
 
-Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.") to deploy a collector.
+Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy a collector.
 With the following config, the collector will scrape AI LLM metrics every 10 seconds from the `kong-metrics.kong:8100` endpoint.
 
 ```

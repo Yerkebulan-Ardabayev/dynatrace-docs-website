@@ -1,7 +1,7 @@
 ---
 title: Configure message queue monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/configuration
-scraped: 2026-02-15T09:13:57.059678
+scraped: 2026-02-16T09:39:42.402689
 ---
 
 # Configure message queue monitoring

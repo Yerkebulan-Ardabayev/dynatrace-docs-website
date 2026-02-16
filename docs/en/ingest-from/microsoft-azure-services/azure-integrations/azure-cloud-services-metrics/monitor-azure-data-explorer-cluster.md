@@ -1,0 +1,85 @@
+---
+title: Azure Data Explorer monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-explorer-cluster
+scraped: 2026-02-16T09:29:34.956385
+---
+
+# Azure Data Explorer monitoring
+
+# Azure Data Explorer monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 3-min read
+* Published Sep 22, 2020
+
+Dynatrace ingests metrics from Azure Metrics API for Azure Data Explorer. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.203+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Data expl](https://dt-cdn.net/images/dashboard-81-3840-6b01ea9389.png)
+
+## Available metrics
+
+| Name | Description | Unit | Dimensions | Recommended |
+| --- | --- | --- | --- | --- |
+| BatchBlobCount | The number of data sources in an aggregated batch for ingestion | Count | Database | Applicable |
+| BatchDuration | The duration of the aggregation phase in the ingestion flow | Second | Database |  |
+| BatchSize | The uncompressed, expected data size in an aggregated batch for ingestion | Byte | Database | Applicable |
+| BatchesProcessed | The number of batches aggregated for ingestion | Count | Database, SealReason |  |
+| CPU | The CPU utilization level | Percent |  | Applicable |
+| CacheUtilization | The utilization level in the cluster scope | Percent |  | Applicable |
+| ContinuousExportMaxLatenessMinutes | The lateness (in minutes) reported by the continuous export jobs in the cluster | Count |  | Applicable |
+| ContinuousExportNumOfRecordsExported | The number of records exported, fired for every storage artifact written during the export operation | Count |  | Applicable |
+| ContinuousExportPendingCount | The number of pending continuous export jobs ready for execution | Count |  | Applicable |
+| ContinuousExportResult | Indicates whether continuous export succeeded or failed | Count | ContinuousExportName, Result, Database | Applicable |
+| EventsProcessedForEventHubs | The number of events processed by the cluster when ingesting from Event/IoT Hub | Count | EventStatus |  |
+| ExportUtilization | The export utilization | Percent |  | Applicable |
+| IngestionLatencyInSeconds | The ingestion time from the source (for example, if message is in EventHub) to the cluster in seconds | Second |  | Applicable |
+| IngestionResult | The number of ingestion operations | Count | IngestionResultDetails |  |
+| IngestionUtilization | The ratio of used ingestion slots in the cluster | Percent |  | Applicable |
+| IngestionVolumeInMB | The overall volume of ingested data to the cluster (in MB) | MegaByte |  | Applicable |
+| InstanceCount | The total instance count | Count |  |  |
+| KeepAlive | Sanity check, indicating how the cluster responds to queries | Count |  | Applicable |
+| QueryDuration | The queries duration in seconds | MilliSecond | QueryStatus | Applicable |
+| SteamingIngestRequestRate | The streaming ingest request rate (requests per second) | Count |  |  |
+| StreamingIngestDataRate | The streaming ingest data rate (MB per second) | Count |  |  |
+| StreamingIngestDuration | The streaming ingest duration in milliseconds | MilliSecond |  |  |
+| StreamingIngestResults | The streaming ingest result | Count | Result |  |
+| TotalNumberOfConcurrentQueries | The total number of concurrent queries | Count |  | Applicable |
+| TotalNumberOfExtents | The total number of data extents | Count |  | Applicable |
+| TotalNumberOfThrottledCommands | The total number of throttled commands | Count | CommandType |  |
+| TotalNumberOfThrottledQueries | The total number of throttled queries | Count |  | Applicable |

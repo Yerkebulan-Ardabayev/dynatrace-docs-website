@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace Intelligence causal AI use cases
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples
-scraped: 2026-02-15T21:10:22.829015
+scraped: 2026-02-16T09:12:41.040721
 ---
 
 # Dynatrace Intelligence causal AI use cases

@@ -1,7 +1,7 @@
 ---
 title: End-to-end guide for monitoring Google Cloud services integrating Operations Suite
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide
-scraped: 2026-02-15T21:23:31.009169
+scraped: 2026-02-16T09:39:12.053946
 ---
 
 # End-to-end guide for monitoring Google Cloud services integrating Operations Suite

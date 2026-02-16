@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 35
+Files combined: 36
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 35
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-02-15T21:09:18.438076
+scraped: 2026-02-16T09:15:20.840313
 ---
 
 # Add code to a dashboard
@@ -174,7 +174,7 @@ const environment = "https://{your-environment}"
 
 
 
-const token = "<DYNATRACE_TOKEN_PLACEHOLDER>.F6QEWJT7VHQXY3KGNWG32ZIV3XLWL55000000000000000000000000";
+const token = "<DYNATRACE_TOKEN_PLACEHOLDER>";
 
 
 
@@ -233,7 +233,7 @@ To see more examples, open the  menu at the top of your dashboard and browse the
 ---
 title: Add data to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
-scraped: 2026-02-15T21:09:33.915662
+scraped: 2026-02-16T09:15:22.483614
 ---
 
 # Add data to a dashboard
@@ -434,7 +434,7 @@ Select **Run query**.
 ---
 title: Add Markdown to dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
-scraped: 2026-02-15T21:09:26.901742
+scraped: 2026-02-16T09:15:26.043739
 ---
 
 # Add Markdown to dashboard
@@ -716,7 +716,7 @@ For details on variables, see [Add a variable to a dashboard](/docs/analyze-expl
 ---
 title: Add a snippet to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
-scraped: 2026-02-15T21:09:31.270228
+scraped: 2026-02-16T09:15:17.497710
 ---
 
 # Add a snippet to a dashboard
@@ -828,7 +828,7 @@ When you find something interesting:
 ---
 title: Add a variable to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
-scraped: 2026-02-15T21:09:35.470741
+scraped: 2026-02-16T09:15:15.865012
 ---
 
 # Add a variable to a dashboard
@@ -1350,7 +1350,7 @@ In this example, we selected `Variable1` to display the variable definition and 
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-15T21:08:12.558149
+scraped: 2026-02-16T09:12:26.139014
 ---
 
 # Dashboards
@@ -2697,7 +2697,7 @@ To delete multiple tiles simultaneously
 ---
 title: API for Dashboards and Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-api
-scraped: 2026-02-15T09:10:09.623813
+scraped: 2026-02-16T09:35:21.262488
 ---
 
 # API for Dashboards and Notebooks
@@ -2750,7 +2750,7 @@ To see the full API documentation for the documents service
 ---
 title: Manage document versions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
-scraped: 2026-02-15T21:09:19.907870
+scraped: 2026-02-16T09:15:19.133723
 ---
 
 # Manage document versions
@@ -10562,7 +10562,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Edit visualizations for Notebooks and Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations
-scraped: 2026-02-15T21:09:24.343638
+scraped: 2026-02-16T09:15:29.446282
 ---
 
 # Edit visualizations for Notebooks and Dashboards
@@ -10733,7 +10733,7 @@ For details, see [Scatterplot visualization](/docs/analyze-explore-automate/dash
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-15T21:09:21.542622
+scraped: 2026-02-16T09:15:31.364520
 ---
 
 # Explore data
@@ -11655,7 +11655,7 @@ That's what makes this a great tool for beginners and experts.
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-15T21:10:21.629745
+scraped: 2026-02-16T09:12:31.786423
 ---
 
 # Notebooks
@@ -12961,7 +12961,7 @@ Create powerful, data-driven documents for custom analytics and collaboration.](
 ---
 title: Drilldowns and navigation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/open-with
-scraped: 2026-02-15T21:09:32.723982
+scraped: 2026-02-16T09:15:33.124997
 ---
 
 # Drilldowns and navigation
@@ -13368,7 +13368,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-02-15T21:08:14.983733
+scraped: 2026-02-16T09:12:10.970218
 ---
 
 # Ready-made dashboards
@@ -13805,7 +13805,7 @@ Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-
 ---
 title: Ready-made documents
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents
-scraped: 2026-02-15T21:19:42.979520
+scraped: 2026-02-16T09:15:58.014715
 ---
 
 # Ready-made documents
@@ -13867,6 +13867,46 @@ When you open a document (dashboard or notebook) for which you don't have write 
 
    * **Save as new**âsaves your changes in a new copy of the edited notebook.
    * **Discard changes**âdiscards your changes and returns you to the unedited read-only notebook.
+
+
+---
+
+
+## Source: use-cases.md
+
+
+---
+title: Notebooks and Dashboards use cases
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/use-cases
+scraped: 2026-02-16T09:35:58.889788
+---
+
+# Notebooks and Dashboards use cases
+
+# Notebooks and Dashboards use cases
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published May 17, 2024
+
+The following use cases show some of the ways you can use Notebooks and Dashboards to leverage visualization and analysis of data ingested into Grail.
+
+### Analyze and report with security snippets
+
+Application Security
+
+In this use case, you use snippets to visualize exposure to vulnerabilities, prioritize remediation efforts, and communicate findings to owning teams.
+
+* [Built-in security query snippets](/docs/secure/use-cases#snippets "Use case scenarios for Application Security and Threat Observability.")
+
+### Determine threat exposure with security templates
+
+Application Security
+
+In this use case, you use the Threat exposure template to visualize the risk and impact of vulnerabilities (Dashboards) or analyze the impact of vulnerabilities and prioritize remediation efforts (Notebooks).
+
+* [Out-of-the-box templates](/docs/secure/use-cases#templates "Use case scenarios for Application Security and Threat Observability.")
 
 
 ---

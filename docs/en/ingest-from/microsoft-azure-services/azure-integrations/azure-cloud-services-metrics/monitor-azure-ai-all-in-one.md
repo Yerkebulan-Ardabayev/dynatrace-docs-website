@@ -1,7 +1,7 @@
 ---
 title: Azure AI - All In One monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-all-in-one
-scraped: 2026-02-15T09:10:35.587576
+scraped: 2026-02-16T09:39:40.819888
 ---
 
 # Azure AI - All In One monitoring

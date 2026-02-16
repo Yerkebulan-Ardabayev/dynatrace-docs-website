@@ -2,7 +2,7 @@
 
 Generated: 2026-02-16
 
-Files combined: 9
+Files combined: 11
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 9
 ---
 title: Account limits API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/account-limits-api
-scraped: 2026-02-15T21:22:56.664306
+scraped: 2026-02-16T09:27:31.393325
 ---
 
 # Account limits API
@@ -32,13 +32,119 @@ Get an overview of account limits assigned to your Dynatrace account.](/docs/dyn
 ---
 
 
+## Source: get-cost-allocation.md
+
+
+---
+title: Dynatrace Platform Subscription API - GET cost allocation
+source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation
+scraped: 2026-02-16T09:40:11.276692
+---
+
+# Dynatrace Platform Subscription API - GET cost allocation
+
+# Dynatrace Platform Subscription API - GET cost allocation
+
+* Latest Dynatrace
+* Reference
+* Published Oct 18, 2024
+
+Lists Dynatrace Platform Subscription usage data by cost allocation field.
+
+The request produces an `application/json` payload.
+
+GET
+
+`https://api.dynatrace.com/v1/subscriptions/{subscription-uuid}/cost-allocation`
+
+## Authentication
+
+To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+
+## Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| subscription-uuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptionsï»¿](https://dt-url.net/jq03jvq) request. (required) | path | Required |
+| field | string | Field by which costs and usage should be split. Allowed values: `COSTCENTER`, `PRODUCT` (required unless page-key is provided) | query | Required |
+| environment-id | string | The identifier of an environment. (required unless page-key is provided) | query | Optional |
+| from | string | The start of the requested timeframe in `2021-05-01` format. | query | Optional |
+| to | string | The end of the requested timeframe in `2021-05-01` format. | query | Optional |
+| page-size | number | Defines the requested number of entries for the next page. | query | Optional |
+| page-key | string | A base64 encoded key to retrieve a specific page. If this query parameter is set, no other query parameters can be set. | query | Optional |
+
+## Response
+
+### Response codes
+
+| Code | Type | Description |
+| --- | --- | --- |
+| **200** | [PaginatedEnvironmentBreakdownDto](#openapi-definition-PaginatedEnvironmentBreakdownDto) | Success. The response contains a page of the requested chargeback breakdown. |
+| **400** | - | The request was unacceptable, often due to missing a required parameter |
+| **401** | - | No valid session provided |
+| **403** | - | Access denied |
+| **500** | - | Something went wrong on Account Management's end |
+
+### Response body objects
+
+#### The `PaginatedEnvironmentBreakdownDto` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| environmentId | string | Identifier of the environment |
+| field | string | Field used to generate the breakdown. Can be `COSTCENTER` or `PRODUCT` |
+| records | string[] | List of individual breakdown entries. |
+| nextPageKey | string | Key to request the next page. |
+
+### Response body JSON models
+
+```
+{
+
+
+
+"environmentId": "string",
+
+
+
+"field": "string",
+
+
+
+"records": [
+
+
+
+"string"
+
+
+
+],
+
+
+
+"nextPageKey": "string"
+
+
+
+}
+```
+
+## Related topics
+
+* [Allocate your DPS costs](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.")
+
+
+---
+
+
 ## Source: manage-cost-allocation.md
 
 
 ---
 title: Dynatrace Platform Subscription API - manage cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/manage-cost-allocation
-scraped: 2026-02-15T09:06:34.424713
+scraped: 2026-02-16T09:37:46.364546
 ---
 
 # Dynatrace Platform Subscription API - manage cost allocation
@@ -615,7 +721,7 @@ To execute this request, you need the **Allow write access for usage and consump
 ---
 title: Dynatrace Platform Subscription API - Cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation
-scraped: 2026-02-15T21:29:38.804626
+scraped: 2026-02-16T09:31:35.419046
 ---
 
 # Dynatrace Platform Subscription API - Cost allocation
@@ -650,7 +756,7 @@ Manage Dynatrace Platform Subscription cost and usage are allocated to product a
 ---
 title: Dynatrace Platform Subscription API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api
-scraped: 2026-02-15T21:26:27.224877
+scraped: 2026-02-16T09:35:35.837929
 ---
 
 # Dynatrace Platform Subscription API
@@ -713,7 +819,7 @@ Manage Dynatrace Platform Subscription cost and usage are allocated to product a
 ---
 title: Platform tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/platform-tokens-api
-scraped: 2026-02-15T21:27:53.680184
+scraped: 2026-02-16T09:39:19.074075
 ---
 
 # Platform tokens API
@@ -744,7 +850,7 @@ Edit the status of a platform token.](/docs/dynatrace-api/account-management-api
 ---
 title: Policy management API - DELETE a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary
-scraped: 2026-02-15T21:29:26.844413
+scraped: 2026-02-16T09:33:43.021931
 ---
 
 # Policy management API - DELETE a policy boundary
@@ -852,7 +958,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 ---
 title: Policy management API - GET a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-boundary
-scraped: 2026-02-15T21:23:22.920684
+scraped: 2026-02-16T09:38:23.952905
 ---
 
 # Policy management API - GET a policy boundary
@@ -1534,7 +1640,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 ---
 title: Policy management API - PUT a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/put-boundary
-scraped: 2026-02-15T09:13:13.379922
+scraped: 2026-02-16T09:32:15.838619
 ---
 
 # Policy management API - PUT a policy boundary
@@ -1879,6 +1985,39 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 #### Response code
 
 204 - Successful response - policy boundary updated.
+
+
+---
+
+
+## Source: service-user-management-api.md
+
+
+---
+title: Service user management API
+source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/service-user-management-api
+scraped: 2026-02-16T09:39:30.628250
+---
+
+# Service user management API
+
+# Service user management API
+
+* Latest Dynatrace
+* Reference
+* Published Dec 04, 2025
+
+[### List all service users
+
+Get an overview of all service users in your Dynatrace account.](/docs/dynatrace-api/account-management-api/service-user-management-api/get-all-service-users "Get an overview of service users in your Dynatrace account via the Dynatrace API.")[### Create a service user
+
+Add a new service user to your Dynatrace account.](/docs/dynatrace-api/account-management-api/service-user-management-api/post-service-user "Create a service user in your Dynatrace account via the Dynatrace API.")[### View a service user
+
+View details of a selected service user.](/docs/dynatrace-api/account-management-api/service-user-management-api/get-service-user "Get an overview of a service user in an account via the Dynatrace API.")[### Edit a service user
+
+Edit details of a service user.](/docs/dynatrace-api/account-management-api/service-user-management-api/put-service-user "Edit a service user in your Dynatrace account via the Dynatrace API.")[### Delete a service user
+
+Delete a service user.](/docs/dynatrace-api/account-management-api/service-user-management-api/delete-service-user "Delete a service user from your Dynatrace account via the Dynatrace API.")
 
 
 ---

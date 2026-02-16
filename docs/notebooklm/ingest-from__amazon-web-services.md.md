@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Set up Dynatrace on Amazon Web Services
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services
-scraped: 2026-02-15T21:13:43.969766
+scraped: 2026-02-16T09:21:00.721050
 ---
 
 # Set up Dynatrace on Amazon Web Services

@@ -1,7 +1,7 @@
 ---
 title: Allocate your DPS costs
 source: https://www.dynatrace.com/docs/license/cost-allocation
-scraped: 2026-02-15T21:15:28.336442
+scraped: 2026-02-16T09:15:45.972464
 ---
 
 # Allocate your DPS costs
@@ -5490,7 +5490,7 @@ In the notebook that you imported, set up the mapping between users and attribut
 
 1. Create a list of users whose account activity you want to map to a given cost center or product.
 
-   The **Quickstart: Retrieve a list of active Dynatrace users** card provides a list of all users who active in the relevant environment.
+   The **Quickstart: Retrieve a list of active Dynatrace users** card provides a list of all users who are active in the relevant environment.
 
    Each user is identified with an email and a unique user ID.
 2. Create a list of all cost centers and products that costs should be allocated to.

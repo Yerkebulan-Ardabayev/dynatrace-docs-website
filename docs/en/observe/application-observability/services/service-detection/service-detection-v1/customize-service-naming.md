@@ -1,7 +1,7 @@
 ---
 title: Service naming rules
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-naming
-scraped: 2026-02-15T21:15:43.268464
+scraped: 2026-02-16T09:23:38.985409
 ---
 
 # Service naming rules

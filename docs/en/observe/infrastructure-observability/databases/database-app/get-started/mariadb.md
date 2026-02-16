@@ -1,7 +1,7 @@
 ---
 title: Monitor MariaDB database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mariadb
-scraped: 2026-02-15T21:23:47.137999
+scraped: 2026-02-16T09:34:26.351042
 ---
 
 # Monitor MariaDB database

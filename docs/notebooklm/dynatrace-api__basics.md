@@ -13,7 +13,7 @@ Files combined: 4
 ---
 title: Migrate from Maintenance windows API to Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/maintenance-windows-to-settings
-scraped: 2026-02-15T21:22:27.541261
+scraped: 2026-02-16T09:38:32.290276
 ---
 
 # Migrate from Maintenance windows API to Settings API
@@ -2157,7 +2157,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 ---
 title: Migrate from Topology and Smartscape API to Monitored entities API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/topology-v1-to-entity-v2
-scraped: 2026-02-15T21:21:40.345302
+scraped: 2026-02-16T09:19:22.224339
 ---
 
 # Migrate from Topology and Smartscape API to Monitored entities API

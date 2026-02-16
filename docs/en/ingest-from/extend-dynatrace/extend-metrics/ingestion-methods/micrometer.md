@@ -1,7 +1,7 @@
 ---
 title: Send Micrometer metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer
-scraped: 2026-02-15T21:11:34.553740
+scraped: 2026-02-16T09:25:45.050952
 ---
 
 # Send Micrometer metrics to Dynatrace
@@ -10,7 +10,7 @@ scraped: 2026-02-15T21:11:34.553740
 
 * Latest Dynatrace
 * 7-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 09, 2026
 
 [Micrometerï»¿](https://dt-url.net/7u039ck) is an open source instrumentation framework for JVM-based application metrics. It's used by [Spring Bootï»¿](https://dt-url.net/ba239ye) to record a wide range of metrics. You can ingest Micrometer and Spring Boot metrics and analyze them with Dynatrace Intelligence end-to-end in the context of your trace, log, and diagnostics data. With Dynatrace, you get intelligent AI-based observability and automatic root cause analysis for Spring Boot, 15+ pre-instrumented JVM-based frameworks and servers, and custom metrics.
 
@@ -109,7 +109,7 @@ You can use one of the following ingestion channels to send your Micrometer metr
 Micrometer uses the concept of a registry to export metrics to monitoring systems.
 
 * For Micrometer version 1.8.0 or later, [Dynatrace Registry v2ï»¿](https://micrometer.io/docs/registry/dynatrace) is available. It exports metrics via the [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API."). All new integrations of Micrometer and Dynatrace must use this version.
-* For Micrometer version 1.8.0 or earlier, the legacy Dynatrace Micrometer registry v1 is available. For instructions, see [Dynatrace Micrometer registry v1 (legacy)](#registry-v1) below.
+* Older Micrometer versions are no longer supported (see [Dynatrace Micrometer registry v1 (legacy)](#registry-v1) below).
 
 ## Ingest metrics from Spring Boot apps
 
@@ -1220,174 +1220,8 @@ Starting with Micrometer version 1.9.x, specialized instruments are used in the 
 * They are available from version 1.9.0 and are used as a drop-in replacement by default. No action is needed from users upgrading to 1.9.0.
 * If there's a discrepancy in the observed metrics, it's possible to return to the previous behavior by setting the `useDynatraceSummaryInstruments` toggle to `false`.
 
-## Dynatrace Micrometer registry v1 (legacy)
+## Dynatrace Micrometer registry v1 Deprecated
 
-If the **apiVersion** property is set to `V1`, the registry sends data via the [Timeseries API v1](/docs/dynatrace-api/environment-api/metric-v1/custom-metrics "Manage custom metrics via the Timeseries v1 API."). For backward compatibility, it defaults to `V1` if a **deviceId** is specified, because this property is required in `V1` and is not used in `V2`.
+Timeseries v1 API deprecation
 
-Existing setups will continue to work when updating to newer versions of Micrometer. The reported metrics will be assigned to custom devices in Dynatrace.
-
-For the `V1` API, you only need to specify the base URL of your environment (for example, `https://mySampleEnv.live.dynatrace.com`).
-
-Spring Boot
-
-```
-management.dynatrace.metrics.export:
-
-
-
-# For v1 export, do not append a path to the endpoint URL. For example:
-
-
-
-# For SaaS: https://{your-environment-id}.live.dynatrace.com
-
-
-
-# For Managed deployments: https://{your-domain}/e/{your-environment-id}
-
-
-
-uri: https://{your-environment-id}.live.dynatrace.com
-
-
-
-# Should be read from a secure source
-
-
-
-api-token: MY_TOKEN
-
-
-
-# When setting the device id, metrics will be exported to the v1 timeseries endpoint
-
-
-
-# Using just device-id (without the v1 prefix) is deprecated, but will work to maintain backwards compatibility.
-
-
-
-v1:
-
-
-
-device-id: sample
-
-
-
-# To disable Dynatrace publishing (for example, in a local development profile), use:
-
-
-
-# enabled: false
-
-
-
-# The interval at which metrics are sent to Dynatrace. The default is 1 minute.
-
-
-
-step: 1m
-```
-
-Directly in Micrometer
-
-```
-DynatraceConfig dynatraceConfig = new DynatraceConfig() {
-
-
-
-@Override
-
-
-
-public String uri() {
-
-
-
-// The Dynatrace environment URI without any path. For example:
-
-
-
-// https://{your-environment-id}.live.dynatrace.com
-
-
-
-return MY_DYNATRACE_URI;
-
-
-
-}
-
-
-
-@Override
-
-
-
-public String apiToken() {
-
-
-
-// Should be read from a secure source
-
-
-
-return MY_TOKEN;
-
-
-
-}
-
-
-
-@Override
-
-
-
-public String deviceId() {
-
-
-
-return MY_DEVICE_ID;
-
-
-
-}
-
-
-
-@Override
-
-
-
-@Nullable
-
-
-
-public String get(String k) {
-
-
-
-return null;
-
-
-
-}
-
-
-
-};
-
-
-
-DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build();
-
-
-
-// Add the Dynatrace registry to Micrometers global registry.
-
-
-
-Metrics.addRegistry(registry);
-```
+The [Timeseries v1 API](/docs/dynatrace-api/environment-api/metric-v1 "Retrieve metric information via Timeseries v1 API.") is deprecated and no longer accepts data. Please migrate to the supported exporter as described on this page.

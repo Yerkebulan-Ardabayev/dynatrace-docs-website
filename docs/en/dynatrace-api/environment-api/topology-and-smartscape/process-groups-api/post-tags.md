@@ -1,7 +1,7 @@
 ---
 title: Process groups API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/post-tags
-scraped: 2026-02-15T21:21:30.423444
+scraped: 2026-02-16T09:19:31.493707
 ---
 
 # Process groups API - POST tags

@@ -1,7 +1,7 @@
 ---
 title: Analyze individual user actions
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/analyze-individual-user-actions
-scraped: 2026-02-15T21:22:09.760450
+scraped: 2026-02-16T09:19:45.136825
 ---
 
 # Analyze individual user actions

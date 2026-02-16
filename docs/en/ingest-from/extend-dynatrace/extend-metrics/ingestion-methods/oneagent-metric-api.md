@@ -1,7 +1,7 @@
 ---
 title: OneAgent metric API
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api
-scraped: 2026-02-15T21:11:46.394170
+scraped: 2026-02-16T09:25:36.644829
 ---
 
 # OneAgent metric API
