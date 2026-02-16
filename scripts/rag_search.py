@@ -28,8 +28,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-# Fix Windows encoding
-if sys.platform == 'win32':
+# Fix Windows encoding (only in interactive terminal, not piped)
+if sys.platform == 'win32' and sys.stdout.isatty():
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
@@ -127,7 +127,7 @@ class SearchIndex:
 
 
 # ─── Groq LLM ────────────────────────────────────────────
-def ask_groq(question, context_docs, lang="ru"):
+def ask_groq(question, context_docs, lang="ru", _retry=0):
     """Generate answer using Groq Llama with document context."""
     if not GROQ_API_KEY:
         return "GROQ_API_KEY не задан! Установи: set GROQ_API_KEY=gsk_..."
@@ -186,8 +186,12 @@ def ask_groq(question, context_docs, lang="ru"):
         )
 
         if response.status_code == 429:
-            time.sleep(3)
-            return ask_groq(question, context_docs, lang)  # retry once
+            if _retry >= 2:
+                return "⚠️ Groq rate limit исчерпан. Подожди пару минут и попробуй снова."
+            wait = int(response.headers.get("retry-after", 5))
+            print(f"  ⏳ Rate limit, жду {wait}с...")
+            time.sleep(min(wait, 10))
+            return ask_groq(question, context_docs, lang, _retry + 1)
 
         if response.status_code != 200:
             return f"Ошибка API: {response.status_code} — {response.text[:200]}"
