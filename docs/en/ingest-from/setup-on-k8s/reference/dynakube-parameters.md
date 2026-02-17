@@ -1,7 +1,7 @@
 ---
 title: DynaKube parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-scraped: 2026-02-16T09:38:08.852569
+scraped: 2026-02-17T21:29:20.303529
 ---
 
 # DynaKube parameters for Dynatrace Operator

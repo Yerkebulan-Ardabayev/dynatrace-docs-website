@@ -1,7 +1,7 @@
 ---
 title: Add a variable to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
-scraped: 2026-02-17T04:46:22.715955
+scraped: 2026-02-17T21:15:05.856370
 ---
 
 # Add a variable to a dashboard

@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Global field reference
 source: https://www.dynatrace.com/docs/semantic-dictionary/fields
-scraped: 2026-02-17T04:48:25.654879
+scraped: 2026-02-17T21:14:07.980695
 ---
 
 # Global field reference

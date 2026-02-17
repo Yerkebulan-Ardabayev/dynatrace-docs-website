@@ -1,7 +1,7 @@
 ---
 title: Ingest Amazon GuardDuty security findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-amazon-guardduty
-scraped: 2026-02-16T21:20:44.119940
+scraped: 2026-02-17T21:17:26.093040
 ---
 
 # Ingest Amazon GuardDuty security findings

@@ -106,7 +106,7 @@ Common interactions and features of data visualizations in the latest Dynatrace.
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-17T04:54:24.910660
+scraped: 2026-02-17T21:22:04.861079
 ---
 
 # Launchpads
@@ -287,7 +287,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-17T04:46:01.446183
+scraped: 2026-02-17T21:14:54.418319
 ---
 
 # Share documents
@@ -594,7 +594,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-17T04:54:15.983616
+scraped: 2026-02-17T21:17:08.700524
 ---
 
 # Filter field
@@ -1080,7 +1080,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-17T04:45:44.028672
+scraped: 2026-02-17T21:15:59.660284
 ---
 
 # What is a monitoring environment?
@@ -1782,7 +1782,7 @@ Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe,
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-02-16T21:22:29.415702
+scraped: 2026-02-17T21:22:01.358021
 ---
 
 # Serverless monitoring

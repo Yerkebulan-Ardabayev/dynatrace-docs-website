@@ -1,7 +1,7 @@
 ---
 title: Set up Dynatrace on Heroku
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/heroku
-scraped: 2026-02-17T04:48:34.019971
+scraped: 2026-02-17T21:19:41.038143
 ---
 
 # Set up Dynatrace on Heroku

@@ -456,7 +456,7 @@ To use the **AWS EC2 Instance Ecosystem** effectively, we recommend that you:
 ---
 title: Infrastructure overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview
-scraped: 2026-02-17T05:00:23.784457
+scraped: 2026-02-17T21:25:37.776128
 ---
 
 # Infrastructure overview
@@ -669,7 +669,7 @@ To use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "S
 ---
 title: Service dependency graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph
-scraped: 2026-02-16T21:31:34.029783
+scraped: 2026-02-17T21:28:32.755226
 ---
 
 # Service dependency graph
@@ -730,7 +730,7 @@ To use **Service dependency graph** effectively, we recommend that you:
 ---
 title: Smartscape on Grail view
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view
-scraped: 2026-02-16T21:27:09.444394
+scraped: 2026-02-17T21:28:01.780275
 ---
 
 # Smartscape on Grail view

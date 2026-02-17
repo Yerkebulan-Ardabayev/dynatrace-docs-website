@@ -1,7 +1,7 @@
 ---
 title: Configure a processing pipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/tutorial-configure-processing
-scraped: 2026-02-16T21:21:09.038631
+scraped: 2026-02-17T21:18:09.380880
 ---
 
 # Configure a processing pipeline

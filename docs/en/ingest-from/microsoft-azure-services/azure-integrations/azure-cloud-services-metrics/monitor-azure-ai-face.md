@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Face monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-face
-scraped: 2026-02-16T21:32:12.382368
+scraped: 2026-02-17T21:33:26.902480
 ---
 
 # Azure AI - Face monitoring

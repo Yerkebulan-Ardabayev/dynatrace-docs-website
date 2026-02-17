@@ -1,7 +1,7 @@
 ---
 title: Environment API v2 - Entity selector
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2/entity-selector
-scraped: 2026-02-17T05:08:56.893374
+scraped: 2026-02-17T21:31:44.381338
 ---
 
 # Environment API v2 - Entity selector
@@ -9,7 +9,7 @@ scraped: 2026-02-17T05:08:56.893374
 # Environment API v2 - Entity selector
 
 * Reference
-* Published Nov 20, 2020
+* Updated on Jan 27, 2026
 
 The entity selector is a powerful instrument for specifying which entities you want to include to the scope of your Environment v2 API calls. It is used in several APIs, so you only have to learn the syntax once and then reuse it for multiple use cases.
 
@@ -26,6 +26,7 @@ Additionally you can provide the following criteria in any combination:
 * [Management zone ID](#mzid)
 * [Management zone name](#mzname)
 * [Health state](#health)
+* [Inclusion of deleted entities](#deletedEntities)
 
 If you provide several criteria, only results matching **all** criteria are included in the response.
 
@@ -225,6 +226,42 @@ Value operator
 Case-sensitive value
 
 n/a
+
+## Inclusion of deleted entities
+
+Include or exclude entities marked as deleted. Those are limited to the following entity types:
+
+* `HTTP_CHECK`
+* `SYNTHETIC_TEST`
+* `EXTERNAL_SYNTHETIC_TEST`
+* `MULTIPROTOCOL_MONITOR`
+* `APPLICATION`
+* `MOBILE_APPLICATION`
+* `CUSTOM_APPLICATION`
+* `DCRUM_APPLICATION`
+* `CUSTOM_DEVICE`
+
+Syntax
+
+`deletedEntities.<operator>()`
+
+Operator
+
+* `include`: include deleted entities
+* `exclude`: exclude deleted entities
+
+Values
+
+![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+Example
+
+`type(HTTP_CHECK), deletedEntities.include()`: Select all entities of type `HTTP_CHECK` and include the ones marked as deleted.
+
+Note
+
+* By default, deleted entities are excluded from all results.
+* This is not supported in [management zone rules](/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text "Define rules to limit the entities accessible within a management zone.") and [automatic tagging](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.").
 
 ## Relationships
 

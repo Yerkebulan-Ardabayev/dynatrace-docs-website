@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities API - POST remediation item tracking links
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-item-tracking-link
-scraped: 2026-02-17T04:57:53.681679
+scraped: 2026-02-17T21:29:59.579156
 ---
 
 # Vulnerabilities API - POST remediation item tracking links

@@ -1,7 +1,7 @@
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-02-17T05:00:01.871971
+scraped: 2026-02-17T21:25:57.015501
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard

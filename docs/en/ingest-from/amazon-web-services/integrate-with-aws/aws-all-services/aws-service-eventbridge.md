@@ -1,7 +1,7 @@
 ---
 title: Amazon EventBridge monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-eventbridge
-scraped: 2026-02-17T05:05:17.264473
+scraped: 2026-02-17T21:34:08.230502
 ---
 
 # Amazon EventBridge monitoring

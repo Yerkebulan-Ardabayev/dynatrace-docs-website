@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: What is Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/what-is-dynatrace
-scraped: 2026-02-17T04:45:19.858968
+scraped: 2026-02-17T21:13:32.203369
 ---
 
 # What is Dynatrace

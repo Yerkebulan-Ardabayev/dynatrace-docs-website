@@ -774,7 +774,7 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles/2640173c-e
 ---
 title: Migrate from Events API v1 to Events API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/events-v1-to-v2
-scraped: 2026-02-17T05:01:16.015547
+scraped: 2026-02-17T21:26:24.609974
 ---
 
 # Migrate from Events API v1 to Events API v2
@@ -2150,7 +2150,7 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/frequentIssueDetection/07f4
 ---
 title: Migrate from Maintenance windows API to Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/maintenance-windows-to-settings
-scraped: 2026-02-17T05:03:40.705375
+scraped: 2026-02-17T21:33:01.087012
 ---
 
 # Migrate from Maintenance windows API to Settings API
@@ -3291,7 +3291,7 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows/07f476c6
 ---
 title: Migrate from Problems API v1 to Problems API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/problems-v1-to-v2
-scraped: 2026-02-17T04:57:28.252991
+scraped: 2026-02-17T21:33:48.205554
 ---
 
 # Migrate from Problems API v1 to Problems API v2

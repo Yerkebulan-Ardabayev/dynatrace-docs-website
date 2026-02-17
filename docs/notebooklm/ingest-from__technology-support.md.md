@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-02-17T04:45:42.936698
+scraped: 2026-02-17T21:15:56.071994
 ---
 
 # Technology support

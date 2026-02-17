@@ -47,7 +47,7 @@ Remove and account from the AWS PrivateLink allowlist.](/docs/dynatrace-api/conf
 ---
 title: Calculated metrics API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/calculated-metrics
-scraped: 2026-02-16T21:13:44.153244
+scraped: 2026-02-17T21:24:36.774511
 ---
 
 # Calculated metrics API
@@ -448,7 +448,7 @@ A list of constraint violations
 ---
 title: Allowed beacon domains API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors
-scraped: 2026-02-17T05:10:02.712198
+scraped: 2026-02-17T21:34:04.228495
 ---
 
 # Allowed beacon domains API
@@ -584,7 +584,7 @@ Update configuration of IP address mappings.](/docs/dynatrace-api/configuration-
 ---
 title: Mobile and custom app API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration
-scraped: 2026-02-15T21:28:59.613866
+scraped: 2026-02-17T21:30:28.322302
 ---
 
 # Mobile and custom app API
@@ -715,7 +715,7 @@ Update configuration of configuration.](/docs/dynatrace-api/configuration-api/ru
 ---
 title: Service detection API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/detection-rules
-scraped: 2026-02-16T21:13:13.986496
+scraped: 2026-02-17T21:24:21.905132
 ---
 
 # Service detection API
@@ -795,7 +795,7 @@ Delete a service detection rule you don't need anymore.
 ---
 title: Failure detection API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/failure-detection
-scraped: 2026-02-17T05:12:01.107001
+scraped: 2026-02-17T21:29:41.409622
 ---
 
 # Failure detection API
@@ -859,7 +859,7 @@ Delete a failure detection rule you don't need anymore.](/docs/dynatrace-api/con
 ---
 title: Request attributes API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/request-attributes-api
-scraped: 2026-02-16T21:13:40.162888
+scraped: 2026-02-17T21:24:41.392979
 ---
 
 # Request attributes API

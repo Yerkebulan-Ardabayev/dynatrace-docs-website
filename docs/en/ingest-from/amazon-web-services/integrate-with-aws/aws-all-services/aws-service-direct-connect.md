@@ -1,7 +1,7 @@
 ---
 title: AWS Direct Connect monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-direct-connect
-scraped: 2026-02-17T05:10:31.007765
+scraped: 2026-02-17T21:32:33.220532
 ---
 
 # AWS Direct Connect monitoring

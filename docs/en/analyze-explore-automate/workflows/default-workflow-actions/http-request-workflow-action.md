@@ -1,7 +1,7 @@
 ---
 title: HTTP request action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action
-scraped: 2026-02-15T21:27:06.384993
+scraped: 2026-02-17T21:31:49.282356
 ---
 
 # HTTP request action for Workflows

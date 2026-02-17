@@ -1,7 +1,7 @@
 ---
 title: Send Micrometer metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer
-scraped: 2026-02-16T21:22:11.830229
+scraped: 2026-02-17T21:20:50.636302
 ---
 
 # Send Micrometer metrics to Dynatrace

@@ -1,7 +1,7 @@
 ---
 title: Filter Smartscape nodes with segments
 source: https://www.dynatrace.com/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes
-scraped: 2026-02-16T21:20:03.693660
+scraped: 2026-02-17T21:17:05.032123
 ---
 
 # Filter Smartscape nodes with segments

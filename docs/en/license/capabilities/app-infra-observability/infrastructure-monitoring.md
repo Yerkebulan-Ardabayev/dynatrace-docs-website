@@ -1,7 +1,7 @@
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-02-16T21:23:10.495679
+scraped: 2026-02-17T21:21:34.884104
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)

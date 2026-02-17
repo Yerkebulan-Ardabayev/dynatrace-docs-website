@@ -13,7 +13,7 @@ Files combined: 10
 ---
 title: Configure data privacy settings
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
-scraped: 2026-02-16T21:13:04.167152
+scraped: 2026-02-17T21:24:47.572276
 ---
 
 # Configure data privacy settings
@@ -406,7 +406,7 @@ Dynatrace also provides multi-layered [security controls](/docs/manage/data-priv
 ---
 title: Data retention periods
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods
-scraped: 2026-02-16T21:14:47.584011
+scraped: 2026-02-17T21:19:05.891045
 ---
 
 # Data retention periods
@@ -650,7 +650,7 @@ Depending on the source of the data, Dynatrace stores [security events](/docs/se
 ---
 title: Create scheduled scan in Sensitive Data Center
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-scheduled-scan
-scraped: 2026-02-17T05:10:27.354197
+scraped: 2026-02-17T21:32:16.626073
 ---
 
 # Create scheduled scan in Sensitive Data Center
@@ -707,7 +707,7 @@ Based on scan results, you can take immediate action:
 ---
 title: Sensitive Data Center
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center
-scraped: 2026-02-15T09:06:30.918749
+scraped: 2026-02-17T21:25:01.223756
 ---
 
 # Sensitive Data Center
@@ -1033,7 +1033,7 @@ The most likely cause of failed scans is misconfigured permissions for the servi
 ---
 title: Data safety guidance for Android
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-android
-scraped: 2026-02-17T05:01:37.167119
+scraped: 2026-02-17T21:30:13.067651
 ---
 
 # Data safety guidance for Android
@@ -1442,7 +1442,7 @@ Other Data
 ---
 title: Data security controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/data-security-controls
-scraped: 2026-02-17T04:59:05.588437
+scraped: 2026-02-17T21:25:09.122702
 ---
 
 # Data security controls

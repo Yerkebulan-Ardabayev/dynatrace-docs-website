@@ -1,7 +1,7 @@
 ---
 title: Visibility of segments
 source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concepts-visibility
-scraped: 2026-02-17T04:54:50.282105
+scraped: 2026-02-17T21:18:58.499551
 ---
 
 # Visibility of segments

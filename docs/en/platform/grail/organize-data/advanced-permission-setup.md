@@ -1,7 +1,7 @@
 ---
 title: Configure advanced permissions with security context
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/advanced-permission-setup
-scraped: 2026-02-16T21:30:11.878830
+scraped: 2026-02-17T21:27:28.871544
 ---
 
 # Configure advanced permissions with security context

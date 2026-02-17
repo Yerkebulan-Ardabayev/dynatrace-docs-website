@@ -1,12 +1,12 @@
 ---
-title: Collector Configuration
+title: Configure the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/configuration
-scraped: 2026-02-15T21:28:16.168727
+scraped: 2026-02-17T21:34:20.565348
 ---
 
-# Collector Configuration
+# Configure the OpenTelemetry Collector
 
-# Collector Configuration
+# Configure the OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -19,7 +19,7 @@ Dynatrace Collector
 
 As part of a Dynatrace Collector setup, note that you can only configure the components shipped with Dynatrace Collector.
 
-Find a full list of all supported Collector components at [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace Collector.").
+Find a full list of all supported Collector components at [Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
 
 ## Configuration example
 

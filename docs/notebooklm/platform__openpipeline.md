@@ -114,7 +114,7 @@ Administrators can:
 ---
 title: Data flow in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/data-flow
-scraped: 2026-02-16T21:21:05.069860
+scraped: 2026-02-17T21:18:21.222689
 ---
 
 # Data flow in OpenPipeline
@@ -266,7 +266,7 @@ Storage and retention for system events is not configurable.
 ---
 title: Processing in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/processing
-scraped: 2026-02-16T21:12:58.785337
+scraped: 2026-02-17T21:18:16.279788
 ---
 
 # Processing in OpenPipeline
@@ -632,7 +632,7 @@ Returns the aggregated values of a metric from the records that match the query.
 ---
 title: How to ingest data (events)
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-ingestion
-scraped: 2026-02-16T21:20:56.438958
+scraped: 2026-02-17T21:18:25.063079
 ---
 
 # How to ingest data (events)
@@ -781,7 +781,7 @@ For an overview of the available endpoints, refer to [Ingest sources in OpenPipe
 ---
 title: Route data
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-routing
-scraped: 2026-02-16T21:23:38.496088
+scraped: 2026-02-17T21:19:07.126415
 ---
 
 # Route data
@@ -916,7 +916,7 @@ To change how logs are processed, you can modify the matching condition to exclu
 ---
 title: Set access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/set-access-control
-scraped: 2026-02-17T04:59:12.578398
+scraped: 2026-02-17T21:33:57.084290
 ---
 
 # Set access control in OpenPipeline
@@ -1068,7 +1068,7 @@ Once administrators set permissions and owners set access, users can manage and 
 ---
 title: Configure a processing pipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/tutorial-configure-processing
-scraped: 2026-02-16T21:21:09.038631
+scraped: 2026-02-17T21:18:09.380880
 ---
 
 # Configure a processing pipeline
@@ -1193,7 +1193,7 @@ You have configured ingest sources, routing, and processing for records of a con
 ---
 title: Ingest sources in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/api-ingestion-reference
-scraped: 2026-02-16T21:20:57.902738
+scraped: 2026-02-17T21:18:17.489690
 ---
 
 # Ingest sources in OpenPipeline
@@ -1634,7 +1634,7 @@ User events & sessions
 ---
 title: DQL matcher in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline
-scraped: 2026-02-16T21:23:42.583319
+scraped: 2026-02-17T21:19:10.682912
 ---
 
 # DQL matcher in OpenPipeline
@@ -2308,7 +2308,7 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-17T04:57:47.199770
+scraped: 2026-02-17T21:16:56.091609
 ---
 
 # OpenPipeline limits
@@ -2570,7 +2570,7 @@ Endpoint path doesn't support:
 ---
 title: OpenPipeline API
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/openpipeline-api
-scraped: 2026-02-16T21:21:06.402161
+scraped: 2026-02-17T21:18:10.628953
 ---
 
 # OpenPipeline API
@@ -2620,7 +2620,7 @@ Replaced by Settings API
 ---
 title: OpenPipeline processing examples
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/processing-examples
-scraped: 2026-02-16T21:21:00.950261
+scraped: 2026-02-17T21:18:12.210693
 ---
 
 # OpenPipeline processing examples
@@ -3718,7 +3718,7 @@ Conclusion
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-17T04:45:29.982205
+scraped: 2026-02-17T21:14:35.255929
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -3914,7 +3914,7 @@ After applying these rules, queues with high cardinality will either have `messa
 ---
 title: Extract metrics from spans and distributed traces
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans
-scraped: 2026-02-17T05:11:25.774301
+scraped: 2026-02-17T21:18:13.610298
 ---
 
 # Extract metrics from spans and distributed traces
@@ -4241,7 +4241,7 @@ You successfully created a new processor to extract a metric containing the resp
 ---
 title: Parse log lines and extract a metric
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline
-scraped: 2026-02-16T21:20:55.088757
+scraped: 2026-02-17T21:18:14.919069
 ---
 
 # Parse log lines and extract a metric
@@ -4549,7 +4549,7 @@ You have successfully created a pipeline to parse log data and extract a metric.
 ---
 title: Extract a metric to track system events
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-system-events
-scraped: 2026-02-16T21:20:59.258812
+scraped: 2026-02-17T21:18:18.613208
 ---
 
 # Extract a metric to track system events
@@ -4673,7 +4673,7 @@ You successfully extracted a metric to track app update frequency. All new app l
 ---
 title: Process logs with technology bundle parsers
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-technology-processor
-scraped: 2026-02-16T21:21:03.706345
+scraped: 2026-02-17T21:18:22.526869
 ---
 
 # Process logs with technology bundle parsers

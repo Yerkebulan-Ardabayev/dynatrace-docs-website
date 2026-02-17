@@ -13,7 +13,7 @@ Files combined: 5
 ---
 title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/xspm/assess-coverage
-scraped: 2026-02-17T05:06:00.441154
+scraped: 2026-02-17T21:29:07.120978
 ---
 
 # Assess coverage
@@ -203,7 +203,7 @@ You can filter and sort results based on severity. For details, see [Review find
 ---
 title: Gain insights
 source: https://www.dynatrace.com/docs/secure/xspm/gain-insights
-scraped: 2026-02-17T04:59:32.100116
+scraped: 2026-02-17T21:28:52.849076
 ---
 
 # Gain insights
@@ -320,7 +320,7 @@ Dynatrace Intelligence generative AI explanations are tailored to the nature of 
 ---
 title: Review findings
 source: https://www.dynatrace.com/docs/secure/xspm/review-findings
-scraped: 2026-02-17T05:00:22.134723
+scraped: 2026-02-17T21:32:38.682103
 ---
 
 # Review findings
@@ -419,7 +419,7 @@ On the **Overview** and the **Assessment results** pages, select any of the colu
 ---
 title: Collaborate with apps and share findings
 source: https://www.dynatrace.com/docs/secure/xspm/share-findings
-scraped: 2026-02-15T21:27:41.500681
+scraped: 2026-02-17T21:31:46.946663
 ---
 
 # Collaborate with apps and share findings

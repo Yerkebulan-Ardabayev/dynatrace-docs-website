@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Billing report
 source: https://www.dynatrace.com/docs/license/billing-reports
-scraped: 2026-02-16T21:15:29.594251
+scraped: 2026-02-17T21:16:31.823547
 ---
 
 # Billing report

@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: New technology support
 source: https://www.dynatrace.com/docs/whats-new/technology
-scraped: 2026-02-17T04:46:26.182883
+scraped: 2026-02-17T21:15:49.365586
 ---
 
 # New technology support

@@ -1,7 +1,7 @@
 ---
 title: DPL Positional Matchers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-positional-matchers
-scraped: 2026-02-17T04:58:21.631657
+scraped: 2026-02-17T21:32:51.286333
 ---
 
 # DPL Positional Matchers

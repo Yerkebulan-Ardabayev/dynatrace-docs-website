@@ -1,7 +1,7 @@
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-17T04:48:19.779216
+scraped: 2026-02-17T21:13:58.237513
 ---
 
 # Notebooks
@@ -800,7 +800,7 @@ To see the edit commands for a section, select the section. If you have edit per
   + **Copy query link** copies a link to the clipboard. If you open the link in a browser, the query will be opened in a new or existing notebook.
   + **Download result** downloads (exports) the result of the current notebook section.
   + ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Add to dashboard** opens the selected section in a dashboard.
-  + **Open with** opens the section in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  + **Open with** opens the section in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 You can select multiple sections and then apply the same command to all of them at once. For details, see [Manage multiple sections](#edit-manage-multiple-sections).
 
@@ -988,7 +988,7 @@ When you select multiple sections, the available commands include:
   + **Clear results** clears the results of the selected sections. Select  **Run** again to get new results.
   + **Delete sections** removes the selected sections from the notebook.
   + ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Add to dashboard** opens the selected sections in a dashboard.
-  + **Open with** opens the selected sections in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  + **Open with** opens the selected sections in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Run a section
 

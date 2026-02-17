@@ -13,7 +13,7 @@ Files combined: 16
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-02-16T21:23:13.047019
+scraped: 2026-02-17T21:21:31.148121
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -122,7 +122,7 @@ These metrics are also available via the Environment API and your **Account Mana
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-02-17T04:53:27.026380
+scraped: 2026-02-17T21:23:10.428731
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -551,7 +551,7 @@ When using the metric "(DPS) Total metric data points billed for Full-Stack moni
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-02-16T21:23:10.495679
+scraped: 2026-02-17T21:21:34.884104
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -769,7 +769,7 @@ The example below shows that one of the Infrastructure monitored hosts reported 
 ---
 title: Calculate your consumption of Mainframe Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/mainframe
-scraped: 2026-02-17T04:53:24.305796
+scraped: 2026-02-17T21:23:12.935563
 ---
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
@@ -913,7 +913,7 @@ The following details apply to metric data points:
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability
-scraped: 2026-02-16T09:32:34.192050
+scraped: 2026-02-17T21:34:35.265515
 ---
 
 # Application & Infrastructure Observability overview (DPS)
@@ -996,7 +996,7 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-02-17T04:58:31.585880
+scraped: 2026-02-17T21:28:45.390915
 ---
 
 # Application Security overview (DPS)
@@ -1294,7 +1294,7 @@ The following details apply to metric data points:
 ---
 title: Events powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/events
-scraped: 2026-02-17T05:12:12.914468
+scraped: 2026-02-17T21:17:07.409449
 ---
 
 # Events powered by Grail overview (DPS)
@@ -1499,7 +1499,7 @@ Use DQL to analyze event data in context with relevant data on the Dynatrace pla
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-17T04:47:55.561462
+scraped: 2026-02-17T21:14:28.740141
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1636,7 +1636,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-16T21:19:56.895128
+scraped: 2026-02-17T21:17:12.245705
 ---
 
 # Log Analytics (DPS)
@@ -1759,7 +1759,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-17T05:04:14.578226
+scraped: 2026-02-17T21:17:06.284963
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1927,7 +1927,7 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-16T21:13:29.092420
+scraped: 2026-02-17T21:19:03.283801
 ---
 
 # Traces powered by Grail overview (DPS)

@@ -1,7 +1,7 @@
 ---
 title: Enable OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes
-scraped: 2026-02-16T21:23:09.139339
+scraped: 2026-02-17T21:20:58.853677
 ---
 
 # Enable OneAgent monitoring modes

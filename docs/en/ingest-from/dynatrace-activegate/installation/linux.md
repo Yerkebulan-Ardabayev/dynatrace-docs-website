@@ -1,7 +1,7 @@
 ---
 title: ActiveGate on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/linux
-scraped: 2026-02-16T21:21:13.396590
+scraped: 2026-02-17T21:18:42.648259
 ---
 
 # ActiveGate on Linux

@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-17T04:47:09.128240
+scraped: 2026-02-17T21:13:54.145276
 ---
 
 # OpenPipeline

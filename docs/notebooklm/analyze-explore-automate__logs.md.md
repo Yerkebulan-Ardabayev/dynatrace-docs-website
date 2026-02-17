@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Log Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs
-scraped: 2026-02-17T04:47:10.783872
+scraped: 2026-02-17T21:13:55.371035
 ---
 
 # Log Analytics

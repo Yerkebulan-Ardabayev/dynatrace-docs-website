@@ -628,7 +628,7 @@ TLS1.2, TLS1.3
 ---
 title: ActiveGate group
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-group
-scraped: 2026-02-17T05:08:01.674306
+scraped: 2026-02-17T21:17:15.917514
 ---
 
 # ActiveGate group
@@ -868,7 +868,7 @@ Refer to [ActiveGate storage requirements](/docs/ingest-from/dynatrace-activegat
 ---
 title: Containerized ActiveGate configuration
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container/configuration
-scraped: 2026-02-17T05:05:22.623838
+scraped: 2026-02-17T21:30:24.558682
 ---
 
 # Containerized ActiveGate configuration
@@ -1317,7 +1317,7 @@ A containerized ActiveGate configuration is not persistently stored. It is decla
 ---
 title: ActiveGate container image
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container
-scraped: 2026-02-16T21:21:15.167483
+scraped: 2026-02-17T21:18:41.397831
 ---
 
 # ActiveGate container image
@@ -3009,7 +3009,7 @@ There is a dedicated, FIPS-compliant ActiveGate image available. See [ActiveGate
 ---
 title: Execute synthetic monitors from private locations
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose
-scraped: 2026-02-16T21:21:16.489194
+scraped: 2026-02-17T21:18:44.967883
 ---
 
 # Execute synthetic monitors from private locations
@@ -3068,7 +3068,7 @@ Additionally, you can also:
 ---
 title: Install the zRemote module for z/OS monitoring
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities/zremote-purpose
-scraped: 2026-02-16T21:21:24.508137
+scraped: 2026-02-17T21:18:38.404204
 ---
 
 # Install the zRemote module for z/OS monitoring
@@ -3103,7 +3103,7 @@ For more details and configuration options, see [Install the zRemote module](/do
 ---
 title: ActiveGate purposes and functionality
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities
-scraped: 2026-02-16T21:21:17.933641
+scraped: 2026-02-17T21:18:35.843198
 ---
 
 # ActiveGate purposes and functionality
@@ -3454,7 +3454,7 @@ zRemote
 ---
 title: Reverse proxy or load balancer for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-oneagent
-scraped: 2026-02-17T05:00:28.883121
+scraped: 2026-02-17T21:31:12.793330
 ---
 
 # Reverse proxy or load balancer for OneAgent
@@ -3524,7 +3524,7 @@ To verify the configuration
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements
-scraped: 2026-02-16T21:21:21.823115
+scraped: 2026-02-17T21:18:47.485371
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Linux
@@ -3915,7 +3915,7 @@ M
 ---
 title: ActiveGate on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/linux
-scraped: 2026-02-16T21:21:13.396590
+scraped: 2026-02-17T21:18:42.648259
 ---
 
 # ActiveGate on Linux
@@ -3954,7 +3954,7 @@ Dynatrace supports ActiveGate installation on Linux.
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements
-scraped: 2026-02-16T21:21:12.102156
+scraped: 2026-02-17T21:18:46.291878
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Windows
@@ -4195,7 +4195,7 @@ High
 ---
 title: ActiveGate on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/windows
-scraped: 2026-02-16T21:21:23.134923
+scraped: 2026-02-17T21:18:39.684142
 ---
 
 # ActiveGate on Windows
@@ -4234,7 +4234,7 @@ Dynatrace supports ActiveGate installation on Windows.
 ---
 title: Supported connectivity schemes for ActiveGates
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates
-scraped: 2026-02-16T21:21:20.451830
+scraped: 2026-02-17T21:18:43.745173
 ---
 
 # Supported connectivity schemes for ActiveGates

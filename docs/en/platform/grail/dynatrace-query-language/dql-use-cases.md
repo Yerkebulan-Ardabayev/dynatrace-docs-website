@@ -1,7 +1,7 @@
 ---
 title: DQL use cases
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-use-cases
-scraped: 2026-02-17T04:56:43.523162
+scraped: 2026-02-17T21:27:19.778531
 ---
 
 # DQL use cases

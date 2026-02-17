@@ -1,7 +1,7 @@
 ---
 title: Stream Kubernetes logs with Fluent Bit
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s
-scraped: 2026-02-17T05:10:56.158078
+scraped: 2026-02-17T21:26:10.435464
 ---
 
 # Stream Kubernetes logs with Fluent Bit

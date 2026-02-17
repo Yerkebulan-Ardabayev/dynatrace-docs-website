@@ -1,7 +1,7 @@
 ---
 title: Allowed beacon domains API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors
-scraped: 2026-02-17T05:10:02.712198
+scraped: 2026-02-17T21:34:04.228495
 ---
 
 # Allowed beacon domains API

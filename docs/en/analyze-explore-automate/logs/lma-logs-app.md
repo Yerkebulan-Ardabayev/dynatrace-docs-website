@@ -1,7 +1,7 @@
 ---
 title: Logs app
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app
-scraped: 2026-02-17T04:45:21.537305
+scraped: 2026-02-17T21:13:29.783959
 ---
 
 # Logs app

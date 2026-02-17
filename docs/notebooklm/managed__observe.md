@@ -95,7 +95,7 @@ To learn more about how to create, edit, or delete service detection rules, see 
 ---
 title: Monitor Kubernetes/OpenShift cluster utilization
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes
-scraped: 2026-02-16T21:17:20.912242
+scraped: 2026-02-17T21:16:53.725312
 ---
 
 # Monitor Kubernetes/OpenShift cluster utilization
@@ -274,7 +274,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: VMware vSphere monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring
-scraped: 2026-02-17T04:52:12.943379
+scraped: 2026-02-17T21:22:03.580425
 ---
 
 # VMware vSphere monitoring

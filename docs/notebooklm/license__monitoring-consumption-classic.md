@@ -13,7 +13,7 @@ Files combined: 3
 ---
 title: Application and Infrastructure Monitoring (Host Units)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring
-scraped: 2026-02-16T21:23:11.838429
+scraped: 2026-02-17T21:21:28.813316
 ---
 
 # Application and Infrastructure Monitoring (Host Units)
@@ -235,7 +235,7 @@ The following details apply to metric data points:
 ---
 title: DDUs for custom traces (Trace API)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/custom-traces
-scraped: 2026-02-17T05:02:18.735673
+scraped: 2026-02-17T21:32:30.365990
 ---
 
 # DDUs for custom traces (Trace API)
@@ -279,7 +279,7 @@ Davis data unit pools
 ---
 title: DDUs for custom Davis events
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/ddu-events
-scraped: 2026-02-17T05:09:20.407521
+scraped: 2026-02-17T21:32:53.834573
 ---
 
 # DDUs for custom Davis events

@@ -2,7 +2,7 @@
 
 Generated: 2026-02-17
 
-Files combined: 12
+Files combined: 13
 
 ---
 
@@ -144,7 +144,7 @@ To execute this request, you need the **Allow read access for usage and consumpt
 ---
 title: Dynatrace Platform Subscription API - manage cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/manage-cost-allocation
-scraped: 2026-02-16T09:37:46.364546
+scraped: 2026-02-17T21:26:23.106250
 ---
 
 # Dynatrace Platform Subscription API - manage cost allocation
@@ -721,7 +721,7 @@ To execute this request, you need the **Allow write access for usage and consump
 ---
 title: Dynatrace Platform Subscription API - Cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation
-scraped: 2026-02-17T05:00:46.176142
+scraped: 2026-02-17T21:32:12.944058
 ---
 
 # Dynatrace Platform Subscription API - Cost allocation
@@ -756,7 +756,7 @@ Manage Dynatrace Platform Subscription cost and usage are allocated to product a
 ---
 title: Dynatrace Platform Subscription API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api
-scraped: 2026-02-16T21:25:02.635327
+scraped: 2026-02-17T21:28:40.194608
 ---
 
 # Dynatrace Platform Subscription API
@@ -819,7 +819,7 @@ Manage Dynatrace Platform Subscription cost and usage are allocated to product a
 ---
 title: Platform tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/platform-tokens-api
-scraped: 2026-02-17T05:10:48.118469
+scraped: 2026-02-17T21:26:36.048347
 ---
 
 # Platform tokens API
@@ -850,7 +850,7 @@ Edit the status of a platform token.](/docs/dynatrace-api/account-management-api
 ---
 title: Policy management API - DELETE a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary
-scraped: 2026-02-17T05:08:31.885148
+scraped: 2026-02-17T21:34:34.187386
 ---
 
 # Policy management API - DELETE a policy boundary
@@ -1273,7 +1273,7 @@ Success (200) - Successful response - list of policy boundaries
 ---
 title: Policy management API - GET a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-boundary
-scraped: 2026-02-17T05:07:18.457336
+scraped: 2026-02-17T21:29:13.935330
 ---
 
 # Policy management API - GET a policy boundary
@@ -1542,7 +1542,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 ---
 title: Policy management API - POST a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary
-scraped: 2026-02-17T04:57:05.740128
+scraped: 2026-02-17T21:33:24.361996
 ---
 
 # Policy management API - POST a policy boundary
@@ -1955,7 +1955,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 ---
 title: Policy management API - PUT a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/put-boundary
-scraped: 2026-02-16T09:32:15.838619
+scraped: 2026-02-17T21:26:51.487162
 ---
 
 # Policy management API - PUT a policy boundary
@@ -2305,13 +2305,46 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 ---
 
 
+## Source: boundaries.md
+
+
+---
+title: Policy management API - Boundaries
+source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries
+scraped: 2026-02-17T21:33:28.126771
+---
+
+# Policy management API - Boundaries
+
+# Policy management API - Boundaries
+
+* Latest Dynatrace
+* Reference
+* Published Nov 20, 2025
+
+[### List all policy boundaries
+
+Get an overview of all policy boundaries of a level.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-all-boundaries "View all policy boundaries of a level via the Policy management API.")[### View a policy boundary
+
+View parameters of a policy boundary.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-boundary "View a policy boundary via the Policy management API.")[### Create a policy boundary
+
+Create a new policy boundary.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary "Create a new boundary via the Policy management API.")[### Update a policy boundary
+
+Edit an existing policy boundary.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/put-boundary "Edit a policy boundary via the Policy management API.")[### Delete a policy boundary
+
+Delete a policy boundary you no longer need.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary "Delete a policy boundary via the Policy management API.")
+
+
+---
+
+
 ## Source: service-user-management-api.md
 
 
 ---
 title: Service user management API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/service-user-management-api
-scraped: 2026-02-17T05:06:10.062361
+scraped: 2026-02-17T21:30:38.572147
 ---
 
 # Service user management API

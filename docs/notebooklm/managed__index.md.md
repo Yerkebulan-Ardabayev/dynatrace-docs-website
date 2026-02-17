@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Welcome to Dynatrace Documentation
 source: https://www.dynatrace.com/support/help/
-scraped: 2026-02-17T04:44:58.565886
+scraped: 2026-02-17T21:13:17.398251
 ---
 
 # Welcome to Dynatrace Documentation
