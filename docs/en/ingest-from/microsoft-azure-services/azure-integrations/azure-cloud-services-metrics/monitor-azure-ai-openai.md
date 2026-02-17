@@ -1,7 +1,7 @@
 ---
 title: Azure OpenAI
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-openai
-scraped: 2026-02-16T21:28:58.027387
+scraped: 2026-02-17T04:59:41.355163
 ---
 
 # Azure OpenAI

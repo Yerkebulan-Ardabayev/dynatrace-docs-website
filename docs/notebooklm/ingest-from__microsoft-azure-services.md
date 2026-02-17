@@ -1,8 +1,8 @@
 # Dynatrace Documentation: ingest-from/microsoft-azure-services
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 114
+Files combined: 119
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 114
 ---
 title: Azure Kubernetes Service (AKS)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-aks
-scraped: 2026-02-16T21:13:57.744311
+scraped: 2026-02-17T04:49:16.327993
 ---
 
 # Azure Kubernetes Service (AKS)
@@ -49,7 +49,7 @@ In addition you can enable capturing AKS specific metrics from Azure Monitor
 ---
 title: Integrate OneAgent on Azure App Service for Windows
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-azure-app-service
-scraped: 2026-02-16T21:18:03.343937
+scraped: 2026-02-17T04:51:38.309392
 ---
 
 # Integrate OneAgent on Azure App Service for Windows
@@ -994,7 +994,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure App Service
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice
-scraped: 2026-02-16T21:14:29.333844
+scraped: 2026-02-17T04:49:23.136545
 ---
 
 # Monitor Azure App Service
@@ -1027,13 +1027,310 @@ The App Service integration with Dynatrace provides the following capabilities:
 ---
 
 
+## Source: azure-arc-enabled-servers.md
+
+
+---
+title: Microsoft Azure Arc-enabled servers
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-arc-enabled-servers
+scraped: 2026-02-17T05:09:50.686667
+---
+
+# Microsoft Azure Arc-enabled servers
+
+# Microsoft Azure Arc-enabled servers
+
+* Latest Dynatrace
+* How-to guide
+* 4-min read
+* Published Dec 10, 2024
+
+## Capabilities
+
+* Full-stack monitoring powered by OneAgent
+* [Extensions for easy deployment of OneAgent](#installation)
+* [Integration with Azure Monitor](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
+* Enhanced support for Azure VM metadata such as Azure regions, scale sets and more
+* [Classic Virtual Machines](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vm/monitor-azure-virtual-machines-classic "Monitor Azure Virtual Machines (classic) and view available metrics.") are also supported
+
+## Prerequisites
+
+* Create a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
+* Determine your [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Determine your server URL if required.
+
+  The server URL is required only if you use an ActiveGate for a Dynatrace SaaS endpoint. The URL is automatically generated from the environment ID.
+
+  + **ActiveGate server URL:**  
+    `https://<your-active-gate-IP-or-hostname>:9999/e/<your-environment-id>/api` (the ActiveGate port is configurable)
+
+## Install Dynatrace OneAgent VM extension
+
+There are several ways to install the Dynatrace OneAgent VM extension: through Azure Portal, Azure CLI, or PowerShell, or by using an ARM template. Follow the steps below for instructions.
+
+Azure Portal
+
+Azure CLI 2.0
+
+ARM template
+
+### Add the extension to an existing VM
+
+1. In Azure Portal, go to an existing Azure Arc Machine resource.
+2. In the left menu, go to **Settings** > **Extensions**.
+3. Select **Add**.
+4. From the list of extensions, select **Dynatrace OneAgent**.
+5. Select **Next** to add the extension.
+6. On the **Configure Dynatrace OneAgent Extension** page, enter your **Environment ID**, your **API Token**, and your **Server URL**. See [Prerequisites](#prerequisites) for details.
+7. Optional Define additional OneAgent settings (such as proxy, port).
+8. Select **Review + create**.
+9. To check the deployment status, in your Dynatrace environment, go to **Deployment Status**.
+
+```
+az connectedmachine extension create
+
+
+
+--publisher "Dynatrace.Ruxit"
+
+
+
+--type "<Extension-Type>"
+
+
+
+--name â<Extension-Type>â
+
+
+
+--resource-group "<Resource-Group>"
+
+
+
+--machine-name "<Azure Arc Server Name>"
+
+
+
+--location <Azure Region>
+
+
+
+--settings "{\"tenantId\":\"<Environment-ID>\",\"token\":\"<API-Token>\", \"server\":\"<Server-Url>\", \"enableLogAnalytics\":\"yes\", \"hostGroup\":\"<Host-Group>\"}"
+```
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| Resource-Group | Required | Name of the resource group on which the VM is deployed. |
+| Azure Arc Server Name | Required | Name of the machine extension. |
+| Extension-Type | Required | For Windows-based VMs, use `oneAgentWindows`. For Linux-based VMs, use `oneAgentLinux`. |
+| Extension-name | Required | For Windows-based VMs, use `oneAgentWindows`. For Linux-based VMs, use `oneAgentLinux`. |
+| Azure Region | Required | Azure Region of the resource |
+| tenantId | Required | The environment ID as described in [Prerequisites](#prerequisites). |
+| token | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
+| server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
+| enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
+| hostGroup | Optional | Define the [host group](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+
+Alternatively to the main installation methods, you can make the Dynatrace VM extension part of your ARM templates.
+
+The [JSON fileï»¿](https://dt-url.net/9f03wr8) for a virtual machine extension can be nested inside the virtual machine resource, or placed at the root or top level of a resource manager JSON template. The placement of the JSON file affects the value of the resource name and type.
+
+Example
+
+The following example assumes the OneAgent extension is nested inside the virtual machine resource. When nesting the extension resource, the JSON file is placed in the `"resources": []` object of the virtual machine.'
+
+```
+{
+
+
+
+â¯ â¯ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+
+
+
+â¯ â¯ "contentVersion": "1.0.0.0",
+
+
+
+â¯ â¯ "parameters": {
+
+
+
+â¯ â¯ â¯ â¯ "vmName": {
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "type": "string"
+
+
+
+â¯ â¯ â¯ â¯ },
+
+
+
+â¯ â¯ â¯ â¯ "location": {
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "type": "string"
+
+
+
+â¯ â¯ â¯ â¯ },
+
+
+
+â¯ â¯ â¯ â¯ "tenant": {
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "type": "string"
+
+
+
+â¯ â¯ â¯ â¯ },
+
+
+
+â¯ â¯ â¯ â¯ "token": {
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "type": "securestring"
+
+
+
+â¯ â¯ â¯ â¯ },
+
+
+
+â¯ â¯ â¯ â¯ "server": {
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "type": "string",
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "defaultValue": ""
+
+
+
+â¯ â¯ â¯ â¯ }
+
+
+
+â¯ â¯ },
+
+
+
+â¯ â¯ "resources": [
+
+
+
+â¯ â¯ â¯ â¯ {
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "name": "[concat(parameters('vmName'),'/<Extension-Type>')]",
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "type": "Microsoft.HybridCompute/machines/extensions",
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "location": "[parameters('location')]",
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "apiVersion": "2022-03-10",
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ "properties": {
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "publisher": "dynatrace.ruxit",
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "type": " <Extension-Type>",
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "autoUpgradeMinorVersion": true,
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "settings": {
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "tenantId": "[parameters('tenant')]",
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "server": "[parameters('server')]"
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ },
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "protectedSettings": {
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "token": "[parameters('token')]"
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ }
+
+
+
+â¯ â¯ â¯ â¯ â¯ â¯ }
+
+
+
+â¯ â¯ â¯ â¯ }
+
+
+
+â¯ â¯ ]
+
+
+
+}
+```
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| Parent-Arc Machine-Resource | Required | Name of the Azure Arc Machine resource where you want to install the extension. Not applicable when using nested resource. |
+| Arc Machine Name | Required | Name of the Azure Arc Machine where you want to install the extension. |
+| Extension-Type | Required | For Windows-based VMs, use `oneAgentWindows`. For Linux-based VMs, use `oneAgentLinux`. |
+| tenantId | Required | The environment ID as described in [Prerequisites](#prerequisites). |
+| token | Required | The PaaS token as described in [Prerequisites](#prerequisites). From Microsoft Azure Arc version 2.200.0.0, it's recommended to pass it in `protectedSettings`. |
+| server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
+
+To check the deployment status, in your Dynatrace environment, go to **Manage** > **Deployment status**.
+
+After installation is complete, OneAgent will begin monitoring.
+
+
+---
+
+
 ## Source: monitor-azure-ai-all-in-one.md
 
 
 ---
 title: Azure AI - All In One monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-all-in-one
-scraped: 2026-02-16T09:39:40.819888
+scraped: 2026-02-17T04:56:56.740760
 ---
 
 # Azure AI - All In One monitoring
@@ -1112,7 +1409,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Anomaly Detector monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-anomaly-detector
-scraped: 2026-02-16T09:31:58.601742
+scraped: 2026-02-17T05:03:43.969760
 ---
 
 # Azure AI - Anomaly Detector monitoring
@@ -1187,7 +1484,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Autosuggest monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-autosuggest
-scraped: 2026-02-16T21:28:39.246388
+scraped: 2026-02-17T05:07:15.026491
 ---
 
 # Azure AI - Bing Autosuggest monitoring
@@ -1262,7 +1559,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Custom Search monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-custom-search
-scraped: 2026-02-16T21:32:15.236893
+scraped: 2026-02-17T05:05:03.297668
 ---
 
 # Azure AI - Bing Custom Search monitoring
@@ -1337,7 +1634,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Entity Search monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-entity-search
-scraped: 2026-02-16T21:26:37.634148
+scraped: 2026-02-17T05:12:50.849704
 ---
 
 # Azure AI - Bing Entity Search monitoring
@@ -1412,7 +1709,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Search monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-search
-scraped: 2026-02-15T09:10:41.513373
+scraped: 2026-02-17T05:02:41.824762
 ---
 
 # Azure AI - Bing Search monitoring
@@ -1562,7 +1859,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Computer Vision monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-computer-vision
-scraped: 2026-02-16T09:37:20.593684
+scraped: 2026-02-17T05:01:08.264614
 ---
 
 # Azure AI - Computer Vision monitoring
@@ -1712,7 +2009,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Custom Vision Prediction monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-custom-vision-prediction
-scraped: 2026-02-16T21:25:06.633934
+scraped: 2026-02-17T05:04:55.004718
 ---
 
 # Azure AI - Custom Vision Prediction monitoring
@@ -1937,7 +2234,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Immersive Reader monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-immersive-reader
-scraped: 2026-02-16T09:27:57.151943
+scraped: 2026-02-17T05:04:32.347215
 ---
 
 # Azure AI - Immersive Reader monitoring
@@ -2012,7 +2309,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Language Understanding (LUIS) Authoring monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-language-understanding-authoring
-scraped: 2026-02-16T09:37:22.235998
+scraped: 2026-02-17T05:05:55.458874
 ---
 
 # Azure AI - Language Understanding (LUIS) Authoring monitoring
@@ -2087,7 +2384,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Language Understanding (LUIS) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-language-understanding
-scraped: 2026-02-16T21:27:29.922593
+scraped: 2026-02-17T05:08:12.559950
 ---
 
 # Azure AI - Language Understanding (LUIS) monitoring
@@ -2163,7 +2460,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure OpenAI
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-openai
-scraped: 2026-02-16T21:28:58.027387
+scraped: 2026-02-17T04:59:41.355163
 ---
 
 # Azure OpenAI
@@ -2239,7 +2536,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Personalizer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-personalizer
-scraped: 2026-02-16T09:34:24.748449
+scraped: 2026-02-17T05:03:47.481260
 ---
 
 # Azure AI - Personalizer monitoring
@@ -2314,7 +2611,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - QnA Maker monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-qna-maker
-scraped: 2026-02-16T09:29:44.859185
+scraped: 2026-02-17T05:01:32.134664
 ---
 
 # Azure AI - QnA Maker monitoring
@@ -2389,7 +2686,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Speech monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-speech
-scraped: 2026-02-16T21:25:38.939373
+scraped: 2026-02-17T05:12:25.427929
 ---
 
 # Azure AI - Speech monitoring
@@ -2463,7 +2760,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Text Analytics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-text-analytics
-scraped: 2026-02-16T21:29:45.348121
+scraped: 2026-02-17T05:10:28.946159
 ---
 
 # Azure AI - Text Analytics monitoring
@@ -2539,7 +2836,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Translator monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-translator
-scraped: 2026-02-16T21:27:54.900490
+scraped: 2026-02-17T05:09:44.059693
 ---
 
 # Azure AI - Translator monitoring
@@ -2698,7 +2995,7 @@ This service monitors a part of Azure API Management (Microsoft.ApiManagement/se
 ---
 title: Azure App Configuration monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-app-configuration
-scraped: 2026-02-16T09:35:32.646967
+scraped: 2026-02-17T05:05:20.910458
 ---
 
 # Azure App Configuration monitoring
@@ -2767,7 +3064,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Application Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-application-gateway
-scraped: 2026-02-16T21:31:39.319774
+scraped: 2026-02-17T04:57:43.840576
 ---
 
 # Azure Application Gateway monitoring
@@ -2960,7 +3257,7 @@ Running the Azure App Service extension at the same time with Azure Application 
 ---
 title: Azure Machine - Azure Arc
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-arc
-scraped: 2026-02-16T09:33:03.357374
+scraped: 2026-02-17T05:10:22.392447
 ---
 
 # Azure Machine - Azure Arc
@@ -2990,7 +3287,7 @@ To learn how to enable service monitoring, see [Enable service monitoring](/docs
 ---
 title: Azure Basic Load Balancer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-basic-load-balancer
-scraped: 2026-02-16T21:27:59.039898
+scraped: 2026-02-17T05:01:38.768882
 ---
 
 # Azure Basic Load Balancer monitoring
@@ -3023,7 +3320,7 @@ To learn how to enable service monitoring, see [Enable service monitoring](/docs
 ---
 title: Azure Batch monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-batch
-scraped: 2026-02-16T21:32:00.766429
+scraped: 2026-02-17T05:12:02.761498
 ---
 
 # Azure Batch monitoring
@@ -3477,7 +3774,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Cognitive Services - Ink Recognizer monitoring (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cognitive-services-ink-recognizer
-scraped: 2026-02-16T21:28:55.404781
+scraped: 2026-02-17T05:09:23.927681
 ---
 
 # Azure Cognitive Services - Ink Recognizer monitoring (deprecated)
@@ -3552,7 +3849,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Container App monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-app
-scraped: 2026-02-16T21:25:51.279595
+scraped: 2026-02-17T05:05:48.852159
 ---
 
 # Azure Container App monitoring
@@ -3625,7 +3922,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Container Apps Environment monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-apps-environment
-scraped: 2026-02-16T09:40:06.259858
+scraped: 2026-02-17T04:58:34.984957
 ---
 
 # Azure Container Apps Environment monitoring
@@ -3691,7 +3988,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure Container Instances
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-instances
-scraped: 2026-02-16T21:27:34.170507
+scraped: 2026-02-17T05:08:26.943302
 ---
 
 # Monitor Azure Container Instances
@@ -3761,7 +4058,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Container Registry monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-registry
-scraped: 2026-02-15T21:23:17.328400
+scraped: 2026-02-17T05:01:59.513982
 ---
 
 # Azure Container Registry monitoring
@@ -3981,7 +4278,7 @@ This service monitors a part of Azure Cosmos DB Account (Microsoft.DocumentDB/da
 ---
 title: Azure Cosmos DB Account (MongoDB) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cosmos-db-account-mongodb
-scraped: 2026-02-16T09:31:42.118972
+scraped: 2026-02-17T04:57:34.414291
 ---
 
 # Azure Cosmos DB Account (MongoDB) monitoring
@@ -4087,7 +4384,7 @@ This service monitors a part of Azure Cosmos DB Account (Microsoft.DocumentDB/da
 ---
 title: Azure Data Explorer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-explorer-cluster
-scraped: 2026-02-16T21:29:42.281054
+scraped: 2026-02-17T05:08:50.537514
 ---
 
 # Azure Data Explorer monitoring
@@ -4277,6 +4574,79 @@ Hiding a dashboard doesn't affect other users.
 ---
 
 
+## Source: monitor-azure-data-lake-analytics.md
+
+
+---
+title: Azure Data Lake Analytics monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-lake-analytics
+scraped: 2026-02-17T05:12:43.091035
+---
+
+# Azure Data Lake Analytics monitoring
+
+# Azure Data Lake Analytics monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Jul 27, 2020
+
+Dynatrace ingests metrics from Azure Metrics API for Azure Data Lake Analytics. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.199+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Lake analyt](https://dt-cdn.net/images/2021-03-12-11-03-26-861-0d68610484.png)
+
+## Available metrics
+
+| Name | Description | Dimensions | Unit | Recommended |
+| --- | --- | --- | --- | --- |
+| JobEndedSuccess | Count of successful jobs | containerName | Count | Applicable |
+| JobEndedFailure | Count of failed jobs | containerName | Count | Applicable |
+| JobEndedCancelled | Count of cancelled jobs |  | Count | Applicable |
+| JobAUEndedSuccess | Total AU time for successful jobs |  | Second | Applicable |
+| JobAUEndedFailure | Total AU time for failed jobs |  | Second | Applicable |
+| JobAUEndedCancelled | Total AU time for cancelled jobs |  | Second | Applicable |
+| JobStage | Progress of jobs |  | Count |  |
+
+
+---
+
+
 ## Source: monitor-azure-data-lake-storage-gen1.md
 
 
@@ -4426,7 +4796,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Database for MariaDB monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mariadb
-scraped: 2026-02-16T09:30:29.084319
+scraped: 2026-02-17T05:03:54.032537
 ---
 
 # Azure Database for MariaDB monitoring
@@ -4528,7 +4898,7 @@ After you create the management zone, select it from your dashboard (**Edit** > 
 ---
 title: Azure Database for MySQL monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mysql
-scraped: 2026-02-16T21:24:51.772296
+scraped: 2026-02-17T05:09:05.128335
 ---
 
 # Azure Database for MySQL monitoring
@@ -4780,7 +5150,7 @@ After you create the management zone, assign it to your dashboard (from the dash
 ---
 title: Azure Device Provisioning Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-device-provisioning-service
-scraped: 2026-02-16T09:27:26.658618
+scraped: 2026-02-17T04:59:33.743771
 ---
 
 # Azure Device Provisioning Service monitoring
@@ -4920,7 +5290,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Event Grid (Domain Topics, Topics, System Topics) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-event-grid
-scraped: 2026-02-16T09:28:22.644612
+scraped: 2026-02-17T04:56:40.274775
 ---
 
 # Azure Event Grid (Domain Topics, Topics, System Topics) monitoring
@@ -5259,7 +5629,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Front Door (classic) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-front-door
-scraped: 2026-02-15T09:10:02.347772
+scraped: 2026-02-17T04:57:17.780640
 ---
 
 # Azure Front Door (classic) monitoring
@@ -5411,7 +5781,7 @@ This service monitors a part of Azure Load Balancer (Microsoft.Network/loadBalan
 ---
 title: Azure Integration Service Environment monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment
-scraped: 2026-02-16T21:29:23.243840
+scraped: 2026-02-17T05:06:19.570027
 ---
 
 # Azure Integration Service Environment monitoring
@@ -5513,7 +5883,7 @@ Azure Integration Service Environment can be connected with Azure Logic Apps. Fo
 ---
 title: Azure IoT Central Applications monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-iot-central-applications
-scraped: 2026-02-15T21:28:30.880114
+scraped: 2026-02-17T05:06:16.744824
 ---
 
 # Azure IoT Central Applications monitoring
@@ -5588,7 +5958,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure IoT Hub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-iot-hub
-scraped: 2026-02-16T21:32:22.186642
+scraped: 2026-02-17T05:01:14.644901
 ---
 
 # Azure IoT Hub monitoring
@@ -5724,7 +6094,7 @@ This service monitors a part of Azure IoT Hub (Microsoft.Devices/IotHubs). While
 ---
 title: Azure Key Vault monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-key-vault
-scraped: 2026-02-16T09:37:55.179686
+scraped: 2026-02-17T05:12:41.483586
 ---
 
 # Azure Key Vault monitoring
@@ -5897,7 +6267,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Machine Learning monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-machine-learning
-scraped: 2026-02-16T09:27:39.495730
+scraped: 2026-02-17T05:01:23.012040
 ---
 
 # Azure Machine Learning monitoring
@@ -6074,7 +6444,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Mesh Application monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-mesh-application
-scraped: 2026-02-15T21:27:48.526704
+scraped: 2026-02-17T04:57:14.476419
 ---
 
 # Azure Mesh Application monitoring
@@ -6148,7 +6518,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure NetApp Files monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-netapp-files
-scraped: 2026-02-16T21:25:46.916741
+scraped: 2026-02-17T04:59:55.881963
 ---
 
 # Azure NetApp Files monitoring
@@ -6244,7 +6614,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Network Interface monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-network-interface
-scraped: 2026-02-16T09:34:11.376169
+scraped: 2026-02-17T05:04:46.281766
 ---
 
 # Azure Network Interface monitoring
@@ -6314,7 +6684,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-network-watcher
-scraped: 2026-02-16T21:25:42.897649
+scraped: 2026-02-17T05:00:47.864169
 ---
 
 # Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring
@@ -6395,7 +6765,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Notification Hub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-notification-hub
-scraped: 2026-02-16T09:27:06.857347
+scraped: 2026-02-17T05:02:28.532007
 ---
 
 # Azure Notification Hub monitoring
@@ -6591,13 +6961,86 @@ Hiding a dashboard doesn't affect other users.
 ---
 
 
+## Source: monitor-azure-private-dns-zone.md
+
+
+---
+title: Azure Private DNS Zone monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-private-dns-zone
+scraped: 2026-02-17T04:59:38.597357
+---
+
+# Azure Private DNS Zone monitoring
+
+# Azure Private DNS Zone monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Jul 27, 2020
+
+Dynatrace ingests metrics from Azure Metrics API for Azure Private DNS Zone. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.199+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Private dns dash](https://dt-cdn.net/images/privatedns-dashboard-1626-bd25c5d19d.png)
+
+## Available metrics
+
+| Name | Description | Unit | Recommended |
+| --- | --- | --- | --- |
+| QueryVolume | Number of queries served for a DNS zone | Count | Applicable |
+| RecordSetCount | Number of Record Sets in a DNS zone | Count | Applicable |
+| RecordSetCapacityUtilization | Percentage of Record Set capacity utilized by a DNS zone | Percent | Applicable |
+| VirtualNetworkLinkCount | Number of virtual networks associated with a private DNS zone | Count | Applicable |
+| VirtualNetworkLinkCapacityUtilization | Percentage of virtual network capacity utilized by a private DNS zone | Percent | Applicable |
+| VirtualNetworkWithRegistrationCapacityUtilization | Percentage of capacity utilization for a virtual network with automatic registration that is utilized by a private DNS zone | Percent |  |
+| VirtualNetworkWithRegistrationLinkCount | Number of virtual networks that are linked to a private DNS zone and for which automatic registration is activated | Count |  |
+
+
+---
+
+
 ## Source: monitor-azure-public-ip-addresses.md
 
 
 ---
 title: Azure Public IP Address monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-public-ip-addresses
-scraped: 2026-02-15T21:29:12.267869
+scraped: 2026-02-17T04:57:57.305474
 ---
 
 # Azure Public IP Address monitoring
@@ -6746,13 +7189,96 @@ Hiding a dashboard doesn't affect other users.
 ---
 
 
+## Source: monitor-azure-relay.md
+
+
+---
+title: Azure Relay monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-relay
+scraped: 2026-02-17T05:00:42.751277
+---
+
+# Azure Relay monitoring
+
+# Azure Relay monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Published Jun 25, 2020
+
+Dynatrace ingests metrics from Azure Metrics API for Azure Relay. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.201+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Relay](https://dt-cdn.net/images/dashboard-62-966-f8f2704383.png)
+
+## Available metrics
+
+| Name | Description | Dimensions | Unit | Recommended |
+| --- | --- | --- | --- | --- |
+| ActiveConnections | Total active connections for Azure Relay | EntityName | Count | Applicable |
+| ActiveListeners | Total active listeners for Azure Relay | EntityName | Count | Applicable |
+| BytesTransferred | Total bytes transferred for Azure Relay | EntityName | Count | Applicable |
+| ListenerConnections-ClientError | Client error on listener connections for Azure Relay | EntityName | Count | Applicable |
+| ListenerConnections-ServerError | Server error on listener connections for Azure Relay | EntityName | Count | Applicable |
+| ListenerConnections-Success | Successful listener connections for Azure Relay | EntityName | Count |  |
+| ListenerConnections-TotalRequests | Total listener connections for Azure Relay | EntityName | Count | Applicable |
+| ListenerDisconnects | Total listener disconnects for Azure Relay | EntityName | Count |  |
+| SenderConnections-ClientError | Client error on sender connection for Azure Relay | EntityName | Count | Applicable |
+| SenderConnections-ServerError | Server error on sender connection for Azure Relay | EntityName | Count | Applicable |
+| SenderConnections-Success | Successful sender connections for Azure Relay | EntityName | Count |  |
+| SenderConnections-TotalRequests | Total sender connections requests for Azure Relay | EntityName | Count | Applicable |
+| SenderDisconnects | Total sender disconnects for Azure Relay | EntityName | Count |  |
+
+## Limitations
+
+Metrics are only supported for the Hybrid Connections feature in Azure Relay.
+
+
+---
+
+
 ## Source: monitor-azure-search.md
 
 
 ---
 title: Azure Search Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-search
-scraped: 2026-02-16T09:36:27.388692
+scraped: 2026-02-17T04:59:36.966385
 ---
 
 # Azure Search Service monitoring
@@ -6893,7 +7419,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure SQL Data Warehouse (legacy)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-data-warehouse
-scraped: 2026-02-15T09:06:42.618830
+scraped: 2026-02-17T05:02:36.946591
 ---
 
 # Azure SQL Data Warehouse (legacy)
@@ -7178,7 +7704,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure SQL Database (vCore) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-database-vcore
-scraped: 2026-02-16T09:29:58.776764
+scraped: 2026-02-17T04:58:00.205544
 ---
 
 # Azure SQL Database (vCore) monitoring
@@ -7364,7 +7890,7 @@ This service monitors a part of Azure SQL (Microsoft.Sql/servers/elasticpools). 
 ---
 title: Azure SQL elastic pool (vCore) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-elastic-pool-vcore
-scraped: 2026-02-16T21:25:52.607782
+scraped: 2026-02-17T05:03:22.767179
 ---
 
 # Azure SQL elastic pool (vCore) monitoring
@@ -7484,7 +8010,7 @@ To learn how to enable service monitoring, see [Enable service monitoring](/docs
 ---
 title: Azure Standard Load Balancer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-standard-load-balancer
-scraped: 2026-02-16T21:28:07.372810
+scraped: 2026-02-17T05:09:08.489787
 ---
 
 # Azure Standard Load Balancer monitoring
@@ -7702,13 +8228,88 @@ This service monitors a part of Storage Account Classic (Microsoft.ClassicStorag
 ---
 
 
+## Source: monitor-azure-storage-sync.md
+
+
+---
+title: Azure Storage Sync monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-sync
+scraped: 2026-02-17T05:06:45.478103
+---
+
+# Azure Storage Sync monitoring
+
+# Azure Storage Sync monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Published Sep 23, 2020
+
+Dynatrace ingests metrics from Azure Metrics API for Azure Storage Sync. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Dynatrace version 1.203+
+* Environment ActiveGate version 1.195+
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+
+### View metrics on the custom device overview page
+
+To access the custom device overview page
+
+1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Filter by service name and select the relevant custom device group.
+3. Once you select the custom device group, you're on the **custom device group overview page**.
+4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+
+### View metrics on your dashboard
+
+If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+
+Hiding a dashboard doesn't affect other users.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Stor sync](https://dt-cdn.net/images/2021-03-12-11-36-41-1570-b719e71510.png)
+
+## Available metrics
+
+| Name | Description | Dimensions | Unit | Recommended |
+| --- | --- | --- | --- | --- |
+| ServerSyncSessionResult | Logs a value of `1` each time the server endpoint successfully completes a sync session with the cloud endpoint | Sync group name, Server endpoint name, Sync direction | Count | Applicable |
+| StorageSyncSyncSessionAppliedFilesCount | The number of files synced | Sync group name, Server endpoint name, Sync direction | Count | Applicable |
+| StorageSyncSyncSessionPerItemErrorsCount | The number of files that failed to sync | Sync group name, Server endpoint name, Sync direction | Count | Applicable |
+| StorageSyncBatchTransferredFileBytes | The total file size transferred for sync sessions | Sync group name, Server endpoint name, Sync direction | Byte | Applicable |
+| StorageSyncServerHeartbeat | Logs a value of `1` each time the registered server successfully records a heartbeat with the cloud endpoint | Server name | Count | Applicable |
+| StorageSyncRecallIOTotalSizeBytes | The total size of data recalled by the server | Server name | Byte |  |
+| StorageSyncRecalledTotalNetworkBytes | The size of data recalled | Sync group name, Server name | Byte |  |
+| StorageSyncRecallThroughputBytesPerSecond | The size of data recall throughput | Sync group name, Server name | BytePerSecond |  |
+| StorageSyncRecalledNetworkBytesByApplication | The size of data recalled by application | Sync group name, Server name, Application name | Byte |  |
+
+
+---
+
+
 ## Source: monitor-azure-stream-analytics.md
 
 
 ---
 title: Azure Stream Analytics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-stream-analytics
-scraped: 2026-02-15T21:26:47.751823
+scraped: 2026-02-17T04:57:31.079581
 ---
 
 # Azure Stream Analytics monitoring
@@ -7971,7 +8572,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Traffic Manager monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-traffic-manager
-scraped: 2026-02-15T21:24:41.249986
+scraped: 2026-02-17T04:57:20.933312
 ---
 
 # Azure Traffic Manager monitoring
@@ -8117,7 +8718,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-web-application-firewall-policies
-scraped: 2026-02-16T21:27:13.461185
+scraped: 2026-02-17T05:08:25.332961
 ---
 
 # Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
@@ -8184,7 +8785,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: All Azure cloud services
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics
-scraped: 2026-02-16T21:14:09.079548
+scraped: 2026-02-17T04:48:46.951574
 ---
 
 # All Azure cloud services
@@ -8392,7 +8993,7 @@ All cloud services consume DDUs. The amount of DDU consumption per service insta
 ---
 title: Trace Azure Functions written in .NET
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet
-scraped: 2026-02-16T21:23:46.874984
+scraped: 2026-02-17T04:56:20.092678
 ---
 
 # Trace Azure Functions written in .NET
@@ -9422,7 +10023,7 @@ The underlying issue can also affect other instrumentations. Therefore, we do no
 ---
 title: Trace Azure Functions written in Node.js
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs
-scraped: 2026-02-16T21:23:54.263643
+scraped: 2026-02-17T04:56:25.636919
 ---
 
 # Trace Azure Functions written in Node.js
@@ -10033,7 +10634,7 @@ Supported [Azure Functions programming modelï»¿](https://learn.microsoft.com/
 ---
 title: Trace Azure Functions written in Python
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python
-scraped: 2026-02-16T21:23:57.189344
+scraped: 2026-02-17T04:56:27.351489
 ---
 
 # Trace Azure Functions written in Python
@@ -10812,7 +11413,7 @@ For Azure Functions, monitoring consumption is based on Davis data units. See [S
 ---
 title: Monitor Azure Functions on App Service Plan for Windows
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions
-scraped: 2026-02-16T21:17:46.565631
+scraped: 2026-02-17T04:52:00.376987
 ---
 
 # Monitor Azure Functions on App Service Plan for Windows
@@ -11207,7 +11808,7 @@ See [Serverless monitoring](/docs/license/monitoring-consumption-classic/davis-d
 ---
 title: Monitor Azure Functions using Azure App Service (built-in)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions
-scraped: 2026-02-16T21:14:13.114368
+scraped: 2026-02-17T04:49:09.076435
 ---
 
 # Monitor Azure Functions using Azure App Service (built-in)
@@ -11897,7 +12498,7 @@ To monitor resources based on tags
 ---
 title: Set up metric events for alerting
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-metric-events-for-alerting
-scraped: 2026-02-16T21:30:18.656617
+scraped: 2026-02-17T05:05:40.015134
 ---
 
 # Set up metric events for alerting
@@ -12043,7 +12644,7 @@ If you disable any or all of the alerting rules, you can always re-enable them.
 ---
 title: Set up monitoring notifications with Azure Monitor alerts
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-monitoring-with-azure-alerts
-scraped: 2026-02-16T21:28:16.783094
+scraped: 2026-02-17T05:12:49.156842
 ---
 
 # Set up monitoring notifications with Azure Monitor alerts
@@ -12199,7 +12800,7 @@ See [Create activity log alerts on service notifications using the Azure portal�
 ---
 title: Tags and management zones for Azure integration
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/tags-and-management-zones-azure
-scraped: 2026-02-16T09:34:21.522868
+scraped: 2026-02-17T05:03:55.852738
 ---
 
 # Tags and management zones for Azure integration
@@ -12631,7 +13232,7 @@ This page presents common troubleshooting scenarios for Azure monitoring setup.
 ---
 title: Monitor Azure services with Azure Monitor metrics
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide
-scraped: 2026-02-16T21:14:03.165899
+scraped: 2026-02-17T04:48:42.043615
 ---
 
 # Monitor Azure services with Azure Monitor metrics
@@ -13683,7 +14284,7 @@ You can also monitor Azure logs. For more information, see [Azure Logs](/docs/in
 ---
 title: Monitor Azure Service Fabric
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-servicefabric
-scraped: 2026-02-16T21:14:10.411094
+scraped: 2026-02-17T04:48:54.744269
 ---
 
 # Monitor Azure Service Fabric
@@ -13824,7 +14425,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure Spring Apps
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring
-scraped: 2026-02-16T21:14:32.095890
+scraped: 2026-02-17T04:48:40.032289
 ---
 
 # Monitor Azure Spring Apps
@@ -14007,7 +14608,7 @@ Following a OneAgent update, you need to restart or redeploy your applications f
 ---
 title: Monitor Azure Virtual Machines (classic)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vm/monitor-azure-virtual-machines-classic
-scraped: 2026-02-15T21:24:04.399622
+scraped: 2026-02-17T05:06:52.360975
 ---
 
 # Monitor Azure Virtual Machines (classic)
@@ -14086,7 +14687,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure Virtual Machines
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vm
-scraped: 2026-02-16T21:13:54.720821
+scraped: 2026-02-17T04:48:38.670702
 ---
 
 # Monitor Azure Virtual Machines
@@ -14532,7 +15133,7 @@ See [network zones](/docs/manage/network-zones "Find out how network zones work 
 ---
 title: Monitor Azure Virtual Machine Scale Set (VMSS)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss
-scraped: 2026-02-16T21:13:59.173429
+scraped: 2026-02-17T04:49:10.814079
 ---
 
 # Monitor Azure Virtual Machine Scale Set (VMSS)
@@ -14953,7 +15554,7 @@ Restart-AzureRmVmss -ResourceGroupName "<Resource-Group>" -VMScaleSetName "<VMSS
 ---
 title: Azure Logs
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure
-scraped: 2026-02-16T21:14:14.612871
+scraped: 2026-02-17T04:49:14.725341
 ---
 
 # Azure Logs
@@ -15520,7 +16121,7 @@ To uninstall the Dynatrace Azure log forwarder
 ---
 title: Microsoft Azure Integrations
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations
-scraped: 2026-02-16T21:18:39.407411
+scraped: 2026-02-17T04:51:12.821485
 ---
 
 # Microsoft Azure Integrations
@@ -15567,7 +16168,7 @@ For more information, see [Monitor Azure services with Azure Monitor metrics](/d
 ---
 title: Azure Native Dynatrace Service
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration
-scraped: 2026-02-16T09:29:26.696608
+scraped: 2026-02-17T05:02:25.199421
 ---
 
 # Azure Native Dynatrace Service

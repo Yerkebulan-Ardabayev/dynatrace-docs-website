@@ -1,8 +1,8 @@
 # Dynatrace Documentation: analyze-explore-automate/logs
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 47
+Files combined: 49
 
 ---
 
@@ -99,7 +99,7 @@ For detailed instructions, see [Create log alerts for a log event or summary of 
 ---
 title: Log content analysis
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-analysis
-scraped: 2026-02-16T21:13:37.530039
+scraped: 2026-02-17T04:50:11.194019
 ---
 
 # Log content analysis
@@ -681,7 +681,7 @@ For more information, see [Log Management and Analytics best practices](/docs/an
 ---
 title: DQL matcher in logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher
-scraped: 2026-02-16T21:26:00.024268
+scraped: 2026-02-17T05:00:56.656564
 ---
 
 # DQL matcher in logs
@@ -1710,7 +1710,7 @@ If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 20
 ---
 title: Connect log data to traces
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-enrichment
-scraped: 2026-02-16T21:10:02.609613
+scraped: 2026-02-17T04:46:46.746687
 ---
 
 # Connect log data to traces
@@ -2905,7 +2905,7 @@ format: winston.format.simple()
 ---
 title: Syslog ingestion with ActiveGate
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog
-scraped: 2026-02-16T21:25:17.801391
+scraped: 2026-02-17T05:04:34.247832
 ---
 
 # Syslog ingestion with ActiveGate
@@ -4879,13 +4879,185 @@ The `level` severity key in the Log ingestion API request parameter contains the
 ---
 
 
+## Source: lma-log-ingestion-via-api.md
+
+
+---
+title: Log ingestion API
+source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api
+scraped: 2026-02-17T05:02:17.016639
+---
+
+# Log ingestion API
+
+# Log ingestion API
+
+* Latest Dynatrace
+* Overview
+* 3-min read
+* Updated on Oct 08, 2025
+
+## Ingest via Log ingestion API
+
+When unable to install OneAgent, use the Log ingestion API. For example, in serverless environments like AWS Fargate, where logging relies on a built-in log router such as Fluent Bit, which can be easily integrated with the Dynatrace Log ingestion API. The Log ingest API allows you to stream log records to the Grail data lakehouse, and have Dynatrace transform the stream into meaningful log messages. You can configure Log ingest API integration for the vast variety of use cases, and you can include custom integrations. You can use our supported integrations for clouds or log shippers and for your custom use cases.
+
+![log-api](https://dt-cdn.net/images/log-api-1980-03664b6a2d.png)
+
+You can configure Log ingestion API integration for any log shippers that integrate with Dynatrace REST API, e.g. [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector."), [Fluentbit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace."), [Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace.").
+
+Dynatrace automatically collects log and event data from a vast array of technologies. With the Log ingestion API, you can stream log records to a system and have Dynatrace transform the stream into meaningful log messages.
+
+![LMA - Generic log ingestion API](https://dt-cdn.net/images/lma-generic-log-ingestion-api-2500-090a5b5c43.png)
+
+The Log ingestion API allows you to stream log records to the system. It is available via [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") or via [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
+
+* For Dynatrace SaaS, the logs ingestion endpoint is available in your environment.
+* If the Environment ActiveGate is your choice for an endpoint in your local environment, install an ActiveGate instance: In Dynatrace Hub, select **ActiveGate** > **Set up**. The Log ingestion API v2 is automatically enabled on ActiveGate.
+* The endpoint is enabled by default on all of your ActiveGates.
+* ActiveGate is responsible for serving the endpoint, collecting the data, and forwarding it to Dynatrace in batches.
+* SaaS endpoints:
+
+  + `https://{your-environment-id}.live.dynatrace.com/api/v2/logs/ingest`
+  + `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/logs`
+* Environment ActiveGate endpoints:
+
+  + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`
+  + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/logs`
+* For Kubernetes environments, you can use [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.") or [Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.") to forward logs to Dynatrace.
+
+ActiveGate will collect and attempt to automatically transform any log data containing the following elements:
+
+* Log content
+* Timestamp
+* Key-Values attributes
+
+When using log processing with the custom processing pipeline (OpenPipeline), ingest supports all JSON data types for attribute values. This requires SaaS version 1.295+ when using the SaaS API endpoint or ActiveGate version 1.295+ when using the ActiveGate API endpoint. In all other cases, all ingested values are converted to the string type.
+
+### Retry failed requests
+
+API clients have to retry executing log ingestion requests that failed on retryable errors.
+
+Each API endpoint documentation specifies which response codes are retryable. When retrying, the client implements an exponential backoff strategy.
+
+## Log data queue
+
+You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate to set the following values:
+
+```
+[generic_ingest]
+
+
+
+#disk_queue_path=<custom_path> # defaults to temp folder
+
+
+
+#disk_queue_max_size_mb=<limit> # defaults to 300 MB
+```
+
+503 Usable space limit reached
+
+The log data ingestion API returns a `503 Usable space limit reached` error when the ingested log data exceeds the configured queue size. Typically, this is a temporary situation that occurs only during spikes. If this error persists, increase the value of `disk_queue_max_size_mb` in `custom.properties` to allow log ingestion spikes to be queued.
+
+## Example
+
+In this example, the API request ingests JSON log data that will create a log event with defined log attributes `content`, `status`, `service.name`, and `service.namespace`.
+
+The API token is passed in the Authorization header.
+
+The response contains response code `204`.
+
+#### Curl
+
+```
+curl -X POST \
+
+
+
+https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest \
+
+
+
+-H 'Content-Type: application/json; charset=utf-8' \
+
+
+
+-H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
+
+
+
+-d '[
+
+
+
+{
+
+
+
+"content": "Exception: Custom error log sent via Log ingestion API",
+
+
+
+"status": "error",
+
+
+
+"service.name": "log-monitoring-tenant",
+
+
+
+"service.namespace": "dev-stage-cluster"
+
+
+
+}
+
+
+
+]'
+```
+
+#### Request URL
+
+```
+https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest
+```
+
+#### Response content
+
+```
+Success
+```
+
+#### Response code
+
+`204`
+
+## Troubleshooting
+
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.").
+
+* [Troubleshooting log Ingestion via API - POST ingest logsï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
+
+## Related topics
+
+* [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.")
+* [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+* [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
+* [OpenTelemetry logs ingest API](/docs/dynatrace-api/environment-api/opentelemetry/post-logs "Send OpenTelemetry logs to Dynatrace via API.")
+* [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation "Log ingestion API automatically transforms log data into output values for the loglevel attribute.")
+
+
+---
+
+
 ## Source: lma-custom-log-source.md
 
 
 ---
 title: Custom log source
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source
-scraped: 2026-02-16T21:16:41.159894
+scraped: 2026-02-17T04:53:35.576938
 ---
 
 # Custom log source
@@ -5106,7 +5278,7 @@ Three hierarchy scopes are supported: host, host group, and environment. The nar
 ---
 title: Stream Kubernetes logs with Fluent Bit
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s
-scraped: 2026-02-16T21:31:46.553882
+scraped: 2026-02-17T05:10:56.158078
 ---
 
 # Stream Kubernetes logs with Fluent Bit
@@ -6142,7 +6314,7 @@ will result in additional `dt.trace_id` and `dt.span_id` attributes for log reco
 ---
 title: Log ingest rules
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration
-scraped: 2026-02-16T21:16:36.972750
+scraped: 2026-02-17T04:53:37.546296
 ---
 
 # Log ingest rules
@@ -7443,7 +7615,7 @@ Starting with OneAgent version `1.249`, you can activate/inactivate your rules b
 ---
 title: Stream Kubernetes logs with Dynatrace Log Module
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes
-scraped: 2026-02-16T21:32:06.885040
+scraped: 2026-02-17T04:57:24.698410
 ---
 
 # Stream Kubernetes logs with Dynatrace Log Module
@@ -8178,7 +8350,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Sensitive data masking in OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking
-scraped: 2026-02-16T21:16:35.332802
+scraped: 2026-02-17T04:53:39.478189
 ---
 
 # Sensitive data masking in OneAgent
@@ -9282,7 +9454,7 @@ Be aware of the following limitations to sensitive data masking:
 ---
 title: Timestamp/splitting configuration
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration
-scraped: 2026-02-16T21:16:42.658293
+scraped: 2026-02-17T04:53:33.870566
 ---
 
 # Timestamp/splitting configuration
@@ -9907,13 +10079,318 @@ To create a timestamp configuration using the API
 ---
 
 
+## Source: lma-windows-event-logs.md
+
+
+---
+title: Windows event logs
+source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-windows-event-logs
+scraped: 2026-02-17T04:58:52.303734
+---
+
+# Windows event logs
+
+# Windows event logs
+
+* Latest Dynatrace
+* Tutorial
+* Updated on Aug 15, 2025
+
+Windows Event Logs are a detailed record of notifications stored by the Windows operating system. These logs are used for troubleshooting and monitoring the health and security of a system. Dynatrace OneAgent is using native Windows API to gather all log records. There are three main logs:
+
+* Application Logs: Contains events logged by applications or programs.
+* System Logs: Contains events logged by Windows system components.
+* Security Logs: Contains security-related events like login attempts and resource access.
+
+Windows Event Logs are automatically detected and can be ingested using the Dynatrace OneAgent. You can provide custom Event Logs by the [Custom log source](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source#configure-log-source-mainclscuipage "Configure custom log sources to manually add log data sources that have not been autodetected.") configuration.
+
+## Configure Windows event logs ingestion
+
+There are multiple ways to configure your Windows event logs. To enable and customize their ingestion, follow the steps below.
+
+### Set query timeout
+
+Before you start the actual configuration, set the value for the **Windows Event Log query timeout**:
+
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Log monitoring** > **Advanced log settings**.
+2. In the **Windows Event Log query timeout** field, input a value, in seconds, to define the maximum timeout value for the query extracting the Windows Event Logs.
+
+### Enable Windows event log ingestion
+
+The following configuration allows Windows event logs to be ingested and ready for analysis. Follow the steps below:
+
+1. Go to **Settings** > **Log Monitoring** > **Log ingest rules**.
+2. Enable the **[Built-in] Windows system, application, and security logs** rule.
+
+If the **[Built-in] Ingest all logs** option is enabled, Windows event logs are automatically included, and no additional configuration is required to enable their ingestion.
+
+### Create an ingest rule based on the Windows event logs attributes
+
+The steps below are required in case you want to customize log ingest rules when you need to collect only specific Windows event logs based on their attributes, rather than ingesting all available logs.
+
+1. Go to **Settings** > **Log Monitoring** > **Log ingest rules**.
+2. Select **Add rule** and provide the name for your configuration in the **Rule name** field.
+3. Make sure that the **Include in storage** button is turned on, so logs matching this configuration will be stored in Dynatrace.
+4. Select **Add condition**.
+5. From the **Matcher attribute** dropdown, and select one or more of the Windows log [attributes](#attributes).
+6. Input the matcher in the **Value** field, according to the chosen attribute, and select **Add matcher**.
+7. Select **Save changes**.
+
+### Create an ingest rule based on the Windows event logs name
+
+The steps below are required in case you want to customize log ingest rules when you need to collect only specific Windows event logs based on their names, rather than ingesting all available logs.
+
+1. Go to **Settings** > **Log Monitoring** > **Log ingest rules**.
+2. Select **Add rule** and provide the name for your configuration in the **Rule name** field.
+3. Make sure that the **Include in storage** button is turned on, so logs matching this configuration will be stored in Dynatrace.
+4. Select **Add condition**.
+5. From the **Matcher [attribute](#attributes)** dropdown, and select **Log source**.
+6. Input one or more Windows log matchers in the **Value** field (**Windows Application Log**, **Windows Security Log**, or **Windows System Log**), and select **Add matcher**.
+7. Select **Save changes**.
+
+## Add a custom Windows event log source
+
+Custom Windows event log sources are useful when you need to ingest logs from custom application logs or logs created by third-party software. For example, if your organization has a custom application, you can use this feature to collect and analyze its own dedicated event logs in Dynatrace.
+
+To ingest custom Windows event logs, you can define a custom log source. Follow the steps below to configure and add a custom Windows event log source according to your requirements.
+
+1. Go to **Settings** > **Log Monitoring** > **Custom log sources**.
+2. Select **Add custom log source** and provide the name for your configuration in the **Rule name** field.
+3. Optional Bind your rule to a **Process group** by selecting the process group name from the dropdown menu.
+4. Select the **Windows Event** log option for the custom log source path.
+5. Select **Add custom log source path**, and enter the full name for the event log source.
+6. Select **Save changes**.
+7. If required, add the corresponding ingest rule.
+
+## Attributes selected in Windows event logs
+
+For Windows event logs, Log Monitoring detects the following fields and sends them as custom attributes:
+
+Semantic attribute name
+
+Configuration matcher name
+
+Event property
+
+Description
+
+`winlog.keywords`
+
+Windows log record keywords
+
+`Event.RenderingInfo.Keywords`
+
+A bitmask of the keywords defined in the event. Keywords are used to classify types of events (for example, events associated with reading data).
+
+`winlog.username`
+
+Windows log record user name
+
+`Event.System.Security.UserID`
+
+The user name of the event provider that logged the event.
+
+`winlog.level`
+
+`Event.RenderingInfo.Level`
+
+The severity level defined in the event. This attribute is not available in the configuration matchers, but you can use the **Log record level** instead.
+
+`winlog.eventid`
+
+Windows log record event ID
+
+`Event.System.EventID`
+
+The identifier that the provider used to identify the event.
+
+`winlog.provider`
+
+Windows log record source
+
+`Event.System.Provider.Name`
+
+Identifies the provider that logged the event.
+
+`winlog.task`
+
+Windows log record task category
+
+`Event.System.Task`
+
+The task defined in the event. Task and opcode are typically used to identify the location in the application from where the event was logged.
+
+`winlog.opcode`
+
+Windows log record operational code
+
+`Event.RenderingInfo.Opcode`
+
+The opcode defined in the event. Task and opcode are typcially used to identify the location in the application from where the event was logged.
+
+## Support for structured data
+
+This feature enables the collection of structured data from Windows Event Logs in the **User Data** or **Event Data** branches (depending on the availability), along with their sub-branches. The collected data is transmitted along with the record content in the form of attributes.
+
+To enable this feature, go to **Settings** > **Log Monitoring** > **Log module feature flags**, and enable the **Support for structured data in Windows Event Logs** feature flag.
+
+Attribute names are assigned based on available information, such as tag names, the value of the **Name** field, or, if tag names are repeated and the **Name** field is absent, a sequential number is added to the tag name.
+
+* Sub-branches without values and tags labeled as Binary are omitted.
+* A prefix is always added to the attribute name `winlog.data`.
+* Numbering of consecutive fields (if necessary, the same attribute name) also includes fields with empty values.
+
+Given below are examples of branches and attributes:
+
+Data in the EventData section
+
+Event log raw data:
+
+```
+- <EventData>
+
+
+
+<Data Name="CallerProcessId">16548</Data>
+
+
+
+<Data Name="CallerProcessImageName">vctip</Data>
+
+
+
+<Data Name="Type">client</Data>
+
+
+
+</EventData>
+```
+
+Parsed attributes:
+
+```
+AttributeKey: winlog.data.CallerProcessId, AttributeValue: 16548
+
+
+
+AttributeKey: winlog.data.CallerProcessImageName, AttributeValue: vctip
+
+
+
+AttributeKey: winlog.data.Type, AttributeValue: client
+```
+
+Data in the UserData section
+
+Event log raw data:
+
+```
+- <UserData>
+
+
+
+-   <CbsPackageChangeState xmlns="http://manifests.microsoft.com/win/2004/08/windows/setup_provider">
+
+
+
+<PackageIdentifier>KB5058405</PackageIdentifier>
+
+
+
+<IntendedPackageState>5112</IntendedPackageState>
+
+
+
+<IntendedPackageStateTextized></IntendedPackageStateTextized>
+
+
+
+</CbsPackageChangeState>
+
+
+
+</UserData>
+```
+
+Parsed attributes:
+
+```
+AttributeKey: winlog.data.CbsPackageChangeState.<xmlattr>.xmlns, AttributeValue: http://manifests.microsoft.com/win/2004/08/windows/setup_provider
+
+
+
+AttributeKey: winlog.data.CbsPackageChangeState.PackageIdentifier, AttributeValue: KB5058405
+
+
+
+AttributeKey: winlog.data.CbsPackageChangeState.IntendedPackageState, AttributeValue: 5112
+```
+
+Binary data and empty data fields
+
+Event log raw data:
+
+```
+- <EventData>
+
+
+
+<Data>WinRT Intellisense PPI - en-us</Data>
+
+
+
+<Data>10.1.19041.685</Data>
+
+
+
+<Data>(NULL)</Data>
+
+
+
+<Data />
+
+
+
+<Binary>7B31354532394146462D434231392D413230422D394138312D4230373635413633313135467D3030303063306133616532343933363166643732376335306533653966623534363139633030303030393034</Binary>
+
+
+
+<Data>Test</Data>
+
+
+
+</EventData>
+```
+
+Parsed attributes:
+
+```
+AttributeKey: winlog.data.Data1, AttributeValue: WinRT Intellisense PPI - en-us
+
+
+
+AttributeKey: winlog.data.Data2, AttributeValue: 10.1.19041.685
+
+
+
+AttributeKey: winlog.data.Data3, AttributeValue: (NULL)
+
+
+
+AttributeKey: winlog.data.Data5, AttributeValue: Test
+```
+
+
+---
+
+
 ## Source: lma-log-ingestion-via-oa.md
 
 
 ---
 title: Log ingestion via OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa
-scraped: 2026-02-16T21:32:32.222063
+scraped: 2026-02-17T05:09:45.187373
 ---
 
 # Log ingestion via OneAgent
@@ -10372,7 +10849,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Push logs with Cloudflare
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-push-logs-with-cloudflare
-scraped: 2026-02-15T21:24:49.378833
+scraped: 2026-02-17T05:00:53.011486
 ---
 
 # Push logs with Cloudflare
@@ -11421,7 +11898,7 @@ Log Monitoring API automatically process ingested logs by:
 ---
 title: Log processing with OpenPipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline
-scraped: 2026-02-16T21:12:09.072168
+scraped: 2026-02-17T04:48:27.347071
 ---
 
 # Log processing with OpenPipeline
@@ -11659,7 +12136,7 @@ Check the following use cases to learn how to leverage log processing with OpenP
 ---
 title: Log pre-processing with OpenPipeline with ready-made bundles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing
-scraped: 2026-02-16T21:25:14.999144
+scraped: 2026-02-17T05:02:55.343812
 ---
 
 # Log pre-processing with OpenPipeline with ready-made bundles
@@ -11847,7 +12324,7 @@ We recommend utilizing log processing with OpenPipeline as a scalable, powerful 
 ---
 title: Filter with facets
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/facets
-scraped: 2026-02-16T21:11:57.004810
+scraped: 2026-02-17T04:47:52.315086
 ---
 
 # Filter with facets
@@ -11927,7 +12404,7 @@ If you have previously modified the facets, to revert to the default settings fo
 ---
 title: Limits in Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/limits
-scraped: 2026-02-16T21:11:55.652873
+scraped: 2026-02-17T04:47:58.794001
 ---
 
 # Limits in Logs
@@ -11977,7 +12454,7 @@ To adjust the limits for your queries in ![Logs](https://dt-cdn.net/images/logs-
 ---
 title: Spot trends with the log distribution chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart
-scraped: 2026-02-16T21:11:58.334785
+scraped: 2026-02-17T04:47:49.055393
 ---
 
 # Spot trends with the log distribution chart
@@ -12043,7 +12520,7 @@ The log distribution chart may be based on sampled data, which means the display
 ---
 title: Adjust the log message
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/message
-scraped: 2026-02-16T21:11:51.613959
+scraped: 2026-02-17T04:47:50.692967
 ---
 
 # Adjust the log message
@@ -12289,7 +12766,7 @@ The log message is detected in a key/value pair for the following keys:
 ---
 title: Query and filter logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter
-scraped: 2026-02-16T21:11:52.946958
+scraped: 2026-02-17T04:47:57.150811
 ---
 
 # Query and filter logs
@@ -12406,7 +12883,7 @@ Note that suggestions are presented based on actual values queried in the backgr
 ---
 title: View surrounding logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs
-scraped: 2026-02-16T21:11:54.304422
+scraped: 2026-02-17T04:47:53.921450
 ---
 
 # View surrounding logs
@@ -12446,7 +12923,7 @@ The surrounding logs are shown for the context provided by the log record.
 ---
 title: Logs app
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app
-scraped: 2026-02-16T21:09:56.243518
+scraped: 2026-02-17T04:45:21.537305
 ---
 
 # Logs app
@@ -12765,7 +13242,7 @@ If OneAgent is not ingesting log records from a log file despite a log file is c
 ---
 title: Set up alerts based on events extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events
-scraped: 2026-02-16T09:28:59.648138
+scraped: 2026-02-17T05:01:25.768856
 ---
 
 # Set up alerts based on events extracted from logs
@@ -12896,7 +13373,7 @@ More information about event properties is available at:
 ---
 title: Set up custom alerts based on metrics extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics
-scraped: 2026-02-16T21:32:41.987545
+scraped: 2026-02-17T04:57:42.723210
 ---
 
 # Set up custom alerts based on metrics extracted from logs
@@ -13027,7 +13504,7 @@ Detected anomalies can trigger automations using simple workflows as described i
 ---
 title: Detect problems with Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs
-scraped: 2026-02-15T21:27:35.172685
+scraped: 2026-02-17T05:02:01.273233
 ---
 
 # Detect problems with Logs
@@ -13261,7 +13738,7 @@ Otherwise, your next step should be to contact the team responsible for maintain
 ---
 title: Create log metric
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric
-scraped: 2026-02-16T21:12:46.808954
+scraped: 2026-02-17T05:04:13.502966
 ---
 
 # Create log metric
@@ -13478,7 +13955,7 @@ For more information, check the **Related topics** section and see [Log Manageme
 ---
 title: Optimize performance and costs of dashboards running log queries
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-log-query-dashboard
-scraped: 2026-02-16T09:36:18.947391
+scraped: 2026-02-17T05:09:42.906105
 ---
 
 # Optimize performance and costs of dashboards running log queries
@@ -13707,7 +14184,7 @@ Best practices:
 ---
 title: Log Management and Analytics use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases
-scraped: 2026-02-16T21:21:27.241888
+scraped: 2026-02-17T05:04:31.245867
 ---
 
 # Log Management and Analytics use cases
@@ -13809,7 +14286,7 @@ Using a combination of metrics based on logs and [custom alerts](/docs/dynatrace
 ---
 title: Log on Grail examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-on-grail-examples
-scraped: 2026-02-16T21:15:12.711737
+scraped: 2026-02-17T04:54:58.881752
 ---
 
 # Log on Grail examples

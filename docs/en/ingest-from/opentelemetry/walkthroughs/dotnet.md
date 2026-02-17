@@ -1,7 +1,7 @@
 ---
 title: Instrument your .NET application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/dotnet
-scraped: 2026-02-15T21:25:49.684876
+scraped: 2026-02-17T05:01:47.451090
 ---
 
 # Instrument your .NET application with OpenTelemetry

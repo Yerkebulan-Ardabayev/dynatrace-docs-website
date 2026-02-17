@@ -1,7 +1,7 @@
 ---
 title: Azure Container Apps Environment monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-apps-environment
-scraped: 2026-02-16T09:40:06.259858
+scraped: 2026-02-17T04:58:34.984957
 ---
 
 # Azure Container Apps Environment monitoring

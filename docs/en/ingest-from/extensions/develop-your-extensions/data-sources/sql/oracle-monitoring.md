@@ -1,7 +1,7 @@
 ---
 title: Oracle Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
-scraped: 2026-02-16T21:24:47.757564
+scraped: 2026-02-17T05:11:23.955718
 ---
 
 # Oracle Database monitoring configuration

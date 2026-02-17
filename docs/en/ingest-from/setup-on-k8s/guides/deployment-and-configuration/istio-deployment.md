@@ -1,7 +1,7 @@
 ---
 title: Deploy Dynatrace alongside Istio
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment
-scraped: 2026-02-16T21:14:23.962632
+scraped: 2026-02-17T04:49:19.800029
 ---
 
 # Deploy Dynatrace alongside Istio

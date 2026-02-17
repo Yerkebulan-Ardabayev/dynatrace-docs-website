@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/opentelemetry
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 40
 
@@ -238,7 +238,7 @@ If this configuration option is not specified, the default behavior depends on w
 ---
 title: Deploy Dynatrace OTel Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/deployment
-scraped: 2026-02-16T21:26:14.137029
+scraped: 2026-02-17T05:06:26.744337
 ---
 
 # Deploy Dynatrace OTel Collector
@@ -1825,7 +1825,7 @@ Container images for the Dynatrace distribution of the OpenTelemetry Collector a
 ---
 title: How to scale the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/scaling
-scraped: 2026-02-16T21:26:04.100687
+scraped: 2026-02-17T05:04:22.999483
 ---
 
 # How to scale the OpenTelemetry Collector
@@ -2426,7 +2426,7 @@ This table shows the load results with different scenarios.
 ---
 title: Batch OTLP requests with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/batch
-scraped: 2026-02-16T09:39:01.857031
+scraped: 2026-02-17T05:07:06.562681
 ---
 
 # Batch OTLP requests with the OpenTelemetry Collector
@@ -2695,14 +2695,14 @@ For more information see:
 
 
 ---
-title: Enrich with OneAgent (non-containerized)
+title: Enrich OTLP with OneAgent data (non-containerized)
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/enrich
-scraped: 2026-02-15T21:25:58.996874
+scraped: 2026-02-17T05:06:37.065527
 ---
 
-# Enrich with OneAgent (non-containerized)
+# Enrich OTLP with OneAgent data (non-containerized)
 
-# Enrich with OneAgent (non-containerized)
+# Enrich OTLP with OneAgent data (non-containerized)
 
 * Latest Dynatrace
 * How-to guide
@@ -2721,14 +2721,14 @@ Enrichment is specific to non-container OneAgent environments. Configuring a con
 
 * One of the following Collector distributions with the [Resource Detection processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/resourcedetectionprocessor):
 
-  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace Collector.")
-  + OpenTelemetry [Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace Collector.")
-  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace Collector.")
+  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
+  + OpenTelemetry [Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace OTel Collector.")
+  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace OTel Collector.")
 * A OneAgent running on the same host as the Collector, where the OneAgent monitors in either Full-Stack, Infrastructure, or Foundation & Discovery mode.
 * The [Dynatrace API endpoint URL](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported, configured as system environment variable
 * An [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate), configured as system environment variable
 
-See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Demo configuration
 
@@ -2854,7 +2854,7 @@ exporters: [otlp_http]
 
 Configuration validation
 
-[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "Configure the OpenTelemetry Collector.") to avoid any configuration issues.
+[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
 
 ## Components
 
@@ -2905,7 +2905,7 @@ Under `service`, we assemble our receiver, processor, and exporter objects into 
 ---
 title: Transform OTLP gRPC to HTTP with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/grpc
-scraped: 2026-02-16T21:28:04.681933
+scraped: 2026-02-17T05:08:18.584161
 ---
 
 # Transform OTLP gRPC to HTTP with the OpenTelemetry Collector
@@ -3303,14 +3303,14 @@ For more information see:
 
 
 ---
-title: Ingest data from Jaeger
+title: Ingest Jaeger data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/jaeger
-scraped: 2026-02-15T21:29:51.433854
+scraped: 2026-02-17T05:07:56.609579
 ---
 
-# Ingest data from Jaeger
+# Ingest Jaeger data with the OpenTelemetry Collector
 
-# Ingest data from Jaeger
+# Ingest Jaeger data with the OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -3323,13 +3323,13 @@ The following configuration example shows how you configure a Collector instance
 
 * One of the following Collector distributions with the [Jaeger receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/receiver/jaegerreceiver):
 
-  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace Collector.")
-  + [OpenTelemetry Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace Collector.")
-  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace Collector.")
+  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
+  + [OpenTelemetry Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace OTel Collector.")
+  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace OTel Collector.")
 * The [Dynatrace API endpoint URL](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported
 * An [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate)
 
-See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Demo configuration
 
@@ -3395,7 +3395,7 @@ exporters: [otlp_http]
 
 Configuration validation
 
-[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "Configure the OpenTelemetry Collector.") to avoid any configuration issues.
+[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
 
 ## Components
 
@@ -3423,7 +3423,7 @@ Under `service`, we eventually assemble our receiver and exporter objects into a
 ## Related topics
 
 * [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
-* [Enrich from Kubernetes](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
+* [Enrich OTLP requests with Kubernetes data](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
 
 
 ---
@@ -3683,7 +3683,7 @@ For more information see:
 ---
 title: Ingest NetFlow with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/netflow
-scraped: 2026-02-16T09:36:41.035749
+scraped: 2026-02-17T05:09:32.786673
 ---
 
 # Ingest NetFlow with the OpenTelemetry Collector
@@ -3913,7 +3913,7 @@ For more information see:
 ---
 title: Scrape Promethus metrics with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/prometheus
-scraped: 2026-02-16T21:28:10.118170
+scraped: 2026-02-17T04:58:50.642575
 ---
 
 # Scrape Promethus metrics with the OpenTelemetry Collector
@@ -4802,7 +4802,7 @@ Under `service`, we eventually assemble all the configured objects into pipeline
 ---
 title: Sampling with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/sampling
-scraped: 2026-02-16T09:28:00.427278
+scraped: 2026-02-17T05:04:00.823679
 ---
 
 # Sampling with the OpenTelemetry Collector
@@ -5106,7 +5106,7 @@ For more information see:
 ---
 title: Transform and filter data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/transform
-scraped: 2026-02-16T21:31:42.344824
+scraped: 2026-02-17T05:10:18.726173
 ---
 
 # Transform and filter data with the OpenTelemetry Collector
@@ -5651,7 +5651,7 @@ Under `service`, we eventually assemble our receiver and exporter objects into a
 ---
 title: OpenTelemetry Collector use cases
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases
-scraped: 2026-02-16T21:32:26.503593
+scraped: 2026-02-17T05:09:30.032663
 ---
 
 # OpenTelemetry Collector use cases
@@ -5867,7 +5867,7 @@ Services are used to define pipelines that channel data through the Collector. T
 ---
 title: Get started with OpenTelemetry and Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/getting-started
-scraped: 2026-02-16T21:10:06.854716
+scraped: 2026-02-17T04:46:51.595495
 ---
 
 # Get started with OpenTelemetry and Dynatrace
@@ -5905,7 +5905,7 @@ How to calculate DPS consumption related to OpenTelemetry.](/docs/ingest-from/op
 ---
 title: Configure OpenTelemetry tracing with Envoy
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/integrations/envoy
-scraped: 2026-02-16T21:13:50.509458
+scraped: 2026-02-17T04:49:05.829332
 ---
 
 # Configure OpenTelemetry tracing with Envoy
@@ -6069,7 +6069,7 @@ Once the setup is complete and you have ingested your first data, you can verify
 ---
 title: Configure OpenTelemetry tracing with Istio
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/integrations/istio
-scraped: 2026-02-16T21:31:10.478249
+scraped: 2026-02-17T05:05:47.206005
 ---
 
 # Configure OpenTelemetry tracing with Istio
@@ -6358,7 +6358,7 @@ This page provides information on how to configure Istio and Envoy to export Ope
 ---
 title: OpenTelemetry licensing
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/opentelemetry-licensing
-scraped: 2026-02-16T21:12:53.554036
+scraped: 2026-02-17T05:00:27.206690
 ---
 
 # OpenTelemetry licensing
@@ -6491,7 +6491,7 @@ These are described on the respective DPS capability page:
 ---
 title: Set up Grail permissions for OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/opentelemetry-security-context
-scraped: 2026-02-16T21:13:02.782266
+scraped: 2026-02-17T05:12:17.892609
 ---
 
 # Set up Grail permissions for OpenTelemetry
@@ -6556,7 +6556,7 @@ To read more about enrichment options and setup, see how to [enrich via environm
 ---
 title: Ingest OTLP logs
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-logs
-scraped: 2026-02-16T21:30:49.394236
+scraped: 2026-02-17T05:11:30.974586
 ---
 
 # Ingest OTLP logs
@@ -7617,7 +7617,7 @@ Applications using official OpenTelemetry SDKs cannot produce summary metrics.
 ---
 title: Ingest OTLP traces
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-traces
-scraped: 2026-02-15T21:29:05.798631
+scraped: 2026-02-17T05:07:44.626413
 ---
 
 # Ingest OTLP traces
@@ -8111,7 +8111,7 @@ See this [GitHub readmeï»¿](https://github.com/open-telemetry/opentelemetry-c
 ---
 title: Instrument your C++ application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/cpp
-scraped: 2026-02-16T21:18:19.921884
+scraped: 2026-02-17T04:51:34.394728
 ---
 
 # Instrument your C++ application with OpenTelemetry
@@ -9388,7 +9388,7 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 ---
 title: Instrument your .NET application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/dotnet
-scraped: 2026-02-15T21:25:49.684876
+scraped: 2026-02-17T05:01:47.451090
 ---
 
 # Instrument your .NET application with OpenTelemetry
@@ -10375,7 +10375,7 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 ---
 title: Instrument your Erlang application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/erlang
-scraped: 2026-02-16T21:18:08.755746
+scraped: 2026-02-17T04:50:55.856153
 ---
 
 # Instrument your Erlang application with OpenTelemetry
@@ -11625,7 +11625,7 @@ The following features are currently supported by OpenTelemetry Java.
 ---
 title: Instrument your JavaScript application on Node.js with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/nodejs
-scraped: 2026-02-16T21:25:31.878751
+scraped: 2026-02-17T05:07:08.426197
 ---
 
 # Instrument your JavaScript application on Node.js with OpenTelemetry
@@ -12173,7 +12173,7 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 ---
 title: Instrument your Python application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/python
-scraped: 2026-02-16T21:12:42.699456
+scraped: 2026-02-17T04:51:53.335441
 ---
 
 # Instrument your Python application with OpenTelemetry
@@ -12214,7 +12214,7 @@ The following features are currently supported by OpenTelemetry Python.
 ---
 title: Instrument your Ruby application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/ruby
-scraped: 2026-02-16T21:18:38.102966
+scraped: 2026-02-17T04:51:46.831609
 ---
 
 # Instrument your Ruby application with OpenTelemetry
@@ -12600,7 +12600,7 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 ---
 title: Instrument your Rust application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/rust
-scraped: 2026-02-16T21:17:48.305851
+scraped: 2026-02-17T04:51:44.061499
 ---
 
 # Instrument your Rust application with OpenTelemetry

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-intelligence/copilot.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/technology-support
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 23
 
@@ -13,7 +13,7 @@ Files combined: 23
 ---
 title: C++
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/cpp
-scraped: 2026-02-16T21:17:59.950048
+scraped: 2026-02-17T04:51:55.047474
 ---
 
 # C++
@@ -42,7 +42,7 @@ You can send data from your C++ application to Dynatrace via OpenTelemetry. See 
 ---
 title: .NET
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/dotnet
-scraped: 2026-02-16T21:18:32.613703
+scraped: 2026-02-17T04:51:23.682529
 ---
 
 # .NET
@@ -431,7 +431,7 @@ Consider also the following information:
 ---
 title: Erlang/Elixir
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/erlang-elixir
-scraped: 2026-02-16T21:18:29.788186
+scraped: 2026-02-17T04:52:06.503725
 ---
 
 # Erlang/Elixir
@@ -460,7 +460,7 @@ You can send data from your Erlang/Elixir application to Dynatrace via OpenTelem
 ---
 title: Supported Go versions
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/go/support/supported-go-versions
-scraped: 2026-02-16T21:18:10.130820
+scraped: 2026-02-17T04:52:22.844942
 ---
 
 # Supported Go versions
@@ -763,7 +763,7 @@ metadata is not used. You can find OneAgent features at **Settings** > **Prefere
 ---
 title: Go
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/go
-scraped: 2026-02-16T21:18:07.371775
+scraped: 2026-02-17T04:52:16.228553
 ---
 
 # Go
@@ -839,7 +839,7 @@ Dynatrace provides extensive Go monitoring capabilities:
 ---
 title: GraalVM Native Image
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/graalvm-native-image
-scraped: 2026-02-16T21:14:33.516092
+scraped: 2026-02-17T04:48:45.644469
 ---
 
 # GraalVM Native Image
@@ -1400,7 +1400,7 @@ jvmArgs.addAll(
 ---
 title: Red Hat Quarkus native applications monitoring
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/quarkus
-scraped: 2026-02-16T21:26:15.643249
+scraped: 2026-02-17T05:07:36.093923
 ---
 
 # Red Hat Quarkus native applications monitoring
@@ -2175,7 +2175,7 @@ For the procedure below, we assume your application writes logs to the `/var/log
 ---
 title: Out-of-memory (OOM) and out-of-threads (OOT) events and alerting
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/set-up-event-and-memory-alerting
-scraped: 2026-02-16T21:26:34.951592
+scraped: 2026-02-17T05:00:11.079156
 ---
 
 # Out-of-memory (OOM) and out-of-threads (OOT) events and alerting
@@ -2271,7 +2271,7 @@ Alternatively, you can create alerts only for specific metric events.
 ---
 title: Java
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java
-scraped: 2026-02-16T21:18:05.997298
+scraped: 2026-02-17T04:51:08.689156
 ---
 
 # Java
@@ -2336,7 +2336,7 @@ For more information, see [Process logs with technology bundle parsers](/docs/pl
 ---
 title: Kong Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nginx/kong-gateway
-scraped: 2026-02-16T21:17:54.102015
+scraped: 2026-02-17T04:52:08.229448
 ---
 
 # Kong Gateway monitoring
@@ -2746,7 +2746,7 @@ If you're running on Kubernetes, you can enrich traces, metrics, and logs using 
 ---
 title: Runtime instrumentation
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation
-scraped: 2026-02-16T21:17:49.629813
+scraped: 2026-02-17T04:51:48.492674
 ---
 
 # Runtime instrumentation
@@ -2806,7 +2806,7 @@ DT_NGINX_FORCE_RUNTIME_INSTRUMENTATION=on
 ---
 title: NGINX
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nginx
-scraped: 2026-02-16T21:17:42.381034
+scraped: 2026-02-17T04:50:58.623355
 ---
 
 # NGINX
@@ -11114,7 +11114,7 @@ For more information, see [Process logs with technology bundle parsers](/docs/pl
 ---
 title: Node.js
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nodejs
-scraped: 2026-02-16T21:17:45.139453
+scraped: 2026-02-17T04:52:24.464896
 ---
 
 # Node.js
@@ -11500,7 +11500,7 @@ For more information, see [Process logs with technology bundle parsers](/docs/pl
 ---
 title: PHP
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/php
-scraped: 2026-02-16T21:18:11.457572
+scraped: 2026-02-17T04:51:28.527315
 ---
 
 # PHP
@@ -11558,7 +11558,7 @@ See [the environments and versions that Dynatrace supports](/docs/ingest-from/te
 ---
 title: Ruby
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/ruby
-scraped: 2026-02-16T21:17:34.571776
+scraped: 2026-02-17T04:51:51.722758
 ---
 
 # Ruby
@@ -11586,7 +11586,7 @@ You can send data from your Ruby application to Dynatrace via OpenTelemetry. See
 ---
 title: Rust
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/rust
-scraped: 2026-02-16T21:18:15.366609
+scraped: 2026-02-17T04:52:11.787426
 ---
 
 # Rust
@@ -11643,7 +11643,7 @@ The following runtimes can be monitored within Dynatrace.
 ---
 title: Known solutions and workarounds
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/known-solutions-and-workarounds
-scraped: 2026-02-16T21:17:43.803918
+scraped: 2026-02-17T04:51:20.353852
 ---
 
 # Known solutions and workarounds
@@ -12328,7 +12328,7 @@ The dispatcher needs to be configured to cache the response header "X-OneAgent-J
 ---
 title: Mainframe technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/mainframe-technology-support
-scraped: 2026-02-16T21:16:48.141541
+scraped: 2026-02-17T04:52:01.491190
 ---
 
 # Mainframe technology support
@@ -12514,7 +12514,7 @@ Only the [Db2 JDBC driver typesï»¿](https://www.ibm.com/docs/en/sdi/7.2.0.3?t
 ---
 title: OneAgent platform and capability support matrix
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix
-scraped: 2026-02-16T21:14:59.756448
+scraped: 2026-02-17T04:51:58.653547
 ---
 
 # OneAgent platform and capability support matrix
@@ -12769,7 +12769,7 @@ For a detailed overview of limitations, see [Set up Dynatrace OneAgent as a Dock
 ---
 title: Serverless compute support matrix
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/serverless-compute-services
-scraped: 2026-02-16T21:17:57.123845
+scraped: 2026-02-17T04:52:10.147142
 ---
 
 # Serverless compute support matrix
@@ -13574,7 +13574,7 @@ Node.js
 ---
 title: Dynatrace Operator support and known issues
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/support-model-and-issues
-scraped: 2026-02-16T21:18:33.910731
+scraped: 2026-02-17T04:52:17.868185
 ---
 
 # Dynatrace Operator support and known issues
@@ -13753,7 +13753,7 @@ The automatic TLS certificate feature requires ActiveGate version 1.307.35+.
 ---
 title: Dynatrace support model for VMware Tanzu Application Service
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/support-model-for-pivotal-platform
-scraped: 2026-02-16T21:17:33.227446
+scraped: 2026-02-17T04:52:14.635129
 ---
 
 # Dynatrace support model for VMware Tanzu Application Service

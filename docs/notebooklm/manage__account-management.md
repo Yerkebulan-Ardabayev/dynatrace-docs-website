@@ -1,6 +1,6 @@
 # Dynatrace Documentation: manage/account-management
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Subscription or license overview
 source: https://www.dynatrace.com/docs/manage/account-management/license-subscription
-scraped: 2026-02-16T21:27:35.481845
+scraped: 2026-02-17T05:09:57.466469
 ---
 
 # Subscription or license overview

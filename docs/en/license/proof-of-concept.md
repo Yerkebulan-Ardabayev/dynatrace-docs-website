@@ -1,7 +1,7 @@
 ---
 title: Proof of Concept for existing DPS subscriptions
 source: https://www.dynatrace.com/docs/license/proof-of-concept
-scraped: 2026-02-16T09:38:57.121930
+scraped: 2026-02-17T04:56:45.123192
 ---
 
 # Proof of Concept for existing DPS subscriptions

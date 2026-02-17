@@ -1,8 +1,8 @@
 # Dynatrace Documentation: ingest-from/setup-on-container-platforms
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 6
+Files combined: 7
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 6
 ---
 title: Set up Dynatrace on Cloud Foundry
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/cloud-foundry
-scraped: 2026-02-16T21:14:56.797632
+scraped: 2026-02-17T04:52:19.503626
 ---
 
 # Set up Dynatrace on Cloud Foundry
@@ -302,7 +302,7 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
 ---
 title: Set up Dynatrace on Docker
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/docker
-scraped: 2026-02-16T21:14:00.466524
+scraped: 2026-02-17T04:48:30.672475
 ---
 
 # Set up Dynatrace on Docker
@@ -338,7 +338,7 @@ In a typical scenario, container orchestration and management tools such as Kube
 ---
 title: Set up Dynatrace on Heroku
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/heroku
-scraped: 2026-02-16T21:14:25.349686
+scraped: 2026-02-17T04:48:34.019971
 ---
 
 # Set up Dynatrace on Heroku
@@ -511,7 +511,7 @@ If you've specified a default OneAgent install version for new hosts and applica
 ---
 title: Deploy OneAgent Operator on Kubernetes (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-k8s-legacy
-scraped: 2026-02-16T09:32:00.557358
+scraped: 2026-02-17T05:01:49.338787
 ---
 
 # Deploy OneAgent Operator on Kubernetes (deprecated)
@@ -1749,6 +1749,67 @@ helm uninstall dynatrace-oneagent-operator -n dynatrace
 * [Kubernetes Classic](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.")
 * [Store Dynatrace images in private registries](/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Store Dynatrace images in private registries")
 * [Migrate Dynatrace Operator to a new environment](/docs/ingest-from/setup-on-k8s/guides/migration/migrate-dto-to-tenant "Migrate monitoring to a new Dynatrace environment on Kubernetes clusters.")
+
+
+---
+
+
+## Source: oneagent-privileges.md
+
+
+---
+title: OneAgent privileges for container monitoring
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/oneagent-privileges
+scraped: 2026-02-17T05:03:33.409684
+---
+
+# OneAgent privileges for container monitoring
+
+# OneAgent privileges for container monitoring
+
+* Latest Dynatrace
+* 2-min read
+* Published Mar 08, 2023
+
+Dynatrace supports Full-Stack Monitoring for container platforms, from the application down to the infrastructure layer. This requires elevated privileges to get container-level metrics and perform deep-code host monitoring, including OneAgent injection into processes.
+
+However, if you don't want to grant elevated privileges to OneAgent, or you don't have access to the infrastructure layer, you can go with application-only monitoring.
+
+For Kubernetes, Dynatrace Operatorâbased application-only monitoring still provides you with a good scope of data, such as node-level insights (basic metrics and alerting) based on data retrieved by the ActiveGate from Kubernetes API, or Prometheus metrics.
+
+## Full-stack injection
+
+The OneAgent container and underlying host share selected Linux namespaces for OneAgent to be able to access data required for full-stack monitoring:
+
+* Shared network namespace enables processes running inside the container to directly access host network interfaces.
+* Shared PID namespace enables processes running inside the container to see and work with all the processes from the host process table.
+* Mounted host's root filesystem is accessed by all OneAgent modules and allows for log files access, disk metrics, and other full-stack monitoring capabilities.
+
+During monitoring, the scope of required permissions for each process is limited using specific [Linux System Capabilities](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged#linux-system-capabilities "Find out when Dynatrace OneAgent requires root privileges on Linux.").
+
+You can achieve full-stack injection using the following deployment modes:
+
+* Dynatrace Operator on Kubernetes/OpenShift
+
+  + [Cloud-native full-stack mode](/docs/ingest-from/setup-on-k8s/how-it-works#cloud-native "In-depth description on how the deployment on Kubernetes works.")
+  + [Classic full-stack mode](/docs/ingest-from/setup-on-k8s/how-it-works#classic "In-depth description on how the deployment on Kubernetes works.")
+* Docker outside a container platform
+
+  + [OneAgent as a Docker container](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container "Install and update Dynatrace OneAgent as a Docker container.")
+
+### OneAgent on Docker host
+
+Alternatively, you can also deploy OneAgent on the Docker host on Linux. In this scenario, OneAgent does not run in a container but directly on the host, so there is no Linux namespace isolation. For more information, see [OneAgent on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.").
+
+## Application-only injection
+
+OneAgent deployed in application-only mode doesn't run as a privileged container.
+
+For more information, see:
+
+* [Get started with Kubernetes platform monitoring + Application observability](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes")
+* [Deploy OneAgent on Cloud Foundry for application-only monitoring](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring "Install OneAgent on Cloud Foundry.")
+* [Set up OneAgent on containers for application-only monitoring](/docs/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.")
 
 
 ---

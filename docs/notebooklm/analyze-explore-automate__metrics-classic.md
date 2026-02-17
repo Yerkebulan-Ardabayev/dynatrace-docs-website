@@ -1,6 +1,6 @@
 # Dynatrace Documentation: analyze-explore-automate/metrics-classic
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 2
 
@@ -13,7 +13,7 @@ Files combined: 2
 ---
 title: Built-in classic metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/built-in-metrics
-scraped: 2026-02-16T09:30:51.606611
+scraped: 2026-02-17T05:12:33.122620
 ---
 
 # Built-in classic metrics
@@ -1818,7 +1818,7 @@ For the purposes of [calculating monitoring consumption](/docs/license/monitorin
 ---
 title: Filter classic metrics by management zone
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/metrics-mz
-scraped: 2026-02-15T21:24:12.397035
+scraped: 2026-02-17T05:02:26.879277
 ---
 
 # Filter classic metrics by management zone

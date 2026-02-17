@@ -1,6 +1,6 @@
 # Dynatrace Documentation: deliver/self-service-kubernetes-use-case.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Predict and autoscale Kubernetes workloads
 source: https://www.dynatrace.com/docs/deliver/self-service-kubernetes-use-case
-scraped: 2026-02-15T21:27:32.476036
+scraped: 2026-02-17T05:01:55.950106
 ---
 
 # Predict and autoscale Kubernetes workloads

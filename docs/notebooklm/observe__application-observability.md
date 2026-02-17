@@ -1,8 +1,8 @@
 # Dynatrace Documentation: observe/application-observability
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 63
+Files combined: 65
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 63
 ---
 title: Set up cross-environment tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/analysis/connect-environments
-scraped: 2026-02-16T21:18:55.167579
+scraped: 2026-02-17T04:52:29.531654
 ---
 
 # Set up cross-environment tracing
@@ -186,7 +186,7 @@ You can use [Davis AI](/docs/dynatrace-intelligence "Get familiar with the capab
 ---
 title: Treat diagnostic messages
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/analysis/diagnostic-messages
-scraped: 2026-02-16T09:37:08.652375
+scraped: 2026-02-17T05:09:36.139118
 ---
 
 # Treat diagnostic messages
@@ -664,7 +664,7 @@ Yes. To learn how, see [Connect your log data to user sessions and Session Repla
 ---
 title: Segment requests to improve response time degradation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/segment-request
-scraped: 2026-02-16T21:10:10.904942
+scraped: 2026-02-17T04:46:38.612879
 ---
 
 # Segment requests to improve response time degradation
@@ -737,7 +737,7 @@ You can extend your analysis:
 ---
 title: Distributed Traces Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces
-scraped: 2026-02-16T21:15:34.890146
+scraped: 2026-02-17T04:48:35.099881
 ---
 
 # Distributed Traces Classic
@@ -780,7 +780,7 @@ Upgrade Distributed Traces Classic ![Distributed Traces Classic](https://dt-cdn.
 ---
 title: Advanced Tracing Analytics powered by Grail
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/advanced-tracing-analytics
-scraped: 2026-02-16T21:10:17.007468
+scraped: 2026-02-17T04:47:05.576695
 ---
 
 # Advanced Tracing Analytics powered by Grail
@@ -2606,7 +2606,7 @@ For more examples, see the [Trace query usageï»¿](https://wkf10640.apps.dynat
 ---
 title: Retain trace data for long periods
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/data-retention
-scraped: 2026-02-16T21:12:12.503847
+scraped: 2026-02-17T04:48:28.476544
 ---
 
 # Retain trace data for long periods
@@ -2717,7 +2717,7 @@ You created a new bucket with a custom retention period of 5 years. The new buck
 ---
 title: Detect performance issues
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/detect-performance-issues
-scraped: 2026-02-16T21:10:05.516504
+scraped: 2026-02-17T04:46:35.324032
 ---
 
 # Detect performance issues
@@ -2899,7 +2899,7 @@ The table is updated with the selected attribute(s). To change the filter select
 ---
 title: Distributed Tracing app
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app
-scraped: 2026-02-16T21:10:27.502117
+scraped: 2026-02-17T04:46:41.918803
 ---
 
 # Distributed Tracing app
@@ -3109,7 +3109,7 @@ To learn more about analyzing exceptions, see [Exception analysis](/docs/observe
 ---
 title: Exception analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/exception-analysis
-scraped: 2026-02-16T21:10:24.915473
+scraped: 2026-02-17T04:47:03.332241
 ---
 
 # Exception analysis
@@ -3251,7 +3251,7 @@ Visit the [Feedback Channelï»¿](https://dt-url.net/i003111) in the Dynatrace 
 ---
 title: Ingest traces
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/ingest-traces
-scraped: 2026-02-16T21:10:20.850679
+scraped: 2026-02-17T04:46:59.775808
 ---
 
 # Ingest traces
@@ -3323,7 +3323,7 @@ Other setup options
 ---
 title: Set up Grail permissions for Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/permissions
-scraped: 2026-02-16T21:10:09.542838
+scraped: 2026-02-17T04:46:48.350082
 ---
 
 # Set up Grail permissions for Distributed Tracing
@@ -3456,7 +3456,7 @@ To learn more about restricted view access to personal data and confidential req
 ---
 title: Configure data storage and retention for Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/storage
-scraped: 2026-02-16T21:10:28.838000
+scraped: 2026-02-17T04:46:57.037391
 ---
 
 # Configure data storage and retention for Distributed Tracing
@@ -3542,7 +3542,7 @@ With this procedure, you skip storage of spans that match the route and the pipe
 ---
 title: Span and trace context propagation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/tracking-transactions
-scraped: 2026-02-16T21:10:26.235862
+scraped: 2026-02-17T04:46:58.140751
 ---
 
 # Span and trace context propagation
@@ -3626,7 +3626,7 @@ While the W3C standard formally specifies HTTP propagation, Dynatrace and the br
 ---
 title: Use traces, DQL, and logs to spot patterns
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/use-traces-and-dql-to-spot-patterns
-scraped: 2026-02-16T21:10:04.193632
+scraped: 2026-02-17T04:47:01.667481
 ---
 
 # Use traces, DQL, and logs to spot patterns
@@ -4099,7 +4099,7 @@ If you believe that you need to have certain information at hand, [add the DQL q
 ---
 title: Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing
-scraped: 2026-02-16T21:09:45.378333
+scraped: 2026-02-17T04:45:14.696767
 ---
 
 # Distributed Tracing
@@ -4557,7 +4557,7 @@ You can choose a custom string for the rule, or replace it with an SHA-256 hash.
 ---
 title: Live Debugger breakpoints
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/breakpoints
-scraped: 2026-02-16T09:27:18.506613
+scraped: 2026-02-17T05:11:03.437645
 ---
 
 # Live Debugger breakpoints
@@ -4832,7 +4832,7 @@ Use size instead of len or length on any platform.
 ---
 title: Use Live Debugger with your IDE
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/ide-integration
-scraped: 2026-02-16T09:31:55.384730
+scraped: 2026-02-17T05:10:16.956081
 ---
 
 # Use Live Debugger with your IDE
@@ -4939,7 +4939,7 @@ When required, you can access all session configuration options via the header o
 ---
 title: Set up permissions for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/setup
-scraped: 2026-02-16T09:32:24.428131
+scraped: 2026-02-17T05:03:28.841900
 ---
 
 # Set up permissions for Live Debugging
@@ -5436,7 +5436,7 @@ You can perform several types of analysis:
 ---
 title: Top web requests
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis/top-web-requests
-scraped: 2026-02-16T21:29:36.951168
+scraped: 2026-02-17T05:04:53.894735
 ---
 
 # Top web requests
@@ -5581,7 +5581,7 @@ In this case, all non-POST requests are filtered out, so you can focus your anal
 ---
 title: Multidimensional analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis
-scraped: 2026-02-16T21:15:36.386225
+scraped: 2026-02-17T05:01:43.696546
 ---
 
 # Multidimensional analysis
@@ -5758,7 +5758,7 @@ To create a calculated service metric from a multidimensional analysis view
 ---
 title: Crash analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/profiling-and-optimization/crash-analysis
-scraped: 2026-02-16T21:16:38.317096
+scraped: 2026-02-17T04:53:42.672115
 ---
 
 # Crash analysis
@@ -6176,13 +6176,160 @@ Track all application crashes and enable analysis.](/docs/observe/application-ob
 ---
 
 
+## Source: calculated-service-metric.md
+
+
+---
+title: Calculated metrics for services
+source: https://www.dynatrace.com/docs/observe/application-observability/services/calculated-service-metric
+scraped: 2026-02-17T05:04:50.719185
+---
+
+# Calculated metrics for services
+
+# Calculated metrics for services
+
+* Latest Dynatrace
+* How-to guide
+* 5-min read
+* Published Mar 30, 2021
+
+Dynatrace automatically captures important metrics for services with no configuration required. You might need additional business or technical metrics that are specific to your application. These metrics can be calculated and derived based on a wide variety of available data within the captured distributed trace. You can also split these metrics by multiple dimensions, for example, a requests attribute or an HTTP method.
+
+[OpenPipeline metric extraction](/docs/platform/openpipeline/use-cases/tutorial-system-events "Learn how to extract a metric to track system events with OpenPipeline.") now replaces calculated service metrics as the method to create additional service business or technical metrics. To read more about metric extraction, see [Extract metrics from spans and distributed traces](/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans "Extract metrics directly from your spans and distributed traces via OpenPipeline.").
+If you're an existing customer, you can still use them until we deprecate them. If you're a new customer, you won't be able to create calculated service metrics anymore.
+
+## Why start using OpenPipeline instead of classic calculated service metrics?
+
+* More flexible metric creation from spansâwith OpenPipeline, metrics are no longer limited to support at most 100 dimension values (âtop Xâ).
+
+  + You can store full dimension cardinality
+  + You can combine dimensions freely
+  + Powerful ingestion, processing, and transformation capabilities are available via a unified solution (that works the same for other configuration scopes, such as logs and events).
+* Better scale and performanceâplatform-scale ingest and stream processing built to go beyond petabytes; no more 500 calculated service metrics limit per tenant.
+* Security, cost management, and data governanceâfilter and mask sensitive or unnecessary fields; assign cost center usage to specific metrics; route data to specific Grail buckets with controlled retention durations.
+
+Limits
+
+* Only new data is written to calculated metrics; retrospective data is not included.
+* You can have up to 500 enabled calculated metrics per environment and up to 100 enabled calculated metrics per service.
+* Classic calculated metrics support at most 100 dimension values. This is referred to as the "top X" rule, as you can select fewer depending on your configuration. However you choose the top 100 dimension values, the remaining dimensions are aggregated into a single timeseries and the dimension value is accessible through a special `remainder` dimension. The [remainder](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#remainder "Configure the metric selector for the Metric v2 API.") filter condition allowing you to filter on this `remainder` dimension.
+
+* Grail calculated service metrics with cardinality higher than 2000 within any 5-minute window in the past 2 weeks or since the last metric change are automatically disabled in Grail. Enabling such metrics on Grail is not allowed. If the metric is already enabled on Grail, you are informed of the metric rejection via the [**Metric & Dimensions Usage + Rejections**](/docs/dynatrace-api/environment-api/metric-v2/best-practices#identify-high-cardinality-situations "Best practices for metrics.") ready-made dashboard. To enable a Classic metric on Grail and keep collecting incoming data on Grail, make sure cardinality stays below the limit.
+
+## Create a calculated service metric
+
+### Steps
+
+1. Go to **Settings** > **Server-side service monitoring** > **Calculated service metrics** > **Create new metric**.
+2. Enter the name for the metric.
+   The name and the `calc:service.` prefix are added automatically to the metric key. Note that once a metric is [enabled in Grail](#grail) the prefix is automatically changed to `service.`
+3. Choose the metric source from the **Metric source** list.
+
+   * If the source is a request attribute, select the required unit.
+   * Optional To exclude the data contribution of [muted requests](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-monitoring-mute "Mute the monitoring of certain service requests so that you can focus on the performance of requests that affect your customers."), turn on **Ignore muted requests**.
+4. Optional Select the management zone. The new metric will be restricted to data from this zone.
+5. Provide conditions to define which requests are included in the calculation.
+
+   If you provide several conditions, **all conditions must be fulfilled** to use the metric.
+
+   1. Select **Add condition**.
+   2. Select the attribute to be checked.
+   3. Select the operator of the condition.
+   4. If needed, specify the reference value.
+
+      * Classic metric Preview shows the list of services to be included to the custom metric and the estimation of [DDU consumption](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+
+        Preview only considers management zone and conditions based on service attributes. These attributes are marked with `[Service property]` in the attribute list.
+
+      * Grail metric While the DDUs estimation is only valid for the Classic metric, for the Grail metric expect enhanced precision and more comprehensive insights, as in Grail, the metrics' full dimension cardinality is stored (not just the Top X values). This may result in a greater number of data points compared to the classic metric, allowing for a more detailed analysis of your data.
+6. Optional Add dimension to your new metric.
+
+   1. Turn on **Split by dimension**.
+   2. Choose the placeholders to define the dimension.
+
+      * Select an available placeholder from **Dimension value pattern**.
+      * Create a [custom placeholder](#placeholder).
+   3. Enter a dimension name.
+   4. Classic metric Define the top *X* value limit.
+
+      The top *X* value limit applies to the Classic metric only, not to the Grail metric.
+
+      1. In the **Number of top values** field, specify the amount of top *X* values to be calculated for the metric.
+      2. From the **Value sorting** and **Value aggregation** lists, select the sorting and aggregation of the top *X* values.
+7. Review the metric source and dimension names. They will be used in the UI and API. Once a metric is created, you can't change them.
+8. Select **Save metric**.
+
+## Create a custom placeholder
+
+When a placeholder is not available, you can create a custom placeholder. All custom placeholders must be used in the dimension value pattern, alternatevely you can delete unused custom placeholders.
+
+Prior knowledge
+
+### Extraction method
+
+You have two methods to extract the value for a placeholder:
+
+* Delimiter-based. In this case, Dynatrace extracts the value by checking the value of the source against a reference value and specified delimiter kind and position.
+* Regex-based. In this case, Dynatrace uses regular expression extraction. To learn how Dynatrace uses regular expressions, see [Regular expressions in Dynatrace](/docs/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace.").
+
+### Extraction method for request attributes
+
+Placeholders that are based on request attributes provide three options for value extraction:
+
+* **First**: The first occurrence of the attribute is used to extract the value.
+* **Last**: The last occurrence of the attribute is used to extract the value.
+* **Count**: The value equals the number of attribute occurrences.
+
+### Steps
+
+To create a custom placeholder
+
+1. While creating or editing a calculated service metric, select **Add custom placeholder**.
+2. Enter a name for your placeholder. The name will be used in the **Dimension value pattern** field.
+3. Select the source for the dimension.
+4. Choose the [extraction method](#prior).
+
+   If the source is a request attribute,
+
+   1. Optional Select **Use from downstream services** checkbox to use child calls as the value source.
+   2. Optional Restrict the child calls to a particular management zone or service tag.
+5. Select **Add**.
+6. Required Use the newly created placeholder in the dimension value pattern.
+
+## Enable a metric in Grail
+
+Prerequisites
+
+* Make sure each dimension cardinality is less than 2000 within any 5-minute window in the past 2 weeks or since the last metric change.
+* Review the dimension for [unsupported placeholders](/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail#unsupported-placeholders "Get to know the equivalents of the classic built-in metrics supported on Grail.") on Grail.
+
+### Steps
+
+To enable a metric in Grail, turn on **Enable on Grail**.
+
+### Conclusion
+
+The prefix is automatically modified from `calc:service.` to `service.`. The metric name and previosuly existing dimension are maintained. Supported placeholders are converted to additional dimensions and new dimensions are added for metrics derived by OneAgent.
+
+For a complete list of available dimensions see [Built-in Metrics on Grail - Calculated service metrics](/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail#calc-service "Get to know the equivalents of the classic built-in metrics supported on Grail.").
+
+## Related topics
+
+* [Service metrics API](/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics "Manage calculated service metrics via the Dynatrace configuration API.")
+* [Multidimensional analysis](/docs/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.")
+
+
+---
+
+
 ## Source: customize-api-definitions.md
 
 
 ---
 title: Custom API definitions
 source: https://www.dynatrace.com/docs/observe/application-observability/services/customize-api-definitions
-scraped: 2026-02-16T21:26:28.051074
+scraped: 2026-02-17T05:04:19.532506
 ---
 
 # Custom API definitions
@@ -6226,7 +6373,7 @@ The user-defined **easyTravel** API is now included in the code-level analysis.
 ---
 title: Leverage enhanced endpoints for SDv1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/enhanced-endpoints-sdv1
-scraped: 2026-02-16T21:19:47.439631
+scraped: 2026-02-17T04:49:33.136209
 ---
 
 # Leverage enhanced endpoints for SDv1
@@ -6415,7 +6562,7 @@ Your existing configuration for resource request detection is still applicable, 
 ---
 title: Failure Analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services/failure-analysis
-scraped: 2026-02-16T21:11:06.121086
+scraped: 2026-02-17T04:45:26.691367
 ---
 
 # Failure Analysis
@@ -6531,7 +6678,7 @@ Weâd love to hear your feedback and questions about the new **Failure Analy
 ---
 title: Monitor service message processing
 source: https://www.dynatrace.com/docs/observe/application-observability/services/monitor-service-message-processing
-scraped: 2026-02-16T21:19:46.052703
+scraped: 2026-02-17T04:49:29.842010
 ---
 
 # Monitor service message processing
@@ -7013,7 +7160,7 @@ Once youâve defined your request attributes, they're listed in the related 
 ---
 title: Request attributes
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes
-scraped: 2026-02-16T21:10:19.496522
+scraped: 2026-02-17T04:46:54.289248
 ---
 
 # Request attributes
@@ -7095,7 +7242,7 @@ The maximum number of request attributes that can be captured by OneAgent for a 
 ---
 title: Response time analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services/response-time-analysis
-scraped: 2026-02-16T21:11:03.391353
+scraped: 2026-02-17T04:45:31.633814
 ---
 
 # Response time analysis
@@ -7218,7 +7365,7 @@ Use response time analysis proactively to:
 ---
 title: Configure service failure detection
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection
-scraped: 2026-02-16T21:13:18.085840
+scraped: 2026-02-17T04:48:29.597296
 ---
 
 # Configure service failure detection
@@ -7371,7 +7518,7 @@ On the service level, you can visualize the **Schema ID** by selecting **More** 
 ---
 title: Service detection rules
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection
-scraped: 2026-02-16T21:13:22.374372
+scraped: 2026-02-17T05:11:46.158322
 ---
 
 # Service detection rules
@@ -8536,7 +8683,7 @@ You can use [regular expressions](/docs/manage/tags-and-metadata/reference/regul
 ---
 title: Opaque services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services
-scraped: 2026-02-16T21:10:50.471780
+scraped: 2026-02-17T04:45:38.679992
 ---
 
 # Opaque services
@@ -8855,7 +9002,7 @@ While this has been possible using request attributes alone, request naming make
 ---
 title: Service Detection v1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1
-scraped: 2026-02-16T21:10:12.196803
+scraped: 2026-02-17T04:46:49.991523
 ---
 
 # Service Detection v1
@@ -9388,6 +9535,160 @@ You can delete only custom rulesets and rules, not the built-in ones.
 ---
 
 
+## Source: service-detection-v2.md
+
+
+---
+title: Customize service detection in Service Detection v2
+source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/service-detection-v2
+scraped: 2026-02-17T04:57:16.153042
+---
+
+# Customize service detection in Service Detection v2
+
+# Customize service detection in Service Detection v2
+
+* How-to guide
+* 2-min read
+* Updated on Nov 24, 2025
+
+Service Detection v2 (SDv2) allows you to define services based on span resource attributes.
+You can use the default Dynatrace detection rules and also define your own custom rules.
+The same rules are also applied to log and metric ingest which allows Dynatrace to link the input of all sources together.
+
+## Aim and context
+
+This page describes service detection for SDv2, how to use default detection rules, and how to create your own custom rules.
+
+### Service detection rules
+
+* Rules apply to spans, metrics, and logs.
+
+* Rules are evaluated in order, from top to bottom.
+* Custom rules are always evaluated before default rules.
+* Only the first matching rule is applied.
+
+### Default service detection rules
+
+Dynatrace provides several default service detection rules.
+Additionally, custom rules can be created as described in [Create new rule](/docs/observe/application-observability/services/service-detection/service-detection-v2/service-detection-v2#create-new-rule "Find out how to detect services based on OpenTelemetry resource attributes.").
+
+Any future default rule changes will be opt-in: new rules will be shipped as disabled; you can choose whether to activate them.
+
+Priority
+
+Condition
+
+Service name
+
+1
+
+`adobe.em.tier`, `adobe.em.env_type`, `adobe.em.program` attributes present
+
+`aem-{adobe.em.tier}-{adobe.em.env_type}-{adobe.em.program}`
+
+2
+
+`k8s.workload.name` attribute present
+
+`{k8s.workload.name}`
+
+3
+
+`dt.kubernetes.workload.name` attribute present
+
+`{dt.kubernetes.workload.name}`
+
+4
+
+`istio.canonical_service` attribute present
+
+`{istio.canonical_service}`
+
+5
+
+`service.name` attribute present
+
+`{service.name}`
+
+The service ID is a unique identifier, such as `SERVICE-649B4E44CBA804F4`, that is the result of hashing the attribute values that are used as part of the name pattern, additional service detection attributes, and [service splitting attributes](/docs/observe/application-observability/services/service-detection/service-detection-v2/service-splitting-v2 "Find out how to split detected services based on resource attributes."), when applicable.
+
+## Steps
+
+Detection rules are customized in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **Services** > **Service detection**.
+
+### Create new rule
+
+1. In **Service detection**, select **Add rule**.
+2. Fill in the following optional and required fields:
+
+   * **Rule name**: Required
+
+     A user-defined name for the rule.
+   * **Description**: Optional
+
+     A human-readable descriptor of the rule.
+   * **Matching condition**: Required
+
+     A [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.").
+     If the matching condition applies, the rule is evaluated.
+   * **Service name template**: Required
+
+     The name that you want the service to have.
+     You can use plain text, or resource attributes surrounded by curly braces (`{}`).
+     For the rule to be applied, the span must contain all the specified resource attributes.
+     Changing the static parts of the template or re-ordering the used attributes will not affect the service ID. Only completely removing an attribute or adding a new attribute will also change the service ID.
+   * **Additional service detection attributes**: Optional
+
+     Additional attributes used to detect and split services without affecting the generated name.
+     Each attribute consists of a resource attribute specified without curly braces (for example, `service.name` or `k8s.workload.name`).
+     Adding or removing attributes in this section will change the resulting service ID.
+
+     Up to 10 additional service detection attributes can be applied.
+3. Select **Save changes**.
+
+### Edit custom rules
+
+You can re-order custom rules.
+
+You can also edit a custom rule.
+
+1. Navigate to the rule and select **Details** > .
+2. Edit the fields as appropriate.
+3. Select **Save changes**.
+
+### Delete custom rules
+
+To delete a custom rule
+
+1. Navigate to the rule and select **Delete** > .
+2. Select **Save changes** to permanently delete the rule, or **Discard changes** to keep the rule.
+
+You can delete only custom rules, not the built-in rules.
+
+## FAQ
+
+### How can I remove an attribute that was used as part of the service name without also changing the service ID?
+
+To remove an attribute that was used as part of the service name without also changing the service ID
+
+1. Remove the attribute from the **Service name template**.
+2. Add the attribute to the **Additional service detection attributes** section.
+
+This way, it will still contribute to the service ID, but it will no longer be part of the service name.
+
+### My **Matching conditions** do match certain spans but still my rule is not applied. Why?
+
+Verify that all the attributes used as parts of the **Service name template** and **Additional service detection attributes** also exist on the spans. The existence of those attributes is an implicit matching condition.
+
+## Related topics
+
+* [Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")
+
+
+---
+
+
 ## Source: service-splitting-v2.md
 
 
@@ -9542,7 +9843,7 @@ It's not possible to delete built-in rules, however you can deactivate built-in 
 ---
 title: Configure URL path pattern matching in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2
-scraped: 2026-02-16T21:29:55.213806
+scraped: 2026-02-17T05:07:01.435963
 ---
 
 # Configure URL path pattern matching in Service Detection v2
@@ -9866,7 +10167,7 @@ SDv2 behavior can be configured via:
 ---
 title: Services app
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-app
-scraped: 2026-02-16T21:09:50.798841
+scraped: 2026-02-17T04:45:07.349689
 ---
 
 # Services app
@@ -9995,7 +10296,7 @@ Get a hands-on experience with ![Services](https://dt-cdn.net/hub/logos/services
 ---
 title: Service-related concepts
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-concepts
-scraped: 2026-02-16T21:11:02.052440
+scraped: 2026-02-17T04:45:33.214339
 ---
 
 # Service-related concepts
@@ -10067,7 +10368,7 @@ Instead of [defining key requests](/docs/observe/application-observability/servi
 ---
 title: Monitor key requests
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/monitor-key-requests
-scraped: 2026-02-16T21:19:48.806256
+scraped: 2026-02-17T04:49:31.457828
 ---
 
 # Monitor key requests
@@ -10387,7 +10688,7 @@ As you can see, outlier analysis, enabled by Dynatrace response-time distributio
 ---
 title: Service analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-analysis-new
-scraped: 2026-02-16T21:32:34.940827
+scraped: 2026-02-17T05:03:30.622716
 ---
 
 # Service analysis
@@ -10564,7 +10865,7 @@ Contains a list of [logs](/docs/analyze-explore-automate/logs "Log Management an
 ---
 title: Service analysis timings
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-analysis-timing
-scraped: 2026-02-16T21:10:34.122505
+scraped: 2026-02-17T04:46:55.394196
 ---
 
 # Service analysis timings
@@ -10761,7 +11062,7 @@ Percentage of measured samples in which the method is blocked by waiting for a s
 ---
 title: Service backtrace
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-backtrace
-scraped: 2026-02-16T21:13:12.623238
+scraped: 2026-02-17T04:48:50.315078
 ---
 
 # Service backtrace
@@ -10986,7 +11287,7 @@ Learn more about additional analysis options in topics listed below.
 ---
 title: Service flow
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow
-scraped: 2026-02-16T21:15:39.078183
+scraped: 2026-02-17T04:48:53.608559
 ---
 
 # Service flow
@@ -11162,7 +11463,7 @@ Typically, web-request services have a wide range of response times. Analyzing a
 ---
 title: Services Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic
-scraped: 2026-02-16T21:22:54.593892
+scraped: 2026-02-17T05:12:28.731607
 ---
 
 # Services Classic
@@ -11243,7 +11544,7 @@ Read this guide](/docs/observe/application-observability/services-classic/servic
 ---
 title: Services
 source: https://www.dynatrace.com/docs/observe/application-observability/services
-scraped: 2026-02-16T21:11:04.772761
+scraped: 2026-02-17T04:45:28.373291
 ---
 
 # Services

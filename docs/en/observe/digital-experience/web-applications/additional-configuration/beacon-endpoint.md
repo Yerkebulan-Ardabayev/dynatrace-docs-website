@@ -1,7 +1,7 @@
 ---
 title: Configure beacon endpoint for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/beacon-endpoint
-scraped: 2026-02-16T21:18:31.277076
+scraped: 2026-02-17T04:51:30.229069
 ---
 
 # Configure beacon endpoint for web applications

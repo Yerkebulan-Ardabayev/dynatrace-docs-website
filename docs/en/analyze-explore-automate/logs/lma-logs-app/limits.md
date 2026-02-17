@@ -1,7 +1,7 @@
 ---
 title: Limits in Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/limits
-scraped: 2026-02-16T21:11:55.652873
+scraped: 2026-02-17T04:47:58.794001
 ---
 
 # Limits in Logs

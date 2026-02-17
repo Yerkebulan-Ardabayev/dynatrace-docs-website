@@ -1,6 +1,6 @@
 # Dynatrace Documentation: whats-new/edgeconnect.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: EdgeConnect release notes
 source: https://www.dynatrace.com/docs/whats-new/edgeconnect
-scraped: 2026-02-16T21:12:20.141168
+scraped: 2026-02-17T04:46:27.814827
 ---
 
 # EdgeConnect release notes

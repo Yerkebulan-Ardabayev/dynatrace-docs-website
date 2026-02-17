@@ -1,8 +1,8 @@
 # Dynatrace Documentation: ingest-from/setup-on-k8s
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 41
+Files combined: 45
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 41
 ---
 title: Get started with Kubernetes platform monitoring + Application observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/application-observability
-scraped: 2026-02-16T21:18:25.629612
+scraped: 2026-02-17T04:51:32.162309
 ---
 
 # Get started with Kubernetes platform monitoring + Application observability
@@ -1028,7 +1028,7 @@ Sizing guide for Dynatrace ActiveGate components](/docs/ingest-from/setup-on-k8s
 ---
 title: Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/marketplaces/eks-dto
-scraped: 2026-02-15T09:11:29.917800
+scraped: 2026-02-17T05:01:01.552864
 ---
 
 # Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)
@@ -1183,7 +1183,7 @@ To install the Dynatrace Operator add-on for AWS EKS through the CLI
 ---
 title: Deploy ActiveGate in a VM
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm
-scraped: 2026-02-16T21:25:09.716059
+scraped: 2026-02-17T05:08:47.258365
 ---
 
 # Deploy ActiveGate in a VM
@@ -1869,7 +1869,7 @@ To update ActiveGate, see [Update ActiveGate](/docs/ingest-from/dynatrace-active
 ---
 title: Manually deploy ActiveGate as a StatefulSet
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-statefulset
-scraped: 2026-02-16T21:32:13.917404
+scraped: 2026-02-17T04:59:52.852201
 ---
 
 # Manually deploy ActiveGate as a StatefulSet
@@ -2852,13 +2852,97 @@ ActiveGate is updated automatically on pod restart whenever there is a new versi
 ---
 
 
+## Source: ocp-operator-hub.md
+
+
+---
+title: Set up OpenShift monitoring via OperatorHub
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ocp-operator-hub
+scraped: 2026-02-17T04:57:52.026277
+---
+
+# Set up OpenShift monitoring via OperatorHub
+
+# Set up OpenShift monitoring via OperatorHub
+
+* Latest Dynatrace
+* 2-min read
+* Published Jun 15, 2020
+
+The OperatorHub is the interface that cluster administrators use to discover and install operators and is available via the OpenShift Container Platform web console.
+
+## Prerequisites for OpenShift Dedicated
+
+* A dedicated-admin user for the OpenShift Dedicated cluster
+
+How to add a user to a dedicated-admin role
+
+1. Sign in to the [Red Hat OpenShift Cluster Managerï»¿](https://cloud.redhat.com/openshift) with your Red Hat account.
+2. Select the OpenShift Dedicated cluster and go to **Access control** > **Cluster administrative users** > **Add user**.
+3. Add the userid of the user who will have dedicated-admin access.
+
+The dedicated-admin user must be added before the OneAgent Operator is visible in the OperatorHub UI.
+
+## Limitations
+
+Deployment options that can be installed from OperatorHub:
+
+* [Kubernetes platform monitoring](/docs/ingest-from/setup-on-k8s/deployment/platform-observability "Deploy Dynatrace Operator for Kubernetes platform monitoring.")
+* [Classic Full-Stack monitoring](/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
+* [Application observability](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") without CSI driver
+
+Deployment options that **can't** be installed from OperatorHub (they require Helm or manifest installation approaches):
+
+* [Full-Stack observability](/docs/ingest-from/setup-on-k8s/deployment/full-stack-observability "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes")
+* [Application observability](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") with CSI driver
+* [Host monitoring](/docs/ingest-from/setup-on-k8s/deployment/other/host-monitoring "Deploy Dynatrace Operator in host monitoring mode to Kubernetes")
+
+## Installation
+
+To install Dynatrace Operator on OpenShift via OperatorHub
+
+1. On the OpenShift Container Platform dashboard, select **Operators** > **OperatorHub** from the side menu.
+2. Select **Dynatrace Operator** > **Install**.
+3. Enter the necessary information about the Operator subscription.
+4. In **Installation Mode**, select **All namespaces**.
+5. Keep the default values of the other settings and select **Subscribe**.
+6. Go to **Operators** > **Installed Operators** and wait until you see **Install Succeeded**.
+7. Go to **Workloads** > **Secrets** and create a new key named `dynakube` with two values:
+
+   * `apiToken` equal to your cluster's [Dynatrace Operator token](/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+   * `dataIngestToken` equal to your cluster's [Data Ingest token](/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+8. Go to **Operators** > **Installed Operators** from the side menu and select **Dynatrace Operator**.
+9. Select **Create instance**.
+10. Make the following changes:
+
+    * Replace `apiURL` value according to your deployment:
+
+      Dynatrace SaaS
+
+      ```
+      spec:
+
+
+
+      apiURL: 'https://ENVIRONMENTID.live.dynatrace.com/api'
+      ```
+
+      Replace `ENVIRONMENTID` with your [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+    * Set `classicFullStack.enabled` to `true`.
+    * If you're using a custom resource file, set `namespace` to the namespace where you installed Dynatrace Operator.
+11. Select **Create**.
+
+
+---
+
+
 ## Source: supported-technologies.md
 
 
 ---
 title: Supported distributions
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/supported-technologies
-scraped: 2026-02-16T21:18:24.092396
+scraped: 2026-02-17T04:51:22.052829
 ---
 
 # Supported distributions
@@ -3335,7 +3419,7 @@ No specific configuration is required.
 ---
 title: Deployment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
-scraped: 2026-02-16T21:14:04.602524
+scraped: 2026-02-17T04:48:48.729998
 ---
 
 # Deployment
@@ -4609,7 +4693,7 @@ For more information on configuring a DynaKube custom resource, see our examples
 ---
 title: ClusterRole aggregation for Kubernetes monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation
-scraped: 2026-02-15T21:25:50.877707
+scraped: 2026-02-17T05:06:02.073072
 ---
 
 # ClusterRole aggregation for Kubernetes monitoring
@@ -4725,7 +4809,7 @@ The permissions are aggregated immediately after applying the ClusterRole and ta
 ---
 title: Provision EdgeConnect for Dynatrace environment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect-provision
-scraped: 2026-02-16T09:38:13.725014
+scraped: 2026-02-17T05:10:05.433022
 ---
 
 # Provision EdgeConnect for Dynatrace environment
@@ -5030,7 +5114,7 @@ sample-edge-connect-name   <environment-id>.apps.dynatrace.com   Running   16m
 ---
 title: Deploy Dynatrace alongside Istio
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment
-scraped: 2026-02-16T21:14:23.962632
+scraped: 2026-02-17T04:49:19.800029
 ---
 
 # Deploy Dynatrace alongside Istio
@@ -6024,7 +6108,7 @@ ActiveGate is updated automatically on pod restart whenever there is a new versi
 ---
 title: Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits
-scraped: 2026-02-16T21:31:27.043732
+scraped: 2026-02-17T05:08:42.141470
 ---
 
 # Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
@@ -6602,13 +6686,134 @@ templates:
 ---
 
 
+## Source: auto-update-components.md
+
+
+---
+title: Configure auto-update for Dynatrace Operator managed components
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components
+scraped: 2026-02-17T05:05:13.666058
+---
+
+# Configure auto-update for Dynatrace Operator managed components
+
+# Configure auto-update for Dynatrace Operator managed components
+
+* Latest Dynatrace
+* 2-min read
+* Updated on Sep 05, 2025
+
+Dynatrace Operator manages the rollout and updates of the following components in Kubernetes:
+
+* OneAgent: Configured in the DynaKube
+* ActiveGate: Configured in the DynaKube
+* EdgeConnect: Configured by the EdgeConnect Custom Resource (CR)
+
+The default settings for OneAgent and ActiveGate automatically roll out updates as soon as they become available. DynaKube also defaults to update all pods when updates are detected automatically. Note that updates may take up to 15 minutes due to Dynatrace Operator checking for updates at 15-minute intervals. If you set a custom `image` or `version`, it will disable automatic updates.
+
+## Configure OneAgent auto-update
+
+Set the target version on the Dynatrace Server to a relative version, for example, `Latest stable version`. Dynatrace Operator will periodically check for updates and propagate them to the Kubernetes environment. An update of the OneAgent version will always cause restart of the OneAgent pods.
+
+Minimal DynaKube configuration that uses auto-update:
+
+```
+apiVersion: dynatrace.com/v1beta5
+
+
+
+kind: DynaKube
+
+
+
+metadata:
+
+
+
+name: dynakube
+
+
+
+namespace: dynatrace
+
+
+
+spec:
+
+
+
+apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
+
+
+
+oneAgent:
+
+
+
+cloudNativeFullStack: {}
+```
+
+Update windows currently do not apply in Kubernetes environments.
+
+If `autoUpdate` is set to `false` in the DynaKube, the OneAgents will not get version updates based on the target version of the Dynatrace environment after the initial deployment of the OneAgents.
+
+We do not recommend setting `autoUpdate: false` directly. To control OneAgent version updates, we recommend doing one of the following:
+
+* Set `autoUpdate: true` and set the target version in the Dynatrace environment's web UI
+* Configure the `image` field in the DynaKube
+* Configure the `version` field in the DynaKube
+
+## Configure code module auto-update of monitored applications
+
+While new images are downloaded, applications are only updated when restarted. Keep in mind that autoscaling also injects the most recent CodeModule.
+
+## Configure ActiveGate auto-update
+
+Similar to OneAgent, the ActiveGate update can be configured in the UI, resulting in a changed ActiveGate image, visible to Dynatrace Operator.
+
+## Configure EdgeConnect auto-update
+
+Dynatrace Operator can be configured to disable auto-updates by setting the `autoUpdate` field in the [EdgeConnect spec](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters#spec "List of configuration parameters for EdgeConnect.") section to `false`.
+
+```
+apiVersion: dynatrace.com/v1alpha2
+
+
+
+kind: EdgeConnect
+
+
+
+metadata:
+
+
+
+name: edgeconnect
+
+
+
+namespace: dynatrace
+
+
+
+spec:
+
+
+
+autoUpdate: false
+```
+
+
+---
+
+
 ## Source: dto-auto-update.md
 
 
 ---
 title: Auto-update for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update
-scraped: 2026-02-16T21:24:42.234335
+scraped: 2026-02-17T04:58:15.005340
 ---
 
 # Auto-update for Dynatrace Operator
@@ -6725,7 +6930,7 @@ Renovate automates the updating of dependencies in Git repositories. Integrating
 ---
 title: Manage Dynatrace deployments using GitOps
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops
-scraped: 2026-02-16T21:14:17.302129
+scraped: 2026-02-17T04:48:36.842745
 ---
 
 # Manage Dynatrace deployments using GitOps
@@ -7123,7 +7328,7 @@ For configuring automatic updates for Dynatrace Operator, see [Auto-update of Dy
 ---
 title: Metadata enrichment of all telemetry originating from Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment
-scraped: 2026-02-16T21:13:08.637777
+scraped: 2026-02-17T04:57:07.558525
 ---
 
 # Metadata enrichment of all telemetry originating from Kubernetes
@@ -7860,7 +8065,7 @@ k8s.namespace.label.domain: finance
 ---
 title: Configure enrichment directory
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment
-scraped: 2026-02-16T21:13:05.592514
+scraped: 2026-02-17T04:58:28.324960
 ---
 
 # Configure enrichment directory
@@ -8167,7 +8372,7 @@ By following these steps, you can fully leverage metadata enrichment to enhance 
 ---
 title: Migration of DynaKube v1beta1 to v1beta4
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta4
-scraped: 2026-02-15T09:13:38.282977
+scraped: 2026-02-17T05:05:38.384248
 ---
 
 # Migration of DynaKube v1beta1 to v1beta4
@@ -10104,7 +10309,7 @@ The CSI driver is now used when installed as part of the Dynatrace Operator inst
 ---
 title: Migration of DynaKube v1beta2 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5
-scraped: 2026-02-16T21:28:22.251881
+scraped: 2026-02-17T05:11:57.736258
 ---
 
 # Migration of DynaKube v1beta2 to v1beta5
@@ -10349,13 +10554,190 @@ The CSI driver is now used when installed as part of the Dynatrace Operator inst
 ---
 
 
+## Source: migrate-dk-v1beta3-v1beta4.md
+
+
+---
+title: Migration of DynaKube v1beta3 to v1beta4
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta4
+scraped: 2026-02-17T05:00:17.657215
+---
+
+# Migration of DynaKube v1beta3 to v1beta4
+
+# Migration of DynaKube v1beta3 to v1beta4
+
+* Latest Dynatrace
+* Reference
+* 10-min read
+* Updated on Oct 22, 2025
+
+This guide will show you how you can manually migrate from `apiVersion: dynatrace.com/v1beta3` to `apiVersion: dynatrace.com/v1beta4` of the `DynaKube`.
+
+## Support lifecycle
+
+### v1beta3
+
+**Introduced in**: Dynatrace Operator version 1.3.0
+
+**Deprecated in**: Dynatrace Operator version 1.6.0
+
+### v1beta4
+
+**Introduced in**: Dynatrace Operator version 1.5.0
+
+## Changes
+
+Reminder
+
+When migrating your DynaKube, remember to update the `apiVersion` field as well as any other fields that have changed
+
+### Deprecated fields
+
+#### OneAgent `autoUpdate`
+
+The `spec.oneAgent.<mode>.autoUpdate: true/false` field is [deprecated](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).") in `v1beta5`, so it shouldn't be used.
+
+We recommend the following:
+
+* If you want `autoUpdate: true`, do not set `image`, `codeModulesImage`, or `version`.
+
+  ```
+  apiVersion: dynatrace.com/v1beta5
+
+
+
+  kind: DynaKube
+
+
+
+  metadata:
+
+
+
+  name: example
+
+
+
+  namespace: dynatrace
+
+
+
+  spec:
+
+
+
+  oneAgent:
+
+
+
+  cloudNativeFullstack: {} # same as autoUpdate: true
+
+
+
+  # ...
+  ```
+* If you want `autoUpdate: false`, set `image`, `codeModulesImage` or `version`
+
+  ```
+  apiVersion: dynatrace.com/v1beta5
+
+
+
+  kind: DynaKube
+
+
+
+  metadata:
+
+
+
+  name: example
+
+
+
+  namespace: dynatrace
+
+
+
+  spec:
+
+
+
+  oneAgent:
+
+
+
+  cloudNativeFullstack:
+
+
+
+  image: ... # same effect as autoUpdate: false
+
+
+
+  codeModulesImage: # same effect as autoUpdate: false
+
+
+
+  # ...
+
+
+
+  ---
+
+
+
+  apiVersion: dynatrace.com/v1beta5
+
+
+
+  kind: DynaKube
+
+
+
+  metadata:
+
+
+
+  name: example
+
+
+
+  namespace: dynatrace
+
+
+
+  spec:
+
+
+
+  oneAgent:
+
+
+
+  cloudNativeFullstack:
+
+
+
+  version: ... # replaces autoUpdate: false
+
+
+
+  # ...
+  ```
+
+
+---
+
+
 ## Source: migrate-dk-v1beta3-v1beta5.md
 
 
 ---
 title: Migration of DynaKube v1beta3 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta5
-scraped: 2026-02-16T09:38:25.570498
+scraped: 2026-02-17T05:12:23.848405
 ---
 
 # Migration of DynaKube v1beta3 to v1beta5
@@ -10713,7 +11095,7 @@ We recommend the following:
 ---
 title: Migration of DynaKube v1beta5 to v1beta6
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta5-v1beta6
-scraped: 2026-02-15T21:29:13.428580
+scraped: 2026-02-17T05:09:16.821230
 ---
 
 # Migration of DynaKube v1beta5 to v1beta6
@@ -11058,7 +11440,7 @@ Optional
 ---
 title: Migrate from classic full-stack to cloud-native full-stack mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-cloud-native
-scraped: 2026-02-16T21:28:08.735169
+scraped: 2026-02-17T05:02:12.035415
 ---
 
 # Migrate from classic full-stack to cloud-native full-stack mode
@@ -11350,7 +11732,7 @@ Required
 ---
 title: Migrate from cloud-native full-stack to application monitoring mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/cloud-native-to-app-monitoring
-scraped: 2026-02-15T21:23:44.135577
+scraped: 2026-02-17T05:09:26.726342
 ---
 
 # Migrate from cloud-native full-stack to application monitoring mode
@@ -11789,7 +12171,7 @@ OpenShift
 ---
 title: Migrate from OneAgent Operator to Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/migrate-to-dto
-scraped: 2026-02-16T09:38:22.271974
+scraped: 2026-02-17T05:10:49.770574
 ---
 
 # Migrate from OneAgent Operator to Dynatrace Operator
@@ -11995,7 +12377,7 @@ OpenShift
 ---
 title: Migration guides
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration
-scraped: 2026-02-15T09:13:35.951687
+scraped: 2026-02-17T05:10:07.064638
 ---
 
 # Migration guides
@@ -12034,7 +12416,7 @@ Migrate from your old `DynaKube` with an older `apiVersion` to the newest suppor
 ---
 title: Network configurations
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations
-scraped: 2026-02-15T21:27:57.886040
+scraped: 2026-02-17T05:11:15.606877
 ---
 
 # Network configurations
@@ -12528,7 +12910,7 @@ To configure a server TLS certificate for the ActiveGate:
 ---
 title: Guides
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides
-scraped: 2026-02-16T09:34:48.808356
+scraped: 2026-02-17T05:05:31.118588
 ---
 
 # Guides
@@ -12565,7 +12947,7 @@ Automate and optimize your system's metadata management.](/docs/ingest-from/setu
 ---
 title: Full-stack observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack
-scraped: 2026-02-16T21:18:12.777972
+scraped: 2026-02-17T04:51:26.925334
 ---
 
 # Full-stack observability
@@ -12626,7 +13008,7 @@ The following components are deployed by applying a DynaKube with full-stack obs
 ---
 title: Classic Full-Stack monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack
-scraped: 2026-02-16T21:17:38.530885
+scraped: 2026-02-17T04:51:16.748269
 ---
 
 # Classic Full-Stack monitoring
@@ -12728,6 +13110,87 @@ Host monitoring](/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-mo
 Components of Dynatrace Operator
 
 Dynatrace Operator](/docs/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator)
+
+
+---
+
+
+## Source: k8-security-context.md
+
+
+---
+title: Set up Grail permissions for telemetry from Kubernetes and Kubernetes workloads
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/k8-security-context
+scraped: 2026-02-17T05:06:35.411327
+---
+
+# Set up Grail permissions for telemetry from Kubernetes and Kubernetes workloads
+
+# Set up Grail permissions for telemetry from Kubernetes and Kubernetes workloads
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Updated on Nov 20, 2025
+
+Dynatrace has a [permission model for Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
+
+We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
+
+For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+
+If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.
+
+For more control in Dynatrace, you can set up policy boundaries with more granular restrictions on a data level. By default, you can use the following attributes:
+
+* `dt.host_group.id`
+* `k8s.cluster.name`
+* `k8s.namespace.name`
+* Any other attribute listed in the [permission model](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
+
+Dynatrace provides a comprehensive permission model for Grail that applies to all telemetry data-including metrics, logs, spans, and events.
+
+## Set up security context in Kubernetes
+
+You may already have defined your own security boundaries outside of Dynatrace and defined them as Kubernetes labels or annotations. Suppose the permissions for the Kubernetes cluster or namespace are not sufficient. In that case, Dynatrace allows you to set up more fine-grained permissions by leveraging your own Kubernetes labels or annotations as the source for your [security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context") in Dynatrace.
+
+This security context can represent your own security architecture and could even be hierarchical by encoding this into a string such as `department-A/department-AB/team-C`.
+
+### Security context based on existing namespace labels or annotations (recommended)
+
+Via the Kubernetes metadata enrichment feature, you can use already existing namespace labels and annotations as source for your security context. Just choose an existing label, and it will be added as `dt.security_context` on your telemetry.
+
+To enable this functionality, make sure Dynatrace Operator has [metadata enrichment](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+
+For details, see [Use settings to use existing labels and annotations](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment#enrichment-options "Guides for telemetry enrichment on Kubernetes").
+
+### Security context based on dedicated pod annotations
+
+[Dedicated pod annotations](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment#dedicated-annotations "Guides for telemetry enrichment on Kubernetes") are only intended for scenarios where namespace labels or annotations cannot be used as a source.
+
+Unlike the settings-based approach, manually added pod annotations do not provide full enrichment. They do not enrich Kubernetes metrics, Kubernetes events, Kubernetes Smartscape entities, or Prometheus metrics.
+
+You can provide `dt.security_context` as a pod annotatation:
+
+```
+metadata:
+
+
+
+annotations:
+
+
+
+metadata.dynatrace.com/dt.security_context: foo
+```
+
+This works automatically for OneAgent and OpenTelemetry scenarios where you are enriching [attributes directly in your application code](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.").
+
+For details, see [security context and cost allocation](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment#security-context-and-cost-allocation "Guides for telemetry enrichment on Kubernetes").
+
+## Related topics
+
+* [Kubernetes cluster and workload monitoringï»¿](https://www.dynatrace.com/technologies/kubernetes-monitoring/)
 
 
 ---
@@ -14883,7 +15346,7 @@ v1alpha2
 ---
 title: Dynatrace Operator security
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/security
-scraped: 2026-02-16T09:39:00.739725
+scraped: 2026-02-17T05:01:51.341533
 ---
 
 # Dynatrace Operator security

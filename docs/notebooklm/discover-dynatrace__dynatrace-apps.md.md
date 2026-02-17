@@ -1,6 +1,6 @@
 # Dynatrace Documentation: discover-dynatrace/dynatrace-apps.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace Apps
 source: https://www.dynatrace.com/docs/discover-dynatrace/dynatrace-apps
-scraped: 2026-02-16T21:09:41.318055
+scraped: 2026-02-17T04:45:04.082020
 ---
 
 # Dynatrace Apps

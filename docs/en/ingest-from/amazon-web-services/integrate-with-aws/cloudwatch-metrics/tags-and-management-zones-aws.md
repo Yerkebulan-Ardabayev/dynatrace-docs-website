@@ -1,7 +1,7 @@
 ---
 title: Tags and management zones for AWS integration
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/tags-and-management-zones-aws
-scraped: 2026-02-16T21:25:56.890174
+scraped: 2026-02-17T05:04:07.494866
 ---
 
 # Tags and management zones for AWS integration

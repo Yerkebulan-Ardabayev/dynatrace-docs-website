@@ -1,7 +1,7 @@
 ---
 title: Trace Lambda functions
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions
-scraped: 2026-02-16T21:17:55.607581
+scraped: 2026-02-17T04:51:18.553491
 ---
 
 # Trace Lambda functions

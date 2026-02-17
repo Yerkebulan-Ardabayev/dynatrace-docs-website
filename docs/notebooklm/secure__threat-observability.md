@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/threat-observability
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 23
 
@@ -232,7 +232,7 @@ For more information and the complete security model specification, see [Securit
 ---
 title: DQL examples for security data
 source: https://www.dynatrace.com/docs/secure/threat-observability/dql-examples
-scraped: 2026-02-16T21:15:17.855967
+scraped: 2026-02-17T04:55:08.589075
 ---
 
 # DQL examples for security data
@@ -2925,7 +2925,7 @@ Enrich observables with threat intelligence from AbuseIPDB.](https://www.dynatra
 ---
 title: Ingest Akamai security logs and events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-akamai
-scraped: 2026-02-16T21:20:28.949592
+scraped: 2026-02-17T05:02:43.460276
 ---
 
 # Ingest Akamai security logs and events
@@ -3812,7 +3812,7 @@ Ingest AWS Security Hub vulnerabilities, detections, and compliance findings.](h
 ---
 title: Ingest custom security events via API
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-custom-data
-scraped: 2026-02-16T21:20:51.110557
+scraped: 2026-02-17T05:07:28.686829
 ---
 
 # Ingest custom security events via API
@@ -4422,7 +4422,7 @@ For billing information, see [Events powered by Grail](/docs/license/capabilitie
 ---
 title: Ingest GitHub Advanced Security security events and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-github-advanced-security
-scraped: 2026-02-16T21:20:30.343175
+scraped: 2026-02-17T05:05:08.426439
 ---
 
 # Ingest GitHub Advanced Security security events and audit logs
@@ -4706,7 +4706,7 @@ Ingest GitHub Advanced Security (GHAS) security events and audit logs.](https://
 ---
 title: Ingest Harbor vulnerability findings, scans, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-harbor-data
-scraped: 2026-02-16T21:20:41.360333
+scraped: 2026-02-17T05:02:20.388478
 ---
 
 # Ingest Harbor vulnerability findings, scans, and audit logs
@@ -5101,7 +5101,7 @@ Ingest Microsoft Defender for Cloud security findings and scan events.](https://
 ---
 title: Ingest Microsoft Entra ID sign-in logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-entra-id
-scraped: 2026-02-16T21:20:33.110687
+scraped: 2026-02-17T05:04:17.941219
 ---
 
 # Ingest Microsoft Entra ID sign-in logs
@@ -5441,7 +5441,7 @@ Ingest Microsoft Sentinel security findings.](https://www.dynatrace.com/hub/deta
 ---
 title: Ingest vulnerability findings in OCSF format
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-ocsf-data
-scraped: 2026-02-16T21:20:48.217961
+scraped: 2026-02-17T05:11:20.605874
 ---
 
 # Ingest vulnerability findings in OCSF format
@@ -6382,7 +6382,7 @@ Ingest SonarQube vulnerability findings, metrics, and audit logs.](https://www.d
 ---
 title: Ingest Sonatype Lifecycle security events and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-sonatype
-scraped: 2026-02-16T21:20:45.464470
+scraped: 2026-02-17T04:58:11.636475
 ---
 
 # Ingest Sonatype Lifecycle security events and audit logs
@@ -6986,7 +6986,7 @@ Ingest Tenable vulnerability findings, scan events, and audit logs.](https://www
 ---
 title: Enrich threat observables with VirusTotal
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/virustotal-enrich
-scraped: 2026-02-16T21:20:35.861735
+scraped: 2026-02-17T05:02:24.006952
 ---
 
 # Enrich threat observables with VirusTotal
@@ -7135,7 +7135,7 @@ Enrich observables with threat intelligence from VirusTotal.](https://www.dynatr
 ---
 title: Security integrations
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest
-scraped: 2026-02-16T21:11:13.131963
+scraped: 2026-02-17T04:47:15.861527
 ---
 
 # Security integrations

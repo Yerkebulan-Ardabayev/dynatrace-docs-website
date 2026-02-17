@@ -1,7 +1,7 @@
 ---
 title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability
-scraped: 2026-02-16T09:35:54.096725
+scraped: 2026-02-17T04:59:20.626542
 ---
 
 # OpenAI Observability

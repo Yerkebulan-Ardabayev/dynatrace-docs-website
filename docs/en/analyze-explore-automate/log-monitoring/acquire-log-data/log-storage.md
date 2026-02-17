@@ -1,7 +1,7 @@
 ---
 title: Log ingest rules (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage
-scraped: 2026-02-16T09:32:59.837883
+scraped: 2026-02-17T05:09:18.817474
 ---
 
 # Log ingest rules (Logs Classic)

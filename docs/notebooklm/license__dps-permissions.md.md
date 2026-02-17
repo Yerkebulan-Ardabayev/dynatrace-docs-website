@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/dps-permissions.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: DPS permissions
 source: https://www.dynatrace.com/docs/license/dps-permissions
-scraped: 2026-02-16T21:15:26.947570
+scraped: 2026-02-17T05:04:56.091441
 ---
 
 # DPS permissions

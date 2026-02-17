@@ -1,7 +1,7 @@
 ---
 title: Drilldowns and navigation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/open-with
-scraped: 2026-02-16T21:12:22.975784
+scraped: 2026-02-17T04:46:08.290556
 ---
 
 # Drilldowns and navigation

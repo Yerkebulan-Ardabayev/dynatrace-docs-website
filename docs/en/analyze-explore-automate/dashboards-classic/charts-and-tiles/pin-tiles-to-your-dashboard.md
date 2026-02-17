@@ -1,7 +1,7 @@
 ---
 title: Pin tiles to your dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard
-scraped: 2026-02-15T21:25:16.400487
+scraped: 2026-02-17T05:06:13.296493
 ---
 
 # Pin tiles to your dashboard

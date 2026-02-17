@@ -1,6 +1,6 @@
 # Dynatrace Documentation: whats-new.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: What's new in Dynatrace
 source: https://www.dynatrace.com/docs/whats-new
-scraped: 2026-02-16T21:09:59.061390
+scraped: 2026-02-17T04:45:12.915066
 ---
 
 # What's new in Dynatrace

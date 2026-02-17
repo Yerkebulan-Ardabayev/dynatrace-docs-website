@@ -1,6 +1,6 @@
 # Dynatrace Documentation: observe/infrastructure-observability.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-02-16T21:11:41.208333
+scraped: 2026-02-17T04:47:30.792566
 ---
 
 # Infrastructure Observability

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: whats-new/saas.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: What's new in Dynatrace SaaS
 source: https://www.dynatrace.com/docs/whats-new/saas
-scraped: 2026-02-16T21:09:38.628402
+scraped: 2026-02-17T04:45:00.239373
 ---
 
 # What's new in Dynatrace SaaS

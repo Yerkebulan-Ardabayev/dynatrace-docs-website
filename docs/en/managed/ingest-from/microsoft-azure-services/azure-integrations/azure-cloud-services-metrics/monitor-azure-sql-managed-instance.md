@@ -1,7 +1,7 @@
 ---
 title: Azure SQL Managed Instance monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-managed-instance
-scraped: 2026-02-15T09:08:16.369287
+scraped: 2026-02-17T04:59:17.421587
 ---
 
 # Azure SQL Managed Instance monitoring

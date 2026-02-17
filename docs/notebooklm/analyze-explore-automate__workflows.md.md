@@ -1,6 +1,6 @@
 # Dynatrace Documentation: analyze-explore-automate/workflows.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-16T21:13:31.913639
+scraped: 2026-02-17T04:54:40.476237
 ---
 
 # Workflows

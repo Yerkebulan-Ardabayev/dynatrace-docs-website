@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/google-cloud-platform.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Set up Dynatrace on Google Cloud
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform
-scraped: 2026-02-16T21:14:54.179272
+scraped: 2026-02-17T05:12:16.240061
 ---
 
 # Set up Dynatrace on Google Cloud

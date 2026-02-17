@@ -1,6 +1,6 @@
 # Dynatrace Documentation: analyze-explore-automate/dashboards-classic
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 9
 
@@ -1242,7 +1242,7 @@ To configure this tile type from the dashboard editor
 ---
 title: Pin tiles to your dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard
-scraped: 2026-02-15T21:25:16.400487
+scraped: 2026-02-17T05:06:13.296493
 ---
 
 # Pin tiles to your dashboard
@@ -1411,7 +1411,7 @@ To pin the cloned tiles to another existing dashboard, or to create another dash
 ---
 title: Edit Dynatrace dashboard JSON
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json
-scraped: 2026-02-15T09:08:50.600588
+scraped: 2026-02-17T05:04:44.644071
 ---
 
 # Edit Dynatrace dashboard JSON
@@ -1513,7 +1513,7 @@ Edit the dashboard JSON in your preferred development environment. For JSON synt
 ---
 title: Dynatrace dashboard timeframe and management zone settings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe
-scraped: 2026-02-16T21:19:31.240626
+scraped: 2026-02-17T04:49:59.221556
 ---
 
 # Dynatrace dashboard timeframe and management zone settings
@@ -1702,7 +1702,7 @@ To set a tile management zone that overrides the dashboard management zone
 ---
 title: Create remote/multi-environment Dynatrace dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment
-scraped: 2026-02-16T21:18:52.333343
+scraped: 2026-02-17T04:52:26.111216
 ---
 
 # Create remote/multi-environment Dynatrace dashboards
@@ -1898,7 +1898,7 @@ You can of course add other tile types and point to additional remote environmen
 ---
 title: Preset Dynatrace dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset
-scraped: 2026-02-16T21:32:02.136483
+scraped: 2026-02-17T05:07:03.066884
 ---
 
 # Preset Dynatrace dashboards
@@ -2038,7 +2038,7 @@ If you have admin privileges, you can assign a preset dashboard as the home dash
 ---
 title: Global Dynatrace dashboard settings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-settings
-scraped: 2026-02-16T21:25:29.017350
+scraped: 2026-02-17T05:05:01.630803
 ---
 
 # Global Dynatrace dashboard settings

@@ -1,7 +1,7 @@
 ---
 title: Line chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-line
-scraped: 2026-02-15T21:16:34.227797
+scraped: 2026-02-17T04:55:28.645055
 ---
 
 # Line chart visualization

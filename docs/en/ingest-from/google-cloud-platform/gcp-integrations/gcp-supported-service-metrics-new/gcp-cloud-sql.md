@@ -1,7 +1,7 @@
 ---
 title: Google Cloud SQL monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-sql
-scraped: 2026-02-15T21:29:19.911177
+scraped: 2026-02-17T05:02:46.791280
 ---
 
 # Google Cloud SQL monitoring

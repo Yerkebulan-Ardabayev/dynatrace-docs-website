@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/threat-observability.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Threat Observability
 source: https://www.dynatrace.com/docs/secure/threat-observability
-scraped: 2026-02-16T21:11:34.561090
+scraped: 2026-02-17T04:47:43.985551
 ---
 
 # Threat Observability

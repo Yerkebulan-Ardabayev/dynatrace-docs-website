@@ -1,7 +1,7 @@
 ---
 title: Scatterplot visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot
-scraped: 2026-02-16T21:29:57.995685
+scraped: 2026-02-17T04:55:25.014503
 ---
 
 # Scatterplot visualization

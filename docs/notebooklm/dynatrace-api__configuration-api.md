@@ -1,8 +1,8 @@
 # Dynatrace Documentation: dynatrace-api/configuration-api
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 11
+Files combined: 12
 
 ---
 
@@ -442,6 +442,40 @@ A list of constraint violations
 ---
 
 
+## Source: allowed-beacon-cors.md
+
+
+---
+title: Allowed beacon domains API
+source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors
+scraped: 2026-02-17T05:10:02.712198
+---
+
+# Allowed beacon domains API
+
+# Allowed beacon domains API
+
+* Reference
+* Published Sep 23, 2020
+
+The **Allowed beacon domains** API enables you to manage the list of RUM beacon origins that must be accepted by OneAgent and ActiveGate.
+
+To manage the RUM beacon origins list in the Dynatrace web UI, go to **Settings** > **Web and mobile monitoring** > **Beacon origins for CORS**.
+
+[### View configuration
+
+Get an overview of allowed beacon origins.](/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors/get-configuration "Read allowed beacon domains list via the Dynatrace API.")[### Update configuration
+
+Update configuration of allowed beacon origins.](/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors/put-configuration "Update allowed beacon domains list via the Dynatrace API.")
+
+## Related topics
+
+* [Configure beacon origin allowlist for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.")
+
+
+---
+
+
 ## Source: content-resources.md
 
 
@@ -516,7 +550,7 @@ Update configuration of IP address mappings.](/docs/dynatrace-api/configuration-
 ---
 title: Geographic regions - IP mapping headers API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-header
-scraped: 2026-02-16T21:24:11.661965
+scraped: 2026-02-17T04:58:20.014133
 ---
 
 # Geographic regions - IP mapping headers API
@@ -606,7 +640,7 @@ Delete a user session property you don't need anymore.](/docs/dynatrace-api/conf
 ---
 title: Web application configuration API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api
-scraped: 2026-02-16T09:31:24.870224
+scraped: 2026-02-17T05:03:08.675443
 ---
 
 # Web application configuration API
@@ -761,7 +795,7 @@ Delete a service detection rule you don't need anymore.
 ---
 title: Failure detection API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/failure-detection
-scraped: 2026-02-16T09:29:12.892784
+scraped: 2026-02-17T05:12:01.107001
 ---
 
 # Failure detection API

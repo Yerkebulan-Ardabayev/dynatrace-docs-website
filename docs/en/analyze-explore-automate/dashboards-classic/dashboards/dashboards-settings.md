@@ -1,7 +1,7 @@
 ---
 title: Global Dynatrace dashboard settings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-settings
-scraped: 2026-02-16T21:25:29.017350
+scraped: 2026-02-17T05:05:01.630803
 ---
 
 # Global Dynatrace dashboard settings

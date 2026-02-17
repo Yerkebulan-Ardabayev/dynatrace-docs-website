@@ -1,7 +1,7 @@
 ---
 title: Amazon ES (Elasticsearch Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticsearch-service-es
-scraped: 2026-02-16T09:28:31.188912
+scraped: 2026-02-17T05:07:46.659947
 ---
 
 # Amazon ES (Elasticsearch Service) monitoring

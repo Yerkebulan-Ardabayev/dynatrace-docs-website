@@ -1,7 +1,7 @@
 ---
 title: External vault integration
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration
-scraped: 2026-02-16T21:24:53.247107
+scraped: 2026-02-17T05:02:13.822123
 ---
 
 # External vault integration

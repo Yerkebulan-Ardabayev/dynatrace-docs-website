@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure Container Instances
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-instances
-scraped: 2026-02-16T21:27:34.170507
+scraped: 2026-02-17T05:08:26.943302
 ---
 
 # Monitor Azure Container Instances

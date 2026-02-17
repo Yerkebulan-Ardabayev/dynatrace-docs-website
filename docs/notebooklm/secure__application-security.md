@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/application-security
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 20
 
@@ -13,7 +13,7 @@ Files combined: 20
 ---
 title: Runtime Application Protection monitoring rules
 source: https://www.dynatrace.com/docs/secure/application-security/application-protection/application-protection-rules
-scraped: 2026-02-15T21:26:50.425428
+scraped: 2026-02-17T04:58:24.892366
 ---
 
 # Runtime Application Protection monitoring rules
@@ -984,7 +984,7 @@ In this case, the vulnerability is counted one time, as `Medium`.
 ---
 title: Monitoring rules - Code-level Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv
-scraped: 2026-02-15T21:25:00.783318
+scraped: 2026-02-17T05:05:57.099224
 ---
 
 # Monitoring rules - Code-level Vulnerability Analytics
@@ -1087,7 +1087,7 @@ Define code-level vulnerability detection on a process group level.](/docs/secur
 ---
 title: Email integration for security notifications
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/security-notifications-rva/email-integration
-scraped: 2026-02-15T09:13:26.867695
+scraped: 2026-02-17T05:12:39.884971
 ---
 
 # Email integration for security notifications
@@ -1251,7 +1251,7 @@ To verify that your integration is set up correctly
 ---
 title: Jira integration for security notifications
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/security-notifications-rva/jira-integration
-scraped: 2026-02-15T09:10:01.276976
+scraped: 2026-02-17T05:01:03.451461
 ---
 
 # Jira integration for security notifications
@@ -1377,7 +1377,7 @@ To verify that your integration is set up correctly
 ---
 title: Webhook integration for security notifications
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/security-notifications-rva/webhook-integration
-scraped: 2026-02-16T21:30:21.337438
+scraped: 2026-02-17T05:05:36.572095
 ---
 
 # Webhook integration for security notifications
@@ -1489,7 +1489,7 @@ To verify that your integration is set up correctly
 ---
 title: Davis Security Advisor calculations
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor
-scraped: 2026-02-16T21:18:43.688538
+scraped: 2026-02-17T04:49:36.402527
 ---
 
 # Davis Security Advisor calculations
@@ -1545,7 +1545,7 @@ To filter by recommended fixes, see [Filter third-party vulnerabilities by recom
 ---
 title: Davis Security Score calculations
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score
-scraped: 2026-02-16T21:18:45.038354
+scraped: 2026-02-17T04:49:43.709026
 ---
 
 # Davis Security Score calculations
@@ -1656,7 +1656,7 @@ Thus, the DSS (score and risk level) for vulnerabilities on Grail-powered apps c
 ---
 title: Monitoring rules - Third-party Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv
-scraped: 2026-02-16T21:18:50.976505
+scraped: 2026-02-17T04:49:40.172666
 ---
 
 # Monitoring rules - Third-party Vulnerability Analytics
@@ -2944,7 +2944,7 @@ New monitoring rules Classic monitoring rules
 ---
 title: Filter or change status of third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities
-scraped: 2026-02-16T21:18:47.859448
+scraped: 2026-02-17T04:49:47.283773
 ---
 
 # Filter or change status of third-party vulnerabilities
@@ -3117,7 +3117,7 @@ The last five status changes of the vulnerability are logged in the **Vulnerabil
 ---
 title: Manage third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities
-scraped: 2026-02-16T21:18:49.279605
+scraped: 2026-02-17T04:49:49.068349
 ---
 
 # Manage third-party vulnerabilities
@@ -3557,7 +3557,7 @@ Lists and links to the top five process groups, sorted by status (`Affected`, th
 ---
 title: Remediation tracking
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking
-scraped: 2026-02-16T21:18:46.500278
+scraped: 2026-02-17T04:49:42.020509
 ---
 
 # Remediation tracking
@@ -4209,7 +4209,7 @@ The order of the monitoring rules is important: As soon as a rule matches an ent
 ---
 title: Third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities
-scraped: 2026-02-16T21:10:53.963051
+scraped: 2026-02-17T04:45:34.802676
 ---
 
 # Third-party vulnerabilities
@@ -4254,7 +4254,7 @@ Create, modify, and delete custom monitoring rules for Dynatrace-monitored proce
 ---
 title: Upgrade Thirdâparty and Codeâlevel vulnerabilities to the 3rd generation experience
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/vulnerabilities-upgrade-classic-to-latest
-scraped: 2026-02-16T21:31:17.265344
+scraped: 2026-02-17T05:09:39.460740
 ---
 
 # Upgrade Thirdâparty and Codeâlevel vulnerabilities to the 3rd generation experience
@@ -4367,7 +4367,7 @@ Connect with the Dynatrace Community to [share feedback and ask questionsï»¿]
 ---
 title: Runtime Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics
-scraped: 2026-02-16T21:23:15.795581
+scraped: 2026-02-17T05:03:45.780249
 ---
 
 # Runtime Vulnerability Analytics

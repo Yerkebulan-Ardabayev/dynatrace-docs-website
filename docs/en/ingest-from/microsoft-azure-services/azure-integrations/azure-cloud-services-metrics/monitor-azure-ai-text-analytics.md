@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Text Analytics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-text-analytics
-scraped: 2026-02-16T21:29:45.348121
+scraped: 2026-02-17T05:10:28.946159
 ---
 
 # Azure AI - Text Analytics monitoring

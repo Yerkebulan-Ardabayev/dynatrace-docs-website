@@ -1,7 +1,7 @@
 ---
 title: OneAgent platform and capability support matrix
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix
-scraped: 2026-02-16T21:14:59.756448
+scraped: 2026-02-17T04:51:58.653547
 ---
 
 # OneAgent platform and capability support matrix

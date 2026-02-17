@@ -1,7 +1,7 @@
 ---
 title: Azure NetApp Files monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-netapp-files
-scraped: 2026-02-16T21:25:46.916741
+scraped: 2026-02-17T04:59:55.881963
 ---
 
 # Azure NetApp Files monitoring

@@ -1,8 +1,8 @@
 # Dynatrace Documentation: platform/grail
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 20
+Files combined: 21
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 20
 ---
 title: What is Dynatrace Grail?
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-grail
-scraped: 2026-02-16T21:10:22.185904
+scraped: 2026-02-17T04:46:53.195776
 ---
 
 # What is Dynatrace Grail?
@@ -188,7 +188,7 @@ NoSQL databases like Cassandra, Redis, and Amazon DynamoDB are examples of stora
 ---
 title: DPL Architect
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/dpl-architect
-scraped: 2026-02-15T21:26:34.350245
+scraped: 2026-02-17T04:58:16.713600
 ---
 
 # DPL Architect
@@ -427,13 +427,176 @@ For additional insights into DPL Architect, see
 ---
 
 
+## Source: log-processing-positional-matchers.md
+
+
+---
+title: DPL Positional Matchers
+source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-positional-matchers
+scraped: 2026-02-17T04:58:21.631657
+---
+
+# DPL Positional Matchers
+
+# DPL Positional Matchers
+
+* Latest Dynatrace
+* Reference
+* Published Nov 08, 2022
+
+## Beginning of string
+
+**BOS, BOF**
+
+Matches beginning of string
+
+output type
+
+quantifier
+
+configuration
+
+none
+
+none
+
+none
+
+#### Example
+
+Extracting the first line in the string:
+
+```
+"name";"age"
+
+
+
+Homer Simpson;40
+
+
+
+Charles Montgomery Burns;104
+```
+
+```
+BOF LD:header EOL;
+```
+
+Results in the first line parsed into the `header` field. Parsing following lines fails, as they do not begin at the start of file marker.
+
+| header |
+| --- |
+| `''name'';''age''` |
+|  |
+
+## Middle of string
+
+**MOS, MOF**
+
+Matches any bytes in the middle of string
+
+output type
+
+quantifier
+
+configuration
+
+none
+
+none
+
+none
+
+#### Example
+
+Extracting records after the first row in the string
+
+```
+"name";"age"
+
+
+
+Homer Simpson;40
+
+
+
+Charles Montgomery Burns;104
+```
+
+```
+MOF LD:name ';' INT:age EOL
+```
+
+Results in lines 2 and 3 parsed to fields `name` and `age`. Line 1 fails to parse as it begins with the beginning of the string marker.
+
+| name | age |
+| --- | --- |
+|  | `-1` |
+| `Homer Simpson` | `40` |
+| `Charles Montgomery Burns` | `40` |
+
+## End of string
+
+**EOS, EOF**
+
+Matches end of string
+
+output type
+
+quantifier
+
+configuration
+
+none
+
+none
+
+none
+
+#### Example
+
+Extracting the last line of the string:
+
+```
+"name";"age"
+
+
+
+Homer Simpson;40
+
+
+
+Charles Montgomery Burns;104
+
+
+
+total:2 persons, average age: 72 years
+```
+
+The following pattern matches only when the last line is followed by the end of string marker:
+
+```
+LD:footer EOS
+```
+
+Results in the last line being extracted to the `footer` field. First three lines fail to parse as they are not the last in the string.
+
+| footer |
+| --- |
+|  |
+| `total:2 persons, average age: 72 years` |
+
+
+---
+
+
 ## Source: dynatrace-pattern-language.md
 
 
 ---
 title: Dynatrace Pattern Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language
-scraped: 2026-02-16T21:22:00.808423
+scraped: 2026-02-17T05:09:55.836050
 ---
 
 # Dynatrace Pattern Language
@@ -636,7 +799,7 @@ If the engine encounters data for which it is unable to find a match, it resets 
 ---
 title: DQL commands
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/commands
-scraped: 2026-02-16T21:15:08.395237
+scraped: 2026-02-17T04:55:01.729375
 ---
 
 # DQL commands
@@ -848,7 +1011,7 @@ Traverses source nodes to target nodes in the specified direction, following edg
 ---
 title: DQL data types
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/data-types
-scraped: 2026-02-16T21:15:11.140992
+scraped: 2026-02-17T04:55:16.278439
 ---
 
 # DQL data types
@@ -1263,7 +1426,7 @@ A set of key-value pair data whose value can be any DQL data type.
 ---
 title: DQL best practices
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-best-practices
-scraped: 2026-02-16T21:12:48.217778
+scraped: 2026-02-17T04:57:09.282010
 ---
 
 # DQL best practices
@@ -1521,7 +1684,7 @@ Similarly, if you need to sort by a field named 'not':
 ---
 title: DQL compared to SQL and more
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-comparison
-scraped: 2026-02-16T21:15:05.612074
+scraped: 2026-02-17T04:54:57.011292
 ---
 
 # DQL compared to SQL and more
@@ -1929,7 +2092,7 @@ events
 ---
 title: Use DQL queries
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-guide
-scraped: 2026-02-16T21:15:09.732459
+scraped: 2026-02-17T04:55:02.853892
 ---
 
 # Use DQL queries
@@ -2132,7 +2295,7 @@ You can learn DQL through hands-on experience with interactive tutorials in the 
 ---
 title: DQL language reference
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-reference
-scraped: 2026-02-16T21:15:15.995427
+scraped: 2026-02-17T04:55:06.377792
 ---
 
 # DQL language reference
@@ -2335,7 +2498,7 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
 ---
 title: DQL use cases
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-use-cases
-scraped: 2026-02-16T21:28:27.585114
+scraped: 2026-02-17T04:56:43.523162
 ---
 
 # DQL use cases
@@ -5691,7 +5854,7 @@ upper(content)
 ---
 title: DQL functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions
-scraped: 2026-02-16T21:15:01.295469
+scraped: 2026-02-17T04:55:14.575483
 ---
 
 # DQL functions
@@ -6693,7 +6856,7 @@ Creates a record from the keys and values of the parameter.
 ---
 title: DQL operators
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/operators
-scraped: 2026-02-16T21:15:14.858330
+scraped: 2026-02-17T04:55:12.666445
 ---
 
 # DQL operators
@@ -7731,7 +7894,7 @@ Only strings allow patterns.
 ---
 title: Dynatrace Query Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language
-scraped: 2026-02-16T21:10:31.469097
+scraped: 2026-02-17T04:46:10.991281
 ---
 
 # Dynatrace Query Language
@@ -8248,7 +8411,7 @@ You can also use [policy boundaries](/docs/manage/identity-access-management/per
 ---
 title: Permissions in Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
-scraped: 2026-02-16T21:13:07.098589
+scraped: 2026-02-17T04:55:58.649099
 ---
 
 # Permissions in Grail
@@ -8994,7 +9157,7 @@ ALLOW storage:system:read;
 ---
 title: Organize data
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
-scraped: 2026-02-16T21:21:59.440905
+scraped: 2026-02-17T05:03:27.201979
 ---
 
 # Organize data
@@ -9181,7 +9344,7 @@ See when to [create custom buckets and how to allow access to them](/docs/platfo
 ---
 title: Query monitored entities in Grail
 source: https://www.dynatrace.com/docs/platform/grail/querying-monitored-entities
-scraped: 2026-02-16T21:29:20.585217
+scraped: 2026-02-17T05:12:48.042864
 ---
 
 # Query monitored entities in Grail
@@ -10628,7 +10791,7 @@ related\_to
 ---
 title: Smartscape on Grail
 source: https://www.dynatrace.com/docs/platform/grail/smartscape-on-grail
-scraped: 2026-02-16T21:19:58.277884
+scraped: 2026-02-17T04:55:41.028101
 ---
 
 # Smartscape on Grail

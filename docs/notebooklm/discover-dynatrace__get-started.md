@@ -1,6 +1,6 @@
 # Dynatrace Documentation: discover-dynatrace/get-started
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 10
 
@@ -55,7 +55,7 @@ Any ACR posted below, or anywhere else on the Dynatrace website, or otherwise pu
 ---
 title: Data visualizations
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
-scraped: 2026-02-15T21:28:17.395512
+scraped: 2026-02-17T05:08:33.518703
 ---
 
 # Data visualizations
@@ -106,7 +106,7 @@ Common interactions and features of data visualizations in the latest Dynatrace.
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-16T09:35:00.811004
+scraped: 2026-02-17T04:54:24.910660
 ---
 
 # Launchpads
@@ -261,7 +261,7 @@ To see the full API documentation for the documents service
 ---
 title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-02-15T21:24:57.994483
+scraped: 2026-02-17T05:05:06.595849
 ---
 
 # Troubleshooting sign-in issues
@@ -287,7 +287,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-16T21:12:34.578096
+scraped: 2026-02-17T04:46:01.446183
 ---
 
 # Share documents
@@ -594,7 +594,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-16T21:14:44.864610
+scraped: 2026-02-17T04:54:15.983616
 ---
 
 # Filter field
@@ -889,7 +889,7 @@ Use bracket notation for subkeys with special characters (spaces, dashes, etc.) 
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-16T09:36:54.362238
+scraped: 2026-02-17T05:06:03.208730
 ---
 
 # Navigate the Dynatrace platform
@@ -1080,7 +1080,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-16T21:10:55.296821
+scraped: 2026-02-17T04:45:44.028672
 ---
 
 # What is a monitoring environment?

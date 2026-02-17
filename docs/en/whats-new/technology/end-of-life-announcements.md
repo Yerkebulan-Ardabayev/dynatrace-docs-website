@@ -1,7 +1,7 @@
 ---
 title: End-of-life announcements
 source: https://www.dynatrace.com/docs/whats-new/technology/end-of-life-announcements
-scraped: 2026-02-16T21:32:09.573510
+scraped: 2026-02-17T05:02:10.838508
 ---
 
 # End-of-life announcements

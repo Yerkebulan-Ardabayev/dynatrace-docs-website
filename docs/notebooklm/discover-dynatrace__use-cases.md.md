@@ -1,6 +1,6 @@
 # Dynatrace Documentation: discover-dynatrace/use-cases.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace tutorials
 source: https://www.dynatrace.com/docs/discover-dynatrace/use-cases
-scraped: 2026-02-15T21:29:52.635749
+scraped: 2026-02-17T05:01:42.059612
 ---
 
 # Dynatrace tutorials

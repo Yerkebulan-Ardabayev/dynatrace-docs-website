@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/capabilities
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 16
 
@@ -122,7 +122,7 @@ These metrics are also available via the Environment API and your **Account Mana
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-02-16T21:16:46.811722
+scraped: 2026-02-17T04:53:27.026380
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -769,7 +769,7 @@ The example below shows that one of the Infrastructure monitored hosts reported 
 ---
 title: Calculate your consumption of Mainframe Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/mainframe
-scraped: 2026-02-16T21:16:49.496698
+scraped: 2026-02-17T04:53:24.305796
 ---
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
@@ -949,7 +949,7 @@ For each OneAgent installed in your infrastructure, you can choose the monitorin
 ---
 title: AppEngine Functions (Serverless Functions) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/appengine-functions
-scraped: 2026-02-15T09:09:13.036073
+scraped: 2026-02-17T05:00:07.849962
 ---
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
@@ -996,7 +996,7 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-02-16T21:28:00.335099
+scraped: 2026-02-17T04:58:31.585880
 ---
 
 # Application Security overview (DPS)
@@ -1056,7 +1056,7 @@ This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/
 ---
 title: Automation Workflow capability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/automation
-scraped: 2026-02-16T21:26:26.721298
+scraped: 2026-02-17T05:00:12.749034
 ---
 
 # Automation Workflow capability overview (DPS)
@@ -1197,7 +1197,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Digital Experience Monitoring (DEM) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/digital-experience-monitoring
-scraped: 2026-02-16T21:31:47.869508
+scraped: 2026-02-17T05:04:47.349529
 ---
 
 # Digital Experience Monitoring (DEM) overview (DPS)
@@ -1294,7 +1294,7 @@ The following details apply to metric data points:
 ---
 title: Events powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/events
-scraped: 2026-02-16T21:20:02.351807
+scraped: 2026-02-17T05:12:12.914468
 ---
 
 # Events powered by Grail overview (DPS)
@@ -1499,7 +1499,7 @@ Use DQL to analyze event data in context with relevant data on the Dynatrace pla
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-16T21:11:59.662942
+scraped: 2026-02-17T04:47:55.561462
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1759,7 +1759,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-16T21:19:59.594291
+scraped: 2026-02-17T05:04:14.578226
 ---
 
 # Metrics powered by Grail overview (DPS)

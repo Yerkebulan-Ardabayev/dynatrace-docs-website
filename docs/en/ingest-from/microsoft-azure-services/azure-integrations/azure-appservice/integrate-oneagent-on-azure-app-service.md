@@ -1,7 +1,7 @@
 ---
 title: Integrate OneAgent on Azure App Service for Windows
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-azure-app-service
-scraped: 2026-02-16T21:18:03.343937
+scraped: 2026-02-17T04:51:38.309392
 ---
 
 # Integrate OneAgent on Azure App Service for Windows

@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Bing Custom Search monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-custom-search
-scraped: 2026-02-16T21:32:15.236893
+scraped: 2026-02-17T05:05:03.297668
 ---
 
 # Azure AI - Bing Custom Search monitoring

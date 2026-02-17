@@ -1,7 +1,7 @@
 ---
 title: Actions for GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions
-scraped: 2026-02-15T09:09:19.331883
+scraped: 2026-02-17T05:11:44.184762
 ---
 
 # Actions for GitHub Connector
