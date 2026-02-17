@@ -1,0 +1,3159 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine/compute-engine-monitoring/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Google Compute Engine with Operations suite metrics monitoring - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#google-compute-engine-with-operations-suite-metrics-monitoring" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Google Compute Engine with Operations suite metrics monitoring
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="google-compute-engine-with-operations-suite-metrics-monitoring">Google Compute Engine with Operations suite metrics monitoring<a class="headerlink" href="#google-compute-engine-with-operations-suite-metrics-monitoring" title="Permanent link">&para;</a></h1>
+<h1 id="google-compute-engine-with-operations-suite-metrics-monitoring_1">Google Compute Engine with Operations suite metrics monitoring<a class="headerlink" href="#google-compute-engine-with-operations-suite-metrics-monitoring_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>18-min read</li>
+<li>Published Jan 17, 2022</li>
+</ul>
+<p>Dynatrace Google Cloud integration leverages data collected from the Google Operation API to constantly monitor health and performance of Google Cloud Services. While combining all relevant data into dashboards, it also enables alerting and event tracking.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p><a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8" title="Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.">Set up integration</a></p>
+<h2 id="add-services-and-feature-sets-optional">Add services and feature sets Optional<a class="headerlink" href="#add-services-and-feature-sets-optional" title="Permanent link">&para;</a></h2>
+<p>After integration, Dynatrace automatically monitors a number of preset Google Cloud services and feature sets (metrics). Besides these, you can add more services or feature sets to monitoring. For details, see <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage" title="Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.">Add or remove services</a>.</p>
+<p>For a list of feature sets available for this service, see <a href="#table">Metric table</a>.</p>
+<h2 id="view-metrics">View metrics<a class="headerlink" href="#view-metrics" title="Permanent link">&para;</a></h2>
+<p>After deploying the integration, you can see metrics from monitored services in the <a href="/docs/analyze-explore-automate/dashboards-classic/metrics-browser" title="Browse metrics with the Dynatrace metrics browser.">Metrics browser</a>, <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>, and your dashboard tiles.</p>
+<h2 id="metric-table">Metric table<a class="headerlink" href="#metric-table" title="Permanent link">&para;</a></h2>
+<p>The following feature sets are available for Google Compute Engine.</p>
+<table>
+<thead>
+<tr>
+<th>Feature set</th>
+<th>Name</th>
+<th>Unit</th>
+<th>GCP metric identifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Dropped bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/firewall/dropped_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Dropped packets</td>
+<td>Count</td>
+<td>compute.googleapis.com/firewall/dropped_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Runnable task count.</td>
+<td>Count</td>
+<td>compute.googleapis.com/guest/cpu/runnable_task_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>CPU usage</td>
+<td>Second</td>
+<td>compute.googleapis.com/guest/cpu/usage_time</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Disk usage in Bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/guest/disk/bytes_used</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>IO Time</td>
+<td>MilliSecond</td>
+<td>compute.googleapis.com/guest/disk/io_time</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Merged disk operations</td>
+<td>Count</td>
+<td>compute.googleapis.com/guest/disk/merged_operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Disk bytes transferred</td>
+<td>Byte</td>
+<td>compute.googleapis.com/guest/disk/operation_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Disk operations</td>
+<td>Count</td>
+<td>compute.googleapis.com/guest/disk/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Disk operation time</td>
+<td>MilliSecond</td>
+<td>compute.googleapis.com/guest/disk/operation_time</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Queue Length</td>
+<td>Count</td>
+<td>compute.googleapis.com/guest/disk/queue_length</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>IO Time</td>
+<td>MilliSecond</td>
+<td>compute.googleapis.com/guest/disk/weighted_io_time</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Anonymous memory usage in Bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/guest/memory/anonymous_used</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Memory usage in Bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/guest/memory/bytes_used</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Dirty pages usage in Bytes.</td>
+<td>Byte</td>
+<td>compute.googleapis.com/guest/memory/dirty_used</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Page cache memory usage in Bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/guest/memory/page_cache_used</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Unevictable memory usage in Bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/guest/memory/unevictable_used</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Problem Count</td>
+<td>Count</td>
+<td>compute.googleapis.com/guest/system/problem_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Problem State</td>
+<td>Count</td>
+<td>compute.googleapis.com/guest/system/problem_state</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Uptime</td>
+<td>Second</td>
+<td>compute.googleapis.com/guest/system/uptime</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Reserved vCPUs</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/cpu/reserved_cores</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Scheduler Wait Time</td>
+<td>Second</td>
+<td>compute.googleapis.com/instance/cpu/scheduler_wait_time</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>CPU usage</td>
+<td>Second</td>
+<td>compute.googleapis.com/instance/cpu/usage_time</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>CPU utilization</td>
+<td>Percent</td>
+<td>compute.googleapis.com/instance/cpu/utilization</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Peak disk read bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/disk/max_read_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Peak disk read ops</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/disk/max_read_ops_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Peak disk write bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/disk/max_write_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Peak disk write ops</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/disk/max_write_ops_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Disk read bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/disk/read_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Disk read operations</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/disk/read_ops_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Throttled read bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/disk/throttled_read_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Throttled read operations</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/disk/throttled_read_ops_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Throttled write bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/disk/throttled_write_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Throttled write operations</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/disk/throttled_write_ops_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Disk write bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/disk/write_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Disk write operations</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/disk/write_ops_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Early Boot Validation</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/integrity/early_boot_validation_status</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Late Boot Validation</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/integrity/late_boot_validation_status</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>VM Memory Total</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/memory/balloon/ram_size</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>VM Memory Used</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/memory/balloon/ram_used</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>VM Swap In</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/memory/balloon/swap_in_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>VM Swap Out</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/memory/balloon/swap_out_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Received bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/network/received_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Received packets</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/network/received_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Sent bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/instance/network/sent_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Sent packets</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance/network/sent_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Uptime</td>
+<td>Second</td>
+<td>compute.googleapis.com/instance/uptime</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Uptime Total</td>
+<td>Second</td>
+<td>compute.googleapis.com/instance/uptime_total</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Dropped packets</td>
+<td>Count</td>
+<td>compute.googleapis.com/mirroring/dropped_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Mirrored bytes</td>
+<td>Byte</td>
+<td>compute.googleapis.com/mirroring/mirrored_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Mirrored packets</td>
+<td>Count</td>
+<td>compute.googleapis.com/mirroring/mirrored_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Allocated ports</td>
+<td>Unspecified</td>
+<td>compute.googleapis.com/nat/allocated_ports</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Closed connections count</td>
+<td>Unspecified</td>
+<td>compute.googleapis.com/nat/closed_connections_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Received packets dropped count</td>
+<td>Unspecified</td>
+<td>compute.googleapis.com/nat/dropped_received_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Sent packets dropped count</td>
+<td>Unspecified</td>
+<td>compute.googleapis.com/nat/dropped_sent_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>New connections count</td>
+<td>Unspecified</td>
+<td>compute.googleapis.com/nat/new_connections_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Open connections</td>
+<td>Unspecified</td>
+<td>compute.googleapis.com/nat/open_connections</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Port usage</td>
+<td>Unspecified</td>
+<td>compute.googleapis.com/nat/port_usage</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Received bytes count</td>
+<td>Byte</td>
+<td>compute.googleapis.com/nat/received_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Received packets count</td>
+<td>Unspecified</td>
+<td>compute.googleapis.com/nat/received_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Sent bytes count</td>
+<td>Byte</td>
+<td>compute.googleapis.com/nat/sent_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/default_metrics</td>
+<td>Sent packets count</td>
+<td>Unspecified</td>
+<td>compute.googleapis.com/nat/sent_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Monitoring Agent API Request Count</td>
+<td>Count</td>
+<td>agent.googleapis.com/agent/api_request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Logging Agent Log Entry Count</td>
+<td>Count</td>
+<td>agent.googleapis.com/agent/log_entry_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Logging Agent Retried Log Entry Writes Count</td>
+<td>Count</td>
+<td>agent.googleapis.com/agent/log_entry_retry_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Monitoring Agent Memory Usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/agent/memory_usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Monitoring Agent Metric Point Count</td>
+<td>Count</td>
+<td>agent.googleapis.com/agent/monitoring/point_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Logging Agent API Request Count</td>
+<td>Count</td>
+<td>agent.googleapis.com/agent/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Monitoring Agent Process Labels Size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/agent/streamspace_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Monitoring Agent is Throttling Processes</td>
+<td>Count</td>
+<td>agent.googleapis.com/agent/streamspace_size_throttling</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Monitoring/Logging Agent Uptime</td>
+<td>Second</td>
+<td>agent.googleapis.com/agent/uptime</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Open connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/apache/connections</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Idle workers</td>
+<td>Count</td>
+<td>agent.googleapis.com/apache/idle_workers</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/apache/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Scoreboard</td>
+<td>Count</td>
+<td>agent.googleapis.com/apache/scoreboard</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Traffic</td>
+<td>Byte</td>
+<td>agent.googleapis.com/apache/traffic</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Hit count</td>
+<td>Count</td>
+<td>agent.googleapis.com/cassandra/cache/hits</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Read latency</td>
+<td>MicroSecond</td>
+<td>agent.googleapis.com/cassandra/client_request/latency/50p</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Read latency</td>
+<td>MicroSecond</td>
+<td>agent.googleapis.com/cassandra/client_request/latency/95p</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Read latency</td>
+<td>MicroSecond</td>
+<td>agent.googleapis.com/cassandra/client_request/latency/99p</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Read latency</td>
+<td>MicroSecond</td>
+<td>agent.googleapis.com/cassandra/client_request/latency/max</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Compression ratio</td>
+<td>Count</td>
+<td>agent.googleapis.com/cassandra/column_family/compression_ratio</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Max row size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/cassandra/column_family/max_row_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Commit log size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/cassandra/commitlog_total_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Completed tasks</td>
+<td>Count</td>
+<td>agent.googleapis.com/cassandra/completed_tasks</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Tasks</td>
+<td>Count</td>
+<td>agent.googleapis.com/cassandra/current_tasks</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Dropped messages</td>
+<td>Count</td>
+<td>agent.googleapis.com/cassandra/dropped_message/dropped_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Exceptions</td>
+<td>Count</td>
+<td>agent.googleapis.com/cassandra/storage_service_exception_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Storage load</td>
+<td>Byte</td>
+<td>agent.googleapis.com/cassandra/storage_service_load</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Request latency</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/couchdb/average_request_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Bulk requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/httpd/bulk_request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/httpd/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Request methods</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/httpd/request_method_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Response codes</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/httpd/response_code_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Temp view reads</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/httpd/temporary_view_read_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>View reads</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/httpd/view_read_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Open databases</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/open_databases</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Open files</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/open_files</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Reads</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/read_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Writes</td>
+<td>Count</td>
+<td>agent.googleapis.com/couchdb/write_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>CPU load (15m)</td>
+<td>Count</td>
+<td>agent.googleapis.com/cpu/load_15m</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>CPU load (1m)</td>
+<td>Count</td>
+<td>agent.googleapis.com/cpu/load_1m</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>CPU load (5m)</td>
+<td>Count</td>
+<td>agent.googleapis.com/cpu/load_5m</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>CPU usage</td>
+<td>Second</td>
+<td>agent.googleapis.com/cpu/usage_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>CPU utilization</td>
+<td>Percent</td>
+<td>agent.googleapis.com/cpu/utilization</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/disk/bytes_used</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk I/O time</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/disk/io_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk merged operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/disk/merged_operations</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/disk/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk operation time</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/disk/operation_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk pending operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/disk/pending_operations</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk utilization</td>
+<td>Percent</td>
+<td>agent.googleapis.com/disk/percent_used</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk bytes read</td>
+<td>Byte</td>
+<td>agent.googleapis.com/disk/read_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk weighted I/O time</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/disk/weighted_io_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Disk bytes written</td>
+<td>Byte</td>
+<td>agent.googleapis.com/disk/write_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Cache size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/elasticsearch/cache_memory_usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Field evictions</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/field_eviction_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Filter evictions</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/filter_cache_eviction_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>GC count</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/gc_collection_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memory usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/elasticsearch/memory_usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Network traffic</td>
+<td>Byte</td>
+<td>agent.googleapis.com/elasticsearch/network</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Documents</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/num_current_documents</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Data nodes</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/num_data_nodes</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Open connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/num_http_connections</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Nodes</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/num_nodes</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Open files</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/num_open_files</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Open connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/num_server_connections</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Shards</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/num_shards</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Completed operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Operation time</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/elasticsearch/operation_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Max threads</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/peak_threads</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Storage size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/elasticsearch/storage_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Threads</td>
+<td>Count</td>
+<td>agent.googleapis.com/elasticsearch/threads</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>IPC connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/ipc/connections</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>IPC queue size</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/ipc/queue_length</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>IPC traffic</td>
+<td>Byte</td>
+<td>agent.googleapis.com/hbase/ipc/traffic_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Load</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/master/average_load</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Dead region servers</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/master/dead_region_servers</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Live region servers</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/master/live_region_servers</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Block cache accesses</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/block_cache/access_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Evicted block count</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/block_cache/evicted_blocks_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Block cache hit ratio</td>
+<td>Percent</td>
+<td>agent.googleapis.com/hbase/regionserver/block_cache/hit_ratio_percent</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Block cache size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/hbase/regionserver/block_cache/memory</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Block count</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/block_cache/num_items</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Call queue size</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/call_queue/length</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Compaction queue size</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/compaction_queue/length</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Flush queue size</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/flush_queue/length</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Heap usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/hbase/regionserver/memory/heap_usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memstore files</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/memstore/files</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memstore index size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/hbase/regionserver/memstore/index_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memstore open stores</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/memstore/open_stores</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memstore size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/hbase/regionserver/memstore/size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Online regions</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/online_regions</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Request count</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>RPC request rate</td>
+<td>PerSecond</td>
+<td>agent.googleapis.com/hbase/regionserver/requests/total_rate</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Slow operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/regionserver/slow_operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Thrift average batch latency</td>
+<td>NanoSecond</td>
+<td>agent.googleapis.com/hbase/thrift/batch_latency/average</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Thrift average call latency</td>
+<td>NanoSecond</td>
+<td>agent.googleapis.com/hbase/thrift/call_latency/average</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Thrift call queue size</td>
+<td>Count</td>
+<td>agent.googleapis.com/hbase/thrift/call_queue/length</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Thrift average slow call latency</td>
+<td>NanoSecond</td>
+<td>agent.googleapis.com/hbase/thrift/slow_call_latency/average</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Thrift average time in queue</td>
+<td>NanoSecond</td>
+<td>agent.googleapis.com/hbase/thrift/time_in_queue/average</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>IIS open connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/iis/current_connections</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>IIS transferred bytes</td>
+<td>Byte</td>
+<td>agent.googleapis.com/iis/network/transferred_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>IIS connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/iis/new_connection_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>IIS requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/iis/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Network errors</td>
+<td>Count</td>
+<td>agent.googleapis.com/interface/errors</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Network packets</td>
+<td>Count</td>
+<td>agent.googleapis.com/interface/packets</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Network traffic</td>
+<td>Byte</td>
+<td>agent.googleapis.com/interface/traffic</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>GC count</td>
+<td>Count</td>
+<td>agent.googleapis.com/jvm/gc/count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>GC time</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/jvm/gc/time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memory usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/jvm/memory/usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>CPU time</td>
+<td>NanoSecond</td>
+<td>agent.googleapis.com/jvm/os/cpu_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Open files</td>
+<td>Count</td>
+<td>agent.googleapis.com/jvm/os/open_files</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Daemon threads</td>
+<td>Count</td>
+<td>agent.googleapis.com/jvm/thread/num_daemon</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Threads</td>
+<td>Count</td>
+<td>agent.googleapis.com/jvm/thread/num_live</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Max threads</td>
+<td>Count</td>
+<td>agent.googleapis.com/jvm/thread/peak</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Uptime</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/jvm/uptime</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Failed requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/broker/topics/failed_request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Incoming messages</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/broker/topics/incoming_message_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Traffic</td>
+<td>Byte</td>
+<td>agent.googleapis.com/kafka/broker/topics/traffic</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Active controllers</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/controller/kafka/active</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Offline partitions</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/controller/kafka/offline_partitions</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Leader elections</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/controller/leader_elections/election_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Stale leader elections</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/controller/leader_elections/unclean_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Flushes</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/log/flush_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/network/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Delayed purgatory requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/purgatory/num_delayed_requests</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Purgatory requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/purgatory/size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Maximum lag</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/replica_fetcher/max_lag</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Minimum fetch rate</td>
+<td>PerSecond</td>
+<td>agent.googleapis.com/kafka/replica_fetcher/min_fetch_rate</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Gaining replicas</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/replica_manager/isr/expand_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Lagging replicas</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/replica_manager/isr/shrink_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Leaders</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/replica_manager/leaders</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Partitions</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/replica_manager/partitions</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Unreliable partitions</td>
+<td>Count</td>
+<td>agent.googleapis.com/kafka/replica_manager/under_replicated_partitions</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Commands</td>
+<td>Count</td>
+<td>agent.googleapis.com/memcached/command_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/memcached/current_connections</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Items</td>
+<td>Count</td>
+<td>agent.googleapis.com/memcached/current_items</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Evictions</td>
+<td>Count</td>
+<td>agent.googleapis.com/memcached/eviction_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memory usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/memcached/memory</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Traffic</td>
+<td>Byte</td>
+<td>agent.googleapis.com/memcached/network</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/memcached/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Hit ratio</td>
+<td>Percent</td>
+<td>agent.googleapis.com/memcached/operation_hitratio</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>CPU time</td>
+<td>Second</td>
+<td>agent.googleapis.com/memcached/rusage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Threads</td>
+<td>Count</td>
+<td>agent.googleapis.com/memcached/threads</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memory usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/memory/bytes_used</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memory utilization</td>
+<td>Percent</td>
+<td>agent.googleapis.com/memory/percent_used</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Cache hits</td>
+<td>Count</td>
+<td>agent.googleapis.com/mongodb/cache/hits</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Cache misses</td>
+<td>Count</td>
+<td>agent.googleapis.com/mongodb/cache/misses</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Collections</td>
+<td>Count</td>
+<td>agent.googleapis.com/mongodb/collections</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/mongodb/connections</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Data size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/mongodb/data_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Extents</td>
+<td>Count</td>
+<td>agent.googleapis.com/mongodb/extents</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Global lock time</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/mongodb/global_lock_hold_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Index size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/mongodb/index_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Indexes</td>
+<td>Count</td>
+<td>agent.googleapis.com/mongodb/indexes</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memory usage</td>
+<td>MebiByte</td>
+<td>agent.googleapis.com/mongodb/memory_usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Objects</td>
+<td>Count</td>
+<td>agent.googleapis.com/mongodb/objects</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/mongodb/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Storage size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/mongodb/storage_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>SQL Server open connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/mssql/connections/user</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>SQL Server transaction rate</td>
+<td>PerSecond</td>
+<td>agent.googleapis.com/mssql/transaction_rate</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>SQL Server write transaction rate</td>
+<td>PerSecond</td>
+<td>agent.googleapis.com/mssql/write_transaction_rate</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Buffer pool pages</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/buffer_pool/num_pages</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Buffer pool operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/buffer_pool/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Buffer pool size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/mysql/buffer_pool_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Commands</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/command_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Handlers</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/handler_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>InnoDB doublewrite buffers</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/innodb/doublewrite_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>InnoDB log operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/innodb/log_operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>InnoDB operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/innodb/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>InnoDB page operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/innodb/page_operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>InnoDB locks</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/innodb/row_lock_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>InnoDB row operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/innodb/row_operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Locks</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/lock_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>QCache operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/qcache/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>QCache queries</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/qcache/query_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Replica lag</td>
+<td>Second</td>
+<td>agent.googleapis.com/mysql/slave_replication_lag</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Sorts</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/sort_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Threads</td>
+<td>Count</td>
+<td>agent.googleapis.com/mysql/thread_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>TCP connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/network/tcp_connections</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Accepted connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/nginx/connections/accepted_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Active connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/nginx/connections/current</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Handled connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/nginx/connections/handled_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/nginx/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Pagefile utilization</td>
+<td>Percent</td>
+<td>agent.googleapis.com/pagefile/percent_used</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Blocks read</td>
+<td>Count</td>
+<td>agent.googleapis.com/postgresql/blocks_read_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Commits</td>
+<td>Count</td>
+<td>agent.googleapis.com/postgresql/commit_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>DB size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/postgresql/db_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Backends</td>
+<td>Count</td>
+<td>agent.googleapis.com/postgresql/num_backends</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>DB rows</td>
+<td>Count</td>
+<td>agent.googleapis.com/postgresql/num_tuples</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/postgresql/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Rollbacks</td>
+<td>Count</td>
+<td>agent.googleapis.com/postgresql/rollback_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Processes</td>
+<td>Count</td>
+<td>agent.googleapis.com/processes/count_by_state</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Process CPU</td>
+<td>Second</td>
+<td>agent.googleapis.com/processes/cpu_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Process disk read I/O</td>
+<td>Byte</td>
+<td>agent.googleapis.com/processes/disk/read_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Process disk write I/O</td>
+<td>Byte</td>
+<td>agent.googleapis.com/processes/disk/write_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Fork count</td>
+<td>Count</td>
+<td>agent.googleapis.com/processes/fork_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Process resident memory</td>
+<td>Byte</td>
+<td>agent.googleapis.com/processes/rss_usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Process virtual memory</td>
+<td>Byte</td>
+<td>agent.googleapis.com/processes/vm_usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Consumers</td>
+<td>Count</td>
+<td>agent.googleapis.com/rabbitmq/consumers</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Delivery rate</td>
+<td>PerSecond</td>
+<td>agent.googleapis.com/rabbitmq/delivery_rate</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Messages</td>
+<td>Count</td>
+<td>agent.googleapis.com/rabbitmq/num_messages</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Publish rate</td>
+<td>PerSecond</td>
+<td>agent.googleapis.com/rabbitmq/publish_rate</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Unsaved changes</td>
+<td>Count</td>
+<td>agent.googleapis.com/redis/changes_since_last_save</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Blocked clients</td>
+<td>Count</td>
+<td>agent.googleapis.com/redis/clients/blocked</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Connected clients</td>
+<td>Count</td>
+<td>agent.googleapis.com/redis/clients/connected</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Commands</td>
+<td>Count</td>
+<td>agent.googleapis.com/redis/commands_processed</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Slave connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/redis/connections/slaves</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/redis/connections/total</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Expired keys</td>
+<td>Count</td>
+<td>agent.googleapis.com/redis/expired_keys</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memory usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/redis/memory/usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Lua memory usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/redis/memory/usage_lua</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>PubSub channels</td>
+<td>Count</td>
+<td>agent.googleapis.com/redis/pubsub/channels</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>PubSub patterns</td>
+<td>Count</td>
+<td>agent.googleapis.com/redis/pubsub/patterns</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Uptime</td>
+<td>Second</td>
+<td>agent.googleapis.com/redis/uptime</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>95% latency (1m)</td>
+<td>MicroSecond</td>
+<td>agent.googleapis.com/riak/latency/95th_percentile</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Average latency (1m)</td>
+<td>MicroSecond</td>
+<td>agent.googleapis.com/riak/latency/average</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Maximum latency (1m)</td>
+<td>MicroSecond</td>
+<td>agent.googleapis.com/riak/latency/maximum</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Memory usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/riak/memory_usage</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>95% siblings (1m)</td>
+<td>Count</td>
+<td>agent.googleapis.com/riak/num_siblings/95th_percentile</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Average siblings (1m)</td>
+<td>Count</td>
+<td>agent.googleapis.com/riak/num_siblings/average</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Maximum siblings (1m)</td>
+<td>Count</td>
+<td>agent.googleapis.com/riak/num_siblings/maximum</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>95% object size (1m)</td>
+<td>Byte</td>
+<td>agent.googleapis.com/riak/object_size/95th_percentile</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Average object size (1m)</td>
+<td>Byte</td>
+<td>agent.googleapis.com/riak/object_size/average</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Maximum object size (1m)</td>
+<td>Byte</td>
+<td>agent.googleapis.com/riak/object_size/maximum</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/riak/operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Swap usage</td>
+<td>Byte</td>
+<td>agent.googleapis.com/swap/bytes_used</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Swap I/O operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/swap/io</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Swap utilization</td>
+<td>Percent</td>
+<td>agent.googleapis.com/swap/percent_used</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Sessions</td>
+<td>Count</td>
+<td>agent.googleapis.com/tomcat/manager/sessions</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Errors</td>
+<td>Count</td>
+<td>agent.googleapis.com/tomcat/request_processor/error_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Processing time</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/tomcat/request_processor/processing_time</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/tomcat/request_processor/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Traffic</td>
+<td>Byte</td>
+<td>agent.googleapis.com/tomcat/request_processor/traffic_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Busy threads</td>
+<td>Count</td>
+<td>agent.googleapis.com/tomcat/threads/busy</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Current threads</td>
+<td>Count</td>
+<td>agent.googleapis.com/tomcat/threads/current</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Backend connection successes</td>
+<td>Count</td>
+<td>agent.googleapis.com/varnish/backend_connection_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Cache operations</td>
+<td>Count</td>
+<td>agent.googleapis.com/varnish/cache_operation_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Client connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/varnish/client_connection_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Open connections</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/connections_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Data size</td>
+<td>Byte</td>
+<td>agent.googleapis.com/zookeeper/data_size</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Followers</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/followers/count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Synced followers</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/followers/synced_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Packets received</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/network/received_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Packets sent</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/network/sent_packets_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Nodes</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/nodes/count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Ephemeral nodes</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/nodes/ephemeral_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Watches</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/nodes/watches_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Average request latency</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/zookeeper/requests/latency/average</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Maximum request latency</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/zookeeper/requests/latency/maximum</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Minimum request latency</td>
+<td>MilliSecond</td>
+<td>agent.googleapis.com/zookeeper/requests/latency/minimum</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Outstanding requests</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/requests/outstanding_count</td>
+</tr>
+<tr>
+<td>gce_instance/agent</td>
+<td>Pending syncs</td>
+<td>Count</td>
+<td>agent.googleapis.com/zookeeper/sync_operations/pending_count</td>
+</tr>
+<tr>
+<td>gce_instance/firewallinsights</td>
+<td>VM Firewall Hit Counts</td>
+<td>Count</td>
+<td>firewallinsights.googleapis.com/vm/firewall_hit_count</td>
+</tr>
+<tr>
+<td>gce_instance/firewallinsights</td>
+<td>VM Firewall Last Used Timestamp</td>
+<td>Count</td>
+<td>firewallinsights.googleapis.com/vm/firewall_last_used_timestamp</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Client Connection Close Count</td>
+<td>Byte</td>
+<td>istio.io/service/client/connection_close_count</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Client Connection Open Count</td>
+<td>Byte</td>
+<td>istio.io/service/client/connection_open_count</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Client Received Bytes Count</td>
+<td>Byte</td>
+<td>istio.io/service/client/received_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Client Request Bytes</td>
+<td>Byte</td>
+<td>istio.io/service/client/request_bytes</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Client Request Count</td>
+<td>Count</td>
+<td>istio.io/service/client/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Client Response Bytes</td>
+<td>Byte</td>
+<td>istio.io/service/client/response_bytes</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Client Roundtrip Latencies</td>
+<td>MilliSecond</td>
+<td>istio.io/service/client/roundtrip_latencies</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Client Sent Bytes Count</td>
+<td>Byte</td>
+<td>istio.io/service/client/sent_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Server Connection Close Count</td>
+<td>Byte</td>
+<td>istio.io/service/server/connection_close_count</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Server Connection Open Count</td>
+<td>Byte</td>
+<td>istio.io/service/server/connection_open_count</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Server Received Bytes Count</td>
+<td>Byte</td>
+<td>istio.io/service/server/received_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Server Request Bytes</td>
+<td>Byte</td>
+<td>istio.io/service/server/request_bytes</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Server Request Count</td>
+<td>Count</td>
+<td>istio.io/service/server/request_count</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Server Response Bytes</td>
+<td>Byte</td>
+<td>istio.io/service/server/response_bytes</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Server Response Latencies</td>
+<td>MilliSecond</td>
+<td>istio.io/service/server/response_latencies</td>
+</tr>
+<tr>
+<td>gce_instance/istio</td>
+<td>Server Sent Bytes Count</td>
+<td>Byte</td>
+<td>istio.io/service/server/sent_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance_vm_flow/default_metrics</td>
+<td>Egress bytes</td>
+<td>Byte</td>
+<td>networking.googleapis.com/vm_flow/egress_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance_vm_flow/default_metrics</td>
+<td>Ingress bytes</td>
+<td>Byte</td>
+<td>networking.googleapis.com/vm_flow/ingress_bytes_count</td>
+</tr>
+<tr>
+<td>gce_instance_vm_flow/default_metrics</td>
+<td>RTT latencies</td>
+<td>MilliSecond</td>
+<td>networking.googleapis.com/vm_flow/rtt</td>
+</tr>
+<tr>
+<td>instance_group/default_metrics</td>
+<td>Instance group size</td>
+<td>Count</td>
+<td>compute.googleapis.com/instance_group/size</td>
+</tr>
+<tr>
+<td>autoscaler/default_metrics</td>
+<td>Serving capacity</td>
+<td>Count</td>
+<td>autoscaler.googleapis.com/capacity</td>
+</tr>
+<tr>
+<td>autoscaler/default_metrics</td>
+<td>Current Autoscaler utilization</td>
+<td>Count</td>
+<td>autoscaler.googleapis.com/current_utilization</td>
+</tr>
+<tr>
+<td>tpu_worker/default_metrics</td>
+<td>Container CPU utilization</td>
+<td>Percent</td>
+<td>tpu.googleapis.com/container/cpu/utilization</td>
+</tr>
+<tr>
+<td>tpu_worker/default_metrics</td>
+<td>Container memory usage</td>
+<td>Byte</td>
+<td>tpu.googleapis.com/container/memory/usage</td>
+</tr>
+<tr>
+<td>tpu_worker/default_metrics</td>
+<td>CPU utilization</td>
+<td>Percent</td>
+<td>tpu.googleapis.com/cpu/utilization</td>
+</tr>
+<tr>
+<td>tpu_worker/default_metrics</td>
+<td>Memory usage</td>
+<td>Byte</td>
+<td>tpu.googleapis.com/memory/usage</td>
+</tr>
+<tr>
+<td>tpu_worker/default_metrics</td>
+<td>Network bytes received</td>
+<td>Byte</td>
+<td>tpu.googleapis.com/network/received_bytes_count</td>
+</tr>
+<tr>
+<td>tpu_worker/default_metrics</td>
+<td>Network bytes sent</td>
+<td>Byte</td>
+<td>tpu.googleapis.com/network/sent_bytes_count</td>
+</tr>
+<tr>
+<td>tpu_worker/default_metrics</td>
+<td>MXU utilization</td>
+<td>Percent</td>
+<td>tpu.googleapis.com/tpu/mxu/utilization</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/google-cloud-platform/gcp-integrations" title="Set up and configure Dynatrace on Google Cloud.">Google Cloud integrations</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

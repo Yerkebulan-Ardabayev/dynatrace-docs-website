@@ -985,8 +985,8 @@
 
 
 <h1 id="dynatrace-documentation-whats-newdynatrace-operator">Dynatrace Documentation: whats-new/dynatrace-operator<a class="headerlink" href="#dynatrace-documentation-whats-newdynatrace-operator" title="Permanent link">&para;</a></h1>
-<p>Generated: 2026-02-16</p>
-<p>Files combined: 9</p>
+<p>Generated: 2026-02-17</p>
+<p>Files combined: 10</p>
 <hr />
 <h2 id="source-dto-fix-0-10-0md">Source: dto-fix-0-10-0.md<a class="headerlink" href="#source-dto-fix-0-10-0md" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1091,7 +1091,7 @@ scraped: 2026-02-16T21:25:41.583107</p>
 <hr />
 <p>title: Dynatrace Operator release notes version 0.10.2
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-10-2
-scraped: 2026-02-16T21:24:40.935770</p>
+scraped: 2026-02-17T04:59:24.357118</p>
 <hr />
 <h1 id="dynatrace-operator-release-notes-version-0102">Dynatrace Operator release notes version 0.10.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-0102" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-operator-release-notes-version-0102_1">Dynatrace Operator release notes version 0.10.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-0102_1" title="Permanent link">&para;</a></h1>
@@ -1113,6 +1113,30 @@ scraped: 2026-02-16T21:24:40.935770</p>
 <li>Go is updated to version 1.19.4.</li>
 </ul>
 <hr />
+<h2 id="source-dto-fix-0-9-2md">Source: dto-fix-0-9-2.md<a class="headerlink" href="#source-dto-fix-0-9-2md" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Dynatrace Operator release notes version 0.9.2
+source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-9-2
+scraped: 2026-02-17T04:58:58.839068</p>
+<hr />
+<h1 id="dynatrace-operator-release-notes-version-092">Dynatrace Operator release notes version 0.9.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-092" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-operator-release-notes-version-092_1">Dynatrace Operator release notes version 0.9.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-092_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Release notes</li>
+<li>Published Jan 05, 2023</li>
+</ul>
+<p>Release date: Jan 10, 2023</p>
+<h2 id="resolved-issues_3">Resolved issues<a class="headerlink" href="#resolved-issues_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Fixed a bug with volume creation for read-only support in <code>hostMonitoring</code>.</p>
+</li>
+<li>
+<p>Fixed a bug causing pods to be incorrectly unmounted, when multiple pods are unmounted at the same time by the CSI driver.</p>
+</li>
+</ul>
+<hr />
 <h2 id="source-dto-fix-1-6-3md">Source: dto-fix-1-6-3.md<a class="headerlink" href="#source-dto-fix-1-6-3md" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Dynatrace Operator release notes version 1.6.3
@@ -1128,7 +1152,7 @@ scraped: 2026-02-16T21:29:39.620940</p>
 </ul>
 <p>Release date: September 20, 2025</p>
 <p>This page provides an overview of the patches included in Dynatrace Operator version 1.6.3. For detailed information on new features and other enhancements, see the <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-6-0" title="Release notes for Dynatrace Operator, version 1.6.0">release notes for version 1.6</a>.</p>
-<h2 id="resolved-issues_3">Resolved issues<a class="headerlink" href="#resolved-issues_3" title="Permanent link">&para;</a></h2>
+<h2 id="resolved-issues_4">Resolved issues<a class="headerlink" href="#resolved-issues_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Reintroduced the <code>mark for termination</code> event, which was previously removed in <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-6-0#removal-and-deprecation-notices" title="Release notes for Dynatrace Operator, version 1.6.0">Dynatrace Operator version 1.6.0</a>, to address <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-6-0#known-issues" title="Release notes for Dynatrace Operator, version 1.6.0">challenges</a> in reliably detecting node terminations in setups facilitating auto-scaler. This feature requires your API token to have the <code>DataExport</code> token scope.</li>
 </ul>
@@ -1203,7 +1227,7 @@ scraped: 2026-02-16T09:28:29.199692</p>
 <li>Automatic Kubernetes API monitoring is disabled. You need to <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#local" title="Monitor the Kubernetes API using Dynatrace">enable it manually</a> for your tenant.</li>
 <li>The OneAgent Log module is initially deployed without a MonitoredEntityID context. As soon as the MonitoredEntityID is known, its configuration is updated and the OneAgent Log module is restarted. As a consequence, logs may initially miss the <code>topology:dt.entity.kubernetes_cluster</code> enrichment.</li>
 </ul>
-<h2 id="resolved-issues_4">Resolved issues<a class="headerlink" href="#resolved-issues_4" title="Permanent link">&para;</a></h2>
+<h2 id="resolved-issues_5">Resolved issues<a class="headerlink" href="#resolved-issues_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>The secret containing the auto-generated TLS certificate for ActiveGate is now properly removed when ActiveGate is disabled or deleted from the DynaKube configuration.</p>
@@ -1316,7 +1340,7 @@ scraped: 2026-02-16T09:28:29.199692</p>
 <hr />
 <p>title: Dynatrace Operator release notes version 1.7.1
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-1
-scraped: 2026-02-16T09:37:23.820736</p>
+scraped: 2026-02-17T05:03:21.134524</p>
 <hr />
 <h1 id="dynatrace-operator-release-notes-version-171">Dynatrace Operator release notes version 1.7.1<a class="headerlink" href="#dynatrace-operator-release-notes-version-171" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-operator-release-notes-version-171_1">Dynatrace Operator release notes version 1.7.1<a class="headerlink" href="#dynatrace-operator-release-notes-version-171_1" title="Permanent link">&para;</a></h1>
@@ -1327,7 +1351,7 @@ scraped: 2026-02-16T09:37:23.820736</p>
 </ul>
 <p>Release date: September 20th, 2025</p>
 <p>This page provides an overview of the patches included in Dynatrace Operator version 1.7.1. For detailed information on new features and other enhancements, see the <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-7-0" title="Release notes for Dynatrace Operator, version 1.7.0">release notes for version 1.7</a>.</p>
-<h2 id="resolved-issues_5">Resolved issues<a class="headerlink" href="#resolved-issues_5" title="Permanent link">&para;</a></h2>
+<h2 id="resolved-issues_6">Resolved issues<a class="headerlink" href="#resolved-issues_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Reintroduced the <code>mark for termination</code> event, which was previously removed in <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-6-0#removal-and-deprecation-notices" title="Release notes for Dynatrace Operator, version 1.6.0">Dynatrace Operator version 1.6.0</a>, to address <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-7-0#known-issues" title="Release notes for Dynatrace Operator, version 1.7.0">challenges</a> in reliably detecting node terminations in setups facilitating auto-scaler. This feature requires your API token to have the <code>DataExport</code> token scope.</li>
 </ul>
@@ -1398,7 +1422,7 @@ scraped: 2026-02-16T09:37:23.820736</p>
 <hr />
 <p>title: Dynatrace Operator release notes version 1.7.2
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-2
-scraped: 2026-02-15T21:24:25.312331</p>
+scraped: 2026-02-17T05:00:20.431151</p>
 <hr />
 <h1 id="dynatrace-operator-release-notes-version-172">Dynatrace Operator release notes version 1.7.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-172" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-operator-release-notes-version-172_1">Dynatrace Operator release notes version 1.7.2<a class="headerlink" href="#dynatrace-operator-release-notes-version-172_1" title="Permanent link">&para;</a></h1>
@@ -1408,7 +1432,7 @@ scraped: 2026-02-15T21:24:25.312331</p>
 <li>Updated on Jan 22, 2026</li>
 </ul>
 <p>Release date: November 12th, 2025</p>
-<h2 id="resolved-issues_6">Resolved issues<a class="headerlink" href="#resolved-issues_6" title="Permanent link">&para;</a></h2>
+<h2 id="resolved-issues_7">Resolved issues<a class="headerlink" href="#resolved-issues_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The OpenTelemetry Collector used for <a href="/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest" title="Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.">telemetry ingest</a> now automatically includes the local ActiveGate service URL in its no-proxy configuration, ensuring that connections to the local ActiveGate bypass any configured proxies and avoiding unnecessary proxy hops or related connection issues.</li>
 </ul>
@@ -1479,7 +1503,7 @@ scraped: 2026-02-15T21:24:25.312331</p>
 <hr />
 <p>title: Dynatrace Operator release notes version 1.7.3
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-3
-scraped: 2026-02-16T21:27:47.944726</p>
+scraped: 2026-02-17T04:58:26.590163</p>
 <hr />
 <h1 id="dynatrace-operator-release-notes-version-173">Dynatrace Operator release notes version 1.7.3<a class="headerlink" href="#dynatrace-operator-release-notes-version-173" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-operator-release-notes-version-173_1">Dynatrace Operator release notes version 1.7.3<a class="headerlink" href="#dynatrace-operator-release-notes-version-173_1" title="Permanent link">&para;</a></h1>
@@ -1489,7 +1513,7 @@ scraped: 2026-02-16T21:27:47.944726</p>
 <li>Updated on Jan 15, 2026</li>
 </ul>
 <p>Release date: January 19th, 2025</p>
-<h2 id="resolved-issues_7">Resolved issues<a class="headerlink" href="#resolved-issues_7" title="Permanent link">&para;</a></h2>
+<h2 id="resolved-issues_8">Resolved issues<a class="headerlink" href="#resolved-issues_8" title="Permanent link">&para;</a></h2>
 <h3 id="handling-removed-api-versions-during-dyntrace-operator-upgrade">Handling removed API versions during Dyntrace Operator upgrade<a class="headerlink" href="#handling-removed-api-versions-during-dyntrace-operator-upgrade" title="Permanent link">&para;</a></h3>
 <p>Kubernetes records CRD versions in <code>.status.storedVersions</code>, but doesnât remove entries when versions are deleted, so old versions accumulate and can block upgrades.</p>
 <p>In Dynatrace Operator versions &lt; 1.4, deprecated <code>v1beta1</code> and <code>v1beta2</code> were automatically added to <code>.status.storedVersions</code> and never cleaned up. Thus, any cluster that had been running versions before 1.4 is affected. If these versions remain during a future upgrade, CRD installation will fail. This release introduces a two-step solution to ensure smooth upgrades:</p>
@@ -1612,7 +1636,7 @@ scraped: 2026-02-16T21:31:31.375503</p>
 </ul>
 <p>Release date: February 9th, 2026</p>
 <p>This page provides an overview of the patches included in Dynatrace Operator version 1.8.1. For detailed information on new features and other enhancements, please refer to the <a href="/docs/whats-new/dynatrace-operator/dto-fix-1-8-0" title="Release notes for Dynatrace Operator, version 1.8.0">release notes for version 1.8</a>.</p>
-<h2 id="resolved-issues_8">Resolved issues<a class="headerlink" href="#resolved-issues_8" title="Permanent link">&para;</a></h2>
+<h2 id="resolved-issues_9">Resolved issues<a class="headerlink" href="#resolved-issues_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>ActiveGate permissions on OperatorHub marketplace</li>
 </ul>

@@ -1,0 +1,1353 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/migrate-roles/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Upgrade role-based permissions to Dynatrace IAM policies - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#upgrade-role-based-permissions-to-dynatrace-iam-policies" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Upgrade role-based permissions to Dynatrace IAM policies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="upgrade-role-based-permissions-to-dynatrace-iam-policies">Upgrade role-based permissions to Dynatrace IAM policies<a class="headerlink" href="#upgrade-role-based-permissions-to-dynatrace-iam-policies" title="Permanent link">&para;</a></h1>
+<h1 id="upgrade-role-based-permissions-to-dynatrace-iam-policies_1">Upgrade role-based permissions to Dynatrace IAM policies<a class="headerlink" href="#upgrade-role-based-permissions-to-dynatrace-iam-policies_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>11-min read</li>
+<li>Updated on Aug 20, 2025</li>
+</ul>
+<p>Dynatrace version 1.266+</p>
+<p>This guide defines and compares role-based access control (RBAC) and attribute-based access control (ABAC), and provides guidelines and recommendations to consider when planning your upgrade from RBAC to ABAC. Upgrade in this context means expressing classic RBAC permissions targeting the previous Dynatrace as statements within IAM policies. As is explained later, upgrading offers you multiple benefits.</p>
+<p>The guide is primarily intended for use by account administrators wanting to take advantage of the power of the ABAC framework within the previous Dynatrace.</p>
+<h2 id="what-is-abac">What is ABAC?<a class="headerlink" href="#what-is-abac" title="Permanent link">&para;</a></h2>
+<p>ABAC is the preferred industry-wide access management framework because of its business-oriented and modern approach to defining security policies through logical, plain language.</p>
+<p>It defines access to secure resources based on a combination of user, resource, action, and contextual attributes. It uses security policies as a mechanism to define access rules for resources.</p>
+<h3 id="understanding-the-difference-rbac-vs-abac">Understanding the Difference: RBAC vs ABAC<a class="headerlink" href="#understanding-the-difference-rbac-vs-abac" title="Permanent link">&para;</a></h3>
+<p>RBAC roles are typically created to map work functions, such as department, seniority, or work assignment. RBAC permissions typically grant all-or-nothing access to resources based on pre-defined static roles.</p>
+<p>For example, assigning "View Logs" permission to a group in Dynatrace grants users in that group the ability to view all captured logs. There is no ability to further refine their access to the logs.</p>
+<ul>
+<li>Various user, resource, and contextual information is not considered in classic RBAC.</li>
+<li>RBAC roles do not adapt well to changing access permission requirements and the dynamic nature of the attributes of the resources being secured.</li>
+</ul>
+<p>ABAC, on the other hand, determines user access by evaluating resource, data, user, and contextual attributes, along with the specific user action being requested. This provides for a flexible permissions framework that handles changes in access requirements in a more dynamic way, rather than relying on static RBAC roles. Furthermore, the access control granularity offered makes it possible to design common or complex access requirements.</p>
+<p>Dynatraceâs IAM permissions framework uses these core ABAC principles and further enhances them with features like <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policy-templating" title="Policy templating">policy templating</a>, <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries" title="Restrict security policies with policy boundaries to provide tailored access to your users.">policy boundaries</a>, and <a href="/docs/manage/identity-access-management/permission-management/default-policies#default-policies" title="Dynatrace default policies reference">default policies</a> to make our implementation of ABAC more flexible and user friendly.</p>
+<h3 id="abac-implementation-in-your-dynatrace">ABAC implementation in your Dynatrace<a class="headerlink" href="#abac-implementation-in-your-dynatrace" title="Permanent link">&para;</a></h3>
+<p>The Dynatrace IAM permissions framework currently supports the classic RBAC as well as the newer, ABAC, which leverages security policies to define permissions. Security policies are stand-alone components of the ABAC framework that allow combining one or many policy statements to define conditional access to your Dynatrace resources.</p>
+<p>The access permissions defined in a security policy take effect when that policy is bound to a group, thus directly controlling the permissions of the users of that group. For simplicity, we will refer to security policies as simply policies for the remainder of this guide.</p>
+<p>The following diagram captures the relationship between users, groups, policies, and policy boundaries.</p>
+<p><img alt="Users-Groups-Policies-Boundaries" src="https://dt-cdn.net/images/user-group-policy-boundary-812-75ea55d16b.png" /></p>
+<p><a href="/docs/manage/identity-access-management/permission-management" title="Permission management">Policies</a> leverage user, resource, data, and contextual attribution to enable you to configure access to your Dynatrace secure resources. You can secure individual data resources, apps, and services while optionally specifying business-specific access control conditions through the expressiveness of the <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax" title="IAM policy statement syntax.">policy statements syntax</a>.</p>
+<p>One or many policy statements can be combined into one policy. The policy can then be bound to one or many user groups, ultimately granting the users of those group the resource access defined by the policy.</p>
+<p>For example, the Dynatrace ABAC policy below grants the ability to install or delete (action) custom apps (resource) where (condition) app identifier (resource attribute) is prefixed with "custom" (attribute value):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ALLOW app-engine:apps:install, app-engine:apps:delete WHERE shared:app-id startsWith âcustomâ;
+</code></pre></div>
+<p>The next example leverages additional contextual information (the time of the day) to restrict the ability to run apps only within business working hours.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ALLOW app-engine:apps:run WHERE shared:app-id = &quot;dynatrace.automations&quot; and global:time-of-day &gt; &quot;09:00+01:00&quot; AND global:time-of-day &lt; &quot;17:00+01:00&quot;;
+</code></pre></div>
+<p>Classic RBAC roles can also be expressed in policies. For example, the policy statement below grants environment access but only for a specific management zone.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ALLOW environment:roles:viewer WHERE environment:management-zone=âmgmt-euâ
+</code></pre></div>
+<p>The ability to include classic RBAC roles in your policy statements is a very important feature of ABAC policies to help you transition from RBAC.</p>
+<p>The true power of the Dynatrace ABAC framework lies in its ability to dynamically target individual or groups of platform resources, while optionally combining available attributes to further narrow down access parameters using the expressive nature of policy statement syntax.</p>
+<h3 id="benefits-of-upgrading-to-abac">Benefits of upgrading to ABAC<a class="headerlink" href="#benefits-of-upgrading-to-abac" title="Permanent link">&para;</a></h3>
+<p>Dynatraceâs ABAC permissions framework offers the following advantages:</p>
+<h4 id="security-and-compliance">Security and compliance<a class="headerlink" href="#security-and-compliance" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Policies enable admins to adopt the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">principle of least privilegeï»¿</a></li>
+<li>Policies provide a better framework to adhere to your IT compliance standards</li>
+</ul>
+<h4 id="flexibility">Flexibility<a class="headerlink" href="#flexibility" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Policies are built to be adaptable to changes and future platform services</li>
+<li><a href="/docs/manage/identity-access-management/permission-management/default-policies" title="Dynatrace default policies reference">default policies</a> are managed by Dynatrace and automatically adapt to future platform changes</li>
+<li>Multiple policy statements can be combined to form one policy, allowing administrators to build policies that align with their access control business requirement</li>
+</ul>
+<h4 id="scalability">Scalability<a class="headerlink" href="#scalability" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Policies allow for a concise expression of complex permissions</li>
+<li>Policy boundaries offer further policy optimization and generalization</li>
+<li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policy-templating" title="Policy templating">Policy templating</a> enables parameterization of policies through binding parameters</li>
+</ul>
+<h4 id="granularity">Granularity<a class="headerlink" href="#granularity" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Each policy statement can target one or many platform resources</li>
+<li><code>WHERE</code> conditions can be appended to statements to further limit access</li>
+</ul>
+<h4 id="usability">Usability<a class="headerlink" href="#usability" title="Permanent link">&para;</a></h4>
+<p><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries" title="Restrict security policies with policy boundaries to provide tailored access to your users.">Policy boundaries</a> can be re-used in multiple policies.</p>
+<ul>
+<li>Default policies give a great starting point for common access scenarios</li>
+</ul>
+<h4 id="futureproofing">Futureproofing<a class="headerlink" href="#futureproofing" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ABAC is here to stay and will continue to be developed and extended.</li>
+</ul>
+<h2 id="rbac-to-abac-upgrade-planning">RBAC to ABAC upgrade planning<a class="headerlink" href="#rbac-to-abac-upgrade-planning" title="Permanent link">&para;</a></h2>
+<p>The following upgrade guide recommends a strategy and best practices to consider when planning and executing your upgrade from RBAC to ABAC.</p>
+<p>If you use management zones for access control, this guide offers examples of how to refer to management zones within policies so that you can remove the corresponding RBAC assignments. This guide does not cover how to migrate your use of management zones into Grail permissions.</p>
+<h3 id="upgrade-guidelines">Upgrade guidelines<a class="headerlink" href="#upgrade-guidelines" title="Permanent link">&para;</a></h3>
+<p>The upgrade strategy you choose will depend on your current Dynatrace configuration.</p>
+<p>The general strategy is to:</p>
+<ol>
+<li>Identify RBAC permissions that you have currently configured with your groups.</li>
+<li>
+<p>Define a mapping on how those RBAC permissions map to ABAC permissions that can be implemented in policies.</p>
+</li>
+<li>
+<p>You can repeat doing this in batches until you cover all your groups.</p>
+</li>
+<li>Where appropriate, consider using <a href="/docs/manage/identity-access-management/permission-management/default-policies" title="Dynatrace default policies reference">default policies</a> rather than building custom policies.</li>
+</ol>
+<p>You can use these sample <a href="https://community.dynatrace.com/t5/Dynatrace-tips/RBAC-to-ABAC-migration-helper-scripts-Notebook-and-PowerShell/m-p/257807#M1447">Dynatrace Notebook or this PowerShellï»¿</a> scripts to give you an initial assessment and some recommendations to get you started. We will use the script output from our sample Dynatrace environment to illustrate some important concepts and best practices you should consider as you plan your RBAC upgrade to ABAC.</p>
+<p>Note that any automation scripts that you might have built that use RBAC permissions will also have to be reviewed for potential changes in the event that you transition to solely using ABAC for your access control.</p>
+<h3 id="your-dynatrace-rbac-assessment">Your Dynatrace RBAC assessment<a class="headerlink" href="#your-dynatrace-rbac-assessment" title="Permanent link">&para;</a></h3>
+<p>An upgrade plan should start with an assessment of your current RBAC configuration. This means identifying existing RBAC roles assigned to your groups. We are interested in RBAC role assignments that are scoped to target environments or management zones.</p>
+<p>Consider the steps below to conduct an initial assessment. You can use the Account Management portal to complete the steps or <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.">import</a> and use the provided notebook to help you. Alternatively, you can also use the provided PowerShell script.</p>
+<ol>
+<li>Create the required OAuth client in the <a href="/docs/manage/account-management" title="Manage your Dynatrace license, subscriptions, and platform adoption and environment health.">Account Management</a> portal with permissions as instructed in the notebook.</li>
+<li>Import the provided <strong>RBAC Assessment</strong> notebook into your Dynatrace or, if itâs more convenient for you, use the provided PowerShell script.</li>
+<li>Run the script.</li>
+<li>The output will be a table like the example below:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>permissionName</th>
+<th>scope</th>
+<th>scopeType</th>
+<th>mgmtzone_name</th>
+<th>group_name</th>
+<th>abacRole</th>
+<th>recommended_policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tenant-replay-session-with-masking</td>
+<td>xyz:mgmt_na_east</td>
+<td>management-zone</td>
+<td>mgmt_na_east</td>
+<td>group_na_supp</td>
+<td><code>environment:roles:replay-sessions-with-masking</code></td>
+<td>Dynatrace Professional</td>
+</tr>
+<tr>
+<td>tenant-replay-session-without-masking</td>
+<td>xyz:mgmt_na_east</td>
+<td>management-zone</td>
+<td>mgmt_na_east</td>
+<td>group_na_supp</td>
+<td><code>environment:roles:replay-sessions-without-masking</code></td>
+<td>Dynatrace Professional</td>
+</tr>
+<tr>
+<td>tenant-manage-settings</td>
+<td>xyz:mgmt_na_east</td>
+<td>management-zone</td>
+<td>mgmt_na_east</td>
+<td>group_na_supp</td>
+<td><code>environment:roles:manage-settings</code></td>
+<td>Dynatrace Professional</td>
+</tr>
+<tr>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+</tr>
+<tr>
+<td>tenant-replay-session-with-masking</td>
+<td>xyz:mgmt_na_west</td>
+<td>management-zone</td>
+<td>mgmt_na_west</td>
+<td>group_na_supp</td>
+<td><code>environment:roles:replay-sessions-with-masking</code></td>
+<td>Dynatrace Professional</td>
+</tr>
+<tr>
+<td>tenant-replay-session-without-masking</td>
+<td>xyz:mgmt_na_west</td>
+<td>management-zone</td>
+<td>mgmt_na_west</td>
+<td>group_na_supp</td>
+<td><code>environment:roles:replay-sessions-without-masking</code></td>
+<td>Dynatrace Professional</td>
+</tr>
+<tr>
+<td>tenant-manage-settings</td>
+<td>xyz:mgmt_na_west</td>
+<td>management-zone</td>
+<td>mgmt_na_west</td>
+<td>group_na_supp</td>
+<td><code>environment:roles:manage-settings</code></td>
+<td>Dynatrace Professional</td>
+</tr>
+<tr>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+<td>â¦</td>
+</tr>
+</tbody>
+</table>
+<h3 id="upgrade-to-abac">Upgrade to ABAC<a class="headerlink" href="#upgrade-to-abac" title="Permanent link">&para;</a></h3>
+<p>With the inventory of assigned RBAC permissions already created, you can now map RBAC permissions to ABAC ones. You should give priority to existing <a href="/docs/manage/identity-access-management/permission-management/default-policies" title="Dynatrace default policies reference">default policies</a> whenever possible, as opposed to building your own custom policies.</p>
+<p>We will use âgroup_na_suppâ to help us illustrate some key best practices you should consider for your ABAC configuration.</p>
+<p>This group currently has the following RBAC permissions scoped to two management zones âmgmt_na_eastâ and âmgmt-na_westâ:</p>
+<table>
+<thead>
+<tr>
+<th>RBAC Role Name</th>
+<th>ABAC role name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tenant-replay-session-with-masking</td>
+<td><code>environment:roles:replay-sessions-with-masking</code></td>
+</tr>
+<tr>
+<td>tenant-replay-session-without-masking</td>
+<td><code>environment:roles:replay-sessions-without-masking</code></td>
+</tr>
+<tr>
+<td>tenant-manage-settings</td>
+<td><code>environment:roles:manage-settings</code></td>
+</tr>
+<tr>
+<td>tenant-view-sensitive-request-data</td>
+<td><code>environment:roles:view-sensitive-request-data</code></td>
+</tr>
+<tr>
+<td>tenant-view-security-problems</td>
+<td><code>environment:roles:view-security-problems</code></td>
+</tr>
+<tr>
+<td>tenant-manage-security-problems</td>
+<td><code>environment:roles:manage-security-problems</code></td>
+</tr>
+<tr>
+<td>tenant-log-viewer</td>
+<td><code>environment:roles:logviewer</code></td>
+</tr>
+</tbody>
+</table>
+<p>If we were to create a new custom policy to assign those permissions, we could write the following policy statement:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ALLOW  environment:roles:replay-sessions-with-masking, environment:roles:replay-sessions-without-masking, environment:roles:manage-settings, environment:roles:view-sensitive-request-data , environment:roles:manage-security-problems, environment:roles:logviewer
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>WHERE environment:management-zone startsWith &quot;mgmt_na&quot;;
+</code></pre></div>
+<p>We could then bind this policy to the <code>group_na_supp</code> group and remove the old RBAC role assignment from the group. To further optimize our new ABAC permission, we could use <strong>Dynatrace Professional</strong> rather than building a custom policy. Because <a href="/docs/manage/identity-access-management/permission-management/default-policies" title="Dynatrace default policies reference">default policies</a> are read-only, we would need a mechanism to append our <code>WHERE</code> condition above.</p>
+<p>This is where <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries" title="Restrict security policies with policy boundaries to provide tailored access to your users.">policy boundaries</a> come into play. We can store the condition <code>environment:management-zone startsWith "mgmt\_na";</code> in a policy boundary and then use it with our group, as we bind the group to the <strong>Dynatrace Professional</strong> policy, thus further restricting this permission assignment using the boundary we created.</p>
+<p>First, letâs create the policy boundary. In <a href="/docs/manage/account-management" title="Manage your Dynatrace license, subscriptions, and platform adoption and environment health.">Account Management</a>, under <strong>Identity &amp; Access management</strong> &gt; <strong>Policy management</strong>, we can create a policy boundary specific to North America management zones.</p>
+<p><img alt="Boundaries" src="https://dt-cdn.net/images/boundaries-468-08355e2a83.png" /></p>
+<p>Next, we assign the default policy <strong>Dynatrace Professional</strong> to the <code>group_na_supp</code> and apply the boundary we just created.</p>
+<p><img alt="Permission Assign" src="https://dt-cdn.net/images/permissionassign-936-e6e96537be.png" /></p>
+<p>As may be obvious from this example, policy boundaries make it possible to extract your business-specific access requirements out of the policy and into a standalone unit that can be re-applied over and over across multiple policies. Policy boundaries can be assigned to one or many group-to-policy bindings, making them reusable. The combination of default policies with policy boundaries has the potential to further simplify your permissions configuration.</p>
+<p>Best practice</p>
+<p>Make use of <a href="/docs/manage/identity-access-management/permission-management/default-policies" title="Dynatrace default policies reference">default policies</a> whenever possible and define your business-specific access conditions in policy boundaries.</p>
+<h3 id="when-should-you-create-custom-policies">When should you create custom policies<a class="headerlink" href="#when-should-you-create-custom-policies" title="Permanent link">&para;</a></h3>
+<p>Rather than creating new custom policies, administrators are strongly encouraged to primarily leverage default policies, which are built and managed by Dynatrace and already encapsulate the necessary policy statements for typical access scenarios. When assigning these default policies to groups, you can then further restrict the permissions by using policy boundaries.</p>
+<p>In cases where default policies do not meet your specific permission requirements, or when you might want to restrict them with some specific <code>DENY</code> statements, you can then build custom policies.</p>
+<p>Best practice</p>
+<p>Build your own custom policies only when provided default policies don't fit your requirements or when you want to further limit default policies.</p>
+<h3 id="testing-and-validation">Testing and validation<a class="headerlink" href="#testing-and-validation" title="Permanent link">&para;</a></h3>
+<p>We recommend mocking up groups and users and testing separately, ideally in a sandboxed environment if possible.</p>
+<p>Also, Dynatraceâs Enterprise API could be used to provide useful permissions information for specific users or groups. For example, the following GET request to <code>https://api.dynatrace.com</code> will return current permissions for a specific user:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>`https://api.dynatrace.com/iam/v1/resolutionaccount/:accountIdHere/effectivepermissions?entityType=user\&amp;entityId=:userIdHere`
+</code></pre></div>
+<h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h3>
+<p>Deploy policies in a phased approach to minimize user access disruptions. You may choose to do these in batches of groups or some other way more appropriate to your setup.</p>
+<p>Best practice</p>
+<p>Consider deploying your changes in batches rather than all at once.</p>
+<h3 id="monitoring-and-tuning">Monitoring and tuning<a class="headerlink" href="#monitoring-and-tuning" title="Permanent link">&para;</a></h3>
+<p>Monitor your ABAC permissions over time to see if they have adversely affected user access and adjust accordingly.</p>
+<h3 id="upgrade-support">Upgrade support<a class="headerlink" href="#upgrade-support" title="Permanent link">&para;</a></h3>
+<p>Refer to our online documentation and Dynatrace Community forums for additional help during your upgrade from RBAC to ABAC. Additionally, make use of Dynatraceâs support channels for more targeted help.</p>
+<h3 id="final-checklist">Final checklist<a class="headerlink" href="#final-checklist" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Compile your existing RBAC roles and group assignments</p>
+</li>
+<li>
+<p>Identify and plan to replace any custom automation still relying on RBAC</p>
+</li>
+<li>
+<p>Design your ABAC policies:</p>
+</li>
+<li>
+<p>Use default policies whenever suitable</p>
+</li>
+<li>Create policy boundaries to capture your specific business logic</li>
+<li>
+<p>Decide on an upgrade strategy</p>
+</li>
+<li>
+<p>Consider a phased rather than a big-bang approach by introducing changes in multiple batches</p>
+</li>
+<li>
+<p>Test your upgrade</p>
+</li>
+<li>
+<p>Use a sandbox environment if available to test the effects of your new ABAC-only configuration</p>
+</li>
+<li>Try upgrading a select set of groups first</li>
+<li>Monitor the effects of your upgrade to catch and correct any misconfigurations</li>
+</ol>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Working with policies</a></li>
+<li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax" title="IAM policy statement syntax.">IAM policy statement syntax and examples</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

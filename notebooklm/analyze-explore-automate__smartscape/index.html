@@ -957,10 +957,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#source-smartscape-view-topologymd" class="md-nav__link">
+  <a href="#source-smartscape-conceptsmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Source: smartscape-view-topology.md
+        Source: smartscape-concepts.md
       
     </span>
   </a>
@@ -985,8 +985,102 @@
 
 
 <h1 id="dynatrace-documentation-analyze-explore-automatesmartscape">Dynatrace Documentation: analyze-explore-automate/smartscape<a class="headerlink" href="#dynatrace-documentation-analyze-explore-automatesmartscape" title="Permanent link">&para;</a></h1>
-<p>Generated: 2026-02-16</p>
-<p>Files combined: 8</p>
+<p>Generated: 2026-02-17</p>
+<p>Files combined: 11</p>
+<hr />
+<h2 id="source-smartscape-conceptsmd">Source: smartscape-concepts.md<a class="headerlink" href="#source-smartscape-conceptsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Smartscape concepts
+source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-concepts
+scraped: 2026-02-17T05:11:29.059731</p>
+<hr />
+<h1 id="smartscape-concepts">Smartscape concepts<a class="headerlink" href="#smartscape-concepts" title="Permanent link">&para;</a></h1>
+<h1 id="smartscape-concepts_1">Smartscape concepts<a class="headerlink" href="#smartscape-concepts_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Explanation</li>
+<li>8-min read</li>
+<li>Published Jan 28, 2026</li>
+</ul>
+<p>This page is an introduction to Smartscape-specific concepts, as well as general concepts and their usage within <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong>.</p>
+<h2 id="smartscape-views">Smartscape views<a class="headerlink" href="#smartscape-views" title="Permanent link">&para;</a></h2>
+<p><img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> provides multiple topology views, each offering a unique perspective on your digital system. For more information, see <a href="/docs/analyze-explore-automate/smartscape/smartscape-views" title="Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services."><img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> views</a>.</p>
+<h2 id="smartscape-modals">Smartscape modals<a class="headerlink" href="#smartscape-modals" title="Permanent link">&para;</a></h2>
+<p><img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> modals deliver in-context topological insights anywhere on the platform, seamlessly integrating analytics into your workflows. <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> modals are displayed in an overlay on top of the existing app, which allows you to access topological insights and analytics without leaving your current app or context. For more information, see <a href="/docs/analyze-explore-automate/smartscape/smartscape-modals" title="Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies"><img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> modals</a>.</p>
+<h2 id="nodes-edges-and-groups">Nodes, edges, and groups<a class="headerlink" href="#nodes-edges-and-groups" title="Permanent link">&para;</a></h2>
+<p>In graph visualizations, a graph is a network of entities (nodes) and their relationships (edges). Here's how the key components work:</p>
+<ul>
+<li>Nodes: Represent entities or objects, such as people, devices, or systems. They are displayed as circles, dots, or vertices in the visualization.</li>
+<li>Edges: Represent relationships or connections between nodes, such as communication links, dependencies, or interactions. These are rendered as lines between nodes in the graph.</li>
+<li>Groups: Represent clusters or collections of nodes that share a common characteristic or context. In the visualization, groups encompass a set of nodes. Nodes and groups can also have multiple levels of nesting.</li>
+</ul>
+<p>In <strong>Smartscape on Grail</strong>, nodes and edges are specifically designed to represent your digital ecosystem:</p>
+<ul>
+<li>Smartscape Nodes: Represent individual entities, such as services, processes, hosts, or data centers.</li>
+<li>Smartscape Edges: Represent the relationships or dependencies between nodes. For example, a <code>calls</code> relationship between services, or a <code>runs on</code> relationship between a process and a host.</li>
+</ul>
+<p>The nodes and edges shown in the <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> app don't always map 1:1 to <strong>Smartscape on Grail</strong> nodes and edges. Based on the specific view and use case, we may adjust how entities, properties, or relationships are represented to make the data more meaningful.</p>
+<h2 id="timeframe-selector">Timeframe selector<a class="headerlink" href="#timeframe-selector" title="Permanent link">&para;</a></h2>
+<p>The timeframe selector in the <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> app works slightly different compared to the other areas of the platform. The timeframe selector lets you view nodes whose lifetime overlaps with the selected timeframe. This ensures that you only see nodes relevant to the period you're analyzing.</p>
+<p>For more information about lifetime, see <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."><strong>Smartscape on Grail</strong></a>.</p>
+<h2 id="segments">Segments<a class="headerlink" href="#segments" title="Permanent link">&para;</a></h2>
+<p>Segments allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Within the <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> app, we recommend using segments as a best practice to filter your graph view down to a dataset that is relevant to you and your team.</p>
+<p>Working with vast amounts of data such as thousands of nodes in a graph, and trying to analyze everything at once, can be overwhelming and counterproductive. By narrowing the scope to your area of responsibilityâwhether it's a specific application, environment, or infrastructureâyou can uncover actionable insights faster and make effective decisions. Filtering with segments allows you to enhance clarity and ensures that the data you're viewing is relevant to your goals.</p>
+<h3 id="segments-in-smartscape-smartscape">Segments in Smartscape <strong>Smartscape</strong><a class="headerlink" href="#segments-in-smartscape-smartscape" title="Permanent link">&para;</a></h3>
+<p>In nested views, if your segment filters out a parent group, you won't be able to see the child nodes of that group even if those child nodes aren't directly affected by the segment filter.</p>
+<p>For more information about Segments, see <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a>.</p>
+<h2 id="tooltips">Tooltips<a class="headerlink" href="#tooltips" title="Permanent link">&para;</a></h2>
+<p>Tooltips, or overlays, provide in-context information about nodes, groups, or edges within a Smartscape view. You can perform the following actions to access tooltips:</p>
+<ul>
+<li>Hover for key metadata: Hovering over a node, group, or edge displays a tooltip with essential metadata.</li>
+<li>
+<p>Select for more details: Selecting a node or group tooltip pins it in place, loads key metrics, and reveals further actions and intents you can perform:</p>
+</li>
+<li>
+<p>Actions: Trigger actions directly within the <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> app, such as isolating a node for deeper analysis.</p>
+</li>
+<li>Drilldowns: Navigate to other platform applications to continue your analysis in dedicated domain-specific tools.</li>
+</ul>
+<p>Tooltips ensure you have quick access to relevant information and workflows, streamlining your analysis process.</p>
+<h2 id="toolbar">Toolbar<a class="headerlink" href="#toolbar" title="Permanent link">&para;</a></h2>
+<p>The toolbar in the Smartscape graph provides an intuitive way to navigate and interact with the visualization. The available tools include:</p>
+<ul>
+<li><strong>Move</strong>: Move the toolbar across the Smartscape graph.</li>
+<li>
+<p><strong>Download</strong>: Export the Smartscape graph as a .png image. You can choose from the following options:</p>
+</li>
+<li>
+<p><strong>Download full view as PNG</strong>: Download the complete Smartscape graph.</p>
+</li>
+<li><strong>Download current view as PNG</strong>: Download only the portion of the graph currently visible on your screen.</li>
+<li><strong>Zoom in</strong> and  <strong>Zoom out</strong>: Adjust the zoom level to focus on specific areas or view a broader section of the graph.</li>
+<li><strong>Zoom to fit</strong>: Automatically adjust the zoom to ensure the entire graph fits within your view.</li>
+<li><strong>Collapse all</strong>: Collapse all open groups within the graph.</li>
+<li><strong>Reset</strong>: Return the graph view to its original state.</li>
+</ul>
+<h2 id="badges">Badges<a class="headerlink" href="#badges" title="Permanent link">&para;</a></h2>
+<p>Badges appear on nodes, groups, and edges within <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> views. Their meaning depends on the element they are attached to and the specific view being displayed.</p>
+<p>In general, badges show the number of active problems on a given element, such as a group or a node (see below).</p>
+<h3 id="problem-indicators">Problem indicators<a class="headerlink" href="#problem-indicators" title="Permanent link">&para;</a></h3>
+<p>Problem indicators are a specialized type of badge that display the number of problems detected for a specific Smartscape node.</p>
+<p>There are several types of problem indicators:</p>
+<ul>
+<li>Group-specific: For Smartscape groups (nodes with children), the problem count reflects only the issues associated with the group entity itself and doesn't include problems from child nodes. This means that problems on child nodes aren't aggregated or counted towards the problem count of the parent group.</li>
+<li>
+<p>Affected nodes only: Problem indicators are shown only on Smartscape nodes directly affected by a problem.</p>
+</li>
+<li>
+<p>Related nodes that are indirectly associated with a problem won't display a problem indicator.</p>
+</li>
+</ul>
+<h2 id="optimized-views">Optimized views<a class="headerlink" href="#optimized-views" title="Permanent link">&para;</a></h2>
+<p>To ensure a seamless and responsive experience, the <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> app dynamically optimizes your view by limiting the graph to display a maximum of 4,000 nodes and 10,000 edges. This allows you to explore your environment efficiently without compromising performance or usability.</p>
+<p>If you need deeper insights into your data, you can fine-tune your view by:</p>
+<ul>
+<li>Using segments: to filter your graph view down to a dataset that is meaningful to you and your team. For more information, see the <a href="#smartscape-segments">Segments</a> section.</li>
+<li>Adjusting the timeframe: Limit the view's timeframe to a shorter time period to capture the most relevant details. For more information, see the <a href="#smartscape-timeframe-selector">Timeframe selector</a> section.</li>
+</ul>
+<p>By optimizing the graph's size, you can ensure a stable and uninterrupted experience.</p>
 <hr />
 <h2 id="source-smartscape-view-topologymd">Source: smartscape-view-topology.md<a class="headerlink" href="#source-smartscape-view-topologymd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1080,7 +1174,7 @@ scraped: 2026-02-16T21:30:15.938124</p>
 <hr />
 <p>title: Visual Resolution Path
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path
-scraped: 2026-02-16T09:35:14.493846</p>
+scraped: 2026-02-17T05:05:45.502622</p>
 <hr />
 <h1 id="visual-resolution-path">Visual Resolution Path<a class="headerlink" href="#visual-resolution-path" title="Permanent link">&para;</a></h1>
 <h1 id="visual-resolution-path_1">Visual Resolution Path<a class="headerlink" href="#visual-resolution-path_1" title="Permanent link">&para;</a></h1>
@@ -1145,6 +1239,29 @@ scraped: 2026-02-16T09:35:14.493846</p>
 <li><a href="/docs/analyze-explore-automate/smartscape/smartscape-views" title="Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.">Smartscape views</a></li>
 <li><a href="/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph" title="Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.">Problem graph</a></li>
 <li><a href="/docs/dynatrace-intelligence/root-cause-analysis" title="How Dynatrace analyzes problems to determine their root cause.">Root cause analysis</a></li>
+</ul>
+<hr />
+<h2 id="source-smartscape-modalsmd">Source: smartscape-modals.md<a class="headerlink" href="#source-smartscape-modalsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Smartscape modals
+source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals
+scraped: 2026-02-17T05:08:21.817652</p>
+<hr />
+<h1 id="smartscape-modals_1">Smartscape modals<a class="headerlink" href="#smartscape-modals_1" title="Permanent link">&para;</a></h1>
+<h1 id="smartscape-modals_2">Smartscape modals<a class="headerlink" href="#smartscape-modals_2" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Overview</li>
+<li>2-min read</li>
+<li>Published Jan 28, 2026</li>
+</ul>
+<p><img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> modals extend the power of topological analytics beyond the <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> app by providing intent add-on modals that deliver in-context insights regardless of which part of the Dynatrace platform you use. <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> modals seamlessly integrate topological and relationship analytics into your workflows, ensuring you have the insights you need whenever you need them.</p>
+<p>[### Visual Resolution Path</p>
+<p>Use the Visual Resolution Path (VRP) add-on to access the problem resolution path directly from any Dynatrace app and gain insights into the problem and underlying problem event timeline without leaving your current context.](/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path "Access the problem resolution path directly from any Dynatrace app to gain insights into a problem and event timeline without leaving the current context.")[### View Topology</p>
+<p>Visualize the topology around any selected entity to gain immediate insights on the relationships to other entities within your digital system.](/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology "Visualize the topology around the selected entity to gain insights on service dependencies and relationships between the nodes.")</p>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/analyze-explore-automate/smartscape" title="Visualize the structure of your environments and understand relationships and dependencies between your service entities.">Smartscape</a></li>
 </ul>
 <hr />
 <h2 id="source-aws-ec2-ecosystem-overviewmd">Source: aws-ec2-ecosystem-overview.md<a class="headerlink" href="#source-aws-ec2-ecosystem-overviewmd" title="Permanent link">&para;</a></h2>
@@ -1214,7 +1331,7 @@ scraped: 2026-02-16T21:28:46.133688</p>
 <li>Drill down into any region, availability zone, subnet, or EC2 instance to continue your exploration or investigation and access detailed health-relevant signals, metrics, events, and logs.</li>
 <li>Review the distribution of instances across availability zones to ensure your architecture maintains high availability and fault tolerance.</li>
 </ul>
-<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/smartscape" title="Visualize the structure of your environments and understand relationships and dependencies between your service entities.">Smartscape</a></li>
 </ul>
@@ -1223,7 +1340,7 @@ scraped: 2026-02-16T21:28:46.133688</p>
 <hr />
 <p>title: Infrastructure overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview
-scraped: 2026-02-16T21:31:58.111535</p>
+scraped: 2026-02-17T05:00:23.784457</p>
 <hr />
 <h1 id="infrastructure-overview">Infrastructure overview<a class="headerlink" href="#infrastructure-overview" title="Permanent link">&para;</a></h1>
 <h1 id="infrastructure-overview_1">Infrastructure overview<a class="headerlink" href="#infrastructure-overview_1" title="Permanent link">&para;</a></h1>
@@ -1288,7 +1405,7 @@ scraped: 2026-02-16T21:31:58.111535</p>
 <li>Actively use the pin the tooltip functionality on nodes for easy key metric access. Key metrics such as CPU, memory, or disk utilization, and can help you gain insights necessary to detect and resolve performance issues faster.</li>
 <li>Drill down into any nodes in the <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> app to continue your exploration of your infrastructure.</li>
 </ul>
-<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/smartscape" title="Visualize the structure of your environments and understand relationships and dependencies between your service entities.">Smartscape</a></li>
 </ul>
@@ -1297,7 +1414,7 @@ scraped: 2026-02-16T21:31:58.111535</p>
 <hr />
 <p>title: Kubernetes overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview
-scraped: 2026-02-16T21:31:06.353392</p>
+scraped: 2026-02-17T05:04:26.196148</p>
 <hr />
 <h1 id="kubernetes-overview">Kubernetes overview<a class="headerlink" href="#kubernetes-overview" title="Permanent link">&para;</a></h1>
 <h1 id="kubernetes-overview_1">Kubernetes overview<a class="headerlink" href="#kubernetes-overview_1" title="Permanent link">&para;</a></h1>
@@ -1343,7 +1460,7 @@ scraped: 2026-02-16T21:31:06.353392</p>
 <li>Use Kubernetes topology graph to ensure that configured clusters, namespaces, and workloads exist and are correctly associated with their intended clusters and namespaces.</li>
 <li>Drill down into any cluster, namespace, or workload in the <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong> to continue your exploration or investigation and access detailed health-relevant signals, metrics, events, and logs.</li>
 </ul>
-<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/smartscape" title="Visualize the structure of your environments and understand relationships and dependencies between your service entities.">Smartscape</a></li>
 </ul>
@@ -1391,7 +1508,7 @@ scraped: 2026-02-16T21:29:35.618649</p>
 <li>Drill down and open your problem in the dedicated <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> app to access detailed insights, root cause analysis, and resolution recommendations.</li>
 <li>Investigate specific entities (such as services or hosts) further by opening them in their respective domain applications, such as the <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong>, <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong>, or <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> apps.</li>
 </ul>
-<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/smartscape" title="Visualize the structure of your environments and understand relationships and dependencies between your service entities.">Smartscape</a></li>
 </ul>
@@ -1434,7 +1551,7 @@ scraped: 2026-02-16T21:31:34.029783</p>
 <p>These layout options are only available on filtered-down views with fewer nodes.
 * Actively use the pin the tooltip functionality on your service nodes to reveal key metrics such as throughput, error rates, or response times in context.
 * Drill down into details of your service in the dedicated <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> app to access health-relevant signals, metrics, events, and logs.</p>
-<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/smartscape" title="Visualize the structure of your environments and understand relationships and dependencies between your service entities.">Smartscape</a></li>
 </ul>
@@ -1478,7 +1595,35 @@ scraped: 2026-02-16T21:27:09.444394</p>
 <li>Drill down into domain-specific apps (such as Services, Kubernetes, or Infrastructure &amp; Operations) directly from nodes in the graph to access detailed metrics, events, and health signals for deeper analysis.</li>
 <li>Leverage the real-time nature of the graph to monitor changes in your environment as they happen, ensuring you always have up-to-date insights into your digital ecosystem.</li>
 </ul>
-<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_8">Related topics<a class="headerlink" href="#related-topics_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/analyze-explore-automate/smartscape" title="Visualize the structure of your environments and understand relationships and dependencies between your service entities.">Smartscape</a></li>
+</ul>
+<hr />
+<h2 id="source-smartscape-viewsmd">Source: smartscape-views.md<a class="headerlink" href="#source-smartscape-viewsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Smartscape views
+source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views
+scraped: 2026-02-17T05:11:40.612220</p>
+<hr />
+<h1 id="smartscape-views_1">Smartscape views<a class="headerlink" href="#smartscape-views_1" title="Permanent link">&para;</a></h1>
+<h1 id="smartscape-views_2">Smartscape views<a class="headerlink" href="#smartscape-views_2" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Overview</li>
+<li>2-min read</li>
+<li>Published Jan 28, 2026</li>
+</ul>
+<p><img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> views enable you to visualize and analyze topology data with a range of ready-made, customized perspectives. Each view utilizes Dynatrace's comprehensive topological and relational data to deliver actionable insights into the complexities of contemporary digital systems, ensuring relevance to specific use cases.</p>
+<p>Whether you're exploring service relationships, understanding infrastructure dependencies, or visualizing problem impact, <img alt="Smartscape" src="https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png" title="Smartscape" /> <strong>Smartscape</strong> ensures that you have the right lens to address your specific needs.</p>
+<p>[### Smartscape on Grail view</p>
+<p>Discover all entities and relationships in your environment and focus on what's relevant to you and your team.](/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view "Discover all entities and relationships in your environment and select relevant segments with the help of Grail.")[### Infrastructure overview</p>
+<p>Gain insight into what components are running, how they're connected, and where the impact may spread.](/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview "Visualize call-type relationships between components and gain insights into process dependencies and workload distribution.")[### Problem graph</p>
+<p>Analyze problem impact and blast radius across your environment.](/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.")[### Service dependency graph</p>
+<p>Discover how your services connect and communicate in real time.](/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph "Visualize relationships between services in your environment to identify dependency chains and and uncover critical dependencies.")[### Kubernetes overview</p>
+<p>Map your Kubernetes environments from clusters to components.](/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview "Get a high-level overview of your Kubernetes environment to navigate dependencies and identify misconfigurations.")[### AWS EC2 ecosystem overview</p>
+<p>Visualize your AWS EC2 ecosystem and resource relationships.](/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview "Visualize your AWS EC2 ecosystem and resource relationships.")</p>
+<h2 id="related-topics_9">Related topics<a class="headerlink" href="#related-topics_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/smartscape" title="Visualize the structure of your environments and understand relationships and dependencies between your service entities.">Smartscape</a></li>
 </ul>

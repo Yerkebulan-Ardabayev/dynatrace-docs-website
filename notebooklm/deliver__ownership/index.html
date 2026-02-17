@@ -985,8 +985,8 @@
 
 
 <h1 id="dynatrace-documentation-deliverownership">Dynatrace Documentation: deliver/ownership<a class="headerlink" href="#dynatrace-documentation-deliverownership" title="Permanent link">&para;</a></h1>
-<p>Generated: 2026-02-16</p>
-<p>Files combined: 2</p>
+<p>Generated: 2026-02-17</p>
+<p>Files combined: 3</p>
 <hr />
 <h2 id="source-assign-ownershipmd">Source: assign-ownership.md<a class="headerlink" href="#source-assign-ownershipmd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1452,7 +1452,7 @@ scraped: 2026-02-16T21:25:33.322942</p>
 <hr />
 <p>title: Best practices for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/best-practices
-scraped: 2026-02-16T21:30:40.821825</p>
+scraped: 2026-02-17T05:08:43.800611</p>
 <hr />
 <h1 id="best-practices-for-entity-ownership">Best practices for entity ownership<a class="headerlink" href="#best-practices-for-entity-ownership" title="Permanent link">&para;</a></h1>
 <h1 id="best-practices-for-entity-ownership_1">Best practices for entity ownership<a class="headerlink" href="#best-practices-for-entity-ownership_1" title="Permanent link">&para;</a></h1>
@@ -1628,6 +1628,147 @@ scraped: 2026-02-16T21:30:40.821825</p>
 <h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale" title="Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.">Best practices for scaling tagging and management-zone rules</a></li>
+</ul>
+<hr />
+<h2 id="source-ownership-teamsmd">Source: ownership-teams.md<a class="headerlink" href="#source-ownership-teamsmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Create and manage teams for entity ownership
+source: https://www.dynatrace.com/docs/deliver/ownership/ownership-teams
+scraped: 2026-02-17T04:59:39.722442</p>
+<hr />
+<h1 id="create-and-manage-teams-for-entity-ownership">Create and manage teams for entity ownership<a class="headerlink" href="#create-and-manage-teams-for-entity-ownership" title="Permanent link">&para;</a></h1>
+<h1 id="create-and-manage-teams-for-entity-ownership_1">Create and manage teams for entity ownership<a class="headerlink" href="#create-and-manage-teams-for-entity-ownership_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>8-min read</li>
+<li>Updated on Nov 07, 2023</li>
+</ul>
+<p>Ownership for monitored entities is defined within <strong>teams</strong>. You can set up ownership teams in the web UI, via API, and using <a href="/docs/deliver/configuration-as-code" title="Use Dynatrace configuration as code via Monaco or Terraform.">Configuration as Code</a>. Each team has a <strong>unique identifier</strong> that is the basis for <a href="/docs/deliver/ownership/assign-ownership" title="Assign owners to entities using entity metadata like labels, environment variables, and tags.">applying ownership to entities</a> by different methods (Kubernetes labels and annotations, host metadata, environment variables, or tags). Additionally, team definitions consist of names, descriptions, important routing information for notifications (via Microsoft Teams, Slack, Jira, and email), responsibilities (such as operations or security), and additional helpful links.</p>
+<p>Team settings are based on the <a href="/docs/manage/settings/settings-20" title="Introduction to the Settings 2.0 framework">Settings 2.0 framework</a>, which defines each team configuration as a settings object based on the ownership schema, whether you use API, Configuration as Code, imported data from third-party databases, or the web UI at <strong>Settings</strong> &gt; <strong>Ownership</strong>.</p>
+<p>Ownership information attached to monitored entities aids in mapping your Dynatrace environment to the right teams for collaboration, issue resolution, and vulnerability escalation.</p>
+<h2 id="permissions_1">Permissions<a class="headerlink" href="#permissions_1" title="Permanent link">&para;</a></h2>
+<p>You need <strong>any</strong> of the following permissions to create, edit, or delete a team via API.</p>
+<ul>
+<li>The <code>settings.write</code> <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens" title="Learn the concept of an access token and its scopes.">token permission</a></li>
+<li>The <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">IAM policy</a> <code>ALLOW settings:objects:write, settings:schemas:read WHERE settings:schemaId = "builtin:ownership.teams";</code></li>
+</ul>
+<p>You need the <strong>Manage monitoring settings</strong> <a href="/docs/manage/identity-access-management/permission-management/role-based-permissions" title="Role-based permissions">permission</a> at the environment or management-zone level to create teams via the web UI.</p>
+<h2 id="create-a-team-via-web-ui">Create a team via web UI<a class="headerlink" href="#create-a-team-via-web-ui" title="Permanent link">&para;</a></h2>
+<p>To create a team via the Dynatrace web UI</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Ownership</strong> &gt; <strong>Teams</strong>.</li>
+</ol>
+<p><img alt="Ownership teams settings page" src="https://dt-cdn.net/images/ownership-teams-page-2212-be3abe3c7d.png" />
+2. Select <strong>Add team</strong>.
+3. Required Start by providing a <strong>Team name</strong>.</p>
+<p>In ownership team data <a href="/docs/deliver/ownership-app#import-teams" title="It provides custom actions to define workflows integrating entity owners and their contact information.">imported from Microsoft Entra ID</a>, the <code>displayName</code> import parameter from <code>get_groups</code> is set as the <strong>Team name</strong>.</p>
+<ol>
+<li>Required The <strong>Team identifier</strong> is auto-populated based on the team name. Use the default identifier or provide your own.</li>
+</ol>
+<p><strong>Requirements</strong></p>
+<p>Team identifiers are the basis of <a href="/docs/deliver/ownership/assign-ownership" title="Assign owners to entities using entity metadata like labels, environment variables, and tags.">applying ownership to entities</a>, regardless of the method. Main team identifiers must be unique across your environment. However, you may reuse the identifier of a previously deleted team.</p>
+<ul>
+<li>Identifiers must be unique; no two main team identifiers can be the same.</li>
+<li>Identifiers must be between 1 and 100 characters long.</li>
+<li>They must begin and end with a letter (<code>[a-zA-Z]</code>).</li>
+<li>They can contain hyphens (<code>-</code>), underscores (<code>_</code>), and alphanumerics between the opening and closing characters. Blank spaces and other special characters are not supported.</li>
+<li>Once created, a main <strong>team identifier cannot be edited or changed</strong>.</li>
+</ul>
+<p>In team information <a href="/docs/deliver/ownership-app#import-teams" title="It provides custom actions to define workflows integrating entity owners and their contact information.">imported from Microsoft Entra ID</a>, this field is set to the corresponding group's <strong>Object Id</strong> in Entra ID and cannot be edited. The <strong>External ID</strong> of the imported ownership team in Dynatrace is also set to this value.
+5. Add a <strong>Description</strong> that aids in differentiating the team, for example, by entities managed or by responsibility. This description is appended to the team name for display on the <strong>Ownership teams</strong> page.
+6. Optionally, specify <strong>Supplementary identifiers</strong>. Select <strong>Add supplementary identifier</strong> to provide up to three additional identifiers, for example, to identify sub-teams. When assigning ownership to entities, you can use the main team identifier or any of the supplementary identifiers to assign an entity to the named team.</p>
+<ul>
+<li>Supplementary identifiers must meet the same character requirements as the main team ID.</li>
+<li>A supplementary identifier cannot be the same as the main identifier of the same team.</li>
+<li>Within a team, supplementary identifiers must be unique.</li>
+<li>A supplementary identifier can be the same as the main or supplementary identifier of another team.</li>
+<li>Unlike the main team identifier, supplementary identifiers <strong>may be edited and deleted</strong>.</li>
+</ul>
+<p>In ownership team data <a href="/docs/deliver/ownership-app#import-teams" title="It provides custom actions to define workflows integrating entity owners and their contact information.">imported from Microsoft Entra ID</a>, the <code>mailNickname</code> import parameter from <code>get_groups</code> is set as a unique, human-readable <strong>Supplementary Identifier</strong>.
+7. Select all <strong>Responsibilities</strong> that apply to the team. Although optional, these toggles provide critical metadata at a glance and help you specify the appropriate contact details.</p>
+<ul>
+<li><strong>Development</strong>âTeams responsible for developing and maintaining the underlying software code</li>
+<li><strong>Security</strong>âTeams tasked with assessing the impact and priority of vulnerabilities and responding to them</li>
+<li><strong>Operations</strong>âTeams that deploy and manage software, with a focus on performance and availability</li>
+<li><strong>Infrastructure</strong>âTeams responsible for installing and maintaining IT hardware</li>
+<li><strong>Line of business</strong>âTeams responsible for meeting customer and business goals</li>
+<li>Add all <strong>Contact details</strong> that apply to the team. You can provide specific routing information for targeted notifications via email, Jira, Microsoft Teams, and Slack.</li>
+</ul>
+<p>You can add as many entries as required. Create a separate entry for each email address, Slack channel, Microsoft team, or Jira project you want to add.</p>
+<ol>
+<li>Select <strong>Add contact information</strong>.</li>
+<li>Select an <strong>Integration type</strong>.</li>
+<li>
+<p>Provide details as follows:</p>
+<ul>
+<li><strong>Email</strong>âProvide a single <strong>Email</strong> address.</li>
+<li><strong>Jira</strong>âEnter the Jira <strong>Project</strong> name, <strong>Default assignee</strong> Required, and project <strong>URL</strong>.</li>
+<li><strong>MS Teams</strong>âProvide the <strong>Team</strong> name and <strong>URL</strong> (you can provide the link to a team channel from MS Teams).</li>
+<li><strong>Slack</strong>âProvide the <strong>Channel</strong> name and <strong>URL</strong>.</li>
+<li>Provide any other <strong>Links</strong> describing the team or its responsibilities.</li>
+<li>Select <strong>Add link</strong>.</li>
+<li>Select the link <strong>Type</strong>, for example, <strong>Documentation</strong> or <strong>Wiki</strong>.</li>
+<li>Provide the <strong>URL</strong>.</li>
+</ul>
+<p>You can add as many entries as required. Create a separate entry for each link you want to add.
+13. Select <strong>Add additional information</strong> to provide additional key-value pairs in the <strong>Name</strong> and <strong>Value</strong> fields, for example, cost center names or organizational hierarchy information. You can also provide an optional <strong>URL</strong>.</p>
+<p>Keys for additional information:</p>
+<ul>
+<li>Must be 1â100 characters long.</li>
+<li>Can contain letters, numbers, special characters, and spaces.</li>
+<li>
+<p>Provide an <strong>External ID</strong> to be used only for automation purposes such as importing or updating team information. For example, use this field to store the unique ID assigned to a team in an external system such as Active Directory.</p>
+</li>
+<li>
+<p>An external ID can only be specified during team creation.</p>
+</li>
+<li>Once created, an external ID <strong>cannot be modified</strong>.</li>
+<li>
+<p>This string can begin and end with and contain special characters, blank spaces, numbers, and letters.</p>
+</li>
+<li>
+<p>External IDs cannot be used to apply ownership information to entities in key-value pairs; use the main team ID and supplementary IDs to assign entities to team owners.</p>
+</li>
+<li>
+<p>In team information <a href="/docs/deliver/ownership-app#import-teams" title="It provides custom actions to define workflows integrating entity owners and their contact information.">imported from Microsoft Entra ID</a>, this field is set to the corresponding group's <strong>Object Id</strong> from Entra ID and cannot be edited. The <strong>Team identifier</strong> of the imported ownership team is also set to this value.</p>
+</li>
+<li><strong>Save changes</strong>.</li>
+</ul>
+</li>
+</ol>
+<p>See <a href="/docs/deliver/ownership/best-practices" title="Tips and best practices to ensure that entities have adequate ownership coverage">Best practices for entity ownership</a> for more information about setting up teams optimally.</p>
+<h2 id="create-a-team-via-api-and-configuration-as-code">Create a team via API and Configuration as Code<a class="headerlink" href="#create-a-team-via-api-and-configuration-as-code" title="Permanent link">&para;</a></h2>
+<p>Team creation via the <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers."><strong>Settings API</strong></a> requires the ownership configuration <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="View a settings schema via the Dynatrace API.">JSON schema</a> (<code>builtin:ownership.config</code>) provided by Dynatrace. You can retrieve the schema using the Settings API. Provide team configuration as a JSON payload.</p>
+<p><a href="/docs/deliver/configuration-as-code" title="Use Dynatrace configuration as code via Monaco or Terraform.">Configuration as Code</a> enables you to use JSON templates and YAML files for team creation for one or multiple teams at the same time.</p>
+<h2 id="import-teams-via-workflows-workflows">Import teams via Workflows Workflows<a class="headerlink" href="#import-teams-via-workflows-workflows" title="Permanent link">&para;</a></h2>
+<p>You can import user groups from <strong>Microsoft Entra ID</strong> and <strong>ServiceNow</strong> as ownership teams within Dynatrace.
+Therefore, see how to use the <a href="/docs/deliver/ownership-app#import-teams" title="It provides custom actions to define workflows integrating entity owners and their contact information."><code>import_teams</code></a> action and workflows for importing teams.</p>
+<h2 id="manage-teams">Manage teams<a class="headerlink" href="#manage-teams" title="Permanent link">&para;</a></h2>
+<p>You can manage (create, delete, edit) ownership teams via <strong>Settings</strong> &gt; <strong>Ownership</strong> &gt; <strong>Teams</strong> as well as the <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a>.</p>
+<p>The <strong>Ownership teams</strong> settings page lists all teams (and their descriptions) in your environment, whether created via web UI or the API. Use the <strong>Filter</strong> field  to narrow this list by any string in a team name or description.</p>
+<p>You can <strong>Delete</strong> a team from this view and expand <strong>Details</strong> to view and edit team information. You cannot, however, edit or delete the main team identifier.</p>
+<h3 id="revision-history">Revision history<a class="headerlink" href="#revision-history" title="Permanent link">&para;</a></h3>
+<p>Select <img alt="More" src="https://dt-cdn.net/images/more-icon-01c8b008ca.svg" title="More" /> in the upper-right corner of the <strong>Ownership teams</strong> page and then select <strong>Revision history</strong> for details of changes, including team creation, modification and deletion. Revisions are listed with <strong>Timestamp</strong>, the <strong>Source</strong> of the change (<strong>Web UI</strong> or <strong>API</strong>), and the <strong>User</strong> making the change.</p>
+<p><img alt="History of ownership teams" src="https://dt-cdn.net/images/ownership-teams-revisions-1462-e55719add4.png" /></p>
+<p>Expand to view the <strong>Details</strong> of any revision. Changes are color coded to show the <strong>Original value</strong> and any <strong>New value</strong>. The image below shows a deleted supplementary identifier.</p>
+<p><img alt="Revision simple view" src="https://dt-cdn.net/images/ownership-teams-revision1-1849-055f7f5d2e.png" /></p>
+<p><strong>Switch to advanced mode</strong> and select <strong>Show diff</strong> to view the same changes as JSON objects. The <strong>Key</strong> displayed in advanced mode is a unique setting ID assigned to each team. Select the key to view the corresponding team's details.</p>
+<p><img alt="Revision YAML view" src="https://dt-cdn.net/images/ownership-teams-revision2-1848-06b3770890.png" /></p>
+<p>You can also filter revision history for a specific teamâpaste any setting ID <strong>Key</strong> into the <strong>Filter</strong> field .</p>
+<h3 id="additional-team-management">Additional team management<a class="headerlink" href="#additional-team-management" title="Permanent link">&para;</a></h3>
+<p>There are additional conveniences for team-specific management within each team.</p>
+<ol>
+<li>Expand team details on the <strong>Ownership teams</strong> page.</li>
+<li>Select <img alt="More" src="https://dt-cdn.net/images/more-icon-01c8b008ca.svg" title="More" /> in the upper-right corner of team details to access team-specific <a href="#revision-history"><strong>Revision history</strong></a>, helpful <strong>API</strong> snippets for team management, and the ability to <strong>Duplicate</strong> team details as the basis for creating a new team.</li>
+</ol>
+<p><img alt="Team-management links" src="https://dt-cdn.net/images/ownership-team-specific-links-1462-4d8ea5d2df.png" /></p>
+<p>The API snippets for reading, creating, updating, and deleting teams are available for both Windows and Linux command line interfaces. While API snippets are team specific, you can modify them, for example, by removing the team identifier to create a new team. Be sure to provide your access token.</p>
+<p><img alt="Team-management API snippets" src="https://dt-cdn.net/images/ownership-teams-api-snippets-763-e9a0f5eb88.png" /></p>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/manage/settings/settings-20" title="Introduction to the Settings 2.0 framework">Dynatrace settings framework</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a></li>
+<li><a href="/docs/deliver/configuration-as-code" title="Use Dynatrace configuration as code via Monaco or Terraform.">Configuration as Code overview</a></li>
 </ul>
 <hr />
 

@@ -25,7 +25,7 @@
     
     
       
-        <title>Ingest data from Jaeger - Dynatrace Managed - Документация</title>
+        <title>Ingest Jaeger data with the OpenTelemetry Collector - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ingest-data-from-jaeger" class="md-skip">
+        <a href="#ingest-jaeger-data-with-the-opentelemetry-collector" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ingest data from Jaeger
+              Ingest Jaeger data with the OpenTelemetry Collector
             
           </span>
         </div>
@@ -965,8 +965,8 @@
 
 
 
-<h1 id="ingest-data-from-jaeger">Ingest data from Jaeger<a class="headerlink" href="#ingest-data-from-jaeger" title="Permanent link">&para;</a></h1>
-<h1 id="ingest-data-from-jaeger_1">Ingest data from Jaeger<a class="headerlink" href="#ingest-data-from-jaeger_1" title="Permanent link">&para;</a></h1>
+<h1 id="ingest-jaeger-data-with-the-opentelemetry-collector">Ingest Jaeger data with the OpenTelemetry Collector<a class="headerlink" href="#ingest-jaeger-data-with-the-opentelemetry-collector" title="Permanent link">&para;</a></h1>
+<h1 id="ingest-jaeger-data-with-the-opentelemetry-collector_1">Ingest Jaeger data with the OpenTelemetry Collector<a class="headerlink" href="#ingest-jaeger-data-with-the-opentelemetry-collector_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
@@ -980,14 +980,14 @@
 <p>One of the following Collector distributions with the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/receiver/jaegerreceiver">Jaeger receiverï»¿</a>:</p>
 </li>
 <li>
-<p>The <a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace Collector.">Dynatrace Collector</a></p>
+<p>The <a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace OTel Collector.">Dynatrace Collector</a></p>
 </li>
-<li><a href="/docs/ingest-from/opentelemetry/collector#collector-contrib" title="Learn about the Dynatrace Collector.">OpenTelemetry Contrib</a></li>
-<li>A <a href="/docs/ingest-from/opentelemetry/collector#collector-builder" title="Learn about the Dynatrace Collector.">custom Builder version</a></li>
+<li><a href="/docs/ingest-from/opentelemetry/collector#collector-contrib" title="Learn about the Dynatrace OTel Collector.">OpenTelemetry Contrib</a></li>
+<li>A <a href="/docs/ingest-from/opentelemetry/collector#collector-builder" title="Learn about the Dynatrace OTel Collector.">custom Builder version</a></li>
 <li>The <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">Dynatrace API endpoint URL</a> to which the data should be exported</li>
 <li>An <a href="/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">API token</a> with the relevant access scope (only required for SaaS and ActiveGate)</li>
 </ul>
-<p>See <a href="/docs/ingest-from/opentelemetry/collector/deployment" title="Deploy the Dynatrace Collector.">Collector Deployment</a> and <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="Configure the OpenTelemetry Collector.">Collector Configuration</a> on how to set up your Collector with the configuration below.</p>
+<p>See <a href="/docs/ingest-from/opentelemetry/collector/deployment" title="How to deploy Dynatrace OTel Collector.">Collector Deployment</a> and <a href="/docs/ingest-from/opentelemetry/collector/configuration" title="How to configure the OpenTelemetry Collector.">Collector Configuration</a> on how to set up your Collector with the configuration below.</p>
 <h2 id="demo-configuration">Demo configuration<a class="headerlink" href="#demo-configuration" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>receivers:
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -1048,7 +1048,7 @@
 <a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>exporters: [otlp_http]
 </code></pre></div>
 <p>Configuration validation</p>
-<p><a href="/docs/ingest-from/opentelemetry/collector/configuration#validate" title="Configure the OpenTelemetry Collector.">Validate your settings</a> to avoid any configuration issues.</p>
+<p><a href="/docs/ingest-from/opentelemetry/collector/configuration#validate" title="How to configure the OpenTelemetry Collector.">Validate your settings</a> to avoid any configuration issues.</p>
 <h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
 <p>For our configuration, we configure the following components.</p>
 <h3 id="receivers">Receivers<a class="headerlink" href="#receivers" title="Permanent link">&para;</a></h3>
@@ -1066,7 +1066,7 @@
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">Enrich ingested data with Dynatrace-specific dimensions</a></li>
-<li><a href="/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich" title="Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.">Enrich from Kubernetes</a></li>
+<li><a href="/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich" title="Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.">Enrich OTLP requests with Kubernetes data</a></li>
 </ul>
 
 

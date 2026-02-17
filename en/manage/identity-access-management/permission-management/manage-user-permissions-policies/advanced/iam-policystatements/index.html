@@ -1,0 +1,2027 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>IAM policy reference - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#iam-policy-reference" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IAM policy reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="iam-policy-reference">IAM policy reference<a class="headerlink" href="#iam-policy-reference" title="Permanent link">&para;</a></h1>
+<h1 id="iam-policy-reference_1">IAM policy reference<a class="headerlink" href="#iam-policy-reference_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>1-min read</li>
+<li>Published Mar 25, 2021</li>
+</ul>
+<p>The following is a complete reference of IAM permissions and corresponding conditions applicable to Dynatrace services. Refer to it when you need to define access policies based on a fine-grained set of permissions and conditions that can be enforced per service.</p>
+<h2 id="ai">ai<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<p>AI exposes generative AI capabilities in Dynatrace</p>
+<h3 id="aioperatorexecute">ai:operator:execute<a class="headerlink" href="#aioperatorexecute" title="Permanent link">&para;</a></h3>
+<p>Grants permission to interact with the AI conversational interface</p>
+<h2 id="app-engine">app-engine<a class="headerlink" href="#app-engine" title="Permanent link">&para;</a></h2>
+<p>AppEngine</p>
+<h3 id="app-engineappsinstall">app-engine:apps:install<a class="headerlink" href="#app-engineappsinstall" title="Permanent link">&para;</a></h3>
+<p>Grants permission to install and update apps</p>
+<h4 id="conditions">conditions:<a class="headerlink" href="#conditions" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>app-engine:app-installer</code> - The ID of the user that installed the app.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="app-engineappsrun">app-engine:apps:run<a class="headerlink" href="#app-engineappsrun" title="Permanent link">&para;</a></h3>
+<p>Grants permission to list and run apps and gives basic access to the Launcher</p>
+<h4 id="conditions_1">conditions:<a class="headerlink" href="#conditions_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>app-engine:app-installer</code> - The ID of the user that installed the app.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="app-engineappsdelete">app-engine:apps:delete<a class="headerlink" href="#app-engineappsdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to uninstall apps</p>
+<h4 id="conditions_2">conditions:<a class="headerlink" href="#conditions_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>app-engine:app-installer</code> - The ID of the user that installed the app.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="app-enginefunctionsrun">app-engine:functions:run<a class="headerlink" href="#app-enginefunctionsrun" title="Permanent link">&para;</a></h3>
+<p>Grants permission to use the function-executor</p>
+<h3 id="app-engineedge-connectsread">app-engine:edge-connects:read<a class="headerlink" href="#app-engineedge-connectsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read EdgeConnects</p>
+<h3 id="app-engineedge-connectswrite">app-engine:edge-connects:write<a class="headerlink" href="#app-engineedge-connectswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write EdgeConnects</p>
+<h3 id="app-engineedge-connectsdelete">app-engine:edge-connects:delete<a class="headerlink" href="#app-engineedge-connectsdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete EdgeConnects</p>
+<h3 id="app-enginecertificatescreate">app-engine:certificates:create<a class="headerlink" href="#app-enginecertificatescreate" title="Permanent link">&para;</a></h3>
+<p>Grants permission to create short-living certificates for app releases</p>
+<h4 id="conditions_3">conditions:<a class="headerlink" href="#conditions_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code></li>
+</ul>
+<h2 id="app-settings">app-settings<a class="headerlink" href="#app-settings" title="Permanent link">&para;</a></h2>
+<p>App Settings service</p>
+<h3 id="app-settingsobjectsread">app-settings:objects:read<a class="headerlink" href="#app-settingsobjectsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read app settings objects belonging to the schema</p>
+<h4 id="conditions_4">conditions:<a class="headerlink" href="#conditions_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - A string that uniquely identifies a single app settings schema. The identifier of a schema can be found in the info box of a settings screen. The condition will match if the object's schemaId property matches.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="app-settingsobjectswrite">app-settings:objects:write<a class="headerlink" href="#app-settingsobjectswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write settings objects belonging to the schema</p>
+<h4 id="conditions_5">conditions:<a class="headerlink" href="#conditions_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - A string that uniquely identifies a single settings schema. The identifier of a schema can be found in the info box of a settings screen. The condition will match if the object's schemaId property matches.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="app-settingsobjectsadmin">app-settings:objects:admin<a class="headerlink" href="#app-settingsobjectsadmin" title="Permanent link">&para;</a></h3>
+<p>Enables using admin-mode to access, change ownership and share permissions of any object. Admin-mode only bypasses the ownership check - so to do anything useful, app-settings:objects:read and/or app-settings:objects:write are needed as well.</p>
+<h4 id="conditions_6">conditions:<a class="headerlink" href="#conditions_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - A string that uniquely identifies a single app settings schema. The identifier of a schema can be found in the info box of a settings screen. The condition will match if the object's schemaId property matches.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h2 id="automation">automation<a class="headerlink" href="#automation" title="Permanent link">&para;</a></h2>
+<p>Automation Server</p>
+<h3 id="automationworkflowsread">automation:workflows:read<a class="headerlink" href="#automationworkflowsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read workflows</p>
+<h3 id="automationworkflowswrite">automation:workflows:write<a class="headerlink" href="#automationworkflowswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write workflows</p>
+<h4 id="conditions_7">conditions:<a class="headerlink" href="#conditions_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>automation:workflow-type</code> - A string that identifies a workflow type either SIMPLE or STANDARD<br />
+  operators: <code>IN</code>, <code>=</code></li>
+</ul>
+<h3 id="automationworkflowsrun">automation:workflows:run<a class="headerlink" href="#automationworkflowsrun" title="Permanent link">&para;</a></h3>
+<p>Grants permission to execute workflows</p>
+<h3 id="automationworkflowsadmin">automation:workflows:admin<a class="headerlink" href="#automationworkflowsadmin" title="Permanent link">&para;</a></h3>
+<p>Grant admin permissions for workflows.</p>
+<h3 id="automationrulesread">automation:rules:read<a class="headerlink" href="#automationrulesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read scheduling rules</p>
+<h3 id="automationruleswrite">automation:rules:write<a class="headerlink" href="#automationruleswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write scheduling rules</p>
+<h3 id="automationcalendarsread">automation:calendars:read<a class="headerlink" href="#automationcalendarsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read business calendars</p>
+<h3 id="automationcalendarswrite">automation:calendars:write<a class="headerlink" href="#automationcalendarswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write business calendars</p>
+<h2 id="business-analytics">business-analytics<a class="headerlink" href="#business-analytics" title="Permanent link">&para;</a></h2>
+<p>Platform Business Analytics Service</p>
+<h3 id="business-analyticsbusiness-flowswrite">business-analytics:business-flows:write<a class="headerlink" href="#business-analyticsbusiness-flowswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write business-flows</p>
+<h3 id="business-analyticsbusiness-flowsread">business-analytics:business-flows:read<a class="headerlink" href="#business-analyticsbusiness-flowsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read business-flows</p>
+<h2 id="data-acquisition">data-acquisition<a class="headerlink" href="#data-acquisition" title="Permanent link">&para;</a></h2>
+<p>Data Acquisition Ingest</p>
+<h3 id="data-acquisitionlogsingest">data-acquisition:logs:ingest<a class="headerlink" href="#data-acquisitionlogsingest" title="Permanent link">&para;</a></h3>
+<p>Grants permission to ingest logs from Data Acquisition supported sources</p>
+<h3 id="data-acquisitionmetricsingest">data-acquisition:metrics:ingest<a class="headerlink" href="#data-acquisitionmetricsingest" title="Permanent link">&para;</a></h3>
+<p>Grants permission to ingest metrics from Data Acquisition supported sources</p>
+<h3 id="data-acquisitioneventsingest">data-acquisition:events:ingest<a class="headerlink" href="#data-acquisitioneventsingest" title="Permanent link">&para;</a></h3>
+<p>Grants permission to ingest events from Data Acquisition supported sources</p>
+<h2 id="davis">davis<a class="headerlink" href="#davis" title="Permanent link">&para;</a></h2>
+<p>Davis service</p>
+<h3 id="davisanalyzersread">davis:analyzers:read<a class="headerlink" href="#davisanalyzersread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to view Davis analyzers</p>
+<h3 id="davisanalyzersexecute">davis:analyzers:execute<a class="headerlink" href="#davisanalyzersexecute" title="Permanent link">&para;</a></h3>
+<p>Grants permission to execute Davis analyzers</p>
+<h2 id="davis-copilot">davis-copilot<a class="headerlink" href="#davis-copilot" title="Permanent link">&para;</a></h2>
+<p>Davis CoPilot exposes generative AI capabilities in Dynatrace</p>
+<h3 id="davis-copilotconversationsexecute">davis-copilot:conversations:execute<a class="headerlink" href="#davis-copilotconversationsexecute" title="Permanent link">&para;</a></h3>
+<p>Grants permission to interact with the Davis CoPilot conversational interface</p>
+<h3 id="davis-copilotnl2dqlexecute">davis-copilot:nl2dql:execute<a class="headerlink" href="#davis-copilotnl2dqlexecute" title="Permanent link">&para;</a></h3>
+<p>Grants permission to execute the Natural Language to DQL generative AI capability</p>
+<h3 id="davis-copilotdql2nlexecute">davis-copilot:dql2nl:execute<a class="headerlink" href="#davis-copilotdql2nlexecute" title="Permanent link">&para;</a></h3>
+<p>Grants permission to execute the CoPilot skill 'Summarize DQL'</p>
+<h3 id="davis-copilotdocument-searchexecute">davis-copilot:document-search:execute<a class="headerlink" href="#davis-copilotdocument-searchexecute" title="Permanent link">&para;</a></h3>
+<p>Grants permission to execute the CoPilot skill 'Document Search'</p>
+<h2 id="deployment">deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<p>Deployment service</p>
+<h3 id="deploymentactivegatesnetwork-zoneswrite">deployment:activegates.network-zones:write<a class="headerlink" href="#deploymentactivegatesnetwork-zoneswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write ActiveGate network zones</p>
+<h3 id="deploymentactivegatesgroupswrite">deployment:activegates.groups:write<a class="headerlink" href="#deploymentactivegatesgroupswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write ActiveGate groups</p>
+<h3 id="deploymentoneagentsnetwork-zoneswrite">deployment:oneagents.network-zones:write<a class="headerlink" href="#deploymentoneagentsnetwork-zoneswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write OneAgent network zones</p>
+<h3 id="deploymentoneagentshost-groupswrite">deployment:oneagents.host-groups:write<a class="headerlink" href="#deploymentoneagentshost-groupswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write OneAgent host groups</p>
+<h3 id="deploymentoneagentshost-tagswrite">deployment:oneagents.host-tags:write<a class="headerlink" href="#deploymentoneagentshost-tagswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write OneAgent host tags</p>
+<h3 id="deploymentoneagentshost-propertieswrite">deployment:oneagents.host-properties:write<a class="headerlink" href="#deploymentoneagentshost-propertieswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write OneAgent host properties</p>
+<h3 id="deploymentoneagentscommunication-settingswrite">deployment:oneagents.communication-settings:write<a class="headerlink" href="#deploymentoneagentscommunication-settingswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write OneAgent communication settings</p>
+<h2 id="dev-obs">dev-obs<a class="headerlink" href="#dev-obs" title="Permanent link">&para;</a></h2>
+<p>Developer Observability</p>
+<h3 id="dev-obsbreakpointset">dev-obs:breakpoint:set<a class="headerlink" href="#dev-obsbreakpointset" title="Permanent link">&para;</a></h3>
+<p>Grants permission to set breakpoint using DevObs live debugger</p>
+<h4 id="conditions_8">conditions:<a class="headerlink" href="#conditions_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>dev-obs:k8s.namespace.name</code> - Kubernetes namespaces of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:dt.entity.process_group</code> - Dynatrace entity process group of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:dt.process_group.detected_name</code> - Dynatrace process group detected name of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:k8s.cluster.name</code> - Cluster name of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:host.group</code> - Host group of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:host.name</code> - Host name of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="dev-obsbreakpointsset">dev-obs:breakpoints:set<a class="headerlink" href="#dev-obsbreakpointsset" title="Permanent link">&para;</a></h3>
+<p>Grants permission to set breakpoint using DevObs live debugger</p>
+<h4 id="conditions_9">conditions:<a class="headerlink" href="#conditions_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>dev-obs:k8s.namespace.name</code> - Kubernetes namespaces of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:dt.entity.process_group</code> - Dynatrace entity process group of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:dt.process_group.detected_name</code> - Dynatrace process group detected name of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:k8s.cluster.name</code> - Cluster name of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:host.group</code> - Host group of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:host.name</code> - Host name of the agents where the user is allowed to set breakpoints<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="dev-obsbreakpointmanage">dev-obs:breakpoint:manage<a class="headerlink" href="#dev-obsbreakpointmanage" title="Permanent link">&para;</a></h3>
+<p>Grants permission to manage breakpoints set in DevObs live debugger</p>
+<h3 id="dev-obsbreakpointsmanage">dev-obs:breakpoints:manage<a class="headerlink" href="#dev-obsbreakpointsmanage" title="Permanent link">&para;</a></h3>
+<p>Grants permission to manage breakpoints set in DevObs live debugger</p>
+<h2 id="document">document<a class="headerlink" href="#document" title="Permanent link">&para;</a></h2>
+<p>Document service</p>
+<h3 id="documentdocumentswrite">document:documents:write<a class="headerlink" href="#documentdocumentswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to create and update documents of the document service</p>
+<h3 id="documentdocumentsread">document:documents:read<a class="headerlink" href="#documentdocumentsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read documents of the document service</p>
+<h3 id="documentdocumentsdelete">document:documents:delete<a class="headerlink" href="#documentdocumentsdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete documents of the document service</p>
+<h3 id="documentdocumentsadmin">document:documents:admin<a class="headerlink" href="#documentdocumentsadmin" title="Permanent link">&para;</a></h3>
+<p>Grants admin permissions for documents of the document service</p>
+<h3 id="documentenvironment-sharesread">document:environment-shares:read<a class="headerlink" href="#documentenvironment-sharesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read environment shares of the document service</p>
+<h3 id="documentenvironment-shareswrite">document:environment-shares:write<a class="headerlink" href="#documentenvironment-shareswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to create and update environment shares of the document service</p>
+<h3 id="documentenvironment-sharesclaim">document:environment-shares:claim<a class="headerlink" href="#documentenvironment-sharesclaim" title="Permanent link">&para;</a></h3>
+<p>Grants permission to claim environment shares of the document service</p>
+<h3 id="documentenvironment-sharesdelete">document:environment-shares:delete<a class="headerlink" href="#documentenvironment-sharesdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete environment shares of the document service</p>
+<h3 id="documentdirect-sharesdelete">document:direct-shares:delete<a class="headerlink" href="#documentdirect-sharesdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete direct shares of the document service</p>
+<h3 id="documentdirect-sharesread">document:direct-shares:read<a class="headerlink" href="#documentdirect-sharesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read direct shares of the document service</p>
+<h3 id="documentdirect-shareswrite">document:direct-shares:write<a class="headerlink" href="#documentdirect-shareswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to create and update direct shares of the document service</p>
+<h3 id="documenttrashdocumentsread">document:trash.documents:read<a class="headerlink" href="#documenttrashdocumentsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read deleted documents of the document service</p>
+<h3 id="documenttrashdocumentsdelete">document:trash.documents:delete<a class="headerlink" href="#documenttrashdocumentsdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to remove deleted documents from the trash of the document service</p>
+<h3 id="documenttrashdocumentsrestore">document:trash.documents:restore<a class="headerlink" href="#documenttrashdocumentsrestore" title="Permanent link">&para;</a></h3>
+<p>Grants permission to restore deleted documents from the trash of the document service</p>
+<h2 id="email">email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h2>
+<p>API for sending emails</p>
+<h3 id="emailemailssend">email:emails:send<a class="headerlink" href="#emailemailssend" title="Permanent link">&para;</a></h3>
+<p>Grants permission to send emails from @apps.dynatrace.com with send email API</p>
+<h2 id="environment">environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h2>
+<p>Environment and management zone user permissions. See <a href="https://dt-url.net/3s23539">Migrate role-based permissions to Dynatrace IAMï»¿</a> for more information.</p>
+<p>Role IAM permissions work the same way as classic roles do, which means that the <code>environment:roles:viewer</code> permission is a part of any other role permission. For example, a policy granting <code>environment:roles:manage-settings</code> permission also allows a user to access the web UI.</p>
+<h3 id="environmentrolesviewer">environment:roles:viewer<a class="headerlink" href="#environmentrolesviewer" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>Access environment</strong> permission.</p>
+<h4 id="conditions_10">conditions:<a class="headerlink" href="#conditions_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - A string that uniquely identifies a management zone. Applies the permission on the management zone level for the specified management zone.<br />
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesmanage-settings">environment:roles:manage-settings<a class="headerlink" href="#environmentrolesmanage-settings" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>Change monitoring settings</strong> permission.</p>
+<h4 id="conditions_11">conditions:<a class="headerlink" href="#conditions_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.<br />
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesagent-install">environment:roles:agent-install<a class="headerlink" href="#environmentrolesagent-install" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>Download/install OneAgent</strong> permission. Users who have this permission assigned are also able to view monitoring data for all management zones.</p>
+<h3 id="environmentrolesview-sensitive-request-data">environment:roles:view-sensitive-request-data<a class="headerlink" href="#environmentrolesview-sensitive-request-data" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>View sensitive request data</strong> permission.</p>
+<h4 id="conditions_12">conditions:<a class="headerlink" href="#conditions_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.<br />
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesconfigure-request-capture-data">environment:roles:configure-request-capture-data<a class="headerlink" href="#environmentrolesconfigure-request-capture-data" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>Configure capture of sensitive data</strong> permission. Users who have this permission assigned are also able to view monitoring data for all management zones.</p>
+<h3 id="environmentrolesreplay-sessions-without-masking">environment:roles:replay-sessions-without-masking<a class="headerlink" href="#environmentrolesreplay-sessions-without-masking" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>Replay session data without masking</strong> permission.</p>
+<h4 id="conditions_13">conditions:<a class="headerlink" href="#conditions_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.<br />
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesreplay-sessions-with-masking">environment:roles:replay-sessions-with-masking<a class="headerlink" href="#environmentrolesreplay-sessions-with-masking" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>Replay session data</strong> permission.</p>
+<h4 id="conditions_14">conditions:<a class="headerlink" href="#conditions_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.<br />
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesmanage-security-problems">environment:roles:manage-security-problems<a class="headerlink" href="#environmentrolesmanage-security-problems" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>Manage security problems</strong> permission.</p>
+<h4 id="conditions_15">conditions:<a class="headerlink" href="#conditions_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.<br />
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesview-security-problems">environment:roles:view-security-problems<a class="headerlink" href="#environmentrolesview-security-problems" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>View security problems</strong> permission.</p>
+<h4 id="conditions_16">conditions:<a class="headerlink" href="#conditions_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.<br />
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentroleslogviewer">environment:roles:logviewer<a class="headerlink" href="#environmentroleslogviewer" title="Permanent link">&para;</a></h3>
+<p>Grants user the <strong>View logs</strong> permission.</p>
+<h4 id="conditions_17">conditions:<a class="headerlink" href="#conditions_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.<br />
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h2 id="extensions">extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h2>
+<p>Extensions service</p>
+<h3 id="extensionsdefinitionsread">extensions:definitions:read<a class="headerlink" href="#extensionsdefinitionsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read extension and environment configurations</p>
+<h4 id="conditions_18">conditions:<a class="headerlink" href="#conditions_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:extension-name</code> - A string that uniquely identifies a single extension<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsdefinitionswrite">extensions:definitions:write<a class="headerlink" href="#extensionsdefinitionswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write (update/create/delete) extension and environment configurations</p>
+<h4 id="conditions_19">conditions:<a class="headerlink" href="#conditions_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:extension-name</code> - A string that uniquely identifies a single extension<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsconfigurationsread">extensions:configurations:read<a class="headerlink" href="#extensionsconfigurationsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read extension monitoring configurations</p>
+<h4 id="conditions_20">conditions:<a class="headerlink" href="#conditions_20" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:host</code> - A string that uniquely identifies a single host for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:host-group</code> - A string that uniquely identifies a single host group for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:ag-group</code> - A string that uniquely identifies a single ActiveGate group for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:management-zone</code> - A string that uniquely identifies a single management zone for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:extension-name</code> - A string that uniquely identifies a single extension<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsconfigurationswrite">extensions:configurations:write<a class="headerlink" href="#extensionsconfigurationswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write (update/create/delete) extension monitoring configurations</p>
+<h4 id="conditions_21">conditions:<a class="headerlink" href="#conditions_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:host</code> - A string that uniquely identifies a single host for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:host-group</code> - A string that uniquely identifies a single host group for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:ag-group</code> - A string that uniquely identifies a single ActiveGate group for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:management-zone</code> - A string that uniquely identifies a single management zone for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:extension-name</code> - A string that uniquely identifies a single extension<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsconfigurationactionswrite">extensions:configuration.actions:write<a class="headerlink" href="#extensionsconfigurationactionswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to execute actions for extension</p>
+<h4 id="conditions_22">conditions:<a class="headerlink" href="#conditions_22" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:host</code> - A string that uniquely identifies a single host for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:host-group</code> - A string that uniquely identifies a single host group for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:ag-group</code> - A string that uniquely identifies a single ActiveGate group for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:management-zone</code> - A string that uniquely identifies a single management zone for monitoring configuration assignment<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:extension-name</code> - A string that uniquely identifies a single extension<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsdiscoveryjmxread">extensions:discovery.jmx:read<a class="headerlink" href="#extensionsdiscoveryjmxread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to discover running Java processes via JMX and read their data through extensions</p>
+<h2 id="geolocation">geolocation<a class="headerlink" href="#geolocation" title="Permanent link">&para;</a></h2>
+<p>Geolocation Service</p>
+<h3 id="geolocationlocationslookup">geolocation:locations:lookup<a class="headerlink" href="#geolocationlocationslookup" title="Permanent link">&para;</a></h3>
+<p>Grants permission to lookup geolocations for IP adresses.</p>
+<h2 id="hub">hub<a class="headerlink" href="#hub" title="Permanent link">&para;</a></h2>
+<p>Hub provides catalog content, such as Dynatrace Apps, Extensions, and Technologies, in the context of the environment.</p>
+<h3 id="hubcatalogread">hub:catalog:read<a class="headerlink" href="#hubcatalogread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read the hub catalog content.</p>
+<h2 id="hyperscaler-authentication">hyperscaler-authentication<a class="headerlink" href="#hyperscaler-authentication" title="Permanent link">&para;</a></h2>
+<p>Hyperscaler authentication service</p>
+<h3 id="hyperscaler-authenticationawsauthenticate">hyperscaler-authentication:aws:authenticate<a class="headerlink" href="#hyperscaler-authenticationawsauthenticate" title="Permanent link">&para;</a></h3>
+<p>Grants permission to authenticate against AWS.</p>
+<h3 id="hyperscaler-authenticationazureauthenticate">hyperscaler-authentication:azure:authenticate<a class="headerlink" href="#hyperscaler-authenticationazureauthenticate" title="Permanent link">&para;</a></h3>
+<p>Grants permission to authenticate against Azure.</p>
+<h2 id="iam">iam<a class="headerlink" href="#iam" title="Permanent link">&para;</a></h2>
+<p>Identity and Access Management Framework.</p>
+<h3 id="iamservice-usersuse">iam:service-users:use<a class="headerlink" href="#iamservice-usersuse" title="Permanent link">&para;</a></h3>
+<p>Grants permission to use all or specified service users</p>
+<h4 id="conditions_23">conditions:<a class="headerlink" href="#conditions_23" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>iam:service-user-email</code> - Service users emails<br />
+  operators: <code>IN</code>, <code>=</code></li>
+</ul>
+<h3 id="iamservice-userscreate">iam:service-users:create<a class="headerlink" href="#iamservice-userscreate" title="Permanent link">&para;</a></h3>
+<p>Grants permission to create a service user in the environment</p>
+<h3 id="iambindingsread">iam:bindings:read<a class="headerlink" href="#iambindingsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read bindings</p>
+<h4 id="conditions_24">conditions:<a class="headerlink" href="#conditions_24" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>iam:policyUuid</code> - Policy uuid in the URI.<br />
+  operators: <code>=</code>, <code>IN</code></li>
+<li><code>iam:levelType</code> - Level type in the URI.<br />
+  operators: <code>=</code>, <code>IN</code></li>
+<li><code>iam:boundGroup</code> - Group uuid in the URI.<br />
+  operators: <code>=</code>, <code>IN</code></li>
+</ul>
+<h3 id="iambindingswrite">iam:bindings:write<a class="headerlink" href="#iambindingswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to create bindings</p>
+<h4 id="conditions_25">conditions:<a class="headerlink" href="#conditions_25" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>iam:policyUuid</code> - Policy uuid in the URI.<br />
+  operators: <code>=</code>, <code>IN</code></li>
+<li><code>iam:levelType</code> - Level type in the URI.<br />
+  operators: <code>=</code>, <code>IN</code></li>
+<li><code>iam:boundGroup</code> - Group uuid in the URI.<br />
+  operators: <code>=</code>, <code>IN</code></li>
+</ul>
+<h3 id="iampoliciesread">iam:policies:read<a class="headerlink" href="#iampoliciesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read policies</p>
+<h3 id="iampolicieswrite">iam:policies:write<a class="headerlink" href="#iampolicieswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to create policies</p>
+<h3 id="iamboundariesread">iam:boundaries:read<a class="headerlink" href="#iamboundariesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read boundaries</p>
+<h3 id="iamboundarieswrite">iam:boundaries:write<a class="headerlink" href="#iamboundarieswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to create boundaries</p>
+<h3 id="iameffective-permissionsread">iam:effective-permissions:read<a class="headerlink" href="#iameffective-permissionsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read effective permissions</p>
+<h4 id="conditions_26">conditions:<a class="headerlink" href="#conditions_26" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>iam-param:entity-type</code> - Entity type in the query parameters. Allowed values: <code>group</code>, <code>user</code>.<br />
+  operators: <code>=</code></li>
+<li><code>iam-param:entity-id</code> - Entity id of given entity-type in the query parameters.<br />
+  operators: <code>=</code>, <code>IN</code></li>
+</ul>
+<h3 id="iamlimitsread">iam:limits:read<a class="headerlink" href="#iamlimitsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read limits</p>
+<h2 id="insights">insights<a class="headerlink" href="#insights" title="Permanent link">&para;</a></h2>
+<p>Business Insights Service</p>
+<h3 id="insightsopportunitiesread">insights:opportunities:read<a class="headerlink" href="#insightsopportunitiesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read data from the Opportunity Insights API</p>
+<h3 id="insightsmomentsread">insights:moments:read<a class="headerlink" href="#insightsmomentsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to query value moments and related data</p>
+<h2 id="mcp-gateway">mcp-gateway<a class="headerlink" href="#mcp-gateway" title="Permanent link">&para;</a></h2>
+<p>MCP Gateway exposes MCP server capabilities in Dynatrace</p>
+<h3 id="mcp-gatewayserversinvoke">mcp-gateway:servers:invoke<a class="headerlink" href="#mcp-gatewayserversinvoke" title="Permanent link">&para;</a></h3>
+<p>Grants permission to invoke the MCP Gateway API</p>
+<h3 id="mcp-gatewayserversread">mcp-gateway:servers:read<a class="headerlink" href="#mcp-gatewayserversread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to list the available MCP servers</p>
+<h2 id="notification">notification<a class="headerlink" href="#notification" title="Permanent link">&para;</a></h2>
+<p>API for sending notifications</p>
+<h3 id="notificationself-notificationsread">notification:self-notifications:read<a class="headerlink" href="#notificationself-notificationsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read self notifications.</p>
+<h3 id="notificationself-notificationswrite">notification:self-notifications:write<a class="headerlink" href="#notificationself-notificationswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write self notifications.</p>
+<h3 id="notificationnotificationsread">notification:notifications:read<a class="headerlink" href="#notificationnotificationsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read notification configurations.</p>
+<h3 id="notificationnotificationswrite">notification:notifications:write<a class="headerlink" href="#notificationnotificationswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write notification configurations.</p>
+<h2 id="oauth2">oauth2<a class="headerlink" href="#oauth2" title="Permanent link">&para;</a></h2>
+<p>Authorization of OAuth token issuing actions (token exchange)</p>
+<h3 id="oauth2clientsmanage">oauth2:clients:manage<a class="headerlink" href="#oauth2clientsmanage" title="Permanent link">&para;</a></h3>
+<p>Allows management of light OAuth clients</p>
+<h4 id="conditions_27">conditions:<a class="headerlink" href="#conditions_27" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>oauth2:scopes</code> - Requested scopes for the generated OAuth clients<br />
+  operators: <code>=</code>, <code>NOT IN</code></li>
+</ul>
+<h2 id="openpipeline">openpipeline<a class="headerlink" href="#openpipeline" title="Permanent link">&para;</a></h2>
+<p>OpenPipeline</p>
+<h3 id="openpipelineconfigurationsread">openpipeline:configurations:read<a class="headerlink" href="#openpipelineconfigurationsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read the OpenPipeline configuration</p>
+<h3 id="openpipelineconfigurationswrite">openpipeline:configurations:write<a class="headerlink" href="#openpipelineconfigurationswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write the OpenPipeline configuration</p>
+<h3 id="openpipelineeventsingest">openpipeline:events:ingest<a class="headerlink" href="#openpipelineeventsingest" title="Permanent link">&para;</a></h3>
+<p>Grants permission to ingest events into OpenPipeline</p>
+<h3 id="openpipelineeventscustomingest">openpipeline:events.custom:ingest<a class="headerlink" href="#openpipelineeventscustomingest" title="Permanent link">&para;</a></h3>
+<p>Grants permission to ingest events into custom endpoints of OpenPipeline</p>
+<h3 id="openpipelinesecurityeventsingest">openpipeline:security.events:ingest<a class="headerlink" href="#openpipelinesecurityeventsingest" title="Permanent link">&para;</a></h3>
+<p>Grants permission to ingest security events into OpenPipeline</p>
+<h3 id="openpipelinesecurityeventscustomingest">openpipeline:security.events.custom:ingest<a class="headerlink" href="#openpipelinesecurityeventscustomingest" title="Permanent link">&para;</a></h3>
+<p>Grants permission to ingest security events into custom endpoints of OpenPipeline</p>
+<h3 id="openpipelineeventssdlcingest">openpipeline:events.sdlc:ingest<a class="headerlink" href="#openpipelineeventssdlcingest" title="Permanent link">&para;</a></h3>
+<p>Grants permission to ingest software development lifecycle events into OpenPipeline</p>
+<h3 id="openpipelineeventssdlccustomingest">openpipeline:events.sdlc.custom:ingest<a class="headerlink" href="#openpipelineeventssdlccustomingest" title="Permanent link">&para;</a></h3>
+<p>Grants permission to ingest software development lifecycle events into custom endpoints of OpenPipeline</p>
+<h2 id="platform-token">platform-token<a class="headerlink" href="#platform-token" title="Permanent link">&para;</a></h2>
+<p>Permissions for platform-tokens</p>
+<h3 id="platform-tokentokenswrite">platform-token:tokens:write<a class="headerlink" href="#platform-tokentokenswrite" title="Permanent link">&para;</a></h3>
+<p>Enables write user's platform tokens.</p>
+<h2 id="security-intelligence">security-intelligence<a class="headerlink" href="#security-intelligence" title="Permanent link">&para;</a></h2>
+<p>Provides APIs for security intelligence (enrichment and contextualization)</p>
+<h3 id="security-intelligenceenrichmentsrun">security-intelligence:enrichments:run<a class="headerlink" href="#security-intelligenceenrichmentsrun" title="Permanent link">&para;</a></h3>
+<p>Allows execution of enrichments and discovery of integration apps.</p>
+<h2 id="session-replay">session-replay<a class="headerlink" href="#session-replay" title="Permanent link">&para;</a></h2>
+<p>Session Replay</p>
+<h3 id="session-replayresourcesread">session-replay:resources:read<a class="headerlink" href="#session-replayresourcesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to retrieve a session replay resource</p>
+<h2 id="settings">settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<p>Settings service</p>
+<h3 id="settingsobjectsread">settings:objects:read<a class="headerlink" href="#settingsobjectsread" title="Permanent link">&para;</a></h3>
+<p>Enables reading of settings objects belonging to the schema</p>
+<h4 id="conditions_28">conditions:<a class="headerlink" href="#conditions_28" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - A string that uniquely identifies a single settings schema. The identifier of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the object's schemaId property matches.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:schemaGroup</code> - A schema group that allows to address multiple individual schemas at once. The group of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema of the object has a schemaGroup property that matches.<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>settings:entity.hostGroup</code> - The host group attribute of an entity for which a setting is stored. This is e.g. useful to grant access to settings scopes of all hosts which belong to the same host group.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:scope</code> - The exact scope identifier a setting object has or will have. This condition allows to grant access to the scope of e.g., an individual host. In this case the scope equals the entity identifier, e.g. HOST-48B8F52F33098830.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>environment:management-zone</code> - The name of a management zone. This condition is applicable to either: any settings object that is allowed on the scope of an entity that can be matched into a management zone or settings objects of the schemas builtin:alerting.maintenance-window, builtin:alerting.profile, builtin:anomaly-detection.metric-events, builtin:monitoring.slo and builtin:problem.notifications.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>settings:dt.security_context</code> - The name of a security context. This condition is applicable to any settings object that is allowed on the scope of an entity that can have a security context assigned.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>startsWith</code></li>
+</ul>
+<h3 id="settingsobjectswrite">settings:objects:write<a class="headerlink" href="#settingsobjectswrite" title="Permanent link">&para;</a></h3>
+<p>Enables writing of settings objects belonging to the schema</p>
+<h4 id="conditions_29">conditions:<a class="headerlink" href="#conditions_29" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - A string that uniquely identifies a single settings schema. The identifier of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the object's schemaId property matches.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:schemaGroup</code> - A schema group that allows to address multiple individual schemas at once. The group of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema of the object has a schemaGroup property that matches.<br />
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>settings:entity.hostGroup</code> - The host group attribute of an entity for which a setting is stored. This is e.g. useful to grant access to settings scopes of all hosts which belong to the same host group.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:scope</code> - The exact scope identifier a setting object has or will have. This condition allows to grant access to the scope of e.g., an individual host. In this case the scope equals the entity identifier, e.g. HOST-48B8F52F33098830.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>environment:management-zone</code> - The name of a management zone. This condition is applicable to either: any settings object that is allowed on the scope of an entity that can be matched into a management zone or settings objects of the schemas builtin:alerting.maintenance-window, builtin:alerting.profile, builtin:anomaly-detection.metric-events, builtin:monitoring.slo and builtin:problem.notifications.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>settings:dt.security_context</code> - The name of a security context. This condition is applicable to any settings object that is allowed on the scope of an entity that can have a security context assigned.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>startsWith</code></li>
+</ul>
+<h3 id="settingsschemasread">settings:schemas:read<a class="headerlink" href="#settingsschemasread" title="Permanent link">&para;</a></h3>
+<p>Enables reading settings schemas</p>
+<h4 id="conditions_30">conditions:<a class="headerlink" href="#conditions_30" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - A string that uniquely identifies a single settings schema. The identifier of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema's schemaId property of the schema matches.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:schemaGroup</code> - A schema group that allows to address multiple individual schemas at once. The group of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema's schemaId property of the schema matches.<br />
+  operators: <code>IN</code>, <code>=</code></li>
+</ul>
+<h3 id="settingsobjectsadmin">settings:objects:admin<a class="headerlink" href="#settingsobjectsadmin" title="Permanent link">&para;</a></h3>
+<p>Enables using admin-mode to access, change ownership and share permissions of any object. Admin-mode only bypasses the ownership check - so to do anything useful, settings:objects:read and/or settings:objects:write are needed as well.</p>
+<h4 id="conditions_31">conditions:<a class="headerlink" href="#conditions_31" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - A string that uniquely identifies a single settings schema. The identifier of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the object's schemaId property matches.<br />
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:schemaGroup</code> - A schema group that allows to address multiple individual schemas at once. The group of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema of the object has a schemaGroup property that matches.<br />
+  operators: <code>IN</code>, <code>=</code></li>
+</ul>
+<h2 id="slo">slo<a class="headerlink" href="#slo" title="Permanent link">&para;</a></h2>
+<p>SLO service</p>
+<h3 id="sloslosread">slo:slos:read<a class="headerlink" href="#sloslosread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read Service-Level Objectives</p>
+<h3 id="slosloswrite">slo:slos:write<a class="headerlink" href="#slosloswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write Service-Level Objectives</p>
+<h3 id="sloobjective-templatesread">slo:objective-templates:read<a class="headerlink" href="#sloobjective-templatesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read Service-Level Objectives Templates</p>
+<h2 id="state">state<a class="headerlink" href="#state" title="Permanent link">&para;</a></h2>
+<p>Platform State Service</p>
+<h3 id="stateapp-statesread">state:app-states:read<a class="headerlink" href="#stateapp-statesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read app-states</p>
+<h4 id="conditions_32">conditions:<a class="headerlink" href="#conditions_32" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateapp-stateswrite">state:app-states:write<a class="headerlink" href="#stateapp-stateswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write app-states</p>
+<h4 id="conditions_33">conditions:<a class="headerlink" href="#conditions_33" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateapp-statesdelete">state:app-states:delete<a class="headerlink" href="#stateapp-statesdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete app-states</p>
+<h4 id="conditions_34">conditions:<a class="headerlink" href="#conditions_34" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateuser-app-statesread">state:user-app-states:read<a class="headerlink" href="#stateuser-app-statesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read user-app-states</p>
+<h4 id="conditions_35">conditions:<a class="headerlink" href="#conditions_35" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateuser-app-stateswrite">state:user-app-states:write<a class="headerlink" href="#stateuser-app-stateswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write user-app-states</p>
+<h4 id="conditions_36">conditions:<a class="headerlink" href="#conditions_36" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateuser-app-statesdelete">state:user-app-states:delete<a class="headerlink" href="#stateuser-app-statesdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete user-app-states</p>
+<h4 id="conditions_37">conditions:<a class="headerlink" href="#conditions_37" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h2 id="state-management">state-management<a class="headerlink" href="#state-management" title="Permanent link">&para;</a></h2>
+<p>State Management - Clear app-states and user-app-states of specific apps.</p>
+<h3 id="state-managementapp-statesdelete">state-management:app-states:delete<a class="headerlink" href="#state-managementapp-statesdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete all app-states</p>
+<h4 id="conditions_38">conditions:<a class="headerlink" href="#conditions_38" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="state-managementuser-app-statesdelete">state-management:user-app-states:delete<a class="headerlink" href="#state-managementuser-app-statesdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete user-app-states of the current user</p>
+<h4 id="conditions_39">conditions:<a class="headerlink" href="#conditions_39" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="state-managementuser-app-statesdelete-all">state-management:user-app-states:delete-all<a class="headerlink" href="#state-managementuser-app-statesdelete-all" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete user-app-states of all users</p>
+<h4 id="conditions_40">conditions:<a class="headerlink" href="#conditions_40" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - The ID of the app.<br />
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h2 id="storage">storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h2>
+<p>Grail</p>
+<h3 id="storageeventsread">storage:events:read<a class="headerlink" href="#storageeventsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read records from the events-table</p>
+<h4 id="conditions_41">conditions:<a class="headerlink" href="#conditions_41" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.kind</code> - Gives high-level information about what kind of information the event contains, without being specific to the contents of the event. Helps to determine the record type of a raw event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.type</code> - The unique type identifier of a given event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.provider</code> - Source of the event, for example the name of the component or system that generated the event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - The name of the namespace.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - The name of the cluster.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Name of the host.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Id of the host group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Google Cloud Platform Project ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Amazon Web Services Account ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Azure subscription.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Azure resource group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storageeventswrite">storage:events:write<a class="headerlink" href="#storageeventswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write events to Grail</p>
+<h3 id="storagemetricsread">storage:metrics:read<a class="headerlink" href="#storagemetricsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read timeseries from the metrics-table</p>
+<h4 id="conditions_42">conditions:<a class="headerlink" href="#conditions_42" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - The name of the namespace that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - The name of the cluster that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Name of the host.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Id of the host group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:metric.key</code> - The identifier of a metric, grouping numeric measurements that share the same measurement semantics (i.e. were measured "the same way".)<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Google Cloud Platform Project ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Amazon Web Services Account ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Azure subscription.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Azure resource group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagemetricswrite">storage:metrics:write<a class="headerlink" href="#storagemetricswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permissions to write metrics from Dynatrace classic to latest Dynatrace and vice versa</p>
+<h3 id="storagelogsread">storage:logs:read<a class="headerlink" href="#storagelogsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read records from the logs-table</p>
+<h4 id="conditions_43">conditions:<a class="headerlink" href="#conditions_43" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - The name of the namespace that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - The name of the cluster that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Name of the host.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Id of the host group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:log.source</code> - The location where the log comes from.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Google Cloud Platform Project ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Amazon Web Services Account ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Azure subscription.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Azure resource group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagelogswrite">storage:logs:write<a class="headerlink" href="#storagelogswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write logs to Grail</p>
+<h3 id="storageentitiesread">storage:entities:read<a class="headerlink" href="#storageentitiesread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read records from entities</p>
+<h4 id="conditions_44">conditions:<a class="headerlink" href="#conditions_44" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:entity.type</code> - The type of the entity.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code></li>
+</ul>
+<h3 id="storagespansread">storage:spans:read<a class="headerlink" href="#storagespansread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read records from the spans-table</p>
+<h4 id="conditions_45">conditions:<a class="headerlink" href="#conditions_45" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - The name of the namespace that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - The name of the cluster that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Name of the host.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Id of the host group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Google Cloud Platform Project ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Amazon Web Services Account ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Azure subscription.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Azure resource group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagebizeventsread">storage:bizevents:read<a class="headerlink" href="#storagebizeventsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read records from the bizevents-table</p>
+<h4 id="conditions_46">conditions:<a class="headerlink" href="#conditions_46" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.kind</code> - Gives high-level information about what kind of information the event contains, without being specific to the contents of the event. Helps to determine the record type of a raw event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.type</code> - The unique type identifier of a given event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.provider</code> - Source of the event, for example the name of the component or system that generated the event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - The name of the namespace that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - The name of the cluster that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Name of the host.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Id of the host group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Google Cloud Platform Project ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Amazon Web Services Account ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Azure subscription.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Azure resource group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagesmartscaperead">storage:smartscape:read<a class="headerlink" href="#storagesmartscaperead" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read smartscape nodes and edges from Grail</p>
+<h4 id="conditions_47">conditions:<a class="headerlink" href="#conditions_47" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - The name of the namespace that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - The name of the cluster that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Name of the host.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Id of the host group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Google Cloud Platform Project ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Amazon Web Services Account ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Azure subscription.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Azure resource group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagesystemread">storage:system:read<a class="headerlink" href="#storagesystemread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read records from all system tables (for example, <code>dt.system.events</code>).</p>
+<h4 id="conditions_48">conditions:<a class="headerlink" href="#conditions_48" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.kind</code> - Gives high-level information about what kind of information the event contains, without being specific to the contents of the event. Helps to determine the record type of a raw event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.type</code> - The unique type identifier of a given event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.provider</code> - Source of the event, for example the name of the component or system that generated the event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagebucketsread">storage:buckets:read<a class="headerlink" href="#storagebucketsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read records from Grail buckets. Required additionally to a table permission.</p>
+<h4 id="conditions_49">conditions:<a class="headerlink" href="#conditions_49" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:table-name</code> - Table name of the bucket that can be accessed.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:bucket-name</code> - Name of the bucket that can be accessed.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:query-consumption</code> - If it is set to <code>INCLUDED</code>, the query returns data only from the configured included timeframe of buckets. If set to <code>ON_DEMAND</code>, it returns data from the entire timeframe. For any other value, the IAM statement is ignored. The included timeframe must be configured per bucket via the Storage Management API.<br />
+  operators: <code>=</code></li>
+</ul>
+<h3 id="storagefieldsetsread">storage:fieldsets:read<a class="headerlink" href="#storagefieldsetsread" title="Permanent link">&para;</a></h3>
+<p>Read data from fieldsets</p>
+<h4 id="conditions_50">conditions:<a class="headerlink" href="#conditions_50" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:table-name</code> - Name of the table from which fieldset(s) can be accessed.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:bucket-name</code> - Name of the bucket from which fieldset(s) can be accessed.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:fieldset-name</code> - Name of the fieldset(s) which can be accessed.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagebucket-definitionsread">storage:bucket-definitions:read<a class="headerlink" href="#storagebucket-definitionsread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read bucket definitions from Grail</p>
+<h3 id="storagebucket-definitionswrite">storage:bucket-definitions:write<a class="headerlink" href="#storagebucket-definitionswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to write bucket definitions to Grail</p>
+<h3 id="storagebucket-definitionsdelete">storage:bucket-definitions:delete<a class="headerlink" href="#storagebucket-definitionsdelete" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete bucket definitions from Grail</p>
+<h3 id="storagebucket-definitionstruncate">storage:bucket-definitions:truncate<a class="headerlink" href="#storagebucket-definitionstruncate" title="Permanent link">&para;</a></h3>
+<p>Grants permission to delete all records from a bucket (not delete the bucket itself) in Grail.</p>
+<h3 id="storagerecordsdelete">storage:records:delete<a class="headerlink" href="#storagerecordsdelete" title="Permanent link">&para;</a></h3>
+<p>Delete records in grail</p>
+<h3 id="storagefilesread">storage:files:read<a class="headerlink" href="#storagefilesread" title="Permanent link">&para;</a></h3>
+<p>Read data from files.</p>
+<h4 id="conditions_51">conditions:<a class="headerlink" href="#conditions_51" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:file-path</code> - Path of the file which can be accessed.<br />
+  operators: <code>=</code>, <code>startsWith</code>, <code>IN</code></li>
+</ul>
+<h3 id="storagefileswrite">storage:files:write<a class="headerlink" href="#storagefileswrite" title="Permanent link">&para;</a></h3>
+<p>Ingest data via REST API</p>
+<h4 id="conditions_52">conditions:<a class="headerlink" href="#conditions_52" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:file-path</code> - Path of the file which can be accessed.<br />
+  operators: <code>=</code>, <code>startsWith</code>, <code>IN</code></li>
+</ul>
+<h3 id="storagefilesdelete">storage:files:delete<a class="headerlink" href="#storagefilesdelete" title="Permanent link">&para;</a></h3>
+<p>Delete data via REST API</p>
+<h4 id="conditions_53">conditions:<a class="headerlink" href="#conditions_53" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:file-path</code> - Path of the file which can be accessed.<br />
+  operators: <code>=</code>, <code>startsWith</code>, <code>IN</code></li>
+</ul>
+<h3 id="storagefilter-segmentsread">storage:filter-segments:read<a class="headerlink" href="#storagefilter-segmentsread" title="Permanent link">&para;</a></h3>
+<p>Read filter-segments from grail</p>
+<h3 id="storagefilter-segmentswrite">storage:filter-segments:write<a class="headerlink" href="#storagefilter-segmentswrite" title="Permanent link">&para;</a></h3>
+<p>Write filter-segments in grail</p>
+<h3 id="storagefilter-segmentsshare">storage:filter-segments:share<a class="headerlink" href="#storagefilter-segmentsshare" title="Permanent link">&para;</a></h3>
+<p>Share filter-segments in grail</p>
+<h3 id="storagefilter-segmentsdelete">storage:filter-segments:delete<a class="headerlink" href="#storagefilter-segmentsdelete" title="Permanent link">&para;</a></h3>
+<p>Delete own filter-segments in grail</p>
+<h3 id="storagefilter-segmentsadmin">storage:filter-segments:admin<a class="headerlink" href="#storagefilter-segmentsadmin" title="Permanent link">&para;</a></h3>
+<p>Write and delete all filter-segments in grail</p>
+<h3 id="storagefieldset-definitionsread">storage:fieldset-definitions:read<a class="headerlink" href="#storagefieldset-definitionsread" title="Permanent link">&para;</a></h3>
+<p>Read fieldset definitions from grail</p>
+<h3 id="storagefieldset-definitionswrite">storage:fieldset-definitions:write<a class="headerlink" href="#storagefieldset-definitionswrite" title="Permanent link">&para;</a></h3>
+<p>Write and delete fieldset definitions in grail</p>
+<h3 id="storageapplicationsnapshotsread">storage:application.snapshots:read<a class="headerlink" href="#storageapplicationsnapshotsread" title="Permanent link">&para;</a></h3>
+<p>Read application.snapshots from grail</p>
+<h4 id="conditions_54">conditions:<a class="headerlink" href="#conditions_54" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storageusereventsread">storage:user.events:read<a class="headerlink" href="#storageusereventsread" title="Permanent link">&para;</a></h3>
+<p>Read user.events from grail</p>
+<h4 id="conditions_55">conditions:<a class="headerlink" href="#conditions_55" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:frontend.name</code> - The name of the frontend.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storageusersessionsread">storage:user.sessions:read<a class="headerlink" href="#storageusersessionsread" title="Permanent link">&para;</a></h3>
+<p>Read user.sessions from grail</p>
+<h4 id="conditions_56">conditions:<a class="headerlink" href="#conditions_56" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:frontend.name</code> - The name of the frontend.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storageuserreplaysread">storage:user.replays:read<a class="headerlink" href="#storageuserreplaysread" title="Permanent link">&para;</a></h3>
+<p>Read user.replays from grail</p>
+<h4 id="conditions_57">conditions:<a class="headerlink" href="#conditions_57" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagesecurityeventsread">storage:security.events:read<a class="headerlink" href="#storagesecurityeventsread" title="Permanent link">&para;</a></h3>
+<p>Read security.events from grail</p>
+<h4 id="conditions_58">conditions:<a class="headerlink" href="#conditions_58" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - This condition reduces the effect of the record-level permission to a defined list of buckets.<br />
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.kind</code> - Gives high-level information about what kind of information the event contains, without being specific to the contents of the event. Helps to determine the record type of a raw event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.type</code> - The unique type identifier of a given event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.provider</code> - Source of the event, for example the name of the component or system that generated the event.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - The name of the namespace that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - The name of the cluster that the pod is running in.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Name of the host.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Id of the host group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Custom field for security context.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Google Cloud Platform Project ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Amazon Web Services Account ID.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Azure subscription.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Azure resource group.<br />
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h2 id="unified-analysis">unified-analysis<a class="headerlink" href="#unified-analysis" title="Permanent link">&para;</a></h2>
+<p>Unified analysis</p>
+<h3 id="unified-analysisscreen-definitionread">unified-analysis:screen-definition:read<a class="headerlink" href="#unified-analysisscreen-definitionread" title="Permanent link">&para;</a></h3>
+<p>Grants permission to read the screen definition of a unified analysis screen</p>
+<h2 id="upgrade-assistant">upgrade-assistant<a class="headerlink" href="#upgrade-assistant" title="Permanent link">&para;</a></h2>
+<p>SaaS Upgrade Assistant service</p>
+<h3 id="upgrade-assistantenvironmentswrite">upgrade-assistant:environments:write<a class="headerlink" href="#upgrade-assistantenvironmentswrite" title="Permanent link">&para;</a></h3>
+<p>Grants permission to use the SaaS Upgrade Assistant app</p>
+<h2 id="vulnerability-service">vulnerability-service<a class="headerlink" href="#vulnerability-service" title="Permanent link">&para;</a></h2>
+<p>Provides APIs to access vulnerabilities that are affecting customer environments</p>
+<h3 id="vulnerability-servicevulnerabilitiesread">vulnerability-service:vulnerabilities:read<a class="headerlink" href="#vulnerability-servicevulnerabilitiesread" title="Permanent link">&para;</a></h3>
+<p>Allows viewing vulnerabilities</p>
+<h3 id="vulnerability-servicevulnerabilitieswrite">vulnerability-service:vulnerabilities:write<a class="headerlink" href="#vulnerability-servicevulnerabilitieswrite" title="Permanent link">&para;</a></h3>
+<p>Allows modifying vulnerability related information</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Working with policies</a></li>
+<li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax" title="IAM policy statement syntax.">IAM policy statement syntax and examples</a></li>
+<li><a href="/docs/manage/identity-access-management/use-cases/access-settings" title="Grant access to Settings">Grant access to Settings</a></li>
+<li><a href="/docs/dynatrace-api/account-management-api" title="Explore endpoints of the Account Management API.">Account Management API</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>
