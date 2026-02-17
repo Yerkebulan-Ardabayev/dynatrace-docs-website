@@ -45,9 +45,9 @@ SECRET_PATTERNS = [
         r'AIza[A-Za-z0-9_-]{35}',
         '<GOOGLE_API_KEY_PLACEHOLDER>'
     ),
-    # Groq API Keys (gsk_ prefix)
+    # Groq API Keys (gsk_ prefix, 20+ chars after prefix)
     (
-        r'gsk_[A-Za-z0-9]{48,}',
+        r'gsk_[A-Za-z0-9]{20,}',
         '<GROQ_API_KEY_PLACEHOLDER>'
     ),
 ]
