@@ -120,7 +120,7 @@ def translate_via_gemini(text: str) -> str | None:
             )
 
             if response.status_code == 429:
-                wait = 2 ** (attempt + 1)
+                wait = 15 * (attempt + 1)  # 15, 30, 45 sec — Gemini free 15 req/min
                 print(f"  ⏳ Gemini rate limit, жду {wait}с...")
                 time.sleep(wait)
                 continue
@@ -143,7 +143,7 @@ def translate_via_gemini(text: str) -> str | None:
                 return None
 
             translation = candidates[0]['content']['parts'][0]['text'].strip()
-            time.sleep(0.5)  # Gemini: 1500 req/day, ~1 req/min — небольшая пауза
+            time.sleep(4.0)  # Gemini free: 15 req/min = 4 sec between requests
             return translation
 
         except requests.Timeout:
