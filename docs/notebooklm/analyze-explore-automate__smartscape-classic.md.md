@@ -1,6 +1,6 @@
 # Dynatrace Documentation: analyze-explore-automate/smartscape-classic.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Visualize your environment through Smartscape Classic
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape-classic
-scraped: 2026-02-16T21:09:49.454407
+scraped: 2026-02-17T04:45:08.471345
 ---
 
 # Visualize your environment through Smartscape Classic

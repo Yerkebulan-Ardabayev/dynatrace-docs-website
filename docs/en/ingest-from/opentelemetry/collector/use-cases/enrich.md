@@ -1,12 +1,12 @@
 ---
-title: Enrich with OneAgent (non-containerized)
+title: Enrich OTLP with OneAgent data (non-containerized)
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/enrich
-scraped: 2026-02-15T21:25:58.996874
+scraped: 2026-02-17T05:06:37.065527
 ---
 
-# Enrich with OneAgent (non-containerized)
+# Enrich OTLP with OneAgent data (non-containerized)
 
-# Enrich with OneAgent (non-containerized)
+# Enrich OTLP with OneAgent data (non-containerized)
 
 * Latest Dynatrace
 * How-to guide
@@ -25,14 +25,14 @@ Enrichment is specific to non-container OneAgent environments. Configuring a con
 
 * One of the following Collector distributions with the [Resource Detection processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/resourcedetectionprocessor):
 
-  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace Collector.")
-  + OpenTelemetry [Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace Collector.")
-  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace Collector.")
+  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
+  + OpenTelemetry [Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace OTel Collector.")
+  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace OTel Collector.")
 * A OneAgent running on the same host as the Collector, where the OneAgent monitors in either Full-Stack, Infrastructure, or Foundation & Discovery mode.
 * The [Dynatrace API endpoint URL](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported, configured as system environment variable
 * An [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate), configured as system environment variable
 
-See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "Deploy the Dynatrace Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "Configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Demo configuration
 
@@ -158,7 +158,7 @@ exporters: [otlp_http]
 
 Configuration validation
 
-[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "Configure the OpenTelemetry Collector.") to avoid any configuration issues.
+[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
 
 ## Components
 

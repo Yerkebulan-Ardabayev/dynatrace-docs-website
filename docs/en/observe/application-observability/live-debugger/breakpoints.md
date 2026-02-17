@@ -1,7 +1,7 @@
 ---
 title: Live Debugger breakpoints
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/breakpoints
-scraped: 2026-02-16T09:27:18.506613
+scraped: 2026-02-17T05:11:03.437645
 ---
 
 # Live Debugger breakpoints

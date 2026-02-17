@@ -1,7 +1,7 @@
 ---
 title: DQL language reference
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-reference
-scraped: 2026-02-16T21:15:15.995427
+scraped: 2026-02-17T04:55:06.377792
 ---
 
 # DQL language reference

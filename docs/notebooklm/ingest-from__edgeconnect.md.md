@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/edgeconnect.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Configure and deploy EdgeConnect
 source: https://www.dynatrace.com/docs/ingest-from/edgeconnect
-scraped: 2026-02-15T21:22:17.659873
+scraped: 2026-02-17T04:56:30.319290
 ---
 
 # Configure and deploy EdgeConnect

@@ -1,7 +1,7 @@
 ---
 title: Syslog ingestion with ActiveGate (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/syslog
-scraped: 2026-02-15T21:26:03.010400
+scraped: 2026-02-17T04:57:39.309248
 ---
 
 # Syslog ingestion with ActiveGate (Logs Classic)
@@ -624,7 +624,7 @@ Enabling syslog log ingestion requires you to:
 
    **Note**: Do NOT modify the exporter configuration. The default configuration points to the embedded Collector.
 
-   For more information on syslog receiver configuration, see [Ingest syslog data using OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
+   For more information on syslog receiver configuration, see [Ingest syslog data with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
 4. **Verify the syslog ingestion is enabled**.
 
    After you enable syslog ingestion, check the following log files to verify it:

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: deliver/pipeline-observability-sdlc-events
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 2
 
@@ -13,7 +13,7 @@ Files combined: 2
 ---
 title: Observe Argo CD deployment and application health with Dashboards and SDLC events
 source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/deployment-observability-use-case-argocd
-scraped: 2026-02-16T09:34:52.270372
+scraped: 2026-02-17T04:58:38.274560
 ---
 
 # Observe Argo CD deployment and application health with Dashboards and SDLC events

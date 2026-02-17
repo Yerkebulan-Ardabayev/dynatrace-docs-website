@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-intelligence/dynatrace-intelligence-integrations
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 2
 
@@ -114,7 +114,7 @@ To learn about specific use cases and how you can use the Dynatrace Intelligence
 ---
 title: Dynatrace Intelligence for Notebooks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks
-scraped: 2026-02-15T21:16:59.240223
+scraped: 2026-02-17T04:55:56.806832
 ---
 
 # Dynatrace Intelligence for Notebooks

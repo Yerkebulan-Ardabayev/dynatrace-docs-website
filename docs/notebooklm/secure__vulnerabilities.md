@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/vulnerabilities
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 6
 
@@ -13,7 +13,7 @@ Files combined: 6
 ---
 title: Address remediation
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/address-remediation
-scraped: 2026-02-16T21:24:54.603133
+scraped: 2026-02-17T05:02:32.005669
 ---
 
 # Address remediation
@@ -226,7 +226,7 @@ Dynatrace Intelligence generative AI explanations are tailored to the nature of 
 ---
 title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/assess-coverage
-scraped: 2026-02-16T21:26:21.416600
+scraped: 2026-02-17T05:09:25.590609
 ---
 
 # Assess coverage
@@ -388,7 +388,7 @@ The downloaded file reflects the filters applied at the time of download.
 ---
 title: Vulnerabilities concepts
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/concepts
-scraped: 2026-02-16T09:28:40.572461
+scraped: 2026-02-17T05:05:26.046862
 ---
 
 # Vulnerabilities concepts
@@ -890,7 +890,7 @@ For details on how normalization works, see [Severity and score normalization](/
 ---
 title: Explore findings
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/explore-findings
-scraped: 2026-02-16T21:31:15.930371
+scraped: 2026-02-17T05:08:36.941328
 ---
 
 # Explore findings
@@ -1059,7 +1059,7 @@ You can extend your analysis beyond ![Vulnerabilities](https://dt-cdn.net/images
 ---
 title: Prioritize vulnerabilities
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/prioritize
-scraped: 2026-02-16T21:29:24.637977
+scraped: 2026-02-17T05:09:37.830415
 ---
 
 # Prioritize vulnerabilities

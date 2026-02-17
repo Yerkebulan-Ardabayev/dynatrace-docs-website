@@ -1,6 +1,6 @@
 # Dynatrace Documentation: semantic-dictionary/fields.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Global field reference
 source: https://www.dynatrace.com/docs/semantic-dictionary/fields
-scraped: 2026-02-16T21:12:04.928666
+scraped: 2026-02-17T04:48:25.654879
 ---
 
 # Global field reference

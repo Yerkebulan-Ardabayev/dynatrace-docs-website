@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Platform Subscription API
 source: https://www.dynatrace.com/docs/license/account-management-api
-scraped: 2026-02-16T21:28:11.446166
+scraped: 2026-02-17T05:03:38.708189
 ---
 
 # Dynatrace Platform Subscription API

@@ -1,7 +1,7 @@
 ---
 title: Bar chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar
-scraped: 2026-02-15T21:16:41.437389
+scraped: 2026-02-17T04:55:34.075537
 ---
 
 # Bar chart visualization

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: manage/hub.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace Hub
 source: https://www.dynatrace.com/docs/manage/hub
-scraped: 2026-02-16T21:11:37.199582
+scraped: 2026-02-17T04:47:35.697445
 ---
 
 # Dynatrace Hub

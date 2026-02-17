@@ -1,7 +1,7 @@
 ---
 title: Anomaly Detection DQL optimization guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization
-scraped: 2026-02-15T09:12:43.424809
+scraped: 2026-02-17T05:05:12.034400
 ---
 
 # Anomaly Detection DQL optimization guide
@@ -200,8 +200,6 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 
 ## Related topics
 
-
-
-* [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Anomaly Detection DQL writing guide](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice "Best practices for creating Anomaly Detection custom alert DQL queries.")
+* [Приложение обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучение конфигураций обнаружения аномалий с помощью приложения обнаружения аномалий.")
+* [Язык запросов Dynatrace](/docs/platform/grail/dynatrace-query-language "Как использовать язык запросов Dynatrace.")
+* [Руководство по написанию DQL для обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice "Лучшие практики создания пользовательских запросов DQL для обнаружения аномалий и оповещений.")

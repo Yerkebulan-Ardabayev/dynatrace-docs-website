@@ -1,7 +1,7 @@
 ---
 title: Amazon Cognito monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cognito
-scraped: 2026-02-16T21:28:37.859286
+scraped: 2026-02-17T05:10:01.141222
 ---
 
 # Amazon Cognito monitoring

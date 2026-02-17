@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Operator support and known issues
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/support-model-and-issues
-scraped: 2026-02-16T21:18:33.910731
+scraped: 2026-02-17T04:52:17.868185
 ---
 
 # Dynatrace Operator support and known issues

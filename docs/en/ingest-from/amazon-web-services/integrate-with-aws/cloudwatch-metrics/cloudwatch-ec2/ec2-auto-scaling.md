@@ -1,7 +1,7 @@
 ---
 title: Amazon EC2 Auto Scaling
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling
-scraped: 2026-02-16T21:29:43.921962
+scraped: 2026-02-17T05:03:37.060997
 ---
 
 # Amazon EC2 Auto Scaling

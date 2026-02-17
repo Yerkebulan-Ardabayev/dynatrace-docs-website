@@ -1,8 +1,8 @@
 # Dynatrace Documentation: whats-new/dynatrace-operator
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 9
+Files combined: 10
 
 ---
 
@@ -117,7 +117,7 @@ Release date: Dec 15, 2022
 ---
 title: Dynatrace Operator release notes version 0.10.2
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-10-2
-scraped: 2026-02-16T21:24:40.935770
+scraped: 2026-02-17T04:59:24.357118
 ---
 
 # Dynatrace Operator release notes version 0.10.2
@@ -137,6 +137,35 @@ Release date: Jan 12, 2023
 * The node-driver-registrar component is updated to version 2.7.0.
 * The `livenessProbe` component is updated to version 2.9.0.
 * Go is updated to version 1.19.4.
+
+
+---
+
+
+## Source: dto-fix-0-9-2.md
+
+
+---
+title: Dynatrace Operator release notes version 0.9.2
+source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-9-2
+scraped: 2026-02-17T04:58:58.839068
+---
+
+# Dynatrace Operator release notes version 0.9.2
+
+# Dynatrace Operator release notes version 0.9.2
+
+* Latest Dynatrace
+* Release notes
+* Published Jan 05, 2023
+
+Release date: Jan 10, 2023
+
+## Resolved issues
+
+* Fixed a bug with volume creation for read-only support in `hostMonitoring`.
+
+* Fixed a bug causing pods to be incorrectly unmounted, when multiple pods are unmounted at the same time by the CSI driver.
 
 
 ---
@@ -338,7 +367,7 @@ Starting with this version, it is no longer possible to deploy a DynaKube with A
 ---
 title: Dynatrace Operator release notes version 1.7.1
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-1
-scraped: 2026-02-16T09:37:23.820736
+scraped: 2026-02-17T05:03:21.134524
 ---
 
 # Dynatrace Operator release notes version 1.7.1
@@ -414,7 +443,7 @@ In Dynatrace Operator version 1.7, the DynaKube API versions `v1beta1` and `v1be
 ---
 title: Dynatrace Operator release notes version 1.7.2
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-2
-scraped: 2026-02-15T21:24:25.312331
+scraped: 2026-02-17T05:00:20.431151
 ---
 
 # Dynatrace Operator release notes version 1.7.2
@@ -488,7 +517,7 @@ In Dynatrace Operator version 1.7, the DynaKube API versions `v1beta1` and `v1be
 ---
 title: Dynatrace Operator release notes version 1.7.3
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-3
-scraped: 2026-02-16T21:27:47.944726
+scraped: 2026-02-17T04:58:26.590163
 ---
 
 # Dynatrace Operator release notes version 1.7.3

@@ -1,7 +1,7 @@
 ---
 title: Web application configuration API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api
-scraped: 2026-02-16T09:31:24.870224
+scraped: 2026-02-17T05:03:08.675443
 ---
 
 # Web application configuration API

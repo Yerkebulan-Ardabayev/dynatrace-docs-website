@@ -1,6 +1,6 @@
 # Dynatrace Documentation: whats-new/edgeconnect
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 5
 
@@ -13,7 +13,7 @@ Files combined: 5
 ---
 title: EdgeConnect release notes version 1.330.2
 source: https://www.dynatrace.com/docs/whats-new/edgeconnect/edgeconnect-release-notes-1-330-2
-scraped: 2026-02-15T21:22:19.060661
+scraped: 2026-02-17T04:56:35.189841
 ---
 
 # EdgeConnect release notes version 1.330.2
@@ -40,7 +40,7 @@ Release date: Jan 27, 2025
 ---
 title: EdgeConnect release notes version 1.416.14
 source: https://www.dynatrace.com/docs/whats-new/edgeconnect/edgeconnect-release-notes-1-416-14
-scraped: 2026-02-15T21:22:20.429616
+scraped: 2026-02-17T04:56:36.844040
 ---
 
 # EdgeConnect release notes version 1.416.14
@@ -83,7 +83,7 @@ If you use `node:http(s)` in your JavaScript code, keep in mind that redirect ha
 ---
 title: EdgeConnect release notes version 1.473.0
 source: https://www.dynatrace.com/docs/whats-new/edgeconnect/edgeconnect-release-notes-1-473-0
-scraped: 2026-02-15T21:22:13.527805
+scraped: 2026-02-17T04:56:33.542054
 ---
 
 # EdgeConnect release notes version 1.473.0
@@ -110,7 +110,7 @@ Release date: Jun 18, 2025
 ---
 title: EdgeConnect release notes version 1.473.2
 source: https://www.dynatrace.com/docs/whats-new/edgeconnect/edgeconnect-release-notes-1-473-2
-scraped: 2026-02-15T21:22:16.015134
+scraped: 2026-02-17T04:56:28.935124
 ---
 
 # EdgeConnect release notes version 1.473.2
@@ -137,7 +137,7 @@ Release date: Jan 15, 2026
 ---
 title: EdgeConnect release notes version 1.473.5
 source: https://www.dynatrace.com/docs/whats-new/edgeconnect/edgeconnect-release-notes-1-473-5
-scraped: 2026-02-15T21:22:14.761180
+scraped: 2026-02-17T04:56:31.988531
 ---
 
 # EdgeConnect release notes version 1.473.5

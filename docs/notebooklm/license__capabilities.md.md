@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/capabilities.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 

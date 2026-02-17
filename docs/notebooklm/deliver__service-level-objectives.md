@@ -1,6 +1,6 @@
 # Dynatrace Documentation: deliver/service-level-objectives
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 6
 
@@ -117,7 +117,7 @@ You can create, edit, list, delete, and evaluate your SLOs via API.
 ---
 title: Permissions for service-level objective (SLO) tiles in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
-scraped: 2026-02-16T09:39:15.579926
+scraped: 2026-02-17T05:11:56.110305
 ---
 
 # Permissions for service-level objective (SLO) tiles in a dashboard
@@ -154,7 +154,7 @@ For the SLO details view
 ---
 title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-02-16T21:24:55.915432
+scraped: 2026-02-17T05:08:11.462417
 ---
 
 # Add a service-level objective (SLO) tile to a dashboard
@@ -240,7 +240,7 @@ Due to the intersection, the result contains only the evaluations related to S-2
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-02-15T09:06:16.274390
+scraped: 2026-02-17T05:00:01.871971
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard
@@ -354,7 +354,7 @@ To copy and paste multiple tiles simultaneously
 ---
 title: View the details of a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-view
-scraped: 2026-02-16T09:33:54.599505
+scraped: 2026-02-17T05:01:30.494617
 ---
 
 # View the details of a service-level objective (SLO) tile in a dashboard
@@ -389,7 +389,7 @@ You can view details of your SLO tile in your dashboard.
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-02-16T21:27:24.251782
+scraped: 2026-02-17T05:00:51.250654
 ---
 
 # Upgrade Classic SLOs

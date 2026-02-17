@@ -1,7 +1,7 @@
 ---
 title: Request attributes
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes
-scraped: 2026-02-16T21:10:19.496522
+scraped: 2026-02-17T04:46:54.289248
 ---
 
 # Request attributes

@@ -1,7 +1,7 @@
 ---
 title: JDBC monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring
-scraped: 2026-02-15T09:09:58.851046
+scraped: 2026-02-17T05:11:10.224490
 ---
 
 # JDBC monitoring configuration

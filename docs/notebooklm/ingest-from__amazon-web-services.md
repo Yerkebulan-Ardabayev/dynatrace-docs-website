@@ -1,8 +1,122 @@
 # Dynatrace Documentation: ingest-from/amazon-web-services
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 66
+Files combined: 69
+
+---
+
+
+## Source: aws-marketplace.md
+
+
+---
+title: AWS Marketplace private offer
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/aws-platform/aws-marketplace
+scraped: 2026-02-17T05:00:30.484096
+---
+
+# AWS Marketplace private offer
+
+# AWS Marketplace private offer
+
+* How-to guide
+* 3-min read
+* Published May 26, 2025
+
+The Dynatrace Platform Service can be licensed via the [AWS Marketplaceï»¿](https://aws.amazon.com/marketplace/pp/prodview-si2angoettdnc?applicationId=AWSMPContessa) according to a private offer.
+
+This page describes how to link your private offer with a Dynatrace environment.
+You can either link an existing Dynatrace environment that was created with AWS, or create and link a new environment.
+
+If you do not yet have a private offer, reach out to Dynatrace sales at [sales@dynatrace.com](mailto:sales@dynatrace.com).
+
+## Key terms
+
+Private offer
+:   A customer-specific license proposal that has been prepared by Dynatrace. It includes a custom [rate cardï»¿](https://www.dynatrace.com/pricing/rate-card) with the agreed-upon capabilities and prices.
+
+Public cloud service
+:   Computing services offered by a third-party provider. Dynatrace can be licensed via a public cloud service.
+
+Dynatrace environment
+:   A [Dynatrace environment](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") is where all your Dynatrace performance analysis takes place. Environments have a unique identifier in the format `abc12345`.
+
+## Prerequisites
+
+* You already have a customized private offer for Dynatrace in the AWS Marketplace.
+* If you are linking an existing Dynatrace account, your Dynatrace user needs to have the **View and manage account billing information** permissions for that account.
+
+## Steps
+
+Follow the steps below to link your private offer to a Dynatrace account.
+
+Link an existing Dynatrace account
+
+Create a new Dynatrace account to link
+
+If you already have an existing Dynatrace account and environment on AWS, follow the steps below to link the account to your AWS Marketplace private offer.
+This can be either a trial or production environment, as long as it is in an active state.
+
+1. In AWS Marketplace, open your Dynatrace private offer.
+2. Accept your Dynatrace private offer.
+3. Select **Set up your account**.
+4. On the **Welcome to your new Dynatrace Platform Subscription** page, select **Link existing account**.
+5. Sign in as the Dynatrace user that is assigned to the account you want to link.
+
+   1. Enter the email address, then select **Next**.
+   2. Enter the account password, then select **Next**.
+6. Depending on how many accounts the user is assigned to, do one of the following:
+
+   * One account: The account is recognized automatically and you can continue to the next step.
+   * Multiple accounts: In the **Account to link** drop-down menu, select the specific account that you want to link this private offer to.
+     Then, continue to the next step.
+   * More than 20 accounts: In the **Account UUID** field, specify the Account UUID from the account that you want to link this private offer to.
+     Then, continue to the next step.
+
+     To get your Account UUID, go to **Account Management** and copy the UUID from the URL of the address field of your browser.
+7. Once you've signed in with the chosen account, your account information is displayed in **User details**, **Account details**, and **Environments**.
+   This is the account that will be linked to your private offer, so verify the details are correct.
+8. Select the check box next to **I agree to link this Dynatrace account with my marketplace subscription.**, then select **Next**.
+
+   This step cannot be undone.
+
+When the **Congratulations!** window appears, your private offer is now linked to the chosen Dynatrace account.
+
+Your subscription information in **Account Management** will reflect the fully-credited new license within three days.
+In the meantime, you can start using your Dynatrace environment according to the account's existing license (if you linked an existing account) or with a trial license (if you created a new account).
+
+Select **Open Dynatrace** to start using Dynatrace and [Set up Dynatrace on Amazon Web Services](/docs/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.").
+
+If you don't yet have a Dynatrace account, follow the steps below to create an account and link it to your AWS Marketplace private offer.
+
+1. In AWS Marketplace, open your Dynatrace private offer.
+2. Accept your Dynatrace private offer.
+3. Select **Set up your account**.
+4. On the **Welcome to your new Dynatrace Platform Subscription** page, select **Create a new account**.
+5. Enter the required information as described on the page:
+
+   1. **User details**
+   2. **Account details**
+   3. **Environment details**
+6. Select **Create account**.
+
+A **You're almost done!** window appears.
+Dynatrace creates a new account and environment according to the information that you have entered.
+This step may take up to 5 minutes to complete.
+
+When the account is successfully created, a **Congratulations!** window appears.
+Your private offer is now linked to the Dynatrace account that you just created.
+
+Your subscription information in **Account Management** will reflect the fully-credited new license within three days.
+In the meantime, you can start using your Dynatrace environment according to the account's existing license (if you linked an existing account) or with a trial license (if you created a new account).
+
+Select **Open Dynatrace** to start using Dynatrace and [Set up Dynatrace on Amazon Web Services](/docs/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.").
+
+## Related topics
+
+* [Discover Dynatrace](/docs/discover-dynatrace "Discover Dynatrace")
+
 
 ---
 
@@ -13,7 +127,7 @@ Files combined: 66
 ---
 title: Set up CORS on Amazon S3
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/aws-platform/set-up-cors-in-amazon-s3
-scraped: 2026-02-16T21:18:04.706500
+scraped: 2026-02-17T04:51:25.276977
 ---
 
 # Set up CORS on Amazon S3
@@ -1562,7 +1676,7 @@ For AWS App Runner, monitoring consumption is based on host units. See [Applicat
 ---
 title: Monitor AWS Elastic Beanstalk
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk
-scraped: 2026-02-16T21:14:11.810017
+scraped: 2026-02-17T04:49:28.156390
 ---
 
 # Monitor AWS Elastic Beanstalk
@@ -1872,7 +1986,7 @@ For AWS Elastic Beanstalk, monitoring consumption is based on hosts units. See [
 ---
 title: Monitor Amazon Elastic Compute Cloud (EC2)
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2
-scraped: 2026-02-16T21:13:49.075218
+scraped: 2026-02-17T04:49:04.203756
 ---
 
 # Monitor Amazon Elastic Compute Cloud (EC2)
@@ -1906,7 +2020,7 @@ Alternatively, you can use any infrastructure management tool such as Terraform 
 ---
 title: Monitor Elastic Container Service (ECS) with EC2 launch type
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs
-scraped: 2026-02-16T21:25:48.275416
+scraped: 2026-02-17T05:10:15.329885
 ---
 
 # Monitor Elastic Container Service (ECS) with EC2 launch type
@@ -2024,7 +2138,7 @@ For Elastic Container Service, monitoring consumption is based on hosts units. S
 ---
 title: Monitor Amazon Elastic Container Service (ECS)
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs
-scraped: 2026-02-16T21:14:26.717899
+scraped: 2026-02-17T04:48:57.989219
 ---
 
 # Monitor Amazon Elastic Container Service (ECS)
@@ -2161,7 +2275,7 @@ For Elastic Container Service, monitoring consumption is based on host units. Se
 ---
 title: Ingest Kubernetes DNS logs from AWS
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-eks/k8s-dns-logs
-scraped: 2026-02-16T09:33:41.383845
+scraped: 2026-02-17T05:02:57.002334
 ---
 
 # Ingest Kubernetes DNS logs from AWS
@@ -2523,7 +2637,7 @@ fetch logs
 ---
 title: Amazon EKS (Elastic Kubernetes Service)
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-eks
-scraped: 2026-02-16T21:30:52.254095
+scraped: 2026-02-17T05:11:54.499205
 ---
 
 # Amazon EKS (Elastic Kubernetes Service)
@@ -2552,7 +2666,7 @@ For Amazon Elastic Kubernetes Service, monitoring consumption is based on host u
 ---
 title: Monitor AWS Fargate
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate
-scraped: 2026-02-16T21:14:06.071556
+scraped: 2026-02-17T04:49:18.057538
 ---
 
 # Monitor AWS Fargate
@@ -2916,7 +3030,7 @@ For AWS Fargate, monitoring consumption is based on host units. To learn how hos
 ---
 title: Integrate Dynatrace Lambda Layer on container images
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/deploy-oneagent-on-lambda-container-images
-scraped: 2026-02-15T21:23:37.397557
+scraped: 2026-02-17T04:57:45.502012
 ---
 
 # Integrate Dynatrace Lambda Layer on container images
@@ -3243,7 +3357,7 @@ Overriding the version compatibility check might result in runtime errors and sh
 ---
 title: Trace Python, Node.js, and Java Lambda functions
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension
-scraped: 2026-02-16T21:24:04.234621
+scraped: 2026-02-17T04:56:01.793338
 ---
 
 # Trace Python, Node.js, and Java Lambda functions
@@ -3625,7 +3739,7 @@ While not mandatory, we recommend that you set up Dynatrace Amazon CloudWatch in
 ---
 title: Trace .NET Lambda functions
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration
-scraped: 2026-02-16T21:23:48.473009
+scraped: 2026-02-17T04:56:07.098288
 ---
 
 # Trace .NET Lambda functions
@@ -4639,7 +4753,7 @@ Starting from .NET 6, Lambda functions can be [built and deployed as container i
 ---
 title: OpenTelemetry interoperability in Java
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java
-scraped: 2026-02-16T21:23:58.654194
+scraped: 2026-02-17T04:56:23.764102
 ---
 
 # OpenTelemetry interoperability in Java
@@ -5298,7 +5412,7 @@ This structure is required to be prepared for batch receives. When you send mult
 ---
 title: OpenTelemetry interoperability in Node.js
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-nodejs
-scraped: 2026-02-15T09:06:55.356787
+scraped: 2026-02-17T05:02:15.904731
 ---
 
 # OpenTelemetry interoperability in Node.js
@@ -6379,7 +6493,7 @@ For details, see how to [receive an SQS message](#receive-sqs-node).
 ---
 title: OpenTelemetry interoperability in Python
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-python
-scraped: 2026-02-15T21:28:53.152768
+scraped: 2026-02-17T04:59:07.619958
 ---
 
 # OpenTelemetry interoperability in Python
@@ -7599,7 +7713,7 @@ return msg;
 ---
 title: OpenTelemetry interoperability
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability
-scraped: 2026-02-16T21:23:49.783521
+scraped: 2026-02-17T04:56:16.241437
 ---
 
 # OpenTelemetry interoperability
@@ -7664,7 +7778,7 @@ To learn more about how OpenTelemetry interoperability works, see
 ---
 title: Trace Lambda functions
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions
-scraped: 2026-02-16T21:17:55.607581
+scraped: 2026-02-17T04:51:18.553491
 ---
 
 # Trace Lambda functions
@@ -8076,7 +8190,7 @@ To analyze cold starts
 ---
 title: Monitor AWS Lambda
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration
-scraped: 2026-02-16T21:14:01.811607
+scraped: 2026-02-17T04:48:32.348125
 ---
 
 # Monitor AWS Lambda
@@ -8161,7 +8275,7 @@ For AWS Lambda, monitoring consumption is based on Davis data units. See [Server
 ---
 title: Amazon AppStream 2.0 monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-appstream-2
-scraped: 2026-02-15T21:25:33.670737
+scraped: 2026-02-17T05:06:21.806486
 ---
 
 # Amazon AppStream 2.0 monitoring
@@ -9016,7 +9130,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS AppSync monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-appsync
-scraped: 2026-02-16T09:37:44.546321
+scraped: 2026-02-17T04:59:54.222275
 ---
 
 # AWS AppSync monitoring
@@ -13338,7 +13452,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS DMS (Database Migration Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-database-migration-service-dms
-scraped: 2026-02-16T21:29:29.444130
+scraped: 2026-02-17T04:59:02.795795
 ---
 
 # AWS DMS (Database Migration Service) monitoring
@@ -14272,7 +14386,7 @@ To collect metrics about changes captured by the migration task (CDC metrics) on
 ---
 title: AWS Direct Connect monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-direct-connect
-scraped: 2026-02-16T21:29:16.296945
+scraped: 2026-02-17T05:10:31.007765
 ---
 
 # AWS Direct Connect monitoring
@@ -17681,7 +17795,7 @@ About dimensions
 ---
 title: Amazon Elastic Transcoder monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-transcoder
-scraped: 2026-02-16T21:25:49.932363
+scraped: 2026-02-17T05:01:07.161008
 ---
 
 # Amazon Elastic Transcoder monitoring
@@ -20407,7 +20521,7 @@ Dynatrace is currently not gathering any instance attributes for AWS Elemental M
 ---
 title: AWS Elemental MediaPackage (Live, Video on Demand) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediapackage
-scraped: 2026-02-16T21:28:42.131100
+scraped: 2026-02-17T04:57:22.904140
 ---
 
 # AWS Elemental MediaPackage (Live, Video on Demand) monitoring
@@ -21962,7 +22076,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon EventBridge monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-eventbridge
-scraped: 2026-02-16T21:25:08.273896
+scraped: 2026-02-17T05:05:17.264473
 ---
 
 # Amazon EventBridge monitoring
@@ -23688,7 +23802,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Inspector monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-inspector
-scraped: 2026-02-16T21:31:25.597123
+scraped: 2026-02-17T04:58:40.194846
 ---
 
 # Amazon Inspector monitoring
@@ -27103,7 +27217,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Polly monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-polly
-scraped: 2026-02-16T21:32:58.916750
+scraped: 2026-02-17T05:04:41.380587
 ---
 
 # Amazon Polly monitoring
@@ -27914,7 +28028,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon QLDB (Quantum Ledger Database) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-quantum-ledger-database-qldb
-scraped: 2026-02-16T21:32:05.371969
+scraped: 2026-02-17T05:11:08.553130
 ---
 
 # Amazon QLDB (Quantum Ledger Database) monitoring
@@ -28790,7 +28904,7 @@ About dimensions
 ---
 title: Amazon Rekognition monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-rekognition
-scraped: 2026-02-16T09:27:02.007270
+scraped: 2026-02-17T05:05:33.082660
 ---
 
 # Amazon Rekognition monitoring
@@ -29591,7 +29705,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon RDS (Relational Database Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-relational-database-service-rds-new
-scraped: 2026-02-16T09:28:52.743520
+scraped: 2026-02-17T04:59:45.780568
 ---
 
 # Amazon RDS (Relational Database Service) monitoring
@@ -31858,7 +31972,7 @@ The `vCPU`, `Memory`, and `SimulationUnit` metrics are for estimation purposes. 
 ---
 title: Amazon Route 53 Resolver monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-route-53-resolver
-scraped: 2026-02-16T09:33:19.118853
+scraped: 2026-02-17T05:06:56.052096
 ---
 
 # Amazon Route 53 Resolver monitoring
@@ -33600,7 +33714,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Site-to-Site VPN monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-site-to-site-vpn
-scraped: 2026-02-16T09:39:50.893899
+scraped: 2026-02-17T05:06:49.126504
 ---
 
 # AWS Site-to-Site VPN monitoring
@@ -36188,7 +36302,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Systems Manager Run Command monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-systems-manager-run-command
-scraped: 2026-02-15T21:23:48.726024
+scraped: 2026-02-17T05:10:37.945827
 ---
 
 # AWS Systems Manager Run Command monitoring
@@ -37828,7 +37942,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Transit Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-transit-gateway
-scraped: 2026-02-16T21:26:43.570665
+scraped: 2026-02-17T05:11:52.881539
 ---
 
 # AWS Transit Gateway monitoring
@@ -39517,7 +39631,7 @@ Dynatrace entities of this AWS service are not enriched with the ARN property.
 ---
 title: Amazon WorkMail monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-workmail
-scraped: 2026-02-16T21:32:51.405048
+scraped: 2026-02-17T05:09:47.232659
 ---
 
 # Amazon WorkMail monitoring
@@ -40370,7 +40484,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon WorkSpaces monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-workspaces
-scraped: 2026-02-16T09:32:22.820279
+scraped: 2026-02-17T05:05:19.219701
 ---
 
 # Amazon WorkSpaces monitoring
@@ -41240,7 +41354,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: All AWS cloud services
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services
-scraped: 2026-02-16T21:14:34.965820
+scraped: 2026-02-17T04:48:43.873928
 ---
 
 # All AWS cloud services
@@ -41363,13 +41477,879 @@ As of 2021, all cloud services consume DDUs. The amount of DDU consumption per s
 ---
 
 
+## Source: aws-log-forwarder.md
+
+
+---
+title: Log monitoring with AWS log forwarder
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder
+scraped: 2026-02-17T05:04:39.407391
+---
+
+# Log monitoring with AWS log forwarder
+
+# Log monitoring with AWS log forwarder
+
+* How-to guide
+* 13-min read
+* Updated on May 08, 2024
+* Deprecated
+
+Deprecation and end of support for AWS log forwarder
+
+The Dynatrace AWS log forwarder is now deprecated in favor of the new [Stream logs via Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput."), which allows ingesting cloud logs directly without any additional infrastructure and with increased throughput. To check the available alternative integrations, see [Set up Dynatrace on Amazon Web Services](/docs/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.").
+
+End of support for the Dynatrace AWS log forwarder is planned for Dec 31, 2024.
+
+DDU consumption for Log Monitoring
+
+DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+
+AWS log forwarding allows you to stream logs from Amazon CloudWatch into Dynatrace logs via an ActiveGate.
+
+## Resources needed
+
+To enable AWS log forwarding, you need to deploy our special-purpose CloudFormation stack into your AWS account. The stack consists of a Kinesis Firehose instance and a Lambda function. These resources incur AWS costs according to standard AWS billing policy. The same applies to included self-monitoring resources (CloudWatch dashboards and metrics).
+
+**Supported services**
+
+| Service name | CloudWatch log forwarding | Log enrichment | Entity linking |
+| --- | --- | --- | --- |
+| AWS Lambda | Applicable | Applicable | Applicable |
+| AWS App Runner | Applicable | Applicable | Applicable |
+| AWS CloudTrail [1](#fn-1-1-def) | Applicable | Applicable | - |
+| Amazon API Gateway | Applicable | Applicable | - |
+| Amazon SNS | Applicable | Applicable | Applicable |
+| Amazon RDS | Applicable | Applicable | Applicable |
+| All services that write to CloudWatch | Applicable | Applicable | - |
+
+1
+
+AWS CloudTrail log group name is chosen by user. For log enrichment, start the log group name with `aws-cloudtrail-logs`.
+
+## Limitations
+
+AWS log forwarder supports maximum 1 GB of data processing per hour in the default configuration.
+
+* To measure the throughput, look for these Kinesis metrics in CloudWatch or check the dashboards provided by the deployed stack: `Delivery - log entries` and `Delivery - data volume`.
+* To measure the latency, look for `Kinesis - record age`.
+
+For scaling recommendations, see the [scaling guide](#scalingguide) below.
+
+## Prerequisites
+
+If you're using an earlier version of Dynatrace, see [Alternative deployments](#alternative) for instructions.
+
+### Dynatrace
+
+* [Enable generic log ingestion](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+* [Create an API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with **Ingest logs** (API v2) permission
+
+### CLI
+
+* You can run the deployment from AWS CloudShell or from any machine with AWS CLI installed that supports Bash script execution.
+
+The deployment script uses the default AWS CLI profile configuration. The profile will determine the AWS account and region. To change the account or region:
+
+* Use a different profile - in this case, you need to [update your configuration fileï»¿](https://dt-url.net/le03r5f).
+* Overwrite the default profile temporarily (this option is limited to your shell session) using [environment variablesï»¿](https://dt-url.net/3823r6v).
+
+### Permission policy
+
+You need the following permissions to run the deployment script:
+
+Permissions policy for deployment
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"cloudformation:CreateChangeSet",
+
+
+
+"cloudformation:ExecuteChangeSet",
+
+
+
+"cloudformation:DescribeChangeSet",
+
+
+
+"cloudformation:DescribeStackEvents",
+
+
+
+"cloudformation:DescribeStacks",
+
+
+
+"cloudformation:GetTemplateSummary",
+
+
+
+"ec2:DescribeImages",
+
+
+
+"s3:CreateBucket",
+
+
+
+"s3:PutLifecycleConfiguration",
+
+
+
+"s3:PutBucketPublicAccessBlock",
+
+
+
+"iam:GetRole",
+
+
+
+"iam:CreateRole",
+
+
+
+"iam:AttachRolePolicy",
+
+
+
+"iam:PutRolePolicy",
+
+
+
+"iam:GetRolePolicy",
+
+
+
+"iam:PassRole",
+
+
+
+"lambda:CreateFunction",
+
+
+
+"lambda:UpdateFunctionCode",
+
+
+
+"lambda:GetFunction",
+
+
+
+"lambda:GetFunctionCodeSigningConfig",
+
+
+
+"cloudwatch:PutDashboard",
+
+
+
+"cloudwatch:GetDashboard",
+
+
+
+"firehose:DescribeDeliveryStream",
+
+
+
+"firehose:CreateDeliveryStream",
+
+
+
+"firehose:ListTagsForDeliveryStream",
+
+
+
+"logs:DeleteSubscriptionFilter",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"logs:PutSubscriptionFilter",
+
+
+
+"ssm:GetParameters"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+## Deploy
+
+1. Set the following environment variables, making sure to replace the placeholders (`<...>`) with your own values.
+
+   * For `TARGET_URL`, enter your environment URL: `https://<your_environment_ID>.live.dynatrace.com`. To learn how to determine your environment ID for the SaaS or Managed deployment, see [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+   * For `TARGET_API_TOKEN`, enter your API token. For instructions, see [Prerequisites](#dynatrace).
+   * Optional For `STACK_NAME`, the default value is `dynatrace-aws-logs`. To provide another name for the CloudFormation stack where you want to deploy the resources, replace the default value with your own.
+
+   ```
+   TARGET_URL=<your_environment_URL>
+
+
+
+   TARGET_API_TOKEN=<your_API_token>
+
+
+
+   STACK_NAME=dynatrace-aws-logs
+   ```
+2. Download the script and deploy the infrastructure.
+
+   ```
+   wget -O dynatrace-aws-log-forwarder.zip https://github.com/dynatrace-oss/dynatrace-aws-log-forwarder/releases/latest/download/dynatrace-aws-log-forwarder.zip \
+
+
+
+   && unzip -qo dynatrace-aws-log-forwarder.zip \
+
+
+
+   && ./dynatrace-aws-logs.sh deploy --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --stack-name $STACK_NAME --require-valid-certificate true
+   ```
+
+## Subscribe to log groups
+
+After deploying the infrastructure, you need to subscribe to the log groups whose logs you want to forward to Dynatrace.
+
+To subscribe to log groups, you have the options described below.
+
+Use parameter `[--stack-name <your_stack_name>]` in case you changed the default value during deployment.
+
+### Subscribe by listing log group names
+
+**Usage recommendation:** Use this option if the number of log groups you'd like to subscribe to is small.
+
+**To subscribe:** Run the command below, making sure to replace `<your_log_group_list>` with a space-separated list of the log group names you want to subscribe to.
+
+**Example list:** `/aws/lambda/my-lambda /aws/apigateway/my-api`
+
+```
+./dynatrace-aws-logs.sh subscribe --log-groups <your_log_group_list>
+```
+
+### Subscribe by reading log groups from file
+
+**Usage recommendation:** Use this option if the number of log groups you'd like to subscribe to is large.
+
+1. Create a file and enter each log group name on a separate line.
+2. Save the file.
+3. Run the command below, making sure to replace `<your_file_name>` with the actual file name.
+
+   ```
+   ./dynatrace-aws-logs.sh subscribe --log-groups-from-file <your_file_name>
+   ```
+
+Log groups auto-discovery
+
+To simplify file creation, you can use the auto-discovery command below to list the names of all log groups in your account. You can adjust the list manually before subscribing.
+
+Be sure to replace `<your_log_groups_file>` with the name of the file to which you want to redirect the output.
+
+```
+./dynatrace-aws-logs.sh discover-log-groups > <your_log_groups_file>
+```
+
+### Subscribe with a subscription filter pattern
+
+**Usage recommendation:** By default, you subscribe to all the logs in the log group. Use this option if you want to restrict the logs you subscribe to. See [Filter and Pattern Syntaxï»¿](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) for details on the pattern syntax.
+
+**Limitation:** You can use only two subscription filters per log group, so the possibility of creating multiple filters with different patterns is limited. If you create a subscription filter that exceeds the limit, an AWS `LimitExceededException` occurs.
+
+**To subscribe:** Run the command below, making sure to replace `<your_log_group_list>` and `<your_filter_pattern>` with your own values.
+
+```
+./dynatrace-aws-logs.sh subscribe --log-groups <your_log_group_list> --filter-pattern <your_filter_pattern>
+```
+
+Subscription usage and options
+
+For additional subscription options, see the commands below.
+
+Consult the [Subscription table](#subscription) for the commands below when replacing placeholders (`<...>`) with your own values.
+
+```
+dynatrace-aws-logs.sh subscribe {--log-groups <your_log_group_list> | --log-groups-from-file <your_file_name>}
+
+
+
+[--stack-name <your_stack_name>] [--filter-pattern <your_filter_pattern>] [--role-arn ROLE_ARN] [--firehose-arn FIREHOSE_ARN]
+```
+
+### Subscription table
+
+| Command-line parameter | Environment variable | Description | Default value |
+| --- | --- | --- | --- |
+| `--log-groups` | `LOG_GROUPS_LIST` | A space-separated list of log group names you want to subscribe to. For example: `/aws/lambda/my-lambda /aws/apigateway/my-api`. |  |
+| `--log-groups-from-file` | `LOG_GROUPS_FILE` | A file listing the log groups you want to subscribe to. The file should contain each log group name on a separate line. |  |
+| `--filter-pattern` | `FILTER_PATTERN` | If set, it allows you to subscribe to a filtered stream of logs. | You subscribe to all logs in the log group. |
+| `--stack-name` | `STACK_NAME` | The name of the CloudFormation stack where you have deployed the resources. | `dynatrace-aws-logs` |
+| `--firehose-arn` | `FIREHOSE_ARN` | Specify to which Amazon Data Firehose the logs should be streamed by providing its ARN (Amazon Resource Name). **Usage recommendation:** Set this option if you have permission or performance issues with CloudFormation. | It will be extracted from the output of the CloudFormation stack used in the deploy step: either the `$DEFAULT_STACK_NAME` default value or the one specified with the `--stack-name <your_stack_name>` option. |
+| `--role-arn` | `ROLE_ARN` | The ARN of an IAM role that grants CloudWatch Logs permission to deliver ingested log events to the destination stream. **Usage recommendation:** Set this option if you have permission or performance issues with CloudFormation. | It will be extracted from the output of the CloudFormation stack used in the deploy step: either the `$DEFAULT_STACK_NAME` default value or the one specified with the `--stack-name <your_stack_name>` option. |
+
+## Unsubscribe from log groups
+
+If you don't want to forward logs to Dynatrace anymore, use one of the two options below to unsubscribe from log groups.
+
+### Unsubscribe by listing the log group names
+
+Run the command below, making sure to replace `<your_log_group_list>` with a space-separated list of the log group names you want to unsubscribe from.
+
+```
+./dynatrace-aws-logs.sh unsubscribe --log-groups <your_log_group_list>
+```
+
+### Unsubscribe by reading log groups from a file
+
+Run the command below, making sure to replace `<your_file_name>` with the file name you created to [subscribe by reading log groups from file](#from-file).
+
+```
+./dynatrace-aws-logs.sh unsubscribe --log-groups-from-file <your_file_name>
+```
+
+Unsubscribe usage and options
+
+For additional unsubscribe options, see the commands below.
+
+Consult the [Unsubscribe table](#unsubscribe-table) for the commands below when replacing the placeholders (`<...>`) with your own values.
+
+```
+dynatrace-aws-logs.sh unsubscribe {--log-groups <your_log_group_list> | --log-groups-from-file <your_file_name>} [--stack-name <your_stack_name>]
+```
+
+### Unsubscribe table
+
+| Command-line parameter | Environment variable | Description | Default value |
+| --- | --- | --- | --- |
+| `--log-groups` | `LOG_GROUPS_LIST` | A space-separated list of log group names you want to unsubscribe from. For example: `/aws/lambda/my-lambda /aws/apigateway/my-api`. |  |
+| `--log-groups-from-file` | `LOG_GROUPS_FILE` | A file listing log groups you want to unsubscribe from, with each log group name on a separate line. |  |
+| `--stack-name` | `STACK_NAME` | The name of the CloudFormation stack where you have deployed the resources. | `dynatrace-aws-logs` |
+
+## Update to new version
+
+To replace your old stack with a new version of the AWS log forwarder stack, deploy the new stack using the same parameters that you used before (especially the stack name, if you changed it from the default value).
+
+## Alternative deployments
+
+If you don't want to use direct ingest through the Cluster API, you need to use an existing ActiveGate version 1.217+. The ActiveGate must be available publicly. The stack will be created without a dedicated ActiveGate if you choose this option.
+
+Although the Log Forwarder will still work without self-monitoring metrics, it is recommended to have them also ingested into CloudWatch. Therefore, internet access to AWS endpoints is required.
+
+See below for instructions.
+
+### Deploy with existing ActiveGate
+
+Prerequisites
+
+Dynatrace version 1.217+
+
+* [Dynatrace requirements](#dynatrace)
+* [CLI requirements](#cli)
+* You need the following permission policy:
+
+Permissions policy for deployment with an existing ActiveGate
+
+```
+{
+
+
+
+"Version": "2012-10-17",
+
+
+
+"Statement": [
+
+
+
+{
+
+
+
+"Effect": "Allow",
+
+
+
+"Action": [
+
+
+
+"cloudformation:CreateChangeSet",
+
+
+
+"cloudformation:ExecuteChangeSet",
+
+
+
+"cloudformation:DescribeChangeSet",
+
+
+
+"cloudformation:DescribeStackEvents",
+
+
+
+"cloudformation:DescribeStacks",
+
+
+
+"cloudformation:GetTemplateSummary",
+
+
+
+"ec2:DescribeImages",
+
+
+
+"s3:CreateBucket",
+
+
+
+"s3:PutLifecycleConfiguration",
+
+
+
+"s3:PutBucketPublicAccessBlock",
+
+
+
+"iam:GetRole",
+
+
+
+"iam:CreateRole",
+
+
+
+"iam:AttachRolePolicy",
+
+
+
+"iam:PutRolePolicy",
+
+
+
+"iam:GetRolePolicy",
+
+
+
+"iam:PassRole",
+
+
+
+"lambda:CreateFunction",
+
+
+
+"lambda:UpdateFunctionCode",
+
+
+
+"lambda:GetFunction",
+
+
+
+"lambda:GetFunctionCodeSigningConfig",
+
+
+
+"cloudwatch:PutDashboard",
+
+
+
+"cloudwatch:GetDashboard",
+
+
+
+"firehose:DescribeDeliveryStream",
+
+
+
+"firehose:CreateDeliveryStream",
+
+
+
+"firehose:ListTagsForDeliveryStream",
+
+
+
+"logs:DeleteSubscriptionFilter",
+
+
+
+"logs:DescribeLogGroups",
+
+
+
+"logs:PutSubscriptionFilter",
+
+
+
+"ssm:GetParameters"
+
+
+
+],
+
+
+
+"Resource": "*"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+1. Set the following environment variables, making sure to replace the placeholders (`<...>`) with your own values, as follows.
+
+   * For `TARGET_URL`, enter the API URL of your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`. To learn how to determine your environment ID, see [environment IDï»¿](https://dt-url.net/ej43qge).
+   * For `TARGET_API_TOKEN`, enter your API token. For instructions, see [Prerequisites](#dynatrace).
+
+   If you want Dynatrace to verify the SSL certificate of your Dynatrace environment URL, you can set `REQUIRE_VALID_CERTIFICATE` to `true`.
+
+   ```
+   TARGET_URL=<your_API_URL>
+
+
+
+   TARGET_API_TOKEN=<your_API_token>
+
+
+
+   REQUIRE_VALID_CERTIFICATE=false
+   ```
+2. Download the script and deploy the infrastructure.
+
+   ```
+   wget -O dynatrace-aws-log-forwarder.zip https://github.com/dynatrace-oss/dynatrace-aws-log-forwarder/releases/latest/download/dynatrace-aws-log-forwarder.zip \
+
+
+
+   && unzip -qo dynatrace-aws-log-forwarder.zip \
+
+
+
+   && ./dynatrace-aws-logs.sh deploy --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --require-valid-certificate $REQUIRE_VALID_CERTIFICATE
+   ```
+
+Deployment usage and options
+
+For additional deployment options, see the command below.
+
+```
+dynatrace-aws-logs.sh deploy --target-url <your_API_URL> --target-api-token <your_API_token> [--require-valid-certificate {true|false}] [--stack-name <your_stack_name>] [--max-log-length <max_log_content_length>] [--tags <value> [<value>...] ]
+```
+
+For a complete list of parameters, see the deploy table below.
+
+### Deploy table
+
+| **Command-line parameter** | **Environment variable** | **Description** | **Default value** |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `--target-url` | `TARGET_URL` | Required The API URL to your Dynatrace SaaS environment logs ingest target. If you choose to use an existing environment ActiveGate, set it to your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>` **Note:** To determine `<your_environment_ID>`, see [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). |  |  |  |  |  |
+| `--target-api-token` | `TARGET_API_TOKEN` | Required Your API token. For instructions, see [Prerequisites](#dynatrace). |  |  |  |  |  |
+| `--require-valid-certificate` | `REQUIRE_VALID_CERTIFICATE` | Optional If `true`, the log forwarder Lambda function verifies the SSL certificate of your Dynatrace environment URL. | `false` |  |  |  |  |
+| `--stack-name` | `STACK_NAME` | Optional The name of the CloudFormation stack where you want to deploy the resources. | `dynatrace-aws-logs` |  |  |  |  |
+| `--max-log-length` | `MAX_LOG_CONTENT_LENGTH` | Optional Log content's max length. If log exceeds this length it will be truncated. For values over 8192 there's also a change in Dynatrace settings neededâyou need to contact a Dynatrace product expert via live chat within your environment. | `8192` |  |  |  |  |
+| `--tags` | `TAGS` | Optional A list of tags to associate with the stack that is created or updated. Syntax: TagKey1=TagValue1 TagKey2=TagValue2 â¦ |  |  |  |  |  |
+
+## Verification
+
+You can use the verification methods provided below to fix an unsuccessful deployment process.
+
+### Verify deployment status
+
+To verify deployment correctness
+
+1. In AWS Console, go to CloudFormation.
+2. Select your log forwarder stack from the list on the left by stack name (the default value is `dynatrace-aws-logs`).
+3. If you find any issues or discrepancies in any of the fields below, select **Delete** to delete the stack, and then repeat the deployment process.
+
+   * In **Stack info**, check the stack status; it should be `CREATE_COMPLETE`.
+   * In **Parameters**, check if the parameter values are consistent with the values you provided during deployment.
+   * In **Events**, look for any events with a failed status.
+
+### Verify connectivity status
+
+To verify AWS log forwarder connectivity and inspect operational logs
+
+1. In AWS Console, go to CloudWatch Dashboards.
+2. Find the self-monitoring dashboard for AWS log forwarding. It will have a name like `DynatraceLogForwarder-SelfMonitoring-eu-north-1-dynatrace-aws-logs`, where the middle part is the AWS region and the last part is the stack name you chose (the default is `dynatrace-aws-logs`).
+3. Inspect the dashboard for any obvious issues.
+4. Go to CloudFormation.
+5. Select your log forwarder stack from the list on the left by stack name (the default value is `dynatrace-aws-logs`).
+6. Select the **Resources** tab and then select the link next to `Lambda`.
+7. On the Lambda screen, select the **Monitor** tab and then select **Logs**.
+8. Select one of the listed log streams and look for exceptions in the logs.
+
+## Scaling guide
+
+To scale up the default throughput, we recommend increasing the Lambda Function's memory and the number of provisioned instances to run concurrently. The values to use depend on the actual load. The following are the maximum tested and supported values.
+
+| **Maximum throughput** | **Lambda memory** | **Number of instances** |
+| --- | --- | --- |
+| up to `15 MB/minute` (1 GB/hour) | `256 MB` | `1` |
+| up to `500 MB/minute` (30 GB/hour) | `1024 MB` | `5` |
+
+As a last resort, scale horizontally: deploy more integrations and subscribe each of them to different log groups to distribute the load.
+
+## Uninstall AWS log forwarding
+
+To uninstall AWS log forwarding
+
+1. Unsubscribe all log groups. You can use the log groups auto-discovery method described in [Subscribe by reading log groups from file](#from-file) and pass the auto-discovery output file to the unsubscribe command. See [Unsubscribe from log groups](#unsubscribe) for details.
+2. In AWS Console, go to your CloudFormation stack.
+3. Select the **Resources** tab and navigate to the `DeliveryBucket` S3 bucket.
+4. Remove all objects in the bucket.
+5. Go back to the CloudFormation stack and select **Delete**.
+
+
+---
+
+
+## Source: aws-migration-guide.md
+
+
+---
+title: Migrate from AWS classic (formerly 'built-in') services to cloud services
+source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-migration-guide
+scraped: 2026-02-17T05:00:33.913760
+---
+
+# Migrate from AWS classic (formerly 'built-in') services to cloud services
+
+# Migrate from AWS classic (formerly 'built-in') services to cloud services
+
+* How-to guide
+* 9-min read
+* Updated on Jun 27, 2024
+
+From the AWS overview page, you can access Dynatrace classic services and cloud services for AWS monitoring. Both types of services share the same AWS resources. However, classic services use a predefined set of metrics, so configuring which metrics to monitor, or determining which ones are already monitored, is not supported.
+
+## Classic services vs cloud services
+
+As previously mentioned, classic services and cloud services share the same AWS resources. However, cloud services support a wider range of configuration options, such as new metrics and customizable monitored metrics. To give you more customization options, weâve started the following:
+
+* Adding more services to the **Cloud services** section so you can customize which metrics you want to monitor.
+* Adding more metrics for cloud services; not only are they configurable, but you can now monitor much more than before.
+* Replacing the classic services with cloud services that have more configuration options regarding metrics.
+
+![AWS E2E Cloud services infographic](https://dt-cdn.net/images/aws-e2e-cloud-services-infographic-988-0482402cdd.png)
+
+If you're using classic services, we recommend migrating to cloud services to take advantage of the wider range of customizable configuration options.
+
+AWS Lambda
+
+If you're using OneAgent integration for your Lambdas, we recommend Lambda migration. Since the release of Dynatrace version 1.283, we show data for the new Lambda service together with OneAgent data on the [Lambda service page](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.").
+
+## Impact of the migration
+
+Even though classic and cloud services monitor the same AWS resources on Dynatrace side, they are monitored as two different entities.
+
+* They have different entity IDs and metric keys.
+* Due to their different implementations, they may detect different numbers of instances. Cloud services show only instances with metrics.
+* Data for each Dynatrace entity type is collected and stored separately.
+* ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change You need to adapt the configuration of dashboards, alerts, and management zones based on entity ID or [metric keys with the monitored service type](#metrics).
+
+You currently have the option to choose from a classic or cloud service to preserve historical data, but be aware of the following:
+
+* Historical data is persisted on the classic services. If you switch back, monitored data will present gaps for the period in which the resources were monitored via the cloud service.
+* You canât have both of them turned on simultaneously. Even though on the Dynatrace side theyâre two different services, the legacy and new versions monitor the same AWS resource. If you had two versions switched on simultaneously, you would be charged double for polling the same data twice.
+* If you turn on the new version, the classic version is turned off automatically, and vice versa.
+* There is no direct link between
+
+  + Entities containing historical and new data.
+  + Cloud service data and data coming from OneAgent for opaque **Amazon RDS**ânot linked to the new cloud service page with CloudWatch metrics.
+* Logs from [Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") to **Amazon RDS** are still being linked to the historical data and entity `RELATIONAL_DATABASE_SERVICE`.
+* Events or problems that would have been auto-detected on the historical (classic) data might not be automatically raised. Alerting rules are not provided for these cloud services:
+
+  + **Amazon RDS**
+  + **Amazon EBS**
+  + **AWS Lambda**â[predefined metric event configuration](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting "Set up and configure metric events for alerting.") is provided but needs to be manually enabled.
+
+To monitor cloud services, you need to have [Environment ActiveGateï»¿](https://dt-url.net/sc0396g) configured.
+
+## Changes in the UI
+
+Your AWS overview page changes after configuring a new version of a service.
+
+For example, letâs have a look at **Amazon EBS**.
+
+* If the legacy **Amazon EBS (classic)** service is configured, this is what the **EBS volumes** section of the AWS overview looks like.
+
+  ![EBS volumes section 1](https://dt-cdn.net/images/ebs-volumes-section-1-1413-72a6702912.png)
+* If the **Amazon EBS** cloud service is configured, this is what the **EBS volumes** section of the AWS overview looks like.
+
+  ![EBS volumes section 2](https://dt-cdn.net/images/ebs-volumes-section-2-1444-bab960de18.png)
+* Select **Cloud services** to find new overview pages for the services.
+
+  ![Amazon EBS](https://dt-cdn.net/images/amazon-ebs-1444-ac20e76566.png)
+* Additionally, you can configure metrics for cloud services via the web UI.
+
+  ![AWS Settings Manage services](https://dt-cdn.net/images/aws-settings-manage-services-1378-2e4d62f377.png)
+
+  ![Settings Amazon EBS](https://dt-cdn.net/images/settings-amazon-ebs-1379-58ec3b97d6.png)
+
+## Cloud services and their corresponding classic services
+
+| new Cloud service | old Classic service |
+| --- | --- |
+| [Amazon EC2 Auto Scaling](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling "Monitor Amazon EC2 Auto Scaling and view available metrics.") | [Amazon EC2 Auto Scaling (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling-builltin "Monitor Amazon EC2 Auto Scaling and view available metrics.") |
+| [Amazon DynamoDB](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamodb-new "Monitor Amazon DynamoDB and view available metrics.") | [Amazon DynamoDB (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamo-db-builtin "Monitor Amazon DynamoDB and view available metrics.") |
+| [Amazon EBS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-ebs-new "Monitor Amazon EBS and view available metrics.") | [Amazon EBS (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-block-store-ebs-builtin "Monitor Amazon Elastic Block Store and view available metrics.") |
+| [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-lambda-new "Monitor AWS Lambda and view available metrics.") | [AWS Lambda (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-lambda-cloudwatch-metrics/lambda-builtin "Monitor AWS Lambda (built-in) and view available metrics.") |
+| [Amazon RDS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-relational-database-service-rds-new "Monitor Amazon RDS and view available metrics.") | [Amazon RDS (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-relational-database-service-rds-builtin "Monitor Amazon RDS and view available metrics.") |
+
+## Metrics migration
+
+Below you can find tables with classic services metrics and their corresponding cloud services metrics. Empty cells indicate the lack of an identical corresponding metric.
+
+You can find more details about accessing these in Grail on this [page](/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail "Get to know the equivalents of the classic built-in metrics supported on Grail.").
+
+The `ext:` prefix is used by metrics from [OneAgent extensions](/docs/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](/docs/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.").
+
+Despite the naming similarities, AWS integration metrics are **not** based on extensions.
+
+### Amazon Auto scaling group
+
+| Classic service metric name | Classic service metric key | Cloud service metric name | Cloud service metric key |
+| --- | --- | --- | --- |
+| Number of running EC2 instances (ASG) | builtin:cloud.aws.asg.running | - | - |
+| Number of stopped EC2 instances (ASG) | builtin:cloud.aws.asg.stopped | - | - |
+| Number of terminated EC2 instances (ASG) | builtin:cloud.aws.asg.terminated | - | - |
+
+### Amazon DynamoDB
+
+| Classic service metric name | Classic service metric key | Cloud service metric name | Cloud service metric key |
+| --- | --- | --- | --- |
+| DynamoDB read capacity units | builtin:cloud.aws.dynamo.capacityUnits.consumed.read | ConsumedReadCapacityUnits Sum | ext:cloud.aws.dynamodb.consumedReadCapacityUnitsSum ext:cloud.aws.dynamodb.consumedReadCapacityUnitsByGlobalSecondaryIndexName |
+| DynamoDB write capacity units | builtin:cloud.aws.dynamo.capacityUnits.consumed.write | ConsumedWriteCapacityUnits Sum | ext:cloud.aws.dynamodb.consumedWriteCapacityUnitsSum ext:cloud.aws.dynamodb.consumedWriteCapacityUnitsSumByGlobalSecondaryIndexName |
+| DynamoDB provisioned read capacity units | builtin:cloud.aws.dynamo.capacityUnits.provisioned.read | ProvisionedReadCapacityUnits Sum | ext:cloud.aws.dynamodb.provisionedReadCapacityUnitsSum ext:cloud.aws.dynamodb.provisionedReadCapacityUnitsSumByGlobalSecondaryIndexName |
+| DynamoDB provisioned write capacity units | builtin:cloud.aws.dynamo.capacityUnits.provisioned.write | ProvisionedWriteCapacityUnits Sum | ext:cloud.aws.dynamodb.provisionedWriteCapacityUnitsSum ext:cloud.aws.dynamodb.provisionedWriteCapacityUnitsSumByGlobalSecondaryIndexName |
+| DynamoDB read capacity units % | builtin:cloud.aws.dynamo.capacityUnits.read | *calculated* | 100 \* ext:cloud.aws.dynamodb.consumedReadCapacityUnitsSum / ext:cloud.aws.dynamodb.provisionedReadCapacityUnitsSum |
+| DynamoDB write capacity units % | builtin:cloud.aws.dynamo.capacityUnits.write | *calculated* | 100 \* ext:cloud.aws.dynamodb.consumedWriteCapacityUnitsSum / ext:cloud.aws.dynamodb.provisionedWriteCapacityUnitsSum |
+| DynamoDB number of requests with HTTP 500 status code | builtin:cloud.aws.dynamo.errors.system | SystemErrors Sum (by Operation) | ext:cloud.aws.dynamodb.SystemErrorsSumByOperation |
+| DynamoDB number of requests with HTTP 400 status code | builtin:cloud.aws.dynamo.errors.user | UserErrors Sum (by Region) | ext:cloud.aws.dynamodb.UserErrorsSum |
+| DynamoDB number of successful request latency for operation | builtin:cloud.aws.dynamo.requests.latency | SuccessfulRequestLatency (by Operation) | ext:cloud.aws.dynamodb.successfulRequestLatencyByOperation |
+| DynamoDB number of items returned by operation | builtin:cloud.aws.dynamo.requests.returnedItems | ReturnedItemCount Sum (by Operation) | ext:cloud.aws.dynamodb.returnedItemCountSumByOperation |
+| DynamoDB number of throttled requests for operation | builtin:cloud.aws.dynamo.requests.throttled | ThrottledRequests Sum (by Operation) | ext:cloud.aws.dynamodb.ThrottledRequestsSumByOperation |
+| DynamoDB number of read throttled events | builtin:cloud.aws.dynamo.throttledEvents.read | ReadThrottleEvents Sum | ext:cloud.aws.dynamodb.ReadThrottleEventsSum ext:cloud.aws.dynamodb.ReadThrottleEventsSumByGlobalSecondaryIndexName |
+| DynamoDB number of write throttled events | builtin:cloud.aws.dynamo.throttledEvents.write | WriteThrottleEvents Sum | ext:cloud.aws.dynamodb.WriteThrottleEventsSum ext:cloud.aws.dynamodb.WriteThrottleEventsSumByGlobalSecondaryIndexName |
+| Number of tables for AvailabilityZone | builtin:cloud.aws.dynamo.tables | - | - |
+
+### Amazon EBS
+
+| Classic service metric name | Classic service metric key | Cloud service metric name | Cloud service metric key |
+| --- | --- | --- | --- |
+| EBS volume read latency | builtin:cloud.aws.ebs.latency.read | - | - |
+| EBS volume write latency | builtin:cloud.aws.ebs.latency.write | - | - |
+| EBS volume consumed OPS | builtin:cloud.aws.ebs.ops.consumed | VolumeConsumedReadWriteOps Sum | ext:cloud.aws.ebs.volumeConsumedReadWriteOps |
+| EBS volume read OPS | builtin:cloud.aws.ebs.ops.read | VolumeReadOps Sum | ext:cloud.aws.ebs.volumeReadOpsSum |
+| EBS volume write OPS | builtin:cloud.aws.ebs.ops.write | VolumeWriteOps Sum | ext:cloud.aws.ebs.volumeWriteOpsSum |
+| EBS volume throughput % | builtin:cloud.aws.ebs.throughput.percent | VolumeThroughputPercentage | ext:cloud.aws.ebs.volumeThroughputPercentage |
+| EBS volume read throughput | builtin:cloud.aws.ebs.throughput.read | *calculated* | ext:cloud.aws.ebs.volumeReadBytes / ext:cloud.aws.ebs.volumeTotalReadTime |
+| EBS volume write throughput | builtin:cloud.aws.ebs.throughput.write | *calculated* | ext:cloud.aws.ebs.volumeWriteBytes / ext:cloud.aws.ebs.volumeTotalWriteTime |
+| EBS volume idle time % | builtin:cloud.aws.ebs.idleTime | - | - |
+| EBS volume queue length | builtin:cloud.aws.ebs.queue | VolumeQueueLength Sum | ext:cloud.aws.ebs.volumeQueueLengthSum |
+
+### AWS Lambda
+
+| Classic service metric name | Classic service metric key | Cloud service metric name | Cloud service metric key |
+| --- | --- | --- | --- |
+| LambdaFunction concurrent executions count | builtin:cloud.aws.lambda.concExecutions | ConcurrentExecutions Sum | ext:cloud.aws.lambda.concurrentExecutionsSum ext:cloud.aws.lambda.concurrentExecutionsSumByResource ext:cloud.aws.lambda.concurrentExecutionsSumByRegion |
+| LambdaFunction code execution time. | builtin:cloud.aws.lambda.duration | Duration | ext:cloud.aws.lambda.duration ext:cloud.aws.lambda.durationByResource ext:cloud.aws.lambda.durationByRegion |
+| LambdaFunction number of failed invocations with HTTP 4XX status code | builtin:cloud.aws.lambda.errors | Errors Sum | ext:cloud.aws.lambda.errorsSum ext:cloud.aws.lambda.errorsSumByResource ext:cloud.aws.lambda.errorsSumByRegion |
+| LambdaFunction rate of failed invocations to all invocations % | builtin:cloud.aws.lambda.errorsRate | *calculated* | 100 \* ext:cloud.aws.lambda.errorsSum / ext:cloud.aws.lambda.invocationsSum |
+| LambdaFunction number of times a function is invoked | builtin:cloud.aws.lambda.invocations | Invocations Sum | ext:cloud.aws.lambda.invocationsSum ext:cloud.aws.lambda.invocationsSumByResource ext:cloud.aws.lambda.invocationsSumByRegion |
+| LambdaFunction provisioned concurrent executions count | builtin:cloud.aws.lambda.provConcExecutions | ProvisionedConcurrentExecutions Sum | ext:cloud.aws.lambda.provisionedConcurrentExecutionsSum ext:cloud.aws.lambda.provisionedConcurrentExecutionsSumByResource ext:cloud.aws.lambda.provisionedConcurrentExecutionsSumByRegion |
+| LambdaFunction provisioned concurrency invocation count | builtin:cloud.aws.lambda.provConcInvocations | ProvisionedConcurrencyInvocations Sum | ext:cloud.aws.lambda.provisionedConcurrencyInvocationsSum ext:cloud.aws.lambda.provisionedConcurrencyInvocationsSumByResource ext:cloud.aws.lambda.provisionedConcurrencyInvocationsSumByRegion |
+| LambdaFunction provisioned concurrency spillover invocation count | builtin:cloud.aws.lambda.provConcSpilloverInvocations | ProvisionedConcurrencySpilloverInvocations Sum | ext:cloud.aws.lambda.provisionedConcurrencySpilloverInvocationsSum ext:cloud.aws.lambda.provisionedConcurrencySpilloverInvocationsSumByResource ext:cloud.aws.lambda.provisionedConcurrencySpilloverInvocationsSumByRegion |
+| LambdaFunction throttled function invocation count | builtin:cloud.aws.lambda.throttlers | Throttles Sum | ext:cloud.aws.lambda.throttlesSum ext:cloud.aws.lambda.throttlesSumByResource ext:cloud.aws.lambda.throttlesSumByRegion |
+
+### Amazon RDS
+
+| Classic service metric name | Classic service metric key | Cloud service metric name | Cloud service metric key |
+| --- | --- | --- | --- |
+| RDS CPU usage % | builtin:cloud.aws.rds.cpu.usage | CPUUtilization | ext:cloud.aws.rds.cpuUtilization ext:cloud.aws.rds.cpuUtilizationByRegionDatabaseClass ext:cloud.aws.rds.cpuUtilizationByRegionDBClusterIdentifier ext:cloud.aws.rds.cpuUtilizationByRegion ext:cloud.aws.rds.cpuUtilizationByRegionEngineName ext:cloud.aws.rds.cpuUtilizationByRegionDBClusterIdentifierRole |
+| RDS read latency | builtin:cloud.aws.rds.latency.read | ReadLatency | ext:cloud.aws.rds.readLatency ext:cloud.aws.rds.readLatencyByRegionDatabaseClass ext:cloud.aws.rds.readLatencyByRegionDBClusterIdentifier ext:cloud.aws.rds.readLatencyByRegion ext:cloud.aws.rds.readLatencyByRegionEngineName ext:cloud.aws.rds.readLatencyByRegionDBClusterIdentifierRole |
+| RDS write latency | builtin:cloud.aws.rds.latency.write | WriteLatency | ext:cloud.aws.rds.writeLatency ext:cloud.aws.rds.writeLatencyByRegionDatabaseClass ext:cloud.aws.rds.writeLatencyByRegionDBClusterIdentifier ext:cloud.aws.rds.writeLatencyByRegion ext:cloud.aws.rds.writeLatencyByRegionEngineName ext:cloud.aws.rds.writeLatencyByRegionDBClusterIdentifierRole |
+| RDS freeable memory | builtin:cloud.aws.rds.memory.freeable | FreeableMemory | ext:cloud.aws.rds.freeableMemory ext:cloud.aws.rds.freeableMemoryByRegionDatabaseClass ext:cloud.aws.rds.freeableMemoryByRegionDBClusterIdentifier ext:cloud.aws.rds.freeableMemoryByRegion ext:cloud.aws.rds.freeableMemoryByRegionEngineName ext:cloud.aws.rds.freeableMemoryByRegionDBClusterIdentifierRole |
+| RDS swap usage | builtin:cloud.aws.rds.memory.swap | SwapUsage | ext:cloud.aws.rds.swapUsage ext:cloud.aws.rds.swapUsageByRegionDatabaseClass ext:cloud.aws.rds.swapUsageByRegionDBClusterIdentifier ext:cloud.aws.rds.swapUsageByRegion ext:cloud.aws.rds.swapUsageByRegionEngineName ext:cloud.aws.rds.swapUsageByRegionDBClusterIdentifierRole |
+| RDS network received throughput | builtin:cloud.aws.rds.net.rx | NetworkReceiveThroughput | ext:cloud.aws.rds.networkReceiveThroughput ext:cloud.aws.rds.networkReceiveThroughputByRegionDatabaseClass ext:cloud.aws.rds.networkReceiveThroughputByRegionDBClusterIdentifier ext:cloud.aws.rds.networkReceiveThroughputByRegion ext:cloud.aws.rds.networkReceiveThroughputByRegionEngineName ext:cloud.aws.rds.networkReceiveThroughputByRegionDBClusterIdentifierRole |
+| RDS network transmitted throughput | builtin:cloud.aws.rds.net.tx | NetworkTransmitThroughput | ext:cloud.aws.rds.networkTransmitThroughput ext:cloud.aws.rds.networkTransmitThroughputByRegionDatabaseClass ext:cloud.aws.rds.networkTransmitThroughputByRegionDBClusterIdentifier ext:cloud.aws.rds.networkTransmitThroughputByRegion ext:cloud.aws.rds.networkTransmitThroughputByRegionEngineName ext:cloud.aws.rds.networkTransmitThroughputByRegionDBClusterIdentifierRole |
+| RDS read IOPS | builtin:cloud.aws.rds.ops.read | ReadIOPS | ext:cloud.aws.rds.readIOPS ext:cloud.aws.rds.readIOPSByRegionDatabaseClass ext:cloud.aws.rds.readIOPSByRegion ext:cloud.aws.rds.readIOPSByRegionEngineName |
+| RDS write IOPS | builtin:cloud.aws.rds.ops.write | WriteIOPS | ext:cloud.aws.rds.writeIOPS ext:cloud.aws.rds.writeIOPSByRegionDatabaseClass ext:cloud.aws.rds.writeIOPSByRegion ext:cloud.aws.rds.writeIOPSByRegionEngineName |
+| RDS read throughput | builtin:cloud.aws.rds.throughput.read | ReadThroughput | ext:cloud.aws.rds.readThroughput ext:cloud.aws.rds.readThroughputByRegionDatabaseClass ext:cloud.aws.rds.readThroughputByRegion ext:cloud.aws.rds.readThroughputByRegionEngineName |
+| RDS write throughput | builtin:cloud.aws.rds.throughput.write | WriteThroughput | ext:cloud.aws.rds.writeThroughput ext:cloud.aws.rds.writeThroughputByRegionDatabaseClass ext:cloud.aws.rds.writeThroughputByRegion ext:cloud.aws.rds.writeThroughputByRegionEngineName |
+| RDS connections | builtin:cloud.aws.rds.connections | DatabaseConnections Sum | ext:cloud.aws.rds.databaseConnectionsSumByRegionDatabaseClass ext:cloud.aws.rds.databaseConnectionsSumByRegionDBClusterIdentifier ext:cloud.aws.rds.databaseConnectionsSumByRegion ext:cloud.aws.rds.databaseConnectionsSumByRegionEngineName ext:cloud.aws.rds.databaseConnectionsSumByRegionDBClusterIdentifierRole |
+| RDS free storage space % | builtin:cloud.aws.rds.free | - | - |
+| RDS restarts | builtin:cloud.aws.rds.restarts | - | - |
+
+
+---
+
+
 ## Source: ec2-auto-scaling.md
 
 
 ---
 title: Amazon EC2 Auto Scaling
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling
-scraped: 2026-02-16T21:29:43.921962
+scraped: 2026-02-17T05:03:37.060997
 ---
 
 # Amazon EC2 Auto Scaling
@@ -42252,7 +43232,7 @@ Dynatrace entities of this AWS service are not enriched with the ARN property.
 ---
 title: Monitor Amazon Elastic Kubernetes Service (EKS) with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-eks
-scraped: 2026-02-16T21:13:56.414894
+scraped: 2026-02-17T04:49:12.892224
 ---
 
 # Monitor Amazon Elastic Kubernetes Service (EKS) with CloudWatch metrics
@@ -44169,7 +45149,7 @@ For all other metrics collected by Dynatrace per configurable AWS service, see t
 ---
 title: Tags and management zones for AWS integration
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/tags-and-management-zones-aws
-scraped: 2026-02-16T21:25:56.890174
+scraped: 2026-02-17T05:04:07.494866
 ---
 
 # Tags and management zones for AWS integration

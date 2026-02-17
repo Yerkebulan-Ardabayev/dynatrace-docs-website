@@ -1,6 +1,6 @@
 # Dynatrace Documentation: manage/account-management.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Account Management
 source: https://www.dynatrace.com/docs/manage/account-management
-scraped: 2026-02-16T21:18:56.622740
+scraped: 2026-02-17T04:52:27.827764
 ---
 
 # Account Management

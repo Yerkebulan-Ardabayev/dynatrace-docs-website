@@ -1,8 +1,8 @@
 # Dynatrace Documentation: dynatrace-api/account-management-api
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 11
+Files combined: 12
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 11
 ---
 title: Account limits API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/account-limits-api
-scraped: 2026-02-16T21:24:35.564431
+scraped: 2026-02-17T04:56:58.403398
 ---
 
 # Account limits API
@@ -38,7 +38,7 @@ Get an overview of account limits assigned to your Dynatrace account.](/docs/dyn
 ---
 title: Dynatrace Platform Subscription API - GET cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation
-scraped: 2026-02-16T09:40:11.276692
+scraped: 2026-02-17T05:06:25.244049
 ---
 
 # Dynatrace Platform Subscription API - GET cost allocation
@@ -721,7 +721,7 @@ To execute this request, you need the **Allow write access for usage and consump
 ---
 title: Dynatrace Platform Subscription API - Cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation
-scraped: 2026-02-16T21:28:15.426600
+scraped: 2026-02-17T05:00:46.176142
 ---
 
 # Dynatrace Platform Subscription API - Cost allocation
@@ -819,7 +819,7 @@ Manage Dynatrace Platform Subscription cost and usage are allocated to product a
 ---
 title: Platform tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/platform-tokens-api
-scraped: 2026-02-16T21:30:35.411661
+scraped: 2026-02-17T05:10:48.118469
 ---
 
 # Platform tokens API
@@ -850,7 +850,7 @@ Edit the status of a platform token.](/docs/dynatrace-api/account-management-api
 ---
 title: Policy management API - DELETE a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary
-scraped: 2026-02-16T09:33:43.021931
+scraped: 2026-02-17T05:08:31.885148
 ---
 
 # Policy management API - DELETE a policy boundary
@@ -952,13 +952,328 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 ---
 
 
+## Source: get-all-boundaries.md
+
+
+---
+title: Policy management API - GET all policy boundaries
+source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-all-boundaries
+scraped: 2026-02-17T05:00:58.362884
+---
+
+# Policy management API - GET all policy boundaries
+
+# Policy management API - GET all policy boundaries
+
+* Latest Dynatrace
+* Reference
+* Published Nov 20, 2025
+
+Gets a list of policy boundaries within a level.
+
+The request produces an `application/json` payload.
+
+GET
+
+`https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries`
+
+## Authentication
+
+To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+
+## Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| size | integer | - | query | Optional |
+| page | integer | - | query | Optional |
+| accountId | - | The ID of the policy boundary level. Use the UUID of the account. | path | Required |
+
+## Response
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| size | integer | - | query | Optional |
+| page | integer | - | query | Optional |
+| accountId | - | The ID of the policy boundary level. Use the UUID of the account. | path | Required |
+
+## Example
+
+In this example, the request retrieves all the policy boundaries that apply to the account with the `accountId` **f1a2b3c4-d5e6-7890-ab12-34cd56ef7890**. Only the first three entries are returned.
+
+#### Curl
+
+```
+curl --request GET \
+
+
+
+--url 'https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890' \
+
+
+
+--header 'accept: application/json' \
+
+
+
+--header 'Authorization: Bearer abcdefjhij1234567890'
+```
+
+#### Request URL
+
+```
+https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890
+```
+
+#### Response body
+
+```
+{
+
+
+
+"pageSize": 100,
+
+
+
+"pageNumber": 1,
+
+
+
+"totalCount": 22,
+
+
+
+"content": [
+
+
+
+{
+
+
+
+"uuid": "a13f7b92-4c8e-4d3a-a1f7-9e3b6c2d8f01",
+
+
+
+"levelType": "account",
+
+
+
+"levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
+
+
+
+"name": "Bnd1",
+
+
+
+"boundaryQuery": "storage:dt.security_context = '${bindParam:bucket-name-param}';",
+
+
+
+"boundaryConditions": [
+
+
+
+{
+
+
+
+"name": "storage:dt.security_context",
+
+
+
+"operator": "EQ",
+
+
+
+"values": [
+
+
+
+"${bindParam:bucket-name-param}"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"metadata": {}
+
+
+
+},
+
+
+
+{
+
+
+
+"uuid": "345a2b02-678e-45ff-92c1-4b4fd5er3b0f",
+
+
+
+"levelType": "account",
+
+
+
+"levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
+
+
+
+"name": "bnd101",
+
+
+
+"boundaryQuery": "storage:gcp.project.id = \"123\";",
+
+
+
+"boundaryConditions": [
+
+
+
+{
+
+
+
+"name": "storage:gcp.project.id",
+
+
+
+"operator": "EQ",
+
+
+
+"values": [
+
+
+
+"123"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"metadata": {}
+
+
+
+},
+
+
+
+{
+
+
+
+"uuid": "a567b345-2345-4ab5-b8d1-0e9a65ae678f",
+
+
+
+"levelType": "account",
+
+
+
+"levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
+
+
+
+"name": "bnd101_alpha",
+
+
+
+"boundaryQuery": "storage:dt.security_context = 'alpha';\n//storage:bucket-name = 'alpha';",
+
+
+
+"boundaryConditions": [
+
+
+
+{
+
+
+
+"name": "storage:dt.security_context",
+
+
+
+"operator": "EQ",
+
+
+
+"values": [
+
+
+
+"alpha"
+
+
+
+]
+
+
+
+}
+
+
+
+],
+
+
+
+"metadata": {}
+
+
+
+},
+
+
+
+]
+
+
+
+}
+```
+
+#### Response code
+
+Success (200) - Successful response - list of policy boundaries
+
+
+---
+
+
 ## Source: get-boundary.md
 
 
 ---
 title: Policy management API - GET a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-boundary
-scraped: 2026-02-16T09:38:23.952905
+scraped: 2026-02-17T05:07:18.457336
 ---
 
 # Policy management API - GET a policy boundary
@@ -1227,7 +1542,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 ---
 title: Policy management API - POST a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary
-scraped: 2026-02-16T21:31:07.820845
+scraped: 2026-02-17T04:57:05.740128
 ---
 
 # Policy management API - POST a policy boundary
@@ -1996,7 +2311,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 ---
 title: Service user management API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/service-user-management-api
-scraped: 2026-02-16T09:39:30.628250
+scraped: 2026-02-17T05:06:10.062361
 ---
 
 # Service user management API

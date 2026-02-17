@@ -1,7 +1,7 @@
 ---
 title: PHP
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/php
-scraped: 2026-02-16T21:18:11.457572
+scraped: 2026-02-17T04:51:28.527315
 ---
 
 # PHP

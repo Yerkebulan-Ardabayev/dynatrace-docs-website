@@ -1,7 +1,7 @@
 ---
 title: Visual Resolution Path
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path
-scraped: 2026-02-16T09:35:14.493846
+scraped: 2026-02-17T05:05:45.502622
 ---
 
 # Visual Resolution Path

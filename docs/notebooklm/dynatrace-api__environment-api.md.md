@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-api/environment-api.md
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Environment API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api
-scraped: 2026-02-15T21:16:09.022497
+scraped: 2026-02-17T04:54:27.966999
 ---
 
 # Environment API

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: managed/observe
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 4
 
@@ -158,7 +158,7 @@ By selecting a specific node, you can access the host details at the top of the 
 ---
 title: Monitor PostgreSQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/postgres
-scraped: 2026-02-16T21:29:07.895141
+scraped: 2026-02-17T05:12:36.393235
 ---
 
 # Monitor PostgreSQL database
@@ -274,7 +274,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: VMware vSphere monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring
-scraped: 2026-02-16T21:15:40.370464
+scraped: 2026-02-17T04:52:12.943379
 ---
 
 # VMware vSphere monitoring

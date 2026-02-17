@@ -1,6 +1,6 @@
 # Dynatrace Documentation: observe/business-observability
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 18
 
@@ -13,7 +13,7 @@ Files combined: 18
 ---
 title: Business event analysis and examples
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-analysis
-scraped: 2026-02-16T21:15:04.115060
+scraped: 2026-02-17T04:55:04.683752
 ---
 
 # Business event analysis and examples
@@ -2046,7 +2046,7 @@ matchesValue(event.provider, "www.easytrade.com")
 ---
 title: Business event metric extraction via classic pipeline
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-metric-extraction
-scraped: 2026-02-16T21:30:58.194811
+scraped: 2026-02-17T05:02:09.215545
 ---
 
 # Business event metric extraction via classic pipeline
@@ -2775,7 +2775,7 @@ If you don't migrate your existing rules, it's still possible to use OpenPipelin
 ---
 title: Business event capture
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-capturing
-scraped: 2026-02-16T21:16:26.826889
+scraped: 2026-02-17T04:53:41.548958
 ---
 
 # Business event capture
@@ -3879,7 +3879,7 @@ Run in Playground
 ---
 title: Business event enrichment
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-enrichment
-scraped: 2026-02-16T09:30:12.386303
+scraped: 2026-02-17T05:10:41.413109
 ---
 
 # Business event enrichment
@@ -4957,7 +4957,7 @@ Hereâs a brief list of some common business processes. Your organization wi
 ---
 title: Business reporting
 source: https://www.dynatrace.com/docs/observe/business-observability/business-reporting
-scraped: 2026-02-15T21:25:29.850529
+scraped: 2026-02-17T04:57:32.773723
 ---
 
 # Business reporting
@@ -5031,7 +5031,7 @@ To report on trends, capture the relevant business metrics as business events. E
 ---
 title: Cost & Carbon Optimization
 source: https://www.dynatrace.com/docs/observe/business-observability/cost-and-carbon-optimization
-scraped: 2026-02-16T21:22:45.316020
+scraped: 2026-02-17T05:10:44.878978
 ---
 
 # Cost & Carbon Optimization
@@ -5490,7 +5490,7 @@ Track and reduce your site infrastructure's carbon footprint.](https://www.dynat
 ---
 title: Business events end-to-end example
 source: https://www.dynatrace.com/docs/observe/business-observability/end-to-end-example
-scraped: 2026-02-16T21:22:43.611415
+scraped: 2026-02-17T05:07:04.886094
 ---
 
 # Business events end-to-end example
@@ -5866,7 +5866,7 @@ You can display your results in several ways, including the following options.
 ---
 title: Explore Business Events
 source: https://www.dynatrace.com/docs/observe/business-observability/explore-business-events
-scraped: 2026-02-16T21:22:39.099495
+scraped: 2026-02-17T05:12:11.795952
 ---
 
 # Explore Business Events

@@ -1,7 +1,7 @@
 ---
 title: Synthetic calculations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations
-scraped: 2026-02-16T21:31:32.695020
+scraped: 2026-02-17T05:07:41.006232
 ---
 
 # Synthetic calculations

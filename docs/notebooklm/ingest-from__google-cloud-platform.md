@@ -1,8 +1,8 @@
 # Dynatrace Documentation: ingest-from/google-cloud-platform
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 52
+Files combined: 56
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 52
 ---
 title: Google Cloud Run monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun/cloud-run-monitoring
-scraped: 2026-02-16T09:32:47.825645
+scraped: 2026-02-17T05:06:30.054553
 ---
 
 # Google Cloud Run monitoring
@@ -73,7 +73,7 @@ The following feature sets are available for Google Cloud Run.
 ---
 title: Monitor Google Cloud Run managed
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun
-scraped: 2026-02-16T21:14:07.528109
+scraped: 2026-02-17T04:49:00.929369
 ---
 
 # Monitor Google Cloud Run managed
@@ -808,7 +808,7 @@ To uninstall OneAgent from application-only monitoring, remove references from y
 ---
 title: Google Cloud Functions monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/cloud-functions-monitoring
-scraped: 2026-02-15T21:25:31.013027
+scraped: 2026-02-17T05:05:24.279534
 ---
 
 # Google Cloud Functions monitoring
@@ -862,7 +862,7 @@ The following feature sets are available for Google Cloud Functions.
 ---
 title: Integrate on Google Cloud Functions .NET
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet
-scraped: 2026-02-16T21:23:52.614739
+scraped: 2026-02-17T04:56:13.328814
 ---
 
 # Integrate on Google Cloud Functions .NET
@@ -1108,7 +1108,7 @@ Because code running outside the function execution can be terminated at any tim
 ---
 title: Integrate on Google Cloud Functions Node.js
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs
-scraped: 2026-02-16T21:24:01.453495
+scraped: 2026-02-17T04:56:18.062548
 ---
 
 # Integrate on Google Cloud Functions Node.js
@@ -1604,7 +1604,7 @@ You need to pay special attention to cases like unhandled exceptions or function
 ---
 title: Integrate on Google Cloud Functions Python
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python
-scraped: 2026-02-16T21:24:07.134651
+scraped: 2026-02-17T04:56:03.508136
 ---
 
 # Integrate on Google Cloud Functions Python
@@ -1844,7 +1844,7 @@ Because code running outside the function execution can be terminated at any tim
 ---
 title: Set up OpenTelemetry monitoring for Google Cloud Functions
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf
-scraped: 2026-02-16T21:30:09.140544
+scraped: 2026-02-17T04:56:46.223584
 ---
 
 # Set up OpenTelemetry monitoring for Google Cloud Functions
@@ -1929,7 +1929,7 @@ The Dynatrace Google Cloud Functions integration doesn't capture the IP addresse
 ---
 title: Trace Google Cloud Functions in Go with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go
-scraped: 2026-02-16T21:24:10.367558
+scraped: 2026-02-17T04:56:00.607006
 ---
 
 # Trace Google Cloud Functions in Go with OpenTelemetry
@@ -3955,7 +3955,7 @@ To view your custom attributes, you need to allow them in the Dynatrace web UI f
 ---
 title: Google Cloud Functions monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions
-scraped: 2026-02-16T21:14:22.607578
+scraped: 2026-02-17T04:49:26.490830
 ---
 
 # Google Cloud Functions monitoring
@@ -3999,7 +3999,7 @@ For Google Cloud Functions, monitoring consumption is based on Davis data units.
 ---
 title: Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8
-scraped: 2026-02-16T09:37:27.353857
+scraped: 2026-02-17T05:11:48.022833
 ---
 
 # Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
@@ -4923,7 +4923,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-with-google-cloud-function
-scraped: 2026-02-15T09:06:47.928207
+scraped: 2026-02-17T05:06:23.573933
 ---
 
 # Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions
@@ -5396,13 +5396,201 @@ All cloud services consume DDUs. The amount of DDU consumption per service insta
 ---
 
 
+## Source: migrate-gcp-function.md
+
+
+---
+title: Migrate to Google Cloud integration version 1.0
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function
+scraped: 2026-02-17T05:08:14.293504
+---
+
+# Migrate to Google Cloud integration version 1.0
+
+# Migrate to Google Cloud integration version 1.0
+
+* Latest Dynatrace
+* How-to guide
+* 5-min read
+* Published Jan 17, 2022
+
+Dynatrace version 1.230+
+
+The new version of the Google Cloud integration (v.1.0) uses [Extensions 2.0](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") and introduces [custom topology](/docs/ingest-from/extend-dynatrace/extend-topology/custom-topology "Learn how to create a custom topology model that's suited to your telemetry data.") for a number of Google Cloud services.
+
+List of services with custom topology
+
+* Google Compute Engine
+* Google Cloud Storage
+* Google Cloud Functions
+* Google Cloud Run
+* Google App Engine
+* Google Cloud Tasks
+* Google Cloud SQL
+* Google Cloud Datastore
+* Google Load Balancing
+* Google Cloud NAT Gateway
+* Google Filestore
+* Google Kubernetes Engine
+* Google Pub/Sub
+* Google Pub/Sub Lite
+* Google Memorystore
+* Google Spanner
+
+Note that your existing metric dimension names will change when you switch to Google Cloud integration using Dynatrace Extensions 2.0. Dimension name changes affect all configured managements zones, custom alerts, and custom dashboards in your environment. To restore proper functionality for these entities, please follow the instructions below.
+
+Upgrading existing `dynatrace-gcp-monitor` installations from earlier versions is not supported. You need to first delete your existing deployment and then install the Google Cloud integration v.1.0. For instructions, see below.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Delete existing deployment**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#delete-deployment "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Remove dashboards and/or alerts**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#remove-dashboards "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Install new Google Cloud deployment**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#install-deployment "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+
+**Update dimensions**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#update-dimensions "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")
+
+## Step 1 Delete existing deployment
+
+For Kubernetes container deployment
+
+For GC Function deployment
+
+1. Find out what release version you're using.
+
+   ```
+   helm ls -n dynatrace
+   ```
+2. Uninstall the release.
+
+   Be sure to replace `<release-name>` with the release name from the previous output.
+
+   ```
+   helm uninstall <release-name> -n dynatrace
+   ```
+
+1. Uninstall the release.
+
+```
+wget https://raw.githubusercontent.com/dynatrace-oss/dynatrace-gcp-monitor/master/scripts/uninstall.sh -O uninstall.sh ; chmod a+x uninstall.sh ; ./uninstall.sh
+```
+
+2. Remove the `activation-config.yaml` service configuration file.
+
+## Step 2 Remove dashboards and/or alerts
+
+You need to manually remove any dashboards or alerts created manually during the previous installation.
+
+## Step 3 Install new Google Cloud deployment
+
+To install the new Google Cloud deployment, see [Set up the Dynatrace Google Cloud metric and log integration (v.1.0) on a new GKE Autopilot cluster](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+## Step 4 Update dimensions
+
+If you created your own dashboards, alerts, or management zones based on Google Cloud metrics, you need to manually update the dimensions according to the list below in order to get links for entities.
+
+### List of dimension changes
+
+| Old dimension name | New dimension name |
+| --- | --- |
+| `project_id` | `gcp.project.id` |
+| `region` | `gcp.region` |
+| `zone` | `gcp.region` |
+| `instance_id` | `gcp.instance.id` |
+| `autoscaler_id` | `gcp.instance.id` |
+| `model_id` | `gcp.instance.id` |
+| `queue_id` | `gcp.instance.id` |
+| `device_registry_id` | `gcp.instance.id` |
+| `job_id` | `gcp.instance.id` |
+| `version_id` | `gcp.instance.id` |
+| `database_id` | `gcp.instance.id` |
+| `volume_id` | `gcp.instance.id` |
+| `router_id` | `gcp.instance.id` |
+| `instance_group_id` | `gcp.instance.id` |
+| `interconnect` | `gcp.instance.id` |
+| `attachment` | `gcp.instance.id` |
+| `volume_id` | `gcp.instance.id` |
+| `snapshot_id` | `gcp.instance.id` |
+| `subscription_id` | `gcp.instance.id` |
+| `topic_id` | `gcp.instance.id` |
+| `key_id` | `gcp.instance.id` |
+| `worker_id` | `gcp.instance.id` |
+| `agent_id` | `gcp.instance.id` |
+| `gateway_id` | `gcp.instance.id` |
+| `name` | `gcp.instance.name` |
+| `autoscaler_name` | `gcp.instance.name` |
+| `environment_name` | `gcp.instance.name` |
+| `cluster_name gcp.instance.name` | `gcp.instance.name` |
+| `function_name gcp.instance.name` | `gcp.instance.name` |
+| `revision_name` | `gcp.instance.name` |
+| `job_name` | `gcp.instance.name` |
+| `instance_name` | `gcp.instance.name` |
+| `domain_name` | `gcp.instance.name` |
+| `table_name` | `gcp.instance.name` |
+| `firewall_name` | `gcp.instance.name` |
+| `bucket_name` | `gcp.instance.name` |
+| `container_name` | `gcp.instance.name` |
+| `url_map_name` | `gcp.instance.name` |
+| `instance_group_name` | `gcp.instance.name` |
+| `load_balancer_name` | `gcp.instance.name` |
+| `canonical_service_name` | `gcp.instance.name` |
+| `node_name` | `gcp.instance.name` |
+| `pod_name` | `gcp.instance.name` |
+| `broker_name` | `gcp.instance.name` |
+| `revision_name` | `gcp.instance.name` |
+| `trigger_name` | `gcp.instance.name` |
+| `fqdn` | `gcp.instance.name` |
+| `target_domain_name` | `gcp.instance.name` |
+| `gateway_name` | `gcp.instance.name` |
+| `policy_name` | `gcp.instance.name` |
+| `proxy_name` | `gcp.instance.name` |
+| `load_balancer_name` | `gcp.instance.name` |
+| `backend_target_name` | `gcp.instance.name` |
+| `connector_name` | `gcp.instance.name` |
+| `gateway_name` | `gcp.instance.name` |
+
+* To update dimensions for dashboards
+
+  1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
+  2. Select the dashboard for which you want to update dimensions, and then select **More** (**â¦**) > **Configure**.
+  3. Select **Dashboard JSON**.
+  4. In the `"splitBy"` section, replace the old dimensions with the new values as determined from the [list of dimension changes](#dimension).
+  5. Select **Save changes**.
+
+Alternatively, you can replace the dimensions by configuring each dashboard tile of a selected dashboard in Data Explorer.
+
+* To update dimensions for alerts
+
+  1. Go to **Settings**.
+  2. Select **Anomaly detection** > **Metric events**.
+  3. Select the event for which you want to update dimensions.
+  4. In the **Add dimension filter** field, select the new dimension keys and enter the corresponding dimension values as determined from the [list of dimension changes](#dimension).
+  5. Select **Save changes**.
+* To update dimensions for management zones
+
+  1. Go to **Settings**.
+  2. Select **Preferences** > **Management zones**.
+  3. Select **Edit** for the management zone for which you want to update dimensions.
+  4. Select **Edit** to edit an existing rule.
+  5. In **Conditions**, edit the `DIMENSION` value according to the [List of dimension changes](#dimension).
+  6. Select **Save changes**.
+
+## Related topics
+
+* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+
+
+---
+
+
 ## Source: set-up-gcp-integration-logs-only.md
 
 
 ---
 title: Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only
-scraped: 2026-02-16T09:33:08.569761
+scraped: 2026-02-17T05:09:22.263449
 ---
 
 # Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)
@@ -6185,7 +6373,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: Set up the Dynatrace Google Cloud metric integration on a GKE cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only
-scraped: 2026-02-16T21:30:50.952364
+scraped: 2026-02-17T05:06:58.000813
 ---
 
 # Set up the Dynatrace Google Cloud metric integration on a GKE cluster
@@ -6954,7 +7142,7 @@ All cloud services consume DDUs. The amount of DDU consumption per service insta
 ---
 title: Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster
-scraped: 2026-02-16T09:37:39.252707
+scraped: 2026-02-17T05:06:32.095074
 ---
 
 # Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster
@@ -7877,7 +8065,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: End-to-end guide for monitoring Google Cloud services integrating Operations Suite
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide
-scraped: 2026-02-16T09:39:12.053946
+scraped: 2026-02-17T05:01:45.364328
 ---
 
 # End-to-end guide for monitoring Google Cloud services integrating Operations Suite
@@ -7942,7 +8130,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: Google Cloud Apigee monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apigee-monitoring
-scraped: 2026-02-16T21:28:23.569496
+scraped: 2026-02-17T05:01:11.563837
 ---
 
 # Google Cloud Apigee monitoring
@@ -7999,13 +8187,77 @@ The following feature sets are available for Google Cloud Apigee.
 ---
 
 
+## Source: gcp-apis-monitoring.md
+
+
+---
+title: Google Cloud APIs monitoring
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apis-monitoring
+scraped: 2026-02-17T05:07:39.337816
+---
+
+# Google Cloud APIs monitoring
+
+# Google Cloud APIs monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Jan 17, 2022
+
+Dynatrace Google Cloud integration leverages data collected from the Google Operation API to constantly monitor health and performance of Google Cloud Services. While combining all relevant data into dashboards, it also enables alerting and event tracking.
+
+## Prerequisites
+
+[Set up integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+## Add services and feature sets Optional
+
+After integration, Dynatrace automatically monitors a number of preset Google Cloud services and feature sets (metrics). Besides these, you can add more services or feature sets to monitoring. For details, see [Add or remove services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+For a list of feature sets available for this service, see [Metric table](#table).
+
+## View metrics
+
+After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+
+## Metric table
+
+The following feature sets are available for Google Cloud APIs.
+
+| Feature set | Name | Unit | GCP metric identifier |
+| --- | --- | --- | --- |
+| api/default\_metrics | Request count | Count | serviceruntime.googleapis.com/api/request\_count |
+| api/default\_metrics | Request latencies | Second | serviceruntime.googleapis.com/api/request\_latencies |
+| api/default\_metrics | Request backend latencies | Second | serviceruntime.googleapis.com/api/request\_latencies\_backend |
+| api/default\_metrics | Request overhead latencies | Second | serviceruntime.googleapis.com/api/request\_latencies\_overhead |
+| consumer\_quota/default\_metrics | Allocation quota usage | Count | serviceruntime.googleapis.com/quota/allocation/usage |
+| consumer\_quota/default\_metrics | Quota exceeded error | Count | serviceruntime.googleapis.com/quota/exceeded |
+| consumer\_quota/default\_metrics | Quota limit | Count | serviceruntime.googleapis.com/quota/limit |
+| consumer\_quota/default\_metrics | Rate quota usage | Count | serviceruntime.googleapis.com/quota/rate/net\_usage |
+| consumed\_api/default\_metrics | Request count | Count | serviceruntime.googleapis.com/api/request\_count |
+| consumed\_api/default\_metrics | Request latencies | Second | serviceruntime.googleapis.com/api/request\_latencies |
+| consumed\_api/default\_metrics | Request sizes | Byte | serviceruntime.googleapis.com/api/request\_sizes |
+| consumed\_api/default\_metrics | Response sizes | Byte | serviceruntime.googleapis.com/api/response\_sizes |
+| producer\_quota/default\_metrics | Allocation quota usage | Count | serviceruntime.googleapis.com/quota/allocation/usage |
+| producer\_quota/default\_metrics | Quota limit | Count | serviceruntime.googleapis.com/quota/limit |
+| producer\_quota/default\_metrics | Rate quota usage | Count | serviceruntime.googleapis.com/quota/rate/net\_usage |
+
+## Related topics
+
+* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+
+
+---
+
+
 ## Source: gcp-assistant-smart-home-monitoring.md
 
 
 ---
 title: Google Cloud Assistant Smart Home monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-assistant-smart-home-monitoring
-scraped: 2026-02-15T21:28:33.329574
+scraped: 2026-02-17T05:07:21.711342
 ---
 
 # Google Cloud Assistant Smart Home monitoring
@@ -8059,7 +8311,7 @@ The following feature sets are available for Google Cloud Assistant Smart Home.
 ---
 title: Google Cloud Bigtable monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigtable-monitoring
-scraped: 2026-02-16T21:30:29.462887
+scraped: 2026-02-17T05:11:39.005589
 ---
 
 # Google Cloud Bigtable monitoring
@@ -8299,7 +8551,7 @@ The following feature sets are available for Google Cloud DNS.
 ---
 title: Google Cloud Firestore monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-firestore-monitoring
-scraped: 2026-02-15T21:22:38.561379
+scraped: 2026-02-17T05:10:51.376490
 ---
 
 # Google Cloud Firestore monitoring
@@ -8441,7 +8693,7 @@ The following feature sets are available for Google Cloud Load Balancing.
 ---
 title: Google Cloud SQL monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-sql
-scraped: 2026-02-15T21:29:19.911177
+scraped: 2026-02-17T05:02:46.791280
 ---
 
 # Google Cloud SQL monitoring
@@ -8609,7 +8861,7 @@ The following feature sets are available for Google Cloud Storage.
 ---
 title: Google Cloud Tasks monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-tasks-monitoring
-scraped: 2026-02-16T09:31:52.194573
+scraped: 2026-02-17T05:07:33.759196
 ---
 
 # Google Cloud Tasks monitoring
@@ -8662,7 +8914,7 @@ The following feature sets are available for Google Cloud Tasks.
 ---
 title: Google Cloud Dataflow monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-dataflow-monitoring
-scraped: 2026-02-16T21:25:23.487231
+scraped: 2026-02-17T05:06:40.360545
 ---
 
 # Google Cloud Dataflow monitoring
@@ -9221,7 +9473,7 @@ The following feature sets are available for NetApp on Google Cloud.
 ---
 title: Google Cloud Network Security monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-network-security-monitoring
-scraped: 2026-02-16T09:36:02.449484
+scraped: 2026-02-17T05:05:53.846435
 ---
 
 # Google Cloud Network Security monitoring
@@ -9272,7 +9524,7 @@ The following feature sets are available for Google Cloud Network Security.
 ---
 title: Google Cloud Network Topology monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-network-topology-monitoring
-scraped: 2026-02-16T21:29:49.303252
+scraped: 2026-02-17T04:59:18.957886
 ---
 
 # Google Cloud Network Topology monitoring
@@ -9322,7 +9574,7 @@ The following feature sets are available for Google Cloud Network Topology.
 ---
 title: Operations: Cloud Monitoring & Logging
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-operations-cloud-monitoring-and-logging
-scraped: 2026-02-16T21:24:15.918520
+scraped: 2026-02-17T05:04:37.557018
 ---
 
 # Operations: Cloud Monitoring & Logging
@@ -9386,13 +9638,79 @@ The following feature sets are available for Google Cloud Operations suite.
 ---
 
 
+## Source: gcp-pub-sub-lite-monitoring.md
+
+
+---
+title: Google Cloud Pub/Sub Lite monitoring
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-lite-monitoring
+scraped: 2026-02-17T05:04:52.359513
+---
+
+# Google Cloud Pub/Sub Lite monitoring
+
+# Google Cloud Pub/Sub Lite monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Jan 17, 2022
+
+Dynatrace Google Cloud integration leverages data collected from the Google Operation API to constantly monitor health and performance of Google Cloud Services. While combining all relevant data into dashboards, it also enables alerting and event tracking.
+
+## Prerequisites
+
+[Set up integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+## Add services and feature sets Optional
+
+After integration, Dynatrace automatically monitors a number of preset Google Cloud services and feature sets (metrics). Besides these, you can add more services or feature sets to monitoring. For details, see [Add or remove services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+For a list of feature sets available for this service, see [Metric table](#table).
+
+## View metrics
+
+After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+
+## Metric table
+
+The following feature sets are available for Google Cloud Pub/Sub Lite.
+
+| Feature set | Name | Unit | GCP metric identifier |
+| --- | --- | --- | --- |
+| pubsublite\_topic\_partition/default\_metrics | Oldest retained message age | Second | pubsublite.googleapis.com/topic/oldest\_retained\_message\_age |
+| pubsublite\_topic\_partition/default\_metrics | Publish message count | Count | pubsublite.googleapis.com/topic/publish\_message\_count |
+| pubsublite\_topic\_partition/default\_metrics | Publish quota byte limit | Byte | pubsublite.googleapis.com/topic/publish\_quota\_byte\_limit |
+| pubsublite\_topic\_partition/default\_metrics | Publish quota bytes | Byte | pubsublite.googleapis.com/topic/publish\_quota\_bytes |
+| pubsublite\_topic\_partition/default\_metrics | Publish quota utilization ratio | Percent | pubsublite.googleapis.com/topic/publish\_quota\_utilization |
+| pubsublite\_topic\_partition/default\_metrics | Publish raw bytes | Byte | pubsublite.googleapis.com/topic/publish\_raw\_bytes |
+| pubsublite\_topic\_partition/default\_metrics | Publish request count | Count | pubsublite.googleapis.com/topic/publish\_request\_count |
+| pubsublite\_topic\_partition/default\_metrics | Topic sent quota bytes | Byte | pubsublite.googleapis.com/topic/sent\_quota\_bytes |
+| pubsublite\_topic\_partition/default\_metrics | Storage quota byte limit | Byte | pubsublite.googleapis.com/topic/storage\_quota\_byte\_limit |
+| pubsublite\_topic\_partition/default\_metrics | Subscribe quota byte limit | Byte | pubsublite.googleapis.com/topic/subscribe\_quota\_byte\_limit |
+| pubsublite\_topic\_partition/default\_metrics | Subscribe quota utilization ratio | Percent | pubsublite.googleapis.com/topic/subscribe\_quota\_utilization |
+| pubsublite\_subscription\_partition/default\_metrics | Backlog message count | Count | pubsublite.googleapis.com/subscription/backlog\_message\_count |
+| pubsublite\_subscription\_partition/default\_metrics | Backlog quota bytes | Byte | pubsublite.googleapis.com/subscription/backlog\_quota\_bytes |
+| pubsublite\_subscription\_partition/default\_metrics | Oldest unacked message age | Second | pubsublite.googleapis.com/subscription/oldest\_unacked\_message\_age |
+| pubsublite\_subscription\_partition/default\_metrics | Subscription sent message count | Count | pubsublite.googleapis.com/subscription/sent\_message\_count |
+| pubsublite\_subscription\_partition/default\_metrics | Subscription sent quota bytes | Byte | pubsublite.googleapis.com/subscription/sent\_quota\_bytes |
+| pubsublite\_subscription\_partition/default\_metrics | Subscription sent raw bytes | Byte | pubsublite.googleapis.com/subscription/sent\_raw\_bytes |
+
+## Related topics
+
+* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+
+
+---
+
+
 ## Source: gcp-pub-sub-monitoring.md
 
 
 ---
 title: Google Cloud Pub/Sub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-monitoring
-scraped: 2026-02-16T21:29:25.962899
+scraped: 2026-02-17T05:05:15.293968
 ---
 
 # Google Cloud Pub/Sub monitoring
@@ -9493,7 +9811,7 @@ The following feature sets are available for Google Cloud Pub/Sub.
 ---
 title: Google Cloud reCAPTCHA Enterprise monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-recaptcha-enterprise-monitoring
-scraped: 2026-02-15T09:12:21.406945
+scraped: 2026-02-17T05:03:24.389261
 ---
 
 # Google Cloud reCAPTCHA Enterprise monitoring
@@ -9543,7 +9861,7 @@ The following feature sets are available for Google Cloud reCAPTCHA Enterprise.
 ---
 title: Google Cloud Router monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-router-monitoring
-scraped: 2026-02-16T21:25:03.963559
+scraped: 2026-02-17T05:12:27.013198
 ---
 
 # Google Cloud Router monitoring
@@ -9668,7 +9986,7 @@ The following feature sets are available for Google Cloud Spanner.
 ---
 title: Google Cloud Storage Transfer Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-storage-transfer-service-monitoring
-scraped: 2026-02-16T09:38:20.577152
+scraped: 2026-02-17T05:07:20.112015
 ---
 
 # Google Cloud Storage Transfer Service monitoring
@@ -9774,7 +10092,7 @@ The following feature sets are available for Google Cloud VPC.
 ---
 title: Google Cloud supported services
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new
-scraped: 2026-02-16T21:13:53.217860
+scraped: 2026-02-17T04:49:24.836397
 ---
 
 # Google Cloud supported services
@@ -10127,7 +10445,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: Google App Engine with Operations suite metrics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine/app-engine-monitoring
-scraped: 2026-02-16T09:28:50.335098
+scraped: 2026-02-17T04:59:27.198830
 ---
 
 # Google App Engine with Operations suite metrics monitoring
@@ -10308,13 +10626,407 @@ Every time you want to update your version of Dynatrace OneAgent, you must redep
 ---
 
 
+## Source: compute-engine-monitoring.md
+
+
+---
+title: Google Compute Engine with Operations suite metrics monitoring
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine/compute-engine-monitoring
+scraped: 2026-02-17T05:00:44.606903
+---
+
+# Google Compute Engine with Operations suite metrics monitoring
+
+# Google Compute Engine with Operations suite metrics monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 18-min read
+* Published Jan 17, 2022
+
+Dynatrace Google Cloud integration leverages data collected from the Google Operation API to constantly monitor health and performance of Google Cloud Services. While combining all relevant data into dashboards, it also enables alerting and event tracking.
+
+## Prerequisites
+
+[Set up integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+## Add services and feature sets Optional
+
+After integration, Dynatrace automatically monitors a number of preset Google Cloud services and feature sets (metrics). Besides these, you can add more services or feature sets to monitoring. For details, see [Add or remove services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+For a list of feature sets available for this service, see [Metric table](#table).
+
+## View metrics
+
+After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+
+## Metric table
+
+The following feature sets are available for Google Compute Engine.
+
+| Feature set | Name | Unit | GCP metric identifier |
+| --- | --- | --- | --- |
+| gce\_instance/default\_metrics | Dropped bytes | Byte | compute.googleapis.com/firewall/dropped\_bytes\_count |
+| gce\_instance/default\_metrics | Dropped packets | Count | compute.googleapis.com/firewall/dropped\_packets\_count |
+| gce\_instance/default\_metrics | Runnable task count. | Count | compute.googleapis.com/guest/cpu/runnable\_task\_count |
+| gce\_instance/default\_metrics | CPU usage | Second | compute.googleapis.com/guest/cpu/usage\_time |
+| gce\_instance/default\_metrics | Disk usage in Bytes | Byte | compute.googleapis.com/guest/disk/bytes\_used |
+| gce\_instance/default\_metrics | IO Time | MilliSecond | compute.googleapis.com/guest/disk/io\_time |
+| gce\_instance/default\_metrics | Merged disk operations | Count | compute.googleapis.com/guest/disk/merged\_operation\_count |
+| gce\_instance/default\_metrics | Disk bytes transferred | Byte | compute.googleapis.com/guest/disk/operation\_bytes\_count |
+| gce\_instance/default\_metrics | Disk operations | Count | compute.googleapis.com/guest/disk/operation\_count |
+| gce\_instance/default\_metrics | Disk operation time | MilliSecond | compute.googleapis.com/guest/disk/operation\_time |
+| gce\_instance/default\_metrics | Queue Length | Count | compute.googleapis.com/guest/disk/queue\_length |
+| gce\_instance/default\_metrics | IO Time | MilliSecond | compute.googleapis.com/guest/disk/weighted\_io\_time |
+| gce\_instance/default\_metrics | Anonymous memory usage in Bytes | Byte | compute.googleapis.com/guest/memory/anonymous\_used |
+| gce\_instance/default\_metrics | Memory usage in Bytes | Byte | compute.googleapis.com/guest/memory/bytes\_used |
+| gce\_instance/default\_metrics | Dirty pages usage in Bytes. | Byte | compute.googleapis.com/guest/memory/dirty\_used |
+| gce\_instance/default\_metrics | Page cache memory usage in Bytes | Byte | compute.googleapis.com/guest/memory/page\_cache\_used |
+| gce\_instance/default\_metrics | Unevictable memory usage in Bytes | Byte | compute.googleapis.com/guest/memory/unevictable\_used |
+| gce\_instance/default\_metrics | Problem Count | Count | compute.googleapis.com/guest/system/problem\_count |
+| gce\_instance/default\_metrics | Problem State | Count | compute.googleapis.com/guest/system/problem\_state |
+| gce\_instance/default\_metrics | Uptime | Second | compute.googleapis.com/guest/system/uptime |
+| gce\_instance/default\_metrics | Reserved vCPUs | Count | compute.googleapis.com/instance/cpu/reserved\_cores |
+| gce\_instance/default\_metrics | Scheduler Wait Time | Second | compute.googleapis.com/instance/cpu/scheduler\_wait\_time |
+| gce\_instance/default\_metrics | CPU usage | Second | compute.googleapis.com/instance/cpu/usage\_time |
+| gce\_instance/default\_metrics | CPU utilization | Percent | compute.googleapis.com/instance/cpu/utilization |
+| gce\_instance/default\_metrics | Peak disk read bytes | Byte | compute.googleapis.com/instance/disk/max\_read\_bytes\_count |
+| gce\_instance/default\_metrics | Peak disk read ops | Count | compute.googleapis.com/instance/disk/max\_read\_ops\_count |
+| gce\_instance/default\_metrics | Peak disk write bytes | Byte | compute.googleapis.com/instance/disk/max\_write\_bytes\_count |
+| gce\_instance/default\_metrics | Peak disk write ops | Count | compute.googleapis.com/instance/disk/max\_write\_ops\_count |
+| gce\_instance/default\_metrics | Disk read bytes | Byte | compute.googleapis.com/instance/disk/read\_bytes\_count |
+| gce\_instance/default\_metrics | Disk read operations | Count | compute.googleapis.com/instance/disk/read\_ops\_count |
+| gce\_instance/default\_metrics | Throttled read bytes | Byte | compute.googleapis.com/instance/disk/throttled\_read\_bytes\_count |
+| gce\_instance/default\_metrics | Throttled read operations | Count | compute.googleapis.com/instance/disk/throttled\_read\_ops\_count |
+| gce\_instance/default\_metrics | Throttled write bytes | Byte | compute.googleapis.com/instance/disk/throttled\_write\_bytes\_count |
+| gce\_instance/default\_metrics | Throttled write operations | Count | compute.googleapis.com/instance/disk/throttled\_write\_ops\_count |
+| gce\_instance/default\_metrics | Disk write bytes | Byte | compute.googleapis.com/instance/disk/write\_bytes\_count |
+| gce\_instance/default\_metrics | Disk write operations | Count | compute.googleapis.com/instance/disk/write\_ops\_count |
+| gce\_instance/default\_metrics | Early Boot Validation | Count | compute.googleapis.com/instance/integrity/early\_boot\_validation\_status |
+| gce\_instance/default\_metrics | Late Boot Validation | Count | compute.googleapis.com/instance/integrity/late\_boot\_validation\_status |
+| gce\_instance/default\_metrics | VM Memory Total | Byte | compute.googleapis.com/instance/memory/balloon/ram\_size |
+| gce\_instance/default\_metrics | VM Memory Used | Byte | compute.googleapis.com/instance/memory/balloon/ram\_used |
+| gce\_instance/default\_metrics | VM Swap In | Byte | compute.googleapis.com/instance/memory/balloon/swap\_in\_bytes\_count |
+| gce\_instance/default\_metrics | VM Swap Out | Byte | compute.googleapis.com/instance/memory/balloon/swap\_out\_bytes\_count |
+| gce\_instance/default\_metrics | Received bytes | Byte | compute.googleapis.com/instance/network/received\_bytes\_count |
+| gce\_instance/default\_metrics | Received packets | Count | compute.googleapis.com/instance/network/received\_packets\_count |
+| gce\_instance/default\_metrics | Sent bytes | Byte | compute.googleapis.com/instance/network/sent\_bytes\_count |
+| gce\_instance/default\_metrics | Sent packets | Count | compute.googleapis.com/instance/network/sent\_packets\_count |
+| gce\_instance/default\_metrics | Uptime | Second | compute.googleapis.com/instance/uptime |
+| gce\_instance/default\_metrics | Uptime Total | Second | compute.googleapis.com/instance/uptime\_total |
+| gce\_instance/default\_metrics | Dropped packets | Count | compute.googleapis.com/mirroring/dropped\_packets\_count |
+| gce\_instance/default\_metrics | Mirrored bytes | Byte | compute.googleapis.com/mirroring/mirrored\_bytes\_count |
+| gce\_instance/default\_metrics | Mirrored packets | Count | compute.googleapis.com/mirroring/mirrored\_packets\_count |
+| gce\_instance/default\_metrics | Allocated ports | Unspecified | compute.googleapis.com/nat/allocated\_ports |
+| gce\_instance/default\_metrics | Closed connections count | Unspecified | compute.googleapis.com/nat/closed\_connections\_count |
+| gce\_instance/default\_metrics | Received packets dropped count | Unspecified | compute.googleapis.com/nat/dropped\_received\_packets\_count |
+| gce\_instance/default\_metrics | Sent packets dropped count | Unspecified | compute.googleapis.com/nat/dropped\_sent\_packets\_count |
+| gce\_instance/default\_metrics | New connections count | Unspecified | compute.googleapis.com/nat/new\_connections\_count |
+| gce\_instance/default\_metrics | Open connections | Unspecified | compute.googleapis.com/nat/open\_connections |
+| gce\_instance/default\_metrics | Port usage | Unspecified | compute.googleapis.com/nat/port\_usage |
+| gce\_instance/default\_metrics | Received bytes count | Byte | compute.googleapis.com/nat/received\_bytes\_count |
+| gce\_instance/default\_metrics | Received packets count | Unspecified | compute.googleapis.com/nat/received\_packets\_count |
+| gce\_instance/default\_metrics | Sent bytes count | Byte | compute.googleapis.com/nat/sent\_bytes\_count |
+| gce\_instance/default\_metrics | Sent packets count | Unspecified | compute.googleapis.com/nat/sent\_packets\_count |
+| gce\_instance/agent | Monitoring Agent API Request Count | Count | agent.googleapis.com/agent/api\_request\_count |
+| gce\_instance/agent | Logging Agent Log Entry Count | Count | agent.googleapis.com/agent/log\_entry\_count |
+| gce\_instance/agent | Logging Agent Retried Log Entry Writes Count | Count | agent.googleapis.com/agent/log\_entry\_retry\_count |
+| gce\_instance/agent | Monitoring Agent Memory Usage | Byte | agent.googleapis.com/agent/memory\_usage |
+| gce\_instance/agent | Monitoring Agent Metric Point Count | Count | agent.googleapis.com/agent/monitoring/point\_count |
+| gce\_instance/agent | Logging Agent API Request Count | Count | agent.googleapis.com/agent/request\_count |
+| gce\_instance/agent | Monitoring Agent Process Labels Size | Byte | agent.googleapis.com/agent/streamspace\_size |
+| gce\_instance/agent | Monitoring Agent is Throttling Processes | Count | agent.googleapis.com/agent/streamspace\_size\_throttling |
+| gce\_instance/agent | Monitoring/Logging Agent Uptime | Second | agent.googleapis.com/agent/uptime |
+| gce\_instance/agent | Open connections | Count | agent.googleapis.com/apache/connections |
+| gce\_instance/agent | Idle workers | Count | agent.googleapis.com/apache/idle\_workers |
+| gce\_instance/agent | Requests | Count | agent.googleapis.com/apache/request\_count |
+| gce\_instance/agent | Scoreboard | Count | agent.googleapis.com/apache/scoreboard |
+| gce\_instance/agent | Traffic | Byte | agent.googleapis.com/apache/traffic |
+| gce\_instance/agent | Hit count | Count | agent.googleapis.com/cassandra/cache/hits |
+| gce\_instance/agent | Read latency | MicroSecond | agent.googleapis.com/cassandra/client\_request/latency/50p |
+| gce\_instance/agent | Read latency | MicroSecond | agent.googleapis.com/cassandra/client\_request/latency/95p |
+| gce\_instance/agent | Read latency | MicroSecond | agent.googleapis.com/cassandra/client\_request/latency/99p |
+| gce\_instance/agent | Read latency | MicroSecond | agent.googleapis.com/cassandra/client\_request/latency/max |
+| gce\_instance/agent | Compression ratio | Count | agent.googleapis.com/cassandra/column\_family/compression\_ratio |
+| gce\_instance/agent | Max row size | Byte | agent.googleapis.com/cassandra/column\_family/max\_row\_size |
+| gce\_instance/agent | Commit log size | Byte | agent.googleapis.com/cassandra/commitlog\_total\_size |
+| gce\_instance/agent | Completed tasks | Count | agent.googleapis.com/cassandra/completed\_tasks |
+| gce\_instance/agent | Tasks | Count | agent.googleapis.com/cassandra/current\_tasks |
+| gce\_instance/agent | Dropped messages | Count | agent.googleapis.com/cassandra/dropped\_message/dropped\_count |
+| gce\_instance/agent | Exceptions | Count | agent.googleapis.com/cassandra/storage\_service\_exception\_count |
+| gce\_instance/agent | Storage load | Byte | agent.googleapis.com/cassandra/storage\_service\_load |
+| gce\_instance/agent | Request latency | MilliSecond | agent.googleapis.com/couchdb/average\_request\_time |
+| gce\_instance/agent | Bulk requests | Count | agent.googleapis.com/couchdb/httpd/bulk\_request\_count |
+| gce\_instance/agent | Requests | Count | agent.googleapis.com/couchdb/httpd/request\_count |
+| gce\_instance/agent | Request methods | Count | agent.googleapis.com/couchdb/httpd/request\_method\_count |
+| gce\_instance/agent | Response codes | Count | agent.googleapis.com/couchdb/httpd/response\_code\_count |
+| gce\_instance/agent | Temp view reads | Count | agent.googleapis.com/couchdb/httpd/temporary\_view\_read\_count |
+| gce\_instance/agent | View reads | Count | agent.googleapis.com/couchdb/httpd/view\_read\_count |
+| gce\_instance/agent | Open databases | Count | agent.googleapis.com/couchdb/open\_databases |
+| gce\_instance/agent | Open files | Count | agent.googleapis.com/couchdb/open\_files |
+| gce\_instance/agent | Reads | Count | agent.googleapis.com/couchdb/read\_count |
+| gce\_instance/agent | Writes | Count | agent.googleapis.com/couchdb/write\_count |
+| gce\_instance/agent | CPU load (15m) | Count | agent.googleapis.com/cpu/load\_15m |
+| gce\_instance/agent | CPU load (1m) | Count | agent.googleapis.com/cpu/load\_1m |
+| gce\_instance/agent | CPU load (5m) | Count | agent.googleapis.com/cpu/load\_5m |
+| gce\_instance/agent | CPU usage | Second | agent.googleapis.com/cpu/usage\_time |
+| gce\_instance/agent | CPU utilization | Percent | agent.googleapis.com/cpu/utilization |
+| gce\_instance/agent | Disk usage | Byte | agent.googleapis.com/disk/bytes\_used |
+| gce\_instance/agent | Disk I/O time | MilliSecond | agent.googleapis.com/disk/io\_time |
+| gce\_instance/agent | Disk merged operations | Count | agent.googleapis.com/disk/merged\_operations |
+| gce\_instance/agent | Disk operations | Count | agent.googleapis.com/disk/operation\_count |
+| gce\_instance/agent | Disk operation time | MilliSecond | agent.googleapis.com/disk/operation\_time |
+| gce\_instance/agent | Disk pending operations | Count | agent.googleapis.com/disk/pending\_operations |
+| gce\_instance/agent | Disk utilization | Percent | agent.googleapis.com/disk/percent\_used |
+| gce\_instance/agent | Disk bytes read | Byte | agent.googleapis.com/disk/read\_bytes\_count |
+| gce\_instance/agent | Disk weighted I/O time | MilliSecond | agent.googleapis.com/disk/weighted\_io\_time |
+| gce\_instance/agent | Disk bytes written | Byte | agent.googleapis.com/disk/write\_bytes\_count |
+| gce\_instance/agent | Cache size | Byte | agent.googleapis.com/elasticsearch/cache\_memory\_usage |
+| gce\_instance/agent | Field evictions | Count | agent.googleapis.com/elasticsearch/field\_eviction\_count |
+| gce\_instance/agent | Filter evictions | Count | agent.googleapis.com/elasticsearch/filter\_cache\_eviction\_count |
+| gce\_instance/agent | GC count | Count | agent.googleapis.com/elasticsearch/gc\_collection\_count |
+| gce\_instance/agent | Memory usage | Byte | agent.googleapis.com/elasticsearch/memory\_usage |
+| gce\_instance/agent | Network traffic | Byte | agent.googleapis.com/elasticsearch/network |
+| gce\_instance/agent | Documents | Count | agent.googleapis.com/elasticsearch/num\_current\_documents |
+| gce\_instance/agent | Data nodes | Count | agent.googleapis.com/elasticsearch/num\_data\_nodes |
+| gce\_instance/agent | Open connections | Count | agent.googleapis.com/elasticsearch/num\_http\_connections |
+| gce\_instance/agent | Nodes | Count | agent.googleapis.com/elasticsearch/num\_nodes |
+| gce\_instance/agent | Open files | Count | agent.googleapis.com/elasticsearch/num\_open\_files |
+| gce\_instance/agent | Open connections | Count | agent.googleapis.com/elasticsearch/num\_server\_connections |
+| gce\_instance/agent | Shards | Count | agent.googleapis.com/elasticsearch/num\_shards |
+| gce\_instance/agent | Completed operations | Count | agent.googleapis.com/elasticsearch/operation\_count |
+| gce\_instance/agent | Operation time | MilliSecond | agent.googleapis.com/elasticsearch/operation\_time |
+| gce\_instance/agent | Max threads | Count | agent.googleapis.com/elasticsearch/peak\_threads |
+| gce\_instance/agent | Storage size | Byte | agent.googleapis.com/elasticsearch/storage\_size |
+| gce\_instance/agent | Threads | Count | agent.googleapis.com/elasticsearch/threads |
+| gce\_instance/agent | IPC connections | Count | agent.googleapis.com/hbase/ipc/connections |
+| gce\_instance/agent | IPC queue size | Count | agent.googleapis.com/hbase/ipc/queue\_length |
+| gce\_instance/agent | IPC traffic | Byte | agent.googleapis.com/hbase/ipc/traffic\_count |
+| gce\_instance/agent | Load | Count | agent.googleapis.com/hbase/master/average\_load |
+| gce\_instance/agent | Dead region servers | Count | agent.googleapis.com/hbase/master/dead\_region\_servers |
+| gce\_instance/agent | Live region servers | Count | agent.googleapis.com/hbase/master/live\_region\_servers |
+| gce\_instance/agent | Block cache accesses | Count | agent.googleapis.com/hbase/regionserver/block\_cache/access\_count |
+| gce\_instance/agent | Evicted block count | Count | agent.googleapis.com/hbase/regionserver/block\_cache/evicted\_blocks\_count |
+| gce\_instance/agent | Block cache hit ratio | Percent | agent.googleapis.com/hbase/regionserver/block\_cache/hit\_ratio\_percent |
+| gce\_instance/agent | Block cache size | Byte | agent.googleapis.com/hbase/regionserver/block\_cache/memory |
+| gce\_instance/agent | Block count | Count | agent.googleapis.com/hbase/regionserver/block\_cache/num\_items |
+| gce\_instance/agent | Call queue size | Count | agent.googleapis.com/hbase/regionserver/call\_queue/length |
+| gce\_instance/agent | Compaction queue size | Count | agent.googleapis.com/hbase/regionserver/compaction\_queue/length |
+| gce\_instance/agent | Flush queue size | Count | agent.googleapis.com/hbase/regionserver/flush\_queue/length |
+| gce\_instance/agent | Heap usage | Byte | agent.googleapis.com/hbase/regionserver/memory/heap\_usage |
+| gce\_instance/agent | Memstore files | Count | agent.googleapis.com/hbase/regionserver/memstore/files |
+| gce\_instance/agent | Memstore index size | Byte | agent.googleapis.com/hbase/regionserver/memstore/index\_size |
+| gce\_instance/agent | Memstore open stores | Count | agent.googleapis.com/hbase/regionserver/memstore/open\_stores |
+| gce\_instance/agent | Memstore size | Byte | agent.googleapis.com/hbase/regionserver/memstore/size |
+| gce\_instance/agent | Online regions | Count | agent.googleapis.com/hbase/regionserver/online\_regions |
+| gce\_instance/agent | Request count | Count | agent.googleapis.com/hbase/regionserver/request\_count |
+| gce\_instance/agent | RPC request rate | PerSecond | agent.googleapis.com/hbase/regionserver/requests/total\_rate |
+| gce\_instance/agent | Slow operations | Count | agent.googleapis.com/hbase/regionserver/slow\_operation\_count |
+| gce\_instance/agent | Thrift average batch latency | NanoSecond | agent.googleapis.com/hbase/thrift/batch\_latency/average |
+| gce\_instance/agent | Thrift average call latency | NanoSecond | agent.googleapis.com/hbase/thrift/call\_latency/average |
+| gce\_instance/agent | Thrift call queue size | Count | agent.googleapis.com/hbase/thrift/call\_queue/length |
+| gce\_instance/agent | Thrift average slow call latency | NanoSecond | agent.googleapis.com/hbase/thrift/slow\_call\_latency/average |
+| gce\_instance/agent | Thrift average time in queue | NanoSecond | agent.googleapis.com/hbase/thrift/time\_in\_queue/average |
+| gce\_instance/agent | IIS open connections | Count | agent.googleapis.com/iis/current\_connections |
+| gce\_instance/agent | IIS transferred bytes | Byte | agent.googleapis.com/iis/network/transferred\_bytes\_count |
+| gce\_instance/agent | IIS connections | Count | agent.googleapis.com/iis/new\_connection\_count |
+| gce\_instance/agent | IIS requests | Count | agent.googleapis.com/iis/request\_count |
+| gce\_instance/agent | Network errors | Count | agent.googleapis.com/interface/errors |
+| gce\_instance/agent | Network packets | Count | agent.googleapis.com/interface/packets |
+| gce\_instance/agent | Network traffic | Byte | agent.googleapis.com/interface/traffic |
+| gce\_instance/agent | GC count | Count | agent.googleapis.com/jvm/gc/count |
+| gce\_instance/agent | GC time | MilliSecond | agent.googleapis.com/jvm/gc/time |
+| gce\_instance/agent | Memory usage | Byte | agent.googleapis.com/jvm/memory/usage |
+| gce\_instance/agent | CPU time | NanoSecond | agent.googleapis.com/jvm/os/cpu\_time |
+| gce\_instance/agent | Open files | Count | agent.googleapis.com/jvm/os/open\_files |
+| gce\_instance/agent | Daemon threads | Count | agent.googleapis.com/jvm/thread/num\_daemon |
+| gce\_instance/agent | Threads | Count | agent.googleapis.com/jvm/thread/num\_live |
+| gce\_instance/agent | Max threads | Count | agent.googleapis.com/jvm/thread/peak |
+| gce\_instance/agent | Uptime | MilliSecond | agent.googleapis.com/jvm/uptime |
+| gce\_instance/agent | Failed requests | Count | agent.googleapis.com/kafka/broker/topics/failed\_request\_count |
+| gce\_instance/agent | Incoming messages | Count | agent.googleapis.com/kafka/broker/topics/incoming\_message\_count |
+| gce\_instance/agent | Traffic | Byte | agent.googleapis.com/kafka/broker/topics/traffic |
+| gce\_instance/agent | Active controllers | Count | agent.googleapis.com/kafka/controller/kafka/active |
+| gce\_instance/agent | Offline partitions | Count | agent.googleapis.com/kafka/controller/kafka/offline\_partitions |
+| gce\_instance/agent | Leader elections | Count | agent.googleapis.com/kafka/controller/leader\_elections/election\_count |
+| gce\_instance/agent | Stale leader elections | Count | agent.googleapis.com/kafka/controller/leader\_elections/unclean\_count |
+| gce\_instance/agent | Flushes | Count | agent.googleapis.com/kafka/log/flush\_count |
+| gce\_instance/agent | Requests | Count | agent.googleapis.com/kafka/network/request\_count |
+| gce\_instance/agent | Delayed purgatory requests | Count | agent.googleapis.com/kafka/purgatory/num\_delayed\_requests |
+| gce\_instance/agent | Purgatory requests | Count | agent.googleapis.com/kafka/purgatory/size |
+| gce\_instance/agent | Maximum lag | Count | agent.googleapis.com/kafka/replica\_fetcher/max\_lag |
+| gce\_instance/agent | Minimum fetch rate | PerSecond | agent.googleapis.com/kafka/replica\_fetcher/min\_fetch\_rate |
+| gce\_instance/agent | Gaining replicas | Count | agent.googleapis.com/kafka/replica\_manager/isr/expand\_count |
+| gce\_instance/agent | Lagging replicas | Count | agent.googleapis.com/kafka/replica\_manager/isr/shrink\_count |
+| gce\_instance/agent | Leaders | Count | agent.googleapis.com/kafka/replica\_manager/leaders |
+| gce\_instance/agent | Partitions | Count | agent.googleapis.com/kafka/replica\_manager/partitions |
+| gce\_instance/agent | Unreliable partitions | Count | agent.googleapis.com/kafka/replica\_manager/under\_replicated\_partitions |
+| gce\_instance/agent | Commands | Count | agent.googleapis.com/memcached/command\_count |
+| gce\_instance/agent | Connections | Count | agent.googleapis.com/memcached/current\_connections |
+| gce\_instance/agent | Items | Count | agent.googleapis.com/memcached/current\_items |
+| gce\_instance/agent | Evictions | Count | agent.googleapis.com/memcached/eviction\_count |
+| gce\_instance/agent | Memory usage | Byte | agent.googleapis.com/memcached/memory |
+| gce\_instance/agent | Traffic | Byte | agent.googleapis.com/memcached/network |
+| gce\_instance/agent | Operations | Count | agent.googleapis.com/memcached/operation\_count |
+| gce\_instance/agent | Hit ratio | Percent | agent.googleapis.com/memcached/operation\_hitratio |
+| gce\_instance/agent | CPU time | Second | agent.googleapis.com/memcached/rusage |
+| gce\_instance/agent | Threads | Count | agent.googleapis.com/memcached/threads |
+| gce\_instance/agent | Memory usage | Byte | agent.googleapis.com/memory/bytes\_used |
+| gce\_instance/agent | Memory utilization | Percent | agent.googleapis.com/memory/percent\_used |
+| gce\_instance/agent | Cache hits | Count | agent.googleapis.com/mongodb/cache/hits |
+| gce\_instance/agent | Cache misses | Count | agent.googleapis.com/mongodb/cache/misses |
+| gce\_instance/agent | Collections | Count | agent.googleapis.com/mongodb/collections |
+| gce\_instance/agent | Connections | Count | agent.googleapis.com/mongodb/connections |
+| gce\_instance/agent | Data size | Byte | agent.googleapis.com/mongodb/data\_size |
+| gce\_instance/agent | Extents | Count | agent.googleapis.com/mongodb/extents |
+| gce\_instance/agent | Global lock time | MilliSecond | agent.googleapis.com/mongodb/global\_lock\_hold\_time |
+| gce\_instance/agent | Index size | Byte | agent.googleapis.com/mongodb/index\_size |
+| gce\_instance/agent | Indexes | Count | agent.googleapis.com/mongodb/indexes |
+| gce\_instance/agent | Memory usage | MebiByte | agent.googleapis.com/mongodb/memory\_usage |
+| gce\_instance/agent | Objects | Count | agent.googleapis.com/mongodb/objects |
+| gce\_instance/agent | Operations | Count | agent.googleapis.com/mongodb/operation\_count |
+| gce\_instance/agent | Storage size | Byte | agent.googleapis.com/mongodb/storage\_size |
+| gce\_instance/agent | SQL Server open connections | Count | agent.googleapis.com/mssql/connections/user |
+| gce\_instance/agent | SQL Server transaction rate | PerSecond | agent.googleapis.com/mssql/transaction\_rate |
+| gce\_instance/agent | SQL Server write transaction rate | PerSecond | agent.googleapis.com/mssql/write\_transaction\_rate |
+| gce\_instance/agent | Buffer pool pages | Count | agent.googleapis.com/mysql/buffer\_pool/num\_pages |
+| gce\_instance/agent | Buffer pool operations | Count | agent.googleapis.com/mysql/buffer\_pool/operation\_count |
+| gce\_instance/agent | Buffer pool size | Byte | agent.googleapis.com/mysql/buffer\_pool\_size |
+| gce\_instance/agent | Commands | Count | agent.googleapis.com/mysql/command\_count |
+| gce\_instance/agent | Handlers | Count | agent.googleapis.com/mysql/handler\_count |
+| gce\_instance/agent | InnoDB doublewrite buffers | Count | agent.googleapis.com/mysql/innodb/doublewrite\_count |
+| gce\_instance/agent | InnoDB log operations | Count | agent.googleapis.com/mysql/innodb/log\_operation\_count |
+| gce\_instance/agent | InnoDB operations | Count | agent.googleapis.com/mysql/innodb/operation\_count |
+| gce\_instance/agent | InnoDB page operations | Count | agent.googleapis.com/mysql/innodb/page\_operation\_count |
+| gce\_instance/agent | InnoDB locks | Count | agent.googleapis.com/mysql/innodb/row\_lock\_count |
+| gce\_instance/agent | InnoDB row operations | Count | agent.googleapis.com/mysql/innodb/row\_operation\_count |
+| gce\_instance/agent | Locks | Count | agent.googleapis.com/mysql/lock\_count |
+| gce\_instance/agent | QCache operations | Count | agent.googleapis.com/mysql/qcache/operation\_count |
+| gce\_instance/agent | QCache queries | Count | agent.googleapis.com/mysql/qcache/query\_count |
+| gce\_instance/agent | Replica lag | Second | agent.googleapis.com/mysql/slave\_replication\_lag |
+| gce\_instance/agent | Sorts | Count | agent.googleapis.com/mysql/sort\_count |
+| gce\_instance/agent | Threads | Count | agent.googleapis.com/mysql/thread\_count |
+| gce\_instance/agent | TCP connections | Count | agent.googleapis.com/network/tcp\_connections |
+| gce\_instance/agent | Accepted connections | Count | agent.googleapis.com/nginx/connections/accepted\_count |
+| gce\_instance/agent | Active connections | Count | agent.googleapis.com/nginx/connections/current |
+| gce\_instance/agent | Handled connections | Count | agent.googleapis.com/nginx/connections/handled\_count |
+| gce\_instance/agent | Requests | Count | agent.googleapis.com/nginx/request\_count |
+| gce\_instance/agent | Pagefile utilization | Percent | agent.googleapis.com/pagefile/percent\_used |
+| gce\_instance/agent | Blocks read | Count | agent.googleapis.com/postgresql/blocks\_read\_count |
+| gce\_instance/agent | Commits | Count | agent.googleapis.com/postgresql/commit\_count |
+| gce\_instance/agent | DB size | Byte | agent.googleapis.com/postgresql/db\_size |
+| gce\_instance/agent | Backends | Count | agent.googleapis.com/postgresql/num\_backends |
+| gce\_instance/agent | DB rows | Count | agent.googleapis.com/postgresql/num\_tuples |
+| gce\_instance/agent | Operations | Count | agent.googleapis.com/postgresql/operation\_count |
+| gce\_instance/agent | Rollbacks | Count | agent.googleapis.com/postgresql/rollback\_count |
+| gce\_instance/agent | Processes | Count | agent.googleapis.com/processes/count\_by\_state |
+| gce\_instance/agent | Process CPU | Second | agent.googleapis.com/processes/cpu\_time |
+| gce\_instance/agent | Process disk read I/O | Byte | agent.googleapis.com/processes/disk/read\_bytes\_count |
+| gce\_instance/agent | Process disk write I/O | Byte | agent.googleapis.com/processes/disk/write\_bytes\_count |
+| gce\_instance/agent | Fork count | Count | agent.googleapis.com/processes/fork\_count |
+| gce\_instance/agent | Process resident memory | Byte | agent.googleapis.com/processes/rss\_usage |
+| gce\_instance/agent | Process virtual memory | Byte | agent.googleapis.com/processes/vm\_usage |
+| gce\_instance/agent | Consumers | Count | agent.googleapis.com/rabbitmq/consumers |
+| gce\_instance/agent | Delivery rate | PerSecond | agent.googleapis.com/rabbitmq/delivery\_rate |
+| gce\_instance/agent | Messages | Count | agent.googleapis.com/rabbitmq/num\_messages |
+| gce\_instance/agent | Publish rate | PerSecond | agent.googleapis.com/rabbitmq/publish\_rate |
+| gce\_instance/agent | Unsaved changes | Count | agent.googleapis.com/redis/changes\_since\_last\_save |
+| gce\_instance/agent | Blocked clients | Count | agent.googleapis.com/redis/clients/blocked |
+| gce\_instance/agent | Connected clients | Count | agent.googleapis.com/redis/clients/connected |
+| gce\_instance/agent | Commands | Count | agent.googleapis.com/redis/commands\_processed |
+| gce\_instance/agent | Slave connections | Count | agent.googleapis.com/redis/connections/slaves |
+| gce\_instance/agent | Connections | Count | agent.googleapis.com/redis/connections/total |
+| gce\_instance/agent | Expired keys | Count | agent.googleapis.com/redis/expired\_keys |
+| gce\_instance/agent | Memory usage | Byte | agent.googleapis.com/redis/memory/usage |
+| gce\_instance/agent | Lua memory usage | Byte | agent.googleapis.com/redis/memory/usage\_lua |
+| gce\_instance/agent | PubSub channels | Count | agent.googleapis.com/redis/pubsub/channels |
+| gce\_instance/agent | PubSub patterns | Count | agent.googleapis.com/redis/pubsub/patterns |
+| gce\_instance/agent | Uptime | Second | agent.googleapis.com/redis/uptime |
+| gce\_instance/agent | 95% latency (1m) | MicroSecond | agent.googleapis.com/riak/latency/95th\_percentile |
+| gce\_instance/agent | Average latency (1m) | MicroSecond | agent.googleapis.com/riak/latency/average |
+| gce\_instance/agent | Maximum latency (1m) | MicroSecond | agent.googleapis.com/riak/latency/maximum |
+| gce\_instance/agent | Memory usage | Byte | agent.googleapis.com/riak/memory\_usage |
+| gce\_instance/agent | 95% siblings (1m) | Count | agent.googleapis.com/riak/num\_siblings/95th\_percentile |
+| gce\_instance/agent | Average siblings (1m) | Count | agent.googleapis.com/riak/num\_siblings/average |
+| gce\_instance/agent | Maximum siblings (1m) | Count | agent.googleapis.com/riak/num\_siblings/maximum |
+| gce\_instance/agent | 95% object size (1m) | Byte | agent.googleapis.com/riak/object\_size/95th\_percentile |
+| gce\_instance/agent | Average object size (1m) | Byte | agent.googleapis.com/riak/object\_size/average |
+| gce\_instance/agent | Maximum object size (1m) | Byte | agent.googleapis.com/riak/object\_size/maximum |
+| gce\_instance/agent | Operations | Count | agent.googleapis.com/riak/operation\_count |
+| gce\_instance/agent | Swap usage | Byte | agent.googleapis.com/swap/bytes\_used |
+| gce\_instance/agent | Swap I/O operations | Count | agent.googleapis.com/swap/io |
+| gce\_instance/agent | Swap utilization | Percent | agent.googleapis.com/swap/percent\_used |
+| gce\_instance/agent | Sessions | Count | agent.googleapis.com/tomcat/manager/sessions |
+| gce\_instance/agent | Errors | Count | agent.googleapis.com/tomcat/request\_processor/error\_count |
+| gce\_instance/agent | Processing time | MilliSecond | agent.googleapis.com/tomcat/request\_processor/processing\_time |
+| gce\_instance/agent | Requests | Count | agent.googleapis.com/tomcat/request\_processor/request\_count |
+| gce\_instance/agent | Traffic | Byte | agent.googleapis.com/tomcat/request\_processor/traffic\_count |
+| gce\_instance/agent | Busy threads | Count | agent.googleapis.com/tomcat/threads/busy |
+| gce\_instance/agent | Current threads | Count | agent.googleapis.com/tomcat/threads/current |
+| gce\_instance/agent | Backend connection successes | Count | agent.googleapis.com/varnish/backend\_connection\_count |
+| gce\_instance/agent | Cache operations | Count | agent.googleapis.com/varnish/cache\_operation\_count |
+| gce\_instance/agent | Client connections | Count | agent.googleapis.com/varnish/client\_connection\_count |
+| gce\_instance/agent | Open connections | Count | agent.googleapis.com/zookeeper/connections\_count |
+| gce\_instance/agent | Data size | Byte | agent.googleapis.com/zookeeper/data\_size |
+| gce\_instance/agent | Followers | Count | agent.googleapis.com/zookeeper/followers/count |
+| gce\_instance/agent | Synced followers | Count | agent.googleapis.com/zookeeper/followers/synced\_count |
+| gce\_instance/agent | Packets received | Count | agent.googleapis.com/zookeeper/network/received\_packets\_count |
+| gce\_instance/agent | Packets sent | Count | agent.googleapis.com/zookeeper/network/sent\_packets\_count |
+| gce\_instance/agent | Nodes | Count | agent.googleapis.com/zookeeper/nodes/count |
+| gce\_instance/agent | Ephemeral nodes | Count | agent.googleapis.com/zookeeper/nodes/ephemeral\_count |
+| gce\_instance/agent | Watches | Count | agent.googleapis.com/zookeeper/nodes/watches\_count |
+| gce\_instance/agent | Average request latency | MilliSecond | agent.googleapis.com/zookeeper/requests/latency/average |
+| gce\_instance/agent | Maximum request latency | MilliSecond | agent.googleapis.com/zookeeper/requests/latency/maximum |
+| gce\_instance/agent | Minimum request latency | MilliSecond | agent.googleapis.com/zookeeper/requests/latency/minimum |
+| gce\_instance/agent | Outstanding requests | Count | agent.googleapis.com/zookeeper/requests/outstanding\_count |
+| gce\_instance/agent | Pending syncs | Count | agent.googleapis.com/zookeeper/sync\_operations/pending\_count |
+| gce\_instance/firewallinsights | VM Firewall Hit Counts | Count | firewallinsights.googleapis.com/vm/firewall\_hit\_count |
+| gce\_instance/firewallinsights | VM Firewall Last Used Timestamp | Count | firewallinsights.googleapis.com/vm/firewall\_last\_used\_timestamp |
+| gce\_instance/istio | Client Connection Close Count | Byte | istio.io/service/client/connection\_close\_count |
+| gce\_instance/istio | Client Connection Open Count | Byte | istio.io/service/client/connection\_open\_count |
+| gce\_instance/istio | Client Received Bytes Count | Byte | istio.io/service/client/received\_bytes\_count |
+| gce\_instance/istio | Client Request Bytes | Byte | istio.io/service/client/request\_bytes |
+| gce\_instance/istio | Client Request Count | Count | istio.io/service/client/request\_count |
+| gce\_instance/istio | Client Response Bytes | Byte | istio.io/service/client/response\_bytes |
+| gce\_instance/istio | Client Roundtrip Latencies | MilliSecond | istio.io/service/client/roundtrip\_latencies |
+| gce\_instance/istio | Client Sent Bytes Count | Byte | istio.io/service/client/sent\_bytes\_count |
+| gce\_instance/istio | Server Connection Close Count | Byte | istio.io/service/server/connection\_close\_count |
+| gce\_instance/istio | Server Connection Open Count | Byte | istio.io/service/server/connection\_open\_count |
+| gce\_instance/istio | Server Received Bytes Count | Byte | istio.io/service/server/received\_bytes\_count |
+| gce\_instance/istio | Server Request Bytes | Byte | istio.io/service/server/request\_bytes |
+| gce\_instance/istio | Server Request Count | Count | istio.io/service/server/request\_count |
+| gce\_instance/istio | Server Response Bytes | Byte | istio.io/service/server/response\_bytes |
+| gce\_instance/istio | Server Response Latencies | MilliSecond | istio.io/service/server/response\_latencies |
+| gce\_instance/istio | Server Sent Bytes Count | Byte | istio.io/service/server/sent\_bytes\_count |
+| gce\_instance\_vm\_flow/default\_metrics | Egress bytes | Byte | networking.googleapis.com/vm\_flow/egress\_bytes\_count |
+| gce\_instance\_vm\_flow/default\_metrics | Ingress bytes | Byte | networking.googleapis.com/vm\_flow/ingress\_bytes\_count |
+| gce\_instance\_vm\_flow/default\_metrics | RTT latencies | MilliSecond | networking.googleapis.com/vm\_flow/rtt |
+| instance\_group/default\_metrics | Instance group size | Count | compute.googleapis.com/instance\_group/size |
+| autoscaler/default\_metrics | Serving capacity | Count | autoscaler.googleapis.com/capacity |
+| autoscaler/default\_metrics | Current Autoscaler utilization | Count | autoscaler.googleapis.com/current\_utilization |
+| tpu\_worker/default\_metrics | Container CPU utilization | Percent | tpu.googleapis.com/container/cpu/utilization |
+| tpu\_worker/default\_metrics | Container memory usage | Byte | tpu.googleapis.com/container/memory/usage |
+| tpu\_worker/default\_metrics | CPU utilization | Percent | tpu.googleapis.com/cpu/utilization |
+| tpu\_worker/default\_metrics | Memory usage | Byte | tpu.googleapis.com/memory/usage |
+| tpu\_worker/default\_metrics | Network bytes received | Byte | tpu.googleapis.com/network/received\_bytes\_count |
+| tpu\_worker/default\_metrics | Network bytes sent | Byte | tpu.googleapis.com/network/sent\_bytes\_count |
+| tpu\_worker/default\_metrics | MXU utilization | Percent | tpu.googleapis.com/tpu/mxu/utilization |
+
+## Related topics
+
+* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+
+
+---
+
+
 ## Source: google-compute-engine.md
 
 
 ---
 title: Monitor Google Compute Engine
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine
-scraped: 2026-02-16T21:14:15.894272
+scraped: 2026-02-17T04:48:56.365872
 ---
 
 # Monitor Google Compute Engine
@@ -10514,7 +11226,7 @@ The following feature sets are available for Google Kubernetes Engine.
 ---
 title: Monitor Google Kubernetes Engine (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke
-scraped: 2026-02-16T21:13:51.829779
+scraped: 2026-02-17T04:48:59.072065
 ---
 
 # Monitor Google Kubernetes Engine (GKE)
@@ -10548,7 +11260,7 @@ Refer to the [Google Marketplaceï»¿](https://www.dynatrace.com/news/blog/60-s
 ---
 title: Google Cloud integrations
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations
-scraped: 2026-02-16T21:18:16.676891
+scraped: 2026-02-17T04:51:50.084654
 ---
 
 # Google Cloud integrations
@@ -10591,7 +11303,7 @@ Dynatrace OneAgent provides full-stack monitoring on Google Compute Engine and G
 ---
 title: Google Cloud supported service metrics (legacy)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/legacy/gcp-supported-service-metrics-legacy
-scraped: 2026-02-16T21:31:11.931440
+scraped: 2026-02-17T05:03:07.528693
 ---
 
 # Google Cloud supported service metrics (legacy)

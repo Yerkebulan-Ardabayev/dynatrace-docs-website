@@ -1,8 +1,8 @@
 # Dynatrace Documentation: ingest-from/dynatrace-activegate
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 15
+Files combined: 16
 
 ---
 
@@ -431,7 +431,7 @@ The diagnostic data is uploaded to the Dynatrace S3 bucket that is configured fo
 ---
 title: ActiveGate FIPS compliance
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance
-scraped: 2026-02-15T21:29:00.883889
+scraped: 2026-02-17T05:06:50.773546
 ---
 
 # ActiveGate FIPS compliance
@@ -628,7 +628,7 @@ TLS1.2, TLS1.3
 ---
 title: ActiveGate group
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-group
-scraped: 2026-02-16T21:20:09.353564
+scraped: 2026-02-17T05:08:01.674306
 ---
 
 # ActiveGate group
@@ -703,7 +703,7 @@ When connecting Dynatrace to Cloud Foundry foundations, you specify an ActiveGat
 ---
 title: Containerized ActiveGate volumes
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container/ag-container-persistence
-scraped: 2026-02-16T09:27:10.136118
+scraped: 2026-02-17T05:09:06.798345
 ---
 
 # Containerized ActiveGate volumes
@@ -868,7 +868,7 @@ Refer to [ActiveGate storage requirements](/docs/ingest-from/dynatrace-activegat
 ---
 title: Containerized ActiveGate configuration
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container/configuration
-scraped: 2026-02-16T09:33:06.715485
+scraped: 2026-02-17T05:05:22.623838
 ---
 
 # Containerized ActiveGate configuration
@@ -1225,7 +1225,7 @@ In addition to the configuration settings passed via environment variables or fi
 ---
 title: Differences between containerized and host-based ActiveGates
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container/differences
-scraped: 2026-02-15T21:22:23.110313
+scraped: 2026-02-17T05:02:58.636763
 ---
 
 # Differences between containerized and host-based ActiveGates
@@ -3443,6 +3443,76 @@ zRemote
 ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
 
 ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
+
+
+---
+
+
+## Source: set-up-reverse-proxy-for-oneagent.md
+
+
+---
+title: Reverse proxy or load balancer for OneAgent
+source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-oneagent
+scraped: 2026-02-17T05:00:28.883121
+---
+
+# Reverse proxy or load balancer for OneAgent
+
+# Reverse proxy or load balancer for OneAgent
+
+* Latest Dynatrace
+* 1-min read
+* Published Sep 20, 2022
+
+A reverse proxy/load balancer can be placed on the path from OneAgent to ActiveGate. You need to configure the URL of the load balancer on the ActiveGate so OneAgents can use that endpoint to connect to the ActiveGate.
+
+There is no need to configure OneAgent to use a reverse proxy. OneAgent uses a list of communication endpoints that are embedded in the installer to connect to the environment. ActiveGate reports to OneAgent the URL that is used to configure OneAgent installation.
+
+## Configure during installation
+
+Linux only
+
+On Linux systems, you can configure a reverse proxy or load balancer for OneAgent by specifying the installation parameters during ActiveGate installation. For details, see [Customize ActiveGate installation on Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#load-balancer-oneagent "Learn about the command-line parameters that you can use with ActiveGate on Linux.").
+
+## Configure after installation
+
+To specify the reverse proxy address after ActiveGate installation
+
+1. Stop the ActiveGate and edit the `custom.properties` file in the [ActiveGate configuration directory](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.").
+2. Configure the `dnsEntryPoint` parameter in the `[connectivity]` section using the following format:
+
+   `dnsEntryPoint = https://<DOMAIN>:<PORT>`
+
+   where `<PORT>` is optional and defaults to `443`. For example:
+
+   ```
+   [connectivity]
+
+
+
+   dnsEntryPoint = https://address.of.my.lb.com:9999
+   ```
+
+   To specify multiple target addresses to which the OneAgent connects, use a comma-separated list. For example:
+
+   ```
+   [connectivity]
+
+
+
+   dnsEntryPoint = https://address.of.my.lb-1.com:9999,https://address.of.my.lb-2.com:9999
+   ```
+3. Save the `custom.properties` file and [restart the ActiveGate main service](/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
+
+## Verify the configuration
+
+To verify the configuration
+
+1. In Dynatrace, go to **Deployment Status** > **ActiveGates**.
+2. Expand the row for your ActiveGate and check the **Load Balancer** property in the **Properties** section.
+
+   You can filter the **ActiveGates** page by `Load Balancer address`.
 
 
 ---

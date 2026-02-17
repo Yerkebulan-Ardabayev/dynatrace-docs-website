@@ -1,7 +1,7 @@
 ---
 title: World map view
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/world-map-view
-scraped: 2026-02-16T21:19:29.899563
+scraped: 2026-02-17T04:49:50.731831
 ---
 
 # World map view

@@ -1,7 +1,7 @@
 ---
 title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-16T21:30:25.448673
+scraped: 2026-02-17T05:03:16.250399
 ---
 
 # Kong AI Gateway

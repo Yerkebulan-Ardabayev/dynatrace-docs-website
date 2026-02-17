@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Language Understanding (LUIS) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-language-understanding
-scraped: 2026-02-16T21:27:29.922593
+scraped: 2026-02-17T05:08:12.559950
 ---
 
 # Azure AI - Language Understanding (LUIS) monitoring

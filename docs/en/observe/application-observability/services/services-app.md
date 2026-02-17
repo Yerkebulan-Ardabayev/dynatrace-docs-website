@@ -1,7 +1,7 @@
 ---
 title: Services app
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-app
-scraped: 2026-02-16T21:09:50.798841
+scraped: 2026-02-17T04:45:07.349689
 ---
 
 # Services app

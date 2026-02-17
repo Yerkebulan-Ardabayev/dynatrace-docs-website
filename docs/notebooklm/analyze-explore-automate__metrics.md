@@ -1,6 +1,6 @@
 # Dynatrace Documentation: analyze-explore-automate/metrics
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 6
 
@@ -13,7 +13,7 @@ Files combined: 6
 ---
 title: Built-in Metrics on Grail
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail
-scraped: 2026-02-16T21:29:34.290685
+scraped: 2026-02-17T05:12:22.180938
 ---
 
 # Built-in Metrics on Grail
@@ -1685,7 +1685,7 @@ The following categories of Metrics Classic metrics are not supported on Grail:
 ---
 title: DQL timeseries examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/dql-examples
-scraped: 2026-02-16T21:15:07.051803
+scraped: 2026-02-17T04:55:10.268699
 ---
 
 # DQL timeseries examples
@@ -2213,7 +2213,7 @@ by:{timeframe, interval, component}
 ---
 title: Histogram metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/histograms
-scraped: 2026-02-15T09:07:01.567875
+scraped: 2026-02-17T04:58:53.880551
 ---
 
 # Histogram metrics
@@ -2292,7 +2292,7 @@ The [timeseries percentile](/docs/platform/grail/dynatrace-query-language/comman
 ---
 title: Set up Grail permissions for Metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/metrics-security-context
-scraped: 2026-02-16T21:31:35.360486
+scraped: 2026-02-17T05:08:00.015559
 ---
 
 # Set up Grail permissions for Metrics
@@ -2371,7 +2371,7 @@ Based on the created attribute, you can enforce security-related user and group 
 ---
 title: Kubernetes metrics migration guide
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/kubernetes-metric-migration
-scraped: 2026-02-16T21:27:46.558638
+scraped: 2026-02-17T05:02:07.528248
 ---
 
 # Kubernetes metrics migration guide
@@ -3061,7 +3061,7 @@ dt.entity.container_group_instance
 ---
 title: RUM metrics migration
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration
-scraped: 2026-02-16T09:38:16.934340
+scraped: 2026-02-17T05:04:02.517331
 ---
 
 # RUM metrics migration

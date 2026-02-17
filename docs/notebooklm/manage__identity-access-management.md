@@ -1,8 +1,8 @@
 # Dynatrace Documentation: manage/identity-access-management
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
-Files combined: 14
+Files combined: 17
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 14
 ---
 title: Access tokens classic
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens
-scraped: 2026-02-16T21:18:53.805855
+scraped: 2026-02-17T04:52:31.306883
 ---
 
 # Access tokens classic
@@ -672,13 +672,202 @@ Grants permission to upload OneAgent extensions via [Extension SDK](/docs/ingest
 ---
 
 
+## Source: platform-tokens.md
+
+
+---
+title: Platform tokens
+source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens
+scraped: 2026-02-17T05:06:17.909841
+---
+
+# Platform tokens
+
+# Platform tokens
+
+* Latest Dynatrace
+* Reference
+* 8-min read
+* Published Jul 23, 2024
+
+Platform tokens are long-lived access tokens enabling programmatic access to Dynatrace platform services. They can be created by regular users and work within the bounds of the assigned user permissions.
+
+Platform tokens are a user-friendly alternative to OAuth clients and are suited for processes and applications that integrate directly with the Dynatrace API. They can be assigned to the user creating them or to a service user that the creating user has access to.
+
+Platform tokens can be set to expire after a period of time or never expire.
+
+These properties make platform tokens a good candidate for all sorts of integrations with the Dynatrace platform, such as:
+
+* Running a scheduled Grail query for data export and ETL
+* Ingesting business metrics and events via the API
+* A script that keeps Dashboards in sync across multiple environments
+
+## How to use a platform token
+
+Platform tokens are directly usable with the APIs offered by the Dynatrace platform services. To use a platform token please provide the token in the Authorization header:
+
+`Authorization: Bearer <platformtoken>`
+
+To get an overview of all the services supporting platform tokens, go to the Dynatrace API explorer. In Dynatrace, search for **Dynatrace API** and select the result.
+
+You can also directly put the platform token into the Authorization field in the Dynatrace API explorer for quick experimentation and try-out.
+
+## My platform tokens
+
+This feature is available for regular users. Every user can create platform tokens in all the accounts of which they are a member.
+
+The platform token management operations listed below are all performed using the **Account Management** pages.
+
+1. Go to [My platform tokensï»¿](https://myaccount.dynatrace.com/platformTokens).
+
+   This opens `https://myaccount.dynatrace.com/platformTokens`, which you can bookmark for easy access to platform tokens Management.
+2. You are presented with a table that list all your platform tokens.
+
+This page lists all of your platform tokens and enables you to create, delete, or disable your tokens.
+
+### Create a new platform token
+
+Every user is able to create up to 10 platform tokens in a given account.
+
+1. Select  \*\*platform token \*\* and specify:
+
+   * **Token Name**
+   * **Expiration date**
+   * **Account**
+   * **Apply to account**
+   * **Environments**.
+
+     + If **apply to account** has been selected, this is not available.
+2. Choose if the new token will be generated for you (default) or a service user you have access to.
+3. Select token scopes in the table below
+
+   * The table provides you with a list of scopes that map to the individual endpoints on the API.
+   * Go to the Dynatrace API explorer, to see the mapping between token scopes and API endpoints.
+   * **IMPORTANT**: A platform token will only work within the limits of the assigned user's permissions. This means that a selected scope is only granting access if that user has the respective permissions.
+4. Select **Generate** to generate the platform token.
+5. The created token will only be shown once, so make sure you copy it into a secure location.
+6. After you have saved the token, select **Finish and exit** to return to the list of platform tokens.
+
+### Disable a platform token
+
+1. Find the platform token that you want to disable in the list overview.
+2. In the **Actions** column, select  > **Disable**.
+3. Select **Cancel** to cancel or **Disable** to confirm.
+
+   * The dialog shows the ID of the token for confirmation.
+
+A disabled token can not be used on the API but can later on be re-enabled to continue using it.
+This is handy if you want to temporary block a token.
+
+Disabling a platform token is immediate, but it may take up to five minutes for the change to propagate.
+
+### Delete a platform token
+
+1. Find the platform token that you want to delete in the list overview
+2. In the **Actions** column, select  > **Delete**.
+3. Select **Cancel** to cancel or **Disable** to confirm.
+
+   * The dialog shows the ID of the token for confirmation.
+
+### Duplicate a platform token
+
+1. Find the platform token that you want to duplicate in the list overview.
+2. In the **Actions** column, select  > **Duplicate**.
+3. The creation process is triggered with an exact copy of the properties of the original token and the name "Duplicate of:" `<token-name>`.
+4. Adjust the properties to your liking and select **Generate**.
+5. After you duplicate the token, it's the only time you can preview it and copy to store for later use.
+6. After you have stored the token, select **Finish and exit** to return to the list of platform tokens.
+
+### Rotate a platform token
+
+It's a security best practice to regularly rotate your tokens.
+
+To rotate an active token
+
+1. Find the platform token that you want to rotate in the list overview.
+2. In the **Actions** column, select  > **Rotate**.
+3. Choose when to expire the old token
+
+   * You may choose to expire immediately or defer to a later time so that you allow some overlap between the two tokens.
+4. Choose a name.
+
+   * To differentiate the rotated token from the original, you can add the current date in the token name.  
+     old: `K8s operator`  
+     new: `K8s operator 10.09.2024`
+5. Either accept the proposed expiry time or change it.
+6. Select **Rotate**.
+
+   * Do not forget to replace the old token with the new one, in all places you are using it.
+
+### Expired tokens
+
+Expired tokens will continue to show in the list overview until you or the account admin decides to delete them.
+
+## Manage users tokens
+
+Account admins can disable or delete platform tokens created by all users under their account. The Account Management UI management actions are performed in a similar way to the ones listed above for regular users.
+
+### Disable platform token creation for an entire account
+
+Account admins have the ability to enable or disable creation of new platform tokens for a given account.
+
+1. In Account Management, go to **Identity & access management** > **Platform tokens**.
+2. Turn off **Allow to manage platform tokens** and confirm the dialog with **Deny**.
+3. Optional To disable existing platform tokens use, select specific or all tokens with the checkboxes on the left and select **Disable** at the top of the list.
+4. Optional To delete existing platform tokens use, select specific or all tokens with the checkboxes on the left and select **Delete** at the top of the list.
+
+To re-enable the creation of new platform tokens, turn on **Allow to manage platform tokens** and confirm the dialog with **Allow**.
+
+### Allow users to generate platform tokens against service users
+
+To allow users to generate platform tokens against existing service users, the account admin needs to assign `iam:service-users:use` permissions, and optionally conditionalize it with `iam:service-user-email` to one or more groups. An example policy could look like this:
+
+```
+ALLOW iam:service-users:use
+
+
+
+WHERE iam:service-user-email IN ("abc@service.sso.dynatrace.com", "def@service.sso.dynatrace.com");
+```
+
+## Platform tokens requirements
+
+* A maximum of 10 platform tokens can be generated by a user for a given account.
+* A platform token is scoped to only one account and cannot be used to access other accounts.
+* A platform token can be further reduced in scope to only target one or many environments within the account the token is being issued against.
+* A platform token name can't exceed 255 characters.
+* Using expired platform tokens to access Dynatrace will return an HTTP error 403 response.
+
+## Available services for platform tokens
+
+The following services are covered by platform tokens:
+
+* `app-engine`
+* `automation`
+* `notification`
+* `davis`
+* `davis-copilot`
+* `document`
+* `email`
+* `iam`
+* `platform-management`
+* `storage`
+* `settings`
+* `app-settings`
+* `state`
+* `state-management`
+
+
+---
+
+
 ## Source: iam-concepts.md
 
 
 ---
 title: Overview of Dynatrace IAM
 source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-concepts
-scraped: 2026-02-15T09:06:25.796733
+scraped: 2026-02-17T05:04:49.049715
 ---
 
 # Overview of Dynatrace IAM
@@ -756,7 +945,7 @@ Access Dynatrace through OAuth clients.](/docs/manage/identity-access-management
 ---
 title: Identity and Access Management limits
 source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-limits
-scraped: 2026-02-16T21:32:27.728380
+scraped: 2026-02-17T04:56:41.837850
 ---
 
 # Identity and Access Management limits
@@ -794,13 +983,1656 @@ Recommended
 ---
 
 
+## Source: iam-policystatements.md
+
+
+---
+title: IAM policy reference
+source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements
+scraped: 2026-02-17T05:00:41.075353
+---
+
+# IAM policy reference
+
+# IAM policy reference
+
+* Latest Dynatrace
+* Reference
+* 1-min read
+* Published Mar 25, 2021
+
+The following is a complete reference of IAM permissions and corresponding conditions applicable to Dynatrace services. Refer to it when you need to define access policies based on a fine-grained set of permissions and conditions that can be enforced per service.
+
+## ai
+
+AI exposes generative AI capabilities in Dynatrace
+
+### ai:operator:execute
+
+Grants permission to interact with the AI conversational interface
+
+## app-engine
+
+AppEngine
+
+### app-engine:apps:install
+
+Grants permission to install and update apps
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT IN`, `NOT startsWith`
+* `app-engine:app-installer` - The ID of the user that installed the app.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT IN`, `NOT startsWith`
+
+### app-engine:apps:run
+
+Grants permission to list and run apps and gives basic access to the Launcher
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT IN`, `NOT startsWith`
+* `app-engine:app-installer` - The ID of the user that installed the app.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT IN`, `NOT startsWith`
+
+### app-engine:apps:delete
+
+Grants permission to uninstall apps
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT IN`, `NOT startsWith`
+* `app-engine:app-installer` - The ID of the user that installed the app.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT IN`, `NOT startsWith`
+
+### app-engine:functions:run
+
+Grants permission to use the function-executor
+
+### app-engine:edge-connects:read
+
+Grants permission to read EdgeConnects
+
+### app-engine:edge-connects:write
+
+Grants permission to write EdgeConnects
+
+### app-engine:edge-connects:delete
+
+Grants permission to delete EdgeConnects
+
+### app-engine:certificates:create
+
+Grants permission to create short-living certificates for app releases
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `=`, `IN`, `startsWith`
+
+## app-settings
+
+App Settings service
+
+### app-settings:objects:read
+
+Grants permission to read app settings objects belonging to the schema
+
+#### conditions:
+
+* `settings:schemaId` - A string that uniquely identifies a single app settings schema. The identifier of a schema can be found in the info box of a settings screen. The condition will match if the object's schemaId property matches.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT startsWith`
+* `shared:app-id` - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+### app-settings:objects:write
+
+Grants permission to write settings objects belonging to the schema
+
+#### conditions:
+
+* `settings:schemaId` - A string that uniquely identifies a single settings schema. The identifier of a schema can be found in the info box of a settings screen. The condition will match if the object's schemaId property matches.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT startsWith`
+* `shared:app-id` - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+### app-settings:objects:admin
+
+Enables using admin-mode to access, change ownership and share permissions of any object. Admin-mode only bypasses the ownership check - so to do anything useful, app-settings:objects:read and/or app-settings:objects:write are needed as well.
+
+#### conditions:
+
+* `settings:schemaId` - A string that uniquely identifies a single app settings schema. The identifier of a schema can be found in the info box of a settings screen. The condition will match if the object's schemaId property matches.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT startsWith`
+* `shared:app-id` - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+## automation
+
+Automation Server
+
+### automation:workflows:read
+
+Grants permission to read workflows
+
+### automation:workflows:write
+
+Grants permission to write workflows
+
+#### conditions:
+
+* `automation:workflow-type` - A string that identifies a workflow type either SIMPLE or STANDARD  
+  operators: `IN`, `=`
+
+### automation:workflows:run
+
+Grants permission to execute workflows
+
+### automation:workflows:admin
+
+Grant admin permissions for workflows.
+
+### automation:rules:read
+
+Grants permission to read scheduling rules
+
+### automation:rules:write
+
+Grants permission to write scheduling rules
+
+### automation:calendars:read
+
+Grants permission to read business calendars
+
+### automation:calendars:write
+
+Grants permission to write business calendars
+
+## business-analytics
+
+Platform Business Analytics Service
+
+### business-analytics:business-flows:write
+
+Grants permission to write business-flows
+
+### business-analytics:business-flows:read
+
+Grants permission to read business-flows
+
+## data-acquisition
+
+Data Acquisition Ingest
+
+### data-acquisition:logs:ingest
+
+Grants permission to ingest logs from Data Acquisition supported sources
+
+### data-acquisition:metrics:ingest
+
+Grants permission to ingest metrics from Data Acquisition supported sources
+
+### data-acquisition:events:ingest
+
+Grants permission to ingest events from Data Acquisition supported sources
+
+## davis
+
+Davis service
+
+### davis:analyzers:read
+
+Grants permission to view Davis analyzers
+
+### davis:analyzers:execute
+
+Grants permission to execute Davis analyzers
+
+## davis-copilot
+
+Davis CoPilot exposes generative AI capabilities in Dynatrace
+
+### davis-copilot:conversations:execute
+
+Grants permission to interact with the Davis CoPilot conversational interface
+
+### davis-copilot:nl2dql:execute
+
+Grants permission to execute the Natural Language to DQL generative AI capability
+
+### davis-copilot:dql2nl:execute
+
+Grants permission to execute the CoPilot skill 'Summarize DQL'
+
+### davis-copilot:document-search:execute
+
+Grants permission to execute the CoPilot skill 'Document Search'
+
+## deployment
+
+Deployment service
+
+### deployment:activegates.network-zones:write
+
+Grants permission to write ActiveGate network zones
+
+### deployment:activegates.groups:write
+
+Grants permission to write ActiveGate groups
+
+### deployment:oneagents.network-zones:write
+
+Grants permission to write OneAgent network zones
+
+### deployment:oneagents.host-groups:write
+
+Grants permission to write OneAgent host groups
+
+### deployment:oneagents.host-tags:write
+
+Grants permission to write OneAgent host tags
+
+### deployment:oneagents.host-properties:write
+
+Grants permission to write OneAgent host properties
+
+### deployment:oneagents.communication-settings:write
+
+Grants permission to write OneAgent communication settings
+
+## dev-obs
+
+Developer Observability
+
+### dev-obs:breakpoint:set
+
+Grants permission to set breakpoint using DevObs live debugger
+
+#### conditions:
+
+* `dev-obs:k8s.namespace.name` - Kubernetes namespaces of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:dt.entity.process_group` - Dynatrace entity process group of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:dt.process_group.detected_name` - Dynatrace process group detected name of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:k8s.cluster.name` - Cluster name of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:host.group` - Host group of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:host.name` - Host name of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+
+### dev-obs:breakpoints:set
+
+Grants permission to set breakpoint using DevObs live debugger
+
+#### conditions:
+
+* `dev-obs:k8s.namespace.name` - Kubernetes namespaces of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:dt.entity.process_group` - Dynatrace entity process group of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:dt.process_group.detected_name` - Dynatrace process group detected name of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:k8s.cluster.name` - Cluster name of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:host.group` - Host group of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+* `dev-obs:host.name` - Host name of the agents where the user is allowed to set breakpoints  
+  operators: `=`, `IN`, `startsWith`, `!=`, `NOT IN`, `NOT startsWith`
+
+### dev-obs:breakpoint:manage
+
+Grants permission to manage breakpoints set in DevObs live debugger
+
+### dev-obs:breakpoints:manage
+
+Grants permission to manage breakpoints set in DevObs live debugger
+
+## document
+
+Document service
+
+### document:documents:write
+
+Grants permission to create and update documents of the document service
+
+### document:documents:read
+
+Grants permission to read documents of the document service
+
+### document:documents:delete
+
+Grants permission to delete documents of the document service
+
+### document:documents:admin
+
+Grants admin permissions for documents of the document service
+
+### document:environment-shares:read
+
+Grants permission to read environment shares of the document service
+
+### document:environment-shares:write
+
+Grants permission to create and update environment shares of the document service
+
+### document:environment-shares:claim
+
+Grants permission to claim environment shares of the document service
+
+### document:environment-shares:delete
+
+Grants permission to delete environment shares of the document service
+
+### document:direct-shares:delete
+
+Grants permission to delete direct shares of the document service
+
+### document:direct-shares:read
+
+Grants permission to read direct shares of the document service
+
+### document:direct-shares:write
+
+Grants permission to create and update direct shares of the document service
+
+### document:trash.documents:read
+
+Grants permission to read deleted documents of the document service
+
+### document:trash.documents:delete
+
+Grants permission to remove deleted documents from the trash of the document service
+
+### document:trash.documents:restore
+
+Grants permission to restore deleted documents from the trash of the document service
+
+## email
+
+API for sending emails
+
+### email:emails:send
+
+Grants permission to send emails from @apps.dynatrace.com with send email API
+
+## environment
+
+Environment and management zone user permissions. See [Migrate role-based permissions to Dynatrace IAMï»¿](https://dt-url.net/3s23539) for more information.
+
+Role IAM permissions work the same way as classic roles do, which means that the `environment:roles:viewer` permission is a part of any other role permission. For example, a policy granting `environment:roles:manage-settings` permission also allows a user to access the web UI.
+
+### environment:roles:viewer
+
+Grants user the **Access environment** permission.
+
+#### conditions:
+
+* `environment:management-zone` - A string that uniquely identifies a management zone. Applies the permission on the management zone level for the specified management zone.  
+  operators: `IN`, `startsWith`, `NOT startsWith`, `=`, `!=`, `MATCH`
+
+### environment:roles:manage-settings
+
+Grants user the **Change monitoring settings** permission.
+
+#### conditions:
+
+* `environment:management-zone` - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.  
+  operators: `IN`, `startsWith`, `NOT startsWith`, `=`, `!=`, `MATCH`
+
+### environment:roles:agent-install
+
+Grants user the **Download/install OneAgent** permission. Users who have this permission assigned are also able to view monitoring data for all management zones.
+
+### environment:roles:view-sensitive-request-data
+
+Grants user the **View sensitive request data** permission.
+
+#### conditions:
+
+* `environment:management-zone` - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.  
+  operators: `IN`, `startsWith`, `NOT startsWith`, `=`, `!=`, `MATCH`
+
+### environment:roles:configure-request-capture-data
+
+Grants user the **Configure capture of sensitive data** permission. Users who have this permission assigned are also able to view monitoring data for all management zones.
+
+### environment:roles:replay-sessions-without-masking
+
+Grants user the **Replay session data without masking** permission.
+
+#### conditions:
+
+* `environment:management-zone` - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.  
+  operators: `IN`, `startsWith`, `NOT startsWith`, `=`, `!=`, `MATCH`
+
+### environment:roles:replay-sessions-with-masking
+
+Grants user the **Replay session data** permission.
+
+#### conditions:
+
+* `environment:management-zone` - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.  
+  operators: `IN`, `startsWith`, `NOT startsWith`, `=`, `!=`, `MATCH`
+
+### environment:roles:manage-security-problems
+
+Grants user the **Manage security problems** permission.
+
+#### conditions:
+
+* `environment:management-zone` - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.  
+  operators: `IN`, `startsWith`, `NOT startsWith`, `=`, `!=`, `MATCH`
+
+### environment:roles:view-security-problems
+
+Grants user the **View security problems** permission.
+
+#### conditions:
+
+* `environment:management-zone` - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.  
+  operators: `IN`, `startsWith`, `NOT startsWith`, `=`, `!=`, `MATCH`
+
+### environment:roles:logviewer
+
+Grants user the **View logs** permission.
+
+#### conditions:
+
+* `environment:management-zone` - A string that uniquely identifies a management zone. Applies the permission on management zone level for the specified management zone.  
+  operators: `IN`, `startsWith`, `NOT startsWith`, `=`, `!=`, `MATCH`
+
+## extensions
+
+Extensions service
+
+### extensions:definitions:read
+
+Grants permission to read extension and environment configurations
+
+#### conditions:
+
+* `extensions:extension-name` - A string that uniquely identifies a single extension  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `!=`, `=`
+
+### extensions:definitions:write
+
+Grants permission to write (update/create/delete) extension and environment configurations
+
+#### conditions:
+
+* `extensions:extension-name` - A string that uniquely identifies a single extension  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `!=`, `=`
+
+### extensions:configurations:read
+
+Grants permission to read extension monitoring configurations
+
+#### conditions:
+
+* `extensions:host` - A string that uniquely identifies a single host for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:host-group` - A string that uniquely identifies a single host group for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:ag-group` - A string that uniquely identifies a single ActiveGate group for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:management-zone` - A string that uniquely identifies a single management zone for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:extension-name` - A string that uniquely identifies a single extension  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `!=`, `=`
+
+### extensions:configurations:write
+
+Grants permission to write (update/create/delete) extension monitoring configurations
+
+#### conditions:
+
+* `extensions:host` - A string that uniquely identifies a single host for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:host-group` - A string that uniquely identifies a single host group for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:ag-group` - A string that uniquely identifies a single ActiveGate group for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:management-zone` - A string that uniquely identifies a single management zone for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:extension-name` - A string that uniquely identifies a single extension  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `!=`, `=`
+
+### extensions:configuration.actions:write
+
+Grants permission to execute actions for extension
+
+#### conditions:
+
+* `extensions:host` - A string that uniquely identifies a single host for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:host-group` - A string that uniquely identifies a single host group for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:ag-group` - A string that uniquely identifies a single ActiveGate group for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:management-zone` - A string that uniquely identifies a single management zone for monitoring configuration assignment  
+  operators: `IN`, `=`
+* `extensions:extension-name` - A string that uniquely identifies a single extension  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `!=`, `=`
+
+### extensions:discovery.jmx:read
+
+Grants permission to discover running Java processes via JMX and read their data through extensions
+
+## geolocation
+
+Geolocation Service
+
+### geolocation:locations:lookup
+
+Grants permission to lookup geolocations for IP adresses.
+
+## hub
+
+Hub provides catalog content, such as Dynatrace Apps, Extensions, and Technologies, in the context of the environment.
+
+### hub:catalog:read
+
+Grants permission to read the hub catalog content.
+
+## hyperscaler-authentication
+
+Hyperscaler authentication service
+
+### hyperscaler-authentication:aws:authenticate
+
+Grants permission to authenticate against AWS.
+
+### hyperscaler-authentication:azure:authenticate
+
+Grants permission to authenticate against Azure.
+
+## iam
+
+Identity and Access Management Framework.
+
+### iam:service-users:use
+
+Grants permission to use all or specified service users
+
+#### conditions:
+
+* `iam:service-user-email` - Service users emails  
+  operators: `IN`, `=`
+
+### iam:service-users:create
+
+Grants permission to create a service user in the environment
+
+### iam:bindings:read
+
+Grants permission to read bindings
+
+#### conditions:
+
+* `iam:policyUuid` - Policy uuid in the URI.  
+  operators: `=`, `IN`
+* `iam:levelType` - Level type in the URI.  
+  operators: `=`, `IN`
+* `iam:boundGroup` - Group uuid in the URI.  
+  operators: `=`, `IN`
+
+### iam:bindings:write
+
+Grants permission to create bindings
+
+#### conditions:
+
+* `iam:policyUuid` - Policy uuid in the URI.  
+  operators: `=`, `IN`
+* `iam:levelType` - Level type in the URI.  
+  operators: `=`, `IN`
+* `iam:boundGroup` - Group uuid in the URI.  
+  operators: `=`, `IN`
+
+### iam:policies:read
+
+Grants permission to read policies
+
+### iam:policies:write
+
+Grants permission to create policies
+
+### iam:boundaries:read
+
+Grants permission to read boundaries
+
+### iam:boundaries:write
+
+Grants permission to create boundaries
+
+### iam:effective-permissions:read
+
+Grants permission to read effective permissions
+
+#### conditions:
+
+* `iam-param:entity-type` - Entity type in the query parameters. Allowed values: `group`, `user`.  
+  operators: `=`
+* `iam-param:entity-id` - Entity id of given entity-type in the query parameters.  
+  operators: `=`, `IN`
+
+### iam:limits:read
+
+Grants permission to read limits
+
+## insights
+
+Business Insights Service
+
+### insights:opportunities:read
+
+Grants permission to read data from the Opportunity Insights API
+
+### insights:moments:read
+
+Grants permission to query value moments and related data
+
+## mcp-gateway
+
+MCP Gateway exposes MCP server capabilities in Dynatrace
+
+### mcp-gateway:servers:invoke
+
+Grants permission to invoke the MCP Gateway API
+
+### mcp-gateway:servers:read
+
+Grants permission to list the available MCP servers
+
+## notification
+
+API for sending notifications
+
+### notification:self-notifications:read
+
+Grants permission to read self notifications.
+
+### notification:self-notifications:write
+
+Grants permission to write self notifications.
+
+### notification:notifications:read
+
+Grants permission to read notification configurations.
+
+### notification:notifications:write
+
+Grants permission to write notification configurations.
+
+## oauth2
+
+Authorization of OAuth token issuing actions (token exchange)
+
+### oauth2:clients:manage
+
+Allows management of light OAuth clients
+
+#### conditions:
+
+* `oauth2:scopes` - Requested scopes for the generated OAuth clients  
+  operators: `=`, `NOT IN`
+
+## openpipeline
+
+OpenPipeline
+
+### openpipeline:configurations:read
+
+Grants permission to read the OpenPipeline configuration
+
+### openpipeline:configurations:write
+
+Grants permission to write the OpenPipeline configuration
+
+### openpipeline:events:ingest
+
+Grants permission to ingest events into OpenPipeline
+
+### openpipeline:events.custom:ingest
+
+Grants permission to ingest events into custom endpoints of OpenPipeline
+
+### openpipeline:security.events:ingest
+
+Grants permission to ingest security events into OpenPipeline
+
+### openpipeline:security.events.custom:ingest
+
+Grants permission to ingest security events into custom endpoints of OpenPipeline
+
+### openpipeline:events.sdlc:ingest
+
+Grants permission to ingest software development lifecycle events into OpenPipeline
+
+### openpipeline:events.sdlc.custom:ingest
+
+Grants permission to ingest software development lifecycle events into custom endpoints of OpenPipeline
+
+## platform-token
+
+Permissions for platform-tokens
+
+### platform-token:tokens:write
+
+Enables write user's platform tokens.
+
+## security-intelligence
+
+Provides APIs for security intelligence (enrichment and contextualization)
+
+### security-intelligence:enrichments:run
+
+Allows execution of enrichments and discovery of integration apps.
+
+## session-replay
+
+Session Replay
+
+### session-replay:resources:read
+
+Grants permission to retrieve a session replay resource
+
+## settings
+
+Settings service
+
+### settings:objects:read
+
+Enables reading of settings objects belonging to the schema
+
+#### conditions:
+
+* `settings:schemaId` - A string that uniquely identifies a single settings schema. The identifier of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the object's schemaId property matches.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT startsWith`
+* `shared:app-id` - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `settings:schemaGroup` - A schema group that allows to address multiple individual schemas at once. The group of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema of the object has a schemaGroup property that matches.  
+  operators: `IN`, `=`
+* `settings:entity.hostGroup` - The host group attribute of an entity for which a setting is stored. This is e.g. useful to grant access to settings scopes of all hosts which belong to the same host group.  
+  operators: `IN`, `=`, `!=`
+* `settings:scope` - The exact scope identifier a setting object has or will have. This condition allows to grant access to the scope of e.g., an individual host. In this case the scope equals the entity identifier, e.g. HOST-48B8F52F33098830.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT startsWith`
+* `environment:management-zone` - The name of a management zone. This condition is applicable to either: any settings object that is allowed on the scope of an entity that can be matched into a management zone or settings objects of the schemas builtin:alerting.maintenance-window, builtin:alerting.profile, builtin:anomaly-detection.metric-events, builtin:monitoring.slo and builtin:problem.notifications.  
+  operators: `IN`, `=`, `startsWith`, `MATCH`
+* `settings:dt.security_context` - The name of a security context. This condition is applicable to any settings object that is allowed on the scope of an entity that can have a security context assigned.  
+  operators: `IN`, `=`, `startsWith`
+
+### settings:objects:write
+
+Enables writing of settings objects belonging to the schema
+
+#### conditions:
+
+* `settings:schemaId` - A string that uniquely identifies a single settings schema. The identifier of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the object's schemaId property matches.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT startsWith`
+* `shared:app-id` - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `settings:schemaGroup` - A schema group that allows to address multiple individual schemas at once. The group of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema of the object has a schemaGroup property that matches.  
+  operators: `IN`, `=`
+* `settings:entity.hostGroup` - The host group attribute of an entity for which a setting is stored. This is e.g. useful to grant access to settings scopes of all hosts which belong to the same host group.  
+  operators: `IN`, `=`, `!=`
+* `settings:scope` - The exact scope identifier a setting object has or will have. This condition allows to grant access to the scope of e.g., an individual host. In this case the scope equals the entity identifier, e.g. HOST-48B8F52F33098830.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT startsWith`
+* `environment:management-zone` - The name of a management zone. This condition is applicable to either: any settings object that is allowed on the scope of an entity that can be matched into a management zone or settings objects of the schemas builtin:alerting.maintenance-window, builtin:alerting.profile, builtin:anomaly-detection.metric-events, builtin:monitoring.slo and builtin:problem.notifications.  
+  operators: `IN`, `=`, `startsWith`, `MATCH`
+* `settings:dt.security_context` - The name of a security context. This condition is applicable to any settings object that is allowed on the scope of an entity that can have a security context assigned.  
+  operators: `IN`, `=`, `startsWith`
+
+### settings:schemas:read
+
+Enables reading settings schemas
+
+#### conditions:
+
+* `settings:schemaId` - A string that uniquely identifies a single settings schema. The identifier of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema's schemaId property of the schema matches.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT startsWith`
+* `shared:app-id` - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `settings:schemaGroup` - A schema group that allows to address multiple individual schemas at once. The group of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema's schemaId property of the schema matches.  
+  operators: `IN`, `=`
+
+### settings:objects:admin
+
+Enables using admin-mode to access, change ownership and share permissions of any object. Admin-mode only bypasses the ownership check - so to do anything useful, settings:objects:read and/or settings:objects:write are needed as well.
+
+#### conditions:
+
+* `settings:schemaId` - A string that uniquely identifies a single settings schema. The identifier of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the object's schemaId property matches.  
+  operators: `IN`, `=`, `!=`, `startsWith`, `NOT startsWith`
+* `shared:app-id` - A string that matches an app identifier. Only applicable to objects of schemas that have been added via apps. The condition will match if the object's app-id property matches.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `settings:schemaGroup` - A schema group that allows to address multiple individual schemas at once. The group of a schema can either be found via the dedicated schema endpoint in the Dynatrace Environment API or in the info box of a settings screen. The condition will match if the schema of the object has a schemaGroup property that matches.  
+  operators: `IN`, `=`
+
+## slo
+
+SLO service
+
+### slo:slos:read
+
+Grants permission to read Service-Level Objectives
+
+### slo:slos:write
+
+Grants permission to write Service-Level Objectives
+
+### slo:objective-templates:read
+
+Grants permission to read Service-Level Objectives Templates
+
+## state
+
+Platform State Service
+
+### state:app-states:read
+
+Grants permission to read app-states
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+### state:app-states:write
+
+Grants permission to write app-states
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+### state:app-states:delete
+
+Grants permission to delete app-states
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+### state:user-app-states:read
+
+Grants permission to read user-app-states
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+### state:user-app-states:write
+
+Grants permission to write user-app-states
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+### state:user-app-states:delete
+
+Grants permission to delete user-app-states
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+## state-management
+
+State Management - Clear app-states and user-app-states of specific apps.
+
+### state-management:app-states:delete
+
+Grants permission to delete all app-states
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+### state-management:user-app-states:delete
+
+Grants permission to delete user-app-states of the current user
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+### state-management:user-app-states:delete-all
+
+Grants permission to delete user-app-states of all users
+
+#### conditions:
+
+* `shared:app-id` - The ID of the app.  
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+
+## storage
+
+Grail
+
+### storage:events:read
+
+Grants permission to read records from the events-table
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:event.kind` - Gives high-level information about what kind of information the event contains, without being specific to the contents of the event. Helps to determine the record type of a raw event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:event.type` - The unique type identifier of a given event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:event.provider` - Source of the event, for example the name of the component or system that generated the event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.namespace.name` - The name of the namespace.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.cluster.name` - The name of the cluster.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:host.name` - Name of the host.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.host_group.id` - Id of the host group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:gcp.project.id` - Google Cloud Platform Project ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:aws.account.id` - Amazon Web Services Account ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.subscription` - Azure subscription.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.resource.group` - Azure resource group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:events:write
+
+Grants permission to write events to Grail
+
+### storage:metrics:read
+
+Grants permission to read timeseries from the metrics-table
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:k8s.namespace.name` - The name of the namespace that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.cluster.name` - The name of the cluster that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:host.name` - Name of the host.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.host_group.id` - Id of the host group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:metric.key` - The identifier of a metric, grouping numeric measurements that share the same measurement semantics (i.e. were measured "the same way".)  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:gcp.project.id` - Google Cloud Platform Project ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:aws.account.id` - Amazon Web Services Account ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.subscription` - Azure subscription.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.resource.group` - Azure resource group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:metrics:write
+
+Grants permissions to write metrics from Dynatrace classic to latest Dynatrace and vice versa
+
+### storage:logs:read
+
+Grants permission to read records from the logs-table
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:k8s.namespace.name` - The name of the namespace that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.cluster.name` - The name of the cluster that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:host.name` - Name of the host.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.host_group.id` - Id of the host group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:log.source` - The location where the log comes from.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:gcp.project.id` - Google Cloud Platform Project ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:aws.account.id` - Amazon Web Services Account ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.subscription` - Azure subscription.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.resource.group` - Azure resource group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:logs:write
+
+Grants permission to write logs to Grail
+
+### storage:entities:read
+
+Grants permission to read records from entities
+
+#### conditions:
+
+* `storage:entity.type` - The type of the entity.  
+  operators: `=`, `IN`, `startsWith`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`
+
+### storage:spans:read
+
+Grants permission to read records from the spans-table
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:k8s.namespace.name` - The name of the namespace that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.cluster.name` - The name of the cluster that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:host.name` - Name of the host.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.host_group.id` - Id of the host group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:gcp.project.id` - Google Cloud Platform Project ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:aws.account.id` - Amazon Web Services Account ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.subscription` - Azure subscription.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.resource.group` - Azure resource group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:bizevents:read
+
+Grants permission to read records from the bizevents-table
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:event.kind` - Gives high-level information about what kind of information the event contains, without being specific to the contents of the event. Helps to determine the record type of a raw event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:event.type` - The unique type identifier of a given event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:event.provider` - Source of the event, for example the name of the component or system that generated the event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.namespace.name` - The name of the namespace that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.cluster.name` - The name of the cluster that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:host.name` - Name of the host.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.host_group.id` - Id of the host group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:gcp.project.id` - Google Cloud Platform Project ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:aws.account.id` - Amazon Web Services Account ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.subscription` - Azure subscription.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.resource.group` - Azure resource group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:smartscape:read
+
+Grants permission to read smartscape nodes and edges from Grail
+
+#### conditions:
+
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.namespace.name` - The name of the namespace that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.cluster.name` - The name of the cluster that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:host.name` - Name of the host.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.host_group.id` - Id of the host group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:gcp.project.id` - Google Cloud Platform Project ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:aws.account.id` - Amazon Web Services Account ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.subscription` - Azure subscription.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.resource.group` - Azure resource group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:system:read
+
+Grants permission to read records from all system tables (for example, `dt.system.events`).
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:event.kind` - Gives high-level information about what kind of information the event contains, without being specific to the contents of the event. Helps to determine the record type of a raw event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:event.type` - The unique type identifier of a given event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:event.provider` - Source of the event, for example the name of the component or system that generated the event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:buckets:read
+
+Grants permission to read records from Grail buckets. Required additionally to a table permission.
+
+#### conditions:
+
+* `storage:table-name` - Table name of the bucket that can be accessed.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:bucket-name` - Name of the bucket that can be accessed.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:query-consumption` - If it is set to `INCLUDED`, the query returns data only from the configured included timeframe of buckets. If set to `ON_DEMAND`, it returns data from the entire timeframe. For any other value, the IAM statement is ignored. The included timeframe must be configured per bucket via the Storage Management API.  
+  operators: `=`
+
+### storage:fieldsets:read
+
+Read data from fieldsets
+
+#### conditions:
+
+* `storage:table-name` - Name of the table from which fieldset(s) can be accessed.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:bucket-name` - Name of the bucket from which fieldset(s) can be accessed.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:fieldset-name` - Name of the fieldset(s) which can be accessed.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+
+### storage:bucket-definitions:read
+
+Grants permission to read bucket definitions from Grail
+
+### storage:bucket-definitions:write
+
+Grants permission to write bucket definitions to Grail
+
+### storage:bucket-definitions:delete
+
+Grants permission to delete bucket definitions from Grail
+
+### storage:bucket-definitions:truncate
+
+Grants permission to delete all records from a bucket (not delete the bucket itself) in Grail.
+
+### storage:records:delete
+
+Delete records in grail
+
+### storage:files:read
+
+Read data from files.
+
+#### conditions:
+
+* `storage:file-path` - Path of the file which can be accessed.  
+  operators: `=`, `startsWith`, `IN`
+
+### storage:files:write
+
+Ingest data via REST API
+
+#### conditions:
+
+* `storage:file-path` - Path of the file which can be accessed.  
+  operators: `=`, `startsWith`, `IN`
+
+### storage:files:delete
+
+Delete data via REST API
+
+#### conditions:
+
+* `storage:file-path` - Path of the file which can be accessed.  
+  operators: `=`, `startsWith`, `IN`
+
+### storage:filter-segments:read
+
+Read filter-segments from grail
+
+### storage:filter-segments:write
+
+Write filter-segments in grail
+
+### storage:filter-segments:share
+
+Share filter-segments in grail
+
+### storage:filter-segments:delete
+
+Delete own filter-segments in grail
+
+### storage:filter-segments:admin
+
+Write and delete all filter-segments in grail
+
+### storage:fieldset-definitions:read
+
+Read fieldset definitions from grail
+
+### storage:fieldset-definitions:write
+
+Write and delete fieldset definitions in grail
+
+### storage:application.snapshots:read
+
+Read application.snapshots from grail
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+
+### storage:user.events:read
+
+Read user.events from grail
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:frontend.name` - The name of the frontend.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:user.sessions:read
+
+Read user.sessions from grail
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:frontend.name` - The name of the frontend.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:user.replays:read
+
+Read user.replays from grail
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+### storage:security.events:read
+
+Read security.events from grail
+
+#### conditions:
+
+* `storage:bucket-name` - This condition reduces the effect of the record-level permission to a defined list of buckets.  
+  operators: `=`, `!=`, `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `MATCH`
+* `storage:event.kind` - Gives high-level information about what kind of information the event contains, without being specific to the contents of the event. Helps to determine the record type of a raw event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:event.type` - The unique type identifier of a given event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:event.provider` - Source of the event, for example the name of the component or system that generated the event.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.namespace.name` - The name of the namespace that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:k8s.cluster.name` - The name of the cluster that the pod is running in.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:host.name` - Name of the host.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.host_group.id` - Id of the host group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:dt.security_context` - Custom field for security context.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:gcp.project.id` - Google Cloud Platform Project ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:aws.account.id` - Amazon Web Services Account ID.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.subscription` - Azure subscription.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+* `storage:azure.resource.group` - Azure resource group.  
+  operators: `=`, `IN`, `startsWith`, `MATCH`
+
+## unified-analysis
+
+Unified analysis
+
+### unified-analysis:screen-definition:read
+
+Grants permission to read the screen definition of a unified analysis screen
+
+## upgrade-assistant
+
+SaaS Upgrade Assistant service
+
+### upgrade-assistant:environments:write
+
+Grants permission to use the SaaS Upgrade Assistant app
+
+## vulnerability-service
+
+Provides APIs to access vulnerabilities that are affecting customer environments
+
+### vulnerability-service:vulnerabilities:read
+
+Allows viewing vulnerabilities
+
+### vulnerability-service:vulnerabilities:write
+
+Allows modifying vulnerability related information
+
+## Related topics
+
+* [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies")
+* [IAM policy statement syntax and examples](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax "IAM policy statement syntax.")
+* [Grant access to Settings](/docs/manage/identity-access-management/use-cases/access-settings "Grant access to Settings")
+* [Account Management API](/docs/dynatrace-api/account-management-api "Explore endpoints of the Account Management API.")
+
+
+---
+
+
+## Source: migrate-roles.md
+
+
+---
+title: Upgrade role-based permissions to Dynatrace IAM policies
+source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/migrate-roles
+scraped: 2026-02-17T05:04:24.608590
+---
+
+# Upgrade role-based permissions to Dynatrace IAM policies
+
+# Upgrade role-based permissions to Dynatrace IAM policies
+
+* Latest Dynatrace
+* 11-min read
+* Updated on Aug 20, 2025
+
+Dynatrace version 1.266+
+
+This guide defines and compares role-based access control (RBAC) and attribute-based access control (ABAC), and provides guidelines and recommendations to consider when planning your upgrade from RBAC to ABAC. Upgrade in this context means expressing classic RBAC permissions targeting the previous Dynatrace as statements within IAM policies. As is explained later, upgrading offers you multiple benefits.
+
+The guide is primarily intended for use by account administrators wanting to take advantage of the power of the ABAC framework within the previous Dynatrace.
+
+## What is ABAC?
+
+ABAC is the preferred industry-wide access management framework because of its business-oriented and modern approach to defining security policies through logical, plain language.
+
+It defines access to secure resources based on a combination of user, resource, action, and contextual attributes. It uses security policies as a mechanism to define access rules for resources.
+
+### Understanding the Difference: RBAC vs ABAC
+
+RBAC roles are typically created to map work functions, such as department, seniority, or work assignment. RBAC permissions typically grant all-or-nothing access to resources based on pre-defined static roles.
+
+For example, assigning "View Logs" permission to a group in Dynatrace grants users in that group the ability to view all captured logs. There is no ability to further refine their access to the logs.
+
+* Various user, resource, and contextual information is not considered in classic RBAC.
+* RBAC roles do not adapt well to changing access permission requirements and the dynamic nature of the attributes of the resources being secured.
+
+ABAC, on the other hand, determines user access by evaluating resource, data, user, and contextual attributes, along with the specific user action being requested. This provides for a flexible permissions framework that handles changes in access requirements in a more dynamic way, rather than relying on static RBAC roles. Furthermore, the access control granularity offered makes it possible to design common or complex access requirements.
+
+Dynatraceâs IAM permissions framework uses these core ABAC principles and further enhances them with features like [policy templating](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policy-templating "Policy templating"), [policy boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users."), and [default policies](/docs/manage/identity-access-management/permission-management/default-policies#default-policies "Dynatrace default policies reference") to make our implementation of ABAC more flexible and user friendly.
+
+### ABAC implementation in your Dynatrace
+
+The Dynatrace IAM permissions framework currently supports the classic RBAC as well as the newer, ABAC, which leverages security policies to define permissions. Security policies are stand-alone components of the ABAC framework that allow combining one or many policy statements to define conditional access to your Dynatrace resources.
+
+The access permissions defined in a security policy take effect when that policy is bound to a group, thus directly controlling the permissions of the users of that group. For simplicity, we will refer to security policies as simply policies for the remainder of this guide.
+
+The following diagram captures the relationship between users, groups, policies, and policy boundaries.
+
+![Users-Groups-Policies-Boundaries](https://dt-cdn.net/images/user-group-policy-boundary-812-75ea55d16b.png)
+
+[Policies](/docs/manage/identity-access-management/permission-management "Permission management") leverage user, resource, data, and contextual attribution to enable you to configure access to your Dynatrace secure resources. You can secure individual data resources, apps, and services while optionally specifying business-specific access control conditions through the expressiveness of the [policy statements syntax](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax "IAM policy statement syntax.").
+
+One or many policy statements can be combined into one policy. The policy can then be bound to one or many user groups, ultimately granting the users of those group the resource access defined by the policy.
+
+For example, the Dynatrace ABAC policy below grants the ability to install or delete (action) custom apps (resource) where (condition) app identifier (resource attribute) is prefixed with "custom" (attribute value):
+
+```
+ALLOW app-engine:apps:install, app-engine:apps:delete WHERE shared:app-id startsWith âcustomâ;
+```
+
+The next example leverages additional contextual information (the time of the day) to restrict the ability to run apps only within business working hours.
+
+```
+ALLOW app-engine:apps:run WHERE shared:app-id = "dynatrace.automations" and global:time-of-day > "09:00+01:00" AND global:time-of-day < "17:00+01:00";
+```
+
+Classic RBAC roles can also be expressed in policies. For example, the policy statement below grants environment access but only for a specific management zone.
+
+```
+ALLOW environment:roles:viewer WHERE environment:management-zone=âmgmt-euâ
+```
+
+The ability to include classic RBAC roles in your policy statements is a very important feature of ABAC policies to help you transition from RBAC.
+
+The true power of the Dynatrace ABAC framework lies in its ability to dynamically target individual or groups of platform resources, while optionally combining available attributes to further narrow down access parameters using the expressive nature of policy statement syntax.
+
+### Benefits of upgrading to ABAC
+
+Dynatraceâs ABAC permissions framework offers the following advantages:
+
+#### Security and compliance
+
+* Policies enable admins to adopt the [principle of least privilegeï»¿](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
+* Policies provide a better framework to adhere to your IT compliance standards
+
+#### Flexibility
+
+* Policies are built to be adaptable to changes and future platform services
+* [default policies](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference") are managed by Dynatrace and automatically adapt to future platform changes
+* Multiple policy statements can be combined to form one policy, allowing administrators to build policies that align with their access control business requirement
+
+#### Scalability
+
+* Policies allow for a concise expression of complex permissions
+* Policy boundaries offer further policy optimization and generalization
+* [Policy templating](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policy-templating "Policy templating") enables parameterization of policies through binding parameters
+
+#### Granularity
+
+* Each policy statement can target one or many platform resources
+* `WHERE` conditions can be appended to statements to further limit access
+
+#### Usability
+
+[Policy boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.") can be re-used in multiple policies.
+
+* Default policies give a great starting point for common access scenarios
+
+#### Futureproofing
+
+* ABAC is here to stay and will continue to be developed and extended.
+
+## RBAC to ABAC upgrade planning
+
+The following upgrade guide recommends a strategy and best practices to consider when planning and executing your upgrade from RBAC to ABAC.
+
+If you use management zones for access control, this guide offers examples of how to refer to management zones within policies so that you can remove the corresponding RBAC assignments. This guide does not cover how to migrate your use of management zones into Grail permissions.
+
+### Upgrade guidelines
+
+The upgrade strategy you choose will depend on your current Dynatrace configuration.
+
+The general strategy is to:
+
+1. Identify RBAC permissions that you have currently configured with your groups.
+2. Define a mapping on how those RBAC permissions map to ABAC permissions that can be implemented in policies.
+
+   * You can repeat doing this in batches until you cover all your groups.
+   * Where appropriate, consider using [default policies](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference") rather than building custom policies.
+
+You can use these sample [Dynatrace Notebook or this PowerShellï»¿](https://community.dynatrace.com/t5/Dynatrace-tips/RBAC-to-ABAC-migration-helper-scripts-Notebook-and-PowerShell/m-p/257807#M1447) scripts to give you an initial assessment and some recommendations to get you started. We will use the script output from our sample Dynatrace environment to illustrate some important concepts and best practices you should consider as you plan your RBAC upgrade to ABAC.
+
+Note that any automation scripts that you might have built that use RBAC permissions will also have to be reviewed for potential changes in the event that you transition to solely using ABAC for your access control.
+
+### Your Dynatrace RBAC assessment
+
+An upgrade plan should start with an assessment of your current RBAC configuration. This means identifying existing RBAC roles assigned to your groups. We are interested in RBAC role assignments that are scoped to target environments or management zones.
+
+Consider the steps below to conduct an initial assessment. You can use the Account Management portal to complete the steps or [import](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and use the provided notebook to help you. Alternatively, you can also use the provided PowerShell script.
+
+1. Create the required OAuth client in the [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.") portal with permissions as instructed in the notebook.
+2. Import the provided **RBAC Assessment** notebook into your Dynatrace or, if itâs more convenient for you, use the provided PowerShell script.
+3. Run the script.
+4. The output will be a table like the example below:
+
+| permissionName | scope | scopeType | mgmtzone\_name | group\_name | abacRole | recommended\_policy |
+| --- | --- | --- | --- | --- | --- | --- |
+| tenant-replay-session-with-masking | xyz:mgmt\_na\_east | management-zone | mgmt\_na\_east | group\_na\_supp | `environment:roles:replay-sessions-with-masking` | Dynatrace Professional |
+| tenant-replay-session-without-masking | xyz:mgmt\_na\_east | management-zone | mgmt\_na\_east | group\_na\_supp | `environment:roles:replay-sessions-without-masking` | Dynatrace Professional |
+| tenant-manage-settings | xyz:mgmt\_na\_east | management-zone | mgmt\_na\_east | group\_na\_supp | `environment:roles:manage-settings` | Dynatrace Professional |
+| â¦ | â¦ | â¦ | â¦ | â¦ | â¦ | â¦ |
+| tenant-replay-session-with-masking | xyz:mgmt\_na\_west | management-zone | mgmt\_na\_west | group\_na\_supp | `environment:roles:replay-sessions-with-masking` | Dynatrace Professional |
+| tenant-replay-session-without-masking | xyz:mgmt\_na\_west | management-zone | mgmt\_na\_west | group\_na\_supp | `environment:roles:replay-sessions-without-masking` | Dynatrace Professional |
+| tenant-manage-settings | xyz:mgmt\_na\_west | management-zone | mgmt\_na\_west | group\_na\_supp | `environment:roles:manage-settings` | Dynatrace Professional |
+| â¦ | â¦ | â¦ | â¦ | â¦ | â¦ | â¦ |
+
+### Upgrade to ABAC
+
+With the inventory of assigned RBAC permissions already created, you can now map RBAC permissions to ABAC ones. You should give priority to existing [default policies](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference") whenever possible, as opposed to building your own custom policies.
+
+We will use âgroup\_na\_suppâ to help us illustrate some key best practices you should consider for your ABAC configuration.
+
+This group currently has the following RBAC permissions scoped to two management zones âmgmt\_na\_eastâ and âmgmt-na\_westâ:
+
+| RBAC Role Name | ABAC role name |
+| --- | --- |
+| tenant-replay-session-with-masking | `environment:roles:replay-sessions-with-masking` |
+| tenant-replay-session-without-masking | `environment:roles:replay-sessions-without-masking` |
+| tenant-manage-settings | `environment:roles:manage-settings` |
+| tenant-view-sensitive-request-data | `environment:roles:view-sensitive-request-data` |
+| tenant-view-security-problems | `environment:roles:view-security-problems` |
+| tenant-manage-security-problems | `environment:roles:manage-security-problems` |
+| tenant-log-viewer | `environment:roles:logviewer` |
+
+If we were to create a new custom policy to assign those permissions, we could write the following policy statement:
+
+```
+ALLOW  environment:roles:replay-sessions-with-masking, environment:roles:replay-sessions-without-masking, environment:roles:manage-settings, environment:roles:view-sensitive-request-data , environment:roles:manage-security-problems, environment:roles:logviewer
+
+
+
+WHERE environment:management-zone startsWith "mgmt_na";
+```
+
+We could then bind this policy to the `group_na_supp` group and remove the old RBAC role assignment from the group. To further optimize our new ABAC permission, we could use **Dynatrace Professional** rather than building a custom policy. Because [default policies](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference") are read-only, we would need a mechanism to append our `WHERE` condition above.
+
+This is where [policy boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.") come into play. We can store the condition `environment:management-zone startsWith "mgmt\_na";` in a policy boundary and then use it with our group, as we bind the group to the **Dynatrace Professional** policy, thus further restricting this permission assignment using the boundary we created.
+
+First, letâs create the policy boundary. In [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health."), under **Identity & Access management** > **Policy management**, we can create a policy boundary specific to North America management zones.
+
+![Boundaries](https://dt-cdn.net/images/boundaries-468-08355e2a83.png)
+
+Next, we assign the default policy **Dynatrace Professional** to the `group_na_supp` and apply the boundary we just created.
+
+![Permission Assign](https://dt-cdn.net/images/permissionassign-936-e6e96537be.png)
+
+As may be obvious from this example, policy boundaries make it possible to extract your business-specific access requirements out of the policy and into a standalone unit that can be re-applied over and over across multiple policies. Policy boundaries can be assigned to one or many group-to-policy bindings, making them reusable. The combination of default policies with policy boundaries has the potential to further simplify your permissions configuration.
+
+Best practice
+
+Make use of [default policies](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference") whenever possible and define your business-specific access conditions in policy boundaries.
+
+### When should you create custom policies
+
+Rather than creating new custom policies, administrators are strongly encouraged to primarily leverage default policies, which are built and managed by Dynatrace and already encapsulate the necessary policy statements for typical access scenarios. When assigning these default policies to groups, you can then further restrict the permissions by using policy boundaries.
+
+In cases where default policies do not meet your specific permission requirements, or when you might want to restrict them with some specific `DENY` statements, you can then build custom policies.
+
+Best practice
+
+Build your own custom policies only when provided default policies don't fit your requirements or when you want to further limit default policies.
+
+### Testing and validation
+
+We recommend mocking up groups and users and testing separately, ideally in a sandboxed environment if possible.
+
+Also, Dynatraceâs Enterprise API could be used to provide useful permissions information for specific users or groups. For example, the following GET request to `https://api.dynatrace.com` will return current permissions for a specific user:
+
+```
+`https://api.dynatrace.com/iam/v1/resolutionaccount/:accountIdHere/effectivepermissions?entityType=user\&entityId=:userIdHere`
+```
+
+### Deployment
+
+Deploy policies in a phased approach to minimize user access disruptions. You may choose to do these in batches of groups or some other way more appropriate to your setup.
+
+Best practice
+
+Consider deploying your changes in batches rather than all at once.
+
+### Monitoring and tuning
+
+Monitor your ABAC permissions over time to see if they have adversely affected user access and adjust accordingly.
+
+### Upgrade support
+
+Refer to our online documentation and Dynatrace Community forums for additional help during your upgrade from RBAC to ABAC. Additionally, make use of Dynatraceâs support channels for more targeted help.
+
+### Final checklist
+
+1. Compile your existing RBAC roles and group assignments
+
+   * Identify and plan to replace any custom automation still relying on RBAC
+2. Design your ABAC policies:
+
+   * Use default policies whenever suitable
+   * Create policy boundaries to capture your specific business logic
+3. Decide on an upgrade strategy
+
+   * Consider a phased rather than a big-bang approach by introducing changes in multiple batches
+4. Test your upgrade
+
+   * Use a sandbox environment if available to test the effects of your new ABAC-only configuration
+   * Try upgrading a select set of groups first
+5. Monitor the effects of your upgrade to catch and correct any misconfigurations
+
+## Related topics
+
+* [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies")
+* [IAM policy statement syntax and examples](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax "IAM policy statement syntax.")
+
+
+---
+
+
 ## Source: iam-policy-boundaries.md
 
 
 ---
 title: Policy boundaries
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries
-scraped: 2026-02-16T09:28:15.568879
+scraped: 2026-02-17T05:05:27.865448
 ---
 
 # Policy boundaries
@@ -1164,7 +2996,7 @@ To apply a policy to a group, you need to bind the policy to the group. For deta
 ---
 title: Working with policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies
-scraped: 2026-02-16T21:17:30.545939
+scraped: 2026-02-17T05:01:35.426471
 ---
 
 # Working with policies
@@ -1709,7 +3541,7 @@ storage:dt.security_context = "mySecurityContext";
 ---
 title: Enhance your account security with MFA TOTP
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-mfa/user-mfa
-scraped: 2026-02-16T21:32:33.592776
+scraped: 2026-02-17T05:09:28.373204
 ---
 
 # Enhance your account security with MFA TOTP
@@ -1778,7 +3610,7 @@ Common reasons why you might not be prompted for MFA when accessing Dynatrace:
 ---
 title: SAML
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml
-scraped: 2026-02-16T21:32:40.643098
+scraped: 2026-02-17T05:03:10.539896
 ---
 
 # SAML
@@ -2753,7 +4585,7 @@ Yes, you can restart SCIM synchronization. To do this, go to the SCIM applicatio
 ---
 title: Okta SCIM configuration for Dynatrace
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-okta
-scraped: 2026-02-16T21:27:02.902548
+scraped: 2026-02-17T05:07:48.277977
 ---
 
 # Okta SCIM configuration for Dynatrace
@@ -2790,7 +4622,7 @@ Dynatrace SCIM supports only bearer token authentication. Depending on the Okta 
 ---
 title: SCIM
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim
-scraped: 2026-02-16T09:36:52.684026
+scraped: 2026-02-17T05:09:03.419970
 ---
 
 # SCIM
@@ -2931,7 +4763,7 @@ Yes, you can restart SCIM synchronization. To do this, go to the SCIM applicatio
 ---
 title: Service users
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-service-users
-scraped: 2026-02-16T21:25:34.645239
+scraped: 2026-02-17T05:08:28.592869
 ---
 
 # Service users

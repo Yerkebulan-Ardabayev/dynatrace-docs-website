@@ -1,6 +1,6 @@
 # Dynatrace Documentation: platform/openpipeline
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 17
 
@@ -13,7 +13,7 @@ Files combined: 17
 ---
 title: Owner-based access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/access-control
-scraped: 2026-02-16T09:27:29.822911
+scraped: 2026-02-17T05:06:38.687553
 ---
 
 # Owner-based access control in OpenPipeline
@@ -916,7 +916,7 @@ To change how logs are processed, you can modify the matching condition to exclu
 ---
 title: Set access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/set-access-control
-scraped: 2026-02-16T21:27:01.587473
+scraped: 2026-02-17T04:59:12.578398
 ---
 
 # Set access control in OpenPipeline
@@ -2308,7 +2308,7 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-16T21:14:36.352095
+scraped: 2026-02-17T04:57:47.199770
 ---
 
 # OpenPipeline limits
@@ -3718,7 +3718,7 @@ Conclusion
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-16T21:11:00.752404
+scraped: 2026-02-17T04:45:29.982205
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -3914,7 +3914,7 @@ After applying these rules, queues with high cardinality will either have `messa
 ---
 title: Extract metrics from spans and distributed traces
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans
-scraped: 2026-02-16T21:21:10.675711
+scraped: 2026-02-17T05:11:25.774301
 ---
 
 # Extract metrics from spans and distributed traces

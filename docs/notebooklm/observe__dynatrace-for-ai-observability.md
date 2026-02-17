@@ -1,6 +1,6 @@
 # Dynatrace Documentation: observe/dynatrace-for-ai-observability
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 11
 
@@ -13,7 +13,7 @@ Files combined: 11
 ---
 title: AI Observability (preview)
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-02-16T09:30:14.087852
+scraped: 2026-02-17T05:05:43.840457
 ---
 
 # AI Observability (preview)
@@ -254,7 +254,7 @@ Review all observable AI technologies in the Dynatrace Hub.](https://www.dynatra
 ---
 title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-16T21:30:25.448673
+scraped: 2026-02-17T05:03:16.250399
 ---
 
 # Kong AI Gateway
@@ -519,7 +519,7 @@ Additionally, the following metrics are reported.
 ---
 title: AI data governance with Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/data-governance
-scraped: 2026-02-16T09:27:48.219653
+scraped: 2026-02-17T05:00:09.500801
 ---
 
 # AI data governance with Amazon Bedrock
@@ -708,7 +708,7 @@ Now you can:
 ---
 title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability
-scraped: 2026-02-16T09:35:54.096725
+scraped: 2026-02-17T04:59:20.626542
 ---
 
 # OpenAI Observability
@@ -1496,7 +1496,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: TensorFlow Keras observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability
-scraped: 2026-02-16T21:25:58.347036
+scraped: 2026-02-17T05:07:13.406346
 ---
 
 # TensorFlow Keras observability

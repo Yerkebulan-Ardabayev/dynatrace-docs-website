@@ -1,7 +1,7 @@
 ---
 title: SCIM
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim
-scraped: 2026-02-16T09:36:52.684026
+scraped: 2026-02-17T05:09:03.419970
 ---
 
 # SCIM

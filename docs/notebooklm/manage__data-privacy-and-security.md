@@ -1,6 +1,6 @@
 # Dynatrace Documentation: manage/data-privacy-and-security
 
-Generated: 2026-02-16
+Generated: 2026-02-17
 
 Files combined: 10
 
@@ -650,7 +650,7 @@ Depending on the source of the data, Dynatrace stores [security events](/docs/se
 ---
 title: Create scheduled scan in Sensitive Data Center
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-scheduled-scan
-scraped: 2026-02-16T21:32:17.910955
+scraped: 2026-02-17T05:10:27.354197
 ---
 
 # Create scheduled scan in Sensitive Data Center
@@ -1033,7 +1033,7 @@ The most likely cause of failed scans is misconfigured permissions for the servi
 ---
 title: Data safety guidance for Android
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-android
-scraped: 2026-02-16T09:38:58.838246
+scraped: 2026-02-17T05:01:37.167119
 ---
 
 # Data safety guidance for Android
@@ -1442,7 +1442,7 @@ Other Data
 ---
 title: Data security controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/data-security-controls
-scraped: 2026-02-16T21:27:05.537753
+scraped: 2026-02-17T04:59:05.588437
 ---
 
 # Data security controls
@@ -1631,7 +1631,7 @@ Third party and code level vulnerabilities are [detected in real time and automa
 ---
 title: Secure development controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/secure-development-controls
-scraped: 2026-02-16T21:25:11.026845
+scraped: 2026-02-17T04:58:08.089379
 ---
 
 # Secure development controls

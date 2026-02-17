@@ -1,7 +1,7 @@
 ---
 title: Azure Application Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-application-gateway
-scraped: 2026-02-16T21:31:39.319774
+scraped: 2026-02-17T04:57:43.840576
 ---
 
 # Azure Application Gateway monitoring

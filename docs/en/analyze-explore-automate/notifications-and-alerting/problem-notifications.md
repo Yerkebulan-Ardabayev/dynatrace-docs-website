@@ -1,7 +1,7 @@
 ---
 title: Problem notifications
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications
-scraped: 2026-02-16T21:09:53.515797
+scraped: 2026-02-17T04:45:23.198741
 ---
 
 # Problem notifications

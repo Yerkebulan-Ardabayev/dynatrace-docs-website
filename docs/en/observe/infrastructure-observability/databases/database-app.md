@@ -1,7 +1,7 @@
 ---
 title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-02-16T21:11:10.324039
+scraped: 2026-02-17T04:47:12.430327
 ---
 
 # Databases app

@@ -1,7 +1,7 @@
 ---
 title: Service flow
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow
-scraped: 2026-02-16T21:15:39.078183
+scraped: 2026-02-17T04:48:53.608559
 ---
 
 # Service flow

@@ -1,7 +1,7 @@
 ---
 title: Attacks API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/attacks
-scraped: 2026-02-16T21:25:45.541425
+scraped: 2026-02-17T05:00:39.039748
 ---
 
 # Attacks API
