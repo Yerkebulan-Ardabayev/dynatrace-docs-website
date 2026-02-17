@@ -1,7 +1,7 @@
 ---
 title: Platform tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/platform-tokens-api
-scraped: 2026-02-17T05:10:48.118469
+scraped: 2026-02-17T21:26:36.048347
 ---
 
 # Platform tokens API

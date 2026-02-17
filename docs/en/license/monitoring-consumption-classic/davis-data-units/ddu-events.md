@@ -1,7 +1,7 @@
 ---
 title: DDUs for custom Davis events
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/ddu-events
-scraped: 2026-02-17T05:09:20.407521
+scraped: 2026-02-17T21:32:53.834573
 ---
 
 # DDUs for custom Davis events

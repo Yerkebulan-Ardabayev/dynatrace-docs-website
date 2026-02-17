@@ -1,7 +1,7 @@
 ---
 title: Distributed traces concepts
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/concepts
-scraped: 2026-02-16T21:12:49.556795
+scraped: 2026-02-17T21:24:15.534904
 ---
 
 # Distributed traces concepts

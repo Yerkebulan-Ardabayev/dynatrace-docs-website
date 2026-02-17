@@ -1,7 +1,7 @@
 ---
 title: Service users
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-service-users
-scraped: 2026-02-17T05:08:28.592869
+scraped: 2026-02-17T21:32:15.403490
 ---
 
 # Service users

@@ -1,7 +1,7 @@
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-17T04:45:11.801697
+scraped: 2026-02-17T21:13:33.844537
 ---
 
 # Dashboards
@@ -1171,7 +1171,7 @@ To copy a dashboard tile to a notebook (as a notebook section)
 
 To copy a dashboard tile to a different app (not ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**), open the  menu and select  **Open with**, and then select the target app.
 
-For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ### Edit a tile
 

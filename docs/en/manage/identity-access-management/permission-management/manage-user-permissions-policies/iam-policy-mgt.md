@@ -1,7 +1,7 @@
 ---
 title: Manage IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt
-scraped: 2026-02-16T21:22:02.163806
+scraped: 2026-02-17T21:21:20.105125
 ---
 
 # Manage IAM policies

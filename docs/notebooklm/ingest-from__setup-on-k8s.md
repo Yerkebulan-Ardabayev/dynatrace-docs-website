@@ -1028,7 +1028,7 @@ Sizing guide for Dynatrace ActiveGate components](/docs/ingest-from/setup-on-k8s
 ---
 title: Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/marketplaces/eks-dto
-scraped: 2026-02-17T05:01:01.552864
+scraped: 2026-02-17T21:30:56.608262
 ---
 
 # Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)
@@ -1869,7 +1869,7 @@ To update ActiveGate, see [Update ActiveGate](/docs/ingest-from/dynatrace-active
 ---
 title: Manually deploy ActiveGate as a StatefulSet
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-statefulset
-scraped: 2026-02-17T04:59:52.852201
+scraped: 2026-02-17T21:28:13.641491
 ---
 
 # Manually deploy ActiveGate as a StatefulSet
@@ -2858,7 +2858,7 @@ ActiveGate is updated automatically on pod restart whenever there is a new versi
 ---
 title: Set up OpenShift monitoring via OperatorHub
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ocp-operator-hub
-scraped: 2026-02-17T04:57:52.026277
+scraped: 2026-02-17T21:30:16.863941
 ---
 
 # Set up OpenShift monitoring via OperatorHub
@@ -3419,7 +3419,7 @@ No specific configuration is required.
 ---
 title: Deployment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
-scraped: 2026-02-17T04:48:48.729998
+scraped: 2026-02-17T21:16:52.491963
 ---
 
 # Deployment
@@ -5114,7 +5114,7 @@ sample-edge-connect-name   <environment-id>.apps.dynatrace.com   Running   16m
 ---
 title: Deploy Dynatrace alongside Istio
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment
-scraped: 2026-02-17T04:49:19.800029
+scraped: 2026-02-17T21:19:56.322498
 ---
 
 # Deploy Dynatrace alongside Istio
@@ -5598,7 +5598,7 @@ If not, check if `enableIstio` is set to `true` in the DynaKube.
 ---
 title: Instrument ingress-nginx
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx
-scraped: 2026-02-16T21:12:45.448003
+scraped: 2026-02-17T21:24:03.966372
 ---
 
 # Instrument ingress-nginx
@@ -5673,7 +5673,7 @@ If your pod isn't up and running, make sure that it hasn't exceeded either of th
 ---
 title: Kubernetes API Monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring
-scraped: 2026-02-16T21:17:23.705849
+scraped: 2026-02-17T21:16:46.043964
 ---
 
 # Kubernetes API Monitoring
@@ -6108,7 +6108,7 @@ ActiveGate is updated automatically on pod restart whenever there is a new versi
 ---
 title: Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits
-scraped: 2026-02-17T05:08:42.141470
+scraped: 2026-02-17T21:25:26.092911
 ---
 
 # Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
@@ -6692,7 +6692,7 @@ templates:
 ---
 title: Configure auto-update for Dynatrace Operator managed components
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components
-scraped: 2026-02-17T05:05:13.666058
+scraped: 2026-02-17T21:29:22.799163
 ---
 
 # Configure auto-update for Dynatrace Operator managed components
@@ -6930,7 +6930,7 @@ Renovate automates the updating of dependencies in Git repositories. Integrating
 ---
 title: Manage Dynatrace deployments using GitOps
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops
-scraped: 2026-02-17T04:48:36.842745
+scraped: 2026-02-17T21:19:42.422419
 ---
 
 # Manage Dynatrace deployments using GitOps
@@ -7328,7 +7328,7 @@ For configuring automatic updates for Dynatrace Operator, see [Auto-update of Dy
 ---
 title: Metadata enrichment of all telemetry originating from Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment
-scraped: 2026-02-17T04:57:07.558525
+scraped: 2026-02-17T21:24:51.383570
 ---
 
 # Metadata enrichment of all telemetry originating from Kubernetes
@@ -8065,7 +8065,7 @@ k8s.namespace.label.domain: finance
 ---
 title: Configure enrichment directory
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment
-scraped: 2026-02-17T04:58:28.324960
+scraped: 2026-02-17T21:24:53.915060
 ---
 
 # Configure enrichment directory
@@ -9215,7 +9215,7 @@ env: ...
 ---
 title: Migration of DynaKube v1beta1 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta5
-scraped: 2026-02-15T21:29:07.246476
+scraped: 2026-02-17T21:30:09.298689
 ---
 
 # Migration of DynaKube v1beta1 to v1beta5
@@ -10112,7 +10112,7 @@ env: ...
 ---
 title: Migration of DynaKube v1beta2 to v1beta4
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta4
-scraped: 2026-02-15T21:25:27.203240
+scraped: 2026-02-17T21:34:26.732123
 ---
 
 # Migration of DynaKube v1beta2 to v1beta4
@@ -10309,7 +10309,7 @@ The CSI driver is now used when installed as part of the Dynatrace Operator inst
 ---
 title: Migration of DynaKube v1beta2 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5
-scraped: 2026-02-17T05:11:57.736258
+scraped: 2026-02-17T21:28:26.023660
 ---
 
 # Migration of DynaKube v1beta2 to v1beta5
@@ -11095,7 +11095,7 @@ We recommend the following:
 ---
 title: Migration of DynaKube v1beta5 to v1beta6
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta5-v1beta6
-scraped: 2026-02-17T05:09:16.821230
+scraped: 2026-02-17T21:34:00.634506
 ---
 
 # Migration of DynaKube v1beta5 to v1beta6
@@ -11440,7 +11440,7 @@ Optional
 ---
 title: Migrate from classic full-stack to cloud-native full-stack mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-cloud-native
-scraped: 2026-02-17T05:02:12.035415
+scraped: 2026-02-17T21:33:42.269314
 ---
 
 # Migrate from classic full-stack to cloud-native full-stack mode
@@ -11732,7 +11732,7 @@ Required
 ---
 title: Migrate from cloud-native full-stack to application monitoring mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/cloud-native-to-app-monitoring
-scraped: 2026-02-17T05:09:26.726342
+scraped: 2026-02-17T21:29:45.355213
 ---
 
 # Migrate from cloud-native full-stack to application monitoring mode
@@ -12171,7 +12171,7 @@ OpenShift
 ---
 title: Migrate from OneAgent Operator to Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/migrate-to-dto
-scraped: 2026-02-17T05:10:49.770574
+scraped: 2026-02-17T21:32:14.167841
 ---
 
 # Migrate from OneAgent Operator to Dynatrace Operator
@@ -12377,7 +12377,7 @@ OpenShift
 ---
 title: Migration guides
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration
-scraped: 2026-02-17T05:10:07.064638
+scraped: 2026-02-17T21:29:40.207760
 ---
 
 # Migration guides
@@ -12416,7 +12416,7 @@ Migrate from your old `DynaKube` with an older `apiVersion` to the newest suppor
 ---
 title: Network configurations
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations
-scraped: 2026-02-17T05:11:15.606877
+scraped: 2026-02-17T21:32:31.712690
 ---
 
 # Network configurations
@@ -12910,7 +12910,7 @@ To configure a server TLS certificate for the ActiveGate:
 ---
 title: Guides
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides
-scraped: 2026-02-17T05:05:31.118588
+scraped: 2026-02-17T21:26:29.642126
 ---
 
 # Guides
@@ -13202,7 +13202,7 @@ For details, see [security context and cost allocation](/docs/ingest-from/setup-
 ---
 title: DynaKube parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-scraped: 2026-02-16T09:38:08.852569
+scraped: 2026-02-17T21:29:20.303529
 ---
 
 # DynaKube parameters for Dynatrace Operator
@@ -15194,7 +15194,7 @@ A custom certificate is required for this capability. See the `tlsSecretName` pa
 ---
 title: EdgeConnect parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters
-scraped: 2026-02-16T21:28:34.864329
+scraped: 2026-02-17T21:33:03.596932
 ---
 
 # EdgeConnect parameters for Dynatrace Operator

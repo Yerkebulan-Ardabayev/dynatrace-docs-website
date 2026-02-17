@@ -1,7 +1,7 @@
 ---
 title: Prometheus data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions
-scraped: 2026-02-17T05:02:04.646870
+scraped: 2026-02-17T21:33:58.310681
 ---
 
 # Prometheus data source

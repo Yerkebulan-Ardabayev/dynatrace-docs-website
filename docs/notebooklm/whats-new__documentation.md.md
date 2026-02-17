@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-17T04:46:30.047574
+scraped: 2026-02-17T21:15:46.757309
 ---
 
 # New Documentation articles
@@ -819,7 +819,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Aug 07, 2023
 
-* [Open with](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.")
+* [Open with](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.")
 * [Performance](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")
 * [User permissions for workflows](/docs/analyze-explore-automate/workflows/security "Guide on security aspects of workflow automation in Dynatrace Workflows")
 * [Ingest OpenTelemetry traces](/docs/ingest-from/opentelemetry/otlp-api/ingest-traces "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply.")

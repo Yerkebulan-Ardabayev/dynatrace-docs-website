@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-17T05:11:59.438351
+scraped: 2026-02-17T21:28:37.497202
 ---
 
 # Dynatrace Assist

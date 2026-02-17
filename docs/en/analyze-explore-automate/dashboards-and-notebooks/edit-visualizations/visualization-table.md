@@ -1,7 +1,7 @@
 ---
 title: Table visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table
-scraped: 2026-02-17T04:54:29.708241
+scraped: 2026-02-17T21:22:18.733660
 ---
 
 # Table visualization

@@ -1,7 +1,7 @@
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-02-17T04:55:45.891828
+scraped: 2026-02-17T21:22:36.078554
 ---
 
 # Auto-adaptive thresholds for anomaly detection

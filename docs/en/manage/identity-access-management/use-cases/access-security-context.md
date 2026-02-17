@@ -1,7 +1,7 @@
 ---
 title: Grant access to entities with security context
 source: https://www.dynatrace.com/docs/manage/identity-access-management/use-cases/access-security-context
-scraped: 2026-02-16T21:28:26.206945
+scraped: 2026-02-17T21:25:03.991881
 ---
 
 # Grant access to entities with security context

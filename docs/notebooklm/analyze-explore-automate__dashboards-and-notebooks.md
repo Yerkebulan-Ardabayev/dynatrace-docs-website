@@ -2,7 +2,7 @@
 
 Generated: 2026-02-17
 
-Files combined: 36
+Files combined: 38
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 36
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-02-17T04:46:03.207413
+scraped: 2026-02-17T21:15:07.158661
 ---
 
 # Add code to a dashboard
@@ -233,7 +233,7 @@ To see more examples, open the  menu at the top of your dashboard and browse the
 ---
 title: Add data to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
-scraped: 2026-02-17T04:46:24.373546
+scraped: 2026-02-17T21:15:00.768731
 ---
 
 # Add data to a dashboard
@@ -434,7 +434,7 @@ Select **Run query**.
 ---
 title: Add Markdown to dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
-scraped: 2026-02-17T04:46:04.882093
+scraped: 2026-02-17T21:14:59.428663
 ---
 
 # Add Markdown to dashboard
@@ -716,7 +716,7 @@ For details on variables, see [Add a variable to a dashboard](/docs/analyze-expl
 ---
 title: Add a snippet to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
-scraped: 2026-02-17T04:46:17.860839
+scraped: 2026-02-17T21:15:03.278515
 ---
 
 # Add a snippet to a dashboard
@@ -828,7 +828,7 @@ When you find something interesting:
 ---
 title: Add a variable to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
-scraped: 2026-02-17T04:46:22.715955
+scraped: 2026-02-17T21:15:05.856370
 ---
 
 # Add a variable to a dashboard
@@ -1350,7 +1350,7 @@ In this example, we selected `Variable1` to display the variable definition and 
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-17T04:45:11.801697
+scraped: 2026-02-17T21:13:33.844537
 ---
 
 # Dashboards
@@ -2520,7 +2520,7 @@ To copy a dashboard tile to a notebook (as a notebook section)
 
 To copy a dashboard tile to a different app (not ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**), open the  menu and select  **Open with**, and then select the target app.
 
-For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ### Edit a tile
 
@@ -2750,7 +2750,7 @@ To see the full API documentation for the documents service
 ---
 title: Manage document versions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
-scraped: 2026-02-17T04:46:06.525026
+scraped: 2026-02-17T21:15:02.033077
 ---
 
 # Manage document versions
@@ -2866,13 +2866,420 @@ The **Actions** column displays all of the actions available from the **History*
 ---
 
 
+## Source: drilldowns-and-navigation.md
+
+
+---
+title: Drilldowns and navigation
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation
+scraped: 2026-02-17T21:15:09.901157
+---
+
+# Drilldowns and navigation
+
+# Drilldowns and navigation
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Updated on Jan 26, 2026
+
+This document explains how to create and use drilldown links based on intents or URLs in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** or ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**. Drilldown links allow you to navigate across dashboards, notebooks, Dynatrace apps, or external systems while preserving context.
+
+The following options simplify workflows by enabling deeper analysis with just a few clicks, making it easy to investigate issues or explore related data directly from visualizations. In the following, we will leverage and go through use cases to explain the concepts and show how to set things up.
+
+## Use cases
+
+You can drill into related data within Dynatrace or in external systems by passing relevant context. Depending on your use case, you can choose to pass context automatically (using **Open with** based on [intentsï»¿](https://dt-url.net/intents)) or manually (via custom links to dashboards or external systems).
+
+### Automatic context passing: explore details in Dynatrace apps
+
+Use **automated context passing** to investigate data quickly, without needing manual configuration.
+
+For example:
+
+* Investigate log lines to identify patterns.
+* Examine traces or spans to pinpoint issues.
+* View detailed host information.
+
+**Options for automated context passing**:
+
+* [Open with](#open-with) opens the selected item in another Dynatrace app.
+* [Suggested apps](#suggested-app-links) are suggested Dynatrace app links added to the menu automatically based on the item you selected.
+
+### Manual context passing: Link to external systems or dashboards
+
+Use **manual context passing** if you need to link to external tools or manually configure dashboard or notebook drilldowns.
+
+For example:
+
+* **Link to external systems**: Integrate with tools like ServiceNow, Jira, or GitHub by passing relevant IDsâsuch as a ServiceNow incident or Jira issue IDâinto the link.
+* **Link to another dashboard or notebook**: Link an overview dashboard (for example, one showing multiple services) to a detailed one that focuses on a single service or application.
+
+**Options for manual context passing**:
+
+* [Link from the visualization menu via custom UI-based links](#visualization-custom-ui-based-link)
+* [Link from a table via a markdown column](#table-markdown-column)
+
+URL format determines whether to open a new tab
+
+When using these options to link to another dashboard or notebook, the URL format you choose determines whether to open the target in a new tab:
+
+* To open the target in a new tab, use:  
+  `https://<your-environment>/ui/[dashboards|notebooks]/...`  
+  (be sure to replace `<your-environment>`)
+* To open the target in the same tab, start your link with:  
+  `/ui/[dashboards|notebooks]/...`  
+  (without `https://<your-environment>`)
+
+## Open with
+
+To navigate between apps in the Dynatrace platform, you can use **Open with** while preserving context, such as the selected timeframe, entities, or filters. When you select **Open with**, a window displays a list of actions you can perform in other apps. The available actions depend on whether the target app can work with the data (fields) provided by the source app and which apps are installed in your environment.
+
+You can use **Open with** at different levels, such as for a section in a notebook, a tile in a dashboard, or even a specific data point or its underlying fields. The further down you goâfrom tile to data point, or from data point to its underlying fieldsâthe more specific the context becomes, meaning fewer fields are passed to the target app.
+
+For example, if you select a row in a table that contains a `dt.smartscape.host` field (`host ID`), and then select **Open with**, you will see a **Go to Host** option. This is because the target app, the ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** app, can handle the `dt.smartscape.host` field.
+
+If you're developing Dynatrace apps, see [Intentsï»¿](https://dt-url.net/intents) for everything you need to know about passing the user flow from one app to another.
+
+### General usage
+
+To use **Open with** with a tile or section
+
+1. In your dashboard or notebook, select the tiles or sections you want to use in another app. You can select multiple items simultaneously if needed.
+2. Open the  menu and select  **Open with**.
+3. In the **Open with** window, choose an action provided by an app to navigate to while preserving context.
+
+   The app opens, processing the context (fields) passed from the tiles or sections. What happens next depends on the action and how the app uses the data.
+
+### Examples
+
+The following are just a few common ways people use **Open with** to pass information between Dynatrace apps.
+
+Notebook to dashboard
+
+To copy a notebook section to a dashboard (as a dashboard tile)
+
+1. In the notebook, select the notebook section that you want to copy to a dashboard.
+2. Open the  menu and select ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Add to dashboard**.
+3. In **Select destination**:
+
+   * If you want to create a new dashboard with the selected notebook section as a tile, select **New dashboard**.
+   * If you want to add the selected notebook section as another tile in an existing dashboard, select the existing dashboard from the list and then select **Confirm**.
+
+   The dashboard opens with the selected section copied into it as a dashboard tile.
+
+To copy a notebook section to a different app (not ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**), open the  menu and select  **Open with**, and then select the target app.
+
+Dashboard to notebook
+
+To copy a dashboard tile to a notebook (as a notebook section)
+
+1. In the dashboard, select the tile that you want to copy to a notebook.
+2. Open the  menu and select ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Add to notebook**.
+3. In **Select destination**:
+
+   * If you want to create a new notebook with the selected dashboard tile as a section, select **New notebook**.
+   * If you want to add the selected dashboard tile as another section in an existing notebook, select the existing notebook from the list and then select **Confirm**.
+
+   The notebook opens with the selected tile copied into it as a notebook section.
+
+To copy a dashboard tile to a different app (not ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**), open the  menu and select  **Open with**, and then select the target app.
+
+Dashboard Grail query to workflow
+
+To copy a Grail query from a dashboard to [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") as a task in a workflow
+
+1. In the dashboard, select the query tile that you want to copy to a workflow.
+2. Select  >  **Open with**.
+3. In the **Open with** window, select the **Automate DQL Query** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** option.
+
+   ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** opens with the selected query added as a workflow task.
+4. Edit the workflow as needed.
+
+## Suggested app links
+
+Suggested app links are an extension of [Open with](#open-with) added to streamline your workflow. Based on the data of your tiles/sections and the data point or fields in your selection, Dynatrace automatically identifies the most relevant action and app combination and adds it directly to the respective menu.
+
+For example, when there is a host ID field in the data, you will see the **Go to Host** option above the **Open with** in the menu.
+
+## Link from visualization via custom links
+
+The **Add Link** feature allows you to create links in the UI directly from your visualizations and navigate to external systems, dashboards, notebooks, or other resources. With it you can:
+
+* Add links from the **visualization menu**, enabling quick setup without leaving the visualization.
+* Manage links in the **Links section** of the visualization tab, where you can:
+
+  + Add new links.
+  + Edit or remove existing links.
+  + Reorder links, with changes reflected in the visualization menu.
+
+### Add and manage links
+
+The  **Add Link** feature allows you to create links directly from your visualizations. These links can navigate to external systems, other Dynatrace apps, or resources, enabling seamless context passing for faster troubleshooting and analysis.
+
+#### Add a link
+
+1. Open the  **Links** section in the visualization tab of your selected visualization.
+2. Select  to open **Add link**.
+3. Configure the link:
+
+   * **Name**: Enter a descriptive name such as "Go to Host" to display in the menu.
+   * **Icon**: Select an icon such as "Logs" to represent the link in the menu.
+   * **URL**: Use [dynamic placeholders](#dynamic-placeholders) to insert data fields or variables. For example, select  **Insert placeholder** and add the `:name` placeholder to the your URL like `https://myhost/host={{:name}}`
+   * Use the **Preview** section at the bottom to see how placeholders will be replaced with actual data and to test your link.
+4. Select **Add link** to save. The link will now appear in the visualization's tooltip menu.
+
+#### Manage links
+
+Use the **Links** section to manage and organize your links:
+
+* **Edit**: To update an existing link, select it (or select  **Edit** in the  menu) or simply select the name.
+* **Duplicate**: To copy an existing link, select  **Duplicate** in the  menu.
+* **Remove**: To delete a link, select it and choose  **Delete** in the  menu.
+* **Reorder**: Adjust the display order of links by dragging  their definitions up or down in the list in the  **Links** section.
+
+### Use dynamic placeholders
+
+Dynamic placeholders allow you to create links that adapt to the data in your visualization. They dynamically populate URLs with context-aware data, such as time ranges, metric values, or entities like hosts.
+
+Depending on your use case, you can use one of three types of placeholders:
+
+1. **Data point** placeholders dynamically resolve values based on the specific data point being clicked. These placeholders are especially useful in time-based or segmented visualizations. The following placeholders are available out of the box:
+
+   * `:name`: The name of the data point (for example, the series name in a line chart, typically displayed in the legend).
+   * `:value`: The value of the data point (for example, the value at the point clicked on a line chart).
+   * `:from`: The start timestamp of the time slot the value represents (for time-based visualizations).
+   * `:to`: The end timestamp of the time slot the value represents.
+
+   **Example:**
+   In a line chart segmented by host, selecting on a specific data point could resolve the `:name` placeholder to the host name and the `:value` placeholder to the metric value at that point in time.
+2. **Existing variables** let you reference existing variables defined in your dashboard.
+
+   **Example:**  
+   Use `$variableName` to pass a user-selected value into the link.
+3. **Existing fields** allow you to reference the full set of data returned in the visualizationâs result. Unlike Data point placeholders, which represent a single point of data, Existing Fields provide access to the entire dataset (for example, all points in a series or all column values in a table).
+
+   **Example:**  
+   If a metric query returns an array of values, you can use a field placeholder to reference the entire array.
+
+To use placeholders in your links:
+
+Start typing `{{` when editing a **URL** to display a menu of placeholder suggestions:
+
+* `{{`: Displays all available placeholders.
+* `{{$`: Displays existing variables.
+* `{{:`: Displays all data point placholders.
+
+Alternatively, select  **Insert placeholder** to choose placeholders from a dropdown menu.
+
+### Encoding links and placeholder values
+
+To prevent errors, encoding ensures your URLs work correctly when they include special characters, such as spaces, ampersands, or reserved characters.
+Neither the static parts of your links nor the dynamic placeholders are encoded automatically, so you need to handle encoding manually to avoid issues.
+
+#### Static parts of the URL
+
+Static parts of the URL must be manually encoded if they include special characters. For example, replace spaces with `%20`, ampersands `&` with `%26`, and other reserved characters as needed.
+
+Use a free tool like [URL Encoder/Decoderï»¿](https://www.url-encode-decode.com/) to encode your static URLs before pasting them into the URL field.
+
+#### Dynamic placeholders
+
+Dynamic placeholders are not automatically encoded. If your placeholder values may contain special characters, you can use Dynatrace Query Language (DQL) functions to encode them properly. Commonly used DQL functions include:
+
+* `encodeUrl()`: Encodes the entire URL.
+* `escape()`: Escapes reserved characters.
+* `replaceString()`: Replaces specific characters (for example, converting `+` to `%20`).
+
+**Example:** Encoding a log field to ensure itâs URL-safe:
+
+```
+fetch logs
+
+
+
+| summarize occurences=count(), by:{content}
+
+
+
+| fieldsAdd contentEncoded = replaceString(escape(encodeUrl(content)), "+", "%20")
+
+
+
+| fields contentEncoded, occurences
+```
+
+### Supported visualizations and link behavior
+
+* **Table**
+
+  + Links are visible for each column, enabling interaction with individual data points while leveraging others. For example, selecting a link in the `Status` column might use another field's value when navigating.
+* **Unsupported visualizations**
+
+  + Map visualizations such as [Choropleth](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Dot](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Connection](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks."), and [Bubble](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
+  + [Single value](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
+  + [Gauge chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
+  + [Meter bar chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
+* **All other visualizations**
+
+  + For visualizations with data splits (for example, line charts by host), links dynamically adjust based on the data series. For example, using the placeholder `{{:name}}` in a line chart segmented by host will replace the placeholder with the respective host name for each series (line).
+
+## Link from table via a markdown column
+
+Tables in Dynatrace provide a powerful way to display data and include clickable links for seamless navigation. Links in tables can be added in three levels of complexity:
+
+1. [Basic: auto-detected raw links](#table-auto-detected-links): automatically display raw URLs as clickable links.
+2. [Intermediate: links with a display name](#table-user-friendly-links): Use markdown column formatting to rename links for better readability.
+3. [Advanced: intent-based links](#table-intent-based-links): Use Dynatrace Query Language (DQL) to dynamically create [intentï»¿](https://dt-url.net/intents)-based links with encoded parameters for advanced navigation to other apps in Dynatrace.
+
+The following steps walk you through these levels of complexity using a single example that builds progressively.
+
+### Basic: auto-detected, raw links
+
+Dynatrace automatically detects URLs in table cells and renders them as clickable links when the column type of the cell is set to **Markdown**.
+
+To enable link detection:
+
+1. Start with a **Table Visualization** in Dynatrace.
+2. Go to the **Visual** tab.
+3. In the **Columns** section, select  **Column type** to add a new column type. Select the column with the raw links and set the column type to **Markdown**.
+
+   **Example:**
+   Hereâs a simple dataset with URLs that you can try on the [Dynatrace playgroundï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.dashboards/dashboard/35295fb4-3d3d-4919-994d-3f8869cab1b7#from=2026-01-21T14%3A19%3A00.000Z&to=2026-01-21T16%3A20%3A00.000Z&tileIds=27):
+
+   ```
+   data record(website="Dynatrace main page", link="http://www.dynatrace.com"),
+
+
+
+   record(website="Dynatrace community", link="https://community.dynatrace.com/")
+   ```
+
+### Intermediate: links with a display name
+
+To make links more user-friendly, you can provide a display name (for example, "Dynatrace main page") using Markdown formatting. This replaces raw URLs with descriptive labels that are easier for users to read and understand.
+
+To provide user-friendly links:
+
+1. Adjust your DQL to create a new column that formats links in Markdown syntax.
+
+   * Use the `fieldsAdd` function to generate a composite field, for example, `markdownLink`, in the format `[Display Name](URL)`.
+   * Use the DQL `concat()` function to easily construct such a field (see the following example).
+2. Go to the **Visual** tab.
+3. In the **Columns** section, select  **Column type** to add a new column type. Select the column with the raw links and set the column type to **Markdown**. For example, `markdownLink`.
+
+   **Example:**:
+   Hereâs a the dataset with URLs and the markdown notation that you can try on the [Dynatrace playgroundï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.dashboards/dashboard/35295fb4-3d3d-4919-994d-3f8869cab1b7#from=2026-01-21T14%3A19%3A00.000Z&to=2026-01-21T16%3A20%3A00.000Z&tileIds=27):
+
+   ```
+   data record(website="Dynatrace main page", link="http://www.dynatrace.com"),
+
+
+
+   record(website="Dynatrace community", link="https://community.dynatrace.com/")
+
+
+
+   | fieldsAdd markdownLink = concat("[", website, "](", link, ")")
+   ```
+
+### Advanced: intent-based links
+
+Intent-based links take link creation to the next level by dynamically passing context (such as error codes, timeframes, or other filters) to other Dynatrace applications for advanced workflows. This is done using **Dynatrace Query Language (DQL)** and proper URL encoding to handle special characters.
+
+In this section, weâll walk through generating dynamic intent-based links step by step using DQL. The resulting links will include:
+
+* A **user-friendly display name**, constructed in Markdown format.
+* **Dynamic parameters**, such as error codes and timeframes, to tailor the link for downstream navigation.
+* Proper **encoding of special characters** in URL query parameters.
+
+To create intent-based links
+
+1. **Fetch the base data**
+
+   Use DQL to fetch the relevant dataset and filter content as needed. For example, you can retrieve logs matching specific error codes:
+
+   ```
+   fetch logs
+
+
+
+   | filter matchesPhrase(content, "failed to complete the order: rpc error: code") and status == "ERROR"
+
+
+
+   | parse content, """DATA 'desc = ' LD:errorCode '    '"""
+
+
+
+   | summarize total = count(), by:{errorCode}
+   ```
+2. **Add the base URL of the target app**
+
+   Define the base URL of the Dynatrace app youâre linking to. In this case, weâre linking logs to the ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** app:
+
+   ```
+   | fieldsAdd LogAppURL = "/ui/apps/dynatrace.logs/#"
+   ```
+3. **Encode the query components**
+
+   To create a proper intent-based link, use the encodeUrl() function to encode each part of the URL. Break the query into components for clarity.
+
+   1. Query filter: Filter the logs matching specific error codes:
+
+      ```
+      | fieldsAdd QueryPart1 = """{"version":0,"data":{"queryConfig":{"query":"fetch logs\n| filter matchesPhrase(content,\"\"\""""
+
+
+
+      | fieldsAdd QueryPart1 = encodeUrl(QueryPart1)
+
+
+
+      | fieldsAdd QueryPart1 = replaceString(QueryPart1, "+", "%20")
+      ```
+   2. Dynamic field value: Encode the error codes dynamically:
+
+      ```
+      | fieldsAdd QueryPart2 = escape(errorCode)
+
+
+
+      | fieldsAdd QueryPart2 = encodeUrl(QueryPart2)
+
+
+
+      | fieldsAdd QueryPart2 = replaceString(QueryPart2, "+", "%20")
+      ```
+   3. Timeframe: Encode the dashboardâs timeframe:
+
+      ```
+      | fieldsAdd QueryTimeFrame = """\"\"\") ","timeframe":{"from":$dt_timeframe_from,"to":$dt_timeframe_to},"filter":{"version":"12.2.4","subQueries":[{"id":"A","isEnabled":true,"datatype":"logs","filter":""}],"globalCommands":{"sort":{"field":"timestamp","direction":"desc"}}},"segments":[],"showDqlEditor":true},"tableConfig":{"visibleColumns":["timestamp","status","content"],"columnAttributes":{"columnWidths":{},"lineWraps":{},"tableLineWrap":false},"columnOrder":["timestamp","status","content"]}}}"""
+      ```
+   4. Create the final link. Combine the base URL, the query components, and Markdown formatting into a user-friendly link:
+
+      ```
+      | fieldsAdd errorCodeLink = concat("[", errorCode, "](", LogAppURL, QueryPart1, QueryPart2, QueryTimeFrame, ")")
+
+
+
+      | fields errorCodeLink, total
+      ```
+
+Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.dashboards/dashboard/35295fb4-3d3d-4919-994d-3f8869cab1b7#from=2026-01-21T14%3A19%3A00.000Z&to=2026-01-21T16%3A20%3A00.000Z&tileIds=22).
+
+
+---
+
+
 ## Source: visualization-chart-area.md
 
 
 ---
 title: Area chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-area
-scraped: 2026-02-17T04:55:19.863543
+scraped: 2026-02-17T21:22:25.689877
 ---
 
 # Area chart visualization
@@ -3007,7 +3414,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -3345,7 +3752,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Band chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-band
-scraped: 2026-02-17T04:55:37.636708
+scraped: 2026-02-17T21:22:20.080243
 ---
 
 # Band chart visualization
@@ -3417,7 +3824,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -3713,7 +4120,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Categorical chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical
-scraped: 2026-02-17T04:55:23.257234
+scraped: 2026-02-17T21:22:28.419355
 ---
 
 # Categorical chart visualization
@@ -3771,7 +4178,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -4039,7 +4446,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Bar chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar
-scraped: 2026-02-17T04:55:34.075537
+scraped: 2026-02-17T21:22:27.059285
 ---
 
 # Bar chart visualization
@@ -4174,7 +4581,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -4512,7 +4919,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Donut visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-donut
-scraped: 2026-02-17T04:55:18.018722
+scraped: 2026-02-17T21:22:17.355653
 ---
 
 # Donut visualization
@@ -4568,7 +4975,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -4799,7 +5206,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Line chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-line
-scraped: 2026-02-17T04:55:28.645055
+scraped: 2026-02-17T21:22:14.622815
 ---
 
 # Line chart visualization
@@ -5136,7 +5543,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -5474,7 +5881,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Pie visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-pie
-scraped: 2026-02-17T04:55:35.817440
+scraped: 2026-02-17T21:22:10.346757
 ---
 
 # Pie visualization
@@ -5529,7 +5936,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -5832,7 +6239,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Single value visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value
-scraped: 2026-02-17T04:54:26.860818
+scraped: 2026-02-17T21:22:13.156258
 ---
 
 # Single value visualization
@@ -6133,7 +6540,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -6419,7 +6826,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Gauge chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge
-scraped: 2026-02-17T04:54:33.289501
+scraped: 2026-02-17T21:22:06.297652
 ---
 
 # Gauge chart
@@ -6699,7 +7106,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Heatmap visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-heatmap
-scraped: 2026-02-17T04:55:26.716663
+scraped: 2026-02-17T21:22:31.119686
 ---
 
 # Heatmap visualization
@@ -6775,7 +7182,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -6950,7 +7357,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Histogram visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-histogram
-scraped: 2026-02-17T04:55:32.253421
+scraped: 2026-02-17T21:22:16.004591
 ---
 
 # Histogram visualization
@@ -7073,7 +7480,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -7379,7 +7786,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Honeycomb visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-honeycomb
-scraped: 2026-02-17T04:55:30.362240
+scraped: 2026-02-17T21:22:29.720800
 ---
 
 # Honeycomb visualization
@@ -7467,7 +7874,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -7662,7 +8069,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Bubble map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble
-scraped: 2026-02-17T04:54:38.752269
+scraped: 2026-02-17T21:22:22.807329
 ---
 
 # Bubble map visualization
@@ -7760,7 +8167,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -8006,7 +8413,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Choropleth map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth
-scraped: 2026-02-17T04:54:36.996620
+scraped: 2026-02-17T21:22:33.746285
 ---
 
 # Choropleth map visualization
@@ -8154,7 +8561,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -8385,7 +8792,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Connection map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection
-scraped: 2026-02-17T04:54:31.507719
+scraped: 2026-02-17T21:22:21.458861
 ---
 
 # Connection map visualization
@@ -8487,7 +8894,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -8726,7 +9133,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Dot map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot
-scraped: 2026-02-17T04:54:35.241920
+scraped: 2026-02-17T21:22:07.708007
 ---
 
 # Dot map visualization
@@ -9025,7 +9432,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -9269,7 +9676,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Meter bar chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar
-scraped: 2026-02-17T04:54:42.286039
+scraped: 2026-02-17T21:22:11.697944
 ---
 
 # Meter bar chart
@@ -9413,7 +9820,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -9574,7 +9981,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Raw visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-raw
-scraped: 2026-02-17T04:55:21.524998
+scraped: 2026-02-17T21:22:09.006305
 ---
 
 # Raw visualization
@@ -9740,7 +10147,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Record list
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-record-list
-scraped: 2026-02-17T04:55:39.326658
+scraped: 2026-02-17T21:22:32.422092
 ---
 
 # Record list
@@ -9938,7 +10345,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Scatterplot visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot
-scraped: 2026-02-17T04:55:25.014503
+scraped: 2026-02-17T21:22:24.188011
 ---
 
 # Scatterplot visualization
@@ -10031,7 +10438,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -10231,7 +10638,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Table visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table
-scraped: 2026-02-17T04:54:29.708241
+scraped: 2026-02-17T21:22:18.733660
 ---
 
 # Table visualization
@@ -10562,7 +10969,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Edit visualizations for Notebooks and Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations
-scraped: 2026-02-17T04:46:12.683958
+scraped: 2026-02-17T21:14:55.654894
 ---
 
 # Edit visualizations for Notebooks and Dashboards
@@ -10733,7 +11140,7 @@ For details, see [Scatterplot visualization](/docs/analyze-explore-automate/dash
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-17T04:46:14.618666
+scraped: 2026-02-17T21:14:57.189100
 ---
 
 # Explore data
@@ -11655,7 +12062,7 @@ That's what makes this a great tool for beginners and experts.
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-17T04:48:19.779216
+scraped: 2026-02-17T21:13:58.237513
 ---
 
 # Notebooks
@@ -12454,7 +12861,7 @@ To see the edit commands for a section, select the section. If you have edit per
   + **Copy query link** copies a link to the clipboard. If you open the link in a browser, the query will be opened in a new or existing notebook.
   + **Download result** downloads (exports) the result of the current notebook section.
   + ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Add to dashboard** opens the selected section in a dashboard.
-  + **Open with** opens the section in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  + **Open with** opens the section in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 You can select multiple sections and then apply the same command to all of them at once. For details, see [Manage multiple sections](#edit-manage-multiple-sections).
 
@@ -12642,7 +13049,7 @@ When you select multiple sections, the available commands include:
   + **Clear results** clears the results of the selected sections. Select  **Run** again to get new results.
   + **Delete sections** removes the selected sections from the notebook.
   + ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Add to dashboard** opens the selected sections in a dashboard.
-  + **Open with** opens the selected sections in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  + **Open with** opens the selected sections in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Run a section
 
@@ -13368,7 +13775,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-02-17T04:45:16.459537
+scraped: 2026-02-17T21:13:25.815696
 ---
 
 # Ready-made dashboards
@@ -13805,7 +14212,7 @@ Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-
 ---
 title: Ready-made documents
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents
-scraped: 2026-02-16T21:23:43.906535
+scraped: 2026-02-17T21:18:49.922336
 ---
 
 # Ready-made documents
@@ -13872,13 +14279,836 @@ When you open a document (dashboard or notebook) for which you don't have write 
 ---
 
 
+## Source: remote-environment-data.md
+
+
+---
+title: Remote environment data
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/remote-environment-data
+scraped: 2026-02-17T21:34:17.932086
+---
+
+# Remote environment data
+
+# Remote environment data
+
+* Latest Dynatrace
+* How-to guide
+* 9-min read
+* Updated on Dec 02, 2024
+
+With [code tiles](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.") (in Dashboards) and [code sections](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (in Notebooks), you can consolidate data from multiple Dynatrace environments.
+
+There are two authentication mechanisms available for fetching data from remote environments:
+
+* **Platform token authentication**: Intended for personal use. Use when you need rapid testing and quick data fetching from remote environments.
+* **OAuth Client Authentication**: Intended for sharing. Use to ensure consistent data visibility for all users.
+
+New! Start with a snippet in Dashboards or Notebooks
+
+Dashboards version 1.310+ Notebooks version 1.310+
+
+You can now start with a snippet when creating a dashboard or notebook that uses data from a remote Dynatrace environment.
+
+* > **Fetch external data**
+* > **Remote environment data via Platform token**
+* > **Remote environment data via OAuth**
+
+## Platform token authentication
+
+Fetching data from remote environments via a platform token is intended for personal use. This method is ideal when you need to rapidly test and quickly fetch data from remote environments first before sharing it with others.
+
+The example JavaScript code described below uses the credential vault for secure token storage, and a platform token for authentication, to offer a robust and secure way to fetch data from a remote Dynatrace environment.
+
+### Prerequisites
+
+Before you create the code for your dashboard tile or notebook section:
+
+* Create a Dynatrace platform token on the environment you want to fetch the data from. For details, see [Platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+* Create a Dynatrace credential vault entry on the primary environment to store the platform token that is later used in the code tile or section for authentication. For details, see [Credential vault](/docs/manage/credential-vault "Store and manage credentials in the credential vault.").
+* Allow external requests
+
+  External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.
+
+  1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **General** > **External requests**.
+  2. Select  **New host pattern**.
+  3. Add the domain names.
+  4. Select **Add**.
+
+  This way you can granularly control the web services your functions can connect to.
+
+  For example, you could add `myenv8132.apps.dynatrace.com` to allow just that environment, or use a wildcard like `*.apps.dynatrace.com` to allow all your Dynatrace environments at once.
+
+For more about allowlisting, see [Allow IP ranges that can access your environment](/docs/manage/account-management/settings/ip-allowlist "Allow IP ranges that can access your environment using the CIDR notation.")
+
+### Code
+
+Before you start coding, review how the functions are used.
+
+1. `async function()`
+
+   This is the main function. It calls `fetchFromDynatrace` (see above) with the necessary parameters.
+2. `fetchFromDynatrace(credentialId = "", url = "", query = "")`
+
+   To fetch data from Dynatrace, this function:
+
+   1. Retrieves the credentials from the credential vault entry on the primary tenant based on the given credentialId.
+   2. Makes the API call on the APIs of the secondary/remote tenant based on the credentials as well as the `url` and `query` parameter provided by the main function.
+
+Now that you have completed the [prerequisites](#prerequisites) and reviewed the functions, you're ready to code.
+
+* Base your code on the example below.
+* Read the comments in the code example for code details.
+* Replace `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` with your own credential ID.
+* Replace `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` with your own URL.
+* Customize the `"fetch logs | limit 1"` query according to your needs.
+* Run your code in a [code tile](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.") (Dashboards) or [code section](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
+
+  If you encounter errors when you run your code, they will be caught and logged with the prefixes `[DynatraceAuthError]`, `[CredentialVaultError]`, or `[ExecutionError]` for easier debugging.
+
+Start with a snippet
+
+You can start with a snippet (**Remote environment data via Platform token**) when creating a dashboard or notebook that uses data from a remote Dynatrace environment.
+
+```
+import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
+
+
+
+/**
+
+
+
+* Execute a query against a Dynatrace API with token retrieval inlined.
+
+
+
+* @param {string} credentialId - The ID of the credential vault entry.
+
+
+
+* @param {string} url - The API endpoint URL.
+
+
+
+* @param {string} query - The query to execute.
+
+
+
+* @returns {Promise<any>} - The API response data.
+
+
+
+* @throws Will throw an error if any step fails.
+
+
+
+*/
+
+
+
+async function fetchFromDynatrace(credentialId, url, query) {
+
+
+
+if (!credentialId || !url || !query) {
+
+
+
+throw new Error("[ValidationError] Missing required parameters: credentialId, url, or query.");
+
+
+
+}
+
+
+
+try {
+
+
+
+// Retrieve the platform token from the credential vault.
+
+
+
+const { token } = await credentialVaultClient.getCredentialsDetails({
+
+
+
+id: credentialId,
+
+
+
+}).catch((error) => {
+
+
+
+console.error(`[CredentialVaultError] Failed to retrieve token: ${error.message}`);
+
+
+
+throw new Error("Unable to fetch platform token.");
+
+
+
+});
+
+
+
+if (!token) {
+
+
+
+throw new Error("[CredentialVaultError] Token is undefined or empty.");
+
+
+
+}
+
+
+
+// Perform the API request.
+
+
+
+const response = await fetch(url, {
+
+
+
+method: "POST",
+
+
+
+headers: {
+
+
+
+"Content-Type": "application/json",
+
+
+
+Accept: "application/json",
+
+
+
+Authorization: `Bearer ${token}`,
+
+
+
+},
+
+
+
+body: JSON.stringify({
+
+
+
+query,
+
+
+
+requestTimeoutMilliseconds: 60000,
+
+
+
+enablePreview: true,
+
+
+
+}),
+
+
+
+});
+
+
+
+if (!response.ok) {
+
+
+
+throw new Error(`[HTTPError] API call failed with status ${response.status}: ${response.statusText}`);
+
+
+
+}
+
+
+
+return await response.json();
+
+
+
+} catch (error) {
+
+
+
+console.error(`[FetchError] Query execution failed: ${error.message}`);
+
+
+
+throw new Error("Unable to execute query.");
+
+
+
+}
+
+
+
+}
+
+
+
+/**
+
+
+
+* Main function to fetch and return results from Dynatrace.
+
+
+
+* @returns {Promise<any>} - The query result.
+
+
+
+*/
+
+
+
+export default async function() {
+
+
+
+const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Replace with your credential vault ID.
+
+
+
+const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Replace with API URL.
+
+
+
+const query = "fetch logs | limit 1"; // Replace with your query.
+
+
+
+try {
+
+
+
+const { result } = await fetchFromDynatrace(credentialId, url, query);
+
+
+
+return result;
+
+
+
+} catch (error) {
+
+
+
+console.error(`[MainFunctionError] ${error.message}`);
+
+
+
+return null; // Or handle as needed.
+
+
+
+}
+
+
+
+}
+```
+
+## OAuth client authentication
+
+Fetching data from remote environments via OAuth is intended for sharing. This method ensures consistent data visibility for all users.
+
+The example JavaScript code described below uses the credential vault for secure token storage, and OAuth for authentication, to offer a robust and secure way to fetch data from a remote Dynatrace environment.
+
+### Prerequisites
+
+Before you create the code for your dashboard tile or notebook section:
+
+* Create an OAuth client. For details, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+* Create a Dynatrace credential vault entry on the primary environment to store the OAuth token that is later used in the code tile or section for authentication. For details, see [Credential vault](/docs/manage/credential-vault "Store and manage credentials in the credential vault.").
+* Allow external requests
+
+  External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.
+
+  1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **General** > **External requests**.
+  2. Select  **New host pattern**.
+  3. Add the domain names.
+  4. Select **Add**.
+
+  This way you can granularly control the web services your functions can connect to.
+
+  For example, you could add `myenv8132.apps.dynatrace.com` to allow just that environment, or use a wildcard like `*.apps.dynatrace.com` to allow all your Dynatrace environments at once.
+
+For more about allowlisting, see [Allow IP ranges that can access your environment](/docs/manage/account-management/settings/ip-allowlist "Allow IP ranges that can access your environment using the CIDR notation.")
+
+### Code
+
+Before you start coding, review how the functions are used.
+
+1. `async function()`
+
+   This is the main function. It calls `fetchFromDynatrace` (see above) with the necessary parameters.
+2. `fetchFromDynatrace(credentialId = "", url = "", query = "")`
+
+   To fetch data from Dynatrace, this function:
+
+   1. Retrieves the credentials from the credential vault entry on the primary tenant based on the given credentialId.
+   2. Gets an access token for the secondary tenant via SSO by calling the authenticateToDynatrace function.
+   3. Makes the API call on the APIs of the secondary/remote tenant based on the previously received `accessToken` value as well as the `url` and `query` parameter provided by the main function.
+3. `authenticateToDynatrace(clientId = '', clientSecret = '')`
+
+   To authenticate against SSO, this function:
+
+   1. Takes two parameters: `clientId` and `clientSecret`.
+   2. Requests an access token based on the initial function parameters provided and the set of scopes defined within the function.
+   3. On success, it returns the received access token from the Dynatrace SSO endpoint.
+
+Now that you have completed the [prerequisites](#prerequisites) and reviewed the functions, you're ready to code.
+
+* Base your code on the example below.
+* Read the comments in the code example for code details.
+* Replace `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` with your own credential ID.
+* Replace `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` with your own URL.
+* Customize the `"fetch logs | limit 1"` query according to your needs.
+* Run your code in a [code tile](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.") (Dashboards) or [code section](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
+
+  If you encounter errors when you run your code, they will be caught and logged with the prefixes `[DynatraceAuthError]`, `[CredentialVaultError]`, or `[ExecutionError]` for easier debugging.
+
+Start with a snippet
+
+You can start with a snippet (**Remote environment data via OAuth**) when creating a dashboard or notebook that uses data from a remote Dynatrace environment.
+
+```
+import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
+
+
+
+/**
+
+
+
+* Authenticate to Dynatrace SSO using client credentials.
+
+
+
+* @param {string} clientId - The client ID for authentication.
+
+
+
+* @param {string} clientSecret - The client secret for authentication.
+
+
+
+* @returns {Promise<string>} - The access token.
+
+
+
+* @throws Will throw an error if authentication fails.
+
+
+
+*/
+
+
+
+async function authenticateToDynatrace(clientId, clientSecret) {
+
+
+
+if (!clientId || !clientSecret) {
+
+
+
+throw new Error("[ValidationError] Missing clientId or clientSecret for SSO authentication.");
+
+
+
+}
+
+
+
+const scopes = [
+
+
+
+"environment-api",
+
+
+
+"storage:buckets:read",
+
+
+
+"storage:bizevents:read",
+
+
+
+"storage:logs:read",
+
+
+
+"storage:metrics:read",
+
+
+
+"storage:entities:read",
+
+
+
+].join(" ");
+
+
+
+try {
+
+
+
+const response = await fetch("https://sso.dynatrace.com/sso/oauth2/token", {
+
+
+
+method: "POST",
+
+
+
+headers: { "Content-Type": "application/x-www-form-urlencoded" },
+
+
+
+body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}&scopes=${scopes}`,
+
+
+
+});
+
+
+
+if (!response.ok) {
+
+
+
+throw new Error(`[HTTPError] SSO authentication failed with status ${response.status}: ${response.statusText}`);
+
+
+
+}
+
+
+
+const { access_token: accessToken } = await response.json();
+
+
+
+if (!accessToken) {
+
+
+
+throw new Error("[SSOError] Access token not received.");
+
+
+
+}
+
+
+
+return accessToken;
+
+
+
+} catch (error) {
+
+
+
+console.error(`[DynatraceAuthError] ${error.message}`);
+
+
+
+throw error;
+
+
+
+}
+
+
+
+}
+
+
+
+/**
+
+
+
+* Fetch data from Dynatrace using a query.
+
+
+
+* @param {string} credentialId - The credential vault ID.
+
+
+
+* @param {string} url - The API endpoint URL.
+
+
+
+* @param {string} query - The query to execute.
+
+
+
+* @returns {Promise<any>} - The API response data.
+
+
+
+* @throws Will throw an error if any step fails.
+
+
+
+*/
+
+
+
+async function fetchFromDynatrace(credentialId, url, query) {
+
+
+
+if (!credentialId || !url || !query) {
+
+
+
+throw new Error("[ValidationError] Missing one or more required parameters: credentialId, url, or query.");
+
+
+
+}
+
+
+
+try {
+
+
+
+// Retrieve credentials from the credential vault.
+
+
+
+const { username: clientId, password: clientSecret } = await credentialVaultClient.getCredentialsDetails({
+
+
+
+id: credentialId,
+
+
+
+}).catch(error => {
+
+
+
+console.error(`[CredentialVaultError] Failed to retrieve credentials: ${error.message}`);
+
+
+
+throw new Error("Unable to fetch credentials from the vault.");
+
+
+
+});
+
+
+
+if (!clientId || !clientSecret) {
+
+
+
+throw new Error("[CredentialVaultError] Missing clientId or clientSecret from the retrieved credentials.");
+
+
+
+}
+
+
+
+// Authenticate and get an access token.
+
+
+
+const accessToken = await authenticateToDynatrace(clientId, clientSecret);
+
+
+
+// Perform the API request.
+
+
+
+const response = await fetch(url, {
+
+
+
+method: "POST",
+
+
+
+headers: {
+
+
+
+"Content-Type": "application/json",
+
+
+
+Accept: "application/json",
+
+
+
+Authorization: `Bearer ${accessToken}`,
+
+
+
+},
+
+
+
+body: JSON.stringify({
+
+
+
+query,
+
+
+
+requestTimeoutMilliseconds: 60000,
+
+
+
+enablePreview: true,
+
+
+
+}),
+
+
+
+});
+
+
+
+if (!response.ok) {
+
+
+
+throw new Error(`[HTTPError] API call failed with status ${response.status}: ${response.statusText}`);
+
+
+
+}
+
+
+
+return await response.json();
+
+
+
+} catch (error) {
+
+
+
+console.error(`[FetchError] ${error.message}`);
+
+
+
+throw error;
+
+
+
+}
+
+
+
+}
+
+
+
+/**
+
+
+
+* Main function to execute a query and return results from Dynatrace.
+
+
+
+* @returns {Promise<any>} - The query result.
+
+
+
+*/
+
+
+
+export default async function fetchDynatraceData() {
+
+
+
+const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Replace with your credential vault ID.
+
+
+
+const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Replace with API URL.
+
+
+
+const query = "fetch logs | limit 1"; // Replace with your query.
+
+
+
+try {
+
+
+
+const { result } = await fetchFromDynatrace(credentialId, url, query);
+
+
+
+return result;
+
+
+
+} catch (error) {
+
+
+
+console.error(`[MainFunctionError] ${error.message}`);
+
+
+
+return null; // Return null or handle gracefully.
+
+
+
+}
+
+
+
+}
+```
+
+
+---
+
+
 ## Source: use-cases.md
 
 
 ---
 title: Notebooks and Dashboards use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/use-cases
-scraped: 2026-02-16T09:35:58.889788
+scraped: 2026-02-17T21:26:03.717792
 ---
 
 # Notebooks and Dashboards use cases

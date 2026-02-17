@@ -2,7 +2,7 @@
 
 Generated: 2026-02-17
 
-Files combined: 29
+Files combined: 31
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 29
 ---
 title: Log sources and storage (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2
-scraped: 2026-02-16T09:34:34.757711
+scraped: 2026-02-17T21:27:52.892797
 ---
 
 # Log sources and storage (Logs Classic)
@@ -67,6 +67,119 @@ After your configuration of log sources is successfully migrated, you can use ne
 Is this change reversible?
 
 No. After the change, all old configurations are wiped out, so be sure before you make this change.
+
+
+---
+
+
+## Source: cloud-provider-log-forwarding.md
+
+
+---
+title: Cloud provider log forwarding (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/cloud-provider-log-forwarding
+scraped: 2026-02-17T21:33:13.971092
+---
+
+# Cloud provider log forwarding (Logs Classic)
+
+# Cloud provider log forwarding (Logs Classic)
+
+* Overview
+* 3-min read
+* Updated on Jan 18, 2023
+
+Log Monitoring Classic
+
+Dynatrace version 1.230+
+
+For the newest Dynatrace version, see [Cloud provider log forwarding](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.").
+
+DDU consumption for Log Monitoring
+
+DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+
+## Amazon Web Services
+
+Stream or forward your logs from Amazon CloudWatch, AWS S3 or other AWS sources.
+
+### Stream logs via Amazon Data Firehose
+
+Dynatrace integration with Amazon Data Firehose provides a simple and safe way to ingest AWS logs.
+
+To enable AWS log forwarding,
+
+1. Create Amazon Data Firehose instance.
+2. Configure it with your Dynatrace environment as a destination.
+3. Connect your CloudWatch log groups by creating a subscription filter or send logs directly to Firehose from services that support it (for example, VPC Flow Logs).
+   Firehose and other created cloud resources incur AWS costs according to the standard AWS billing policy.
+
+To learn more, see [Stream logs via Amazon Data Firehose (Logs Classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.").
+
+### Log ingestion from Amazon S3
+
+You can stream logs from AWS S3 to Dynatrace using a serverless architecture.
+
+The log forwarder offers:
+
+* Out of the box parsing of AWS services, see [Supported AWS Servicesï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder#supported-aws-services)
+* Processing mechanism for any other use case including 3rd party logs written to s3, see [Log Processingï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_processing.md#log-processing)
+* Cross-region support, see [S3 buckets on different AWS Regionsï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_forwarding.md#forward-logs-from-s3-buckets-on-different-aws-regions)
+* Multiple AWS account support, see [S3 buckets on different AWS accountsï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_forwarding.md#forward-logs-from-s3-buckets-on-different-aws-accounts)
+
+For detailed instructions on how to set up log ingestion from AWS S3, see [documentation on GitHubï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder).
+
+### AWS Lambda log collection
+
+You can collect logs directly from your AWS Lambda functions and send them to Dynatrace for analysis. The solution is an alternative to the CloudWatch log forwarder with benefits in terms of cost and latency, and is also easier to set up, particularly if AWS Lambda tracing is already in place. As part of the OneAgent installation process, this feature provides a streamlined solution for collecting logs from your Lambda functions. For more information, see [AWS Lambda documentation page](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Collect logs from AWS Lambda functions").
+
+### AWS log monitoring using log forwarder Deprecated
+
+You can stream logs from Amazon CloudWatch into Dynatrace logs via an ActiveGate.
+
+To enable AWS log forwarding, you need to deploy our special-purpose CloudFormation stack into your AWS account. The stack consists of a Kinesis Firehose instance and a Lambda function. These resources incur AWS costs according to standard AWS billing policy. The same applies to included self-monitoring resources (CloudWatch dashboards and metrics).
+
+For detailed instructions on how to set up AWS log forwarding, see [Log monitoring with AWS log forwarder](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder#prereq "Use AWS log forwarding to ingest AWS logs.").
+
+### Stream logs via Amazon Data Firehose
+
+Dynatrace integration with Amazon Data Firehose provides a simple and safe way to ingest AWS logs.
+
+To enable AWS log forwarding, you need to create Amazon Data Firehose instance and configure it with your Dynatrace environment as a destination. Then you can connect your CloudWatch log groups by creating a Subscription Filter or send logs directly to Firehose from services that support it (e.g. VPC flow logs). Firehose and other created cloud resources incur AWS costs according to the standard AWS billing policy.
+
+## Microsoft Azure
+
+Azure log forwarding allows you to stream Azure logs from Azure Event Hubs into Dynatrace logs via an Azure Function App instance. It supports both Azure resource logs and activity logs.
+
+Azure log forwarding is performed directly through Cluster API. If you don't want to use direct ingest through the Cluster API, you have to use an existing ActiveGate for log ingestion.
+
+Deployment of Azure log forwarder results in creating the following resources:
+
+* Storage account (`Microsoft.Storage/storageAccounts`)
+* Storage Account Blob Service (`Microsoft.Storage/storageAccounts/blobServices`)
+* Azure App Service plan (`Microsoft.Web/serverfarms`)
+* Azure Function App (`Microsoft.Web/sites`)
+
+Azure log forwarder uses Linux based Azure function by default. Windows based function is not supported.
+
+For details about the resources created, see the [Azure Resource Manager file on GitHubï»¿](https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/blob/master/deployment/dynatrace-azure-forwarder.json)
+
+For detailed instruction on how to set up Azure log forwarding see, [Azure Logs](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure#prereq "Use Azure log forwarding to ingest Azure logs.").
+
+## Google Cloud
+
+To set up Google Cloud monitoring for metrics and logs, you'll run the deployment script in Google Cloud Shell. During setup, a new Pub/Sub subscription will be created. GKE will run two containers: a metric forwarder and a log forwarder. After installation, you'll get metrics, logs, dashboards, and alerts for your configured services in Dynatrace. Instructions will depend on the location where you want the deployment script to run:
+
+* [On a new GKE Autopilot cluster created automatically](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster."). Recommended
+* [On an existing GKE standard or GKE Autopilot cluster](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster "Deploy log and metric monitoring for Google Cloud services on an existing standard GKE or GKE Autopilot cluster").
+
+Depending on where you want log ingestion to be performed, you may need additional resources. For example, for Managed deployments, there is a possibility to use an AG for log ingestion. But you have to do it manually since the installation script does not deploy it.
+
+For all log ingestion options, see [Log ingestion](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#ingestion "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+## Related topics
+
+* [DDUs for Log Monitoring Classic](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
 
 
 ---
@@ -888,7 +1001,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 ---
 title: Automatic log enrichment (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation
-scraped: 2026-02-17T05:07:37.720612
+scraped: 2026-02-17T21:34:30.351718
 ---
 
 # Automatic log enrichment (Logs Classic)
@@ -1215,6 +1328,160 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ## Related topics
 
 * [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+
+
+---
+
+
+## Source: log-monitoring-journald.md
+
+
+---
+title: Log Monitoring from Journald (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-journald
+scraped: 2026-02-17T21:29:47.807910
+---
+
+# Log Monitoring from Journald (Logs Classic)
+
+# Log Monitoring from Journald (Logs Classic)
+
+* Tutorial
+* 4-min read
+* Published Apr 22, 2025
+
+Log Monitoring Classic
+
+OneAgent version 1.307+
+
+Log module is capable of reading, processing, and uploading entries from systemd-journald, a Linux-based centralized logging system service. Events/logs are usually stored in files located in the `/var/log/journal/'machine-id'/` directory, where `machine-id` is a long string of digits identifying the machine. These files are kept in a binary, compressed format, maintained by the systemd-journald engine to manage size per file and overall, retention, rotation, etc., according to its settings.
+
+## How Journald works
+
+To avoid the problems of manually tracking the files, such as rotation, decompression, or parsing, Log module uses system API calls to access the entire functionality. This is achieved by opening the system library, `libsystemd.so` and its dependencies, mapping selected functions from the library, and creating a context object, to communicate with the Journald system. This way, Log module becomes a client of Journald and can use a variety of its exposed functions.
+
+At the beginning, Log module opens a handler at the default location of the Journald context. No specific path is used, allowing the handler to open its well-known location. Then the agent reads the entries one by one, keeping track of the current position.
+
+## Enable Journald support
+
+To enable Journald log detection, follow the steps below:
+
+1. Go to **Settings** > **Log Monitoring** > **Log module feature flags**.
+2. Select **Enable Journald log detector**.
+3. Select **Save changes**.
+
+Enabling the feature flag is required to opt-in. Without it, even with configured ingest rules, Journald logs will not appear in Dynatrace.
+
+## Configure log ingestion from Journald
+
+You can enable log ingestion from Journald by either configuring the default Journald [ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis."), or by configuring the tenant storage upload, for example `kubelet.service` as `Journald.unit` from Journald.
+
+### Enable the default ingestion rule
+
+For new accounts, the default Journald ingest rule is enabled by default, and the configuration described in this section is not needed.
+
+Follow the steps below to configure the default Journald ingest rule:
+
+1. Go to **Settings** > **Log Monitoring** > **Log ingest rules**.
+2. Enable the **[Built-in] Ingest Journald logs** rule to ingest all Journald logs.
+3. Select **Save changes**.
+
+### Create a custom ingestion rule
+
+Follow the steps below to configure the tenat storage upload for `kubelet.service` logs from Journad:
+
+1. Go to **Settings** > **Log Monitoring** > **Log ingest rules**.
+2. Select **Add rule** and provide the title for your configuration.
+3. Select **Add matcher**. This is the first matcher to match two specified process groups.
+4. From the **Attribute** list, select **Journald Unit**.
+5. Select **Add value** and type `kubelet.service`.
+6. Select **Add matcher** again to match the specified log data source.
+7. From the **Attribute** list, select **Log source**.
+8. Select **Add value** and enter **Journald** as the value.
+9. Select **Save changes**.
+
+## Attributes selected in journald
+
+Each entry is processed to gain the following attributes:
+
+Semantic attribute name
+
+Description
+
+`Timestamp`
+
+Retrieved by direct API call for timestamp, results in microseconds since epoch converted to agentâs timestamp domain resolution
+
+`Content`
+
+The extracted value of the API call for data with the **MESSAGE** field as a selector
+
+`Journald.unit`
+
+The extracted value of the API call for data with the **UNIT** field as a selector
+As an alternative, the ***SYSTEMD\_UNIT*** field is searched. It may happen that none of the fields are found.
+
+`LogEntryLevel`
+
+The extracted value of the API call for data with the **PRIORITY** field as a selector, priority. Consult the table below for the definitions of the priority levels.
+
+## Priority level
+
+Journald priority codes are used to mark the importance of a message. The following table shows how these priorities translate into Dynatrace severity:
+
+Value
+
+Severity
+
+Description
+
+0
+
+Emergency
+
+System is unusable
+
+1
+
+Alert
+
+Should be corrected immediately
+
+2
+
+Critical
+
+Critical conditions
+
+3
+
+Error
+
+Error conditions
+
+4
+
+Warn
+
+May indicate that an error will occur if action is not taken
+
+5
+
+Notice
+
+Events that are unusual, but not error conditions
+
+6
+
+Info
+
+Normal operational messages that require no action
+
+7
+
+Debug
+
+Messages which may need to be enabled first, only useful for debugging
 
 
 ---
@@ -2048,7 +2315,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Log rotation patterns (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns
-scraped: 2026-02-17T05:02:06.316967
+scraped: 2026-02-17T21:30:19.441815
 ---
 
 # Log rotation patterns (Logs Classic)
@@ -3463,7 +3730,7 @@ Yes. Content filtering conducted on OneAgent reduces both DDU costs and network 
 ---
 title: Log ingestion API (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api
-scraped: 2026-02-17T05:01:33.788856
+scraped: 2026-02-17T21:20:49.081592
 ---
 
 # Log ingestion API (Logs Classic)
@@ -3666,7 +3933,7 @@ For instructions on how to deploy Fluentd integration, see the [documentation on
 ---
 title: Stream logs to Dynatrace with Logstash (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-to-dynatrace-with-logstash
-scraped: 2026-02-15T21:30:25.078511
+scraped: 2026-02-17T21:30:27.105781
 ---
 
 # Stream logs to Dynatrace with Logstash (Logs Classic)
@@ -3744,7 +4011,7 @@ api_key => "${API_KEY}"
 ---
 title: Stream logs to Dynatrace with Fluent Bit (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-with-fluent-bit
-scraped: 2026-02-16T09:31:20.065788
+scraped: 2026-02-17T21:30:49.025094
 ---
 
 # Stream logs to Dynatrace with Fluent Bit (Logs Classic)
@@ -4762,7 +5029,7 @@ Dynatrace Log Monitoring incorporates reshaping the incoming log data into the f
 ---
 title: Log custom attributes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes
-scraped: 2026-02-16T21:26:08.127111
+scraped: 2026-02-17T21:25:45.747786
 ---
 
 # Log custom attributes (Logs Classic)
@@ -5364,7 +5631,7 @@ Unique log data attributes (high-cardinality attributes) such as `span_id` and `
 ---
 title: Management zones and ingested log data (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring
-scraped: 2026-02-16T21:31:59.407316
+scraped: 2026-02-17T21:30:10.561659
 ---
 
 # Management zones and ingested log data (Logs Classic)
@@ -5568,7 +5835,7 @@ Please contact a Dynatrace product expert via live chat within your environment.
 ---
 title: Connecting log data to traces (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment
-scraped: 2026-02-17T04:47:07.508508
+scraped: 2026-02-17T21:15:22.561002
 ---
 
 # Connecting log data to traces (Logs Classic)
@@ -7784,7 +8051,7 @@ Be aware of the following limitations to sensitive data masking:
 ---
 title: Timestamp/splitting configuration (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration
-scraped: 2026-02-17T05:04:35.966162
+scraped: 2026-02-17T21:27:26.450766
 ---
 
 # Timestamp/splitting configuration (Logs Classic)
@@ -8137,7 +8404,7 @@ To create a timestamp configuration using the API
 ---
 title: Supported timestamp formats (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format
-scraped: 2026-02-16T21:29:11.991320
+scraped: 2026-02-17T21:34:36.378939
 ---
 
 # Supported timestamp formats (Logs Classic)
@@ -10227,7 +10494,7 @@ Result after transformation:
 ---
 title: Log processing (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-processing
-scraped: 2026-02-17T05:01:40.380710
+scraped: 2026-02-17T21:27:55.307394
 ---
 
 # Log processing (Logs Classic)
@@ -10305,7 +10572,7 @@ To create a log processing rule
 ---
 title: Upgrade to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma
-scraped: 2026-02-16T21:21:25.880404
+scraped: 2026-02-17T21:18:26.352707
 ---
 
 # Upgrade to Log Management and Analytics

@@ -13,7 +13,7 @@ Files combined: 6
 ---
 title: Address remediation
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/address-remediation
-scraped: 2026-02-17T05:02:32.005669
+scraped: 2026-02-17T21:29:29.480094
 ---
 
 # Address remediation
@@ -226,7 +226,7 @@ Dynatrace Intelligence generative AI explanations are tailored to the nature of 
 ---
 title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/assess-coverage
-scraped: 2026-02-17T05:09:25.590609
+scraped: 2026-02-17T21:27:10.269613
 ---
 
 # Assess coverage
@@ -388,7 +388,7 @@ The downloaded file reflects the filters applied at the time of download.
 ---
 title: Vulnerabilities concepts
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/concepts
-scraped: 2026-02-17T05:05:26.046862
+scraped: 2026-02-17T21:26:19.111500
 ---
 
 # Vulnerabilities concepts
@@ -1059,7 +1059,7 @@ You can extend your analysis beyond ![Vulnerabilities](https://dt-cdn.net/images
 ---
 title: Prioritize vulnerabilities
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/prioritize
-scraped: 2026-02-17T05:09:37.830415
+scraped: 2026-02-17T21:27:05.420356
 ---
 
 # Prioritize vulnerabilities

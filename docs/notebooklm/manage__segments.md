@@ -13,7 +13,7 @@ Files combined: 10
 ---
 title: Include data in segments
 source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concepts-includes
-scraped: 2026-02-17T04:54:51.954612
+scraped: 2026-02-17T21:18:53.574994
 ---
 
 # Include data in segments
@@ -106,7 +106,7 @@ Segments allow a single relationship traversal step only. However, multiple para
 ---
 title: Segments in DQL queries
 source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concepts-queries
-scraped: 2026-02-17T04:54:47.087217
+scraped: 2026-02-17T21:18:55.986976
 ---
 
 # Segments in DQL queries
@@ -154,7 +154,7 @@ For details on how segments are passed in the context of a DQL Query API request
 ---
 title: Variables in segments
 source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concepts-variables
-scraped: 2026-02-17T04:54:53.639114
+scraped: 2026-02-17T21:18:52.328413
 ---
 
 # Variables in segments
@@ -263,7 +263,7 @@ Since variable queries are executed on explicit user interaction, they won't hav
 ---
 title: Visibility of segments
 source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concepts-visibility
-scraped: 2026-02-17T04:54:50.282105
+scraped: 2026-02-17T21:18:58.499551
 ---
 
 # Visibility of segments
@@ -304,7 +304,7 @@ For more information on segment permissons see [IAM policy statements](/docs/man
 ---
 title: Analyze monitoring data with segments
 source: https://www.dynatrace.com/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data
-scraped: 2026-02-17T04:46:21.460620
+scraped: 2026-02-17T21:15:04.480451
 ---
 
 # Analyze monitoring data with segments
@@ -413,7 +413,7 @@ You've managed to filter data on a dashboard using segments and learned to quick
 ---
 title: Filter Smartscape nodes with segments
 source: https://www.dynatrace.com/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes
-scraped: 2026-02-16T21:20:03.693660
+scraped: 2026-02-17T21:17:05.032123
 ---
 
 # Filter Smartscape nodes with segments
@@ -496,7 +496,7 @@ You've learned how to create Smartscape nodes filters using segment include bloc
 ---
 title: Supported data types in segments
 source: https://www.dynatrace.com/docs/manage/segments/reference/segments-reference-data-types
-scraped: 2026-02-17T04:54:48.713894
+scraped: 2026-02-17T21:18:51.133557
 ---
 
 # Supported data types in segments
@@ -544,7 +544,7 @@ Applicable to queries for classic entities of specified type (such as fetch `dt.
 ---
 title: Segment limits
 source: https://www.dynatrace.com/docs/manage/segments/reference/segments-reference-limits
-scraped: 2026-02-17T04:54:55.317883
+scraped: 2026-02-17T21:18:57.207018
 ---
 
 # Segment limits
@@ -604,7 +604,7 @@ For classic entities, various limits apply. These limits don't apply to Smartsca
 ---
 title: Segment data by Kubernetes clusters
 source: https://www.dynatrace.com/docs/manage/segments/use-cases/segments-use-cases-kubernetes-clusters
-scraped: 2026-02-17T04:54:43.889738
+scraped: 2026-02-17T21:18:59.753974
 ---
 
 # Segment data by Kubernetes clusters
@@ -767,7 +767,7 @@ Just as for Kubernetes clusters, segments can also be built with the context of 
 ---
 title: Segment logs by bucket
 source: https://www.dynatrace.com/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket
-scraped: 2026-02-17T04:54:45.474329
+scraped: 2026-02-17T21:18:54.794066
 ---
 
 # Segment logs by bucket

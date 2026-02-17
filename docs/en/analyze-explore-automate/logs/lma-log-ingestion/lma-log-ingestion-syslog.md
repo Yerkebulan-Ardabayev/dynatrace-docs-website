@@ -1,7 +1,7 @@
 ---
 title: Syslog ingestion with ActiveGate
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog
-scraped: 2026-02-17T05:04:34.247832
+scraped: 2026-02-17T21:32:52.598848
 ---
 
 # Syslog ingestion with ActiveGate

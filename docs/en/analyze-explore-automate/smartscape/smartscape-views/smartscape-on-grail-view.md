@@ -1,7 +1,7 @@
 ---
 title: Smartscape on Grail view
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view
-scraped: 2026-02-16T21:27:09.444394
+scraped: 2026-02-17T21:28:01.780275
 ---
 
 # Smartscape on Grail view

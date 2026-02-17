@@ -887,7 +887,7 @@ fetch dt.davis.problems, from:bin(now(), 24h) - 365d
 ---
 title: Optimize DQL cost with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql
-scraped: 2026-02-17T05:12:44.777769
+scraped: 2026-02-17T21:31:21.185247
 ---
 
 # Optimize DQL cost with Workflows
@@ -1112,7 +1112,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 ---
 title: Summarize open problems with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
-scraped: 2026-02-16T21:28:18.160161
+scraped: 2026-02-17T21:31:51.891549
 ---
 
 # Summarize open problems with Workflows
@@ -1321,7 +1321,7 @@ Once a new problem appears, you should receive an email from `no-reply@dev.apps.
 ---
 title: Create log alerts for a log event or summary of log data
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/create-alert-in-logs
-scraped: 2026-02-16T21:32:54.066371
+scraped: 2026-02-17T21:27:25.119522
 ---
 
 # Create log alerts for a log event or summary of log data
@@ -1476,7 +1476,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-17T04:55:00.055948
+scraped: 2026-02-17T21:16:10.327218
 ---
 
 # Dynatrace Intelligence DQL examples
@@ -1848,7 +1848,7 @@ count
 ---
 title: AI in Workflows - Predictive maintenance of cloud disks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-for-workflows
-scraped: 2026-02-17T04:57:58.537614
+scraped: 2026-02-17T21:33:46.632666
 ---
 
 # AI in Workflows - Predictive maintenance of cloud disks

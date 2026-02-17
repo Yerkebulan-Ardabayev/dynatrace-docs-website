@@ -13,7 +13,7 @@ Files combined: 27
 ---
 title: Enrich ingested data with Dynatrace-specific dimensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-data
-scraped: 2026-02-16T09:35:02.435053
+scraped: 2026-02-17T21:27:37.623248
 ---
 
 # Enrich ingested data with Dynatrace-specific dimensions
@@ -162,7 +162,7 @@ The example code initializes an empty dictionary for the imported attributes. It
 ---
 title: Extend event observability
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-events
-scraped: 2026-02-16T09:35:24.449879
+scraped: 2026-02-17T21:31:37.767998
 ---
 
 # Extend event observability
@@ -429,7 +429,7 @@ Note that changing the port for the OneAgent log ingest API also affects [OneAge
 ---
 title: Customize JMX extensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions/customize-jmx-extensions
-scraped: 2026-02-16T09:32:04.030843
+scraped: 2026-02-17T21:33:19.288550
 ---
 
 # Customize JMX extensions
@@ -1129,7 +1129,7 @@ A series has the following attributes:
 ---
 title: JMX extensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions
-scraped: 2026-02-16T21:22:18.627310
+scraped: 2026-02-17T21:20:38.658735
 ---
 
 # JMX extensions
@@ -1388,7 +1388,7 @@ The JMX extension listed below initially consume each monitored host's quota of 
 ---
 title: Send Micrometer metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer
-scraped: 2026-02-16T21:22:11.830229
+scraped: 2026-02-17T21:20:50.636302
 ---
 
 # Send Micrometer metrics to Dynatrace
@@ -2623,7 +2623,7 @@ The [Timeseries v1 API](/docs/dynatrace-api/environment-api/metric-v1 "Retrieve 
 ---
 title: OneAgent metric API
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api
-scraped: 2026-02-17T05:00:49.506081
+scraped: 2026-02-17T21:20:29.002060
 ---
 
 # OneAgent metric API
@@ -2773,7 +2773,7 @@ However, to have events raised for a selected host and have Dynatrace Intelligen
 ---
 title: Metric scripting integration
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe
-scraped: 2026-02-17T05:04:16.275354
+scraped: 2026-02-17T21:20:27.895261
 ---
 
 # Metric scripting integration
@@ -3047,7 +3047,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Prometheus
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus
-scraped: 2026-02-16T21:22:10.135438
+scraped: 2026-02-17T21:20:26.556271
 ---
 
 # Prometheus
@@ -3098,7 +3098,7 @@ For environments that require greater customization, Dynatrace allows the ingest
 ---
 title: Send StatsD metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd
-scraped: 2026-02-17T04:52:04.845011
+scraped: 2026-02-17T21:20:47.981735
 ---
 
 # Send StatsD metrics to Dynatrace
@@ -3719,7 +3719,7 @@ Note that changing the port for Telegraf ingested metrics also affects OneAgent 
 ---
 title: Custom metric metadata
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata
-scraped: 2026-02-16T09:39:35.839736
+scraped: 2026-02-17T21:32:43.953246
 ---
 
 # Custom metric metadata
@@ -4434,7 +4434,7 @@ See [POST ingest data points](/docs/dynatrace-api/environment-api/metric-v2/post
 ---
 title: Extend metric observability
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics
-scraped: 2026-02-17T04:59:14.226976
+scraped: 2026-02-17T21:32:10.427048
 ---
 
 # Extend metric observability
@@ -4619,7 +4619,7 @@ There's no limit to the metric number, but [API throttling](/docs/dynatrace-api/
 ---
 title: Define custom topology
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/custom-topology
-scraped: 2026-02-17T05:10:10.406146
+scraped: 2026-02-17T21:29:38.975852
 ---
 
 # Define custom topology
@@ -4938,7 +4938,7 @@ If the remapping fails, you can retrieve the diagnostic information on an event 
 ---
 title: Generic network topology
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/network-topology
-scraped: 2026-02-17T04:54:23.795236
+scraped: 2026-02-17T21:17:50.526251
 ---
 
 # Generic network topology
@@ -9657,7 +9657,7 @@ Not yet, but this capability is expected to be available soon, at which point th
 ---
 title: Custom topology model
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology
-scraped: 2026-02-17T05:08:53.842419
+scraped: 2026-02-17T21:20:25.466116
 ---
 
 # Custom topology model
@@ -9794,7 +9794,7 @@ See [Define custom topology](/docs/ingest-from/extend-dynatrace/extend-topology/
 ---
 title: OneAgent SDK
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk
-scraped: 2026-02-17T04:50:14.494901
+scraped: 2026-02-17T21:20:39.907376
 ---
 
 # OneAgent SDK
@@ -9875,7 +9875,7 @@ The Dynatrace OneAgent SDK is published directly to GitHub together with the tec
 ---
 title: OpenTracing
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/opentracing
-scraped: 2026-02-16T21:13:26.422909
+scraped: 2026-02-17T21:20:30.240028
 ---
 
 # OpenTracing
@@ -10066,7 +10066,7 @@ Dynatrace integrates traces from any OpenTracing instrumentations. We have posit
 ---
 title: Span settings
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings
-scraped: 2026-02-17T04:46:43.628127
+scraped: 2026-02-17T21:15:38.105641
 ---
 
 # Span settings
@@ -10216,7 +10216,7 @@ To define rules to enable context propagation for specific spans
 ---
 title: Extend distributed tracing
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing
-scraped: 2026-02-17T04:46:37.003804
+scraped: 2026-02-17T21:15:36.835272
 ---
 
 # Extend distributed tracing
@@ -10486,7 +10486,7 @@ chartsCards:
 ---
 title: Unified analysis pages
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui/unified-analysis
-scraped: 2026-02-16T09:31:10.710800
+scraped: 2026-02-17T21:24:55.168025
 ---
 
 # Unified analysis pages
@@ -10633,7 +10633,7 @@ The exploratory analysis analyzes only the metrics from the graph charts that ar
 ---
 title: Extend Dynatrace with domain-specific web UI
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui
-scraped: 2026-02-16T21:22:03.470337
+scraped: 2026-02-17T21:20:43.494277
 ---
 
 # Extend Dynatrace with domain-specific web UI
@@ -10664,7 +10664,7 @@ Extend the Dynatrace web UI using your data-tailored dashboards.](/docs/ingest-f
 ---
 title: Extend user experience and behavior data
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/openkit
-scraped: 2026-02-16T21:22:07.477918
+scraped: 2026-02-17T21:20:35.065714
 ---
 
 # Extend user experience and behavior data

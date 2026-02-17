@@ -1,7 +1,7 @@
 ---
 title: Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/ai-remediation-kiro-cli
-scraped: 2026-02-16T21:32:52.821154
+scraped: 2026-02-17T21:30:47.807310
 ---
 
 # Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace

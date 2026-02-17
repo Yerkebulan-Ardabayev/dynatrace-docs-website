@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace Operator release notes
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator
-scraped: 2026-02-17T04:46:33.670656
+scraped: 2026-02-17T21:15:51.687153
 ---
 
 # Dynatrace Operator release notes

@@ -1,7 +1,7 @@
 ---
 title: Amazon Keyspaces (Cassandra) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-keyspaces-cassandra
-scraped: 2026-02-16T21:24:32.592450
+scraped: 2026-02-17T21:28:31.506014
 ---
 
 # Amazon Keyspaces (Cassandra) monitoring

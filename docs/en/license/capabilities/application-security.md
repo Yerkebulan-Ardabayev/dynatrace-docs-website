@@ -1,7 +1,7 @@
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-02-17T04:58:31.585880
+scraped: 2026-02-17T21:28:45.390915
 ---
 
 # Application Security overview (DPS)

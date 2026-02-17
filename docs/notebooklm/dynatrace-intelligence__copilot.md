@@ -13,7 +13,7 @@ Files combined: 8
 ---
 title: Embedded conversation starters
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters
-scraped: 2026-02-17T05:08:23.675955
+scraped: 2026-02-17T21:32:59.576502
 ---
 
 # Embedded conversation starters
@@ -268,7 +268,7 @@ If you have any feedback, you can provide it directly in the chat window. For mo
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-17T05:11:59.438351
+scraped: 2026-02-17T21:28:37.497202
 ---
 
 # Dynatrace Assist
@@ -506,7 +506,7 @@ In our logs and calls to LLM models, we replace values from the identified patte
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-17T04:48:17.510357
+scraped: 2026-02-17T21:14:00.785777
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -797,7 +797,7 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 ---
 title: Get started with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
-scraped: 2026-02-16T21:23:35.814073
+scraped: 2026-02-17T21:19:02.174763
 ---
 
 # Get started with Dynatrace Intelligence generative AI
@@ -900,7 +900,7 @@ To configure your data access
 ---
 title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-17T04:55:42.628748
+scraped: 2026-02-17T21:18:48.710946
 ---
 
 # Dynatrace Intelligence generative AI overview
@@ -967,7 +967,7 @@ If you would like to learn more about Dynatrace Intelligence generative AI, visi
 ---
 title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-17T05:12:34.697816
+scraped: 2026-02-17T21:30:43.996796
 ---
 
 # Dynatrace Intelligence generative AI - Tips for writing better prompts
@@ -1085,7 +1085,7 @@ We are actively working on improving and extending the Dynatrace Intelligence ge
 ---
 title: Query with natural language
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
-scraped: 2026-02-17T04:56:51.312860
+scraped: 2026-02-17T21:25:59.542789
 ---
 
 # Query with natural language

@@ -1,29 +1,27 @@
 ---
-title: Приложение для проблем
+title: Проблемы приложения
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-17T04:45:25.029159
+scraped: 2026-02-17T21:13:27.215534
 ---
 
-# Приложение для проблем
-
-# Приложение для проблем
+# Проблемы приложения
 
 * Latest Dynatrace
 * App
 * 15-min read
 * Updated on Jan 28, 2026
 
-Быстрое выявление, расследование и устранение входящих инцидентов является основной задачей для команд операций. ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Приложение для проблем - новое") **Приложение для проблем** поддерживает их, автоматически анализируя сложные инциденты, собирая все контекст и представляя коренную причину и влияние в рамках согласованного вида.
+Быстрое выявление, расследование и устранение входящих инцидентов является основной задачей для операционных команд. ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое") **Проблемы** поддерживает их, автоматически анализируя сложные инциденты, собирая весь контекст и представляя коренную причину и влияние в едином виде.
 
-![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Приложение для проблем - новое") **Приложение для проблем**, поддерживаемое данными из Grail и анализом Dynatrace Intelligence, помогает операционным и командам по обеспечению надежности сайта сократить среднее время ремонта (MTTR) путем представления всех аспектов инцидента.
+![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое") **Проблемы**, основанные на данных из Grail и анализа Dynatrace Intelligence, помогает операционным и командам по обеспечению надежности сайта уменьшить среднее время ремонта (MTTR) путем представления каждого аспекта инцидента.
 
 Предварительные условия
 
-### Права доступа
+### Разрешения
 
-Ниже приведена таблица, описывающая необходимые права доступа.
+Следующая таблица описывает необходимые разрешения.
 
-Право доступа
+Разрешение
 
 Описание
 
@@ -33,11 +31,11 @@ business-analytics:business-flows:read
 
 davis-copilot:conversations:execute
 
-Выполнение разговоров с копилотом
+Выполнение разговоров с помощью ко-пилота
 
 davis-copilot:document-search:execute
 
-Выполнение поиска документов с копилотом
+Выполнение поиска документов с помощью ко-пилота
 
 davis:analyzers:execute
 
@@ -49,7 +47,7 @@ document:documents:read
 
 document:documents:write
 
-Запись документов в рабочем процессе Doc
+Запись документов в рабочий процесс Doc
 
 document:documents:delete
 
@@ -79,15 +77,15 @@ settings:objects:read
 
 ## Установка
 
-Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "Смотрите информацию о Dynatrace Hub.").
+Убедитесь, что приложение установлено в вашей среде.
 
 Начало работы
 
-Сценарии использования
+Случаи использования
 
 ## Цель и контекст
 
-Эта страница показывает вам, как использовать ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Приложение для проблем - новое") **Приложение для проблем** для выявления обнаруженных проблем и расследования их коренной причины и влияния.
+Эта страница показывает вам, как использовать ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое") **Проблемы** для выявления обнаруженных проблем и расследования их коренной причины и влияния.
 
 ## Целевая аудитория
 
@@ -101,21 +99,21 @@ settings:objects:read
 
 ## Резюме
 
-**Приложение для проблем** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Приложение для проблем - новое") упрощает выявление, анализ и устранение активных инцидентов, сокращая MTTR. Это позволяет вам сосредоточиться на проблемах, обнаруженных с помощью ИИ, и быстро перейти к их коренной причине.
+**Проблемы** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое") оптимизирует выявление, анализ и устранение активных инцидентов, уменьшая MTTR. Это позволяет вам сосредоточиться на проблемах, обнаруженных с помощью ИИ, и быстро перейти к их коренной причине.
 
-* Данные, предоставляемые Grail и DQL, позволяют анализировать все связанные с проблемой сведения для огромного количества проблем и событий.
+* Данные, предоставленные Grail и DQL, позволяют разрезать и измельчить всю информацию, связанную с проблемами, для огромного количества проблем и событий.
 * Интеграция с контекстно-зависимыми приложениями Dynatrace позволяет анализировать проблемы без необходимости переключать контекст.
 
 ## Расследование и устранение активных проблем
 
 ### Установка фокуса и выявление
 
-По умолчанию, ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Приложение для проблем - новое") **Приложение для проблем** показывает:
+По умолчанию, ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое") **Проблемы** показывает:
 
-* Ленту всех проблем за последние 2 часа. Чтобы помочь командам операций обнаружить открытые проблемы, независимо от установленного фильтра, открытые проблемы остаются вверху ленты, независимо от того, как долго они открыты.
-* График проблем вверху визуализирует любые аномалии с большим количеством проблем в прошлом. Выберите пик на графике, чтобы более подробно расследовать.
+* Ленту всех проблем за последние 2 часа. Чтобы помочь командам по эксплуатации выявить открытые проблемы, независимо от установленного фильтра, открытые проблемы остаются вверху ленты, независимо от того, как долго они открыты.
+* Диаграмму проблем вверху, визуализирующую любые аномалии с большим количеством проблем в прошлом. Выберите пик на диаграмме, чтобы углубиться в него и провести дальнейшее расследование.
 
-![Problems app - problem feed view](https://dt-cdn.net/images/problem-table-1920-1ff1983035.webp)
+![Проблемы приложения - вид ленты проблем](https://dt-cdn.net/images/problem-table-1920-1ff1983035.webp)
 
 #### Фильтрация
 
@@ -124,194 +122,192 @@ settings:objects:read
 * **Статус** - может быть `Активно` или `Закрыто`.
 
   + Если это не установлено, перечислены все проблемы (активные или закрытые).
-  + Если вы выбираете статус в контроле слева, соответствующий фильтр также отображается в строке фильтрации.
+  + Если вы выберете статус в контроле слева, соответствующий фильтр также будет отображен в строке фильтрации.
 * **Категория** - указывает на характер инцидента, такой как замедления, ошибки, проблемы, связанные с ресурсами, или инциденты доступности.
 
-  + Если вы выбираете одну или несколько категорий в контроле слева, соответствующие фильтры также отображаются в строке фильтрации.
+  + Если вы выберете одну или несколько категорий в контроле слева, соответствующие фильтры также будут отображены в строке фильтрации.
 
-Фильтрация с помощью строки фильтрации позволяет сосредоточить ленту на проблемах на основе нескольких критериев, таких как статус, количество затронутых сущностей, коренная причина сущности и многое другое. Поместите курсор в поле ввода, чтобы увидеть все доступные варианты. По умолчанию критерии фильтрации объединяются логикой **И**. Для каждого критерия Dynatrace Intelligence предоставляет список предложенных значений, основанных на вашей ленте проблем.
+Фильтрация с помощью строки фильтрации позволяет сосредоточить ленту проблем на основе нескольких критериев, таких как статус, количество затронутых сущностей, коренная причина сущности и многое другое. Поместите курсор в поле ввода, чтобы увидеть все доступные варианты. По умолчанию, критерии фильтрации объединяются логикой **И**. Для каждого критерия Dynatrace Intelligence предоставляет список предложенных значений, основанных на вашей ленте проблем.
 
 Например, чтобы увидеть проблемы, которые были вызваны увеличением ошибок JavaScript и которые сохраняются более 1 часа, используйте следующие критерии фильтрации:
 
 * `Статус=АКТИВНО`
 * `Продолжительность>1ч`
 * `Категория=Ошибка`
-* `Имя=Увеличение ошибок JavaScript`
+* `Имя=Увеличение скорости ошибок JavaScript`
 
-Строка фильтрации проблем поддерживает логические фильтры с использованием булевой логики. Это позволяет объединять критерии **И** и **ИЛИ** и создавать сложные фильтры, используя скобки для группировки булевых термов. Вы можете увидеть выражение логической фильтрации в приложении **Приложение для проблем** в примере ниже.
+Строка фильтрации проблем поддерживает логические фильтры с использованием булевой логики. Это позволяет объединять критерии **И** и **ИЛИ** и создавать сложные фильтры, используя скобки для группировки булевых термов. Вы можете увидеть выражение логической фильтрации в приложении **Проблемы** в примере ниже.
 
-![Мощные булевы фильтры в строке фильтрации проблем.](https://dt-cdn.net/images/complex-problem-filters-1920-db9346a85b.png)
+![Мощные фильтры с булевой логикой в строке фильтрации проблем.](https://dt-cdn.net/images/complex-problem-filters-1920-db9346a85b.png)
 
-#### Использование предварительно определенных сегментов команд для увеличения операционной производительности
+#### Использование предопределенных сегментов команд для увеличения операционной производительности
 
-Сегменты - это предварительно определенные фильтры, используемые для быстрой фильтрации данных, чтобы включить только соответствующие записи. В контексте приложения **Приложение для проблем** вы или ваша команда можете использовать предварительно определенный набор командных сегментов для фильтрации таблицы проблем вместо того, чтобы создавать свои собственные фильтры проблем.
+Сегменты - это предопределенные фильтры, используемые для быстрой фильтрации данных, чтобы включить только релевантные записи. В контексте приложения **Проблемы** вы или ваша команда можете использовать предопределенный набор командных сегментов для фильтрации таблиц проблем вместо создания собственных фильтров проблем.
 
-Пример ниже показывает, как использовать сегменты для фильтрации проблем, связанных с easyTravel.
+Следующий пример показывает, как использовать сегменты для фильтрации проблем, связанных с easyTravel.
 
-![Фильтрация по сегментам в приложении для проблем.](https://dt-cdn.net/images/problems-filter-by-segments-1920-c5610b610e.png)
+![Фильтрация по сегментам в приложении Проблемы.](https://dt-cdn.net/images/problems-filter-by-segments-1920-c5610b610e.png)
 
-Кроме того, использование сегментов в приложении **Приложение для проблем** позволяет:
+Кроме того, использование сегментов в приложении **Проблемы** позволяет:
 
-* Создавать наборы фильтров, которые можно повторно использовать вами и вашей командой.
-* Экономить время на повторном создании фильтров, примененных во время предыдущих сессий.
-* Повысить производительность, быстро фильтруя соответствующие проблемы.
-* Быстро проверять статус вашей службы, создавая и применяя служебные сегменты.
+* Создать наборы фильтров, которые можно повторно использовать вами и вашей командой.
+* Сэкономить время на повторном создании фильтров, примененных во время предыдущих сессий.
+* Увеличить производительность, быстро фильтруя релевантные проблемы.
+* Быстро проверить статус вашей службы, создав и применив служебные сегменты.
 
-Поскольку проблемы хранятся как события в Grail, сегменты, созданные для фильтрации проблем, должны определять фильтр событий. Например, если вы хотите фильтровать проблемы, которые были вызваны в определенном облачном регионе, вы можете создать сегмент с следующим фильтром событий:
+Поскольку проблемы хранятся как события в Grail, сегменты, созданные для фильтрации проблем, должны определять фильтр событий. Например, если вы хотите фильтровать проблемы, которые были вызваны в конкретном облачном регионе, вы можете создать сегмент с следующим фильтром событий:
 
 ```
 cloud.region = "us-east-1c" AND event.kind = "DAVIS_PROBLEM"
 ```
 
-Пример экрана определения сегмента для фильтрации проблем
+Пример определения сегмента для фильтрации проблем
 
-![Пример определения сегмента для фильтрации проблем в приложении для проблем.](https://dt-cdn.net/images/problems-segment-definition-1512-4649153a97.png)
+![Пример определения сегмента для фильтрации проблем в приложении Проблемы.](https://dt-cdn.net/images/problems-segment-definition-1512-4649153a97.png)
 
-Фильтры сегментов применяются напрямую к записям проблем Grail. Следовательно, фильтры сущностей не применяются к проблеме, если идентификатор сущности не выбран в качестве основного поля фильтрованной проблемы.
+Фильтры сегментов применяются напрямую к записям проблем Grail. Следовательно, никакие фильтры сущностей не применяются к проблеме, если идентификатор сущности не выбран в качестве основного поля фильтруемой проблемы.
 
-Для получения дополнительной информации о сегментах и том, как они работают, см. [Сегменты](/docs/manage/segments "Сегменты логически структурируют данные мониторинга в Grail и функционируют как удобные фильтры для данных, к которым пользователи имеют доступ на основе разрешений.") ![Сегменты](https://dt-cdn.net/images/segments-256-8e66310720.webp "Сегменты").
+Для получения более подробной информации о сегментах и том, как они работают, см. [Сегменты](/docs/manage/segments "Сегменты логически структурируют данные мониторинга в Grail и функционируют как удобные фильтры для данных, к которым пользователи имеют доступ на основе разрешений.") ![Сегменты](https://dt-cdn.net/images/segments-256-8e66310720.webp "Сегменты").
 
 ### Активация автоперезагрузки
 
-Чтобы всегда обнаруживать входящие проблемы, используйте настройки перезагрузки ![Перезагрузка](https://dt-cdn.net/images/dashboards-app-refresh-33a794c2f1.svg "Перезагрузка") ![Расширить меню](https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg "Расширить меню") в правом верхнем углу приложения **Приложение для проблем**.
+Чтобы всегда обнаруживать входящие проблемы, используйте настройки перезагрузки ![Перезагрузка](https://dt-cdn.net/images/dashboards-app-refresh-33a794c2f1.svg "Перезагрузка") ![Расширить меню](https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg "Расширить меню") в правом верхнем углу приложения **Проблемы**.
 
-* Чтобы автоматически перезагрузить ленту проблем, выберите ![Расширить меню](https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg "Расширить меню") и выберите скорость перезагрузки (или выберите `Выключено`, чтобы отключить автоматическую перезагрузку)
+* Чтобы автоматически перезагрузить ленту проблем, выберите ![Расширить меню](https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg "Расширить меню") и выберите скорость перезагрузки (или выберите `Выключить`, чтобы отключить автоматическую перезагрузку)
 * Чтобы вручную перезагрузить ленту проблем в любое время, независимо от настройки автоматической перезагрузки, выберите ![Перезагрузка](https://dt-cdn.net/images/dashboards-app-refresh-33a794c2f1.svg "Перезагрузка")
 
 ### Расследование и сравнение проблем
 
+Чтобы увидеть подробности проблемы
 
+1. В таблице выберите идентификатор проблемы в столбце **ID**.
+2. Просмотрите страницу подробностей.
 
-To see the details of a problem
+Страница подробностей проблемы предоставляет все доступные подробности о проблеме, выделяя сущность коренной причины красной меткой, чтобы направить ваше внимание на правильные вещи. Пример ниже показывает подробности проблемы с ухудшением пользовательского действия - включая сущность коренной причины (`easyTravelBusiness` сервис) и график аномального времени ответа этого сервиса.
 
-1. In the table, select the problem ID in the **ID** column.
-2. Review the details page.
+![Пример просмотра подробностей проблемы в приложении Problems.](https://dt-cdn.net/images/problems-details-view-page-1920-3d5f2bb781.png)
 
-The problems details page provides all available details about the problem, highlighting the root cause entity with a red mark, to guide your attention to the right things. The example below shows details of a problem with user action degradationâincluding the root cause entity (`easyTravelBusiness` service) and a chart of abnormal response time of that service.
+Все сущности, затронутые проблемой, перечислены в разделе **Затронутые сущности**, вместе с информацией о типе сущности и количестве событий, обнаруженных во время анализа.
 
-![Example of the problem detail view in the Problems app.](https://dt-cdn.net/images/problems-details-view-page-1920-3d5f2bb781.png)
+* Как предложение для начала расследования, Dynatrace Intelligence отмечает сущность, которую он определил как коренную причину проблемы.
+* Чтобы просмотреть подробности о затронутой сущности, выберите ее в таблице.
 
-All entities affected by the problem are listed in the **Affected entities** section, along with information about entity type and the number of events, detected during the analysis.
+#### Сравнить несколько проблем
 
-* As a suggestion for the starting point of the investigation, Dynatrace Intelligence marks the entity that it determined to be the root cause of the problem.
-* To review details about an affected entity, select it in the table.
+Если все фильтры применены и у вас все еще есть несколько проблем для расследования, вы можете выбрать и сравнить подробности нескольких проблем.
 
-#### Compare multiple problems
+1. В таблице используйте флажки для выбора двух или более проблем.
+2. Выберите **Показать подробности**.
 
-If all the filters are applied and you still have multiple problems to investigate, you can select and compare the details of multiple problems.
+Это предварительно загружает подробности всех выбранных проблем и добавляет элементы управления в правом верхнем углу страницы подробностей проблемы, чтобы вы могли быстро переключаться между каждой выбранной проблемой.
 
-1. In the table, use the checkboxes to select two or more problems.
-2. Select **Show details**.
+### Прочитать свойства событий для получения дополнительной информации
 
-   This preloads the details of all selected problems and adds controls to the upper-right corner of the problem details page so you can quickly switch between each selected problem.
+Dynatrace получает события из нескольких источников событий, таких как OneAgent, Synthetic, расширения и API ингестии. Dynatrace принимает и понимает различные свойства (также называемые полями) этих событий, которые предоставляют дополнительную информацию о событии.
 
-### Read event properties for additional information
+Источники событий можно настроить для предоставления информации, необходимой для анализа и устранения проблем, вызванных событиями. Например, связывание конфигурации, которая обнаружила событие (`dt.settings.schema_id` и `dt.settings.object_id`), помогает быстро адаптировать порог или базовую линию, если такое действие необходимо.
 
-Dynatrace receives events from multiple event sources, such as OneAgent, Synthetic, extensions, and ingestion APIs. Dynatrace accepts and understands various properties (also referred to as fields) of those events that provide additional information about the event.
+Другим примером является регулировка чувствительности пользовательского оповещения, которое вызвало событие, путем изменения конфигурации детектора в настройках.
 
-Event sources can be customized to provide the information you need to analyze and remediate problems caused by the events. For example, linking the configuration that detected the event (`dt.settings.schema_id` and `dt.settings.object_id`) helps you to quickly adapt the threshold or baseline if such action is necessary.
+Поскольку доступные свойства событий зависят от источника события, события, которые не генерируются пользовательскими оповещениями, не содержат ссылок на соответствующие настройки событий. Если вы хотите, чтобы событие ссылалось на объект настроек, вы можете сделать это, присоединив свойство `dt.settings.object_id` к событиям, ингестируемым через API и/или расширения.
 
-Another example is adjusting the sensitivity of the custom alert that triggered the event by modifying the detector's configuration in the settings.
+![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** отображает все свойства событий для каждого собранного события в таблице и предоставляет намеренные ссылки, такие как прямая навигация к конфигурации пользовательского оповещения, как показано ниже.
 
-Since available event properties depend on the event's source, events that are not generated by custom alerts don't contain links to relevant event settings. If you want an event to link to a settings object, you can do so by attaching a `dt.settings.object_id` property to events ingested via API and/or extensions.
+![Приложение Problems предлагает прямую ссылку на объект настроек.](https://dt-cdn.net/images/problems-app-settings-direct-link-1920-b7ded7d7d3.png)
 
-![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** displays all event properties for each collected event in a table and provides intent links, such as direct navigation to a custom alert's configuration, as shown below.
+Примеры мощных свойств событий включают:
 
-![Problems app offering a direct link to settings object.](https://dt-cdn.net/images/problems-app-settings-direct-link-1920-b7ded7d7d3.png)
+* Описание события (`event.description`). Описание события поддерживает текст, отформатированный с помощью Markdown, что позволяет включать ссылки на ресурсы, которые могут помочь устранить проблему.
+* Запрос DQL (`dt.query`) позволяет перестроить график события в блокноте или на панели управления или скопировать сырое значение свойства.
+* Связанные сущности (`dt.entity.*`) позволяют напрямую навигировать к сущностям через свойства `dt.entity.*`.
+* Ссылка на объект настроек (`dt.settings.object_id`) и схему настроек (`dt.settings.schema_id`).
 
-Examples of powerful event properties include:
+Чтобы узнать больше о семантике и синтаксисе свойств событий и о том, как они могут быть использованы в Dynatrace, см. [Семантический словарь](/docs/semantic-dictionary/fields "Ознакомьтесь со списком глобальных полей, имеющих хорошо определенное семантическое значение в Dynatrace и которые могут быть использованы в разных типах мониторинга.").
 
-* Event description (`event.description`). The event description supports Markdown-formatted text, enabling you to include links to resources that can help to remediate the problem.
-* DQL query (`dt.query`) allows you to rebuild the event's chart in a notebook or at a dashboard or to copy the raw value of a property.
-* Related entities (`dt.entity.*`) allow you to directly navigate to entities through the `dt.entity.*` properties.
-* Link to a settings object (`dt.settings.object_id`) and settings schema (`dt.settings.schema_id`).
+### Анализировать проблемы с помощью своих собственных инструментов, экспортируя CSV
 
-To learn more about the semantics and syntax of event properties and how they can be used across Dynatrace, see [Semantic Dictionary](/docs/semantic-dictionary/fields "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+Для случаев, когда ваши программные инструменты создают разрывы интеграции, препятствующие эффективному использованию данных Dynatrace, мы предоставляем возможность экспортировать данные ленты проблем в формате CSV. Вы можете позже использовать эти данные в различных инструментах, включая программы электронных таблиц, базы данных и инструменты анализа данных.
 
-### Analyze problems with your own tools by exporting CSV
+Как показано ниже, вы можете экспортировать связанные с проблемой данные из таблицы ленты проблем. Вы также можете экспортировать их из **Блокнотов** и **Панелей управления** во всех визуализациях таблиц.
 
-For cases when your software tools create integration gaps preventing you from effective usage of Dynatrace data, we provide the ability to export problem feed data in the CSV format. You can later use this data in various tools, including spreadsheet programs, databases, and data analysis tools.
+![Экспорт выбранных проблем в виде файла CSV.](https://dt-cdn.net/images/problems-app-csv-export-1920-c5d456c07a.png)
 
-As illustrated below, you can export problem related-data from the problem feed table. You can also export it from **Notebooks** and **Dashboards** within all table visualizations.
+Вы можете экспортировать все загруженные проблемы (до лимита 1000) или использовать функцию многократного выбора для выбора конкретных проблем. Кроме того, панель фильтров над таблицей позволяет фильтровать более крупные подмножества проблем. Флажок **Выбрать все** помогает экспортировать все проблемы в фильтрованном наборе записей.
 
-![Export selected problems as a CSV file.](https://dt-cdn.net/images/problems-app-csv-export-1920-c5d456c07a.png)
+### Проверить коренную причину, не покидая контекст
 
-You can export all loaded problems (up to a limit of 1000) or use the multi-select feature to choose specific problems. Additionally, the filter bar above the table allows you to filter through larger subsets of problems. The **Select all** checkbox helps you to export all problems in the filtered set of entries.
+В зависимости от ответственности вашей команды, вы можете сосредоточить свое внимание на кластерах Kubernetes, облачных ресурсах и рабочих нагрузках критически важных сервисов. Чтобы минимизировать переключение контекста, Dynatrace предлагает последовательную информацию о коренной причине через несколько приложений. Независимо от того, где начинается ваше расследование, вам не нужно переключаться на ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**, чтобы увидеть коренную причину.
 
-### Check the root cause without leaving your context
+В примере ниже приложение **Kubernetes** отображает информацию о проблеме, влияющей на рабочую нагрузку.
 
-Depending on your team's responsibility, you might want to focus your attention on Kubernetes clusters, cloud resources, and workloads of critical services. To minimize context switching, Dynatrace offers consistent root cause information across multiple apps. No matter where your investigation starts, you don't have to switch to ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** to see the root cause.
+![Информация о проблеме, интегрированная в приложение Kubernetes.](https://dt-cdn.net/images/dynatrace-intelligence-in-k8s-app-1920-2da55950a8.png)
 
-In the example below, the **Kubernetes** app displays information about a problem affecting a workload.
+### Расследовать все актуальные для проблемы журналы
 
-![Problem information integrated into the Kubernetes app.](https://dt-cdn.net/images/dynatrace-intelligence-in-k8s-app-1920-2da55950a8.png)
+Проблема, проанализированная Davis, подчеркивает коренную причину инцидента и показывает все актуальные для инцидента строки журнала через несколько сущностей на странице подробностей проблемы.
 
-### Investigate all problem relevant logs
+Чтобы получить доступ к строкам журнала, собранным во время инцидента, выберите вкладку **Журналы**. Кроме того, вы можете увидеть их уровень журнала через все сущности, затронутые проблемой, что позволяет сэкономить время на ручных расследованиях и фильтрации журналов актуальных сущностей отдельно.
 
-A Davis-analyzed problem highlights the root cause of an incident and shows all the incident-relevant log lines across multiple entities in the problem details.
+Вкладка **Журналы** также включает ссылки на затронутые сущности и информацию о всех связанных сущностях, таких как родительские хосты. Чтобы проверить, какие сущности затронуты проблемой, вы можете обратиться ко всем свойствам событий, начинающимся с префикса `dt.entity.`.
 
-To access the log lines that were collected during the incident, select the **Logs** tab. Additionally, you're able to see their log level across all entities affected by the problem, allowing you to save time on manual investigations and filtering logs of relevant entities separately.
-
-The **Logs** tab also includes references to the affected entities and information about all related entities, such as parent hosts. To verify which entities are affected by the problem event, you can refer to all the event properties that start with the `dt.entity.` prefix.
-
-See how **Logs** tab summarizes all problem-relevant logs in the image below.
+Смотрите, как вкладка **Журналы** суммирует все актуальные для проблемы журналы на изображении ниже.
 
 ![Dynatrace Intelligence Problems app log count.](https://dt-cdn.net/images/problems-log-count-1920-330dd46337.png)
 
-The image below illustrates the further sorting of the log lines with the help of a DQL query.
+Изображение ниже иллюстрирует дальнейшую сортировку строк журнала с помощью запроса DQL.
 
 ![Dynatrace Intelligence Problems app error log lines.](https://dt-cdn.net/images/problems-error-log-lines-1920-cb4599df02.png)
 
-### Visually notify and automate to speed up remediation
+### Визуально уведомлять и автоматизировать для ускорения устранения
 
-![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** features a global problem indicator that shows the number of active problems within the environment and is always visible in the Dock. When the Dock is collapsed, a red dot is displayed next to the app icon instead of a number.
+![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** имеет глобальный индикатор проблемы, который показывает количество активных проблем в окружении и всегда виден в Dock. Когда Dock свернут, красная точка отображается рядом с иконкой приложения вместо числа.
 
-To personalize the indicator and the number of the displayed active issues, select filters in **Category** and save the filter configuration by selecting the  icon. The saved filter will automatically apply to the global problem indicator, reducing the number of problems counted for the user, as shown below. Selecting the **Default filter** button restores the last saved configuration.
+Чтобы персонализировать индикатор и количество отображаемых активных проблем, выберите фильтры в **Категории** и сохраните конфигурацию фильтра, выбрав иконку. Сохраненный фильтр будет автоматически применен к глобальному индикатору проблемы, уменьшая количество проблем, подсчитанных для пользователя, как показано ниже. Выбор кнопки **Фильтр по умолчанию** восстанавливает последнюю сохраненную конфигурацию.
 
-![Saving filter configuration in Problems app.](https://dt-cdn.net/images/problems-app-notifications-config-save-1920-af4147c3c1.png)
+![Сохранение конфигурации фильтра в приложении Problems.](https://dt-cdn.net/images/problems-app-notifications-config-save-1920-af4147c3c1.png)
 
-While a problem filter is active, the indicator number will only show active problems from your chosen categories. The indicator updates on a one-minute schedule, which means that after the filter is updated, it can take some time for the indicator to adapt.
+Пока проблема фильтра активна, число индикатора будет показывать только активные проблемы из выбранных категорий. Индикатор обновляется по расписанию каждую минуту, что означает, что после обновления фильтра может потребоваться некоторое время, чтобы индикатор адаптировался.
 
-You can also set up email notifications for filtered problems using your email address by selecting the  icon, as shown below:
+Вы также можете настроить уведомления по электронной почте для отфильтрованных проблем, используя свой адрес электронной почты, выбрав иконку, как показано ниже:
 
-![Turning on email notifications for the filters applied in the Problems app.](https://dt-cdn.net/images/problems-app-turn-on-notifications-1920-6806895778.png)
+![Включение уведомлений по электронной почте для примененных фильтров в приложении Problems.](https://dt-cdn.net/images/problems-app-turn-on-notifications-1920-6806895778.png)
 
-The email notification is your personal setting, so you can enable it without the need for configuration permissions or the risk of impacting other users within the same environment.
+Уведомление по электронной почте является вашей личной настройкой, поэтому вы можете включить его без необходимости конфигурации или риска влияния на других пользователей в том же окружении.
 
-The email notification is directly triggered within OpenPipeline, meaning only simple filters can be applied. Workflows that query ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** through DQL can use the complete feature set of Grail queries, such as joining tables.
+Уведомление по электронной почте запускается напрямую в OpenPipeline, что означает, что могут быть применены только простые фильтры. Рабочие процессы, которые запрашивают ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** через DQL, могут использовать полный набор функций запросов Grail, таких как объединение таблиц.
 
-If you need to send out customized email messages or have more complex automation and integration needs, you should apply a complete workflow along with the problem trigger.
+Если вам нужно отправлять настраиваемые сообщения по электронной почте или иметь более сложные потребности в автоматизации и интеграции, вы должны применить полный рабочий процесс вместе с триггером проблемы.
 
-### Visualize affected deployments to gather additional insights
+### Визуализировать затронутые развертывания для сбора дополнительных сведений
 
-**Развертывание** перспектива обеспечивает команды эксплуатации более глубоким пониманием инфраструктуры и облачных ресурсов, затронутых крупномасштабными инцидентами. Функция анализа коренной причины автоматически собирает и визуализирует затронутые развертывания и связанные с ними ресурсы.
+**Перспектива развертывания** оснащает команды эксплуатации более глубоким пониманием инфраструктуры и облачных ресурсов, затронутых крупномасштабными инцидентами. Функция анализа коренной причины автоматически собирает и визуализирует затронутые развертывания и связанные с ними ресурсы.
 
 Дополнительный контекст, предоставляемый связанными ресурсами, позволяет вам:
 
 * Быстро понять, где находится затронутый ресурс, например, в конкретном облачном регионе или кластере Kubernetes.
 * Собрать дополнительную информацию для развертываний в нескольких облаках, показывая развертывание приложения в облаках, регионах и технологических границах.
 
-**Развертывание** представление использует диаграмму, подобную диаграмме развертывания Unified Modeling Language (UML), и следует подходу сверху вниз, начиная с самого большого контейнерного элемента вверху и становясь более подробным, когда вы углубляетесь. Структура развертывания визуализируется в виде сворачиваемых карточек с горизонтально перекрывающимися элементами, например, сервисами, работающими в нескольких регионах. В этом случае карточки, представляющие такие сервисы, дублируются и показываются в нескольких стопках развертывания.
+**Вид развертывания** использует диаграмму, подобную диаграмме развертывания Unified Modeling Language (UML), и следует подходу сверху вниз, начиная с самого большого контейнерного элемента вверху и становясь более подробным при переходе вниз. Структура развертывания визуализируется в виде сжимаемых карточек с горизонтально перекрывающимися элементами, например, сервисами, работающими в нескольких регионах. В этом случае карточки, представляющие такие сервисы, дублируются и показываются в нескольких стопках развертывания.
 
-Развертывание, содержащее коренную причину, автоматически разворачивается и помечается красной меткой коренной причины, в то время как все остальные развертывания сворачиваются по умолчанию. Иерархия развертывания фокусируется на максимум 5 уровнях, начиная с листовых узлов иерархии в нижней части диаграммы, как показано в примере ниже:
+Развертывание, содержащее коренную причину, автоматически расширяется и помечается красным значком коренной причины, в то время как все остальные развертывания по умолчанию сжимаются. Иерархия развертывания фокусируется на максимум 5 уровнях, начиная с листовых узлов иерархии внизу диаграммы, как показано в примере ниже:
 
 ![Dynatrace Intelligence Problems Deployment view с выделенной коренной причиной.](https://dt-cdn.net/images/problem-deployment-view-1920-e646972d40.png)
 
-Интерактивность является важной функцией представления развертывания. Справа вы можете кликнуть на любой элемент, чтобы визуализировать результаты, такие как события, связанные с проблемой, вместе с прямой ссылкой на выбранную сущность. Этот структурированный подход позволяет вам и вашей команде эксплуатации сократить время, необходимое для реагирования на инциденты, навигируя по знакомому визуальному представлению.
+Интерактивность является важной функцией вида развертывания. Справа вы можете кликнуть на любой элемент, чтобы визуализировать результаты, такие как события, связанные с проблемой, вместе с прямой ссылкой на выбранную сущность. Этот структурированный подход позволяет вам и вашей команде эксплуатации сократить время, необходимое для реагирования на инциденты, навигируя по знакомому визуальному представлению.
 
 Не все связанные с инцидентом элементы могут показывать информацию справа. Некоторые элементы, такие как облачный регион, отображаются для лучшего контекста, но могут не обязательно показывать события, связанные с проблемой.
 
 ### Определение пользовательских полей проблем
 
-Dynatrace Intelligence причинно-следственный анализ коренной причины выявляет и сообщает о проблемах, вызванных одним или несколькими событиями в среде Dynatrace, и сохраняет результаты в виде записи проблемы в Grail.
+Dynatrace Intelligence обнаружение коренной причины с помощью причинно-следственного ИИ выявляет и сообщает о проблемах, вызванных одним или несколькими событиями в среде Dynatrace, и сохраняет результаты в виде записи проблемы в Grail.
 
-Запись проблемы включает в себя массив идентификаторов событий (`dt.davis.event_ids`), который представляет все события, собранные и объединенные во время анализа коренной причины. Событийные поля **Проблем** таблицы, такие как категория, имя, описание, статус, начало и конец, получаются из этих событий, что позволяет вам эффективно фильтровать и сортировать все входящие записи проблем.
+Запись проблемы включает в себя массив идентификаторов событий (`dt.davis.event_ids`), который представляет все события, собранные и объединенные во время анализа коренной причины. Событийные поля таблицы **Проблемы**, такие как категория, имя, описание, статус, начало и конец, получаются из этих событий, что позволяет вам эффективно фильтровать и сортировать все входящие записи проблем.
 
 По умолчанию Dynatrace распространяет набор встроенных полей проблем вместе с полями разрешений на уровне записи, такими как `dt.host_group.id`, `k8s.namespace.name`, `k8s.cluster.name`, на проблемы. Для полного списка встроенных полей проблем см. [Разрешения на уровне записи в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Узнайте, как назначать разрешения на бакеты и таблицы в Grail.").
 
 Другие встроенные и пользовательские поля событий не автоматически распространяются, чтобы избежать чрезмерного количества записей проблем.
 
-В событиях Davis политики разрешений, основанные на разрешениях на уровне записи Grail, работают как ожидается, поскольку поля содержат единственные значения. Однако, когда несколько событий агрегируются в проблему, значения одного и того же поля объединяются в массив. Из-за текущей реализации фильтров разрешений на уровне записи Grail только `dt.security_context` поддерживает фильтрацию массивов значений. Другие поля разрешений не могут быть использованы с фильтрами на основе массивов в политиках разрешений.
+В событиях Davis политики разрешений на основе разрешений на уровне записи Grail работают как ожидается, поскольку поля содержат единственные значения. Однако, когда несколько событий агрегируются в проблему, значения одного и того же поля объединяются в массив. Из-за текущей реализации фильтров разрешений на уровне записи Grail только `dt.security_context` поддерживает фильтрацию массивных значений. Другие поля разрешений не могут быть использованы с фильтрами массивов в политиках разрешений.
 
 Это поведение отличается от функциональности фильтрации DQL, где фильтры массивов на полях массивов полностью поддерживаются. Хотя это ограничение может повлиять на гибкость фильтров разрешений, важно учитывать при управлении политиками разрешений.
 
@@ -320,36 +316,36 @@ Dynatrace Intelligence причинно-следственный анализ к
 
 #### Изменение пользовательских полей проблем
 
-Чтобы просмотреть или изменить поля, автоматически распространяемые из событий в проблемы, перейдите в ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки** >  **Dynatrace Intelligence** > **Анализ коренной причины** > **Поля проблем**. Изменяя эти поля проблем, вы можете:
+Чтобы просмотреть или изменить поля, автоматически распространяемые из событий на проблемы, перейдите в ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки** >  **Dynatrace Intelligence** > **Анализ коренной причины** > **Поля проблем**. Изменяя эти поля проблем, вы можете:
 
-* Подписаться на пользовательские поля записей, чтобы они автоматически распространялись из всех отдельных событий на любую обнаруженную проблему.
+* Подписаться на пользовательские поля записей, чтобы они автоматически распространялись из всех одиночных событий на любую обнаруженную проблему.
 * Переименовать существующие поля проблем.
 * Удалить поля проблем.
 
 Переименование существующих полей проблем и удаление полей проблем изменяет текущие и будущие записи проблем Grail и может нарушить ваши запросы DQL.
 
-Чтобы узнать больше о случаях использования пользовательских полей проблем, см. [Dynatrace Intelligence Проблемы использования случаев](/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples "Изучите сценарии использования пользовательских полей проблем в Проблемах.").
+Чтобы узнать больше о случаях использования пользовательских полей проблем, см. [Dynatrace Intelligence Problems: случаи использования](/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples "Изучите сценарии использования пользовательских полей проблем в Problems.").
 
 ### Создание руководства по устранению неполадок
 
-![Проблемы приложения - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое") **Проблемы** позволяет создавать руководства по устранению неполадок, используя ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели мониторинга") **Панели мониторинга** или ![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетради**, чтобы документировать ваше расследование и шаги, предпринятые для решения проблемы. Руководство основано на предварительно определенной шаблоне и содержит два типа разделов:
+![Problems app - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - новое") **Проблемы** позволяет создавать руководства по устранению неполадок с помощью ![Панелей приборов](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели приборов") **Панелей приборов** или ![Тетрадей](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетрадей**, чтобы документировать ваше расследование и шаги, предпринятые для решения проблемы. Руководство основано на предварительно определенной форме и содержит два типа разделов:
 
 * Разделы с информацией, извлеченной直接 из проблемы.
 * Шаблонные разделы (такие как `Первоначальный ответ и обнаружение`, `Устранение неполадок` и `Шаги по устранению`) которые вы можете редактировать, чтобы описать процесс и шаги, предпринятые для решения проблемы.
 
 Чтобы создать руководство по устранению неполадок
 
-1. Перейдите в ![Проблемы приложения - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое") **Проблемы** и откройте проблему, которую необходимо решить.
+1. Перейдите в ![Problems app - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - новое") **Проблемы** и откройте проблему, которую необходимо решить.
 2. На странице деталей проблемы выберите **Устранение неполадок**.
 3. Выберите  **Новое**.
 
    * Выберите  **Тетради**, чтобы создать новый документ в ![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетради**.
-   * Выберите  **Панели мониторинга**, чтобы создать новый документ в ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели мониторинга") **Панели мониторинга**.
+   * Выберите  **Панели приборов**, чтобы создать новый документ в ![Панели приборов](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели приборов") **Панели приборов**.
 4. Следуйте инструкциям в шаблоне, чтобы документировать детали для вашего руководства по устранению неполадок.
 
-Если вы поделитесь руководством по устранению неполадок со всеми пользователями в вашей среде и включите предложения документов на основе векторной подобности, Dynatrace Intelligence генеративный ИИ проиндексирует ваш документ и предложит его вашей команде, чтобы помочь им быстрее устранить подобные проблемы. Чтобы узнать больше о предложениях документов Dynatrace Intelligence генеративного ИИ, см. [Найти релевантные документы с помощью Dynatrace Intelligence генеративного ИИ](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Узнайте, как Dynatrace Intelligence генеративный ИИ может предложить руководства по устранению неполадок для решения проблем.").
+Если вы поделитесь руководством по устранению неполадок со всеми пользователями в вашей среде и включите предложения документов на основе векторной подобности, Dynatrace Intelligence генеративный ИИ проиндексирует ваш документ и предложит его вашей команде, чтобы помочь им быстрее устранить подобные проблемы. Чтобы узнать больше о предложениях документов Dynatrace Intelligence генеративного ИИ, см. [Найти соответствующие документы с помощью Dynatrace Intelligence генеративного ИИ](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Узнайте, как Dynatrace Intelligence генеративный ИИ может предложить руководства по устранению неполадок для решения проблем.").
 
-Возможность создавать и делиться руководствами по устранению неполадок позволяет командам DevOps:
+Возможность создания и обмена руководствами по устранению неполадок позволяет командам DevOps:
 
 * Делиться и распространять свои знания о конкретной бизнес-логике, реализации программного обеспечения и инфраструктуре.
 * Обогащать Dynatrace AI в своей среде с общими знаниями для более упрощенного и адаптированного опыта во время расследования и решения проблем.
@@ -357,141 +353,139 @@ Dynatrace Intelligence причинно-следственный анализ к
 
 ### Решение случаев пропущенных событий
 
-Dynatrace предлагает широкий спектр инструментов, подходящих для ваших потребностей, таких как настройка разрешений групп пользователей, правил оповещения Dynatrace Intelligence или правил ингестии OpenPipeline. Однако из-за богатых возможностей настройки могут возникнуть случаи, когда события не будут видны в ![Проблемы приложения - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое") **Проблемы** и различия в количестве затронутых сущностей в доступных вкладках. Наиболее распространенные причины пропуска событий из ![Проблемы приложения - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы приложения - новое") **Проблемы** являются:
+Dynatrace предлагает широкий спектр инструментов, подходящих для ваших потребностей, таких как настройка разрешений групп пользователей, правил оповещения Dynatrace Intelligence или правил ингестии OpenPipeline. Однако из-за богатых возможностей настройки могут возникнуть случаи, когда события не будут видны в ![Problems app - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - новое") **Проблемы** и различия в количестве затронутых сущностей в доступных вкладках. Наиболее распространенные причины пропуска событий из ![Problems app - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - новое") **Проблемы** являются:
 
-* Разница в периоде хранения бакета: вы можете настроить период хранения бакета для мониторинговых данных, чтобы он длился дольше, так что события, связанные с проблемой, будут видны независимо от того, как долго проблема находится в открытом состоянии. Чтобы узнать больше о настройке периода хранения бакета для мониторинговых данных, см. [Сохранять данные трассировки в течение длительного периода](/docs/observe/application-observability/distributed-tracing/data-retention "Создайте и назначьте бакеты с пользовательским хранением данных для ваших данных трассировки в Grail.").
+* Разница в периоде хранения бакета: вы можете настроить период хранения бакета для мониторинговых данных, чтобы он длился дольше, так что события, связанные с проблемой, будут видны независимо от того, как долго проблема находится в открытом состоянии. Чтобы узнать больше о настройке периода хранения бакета для мониторинговых данных, см. [Сохранение данных трассировки на длительные периоды](/docs/observe/application-observability/distributed-tracing/data-retention "Создайте и назначьте бакеты с пользовательским хранением данных для ваших данных трассировки в Grail.").
 * Отсутствие необходимых разрешений для просмотра события: проверьте с группой поддержки Dynatrace и убедитесь, что у вас есть необходимые разрешения. Попросите администратора скорректировать разрешения, чтобы событие стало видимым для вас.
-* Правила ингестии OpenPipeline, которые удаляют записи: вы можете скорректировать правила ингестии OpenPipeline, чтобы они не удаляли никаких записей или расширили правила, чтобы сохранить записи, которые могут быть связаны с оповещенной проблемой. Чтобы узнать больше о настройке правил ингестии OpenPipeline, см. [Обработка журналов с помощью OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Обрабатывайте журналы, используя Dynatrace OpenPipeline.").
+* Правила ингестии OpenPipeline, которые удаляют записи: вы можете настроить правила ингестии OpenPipeline, чтобы предотвратить удаление записей или расширить правила, чтобы сохранить записи, которые могут быть связаны с оповещенной проблемой. Чтобы узнать больше о настройке правил ингестии OpenPipeline, см. [Обработка журналов с помощью OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Обработайте журналы с помощью Dynatrace OpenPipeline.").
 
-### Упрощение решения проблем с помощью специфических для проблем опций просмотра
+### Упрощение решения проблем с помощью специфических для проблем опций перехода
 
-...
+... (остальной текст перевода)
 
+![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** предоставляет варианты детального анализа, предназначенные для того, чтобы направить вас к наиболее актуальным действиям для решения обнаруженных проблем и помочь вам оптимизировать процесс решения проблем.
 
+Варианты детального анализа, доступные вам, отображаются в представлении деталей проблемы и зависят от типа затронутой сущности (например, сервиса, рабочей нагрузки Kubernetes, хоста или зоны доступности AWS).
 
-![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** provides drill-down options that are designed to guide you toward the most relevant actions for resolving detected problems and help you streamline problem resolution.
+Некоторые из доступных вариантов детального анализа:
 
-Drill-down options available to you are displayed within the problem details view and depend on the type of the affected entity (such as service, Kubernetes workload, host, or AWS availability zone).
+* Анализ неудач: Проведите сосредоточенный анализ неудач, чтобы определить коренную причину неудач, шаблонов ошибок или проблем с производительностью.
+* Просмотр связанных журналов: Изучите актуальные записи журнала напрямую в ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.
+* Просмотр неудачных трасс: Анализируйте неудачные трассы в ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**, чтобы понять коренную причину неудач.
+* Просмотр `app`: Перейдите на страницу деталей связанного приложения. Точное название зависит от затронутой сущности (например, Просмотр сервиса, Просмотр рабочей нагрузки Kubernetes или Просмотр хоста).
 
-Some of the available drill-down options are:
+Для доступа к вариантам детального анализа
 
-* Analyze failures: Perform a focused failure analysis to identify the root cause of failure rates, error patterns, or performance issues.
-* View related logs: Investigate relevant log entries directly within ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.
-* View failed traces: Analyze failed traces in ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** to understand the root cause of failures.
-* View `app`: Navigate to the associated app's details page. The exact name is specific to the affected entity (such as View service, View Kubernetes workload, or View host).
+1. В **Dynatrace**, перейдите в ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.
+2. Выберите проблему, которую вы хотите изучить из обзора ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**. Это открывает страницу деталей проблемы.
+3. Необязательно: В левой части страницы деталей проблемы выберите затронутую сущность или инфраструктуру, которую вы хотите изучить дальше. Обычно, когда вы открываете страницу деталей проблемы, затронутая сущность предварительно выбрана для вас.
+4. Из деталей затронутой сущности справа выберите предпочитаемый вариант для дальнейшего изучения.
 
-To access drill-down options
+   * Выберите  > **Просмотр связанных журналов**, чтобы продолжить изучение без выхода из ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.
+   * Выберите  > **Просмотр неудачных трасс**, чтобы продолжить изучение в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.").
+   * Выберите  > **Просмотр** `app`, чтобы продолжить изучение в одном из доступных приложений Dynatrace.
+   * Выберите  > **Открыть с помощью**, чтобы увидеть все доступные варианты изучения.
 
-1. In **Dynatrace**, go to ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.
-2. Select the problem you want to investigate from the ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** overview. This opens a problem details page.
-3. Optional On the left side of the problem details page, select the affected entity or infrastructure you want to investigate further. Usually, when you open the problem details page, the affected entity is pre-selected for you.
-4. From the affected entity details on the right, select the preferred option for further investigation.
+Варианты детального анализа обеспечивают беспрепятственное навигирование между ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** и другими приложениями Dynatrace, чтобы обеспечить фокус и непрерывность в решении проблем.
 
-   * Select  > **View related logs** to continue the investigation without leaving ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.
-   * Select  > **View failed traces** to continue the investigation in the [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.").
-   * Select  > **View** `app` to continue the investigation in one of the available Dynatrace apps.
-   * Select  > **Open with** to see all available investigation options.
+### Просмотр обзора проблемы
 
-Drill-down options provide you with seamless navigation between ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** and other Dynatrace apps to ensure focus and continuity in problem resolution.
+**Обзор** - это краткий, исполнительный сводка обнаруженной проблемы.
 
-### Review problem overview
+Чтобы просмотреть обзор проблемы
 
-The **Overview** is a concise, executive summary of a detected problem.
+1. Перейдите в ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** и откройте проблему, которую вы хотите решить.
+2. На странице деталей проблемы выберите **Обзор**.
 
-To view a problem overview
+   **Пример**:
 
-1. Go to ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** and open the problem you need to resolve.
-2. On the problem details page, select **Overview**.
+   ![Пример страницы деталей проблемы с вкладкой Обзор](https://dt-cdn.net/images/problems-screenshot-with-overview-1920-6c68de3f34.png)
 
-   **Example**:
+**Обзор** имеет четыре раздела:
 
-   ![Example problem details Overview tab](https://dt-cdn.net/images/problems-screenshot-with-overview-1920-6c68de3f34.png)
+Раздел
 
-The **Overview** has four sections:
+Описание
 
-Section
+[Воздействие](#overview-impact)
 
-Description
+Отображает все затронутые сущности Smartscape (например, сервисы, процессы и хосты) вместе с краткими деталями проблемы для каждой сущности.
 
-[Impact](#overview-impact)
+[Коренная причина](#overview-root-cause)
 
-Displays all impacted Smartscape entities (for example, services, processes, and hosts) along with brief issue details for each entity.
+Сосредоточен на коренной причине проблемы, включая подробную информацию о затронутом стеке развертывания.
 
-[Root cause](#overview-root-cause)
+[Визуальный путь решения](#overview-visual-resolution-path)
 
-Focuses on the root cause of the issue, including detailed information about the affected deployment stack.
+Графически иллюстрирует отношения между фронтендами, сервисами и бэкендами, участвующими в проблеме.
 
-[Visual resolution path](#overview-visual-resolution-path)
+[Автоматизация и исправление](#overview-automation-and-remediation)
 
-Graphically illustrates the relationships between frontends, services, and backends involved in the issue.
+Список всех автоматизированных рабочих процессов, запущенных проблемой, таких как уведомления, исправления и внешние интеграции.
 
-[Automation and remediation](#overview-automation-and-remediation)
+Настройка макета
 
-Lists all automation workflows triggered by the problem, such as notifications, remediations, and external integrations.
+Вы можете переместить эти разделы, чтобы персонализировать свой вид **Обзора**.
 
-Customize the layout
+1. В заголовке раздела, который вы хотите переместить, выберите  и перетащите раздел.
+2. Отпустите раздел, где вы хотите, чтобы он появился в макете.
 
-You can move these sections around to personalize your view of the **Overview**.
+Эти изменения сохраняются на пользователя. Ваши изменения макета не влияют на то, как другие видят обзор.
 
-1. In the header of the section you want to move, select  and drag the section.
-2. Drop the section where you want it to appear in the layout.
+### Воздействие
 
-These changes are saved per user. Your layout changes don't affect how others see the overview.
+Раздел **Воздействие** отображает все затронутые сущности Smartscape (например, сервисы, процессы и хосты) вместе с краткими деталями проблемы для каждой сущности.
 
-### Impact
+Раздел **Воздействие** категоризирован по:
 
-The **Impact** section displays all impacted [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") entities (for example, services, processes, and hosts) along with brief issue details for each entity.
+* **Фронтенды**
+* **Сервисы**
+* **Инфраструктура**
+* **Синтетический мониторинг**
+* **Окружение**
 
-The **Impact** section is categorized by:
+### Коренная причина
 
-* **Frontends**
-* **Services**
-* **Infrastructure**
-* **Synthetic monitoring**
-* **Environment**
+Раздел **Коренная причина** сосредоточен на коренной причине проблемы, включая подробную информацию о затронутом стеке развертывания. Это может включать:
 
-### Root cause
+* Процесс и хост, где работает сервис коренной причины.
+* Рабочая нагрузка Kubernetes, обслуживающая затронутый сервис.
 
-The **Root cause** section focuses on the root cause of the issue, including detailed information about the affected deployment stack. This may include:
+Чтобы обеспечить согласованность, сущность коренной причины также перечислена в таблице **Воздействие**.
 
-* The process and host where the root-cause service is running.
-* The Kubernetes workload serving the impacted service.
+### Визуальный путь решения
 
-To ensure consistency, the root-cause entity is also listed in the **Impact** table.
+Раздел **Визуальный путь решения** графически иллюстрирует отношения между фронтендами, сервисами и бэкендами, участвующими в проблеме.
 
-### Visual resolution path
+* Каждый узел представляет сущность Smartscape (фронтенд, сервис или бэкенд), где была обнаружена проблема с работоспособностью.
+* Серые узлы указывают на связанные сущности, используемые в анализе, но не直接 затронутые.
 
-The **Visual resolution path** section graphically illustrates the relationships between frontends, services, and backends involved in the issue.
+Эта графика помогает объяснить, как Dynatrace AI определила сервис коренной причины бэкенда.
 
-* Each node represents a [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") entity (frontend, service, or backend) where a health issue was detected.
-* Gray nodes indicate related entities used in the analysis but not directly impacted.
+Чтобы максимизировать свой вид графики, выберите  **Максимизировать**.
 
-This graph helps explain how Dynatrace AI identified the root-cause backend service.
+### Автоматизация и исправление
 
-To maximize your view of the graph, select  **Maximize**.
+Раздел **Автоматизация и исправление** перечисляет все автоматизированные рабочие процессы, запущенные проблемой. Эти рабочие процессы могут включать:
 
-### Automation and remediation
+* Уведомления, отправленные командам реагирования.
+* Потоки исправления и руководства по автоматизированному исправлению.
+* Триггеры внешних агентов ИИ, таких как агенты SRE облачной платформы, для сбора дополнительных сведений или решения проблем в инфраструктуре поставщика облачных услуг.
 
-The **Automation and remediation** section lists all automation workflows triggered by the problem. These workflows may include:
+Таблица предоставляет ключевые детали для каждого рабочего процесса, включая:
 
-* Alert notifications sent to response teams.
-* Remediation flows and runbooks for auto-remediation.
-* External AI agent triggers, such as cloud platform SRE agents, to gather further insights or resolve issues within cloud vendor infrastructure.
+* Время последнего запуска (поскольку рабочие процессы могут запускаться несколько раз во время обновления проблемы).
+* Состояние выполнения (например, успех или неудача).
 
-The table provides key details for each workflow, including:
+Детали выполнения рабочего процесса основаны на стандартных событиях выполнения рабочего процесса, которые также можно запросить с помощью DQL в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь сведениями из ваших данных наблюдаемости - все в одном совместном, настраиваемом рабочем пространстве.") и [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена вашими данными наблюдаемости в режиме реального времени.").
 
-* The last trigger time (as workflows may run multiple times during problem updates).
-* The execution state (for example, success or failure).
+**Примечание**:
 
-Workflow execution details are based on standard workflow execution events, which can also be queried using DQL in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
-
-**Note**:
-
-* Only users with system event read permissions can view workflow executions. Without these permissions, the table is empty and a message indicates the missing access.
-* Workflows not shared with your user are listed but shown in gray without direct links, indicating restricted access.
+* Только пользователи с разрешениями на чтение системных событий могут просматривать выполнение рабочего процесса. Без этих разрешений таблица пуста, и сообщение указывает на отсутствие доступа.
+* Рабочие процессы, не共享енные с вашим пользователем, перечислены, но отображаются в сером цвете без прямых ссылок, указывающих на ограниченный доступ.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
-## Explore in Dynatrace Hub
+## Изучите в Dynatrace Hub
 
-Triage, investigate, and remediate incidences directly in ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.](https://www.dynatrace.com/hub/detail/problems/)
+Триаж, расследуйте и исправляйте инциденты直接 в ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.](https://www.dynatrace.com/hub/detail/problems/)

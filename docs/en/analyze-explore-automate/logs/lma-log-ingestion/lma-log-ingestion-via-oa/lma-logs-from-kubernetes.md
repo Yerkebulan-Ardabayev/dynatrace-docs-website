@@ -1,7 +1,7 @@
 ---
 title: Stream Kubernetes logs with Dynatrace Log Module
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes
-scraped: 2026-02-17T04:57:24.698410
+scraped: 2026-02-17T21:25:18.533312
 ---
 
 # Stream Kubernetes logs with Dynatrace Log Module

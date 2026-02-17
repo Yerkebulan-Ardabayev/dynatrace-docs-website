@@ -1,7 +1,7 @@
 ---
 title: Azure Cosmos DB Account (GlobalDocumentDB) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cosmos-db-account-globaldocumentdb
-scraped: 2026-02-15T09:08:34.725653
+scraped: 2026-02-17T21:27:00.294674
 ---
 
 # Azure Cosmos DB Account (GlobalDocumentDB) monitoring

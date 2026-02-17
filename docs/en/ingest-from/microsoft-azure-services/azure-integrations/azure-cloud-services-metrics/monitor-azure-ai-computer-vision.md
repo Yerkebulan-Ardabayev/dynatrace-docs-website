@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Computer Vision monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-computer-vision
-scraped: 2026-02-17T05:01:08.264614
+scraped: 2026-02-17T21:33:37.019457
 ---
 
 # Azure AI - Computer Vision monitoring

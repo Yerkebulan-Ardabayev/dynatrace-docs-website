@@ -1,7 +1,7 @@
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-16T21:13:29.092420
+scraped: 2026-02-17T21:19:03.283801
 ---
 
 # Traces powered by Grail overview (DPS)

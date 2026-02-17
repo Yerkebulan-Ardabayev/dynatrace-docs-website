@@ -80,7 +80,7 @@ See the [GitHub release notesï»¿](https://github.com/Dynatrace/dynatrace-oper
 ---
 title: Dynatrace Operator release notes version 0.10.1
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-10-1
-scraped: 2026-02-16T21:25:41.583107
+scraped: 2026-02-17T21:30:59.112009
 ---
 
 # Dynatrace Operator release notes version 0.10.1
@@ -117,7 +117,7 @@ Release date: Dec 15, 2022
 ---
 title: Dynatrace Operator release notes version 0.10.2
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-10-2
-scraped: 2026-02-17T04:59:24.357118
+scraped: 2026-02-17T21:32:23.894355
 ---
 
 # Dynatrace Operator release notes version 0.10.2
@@ -148,7 +148,7 @@ Release date: Jan 12, 2023
 ---
 title: Dynatrace Operator release notes version 0.9.2
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-9-2
-scraped: 2026-02-17T04:58:58.839068
+scraped: 2026-02-17T21:33:10.032330
 ---
 
 # Dynatrace Operator release notes version 0.9.2
@@ -216,7 +216,7 @@ No breaking changes.
 ---
 title: Dynatrace Operator release notes version 1.7.0
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-0
-scraped: 2026-02-16T09:28:29.199692
+scraped: 2026-02-17T21:29:51.543832
 ---
 
 # Dynatrace Operator release notes version 1.7.0
@@ -517,7 +517,7 @@ In Dynatrace Operator version 1.7, the DynaKube API versions `v1beta1` and `v1be
 ---
 title: Dynatrace Operator release notes version 1.7.3
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-3
-scraped: 2026-02-17T04:58:26.590163
+scraped: 2026-02-17T21:31:55.643193
 ---
 
 # Dynatrace Operator release notes version 1.7.3
@@ -646,7 +646,7 @@ In Dynatrace Operator version 1.7, the DynaKube API versions `v1beta1` and `v1be
 ---
 title: Dynatrace Operator release notes version 1.8.1
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-8-1
-scraped: 2026-02-16T21:31:31.375503
+scraped: 2026-02-17T21:31:17.505387
 ---
 
 # Dynatrace Operator release notes version 1.8.1

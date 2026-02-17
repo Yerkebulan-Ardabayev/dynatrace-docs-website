@@ -1,7 +1,7 @@
 ---
 title: Proxy for private locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations
-scraped: 2026-02-16T21:30:53.717500
+scraped: 2026-02-17T21:30:54.253471
 ---
 
 # Proxy for private locations

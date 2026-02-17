@@ -1,7 +1,7 @@
 ---
 title: Sign extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/sign-extensions
-scraped: 2026-02-15T21:24:29.478599
+scraped: 2026-02-17T21:27:36.517578
 ---
 
 # Sign extensions

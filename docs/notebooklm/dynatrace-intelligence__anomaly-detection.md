@@ -13,7 +13,7 @@ Files combined: 15
 ---
 title: Adjust the sensitivity of anomaly detection for infrastructure
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
-scraped: 2026-02-17T04:53:28.672438
+scraped: 2026-02-17T21:23:39.704962
 ---
 
 # Adjust the sensitivity of anomaly detection for infrastructure
@@ -124,7 +124,7 @@ To change threshold settings for a specific host
 ---
 title: Adjust the sensitivity of anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection
-scraped: 2026-02-17T04:55:50.719315
+scraped: 2026-02-17T21:22:42.058254
 ---
 
 # Adjust the sensitivity of anomaly detection
@@ -177,7 +177,7 @@ To configure detection sensitivity on the global level
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-17T04:55:53.457406
+scraped: 2026-02-17T21:22:39.654331
 ---
 
 # Anomaly Detection status types
@@ -259,7 +259,7 @@ Some of the error messages might be more complicated than others. Here are some 
 ---
 title: Configure a simple custom alert
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad
-scraped: 2026-02-17T05:12:14.553424
+scraped: 2026-02-17T21:31:56.757691
 ---
 
 # Configure a simple custom alert
@@ -538,7 +538,7 @@ When creating a custom alert:
 ---
 title: Anomaly Detection DQL optimization guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization
-scraped: 2026-02-17T05:05:12.034400
+scraped: 2026-02-17T21:28:49.192496
 ---
 
 # Anomaly Detection DQL optimization guide
@@ -751,7 +751,7 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 ---
 title: Anomaly Detection app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
-scraped: 2026-02-17T04:55:55.154037
+scraped: 2026-02-17T21:17:03.819596
 ---
 
 # Anomaly Detection app
@@ -920,7 +920,7 @@ Detect anomalies in timeseries using ![Anomaly Detection - new](https://dt-cdn.n
 ---
 title: Anomaly detection configuration
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-02-17T04:55:44.256793
+scraped: 2026-02-17T21:22:43.158420
 ---
 
 # Anomaly detection configuration
@@ -1051,7 +1051,7 @@ You can provide additional parameters as key-value pairs. For a list of possible
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-02-17T04:55:45.891828
+scraped: 2026-02-17T21:22:36.078554
 ---
 
 # Auto-adaptive thresholds for anomaly detection
@@ -1104,7 +1104,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ---
 title: Automated multi-dimensional baselining
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining
-scraped: 2026-02-17T04:55:51.819561
+scraped: 2026-02-17T21:22:37.323565
 ---
 
 # Automated multi-dimensional baselining
@@ -1224,7 +1224,7 @@ You should consider this design choice when configuring alerting settings to ens
 ---
 title: Metric key events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events
-scraped: 2026-02-17T05:03:26.071055
+scraped: 2026-02-17T21:25:15.674418
 ---
 
 # Metric key events
@@ -1313,7 +1313,7 @@ Two types of filters are available:
 ---
 title: Metric selector events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events
-scraped: 2026-02-16T21:27:38.306338
+scraped: 2026-02-17T21:28:17.393534
 ---
 
 # Metric selector events
@@ -1416,7 +1416,7 @@ If there are sparse counts across many entities (for example, an error count acr
 ---
 title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-02-17T04:50:12.885945
+scraped: 2026-02-17T21:22:34.861948
 ---
 
 # Metric events
@@ -1541,7 +1541,7 @@ batchjob.executions,dt.entity.host=HOST-2222222,dt.entity.process_group_instance
 ---
 title: Automate alerts with API
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api
-scraped: 2026-02-17T04:55:47.566046
+scraped: 2026-02-17T21:22:40.804698
 ---
 
 # Automate alerts with API
@@ -1992,7 +1992,7 @@ You have learned how to set up and configure a custom alert via API. Now you can
 ---
 title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-02-17T04:55:49.135021
+scraped: 2026-02-17T21:22:38.400577
 ---
 
 # Static thresholds for anomaly detection

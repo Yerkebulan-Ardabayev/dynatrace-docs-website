@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Your license lifecycle
 source: https://www.dynatrace.com/docs/license/license-lifecycle
-scraped: 2026-02-17T05:07:10.041371
+scraped: 2026-02-17T21:16:25.708623
 ---
 
 # Your license lifecycle

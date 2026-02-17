@@ -1,7 +1,7 @@
 ---
 title: Manage private Synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations
-scraped: 2026-02-16T21:27:27.050556
+scraped: 2026-02-17T21:29:28.259397
 ---
 
 # Manage private Synthetic locations

@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace Apps
 source: https://www.dynatrace.com/docs/discover-dynatrace/dynatrace-apps
-scraped: 2026-02-17T04:45:04.082020
+scraped: 2026-02-17T21:13:23.223787
 ---
 
 # Dynatrace Apps

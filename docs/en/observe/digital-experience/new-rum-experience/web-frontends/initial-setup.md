@@ -1,7 +1,7 @@
 ---
 title: Initial setup for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup
-scraped: 2026-02-15T09:06:20.981775
+scraped: 2026-02-17T21:32:39.941516
 ---
 
 # Initial setup for web frontends

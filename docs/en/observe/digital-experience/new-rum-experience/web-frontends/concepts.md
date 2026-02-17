@@ -1,7 +1,7 @@
 ---
 title: Concepts for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts
-scraped: 2026-02-16T09:32:29.285686
+scraped: 2026-02-17T21:32:09.129324
 ---
 
 # Concepts for web frontends

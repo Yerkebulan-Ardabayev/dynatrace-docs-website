@@ -839,7 +839,7 @@ Dynatrace provides extensive Go monitoring capabilities:
 ---
 title: GraalVM Native Image
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/graalvm-native-image
-scraped: 2026-02-17T04:48:45.644469
+scraped: 2026-02-17T21:20:01.334583
 ---
 
 # GraalVM Native Image
@@ -1400,7 +1400,7 @@ jvmArgs.addAll(
 ---
 title: Red Hat Quarkus native applications monitoring
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/quarkus
-scraped: 2026-02-17T05:07:36.093923
+scraped: 2026-02-17T21:28:18.652454
 ---
 
 # Red Hat Quarkus native applications monitoring
@@ -12328,7 +12328,7 @@ The dispatcher needs to be configured to cache the response header "X-OneAgent-J
 ---
 title: Mainframe technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/mainframe-technology-support
-scraped: 2026-02-17T04:52:01.491190
+scraped: 2026-02-17T21:23:14.051650
 ---
 
 # Mainframe technology support
@@ -12514,7 +12514,7 @@ Only the [Db2 JDBC driver typesï»¿](https://www.ibm.com/docs/en/sdi/7.2.0.3?t
 ---
 title: OneAgent platform and capability support matrix
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix
-scraped: 2026-02-17T04:51:58.653547
+scraped: 2026-02-17T21:23:06.579001
 ---
 
 # OneAgent platform and capability support matrix
@@ -12769,7 +12769,7 @@ For a detailed overview of limitations, see [Set up Dynatrace OneAgent as a Dock
 ---
 title: Serverless compute support matrix
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/serverless-compute-services
-scraped: 2026-02-17T04:52:10.147142
+scraped: 2026-02-17T21:30:34.869288
 ---
 
 # Serverless compute support matrix

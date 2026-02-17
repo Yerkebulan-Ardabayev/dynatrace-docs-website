@@ -13,7 +13,7 @@ Files combined: 9
 ---
 title: Available tiles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles
-scraped: 2026-02-16T09:37:05.420068
+scraped: 2026-02-17T21:27:21.422138
 ---
 
 # Available tiles
@@ -1242,7 +1242,7 @@ To configure this tile type from the dashboard editor
 ---
 title: Pin tiles to your dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard
-scraped: 2026-02-17T05:06:13.296493
+scraped: 2026-02-17T21:25:42.907432
 ---
 
 # Pin tiles to your dashboard
@@ -1411,7 +1411,7 @@ To pin the cloned tiles to another existing dashboard, or to create another dash
 ---
 title: Edit Dynatrace dashboard JSON
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json
-scraped: 2026-02-17T05:04:44.644071
+scraped: 2026-02-17T21:28:06.840072
 ---
 
 # Edit Dynatrace dashboard JSON
@@ -2038,7 +2038,7 @@ If you have admin privileges, you can assign a preset dashboard as the home dash
 ---
 title: Global Dynatrace dashboard settings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-settings
-scraped: 2026-02-17T05:05:01.630803
+scraped: 2026-02-17T21:28:55.364554
 ---
 
 # Global Dynatrace dashboard settings
@@ -2145,7 +2145,7 @@ Then you can add a dashboard image via URL.
 ---
 title: Share Dynatrace dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards
-scraped: 2026-02-16T21:26:12.377218
+scraped: 2026-02-17T21:33:15.228037
 ---
 
 # Share Dynatrace dashboards

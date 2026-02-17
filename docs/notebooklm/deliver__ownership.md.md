@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-02-17T05:09:59.164570
+scraped: 2026-02-17T21:33:06.162538
 ---
 
 # Ownership Classic

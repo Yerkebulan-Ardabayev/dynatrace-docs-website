@@ -1,7 +1,7 @@
 ---
 title: Set up Grail permissions for OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/opentelemetry-security-context
-scraped: 2026-02-17T05:12:17.892609
+scraped: 2026-02-17T21:24:50.107399
 ---
 
 # Set up Grail permissions for OpenTelemetry

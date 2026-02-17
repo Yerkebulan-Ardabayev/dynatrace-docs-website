@@ -2,7 +2,82 @@
 
 Generated: 2026-02-17
 
-Files combined: 17
+Files combined: 18
+
+---
+
+
+## Source: rotate-tenant-token.md
+
+
+---
+title: Tenant token classic
+source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token
+scraped: 2026-02-17T21:25:22.238969
+---
+
+# Tenant token classic
+
+# Tenant token classic
+
+* 2-min read
+* Published Feb 23, 2021
+
+This article discusses access tokens used in previous Dynatrace to authenticate to classic Configuration and Environment APIs. For the latest Dynatrace access, see [Platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.") and [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+
+The tenant token is used by OneAgents and ActiveGates to report data to Dynatrace. Dynatrace automatically generates the tenant token and adds it to OneAgent and ActiveGate installers on download.
+
+## Access a tenant token
+
+To obtain a tenant token for your environment, execute the [GET connectivity information for OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info "View the connectivity information of OneAgent via Dynatrace API.") request of the Deployment API. You will find the tenant token in the `tenantToken` field of the response body. You'll need your PaaS token to authenticate the request.
+
+## Rotate tenant token
+
+You can change the tenant token as needed (for example, to adhere to internal security policies or respond to unintended exposure). The procedure for changing the tenant token is called *tenant token rotation*.
+
+To rotate the token, you need to generate a new token, assign it to all OneAgents and ActiveGates that report data to the environment, and then disable the old token.
+
+To avoid data loss, both old and new tokens are valid during the rotation process. During rotation, do not deploy any new OneAgents until all your ActiveGates are configured with the new tenant token.
+
+1. Start the rotation and generate a new tenant token by executing the [POST start rotation request](/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens/post-start "Initiate Dynatrace tenant token rotation.").
+
+   The request returns the new token in the **active** field of the response body.
+2. Add the new token to ActiveGates. For each ActiveGate:
+
+   1. [Stop ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
+   2. In the `authorization.properties` file of [ActiveGate configuration directory](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."), find the entry for the required environment and specify the new token in the **tenantToken** field.
+   3. Depending on your [ActiveGate purpose](/docs/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate."):
+
+      * [Route OneAgent traffic and monitor remote technologies](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate."): Find the entry for the required environment in the `ruxitagent.conf` and `extensions.conf` files, and specify the new token in the **tenantToken**.
+
+        **Windows**: `%PROGRAMFILES%\dynatrace\remotepluginmodule\agent\conf`  
+        **Linux**: `/opt/dynatrace/remotepluginmodule/agent/conf`
+      * [Install the zRemote module for z/OS monitoring](/docs/ingest-from/dynatrace-activegate/capabilities/zremote-purpose "Learn about installing the zRemote module for z/OS monitoring."): Find the entry for the required environment and specify the new token in the **tenantToken** field.
+
+        **Windows**: `%PROGRAMFILES%\dynatrace\zremote\agent\conf\ruxitagent.conf`  
+        **Linux**: `/opt/dynatrace/zremote/agent/conf/ruxitagent.conf`
+   4. Windows only Change the value of the registry entry: `HKEY_LOCAL_MACHINE\Software\Dynatrace\Dynatrace ActiveGate\common\tenant_token`.
+   5. [Start ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
+3. Add the new token to OneAgents. For each OneAgent:
+
+   1. Add the new token to the communication settings of the OneAgent.
+
+      Use the `--set-tenant-token` command of the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#change-oneagent-communication-settings "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+   2. [Restart](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") OneAgent.
+
+   You can combine both steps into one command:
+
+   ```
+   oneagentctl --restart-service --set-tenant-token={new token}
+   ```
+4. Finish the rotation by executing the [POST finish rotation request](/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens/post-finish "Finish Dynatrace tenant token rotation."). This finishes the process and renders the old token invalid.
+
+## Related topics
+
+* [Tenant tokens API](/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens "Rotate Dynatrace tenant tokens.")
+* [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.")
+* [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+
 
 ---
 
@@ -13,7 +88,7 @@ Files combined: 17
 ---
 title: Access tokens classic
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens
-scraped: 2026-02-17T04:52:31.306883
+scraped: 2026-02-17T21:26:20.463043
 ---
 
 # Access tokens classic
@@ -678,7 +753,7 @@ Grants permission to upload OneAgent extensions via [Extension SDK](/docs/ingest
 ---
 title: Platform tokens
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens
-scraped: 2026-02-17T05:06:17.909841
+scraped: 2026-02-17T21:34:27.853256
 ---
 
 # Platform tokens
@@ -945,7 +1020,7 @@ Access Dynatrace through OAuth clients.](/docs/manage/identity-access-management
 ---
 title: Identity and Access Management limits
 source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-limits
-scraped: 2026-02-17T04:56:41.837850
+scraped: 2026-02-17T21:29:21.553191
 ---
 
 # Identity and Access Management limits
@@ -989,7 +1064,7 @@ Recommended
 ---
 title: IAM policy reference
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements
-scraped: 2026-02-17T05:00:41.075353
+scraped: 2026-02-17T21:25:08.015659
 ---
 
 # IAM policy reference
@@ -2632,7 +2707,7 @@ Refer to our online documentation and Dynatrace Community forums for additional 
 ---
 title: Policy boundaries
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries
-scraped: 2026-02-17T05:05:27.865448
+scraped: 2026-02-17T21:27:31.650380
 ---
 
 # Policy boundaries
@@ -2847,7 +2922,7 @@ Grail does not support management zones but uses the `storage:` fields for recor
 ---
 title: Manage IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt
-scraped: 2026-02-16T21:22:02.163806
+scraped: 2026-02-17T21:21:20.105125
 ---
 
 # Manage IAM policies
@@ -2996,7 +3071,7 @@ To apply a policy to a group, you need to bind the policy to the group. For deta
 ---
 title: Working with policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies
-scraped: 2026-02-17T05:01:35.426471
+scraped: 2026-02-17T21:16:01.964407
 ---
 
 # Working with policies
@@ -3372,7 +3447,7 @@ This can also be written as `type(SERVICE),fromRelationship.calls(type(SERVICE) 
 ---
 title: Grant access to entities with security context
 source: https://www.dynatrace.com/docs/manage/identity-access-management/use-cases/access-security-context
-scraped: 2026-02-16T21:28:26.206945
+scraped: 2026-02-17T21:25:03.991881
 ---
 
 # Grant access to entities with security context
@@ -3610,7 +3685,7 @@ Common reasons why you might not be prompted for MFA when accessing Dynatrace:
 ---
 title: SAML
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml
-scraped: 2026-02-17T05:03:10.539896
+scraped: 2026-02-17T21:28:27.340683
 ---
 
 # SAML
@@ -4389,7 +4464,7 @@ The user enters their username on the SSO sign-in page to sign in. It's in email
 ---
 title: Azure SCIM configuration for Dynatrace
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure
-scraped: 2026-02-15T21:27:14.155315
+scraped: 2026-02-17T21:28:56.636566
 ---
 
 # Azure SCIM configuration for Dynatrace
@@ -4622,7 +4697,7 @@ Dynatrace SCIM supports only bearer token authentication. Depending on the Okta 
 ---
 title: SCIM
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim
-scraped: 2026-02-17T05:09:03.419970
+scraped: 2026-02-17T21:25:28.647320
 ---
 
 # SCIM
@@ -4763,7 +4838,7 @@ Yes, you can restart SCIM synchronization. To do this, go to the SCIM applicatio
 ---
 title: Service users
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-service-users
-scraped: 2026-02-17T05:08:28.592869
+scraped: 2026-02-17T21:32:15.403490
 ---
 
 # Service users

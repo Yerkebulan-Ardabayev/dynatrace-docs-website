@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace Hub
 source: https://www.dynatrace.com/docs/manage/hub
-scraped: 2026-02-17T04:47:35.697445
+scraped: 2026-02-17T21:14:45.986146
 ---
 
 # Dynatrace Hub
@@ -82,7 +82,7 @@ Once you find an interesting listing, select the app icon to open the app overvi
 * **Product information**:  
   App overview, getting started, use cases, and links to related resources.
 * **Technical information**:  
-  All that you need to get your users started with the app, including required permissions and supported [intents](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  All that you need to get your users started with the app, including required permissions and supported [intents](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 * **Contents**:  
   All ready-made dashboards, notebooks, and workflow actions that are included with this app. You can start using them as soon as the app is installed.
 * **Release notes**

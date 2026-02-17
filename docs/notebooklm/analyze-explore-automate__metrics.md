@@ -13,7 +13,7 @@ Files combined: 6
 ---
 title: Built-in Metrics on Grail
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail
-scraped: 2026-02-17T05:12:22.180938
+scraped: 2026-02-17T21:26:34.831577
 ---
 
 # Built-in Metrics on Grail
@@ -1685,7 +1685,7 @@ The following categories of Metrics Classic metrics are not supported on Grail:
 ---
 title: DQL timeseries examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/dql-examples
-scraped: 2026-02-17T04:55:10.268699
+scraped: 2026-02-17T21:16:18.388813
 ---
 
 # DQL timeseries examples
@@ -2371,7 +2371,7 @@ Based on the created attribute, you can enforce security-related user and group 
 ---
 title: Kubernetes metrics migration guide
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/kubernetes-metric-migration
-scraped: 2026-02-17T05:02:07.528248
+scraped: 2026-02-17T21:31:41.871469
 ---
 
 # Kubernetes metrics migration guide

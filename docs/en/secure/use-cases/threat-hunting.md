@@ -1,7 +1,7 @@
 ---
 title: Threat hunting and forensics
 source: https://www.dynatrace.com/docs/secure/use-cases/threat-hunting
-scraped: 2026-02-16T09:34:45.595381
+scraped: 2026-02-17T21:33:34.505929
 ---
 
 # Threat hunting and forensics

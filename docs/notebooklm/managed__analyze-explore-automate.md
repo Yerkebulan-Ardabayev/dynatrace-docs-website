@@ -102,7 +102,7 @@ Use the Dynatrace API to send log data to Dynatrace and quickly search, aggregat
 ---
 title: Self-monitoring metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/self-monitoring-metrics
-scraped: 2026-02-17T05:00:00.170546
+scraped: 2026-02-17T21:29:00.317715
 ---
 
 # Self-monitoring metrics

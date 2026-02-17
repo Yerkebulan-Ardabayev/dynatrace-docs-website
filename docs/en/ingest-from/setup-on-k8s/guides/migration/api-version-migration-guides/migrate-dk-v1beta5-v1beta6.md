@@ -1,7 +1,7 @@
 ---
 title: Migration of DynaKube v1beta5 to v1beta6
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta5-v1beta6
-scraped: 2026-02-17T05:09:16.821230
+scraped: 2026-02-17T21:34:00.634506
 ---
 
 # Migration of DynaKube v1beta5 to v1beta6

@@ -117,7 +117,7 @@ You can create, edit, list, delete, and evaluate your SLOs via API.
 ---
 title: Permissions for service-level objective (SLO) tiles in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
-scraped: 2026-02-17T05:11:56.110305
+scraped: 2026-02-17T21:28:59.049319
 ---
 
 # Permissions for service-level objective (SLO) tiles in a dashboard
@@ -154,7 +154,7 @@ For the SLO details view
 ---
 title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-02-17T05:08:11.462417
+scraped: 2026-02-17T21:25:54.252564
 ---
 
 # Add a service-level objective (SLO) tile to a dashboard
@@ -240,7 +240,7 @@ Due to the intersection, the result contains only the evaluations related to S-2
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-02-17T05:00:01.871971
+scraped: 2026-02-17T21:25:57.015501
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard
@@ -354,7 +354,7 @@ To copy and paste multiple tiles simultaneously
 ---
 title: View the details of a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-view
-scraped: 2026-02-17T05:01:30.494617
+scraped: 2026-02-17T21:28:42.775687
 ---
 
 # View the details of a service-level objective (SLO) tile in a dashboard
