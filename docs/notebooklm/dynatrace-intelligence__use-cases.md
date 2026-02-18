@@ -1,19 +1,15 @@
-# Dynatrace Documentation: dynatrace-intelligence/use-cases
-
-Generated: 2026-02-18
-
-Files combined: 6
-
+# Документация Dynatrace: dynatrace-intelligence/use-cases
+Язык: Русский (RU)
+Сгенерировано: 2026-02-18
+Файлов в разделе: 6
 ---
 
-
-## Source: copilot-examples.md
-
+## dynatrace-intelligence/use-cases/copilot-examples.md
 
 ---
 title: Generative AI quick analysis examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-examples
-scraped: 2026-02-18T05:52:25.234964
+scraped: 2026-02-17T05:09:54.139472
 ---
 
 # Generative AI quick analysis examples
@@ -603,6 +599,8 @@ timeseries by:{k8s.container.name}, avg_cpu = avg(dt.kubernetes.container.cpu_us
 
 ## Analyze entities with generative AI
 
+
+
 Prompt
 
 Generated query
@@ -877,17 +875,14 @@ fetch dt.davis.problems, from:bin(now(), 24h) - 365d
 * [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
 * [Dynatrace Intelligence generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
 
-
 ---
 
-
-## Source: copilot-in-workflows-dql.md
-
+## dynatrace-intelligence/use-cases/copilot-in-workflows-dql.md
 
 ---
 title: Optimize DQL cost with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql
-scraped: 2026-02-17T21:31:21.185247
+scraped: 2026-02-17T05:12:44.777769
 ---
 
 # Optimize DQL cost with Workflows
@@ -1102,17 +1097,14 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 * [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
 * [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
 
-
 ---
 
-
-## Source: copilot-in-workflows-examples.md
-
+## dynatrace-intelligence/use-cases/copilot-in-workflows-examples.md
 
 ---
 title: Summarize open problems with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
-scraped: 2026-02-17T21:31:51.891549
+scraped: 2026-02-16T21:28:18.160161
 ---
 
 # Summarize open problems with Workflows
@@ -1311,17 +1303,14 @@ Once a new problem appears, you should receive an email from `no-reply@dev.apps.
 * [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
 * [Dynatrace Intelligence (Preview) app](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
 
-
 ---
 
-
-## Source: create-alert-in-logs.md
-
+## dynatrace-intelligence/use-cases/create-alert-in-logs.md
 
 ---
 title: Create log alerts for a log event or summary of log data
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/create-alert-in-logs
-scraped: 2026-02-18T05:46:13.411274
+scraped: 2026-02-16T21:32:54.066371
 ---
 
 # Create log alerts for a log event or summary of log data
@@ -1466,17 +1455,14 @@ If you followed these steps, now you know how to create log alerts for specific 
 * [[Video] Elevating Security with Anomaly Detectionï»¿](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Video] Anomaly Detection and Data Observabilityï»¿](https://www.youtube.com/watch?v=HPQi63mQg3w)
 
-
 ---
 
-
-## Source: davis-dql-examples.md
-
+## dynatrace-intelligence/use-cases/davis-dql-examples.md
 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-18T05:37:51.861555
+scraped: 2026-02-17T04:55:00.055948
 ---
 
 # Dynatrace Intelligence DQL examples
@@ -1801,6 +1787,8 @@ fetch dt.davis.problems
 
 ## Chart the number of CPU saturation and high-memory events in the last 7 days
 
+
+
 * Fetches table `dt.davis.events` for the last 7 days.
 * Counts in a resolution of 60-minute bins.
 
@@ -1838,17 +1826,14 @@ count
 
 201
 
-
 ---
 
-
-## Source: davis-for-workflows.md
-
+## dynatrace-intelligence/use-cases/davis-for-workflows.md
 
 ---
 title: AI in Workflows - Predictive maintenance of cloud disks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-for-workflows
-scraped: 2026-02-17T21:33:46.632666
+scraped: 2026-02-17T04:57:58.537614
 ---
 
 # AI in Workflows - Predictive maintenance of cloud disks
@@ -2122,6 +2107,8 @@ The next workflow action tests each prediction to determine whether the disk wil
 
 ### Step 6 Remediate before it happens
 
+
+
 You have a variety of remediation actions to follow up on predicted capacity shortages. In our example, the workflow raises a Davis problem and sends a Slack message for each potential shortage. Both are conditional actions that only trigger if the forecast predicts any disk space shortages.
 
 Each raised Davis problem carries custom properties that provide insight into the situation and help to identify the problematic disk.
@@ -2246,6 +2233,5 @@ Raising a problem is an optional remediation step that you can skip completely, 
 
 * [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
 * [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
-
 
 ---

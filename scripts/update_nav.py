@@ -2,12 +2,10 @@
 # -*- coding: utf-8 -*-
 """
 Автоматически обновляет mkdocs.yml nav на основе переведённых ru/ файлов.
-Генерирует навигацию которая включает все файлы из docs/ru/
+Читает заголовки H1 из файлов и использует русские названия разделов.
 """
 
 import sys
-import io
-import os
 import re
 from pathlib import Path
 
@@ -22,237 +20,242 @@ if sys.platform == 'win32':
 BASE_DIR = Path(__file__).parent.parent
 DOCS_DIR = BASE_DIR / 'docs'
 RU_DIR = DOCS_DIR / 'ru'
-EN_DIR = DOCS_DIR / 'en'
 MKDOCS_YML = BASE_DIR / 'mkdocs.yml'
 
-# Человекочитаемые названия для разделов
-SECTION_NAMES = {
-    'dynatrace-intelligence': 'ИИ и аналитика',
-    'deliver': 'Развёртывание',
-    'analyze-explore-automate': 'Анализ и автоматизация',
-    'observe': 'Мониторинг',
-    'license': 'Лицензирование',
-    'platform': 'Платформа',
-    'discover-dynatrace': 'Знакомство',
-    'whats-new': 'Что нового',
-    'ingest-from': 'Источники данных',
-    'secure': 'Безопасность',
-    'manage': 'Управление',
-    'managed': 'Managed',
-    # Subsections
-    'anomaly-detection': 'Обнаружение аномалий',
-    'copilot': 'Copilot',
-    'use-cases': 'Примеры использования',
-    'configuration-as-code': 'Конфигурация как код',
-    'monaco': 'Monaco',
-    'terraform': 'Terraform',
-    'ownership': 'Владение',
-    'service-level-objectives': 'SLO',
-    'site-reliability-guardian': 'SRG',
-    'release-monitoring': 'Мониторинг релизов',
-    'deliver-pipeline': 'CI/CD',
-    'dashboards-and-notebooks': 'Дашборды',
-    'logs': 'Логи',
-    'notifications-and-alerting': 'Уведомления',
-    'grail': 'Grail',
-    'anomaly-detection-app': 'Приложение',
-    'metric-events': 'Метрики',
-    'adjust-sensitivity-anomaly-detection': 'Настройка',
-    'root-cause-analysis': 'Анализ причин',
-    'davis-problems-app': 'Davis Problems',
-    'dynatrace-intelligence-integrations': 'Интеграции',
-    'reference': 'Справочник',
-    'ai-models': 'AI модели',
-    'lma-logs-app': 'LMA Logs',
-    'application-observability': 'Приложения',
-    'infrastructure-observability': 'Инфраструктура',
-    'digital-experience': 'Digital Experience',
-    'container-platform-monitoring': 'Kubernetes',
-    'kubernetes-app': 'Kubernetes App',
-    'cloud-platform-monitoring': 'Облако',
-    'databases': 'Базы данных',
-    'services': 'Сервисы',
-    'synthetic-monitoring': 'Синтетика',
-    'dynatrace-oneagent': 'OneAgent',
-    'threat-observability': 'Угрозы',
-    'pipeline-observability-sdlc-events': 'Pipeline',
-    'tutorials': 'Туториалы',
-    'configuration': 'Конфигурация',
-    'ready-made-documents': 'Готовые документы',
-    'log-analytics': 'Log Analytics',
-    'capabilities': 'Возможности',
-    'synthetic-on-grail': 'Synthetic on Grail',
-}
-
-# Названия для конкретных файлов
-FILE_NAMES = {
-    'index.md': 'Обзор',
-    'getting-started.md': 'Начало работы',
-    'whats-new.md': 'Что нового',
-    'dynatrace-api.md': 'API Dynatrace',
-    'dynatrace-intelligence.md': 'ИИ Dynatrace',
-    'ingest-from.md': 'Источники данных',
-    'license.md': 'Лицензирование',
-    'semantic-dictionary.md': 'Словарь',
-    'faq.md': 'FAQ',
-    'overview.md': 'Обзор',
-    'reference.md': 'Справочник',
-    'quickstart.md': 'Быстрый старт',
-    'tutorial.md': 'Туториал',
-    'configuration.md': 'Конфигурация',
-    'installation.md': 'Установка',
-    'setup.md': 'Настройка',
-    'monitor.md': 'Мониторинг',
-    'copilot-faq.md': 'FAQ по Copilot',
-    'groq.md': 'Groq AI',
+# Русские названия для разделов (папок)
+SECTION_LABELS = {
+    'analyze-explore-automate':          '🔍 Анализ и автоматизация',
+    'deliver':                           '🚀 Развёртывание',
+    'discover-dynatrace':                '💡 Знакомство с Dynatrace',
+    'dynatrace-intelligence':            '🤖 ИИ и аналитика',
+    'ingest-from':                       '📥 Источники данных',
+    'license':                           '📋 Лицензирование',
+    'manage':                            '⚙️ Управление',
+    'managed':                           '🖥️ Managed',
+    'observe':                           '👁️ Мониторинг',
+    'platform':                          '🏗️ Платформа',
+    'secure':                            '🔒 Безопасность',
+    'whats-new':                         '🆕 Что нового',
+    # Подразделы
+    'anomaly-detection':                 'Обнаружение аномалий',
+    'anomaly-detection-app':             'Приложение аномалий',
+    'adjust-sensitivity-anomaly-detection': 'Настройка чувствительности',
+    'metric-events':                     'События метрик',
+    'root-cause-analysis':               'Анализ первопричин',
+    'davis-problems-app':                'Davis Problems',
+    'copilot':                           'Copilot',
+    'use-cases':                         'Примеры использования',
+    'ai-models':                         'AI модели',
+    'dynatrace-intelligence-integrations': 'Интеграции ИИ',
+    'configuration-as-code':             'Конфигурация как код',
+    'monaco':                            'Monaco',
+    'terraform':                         'Terraform',
+    'ownership':                         'Владение',
+    'service-level-objectives':          'SLO',
+    'site-reliability-guardian':         'SRG',
+    'release-monitoring':                'Мониторинг релизов',
+    'deliver-pipeline':                  'CI/CD пайплайн',
+    'dashboards-and-notebooks':          'Дашборды и ноутбуки',
+    'logs':                              'Логи',
+    'lma-logs-app':                      'Приложение журналов',
+    'log-analytics':                     'Аналитика логов',
+    'notifications-and-alerting':        'Уведомления и оповещения',
+    'grail':                             'Grail',
+    'reference':                         'Справочник',
+    'application-observability':         'Наблюдаемость приложений',
+    'infrastructure-observability':      'Наблюдаемость инфраструктуры',
+    'digital-experience':                'Цифровой опыт',
+    'container-platform-monitoring':     'Kubernetes мониторинг',
+    'kubernetes-app':                    'Kubernetes App',
+    'cloud-platform-monitoring':         'Облачный мониторинг',
+    'databases':                         'Базы данных',
+    'services':                          'Сервисы',
+    'synthetic-monitoring':              'Синтетический мониторинг',
+    'synthetic-on-grail':                'Synthetic on Grail',
+    'dynatrace-oneagent':                'OneAgent',
+    'threat-observability':              'Наблюдаемость угроз',
+    'pipeline-observability-sdlc-events': 'Pipeline наблюдаемость',
+    'tutorials':                         'Туториалы',
+    'configuration':                     'Конфигурация',
+    'ready-made-documents':              'Готовые документы',
+    'capabilities':                      'Возможности',
+    'explorer':                          'Обозреватель',
+    'facets':                            'Фасеты',
+    'problem-notifications':             'Уведомления о проблемах',
+    'compliance-and-resilience':         'Соответствие требованиям',
+    'dashboards-new':                    'Новые дашборды',
+    'workflows':                         'Рабочие процессы',
 }
 
 
-def get_display_name(path_part: str) -> str:
-    """Получить человекочитаемое название для пути."""
-    if path_part in SECTION_NAMES:
-        return SECTION_NAMES[path_part]
-    if path_part in FILE_NAMES:
-        return FILE_NAMES[path_part]
-    # Try to get name from file content
-    return path_part.replace('-', ' ').replace('_', ' ').title()
-
-
-def get_file_title(filepath: Path) -> str:
-    """Попробовать прочитать заголовок из файла."""
+def get_title(filepath: Path, max_len: int = 55) -> str:
+    """Читает H1 заголовок из markdown файла, правильно пропуская frontmatter."""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith('# '):
-                    title = line[2:].strip()
-                    # Limit length
-                    if len(title) > 60:
-                        title = title[:57] + '...'
+            lines = f.readlines()
+
+        i = 0
+        n = len(lines)
+
+        # Пропускаем YAML frontmatter (--- ... ---)
+        if i < n and lines[i].strip() == '---':
+            i += 1
+            while i < n and lines[i].strip() != '---':
+                i += 1
+            i += 1  # пропускаем закрывающий ---
+
+        # Ищем первый H1 в оставшемся тексте
+        for j in range(i, min(i + 30, n)):
+            stripped = lines[j].strip()
+            if stripped.startswith('# '):
+                title = stripped[2:].strip()
+                # Убираем markdown-разметку
+                title = re.sub(r'[*_`]', '', title)
+                title = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', title)
+                title = title.strip()
+                if title:
+                    if len(title) > max_len:
+                        title = title[:max_len - 3] + '...'
                     return title
-                if line and not line.startswith('---') and not line.startswith('title:') and not line.startswith('source:'):
-                    if len(line) > 5:
-                        break
     except Exception:
         pass
     return None
 
 
-def build_nav_tree(directory: Path, base_docs: Path, depth=0) -> list:
+FILE_FALLBACKS = {
+    'index':               'Обзор',
+    'overview':            'Обзор',
+    'getting-started':     'Начало работы',
+    'dynatrace-api':       'Dynatrace API',
+    'dynatrace-intelligence': 'ИИ Dynatrace',
+    'ingest-from':         'Источники данных',
+    'license':             'Лицензирование',
+    'semantic-dictionary': 'Семантический словарь',
+    'whats-new':           'Что нового',
+    'faq':                 'FAQ',
+    'reference':           'Справочник',
+    'quickstart':          'Быстрый старт',
+    'tutorial':            'Туториал',
+    'configuration':       'Конфигурация',
+    'installation':        'Установка',
+    'setup':               'Настройка',
+}
+
+
+def folder_label(name: str) -> str:
+    """Возвращает русское название раздела или файла."""
+    if name in SECTION_LABELS:
+        return SECTION_LABELS[name]
+    if name in FILE_FALLBACKS:
+        return FILE_FALLBACKS[name]
+    # Fallback: капитализация с заменой дефисов
+    return name.replace('-', ' ').replace('_', ' ').title()
+
+
+def build_nav(directory: Path, docs_base: Path) -> list:
     """Рекурсивно строит nav-дерево из директории."""
+    if not directory.exists():
+        return []
+
+    all_items = list(directory.iterdir())
+    md_files = sorted(
+        [f for f in all_items if f.is_file() and f.suffix == '.md'],
+        key=lambda f: (f.name != 'index.md', f.name.lower())
+    )
+    subdirs = sorted([d for d in all_items if d.is_dir()], key=lambda d: d.name.lower())
+
     items = []
 
-    if not directory.exists():
-        return items
-
-    # Get all items sorted: files first (index.md first), then dirs
-    all_items = list(directory.iterdir())
-
-    md_files = sorted([f for f in all_items if f.is_file() and f.suffix == '.md'],
-                      key=lambda f: (f.name != 'index.md', f.name))
-    subdirs = sorted([d for d in all_items if d.is_dir()])
-
     for f in md_files:
-        rel_path = f.relative_to(base_docs).as_posix()
-        # Try to get display name
-        name = FILE_NAMES.get(f.name) or get_file_title(f) or get_display_name(f.stem)
-        items.append({name: rel_path})
+        rel_path = f.relative_to(docs_base).as_posix()
+        title = get_title(f) or FILE_FALLBACKS.get(f.stem) or folder_label(f.stem)
+        items.append({title: rel_path})
 
     for d in subdirs:
-        subname = get_display_name(d.name)
-        subtree = build_nav_tree(d, base_docs, depth + 1)
+        subtree = build_nav(d, docs_base)
         if subtree:
-            items.append({subname: subtree})
+            label = folder_label(d.name)
+            items.append({label: subtree})
 
     return items
 
 
-def nav_to_yaml(nav_items, indent=0) -> str:
-    """Конвертирует nav-дерево в YAML строку."""
+def nav_to_yaml(nav_items: list, indent: int = 0) -> str:
+    """Конвертирует nav-дерево в YAML строки."""
     lines = []
-    prefix = '  ' * indent
+    prefix = '    ' * indent  # 4 пробела на уровень
 
     for item in nav_items:
         for key, value in item.items():
             if isinstance(value, str):
-                # Leaf node (file)
-                lines.append(f"{prefix}- {key}: {value}")
+                lines.append(f"{prefix}- \"{key}\": {value}")
             elif isinstance(value, list):
-                # Section with children
-                lines.append(f"{prefix}- {key}:")
-                for child in value:
-                    lines.append(nav_to_yaml([child], indent + 1))
+                lines.append(f"{prefix}- \"{key}\":")
+                sub = nav_to_yaml(value, indent + 1)
+                if sub:
+                    lines.append(sub)
 
-    return '\n'.join(lines)
+    return '\n'.join(filter(None, lines))
 
 
 def main():
-    print("=" * 60)
-    print("Обновление nav в mkdocs.yml")
-    print("=" * 60)
+    print('=' * 60)
+    print('  Обновление nav в mkdocs.yml (с русскими заголовками)')
+    print('=' * 60)
 
-    # Count translated files
     ru_files = list(RU_DIR.rglob('*.md'))
-    print(f"Найдено {len(ru_files)} переведённых файлов в docs/ru/")
+    print(f'\n  Найдено файлов в docs/ru/: {len(ru_files)}')
 
-    # Build nav for ru/ content
-    ru_nav = build_nav_tree(RU_DIR, DOCS_DIR)
-
+    ru_nav = build_nav(RU_DIR, DOCS_DIR)
     if not ru_nav:
-        print("❌ Нет файлов в docs/ru/")
+        print('❌ docs/ru/ пуст!')
         return
 
-    # Generate YAML for the ru section
     ru_nav_yaml = nav_to_yaml(ru_nav, indent=2)
 
-    print("\nГенерирую nav секцию для переведённых файлов...")
-    print(f"Секций верхнего уровня: {len(ru_nav)}")
+    # Блок для вставки в mkdocs.yml
+    ru_block = (
+        '\n  # ПЕРЕВЕДЁННАЯ ДОКУМЕНТАЦИЯ (RU)\n'
+        '  - "📚 Документация":\n'
+        f'{ru_nav_yaml}'
+    )
 
-    # Read current mkdocs.yml
     with open(MKDOCS_YML, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Find the nav section and the ru/ section if it exists
-    # We'll add/replace the 📚 Документация (RU) section
+    marker = '  # ПЕРЕВЕДЁННАЯ ДОКУМЕНТАЦИЯ (RU)'
 
-    ru_section = f"""
-  # ПЕРЕВЕДЁННАЯ ДОКУМЕНТАЦИЯ (RU)
-  - 📚 Документация:
-{ru_nav_yaml}"""
-
-    # Check if ru section already exists
-    if '# ПЕРЕВЕДЁННАЯ ДОКУМЕНТАЦИЯ (RU)' in content:
-        # Replace existing
-        old_start = content.index('  # ПЕРЕВЕДЁННАЯ ДОКУМЕНТАЦИЯ (RU)')
-        # Find next top-level nav entry or end
-        rest = content[old_start:]
-        # Find next section at same indent level
-        next_section = re.search(r'\n  - [^\s]', rest[10:])
-        if next_section:
-            old_end = old_start + 10 + next_section.start()
-            content = content[:old_start] + ru_section + '\n' + content[old_end:]
+    if marker in content:
+        start = content.index(marker)
+        rest_after = content[start + len(marker):]
+        # Ищем следующий top-level nav entry (две пробела + дефис + не-пробел)
+        m = re.search(r'\n  - [^\s]', rest_after)
+        if m:
+            end = start + len(marker) + m.start()
+            content = content[:start] + ru_block + '\n' + content[end:]
         else:
-            # It's the last section, find where nav ends
-            nav_end = content.find('\nmarkdown_extensions:')
-            content = content[:old_start] + ru_section + '\n\n' + content[nav_end:]
-        print("✅ Обновлена существующая секция документации")
+            # Последняя секция nav — ищем конец nav
+            nav_end_markers = ['\nmarkdown_extensions:', '\nplugins:', '\nextra:']
+            end = len(content)
+            for nm in nav_end_markers:
+                idx = content.find(nm, start)
+                if idx != -1 and idx < end:
+                    end = idx
+            content = content[:start] + ru_block + '\n\n' + content[end:]
+        print('  ✅ Обновлена существующая RU-секция')
     else:
-        # Insert before AI section or before markdown_extensions
-        insert_before = '  # AI\n'
-        if insert_before in content:
-            content = content.replace(insert_before, ru_section + '\n\n  # AI\n')
-        else:
-            # Insert before markdown_extensions
-            content = content.replace('\nmarkdown_extensions:', ru_section + '\n\nmarkdown_extensions:')
-        print("✅ Добавлена новая секция документации")
+        # Вставляем перед markdown_extensions или в конец nav
+        for anchor in ['\nmarkdown_extensions:', '\nplugins:']:
+            if anchor in content:
+                content = content.replace(anchor, ru_block + '\n' + anchor)
+                break
+        print('  ✅ Добавлена новая RU-секция')
 
-    # Write back
     with open(MKDOCS_YML, 'w', encoding='utf-8') as f:
         f.write(content)
 
-    print(f"\n✅ mkdocs.yml обновлён!")
-    print(f"   Добавлено {len(ru_files)} файлов в nav")
-    print(f"\nДля проверки запустите: mkdocs build")
+    print(f'  ✅ mkdocs.yml обновлён! Файлов в nav: {len(ru_files)}')
+    print('\n  Проверка: mkdocs build')
 
 
 if __name__ == '__main__':

@@ -1,19 +1,15 @@
-# Dynatrace Documentation: deliver/pipeline-observability-sdlc-events
-
-Generated: 2026-02-18
-
-Files combined: 2
-
+# Документация Dynatrace: deliver/pipeline-observability-sdlc-events
+Язык: Русский (RU)
+Сгенерировано: 2026-02-18
+Файлов в разделе: 2
 ---
 
-
-## Source: deployment-observability-use-case-argocd.md
-
+## deliver/pipeline-observability-sdlc-events/tutorials/deployment-observability-use-case-argocd.md
 
 ---
 title: Observe Argo CD deployment and application health with Dashboards and SDLC events
 source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/deployment-observability-use-case-argocd
-scraped: 2026-02-17T21:27:34.052122
+scraped: 2026-02-17T04:58:38.274560
 ---
 
 # Observe Argo CD deployment and application health with Dashboards and SDLC events
@@ -446,6 +442,8 @@ To use [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand
 
 Now that you've successfully configured Argo CD and Dynatrace, you can use Dashboards and SDLC events to observe your Argo CD deployments.
 
+
+
 ### Analyze
 
 In Dynatrace, open the **ArgoCD Application Lifecycle** dashboard to
@@ -484,17 +482,14 @@ We highly value your insights on Argo CD observability. Your feedback is crucial
 * [Ingest SDLC events](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
 * [Auto-update for Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update "Enable automatic updates of Dynatrace Operator following a GitOps approach.")
 
-
 ---
 
-
-## Source: pipeline-observability-tutorial-jira.md
-
+## deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira.md
 
 ---
 title: Optimize engineering flow metrics using Jira data
 source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira
-scraped: 2026-02-18T05:44:01.889068
+scraped: 2026-02-16T09:34:18.177698
 ---
 
 # Optimize engineering flow metrics using Jira data
@@ -951,6 +946,8 @@ To find and use the dashboard:
    * **Changes in the last 2 weeks**:
      Changes to the fields **Status**, **Fix Version**, and **Assignee** are shown.
 
+
+
 ## Next steps
 
 You now have the dashboard, which allows you to view the metrics and start optimizing your value delivery flow.
@@ -967,6 +964,5 @@ Below is a full screenshot of the **Engineering Flow Metrics** dashboard.
 * [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
 * [Ingest sources in OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
 * [Analyze SDLC events from your pipeline](/docs/deliver/pipeline-observability-sdlc-events/pipeline-observability-analyze "Analyze your pipeline using data from your software development lifecycle (SDLC) events  using our examples.")
-
 
 ---

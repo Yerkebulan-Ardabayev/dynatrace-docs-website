@@ -1,19 +1,15 @@
-# Dynatrace Documentation: deliver/release-monitoring
-
-Generated: 2026-02-18
-
-Files combined: 3
-
+# Документация Dynatrace: deliver/release-monitoring
+Язык: Русский (RU)
+Сгенерировано: 2026-02-18
+Файлов в разделе: 4
 ---
 
-
-## Source: issue-tracking-integration.md
-
+## deliver/release-monitoring/issue-tracking-integration.md
 
 ---
 title: Issue-tracking integration
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
-scraped: 2026-02-17T21:28:57.858952
+scraped: 2026-02-16T21:27:22.845700
 ---
 
 # Issue-tracking integration
@@ -96,12 +92,9 @@ You can create a maximum of 20 issue-tracking configurations.
 
 The following is a solution to a problem some people had with [Automated release monitoring issue-tracking integration: no query results matching the filterï»¿](https://dt-url.net/5o038bi).
 
-
 ---
 
-
-## Source: monitor-releases-with-dynatrace.md
-
+## deliver/release-monitoring/monitor-releases-with-dynatrace.md
 
 ---
 title: Monitor releases with Dynatrace
@@ -203,17 +196,14 @@ In addition, a graph displays the latest 20 release validation results:
 * The x-axis displays the end time of each quality gate evaluation
 * The bar color indicates the quality gate status (`Failed`, `Warning`, or `Passed`)
 
-
 ---
 
-
-## Source: version-detection-strategies.md
-
+## deliver/release-monitoring/version-detection-strategies.md
 
 ---
 title: Version detection strategies for deep-monitored processes
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/version-detection-strategies
-scraped: 2026-02-18T05:46:20.084341
+scraped: 2026-02-17T04:59:25.534551
 ---
 
 # Version detection strategies for deep-monitored processes
@@ -408,5 +398,44 @@ As a result, releases defined via OpenTelemetry resource attributes won't appear
    `export OTEL_RESOURCE_ATTRIBUTES=deployment.release_version='<YOUR_VERSION>',deployment.release_stage='<YOUR_STAGE_NAME>'`
 2. Once the environment variable is set, Dynatrace automatically detects the resource attributes and enriches traces and logs with the provided release metadata.
 
+---
+
+## deliver/release-monitoring.md
+
+---
+title: Release monitoring Classic
+source: https://www.dynatrace.com/docs/deliver/release-monitoring
+scraped: 2026-02-17T04:57:50.402360
+---
+
+# Release monitoring Classic
+
+# Release monitoring Classic
+
+* Overview
+* 1-min read
+* Published Sep 14, 2020
+
+The software product lifecycle of a release requires careful management of release risks. Also, as more and more components and versions are deployed, the frequency of releases in your organization increases, and manually collecting release-relevant data can easily become a bottleneck in your release automation pipeline and automated software lifecycle.
+
+Dynatrace offers a built-in release-analysis solution that helps you determine:
+
+* Which versions are deployed across your deployment stages and production environments based on multiple version-detection strategies.
+* The release stages of the deployed versions.
+* The changelog for a new version.
+* Known bugs and whether they're release blockers.
+* Risks related to specific versions.
+* Which version has an excessive load (for example, if you're temporarily redirecting the load with a canary deployment).
+* How the new version is behaving compared to previous versions.
+* Issue statistics related to the monitored entities.
+
+## Configure
+
+* Learn how to [configure environment variables for version detection](/docs/deliver/release-monitoring/version-detection-strategies "Metadata for version detection in different technologies").
+* Optionally, you can [integrate your issue-tracking systems and configure dynamic queries](/docs/deliver/release-monitoring/issue-tracking-integration "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities.").
+
+## Analyze
+
+Once you configure your software/issue tracker, you can [analyze the software product lifecycle of your releases](/docs/deliver/release-monitoring/monitor-releases-with-dynatrace "Analyze data related to each release version of your software.").
 
 ---

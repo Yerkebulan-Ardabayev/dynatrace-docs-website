@@ -1,19 +1,15 @@
-# Dynatrace Documentation: dynatrace-intelligence/reference
-
-Generated: 2026-02-18
-
-Files combined: 4
-
+# Документация Dynatrace: dynatrace-intelligence/reference
+Язык: Русский (RU)
+Сгенерировано: 2026-02-18
+Файлов в разделе: 4
 ---
 
-
-## Source: forecast-analysis.md
-
+## dynatrace-intelligence/reference/ai-models/forecast-analysis.md
 
 ---
 title: Dynatrace Intelligence predictive AI analysis
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
-scraped: 2026-02-18T05:34:11.327253
+scraped: 2026-02-17T04:46:19.821220
 ---
 
 # Dynatrace Intelligence predictive AI analysis
@@ -189,6 +185,8 @@ When using the forecast analysis in one of your [notebooks](/docs/analyze-explor
 * Every numerical value in a data array must have at least one decimal point (for example, `1.0`).
 
 ### Example queries
+
+
 
 The example DQL queries below yield valid responses.
 
@@ -626,6 +624,8 @@ The following JSON describes the structure of the record format.
 
 ### Single value format
 
+
+
 In the single value format, each record entry specifies a single value in the time series. Exactly one numeric field is allowed per record.
 
 A record in a valid single value format response must contain:
@@ -957,17 +957,14 @@ This example shows the forecast for a 6-hours timeframe. Apart from an extensive
 
 ![Seasonal forecast with noise over 6-hour timeframe](https://dt-cdn.net/images/seasonal-forecast-with-noise-result-6h-1730-75d0e7ceb1.png)
 
-
 ---
 
-
-## Source: seasonal-baseline.md
-
+## dynatrace-intelligence/reference/ai-models/seasonal-baseline.md
 
 ---
 title: Seasonal baseline
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline
-scraped: 2026-02-17T21:29:37.738013
+scraped: 2026-02-17T05:10:13.647668
 ---
 
 # Seasonal baseline
@@ -1042,17 +1039,14 @@ After the training is finished, Dynatrace uses the seasonal model to detect anom
 
 * [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
 
-
 ---
 
-
-## Source: ai-models.md
-
+## dynatrace-intelligence/reference/ai-models.md
 
 ---
 title: AI models
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
-scraped: 2026-02-18T05:41:08.354652
+scraped: 2026-02-16T21:22:51.985154
 ---
 
 # AI models
@@ -1086,17 +1080,14 @@ How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of 
 
 Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline)
 
-
 ---
 
-
-## Source: davis-ai-limits.md
-
+## dynatrace-intelligence/reference/davis-ai-limits.md
 
 ---
 title: Dynatrace Intelligence limits
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/davis-ai-limits
-scraped: 2026-02-17T21:33:41.121351
+scraped: 2026-02-17T04:59:09.274457
 ---
 
 # Dynatrace Intelligence limits
@@ -1329,6 +1320,5 @@ Individual user requests
 All user requests across the environment
 
 60 requests per 15 minutes
-
 
 ---

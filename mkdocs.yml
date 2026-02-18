@@ -83,7 +83,447 @@ nav:
   - 📖 SaaS: saas-reference/index.md
   
 
+
+
   # ПЕРЕВЕДЁННАЯ ДОКУМЕНТАЦИЯ (RU)
+  - "📚 Документация":
+        - "Добро пожаловать в документацию Dynatrace": ru/index.md
+        - "Dynatrace API": ru/dynatrace-api.md
+        - "Dynatrace Интеллект": ru/dynatrace-intelligence.md
+        - "Начало работы с Dynatrace": ru/getting-started.md
+        - "Ввод данных": ru/ingest-from.md
+        - "Лицензия Dynatrace": ru/license.md
+        - "Семантический Словарь": ru/semantic-dictionary.md
+        - "Что нового в Dynatrace": ru/whats-new.md
+        - "🔍 Анализ и автоматизация":
+            - "Соблюдение требований и устойчивость": ru/analyze-explore-automate/compliance-and-resilience.md
+            - "Обозреватель данных": ru/analyze-explore-automate/explorer.md
+            - "Log Analytics": ru/analyze-explore-automate/logs.md
+            - "Visualize your environment through Smartscape Classic": ru/analyze-explore-automate/smartscape-classic.md
+            - "Smartscape": ru/analyze-explore-automate/smartscape.md
+            - "Workflows": ru/analyze-explore-automate/workflows.md
+            - "Соответствие требованиям":
+                - "Compliance Assistant": ru/analyze-explore-automate/compliance-and-resilience/compliance-assistant.md
+            - "Дашборды и ноутбуки":
+                - "Dashboards": ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md
+                - "API for Dashboards and Notebooks": ru/analyze-explore-automate/dashboards-and-notebooks/document-api.md
+                - "Manage document versions": ru/analyze-explore-automate/dashboards-and-notebooks/document-version.md
+                - "Drilldowns and navigation": ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md
+                - "Edit visualizations for Notebooks and Dashboards": ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md
+                - "Explore data": ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md
+                - "Готовые документы":
+                    - "Готовые дашборды": ru/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards.md
+            - "Логи":
+                - "Приложение журналов": ru/analyze-explore-automate/logs/lma-logs-app.md
+                - "Приложение журналов":
+                    - "Фильтр с гранями": ru/analyze-explore-automate/logs/lma-logs-app/facets.md
+                    - "Ограничения в журналах": ru/analyze-explore-automate/logs/lma-logs-app/limits.md
+                    - "Выявляйте тенденции с помощью диаграммы распределени...": ru/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart.md
+                    - "Настройте сообщение журнала": ru/analyze-explore-automate/logs/lma-logs-app/message.md
+                    - "Журналы запросов и фильтров": ru/analyze-explore-automate/logs/lma-logs-app/query-and-filter.md
+                    - "Просмотр окружающих журналов": ru/analyze-explore-automate/logs/lma-logs-app/surrounding-logs.md
+            - "Уведомления и оповещения":
+                - "Уведомления о проблемах": ru/analyze-explore-automate/notifications-and-alerting/problem-notifications.md
+        - "🚀 Развёртывание":
+            - "Configuration as Code overview": ru/deliver/configuration-as-code.md
+            - "Ownership": ru/deliver/ownership-app.md
+            - "Ownership Classic": ru/deliver/ownership.md
+            - "Release validation": ru/deliver/quality-gates.md
+            - "Release monitoring Classic": ru/deliver/release-monitoring.md
+            - "Predict and autoscale Kubernetes workloads": ru/deliver/self-service-kubernetes-use-case.md
+            - "Service-Level Objectives Classic": ru/deliver/service-level-objectives-classic.md
+            - "Service-Level Objectives": ru/deliver/service-level-objectives.md
+            - "Site Reliability Guardian": ru/deliver/site-reliability-guardian.md
+            - "Test pipeline observability": ru/deliver/test-pipeline-observability.md
+            - "Конфигурация как код":
+                - "Monaco":
+                    - "Monaco API support and access permission handling": ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md
+                    - "Monaco concepts": ru/deliver/configuration-as-code/monaco/monaco-concepts.md
+                    - "Manage configurations with Monaco": ru/deliver/configuration-as-code/monaco/monaco-getting-started.md
+                    - "Конфигурация":
+                        - "Account configuration for Monaco account management": ru/deliver/configuration-as-code/monaco/configuration/account-configuration.md
+                        - "Monaco resources": ru/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources.md
+                        - "Monaco configuration YAML file - list of special con...": ru/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas.md
+                        - "Monaco configuration YAML file - list of type fields": ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields.md
+                        - "Monaco configuration YAML file structure": ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas.md
+                    - "Справочник":
+                        - "Work with Dynatrace Monaco CLI commands for Latest D...": ru/deliver/configuration-as-code/monaco/reference/commands-saas.md
+                - "Terraform":
+                    - "Terraform API support and access permission handling": ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md
+                    - "Terraform CLI commands": ru/deliver/configuration-as-code/terraform/terraform-cli-commands.md
+                    - "Terraform tutorials overview": ru/deliver/configuration-as-code/terraform/tutorials.md
+                    - "Туториалы":
+                        - "Настройка автоматических уведомлений с помощью Terra...": ru/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification.md
+            - "Владение":
+                - "Assign ownership teams to monitored entities": ru/deliver/ownership/assign-ownership.md
+                - "Best practices for entity ownership": ru/deliver/ownership/best-practices.md
+                - "Create and manage teams for entity ownership": ru/deliver/ownership/ownership-teams.md
+            - "Pipeline наблюдаемость":
+                - "Туториалы":
+                    - "Observe Argo CD deployment and application health wi...": ru/deliver/pipeline-observability-sdlc-events/tutorials/deployment-observability-use-case-argocd.md
+                    - "Optimize engineering flow metrics using Jira data": ru/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira.md
+            - "Мониторинг релизов":
+                - "Issue-tracking integration": ru/deliver/release-monitoring/issue-tracking-integration.md
+                - "Monitor releases with Dynatrace": ru/deliver/release-monitoring/monitor-releases-with-dynatrace.md
+                - "Version detection strategies for deep-monitored proc...": ru/deliver/release-monitoring/version-detection-strategies.md
+            - "SLO":
+                - "Create service-level objectives": ru/deliver/service-level-objectives/create-slo.md
+                - "Permissions for service-level objective (SLO) tiles ...": ru/deliver/service-level-objectives/service-level-objective-permissions.md
+                - "Add a service-level objective (SLO) tile to a dashboard": ru/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard.md
+                - "Edit a service-level objective (SLO) tile in a dashb...": ru/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard.md
+                - "View the details of a service-level objective (SLO) ...": ru/deliver/service-level-objectives/service-level-objective-tile-view.md
+                - "Upgrade Classic SLOs": ru/deliver/service-level-objectives/service-level-objective-upgrade-classic.md
+            - "Service Level Objectives Classic":
+                - "SLO management with management-zone permissions": ru/deliver/service-level-objectives-classic/slo-mz-permissions.md
+            - "SRG":
+                - "Site Reliability guardian event structure": ru/deliver/site-reliability-guardian/event-structure.md
+                - "Guardian execution context": ru/deliver/site-reliability-guardian/execution-context.md
+                - "List and work with your guardians": ru/deliver/site-reliability-guardian/guardian-list.md
+        - "💡 Знакомство с Dynatrace":
+            - "Приложения Dynatrace": ru/discover-dynatrace/dynatrace-apps.md
+            - "Начните работу с Dynatrace": ru/discover-dynatrace/get-started.md
+            - "Что такое Dynatrace": ru/discover-dynatrace/what-is-dynatrace.md
+        - "🤖 ИИ и аналитика":
+            - "Обнаружение аномалий": ru/dynatrace-intelligence/anomaly-detection.md
+            - "Dynatrace Intelligence agentic and generative AI": ru/dynatrace-intelligence/copilot.md
+            - "Приложение для проблем": ru/dynatrace-intelligence/davis-problems-app.md
+            - "Dynatrace Intelligence integrations": ru/dynatrace-intelligence/dynatrace-intelligence-integrations.md
+            - "Root cause analysis": ru/dynatrace-intelligence/root-cause-analysis.md
+            - "Обнаружение аномалий":
+                - "Adjust the sensitivity of anomaly detection": ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md
+                - "Anomaly Detection app": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md
+                - "Anomaly detection configuration": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md
+                - "Auto-adaptive thresholds for anomaly detection": ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md
+                - "Automated multi-dimensional baselining": ru/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining.md
+                - "Metric events": ru/dynatrace-intelligence/anomaly-detection/metric-events.md
+                - "Automate alerts with API": ru/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api.md
+                - "Static thresholds for anomaly detection": ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md
+                - "Настройка чувствительности":
+                    - "Adjust the sensitivity of anomaly detection for infr...": ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure.md
+                - "Приложение аномалий":
+                    - "Anomaly Detection status types": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types.md
+                    - "Configure a simple custom alert": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad.md
+                    - "Anomaly Detection DQL writing guide": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice.md
+                    - "Anomaly Detection DQL optimization guide": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization.md
+                - "События метрик":
+                    - "Metric key events": ru/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events.md
+                    - "Metric selector events": ru/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events.md
+            - "Copilot":
+                - "Dynatrace Assist": ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md
+                - "Dynatrace Intelligence generative AI data privacy an...": ru/dynatrace-intelligence/copilot/copilot-data-privacy.md
+                - "Discover relevant troubleshooting guides with Dynatr...": ru/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides.md
+                - "Get started with Dynatrace Intelligence generative AI": ru/dynatrace-intelligence/copilot/copilot-getting-started.md
+                - "Dynatrace Intelligence generative AI overview": ru/dynatrace-intelligence/copilot/copilot-overview.md
+                - "Query with natural language": ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md
+                - "Chat With Davis Copilot":
+                    - "Embedded conversation starters": ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters.md
+                - "Quick Analysis Copilot Dql":
+                    - "Dynatrace Intelligence generative AI - Tips for writ...": ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips.md
+            - "Davis Problems":
+                - "Dynatrace Intelligence causal AI use cases": ru/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples.md
+            - "Интеграции ИИ":
+                - "Dynatrace Intelligence (Preview) app": ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md
+                - "Dynatrace Intelligence для Notebooks": ru/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks.md
+            - "Справочник":
+                - "AI models": ru/dynatrace-intelligence/reference/ai-models.md
+                - "Dynatrace Intelligence limits": ru/dynatrace-intelligence/reference/davis-ai-limits.md
+                - "AI модели":
+                    - "Dynatrace Intelligence predictive AI analysis": ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md
+                    - "Seasonal baseline": ru/dynatrace-intelligence/reference/ai-models/seasonal-baseline.md
+            - "Анализ первопричин":
+                - "Root cause analysis concepts": ru/dynatrace-intelligence/root-cause-analysis/concepts.md
+                - "Event analysis and correlation": ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md
+            - "Примеры использования":
+                - "Generative AI quick analysis examples": ru/dynatrace-intelligence/use-cases/copilot-examples.md
+                - "Optimize DQL cost with Workflows": ru/dynatrace-intelligence/use-cases/copilot-in-workflows-dql.md
+                - "Summarize open problems with Workflows": ru/dynatrace-intelligence/use-cases/copilot-in-workflows-examples.md
+                - "Create log alerts for a log event or summary of log ...": ru/dynatrace-intelligence/use-cases/create-alert-in-logs.md
+                - "Dynatrace Intelligence DQL examples": ru/dynatrace-intelligence/use-cases/davis-dql-examples.md
+                - "AI in Workflows - Predictive maintenance of cloud disks": ru/dynatrace-intelligence/use-cases/davis-for-workflows.md
+        - "📥 Источники данных":
+            - "Расширения": ru/ingest-from/extensions.md
+            - "OneAgent":
+                - "Установите OneAgent на сервер": ru/ingest-from/dynatrace-oneagent/installation-and-operation.md
+        - "📋 Лицензирование":
+            - "Dynatrace Platform Subscription API": ru/license/account-management-api.md
+            - "Billing report": ru/license/billing-reports.md
+            - "Set budget alerts": ru/license/budget-alerts.md
+            - "Understanding DPS capabilities": ru/license/capabilities.md
+            - "Customize cost alerts": ru/license/cost-monitors.md
+            - "Your first year with DPS": ru/license/dps-first-year.md
+            - "DPS permissions": ru/license/dps-permissions.md
+            - "Your license lifecycle": ru/license/license-lifecycle.md
+            - "Dynatrace classic licensing": ru/license/monitoring-consumption-classic.md
+            - "Возможности":
+                - "Аналитика логов":
+                    - "Рассчитайте потребление Log Management & Analytics —...": ru/license/capabilities/log-analytics/dps-log-query.md
+        - "⚙️ Управление":
+            - "Центр Dynatrace": ru/manage/hub.md
+        - "🖥️ Managed":
+            - "Обзор Dynatrace Managed": ru/managed/index.md
+        - "👁️ Мониторинг":
+            - "Цифровой опыт": ru/observe/digital-experience.md
+            - "AI и LLM Наблюдаемость": ru/observe/dynatrace-for-ai-observability.md
+            - "Наблюдаемость за инфраструктурой": ru/observe/infrastructure-observability.md
+            - "Наблюдаемость приложений":
+                - "Распределенная трассировка": ru/observe/application-observability/distributed-tracing.md
+                - "Сервисы":
+                    - "Приложение «Сервисы»": ru/observe/application-observability/services/services-app.md
+            - "Цифровой опыт":
+                - "Синтетический мониторинг":
+                    - "Synthetic on Grail":
+                        - "Синтетическое приложение": ru/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app.md
+            - "Наблюдаемость инфраструктуры":
+                - "Инфраструктура и операции": ru/observe/infrastructure-observability/infrastructure-and-operations.md
+                - "Облачный мониторинг":
+                    - "Приложение «Облака»": ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md
+                - "Kubernetes мониторинг":
+                    - "Кубернетес": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app.md
+                    - "Кубернетес Классический": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md
+                    - "Kubernetes App":
+                        - "Enable K8S Experience":
+                            - "Включить Kubernetes для существующих кластеров.": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/enable-k8s-experience/existing-clusters.md
+                        - "Preview":
+                            - "Предварительный просмотр расширенной видимости объек...": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/preview/enhanced-object-vis-preview.md
+                        - "Справочник":
+                            - "Разрешения": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/reference/permissions.md
+                - "Базы данных":
+                    - "Приложение баз данных": ru/observe/infrastructure-observability/databases/database-app.md
+        - "🏗️ Платформа":
+            - "AppEngine": ru/platform/appengine.md
+            - "OneAgent": ru/platform/oneagent.md
+            - "OpenPipeline": ru/platform/openpipeline.md
+            - "Grail":
+                - "Что такое Dynatrace Grail?": ru/platform/grail/dynatrace-grail.md
+                - "Язык запросов Dynatrace": ru/platform/grail/dynatrace-query-language.md
+        - "🔒 Безопасность":
+            - "Наблюдаемость угроз": ru/secure/threat-observability.md
+            - "Наблюдаемость угроз":
+                - "Интеграция безопасности": ru/secure/threat-observability/security-events-ingest.md
+        - "🆕 Что нового":
+            - "Примечания к выпуску ActiveGate": ru/whats-new/activegate.md
+            - "Примечания к выпуску OneAgent": ru/whats-new/oneagent.md
+            - "Что нового в Dynatrace SaaS": ru/whats-new/saas.md
+
+  - "📚 Документация":
+        - "Index": ru/index.md
+        - "Dynatrace Api": ru/dynatrace-api.md
+        - "🤖 ИИ и аналитика": ru/dynatrace-intelligence.md
+        - "Начало работы с Dynatrace": ru/getting-started.md
+        - "📥 Источники данных": ru/ingest-from.md
+        - "📋 Лицензирование": ru/license.md
+        - "Semantic Dictionary": ru/semantic-dictionary.md
+        - "🆕 Что нового": ru/whats-new.md
+        - "🔍 Анализ и автоматизация":
+            - "Соответствие требованиям": ru/analyze-explore-automate/compliance-and-resilience.md
+            - "Обозреватель": ru/analyze-explore-automate/explorer.md
+            - "Логи": ru/analyze-explore-automate/logs.md
+            - "Smartscape Classic": ru/analyze-explore-automate/smartscape-classic.md
+            - "Smartscape": ru/analyze-explore-automate/smartscape.md
+            - "Рабочие процессы": ru/analyze-explore-automate/workflows.md
+            - "Соответствие требованиям":
+                - "Compliance Assistant": ru/analyze-explore-automate/compliance-and-resilience/compliance-assistant.md
+            - "Дашборды и ноутбуки":
+                - "Новые дашборды": ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md
+                - "Document Api": ru/analyze-explore-automate/dashboards-and-notebooks/document-api.md
+                - "Document Version": ru/analyze-explore-automate/dashboards-and-notebooks/document-version.md
+                - "Drilldowns And Navigation": ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md
+                - "Edit Visualizations": ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md
+                - "Explore Data": ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md
+                - "Готовые документы":
+                    - "Ready Made Dashboards": ru/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards.md
+            - "Логи":
+                - "Приложение журналов": ru/analyze-explore-automate/logs/lma-logs-app.md
+                - "Приложение журналов":
+                    - "Фасеты": ru/analyze-explore-automate/logs/lma-logs-app/facets.md
+                    - "Limits": ru/analyze-explore-automate/logs/lma-logs-app/limits.md
+                    - "Log Distribution Chart": ru/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart.md
+                    - "Message": ru/analyze-explore-automate/logs/lma-logs-app/message.md
+                    - "Query And Filter": ru/analyze-explore-automate/logs/lma-logs-app/query-and-filter.md
+                    - "Surrounding Logs": ru/analyze-explore-automate/logs/lma-logs-app/surrounding-logs.md
+            - "Уведомления и оповещения":
+                - "Уведомления о проблемах": ru/analyze-explore-automate/notifications-and-alerting/problem-notifications.md
+        - "🚀 Развёртывание":
+            - "Конфигурация как код": ru/deliver/configuration-as-code.md
+            - "Ownership App": ru/deliver/ownership-app.md
+            - "Владение": ru/deliver/ownership.md
+            - "Quality Gates": ru/deliver/quality-gates.md
+            - "Мониторинг релизов": ru/deliver/release-monitoring.md
+            - "Self Service Kubernetes Use Case": ru/deliver/self-service-kubernetes-use-case.md
+            - "Service Level Objectives Classic": ru/deliver/service-level-objectives-classic.md
+            - "SLO": ru/deliver/service-level-objectives.md
+            - "SRG": ru/deliver/site-reliability-guardian.md
+            - "Test Pipeline Observability": ru/deliver/test-pipeline-observability.md
+            - "Конфигурация как код":
+                - "Monaco":
+                    - "Monaco Api Support And Access Handling": ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md
+                    - "Monaco Concepts": ru/deliver/configuration-as-code/monaco/monaco-concepts.md
+                    - "Monaco Getting Started": ru/deliver/configuration-as-code/monaco/monaco-getting-started.md
+                    - "Конфигурация":
+                        - "Account Configuration": ru/deliver/configuration-as-code/monaco/configuration/account-configuration.md
+                        - "Monaco Manage Resources": ru/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources.md
+                        - "Special Configuration Types Saas": ru/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas.md
+                        - "Yaml Configuration Saas Type Fields": ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields.md
+                        - "Yaml Configuration Saas": ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas.md
+                    - "Справочник":
+                        - "Commands Saas": ru/deliver/configuration-as-code/monaco/reference/commands-saas.md
+                - "Terraform":
+                    - "Terraform Api Support Access Permission Handling": ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md
+                    - "Terraform Cli Commands": ru/deliver/configuration-as-code/terraform/terraform-cli-commands.md
+                    - "Туториалы": ru/deliver/configuration-as-code/terraform/tutorials.md
+                    - "Туториалы":
+                        - "Terraform Tutorial Set Up Automated Notification": ru/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification.md
+            - "Владение":
+                - "Assign Ownership": ru/deliver/ownership/assign-ownership.md
+                - "Best Practices": ru/deliver/ownership/best-practices.md
+                - "Ownership Teams": ru/deliver/ownership/ownership-teams.md
+            - "Pipeline наблюдаемость":
+                - "Туториалы":
+                    - "Deployment Observability Use Case Argocd": ru/deliver/pipeline-observability-sdlc-events/tutorials/deployment-observability-use-case-argocd.md
+                    - "Pipeline Observability Tutorial Jira": ru/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira.md
+            - "Мониторинг релизов":
+                - "Issue Tracking Integration": ru/deliver/release-monitoring/issue-tracking-integration.md
+                - "Monitor Releases With Dynatrace": ru/deliver/release-monitoring/monitor-releases-with-dynatrace.md
+                - "Version Detection Strategies": ru/deliver/release-monitoring/version-detection-strategies.md
+            - "SLO":
+                - "Create Slo": ru/deliver/service-level-objectives/create-slo.md
+                - "Service Level Objective Permissions": ru/deliver/service-level-objectives/service-level-objective-permissions.md
+                - "Service Level Objective Tile Add To Dashboard": ru/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard.md
+                - "Service Level Objective Tile Edit In Dashboard": ru/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard.md
+                - "Service Level Objective Tile View": ru/deliver/service-level-objectives/service-level-objective-tile-view.md
+                - "Service Level Objective Upgrade Classic": ru/deliver/service-level-objectives/service-level-objective-upgrade-classic.md
+            - "Service Level Objectives Classic":
+                - "Slo Mz Permissions": ru/deliver/service-level-objectives-classic/slo-mz-permissions.md
+            - "SRG":
+                - "Event Structure": ru/deliver/site-reliability-guardian/event-structure.md
+                - "Execution Context": ru/deliver/site-reliability-guardian/execution-context.md
+                - "Guardian List": ru/deliver/site-reliability-guardian/guardian-list.md
+        - "💡 Знакомство с Dynatrace":
+            - "Dynatrace Apps": ru/discover-dynatrace/dynatrace-apps.md
+            - "Get Started": ru/discover-dynatrace/get-started.md
+            - "What Is Dynatrace": ru/discover-dynatrace/what-is-dynatrace.md
+        - "🤖 ИИ и аналитика":
+            - "Обнаружение аномалий": ru/dynatrace-intelligence/anomaly-detection.md
+            - "Copilot": ru/dynatrace-intelligence/copilot.md
+            - "Davis Problems": ru/dynatrace-intelligence/davis-problems-app.md
+            - "Интеграции ИИ": ru/dynatrace-intelligence/dynatrace-intelligence-integrations.md
+            - "Анализ первопричин": ru/dynatrace-intelligence/root-cause-analysis.md
+            - "Обнаружение аномалий":
+                - "Настройка чувствительности": ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md
+                - "Приложение аномалий": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md
+                - "Anomaly Detection Configuration": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md
+                - "Auto Adaptive Threshold": ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md
+                - "Automated Multidimensional Baselining": ru/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining.md
+                - "События метрик": ru/dynatrace-intelligence/anomaly-detection/metric-events.md
+                - "Set Up Anomaly Detectors Via Api": ru/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api.md
+                - "Static Thresholds": ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md
+                - "Настройка чувствительности":
+                    - "Adjust Sensitivity Infastructure": ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure.md
+                - "Приложение аномалий":
+                    - "Anomaly Detection Status Types": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types.md
+                    - "Configure A Simple Ad": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad.md
+                    - "Davis Ad Dql Best Practice": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice.md
+                    - "Davis Ad Dql Optimization": ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization.md
+                - "События метрик":
+                    - "Metric Key Events": ru/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events.md
+                    - "Metric Selector Events": ru/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events.md
+            - "Copilot":
+                - "Chat With Davis Copilot": ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md
+                - "Copilot Data Privacy": ru/dynatrace-intelligence/copilot/copilot-data-privacy.md
+                - "Copilot Find Relevant Troubleshooting Guides": ru/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides.md
+                - "Copilot Getting Started": ru/dynatrace-intelligence/copilot/copilot-getting-started.md
+                - "Copilot Overview": ru/dynatrace-intelligence/copilot/copilot-overview.md
+                - "Quick Analysis Copilot Dql": ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md
+                - "Chat With Davis Copilot":
+                    - "Copilot Conv Starters": ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters.md
+                - "Quick Analysis Copilot Dql":
+                    - "Copilot Tips": ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips.md
+            - "Davis Problems":
+                - "Problems App Custom Problem Field Examples": ru/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples.md
+            - "Интеграции ИИ":
+                - "Copilot For Workflows": ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md
+                - "Davis For Notebooks": ru/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks.md
+            - "Справочник":
+                - "AI модели": ru/dynatrace-intelligence/reference/ai-models.md
+                - "Davis Ai Limits": ru/dynatrace-intelligence/reference/davis-ai-limits.md
+                - "AI модели":
+                    - "Forecast Analysis": ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md
+                    - "Seasonal Baseline": ru/dynatrace-intelligence/reference/ai-models/seasonal-baseline.md
+            - "Анализ первопричин":
+                - "Concepts": ru/dynatrace-intelligence/root-cause-analysis/concepts.md
+                - "Event Analysis And Correlation": ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md
+            - "Примеры использования":
+                - "Copilot Examples": ru/dynatrace-intelligence/use-cases/copilot-examples.md
+                - "Copilot In Workflows Dql": ru/dynatrace-intelligence/use-cases/copilot-in-workflows-dql.md
+                - "Copilot In Workflows Examples": ru/dynatrace-intelligence/use-cases/copilot-in-workflows-examples.md
+                - "Create Alert In Logs": ru/dynatrace-intelligence/use-cases/create-alert-in-logs.md
+                - "Davis Dql Examples": ru/dynatrace-intelligence/use-cases/davis-dql-examples.md
+                - "Davis For Workflows": ru/dynatrace-intelligence/use-cases/davis-for-workflows.md
+        - "📥 Источники данных":
+            - "Extensions": ru/ingest-from/extensions.md
+            - "OneAgent":
+                - "Installation And Operation": ru/ingest-from/dynatrace-oneagent/installation-and-operation.md
+        - "📋 Лицензирование":
+            - "Account Management Api": ru/license/account-management-api.md
+            - "Billing Reports": ru/license/billing-reports.md
+            - "Budget Alerts": ru/license/budget-alerts.md
+            - "Возможности": ru/license/capabilities.md
+            - "Cost Monitors": ru/license/cost-monitors.md
+            - "Dps First Year": ru/license/dps-first-year.md
+            - "Dps Permissions": ru/license/dps-permissions.md
+            - "License Lifecycle": ru/license/license-lifecycle.md
+            - "Monitoring Consumption Classic": ru/license/monitoring-consumption-classic.md
+            - "Возможности":
+                - "Аналитика логов":
+                    - "Dps Log Query": ru/license/capabilities/log-analytics/dps-log-query.md
+        - "⚙️ Управление":
+            - "Hub": ru/manage/hub.md
+        - "🖥️ Managed":
+            - "Обзор Dynatrace Managed": ru/managed/index.md
+        - "👁️ Мониторинг":
+            - "Цифровой опыт": ru/observe/digital-experience.md
+            - "Dynatrace For Ai Observability": ru/observe/dynatrace-for-ai-observability.md
+            - "Наблюдаемость инфраструктуры": ru/observe/infrastructure-observability.md
+            - "Наблюдаемость приложений":
+                - "Distributed Tracing": ru/observe/application-observability/distributed-tracing.md
+                - "Сервисы":
+                    - "Services App": ru/observe/application-observability/services/services-app.md
+            - "Цифровой опыт":
+                - "Синтетический мониторинг":
+                    - "Synthetic on Grail":
+                        - "Synthetic App": ru/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app.md
+            - "Наблюдаемость инфраструктуры":
+                - "Infrastructure And Operations": ru/observe/infrastructure-observability/infrastructure-and-operations.md
+                - "Облачный мониторинг":
+                    - "Clouds App": ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md
+                - "Kubernetes мониторинг":
+                    - "Kubernetes App": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app.md
+                    - "Kubernetes Monitoring": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md
+                    - "Kubernetes App":
+                        - "Enable K8S Experience":
+                            - "Existing Clusters": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/enable-k8s-experience/existing-clusters.md
+                        - "Preview":
+                            - "Enhanced Object Vis Preview": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/preview/enhanced-object-vis-preview.md
+                        - "Справочник":
+                            - "Permissions": ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/reference/permissions.md
+                - "Базы данных":
+                    - "Database App": ru/observe/infrastructure-observability/databases/database-app.md
+        - "🏗️ Платформа":
+            - "Appengine": ru/platform/appengine.md
+            - "Oneagent": ru/platform/oneagent.md
+            - "Openpipeline": ru/platform/openpipeline.md
+            - "Grail":
+                - "Dynatrace Grail": ru/platform/grail/dynatrace-grail.md
+                - "Dynatrace Query Language": ru/platform/grail/dynatrace-query-language.md
+        - "🔒 Безопасность":
+            - "Наблюдаемость угроз": ru/secure/threat-observability.md
+            - "Наблюдаемость угроз":
+                - "Security Events Ingest": ru/secure/threat-observability/security-events-ingest.md
+        - "🆕 Что нового":
+            - "Activegate": ru/whats-new/activegate.md
+            - "Oneagent": ru/whats-new/oneagent.md
+            - "Saas": ru/whats-new/saas.md
+
   - 📚 Документация:
     - Обзор: ru/index.md
     - API Dynatrace: ru/dynatrace-api.md

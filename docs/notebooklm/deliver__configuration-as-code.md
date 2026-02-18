@@ -1,14 +1,10 @@
-# Dynatrace Documentation: deliver/configuration-as-code
-
-Generated: 2026-02-18
-
-Files combined: 13
-
+# Документация Dynatrace: deliver/configuration-as-code
+Язык: Русский (RU)
+Сгенерировано: 2026-02-18
+Файлов в разделе: 14
 ---
 
-
-## Source: account-configuration.md
-
+## deliver/configuration-as-code/monaco/configuration/account-configuration.md
 
 ---
 title: Account configuration for Monaco account management
@@ -615,21 +611,18 @@ In this example, we define these objects.
 
 ## Commands
 
-Because account-level configuration is usually distinct from environment-level configuration and changes less frequently, existing commands like `monaco deploy` ignore any account configuration that may be defined in a manifest file.
+Поскольку конфигурация на уровне учетной записи обычно отличается от конфигурации на уровне среды и меняется реже, существующие команды, такие как `monaco deploy`, игнорируют любую конфигурацию учетной записи, которая может быть определена в файле манифеста.
 
-Dedicated commands exist for account resources: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "How to use the Monaco CLI application, including arguments and options.").
-
+Существуют специальные команды для ресурсов учетной записи: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "Как использовать приложение Monaco CLI, включая аргументы и опции.").
 
 ---
 
-
-## Source: monaco-manage-resources.md
-
+## deliver/configuration-as-code/monaco/configuration/monaco-manage-resources.md
 
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-18T05:50:14.035277
+scraped: 2026-02-17T05:03:31.823164
 ---
 
 # Monaco resources
@@ -905,6 +898,8 @@ A grouping project offers a simplified way of grouping multiple projects togethe
 
 ### environmentGroups
 
+
+
 An environment is a Dynatrace environment.
 You can group these environments together in single environment group using the `environmentGroups` type.
 You can apply a configuration to an `environmentGroup`, which implicitly applies it to all environments within the group.
@@ -1134,17 +1129,14 @@ The special requirements for JSON templates
 
 Some configuration types have special requirements for their JSON payloads and might need manual modification to be used with Configuration as Code.
 
-
 ---
 
-
-## Source: special-configuration-types-saas.md
-
+## deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas.md
 
 ---
 title: Monaco configuration YAML file - list of special configuration types
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas
-scraped: 2026-02-18T05:54:08.467889
+scraped: 2026-02-17T05:01:53.184426
 ---
 
 # Monaco configuration YAML file - list of special configuration types
@@ -1427,6 +1419,8 @@ The `SERVICE` type:
 ```
 
 ### Settings 2.0 JSON
+
+
 
 The [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") has additional properties unrelated to the specific schemas.
 This requires Dynatrace Monaco CLI to set further parameters.
@@ -1975,17 +1969,14 @@ The Dynatrace Monaco JSON template only requires the `value` content:
 
 When using the [download command](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options."), this happens automatically.
 
-
 ---
 
-
-## Source: yaml-configuration-saas-type-fields.md
-
+## deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields.md
 
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-18T05:47:48.351173
+scraped: 2026-02-17T05:10:53.325344
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -2626,6 +2617,8 @@ type: bucket
 
 
 
+
+
 - id: log-bucket-rule
 
 
@@ -3005,6 +2998,8 @@ id: my-group
 
 
 
+
+
 serviceUsers:     # supported with Monaco CLI v2.23.0+
 
 
@@ -3162,12 +3157,9 @@ While this sample shows users, service users, policies, and groups defined in a 
 
 * [Monaco configuration YAML file structure](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas "The Monaco configuration YAML file is structure.")
 
-
 ---
 
-
-## Source: yaml-configuration-saas.md
-
+## deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas.md
 
 ---
 title: Monaco configuration YAML file structure
@@ -3464,6 +3456,8 @@ Use the `name` property in JSON like this `"{{ .name }}"`.
 If you encounter issues with the configurations not being created several times instead of updated, check to make sure that your reference to the name does not contain any spaces or other characters that make what is sent to Dynatrace in the JSON different from the name defined in the YAML.
 
 ### Other configuration types
+
+
 
 The `name` property isn't used to identify Dynatrace objects.
 Instead, the configuration's coordinate, a combination of project, type, and configuration ID, or originObjectId, if present, is used.
@@ -4193,6 +4187,8 @@ Each reference parameter must be defined as a separate parameter and listed in t
 
 In the given example, you can reference the additional parameter called `comment` within the content specified by the file parameter using the notation `{{ .comment }}`.
 
+
+
 ### `originObjectId`
 
 When using the Dynatrace Monaco CLI to [download](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options.") existing configurations from Dynatrace, the created YAML files contain an `originObjectId` for some configuration types.
@@ -4324,17 +4320,14 @@ skip: true
 
 * [Monaco configuration YAML file - list of type fields](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields "This is a list of type fields in the Monaco configuration YAML file.")
 
-
 ---
 
-
-## Source: monaco-api-support-and-access-handling.md
-
+## deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md
 
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-18T05:57:26.938793
+scraped: 2026-02-17T05:06:15.123293
 ---
 
 # Monaco API support and access permission handling
@@ -4868,21 +4861,20 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 
 [Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
 
-## Related topics
 
-* [Monaco configuration YAML file - list of special configuration types](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "This is a list of Monaco special configuration types.")
 
+## Связанные темы
+
+* [Файл конфигурации Monaco в формате YAML - список специальных типов конфигурации](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "Это список специальных типов конфигурации Monaco.")
 
 ---
 
-
-## Source: monaco-concepts.md
-
+## deliver/configuration-as-code/monaco/monaco-concepts.md
 
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-18T05:55:22.178039
+scraped: 2026-02-17T05:10:32.645517
 ---
 
 # Monaco concepts
@@ -4933,17 +4925,14 @@ Dynatrace resource configuration
 
     The JSON template file contains the payload that will be uploaded to the Dynatrace API endpoints. It allows you to reference all defined configuration parameters via `{{ .PARAMETER_NAME }}` syntax.
 
-
 ---
 
-
-## Source: monaco-getting-started.md
-
+## deliver/configuration-as-code/monaco/monaco-getting-started.md
 
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-18T05:54:00.091868
+scraped: 2026-02-16T09:29:08.031533
 ---
 
 # Manage configurations with Monaco
@@ -5367,6 +5356,8 @@ To verify that your Dynatrace config has been created in your Dynatrace environm
 
 ## Delete a configuration with Monaco
 
+
+
 Now that your configuration is deployed, you can delete it from your local filesystem.
 
 1. To delete the previously created SLO, create a delete file.
@@ -5442,17 +5433,14 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 * [Install Dynatrace Configuration as Code via Monaco](/docs/deliver/configuration-as-code/monaco/installation "Download and install Dynatrace Configuration as Code via Monaco.")
 * [Monaco API support and access permission handling](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling "This is a list of the Monaco API support and access permission handling.")
 
-
 ---
 
-
-## Source: commands-saas.md
-
+## deliver/configuration-as-code/monaco/reference/commands-saas.md
 
 ---
 title: Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/reference/commands-saas
-scraped: 2026-02-18T05:54:54.511415
+scraped: 2026-02-17T04:59:00.750736
 ---
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
@@ -5618,6 +5606,8 @@ monaco download [ARGS] [OPTIONS]
 ```
 
 ### Options
+
+
 
 The available options depend on the download method.
 
@@ -5947,6 +5937,8 @@ monaco download
 
 ## Delete
 
+
+
 The `delete` command is a convenient way to remove configurations from Dynatrace environments.
 
 * Deleting long-lived configurations in production environments is not ideal, but sometimes it's necessary
@@ -6267,6 +6259,8 @@ Optional
 
 ### Options
 
+
+
 The available options depend on the specific argument that is used.
 
 #### deploy
@@ -6512,17 +6506,14 @@ Enable [verbose debugging logs](/docs/deliver/configuration-as-code/monaco/refer
 
 Optional
 
-
 ---
 
-
-## Source: terraform-api-support-access-permission-handling.md
-
+## deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md
 
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-02-18T05:54:15.539341
+scraped: 2026-02-16T21:26:05.486160
 ---
 
 # Terraform API support and access permission handling
@@ -6643,17 +6634,14 @@ The Dynatrace Terraform Provider contains most Dynatrace APIs. All supported res
 Always consider the correct permission scopes that are needed for the selected API resources.
 Information can be found at [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") and [the Dynatrace Terraform provider GitHub repositoryï»¿](https://github.com/dynatrace-oss/terraform-provider-dynatrace/blob/main/documentation/supported-resources.md).
 
-
 ---
 
-
-## Source: terraform-cli-commands.md
-
+## deliver/configuration-as-code/terraform/terraform-cli-commands.md
 
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-18T05:44:47.611441
+scraped: 2026-02-16T21:24:36.897092
 ---
 
 # Terraform CLI commands
@@ -6826,57 +6814,52 @@ The reasons are added as comments at the beginning of each file.
   This may be due to sensitive data or instances where the files require additional attention.
   (For example, `dynatrace_credentials` confidential strings are not available via the API.)
 
-
 ---
 
-
-## Source: terraform-tutorial-set-up-automated-notification.md
-
+## deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification.md
 
 ---
-title: Configure automated notifications using Terraform and Configuration as Code
+title: Настройка автоматических уведомлений с помощью Terraform и Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
 scraped: 2026-02-16T21:27:45.110164
 ---
 
-# Configure automated notifications using Terraform and Configuration as Code
-
-# Configure automated notifications using Terraform and Configuration as Code
+# Настройка автоматических уведомлений с помощью Terraform и Configuration as Code
 
 * Latest Dynatrace
-* Tutorial
-* 2-min read
-* Updated on Nov 05, 2025
+* Урок
+* 2-минутное чтение
+* Обновлено 05 ноября 2025 г.
 
-This tutorial explains how to configure an event notification with the latest Dynatrace.
+Этот урок объясняет, как настроить уведомление о событии с помощью последней версии Dynatrace.
 
-The notification consists of
+Уведомление состоит из
 
-* A [custom alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") configuration, which raises an alerting event if a certain conditions is met.
-* A simple workflow that automatically sends an email when the alerting event is active.
+* Настройки [пользовательского оповещения](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.") , которое вызывает событие оповещения, если выполнено определенное условие.
+* Простого рабочего процесса, который автоматически отправляет электронное письмо, когда событие оповещения активно.
 
-## Prerequisites
+## Предварительные условия
 
-* Terraform CLI with the Dynatrace provider installed and available under PATH.
-  For more information, see [Install Terraform CLI and set up Configuration as Code via Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.").
-* OAuth client or platform token with the following permissions.
-  For more information, see [Create API access token](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+* Terraform CLI с установленным провайдером Dynatrace и доступным по пути.
+  Для получения дополнительной информации см. [Установка Terraform CLI и настройка Configuration as Code через Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Установите Terraform CLI и настройте Configuration as Code Dynatrace через Terraform.").
+* Клиент OAuth или платформенный токен с следующими разрешениями.
+  Для получения дополнительной информации см. [Создание токена доступа к API](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup "Описывает различные варианты, которые провайдер Terraform может использовать для аутентификации вызовов API Dynatrace.").
 
-  + View settings objects for schema (`settings:objects:read`)
-  + Create settings objects for schema (`settings:objects:write`)
-  + View workflows (`automation:workflows:read`)
-  + Create and edit workflows (`automation:workflows:write`)
+  + Просмотр объектов настроек для схемы (`settings:objects:read`)
+  + Создание объектов настроек для схемы (`settings:objects:write`)
+  + Просмотр рабочих процессов (`automation:workflows:read`)
+  + Создание и редактирование рабочих процессов (`automation:workflows:write`)
 
-  The Terraform user needs to have all required permissions to run the run automated configurations such as custom alerts or workflows.
-  Missing or wrong permission can lead to an unexpected behavior.
+  Пользователь Terraform должен иметь все необходимые разрешения для запуска автоматических конфигураций, таких как пользовательские оповещения или рабочие процессы.
+  Отсутствие или неправильное разрешение может привести к непредвиденному поведению.
 
-## What will you learn
+## Что вы узнаете
 
-You'll learn how to configure a [custom alert](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.") and a [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") with an email action.
+Вы узнаете, как настроить [пользовательское оповещение](/docs/dynatrace-intelligence/anomaly-detection "Как Dynatrace обнаруживает аномалии в вашей среде.") и [рабочий процесс](/docs/analyze-explore-automate/workflows "Автоматизируйте процессы ИТ с помощью рабочих процессов Dynatrace — реагируйте на события, планируйте задачи и подключайте службы.") с действием электронной почты.
 
-## Steps
+## Шаги
 
-### Build Terraform configuration
+### Создание конфигурации Terraform
 
 To build a configuration for raising an event and a simple workflow for sending an email in case of a raised event
 
@@ -7968,6 +7951,8 @@ To build a configuration for raising an event and a simple workflow for sending 
    A Terraform `terraform.tfstate` state file is automatically generated. It keeps track of the resources that Terraform manages.
    It's crucial for subsequent Terraform operations.
 
+
+
 ### Modify Terraform configuration
 
 To modify the Terraform configuration
@@ -8055,17 +8040,14 @@ To modify the Terraform configuration
 
    The previously created configurations in the Dynatrace environment have been destroyed. Confirm that your Terraform state `terraform.tfstate` file is empty.
 
-
 ---
 
-
-## Source: tutorials.md
-
+## deliver/configuration-as-code/terraform/tutorials.md
 
 ---
 title: Terraform tutorials overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials
-scraped: 2026-02-17T21:28:23.476080
+scraped: 2026-02-17T05:04:29.621269
 ---
 
 # Terraform tutorials overview
@@ -8081,5 +8063,143 @@ Terraform is an extensive tool that you can combine with Configuration as Code t
 
 We provide a tutorial to help you [Configure automated notifications using Terraform and Configuration as Code](/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification "Configure automated notifications using Terraform and Configuration as Code.").
 
+---
+
+## deliver/configuration-as-code.md
+
+---
+title: Configuration as Code overview
+source: https://www.dynatrace.com/docs/deliver/configuration-as-code
+scraped: 2026-02-17T05:10:12.037000
+---
+
+# Configuration as Code overview
+
+# Configuration as Code overview
+
+* Latest Dynatrace
+* Overview
+* 2-min read
+* Updated on Jul 27, 2025
+
+![Configuration as Code](https://dt-cdn.net/images/configuration-as-code-highresolution-1025-29c909e912.png "Configuration as Code") **Configuration as Code** (CaC) provides Observability as Code and Security as Code to fully automate the configuration of the Dynatrace platform at any scale for:
+
+* Automating and standardizing your observability configurations.
+* Adding observability to your software delivery process.
+* Ensuring standards while democratizing observability.
+* Security-as-code compliance in your service and application onboarding flow.
+
+![Set up Open Pipeline configurations via Terraform](https://cdn.hub.central.dynatrace.com/hub/Terraform-screenshot-intro.png)![Automate the service monitoring configuration via Monaco CLI](https://cdn.hub.central.dynatrace.com/hub/Monaco-Screenshot-Intro.png)
+
+1 of 2Set up Open Pipeline configurations via Terraform
+
+## Overview
+
+Configuration-as-Code represents an approach to managing software and application configuration data, including observability and security systems.
+
+In a nutshell, it allows you to configure Dynatrace declaratively without the need to setup everything in the UI.
+
+A Configuration as Code self-service model allows development teams to set up monitoring, observability, and security policies quickly and efficiently, even for large-scale applications. It eliminates the need to build custom solutions and reduces the manual work of observability teams.
+
+The Dynatrace Configuration as Code approach allows you to manage your Dynatrace environment observability tasks through configuration files instead of a graphical user interface.
+
+## Use cases
+
+Manage any Dynatrace configuration side-by-side with any source code, from within YAML files organized in Git repositories. For example:
+
+* release validation
+* AWS well architected framework pillars
+* IAM resources
+* service monitoring / service onboarding
+* SLO dashboards
+* Remediation and problem notification automations
+
+You can manage any Dynatrace configuration side-by-side with any source code, from within YAML files organized in Git repositories.
+Check out our [samples on GitHubï»¿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
+
+Examples of what can be configured in code:
+
+* Dashboards, Notebooks and Launchpads.
+* Incident management.
+* Release validations.
+* Real-user monitoring enablement.
+* ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
+* Synthetic monitoring.
+* Data ingest and open pipeline configurations.
+
+## Concepts
+
+The Dynatrace CaC approach allows you to manage your Dynatrace environment observability tasks through configuration files instead of via a GUI.
+
+A CaC self-service model allows development teams to set up quickly and efficiently, even for large-scale applications:
+
+* Monitoring
+* Observability
+* Security policies
+
+It eliminates the need to build custom solutions and reduces the manual work of observability teams.
+
+CaC can:
+
+* Create configuration templates for multiple environments.
+* Manage interdependencies between configurations without the need to retain unique identifiers.
+* Apply the same configuration to hundreds of Dynatrace environments and be able to update all of them at the same time.
+* Promote application-specific configurations across environments after deployments at each stage.
+* Support all mechanisms and best practices of git-based workflows such as pull requests, merging, and approvals.
+* Commit your configuration to version control and collaborate on changes.
+
+## Why use configuration as code
+
+The reason to use CaC is to have configuration files that allow you to
+
+* Create,
+* Update, and
+* Manage your observability configurations safely, consistently, and repeatedly.
+
+They can be reused, versioned, and shared with your team.
+
+A standardized approach to configuring Dynatrace as code has many benefits.
+In addition to all the advantages a Git approach brings, such as
+
+* Version control
+* Reproducibility
+
+Applying CaC allows
+
+* Self-service observability configurations
+* Streamlining and standardizing onboarding processes
+* Keeping configurations in sync across different environments
+
+## Use observability-driven development within developer platform
+
+* Reduce deployment time by integrating CaC to streamline your application onboarding process via Golden Paths.
+* Introduce observability and security standards in your environment by integrating them into your CI/CD pipelines, for example, via container images, and ensuring consistency in all your stages.
+* Provide self-service possibilities, integrating observability, automation, and quality gates into your SDLC.
+  For more information, see [Platform Engineering](/docs/discover-dynatrace/get-started/platform-engineering "Use observability and security to drive analytics and automation at scale.").
+
+## Tools
+
+To set up and manage Dynatrace with CaC you have two tool options:
+
+* [Terraform](/docs/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform."), the industry-standard CaC software tool.
+* [Monaco](/docs/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco."), the Dynatrace-proprietary CaC CLI tool.
+
+Deciding what to use depends on the tool stack and requirements.
+
+We recommend Terraform with the Dynatrace Terraform provider if:
+
+* You're already familiar with Terraform and feel comfortable working with it.
+* You want to manage the infrastructure and configuration of multiple providers in a single workspace.
+* You want to benefit from external state management, highlighting gaps between the plan and reality, and collaborating via remote state backends like GitHub.
+* You plan to use dynamic configurations, leveraging calculations and conditional logic supported by HCL (Hashicorp Configuration Language) expressions.
+
+If you don't want to or can't use Terraform, we offer the Dynatrace-proprietary CaC CLI tool, Monaco.
+Monaco provides a third-party independent solution, operating in standalone mode, that uses native JSON to describe the Dynatrace configurations.
+
+## Related topics
+
+* [Configuration as Code via Terraform overview](/docs/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
+* [Configuration as Code via Monaco overview](/docs/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
+* [[Blog] Automated observability, security, and reliability at scaleï»¿](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)
 
 ---
