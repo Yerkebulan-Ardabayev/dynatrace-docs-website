@@ -1,7 +1,7 @@
 ---
 title: NGINX
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nginx
-scraped: 2026-02-17T04:50:58.623355
+scraped: 2026-02-18T21:26:20.788165
 ---
 
 # NGINX
@@ -94,6 +94,20 @@ Dynatrace support until
 
 [Dynatrace support level](/docs/ingest-from/technology-support#support-levels)
 
+1.29.5
+
+2025-02-04
+
+-
+
+1.335
+
+-
+
+-
+
+Not supported
+
 1.29.4
 
 2025-12-09
@@ -163,6 +177,20 @@ Supported
 -
 
 Supported
+
+1.28.2
+
+2025-02-04
+
+-
+
+1.335
+
+-
+
+-
+
+Not supported
 
 1.28.1
 

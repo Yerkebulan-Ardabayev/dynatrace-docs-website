@@ -1,96 +1,52 @@
-# Обзор Dynatrace Managed
+---
+title: Welcome to Dynatrace Documentation
+source: https://www.dynatrace.com/support/help/
+scraped: 2026-02-18T21:15:15.936958
+---
 
-Dynatrace Managed - это вариант развертывания на собственных серверах для организаций, которым требуется полный контроль над инфраструктурой мониторинга.
+# Welcome to Dynatrace Documentation
 
-## Что такое Dynatrace Managed?
+# Welcome to Dynatrace Documentation
 
-Dynatrace Managed предоставляет:
+Learn about Dynatrace and explore resources to enhance your observability and security.
 
-- **Локальное развертывание** - Размещение в вашем дата-центре
-- **Полный контроль данных** - Ваши данные не покидают вашу среду
-- **Соответствие требованиям** - Выполнение регуляторных требований
-- **Те же функции** - Все возможности Dynatrace SaaS
+![Dynatrace Documentation](https://dt-cdn.net/images/docs-hero-0423f9e141.svg "Dynatrace Documentation")
 
-## Архитектура
+### Get started with Dynatrace or discover whatâs new
 
-```
-┌─────────────────────────────────────────┐
-│         Кластер Managed                 │
-│  ┌───────────────────────────────────┐  │
-│  │   Cluster Management Console    │  │
-│  └───────────────────────────────────┘  │
-│  ┌───────────────────────────────────┐  │
-│  │   Узлы кластера                    │  │
-│  │   - Обработка                      │  │
-│  │   - Хранилище                      │  │
-│  │   - UI                             │  │
-│  └───────────────────────────────────┘  │
-└─────────────────────────────────────────┘
-           ↑
-           │ Данные мониторинга
-           │
-    ┌──────┴───────┐
-    │  OneAgents   │
-    │  (развернуты │
-    │  на хостах)  │
-    └──────────────┘
-```
+* New to Dynatrace? Learn how to [get started](/docs/discover-dynatrace/get-started "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") in just a few steps.
+* Already on board? Discover whatâs new for [SaaS](/docs/whats-new/saas "Release notes for Dynatrace SaaS"), [OneAgent](/docs/whats-new/oneagent "Release notes for Dynatrace OneAgent"), or [ActiveGate](/docs/whats-new/activegate "Release notes for Dynatrace ActiveGate").
 
-## Ключевые особенности
+![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
-### Суверенитет данных
-- Все данные хранятся локально
-- Нет передачи данных в облако Dynatrace
-- Полный контроль над хранением данных
+## Popular pages
 
-### Кастомизация
-- Пользовательские интеграции
-- Развертывание в частной сети
-- Гибкие варианты размеров
+## Tutorials
 
-### Высокая доступность
-- Настройка многоузлового кластера
-- Автоматическое переключение при сбое
-- Варианты аварийного восстановления
+Filter by
 
-## Системные требования
+Select an option
 
-### Минимальные требования
+Type to filter
 
-- **CPU:** 8 ядер
-- **RAM:** 32 ГБ
-- **Хранилище:** 200 ГБ (рекомендуется SSD)
-- **ОС:** Linux (Ubuntu, RHEL, SUSE)
+## Documentation highlights
 
-### Рекомендуется для продакшена
+## Dynatrace apps
 
-- **CPU:** 16+ ядер
-- **RAM:** 64+ ГБ
-- **Хранилище:** 500+ ГБ SSD
-- **Сеть:** 1 Гбит/с+
+Discover all [Dynatrace apps](/docs/discover-dynatrace/dynatrace-apps "Browse Dynatrace Apps.").
 
-## Установка
+## Still have questions?
 
-См. наше [Руководство по установке](installation.md) для подробных инструкций.
+[### Talk to our product experts
 
-## Когда выбирать Managed?
+Our Dynatrace product experts are here to help you with technical questions and provide in-depth assistance via chat.](https://support.dynatrace.com/)
 
-Выбирайте Dynatrace Managed если вам нужно:
+## Continue your learning journey
 
-- ✅ Локальное развертывание
-- ✅ Суверенитет данных
-- ✅ Изолированные среды (air-gapped)
-- ✅ Специфические требования compliance
-- ✅ Интеграция с частными сетями
+[### Join Dynatrace University
 
-## Следующие шаги
+Game-changing education and resources, online and in-person](https://university.dynatrace.com)[### Dynatrace Developer
 
-- [📥 Руководство по установке](installation.md)
-- [⚙️ Конфигурация](configuration.md)
-- [🔧 Обслуживание](maintenance.md)
-- [🆘 Устранение неполадок](troubleshooting.md)
+Learn to create incredible apps with minimal effort](https://developer.dynatrace.com)[### Join Dynatrace Community
 
-## Нужна помощь?
-
-- 🤖 [Быстрые вопросы - AI Чат](../../ai/gemini.md)
-- 🔬 [Комплексный анализ - NotebookLM](../../ai/notebooklm.md)
+Find the answers you are looking for and meet other users and Dynatrace experts.](https://community.dynatrace.com)

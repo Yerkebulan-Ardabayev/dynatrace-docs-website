@@ -1,50 +1,50 @@
 ---
 title: Digital Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience
-scraped: 2026-02-06T16:19:52.722623
+scraped: 2026-02-18T21:16:46.361547
 ---
 
-# Цифровой опыт
+# Digital Experience
 
-# Цифровой опыт
+# Digital Experience
 
-* Последняя версия Dynatrace
-* Обзор
-* 1 минута чтения
-* Опубликовано 6 февраля 2023 г.
+* Latest Dynatrace
+* Overview
+* 1-min read
+* Published Feb 06, 2023
 
-Мониторинг цифрового опыта (DEM) определяется Gartner[1](#fn-1-1-def) как дисциплина мониторинга доступности и производительности, которая поддерживает оптимизацию рабочего процесса и поведения цифрового агента, человека или машины при их взаимодействии с корпоративными приложениями и сервисами.
+Digital Experience Monitoring (DEM) is defined by Gartner[1](#fn-1-1-def) as an availability and performance monitoring discipline that supports the optimization of the operational experience and behavior of a digital agent, human, or machine, as it interacts with enterprise applications and services.
 
-[![Дом Грааля у озера](https://dt-cdn.net/images/grail-57e02b3814.svg "Grail lakehouse")
+[![Grail lakehouse](https://dt-cdn.net/images/grail-57e02b3814.svg "Grail lakehouse")
 
-### Новый опыт РУМа
+### New RUM Experience
 
-Откройте для себя новый интерфейс RUM, обеспечивающий мониторинг реального пользователя в последней версии Dynatrace.](/docs/observe/digital-experience/new-rum-experience «Откройте для себя новый интерфейс RUM, обеспечивающий непревзойденную прозрачность поведения пользователей и производительности интерфейса.»)[### Концепции RUM
+Discover the New RUM Experience, bringing Real User Monitoring to the latest Dynatrace.](/docs/observe/digital-experience/new-rum-experience "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.")[### RUM concepts
 
-Узнайте о приложениях, действиях пользователей, пользовательских сеансах, показателях и многом другом.](/docs/observe/digital-experience/rum-concepts «Узнайте об основных концепциях мониторинга реальных пользователей Dynatrace.»)[### Веб-приложения
+Learn about applications, user actions, user sessions, metrics, and more.](/docs/observe/digital-experience/rum-concepts "Learn about the basic concepts of Dynatrace Real User Monitoring.")[### Web applications
 
-Традиционные веб-приложения или одностраничные приложения, работающие в браузере](/docs/observe/digital-experience/web-applications «Узнайте, как настроить и использовать мониторинг реальных пользователей для ваших веб-приложений.»)[### Мобильные приложения
+Traditional web applications or single-page applications running in a browser](/docs/observe/digital-experience/web-applications "Learn how to configure and use Real User Monitoring for your web applications.")[### Mobile applications
 
-Собственные мобильные приложения для iOS или Android и гибридные приложения, доступные через браузер](/docs/observe/digital-experience/mobile-applications «Настройте и используйте мониторинг реальных пользователей для своих мобильных приложений».)[### Пользовательские приложения
+Native mobile apps on iOS or Android and hybrid applications accessed via browser](/docs/observe/digital-experience/mobile-applications "Configure and use Real User Monitoring for your mobile applications.")[### Custom applications
 
-Традиционные многофункциональные клиентские приложения, интеллектуальные приложения IoT и даже навыки работы с Alexa](/docs/observe/digital-experience/custom-applications «Узнайте, как настроить и использовать мониторинг реальных пользователей для ваших пользовательских приложений».)[### Сегментация сеансов
+Traditional rich client applications, smart IoT applications, and even Alexa skills](/docs/observe/digital-experience/custom-applications "Learn how to configure and use Real User Monitoring for your custom applications.")[### Session segmentation
 
-Разрезайте и объединяйте пользовательские сеансы в значимые сегменты на основе общих характеристик.](/docs/observe/digital-experience/session-segmentation «Узнайте, как использовать мониторинг реальных пользователей для анализа пользовательских сеансов в ваших приложениях».)[### Воспроизведение сеанса
+Slice, dice, and combine user sessions into meaningful segments based on shared characteristics.](/docs/observe/digital-experience/session-segmentation "Learn how to use Real User Monitoring to analyze user sessions across your applications.")[### Session Replay
 
-Захватывайте и визуально воспроизводите весь цифровой опыт пользователей вашего приложения.](/docs/observe/digital-experience/session-replay «Узнайте, как можно использовать воспроизведение сеанса, чтобы лучше понимать и устранять ошибки, с которыми сталкиваются ваши клиенты».)[### Синтетический мониторинг
+Capture and visually replay the complete digital experience of your application's users.](/docs/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")[### Synthetic Monitoring
 
-Круглосуточно отслеживайте доступность и производительность вашего приложения с точки зрения ваших клиентов по всему миру.](/docs/observe/digital-experience/synthetic-monitoring «Узнайте о синтетическом мониторинге и о том, как создать монитор браузера с одним URL-адресом, путь кликов браузера или монитор HTTP».)[![Случаи использования](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
+Monitor your application availability and performance as experienced by your customers around the world and around the clock.](/docs/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")[![Use cases](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
 
-### Варианты использования
+### Use cases
 
-Изучите варианты использования мониторинга реальных пользователей, синтетического мониторинга, сегментации сеансов и воспроизведения сеансов.](/docs/observe/digital-experience/dem-use-cases/customer-support-with-session-segmentation «Узнайте, как разрешать жалобы клиентов с помощью сегментации сеансов».)
+Explore use cases for Real User Monitoring, Synthetic Monitoring, Session segmentation, and Session Replay.](/docs/observe/digital-experience/dem-use-cases/customer-support-with-session-segmentation "Learn how to resolve customer complaints using session segmentation.")
 
-[![Центр](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
-### Исследуйте в Dynatrace Hub
+### Explore in Dynatrace Hub
 
-Убедитесь, что все ваши приложения, от мобильных и веб-приложений до Интернета вещей и API, доступны, функциональны, быстры и эффективны по каждому каналу.](https://www.dynatrace.com/hub/?filter=digital-experience&internal_source=doc&internal_medium=link&internal_campaign=cross)
+Ensure that all your applications, from mobile and web to IoT and APIs, are available, functional, fast, and efficient across every channel.](https://www.dynatrace.com/hub/?filter=digital-experience&internal_source=doc&internal_medium=link&internal_campaign=cross)
 
 1
 
-Gartner, «Основные стратегические технологические тенденции на 2024 год», Барт Виллемсен, Гэри Оллифф и Арун Чандрасекаран, 16 октября 2023 года. GARTNER является зарегистрированным товарным знаком и знаком обслуживания компании Gartner, Inc. и/или ее дочерних компаний в США и за рубежом и используется здесь с разрешения.Все права защищены.
+Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe, and Arun Chandrasekaran, 16 October 2023. GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and is used herein with permission. All rights reserved.

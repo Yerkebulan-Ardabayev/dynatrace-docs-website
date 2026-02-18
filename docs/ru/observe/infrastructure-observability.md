@@ -1,95 +1,123 @@
 ---
 title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-02-06T16:20:03.206716
+scraped: 2026-02-18T21:16:42.951754
 ---
 
-# Наблюдаемость за инфраструктурой
+# Infrastructure Observability
 
-# Наблюдаемость за инфраструктурой
+# Infrastructure Observability
 
-* Последняя версия Dynatrace
-* Обзор
-* 1 минута чтения
-* Опубликовано 12 августа 2021 г.
+* Latest Dynatrace
+* Overview
+* 1-min read
+* Published Aug 12, 2021
 
-Узнайте, как мониторинг Dynatrace работает на следующих платформах.
+[![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations")
 
-## Облачные платформы
+#### Infrastructure & Operations
 
-[![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")
+Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.
 
-### Приложение «Облака»
+* App
 
-Мониторинг всех облачных платформ одновременно.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app «Мониторинг всех облачных платформ одновременно».)
+Explore this app](/docs/observe/infrastructure-observability/infrastructure-and-operations)[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
 
-[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")
+#### Kubernetes
 
-### АВС
+Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.
 
-Мониторинг AWS с помощью Dynatrace.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring «Мониторинг AWS с Dynatrace»)[![Лазурь](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")
+* App
 
-### Лазурный
+Explore this app](/docs/observe/infrastructure-observability/kubernetes-app)[![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")
 
-Мониторинг Azure с помощью Dynatrace.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring «Мониторинг Azure с помощью Dynatrace»)[![Облако Google](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")
+#### Databases app
 
-### Google Облако
+The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.
 
-Мониторинг Google Cloud с помощью Dynatrace.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/gcp-monitoring "Мониторинг Google Cloud с помощью Dynatrace")
+* App
 
-## Контейнерные платформы
+Explore this app](/docs/observe/infrastructure-observability/databases/database-app)[![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")
 
-[![Кубернетес](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
+#### Clouds app
 
-### Кубернетес Классический
+Monitor all cloud platforms at once.
 
-Доступные метрики для мониторинга кластеров Kubernetes.](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.")[![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)")
+* App
 
-### Приложение Kubernetes
+Explore this app](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app)
 
-Изучите новое приложение Kubernetes.](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app «Отслеживайте и оптимизируйте Kubernetes с помощью Dynatrace. Получайте аналитические данные и информацию о работоспособности кластеров и рабочих нагрузок в режиме реального времени».)[![Облачная литейная](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")
+## Concepts
 
-### Облачная кузница
+[#### Data centers
 
-Мониторинг Cloud Foundry с помощью Dynatrace.](/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Мониторинг Cloud Foundry с помощью Dynatrace.")[![Докер](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")
+Monitor the health and performance of your data centers and availability zones to detect and resolve critical issues.
 
-### Докер
+* Explanation
 
-Разверните OneAgent в Docker.](/docs/ingest-from/setup-on-container-platforms/docker «Разверните OneAgent в Docker.»)[![Хероку](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")
+Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers)[#### Hosts
 
-### Героку
+Monitor infrastructure hosts across physical machines, VMs, and cloud instances to track health, performance, and resource utilization.
 
-Мониторинг Heroku с помощью Dynatrace.](/docs/observe/infrastructure-observability/container-platform-monitoring/heroku "Мониторинг Heroku с помощью Dynatrace.")[### Варианты использования
+* Explanation
 
-Изучите варианты использования для управления работоспособностью кластера и оптимизации ресурсов.](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases «Реальные сценарии и лучшие практики использования нового опыта Dynatrace Kubernetes».)
+Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts)[#### Processes
 
-## Инфраструктура
+Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.
 
-[![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations")
+* Explanation
 
-### Инфраструктура и операции
+Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Containers
 
-Подробное наблюдение за хостами и процессами во всей среде.](/docs/observe/infrastructure-observability/infrastructure-and-operations «Отслеживайте состояние хостов и центров обработки данных для обнаружения проблем и повышения производительности инфраструктуры.»)[### Сети
+Monitor and troubleshoot containerized workloads across Kubernetes and standalone hosts.
 
-Мониторинг сетевых соединений.](/docs/observe/infrastructure-observability/networks «Узнайте, как контролировать сетевые соединения.»)[![Хозяева](https://cdn.bfldr.com/B686QPH3/at/k4rk5vxbj45w8gppqjsfkvh5/DT0410.svg?auto=webp&width=72&height=72 "Hosts")
+* Explanation
 
-### Хосты
+Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Networks
 
-Начало работы с мониторингом хоста, его работоспособностью и т. д.](/docs/observe/infrastructure-observability/hosts «Узнайте, как начать мониторинг хоста, поймите, какие меры способствуют работоспособности хоста, как настроить собственные имена хостов и т. д.»)[### Группы процессов
+Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
 
-Анализ групп процессов.](/docs/observe/infrastructure-observability/process-groups «Анализ групп процессов и настройка именования, обнаружения и мониторинга групп процессов.»)[### VMware
+* Explanation
 
-Мониторинг VMware vSphere с помощью Dynatrace.](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring «Мониторинг VMware vSphere с помощью Dynatrace.»)
+Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/networks)[#### Extensions
 
-[![Центр](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+Extensions ordered by category
 
-### Исследуйте в Dynatrace Hub
+* Reference
 
-Получите автоматическое и интеллектуальное наблюдение в облачных и гибридных средах с непрерывным автоматическим обнаружением любого типа инфраструктуры, все в контексте и с точными ответами на основе искусственного интеллекта.] (https://www.dynatrace.com/hub/?filter=infrastructure-monitoring&internal_source=doc&internal_medium=link&internal_campaign=cross)
+Read this reference](/docs/observe/infrastructure-observability/extensions)
 
-## Похожие темы
+## Classic
 
-* [Бессерверный мониторинг](/docs/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
-* [Прием данных](/docs/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
-* [Мониторинг групп контейнеров](/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
-* [Правила мониторинга контейнеров](/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules "Define, enable and disable container monitoring rules")
+[#### Container platform monitoring
+
+The container platforms Dynatrace can monitor
+
+* Explanation
+
+Read this explanation](/docs/observe/infrastructure-observability/container-platform-monitoring)[#### Process groups
+
+Analyze process groups and customize process group naming, detection, and monitoring.
+
+* Explanation
+
+Read this explanation](/docs/observe/infrastructure-observability/process-groups)[#### Message queues
+
+Monitor and analyze your message queues with Dynatrace.
+
+* Explanation
+
+Read this explanation](/docs/observe/infrastructure-observability/queues)[#### VMware vSphere monitoring
+
+Monitor VMware vSphere with Dynatrace.
+
+* How-to guide
+
+Read this guide](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring)
+
+## Related topics
+
+* [Serverless monitoring](/docs/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
+* [Ingest data](/docs/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
+* [Monitor container groups](/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
+* [Container monitoring rules](/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules "Define, enable and disable container monitoring rules")

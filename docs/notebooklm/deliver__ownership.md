@@ -894,7 +894,7 @@ The API snippets for reading, creating, updating, and deleting teams are availab
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-02-17T05:09:59.164570
+scraped: 2026-02-18T21:34:46.691171
 ---
 
 # Ownership Classic

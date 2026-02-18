@@ -1,15 +1,15 @@
 ---
 title: OneAgent release notes
 source: https://www.dynatrace.com/docs/whats-new/oneagent
-scraped: 2026-02-06T16:18:43.124171
+scraped: 2026-02-18T21:15:21.903399
 ---
 
-# Примечания к выпуску OneAgent
+# OneAgent release notes
 
-# Примечания к выпуску OneAgent
+# OneAgent release notes
 
-* Последняя версия Dynatrace
-* Примечания к выпуску
-* Обновлено 3 февраля 2026 г.
+* Latest Dynatrace
+* Release notes
+* Updated on Feb 03, 2026
 
-Невозможно отобразить DataTable.Проверьте конфигурацию.
+Unable to render DataTable. Check configuration.

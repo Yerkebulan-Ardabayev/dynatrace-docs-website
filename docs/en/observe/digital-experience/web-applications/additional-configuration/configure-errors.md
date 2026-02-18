@@ -1,7 +1,7 @@
 ---
 title: Configure error detection for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-errors
-scraped: 2026-02-17T04:50:00.865821
+scraped: 2026-02-18T21:25:12.145611
 ---
 
 # Configure error detection for web applications

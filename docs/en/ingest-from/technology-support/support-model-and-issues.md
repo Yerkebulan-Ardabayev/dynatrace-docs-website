@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Operator support and known issues
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/support-model-and-issues
-scraped: 2026-02-17T04:52:17.868185
+scraped: 2026-02-18T21:25:56.812188
 ---
 
 # Dynatrace Operator support and known issues
@@ -18,16 +18,16 @@ The table below lists the verified and tested release versions:
 
 | Kubernetes upstream version | OpenShift version | Minimum OneAgent version | Minimum ActiveGate version | Minimum Dynatrace Operator version | Recommended Dynatrace Operator version | End of support (Kubernetes) | End of support (OpenShift) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1.35 |  | 1.329 | 1.329 | v1.1.x | v1.8.0+ | Apr 1, 2028 |  |
-| 1.34 | 4.21[4](#fn-1-4-def) | 1.321 | 1.321 | v1.1.x | v1.7.0+ | Nov 1, 2027 | Oct 1, 2028 |
-| 1.33 | 4.20[4](#fn-1-4-def) | 1.319 | 1.319 | v1.1.x | v1.7.0+ | Jul 1, 2027 | Mar 1, 2028 |
-| 1.32 | 4.19[4](#fn-1-4-def) | 1.309 | 1.309 | v1.1.x | v1.7.0+ | Mar 1, 2027 | Mar 1, 2028 |
-| 1.31 | 4.18[3](#fn-1-3-def) | 1.297 | 1.297 | v1.1.x | v1.7.0+ | Jan 1, 2027 | Aug 1, 2028 |
-| 1.30 | 4.17[3](#fn-1-3-def) | 1.291 | 1.291 | v1.1.x | v1.7.0+ | Aug 1, 2026 | Jul 1, 2027 |
-| 1.29 | 4.16[3](#fn-1-3-def) | 1.281 | 1.281 | v0.14.x | v1.7.0+ | Mar 1, 2026 | Sep 1, 2027 |
-| 1.28 | 4.15 | 1.275 | 1.275 | v0.12.x | v1.7.0+ | Nov 1, 2025 | Nov 1, 2026 |
-| 1.27 | 4.14 | 1.269 | 1.269 | v0.10.x | v1.7.0+ | Jul 1, 2025 | Nov 1, 2026 |
-| 1.26 | 4.13 | 1.259 | 1.257 | v0.10.x | v1.7.0+ | Mar 1, 2025 | Feb 1, 2026 |
+| 1.35 |  | 1.329 | 1.329 | v1.6.x | v1.8.0+ | Apr 1, 2028 |  |
+| 1.34 | 4.21[4](#fn-1-4-def) | 1.321 | 1.321 | v1.6.x | v1.8.0+ | Nov 1, 2027 | Oct 1, 2028 |
+| 1.33 | 4.20[4](#fn-1-4-def) | 1.319 | 1.319 | v1.1.x | v1.8.0+ | Jul 1, 2027 | Mar 1, 2028 |
+| 1.32 | 4.19[4](#fn-1-4-def) | 1.309 | 1.309 | v1.1.x | v1.8.0+ | Mar 1, 2027 | Mar 1, 2028 |
+| 1.31 | 4.18[3](#fn-1-3-def) | 1.297 | 1.297 | v1.1.x | v1.8.0+ | Jan 1, 2027 | Aug 1, 2028 |
+| 1.30 | 4.17[3](#fn-1-3-def) | 1.291 | 1.291 | v1.1.x | v1.8.0+ | Aug 1, 2026 | Jul 1, 2027 |
+| 1.29 | 4.16[3](#fn-1-3-def) | 1.281 | 1.281 | v0.14.x | v1.8.0+ | Mar 1, 2026 | Sep 1, 2027 |
+| 1.28 | 4.15 | 1.275 | 1.275 | v0.12.x | v1.8.0+ | Nov 1, 2025 | Nov 1, 2026 |
+| 1.27 | 4.14 | 1.269 | 1.269 | v0.10.x | v1.8.0+ | Jul 1, 2025 | Nov 1, 2026 |
+| 1.26 | 4.13 | 1.259 | 1.257 | v0.10.x | v1.8.0+ | Mar 1, 2025 | Feb 1, 2026 |
 | 1.25 | 4.12 | 1.249 | 1.251 | v0.8.x | v1.4.2+ | Nov 1, 2024 | Feb 1, 2026 |
 | 1.24 | 4.11 | 1.241 | 1.243 | v0.7.x | v1.3.2+ | Aug 1, 2024 | Mar 1, 2025 |
 | 1.23 | 4.10 | 1.233 | 1.233 | v0.4.x | v1.0.1[2](#fn-1-2-def) | Apr 1, 2024 | Mar 1, 2025 |

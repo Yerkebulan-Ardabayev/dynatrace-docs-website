@@ -1,86 +1,86 @@
 ---
 title: Install OneAgent on a server
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation
-scraped: 2026-02-06T16:18:55.331928
+scraped: 2026-02-18T21:15:32.773428
 ---
 
-# Установите OneAgent на сервер
+# Install OneAgent on a server
 
-# Установите OneAgent на сервер
+# Install OneAgent on a server
 
-* Последняя версия Dynatrace
-* 3-минутное чтение
-* Обновлено 22 января 2026 г.
+* Latest Dynatrace
+* 3-min read
+* Updated on Jan 22, 2026
 
-Следуйте этому руководству, чтобы установить Dynatrace OneAgent в первый раз.
+Follow this guide to install Dynatrace OneAgent for the very first time.
 
-После выполнения этого руководства OneAgent будет установлен на хосте и вы сможете использовать Dynatrace для мониторинга этого хоста и его процессов.
+Once you've followed this guide, you'll have OneAgent installed onto a host and can use Dynatrace to monitor that host and its processes.
 
-Информация на этой странице не зависит от платформы.
+The information on this page is platform-agnostic.
 
-Для получения информации об установке OneAgent и дополнительных функциях для конкретной ОС выберите свою ОС, чтобы получить подробные инструкции.
+For OS-specific information on OneAgent installation and advanced operation, select your OS for the detailed instructions.
 
-[ЭКС](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix) [Линукс](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux) [Солярис](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris) [Окна](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows) [зОС](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos)
+[AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix) [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux) [Solaris](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris) [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows) [zOS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos)
 
-## Предварительные условия
+## Prerequisites
 
-В этом руководстве предполагается, что у вас есть:
+This guide assumes that you have:
 
-* Среда Dynatrace.
-* Доступ администратора к хосту Linux, Windows или AIX (на котором не установлено ни одного агента OneAgent).
-* Сеть, поддерживающая связь SSL.
+* A Dynatrace environment.
+* Administrator access to a Linux, Windows, or AIX host (that doesn't have any existing OneAgent installations).
+* A network that supports SSL communication.
 
-## Настройка OneAgent
+## OneAgent setup
 
-Чтобы загрузить и установить OneAgent на хосте:
+To download and install OneAgent on a host:
 
-1. В **Dynatrace Hub** выберите **OneAgent**.
-2. Выберите **Настроить**.
-Откроется окно **Установить OneAgent**.
-3. Введите или выберите соответствующие параметры (пример см. на скриншоте ниже).
+1. In **Dynatrace Hub**, select **OneAgent**.
+2. Select **Set up** .
+   The **Install OneAgent** window opens.
+3. Enter or select the appropriate parameters (see the screenshot below for an example).
 
-* **Тип ОС**
+   * **OS type**
 
-Выберите **Linux**, **Windows** или **AIX** в зависимости от операционной системы вашего хоста.
+     Choose **Linux**, **Windows**, or **AIX** according to your host's OS.
 
-* **Архитектура** (только Linux)
-* **Режим мониторинга**
-Варианты: **Полный стек**, **Инфраструктура** или **Обнаружение**.
-Если вы используете бесплатную пробную версию Dynatrace, выберите **Полный пакет**, чтобы увидеть все, что Dynatrace способен отслеживать.
-Вы всегда можете изменить режим мониторинга после установки.
-* Для **Необязательных параметров** вы можете добавить **Пользовательское имя хоста** для упрощения идентификации.
-Остальные параметры выходят за рамки данного руководства.
+   * **Architecture** (Linux only)
+   * **Monitoring mode**
+     Options are **Full-Stack**, **Infrastructure**, or **Discovery**.
+     If you are using a free Dynatrace trial, select **Full-Stack** to see everything that Dynatrace is capable of observing.
+     You can always change the monitoring mode after installation.
+   * For **Optional parameters**, you might want to add a **Custom host name** for easier identification.
+     The rest of the parameters are out of scope for this guide.
 
-![Параметры настройки OneAgent](https://dt-cdn.net/images/screenshot-2025-02-05-at-15-06-49-2992-637e933241.png)
-4. Выберите **Создать токен**, чтобы создать токен API, который позволит вашей среде Dynatrace получить доступ к OneAgent.
-Скопируйте токен и сохраните его в безопасном месте, потому что вы не сможете снова получить к нему доступ.
-Вам больше ничего делать с этим токеном прямо сейчас не нужно.
+   ![OneAgent setup parameters](https://dt-cdn.net/images/screenshot-2025-02-05-at-15-06-49-2992-637e933241.png)
+4. Select **Generate token** to generate an API token that lets your Dynatrace environment access OneAgent.
+   Copy the token and save it somewhere safe, because you will not be able to access it again.
+   You don't need to do anything else with this token right now.
 
-5. Загрузите OneAgent.
-Либо используйте предоставленную команду CLI, либо выберите **Загрузить**.
-6. Проверьте подпись.
-Используйте предоставленную команду CLI.
-(Примечание: только для Linux и AIX.)
-7. Установите OneAgent.
-Либо используйте предоставленную команду CLI, либо запустите исполняемый файл, выбрав его в графическом интерфейсе.
-Следуйте инструкциям, описанным в установщике.
+5. Download OneAgent.
+   Either use the provided CLI command or select  **Download**.
+6. Verify the signature.
+   Use the provided CLI command.
+   (Note: Linux and AIX only.)
+7. Install OneAgent.
+   Either use the provided CLI command or run the executable by selecting it in the GUI.
+   Follow the steps as described in the installer.
 
-При установке через графический интерфейс необходимо добавить следующие параметры на экран **Необязательно: дополнительные настройки командной строки**:
-`--set-monitoring-mode=fullstack --set-app-log-content-access=true`
-8. Когда программа установки отобразит **Поздравляем!Dynatrace OneAgent успешно установлен!** означает, что OneAgent установлен на хосте.
-Выберите **Готово**, чтобы выйти из программы установки.
-9. Поскольку OneAgent не может внедряться в запущенные процессы, вам потребуется перезапустить все процессы, которые вы хотите отслеживать с помощью OneAgent.
-10. Чтобы убедиться, что OneAgent отслеживает ваш хост, откройте Dynatrace и перейдите в раздел **Инфраструктура и операции** > **Хост**.
-Если все работает правильно, вы увидите имя вашего хоста в таблице **Хосты**.
-Пример смотрите на скриншоте ниже.
+   If you install via the GUI, you should add the following options in the **Optional: advanced command-line settings** screen:
+   `--set-monitoring-mode=fullstack --set-app-log-content-access=true`
+8. When the installer shows a **Congratulations! Dynatrace OneAgent was successfully installed!** message, OneAgent is installed on the host.
+   Select **Finish** to exit the installer.
+9. Because OneAgent can't inject itself into running processes, you'll need to restart all processes that you want OneAgent to monitor.
+10. To confirm that OneAgent is monitoring your host, open Dynatrace and go to **Infrastructure & Operations** > **Host**.
+    If everything is working as expected, you'll see the name of your host in the **Hosts** table.
+    See the screenshot below for an example.
 
-![Представление инфраструктуры и операций недавно добавленного OneAgent на хосте](https://dt-cdn.net/images/screenshot-2025-02-04-at-13-32-36-2598-439524d1f9.png)
+    ![Infrastructure & Operations view of a newly added OneAgent on host](https://dt-cdn.net/images/screenshot-2025-02-04-at-13-32-36-2598-439524d1f9.png)
 
-Теперь OneAgent настроен и контролирует ваш хост.См. [Начните работу с Dynatrace](/docs/discover-dynatrace/get-started "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments."), чтобы продолжить свое первое путешествие с Dynatrace.
+OneAgent is now set up and monitoring your host. See [Get started with Dynatrace](/docs/discover-dynatrace/get-started "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") to continue your first journey with Dynatrace.
 
-## Похожие темы
+## Related topics
 
-* [Возможности OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.")
-* [Инфраструктура и операции](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor host and data center health to detect issues and improve infrastructure performance.")
-* [Настройки на уровне хоста](/docs/observe/infrastructure-observability/hosts/configuration "Host-level settings")
-* [Режимы мониторинга инфраструктуры и обнаружения](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.")
+* [OneAgent features](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.")
+* [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
+* [Host-level settings](/docs/observe/infrastructure-observability/hosts/configuration "Host-level settings")
+* [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.")

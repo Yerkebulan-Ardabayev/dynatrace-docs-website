@@ -1,7 +1,7 @@
 ---
 title: HTTP monitors reporting results
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic
-scraped: 2026-02-18T05:36:56.337844
+scraped: 2026-02-18T21:21:44.856142
 ---
 
 # HTTP monitors reporting results

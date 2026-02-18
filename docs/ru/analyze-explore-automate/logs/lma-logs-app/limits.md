@@ -1,42 +1,42 @@
 ---
 title: Limits in Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/limits
-scraped: 2026-02-06T16:00:23.763085
+scraped: 2026-02-18T21:17:58.779504
 ---
 
-# Ограничения в журналах
+# Limits in Logs
 
-# Ограничения в журналах
+# Limits in Logs
 
-* Последняя версия Dynatrace
-* Ссылка
-* 1 минута чтения
-* Опубликовано 19 января 2026 г.
+* Latest Dynatrace
+* Reference
+* 1-min read
+* Published Jan 19, 2026
 
-На этой странице описаны ограничения, которые применяются при запросе и просмотре журналов в ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы**, а также способы изменения ограничений по умолчанию.
+This page describes the limits that apply when querying and viewing logs in ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**, as well as how to change the default limits.
 
-## Строки результатов запроса (**Ограничение количества записей**)
+## Query result rows (**Record limit**)
 
-По умолчанию ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы** отображают максимум 1000 строк в результате вашего запроса.
+By default, ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** displays a maximum of 1000 rows as a result of your query.
 
-Вы можете настроить параметр **Лимит записи** до 50 000 строк, чтобы просмотреть больше результатов в одном запросе.
+You can adjust the **Record limit** setting up to 50,000 rows to view more results in a single query.
 
-## Сканированные данные на каждый запрос (**Ограничение количества прочитанных данных**)
+## Scanned data per query (**Read data limit**)
 
-![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы** считывают максимум 500 ГБ данных на каждый запрос.Запрос останавливается после достижения этого предела.
+![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** reads a maximum of 500 GB of data per query. The query stops after reaching this limit.
 
-Вы можете настроить параметр **Лимит чтения данных** на желаемое значение, чтобы сканировать больше данных, но вы не можете установить для него неограниченное значение.
+You can adjust the **Read data limit** setting to your desired value to scan more data, but you cannot set it to unlimited.
 
-## Размер данных результата (**Ограничение размера результата**)
+## Result data size (**Result size limit**)
 
-Размер результата данных, возвращаемых запросом, по умолчанию ограничен 100 МБ.
+The result size of data returned by a query is limited to 100 MB by default.
 
-Вы можете уменьшить параметр **Предел размера результата** и выбрать значение от 1 до 100 МБ в зависимости от ваших потребностей.
+You can reduce the **Result size limit** setting and choose a value between 1 and 100 MB based on your needs.
 
-## Настройка ограничений
+## Adjust limits
 
-Чтобы настроить ограничения для ваших запросов в ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы**
+To adjust the limits for your queries in ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**
 
-1. Перейдите в раздел ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы**.
-2. В правом верхнем углу рядом с пунктом **Выполнить запрос** выберите (**Меню Действия**) > **Настройки приложения**.
-3. На панели **Настройки приложения** настройте нужные ограничения.
+1. Go to ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
+2. In the upper-right corner, next to **Run query**, select  (**Actions menu**) >  **App settings**.
+3. In the **App settings** pane, adjust the desired limits.

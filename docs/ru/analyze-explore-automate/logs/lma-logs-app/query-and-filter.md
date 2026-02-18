@@ -1,109 +1,109 @@
 ---
 title: Query and filter logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter
-scraped: 2026-02-06T16:00:13.052335
+scraped: 2026-02-18T21:17:56.258123
 ---
 
-# Журналы запросов и фильтров
+# Query and filter logs
 
-# Журналы запросов и фильтров
+# Query and filter logs
 
-* Последняя версия Dynatrace
-* Практическое руководство
-* 4-минутное чтение
-* Опубликовано 2 июля 2025 г.
+* Latest Dynatrace
+* How-to guide
+* 4-min read
+* Published Jul 02, 2025
 
-В ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы** вы можете создавать запросы, использовать фильтры, искать определенные строки журнала и многое другое.
+In ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**, you can build queries, use filters, search for particular log lines, and more.
 
-## Создайте запрос в журналах **Logs**
+## Build a query in Logs **Logs**
 
-Запросите журналы, указав оператор сегмента и фильтра с ключами и значениями с вашими условиями поиска, компараторами и логическими операторами.
+Query logs by specifying a segment and filter statement with keys and values with your search terms, comparators, and logical operators.
 
-* **Сегмент**: общий фильтр для данных наблюдения в приложениях на платформе Dynatrace.
-* **Ключ**: поле или атрибут, по которому требуется фильтровать.
-* **Значение**: конкретное значение, которое вы ищете.
-* **Логический оператор**: соединяет несколько операторов фильтра.
+* **Segment**: A common filter for observability data across apps on the Dynatrace platform.
+* **Key**: The field or attribute you want to filter on.
+* **Value**: The specific value that you're looking for.
+* **Logical operator**: Connects multiple filter statements.
 
-По умолчанию все операторы фильтра подключены к `AND`.
-* **Компаратор**: определяет тип сравнения.
+  By default, all filter statements are `AND` connected.
+* **Comparator**: Determines the type of comparison.
 
-![Поле фильтра в приложении «Журналы»](https://dt-cdn.net/images/untitled-001-1835-80e79a2919.png)
+![Filter field in Logs app](https://dt-cdn.net/images/untitled-001-1835-80e79a2919.png)
 
-[Фильтр с гранями](/docs/analyze-explore-automate/logs/lma-logs-app/facets "Filter with facets in the Dynatrace Logs app."), чтобы автоматически добавлять ключи и значения в фильтр.
+[Filter with facets](/docs/analyze-explore-automate/logs/lma-logs-app/facets "Filter with facets in the Dynatrace Logs app.") to add keys and and values to your filter automatically.
 
-Используйте средство выбора даты, чтобы применить правильный временной интервал для вашего запроса.
+Use the date picker to apply the correct timeframe for your query.
 
-Выберите **Выполнить запрос**, чтобы выполнить запрос.
+Select **Run query** to execute the query.
 
-После того как ваш запрос вернет записи в таблицу результатов, вы можете выполнить поиск по ключевым словам в этих данных.Используйте поле **Искать в результатах**, чтобы отфильтровать таблицу по ключевому слову.Эта фильтрация не выполняет новый запрос, а только показывает уже возвращенные и загруженные результаты в вашем браузере.
+After your query has returned records in the result table, you can search for keywords in this data. Use the **Search in results** field to filter the table using your keyword. This filtering does not execute a new query but only shows the already returned and loaded results in your browser.
 
-## Использовать сегменты **Сегменты**
+## Use Segments **Segments**
 
-По возможности применяйте сегментный фильтр к вашему запросу.
+Apply a segment filter to your query whenever possible.
 
-* Сегменты позволяют фильтровать журналы и другие наблюдаемые данные с помощью единого фильтра.
-* Сегменты удобны для ограничения ваших запросов только определенными сегментами Grail, что уменьшает объем данных, которые необходимо сканировать для получения релевантных результатов.
+* Segments let you filter on logs and other observability data with a consistent filter.
+* Segments are convenient to limit your queries to only specific Grail buckets, which reduces the amount of data that you need to scan to get the relevant results.
 
-Дополнительные сведения см. в [Сегментировать журналы по сегментам](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket "Segment logs by bucket with segments") и [лучшие практики для журналов](/docs/analyze-explore-automate/logs/lma-best-practices#use-bucket-filters "Best practices for setting up Log Management and Analytics with Dynatrace.").
-* Сегменты позволяют сохранять и повторно использовать часто используемые фильтры, которые применимы в ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналах** и в других приложениях Dynatrace.
+  For additional details, see [Segment logs by bucket](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket "Segment logs by bucket with segments") and the [best practices for logs](/docs/analyze-explore-automate/logs/lma-best-practices#use-bucket-filters "Best practices for setting up Log Management and Analytics with Dynatrace.").
+* Segments let you save and reuse commonly used filters, which are applicable in ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** and across other Dynatrace apps.
 
-## Изучите последние фильтры и фильтры-штифты
+## Explore recent filters and pin filters
 
-![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы** сохраняют недавно использованные фильтры, чтобы вы могли повторно применить их одним щелчком мыши.Вы также можете сохранить фильтры, закрепив их.
+![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** saves your recently used filters so that you can re-apply them with just a click. You can also persist filters by pinning them.
 
-Выберите поле фильтра и проверьте раздел **Недавно использованные фильтры**.В этом разделе отображаются недавно примененные вами фильтры, причем самые последние находятся вверху.Когда вы вводите новый оператор фильтра, этот список сокращается до аналогичных операторов из недавно использованных фильтров.
+Select the filter field and check the **Recently used filters** section. The section displays filters you have recently applied, with the most recent on top. As you type a new filter statement, this list is reduced to match similar statements from your recently used filters.
 
-Выберите (**Закрепить фильтр**), чтобы закрепить любой созданный вами фильтр.Если поле фильтра пусто, выберите его и прокрутите вниз до раздела **Закрепленные фильтры**, чтобы просмотреть ранее закрепленные фильтры.Открепите фильтр, снова выбрав (**Закрепить фильтр**).
+Select  (**Pin filter**) to pin any filter that you've created. When the filter field is empty, select it and scroll down to the **Pinned filters** section to view your previously pinned filters. Unpin a filter by selecting  (**Pin filter**) again.
 
-## Поиск фразы в логах
+## Search for a phrase in logs
 
-Если вам нужно найти журналы, содержащие определенную фразу, у вас есть несколько вариантов: от самой широкой до более узкой фильтрации.
+If you need to find logs that contain a specific phrase, you have multiple options, which range from broadest to more narrow filtering.
 
-### Поиск по всем полям
+### Search from all fields
 
-Используйте `*` вместо ключевого имени и `~` в качестве компаратора для поиска вашей фразы во всех полях записи журнала, соответствующих вашим фильтрам.
+Use `*` instead of a keyname and `~` as the comparator to search for your phrase from all the fields of the log record that match your filters.
 
-Например, фильтр `* ~ "failed to charge card"` соответствует журналам, которые содержат эту фразу в любом поле.
+For example, the `* ~ "failed to charge card"` filter matches logs that contain this phrase in any field.
 
-Это эквивалентно использованию команды DQL [`search`](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search «Команды фильтрации и поиска DQL»).
+This is equivalent to using the [`search`](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands") DQL command.
 
-### Поиск по `content`
+### Search from `content`
 
-Обычно исходные полезные данные журнала сохраняются в поле `content` записи журнала.Ограничьте поиск этим полем, чтобы повысить производительность запроса.
+Typically, original log payload is preserved in the `content` field of the log record. Restrict your search to this field to increase query performance.
 
-Например, фильтр `content ~ "failed to charge card"` соответствует журналам, которые содержат эту фразу в поле `content`.
+For example, the `content ~ "failed to charge card"` filter matches logs that contain this phrase in the `content` field.
 
-Это эквивалентно использованию строковой функции [`matchesPhrase`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase «Список строковых функций DQL.») DQL.
+This is equivalent to using the [`matchesPhrase`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions.") DQL string function.
 
-### Подстановочный знак в значении
+### Wildcard in value
 
-Вы также можете указать только часть значения с помощью подстановочного знака, используя `*` в поисковом запросе.
+You can also specify just a part of the value with a wildcard by using `*` in your search term.
 
-Например, фильтр `content = "*card*"` соответствует журналам, содержащим фразу `card` в поле `content`.
+For example, the `content = "*card*"` filter matches logs that contain the `card` phrase in the `content` field.
 
-Это эквивалентно использованию строковой функции [`matchesValue`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesValue «Список строковых функций DQL.»).
+This is equivalent to using the [`matchesValue`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesValue "A list of DQL string functions.") DQL string function.
 
-Полную информацию см. в [Поле фильтра](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+For the full reference, see [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
 
-## Фильтрация по полю с несколькими значениями
+## Filter on a field with multiple values
 
-По умолчанию все операторы фильтра связаны с логическим оператором `AND`.Например, `status = ERROR` `status = WARN` не возвращает результатов, поскольку одна запись журнала не может иметь два статуса.
+By default, all filter statements are connected with the `AND` logical operator. For example, `status = ERROR` `status = WARN` returns no results, as one a log record cannot have two statuses.
 
-Для запроса по полю с разными значениями используйте оператор `in`.Например, `status in (ERROR, WARN)` возвращает журналы со статусом `ERROR` или `WARN`.Альтернативно вы можете использовать `OR` для объединения нескольких операторов фильтра.
+To query by a field with different values, use the `in` operator. For example, `status in (ERROR, WARN)` returns logs that have either the `ERROR` or `WARN` status. Alternatively, you can use `OR` to combine multiple filter statements.
 
-## Используйте автоматические предложения для фильтров журналов
+## Leverage automatic suggestions for log filters
 
-![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы** предоставляют предложения по автозаполнению ключей, компараторов и значений.
+![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** provides autocomplete suggestions for keys, comparators, and values.
 
-* Выберите поле фильтра, чтобы получить список предложений для наиболее распространенных или релевантных полей для фильтрации.
-* После выбора поля вы получаете список предложений для компараторов.
-* После выбора компаратора вы получаете список предлагаемых значений для этого поля.Это не поддерживается для поля `content`.
+* Select the filter field to get a list of suggestions for most common or relevant fields for filtering.
+* After choosing a field, you get a list of suggestions for comparators.
+* After choosing a comparator, you get a list of suggestions for values for this field. This is not supported for the `content` field.
 
-Обратите внимание, что предложения представлены на основе фактических значений, запрошенных в фоновом режиме из данных журнала, но стоимость запроса для контекстно релевантных предложений не взимается.
+Note that suggestions are presented based on actual values queried in the background from your log data, but there is no query cost for contextually relevant suggestions.
 
-## Похожие темы
+## Related topics
 
-* [Поле фильтра](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.")
-* [Фильтр с гранями](/docs/analyze-explore-automate/logs/lma-logs-app/facets "Filter with facets in the Dynatrace Logs app.")
-* [Сегментировать журналы по сегментам](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket "Segment logs by bucket with segments")
-* [Лучшие практики управления журналами и аналитики](/docs/analyze-explore-automate/logs/lma-best-practices "Best practices for setting up Log Management and Analytics with Dynatrace.")
+* [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.")
+* [Filter with facets](/docs/analyze-explore-automate/logs/lma-logs-app/facets "Filter with facets in the Dynatrace Logs app.")
+* [Segment logs by bucket](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket "Segment logs by bucket with segments")
+* [Log Management and Analytics best practices](/docs/analyze-explore-automate/logs/lma-best-practices "Best practices for setting up Log Management and Analytics with Dynatrace.")

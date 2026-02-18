@@ -1,177 +1,177 @@
 ---
 title: Dynatrace Hub
 source: https://www.dynatrace.com/docs/manage/hub
-scraped: 2026-02-06T16:20:12.128419
+scraped: 2026-02-18T21:16:51.219350
 ---
 
-# Центр Dynatrace
+# Dynatrace Hub
 
-# Центр Dynatrace
+# Dynatrace Hub
 
-* Последняя версия Dynatrace
-* Приложение
-* 7-минутное чтение
-* Обновлено 25 ноября 2025 г.
+* Latest Dynatrace
+* App
+* 7-min read
+* Updated on Nov 25, 2025
 
-Раскройте весь потенциал Dynatrace, найдя, активировав и запустив приложения и расширения, отвечающие вашим конкретным потребностям в наблюдении.
+Unlock the full potential of Dynatrace by finding, activating, and running apps and extensions that address your specific observability needs.
 
-**Dynatrace Hub** ![Центр](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") — это центральное место для изучения и активации всех возможностей Dynatrace.Вы можете найти решения для мониторинга вашей среды, анализа данных наблюдения, чтобы получить ценную информацию и автоматизировать решение проблем на основе вашей информации.Вы будете в курсе последних дополнений к платформе Dynatrace.Вы можете легко устанавливать приложения и расширения одним щелчком мыши через Dynatrace Hub и получать постоянные обновления.Вы можете управлять своими приложениями, чтобы сохранять контроль.
+**Dynatrace Hub** ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") is the central place to explore and activate all capabilities of Dynatrace. You can find solutions to monitor your environment, analyze your observability data to get insights and automate problem resolution based on your insights. You stay up to date with recent additions to the Dynatrace Platform. You can easily install applications and extensions with one click via Dynatrace Hub and benefit from continuous updates. You can manage your apps to stay in control.
 
-* Просмотрите все возможности платформы Dynatrace.
-* Будьте в курсе последних дополнений к платформе Dynatrace.
-* Найдите решение вашей проблемы с мониторингом
-* Простая установка приложений и расширений в один клик.
-* Получайте постоянные обновления, чтобы получать новейшие функции.
-* Управляйте своими приложениями
+* Browse all the capabilities of the Dynatrace Platform
+* Keep up to date with the recent additions to the Dynatrace Platform
+* Find the solution to your monitoring problem
+* Easy one-click installation of apps and extensions
+* Get continuous updates to receive the latest features
+* Manage your apps
 
-## Где найти центр Dynatrace
+## Where to find Dynatrace Hub
 
-Вы можете получить доступ к Dynatrace Hub с помощью поиска в [пусковая установка](/docs/discover-dynatrace/get-started/dynatrace-ui#launcher "Navigate the latest Dynatrace").
+You can access Dynatrace Hub via search in the [Launcher](/docs/discover-dynatrace/get-started/dynatrace-ui#launcher "Navigate the latest Dynatrace").
 
-Найдите «Hub» и откройте Dynatrace Hub.
+Search for âHubâ and open Dynatrace Hub.
 
-Альтернативно вы можете выбрать **Dynatrace Hub** в разделе **Управление** панели запуска.
+Alternatively, you can select **Dynatrace Hub** in the **Manage** section on the Launcher.
 
-## Что указано в Dynatrace Hub
+## What's listed in Dynatrace Hub
 
-Как правило, Dynatrace Hub перечисляет любые технологии, которые Dynatrace официально поддерживает, например:
+Generally, Dynatrace Hub lists any technology that Dynatrace officially supports, such as:
 
-* Готовые к использованию технологии OneAgent.
-* Поддерживаемые платформы открытой наблюдения.
-* Расширения, созданные Dynatrace.
-* Dynatrace создавала приложения на основе AppEngine.
+* OneAgent out-of-the-box supported technologies.
+* Supported Open Observability Frameworks.
+* Dynatrace built extensions.
+* Dynatrace built apps based on the AppEngine.
 
-## Приложения против расширений
+## Apps vs. Extensions
 
-### Приложения
+### Apps
 
-По сравнению с другими функциями платформы Dynatrace, приложения Dynatrace меньше по размеру, автономны и ориентированы на конкретные случаи использования.Но приложение Dynatrace не является изолированным приложением: платформа Dynatrace реализует концепцию намерений, которая обеспечивает взаимодействие между приложениями Dynatrace.
+Compared to other Dynatrace platform functionality, Dynatrace Apps are smaller, self-contained, and focused on specific use cases. But a Dynatrace App is not an isolated application: the Dynatrace platform implements an intent concept that allows interoperability between Dynatrace Apps.
 
-Для получения дополнительной информации см. [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!").
+For more information, see [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!").
 
-### Расширения
+### Extensions
 
-С помощью [Расширения 2.0](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") вы можете декларативно переносить метрики в Dynatrace, которые обеспечивают возможности аналитики и мониторинга платформы.Dynatrace связывает ваши данные значимым образом, чтобы вы могли исследовать их, создавать инструменты и настраивать оповещения.
+With [Extensions 2.0](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") you can declaratively bring metrics into Dynatrace that feed platform analytics and monitoring capabilities. Dynatrace links your data in a meaningful way so you can explore it, build instrumentation, and set up alerting.
 
-Вы можете управлять своими расширениями с помощью [Приложение расширений»¿](https://www.dynatrace.com/hub/detail/extension-manager/).
+You can manage your extensions with the [Extensions appï»¿](https://www.dynatrace.com/hub/detail/extension-manager/).
 
-## Обнаружить
+## Discover
 
-Вы можете просмотреть все списки Hub, используя предоставленные категории.
+You can browse through all the Hub listings using the provided categories.
 
-![Просмотр приложений в Dynatrace Hub](https://dt-cdn.net/images/hub-browse-1835-1db425b4b1.png)
+![Browse apps in Dynatrace Hub](https://dt-cdn.net/images/hub-browse-1835-1db425b4b1.png)
 
-Если у вас есть конкретная проблема, вы можете выполнить поиск в списках Hub и отфильтровать результаты.
+If you have a specific problem in mind, you can search the Hub listings and filter your results.
 
-### Получить информацию
+### Get information
 
-Найдя интересное объявление, выберите значок приложения, чтобы открыть страницу обзора приложения со следующей информацией:
+Once you find an interesting listing, select the app icon to open the app overview page with the following information:
 
-* **Информация о продукте**:
-Обзор приложения, начало работы, варианты использования и ссылки на соответствующие ресурсы.
-* **Техническая информация**:
-Все, что вам нужно, чтобы ваши пользователи могли начать работу с приложением, включая необходимые разрешения и поддерживаемый [намерения](/docs/analyze-explore-automate/dashboards-and-notebooks/open-with "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
-* **Содержание**:
-Все готовые панели мониторинга, блокноты и действия рабочих процессов, включенные в это приложение.Вы можете начать использовать их, как только приложение будет установлено.
-* **Примечания к выпуску**
+* **Product information**:  
+  App overview, getting started, use cases, and links to related resources.
+* **Technical information**:  
+  All that you need to get your users started with the app, including required permissions and supported [intents](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Contents**:  
+  All ready-made dashboards, notebooks, and workflow actions that are included with this app. You can start using them as soon as the app is installed.
+* **Release notes**
 
-## Управлять
+## Manage
 
-Dynatrace Hub дает вам полный контроль над приложениями, доступными в вашей среде.
+Dynatrace Hub gives you full control over apps available in your environment.
 
-![Управление приложениями в Dynatrace Hub](https://dt-cdn.net/images/hub-manage-1834-56c55de3d9.png)
+![Manage apps in Dynatrace Hub](https://dt-cdn.net/images/hub-manage-1834-56c55de3d9.png)
 
-### Фильтр
+### Filter
 
-Вы можете отфильтровать список для пользовательских приложений (предоставленных вами) и приложений Dynatrace (предоставленных Dynatrace).
+You can filter the list for custom apps (provided by you) and Dynatrace Apps (provided by Dynatrace).
 
-Для управления установленными приложениями вы можете использовать фильтры, чтобы отсортировать их по статусу.Например, вы можете увидеть, для каких приложений доступны обновления или в каких приложениях есть проблемы, которые необходимо устранить.
+To manage your installed apps, you can use filters to sort them by their status. For example, you can see which apps have updates available or which apps have issues that need to be fixed.
 
-### Установить
+### Install
 
-Вам необходимы разрешения [App-движок: приложения: установить](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#app-engine-apps-install "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") для установки приложений и предоставления к ним доступа пользователям вашей среды.
+You need [app-engine:apps:install](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#app-engine-apps-install "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") permissions to install apps and make them available to your environment users.
 
-Чтобы установить приложение, откройте обзор приложения и выберите **Установить**.
+To install an app, open the app overview and select **Install**.
 
-Установка автоматическая и занимает несколько секунд.
+The installation is automatic and takes a few seconds.
 
-После установки приложение доступно всем пользователям вашей среды.Обязательно распределите потенциальных пользователей приложения по группам с разрешениями, указанными на вкладке **Техническая информация** обзора приложения.Для получения дополнительной информации см. [Управление политиками IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+After the installation, the app is available to all the users of your environment. Make sure you assign your potential app users to groups with the permissions listed in the **Technical information** tab of the app overview. For more information, see [Manage IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
 
-Если у вас нет разрешения на установку приложения
+If you don't have permission to install the app
 
-1. Отправьте запрос, открыв обзор приложения и выбрав **Запросить установку**.
-2. Выберите один из вариантов:
+1. Send a request by opening the app overview and selecting **Request install**.
+2. Choose one of the options:
 
-* **Запрос на автоматическую установку**âВ разделе **Отправить запрос** выберите ответственного лица, которое получит ваш запрос, оставьте комментарий в поле и выберите **Отправить запрос**.Обратите внимание: чтобы запросы на автоматическую установку работали, администратору необходимо [сначала укажите контактные данные](/docs/manage/hub#auto-install-requests "See the information about Dynatrace Hub.").
-* **Запрос на установку вручную**âВыберите **Запросить вручную**, скопируйте предоставленную информацию и передайте ее администратору, чтобы он помог вам установить приложение.
+   * **Automatic installation request**âUnder **Send a request**, view the responsible person who will receive your request, provide a comment in the field, and select **Send Request**. Note that for automatic installation requests to work, an admin has to [set up the contact details first](/docs/manage/hub#auto-install-requests "See the information about Dynatrace Hub.").
+   * **Manual installation request**âSelect **Request manually**, copy the provided information, and pass it on to your admin to help you install the app.
 
-### Включить запросы автоматической установки
+### Enable automatic installation requests
 
-Отправка автоматического запроса доступна только в том случае, если администратор настроил контакты для запросов на автоматическую установку.Используйте один из вариантов ниже, чтобы настроить контакты.
+Sending an automatic request is available only when an admin has set up the contacts for automatic installation requests. Use one of the options below to set up the contacts.
 
-* В Dynatrace Hub:
+* In Dynatrace Hub:
 
-1. Выберите значок ![Настраиваемый](https://dt-cdn.net/images/configurable-490-8b015913d4.svg "Configurable").
-2. Выберите **Добавить администратора**, чтобы добавить сведения об администраторе.При необходимости можно добавить более одного контакта.
-3. Выберите **Сохранить**.
-* В настройках:
+  1. Select ![Configurable](https://dt-cdn.net/images/configurable-490-8b015913d4.svg "Configurable") icon.
+  2. Select **Add admin** to add the admin details. More than one contact can be added if needed.
+  3. Select **Save**.
+* In Settings:
 
-1. Откройте раздел **Общие** > **Запросы хаба**.
-2. Выберите **Добавить администратора** и добавьте сведения об администраторе.
-3. Выберите **Сохранить**.
+  1. Go to **General** > **Hub Requests**.
+  2. Select **Add admin** and add the admin details.
+  3. Select **Save**.
 
-Для запросов на автоматическую установку требуется хотя бы один контакт администратора.
+Automatic installation requests require at least one admin contact.
 
-### Автоматические обновления
+### Automatic updates
 
-Все приложения, установленные через Dynatrace Hub, автоматически обновляются.
+All apps that were installed via Dynatrace Hub are automatically kept up-to-date.
 
-### Уведомления об обновлении приложения
+### App update notifications
 
-Dynatrace Hub может отправлять вам уведомления по электронной почте, когда для приложения доступно обновление.
+Dynatrace Hub can send you an email notification when there's an update available for an app.
 
-Чтобы получать уведомления об обновлениях, пользователям необходимы как минимум следующие разрешения.
+To receive update notifications, users need at least the following permissions.
 
-|Разрешение |Предоставляет доступ к |
-|--- |--- |
-|Требуется `storage:system:read` |Просмотр событий обновления приложения.|
-|необязательный `storage:event.provider = "APP_REGISTRY"` |Ограничьте доступ к событиям только событиями, связанными с приложением.|
+| Permission | Grants access to |
+| --- | --- |
+| Required `storage:system:read` | View app update events. |
+| optional `storage:event.provider = "APP_REGISTRY"` | Restrict event access to app-related events only. |
 
-Чтобы управлять уведомлениями по электронной почте об обновлениях приложений
+To manage your email notifications about app updates
 
-1. В Dynatrace перейдите в **Hub** и перейдите на вкладку **Управление**.
-2. Выберите **Уведомлять об обновлениях приложения**.
-Если вы уже включили уведомления, кнопка теперь имеет статус **Уведомления об обновлении включены**.
-3. Откройте список и сделайте свой выбор.Есть окно поиска, чтобы упростить задачу.
+1. In Dynatrace, go to  **Hub** and switch to the **Manage** tab.
+2. Select  **Notify on app updates**.  
+   If you have already enabled notifications, the button is now  **Update notifications enabled**.
+3. Open the list and make your selections. There's a search box to make things easier.
 
-* Чтобы получать уведомления по электронной почте при обновлении определенных приложений, установите их флажки.
-* Чтобы перестать получать уведомления об определенных приложениях, снимите их флажки.
-4. Чтобы сохранить изменения, закройте список и выберите **Применить**.
+   * To receive email notifications when certain apps are updated, select their checkboxes.
+   * To stop receiving notifications about certain apps, clear their checkboxes.
+4. To save your changes, close the list and select **Apply**.
 
-Вы начнете получать электронную почту об обновлениях выбранных приложений.
+   You will start receiving email about updates to the selected apps.
 
-### Удалить
+### Uninstall
 
-Для удаления приложения вам необходимы разрешения [App-движок: приложения: удалить](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#app-engine-apps-delete "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+You need [app-engine:apps:delete](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#app-engine-apps-delete "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") permissions to uninstall an app.
 
-Чтобы удалить приложение:
+To uninstall an app:
 
-1. Откройте обзор приложения.
-2. Выберите > **Удалить**.
+1. Open an app overview.
+2. Select  >  **Uninstall**.
 
-### Добавление подписок Hub
+### Add Hub subscriptions
 
-Dynatrace может предоставить вам приложения или выпуски, специально созданные и распространяемые в вашей среде.
+Dynatrace can provide you with apps or releases specifically created and distributed to your environment.
 
-В таких случаях представитель Dynatrace свяжется с вами и предоставит идентификатор канала, который вам необходимо добавить в свою среду, чтобы включить подписку на определенное приложение или выпуск.
+In such cases, a Dynatrace representative will reach out to you and provide you with a channel ID that you need to add to your environment to enable a subscription to a specific app or release.
 
-После включения подписки ваше приложение для конкретной среды будет доступно вам в Dynatrace Hub, и вы сможете управлять им, как любым другим приложением.Таким образом вы можете настроить несколько подписок, каждая для отдельного приложения/выпуска.
+After you enable the subscription, your environment-specific app will be available to you in Dynatrace Hub, and you can manage it like any other app. You can set up multiple subscriptions, each for a different app/release, in this manner.
 
-Из-за кэширования активация подписки может занять до 30 минут.
+Because of caching, the subscription might take up to 30 minutes to become active.
 
-Для включения подписок вам необходим доступ для чтения и записи к настройкам.
+You need read-and-write access to settings to enable subscriptions.
 
-Пример политики
+Example policy
 
 ```
 ALLOW settings:objects:read, settings:objects:write, settings:schemas:read
@@ -181,34 +181,36 @@ ALLOW settings:objects:read, settings:objects:write, settings:schemas:read
 WHERE settings:schemaId = "builtin:hub-channel.subscriptions";
 ```
 
-Чтобы зарегистрировать подписку в вашей среде
+To enroll a subscription in your environment
 
-1. Откройте приложение ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Настройки** и выберите **Общие** > **Подписки Hub**.
-2. Выберите **Добавить подписку**.
-3. В поле **Название подписки** добавьте осмысленное имя, чтобы ваша команда знала, для чего она нужна.
-4. В поле **Идентификатор канала** вставьте предоставленный идентификатор канала.Идентификатор канала выглядит следующим образом: `c576b6da-af39-41cd-af90-f179e5c67b6e`.
-5. Необязательно. В поле **Описание** опишите цель подписки или добавьте дополнительные комментарии.
-6. Выберите **Сохранить изменения**.
+1. Open ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** app and go to **General** > **Hub subscriptions**.
+2. Select **Add subscription**.
+3. In **Name of subscription**, add a meaningful name so that your team knows what it's for.
+4. In **Channel ID**, paste the provided channel identifier. The channel ID looks like this: `c576b6da-af39-41cd-af90-f179e5c67b6e`.
+5. Optional In **Description**, describe the subscription's purpose or include additional comments.
+6. Select **Save changes**.
 
-После добавления подписки вы можете включить или отключить ее с помощью переключателя в столбце **Статус**.
+After you added a subscription, you can enable or disable it using a toggle in the **Status** column.
 
-## Процесс проверки приложения Dynatrace
+## Dynatrace App verification process
 
-Процесс распространения приложений Dynatrace Hub предназначен для обеспечения безопасности и надежности приложений, доступных в вашей среде.
 
-Чтобы гарантировать их подлинность и целостность, Dynatrace проверяет все приложения Dynatrace перед их включением в список:
 
-### Подлинность приложения Dynatrace
+The Dynatrace Hub app distribution process is designed to ensure that apps available in your environment are secure and trusted.
 
-Как пользователь или администратор Dynatrace, вы можете быть уверены, кто разработал приложение и как оно попало в вашу среду.
+To ensure their authenticity and integrity, Dynatrace verifies all Dynatrace Apps before they are listed:
 
-* В списке приложений Hub содержится информация о поставщике приложения.
-* На вкладке Hub **Управление** приложения, не прошедшие стандартную проверку Dynatrace, выделены как «Пользовательские приложения».
+### Dynatrace App authenticity
 
-### Целостность приложения Dynatrace
+As a Dynatrace user or admin, you can be sure who developed the app and how it reached your environment.
 
-Целостность приложения гарантирует, что приложение не было изменено с момента его выпуска до момента его размещения в Dynatrace Hub.
+* The Hub listing for an app gives you the information on the app provider.
+* The Hub **Manage** tab highlights apps that haven't gone through the Dynatrace standard verification process as "Custom apps".
 
-### Подписание кода приложения Dynatrace
+### Dynatrace App integrity
 
-Для достижения целей аутентичности и целостности приложениям Dynatrace требуется действительный сертификат.Этот сертификат, в дополнение к другим автоматическим проверкам, связанным с безопасностью, проверяется перед размещением приложения.
+App integrity ensures that the app has not been modified between its release and the time it is listed on the Dynatrace Hub.
+
+### Dynatrace App code signing
+
+To meet the authenticity and integrity goals, Dynatrace apps require a valid certificate. This certificate, in addition to other security-related automated checks, is verified before listing the app.

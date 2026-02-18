@@ -1,17 +1,17 @@
 ---
 title: What's new in Dynatrace SaaS
 source: https://www.dynatrace.com/docs/whats-new/saas
-scraped: 2026-02-06T16:18:45.796011
+scraped: 2026-02-18T21:15:20.806543
 ---
 
-# Что нового в Dynatrace SaaS
+# What's new in Dynatrace SaaS
 
-# Что нового в Dynatrace SaaS
+# What's new in Dynatrace SaaS
 
-* Последняя версия Dynatrace
-* Примечания к выпуску
-* Обновлено 2 февраля 2026 г.
+* Latest Dynatrace
+* Release notes
+* Updated on Feb 02, 2026
 
-Эти примечания к выпуску наших обновлений Dynatrace SaaS, выпускаемых раз в две недели, демонстрирующие новые функции, изменения и исправления ошибок, помогут вам быть в курсе событий и быть на шаг впереди.
+These release notes for our bi-weekly Dynatrace SaaS updatesâshowcasing new features, changes, and bug fixesâkeep you informed and ahead of the game.
 
-Невозможно отобразить DataTable.Проверьте конфигурацию.
+Unable to render DataTable. Check configuration.

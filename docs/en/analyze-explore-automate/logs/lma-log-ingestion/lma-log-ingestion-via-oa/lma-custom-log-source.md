@@ -1,7 +1,7 @@
 ---
 title: Custom log source
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source
-scraped: 2026-02-17T21:23:46.500121
+scraped: 2026-02-18T21:27:37.899953
 ---
 
 # Custom log source

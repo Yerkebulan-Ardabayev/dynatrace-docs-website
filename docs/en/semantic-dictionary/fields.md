@@ -1,7 +1,7 @@
 ---
 title: Global field reference
 source: https://www.dynatrace.com/docs/semantic-dictionary/fields
-scraped: 2026-02-18T05:33:42.879794
+scraped: 2026-02-18T21:16:39.418140
 ---
 
 # Global field reference

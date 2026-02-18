@@ -622,7 +622,7 @@ In this example, we define these objects.
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-17T05:03:31.823164
+scraped: 2026-02-18T21:29:35.840790
 ---
 
 # Monaco resources
@@ -1976,7 +1976,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-17T05:10:53.325344
+scraped: 2026-02-18T21:30:17.157195
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -4874,7 +4874,7 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-17T05:10:32.645517
+scraped: 2026-02-18T21:32:41.221242
 ---
 
 # Monaco concepts
@@ -6641,7 +6641,7 @@ Information can be found at [IAM policy reference](/docs/manage/identity-access-
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-16T21:24:36.897092
+scraped: 2026-02-18T21:32:13.707925
 ---
 
 # Terraform CLI commands

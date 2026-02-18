@@ -99,7 +99,7 @@ The following is a solution to a problem some people had with [Automated release
 ---
 title: Monitor releases with Dynatrace
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/monitor-releases-with-dynatrace
-scraped: 2026-02-17T05:06:53.965749
+scraped: 2026-02-18T21:30:39.396726
 ---
 
 # Monitor releases with Dynatrace
@@ -405,7 +405,7 @@ As a result, releases defined via OpenTelemetry resource attributes won't appear
 ---
 title: Release monitoring Classic
 source: https://www.dynatrace.com/docs/deliver/release-monitoring
-scraped: 2026-02-17T04:57:50.402360
+scraped: 2026-02-18T21:29:53.158842
 ---
 
 # Release monitoring Classic

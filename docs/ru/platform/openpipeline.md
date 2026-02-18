@@ -1,63 +1,63 @@
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-06T16:20:08.157249
+scraped: 2026-02-18T21:16:09.469508
 ---
 
 # OpenPipeline
 
 # OpenPipeline
 
-* Последняя версия Dynatrace
-* Обзор
-* 1 минута чтения
-* Обновлено 19 декабря 2025 г.
+* Latest Dynatrace
+* Overview
+* 1-min read
+* Updated on Dec 19, 2025
 
-Dynatrace версия 1.295+
+Dynatrace version 1.295+
 
-OpenPipeline — это решение для обработки данных Dynatrace, позволяющее беспрепятственно принимать и обрабатывать данные из разных источников в любом масштабе и в любом формате на платформе Dynatrace.
+OpenPipeline is the Dynatrace data handling solution to seamlessly ingest and process data from different sources, at any scale, and in any format in the Dynatrace Platform.
 
-## Варианты использования
+## Use cases
 
-* Настройте прием и обработку различных областей конфигурации, таких как журналы и события, с помощью единого решения.
-* Масштабируйте управление данными между командами, контролируя доступ и целевые технологии.
-* Обеспечьте безопасную и соответствующую требованиям обработку конфиденциальных данных.
-* Обогащайте и контекстуализируйте данные с помощью настраиваемой обработки данных.
-* Оптимизация качества данных и контроль затрат.
+* Configure ingestion and processing of different configuration scopes, such as logs and events, via a unified solution.
+* Scale data management across teams by controlling access and targeted technologies.
+* Ensure secure and compliant sensitive data handling.
+* Enrich and contextualize data via customizable data processing.
+* Optimize data quality and cost control.
 
-## Концепции
+## Concepts
 
-[### Поток данных
+[### Data flow
 
-Узнайте, как данные передаются от приема к хранению через Dynatrace OpenPipeline.](/docs/platform/openpipeline/concepts/data-flow «Узнайте, как данные передаются на платформе Dynatrace от приема к хранению через Dynatrace OpenPipeline.»)[### Processing
+Learn how data flows from ingestion to storage via Dynatrace OpenPipeline.](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")[### Processing
 
-Изучите основные концепции обработки Dynatrace OpenPipeline.](/docs/platform/openpipeline/concepts/processing «Изучите основные концепции обработки Dynatrace OpenPipeline».)
+Learn the core concepts of Dynatrace OpenPipeline processing.](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
-## Начиная
+## Getting started
 
-[### Как принимать данные (события)
+[### How to ingest data (events)
 
-Как принимать данные для области конфигурации в OpenPipeline.](/docs/platform/openpipeline/getting-started/how-to-ingestion «Как принимать данные для области конфигурации в OpenPipeline.»)[### Настроить обработку
+How to ingest data for a configuration scope in OpenPipeline.](/docs/platform/openpipeline/getting-started/how-to-ingestion "How to ingest data for a configuration scope in OpenPipeline.")[### Configure processing
 
-Настройте источники приема, маршруты и обработку ваших данных через OpenPipeline.](/docs/platform/openpipeline/getting-started/tutorial-configure-processing «Настройте источники приема, маршруты и обработку ваших данных в OpenPipeline».)
+Configure ingest sources, routes, and processing for your data via OpenPipeline.](/docs/platform/openpipeline/getting-started/tutorial-configure-processing "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
 
-### Примеры обработки
+### Processing examples
 
-* [Уменьшите количество элементов на основе интервалов и метрик.](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Reduce span- and metric-based cardinality")
-* [Примеры обработки OpenPipeline](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
-* [Разобрать строки журнала и извлечь метрику](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
-* [Извлечение метрик из диапазонов и распределенных трассировок](/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans "Extract metrics directly from your spans and distributed traces via OpenPipeline.")
-* [Журналы обработки с помощью анализаторов технологических пакетов](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.")
-* [Извлеките метрику для отслеживания системных событий](/docs/platform/openpipeline/use-cases/tutorial-system-events "Learn how to extract a metric to track system events with OpenPipeline.")
-* [Извлечение метрики из пользовательских событий](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events "Turn user events into actionable insights by extracting custom metrics for long-term analysis.")
-* [Извлечение метрики из пользовательских сеансов](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions "Discover how to build custom metrics from user sessions, illustrated by a customer conversion metric.")
+* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Reduce span- and metric-based cardinality")
+* [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
+* [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
+* [Extract metrics from spans and distributed traces](/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans "Extract metrics directly from your spans and distributed traces via OpenPipeline.")
+* [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.")
+* [Extract a metric to track system events](/docs/platform/openpipeline/use-cases/tutorial-system-events "Learn how to extract a metric to track system events with OpenPipeline.")
+* [Extract a metric from user events](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events "Turn user events into actionable insights by extracting custom metrics for long-term analysis.")
+* [Extract a metric from user sessions](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions "Discover how to build custom metrics from user sessions, illustrated by a customer conversion metric.")
 
-## Ссылка
+## Reference
 
-[### API приема
+[### Ingest API
 
-Справочный материал по API-интерфейсам приема для областей конфигурации, поддерживаемых OpenPipeline.](/docs/platform/openpipeline/reference/api-ingestion-reference "Источники приема ссылок и API для областей конфигурации, поддерживаемых в OpenPipeline.")[### OpenPipeline API
+Reference material on ingestion APIs for the configuration scopes supported by OpenPipeline.](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")[### OpenPipeline API
 
-Справочный материал для конфигураций через API OpenPipeline.](/docs/platform/openpipeline/reference/openpipeline-api «Настройте возможности OpenPipeline по приему источника, маршрутизации и обработке через API.») [### Ограничения
+Reference material for configurations via OpenPipeline API.](/docs/platform/openpipeline/reference/openpipeline-api "Configure OpenPipeline capabilities of ingest source, routing, and processing via API.")[### Limits
 
-Справочный материал по ограничениям OpenPipeline.](/docs/platform/openpipeline/reference/limits «Справочные ограничения Dynatrace OpenPipeline.»)
+Reference material on OpenPipeline limits.](/docs/platform/openpipeline/reference/limits "Reference limits of Dynatrace OpenPipeline.")

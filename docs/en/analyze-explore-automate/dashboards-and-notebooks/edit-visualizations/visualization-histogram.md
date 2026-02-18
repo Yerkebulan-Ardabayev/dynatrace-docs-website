@@ -1,7 +1,7 @@
 ---
 title: Histogram visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-histogram
-scraped: 2026-02-17T21:22:16.004591
+scraped: 2026-02-18T21:26:59.395087
 ---
 
 # Histogram visualization

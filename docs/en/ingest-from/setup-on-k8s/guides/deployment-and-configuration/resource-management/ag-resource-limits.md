@@ -1,7 +1,7 @@
 ---
 title: Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits
-scraped: 2026-02-18T05:46:33.094967
+scraped: 2026-02-18T21:33:04.023361
 ---
 
 # Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case

@@ -1,174 +1,174 @@
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-18T05:38:27.824812
+scraped: 2026-02-18T21:19:45.650853
 ---
 
 # Workflows
 
 # Workflows
 
-* Последние Dynatrace
-* Приложение
-* 4-мин. чтение
-* Обновлено 18 ноября 2024 г.
+* Latest Dynatrace
+* App
+* 4-min read
+* Updated on Nov 18, 2024
 
-![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** — это мощный инструмент, позволяющий автоматически реагировать на данные мониторинга.
+![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** is a powerful tool that lets you automatically act on monitoring data.
 
-Workflows не предназначен для массового приема или экспорта данных. Для крупномасштабной обработки данных рассмотрите возможность использования [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.") или создание пользовательских решений с помощью [Dynatrace Extensions](/docs/ingest-from/extensions "Узнайте, как создавать и управлять Dynatrace Extensions.").
+A workflow is not intended for mass data ingestion or mass data export. For large-scale data processing, consider using [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") or building custom solutions with [Dynatrace Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
 
-Дополнительную информацию можно найти в [кратком руководстве](/docs/analyze-explore-automate/workflows/quickstart "Создайте и запустите свой первый workflow.").
+For more information, see the [quickstart example](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.").
 
-Предварительные условия
+Prerequisites
 
-### Разрешения
+### Permissions
 
-В следующей таблице описаны необходимые разрешения.
+The following table describes the required permissions.
 
-Разрешение
+Permission
 
-Описание
+Description
 
 hub:catalog:read
 
-Доступ для чтения к Hub приложениям.
+Read access to Hub apps.
 
 document:documents:read
 
-Чтение документов для шаблонов workflows.
+Read documents for workflow templates.
 
 app-engine:apps:run
 
-Включает перечисление всех приложений и чтение пакетов приложений.
+Enables listing all apps and reading the app bundles.
 
 app-engine:functions:run
 
-Включает использование function-executor.
+Enables usage of the function-executor.
 
 automation:calendars:read
 
-Доступ для чтения к бизнес-календарям.
+Read access to business calendars.
 
 automation:calendars:write
 
-Доступ для записи в бизнес-календари.
+Write access to business calendars.
 
 automation:rules:read
 
-Доступ для чтения к правилам планирования.
+Read access to scheduling rules.
 
 automation:rules:write
 
-Доступ для записи в правила планирования.
+Write access to scheduling rules.
 
 automation:workflows:admin
 
-Административный доступ к workflows и их выполнениям.
+Admin access to workflows and executions.
 
 automation:workflows:read
 
-Доступ для чтения к workflows.
+Read access to workflows.
 
 10
 
-строк на страницу
+rows per page
 
-Страница
+Page
 
 1
 
-из 1
+of 1
 
-Вам могут потребоваться дополнительные разрешения для выполнения определенных задач в ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+You might need additional permissions to run certain tasks in ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
-Для получения полного списка разрешений, необходимых для использования ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, перейдите в **Hub**, найдите и выберите **Workflows** и перейдите на вкладку **Technical information** (Техническая информация).
+For a complete list of permissions needed to use ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, go to **Hub**, find and select **Workflows**, and go to the **Technical information** tab.
 
-Дополнительную информацию о безопасности ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** можно найти в разделе [Разрешения пользователей для workflows](/docs/analyze-explore-automate/workflows/security "Руководство по аспектам безопасности автоматизации workflows в Dynatrace Workflows").
+For more information about ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** security, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
-## Установка
+## Installation
 
-Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "См. информацию о Dynatrace Hub.").
+Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 
-Основные понятия
+Concepts
 
-Варианты использования
+Use cases
 
-![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** — это ваша точка входа для управления и мониторинга workflows. Приложение взаимодействует со службой автоматизации через свой REST API. Служба автоматизации отвечает за обработку ваших workflows и отслеживание их выполнений.
+![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** is your entry point to manage and monitor workflows. The app interacts with the automation service via its REST API. The automation service is responsible for processing your workflows and keeping track of the executions.
 
 ### Workflow
 
-Workflow определяет повторяющийся процесс путем сборки серии задач.
+A workflow specifies a repeatable process by assembling a series of tasks.
 
-* Последовательность задач определяется их переходами, которые позволяют выполнять их последовательно, параллельно и с условными путями.
-* Workflows можно редактировать и отслеживать в визуальном графе.
+* The sequence of tasks is defined by their transitions, which allow for execution in series, in parallel, and with conditional paths.
+* Workflows can be edited and monitored in a visual graph.
 
-### Простой workflow
+### Simple workflow
 
-Простой workflow определяет повторяющийся процесс, состоящий только из одной задачи.
+A simple workflow specifies a repeatable process with only one task.
 
-* Workflow с уменьшенной функциональностью, содержащий только одну задачу, ограниченное ведение журналов для выполнений, ограниченные параметры и условия задачи и запрет на использование задач JavaScript.
-* Отсутствие дополнительных затрат на создание workflow, поскольку простые workflows не потребляют часы workflow.
+* Reduced functionality workflow with only one task, limited logging for executions, limited task options and conditions, and no JavaScript tasks allowed.
+* No additional costs for creating the workflow, as simple workflows don't consume workflow hours.
 
-### Задача
+### Task
 
-Каждый шаг в workflow называется задачей.
+Each step in a workflow is called a task.
 
-* Workflow отслеживает задачи и их порядок.
-* Задача определяет единицу работы (например, `Create Incident` (Создать инцидент), `Notify Ops in Slack` (Уведомить Ops в Slack) или `Get error log count` (Получить количество записей об ошибках)), включая условия, поведение повторных попыток, тайм-ауты и, что наиболее важно, входную конфигурацию, необходимую для достижения работы и предоставления результата для использования последующими задачами.
+* A workflow keeps track of tasks and their order.
+* A task defines a unit of work (for example, `Create Incident`, `Notify Ops in Slack`, or `Get error log count`), including the conditions, retry behavior, timeouts and, most importantly, the input configuration required to achieve the work and provide a result to be used by subsequent tasks.
 
-### Действие
+### Action
 
-Действие — это универсальная, многократно используемая функция, которая настраивается и запускается задачами. Например, действие может быть `Create Jira Issue` (Создать задачу Jira), а задача будет выполнять действие с определенной конфигурацией для `Create Bug in Sample project` (Создать ошибку в примере проекта).
+An action is a generic, reusable function configured and triggered by tasks. For example, an action could be `Create Jira Issue`, while a task would execute the action with a specific configuration to `Create Bug in Sample project`.
 
-* Действия — это инструменты, которые собираются в ваши workflows для соответствия вашему индивидуальному процессу.
-* Действия предоставляются из коробки Dynatrace и партнерами и могут быть установлены через Dynatrace Hub.
+* Actions are the tools to be assembled in your workflows to fit your custom process.
+* Actions are provided out of the box by Dynatrace and partners and can be installed via Dynatrace Hub.
 
-### Выполнение
+### Execution
 
-Workflows, задачи и действия определяют, как должна выполняться работа. Выполнение представляет собой конкретный экземпляр прохождения этого процесса.
+Workflows, tasks, and actions all define how work should be done. An execution represents a specific instance of running through that process.
 
-* Выполнение запускается либо по расписанию, либо по событиям, либо вручную через ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** или REST API.
-* Каждое выполнение одного и того же workflow может быть разным в зависимости от его параметров, входных данных и контекста.
-* Каждое выполнение workflow можно найти в виде отдельной записи в таблице **Executions** (Выполнения).
+* An execution is triggered either by a schedule, by events, or manually via ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** or the REST API.
+* Each execution of the same workflow might be different, depending on its parameters, inputs, and context.
+* Each run of a workflow can be found as an individual entry in the **Executions** table.
 
-Чтобы просмотреть прошлые и текущие выполнения
+To list past and ongoing executions
 
-Чтобы просмотреть все выполнения в вашей среде, выберите **Executions** (Выполнения) в заголовке приложения Workflows.
+To list all executions in your environment, select **Executions** in the Workflows app header.
 
-* Чтобы отфильтровать таблицу, можно указать комбинацию:
+* To filter the table, you can specify a combination of
 
-  + **Keyword** (Ключевое слово): строка поиска
-  + **Workflow** (Workflow): имя workflow, отображаемое в пользовательском интерфейсе
-  + **Execution state** (Состояние выполнения): `Success` (Успешно), `Running` (Выполняется), `Error` (Ошибка) или `Waiting` (Ожидание)
-  + **Trigger type** (Тип триггера): `Manual` (Вручную), `Schedule` (Расписание) или `Event` (Событие)
-  + **Timeframe** (Временной интервал): относительный временной интервал, например `Last 2 hours` (Последние 2 часа) или пользовательский временной интервал с выбираемыми настройками From (От) и To (До)
-* Чтобы просмотреть выполнения определенного workflow, найдите workflow в таблице и выберите ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") > **View execution history** (Просмотреть историю выполнения) в столбце **Action** (Действие).
+  + **Keyword**: a search string
+  + **Workflow**: the name of the workflow as displayed in the UI
+  + **Execution state**: `Success`, `Running`, `Error`, or `Waiting`
+  + **Trigger type**: `Manual`, `Schedule`, or `Event`
+  + **Timeframe**: a relative timeframe such as `Last 2 hours` or a custom timeframe with selectable From and To settings
+* To list executions of a particular workflow, find the workflow in the table and select ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") > **View execution history** in the **Action** column.
 
-Чтобы просмотреть выполнения workflow, который вы редактируете, выберите **Executions** (Выполнения) в редакторе.
+To list executions of the workflow you are editing, select **Executions** in the editor.
 
 ## EdgeConnect
 
-EdgeConnect позволяет получить доступ к вашим непубличным службам в задачах workflow. HTTP-запросы, происходящие в любом типе действия или функции платформы, могут быть проксированы через EdgeConnect в целевую сеть.
+EdgeConnect allows you to reach your non-public services in workflow tasks. HTTP requests happening within any type of action or platform function can be proxied via EdgeConnect into the target network.
 
-Любой HTTP-запрос (из вашего пользовательского приложения, workflow или ad-hoc JavaScript-кода), соответствующий определенному шаблону хоста, обрабатывается экземпляром EdgeConnect, который вы указываете в конфигурации платформы. Дополнительную информацию можно найти в разделе [Configure and deploy EdgeConnect](/docs/ingest-from/edgeconnect "Используйте EdgeConnect для управления тем, как ваши приложения и workflows взаимодействуют с вашими внутренними системами.").
+Any HTTP request (from your custom app, workflow, or an ad-hoc JavaScript code) that matches a defined host pattern is handled by an EdgeConnect instance you specify in the platform configuration. For more information, see [Configure and deploy EdgeConnect](/docs/ingest-from/edgeconnect "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
 
-## Варианты использования
+## Use cases
 
-Workflows позволяет:
+Workflows allows you to:
 
-* Создавать **[agentic workflowsï»¿](http://https://www.dynatrace.com/hub/detail/agentic-workflows)**
-* Автоматически реагировать на события Dynatrace Intelligence или проблемы безопасности.
-* Планировать отчеты в соответствии с праздниками и рабочими часами.
-* Организовывать ИТ-процессы во всей вашей ИТ-инфраструктуре.
-* Подключаться как к облачным, так и к локально-ограниченным службам.
-* Объединять готовые интеграции с пользовательским кодом.
-* Визуализировать автоматизированные процессы в графическом интерфейсе workflow.
-* Получать мониторинг в реальном времени и полный аудит всех выполнений автоматизации.
-* Определять логику потока с помощью пользовательских условий, автоматических повторных попыток, циклов и параллельной обработки.
+* Create **[agentic workflowsï»¿](http://https://www.dynatrace.com/hub/detail/agentic-workflows)**
+* Automatically react to Dynatrace Intelligence events or security problems.
+* Schedule reports in line with holidays and work hours.
+* Orchestrate IT processes across your entire IT landscape.
+* Connect to both cloud and locally-gated services.
+* Combine out-of-the-box integrations with custom code.
+* Visualize automated processes in a graphical workflow interface.
+* Get live monitoring and a full audit trail for all automation executions.
+* Define flow logic with custom conditions, automatic retries, loops, and parallel processing.
 
-## Обучающие модули
+## Learning modules
 
-Следующие обучающие модули показывают, как можно использовать ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** для автоматической реакции на данные мониторинга.
+The following learning modules show how you can use ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** to automatically act on monitoring data.
 
 [01Workflows quick start guide
 

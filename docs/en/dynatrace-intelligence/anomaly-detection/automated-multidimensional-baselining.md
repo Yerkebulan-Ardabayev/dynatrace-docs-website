@@ -1,7 +1,7 @@
 ---
 title: Automated multi-dimensional baselining
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining
-scraped: 2026-02-17T21:22:37.323565
+scraped: 2026-02-18T21:27:31.565252
 ---
 
 # Automated multi-dimensional baselining

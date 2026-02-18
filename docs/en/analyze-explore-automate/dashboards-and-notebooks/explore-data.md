@@ -1,7 +1,7 @@
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-18T05:34:15.134563
+scraped: 2026-02-18T21:17:13.314742
 ---
 
 # Explore data
@@ -11,61 +11,41 @@ scraped: 2026-02-18T05:34:15.134563
 * Latest Dynatrace
 * How-to guide
 * 15-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 17, 2026
 
-Dynatrace Dashboards and Notebooks offer the following options for exploring your data:
+Dynatrace [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") offer the following options for exploring your data:
 
-* Use [Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.") and natural language to access data stored in Grail.
-* Get started with our Explore interface for data types such as logs, metrics, and events.
-* Advance with DQL to leverage the full power of Grail.
+* Use [Dynatrace Intelligence generative AI](#copilot) and natural language to access data stored in Grail.
+* Get started with our Explore interface for data types such as [logs](#explore-logs), [metrics](#explore-metrics), and [business events](#explore-business-events).
+* Advance with [DQL](#create-a-dql-query) to leverage the full power of Grail.
 
 ## Get started
 
 To explore data such as logs, metrics, or business events with our point-and-click interface
 
-1. In your document, open the  **Add** menu and select one of the following options, depending on what you want to explore.
+1. In your document, open the  **Add** menu and select an option, depending on what you want to explore.
 
    For this example, select  **Logs**, but there are other options.
 
    List options
 
-   Option
+   We walk you through the following options below:
 
-   Description
+   * **Prompt**âEnter a [plain-text query](#copilot) to get AI-powered insights from Grail.
+   * **Logs**â[Explore logs](#explore-logs) via the UI. We use this option in the example that follows.
+   * **Metrics**â[Explore metrics](#explore-metrics) via the UI.
+   * **Business Events**â[Explore business events](#explore-business-events) via the UI.
 
-   **Prompt**
+   After you try those options, you'll be ready to explore the following [additional options](#explore-others) with little or no additional explanation.
 
-   Enter a [plain-text query](#copilot) to get AI-powered insights from Grail.
+   * **Events**
+   * **Problems**
+   * **Traces**
+   * **User sessions**
+   * **Security events**
+   * **User events**
 
-   **Logs**
-
-   [Explore logs](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-logs "Explore your data with our point-and-click interface.") via the UI. We use this option in the example that follows.
-
-   **Metrics**
-
-   [Explore metrics](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-metrics "Explore your data with our point-and-click interface.") via the UI.
-
-   **Events**
-
-   [Explore events](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-events "Explore your data with our point-and-click interface.") via the UI.
-
-   **Problems**
-
-   [Explore problems](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-problems "Explore your data with our point-and-click interface.") via the UI.
-
-   **Traces**
-
-   [Explore traces](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-traces "Explore your data with our point-and-click interface.") via the UI.
-
-   **Business Events**
-
-   [Explore business events](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-business-events "Explore your data with our point-and-click interface.") via the UI.
-
-   **Security events**
-
-   [Explore events](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-security-events "Explore your data with our point-and-click interface.") via the UI.
-
-   The layouts differ slightly between Dashboards and Notebooks to suit the different contexts, but the functionality is the same.
+   The layouts differ slightly between ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** to suit the different contexts, but the functionality is the same.
 2. Use the displayed elements to define your exploration.
 
    In this example, we focus on **Logs**. By default, the filter field and a default limit of 20 is added.
@@ -79,6 +59,62 @@ To explore data such as logs, metrics, or business events with our point-and-cli
      Operator
 
      Description
+
+     `~`
+
+     Use a tilde to get one of two effects:
+
+     To match on a specific field
+
+     1. In the  filter bar
+
+        + Select the field name
+        + Select the tilde (`~`) as the operator
+        + Enter the term you want to match
+     2. Select **Run**.
+
+        For example, when exploring log data, `content` `~` `error` lists log entries that have "error" in the "content" field.
+
+        In DQL, this translates to [matchesPhrase](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions."), such as:
+
+        ```
+        fetch logs
+
+
+
+        | filter matchesPhrase(content, "error")
+
+
+
+        | limit 20
+        ```
+
+     To search all data
+
+     3. In the  filter bar
+
+        + Enter an asterisk (`*`)
+        + Select the tilde (`~`) as the operator
+        + Enter the term you want to search for
+
+        Alternative: Click in the  filter bar, scroll down to the bottom of the list of suggestions, select `Search a phrase in all data`, and enter the search term between the quotation marks. (This bar is hidden when there is no splitting set, or when there is more than one building block with a metric selected.)
+     4. Select **Run**.
+
+        For example, when exploring log data, `*` `~` `error` lists log entries that have "error".
+
+        In DQL, this translates to [search](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands"), such as:
+
+        ```
+        fetch logs
+
+
+
+        | search "error"
+
+
+
+        | limit 20
+        ```
 
      `=`
 
@@ -225,9 +261,9 @@ To create a notebook section using Dynatrace Intelligence generative AI
 
 ## Logs
 
-This exploration functionality is the same in **![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**** and **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****. We use **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**** in this example.
+This exploration functionality is the same in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**. We use ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** in this example.
 
-1. Open **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**** and select  **Notebook** in the app header to create a new document.
+1. Open ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and select  **Notebook** in the app header to create a new document.
 2. In the empty document, open the  **Add** menu and select  **Logs**.
 3. Inspect the results (initially, results are automatically fetched).
 
@@ -269,7 +305,7 @@ Starting from the previous example, let's add a **content** filter to focus on l
 2. Add `=` as an operator by either selecting it from the suggestions from the auto complete or by typing it.
 3. Enter the string you want to search for.
 
-   If you are using Dashboards, you can also reference existing [variables](#dashboard-component-variable) by entering a `$` sign and selecting the desired variable. In this example, we are looking for logs that contain the string `crash` somewhere in the content, so enter `crash`.
+   If you are using ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, you can also reference existing [variables](#dashboard-component-variable) by entering a `$` sign and selecting the desired variable. In this example, we are looking for logs that contain the string `crash` somewhere in the content, so enter `crash`.
 4. Add `*` a wildcard before and after your filter term such that the results are restricted to logs where the **content** field contains `crash` instead of only considering exact matches.
 5. Select **Run** and inspect the results.
 
@@ -310,7 +346,7 @@ To convert log-based events to a time series format
 
 The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.
 
-1. Open the  **Command** menu for the metric and select **Bucketize**.
+1. Open the  **Command** menu and select **Bucketize**.
 2. Select the field for which you want to create the buckets.
 3. Set the **Bucketize** value.
 
@@ -334,9 +370,9 @@ If the **Limit** setting is not displayed,  **Limit** and then set the value.
 
 ### Add
 
-This exploration functionality is the same in **![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**** and **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****. We use **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**** in these examples.
+This exploration functionality is the same in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**. We use ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** in these examples.
 
-1. Open **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**** and select  **Notebook** in the app header to create a new notebook.
+1. Open ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and select  **Notebook** in the app header to create a new notebook.
 2. In the empty notebook, open the  **Add** menu and select  **Metrics**.
 3. Use the metric selector to select the metric you want to explore.
 
@@ -440,13 +476,6 @@ Now we get a separate line per host.
 
 ![Explore metrics example: Split by dt.entity.host](https://dt-cdn.net/images/explore-metrics-split-by-select-dt-entity-host-921-02cdc26859.png)
 
-### Limit results
-
-To focus our exploration, we can set a limit on the results returned. If you add multiple metrics to your query, the limit applies to all of them.
-
-1. Select  **Limit** to add a **Limit**.
-2. Set **Limit** to the maximum number of records we want to return. In this case, we set the limit to 5, and then we ran it again to see the following results.
-
 ### Compare to previous period
 
 To shift the metric to a previous period and add it for comparison
@@ -504,17 +533,6 @@ The bucketize command is used to group metric data into fixed-size ranges (bucke
 1. Open the  **Command** menu for the metric and select **Bucketize**.
 2. Set the **Bucketize** value.
 
-### Interval
-
-The interval defines the time granularity for metrics, determining how data is grouped and aggregated over time. It is expressed as a duration of each time slot (for example, 1h, 5m) for aggregating data points.
-
-If you add multiple metrics to your query, the interval applies to all of them, ensuring consistency in data granularity across all metrics.
-
-1. Select  **Interval** to add an **Interval** selector to your query.
-2. Select an interval.
-
-For details on how an interval is used in DQL, see [timeseries](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands").
-
 ### Expressions
 
 Add expressions to apply arithmetic based on your selected metrics.
@@ -536,50 +554,6 @@ Add expressions to apply arithmetic based on your selected metrics.
 
 ![Explore metrics example: expression](https://dt-cdn.net/images/explore-metrics-example-expression-662-b59f306f98.png)
 
-## Events
-
-This exploration functionality is the same as described for logs.
-
-To start exploring events
-
-1. Open **![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**** or **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**** and select  in an empty notebook or the document header of a dashboard.
-2. Select  **Events** to add a section or tile based on it.
-3. Inspect the results (if no results are initially displayed, select  **Run**).
-
-Done. You have fetched the first 20 events with just a few clicks.
-
-To make it more useful, now click in the  box to get filter suggestions.
-
-Filter suggestions are available for any field apart from content.
-
-![Explore events example: Notebooks, no filters](https://dt-cdn.net/images/explore-events-example-default-notebooks-1618-71dfb794ff.png)
-
-### Summarize
-
-To summarize your results
-
-1. Open the  **Command** menu and select **Summarize**.
-2. Specify how you want to summarize the results.
-
-   You can choose between aggregation options and you can select the field by which the results are aggregated.
-
-### Convert to time series
-
-You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.
-
-To convert log-based events to a time series format
-
-1. Open the  **Command** menu and select **Convert to time series**.
-2. After you select **Convert to time series**, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.
-
-### Bucketize
-
-The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.
-
-1. Open the  **Command** menu for the metric and select **Bucketize**.
-2. Select the field for which you want to create the buckets.
-3. Set the **Bucketize** value.
-
 ### Sort
 
 To sort your results
@@ -592,151 +566,21 @@ To sort your results
 
 ### Limit
 
-To change the limit of your results, change the value of **Limit** to the maximum number of records you want to return.
+To focus our exploration, we can set a limit on the results returned. If you add multiple metrics to your query, the limit applies to all of them.
 
-If the **Limit** setting is not displayed,  **Limit** and then set the value.
+1. Select  **Limit** to add a **Limit**.
+2. Set **Limit** to the maximum number of records we want to return. In this case, we set the limit to 5, and then we ran it again to see the following results.
 
-## Problems
+### Interval
 
-A `problem` in Dynatrace represents an anomaly from a normal behavior or state, such as a slow service response or user-login process. Whenever a problem is detected, Dynatrace raises a specific problem event indicating such an anomaly. Every problem update is exported to Grail. Use the **Problems** explorer to query Grail for problems matching your search filters.
+The interval defines the time granularity for metrics, determining how data is grouped and aggregated over time. It is expressed as a duration of each time slot (for example, 1h, 5m) for aggregating data points.
 
-1. Open **![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**** or **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**** and select  in an empty notebook or the document header of a dashboard.
-2. Select  **Problems** to add a section or tile based on it.
+If you add multiple metrics to your query, the interval applies to all of them, ensuring consistency in data granularity across all metrics.
 
-   If you run it like that, with **Limit** set to `20` (the default), you get the first 20 results of fetching problem records from Grail.
+1. Select  **Interval** to add an **Interval** selector to your query.
+2. Select an interval.
 
-   DQL equivalent
-
-   In DQL, this is the equivalent of:
-
-   ```
-   fetch dt.davis.problems
-
-
-
-   | limit 20
-   ```
-3. Inspect the results (if no results are initially displayed, select  **Run**).
-
-Done. You have fetched the first 20 problems with just a few clicks.
-
-To make it more useful, now click in the  box to get filter suggestions.
-
-Filter suggestions are available for any field apart from content.
-
-![Explore problems example: Notebooks, no filters](https://dt-cdn.net/images/explore-problems-example-default-notebooks-1627-5a6b1b8abb.png)
-
-### Summarize
-
-To summarize your results
-
-1. Open the  **Command** menu and select **Summarize**.
-2. Specify how you want to summarize the results.
-
-   You can choose between aggregation options and you can select the field by which the results are aggregated.
-
-### Convert to time series
-
-You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.
-
-To convert log-based events to a time series format
-
-1. Open the  **Command** menu and select **Convert to time series**.
-2. After you select **Convert to time series**, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.
-
-### Bucketize
-
-The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.
-
-1. Open the  **Command** menu and select **Bucketize**.
-2. Select the field for which you want to create the buckets.
-3. Set the **Bucketize** value.
-
-### Sort
-
-To sort your results
-
-1. Select  **Sort**.
-2. After you select **Sort**, use the **Sort by** menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.
-
-   * `value.A`  is selected by default
-   * Sort applies to all metrics included in the query
-
-### Limit
-
-To change the limit of your results, change the value of **Limit** to the maximum number of records you want to return.
-
-If the **Limit** setting is not displayed,  **Limit** and then set the value.
-
-## Traces
-
-1. Open **![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**** or **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**** and select  in an empty notebook or the document header of a dashboard.
-2. Select  **Traces** to add a section or tile based on it.
-
-   If you run it like that, with **Limit** set to `20` (the default), you get the first 20 results of fetching spans from Grail.
-
-   DQL equivalent
-
-   In DQL, this is the equivalent of:
-
-   ```
-   fetch spans
-
-
-
-   | limit 20
-   ```
-3. Inspect the results (if no results are initially displayed, select  **Run**).
-
-Done. You have fetched the first 20 spans with just a few clicks.
-
-To make it more useful, now click in the  box to get filter suggestions.
-
-Filter suggestions are available for any field apart from content.
-
-![Explore traces example: Notebooks, no filters](https://dt-cdn.net/images/explore-traces-example-default-notebooks-1614-9e75005b4e.png)
-
-### Summarize
-
-To summarize your results
-
-1. Open the  **Command** menu and select **Summarize**.
-2. Specify how you want to summarize the results.
-
-   You can choose between aggregation options and you can select the field by which the results are aggregated.
-
-### Convert to time series
-
-You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.
-
-To convert log-based events to a time series format
-
-1. Open the  **Command** menu and select **Convert to time series**.
-2. After you select **Convert to time series**, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.
-
-### Bucketize
-
-The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.
-
-1. Open the  **Command** menu and select **Bucketize**.
-2. Select the field for which you want to create the buckets.
-3. Set the **Bucketize** value.
-
-### Sort
-
-To sort your results
-
-1. Select  **Sort**.
-2. After you select **Sort**, use the **Sort by** menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.
-
-   * `value.A`  is selected by default
-   * Sort applies to all metrics included in the query
-
-### Limit
-
-To change the limit of your results, change the value of **Limit** to the maximum number of records you want to return.
-
-If the **Limit** setting is not displayed,  **Limit** and then set the value.
+For details on how an interval is used in DQL, see [timeseries](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands").
 
 ## Business events
 
@@ -744,7 +588,7 @@ This exploration functionality is the same as described for logs.
 
 To start exploring business events
 
-1. Open **![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**** or **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**** and select  in an empty notebook or the document header of a dashboard.
+1. Open ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** or ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and select  in an empty notebook or the document header of a dashboard.
 2. Select  **Business Events** to add a section or tile based on it.
 3. Inspect the results (if no results are initially displayed, select  **Run**).
 
@@ -826,65 +670,27 @@ To change the limit of your results, change the value of **Limit** to the maximu
 
 If the **Limit** setting is not displayed,  **Limit** and then set the value.
 
-## Security events
+## Explore other areas
 
-This exploration functionality is the same as described for logs.
+In the previous sections, we have shown how to use the  **Prompt** for AI-based exploration, and how to explore  **Metrics**,  **Logs**, and  **Business Events** through our point-and-click UI.
 
-To start exploring security events
+You can also explore the following areas in similar fashion:
 
-1. Open **![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**** or **![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**** and select  in an empty notebook or the document header of a dashboard.
-2. Select  **Security events** to add a section or tile based on it.
-3. Inspect the results (if no results are initially displayed, select  **Run**).
+* **Events**
+* **Problems**
+* **Traces**
+* **User sessions**
+* **Security events**
+* **User events**
 
-Done. You have fetched the first 20 security events with just a few clicks.
+In all cases, the functionality is similar.
 
-To make it more useful, now click in the  box to get filter suggestions.
+1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** or ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+2. Create a new notebook or dashboard.
+3. Select  and choose one of the above options (for example,  **Events**) to add a corresponding notebook section or dashboard tile.
+4. Inspect the results. If no results are initially displayed, select  **Run**.
 
-Filter suggestions are available for any field apart from content.
-
-![Explore security events example: Notebooks, no filters](https://dt-cdn.net/images/explore-security-events-example-default-notebooks-1615-e3f261347b.png)
-
-### Summarize
-
-To summarize your results
-
-1. Open the  **Command** menu and select **Summarize**.
-2. Specify how you want to summarize the results.
-
-   You can choose between aggregation options and you can select the field by which the results are aggregated.
-
-### Convert to time series
-
-You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.
-
-To convert log-based events to a time series format
-
-1. Open the  **Command** menu and select **Convert to time series**.
-2. After you select **Convert to time series**, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.
-
-### Bucketize
-
-The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.
-
-1. Open the  **Command** menu and select **Bucketize**.
-2. Select the field for which you want to create the buckets.
-3. Set the **Bucketize** value.
-
-### Sort
-
-To sort your results
-
-1. Select  **Sort**.
-2. After you select **Sort**, use the **Sort by** menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.
-
-   * `value.A`  is selected by default
-   * Sort applies to all metrics included in the query
-
-### Limit
-
-To change the limit of your results, change the value of **Limit** to the maximum number of records you want to return.
-
-If the **Limit** setting is not displayed,  **Limit** and then set the value.
+From that point, you can apply what you've learned from the previous examples to focus your exploration.
 
 ## Query Grail
 

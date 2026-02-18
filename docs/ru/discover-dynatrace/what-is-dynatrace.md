@@ -1,151 +1,153 @@
 ---
 title: What is Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/what-is-dynatrace
-scraped: 2026-02-06T15:59:42.078220
+scraped: 2026-02-18T21:15:27.841141
 ---
 
-# Что такое Dynatrace
+# What is Dynatrace
 
-# Что такое Dynatrace
+# What is Dynatrace
 
-* Последняя версия Dynatrace
-* Объяснение
-* 2 минуты чтения
-* Обновлено 15 октября 2025 г.
+* Latest Dynatrace
+* Explanation
+* 2-min read
+* Updated on Oct 15, 2025
 
-Dynatrace — это платформа наблюдения для анализа, автоматизации и инноваций с использованием возможностей искусственного интеллекта.
+Dynatrace is an observability platform to analyze, automate, and innovate with the power of AI.
 
-Это помогает вам предотвращать проблемы, автоматизировать рабочие процессы и быстрее создавать более качественное и безопасное программное обеспечение.
+It helps you prevent problems, automate workflows, and deliver better, more secure software faster.
 
-* **Ответы и интеллектуальная автоматизация**âDynatrace использует причинно-следственный искусственный интеллект для масштабной автоматизации DevSecOps и предоставления точных ответов, необходимых командам для внедрения инноваций и процветания в современном облаке.
-* **Расширение возможностей**âDynatrace разрушает разрозненность команды и активно предотвращает проблемы до того, как они затронут конечных пользователей.
-* **Решения**âDynatrace решает важнейшие цифровые проблемы, используя все ваши решения для наблюдения, безопасности, аналитики и автоматизации в одном месте.
+* **Answers and intelligent automation**âDynatrace uses causal AI to automate DevSecOps at scale and deliver the precise answers teams need to innovate and thrive in the modern cloud.
+* **Empowerment**âDynatrace breaks down team silos and proactively prevents issues before they affect end users.
+* **Solutions**âDynatrace solves critical digital challenges with all your observability, security, analytics, and automation solutions in one place.
 
-Подход платформы Dynatrace помогает вам решать множество областей использования, он будет расти и адаптироваться для решения новых задач, одновременно обогащая многие области любой организации.Наши решения в области наблюдения, безопасности, аналитики и автоматизации охватывают самый широкий спектр вариантов использования.А поскольку наша платформа обеспечивает все это, вы можете создать любой уникальный вариант использования, адаптированный к постоянно меняющимся потребностям.
+The Dynatrace platform approach helps you solve a multitude of use case areas, and it will grow and adapt to solve new challenges while already enriching many areas of any organization. Our solutions in observability, security, analytics, and automation address the broadest range of use cases. And because our platform powers it all, you can create any unique use case, customized to ever-changing needs.
 
-Что такое Dynatrace за 15 минут
+What is Dynatrace in 15 minutes
 
-## Что вы можете сделать с Dynatrace
+## What you can do with Dynatrace
 
-Dynatrace — это универсальная платформа, специально созданная для широкого спектра вариантов использования.
+Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.
 
-![Платформа Dynatrace](https://dt-cdn.net/images/dynatrace-luminous-wave-marketecture-light-oct2025-3840-b37e81c38a.png)
+![Dynatrace platform](https://dt-cdn.net/images/dynatrace-luminous-wave-marketecture-light-oct2025-3840-b37e81c38a.png)
 
-* [**Наблюдаемость за инфраструктурой**](/docs/observe/infrastructure-observability "The application infrastructure, including cloud and container platforms, that Dynatrace can monitor")
+* [**Infrastructure Observability**](/docs/observe/infrastructure-observability "The application infrastructure, including cloud and container platforms, that Dynatrace can monitor")
 
-Получите автоматический и интеллектуальный мониторинг и наблюдение за инфраструктурой в гибридных и облачных средах с точными ответами на основе искусственного интеллекта.
-* [**Наблюдение за приложением**](/docs/observe/application-observability "Get familiar with application observability capabilities in Dynatrace.")
+  Get automatic and intelligent infrastructure monitoring and observability across hybrid and cloud environments, with precise AI-powered answers.
+* [**Application Observability**](/docs/observe/application-observability "Get familiar with application observability capabilities in Dynatrace.")
 
-Используйте лучший в своем классе мониторинг производительности приложений (APM), чтобы обеспечить оптимальную производительность услуг и SLO, быстрее внедрять инновации, более эффективно сотрудничать и достигать большего с меньшими затратами.
-* [**Цифровой опыт**](/docs/observe/digital-experience "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
+  Leverage best-in-class application performance monitoring (APM) to ensure optimal service performance and SLOs, innovate faster, collaborate more efficiently, and deliver more with less.
+* [**Digital Experience**](/docs/observe/digital-experience "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
 
-Обеспечьте безупречный цифровой опыт и повысьте бизнес-результаты с помощью автоматизированного сквозного цифрового мониторинга на основе искусственного интеллекта.
+  Deliver flawless digital experiences and drive business results with AI-driven, automated, frontend-to-backend digital experience monitoring.
 
-* [**Наблюдаемость ИИ**](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) модели и услуги AI SaaS и многое другое.")
+* [**AI Observability**](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.")
 
-Отслеживайте, оптимизируйте и защищайте приложения генеративного искусственного интеллекта, LLM и агентные рабочие процессы, повышая производительность, понятность и соответствие требованиям.
+  Monitor, optimize, and secure Generative AI applications, LLMs, and agentic workflows â improving performance, explainability, and compliance.
 
-* [**Аналитика журналов**](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+* [**Log Analytics**](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
 
-Принимайте более разумные и быстрые решения при устранении неполадок и измерении работоспособности сред приложений — при этом устраняя дорогостоящие накладные расходы на прием и управление.
+  Make smarter, faster decisions when troubleshooting and measuring the health of your application environments â all while eliminating the costly overhead of ingestion and management.
 
-* [**Безопасность приложений**](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
+* [**Application Security**](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
 
-Получайте непрерывную информацию о состоянии безопасности приложений и защиту от атак.
+  Get continuous application security posture insights and attack protection.
 
-* [**Наблюдаемость угроз**](/docs/secure/threat-observability "Quickly detect, investigate, and respond to threats with intelligent automation.")
+* [**Threat Observability**](/docs/secure/threat-observability "Quickly detect, investigate, and respond to threats with intelligent automation.")
 
-Быстро обнаруживайте, исследуйте угрозы и реагируйте на них с помощью интеллектуальной автоматизации.
+  Quickly detect, investigate, and respond to threats with intelligent automation.
 
-* [**Доставка программного обеспечения**](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.")
+* [**Software Delivery**](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.")
 
-Ускорьте цифровую трансформацию с помощью простых, но мощных средств автоматизации, основанных на наблюдениях и безопасности.
-* [**Наблюдаемость за бизнесом**](/docs/observe/business-observability "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")
+  Accelerate digital transformation with simple yet powerful automations driven by observability and security insights.
+* [**Business Observability**](/docs/observe/business-observability "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")
 
-Упрощайте важные бизнес-решения в режиме реального времени благодаря точности, скорости и контексту.
+  Simplify critical, real-time business decisions with precision, speed, and context.
 
-* **Индивидуальные решения**
+* **Custom Solutions**
 
-+ [**Расширить Dynatrace**](/docs/ingest-from/extend-dynatrace "Learn what extension mechanisms are offered by Dynatrace.")
+  + [**Extend Dynatrace**](/docs/ingest-from/extend-dynatrace "Learn what extension mechanisms are offered by Dynatrace.")
 
-Dynatrace открыта, расширяема и может легко интегрироваться со всеми основными облачными платформами и решениями.
+    Dynatrace is open, extensible, and can easily integrate with all major cloud platforms and solutions.
 
-+ [**Хаб Dynatrace**](/docs/manage/hub "See the information about Dynatrace Hub.")
+  + [**Dynatrace Hub**](/docs/manage/hub "See the information about Dynatrace Hub.")
 
-Раскройте весь потенциал Dynatrace, найдя, активировав и запустив приложения и расширения, отвечающие вашим конкретным потребностям в наблюдении.Dynatrace Hub — это центральное место для изучения и активации всех возможностей Dynatrace.
-+ [**Разработчик Dynatrace**ï»¿](https://dt-url.net/meg36md)
+    Unlock the full potential of Dynatrace by finding, activating, and running apps and extensions that address your specific observability needs. Dynatrace Hub is the central place to explore and activate all Dynatrace capabilities.
+  + [**Dynatrace Developer**ï»¿](https://dt-url.net/meg36md)
 
-Используйте Dynatrace App Toolkit из командной строки для создания, разработки и развертывания приложений Dynatrace.
+    Use the Dynatrace App Toolkit from the command line to create, develop, and deploy Dynatrace Apps.
 
-## Как работает Dynatrace
+## How Dynatrace works
 
-Мощные базовые технологии в совокупности позволяют Dynatrace предоставлять аналитику и автоматизацию для унифицированного наблюдения и безопасности в полностью расширяемой и адаптируемой среде.
+Powerful core technologies combine to enable Dynatrace to deliver analytics and automation for unified observability and security in a fully extensible and adaptable environment.
 
 [![AppEngine](https://cdn.bfldr.com/B686QPH3/at/2zb6jpjtcvvwfj93szhb8x7/AppEngine.svg?auto=webp&width=72&height=72 "AppEngine")
 
 ### AppEngine
 
-Создавайте и делитесь пользовательскими приложениями, использующими информацию обо всех ваших данных наблюдения, безопасности и бизнес-данных.](/docs/platform/appengine «Разрабатывайте многофункциональные приложения Dynatrace для себя и всего мира!»)[![Двигатель автоматизации](https://cdn.bfldr.com/B686QPH3/at/gh4b5kp76g6tt92jqvvp28m/Automation_Engine.svg?auto=webp&width=72&height=72 "Automation Engine")
+Create and share custom apps that leverage insights from all your observability, security, and business data.](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!")[![Automation Engine](https://cdn.bfldr.com/B686QPH3/at/gh4b5kp76g6tt92jqvvp28m/Automation_Engine.svg?auto=webp&width=72&height=72 "Automation Engine")
 
 ### AutomationEngine
 
-Ускорьте цифровую трансформацию с помощью простых, но мощных средств автоматизации, основанных на наблюдениях и безопасности.](/docs/platform/automationengine «Объедините наблюдаемость, безопасность и бизнес-данные с причинно-следственным искусственным интеллектом, чтобы легко автоматизировать рабочие процессы BizDevSecOps в масштабе предприятия.») [### Dynatrace Intelligence
+Accelerate digital transformation with simple yet powerful automations driven by observability and security insights.](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.")[### Dynatrace Intelligence
 
-Dynatrace Intelligence уникальным образом сочетает в себе прогностический ИИ, причинный ИИ и генеративный ИИ для обеспечения наблюдаемости, безопасности и бизнес-применений.](/docs/dynatrace-intelligence «Познакомьтесь с возможностями Dynatrace Intelligence.»)[![Грааль](https://cdn.bfldr.com/B686QPH3/at/kc3c7k476pbx2pb8cphzktf/Grail.svg?auto=webp&width=72&height=72 "Grail")
+Dynatrace Intelligence uniquely combines predictive AI, causal AI, and generative AI for observability, security, and business use cases.](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.")[![Grail](https://cdn.bfldr.com/B686QPH3/at/kc3c7k476pbx2pb8cphzktf/Grail.svg?auto=webp&width=72&height=72 "Grail")
 
-### Грааль
+### Grail
 
-Grail™ — это озеро причинно-следственных данных с аналитическим механизмом массово-параллельной обработки (MPP), который использует язык запросов Dynatrace (DQL) для мгновенной, контекстно-ориентированной аналитики на основе искусственного интеллекта.](/docs/platform/grail «Информация о том, что и как можно запрашивать данные Dynatrace».)[![Открытый конвейер](https://cdn.bfldr.com/B686QPH3/at/rp4vgwhpjx5rv6rm53mk88cc/OpenPipeline.svg?auto=webp&width=72&height=72 "OpenPipeline")
+Grailâ¢ is a causational data lakehouse with a massively parallel processing (MPP) analytics engine that leverages Dynatrace Query Language (DQL) for instant, AI-powered, context-rich analytics.](/docs/platform/grail "Insights on what and how you can query Dynatrace data.")[![OpenPipeline](https://cdn.bfldr.com/B686QPH3/at/rp4vgwhpjx5rv6rm53mk88cc/OpenPipeline.svg?auto=webp&width=72&height=72 "OpenPipeline")
 
 ### OpenPipeline
 
-Dynatrace OpenPipeline управляет всеми аспектами унифицированного приема данных Dynatrace с помощью мощных, масштабируемых и гибких возможностей потоковой обработки и извлечения данных.](/docs/platform/openpipeline «Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline».)[![OneAgent](https://cdn.bfldr.com/B686QPH3/at/g8mmkkpfmgwbxcjz54pvfsx/OneAgent.svg?auto=webp&width=72&height=72 "OneAgent")
+Dynatrace OpenPipeline manages all aspects of Dynatrace's unified ingestion with powerful, scalable, and flexible stream processing and data extraction options.](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")[![OneAgent](https://cdn.bfldr.com/B686QPH3/at/g8mmkkpfmgwbxcjz54pvfsx/OneAgent.svg?auto=webp&width=72&height=72 "OneAgent")
 
 ### OneAgent
 
-Службы OneAgent® автоматически обнаруживают, активируют и анализируют приложения, микросервисы, инфраструктуру и любые зависимости в современных облачных средах.](/docs/platform/oneagent «Изучите возможности мониторинга OneAgent.»)[![Смартскейп](https://dt-cdn.net/images/smartscape-d5c4104cad.svg "Smartscape")
+OneAgentÂ® services automatically discover, activate, and instrument applications, microservices, infrastructure, and any dependencies in modern cloud environments.](/docs/platform/oneagent "Learn the monitoring capabilities of OneAgent.")[![Smartscape](https://dt-cdn.net/images/smartscape-d5c4104cad.svg "Smartscape")
 
-### Смартскейп
+### Smartscape
 
-Динамическое отображение топологии среды Smartscape® визуализирует динамические отношения между всеми компонентами приложения на каждом уровне.](/docs/analyze-explore-automate/smartscape-classic «Узнайте, как Smartscape Classic визуализирует все объекты и зависимости в вашей среде».)
+SmartscapeÂ® dynamic environment-topology mapping visualizes the dynamic relationships among all application components across every tier.](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.")
 
-## Архитектура Dynatrace
+## Dynatrace architecture
 
-Dynatrace создан для того, чтобы облако было легко масштабируемым, доступным и безопасным.
+Dynatrace is built for the cloud to be highly scalable, available, and secure.
 
-### Создан для облака для мониторинга в гипермасштабе
+### Built for the cloud to monitor at hyperscale
 
-Dynatrace — единственное решение на рынке, созданное с использованием динамических облачных технологий веб-масштаба.
+Dynatrace is the only solution on the market architected with dynamic, web-scale cloud-native technologies.
 
-Dynatrace работает в общедоступных облаках и построен на эластичной архитектуре Grid, которая легко масштабируется до более чем 100 000 хостов.Мы используем самые надежные, проверенные на предприятии облачные технологии, чтобы предоставить решение для мониторинга, столь же отказоустойчивое и доступное, как и системы, которые оно контролирует.
+Running on public clouds, Dynatrace is built on an elastic grid architecture that scales to 100,000+ hosts easily. We use the most robust enterprise-proven cloud technologies to provide a monitoring solution as resilient and available as the systems it monitors.
 
-* Облачные вычисления
-* Облачное блочное и объектное хранилище.
-* Автоматизированная балансировка нагрузки
-* Хранилище Hypercube на базе Cassandra.
-* Поисковая система на основе Elasticsearch.
+* Cloud-native computing
+* Cloud-native block and object storage
+* Automated load balancing
+* Cassandra-based Hypercube storage
+* Elasticsearch-based search engine
 
-### Создан для постоянной доступности
+### Designed for always-on availability
 
-Dynatrace работает в нескольких регионах AWS, Azure и Google Cloud, работая как минимум в трех зонах доступности для каждого региона.
+Dynatrace runs across several AWS, Azure, and Google Cloud regions, operating in at least three availability zones for each region.
 
-Возможности автоматического масштабирования и балансировки нагрузки гарантируют, что новые вычислительные экземпляры будут автоматически разворачиваться в соответствии с пиками спроса и/или трафика.
+Automatic scaling and load balancing capabilities ensure that new computing instances spin up automatically to meet spikes in demand and/or traffic.
 
-* Резервирование при отказе в режиме реального времени встроено во все компоненты системы.
-* Уровень автоматического управления обнаруживает неисправные компоненты и немедленно заменяет их.
-* Одна треть избыточной мощности в наших кластерах всегда зарезервирована для аварийного переключения в режиме реального времени и способности справляться с пиковыми нагрузками в режиме реального времени.
-* Гарантия — 99,5 % времени безотказной работы.
+* Real-time failover redundancy is built into all system components.
+* Automated management layer detects faulty components and replaces them immediately.
+* One-third of excess capacity in our clusters is always reserved for real-time failover and the ability to cope with peak loads in real time.
+* Guaranteed â¥ 99.5% uptime
 
-### Безопасность благодаря дизайну
+### Secure by design
 
-Dynatrace был разработан с учетом лучших отраслевых практик, таких как шифрованная передача, предотвращение межсайтового сценария, брандмауэры, регулярные обновления безопасности, сканирование безопасности и оценка уязвимостей, чтобы обеспечить безопасность ваших данных.Аудит, ограничения доступа и безопасный вывод из эксплуатации хранилища данных дополняют дизайн.
+Dynatrace has been designed on industry best practices such as encrypted transmissions, cross-site scripting prevention, firewalls, regular security updates, security scans, and vulnerability assessments to ensure the security of your data. Auditing, access restrictions, and secure decommissioning of data storage complement the design.
 
-Поскольку Dynatrace размещается в облаке, она пользуется преимуществами центров обработки данных мирового класса, сертифицированных по ISO 27001, PCI-DSS Level 1 и SOC 1/SSAE 16.
+Because Dynatrace is hosted in the cloud, it benefits from world-class data centers, which are certified for ISO 27001, PCI-DSS Level 1, and SOC 1 / SSAE 16.
 
-Dynatrace получила сертификат SOC 2 Type II за безопасность и доступность.
+Dynatrace has received SOC 2 Type II certification for security and availability.
 
-## Часть облачной экосистемы вашего предприятия
+## Part of your enterprise cloud ecosystem
 
-Dynatrace интегрируется с ключевыми компонентами облачной экосистемы вашего предприятия для поддержки динамической оркестровки облака в AWS, Azure, Google Cloud, VMware Tanzu Application Service, Red Hat OpenShift, Kubernetes и других.В этих средах Dynatrace автоматически запускает и отслеживает весь облачный стек, а также все приложения и контейнеры, работающие в нем, включая приложения и рабочие нагрузки, которые могут перемещаться по нескольким облачным и гибридным средам.
 
-Наша тесная интеграция с облачными платформами помогает вам упростить разработку и эксплуатацию, повысить прозрачность и ситуационную осведомленность в гибридных и мультиоблачных средах.
+
+Dynatrace is integrated with key components of your enterprise cloud ecosystem to support dynamic cloud orchestration on AWS, Azure, Google Cloud, VMware Tanzu Application Service, Red Hat OpenShift, Kubernetes, and others. In these environments, Dynatrace automatically launches and monitors the full cloud stack and all the applications and containers running within the stack, including applications and workloads that may traverse multiple cloud and hybrid environments.
+
+Our close integration with cloud platforms helps you simplify development and operations, increase visibility, and improve situational awareness across hybrid, multicloud environments.

@@ -1,288 +1,290 @@
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-18T05:31:19.406174
+scraped: 2026-02-18T21:15:31.679452
 ---
 
 # Dashboards
 
 # Dashboards
 
-* Последние Dynatrace
-* Приложение
-* 10 мин на чтение
-* Обновлено 28 января 2026 г.
+* Latest Dynatrace
+* App
+* 10-min read
+* Updated on Jan 28, 2026
 
-Необходимые условия
+Prerequisites
 
-### Разрешения
+### Permissions
 
-В следующей таблице описаны необходимые разрешения.
+The following table describes the required permissions.
 
-Разрешение
+Permission
 
-Описание
+Description
 
 app-engine:functions:run
 
-Разрешает пользователю запускать функции
+Allows the user to run functions
 
 app-engine:apps:run
 
-Разрешает пользователю запускать функции
+Allows the user to run functions
 
 app-engine:edge-connects:read
 
-Разрешает пользователю читать конфигурацию EdgeConnect через функции
+Allows the user to read EdgeConnect configuration via functions
 
 document:environment-shares:read
 
-Разрешает пользователю доступ к общим панелям мониторинга
+Allows the user to access shared dashboards
 
 document:direct-shares:read
 
-Разрешает пользователю доступ к общим панелям мониторинга
+Allows the user to access shared dashboards
 
 state:user-app-states:write
 
-Разрешает приложению сохранять настройки представления, такие как выбранный временной интервал или значения переменных
+Allows the app to persist view settings like the selected timeframe or variable values
 
 state:user-app-states:read
 
-Разрешает приложению читать настройки представления, такие как выбранный временной интервал или значения переменных
+Allows the app to read view settings like the selected timeframe or variable values
 
 state:user-app-states:delete
 
-Разрешает приложению удалять настройки представления, такие как выбранный временной интервал или значения переменных
+Allows the app to delete view settings like the selected timeframe or variable values
 
 davis:analyzers:read
 
-Разрешает пользователю читать конфигурацию анализаторов Davis
+Allows the user to read configuration of Davis analyzers
 
 davis:analyzers:execute
 
-Разрешает пользователю запускать анализаторы Davis
+Allows the user to run Davis analyzers
 
 10
 
-строк на страницу
+rows per page
 
-Страница
+Page
 
 1
 
-из 1
+of 1
 
-Начните работу
+Get started
 
-Основные понятия
+Concepts
 
-Варианты использования
+Use cases
 
-С помощью ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** вы можете создавать мощные, основанные на данных документы для пользовательской аналитики.
+With ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, you can create powerful, data-driven documents for custom analytics.
 
-![Получайте информацию в режиме реального времени, преобразуя сложные данные в динамические интерактивные панели мониторинга.](https://dt-cdn.net/hub/00_General.png)![Быстрый старт с помощью готовых панелей мониторинга, разработанных для ваших повседневных нужд.](https://dt-cdn.net/hub/01_Ready_made.png)![Создавайте свою панель мониторинга легко, всего в несколько кликов.](https://dt-cdn.net/hub/02_Explore.png)![Настраивайте любую визуализацию с легкостью.](https://dt-cdn.net/hub/03_Customize.png)![Оцените динамические и интерактивные панели мониторинга с универсальными фильтрами переменных.](https://dt-cdn.net/hub/04_Variables.png)![Делитесь своими выводами с другими за считанные секунды.](https://dt-cdn.net/hub/05_Share.png)
+![Get real-time insights by transforming complex data into dynamic, interactive dashboards.](https://dt-cdn.net/hub/00_General.png)![Start fast using our ready-made dashboards, designed for your everyday needs.](https://dt-cdn.net/hub/01_Ready_made.png)![Build your dashboard effortlessly with only a few clicks.](https://dt-cdn.net/hub/02_Explore.png)![Customize any visualization with ease.](https://dt-cdn.net/hub/03_Customize.png)![Experience dynamic and interactive dashboards with versatile variable filtering.](https://dt-cdn.net/hub/04_Variables.png)![Share your insights with others in seconds.](https://dt-cdn.net/hub/05_Share.png)
 
-1 из 6Получайте информацию в режиме реального времени, преобразуя сложные данные в динамические интерактивные панели мониторинга.
+1 of 6Get real-time insights by transforming complex data into dynamic, interactive dashboards.
 
-## Плитки панели мониторинга
+## Dashboard tiles
 
-В ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** панель мониторинга может состоять из нескольких плиток:
+In ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, a dashboard can consist of multiple tiles:
 
-* [Explore](#explore): исследуйте данные, такие как журналы, метрики и бизнес-события, с помощью нашего интерфейса point-and-click.
-* [Query](#query): отображает данные, полученные с помощью запросов Grail.
-* [Code](#code): отображает данные, возвращаемые кодом, выполненным с помощью функций Dynatrace.
-* [Markdown](#markdown): статический контент, отредактированный в markdown.
+* [Explore](#explore): explore data such as your logs, metrics, and business events with our point-and-click interface.
+* [Query](#query): displays data queried via Grail.
+* [Code](#code): display data returned by code executed via Dynatrace functions.
+* [Markdown](#markdown): static content edited in markdown.
 
-### Плитка Explore
+### Explore tile
 
-Вы можете использовать параметры Explore для изучения журналов, метрик, бизнес-событий и многого другого с помощью нашего интерфейса point-and-click. Без знания DQL или программирования вы можете создавать и начинать использовать плитки панели мониторинга за считанные минуты.
+You can use the Explore options to explore your logs, metrics, business events, and more with our point-and-click interface. With zero knowledge of DQL or coding, you can create and start using dashboard tiles in minutes.
 
-Для получения дополнительной информации ознакомьтесь со страницей [Explore data](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface."), которая показывает, как создавать плитки Explore.
+For more information, we have a whole [Explore data](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") page that shows you how to create Explore tiles.
 
-### Плитка Query
+### Query tile
 
-Плитки запросов позволяют легко запрашивать данные из Grail и [визуализировать](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") результат различными способами.
+The query tiles allow you to easily query data from Grail and [visualize](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") the result in different ways.
 
-Плитка запроса состоит из поля ввода запроса, в котором можно написать запрос DQL. В поле ввода используйте **Ctrl**+**Space**, чтобы в любое время вызвать автозаполнение.
+A query tile consists of a query input where you can write a DQL query. In the query input, use **Ctrl**+**Space** to trigger autocompletion at any time.
 
-Вы можете управлять временным интервалом для запроса с помощью выпадающего списка временного интервала. Если временной интервал определен в самом запросе, выпадающий список будет отключен.
+You can control the timeframe for the query via the timeframe dropdown list. If the timeframe is defined in the query itself, the dropdown list is disabled.
 
-### Плитка Code
+### Code tile
 
-Раздел кода позволяет получать данные для вашей панели мониторинга с помощью функций Dynatrace.
+The code section enables you to fetch data for your dashboard using Dynatrace functions.
 
-### Плитка Markdown
+### Markdown tile
 
-Раздел markdown может быть чем угодно, от небольшого примечания о чем-то на панели мониторинга до целой страницы отформатированной информации с ссылками и изображениями.
+A markdown section can be anything from a minor note about something on the dashboard to a whole page of formatted information with links and pictures.
 
-* Легко редактировать
-* Приятно на вид
+* Easy to edit
+* Attractive to look at
 
-Чтобы вставить запросы из вашей панели мониторинга с автозаполнением, используйте **Ctrl**+**Space**.
+To insert queries from your dashboard with autocomplete, use **Ctrl**+**Space**.
 
-Вы можете ссылаться на другие места на вашей панели мониторинга и в других местах.
+You can link to other places in your dashboard and elsewhere.
 
-Синтаксис ссылки Markdown
+Markdown link syntax
 
-Ссылка в Markdown — это метка и ссылка в форме `[метка](адрес)`, где:
+A link in Markdown is a label and link of the form `[label](address)`, where:
 
-* `метка` — это произвольный текст для отображения ссылки в вашей плитке или разделе Markdown
-* `адрес` указывает, что открыть при выборе ссылки, например веб-сайт или приложение Dynatrace
+* The `label` is freeform text to display on the link in your Markdown tile or section
+* The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
 
-Ссылка на
+Link to
 
-Синтаксис и примеры
+Syntax and examples
 
-Веб-сайт
-
-```
-[Моя метка](https://www.example.com/)
-```
-
-Приложение Notebooks
+Website
 
 ```
-[Моя метка](/ui/apps/dynatrace.notebooks/notebooks)
+[My label](https://www.example.com/)
 ```
 
-Конкретный Notebook
-
-**Синтаксис**:
+Notebooks app
 
 ```
-[метка](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
+[My label](/ui/apps/dynatrace.notebooks/notebooks)
 ```
 
-**Пример**:
+Specific notebook
+
+**Syntax**:
 
 ```
-[Моя метка](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
+[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
 ```
 
-Чтобы получить адрес
-
-1. Отобразите целевой Notebook.
-2. Скопируйте все из адресной строки браузера, начиная с `/ui/`.
-3. Вставьте его в свой Markdown в качестве адреса ссылки.
-
-Конкретный раздел Notebook
-
-**Синтаксис**:
+**Example**:
 
 ```
-[метка](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
+[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
 ```
 
-**Пример**:
+To get the address
+
+1. Display the target notebook.
+2. Copy everything on the browser address line starting from `/ui/`.
+3. Paste it into your Markdown as the address of a link.
+
+Specific notebook section
+
+**Syntax**:
 
 ```
-[Моя метка](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
+[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
 ```
 
-Чтобы получить адрес
-
-1. Отобразите целевой Notebook.
-2. Выберите целевой раздел Notebook.
-3. Скопируйте все из адресной строки браузера, начиная с `/ui/`.
-4. Вставьте его в свой Markdown в качестве адреса ссылки.
-
-Приложение Dashboards
+**Example**:
 
 ```
-[Моя метка](/ui/apps/dynatrace.dashboards/)
+[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
 ```
 
-Конкретная панель мониторинга
+To get the address
 
-**Синтаксис**:
+1. Display the target notebook.
+2. Select the target section of the notebook.
+3. Copy everything on the browser address line starting from `/ui/`.
+4. Paste it into your Markdown as the address of a link.
 
-```
-[метка](/ui/apps/dynatrace.dashboards/<dashboardid>)
-```
-
-**Пример**:
-
-```
-[Моя метка](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-```
-
-Чтобы получить адрес
-
-1. Отобразите целевую панель мониторинга.
-2. Скопируйте все из адресной строки браузера, начиная с `/ui/`.
-3. Вставьте его в свой Markdown в качестве адреса ссылки.
-
-Конкретная плитка панели мониторинга
-
-**Синтаксис**:
+Dashboards app
 
 ```
-[метка](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
+[My label](/ui/apps/dynatrace.dashboards/)
 ```
 
-**Пример**:
+Specific dashboard
+
+**Syntax**:
 
 ```
-[Моя метка](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
+[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
 ```
 
-Чтобы включить конкретный ID плитки в ссылку
+**Example**:
 
-1. Отобразите целевую панель мониторинга.
-2. Выберите целевую плитку на целевой панели мониторинга.
-3. Скопируйте все из адресной строки браузера, начиная с `/ui/`.
-4. Вставьте его в свой Markdown в качестве адреса ссылки.
+```
+[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
+```
 
-## Варианты использования
+To get the address
 
-Dashboards позволяет вам:
+1. Display the target dashboard.
+2. Copy everything on the browser address line starting from `/ui/`.
+3. Paste it into your Markdown as the address of a link.
 
-* Использовать готовые панели мониторинга для мониторинга состояния вашей системы в режиме реального времени.
-* Создавать пользовательские панели мониторинга легко с помощью простого в использовании редактора или Davis CoPilot™ .
-* Детально изучать свои данные благодаря бесшовной интеграции с другими приложениями Dynatrace.
-* Использовать возможности Davis AI для выявления аномалий и прогнозирования непосредственно на ваших графиках.
-* Искать любой тип данных на платформе и объединять их даже с внешними данными в одном представлении.
-* Настраивать фильтры переменных для мониторинга различных ресурсов в рамках одной панели мониторинга.
+Specific dashboard tile
 
-Эти процедуры описывают основы использования ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** и помогут вам начать настройку и создание собственных панелей мониторинга.
+**Syntax**:
 
-## Использовать панели мониторинга
+```
+[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
+```
 
-### Использовать сочетания клавиш
+**Example**:
 
-Сочетания клавиш помогают вам работать быстрее в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+```
+[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
+```
 
-Чтобы отобразить список сочетаний клавиш, в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** откройте меню и выберите **Сочетания клавиш** или используйте сочетание клавиш **Shift**+**?**
+To include a specific tile ID in the link
 
-| Действие | Сочетание клавиш |
+1. Display the target dashboard.
+2. Select the target tile in the target dashboard.
+3. Copy everything on the browser address line starting from `/ui/`.
+4. Paste it into your Markdown as the address of a link.
+
+## Use cases
+
+Dashboards enables you to:
+
+* Use readymade dashboards to monitor your system status in real-time.
+* Create custom dashboards effortlessly with an easy-to-use editor or Davis CoPilotâ¢.
+* Drill down into your data through seamless integration with other Dynatrace Apps.
+* Utilize the power of Davis AI for spotting anomalies and forecasting directly on your charts.
+* Search for any data type across the platform and combine them even with external data in a single view.
+* Configure variable filters to monitor different resources within a single dashboard.
+
+These procedures describe the basics of using ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and get you started on the way to customizing and creating your own dashboards.
+
+## Use dashboards
+
+### Use shortcuts
+
+Keyboard shortcuts help you work faster in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+
+To list keyboard shortcuts, in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, open the  menu and select  **Keyboard shortcuts** or use keyboard shortcut **Shift**+**?**
+
+| Action | Keyboard shortcut |
 | --- | --- |
-| **Общие** |  |
-| Выделить несколько плиток | Выберите плитку, нажмите **Space**, чтобы получить двойную рамку вокруг плитки, используйте клавиши со стрелками, чтобы перейти к другой плитке, а затем снова нажмите **Space**, чтобы выбрать несколько плиток |
-| Выделить все плитки | **Ctrl**/**Cmd**+**A** |
-| Удалить выбранные плитки | **Del** |
-| Скопировать выбранные плитки в буфер обмена | **Ctrl**/**Cmd**+**C** |
-| Вставить плитки из буфера обмена | **Ctrl**/**Cmd**+**V** |
-| Добавить плитку | **Ctrl**/**Cmd**+**Shift**+**Enter** |
+| **General** |  |
+| Multiselect tiles | Select a tile, press **Space** to get a double border around the tile, use arrow keys to go to another tile, and then press **Space** again to select multiple tiles |
+| Select all tiles | **Ctrl**/**Cmd**+**A** |
+| Delete selected tiles | **Del** |
+| Copy selected tiles to clipboard | **Ctrl**/**Cmd**+**C** |
+| Paste tiles from clipboard | **Ctrl**/**Cmd**+**V** |
+| Add tile | **Ctrl**/**Cmd**+**Shift**+**Enter** |
 |  |  |
-| **Плитки кода** |  |
-| Добавить код | **Shift**+**C** |
-| Выполнить код | **Ctrl**/**Cmd**+**Enter** |
+| **Code tiles** |  |
+| Add code | **Shift**+**C** |
+| Execute code | **Ctrl**/**Cmd**+**Enter** |
 |  |  |
-| **Плитки данных** |  |
-| Добавить запрос | **Shift**+**D** |
-| Выполнить запрос | **Ctrl**/**Cmd**+**Enter** |
+| **Data tiles** |  |
+| Add query | **Shift**+**D** |
+| Run query | **Ctrl**/**Cmd**+**Enter** |
 |  |  |
-| **Плитки Markdown** |  |
-| Добавить Markdown | **Shift**+**M** |
+| **Markdown tiles** |  |
+| Add markdown | **Shift**+**M** |
 |  |  |
-| **Плитки Service-Level Objective** |  |
-| Добавить Service-Level Objective | **Shift**+**S** |
+| **Service-Level Objective tiles** |  |
+| Add Service-Level Objective | **Shift**+**S** |
 |  |  |
-| **Переменные** |  |
-| Добавить переменную | **Shift**+**V** |
+| **Variables** |  |
+| Add variable | **Shift**+**V** |
 
-### Список панелей мониторинга
+### List dashboards
+
+
 
 #### List all dashboards
 
@@ -290,33 +292,33 @@ To list dashboards
 
 1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 2. In the **Dashboards** panel, the **Last opened by you** section lists recently accessed dashboards.
-3. Наведите курсор на название панели мониторинга и выберите  для меню доступных команд для этой панели мониторинга. В этом примере мы отобразим меню для панели мониторинга с именем `my dashboard 3`.
+3. Hover over a dashboard name and select  for a menu of available commands for that dashboard. In this example, we would display the menu for a dashboard called `my dashboard 3`.
 
    ![Dashboards: Last opened by you: dashboard-specific menu](https://dt-cdn.net/images/dashboards-last-opened-by-you-dashboard-specific-menu-269-08e78a134c.png)
 
-   Команды, которые вы видите в меню, зависят от ваших разрешений для этой панели мониторинга. Например, вы не можете переименовать панель мониторинга другого пользователя, если он не предоставил вам права на редактирование этой панели мониторинга. (Но вы *можете* сделать копию общей панели мониторинга, а затем отредактировать свою копию.)
+   The commands you see in the menu depend on your permissions for that dashboard. For example, you can't rename someone else's dashboard unless they have given you edit permissions for that dashboard. (But you *can* make a copy of a shared dashboard and then edit your copy.)
 
-   * **Rename** включает редактирование имени панели мониторинга
-   * **Duplicate** создает копию панели мониторинга
-   * **Download** записывает панель мониторинга в JSON файл, который можно импортировать
-   * **Change owner** назначает право собственности на панель мониторинга новому владельцу
-   * **Move to trash** перемещает панель мониторинга в корзину
+   * **Rename** enables editing for the dashboard name
+   * **Duplicate** makes a copy of the dashboard
+   * **Download** writes the dashboard to a JSON file that you can import
+   * **Change owner** assigns dashboard ownership to a new owner
+   * **Move to trash** moves the dashboard to the trash can
 
-   Этот значок  после названия панели мониторинга означает, что кто-то поделился этой панелью мониторинга с вами.
-4. Чтобы отобразить таблицу всех панелей мониторинга, к которым у вас есть доступ — ваших собственных панелей мониторинга и всех панелей мониторинга, которыми поделились с вами, — выберите  **All dashboards**.
+   This icon  after a dashboard name means someone shared that dashboard with you.
+4. To display a table of all dashboards to which you have accessâyour own dashboards and all dashboards that people have shared with youâselect  **All dashboards**.
 
-   * Чтобы отсортировать таблицу, выберите заголовки **Name**, **Created** или **Last modified**.
-   * Чтобы отфильтровать таблицу:
+   * To sort the table, select the **Name**, **Created**, or **Last modified** header.
+   * To filter the table:
 
-     + Вы можете ввести строку поиска в  панели фильтра в верхней части таблицы.
-     + Вы можете выбрать **Owned by anyone**, **Owned by me** или **Shared with me** в списке в верхней части таблицы.
-   * Чтобы создать новую панель мониторинга, выберите  **Dashboard** в верхнем левом углу.
-   * Чтобы загрузить панель мониторинга, выберите  **Upload** в верхнем левом углу.
-   * Чтобы удалить панель мониторинга, выберите  **Move to trash**. Если для панели мониторинга нет  значка, это означает, что у вас есть разрешение на просмотр этой общей панели мониторинга, но не на ее удаление.
-   * Чтобы просмотреть удаленные панели мониторинга, выберите вкладку **Deleted** на странице **Dashboards**.
+     + You can enter a search string in the  filter bar at the top of the table.
+     + You can select **Owned by anyone**, **Owned by me**, or **Shared with me** in the list at the top of the table.
+   * To create a new dashboard, select  **Dashboard** in the upper-left corner.
+   * To upload a dashboard, select  **Upload** in the upper-left corner.
+   * To delete a dashboard, select  **Move to trash**. If there's no  icon for a dashboard, it means you have permission to view that shared dashboard but not to delete it.
+   * To list deleted dashboards, select the **Deleted** tab of the **Dashboards** page.
 
-     + Чтобы восстановить удаленную панель мониторинга, выберите  **Restore**.
-     + Чтобы окончательно удалить панель мониторинга, выберите  **Delete permanently**.
+     + To restore a deleted dashboard, select  **Restore**.
+     + To permanently delete a dashboard, select  **Delete permanently**.
 
 #### List my dashboards
 
@@ -324,7 +326,7 @@ To list all dashboards you own
 
 1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 2. In the **Dashboards** panel, select  **All dashboards**.
-3. В верхней части таблицы **Dashboards** выберите **Owned by me**.
+3. At the top of the **Dashboards** table, select **Owned by me**.
 
 #### List dashboards shared with me
 
@@ -332,7 +334,7 @@ To list all dashboards shared with you
 
 1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 2. In the **Dashboards** panel, select  **All dashboards**.
-3. В верхней части таблицы **Dashboards** выберите **Shared with me**.
+3. At the top of the **Dashboards** table, select **Shared with me**.
 
 #### List ready-made dashboards
 
@@ -345,16 +347,16 @@ Alternatively, you can select  **All dashboards** and then change the filter at 
 
 What's special about ready-made documents
 
-* Созданы и автоматически распространяются Dynatrace в качестве примеров и шаблонов.
-* Только для чтения: вы можете редактировать их для использования во время сеанса и сохранять копию с вашими изменениями, но вы не можете сохранить свои изменения в исходном документе.
-* Этот значок  в таблице документов указывает, что это готовый документ.
+* Created and automatically distributed by Dynatrace as examples and templates.
+* Read-only: you can edit them for use during your session, and you can save a copy with your changes, but you can't save your changes to the original document.
+* This icon  in a table of documents indicates that it's a ready-made document.
 
 ### Display a dashboard
 
 To display a dashboard
 
 1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
-2. Выберите название панели мониторинга. В этом примере мы открываем `my dashboard 2`.
+2. Select the name of the dashboard. In this example, we open `my dashboard 2`.
 
    ![Open a dashboard](https://dt-cdn.net/images/open-my-dashboard-2-264-194755db23.png)
 
@@ -366,8 +368,8 @@ When you maximize a tile, it is temporarily zoomed to the maximum size of the di
 
 To maximize a tile
 
-1. Наведите курсор на плитку, чтобы отобразить команды, относящиеся к этой плитке.
-2. Выберите  **Maximize**.
+1. Hover over the tile to display the tile-specific commands.
+2. Select  **Maximize**.
 
 To return to the normal dashboard view, select **Minimize** in the upper-right corner.
 
@@ -383,12 +385,12 @@ To refresh the current dashboard manually, in the upper-right corner of the dash
 
 To refresh the current dashboard automatically, in the upper-right corner of the dashboard, select  (in the   pair) and select a refresh rate.
 
-* `Off` отключает автоматическое обновление
-* Другие настройки будут обновлять панель мониторинга через указанный интервал
+* `Off` turns off automatic refresh
+* Other settings will refresh the dashboard at the specified interval
 
-Если вы измените частоту обновления, эта частота будет запомнена при следующем открытии панели мониторинга.
+If you change the refresh rate, that rate is remembered the next time you open the dashboard.
 
-Частая частота обновления может держать вас в курсе событий, но сложная панель мониторинга может потребовать некоторого времени для пересчета каждый раз при обновлении. Выберите частоту обновления, которая соответствует вашим потребностям и сложности панели мониторинга.
+A frequent refresh rate can keep you literally up to the minute, but a complex dashboard may take some time to recalculate each time it is refreshed. Choose a refresh rate that suits your needs and the complexity of the dashboard.
 
 ### Edit read-only dashboards
 
@@ -401,16 +403,16 @@ Example:
 
 1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, list the ready-made dashboards, and select the **Getting started** dashboard.
 
-   В верхнем левом углу, рядом с названием документа, написано  **Ready-made**.
-2. Выберите плитку Pie chart и затем выберите  **Edit**.
-3. Измените визуализацию с Pie на Donut.
+   It says  **Ready-made** in the upper-left corner, next to the document name.
+2. Select the Pie chart tile and then select  **Edit**.
+3. Change the visualization from Pie to Donut.
 
-   Теперь вам предлагается два варианта: **Save as new** и **Discard changes**.
-4. Используйте обновленную панель мониторинга по мере необходимости. У вас есть полный доступ к редактированию для этого сеанса.
-5. Когда вы закончите, выберите, что делать с вашими изменениями:
+   Now you are offered two buttons: **Save as new** and **Discard changes**.
+4. Use the updated dashboard as needed. You have full edit access for this session.
+5. When you're finished, select what to do with your changes:
 
-   * **Save as new** — сохраняет ваши изменения в новой копии отредактированной панели мониторинга.
-   * **Discard changes** — отменяет ваши изменения и возвращает вас к нередактированной панели мониторинга только для чтения.
+   * **Save as new**âsaves your changes in a new copy of the edited dashboard.
+   * **Discard changes**âdiscards your changes and returns you to the unedited read-only dashboard.
 
 ### Select the timeframe
 
@@ -576,572 +578,580 @@ To select tile-level segments
 
 ### Dashboard settings
 
-Чтобы просмотреть или изменить настройки, применяемые ко всей панели мониторинга
 
-1. Отобразите панель мониторинга.
-2. В правом верхнем углу панели мониторинга выберите **Settings** (Настройки).
 
-   Отображается панель **Settings**.
-3. Просмотрите или измените настройки по мере необходимости.
+To review or change settings that apply to an entire dashboard
 
-   Custom timeframe (Настраиваемый временной интервал)
+1. Display the dashboard.
+2. In the upper-right corner of the dashboard, select  **Settings**.
 
-   Чтобы установить временной интервал по умолчанию для панели мониторинга
+   The **Settings** panel is displayed.
+3. Review or change settings as needed.
 
-   1. Отобразите панель мониторинга.
-   2. В правом верхнем углу панели мониторинга выберите **Settings**.
-   3. Включите **Custom timeframe**.
-   4. Выберите временной интервал по умолчанию для выбранной панели мониторинга.
+   Custom timeframe
 
-      Изменение этой настройки не обновит немедленно временной интервал текущей панели мониторинга. Изменение применяется только к новой сессии с панелью мониторинга (либо для другого пользователя, либо для того же пользователя, возвращающегося к панели мониторинга для другой сессии).
+   To set a default timeframe for a dashboard
 
-   Подробности о временных интервалах панели мониторинга см. в разделе [Select the timeframe](#dashboard-timeframe).
+   1. Display the dashboard.
+   2. In the upper-right corner of the dashboard, select  **Settings**.
+   3. Turn on **Custom timeframe**.
+   4. Select the default timeframe for the selected dashboard.
 
-   Default segment (Сегмент по умолчанию)
+      Changing this setting does not immediately update the timeframe of the current dashboard. The change is applied only to a new session with the dashboard (either for a different user, or for the same user returning to the dashboard for another session).
 
-   Чтобы просмотреть или изменить сегмент панели мониторинга по умолчанию
+   For details about the dashboard timeframes, see [Select the timeframe](#dashboard-timeframe).
 
-   1. Отобразите панель мониторинга.
-   2. В правом верхнем углу панели мониторинга выберите **Settings**.
-   3. Включите **Default segment**.
-   4. Выберите сегмент по умолчанию для выбранной панели мониторинга.
+   Default segment
 
-      Изменение этой настройки не обновит немедленно сегмент текущей панели мониторинга. Изменение применяется только к новой сессии с панелью мониторинга (либо для другого пользователя, либо для того же пользователя, возвращающегося к панели мониторинга для другой сессии).
+   To review or change the dashboard default segment
 
-   Подробности о сегментах панели мониторинга см. в разделе [Select segments](#segment).
+   1. Display the dashboard.
+   2. In the upper-right corner of the dashboard, select  **Settings**.
+   3. Turn on **Default segment**.
+   4. Select the default segment for the selected dashboard.
 
-   {$} Variables (Переменные {$})
+      Changing this setting does not immediately update the segment of the current dashboard. The change is applied only to a new session with the dashboard (either for a different user, or for the same user returning to the dashboard for another session).
 
-   Чтобы просмотреть или изменить переменные панели мониторинга
+   For details about dashboard segments, see [Select segments](#segment).
 
-   1. Отобразите панель мониторинга.
-   2. В правом верхнем углу панели мониторинга выберите **Settings**.
+   {$} Variables
 
-      Отображается панель **Settings**.
-   3. Выберите **Variables**.
+   To review or change dashboard variables
 
-   Подробности о переменных панели мониторинга см. в разделе [Add a variable to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
+   1. Display the dashboard.
+   2. In the upper-right corner of the dashboard, select  **Settings**.
 
-### Run a code tile (Запуск плитки кода)
+      The **Settings** panel is displayed.
+   3. Select **Variables**.
 
-При открытии документа от другого пользователя вы можете увидеть следующее сообщение:
+   For details about dashboard variables, see [Add a variable to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
 
-`This dashboard contains custom code. It is read-only until you review the code and select â€œAccept and runâ€ .` (Эта панель мониторинга содержит пользовательский код. Она доступна только для чтения, пока вы не просмотрите код и не выберете â€œAccept and runâ€ .)
+### Run a code tile
 
-При запуске плитки кода или раздела, написанного другим человеком, Dynatrace выполняет JavaScript этого человека, используя вашу учетную запись и ваши разрешения. Это мощная функция, но ее необходимо использовать правильно и ответственно. JavaScript-код может получать доступ к внешним APIs от вашего имени (используя вашу учетную запись и разрешения).
+When you open a document from another user, you may see the following message:
 
-Чтобы просмотреть код
+`This dashboard contains custom code. It is read-only until you review the code and select âAccept and runâ.`
 
-1. Выберите **Review all code**. (Просмотреть весь код).
+When you run a code tile or section written by another person, Dynatrace executes the other person's JavaScript using your user account and your permissions. This is a powerful feature, but it needs to be used correctly and responsibly. The JavaScript code can access external APIs on your behalf (using your account and permissions).
 
-   Страница **Review code** отображает код каждой плитки кода в отдельном блоке.
-2. Просмотрите код и решите, хотите ли вы его запустить.
+To review code
 
-   Если вы хотите запустить код, вы можете одобрить его только для этого раза или навсегда.
+1. Select **Review all code**.
 
-   * Чтобы запустить код только для этого раза, выберите **Accept and run**. (Принять и запустить). В следующий раз, когда вы откроете этот документ, вам снова будет предложено просмотреть код перед его запуском.
-   * Чтобы навсегда принять код в этом документе, выберите **Always trust code in this document** (Всегда доверять коду в этом документе) и затем выберите **Accept and run**.
+   The **Review code** page displays each code tile's code in a separate box.
+2. Review the code and decide whether you want to run it.
 
-### Download result (Загрузка результата)
+   If you want to run the code, you can approve it just this time or permanently.
 
-Чтобы загрузить (экспортировать) результат текущей плитки панели мониторинга или раздела блокнота в локальный файл
+   * To run the code just this time, select **Accept and run**. The next time you open this document, you will be asked once again to review the code before running it.
+   * To permanently accept the code in this document, select **Always trust code in this document** and then select **Accept and run**.
 
-1. Выберите плитку или раздел.
-2. На панели команд откройте меню и выберите **Download result** (Загрузить результат) > [format] (формат).
+### Download result
 
-   Доступные варианты формата зависят от визуализации.
+To download (export) the result of the current dashboard tile or notebook section to a local file
 
-   * **CSV**: Результат загружается в локальный файл значений, разделенных запятыми (\*.csv). Этот вариант включает форматирование таблицы, такое как видимые столбцы и форматирование единиц измерения.
-   * **CSV (raw)**: Результат загружается в локальный файл значений, разделенных запятыми (\*.csv). Этот вариант включает полные неформатированные данные.
-   * **JSON**: Результат загружается в локальный JSON (\*.json) файл.
+1. Select the tile or section.
+2. On the command bar, open the  menu and select  **Download result** > [format].
 
-   Некоторые визуализации не предлагают возможности загрузки результата.
+   The format options available depend on the visualization.
 
-#### Possible issue with importing CSV into Excel (Возможная проблема с импортом CSV в Excel)
+   * **CSV**: The result is downloaded to a local comma-separated values (\*.csv) file. This option includes table formatting such as visible columns and unit formatting.
+   * **CSV (raw)**: The result is downloaded to a local comma-separated values (\*.csv) file. This option includes the complete unformatted data.
+   * **JSON**: The result is downloaded to a local JSON (\*.json) file.
 
-При экспорте результатов в CSV-файл — будь то **CSV** или **CSV (raw)** — с переносами строк в любом столбце/поле результата, а затем открытии файла в Microsoft Excel или попытке преобразования файла в таблицу с помощью опции Excel **Data** (Данные) > **Text to Columns** (Текст по столбцам), вы можете столкнуться с проблемой, при которой переносы строк отображаются в Excel неправильно. Это вызвано ограничением Excel.
+   Some visualizations offer no option to download the result.
 
-Чтобы избежать этой проблемы, используйте опцию Excel **Data** (Данные) > **From Text/CSV**.
+#### Possible issue with importing CSV into Excel
 
-## Manage dashboards (Управление панелями мониторинга)
+When you export results to a CSV fileâwhether **CSV** or **CSV (raw)**âwith line breaks in any result column/field, and then open the file with Microsoft Excel or try to convert the file into a table using Excel option **Data** > **Text to Columns**, you may encounter an issue in which the line breaks are incorrectly rendered in Excel. This is caused by an Excel limitation.
 
-### Add dashboard to Dock (Добавление панели мониторинга в Dock)
+To avoid this issue, use Excel option **Data** > **From Text/CSV**.
 
-Чтобы добавить панель мониторинга в Dock для быстрого доступа
+## Manage dashboards
 
-1. Отобразите панель мониторинга.
-2. Откройте меню рядом с названием панели мониторинга (в левом верхнем углу панели мониторинга).
-3. Выберите **Add to dock**. (Добавить в Dock).
+### Add dashboard to Dock
 
-   Если вы измените название панели мониторинга, оно автоматически обновится в Dock.
+To add a dashboard to the Dock for easy access
 
-Чтобы удалить панель мониторинга из Dock
+1. Display the dashboard.
+2. Open the  menu next to the dashboard name (in the upper-left corner of the dashboard).
+3. Select  **Add to dock**.
 
-1. Наведите курсор на название панели мониторинга в Dock.
-2. Выберите **Unpin from dock**. (Открепить от Dock).
+   If you change the name of the dashboard, it's automatically updated on the Dock.
 
-### Rename a dashboard (Переименование панели мониторинга)
+To remove a dashboard from the Dock
 
-Чтобы переименовать панель мониторинга из панели **Dashboards**
+1. Hover over the dashboard name in the Dock.
+2. Select  **Unpin from dock**.
 
-1. Перейдите по ссылке ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+### Rename a dashboard
 
-   В разделе **Last opened by you** (Недавно открытые вами) перечислены ваши наиболее часто используемые панели мониторинга.
-2. Наведите курсор на название панели мониторинга, которую вы хотите переименовать, и выберите > **Rename**. (Переименовать). Если опция переименования недоступна, у вас нет прав на редактирование этой панели мониторинга.
+To rename a dashboard from the **Dashboards** panel
 
-### Duplicate a dashboard (Дублирование панели мониторинга)
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 
-Чтобы дублировать панель мониторинга из панели **Dashboards**
+   The **Last opened by you** section lists your most recently accessed dashboards.
+2. Hover over the name of the dashboard you want to rename and select  >  **Rename**. If the rename option isn't available, you don't have edit rights to that dashboard.
 
-1. Перейдите по ссылке ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+### Duplicate a dashboard
 
-   В разделе **Last opened by you** (Недавно открытые вами) перечислены ваши наиболее часто используемые панели мониторинга.
-2. Наведите курсор на название панели мониторинга, которую вы хотите дублировать, и выберите > **Make a copy**. (Создать копию).
+To duplicate a dashboard from the **Dashboards** panel
 
-Чтобы сделать копию текущей панели мониторинга
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 
-1. В верхней части панели мониторинга откройте меню панели мониторинга рядом с названием панели мониторинга.
-2. Выберите **Duplicate** (Дублировать) из меню.
+   The **Last opened by you** section lists your most recently accessed dashboards.
+2. Hover over the name of the dashboard you want to duplicate and select  >  **Make a copy**.
 
-   Создается копия с названием **Copy of** (Копия) + названием текущей панели мониторинга. Копия теперь отображается в панели **Dashboards**.
+To make a copy of the current dashboard
 
-### Share a dashboard (Предоставление доступа к панели мониторинга)
+1. At the top of the dashboard, open the dashboard menu  next to the dashboard name.
+2. Select  **Duplicate** from the menu.
 
-Если вы являетесь владельцем панели мониторинга или блокнота, вы можете поделиться им.
+   A copy is created with the name **Copy of** + the name of the current dashboard. The copy is now listed in the **Dashboards** panel.
 
-Существует три способа поделиться документом с другими пользователями Dynatrace в вашей компании:
+### Share a dashboard
 
-* **Access for all (view-only)** (Доступ для всех (только для просмотра)): Предоставьте доступ только для просмотра всем пользователям в вашей среде Dynatrace.
-* **Share access** (Предоставление доступа): Создайте и поддерживайте список пользователей и групп пользователей с доступом к документу.
-* **Share links** (Предоставление ссылок): Создайте ссылки (URL-адреса), указывающие на ваш документ, и распространяйте ссылки по выбранным каналам (например, по электронной почте).
+If you own a dashboard or notebook, you can share it.
 
-Эти методы не являются взаимоисключающими. Например, вы можете поддерживать сфокусированный список пользователей для постоянного доступа к документу (возможно, все в определенной группе регулярно редактируют документ) и создавать и распространять ссылки только для просмотра для более широкой аудитории по мере необходимости.
+There are three ways to share a document with other Dynatrace users in your company:
 
-В любом случае вы контролируете, могут ли люди редактировать документ или только просматривать его.
+* **Access for all (view-only)**: Give view-only access to everyone in your Dynatrace environment.
+* **Share access**: Create and maintain a list of users and user groups with access the document.
+* **Share links**: Create links (URLs) pointing to your document and distribute the links through the channels of your choice (email, for example).
 
-Подробности о предоставлении доступа к документам см. в разделе [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+These methods are not mutually exclusive. For example, you can maintain a focused list of users for ongoing access to the document (maybe everyone in a certain group edits the document regularly) and you can create and distribute view-only links for a wider audience as needed.
 
-### Manage dashboard versions (Управление версиями панели мониторинга)
+In any case, you control whether people can edit the document or only view it.
 
-Версии панели мониторинга сохраняются автоматически.
+For details on sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
-* Вы можете получить доступ к 50 последним версиям вашей панели мониторинга.
-* Каждая версия панели мониторинга доступна до 30 дней.
+### Manage dashboard versions
 
-Чтобы просмотреть и управлять версиями панели мониторинга
+Dashboard versions are saved automatically.
 
-1. Отобразите свою панель мониторинга.
-2. В правом верхнем углу вашей панели мониторинга выберите ![History](https://dt-cdn.net/images/history-icon-dc67cc1e2c.svg "History"). (История).
+* You can access the 50 most recent versions of your dashboard.
+* Each dashboard version is available for up to 30 days.
 
-   Это отображает меню последних версий текущей панели мониторинга.
+To view and manage dashboard versions
 
-   * Дата
-   * Время
-   * Имя человека, создавшего эту версию
-3. Из любой записи версии в меню **Versions** (Версии) вы можете выбрать действия, относящиеся к версии.
+1. Display your dashboard.
+2. In the upper-right corner of your dashboard, select ![History](https://dt-cdn.net/images/history-icon-dc67cc1e2c.svg "History").
 
-   * ![Preview](https://dt-cdn.net/images/icon-preview-1-138a2e67eb.svg "Preview") **Preview** (Предварительный просмотр) отображает предварительный просмотр выбранной версии.
-   * **Restore** (Восстановить) переключает вашу панель мониторинга на выбранную версию.
-   * **Make a copy** (Создать копию) создает новую панель мониторинга из выбранной версии и отображает новую панель мониторинга. Оригинальная панель мониторинга остается неизменной.
-   * **Download** (Загрузить) сохраняет JSON файл выбранной версии панели мониторинга на ваш локальный компьютер.
-   * **Preview in new tab** (Предварительный просмотр в новой вкладке) отображает предварительный просмотр выбранной версии в новой вкладке браузера.
-   * **Delete this version** (Удалить эту версию) удаляет выбранную версию.
-4. Чтобы отобразить и управлять всеми версиями панели мониторинга в отдельном окне, перейдите в нижнюю часть меню **Versions** и выберите **Show all**. (Показать все).
+   This displays a menu of the most recent versions of the current dashboard.
 
-Подробности см. в разделе [Manage document versions](/docs/analyze-explore-automate/dashboards-and-notebooks/document-version "View and manage versions of documents created in Dynatrace Notebooks and Dashboards.").
+   * Date
+   * Time
+   * Name of the person who created that version
+3. From any version entry in the **Versions** menu, you can select version-specific actions.
 
-### Change dashboard owner (Смена владельца панели мониторинга)
+   * ![Preview](https://dt-cdn.net/images/icon-preview-1-138a2e67eb.svg "Preview") **Preview** displays a preview of the selected version.
+   * **Restore** switches your dashboard to the selected version.
+   * **Make a copy** creates a new dashboard from the selected version and displays the new dashboard. The original dashboard remains unchanged.
+   * **Download** saves a JSON file of the selected version of the dashboard to your local machine.
+   * **Preview in new tab** displays a preview of the selected version on a new browser tab.
+   * **Delete this version** deletes the selected version.
+4. To list and manage all versions of the dashboard in a separate window, go to the bottom of the **Versions** menu and select **Show all**.
 
-При создании документа (панели мониторинга или блокнота) вы являетесь владельцем. Чтобы передать право собственности на документ другому пользователю Dynatrace
+For details, see [Manage document versions](/docs/analyze-explore-automate/dashboards-and-notebooks/document-version "View and manage versions of documents created in Dynatrace Notebooks and Dashboards.").
 
-1. Откройте меню документа и выберите **Change owner**. (Сменить владельца).
-2. Найдите и выберите нового владельца, а затем выберите **Change owner**.
+### Change dashboard owner
 
-   После смены владельца документа вы немедленно потеряете к нему доступ.
+When you create a document (dashboard or notebook), you are the owner. To give ownership of the document to another Dynatrace user
 
-   * Убедитесь, что вы готовы передать право собственности, прежде чем выбирать эту команду.
-   * Вы можете восстановить доступ к документу только в том случае, если новый владелец предоставит вам разрешение.
-3. После завершения передачи новый владелец получит электронное письмо об изменении права собственности на документ.
+1. Open the  document menu and select  **Change owner**.
+2. Find and select a new owner, and then select **Change owner**.
 
-### Download a dashboard (Загрузка панели мониторинга)
+   When you change the document owner, you immediately lose access to the document.
 
-Чтобы скачать (экспортировать) текущую отображаемую панель управления как JSON
+   * Be sure you are ready to transfer ownership before you select this command.
+   * You can regain access to the document only if the new owner gives you permission.
+3. After the transfer is complete, the new owner will receive email about the document ownership transfer.
 
-1. В верхней части панели управления откройте меню справа от названия панели управления.
-2. Выберите **Download** (Загрузить) из меню.
+### Download a dashboard
 
-   Определение текущей панели управления скачивается в локальный JSON файл.
 
-Чтобы скачать (экспортировать) панель управления из боковой панели ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** (Панели управления)
 
-1. Перейдите в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** (Панели управления).
-2. В разделе **Last opened by you** (Недавно открытые вами) наведите курсор на название панели управления, которую хотите экспортировать, и выберите **Download** (Загрузить) из меню. Панель управления скачивается в локальный JSON файл, который можно загрузить.
+To download (export) the currently displayed dashboard as JSON
 
-   Если ваша панель управления не отображается в разделе **Last opened by you** (Недавно открытые вами), выберите **All dashboards** (Все панели управления), чтобы отобразить таблицу всех панелей управления, к которым у вас есть доступ (ваши панели управления или панели управления, которыми поделились с вами). Там вы можете найти панель управления и выбрать **Download** (Загрузить) из меню.
+1. At the top of the dashboard, open the  menu to the right of the dashboard name.
+2. Select  **Download** from the menu.
 
-### Загрузка панели управления
+   The definition of the current dashboard is downloaded to a local JSON file.
 
-Чтобы загрузить (импортировать) определение JSON панели управления из боковой панели **Dashboards** (Панели управления)
+To download (export) a dashboard from the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** side panel
 
-1. Перейдите в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** (Панели управления).
-2. В панели **Dashboards** (Панели управления) слева выберите **Upload** (Загрузить).
-3. Найдите и откройте файл определения JSON панели управления.
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+2. In **Last opened by you**, hover over the name of the dashboard you want to export and select  **Download** from the  menu. The dashboard is downloaded to a local JSON file that you can upload.
 
-Чтобы загрузить (импортировать) определение JSON панели управления из таблицы **Dashboards** (Панели управления)
+   If your dashboard isn't listed in **Last opened by you**, select  **All dashboards** to display a table of all dashboards that you can access (your dashboards or dashboards shared with you). From there, you can find the dashboard and select  **Download** from the  menu.
 
-1. Перейдите в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** (Панели управления).
-2. В панели **Dashboards** (Панели управления) слева выберите **All dashboards** (Все панели управления).
+### Upload a dashboard
 
-   Таблица **Dashboards** (Панели управления) отображает все панели управления по **Name** (Названию) и дате **Last modified** (Последнего изменения).
-3. В верхнем левом углу страницы выберите **Upload** (Загрузить).
-4. Найдите и откройте файл определения JSON панели управления.
+To upload (import) the JSON definition of a dashboard from the **Dashboards** side panel
 
-Загруженная панель управления:
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+2. In the **Dashboards** panel on the left, select  **Upload**.
+3. Find and open the dashboard JSON definition file.
 
-* Открывается в Dynatrace.
+To upload (import) the JSON definition of a dashboard from the **Dashboards** table
 
-  Если при загрузке панели управления вы видите сообщение о запуске пользовательского кода, обратитесь к [Run code warnings](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code#run-code-warnings "Add code to your Dynatrace dashboards.") (Предупреждения о запуске кода) для получения дополнительной информации.
-* Добавляется в ваш список **Last opened by you** (Недавно открытые вами).
-* Добавляется на страницу **Dashboards** (Панели управления) с датой **Last modified** (Последнего изменения), установленной на дату и время загрузки.
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+2. In the **Dashboards** panel on the left, select  **All dashboards**.
 
-### Удаление панели управления
+   A **Dashboards** table displays all dashboards by **Name** and **Last modified** date.
+3. In the upper-left corner of the page, select  **Upload**.
+4. Find and open the dashboard JSON definition file.
 
-Чтобы удалить любую панель управления на странице **Dashboards** (Панели управления)
+An uploaded dashboard is:
 
-1. Перейдите в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** (Панели управления).
-2. В панели **Dashboards** (Панели управления) слева выберите **All dashboards** (Все панели управления).
+* Opened in Dynatrace.
 
-   Таблица отображает все панели управления по **Name** (Названию) и дате **Last modified** (Последнего изменения).
-3. На странице **Dashboards** (Панели управления) выберите **Move to trash** (Переместить в корзину) для панели управления, которую хотите удалить.
+  If you see a message about running custom code when you upload a dashboard, see [Run code warnings](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code#run-code-warnings "Add code to your Dynatrace dashboards.") for more information.
+* Added to your **Last opened by you** list.
+* Added to the **Dashboards** page with **Last modified** set to the upload date and time.
 
-### Панели управления через API: лучшие практики
+### Delete a dashboard
 
-При создании или управлении панелями управления через API эти лучшие практики могут облегчить вашу жизнь.
+To delete any dashboard on the **Dashboards** page
 
-* Чтобы получить надежный старт, создайте панель управления в приложении ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** (Панели управления), а затем [скачайте](#dashboards-download) файл конфигурации панели управления.
-* Чтобы проверить изменения, внесенные через API, [загрузите](#dashboards-upload) файл в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** (Панели управления). Все ли по-прежнему выглядит так, как ожидалось?
-* Будьте осторожны с изменениями макета, так как пустые вертикальные пространства автоматически сдвигают плитки вверх при загрузке документа и вызывают появление кнопки **Discard changes** (Отменить изменения).
-* Чтобы подробно изучить изменения, выберите **Save as new** (Сохранить как новый), чтобы скачать документ и сравнить его с исходной версией.
-* Не устанавливайте свойство `version` конфигурации на произвольное значение. Это внутреннее свойство, необходимое для целей миграции.
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+2. In the **Dashboards** panel on the left, select  **All dashboards**.
 
-## Создание и редактирование панелей управления
+   A table displays all dashboards by **Name** and **Last modified** date.
+3. On the **Dashboards** page, select  **Move to trash** for the dashboard you want to delete.
 
-### Создание панели управления
+### Dashboards via API: best practices
 
-Самый быстрый и простой способ изучить свои данные — использовать наши новые плитки и разделы [Explore](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") (Исследование). Всего за несколько секунд вы можете найти и проанализировать свои журналы, метрики или бизнес-события. Не требуется DQL!
+When creating or managing dashboards via API, these best practices can make your life easier.
 
-Чтобы создать новую панель управления
+* To get a solid start, create the dashboard in the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app and then [download](#dashboards-download) the dashboard configuration file.
+* To verify changes made via API, [upload](#dashboards-upload) the file to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**. Does everything still look as expected?
+* Be careful with layout changes, as empty vertical spaces cause tiles to shift upwards automatically on document load and cause the **Discard changes** button to appear.
+* To examine changes in detail, select **Save as new** to download the document and compare it with the original version.
+* Don't set the `version` property of the config to an arbitrary value. It's an internal property needed for migration purposes.
 
-1. Перейдите в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** (Панели управления).
-2. Выберите **Dashboard** (Панель управления).
+## Create and edit dashboards
 
-После создания пустой панели управления необходимо добавить на нее плитки.
+### Create a dashboard
+
+The fastest and easiest way to explore your data is with our new [Explore](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
+
+To create a new dashboard
+
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+2. Select  **Dashboard**.
+
+After you create an empty dashboard, you need to add tiles to it.
 
 * Query Grail
-* Add code (Добавить код)
-* Add Markdown (Добавить Markdown)
-* Add a variable (Добавить переменную)
-* Add a snippet (Добавить фрагмент)
+* Add code
+* Add Markdown
+* Add a variable
+* Add a snippet
 
 ### Query Grail
 
-Чтобы выполнить Query Grail
+To Query Grail
 
-1. В верхнем правом углу панели управления выберите **Add** (Добавить) > **DQL**.
+1. In the upper-right of the dashboard, select  **Add** >  **DQL**.
 
-   Сочетание клавиш: **Shift**+**D**
-
-   ![Dashboards: Add tile button (Plus)](https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png)
-
-   Открывается боковая панель конфигурации справа с двумя вкладками:
-
-   * **Data** (Данные)
-   * **Visual** (Визуализация)
-2. На вкладке **Data** (Данные) используйте [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") (Язык запросов Dynatrace) для определения вашего запроса.
-3. Выберите **Run** (Выполнить), чтобы выполнить запрос.
-4. На вкладке **Visual** (Визуализация) выберите формат [визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") (Создание, редактирование и просмотр визуализаций на ваших панелях управления и блокнотах) для ваших результатов.
-
-   * означает, что тип визуализации недоступен для вашего запроса.
-5. Под селектором **Visualization** (Визуализация) разверните разделы параметров, чтобы настроить параметры визуализации по мере необходимости.
-6. Закройте боковую панель, когда закончите.
-
-   Если вы хотите вернуться к этим настройкам, выберите свою плитку, чтобы отобразить их.
-
-Подробности см. в разделе [Add data to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data "Add data to your Dynatrace dashboards.") (Добавление данных на панель управления).
-
-### Add code (Добавить код)
-
-Чтобы добавить код на панель управления
-
-1. В верхнем правом углу панели управления выберите **Add** (Добавить) > **Code** (Код).
-
-   Сочетание клавиш: **Shift**+**C**
+   Keyboard shortcut: **Shift**+**D**
 
    ![Dashboards: Add tile button (Plus)](https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png)
 
-   На панель управления добавляется пустая плитка, и справа открывается боковая панель **Options** (Параметры).
-2. Необязательно В поле **Tile title** (Название плитки) введите название, которое будет отображаться в верхней части плитки.
-3. В пронумерованном поле **Code** (Код) введите пользовательский JavaScript для получения внешних данных из любого доступного API. Используйте [Fetch APIï»¿](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) (Получение данных из внешних источников) для получения данных из внешних API.
+   A configuration side panel opens on the right to display two tabs:
 
-   Чтобы ваши запросы не блокировались, попросите вашего администратора разрешить ваши внешние источники данных, добавив их в **External requests** (Внешние запросы).
+   * **Data**
+   * **Visual**
+2. On the **Data** tab, use the [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") to define your query.
+3. Select **Run** to execute the query.
+4. On the **Visual** tab, choose a [visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") format for your results.
 
-   External requests (Внешние запросы) обеспечивают исходящие сетевые подключения из вашей среды Dynatrace к внешним службам. Они позволяют вам контролировать доступ к общедоступным конечным точкам из AppEngine с помощью функций приложений и функций в Dashboards (Панели управления), Notebooks (Блокноты) и Automations (Автоматизация).
+   * means the visualization type is unavailable for your query.
+5. Under the **Visualization** selector, expand the options sections to adjust visualization settings as needed.
+6. Close the side panel when you're done.
 
-   1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** (Настройки) > **General** (Общие) > **External requests** (Внешние запросы).
-   2. Выберите **New host pattern** (Новый шаблон хоста).
-   3. Добавьте доменные имена.
-   4. Выберите **Add** (Добавить).
+   If you want to return to these settings, select your tile to display them.
 
-   Таким образом, вы можете детально контролировать веб-службы, к которым могут подключаться ваши функции.
+For details, see [Add data to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data "Add data to your Dynatrace dashboards.").
 
-   Не включайте префикс адреса. Например, если адрес `https://some.service.org`, просто добавьте `some.service.org`.
+### Add code
 
-Подробности см. в разделе [Add code to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.") (Добавление кода на панель управления).
+To add code to a dashboard
 
-### Add markdown (Добавить Markdown)
+1. In the upper-right of the dashboard, select  **Add** >  **Code**.
 
-Чтобы добавить плитку Markdown на панель управления
-
-1. В верхнем правом углу панели управления откройте меню **Add** (Добавить) и выберите **Add markdown** (Добавить Markdown).
-
-   Сочетание клавиш: **Shift**+**M**
+   Keyboard shortcut: **Shift**+**C**
 
    ![Dashboards: Add tile button (Plus)](https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png)
 
-   Открывается боковая панель **Options** (Параметры).
-2. В боковой панели **Options** (Параметры) введите свой текст.
+   An empty tile is added to the dashboard and an **Options** side panel opens on the right.
+2. Optional In **Tile title**, enter a title to display at the top of your tile.
+3. In the numbered **Code** box, enter custom JavaScript to fetch external data from any available API. Use the [Fetch APIï»¿](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to fetch data from external APIs.
 
-   * Используйте Markdown для форматирования текста и добавления ссылок и изображений.
-   * Плитка обновляется по мере редактирования.
-   * Во время редактирования текста нажмите Ctrl+Space, чтобы увидеть параметры.
-3. Закройте боковую панель **Options** (Параметры), когда закончите.
+   To make sure your requests aren't blocked, ask your administrator to allow your external data sources by adding them to the **External requests**.
 
-Подробности см. в разделе [Add Markdown to dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown "Add Markdown-formatted annotations to your Dynatrace dashboards.") (Добавление аннотаций в формате Markdown на ваши панели управления Dynatrace).
+   External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.
 
-### Add variable (Добавить переменную)
+   1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **General** > **External requests**.
+   2. Select  **New host pattern**.
+   3. Add the domain names.
+   4. Select **Add**.
 
-Используйте переменные для фильтрации ваших панелей мониторинга, чтобы они выступали в качестве значений переменных в кодовых плитках и в качестве плейсхолдеров в названиях плиток и тексте Markdown-плиток.
+   This way you can granularly control the web services your functions can connect to.
 
-Чтобы добавить переменную к панели мониторинга
+   Don't include the address prefix. For example, if the address is `https://some.service.org`, just add `some.service.org`.
 
-1. В заголовке панели мониторинга откройте меню и выберите **Переменные**.
-   Клавишная комбинация: **Shift**+**V**
+For details, see [Add code to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.").
 
-   Клавишная комбинация: **Shift**+**V**
+### Add markdown
 
-   ![Панели мониторинга: Кнопка добавления плитки (Плюс)](https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png)
+To add a markdown tile to a dashboard
 
-   Отображается панель **Переменная**.
-2. Определите переменную.
+1. In the upper-right of the dashboard, open the  **Add** menu and select  **Add markdown**.
 
-   * **Имя**: имя переменной.
+   Keyboard shortcut: **Shift**+**M**
 
-     + Разрешены только алфавитно-цифровые значения
-     + Не начинайте имя переменной с `dt_`
-   * **Тип**: может быть одним из следующих:
+   ![Dashboards: Add tile button (Plus)](https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png)
 
-     + **DQL**: значение возвращается из запроса, который вы вводите при определении переменной.
+   An **Options** side panel opens on the right.
+2. In the **Options** side panel, enter your text.
 
-       - Выберите **Выполнить**, чтобы протестировать ваш запрос.
-     + **Код**: значение возвращается из кода, который вы вводите при определении переменной.
-     + **Список**: список значений, разделенных запятыми (CSV).
+   * Use Markdown to format your text and add links and images.
+   * The tile is updated as you edit.
+   * While you're editing text, press Ctrl+Space to see options.
+3. Close the **Options** side panel when you're done.
 
-       - Чтобы определить возможные значения, введите их (разделенные запятыми) в поле под **Данные**.
-       - Чтобы определить значение по умолчанию, выберите одно из списка **Значение по умолчанию**.
-       - Чтобы разрешить выбор нескольких значений одновременно, включите **Множественный выбор**.
-     + **Свободный текст**: свободный текст. Вы можете ввести **Значение по умолчанию**.
-       Ваши изменения сохраняются автоматически.
-3. Установите **Параметры отображения**.
+For details, see [Add Markdown to dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown "Add Markdown-formatted annotations to your Dynatrace dashboards.").
 
-   * Если выпадающий список переменной должен отображаться на панели мониторинга, включите **Отображать как фильтр на панели мониторинга**.  
-     Выключите его, когда вы хотите скрыть его, например, когда переменная используется в качестве статического значения во всех плитках, но не должна отображаться пользователю панели мониторинга.
-   * Если пользователям следует разрешить выбирать несколько значений одновременно в выпадающем списке переменной, включите **Множественный выбор**.  
-     Выключите его, когда вы хотите использовать только одиночные значения выпадающего списка переменной.
-   * Выберите **Значение по умолчанию** для выпадающего списка переменной. Если вы не введете ничего в этом поле, будет выбрано первое доступное значение.
-4. Когда вы закончите, выберите **< Переменная** вверху, чтобы перейти к панели **Переменные**, или выберите , чтобы закрыть панель **Переменные**.
+### Add variable
 
-Переменные в панелях мониторинга могут быть определены так, чтобы зависеть от других переменных.
 
-* Значение переменной пересчитывается, если ее определение ссылается на другую переменную и значение другой переменной изменяется.
 
-  Например, если значение переменной A изменяется, значение любой переменной, определение которой ссылается на переменную A, пересчитывается.
-* Циклы не допускаются.
+Use variables to filter your dashboards, to act as variable values in code tiles, and as placeholders in tile titles and Markdown tile text.
 
-  Например, если значение переменной A зависит от значения переменной B, значение переменной B не может зависеть от значения переменной A.
+To add a variable to a dashboard
 
-Для подробностей см. [Добавление переменной к панели мониторинга](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Добавьте переменные к вашим Dynatrace панелям мониторинга.").
+1. In the dashboard header, open the  menu and select  **Variables**.
+   Keyboard shortcut: **Shift**+**V**
 
-### Добавить фрагмент
+   Keyboard shortcut: **Shift**+**V**
 
-Чтобы начать работу на основе фрагмента
+   ![Dashboards: Add tile button (Plus)](https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png)
 
-1. В правом верхнем углу панели мониторинга выберите **Добавить**, чтобы открыть меню **Добавить**.
+   The **Variable** panel is displayed.
+2. Define the variable.
 
-   Клавишная комбинация: **Ctrl**/**Cmd**+**Shift**+**Enter**
+   * **Name**: the name of the variable.
 
-   ![Панели мониторинга: Кнопка добавления плитки (Плюс)](https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png)
-2. Прокрутите вниз до раздела **Начать с фрагмента** и выберите один из фрагментов. В этом примере мы выбираем фрагмент **Получить журналы**, который отображается в панели предварительного просмотра.
+     + Only alpha-numerical values are allowed
+     + Do not start a variable name with `dt_`
+   * **Type**: can be one of the following:
 
-   ![Пример: выберите фрагмент "Получить журналы".](https://dt-cdn.net/images/add-snippet-menu-example-fetch-logs-754-d4435c09eb.png)
-3. После выбора фрагмента панель редактирования отображает добавленный фрагмент.
+     + **DQL**: the value is returned from a query you enter when you define the variable.
 
-   ![Пример: фрагмент "Получить журналы" добавлен.](https://dt-cdn.net/images/add-snippet-menu-example-fetch-logs-result-1436-77cc9fa8f1.png)
-4. Отредактируйте запрос или код (в зависимости от типа фрагмента, который вы выбрали) и настройки визуализации по мере необходимости.
-5. Выберите **Выполнить**, чтобы увидеть результаты.
-6. Закройте боковую панель, когда закончите.
+       - Select **Run** to test your query.
+     + **Code**: the value is returned from code you enter when you define the variable.
+     + **List**: a comma-separated values (CSV) list of values.
 
-Для подробностей см. [Добавление фрагмента к панели мониторинга](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet "Начните с фрагмента").
+       - To define possible values, enter them (separated by commas) in the box under **Data**.
+       - To define a default value, select one from the **Default value** list.
+       - To allow multiple values to be selected at the same time, turn on **Multi-select**.
+     + **Free Text**: free text. You can enter a **Default value**.
+       Your changes are saved automatically.
+3. Set **Display settings**.
 
-### Анализ данных с помощью ИИ
+   * If the variable dropdown should be displayed on the dashboard, turn on **Display as filter on dashboard**.  
+     Turn it off when you want it hidden, such as when the variable is used as a static value across tiles but should not be displayed to the dashboard user.
+   * If users should be able to select multiple values at the same time within the variable dropdown, turn on **Multi-select**.  
+     Turn it off when you want to use only single values of the variable dropdown.
+   * Select a **Default value** for the variable dropdown. If you don't enter anything in this field, the first available value is selected.
+4. When you're finished, select **< Variable** at the top to go to the **Variables** panel, or select  to dismiss the **Variables** panel.
 
-Для анализа данных с использованием Dynatrace Intelligence Data Analyzers
+Variables in dashboards can be defined to depend on other variables.
 
-1. Изучите временной ряд.
+* The value of a variable is recalculated if its definition refers to another variable and the other variable's value changes.
 
-   Пример
+  For example, if the value of variable A changes, the value of any variable whose definition refers to variable A is recalculated.
+* Loops are not allowed.
 
-   В вашем документе (панели мониторинга или блокноте)
+  For example, if the value of variable A depends on the value of variable B, the value of variable B can't depend on the value of variable A.
 
-   1. Выберите  чтобы добавить новый раздел или плитку, а затем выберите **Metrics** (Метрики) для изучения метрик.
+For details, see [Add a variable to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
 
-      ![Пример: выберите Add > Metrics](https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png)
-   2. В **Select metric** (Выберите метрику) выберите **Infrastructure** (Инфраструктура) > **CPU** (ЦП) > **CPU usage %** (Загрузка ЦП в процентах).
+### Add snippet
 
-      ![Пример: выберите метрику "CPU usage %"](https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png)
-   3. Установите **Split by** (Разделить по) на `host.name`.
+To get started based on a snippet
 
-      ![Пример: установите "Split by" на host.name](https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png)
-   4. Установите **Limit** (Лимит) на максимальное количество серий для анализа. Dynatrace Intelligence Data Analyzer в настоящее время поддерживает анализ до 1000 серий.
+1. In the upper-right of the dashboard, select  **Add** to open the **Add** menu.
 
-   В результате вы должны получить что-то вроде этого:
+   Keyboard shortcut: **Ctrl**/**Cmd**+**Shift**+**Enter**
 
-   ![Пример: завершенный запрос](https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png)
-2. Запустите запрос.
-3. На панели опций справа прокрутите вниз и разверните **Davis AI**.
+   ![Dashboards: Add tile button (Plus)](https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png)
+2. Scroll down to the **Start with a snippet** section and choose one of the snippets. In this example, we select the  **Fetch logs** snippet, which is displayed in a preview panel.
 
-   Показать мне
+   ![Example: select the "Fetch logs" snippet.](https://dt-cdn.net/images/add-snippet-menu-example-fetch-logs-754-d4435c09eb.png)
+3. After you select a snippet, the edit panel displays the snippet you added.
 
-   ![Пример выбора настроек Analyze and alert (Анализ и оповещение) в приложении Dashboards.](https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png)
+   ![Example: "Fetch logs" snippet added.](https://dt-cdn.net/images/add-snippet-menu-example-fetch-logs-result-1436-77cc9fa8f1.png)
+4. Edit the query or code (depending on the snippet type you selected) and the visualization settings as needed.
+5. Select **Run** to see results.
+6. Close the side panel when you're done.
 
-   ![Начальная панель настроек Analyze and alert (Анализ и оповещение) в приложении Dashboards.](https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png)
-4. На панели **Davis AI** установите **Analyzers** (Анализаторы) на нужный анализатор, а затем настройте анализатор.
+For details, see [Add a snippet to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet "Start with a snippet").
 
-   * Для обзора обнаружения аномалий см. [Обнаружение аномалий](/docs/dynatrace-intelligence/anomaly-detection "Как Dynatrace обнаруживает аномалии в вашей среде.")
-   * Для получения подробной информации о настройках обнаружения аномалий см. [Конфигурация обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "Как настроить оповещение об отсутствующих измерениях.")
+### Analyze data with AI
 
-   * Для получения подробной информации о настройках анализа прогнозов см. [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Узнайте, как Dynatrace Intelligence predictive AI генерирует прогнозы.")
 
-   Обнаружение аномалий: Адаптивное пороговое обнаружение аномалий
 
-   * **Number of signal fluctuations** (Количество колебаний сигнала) — количество раз, которое колебание сигнала добавляется к базовому уровню для получения фактического порога для оповещения.
-   * **Alert condition** (Условие оповещения) — ваш выбор зависит от того, хотите ли вы узнать, когда метрика выше, ниже или за пределами (выше или ниже) нормального диапазона.
+To analyze data using Dynatrace Intelligence Data Analyzers
 
-   Для получения подробной информации см. [Конфигурация обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "Как настроить оповещение об отсутствующих измерениях.").
+1. Explore a timeseries.
 
-   Обнаружение аномалий: Сезонное базовое обнаружение аномалий
+   Example
 
-   * **Tolerance** (Допуск) — чем выше допуск, тем шире полоса доверия, что приводит к меньшему количеству сработанных событий.
-   * **Alert condition** (Условие оповещения) — ваш выбор зависит от того, хотите ли вы узнать, когда метрика выше, ниже или за пределами (выше или ниже) нормального диапазона.
+   In your document (dashboard or notebook)
 
-   Для получения подробной информации см. [Конфигурация обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "Как настроить оповещение об отсутствующих измерениях.").
+   1. Select  to add a new section or tile, and then select **Metrics** to explore metrics.
 
-   Обнаружение аномалий: Статическое пороговое обнаружение аномалий
+      ![Example: select Add > Metrics](https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png)
+   2. In **Select metric**, select **Infrastructure** > **CPU** > **CPU usage %**.
 
-   * **Threshold** (Порог) — жесткое ограничение, которое метрика не должна нарушать.
-   * **Unit** (Единица измерения) — единица измерения значения.
-   * **Alert condition** (Условие оповещения) — ваш выбор зависит от того, хотите ли вы узнать, когда метрика выше или ниже порогового значения.
-   * **Suggest threshold** (Предложить порог) — Davis AI может помочь вам найти правильный порог на основе исторических данных.
+      ![Example: select metric "CPU usage %"](https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png)
+   3. Set **Split by** to `host.name`.
 
-   Для получения подробной информации см. [Конфигурация обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "Как настроить оповещение об отсутствующих измерениях.").
+      ![Example: set "Split by" to host.name](https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png)
+   4. Set **Limit** to the maximum number of series to analyze. Dynatrace Intelligence Data Analyzer currently supports analysis up to 1000 series.
 
-   Прогноз: Forecast (Прогноз)
+   You should get something like this:
 
-   * **Data points to predict** (Количество точек данных для прогнозирования) — общее количество шагов, на которые прогнозируется временной ряд. Большее количество шагов обычно приводит к менее надежным прогнозам и более длительному времени выполнения анализатора.
-   * **Forecast offset** (Смещение прогноза) — смещение для начала прогноза. Например, если смещение установлено на `2`, последние две точки данных игнорируются, и возвращается прогноз для этих точек.
+   ![Example: complete query](https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png)
+2. Run the query.
+3. In the options panel on the right, scroll down and expand  **Davis AI**.
 
-   Для получения подробной информации см. [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Узнайте, как Dynatrace Intelligence predictive AI генерирует прогнозы.").
+   Show me
 
-   Дополнительные настройки (для обнаружения аномалий)
+   ![An example of selecting the Analyze and alert settings in the Dashboards app.](https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png)
 
-   Вы можете использовать значения по умолчанию или включить **Show advanced properties** (Показать дополнительные свойства), чтобы точно настроить эти параметры.
+   ![The initial panel for the Analyze and alert settings in the Dashboards app.](https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png)
+4. On the **Davis AI** panel, set **Analyzers** to the analyzer you want to use, and then configure the analyzer.
 
-   * **Alert on missing data** (Оповещать об отсутствии данных) — оповещать, если данные не обнаружены в течение скользящего окна.
-   * **Violating samples** (Нарушающие выборки) — количество выборок в скользящем окне, которые должны нарушить, чтобы вызвать событие.
-   * **Sliding window** (Скользящее окно) — количество выборок, составляющих скользящее окно.
-   * **Dealerting samples** (Выборки для снятия оповещения) — количество выборок в скользящем окне, которые должны вернуться к нормальному состоянию, чтобы закрыть событие.
-5. По умолчанию анализатор не включен. Чтобы включить его, переключите переключатель в верхней части панели редактирования (переключитесь с **AI data analysis is not active** (Анализ данных ИИ не активен) на **AI data analysis is active** (Анализ данных ИИ активен)).
-6. Чтобы просмотреть результаты, выберите визуализацию **Davis AI analysis** (анализ) и разверните раздел **Davis AI analysis chart** (диаграмма анализа), чтобы просмотреть или изменить параметры визуализации.
+   * For an overview of anomaly detection, see [Anomaly detection](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.")
+   * For details on anomaly detection settings, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.")
 
-   Показать мне
+   * For details on forecast analyzer settings, [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
 
-   ![Пример выбора визуализации "AI analysis" и отображения параметров визуализации в приложении Notebooks.](https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png)
+   Anomaly Detection: Auto adaptive threshold anomaly detection
 
-   Визуализация **Davis AI analysis** имеет два раздела: chart (диаграмма) и visualization (визуализация). Вы можете использовать настройку **Visible sections** (Видимые разделы), чтобы отобразить один или оба из них.
+   * **Number of signal fluctuations**âhow many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting.
+   * **Alert condition**âyour selection depends on whether you want to know when the metric is above, below, or outside (above or below) the normal range.
 
-   * **All** (Все) — показать диаграмму и таблицу. Диаграмма отражает ваши выборы в таблице.
-   * **Table** (Таблица) — показать только таблицу. Вы можете сортировать столбцы, которые отображают значок сортировки  в заголовке. Выберите заголовок столбца, чтобы переключить порядок сортировки вверх  или вниз .
-   * **Chart** (Диаграмма) — показать только диаграмму. Используйте таблицу, чтобы выбрать записи, которые вы хотите отобразить на диаграмме.
+   For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
 
-#### Пример: аномальная загрузка ЦП в процентах
+   Anomaly Detection: Seasonal baseline anomaly detection
 
-Чтобы обнаружить, когда загрузка ЦП в процентах превышает 70 процентов, в вашем документе (панели мониторинга или блокноте)
+   * **Tolerance**âthe higher the tolerance, the broader the confidence band, leading to fewer triggered events.
+   * **Alert condition**âyour selection depends on whether you want to know when the metric is above, below, or outside (above or below) the normal range.
 
-1. Выберите  чтобы добавить новый раздел или плитку, а затем выберите **Metrics** (Метрики) для изучения метрик.
+   For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
 
-   Показать мне
+   Anomaly Detection: Static threshold anomaly detection
 
-   ![Пример: выберите Add > Metrics](https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png)
-2. В **Select metric** (Выберите метрику) выберите **Infrastructure** (Инфраструктура) > **CPU** (ЦП) > **CPU usage %** (Загрузка ЦП в процентах).
+   * **Threshold**âa hard limit that a metric should not violate.
+   * **Unit**âthe unit of the value.
+   * **Alert condition**âyour selection depends on whether you want to know when the metric is above or below the threshold value.
+   * **Suggest threshold**âDavis AI can help you to find the right threshold based on historical data.
 
-   Показать мне
+   For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
 
-   ![Пример: выберите метрику "CPU usage %"](https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png)
-3. Установите **Split by** (Разделить по) на `host.name`.
+   Prediction: Forecast
 
-   Показать мне
+   * **Data points to predict**âthe total steps the time series is forecasted. More steps generally results in less reliable forecasts and longer analyzer runtimes.
+   * **Forecast offset**âan offset for the start of the forecast. For example, if the offset is set to `2`, the last two data points are ignored and a forecast for these points is returned as well.
 
-   ![Пример: установите "Split by" на host.name](https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png)
-4. Установите **Limit** (Лимит) на максимальное количество серий для анализа. Davis analyzer в настоящее время поддерживает анализ до 1000 серий.
+   For details, see [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
 
-   Показать мне
+   Advanced settings (for anomaly detection)
 
-   ![Пример: завершенный запрос](https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png)
-5. Выберите **Run** (Запустить).
-6. На панели редактирования разверните **Davis AI**.
+   You can use the default values or turn on **Show advanced properties** to fine-tune these settings.
 
-   Показать мне
+   * **Alert on missing data**âalert if no data is detected within the sliding window.
+   * **Violating samples**ânumber of samples in the sliding window that must violate to trigger an event.
+   * **Sliding window**ânumber of samples that form the sliding window.
+   * **Dealerting samples**ânumber of samples in the sliding window that must go back to normal to close the event.
+5. By default, the analyzer is not enabled. To enable it, turn on the switch at the top of the edit panel (switch from **AI data analysis is not active** to **AI data analysis is active**).
+6. To view the results, select the **Davis AI analysis** visualization and expand the **Davis AI analysis chart** section to review or change the visualization-specific settings:
 
-   ![Пример выбора настроек Analyze and alert (Анализ и оповещение) в приложении Dashboards.](https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png)
+   Show me
 
-   ![Начальная панель настроек Analyze and alert (Анализ и оповещение) в приложении Dashboards.](https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png)
-7. В списке **Analyzers** (Анализаторы) выберите **Static threshold anomaly detection** (Статическое пороговое обнаружение аномалий).
+   ![Example of selecting "AI analysis" visualization and displaying visualization-specific settings in the Notebooks app.](https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png)
 
-   Показать мне
+   The **Davis AI analysis** visualization has two sections: chart and visualization. You can use the **Visible sections** setting to display either or both of them.
 
-   ![Выбор анализатора "Static threshold anomaly detection" в настройках Analyze and alert приложения Dashboards.](https://dt-cdn.net/images/dashboards-analyze-and-alert-select-static-threshold-anomaly-detection-752-45026264f0.png)
-8. Установите **Threshold** (Порог) на `70` (введите значение) и **Alert condition** (Условие оповещения) на **Alert if metric is above** (Оповещать, если метрика выше) (по умолчанию).
+   * **All**âshow a chart and a table. The chart reflects your table selections.
+   * **Table**âshow only a table. You can sort columns that display a sort icon  in the header. Select the column header to toggle the sort order up  or down .
+   * **Chart**âshow only a chart. Use the table to select entries you want to show on the chart.
 
-   Показать мне
+#### Example: anomalous CPU usage percent
 
-   ![Настройка параметров анализатора "Static threshold anomaly detection" в приложении Dashboards.](https://dt-cdn.net/images/dashboards-static-threshold-anomaly-detection-settings-748-4d20c8220e.png)
-9. Активируйте анализатор: в верхней части панели редактирования переключитесь с **AI data analysis is not active** (Анализ данных ИИ не активен) на **AI data analysis is active** (Анализ данных ИИ активен).
-10. Чтобы просмотреть результаты, выберите визуализацию **Davis AI analysis** (анализ). Разверните раздел **Davis AI analysis chart** (диаграмма анализа), чтобы увидеть параметры визуализации.
+To detect when CPU usage percent exceeds 70 percent, in your document (dashboard or notebook)
 
-    Показать мне
+1. Select  to add a new section or tile, and then select **Metrics** to explore metrics.
 
-    ![Пример выбора визуализации "AI analysis" и отображения параметров визуализации в приложении Notebooks.](https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png)
-11. В разделе **Davis AI analysis chart** (диаграмма анализа) установите **Visible sections** (Видимые разделы) на **All** (Все).
-12. Просмотрите результаты.
+   Show me
 
-    В этом примере мы выбрали хосты, которые превысили порог.
+   ![Example: select Add > Metrics](https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png)
+2. In **Select metric**, select **Infrastructure** > **CPU** > **CPU usage %**.
 
-    * Диаграмма показывает линию для выбранной метрики (`CPU usage %`) для каждого выбранного хоста.
-    * Красная полоса в верхней части визуализации указывает, где был превышен порог для этой метрики.
-    * Таблица под диаграммой содержит выбранные хосты.
+   Show me
 
-    ![Пример результатов анализатора с визуализацией "AI analysis" в приложении Notebooks.](https://dt-cdn.net/images/notebooks-ai-analysis-chart-1920-5ac0e1f854.png)
+   ![Example: select metric "CPU usage %"](https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png)
+3. Set **Split by** to `host.name`.
 
-### Изменение значений переменных
+   Show me
+
+   ![Example: set "Split by" to host.name](https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png)
+4. Set **Limit** to the maximum number of series to analyze. Davis analyzer currently supports analysis up to 1000 series.
+
+   Show me
+
+   ![Example: complete query](https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png)
+5. Select **Run**.
+6. In the edit panel, expand  **Davis AI**.
+
+   Show me
+
+   ![An example of selecting the Analyze and alert settings in the Dashboards app.](https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png)
+
+   ![The initial panel for the Analyze and alert settings in the Dashboards app.](https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png)
+7. In the **Analyzers** list, select **Static threshold anomaly detection**.
+
+   Show me
+
+   ![Selecting the "Static threshold anomaly detection" analyzer in the Analyze and alert settings of the Dashboards app.](https://dt-cdn.net/images/dashboards-analyze-and-alert-select-static-threshold-anomaly-detection-752-45026264f0.png)
+8. Set **Threshold** to `70` (enter a value) and **Alert condition** to **Alert if metric is above** (default).
+
+   Show me
+
+   ![Configuring settings for the "Static threshold anomaly detection" analyzer in the Dashboards app.](https://dt-cdn.net/images/dashboards-static-threshold-anomaly-detection-settings-748-4d20c8220e.png)
+9. Activate the analyzer: at the top of the edit panel, switch from **AI data analysis is not active** to **AI data analysis is active**.
+10. To view the results, select the **Davis AI analysis** visualization. Expand the **Davis AI analysis chart** section to see visualization-specifc settings.
+
+    Show me
+
+    ![Example of selecting "AI analysis" visualization and displaying visualization-specific settings in the Notebooks app.](https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png)
+11. In the **Davis AI analysis chart** section, set **Visible sections** to **All**.
+12. Review the results.
+
+    In this example, we selected the hosts that exceeded the threshold.
+
+    * The chart shows a line for the selected metric (`CPU usage %`) for each selected host.
+    * A red bar across the top of the visualization indicates where the threshold for that metric was exceeded.
+    * The table under the chart has those hosts selected.
+
+    ![Example analyzer results with "AI analysis" visualization in the Notebooks app.](https://dt-cdn.net/images/notebooks-ai-analysis-chart-1920-5ac0e1f854.png)
+
+### Change variable values
 
 
 

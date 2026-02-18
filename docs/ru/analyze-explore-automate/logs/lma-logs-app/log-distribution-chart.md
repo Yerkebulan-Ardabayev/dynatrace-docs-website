@@ -1,58 +1,58 @@
 ---
 title: Spot trends with the log distribution chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart
-scraped: 2026-02-06T16:00:15.178106
+scraped: 2026-02-18T21:17:53.679680
 ---
 
-# Выявляйте тенденции с помощью диаграммы распределения журналов
+# Spot trends with the log distribution chart
 
-# Выявляйте тенденции с помощью диаграммы распределения журналов
+# Spot trends with the log distribution chart
 
-* Последняя версия Dynatrace
-* Практическое руководство
-* 2 минуты чтения
-* Опубликовано 2 июля 2025 г.
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Published Jul 02, 2025
 
-Используйте диаграмму распределения журналов, доступную в разделе ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы**, чтобы выявить тенденции в ваших журналах.Ты можешь:
+Utilize the log distribution chart available in ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** to spot trends in your logging. You can:
 
-* Быстро выявляйте тенденции и аномалии.Например, внезапное увеличение количества журналов `ERROR` может означать инцидент или регресс.
-* Детализация по конкретным состояниям журнала или временным диапазонам.
-* Выполняйте целевые запросы, не выходя из визуализации.Взаимодействуя с диаграммой, вы можете выбрать статус журнала и более точные сроки для вашего следующего запроса.
+* Quickly spot trends and anomalies. For example, a sudden increase in `ERROR` logs might mean an incident or regression.
+* Drill down into specific log statuses or time ranges.
+* Perform targeted queries without leaving the visualization. By interacting with the chart, you can choose log status and a more precise timeframe for your next query.
 
-![Приложение журналов, показывающее диаграмму распределения журналов](https://dt-cdn.net/images/logs-app-chart-3840-33eaf4738e.png)
+![Logs app showing the log distribution chart](https://dt-cdn.net/images/logs-app-chart-3840-33eaf4738e.png)
 
-## Обзор диаграммы
+## Chart overview
 
-Диаграмма распределения журналов обеспечивает визуальный обзор записей журнала с течением времени.
+The log distribution chart provides a visual overview of log entries over time.
 
-Записи журнала сгруппированы по статусу.Каждый статус представлен отдельным цветом для облегчения различения.Доступны следующие статусы:
+Log entries are grouped by status. Each status is represented by a distinct color for easy differentiation. The following statuses are available:
 
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
+* `INFO`
+* `WARN`
+* `ERROR`
+* `NONE`
 
-Эти статусы соответствуют атрибуту `status`, который создается во время приема журнала.Подробнее см. информацию об автоматическом пополнении журнала для [OneAgent-](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") или [Журналы, полученные через API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation#transform-all-types-of-logs "Log ingestion API automatically transforms log data into output values for the loglevel attribute.").
+These statuses correspond to the `status` attribute that is created during log ingestion. For details, see the information on automatic log enrichment for [OneAgent-](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") or [API-ingested logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation#transform-all-types-of-logs "Log ingestion API automatically transforms log data into output values for the loglevel attribute.").
 
-## Взаимодействие с диаграммой распределения журналов
+## Interact with log distribution chart
 
-Вы можете взаимодействовать с диаграммой распределения журналов, чтобы уточнить свой анализ.
+You can interact with the log distribution chart to refine your analysis.
 
-* **Выделение определенных статусов журнала**.
+* **Highlight specific log statuses**.
 
-+ Выберите статус на диаграмме или легенде, чтобы сосредоточиться только на этом статусе.
-+ Для отображения нескольких статусов используйте легенду диаграммы.
-* **Увеличение временного диапазона**.Выделите часть диаграммы, а затем выберите **Приблизить к выделенному**.
-* **Используйте панель инструментов диаграммы**.Наведите указатель мыши на диаграмму, чтобы отобразить панель инструментов.
+  + Select a status in the chart or legend to focus on that status only.
+  + To display multiple statuses, use the chart legend.
+* **Zoom in on a time range**. Select a portion of the chart, and then select  **Zoom to selection**.
+* **Use the chart toolbar**. Hover over the chart to display the toolbar.
 
-+ Выберите (**Изменить режим**), чтобы переключаться между **Режимом исследования** (выделение отдельных статусов), **Режимом масштабирования** и **Режимом панорамирования** (исследование диаграммы по горизонтали).
-+ Увеличение или уменьшение масштаба диаграммы.
-+ Выберите (**Сброс**), чтобы вернуть диаграмму в исходное состояние.
+  + Select  (**Change mode**) to switch between the  **Explore mode** (highlight individual statuses),  **Zoom mode**, and  **Pan mode** (explore the chart horizontally).
+  + Zoom further in  or out  on the chart.
+  + Select  (**Reset**) to bring the chart back to its original state.
 
-Для более быстрого и удобного взаимодействия с диаграммой распределения бревен используйте сочетания клавиш.Они отображаются при наведении курсора на значки панели инструментов.
+For quicker and more convenient interaction with the log distribution chart, use the keyboard shortcuts. They're displayed when you hover over the toolbar icons.
 
-## Влияние на выставление счетов
+## Effect on billing
 
-Загрузка диаграммы распределения журналов и взаимодействие с ней не требует лицензии на запросы.
+Loading and interacting with the log distribution chart does not consume any query license.
 
-Диаграмма распределения журналов может быть основана на выборочных данных, что означает, что отображаемые данные являются репрезентативными, и не отображаются все записи журнала.
+The log distribution chart may be based on sampled data, which means the displayed data is representative, and not every log entry is shown.

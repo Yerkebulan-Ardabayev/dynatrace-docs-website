@@ -1,7 +1,7 @@
 ---
 title: Create a NAM monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-a-nam-monitor-synthetic-app
-scraped: 2026-02-18T05:36:59.779971
+scraped: 2026-02-18T21:21:43.743119
 ---
 
 # Create a NAM monitor

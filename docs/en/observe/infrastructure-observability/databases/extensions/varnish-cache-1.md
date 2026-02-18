@@ -1,7 +1,7 @@
 ---
 title: Varnish Cache extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/extensions/varnish-cache-1
-scraped: 2026-02-17T04:51:15.178455
+scraped: 2026-02-18T21:25:30.235642
 ---
 
 # Varnish Cache extension
@@ -73,114 +73,6 @@ In highly segmented networks, feature sets can reflect the segments of your envi
 All metrics that aren't categorized into any feature set are considered to be the default and are always reported.
 
 A metric inherits the feature set of a subgroup, which in turn inherits the feature set of a group. Also, the feature set defined on the metric level overrides the feature set defined on the subgroup level, which in turn overrides the feature set defined on the group level.
-
-mempool
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| In use | varnish.cache.mempool.live | In use |
-| In Pool | varnish.cache.mempool.pool | In Pool |
-| Size requested | varnish.cache.mempool.sz\_wanted | Size requested |
-| Size allocated | varnish.cache.mempool.sz\_actual | Size allocated |
-| Allocations | varnish.cache.mempool.allocs.count | Allocations |
-| Frees | varnish.cache.mempool.frees.count | Frees |
-| Recycled from pool | varnish.cache.mempool.recycle.count | Recycled from pool |
-| Timed out from pool | varnish.cache.mempool.timeout.count | Timed out from pool |
-| Too small to recycle | varnish.cache.mempool.toosmall.count | Too small to recycle |
-| Too many for pool | varnish.cache.mempool.surplus.count | Too many for pool |
-| Pool ran dry | varnish.cache.mempool.randry.count | Pool ran dry |
-
-lck
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Created locks | varnish.cache.lck.creat.count | Created locks |
-| Destroyed locks | varnish.cache.lck.destroy.count | Destroyed locks |
-| Lock Operations | varnish.cache.lck.locks.count | Lock Operations |
-| Contended lock operations | varnish.cache.lck.dbg\_busy.count | If the lck debug bit is set: Lock operations which returned EBUSY on the first locking attempt. If the lck debug bit is unset, this counter will never be incremented even if lock operations are contended. |
-| Contended trylock operations | varnish.cache.lck.dbg\_try\_fail.count | If the lck debug bit is set: Trylock operations which returned EBUSY. If the lck debug bit is unset, this counter will never be incremented even if lock operations are contended. |
-
-vbe
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Happy health probes | varnish.cache.vbe.happy | Represents the last probe results as a bitmap. Happy probes are bits set to 1, and the unhappy ones are set to 0. The highest bits represent the oldest probes. |
-| Request header bytes | varnish.cache.vbe.bereq\_hdrbytes.count | Total backend request header bytes sent |
-| Request body bytes | varnish.cache.vbe.bereq\_bodybytes.count | Total backend request body bytes sent |
-| Response header bytes | varnish.cache.vbe.beresp\_hdrbytes.count | Total backend response header bytes received |
-| Response body bytes | varnish.cache.vbe.beresp\_bodybytes.count | Total backend response body bytes received |
-| Pipe request header bytes | varnish.cache.vbe.pipe\_hdrbytes.count | Total request bytes sent for piped sessions |
-| Piped bytes to backend | varnish.cache.vbe.pipe\_out.count | Total number of bytes forwarded to backend in pipe sessions |
-| Piped bytes from backend | varnish.cache.vbe.pipe\_in.count | Total number of bytes forwarded from backend in pipe sessions |
-| Concurrent connections used | varnish.cache.vbe.conn | The number of currently used connections to the backend. This number is always less or equal to the number of connections to the backend (as, for example shown as ESTABLISHED for TCP connections in netstat) due to connection pooling. |
-| Backend requests sent | varnish.cache.vbe.req.count | Backend requests sent |
-| Fetches not attempted due to backend being unhealthy | varnish.cache.vbe.unhealthy.count | Fetches not attempted due to backend being unhealthy |
-| Fetches not attempted due to backend being busy | varnish.cache.vbe.busy.count | Number of times the max\_connections limit was reached .. === Anything below is actually per VCP entry, but collected per === backend for simplicity |
-| Connections failed | varnish.cache.vbe.fail.count | Counter of failed opens. Detailed reasons are given in the fail\_\* counters (DIAG level) and in the log under the FetchError tag. This counter is the sum of all detailed fail\_\* counters. All fail\_\* counters may be slightly inaccurate for efficiency. |
-| Connections failed with EACCES or EPERM | varnish.cache.vbe.fail\_eacces.count | Connections failed with EACCES or EPERM |
-| Connections failed with EADDRNOTAVAIL | varnish.cache.vbe.fail\_eaddrnotavail.count | Connections failed with EADDRNOTAVAIL |
-| Connections failed with ECONNREFUSED | varnish.cache.vbe.fail\_econnrefused.count | Connections failed with ECONNREFUSED |
-| Connections failed with ENETUNREACH | varnish.cache.vbe.fail\_enetunreach.count | Connections failed with ENETUNREACH |
-| Connections failed ETIMEDOUT | varnish.cache.vbe.fail\_etimedout.count | Connections failed ETIMEDOUT |
-| Connections failed for other reason | varnish.cache.vbe.fail\_other.count | Connections failed for other reason |
-| Connection opens not attempted | varnish.cache.vbe.helddown.count | Connections not attempted during the backend\_local\_error\_holddown or backend\_remote\_error\_holddown interval after a fundamental connection issue. |
-
-mgt
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Management process uptime | varnish.cache.mgt.uptime.count | Uptime in seconds of the management process |
-| Child process started | varnish.cache.mgt.child\_start.count | Number of times the child process has been started |
-| Child process normal exit | varnish.cache.mgt.child\_exit.count | Number of times the child process has been cleanly stopped |
-| Child process unexpected exit | varnish.cache.mgt.child\_stop.count | Number of times the child process has exited with an unexpected return code |
-| Child process died (signal) | varnish.cache.mgt.child\_died.count | Number of times the child process has died due to signals |
-| Child process core dumped | varnish.cache.mgt.child\_dump.count | Number of times the child process has produced core dumps |
-| Child process panic | varnish.cache.mgt.child\_panic.count | Number of times the management process has caught a child panic |
-
-default
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Return code | varnish.cache.returncode | Return code of the varnishstat command |
-
-smf
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Allocator requests | varnish.cache.smf.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
-| Allocator failures | varnish.cache.smf.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
-| Bytes allocated | varnish.cache.smf.c\_bytes.count | Number of total bytes allocated by this storage. |
-| Bytes freed | varnish.cache.smf.c\_freed.count | Number of total bytes returned to this storage. |
-| Allocations outstanding | varnish.cache.smf.g\_alloc | Number of storage allocations outstanding. |
-| Bytes outstanding | varnish.cache.smf.g\_bytes | Number of bytes allocated from the storage. |
-| Bytes available | varnish.cache.smf.g\_space | Number of bytes left in the storage. |
-| N struct smf | varnish.cache.smf.g\_smf | N struct smf |
-| N small free smf | varnish.cache.smf.g\_smf\_frag | N small free smf |
-| N large free smf | varnish.cache.smf.g\_smf\_large | N large free smf |
-
-smu
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Allocator requests | varnish.cache.smu.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
-| Allocator failures | varnish.cache.smu.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
-| Bytes allocated | varnish.cache.smu.c\_bytes.count | Number of total bytes allocated by this storage. |
-| Bytes freed | varnish.cache.smu.c\_freed.count | Number of total bytes returned to this storage. |
-| Allocations outstanding | varnish.cache.smu.g\_alloc | Number of storage allocations outstanding. |
-| Bytes outstanding | varnish.cache.smu.g\_bytes | Number of bytes allocated from the storage. |
-| Bytes available | varnish.cache.smu.g\_space | Number of bytes left in the storage. |
-
-sma
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Allocator requests | varnish.cache.sma.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
-| Allocator failures | varnish.cache.sma.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
-| Bytes allocated | varnish.cache.sma.c\_bytes.count | Number of total bytes allocated by this storage. |
-| Bytes freed | varnish.cache.sma.c\_freed.count | Number of total bytes returned to this storage. |
-| Allocations outstanding | varnish.cache.sma.g\_alloc | Number of storage allocations outstanding. |
-| Bytes outstanding | varnish.cache.sma.g\_bytes | Number of bytes allocated from the storage. |
-| Bytes available | varnish.cache.sma.g\_space | Number of bytes left in the storage. |
 
 main
 
@@ -332,6 +224,114 @@ main
 | Gunzip operations | varnish.cache.main.n\_gunzip.count | Gunzip operations |
 | Test gunzip operations | varnish.cache.main.n\_test\_gunzip.count | Those operations occur when Varnish receives a compressed object from a backend. They are done to verify the gzip stream while it's inserted in storage. |
 | Premature iovec flushes | varnish.cache.main.http1\_iovs\_flush.count | Number of additional writes performed on HTTP1 connections because the number of IO vectors was too small to submit all possible IO in one go. This number is configured through the http1\_iovs parameter for client connections and implicitly defined by the amount of free workspace for backend connections. |
+
+sma
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Allocator requests | varnish.cache.sma.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
+| Allocator failures | varnish.cache.sma.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
+| Bytes allocated | varnish.cache.sma.c\_bytes.count | Number of total bytes allocated by this storage. |
+| Bytes freed | varnish.cache.sma.c\_freed.count | Number of total bytes returned to this storage. |
+| Allocations outstanding | varnish.cache.sma.g\_alloc | Number of storage allocations outstanding. |
+| Bytes outstanding | varnish.cache.sma.g\_bytes | Number of bytes allocated from the storage. |
+| Bytes available | varnish.cache.sma.g\_space | Number of bytes left in the storage. |
+
+smu
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Allocator requests | varnish.cache.smu.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
+| Allocator failures | varnish.cache.smu.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
+| Bytes allocated | varnish.cache.smu.c\_bytes.count | Number of total bytes allocated by this storage. |
+| Bytes freed | varnish.cache.smu.c\_freed.count | Number of total bytes returned to this storage. |
+| Allocations outstanding | varnish.cache.smu.g\_alloc | Number of storage allocations outstanding. |
+| Bytes outstanding | varnish.cache.smu.g\_bytes | Number of bytes allocated from the storage. |
+| Bytes available | varnish.cache.smu.g\_space | Number of bytes left in the storage. |
+
+smf
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Allocator requests | varnish.cache.smf.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
+| Allocator failures | varnish.cache.smf.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
+| Bytes allocated | varnish.cache.smf.c\_bytes.count | Number of total bytes allocated by this storage. |
+| Bytes freed | varnish.cache.smf.c\_freed.count | Number of total bytes returned to this storage. |
+| Allocations outstanding | varnish.cache.smf.g\_alloc | Number of storage allocations outstanding. |
+| Bytes outstanding | varnish.cache.smf.g\_bytes | Number of bytes allocated from the storage. |
+| Bytes available | varnish.cache.smf.g\_space | Number of bytes left in the storage. |
+| N struct smf | varnish.cache.smf.g\_smf | N struct smf |
+| N small free smf | varnish.cache.smf.g\_smf\_frag | N small free smf |
+| N large free smf | varnish.cache.smf.g\_smf\_large | N large free smf |
+
+default
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Return code | varnish.cache.returncode | Return code of the varnishstat command |
+
+mgt
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Management process uptime | varnish.cache.mgt.uptime.count | Uptime in seconds of the management process |
+| Child process started | varnish.cache.mgt.child\_start.count | Number of times the child process has been started |
+| Child process normal exit | varnish.cache.mgt.child\_exit.count | Number of times the child process has been cleanly stopped |
+| Child process unexpected exit | varnish.cache.mgt.child\_stop.count | Number of times the child process has exited with an unexpected return code |
+| Child process died (signal) | varnish.cache.mgt.child\_died.count | Number of times the child process has died due to signals |
+| Child process core dumped | varnish.cache.mgt.child\_dump.count | Number of times the child process has produced core dumps |
+| Child process panic | varnish.cache.mgt.child\_panic.count | Number of times the management process has caught a child panic |
+
+vbe
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Happy health probes | varnish.cache.vbe.happy | Represents the last probe results as a bitmap. Happy probes are bits set to 1, and the unhappy ones are set to 0. The highest bits represent the oldest probes. |
+| Request header bytes | varnish.cache.vbe.bereq\_hdrbytes.count | Total backend request header bytes sent |
+| Request body bytes | varnish.cache.vbe.bereq\_bodybytes.count | Total backend request body bytes sent |
+| Response header bytes | varnish.cache.vbe.beresp\_hdrbytes.count | Total backend response header bytes received |
+| Response body bytes | varnish.cache.vbe.beresp\_bodybytes.count | Total backend response body bytes received |
+| Pipe request header bytes | varnish.cache.vbe.pipe\_hdrbytes.count | Total request bytes sent for piped sessions |
+| Piped bytes to backend | varnish.cache.vbe.pipe\_out.count | Total number of bytes forwarded to backend in pipe sessions |
+| Piped bytes from backend | varnish.cache.vbe.pipe\_in.count | Total number of bytes forwarded from backend in pipe sessions |
+| Concurrent connections used | varnish.cache.vbe.conn | The number of currently used connections to the backend. This number is always less or equal to the number of connections to the backend (as, for example shown as ESTABLISHED for TCP connections in netstat) due to connection pooling. |
+| Backend requests sent | varnish.cache.vbe.req.count | Backend requests sent |
+| Fetches not attempted due to backend being unhealthy | varnish.cache.vbe.unhealthy.count | Fetches not attempted due to backend being unhealthy |
+| Fetches not attempted due to backend being busy | varnish.cache.vbe.busy.count | Number of times the max\_connections limit was reached .. === Anything below is actually per VCP entry, but collected per === backend for simplicity |
+| Connections failed | varnish.cache.vbe.fail.count | Counter of failed opens. Detailed reasons are given in the fail\_\* counters (DIAG level) and in the log under the FetchError tag. This counter is the sum of all detailed fail\_\* counters. All fail\_\* counters may be slightly inaccurate for efficiency. |
+| Connections failed with EACCES or EPERM | varnish.cache.vbe.fail\_eacces.count | Connections failed with EACCES or EPERM |
+| Connections failed with EADDRNOTAVAIL | varnish.cache.vbe.fail\_eaddrnotavail.count | Connections failed with EADDRNOTAVAIL |
+| Connections failed with ECONNREFUSED | varnish.cache.vbe.fail\_econnrefused.count | Connections failed with ECONNREFUSED |
+| Connections failed with ENETUNREACH | varnish.cache.vbe.fail\_enetunreach.count | Connections failed with ENETUNREACH |
+| Connections failed ETIMEDOUT | varnish.cache.vbe.fail\_etimedout.count | Connections failed ETIMEDOUT |
+| Connections failed for other reason | varnish.cache.vbe.fail\_other.count | Connections failed for other reason |
+| Connection opens not attempted | varnish.cache.vbe.helddown.count | Connections not attempted during the backend\_local\_error\_holddown or backend\_remote\_error\_holddown interval after a fundamental connection issue. |
+
+lck
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Created locks | varnish.cache.lck.creat.count | Created locks |
+| Destroyed locks | varnish.cache.lck.destroy.count | Destroyed locks |
+| Lock Operations | varnish.cache.lck.locks.count | Lock Operations |
+| Contended lock operations | varnish.cache.lck.dbg\_busy.count | If the lck debug bit is set: Lock operations which returned EBUSY on the first locking attempt. If the lck debug bit is unset, this counter will never be incremented even if lock operations are contended. |
+| Contended trylock operations | varnish.cache.lck.dbg\_try\_fail.count | If the lck debug bit is set: Trylock operations which returned EBUSY. If the lck debug bit is unset, this counter will never be incremented even if lock operations are contended. |
+
+mempool
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| In use | varnish.cache.mempool.live | In use |
+| In Pool | varnish.cache.mempool.pool | In Pool |
+| Size requested | varnish.cache.mempool.sz\_wanted | Size requested |
+| Size allocated | varnish.cache.mempool.sz\_actual | Size allocated |
+| Allocations | varnish.cache.mempool.allocs.count | Allocations |
+| Frees | varnish.cache.mempool.frees.count | Frees |
+| Recycled from pool | varnish.cache.mempool.recycle.count | Recycled from pool |
+| Timed out from pool | varnish.cache.mempool.timeout.count | Timed out from pool |
+| Too small to recycle | varnish.cache.mempool.toosmall.count | Too small to recycle |
+| Too many for pool | varnish.cache.mempool.surplus.count | Too many for pool |
+| Pool ran dry | varnish.cache.mempool.randry.count | Pool ran dry |
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

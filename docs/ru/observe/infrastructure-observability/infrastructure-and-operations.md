@@ -1,342 +1,322 @@
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-06T16:20:46.905556
+scraped: 2026-02-18T21:16:17.008111
 ---
 
-# Инфраструктура и операции
+# Infrastructure & Operations
 
-# Инфраструктура и операции
+# Infrastructure & Operations
 
-* Последняя версия Dynatrace
-* Приложение
-* 13-минутное чтение
-* Обновлено 29 января 2026 г.
+* Latest Dynatrace
+* App
+* 13-min read
+* Updated on Jan 29, 2026
 
-Приложение ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и эксплуатация** упрощает мониторинг состояния инфраструктуры и облегчает анализ первопричин проблем.
+The ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** app simplifies infrastructure health monitoring and facilitates root cause analysis for problems.
 
-* Индикаторы работоспособности, основанные на Dynatrace Intelligence, помогают обнаружить ранние признаки снижения производительности и быстро определить, какие области вашей среды требуют внимания.
-* Проверяйте показатели работоспособности узла инфраструктуры, журналы и события для всех объектов инфраструктуры.
-* Детализация от ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** до любых показателей, журналов и событий объекта инфраструктуры.
+* Health indicators powered by Dynatrace Intelligence help you detect early signs of performance degradation to quickly see which areas of your environment need attention.
+* Check infrastructure host health metrics, logs, and events for all infrastructure entities.
+* Drill down from ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** to any infrastructure entity metrics, logs, or events.
 
-## Предварительные условия
+## Prerequisites
 
-1. Разверните [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") на своих хостах — это оптимальный выбор для сбора наиболее подробных показателей и информации о сети.
-2. Если вы используете облачные сервисы, интегрируйте свою облачную инфраструктуру с Dynatrace.Следуйте конкретным руководствам по интеграции для AWS, Azure, Google Cloud или других поставщиков облачных услуг.
+1. Deploy [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") on your hostsâit's the optimal choice to collect the most granular metrics and network insights.
+2. If you are using cloud services, integrate your cloud infrastructure with Dynatrace. Follow the specific integration guides for AWS, Azure, Google Cloud, or other cloud providers.
 
-### Разрешения
+### Permissions
 
-В следующей таблице описаны необходимые разрешения.
+The following table describes the required permissions.
 
-Разрешение
+Permission
 
-Описание
+Description
 
-хранилище: журналы: чтение
+storage:logs:read
 
-Журналы запросов из GRAIL
+Query logs from GRAIL
 
-хранилище: события: чтение
+storage:events:read
 
-Запрос событий из GRAIL
+Query events from GRAIL
 
-хранилище: ведра: читать
+storage:buckets:read
 
-Чтение сегментов
+Read buckets
 
-хранилище: метрики: чтение
+storage:metrics:read
 
-Запрос метрик из GRAIL
+Query metrics from GRAIL
 
-хранилище: объекты: чтение
+storage:entities:read
 
-Запрос объектов из GRAIL
+Query entities from GRAIL
 
-хранилище: наборы полей: чтение
+storage:fieldsets:read
 
-Чтение маскированных/чувствительных полей
+Read masked/sensitive fields
 
-состояние: пользовательское-приложение-состояния: чтение
+state:user-app-states:read
 
-Чтение состояния пользователя
+Read user-state
 
-состояние: пользовательское приложение-состояния: запись
+state:user-app-states:write
 
-Написать состояние пользователя
+Write user-state
 
-настройки:объекты:читать
+settings:objects:read
 
-Чтение конфигураций настроек из Settings 2.0.
+Read settings configurations from Settings 2.0
 
-настройки:объекты:запись
+settings:objects:write
 
-Запись конфигурации настроек в Settings 2.0
+Write settings configurations to Settings 2.0
 
 10
 
-строк на странице
+rows per page
 
-Страница
-
-1
-
-из 1
-
-## Начать
-
-![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** предоставляет актуальное и полное представление о контролируемых вами средах.Используйте приложение, чтобы быстро определить области, требующие внимания, и выяснить точную причину проблем.
-
-![Просмотр списка всех центров обработки данных, автоматически отсортированный Davis Intelligence, выявленных проблемах.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.47.23.png)![Просмотр хостов для выбранного дата-центра помогает быстро выявить наиболее проблемные хосты внутри дата-центра.Подробные сведения о хосте.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.48.54.png)![Просмотрите обзор состояния хоста, свойства, теги и информацию о владельце.Подробная информация о хосте.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.51.12.png)![Обзор состояния хоста, технологий и всех объектов хоста, таких как диски и сетевые интерфейсы.Подробные сведения о процессе и метрики объекта.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.51.24.png)![Детальный анализ процесса.Подробности обработки.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.52.09.png)![Обзор показателей сетевых устройств.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.52.34.png)
-
-1 из 6Список всех центров обработки данных, автоматически отсортированный по выявленным проблемам Davis Intelligence.
-
-### Навигация
-
-Приложение ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** представляет данные о ваших центрах обработки данных, хостах и ​​сетевых устройствах в списках.
-
-Используйте параметры таблицы, чтобы перейти к нужным вам сведениям.
-
-* Чтобы отсортировать таблицу по определенному столбцу, выберите заголовок столбца.
-* Чтобы отобразить или скрыть столбцы, выберите **Настройки столбца**, а затем выберите столбцы, которые хотите отобразить.
-
-#### Доступ к сведениям об объектах
-
-Чтобы получить подробную информацию о сущности
-
-1. Перейдите в раздел ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** и выберите **Хосты** , **Контейнеры**, **Процессы** или **Сетевые устройства**.
-2. Выберите объект из списка.При необходимости вы можете сортировать и фильтровать список.
-
-### Фильтрация
-
-Вы можете фильтровать таблицы в приложении, используя поле фильтра со списком предложений.В настоящее время вы можете использовать базовый синтаксис (группировка операторов фильтра и использование логических операторов не поддерживаются).По мере ввода отображаются соответствующие параметры.
-
-Вы можете добавить несколько операторов, чтобы сузить результаты фильтра.Например, `"Alert status" = Critical` `name != *1b*`.В этом случае вы сужаете поиск до хостов с более чем 4 проблемами и именами, не содержащими `1b`.
-
-Дополнительные сведения об использовании фильтров см. в разделе [Поле фильтра](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
-
-### Сегменты
-
-Вы можете использовать сегменты в ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции**, чтобы логически структурировать данные наблюдения для ваших устройств.
-
-Некоторые из преимуществ использования сегментов:
-
-* **Гибкость**. Сегменты можно использовать в разных приложениях, поддерживающих эту функцию.
-* **Простота использования**: вы можете быстро создавать и использовать сложные фильтры.
-* **Возможность поделиться**: вы можете поделиться фильтрами с разными пользователями.
-
-#### Применить сегмент
-
-1. Перейдите в раздел ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** > **Сегменты**.
-2. Выберите имя сегмента из раскрывающегося меню.При необходимости выберите параметры для выбранного сегмента.
-3. Выберите **Применить**, чтобы активировать сегмент.
-
-#### Добавить сегмент
-
-1. Перейдите в раздел ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** > **Сегменты**.
-2. Выберите **Управление сегментами** > **Сегмент**.
-3. Добавьте имя сегмента.
-4. Необязательно Добавьте описание.
-5. Используйте один из доступных вариантов фильтрации данных.
-
-* Добавьте переменную.Для этого необходимо создать запрос.
-* Добавить типы данных.Выберите один из доступных вариантов в меню.
-* Добавляйте объекты и топологию.Выберите один из доступных вариантов в меню.
-6. Выберите **Сохранить**.
-
-Дополнительную информацию об управлении сегментами см. на странице [Сегменты](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
-
-### Анализировать обзорные диаграммы
-
-Вы можете определить, какие показатели будут отображаться на диаграммах, выбрав ![Развернуть меню](https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg "Expand menu") в верхнем левом углу каждого графика или диаграммы.
-
-#### Экспорт данных в блокноты
-
-Для дальнейшего анализа данных из ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** в ![Ноутбуки](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Ноутбуки](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
-
-1. Перейдите в раздел ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции**.
-2. Выберите объект, чтобы просмотреть его сведения.
-3. Выберите график или диаграмму, которую хотите проанализировать, и выберите > **Открыть в блокнотах** ![Открыть с помощью](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with").
-4. Выберите, открывать ли график в новом или существующем блокноте.
-
-### Просмотр хост-процессов
-
-На вкладке **Процессы** полностраничного просмотра хоста отображаются диаграммы **Использование ЦП** и **Использование памяти**, а также таблица с указанием 5 участников.
-
-Чтобы просмотреть процессы на хосте
-
-1. Откройте полностраничный просмотр хоста.
-2. Выберите вкладку **Процессы**.
-
-На диаграммах **Использование ЦП** и **Использование памяти** отображается таблица с указанием 5 участников.Измените участников, выбрав другие показатели, такие как оповещения о работоспособности, специальные предупреждения и загрузка ЦП.
-
-Чтобы просмотреть все процессы в вашей среде, переключитесь на инвентарь [Процессы](#processes).
-
-Обратите внимание, что процессы могут запускаться непосредственно на хостах или в контейнерах, работающих на хостах.
-
-### Отображение показателей модуля кода
-
-Вы можете внедрять модули кода и отображать внедренные данные в приложении.Для получения более подробной информации см. [Универсальное внедрение модулей кода](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#universal-injection "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
-
-После выбора процесса из списка данные отображаются на специальной вкладке.
-
-### Мониторинг входящих и исходящих соединений
-
-В полностраничном представлении хоста в разделе **Подключения** вы можете увидеть краткий обзор каждого типа подключения, общее количество подключенных объектов и количество проблем.Разверните панель, чтобы увидеть список подключенных объектов и возможные проблемы для каждого из них.Вы также можете увидеть, какие процессы текущего хоста взаимодействуют с другими процессами или службами, не являющимися частью хоста.
-
-Таблица **Соединения** позволяет определить потенциальные источники проблем, которые не возникают непосредственно на хосте.Выберите подключенный объект, отмеченный значком, чтобы перейти на страницу его сведений и изучить проблему.
-
-Входящие и исходящие соединения процессов в таблице отображают процессы с наибольшим количеством проблем в зависимости от загрузки сети и ЦП.
-
-### Измерьте доступность хоста или устройства
-
-Столбец **Доступность** на страницах **Хосты** и **Сетевые устройства** показывает, насколько легко вы можете получить доступ к устройству или хосту по сети из удаленного местоположения.Для получения более подробной информации см. [Синтетический мониторинг](/docs/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
-
-Значение представляет собой соотношение полностью доступных мониторов доступности сети (NAM) (со 100% доступностью в течение выбранного периода времени) ко всем настроенным мониторам для данного хоста или сетевого устройства.
-
-Чтобы использовать эту функцию, вам необходимо настроить NAM для нужного устройства или хоста.Подробную информацию см. на странице [Настройка монитора NAM](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor "Learn how to set up a NAM monitor to check the performance and availability of your site.").
-
-### Просмотр предупреждений о состоянии здоровья и предупреждающих сигналов
-
-В разделе ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** вы можете просматривать оповещения о работоспособности и предупреждающие сигналы.
-
-Оповещения о состоянии здоровья и предупреждающие сигналы помогают вам контролировать вашу инфраструктуру, предоставляя четкую и полезную информацию.Эти функции уменьшают шум, вызванный проблемами инфраструктуры, и улучшают возможности оповещения, поэтому вы можете сосредоточиться на самом важном.Это достигается за счет лучшей категоризации обнаруженных неисправностей.
-
-* В случае критических событий выдается предупреждение о работоспособности, которое запускает расследование [Проблемы с Dynatrace](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.").
-* В некритических ситуациях предупреждающий сигнал информирует вас о потенциальной проблеме.
-
-Чтобы воспользоваться этой функцией в ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции**, вам необходимо включить ее.После включения некоторые оповещения, которые ранее были классифицированы как критические, будут переклассифицированы в предупреждения, поскольку они не считаются достаточно важными, чтобы требовать немедленного внимания.
-
-Чтобы включить эту опцию
-
-1. Перейдите в ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Настройки**.
-2. Выберите **Анализ и оповещение** > **Оповещения**.
-3. В разделе **Обновление категории** выберите **Обновление категории готовых оповещений**.
-4. Включите **Обновленную классификацию для избранных готовых оповещений**.
-
-Как только вы включите эту опцию, эти оповещения будут преобразованы в предупреждения:
-
-|Тип объекта |Тип события[1](#fn-1-1-def) |Описание |
-|--- |--- |--- |
-|ХОЗЯИН |OSI\_HIGH\_CPU |Использование ЦП |
-|ХОЗЯИН |OSI\_NIC\_DROPPED\_PACKETS\_HIGH |Высокий уровень отброшенных пакетов |
-|ХОЗЯИН |РЕСУРС\_СОДЕРЖАНИЕ |Медленный диск |
-|ЗГУ |ПРОЦЕСС\_RESTART |Перезапуск процесса |
+Page
 
 1
 
-После преобразования в предупреждения события с указанным здесь `event.type` будут отмечены как `event.type = WARNING`.Их прежняя ценность утрачивается.
+of 1
 
-### Просмотр данных импортированных технологий
+## Get started
 
-![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** обнаруживает установленные расширения и отображает их в списке **Технологии**.Расширения организованы по категориям, что упрощает изучение и анализ вашего стека технологий.
+![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** provides an up-to-date and comprehensive view of your monitored environments. Use the app to quickly identify areas that require attention and drill down to the exact root cause of issues.
 
-Для просмотра установленных технологий
+![List view of all data centers, automatically sorted by Davis Intelligence identified problems.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.47.23.png)![Hosts view for a selected data center helps to quickly identify the most problematic hosts within the data center.  Drill down to host details.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.48.54.png)![View host health overview, properties, tags, and ownership information. Drill down to all host details.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.51.12.png)![Host health overview, technologies and all host entities such as disks and network interfaces. Drill down to process details and entity metrics.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.51.24.png)![Detailed process analysis. Drill down to process details.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.52.09.png)![Network device metrics overview.](https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.52.34.png)
 
-1. Перейдите в раздел ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и эксплуатация** > **Технологии**.
-2. Выберите расширение из списка, чтобы просмотреть более подробную информацию.
+1 of 6List view of all data centers, automatically sorted by Davis Intelligence identified problems.
 
-Подробнее о настройке расширений см. [Расширения](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+### Navigation
 
-Минимально необходимые версии расширений
+The ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** app presents the data for your data centers, hosts, and network devices in lists.
 
-Убедитесь, что в вашей системе установлены эти минимальные версии расширений, чтобы избежать проблем с отображением данных в ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции**.
+Use the table options to navigate to the details that you need.
 
-Этот список касается расширений для поддержки сетевых устройств и не является исчерпывающим.Каждое сетевое устройство может иметь больше расширений.
+* To sort the table by a particular column, select the column header.
+* To show or hide columns, select  **Column settings** and then select the columns you want to display.
 
-|Расширение |Минимальная версия |
-|--- |--- |
-|Автообнаружение SNMP |2.2.8 |
-|Стандартное устройство Cisco |2.1.4 |
-|F5 БИГ-IP |2.10.0 |
-|Межсетевые экраны Пало-Альто |2.7.0 |
-|Juniper Networks (SNMP) |1.5.0 |
-|Общее сетевое устройство |2.0.0 |
-|Фортигейт |1.2.21 |
+#### Access details of entities
 
-См. наше подробное [Общая топология сети](/docs/ingest-from/extend-dynatrace/extend-topology/network-topology "Use the generic network topology model available in Dynatrace extensions.") руководство о том, как сделать так, чтобы ваши пользовательские расширения отображались в разделе ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции**.
+To get the details about an entity
 
-## Концепции
+1. Go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** and select  **Hosts** ,  **Containers**,  **Processes** or  **Network devices**.
+2. Select an entity from the list. You can sort and filter the list as needed.
 
-![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Инфраструктура и операции** состоят из следующих основных компонентов:
+### Filtering
 
-### Дата-центры
+You can filter the tables in the app by using the filter field with listed suggestions. Currently, you can use basic syntax (grouping filter statements and using logical operators is not supported). As you type, the relevant options are displayed.
 
-Список **Центров обработки данных** обеспечивает видимость взаимосвязанных центров обработки данных.Сосредоточение внимания на конкретном центре обработки данных дает вам подробный список всех отслеживаемых хостов.
+You can add several statements to narrow down the filter results. For example, `"Alert status" = Critical` `name != *1b*`. In this case, you narrow the search to hosts with more than 4 problems and names that don't include `1b`.
 
-* Фильтруйте центры обработки данных по их типу и местоположению, а затем сортируйте их по количеству открытых проблем.
-* Дата-центры с наибольшим количеством открытых проблем указаны первыми.
-* Выбор центра обработки данных поможет вам быстро определить наиболее проблемные хосты в этом центре обработки данных.
+For more details on using filters, see [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
 
-### Хосты
+### Segments
 
-В списке **Хосты** отображается подробная информация обо всех отслеживаемых хостах в вашей среде.
+You can use segments in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** to logically structure observability data for your devices.
 
-* Сортируйте и фильтруйте хосты по показателям работоспособности, таким как загрузка процессора, доступная память, емкость диска и сетевое подключение, чтобы определить хосты, требующие внимания.По умолчанию хосты сортируются по количеству открытых проблем.
-* Выберите имя хоста, чтобы просмотреть все технологии с подробной информацией о состоянии и ссылками на процессы.
+Some of the advantages of using segments are
 
-### Процессы
+* **Flexibility**: Segments can be used across different apps that support that feature.
+* **Ease of use**: You can create and use complex filters quickly.
+* **Option to share**: You can share filters across different users.
 
-Список **Процессов** предоставляет подробную информацию о процессах, выполняемых на хостах или в контейнерах, отображает тенденции использования ЦП и памяти, а также ключевые показатели для устранения неполадок.
+#### Apply a segment
 
-* Визуализируйте тенденции использования ЦП и памяти во всех процессах с помощью графического представления.
-* Выберите процесс, чтобы получить доступ к подробным показателям, включая трафик, потребление ресурсов и свойства.
-* Сортируйте и фильтруйте процессы по таким показателям, как использование ЦП, использование памяти или специальные предупреждения, чтобы выявить проблемные процессы.
-* Добавляйте теги типа технологии на уровне процесса или группы процессов для упрощения фильтрации и автоматизации.
-* Детализация до подробной информации на уровне процесса, включая информацию о версиях и выпусках, когда активирован глубокий мониторинг.
+1. Go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** >  **Segments**.
+2. Select the segment name from the drop-down menu. If needed, select parameters for the selected segment.
+3. Select **Apply** to activate the segment.
 
-### Контейнеры
+#### Add a segment
 
-Список **Контейнеров** предоставляет полное представление о ваших контейнерных рабочих нагрузках, независимо от того, организованы ли они ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** или выполняются на автономном хосте.
+1. Go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** >  **Segments**.
+2. Select  **Manage segments** >  **Segment**.
+3. Add a name for the segment.
+4. Optional Add a description.
+5. Use one of the available options for filtering data
 
-* Используйте столбец **Пользовательские оповещения** и фильтр **Критические оповещения**, чтобы быстро выявить контейнеры с проблемами.Выберите предупреждение, чтобы изучить его.
-* Анализируйте и сравнивайте показатели использования ЦП и памяти в разных контейнерах.
-* Выберите имя контейнера, чтобы просмотреть подробные графики, процессы, журналы и события для устранения неполадок.
-* Используйте селектор времени и графики использования ресурсов, чтобы выявить закономерности или аномалии с течением времени.
+   * Add a variable. This requires creating a query.
+   * Add data types. Select from the available options in the menu.
+   * Add entities and topology. Select from the available options in the menu.
+6. Select **Save**.
 
-### Сетевые устройства
+For more details on managing segments, refer to [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
 
-Список **Сетевых устройств** дает представление о сетевых компонентах и ​​их доступности с помощью аналитики на основе Dynatrace Intelligence.
+### Analyze overview charts
 
-* Отслеживайте состояние работоспособности, доступность интерфейса, использование сети и показатели оборудования, такие как использование процессора и памяти.
-* Просматривайте все проблемы, обнаруженные Dynatrace Intelligence, и получайте доступ к затронутым объектам для конкретных проблем.
-* Сортируйте и фильтруйте сетевые устройства по имени, типу, проблемам, IP-адресу, времени безотказной работы, состоянию интерфейса, насыщенности интерфейсов, объему трафика и доступности.
-* Для автоматически обнаруживаемых сетевых устройств, которые в данный момент не отслеживаются, установите и настройте расширения непосредственно на вкладке «Сообщения».
-* Выберите сетевое устройство, чтобы получить доступ к подробным представлениям, включая теги, свойства, показатели и связанные объекты при мониторинге с помощью расширения.
+You can define which metrics are displayed in the charts by selecting ![Expand menu](https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg "Expand menu") in the upper left corner of each graph or chart.
 
-### Связь между хостами, контейнерами и процессами
+#### Export data to Notebooks
 
-Хосты, контейнеры и процессы взаимосвязаны, и вы можете перемещаться между ними, чтобы понять зависимости и устранить проблемы.
+To further analyze the data from ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
 
-#### Хосты
+1. Go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
+2. Select an entity to see its details.
+3. Select the graph or chart you want to analyze and select  > **Open in Notebooks** ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with").
+4. Choose whether to open the graph in a new or existing notebook.
 
-* Полностраничный просмотр хоста включает вкладки **Процессы** и **Контейнеры**, на которых показаны связанные процессы и контейнеры.Выберите объект, чтобы перейти к его сведениям.
+### View host processes
 
-#### Контейнеры
+The **Processes** tab in the host full-page view displays the **CPU usage** and **Memory usage** charts with a table showing 5 contributors.
 
-* Контейнеры запускаются на хостах.Метаданные контейнера отображают имя хоста.
-* Полностраничный просмотр контейнера включает вкладку **Обзор** со ссылками на хост и группу контейнеров.При выборе хоста осуществляется переход к сведениям о хосте.При выборе группы контейнеров список контейнеров фильтруется для отображения всех контейнеров в этой группе.
-* На вкладке **Процессы** показаны связанные процессы.Выберите процесс, чтобы перейти к его деталям.
+To view processes on a host
 
-#### Процессы
+1. Open the full-page view of a host.
+2. Select the **Processes** tab.
 
-* Процессы выполняются непосредственно на хостах или в контейнерах.Метаданные процесса отображают связанное имя хоста и контейнера (если применимо).
-* На боковой панели процесса отображается информация о технологиях, хосте, группе процессов, контейнере (если применимо) и сведения о глубоком мониторинге.
-* Полностраничный просмотр процесса включает вкладку **Обзор** со ссылками на хост, группу процессов и контейнер (если применимо).При выборе хоста осуществляется переход к сведениям о хосте.Выбор группы процессов фильтрует список процессов, чтобы отобразить все процессы в этой группе.При выборе контейнера осуществляется переход к сведениям о контейнере.
+The **CPU usage** and **Memory usage** charts display with a table showing 5 contributors. Change the contributors by selecting other metrics, such as health alerts, custom warnings, and CPU usage.
 
-## Варианты использования
+To view all processes across your environment, switch to the [Processes](#processes) inventory.
 
-* Просмотр и определение состояния всех центров обработки данных, хостов и сетевых устройств.
-* Быстрое определение основной причины проблем с инфраструктурой.
-* Получите представление о производительности инфраструктуры и оптимизируйте ее.
+Note that processes can run directly on hosts or in containers running on hosts.
 
-+ Быстрое представление о состоянии центра обработки данных и выявление проблемных центров обработки данных
-+ Быстро просматривать состояние хоста и выявлять проблемные хосты, сетевые устройства, технологии, процессы, диски, контейнеры и сети.
-+ Просматривайте показатели работоспособности узла инфраструктуры, журналы и события для всех объектов инфраструктуры.
-+ Просматривайте показатели работоспособности сетевых устройств, ловушки и события.
-+ Оцените доступность сети для хостов и сетевых устройств путем интеграции с синтетическими мониторами доступности сети (NAM).
+### Display code-module metrics
 
-[![Центр](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+You can inject code modules and display the injected data in the app. For more details, see [Universal injection of code modules](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#universal-injection "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
 
-### Исследуйте в Dynatrace Hub
+After selecting a process from the list, the data is presented in a dedicated tab.
 
-Просмотрите состояние всех центров обработки данных и хостов и определите основную причину проблем с инфраструктурой.](https://www.dynatrace.com/hub/?filter=infrastructure-monitoring&internal_source=doc&internal_medium=link&internal_campaign=cross)
+### Monitor incoming and outgoing connections
+
+
+
+In the full-page view of a host, under **Connections**, you can see a quick overview of each type of connection, the total number of connected entities, and the number of problems. Expand the panel to see a list of connected entities and possible problems for each of them. You can also see which processes from the current host communicate with other processes or services that aren't part of the host.
+
+The **Connections** table allows you to identify potential sources of problems that don't happen directly on the host. Select the connected entity marked with  to navigate to its details page and investigate the issue.
+
+The incoming and outgoing process connections in the table display processes with the most issues based on network and CPU usage.
+
+### Measure the reachability of a host or device
+
+The **Reachability** column on the **Hosts** and **Network devices** pages shows how easily you can access a device or a host over the network from a remote location. For more details, see [Synthetic Monitoring](/docs/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
+
+The value presents the ratio of fully available Network Availability Monitors (NAM) (with 100% availability over the selected time period) to all configured monitors for the given host or network device.
+
+To use this feature, you need to configure NAM for the desired device or host. For details, refer to [Configure a NAM monitor](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+
+### View health alerts and warning signals
+
+In ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**, you can view health alerts and warning signals.
+
+Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.
+
+* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
+* For non-critical situations, a Warning signal informs you of a potential challenge.
+
+To take advantage of this feature in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**, you need to enable it. Once enabled, certain alerts that were previously classified as critical will be reclassified as warnings, as they are not considered critical enough to require immediate attention.
+
+To enable this option
+
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
+2. Select  **Analyze and alert** > **Alerts**.
+3. Under **Category update**, select **Ready-made alerts category update**.
+4. Enable **Updated classification for select ready-made alerts**.
+
+Once you enable the option, these alerts will be converted to warnings:
+
+| Entity type | Event type[1](#fn-1-1-def) | Description |
+| --- | --- | --- |
+| HOST | OSI\_HIGH\_CPU | CPU Usage |
+| HOST | OSI\_NIC\_DROPPED\_PACKETS\_HIGH | High rate of dropped packets |
+| HOST | RESOURCE\_CONTENTION | Slow disk |
+| PGI | PROCESS\_RESTART | Process restart |
+
+1
+
+Once converted into warnings, the events with the `event.type` listed here, will be marked as `event.type = WARNING`. Their former value is removed.
+
+### View data from imported technologies
+
+![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** detects installed extensions and displays them in the **Technologies** inventory. Extensions are organized by category, making it easy to explore and analyze your technology stack.
+
+To view installed technologies
+
+1. Go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** > **Technologies**.
+2. Select an extension from the list to view more details.
+
+For details on setting up extensions, see [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+
+Minimum required versions of extensions
+
+Ensure your system has these minimum versions of the installed extensions to avoid any issues with displaying the data in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
+
+This list concerns extensions for supporting network devices and is not exhaustive. Each network device can have more extensions.
+
+| Extension | Minimum version |
+| --- | --- |
+| SNMP Autodiscovery | 2.2.8 |
+| Generic Cisco Device | 2.1.4 |
+| F5 BIG-IP | 2.10.0 |
+| Palo Alto firewalls | 2.7.0 |
+| Juniper Networks (SNMP) | 1.5.0 |
+| Generic network device | 2.0.0 |
+| Fortigate | 1.2.21 |
+
+See our detailed [Generic network topology](/docs/ingest-from/extend-dynatrace/extend-topology/network-topology "Use the generic network topology model available in Dynatrace extensions.") guide on how to make your custom extensions appear in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
+
+## Concepts
+
+![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** has the following core components:
+
+[#### Data centers
+
+Monitor the health and performance of your data centers and availability zones to detect and resolve critical issues.
+
+Data centers](/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers)[#### Hosts
+
+Monitor infrastructure hosts across physical machines, VMs, and cloud instances to track health, performance, and resource utilization.
+
+Hosts](/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts)[#### Containers
+
+Monitor and troubleshoot containerized workloads across Kubernetes and standalone hosts.
+
+Containers](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Processes
+
+Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.
+
+Processes](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Networks
+
+Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
+
+Networks](/docs/observe/infrastructure-observability/infrastructure-and-operations/networks)
+
+### Relation between hosts, containers, and processes
+
+Hosts, containers, and processes are interconnected, and you can navigate between them to understand dependencies and troubleshoot issues.
+
+#### Hosts
+
+* The host full-page view includes **Processes** and **Containers** tabs showing related processes and containers. Select an entity to navigate to its details.
+
+#### Containers
+
+* Containers run on hosts. The container metadata displays the host name.
+* The container full-page view includes an **Overview** tab with links to the host and container group. Selecting the host navigates to the host details. Selecting the container group filters the container list to show all containers in that group.
+* The **Processes** tab shows related processes. Select a process to navigate to its details.
+
+#### Processes
+
+* Processes run directly on hosts or in containers. The process metadata displays the related host and container name (if applicable).
+* The process side panel shows information about technologies, host, process group, container (if applicable), and deep monitoring details.
+* The process full-page view includes an **Overview** tab with links to the host, process group, and container (if applicable). Selecting the host navigates to the host details. Selecting the process group filters the process list to show all processes in that group. Selecting the container navigates to the container details.
+
+## Use cases
+
+* View and identify the status of all data centers, hosts and network devices.
+* Quickly identify the root cause of infrastructure problems
+* Gain awareness of infrastructure performance and optimize it
+
+  + See data center health at a glance and identify problematic data centers
+  + Quickly see host health and identify problematic hosts, network devices, technologies, processes, disks, containers, and networks
+  + See infrastructure host health metrics, logs, and events for all infrastructure entities
+  + See network devices health metrics, traps, and events.
+  + Assess the network reachability of hosts and network devices by integrating with synthetic Network Availability Monitors (NAM).
+
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+
+### Explore in Dynatrace Hub
+
+View the status of all data centers and hosts and identify the root cause of infrastructure problems.](https://www.dynatrace.com/hub/?filter=infrastructure-monitoring&internal_source=doc&internal_medium=link&internal_campaign=cross)

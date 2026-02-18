@@ -1,7 +1,7 @@
 ---
 title: Monitor Kubernetes/OpenShift events
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes
-scraped: 2026-02-18T05:43:00.240487
+scraped: 2026-02-18T21:26:48.594935
 ---
 
 # Monitor Kubernetes/OpenShift events

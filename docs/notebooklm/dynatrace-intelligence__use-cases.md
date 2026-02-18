@@ -1310,7 +1310,7 @@ Once a new problem appears, you should receive an email from `no-reply@dev.apps.
 ---
 title: Create log alerts for a log event or summary of log data
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/create-alert-in-logs
-scraped: 2026-02-16T21:32:54.066371
+scraped: 2026-02-18T21:36:35.629158
 ---
 
 # Create log alerts for a log event or summary of log data
@@ -1462,7 +1462,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-17T04:55:00.055948
+scraped: 2026-02-18T21:19:18.482919
 ---
 
 # Dynatrace Intelligence DQL examples
