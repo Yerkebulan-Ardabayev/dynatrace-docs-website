@@ -1,7 +1,7 @@
 ---
 title: Best practices for scaling tagging and management-zone rules
 source: https://www.dynatrace.com/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale
-scraped: 2026-02-16T09:29:23.014404
+scraped: 2026-02-18T05:45:30.307086
 ---
 
 # Best practices for scaling tagging and management-zone rules

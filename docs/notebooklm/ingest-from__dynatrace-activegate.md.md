@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/dynatrace-activegate.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace ActiveGate
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate
-scraped: 2026-02-17T21:13:56.457375
+scraped: 2026-02-18T05:31:25.867594
 ---
 
 # Dynatrace ActiveGate

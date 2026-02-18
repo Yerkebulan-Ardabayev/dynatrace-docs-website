@@ -1,7 +1,7 @@
 ---
 title: Service flow filtering
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow/service-flow-filtering
-scraped: 2026-02-17T21:24:10.159170
+scraped: 2026-02-18T05:37:20.747839
 ---
 
 # Service flow filtering

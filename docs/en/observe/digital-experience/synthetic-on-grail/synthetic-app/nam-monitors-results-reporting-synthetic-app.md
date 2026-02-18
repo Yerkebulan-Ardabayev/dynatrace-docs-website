@@ -1,7 +1,7 @@
 ---
 title: NAM monitors results reporting
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/nam-monitors-results-reporting-synthetic-app
-scraped: 2026-02-17T21:18:00.095049
+scraped: 2026-02-18T05:36:58.049940
 ---
 
 # NAM monitors results reporting

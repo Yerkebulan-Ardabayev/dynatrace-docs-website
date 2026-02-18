@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities API - GET vulnerable functions
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerable-functions
-scraped: 2026-02-16T09:27:44.664793
+scraped: 2026-02-18T05:53:44.143934
 ---
 
 # Vulnerabilities API - GET vulnerable functions

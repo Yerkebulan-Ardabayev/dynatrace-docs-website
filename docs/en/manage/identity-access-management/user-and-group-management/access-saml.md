@@ -1,7 +1,7 @@
 ---
 title: SAML
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml
-scraped: 2026-02-17T21:28:27.340683
+scraped: 2026-02-18T05:44:00.059398
 ---
 
 # SAML

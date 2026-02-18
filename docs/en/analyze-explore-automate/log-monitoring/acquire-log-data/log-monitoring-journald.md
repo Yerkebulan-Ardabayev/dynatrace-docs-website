@@ -1,7 +1,7 @@
 ---
 title: Log Monitoring from Journald (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-journald
-scraped: 2026-02-17T21:29:47.807910
+scraped: 2026-02-18T05:48:55.319656
 ---
 
 # Log Monitoring from Journald (Logs Classic)

@@ -1,7 +1,7 @@
 ---
 title: Service detection API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/detection-rules
-scraped: 2026-02-17T21:24:21.905132
+scraped: 2026-02-18T05:37:35.496679
 ---
 
 # Service detection API

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: observe/business-observability.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Business Observability
 source: https://www.dynatrace.com/docs/observe/business-observability
-scraped: 2026-02-17T21:14:50.574620
+scraped: 2026-02-18T05:32:41.094889
 ---
 
 # Business Observability

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/technology-support
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 23
 
@@ -839,7 +839,7 @@ Dynatrace provides extensive Go monitoring capabilities:
 ---
 title: GraalVM Native Image
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/graalvm-native-image
-scraped: 2026-02-17T21:20:01.334583
+scraped: 2026-02-18T05:40:04.054132
 ---
 
 # GraalVM Native Image
@@ -1400,7 +1400,7 @@ jvmArgs.addAll(
 ---
 title: Red Hat Quarkus native applications monitoring
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/quarkus
-scraped: 2026-02-17T21:28:18.652454
+scraped: 2026-02-18T05:55:20.442409
 ---
 
 # Red Hat Quarkus native applications monitoring
@@ -2175,7 +2175,7 @@ For the procedure below, we assume your application writes logs to the `/var/log
 ---
 title: Out-of-memory (OOM) and out-of-threads (OOT) events and alerting
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/set-up-event-and-memory-alerting
-scraped: 2026-02-17T05:00:11.079156
+scraped: 2026-02-18T05:58:12.094016
 ---
 
 # Out-of-memory (OOM) and out-of-threads (OOT) events and alerting
@@ -12514,7 +12514,7 @@ Only the [Db2 JDBC driver typesï»¿](https://www.ibm.com/docs/en/sdi/7.2.0.3?t
 ---
 title: OneAgent platform and capability support matrix
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix
-scraped: 2026-02-17T21:23:06.579001
+scraped: 2026-02-18T05:38:48.533054
 ---
 
 # OneAgent platform and capability support matrix

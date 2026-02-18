@@ -1,7 +1,7 @@
 ---
 title: What's new in Dynatrace SaaS
 source: https://www.dynatrace.com/docs/whats-new/saas
-scraped: 2026-02-17T21:13:19.613216
+scraped: 2026-02-18T05:30:53.649269
 ---
 
 # What's new in Dynatrace SaaS

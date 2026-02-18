@@ -1,7 +1,7 @@
 ---
 title: GET inline code
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-inline-code
-scraped: 2026-02-16T09:28:33.887130
+scraped: 2026-02-18T05:46:23.478156
 ---
 
 # GET inline code

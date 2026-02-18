@@ -1,6 +1,6 @@
 # Dynatrace Documentation: manage/data-privacy-and-security
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 10
 
@@ -13,7 +13,7 @@ Files combined: 10
 ---
 title: Configure data privacy settings
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
-scraped: 2026-02-17T21:24:47.572276
+scraped: 2026-02-18T05:38:11.338366
 ---
 
 # Configure data privacy settings
@@ -255,7 +255,7 @@ When turned on, the RUM JavaScript sets a persistent cookie in end-user browsers
 ---
 title: Adaptive Data Retention
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/adaptive-data-retention
-scraped: 2026-02-16T09:37:18.990323
+scraped: 2026-02-18T05:56:44.610462
 ---
 
 # Adaptive Data Retention
@@ -337,7 +337,7 @@ Some deviation is expected. When the deviation is too extreme, the required disk
 ---
 title: Data protection at Dynatrace
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/data-protection
-scraped: 2026-02-15T21:26:06.804206
+scraped: 2026-02-18T05:51:34.499559
 ---
 
 # Data protection at Dynatrace
@@ -406,7 +406,7 @@ Dynatrace also provides multi-layered [security controls](/docs/manage/data-priv
 ---
 title: Data retention periods
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods
-scraped: 2026-02-17T21:19:05.891045
+scraped: 2026-02-18T05:38:17.229442
 ---
 
 # Data retention periods
@@ -707,7 +707,7 @@ Based on scan results, you can take immediate action:
 ---
 title: Sensitive Data Center
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center
-scraped: 2026-02-17T21:25:01.223756
+scraped: 2026-02-18T05:52:54.159311
 ---
 
 # Sensitive Data Center
@@ -1631,7 +1631,7 @@ Third party and code level vulnerabilities are [detected in real time and automa
 ---
 title: Secure development controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/secure-development-controls
-scraped: 2026-02-17T04:58:08.089379
+scraped: 2026-02-18T05:53:10.011374
 ---
 
 # Secure development controls

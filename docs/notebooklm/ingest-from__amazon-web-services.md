@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/amazon-web-services
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 72
 
@@ -13,7 +13,7 @@ Files combined: 72
 ---
 title: AWS Marketplace private offer
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/aws-platform/aws-marketplace
-scraped: 2026-02-17T21:30:55.488605
+scraped: 2026-02-18T05:58:59.702823
 ---
 
 # AWS Marketplace private offer
@@ -252,7 +252,7 @@ With Amazon S3 configured, it's now time to enable CORS headers in CloudFront. O
 ---
 title: Create an AWS connection via Settings
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings
-scraped: 2026-02-17T21:17:02.533513
+scraped: 2026-02-18T05:36:27.930739
 ---
 
 # Create an AWS connection via Settings
@@ -1676,7 +1676,7 @@ For AWS App Runner, monitoring consumption is based on host units. See [Applicat
 ---
 title: Monitor AWS Elastic Beanstalk
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk
-scraped: 2026-02-17T21:19:50.085841
+scraped: 2026-02-18T05:40:08.109856
 ---
 
 # Monitor AWS Elastic Beanstalk
@@ -1986,7 +1986,7 @@ For AWS Elastic Beanstalk, monitoring consumption is based on hosts units. See [
 ---
 title: Deploy OneAgent using AWS Systems Manager Distributor
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2/deploy-oneagent-using-aws-systems-manager-distributor
-scraped: 2026-02-17T21:24:57.708502
+scraped: 2026-02-18T05:44:43.921322
 ---
 
 # Deploy OneAgent using AWS Systems Manager Distributor
@@ -2396,7 +2396,7 @@ Remember that `SSM_DYNATRACE_TOKEN_PARAMETER_NAME` and `SSM_DYNATRACE_TOKEN_SECR
 ---
 title: Monitor Amazon Elastic Compute Cloud (EC2)
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2
-scraped: 2026-02-17T21:19:33.393054
+scraped: 2026-02-18T05:40:02.166273
 ---
 
 # Monitor Amazon Elastic Compute Cloud (EC2)
@@ -2430,7 +2430,7 @@ Alternatively, you can use any infrastructure management tool such as Terraform 
 ---
 title: Monitor Elastic Container Service (ECS) with EC2 launch type
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs
-scraped: 2026-02-17T05:10:15.329885
+scraped: 2026-02-18T05:47:23.880001
 ---
 
 # Monitor Elastic Container Service (ECS) with EC2 launch type
@@ -2548,7 +2548,7 @@ For Elastic Container Service, monitoring consumption is based on hosts units. S
 ---
 title: Monitor Amazon Elastic Container Service (ECS)
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs
-scraped: 2026-02-17T21:19:57.435955
+scraped: 2026-02-18T05:39:42.290644
 ---
 
 # Monitor Amazon Elastic Container Service (ECS)
@@ -2685,7 +2685,7 @@ For Elastic Container Service, monitoring consumption is based on host units. Se
 ---
 title: Ingest Kubernetes DNS logs from AWS
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-eks/k8s-dns-logs
-scraped: 2026-02-17T21:26:12.896682
+scraped: 2026-02-18T05:51:08.332479
 ---
 
 # Ingest Kubernetes DNS logs from AWS
@@ -3076,7 +3076,7 @@ For Amazon Elastic Kubernetes Service, monitoring consumption is based on host u
 ---
 title: Monitor AWS Fargate
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate
-scraped: 2026-02-17T21:20:09.038302
+scraped: 2026-02-18T05:39:36.753333
 ---
 
 # Monitor AWS Fargate
@@ -3440,7 +3440,7 @@ For AWS Fargate, monitoring consumption is based on host units. To learn how hos
 ---
 title: Integrate Dynatrace Lambda Layer on container images
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/deploy-oneagent-on-lambda-container-images
-scraped: 2026-02-17T21:34:21.695349
+scraped: 2026-02-18T05:55:36.574782
 ---
 
 # Integrate Dynatrace Lambda Layer on container images
@@ -5163,7 +5163,7 @@ Starting from .NET 6, Lambda functions can be [built and deployed as container i
 ---
 title: OpenTelemetry interoperability in Java
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java
-scraped: 2026-02-17T04:56:23.764102
+scraped: 2026-02-18T05:52:35.712995
 ---
 
 # OpenTelemetry interoperability in Java
@@ -5822,7 +5822,7 @@ This structure is required to be prepared for batch receives. When you send mult
 ---
 title: OpenTelemetry interoperability in Node.js
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-nodejs
-scraped: 2026-02-17T05:02:15.904731
+scraped: 2026-02-18T05:57:45.197668
 ---
 
 # OpenTelemetry interoperability in Node.js
@@ -6903,7 +6903,7 @@ For details, see how to [receive an SQS message](#receive-sqs-node).
 ---
 title: OpenTelemetry interoperability in Python
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-python
-scraped: 2026-02-17T04:59:07.619958
+scraped: 2026-02-18T05:50:23.413900
 ---
 
 # OpenTelemetry interoperability in Python
@@ -7776,7 +7776,7 @@ For details, see how to [receive an SQS message](#receive-sqs-python).
 ---
 title: AWS Lambda logs in context of traces
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment
-scraped: 2026-02-17T21:24:06.556385
+scraped: 2026-02-18T05:37:32.161808
 ---
 
 # AWS Lambda logs in context of traces
@@ -8600,7 +8600,7 @@ To analyze cold starts
 ---
 title: Monitor AWS Lambda
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration
-scraped: 2026-02-17T21:19:51.226873
+scraped: 2026-02-18T05:40:16.245899
 ---
 
 # Monitor AWS Lambda
@@ -9540,7 +9540,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS AppSync monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-appsync
-scraped: 2026-02-17T04:59:54.222275
+scraped: 2026-02-18T05:56:53.462765
 ---
 
 # AWS AppSync monitoring
@@ -10414,7 +10414,7 @@ While Dynatrace doesn't support WebSocket traffic, the AppSync integration shows
 ---
 title: AWS Chatbot monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-chatbot
-scraped: 2026-02-16T21:31:40.951444
+scraped: 2026-02-18T05:56:14.730679
 ---
 
 # AWS Chatbot monitoring
@@ -11218,7 +11218,7 @@ Dynatrace entities of this AWS service are not enriched with the ARN property.
 ---
 title: AWS CloudHSM (V2) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cloudhsm-v2
-scraped: 2026-02-16T09:27:46.600390
+scraped: 2026-02-18T05:48:41.398395
 ---
 
 # AWS CloudHSM (V2) monitoring
@@ -14796,7 +14796,7 @@ To collect metrics about changes captured by the migration task (CDC metrics) on
 ---
 title: AWS Direct Connect monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-direct-connect
-scraped: 2026-02-17T21:32:33.220532
+scraped: 2026-02-18T05:57:52.258889
 ---
 
 # AWS Direct Connect monitoring
@@ -17397,7 +17397,7 @@ This service monitors a part of Amazon EBS (AWS/EBS). While you have this servic
 ---
 title: Amazon Elastic Inference monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-inference
-scraped: 2026-02-17T21:20:14.429124
+scraped: 2026-02-18T05:41:18.844132
 ---
 
 # Amazon Elastic Inference monitoring
@@ -19068,7 +19068,7 @@ Amazon Elastic Transcoder doesn't support tagging.
 ---
 title: AWS Elemental MediaConnect monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediaconnect
-scraped: 2026-02-16T09:29:47.069289
+scraped: 2026-02-18T05:54:14.366057
 ---
 
 # AWS Elemental MediaConnect monitoring
@@ -21622,7 +21622,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Elemental MediaTailor monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediatailor
-scraped: 2026-02-17T21:31:35.155390
+scraped: 2026-02-18T05:54:42.733629
 ---
 
 # AWS Elemental MediaTailor monitoring
@@ -22486,7 +22486,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon EventBridge monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-eventbridge
-scraped: 2026-02-17T21:34:08.230502
+scraped: 2026-02-18T05:58:08.585175
 ---
 
 # Amazon EventBridge monitoring
@@ -23356,7 +23356,7 @@ Amazon EventBridge sends `Invocations` metrics to CloudWatch only if it has a no
 ---
 title: Amazon FSx monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-fsx
-scraped: 2026-02-16T09:37:53.531655
+scraped: 2026-02-18T05:46:45.445516
 ---
 
 # Amazon FSx monitoring
@@ -24212,7 +24212,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Inspector monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-inspector
-scraped: 2026-02-17T21:27:30.327571
+scraped: 2026-02-18T05:45:26.725685
 ---
 
 # Amazon Inspector monitoring
@@ -24851,7 +24851,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Lambda monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-lambda-new
-scraped: 2026-02-15T09:08:00.397793
+scraped: 2026-02-18T05:53:40.608382
 ---
 
 # AWS Lambda monitoring
@@ -25748,7 +25748,7 @@ This service monitors a part of AWS Lambda (AWS/Lambda). While you have this ser
 ---
 title: Amazon MQ monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-mq
-scraped: 2026-02-17T21:33:43.926068
+scraped: 2026-02-18T05:48:04.811665
 ---
 
 # Amazon MQ monitoring
@@ -26671,7 +26671,7 @@ Dynatrace entities of this AWS service are not enriched with the ARN property.
 ---
 title: Amazon Neptune monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-neptune
-scraped: 2026-02-17T21:33:38.744763
+scraped: 2026-02-18T05:50:44.053681
 ---
 
 # Amazon Neptune monitoring
@@ -28550,7 +28550,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Polly monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-polly
-scraped: 2026-02-17T05:04:41.380587
+scraped: 2026-02-18T05:57:32.672913
 ---
 
 # Amazon Polly monitoring
@@ -30237,7 +30237,7 @@ About dimensions
 ---
 title: Amazon Rekognition monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-rekognition
-scraped: 2026-02-17T21:34:11.324843
+scraped: 2026-02-18T05:46:50.859894
 ---
 
 # Amazon Rekognition monitoring
@@ -32449,7 +32449,7 @@ This service monitors a part of Amazon RDS (AWS/RDS). While you have this servic
 ---
 title: AWS RoboMaker monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-robomaker
-scraped: 2026-02-16T21:26:46.627591
+scraped: 2026-02-18T05:49:08.239613
 ---
 
 # AWS RoboMaker monitoring
@@ -34169,7 +34169,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Route 53 monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-route-53
-scraped: 2026-02-17T21:34:13.985151
+scraped: 2026-02-18T05:50:17.767565
 ---
 
 # Amazon Route 53 monitoring
@@ -35034,7 +35034,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon SWF (Simple Workflow Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-workflow-service-swf
-scraped: 2026-02-16T21:31:52.303070
+scraped: 2026-02-18T05:47:55.701492
 ---
 
 # Amazon SWF (Simple Workflow Service) monitoring
@@ -35912,7 +35912,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Site-to-Site VPN monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-site-to-site-vpn
-scraped: 2026-02-17T21:29:01.843806
+scraped: 2026-02-18T05:57:28.938832
 ---
 
 # AWS Site-to-Site VPN monitoring
@@ -38500,7 +38500,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Systems Manager Run Command monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-systems-manager-run-command
-scraped: 2026-02-17T05:10:37.945827
+scraped: 2026-02-18T05:50:40.467252
 ---
 
 # AWS Systems Manager Run Command monitoring
@@ -39290,7 +39290,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Transfer Family monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-transfer-family
-scraped: 2026-02-17T21:29:16.767343
+scraped: 2026-02-18T05:50:41.895522
 ---
 
 # AWS Transfer Family monitoring
@@ -40140,7 +40140,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Transit Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-transit-gateway
-scraped: 2026-02-17T05:11:52.881539
+scraped: 2026-02-18T05:44:29.323907
 ---
 
 # AWS Transit Gateway monitoring
@@ -41016,7 +41016,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS WAF Classic monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-waf-classic
-scraped: 2026-02-17T21:26:44.919599
+scraped: 2026-02-18T05:55:25.629054
 ---
 
 # AWS WAF Classic monitoring
@@ -42682,7 +42682,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon WorkSpaces monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-workspaces
-scraped: 2026-02-17T05:05:19.219701
+scraped: 2026-02-18T05:46:30.107558
 ---
 
 # Amazon WorkSpaces monitoring
@@ -43552,7 +43552,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: All AWS cloud services
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services
-scraped: 2026-02-17T21:19:38.367025
+scraped: 2026-02-18T05:40:05.281632
 ---
 
 # All AWS cloud services
@@ -44365,7 +44365,7 @@ To uninstall AWS log forwarding
 ---
 title: Migrate from AWS classic (formerly 'built-in') services to cloud services
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-migration-guide
-scraped: 2026-02-17T21:27:43.831343
+scraped: 2026-02-18T05:43:39.560793
 ---
 
 # Migrate from AWS classic (formerly 'built-in') services to cloud services
@@ -45430,7 +45430,7 @@ Dynatrace entities of this AWS service are not enriched with the ARN property.
 ---
 title: Monitor Amazon Elastic Kubernetes Service (EKS) with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-eks
-scraped: 2026-02-17T21:20:05.488571
+scraped: 2026-02-18T05:39:38.791857
 ---
 
 # Monitor Amazon Elastic Kubernetes Service (EKS) with CloudWatch metrics
@@ -47225,7 +47225,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Classic (formerly 'built-in') AWS metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/default-aws-metrics
-scraped: 2026-02-16T09:38:34.053585
+scraped: 2026-02-18T05:48:20.741207
 ---
 
 # Classic (formerly 'built-in') AWS metrics
@@ -47648,7 +47648,7 @@ type(PROCESS_GROUP),fromRelationships.runsOn(type(HOST),fromRelationships.runsOn
 ---
 title: Monitor Amazon Web Services with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics
-scraped: 2026-02-16T21:27:50.903848
+scraped: 2026-02-18T05:55:34.816706
 ---
 
 # Monitor Amazon Web Services with CloudWatch metrics

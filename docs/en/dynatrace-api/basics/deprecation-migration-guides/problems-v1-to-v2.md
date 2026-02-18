@@ -1,7 +1,7 @@
 ---
 title: Migrate from Problems API v1 to Problems API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/problems-v1-to-v2
-scraped: 2026-02-17T21:33:48.205554
+scraped: 2026-02-18T05:48:37.657116
 ---
 
 # Migrate from Problems API v1 to Problems API v2

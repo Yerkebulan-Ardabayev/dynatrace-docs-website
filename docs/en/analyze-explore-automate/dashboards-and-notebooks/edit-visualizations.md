@@ -1,7 +1,7 @@
 ---
 title: Edit visualizations for Notebooks and Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations
-scraped: 2026-02-17T21:14:55.654894
+scraped: 2026-02-18T05:34:28.692598
 ---
 
 # Edit visualizations for Notebooks and Dashboards

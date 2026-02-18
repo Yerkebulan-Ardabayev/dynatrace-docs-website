@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/license-lifecycle.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Your license lifecycle
 source: https://www.dynatrace.com/docs/license/license-lifecycle
-scraped: 2026-02-17T21:16:25.708623
+scraped: 2026-02-18T05:39:03.121648
 ---
 
 # Your license lifecycle

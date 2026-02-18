@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-intelligence/dynatrace-intelligence-integrations
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 2
 
@@ -13,7 +13,7 @@ Files combined: 2
 ---
 title: Dynatrace Intelligence (Preview) app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows
-scraped: 2026-02-16T21:24:38.251238
+scraped: 2026-02-18T05:45:03.972584
 ---
 
 # Dynatrace Intelligence (Preview) app
@@ -114,7 +114,7 @@ To learn about specific use cases and how you can use the Dynatrace Intelligence
 ---
 title: Dynatrace Intelligence for Notebooks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks
-scraped: 2026-02-17T21:22:45.689629
+scraped: 2026-02-18T05:57:39.707512
 ---
 
 # Dynatrace Intelligence for Notebooks

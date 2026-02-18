@@ -1,6 +1,6 @@
 # Dynatrace Documentation: semantic-dictionary/model
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Traces
 source: https://www.dynatrace.com/docs/semantic-dictionary/model/trace
-scraped: 2026-02-17T21:24:14.290042
+scraped: 2026-02-18T05:38:31.502941
 ---
 
 # Traces

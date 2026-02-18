@@ -1,7 +1,7 @@
 ---
 title: Manage Microsoft SQL Server extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
-scraped: 2026-02-17T21:20:31.331616
+scraped: 2026-02-18T05:40:46.106754
 ---
 
 # Manage Microsoft SQL Server extensions

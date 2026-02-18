@@ -1,6 +1,6 @@
 # Dynatrace Documentation: analyze-explore-automate/smartscape
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 11
 
@@ -13,7 +13,7 @@ Files combined: 11
 ---
 title: Smartscape concepts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-concepts
-scraped: 2026-02-17T05:11:29.059731
+scraped: 2026-02-18T05:45:05.733882
 ---
 
 # Smartscape concepts
@@ -345,7 +345,7 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 ---
 title: Smartscape modals
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals
-scraped: 2026-02-17T05:08:21.817652
+scraped: 2026-02-18T05:57:37.979901
 ---
 
 # Smartscape modals
@@ -379,7 +379,7 @@ Visualize the topology around any selected entity to gain immediate insights on 
 ---
 title: AWS EC2 ecosystem overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview
-scraped: 2026-02-16T21:28:46.133688
+scraped: 2026-02-18T05:56:49.796809
 ---
 
 # AWS EC2 ecosystem overview
@@ -537,7 +537,7 @@ To use **Infrastructure overview** effectively, we recommend that you:
 ---
 title: Kubernetes overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview
-scraped: 2026-02-17T05:04:26.196148
+scraped: 2026-02-18T05:46:02.035171
 ---
 
 # Kubernetes overview
@@ -730,7 +730,7 @@ To use **Service dependency graph** effectively, we recommend that you:
 ---
 title: Smartscape on Grail view
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view
-scraped: 2026-02-17T21:28:01.780275
+scraped: 2026-02-18T05:49:44.693782
 ---
 
 # Smartscape on Grail view
@@ -792,7 +792,7 @@ To use the **Smartscape on Grail** view effectively, we recommend that you:
 ---
 title: Smartscape views
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views
-scraped: 2026-02-17T05:11:40.612220
+scraped: 2026-02-18T05:49:51.507984
 ---
 
 # Smartscape views

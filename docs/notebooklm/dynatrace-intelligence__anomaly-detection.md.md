@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-intelligence/anomaly-detection.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
-scraped: 2026-02-17T21:14:58.289215
+scraped: 2026-02-18T05:34:09.372539
 ---
 
 # Anomaly detection

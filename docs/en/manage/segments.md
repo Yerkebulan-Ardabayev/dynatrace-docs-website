@@ -1,7 +1,7 @@
 ---
 title: Segments
 source: https://www.dynatrace.com/docs/manage/segments
-scraped: 2026-02-17T21:13:59.471811
+scraped: 2026-02-18T05:33:52.859683
 ---
 
 # Segments

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/discovery-coverage-app.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Discovery & Coverage
 source: https://www.dynatrace.com/docs/ingest-from/discovery-coverage-app
-scraped: 2026-02-17T21:27:40.156856
+scraped: 2026-02-18T05:50:15.788012
 ---
 
 # Discovery & Coverage

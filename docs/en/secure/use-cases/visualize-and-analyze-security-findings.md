@@ -1,7 +1,7 @@
 ---
 title: Visualize and analyze security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/visualize-and-analyze-security-findings
-scraped: 2026-02-17T21:21:08.274063
+scraped: 2026-02-18T05:42:04.772584
 ---
 
 # Visualize and analyze security findings

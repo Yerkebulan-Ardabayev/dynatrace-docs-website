@@ -1,7 +1,7 @@
 ---
 title: Amazon WorkSpaces monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-workspaces
-scraped: 2026-02-17T05:05:19.219701
+scraped: 2026-02-18T05:46:30.107558
 ---
 
 # Amazon WorkSpaces monitoring

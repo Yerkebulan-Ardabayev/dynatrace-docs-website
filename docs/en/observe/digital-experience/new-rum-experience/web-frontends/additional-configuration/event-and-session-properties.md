@@ -1,7 +1,7 @@
 ---
 title: Capture event and session properties for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties
-scraped: 2026-02-17T05:04:04.142109
+scraped: 2026-02-18T05:55:58.365589
 ---
 
 # Capture event and session properties for web frontends

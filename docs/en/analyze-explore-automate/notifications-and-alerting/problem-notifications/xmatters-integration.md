@@ -1,7 +1,7 @@
 ---
 title: Send Dynatrace notifications to xMatters
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration
-scraped: 2026-02-17T21:14:15.322668
+scraped: 2026-02-18T05:31:42.718023
 ---
 
 # Send Dynatrace notifications to xMatters

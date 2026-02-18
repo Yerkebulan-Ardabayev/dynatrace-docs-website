@@ -1,8 +1,8 @@
 # Dynatrace Documentation: ingest-from/setup-on-k8s
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
-Files combined: 45
+Files combined: 46
 
 ---
 
@@ -1028,7 +1028,7 @@ Sizing guide for Dynatrace ActiveGate components](/docs/ingest-from/setup-on-k8s
 ---
 title: Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/marketplaces/eks-dto
-scraped: 2026-02-17T21:30:56.608262
+scraped: 2026-02-18T05:46:31.850718
 ---
 
 # Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)
@@ -1183,7 +1183,7 @@ To install the Dynatrace Operator add-on for AWS EKS through the CLI
 ---
 title: Deploy ActiveGate in a VM
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm
-scraped: 2026-02-17T05:08:47.258365
+scraped: 2026-02-18T05:45:19.442867
 ---
 
 # Deploy ActiveGate in a VM
@@ -1869,7 +1869,7 @@ To update ActiveGate, see [Update ActiveGate](/docs/ingest-from/dynatrace-active
 ---
 title: Manually deploy ActiveGate as a StatefulSet
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-statefulset
-scraped: 2026-02-17T21:28:13.641491
+scraped: 2026-02-18T05:49:06.236306
 ---
 
 # Manually deploy ActiveGate as a StatefulSet
@@ -2858,7 +2858,7 @@ ActiveGate is updated automatically on pod restart whenever there is a new versi
 ---
 title: Set up OpenShift monitoring via OperatorHub
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ocp-operator-hub
-scraped: 2026-02-17T21:30:16.863941
+scraped: 2026-02-18T05:51:48.801893
 ---
 
 # Set up OpenShift monitoring via OperatorHub
@@ -3419,7 +3419,7 @@ No specific configuration is required.
 ---
 title: Deployment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
-scraped: 2026-02-17T21:16:52.491963
+scraped: 2026-02-18T05:39:58.656579
 ---
 
 # Deployment
@@ -4354,7 +4354,7 @@ feature.dynatrace.com/otlp-exporter-configuration-set-no-proxy: "false"
 ---
 title: Store Dynatrace images in private registries
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry
-scraped: 2026-02-16T21:26:32.072603
+scraped: 2026-02-18T05:51:22.205937
 ---
 
 # Store Dynatrace images in private registries
@@ -4956,7 +4956,7 @@ Rotating the OAuth credentials is not immediately reflected in the EdgeConnect d
 ---
 title: Set up EdgeConnect
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect
-scraped: 2026-02-15T09:07:09.645857
+scraped: 2026-02-18T05:51:42.463726
 ---
 
 # Set up EdgeConnect
@@ -5114,7 +5114,7 @@ sample-edge-connect-name   <environment-id>.apps.dynatrace.com   Running   16m
 ---
 title: Deploy Dynatrace alongside Istio
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment
-scraped: 2026-02-17T21:19:56.322498
+scraped: 2026-02-18T05:40:09.972326
 ---
 
 # Deploy Dynatrace alongside Istio
@@ -5598,7 +5598,7 @@ If not, check if `enableIstio` is set to `true` in the DynaKube.
 ---
 title: Instrument ingress-nginx
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx
-scraped: 2026-02-17T21:24:03.966372
+scraped: 2026-02-18T05:37:28.719395
 ---
 
 # Instrument ingress-nginx
@@ -5673,7 +5673,7 @@ If your pod isn't up and running, make sure that it hasn't exceeded either of th
 ---
 title: Kubernetes API Monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring
-scraped: 2026-02-17T21:16:46.043964
+scraped: 2026-02-18T05:42:51.056212
 ---
 
 # Kubernetes API Monitoring
@@ -6108,7 +6108,7 @@ ActiveGate is updated automatically on pod restart whenever there is a new versi
 ---
 title: Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits
-scraped: 2026-02-17T21:25:26.092911
+scraped: 2026-02-18T05:46:33.094967
 ---
 
 # Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
@@ -6692,7 +6692,7 @@ templates:
 ---
 title: Configure auto-update for Dynatrace Operator managed components
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components
-scraped: 2026-02-17T21:29:22.799163
+scraped: 2026-02-18T05:47:50.062460
 ---
 
 # Configure auto-update for Dynatrace Operator managed components
@@ -6930,7 +6930,7 @@ Renovate automates the updating of dependencies in Git repositories. Integrating
 ---
 title: Manage Dynatrace deployments using GitOps
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops
-scraped: 2026-02-17T21:19:42.422419
+scraped: 2026-02-18T05:39:40.535919
 ---
 
 # Manage Dynatrace deployments using GitOps
@@ -7328,7 +7328,7 @@ For configuring automatic updates for Dynatrace Operator, see [Auto-update of Dy
 ---
 title: Metadata enrichment of all telemetry originating from Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment
-scraped: 2026-02-17T21:24:51.383570
+scraped: 2026-02-18T05:38:14.345884
 ---
 
 # Metadata enrichment of all telemetry originating from Kubernetes
@@ -8065,7 +8065,7 @@ k8s.namespace.label.domain: finance
 ---
 title: Configure enrichment directory
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment
-scraped: 2026-02-17T21:24:53.915060
+scraped: 2026-02-18T05:38:05.952875
 ---
 
 # Configure enrichment directory
@@ -8372,7 +8372,7 @@ By following these steps, you can fully leverage metadata enrichment to enhance 
 ---
 title: Migration of DynaKube v1beta1 to v1beta4
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta4
-scraped: 2026-02-17T05:05:38.384248
+scraped: 2026-02-18T05:44:36.440191
 ---
 
 # Migration of DynaKube v1beta1 to v1beta4
@@ -9215,7 +9215,7 @@ env: ...
 ---
 title: Migration of DynaKube v1beta1 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta5
-scraped: 2026-02-17T21:30:09.298689
+scraped: 2026-02-18T05:55:13.955315
 ---
 
 # Migration of DynaKube v1beta1 to v1beta5
@@ -10309,7 +10309,7 @@ The CSI driver is now used when installed as part of the Dynatrace Operator inst
 ---
 title: Migration of DynaKube v1beta2 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5
-scraped: 2026-02-17T21:28:26.023660
+scraped: 2026-02-18T05:53:32.082636
 ---
 
 # Migration of DynaKube v1beta2 to v1beta5
@@ -10737,7 +10737,7 @@ We recommend the following:
 ---
 title: Migration of DynaKube v1beta3 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta5
-scraped: 2026-02-17T05:12:23.848405
+scraped: 2026-02-18T05:57:50.249451
 ---
 
 # Migration of DynaKube v1beta3 to v1beta5
@@ -10914,7 +10914,7 @@ We recommend the following:
 ---
 title: Migration of DynaKube v1beta4 to v1beta5
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta5
-scraped: 2026-02-16T21:27:31.288039
+scraped: 2026-02-18T05:55:32.729273
 ---
 
 # Migration of DynaKube v1beta4 to v1beta5
@@ -11095,7 +11095,7 @@ We recommend the following:
 ---
 title: Migration of DynaKube v1beta5 to v1beta6
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta5-v1beta6
-scraped: 2026-02-17T21:34:00.634506
+scraped: 2026-02-18T05:43:58.196153
 ---
 
 # Migration of DynaKube v1beta5 to v1beta6
@@ -11440,7 +11440,7 @@ Optional
 ---
 title: Migrate from classic full-stack to cloud-native full-stack mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-cloud-native
-scraped: 2026-02-17T21:33:42.269314
+scraped: 2026-02-18T05:46:48.839976
 ---
 
 # Migrate from classic full-stack to cloud-native full-stack mode
@@ -11732,7 +11732,7 @@ Required
 ---
 title: Migrate from cloud-native full-stack to application monitoring mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/cloud-native-to-app-monitoring
-scraped: 2026-02-17T21:29:45.355213
+scraped: 2026-02-18T05:45:09.150648
 ---
 
 # Migrate from cloud-native full-stack to application monitoring mode
@@ -12410,6 +12410,253 @@ Migrate from your old `DynaKube` with an older `apiVersion` to the newest suppor
 ---
 
 
+## Source: network-zones.md
+
+
+---
+title: Using network zones in Kubernetes
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations/network-zones
+scraped: 2026-02-18T05:54:34.179709
+---
+
+# Using network zones in Kubernetes
+
+# Using network zones in Kubernetes
+
+* Latest Dynatrace
+* 5-min read
+* Published Mar 25, 2024
+
+This page describes how to effectively use network zones within Kubernetes environments, emphasizing their configuration through DynaKube.
+
+To ensure a seamless setup process, we strongly advise you to thoroughly review this guide before making any configuration efforts. By doing so, network admins can gain a solid understanding of the prerequisites and steps involved, ensuring a successful deployment.
+
+We assume a foundational understanding of network zones. See the following links for background information:
+
+* [Network zones introduction](/docs/manage/network-zones "Find out how network zones work in Dynatrace.") and [basic information](/docs/manage/network-zones/network-zones-basic-info#activate "Learn how to get started with network zones.")
+* [OneAgent](/docs/manage/network-zones/oneagent-connectivity "Find out how network zones prioritize ActiveGates for OneAgent connectivity.") and [ActiveGate](/docs/manage/network-zones/activegate-connectivity "Find out how network zones prioritize ActiveGates for Environment ActiveGate connectivity.") connectivity
+
+## Network zones in Kubernetes environments
+
+Network zones are instrumental in managing and directing traffic flow among Dynatrace components, ensuring efficient communication within the network, whether in Kubernetes environments or traditional setups. By leveraging network zones, network admins can optimize traffic flow and accommodate environments with stringent network restrictions, such as limited egress capabilities.
+
+Network zones for Dynatrace components deployed on Kubernetes can easily be configured via the DynaKube custom resource, enabling tailored and effective network management.
+
+## Set up network zones
+
+This section categorizes setups into two distinct scenarios based on their characteristics:
+
+* [Kubernetes cluster with non-restricted egress](#kubernetes-cluster-with-non-restricted-egress)
+* [Kubernetes cluster with restricted egress](#kubernetes-cluster-with-restricted-egress)
+
+### Kubernetes cluster with non-restricted egress
+
+In Kubernetes clusters without egress restrictions, the main purposes of network zones are to:
+
+* Efficiently direct traffic to prevent unnecessary global routing
+* Filter unreachable endpoints
+
+The adoption of network zones is therefore widely recommended for optimal traffic management of Dynatrace components.
+
+1. Configure a network zone by setting the `networkZone` field and make sure an ActiveGate is rolled out as part of the DynaKube configuration. The specified network zone will be automatically applied to rolled out ActiveGates and OneAgents by the Dynatrace Operator.
+
+   ```
+   apiVersion: dynatrace.com/v1beta5
+
+
+
+   kind: DynaKube
+
+
+
+   metadata:
+
+
+
+   ...
+
+
+
+   spec:
+
+
+
+   ...
+
+
+
+   networkZone: my-networkzone # Configures network zone
+
+
+
+   oneAgent:
+
+
+
+   ...
+
+
+
+   activeGate: # Ensures ActiveGate rollout
+
+
+
+   capabilities:
+
+
+
+   - routing
+
+
+
+   - kubernetes-monitoring
+
+
+
+   ...
+   ```
+2. Apply the DynaKube CR to the Kubernetes API.
+
+   ```
+   kubectl apply -f dynakube.yaml
+   ```
+
+   After applying, the Dynatrace Operator will roll out Dynatrace components according the DynaKube configuration. As part of the rollout, ActiveGates and OneAgents receive available endpoints according to the specified network zone (with fallback mode *Any ActiveGate*) and can start communicating independently of each other's rollout status.
+
+   In this scenario, it is not required to manually create the network zone before applying the DynaKube custom resource, as network egress is not restricted. Creation of the network zone happens implicitly when the ActiveGate registers itself with the Dynatrace cluster, with *Any ActiveGate* configured as [fallback mode](/docs/manage/network-zones/network-zones-basic-info#fallback-mode "Learn how to get started with network zones.").
+
+### Kubernetes cluster with restricted egress
+
+In Kubernetes clusters that enforce restricted egress, typically, only whitelisted components are permitted to interact with external networks. For Dynatrace, the ActiveGate is designed for this use case and serves as this crucial gateway component able to centralize all outbound communications towards the Dynatrace Cluster.
+
+Given that all Dynatrace components must communicate exclusively through the whitelisted ActiveGate, it is imperative that the network zone is configured to support this requirement. Hence, the network zone needs to ensure that only ActiveGates within the specified network zone are provided for communication, without resorting to any fallback options. To achieve that, the network zone must be created upfront with *None* as the fallback mode to prevent a lockdown of Dynatrace monitoring components.
+
+Dynatrace Operator version 0.14.0+ postpones OneAgent rollout and injection until at least one ActiveGate becomes available. Once an ActiveGate is available, OneAgents are deployed and OneAgent injection is performed. Application pods that have not been injected due to the postponement need to be manually restarted.
+
+Additionally, it may be necessary to also [configure a proxy](/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations#configure-proxy "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations.") to facilitate controlled network access in Kubernetes clusters with restricted egress.
+
+1. Run the following command to create a network zone in fallback mode *None* using the [Dynatrace API](/docs/dynatrace-api/environment-api/network-zones/put-network-zone "Update a network zone via the Dynatrace API.").
+
+   ```
+   curl -X PUT https://<environment-fqdn>/api/v2/networkZones/<network-zone-name> \
+
+
+
+   -H "Authorization: Api-Token <api-token>" \
+
+
+
+   -H "Content-Type: application/json" \
+
+
+
+   -d "{ \"fallbackMode\": \"NONE\" }"
+   ```
+
+   The API token must have the `networkZones.write` permission assigned.
+2. Configure a network zone by setting the `networkZone` field and make sure an ActiveGate is rolled out as part of the DynaKube configuration.
+
+   ```
+   apiVersion: dynatrace.com/v1beta5
+
+
+
+   kind: DynaKube
+
+
+
+   metadata:
+
+
+
+   ...
+
+
+
+   spec:
+
+
+
+   ...
+
+
+
+   networkZone: my-networkzone # Configures network zone
+
+
+
+   oneAgent:
+
+
+
+   ...
+
+
+
+   activeGate: # Ensures ActiveGate rollout
+
+
+
+   capabilities:
+
+
+
+   - routing
+
+
+
+   - kubernetes-monitoring
+
+
+
+   ...
+   ```
+3. Apply the DynaKube CR to the Kubernetes API.
+
+   ```
+   kubectl apply -f dynakube.yaml
+   ```
+
+   After deploying, Dynatrace Operator performs the following steps.
+
+   1. Deploy ActiveGates.
+
+   2. Poll Dynatrace cluster for available ActiveGates in a certain interval until an ActiveGate becomes available.
+   3. Deploy OneAgents with available communication endpoints.
+   4. Perform OneAgent injection into application pods.
+
+   Application pods that have not been injected due to the postponement need to be manually restarted.
+
+   Troubleshooting OneAgent injection of application pods
+
+   If application pods start before an ActiveGate becomes available, Dynatrace Operator skips OneAgent injection. This way, startup of applications won't be delayed, but applications will not be deeply monitored.
+
+   The following reasons can lead to skipped OneAgent injection:
+
+   * ActiveGates are still starting and none is yet registered with the Dynatrace cluster.
+   * ActiveGates are crashing due to misconfiguration.
+
+   Dynatrace Operator adds the following annotations to every pod in case of skipped OneAgent injection:
+
+   ```
+   oneagent.dynatrace.com/injected: "false"
+
+
+
+   oneagent.dynatrace.com/reason: "EmptyConnectionInfo"
+   ```
+
+   Alternatively, Dynatrace Operator logs can be analyzed for skipped OneAgent injections.
+
+## Related topics
+
+* [Get started with network zones](/docs/manage/network-zones/network-zones-basic-info "Learn how to get started with network zones.")
+* [Network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.")
+
+
+---
+
+
 ## Source: network-configurations.md
 
 
@@ -12910,7 +13157,7 @@ To configure a server TLS certificate for the ActiveGate:
 ---
 title: Guides
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides
-scraped: 2026-02-17T21:26:29.642126
+scraped: 2026-02-18T05:44:49.311837
 ---
 
 # Guides
@@ -13062,7 +13309,7 @@ Classic full-stack injection requires *write access* from the OneAgent Pod to th
 ---
 title: How it works
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works
-scraped: 2026-02-16T21:30:07.817516
+scraped: 2026-02-18T05:50:08.567629
 ---
 
 # How it works

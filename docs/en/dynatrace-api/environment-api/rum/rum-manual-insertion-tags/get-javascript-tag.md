@@ -1,7 +1,7 @@
 ---
 title: GET JavaScript tag
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag
-scraped: 2026-02-16T09:28:08.850642
+scraped: 2026-02-18T05:51:27.743223
 ---
 
 # GET JavaScript tag

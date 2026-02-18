@@ -1,8 +1,8 @@
 # Dynatrace Documentation: ingest-from/google-cloud-platform
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
-Files combined: 57
+Files combined: 58
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 57
 ---
 title: Google Cloud Run monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun/cloud-run-monitoring
-scraped: 2026-02-17T05:06:30.054553
+scraped: 2026-02-18T05:45:51.607704
 ---
 
 # Google Cloud Run monitoring
@@ -73,7 +73,7 @@ The following feature sets are available for Google Cloud Run.
 ---
 title: Monitor Google Cloud Run managed
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun
-scraped: 2026-02-17T21:19:35.952979
+scraped: 2026-02-18T05:40:18.097963
 ---
 
 # Monitor Google Cloud Run managed
@@ -1844,7 +1844,7 @@ Because code running outside the function execution can be terminated at any tim
 ---
 title: Set up OpenTelemetry monitoring for Google Cloud Functions
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf
-scraped: 2026-02-17T04:56:46.223584
+scraped: 2026-02-18T05:45:55.051217
 ---
 
 # Set up OpenTelemetry monitoring for Google Cloud Functions
@@ -1929,7 +1929,7 @@ The Dynatrace Google Cloud Functions integration doesn't capture the IP addresse
 ---
 title: Trace Google Cloud Functions in Go with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go
-scraped: 2026-02-17T21:25:44.502384
+scraped: 2026-02-18T05:52:23.369528
 ---
 
 # Trace Google Cloud Functions in Go with OpenTelemetry
@@ -3063,7 +3063,7 @@ To view your custom attributes, you need to allow them in the Dynatrace web UI f
 ---
 title: Trace Google Cloud Functions with OpenTelemetry JavaScript
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-nodejs
-scraped: 2026-02-17T21:25:31.459004
+scraped: 2026-02-18T05:49:04.234610
 ---
 
 # Trace Google Cloud Functions with OpenTelemetry JavaScript
@@ -3955,7 +3955,7 @@ To view your custom attributes, you need to allow them in the Dynatrace web UI f
 ---
 title: Google Cloud Functions monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions
-scraped: 2026-02-17T21:20:06.717486
+scraped: 2026-02-18T05:39:55.772222
 ---
 
 # Google Cloud Functions monitoring
@@ -3999,7 +3999,7 @@ For Google Cloud Functions, monitoring consumption is based on Davis data units.
 ---
 title: Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8
-scraped: 2026-02-17T21:29:26.983282
+scraped: 2026-02-18T05:59:01.680665
 ---
 
 # Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
@@ -4923,7 +4923,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-with-google-cloud-function
-scraped: 2026-02-17T21:28:41.571915
+scraped: 2026-02-18T05:49:30.237367
 ---
 
 # Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions
@@ -5402,7 +5402,7 @@ All cloud services consume DDUs. The amount of DDU consumption per service insta
 ---
 title: Migrate to Google Cloud integration version 1.0
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function
-scraped: 2026-02-17T21:31:00.451969
+scraped: 2026-02-18T05:48:13.646174
 ---
 
 # Migrate to Google Cloud integration version 1.0
@@ -5590,7 +5590,7 @@ Alternatively, you can replace the dimensions by configuring each dashboard tile
 ---
 title: Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only
-scraped: 2026-02-17T05:09:22.263449
+scraped: 2026-02-18T05:52:45.376531
 ---
 
 # Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)
@@ -6373,7 +6373,7 @@ DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/
 ---
 title: Set up the Dynatrace Google Cloud metric integration on a GKE cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only
-scraped: 2026-02-17T05:06:58.000813
+scraped: 2026-02-18T05:55:42.071157
 ---
 
 # Set up the Dynatrace Google Cloud metric integration on a GKE cluster
@@ -7142,7 +7142,7 @@ All cloud services consume DDUs. The amount of DDU consumption per service insta
 ---
 title: Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster
-scraped: 2026-02-17T05:06:32.095074
+scraped: 2026-02-18T05:43:24.156174
 ---
 
 # Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster
@@ -8193,7 +8193,7 @@ The following feature sets are available for Google Cloud Apigee.
 ---
 title: Google Cloud APIs monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apis-monitoring
-scraped: 2026-02-17T05:07:39.337816
+scraped: 2026-02-18T05:58:40.656538
 ---
 
 # Google Cloud APIs monitoring
@@ -8305,13 +8305,76 @@ The following feature sets are available for Google Cloud Assistant Smart Home.
 ---
 
 
+## Source: gcp-bigquery-monitoring.md
+
+
+---
+title: Google BigQuery monitoring
+source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigquery-monitoring
+scraped: 2026-02-18T05:52:48.796818
+---
+
+# Google BigQuery monitoring
+
+# Google BigQuery monitoring
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Jan 17, 2022
+
+Dynatrace Google Cloud integration leverages data collected from the Google Operation API to constantly monitor health and performance of Google Cloud Services. While combining all relevant data into dashboards, it also enables alerting and event tracking.
+
+## Prerequisites
+
+[Set up integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+## Add services and feature sets Optional
+
+After integration, Dynatrace automatically monitors a number of preset Google Cloud services and feature sets (metrics). Besides these, you can add more services or feature sets to monitoring. For details, see [Add or remove services](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+For a list of feature sets available for this service, see [Metric table](#table).
+
+## View metrics
+
+After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+
+## Metric table
+
+The following feature sets are available for Google BigQuery.
+
+| Feature set | Name | Unit | GCP metric identifier |
+| --- | --- | --- | --- |
+| bigquery\_biengine\_model/default\_metrics | Inflight requests | Count | bigquerybiengine.googleapis.com/model/inflight\_requests |
+| bigquery\_biengine\_model/default\_metrics | Request count | Count | bigquerybiengine.googleapis.com/model/request\_count |
+| bigquery\_biengine\_model/default\_metrics | Request execution times | MilliSecond | bigquerybiengine.googleapis.com/model/request\_latencies |
+| bigquery\_project/default\_metrics | Job count | Count | bigquery.googleapis.com/job/num\_in\_flight |
+| bigquery\_project/default\_metrics | Query count | Count | bigquery.googleapis.com/query/count |
+| bigquery\_project/default\_metrics | Query execution times | Second | bigquery.googleapis.com/query/execution\_times |
+| bigquery\_project/default\_metrics | Slots used by project, reservation, and job type | Count | bigquery.googleapis.com/slots/allocated |
+| bigquery\_project/default\_metrics | Slots assigned | Count | bigquery.googleapis.com/slots/assigned |
+| bigquery\_project/default\_metrics | Slots capacity committed | Count | bigquery.googleapis.com/slots/capacity\_committed |
+| bigquery\_project/default\_metrics | Slots max assigned | Count | bigquery.googleapis.com/slots/max\_assigned |
+| bigquery\_project/default\_metrics | Slots used across projects in reservation | Count | bigquery.googleapis.com/slots/total\_allocated\_for\_reservation |
+| bigquery\_project/default\_metrics | Total slots | Count | bigquery.googleapis.com/slots/total\_available |
+| bigquery\_project/default\_metrics | Reservation total bytes | Byte | bigquerybiengine.googleapis.com/reservation/total\_bytes |
+| bigquery\_project/default\_metrics | Reservation used bytes | Byte | bigquerybiengine.googleapis.com/reservation/used\_bytes |
+
+## Related topics
+
+* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+
+
+---
+
+
 ## Source: gcp-bigtable-monitoring.md
 
 
 ---
 title: Google Cloud Bigtable monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigtable-monitoring
-scraped: 2026-02-17T05:11:39.005589
+scraped: 2026-02-18T05:55:15.661541
 ---
 
 # Google Cloud Bigtable monitoring
@@ -8501,7 +8564,7 @@ The following feature sets are available for Google Cloud Data Loss Prevention.
 ---
 title: Google Cloud DNS monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-dns-monitoring
-scraped: 2026-02-17T21:32:01.549615
+scraped: 2026-02-18T05:57:00.556898
 ---
 
 # Google Cloud DNS monitoring
@@ -8606,7 +8669,7 @@ The following feature sets are available for Google Cloud Firestore.
 ---
 title: Google Cloud IoT Core monitoring (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-iot-core-monitoring
-scraped: 2026-02-17T21:26:50.127180
+scraped: 2026-02-18T05:53:47.523049
 ---
 
 # Google Cloud IoT Core monitoring (deprecated)
@@ -8916,7 +8979,7 @@ The following feature sets are available for Google Cloud Storage.
 ---
 title: Google Cloud Tasks monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-tasks-monitoring
-scraped: 2026-02-17T05:07:33.759196
+scraped: 2026-02-18T05:43:46.289883
 ---
 
 # Google Cloud Tasks monitoring
@@ -9042,7 +9105,7 @@ The following feature sets are available for Google Cloud Dataflow.
 ---
 title: Google Cloud Dataproc monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-dataproc-monitoring
-scraped: 2026-02-17T21:34:01.868118
+scraped: 2026-02-18T05:48:58.752462
 ---
 
 # Google Cloud Dataproc monitoring
@@ -9112,7 +9175,7 @@ The following feature sets are available for Google Cloud Dataproc.
 ---
 title: Google Cloud Firestore in Datastore mode monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-in-datastore-mode-monitoring
-scraped: 2026-02-15T21:29:55.455182
+scraped: 2026-02-18T05:46:03.678863
 ---
 
 # Google Cloud Firestore in Datastore mode monitoring
@@ -9296,7 +9359,7 @@ The following feature sets are available for Google Cloud Firebase.
 ---
 title: Google Cloud Hybrid Connectivity monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-hybrid-connectivity-monitoring
-scraped: 2026-02-16T09:35:31.017264
+scraped: 2026-02-18T05:57:23.966783
 ---
 
 # Google Cloud Hybrid Connectivity monitoring
@@ -9464,7 +9527,7 @@ The following feature sets are available for Google Cloud Memorystore.
 ---
 title: NetApp on Google Cloud monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-netapp-monitoring
-scraped: 2026-02-17T21:29:05.886160
+scraped: 2026-02-18T05:47:30.764792
 ---
 
 # NetApp on Google Cloud monitoring
@@ -9579,7 +9642,7 @@ The following feature sets are available for Google Cloud Network Security.
 ---
 title: Google Cloud Network Topology monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-network-topology-monitoring
-scraped: 2026-02-17T04:59:18.957886
+scraped: 2026-02-18T05:58:25.044254
 ---
 
 # Google Cloud Network Topology monitoring
@@ -9699,7 +9762,7 @@ The following feature sets are available for Google Cloud Operations suite.
 ---
 title: Google Cloud Pub/Sub Lite monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-lite-monitoring
-scraped: 2026-02-17T05:04:52.359513
+scraped: 2026-02-18T05:49:14.746400
 ---
 
 # Google Cloud Pub/Sub Lite monitoring
@@ -9765,7 +9828,7 @@ The following feature sets are available for Google Cloud Pub/Sub Lite.
 ---
 title: Google Cloud Pub/Sub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-monitoring
-scraped: 2026-02-17T21:28:03.096139
+scraped: 2026-02-18T05:56:21.438522
 ---
 
 # Google Cloud Pub/Sub monitoring
@@ -9866,7 +9929,7 @@ The following feature sets are available for Google Cloud Pub/Sub.
 ---
 title: Google Cloud reCAPTCHA Enterprise monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-recaptcha-enterprise-monitoring
-scraped: 2026-02-17T21:26:09.135285
+scraped: 2026-02-18T05:50:47.402180
 ---
 
 # Google Cloud reCAPTCHA Enterprise monitoring
@@ -9977,7 +10040,7 @@ The following feature sets are available for Google Cloud Router.
 ---
 title: Google Cloud Spanner monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-spanner-monitoring
-scraped: 2026-02-16T21:31:50.549496
+scraped: 2026-02-18T05:48:06.535466
 ---
 
 # Google Cloud Spanner monitoring
@@ -10041,7 +10104,7 @@ The following feature sets are available for Google Cloud Spanner.
 ---
 title: Google Cloud Storage Transfer Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-storage-transfer-service-monitoring
-scraped: 2026-02-17T05:07:20.112015
+scraped: 2026-02-18T05:54:30.498578
 ---
 
 # Google Cloud Storage Transfer Service monitoring
@@ -10147,7 +10210,7 @@ The following feature sets are available for Google Cloud VPC.
 ---
 title: Google Cloud supported services
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new
-scraped: 2026-02-17T21:20:03.940818
+scraped: 2026-02-18T05:39:44.116344
 ---
 
 # Google Cloud supported services
@@ -11081,7 +11144,7 @@ The following feature sets are available for Google Compute Engine.
 ---
 title: Monitor Google Compute Engine
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine
-scraped: 2026-02-17T21:19:37.160171
+scraped: 2026-02-18T05:39:30.220854
 ---
 
 # Monitor Google Compute Engine
@@ -11281,7 +11344,7 @@ The following feature sets are available for Google Kubernetes Engine.
 ---
 title: Monitor Google Kubernetes Engine (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke
-scraped: 2026-02-17T21:19:52.550776
+scraped: 2026-02-18T05:39:57.448118
 ---
 
 # Monitor Google Kubernetes Engine (GKE)
@@ -11358,7 +11421,7 @@ Dynatrace OneAgent provides full-stack monitoring on Google Compute Engine and G
 ---
 title: Google Cloud supported service metrics (legacy)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/legacy/gcp-supported-service-metrics-legacy
-scraped: 2026-02-17T21:26:55.224380
+scraped: 2026-02-18T05:52:37.515765
 ---
 
 # Google Cloud supported service metrics (legacy)

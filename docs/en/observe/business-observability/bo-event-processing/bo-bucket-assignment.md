@@ -1,7 +1,7 @@
 ---
 title: Business event bucket assignment via classic pipeline
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-bucket-assignment
-scraped: 2026-02-17T21:21:40.077518
+scraped: 2026-02-18T05:41:43.896440
 ---
 
 # Business event bucket assignment via classic pipeline

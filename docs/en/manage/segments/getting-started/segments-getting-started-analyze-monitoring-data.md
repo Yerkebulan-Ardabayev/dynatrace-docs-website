@@ -1,7 +1,7 @@
 ---
 title: Analyze monitoring data with segments
 source: https://www.dynatrace.com/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data
-scraped: 2026-02-17T21:15:04.480451
+scraped: 2026-02-18T05:34:13.093648
 ---
 
 # Analyze monitoring data with segments

@@ -1,7 +1,7 @@
 ---
 title: AWS Systems Manager Run Command monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-systems-manager-run-command
-scraped: 2026-02-17T05:10:37.945827
+scraped: 2026-02-18T05:50:40.467252
 ---
 
 # AWS Systems Manager Run Command monitoring

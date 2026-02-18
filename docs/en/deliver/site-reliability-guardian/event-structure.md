@@ -1,7 +1,7 @@
 ---
 title: Site Reliability guardian event structure
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/event-structure
-scraped: 2026-02-16T21:29:05.232559
+scraped: 2026-02-18T05:49:23.429022
 ---
 
 # Site Reliability guardian event structure

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/cost-overview.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Access your DPS cost overview
 source: https://www.dynatrace.com/docs/license/cost-overview
-scraped: 2026-02-17T21:16:19.613116
+scraped: 2026-02-18T05:39:10.741339
 ---
 
 # Access your DPS cost overview

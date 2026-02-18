@@ -1,7 +1,7 @@
 ---
 title: Log rotation patterns (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns
-scraped: 2026-02-17T21:30:19.441815
+scraped: 2026-02-18T05:57:07.358558
 ---
 
 # Log rotation patterns (Logs Classic)

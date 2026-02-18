@@ -1,7 +1,7 @@
 ---
 title: OneAgent for iOS auto-instrumentation features
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features
-scraped: 2026-02-17T21:29:08.374264
+scraped: 2026-02-18T05:55:10.354270
 ---
 
 # OneAgent for iOS auto-instrumentation features

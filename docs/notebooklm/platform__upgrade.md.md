@@ -1,6 +1,6 @@
 # Dynatrace Documentation: platform/upgrade.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Upgrade to the latest Dynatrace
 source: https://www.dynatrace.com/docs/platform/upgrade
-scraped: 2026-02-17T21:25:41.658998
+scraped: 2026-02-18T05:48:11.947443
 ---
 
 # Upgrade to the latest Dynatrace

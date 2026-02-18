@@ -1,8 +1,8 @@
 # Dynatrace Documentation: ingest-from/extensions
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
-Files combined: 36
+Files combined: 37
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 36
 ---
 title: Distribute custom dashboards with your extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/custom-dashboards
-scraped: 2026-02-17T05:03:19.505437
+scraped: 2026-02-18T05:55:50.084621
 ---
 
 # Distribute custom dashboards with your extensions
@@ -214,7 +214,7 @@ alerts:
 ---
 title: Dedicated performance profile configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/dedicated-performance-profile
-scraped: 2026-02-17T21:25:13.145817
+scraped: 2026-02-18T05:57:41.404935
 ---
 
 # Dedicated performance profile configuration
@@ -530,7 +530,7 @@ Only Dynatrace extensions can be elevated, while custom ones cannot. In case an 
 ---
 title: Customize data with extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/extension-customize
-scraped: 2026-02-17T05:11:50.870490
+scraped: 2026-02-18T05:49:53.328269
 ---
 
 # Customize data with extensions
@@ -936,7 +936,7 @@ sampleLog: |
 ---
 title: About Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/concepts
-scraped: 2026-02-16T09:35:29.413446
+scraped: 2026-02-18T05:53:06.559443
 ---
 
 # About Extensions
@@ -1571,7 +1571,7 @@ type: gauge_statcounter
 ---
 title: JMX data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx
-scraped: 2026-02-17T21:31:45.664283
+scraped: 2026-02-18T05:59:17.530641
 ---
 
 # JMX data source
@@ -1742,7 +1742,7 @@ For more information, see [JMX data source reference](/docs/ingest-from/extensio
 ---
 title: Prometheus data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions
-scraped: 2026-02-17T21:33:58.310681
+scraped: 2026-02-18T05:53:28.599520
 ---
 
 # Prometheus data source
@@ -1799,7 +1799,7 @@ See [Prometheus data source reference](/docs/ingest-from/extensions/develop-your
 ---
 title: Dynatrace Extensions Python SDK
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/python
-scraped: 2026-02-16T21:30:59.509495
+scraped: 2026-02-18T05:49:25.180689
 ---
 
 # Dynatrace Extensions Python SDK
@@ -1828,6 +1828,81 @@ For more information, see:
 
 * [Dynatrace Extensions Python SDK documentationï»¿](https://dt-url.net/7g638yh)
 * [Dynatrace Extensions Python SDK repositoryï»¿](https://dt-url.net/jsa38pm) on Dynatrace Extensions GitHub.
+
+
+---
+
+
+## Source: troubleshooting.md
+
+
+---
+title: Troubleshooting
+source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/troubleshooting
+scraped: 2026-02-18T05:44:18.369806
+---
+
+# Troubleshooting
+
+# Troubleshooting
+
+* Latest Dynatrace
+* Troubleshooting
+* 3-min read
+* Published Jul 10, 2023
+
+When working with Dynatrace extensions that utilize the SNMP data source, you may encounter issues that require troubleshooting.
+
+## Configuration status not OK
+
+Whenever a monitoring configuration is created or updated, it can take a few minutes to fully activate and start monitoring. Until then, the configuration status may change to Warning or Error as the configuration is scheduled to the endpoint, queued for downloading, activated, validated, and started. Allow at least 5 minutes for this. If the status is still not OK, select the colored dot next to it; this opens a Log Viewer interface for more details.
+
+### Fastcheck failures
+
+Fastcheck is a simple SNMP Get query that aims to retrieve one OID from the device representing its system name. The device has 18 seconds to respond or the check fails. This is the very first step before any other detail is collected from the device.
+
+Fastcheck failures point to an issue with communicating with the device
+
+* Wrong credentials for connecting to the device
+* Network firewalls not allowing communication
+* Misconfigured devices not allowing SNMP queries
+
+### GetBulk returned an error
+
+GetBulk is the SNMP query operation used to retrieve data from the device. When this appears in the error message, it means the device is reachable (FastCheck passed) but the data could not be retrieved.
+
+This type of error can have multiple causes:
+
+* The credentials provided (for example, community string) are invalid
+* The network is unreliable, causing communication issues
+* There is too much data to retrieve; try reducing the feature sets or optimizing the advanced settings
+
+### Invalid config errors
+
+Invalid config will point back to the details entered in the monitoring configuration fields. While the device details are self-explanatory, the variables filters must follow the syntax mentioned in the previous section.
+
+### High CPU
+
+`HIGH_CPU` status means the maximum allowed CPU consumption for the datasource module of the Extension Execution Controller (EEC) has been reached on the ActiveGate.
+
+* The amount of data cannot be collected and processed without going above the 5% CPU usage built-in resource limit.
+* Try initially enabling fewer feature sets (implying fewer metrics, so fewer requests to process) or spread the feature sets over multiple configurations.
+
+### Extension logs
+
+Extension logs can be found in the [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."). Look for the `Extensions configuration, logs` in **Purpose of** column.
+
+## Optimization for large devices
+
+Monitoring configurations are provided with a set of advanced settings that affect how the data is requested from the device via SNMP. The default values work in most cases, but you can adjust them if you experience issues such as missing data.
+
+* Timeout and Retries refer to the maximum time to wait for an SNMP query to return and the number of times to retry a query in case of failures.
+* Max. repetitions refers to how many times an OID (metric identifier in SNMP) can be repeated as part of a single SNMP GetBulk query response when the same metric is collected for multiple objects/instances. A lower value means more requests between the extension and the device to collect a large dataset.
+
+  Due to the speed and unreliability of the SNMP protocol, it is more effective to use a smaller value (for example, 20). Default = 50.
+* Max. OIDs per query refers to the maximum number of OIDs that can be requested for each SNMP GetBulk query.
+
+  In very large environments, we recommend that you set it to 5. This improves performance by further splitting the workload into more requests.
 
 
 ---
@@ -1941,7 +2016,7 @@ For example, the SNMP devices used in our tests were equipped with 20 communicat
 ---
 title: IBM Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring
-scraped: 2026-02-17T21:33:04.919516
+scraped: 2026-02-18T05:49:09.447289
 ---
 
 # IBM Database monitoring configuration
@@ -3494,7 +3569,7 @@ XS (`c5.large`)
 ---
 title: PostgreSQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring
-scraped: 2026-02-17T21:25:05.309989
+scraped: 2026-02-18T05:52:40.602130
 ---
 
 # PostgreSQL monitoring configuration
@@ -3836,7 +3911,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SAP Hana Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring
-scraped: 2026-02-17T05:02:48.438898
+scraped: 2026-02-18T05:50:59.736192
 ---
 
 # SAP Hana Database monitoring configuration
@@ -4168,7 +4243,7 @@ To define the SAP Hana Database server, put `ngdbc.jar` file in the following lo
 ---
 title: Snowflake Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
-scraped: 2026-02-17T21:33:25.642063
+scraped: 2026-02-18T05:51:03.180236
 ---
 
 # Snowflake Database monitoring configuration
@@ -4476,7 +4551,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SQL data source reference
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference
-scraped: 2026-02-17T21:26:37.377484
+scraped: 2026-02-18T05:54:36.111865
 ---
 
 # SQL data source reference
@@ -5472,7 +5547,7 @@ The monitoring configuration format depends on the database provider. For more i
 ---
 title: SQL data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql
-scraped: 2026-02-16T21:27:16.086566
+scraped: 2026-02-18T05:45:58.436260
 ---
 
 # SQL data source
@@ -5629,7 +5704,7 @@ Your Dynatrace environment is ready to start creating your WMI extension.
 ---
 title: WMI data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions
-scraped: 2026-02-17T21:26:15.386448
+scraped: 2026-02-18T05:49:55.001185
 ---
 
 # WMI data source
@@ -5743,7 +5818,7 @@ For more information, see [Setting Up a Fixed Port for WMIï»¿](https://docs.m
 ---
 title: Extension YAML file
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/extension-yaml
-scraped: 2026-02-17T21:25:33.963483
+scraped: 2026-02-18T05:55:08.645571
 ---
 
 # Extension YAML file
@@ -6282,7 +6357,7 @@ The filtering logic is different for WMI extensions, where you pass the conditio
 ---
 title: Sign extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/sign-extensions
-scraped: 2026-02-17T21:27:36.517578
+scraped: 2026-02-18T05:56:16.381104
 ---
 
 # Sign extensions
@@ -6357,7 +6432,7 @@ Save the `root.pem` certificate file in the following location:
 ---
 title: Develop your own Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
-scraped: 2026-02-17T21:16:58.434635
+scraped: 2026-02-18T05:35:54.195502
 ---
 
 # Develop your own Extensions
@@ -6437,7 +6512,7 @@ Find solutions to common issues with our expert-written troubleshooting articles
 ---
 title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-02-17T21:16:59.872814
+scraped: 2026-02-18T05:35:53.063774
 ---
 
 # Manage Extensions
@@ -6959,7 +7034,7 @@ Explore ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0
 ---
 title: Manage SNMP extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/snmp
-scraped: 2026-02-17T21:20:33.846277
+scraped: 2026-02-18T05:40:55.747055
 ---
 
 # Manage SNMP extensions
@@ -7116,7 +7191,7 @@ Unable to render DataTable. Check configuration.
 ---
 title: Manage IBM Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db
-scraped: 2026-02-17T21:26:06.459520
+scraped: 2026-02-18T05:48:27.823354
 ---
 
 # Manage IBM Database extensions
@@ -7210,7 +7285,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Microsoft SQL Server extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
-scraped: 2026-02-17T21:20:31.331616
+scraped: 2026-02-18T05:40:46.106754
 ---
 
 # Manage Microsoft SQL Server extensions
@@ -7305,7 +7380,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage MySQL extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql
-scraped: 2026-02-17T05:10:39.622285
+scraped: 2026-02-18T05:49:43.048494
 ---
 
 # Manage MySQL extensions
@@ -7402,7 +7477,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Oracle Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-02-17T21:20:41.139252
+scraped: 2026-02-18T05:40:35.872149
 ---
 
 # Manage Oracle Database extensions
@@ -7610,7 +7685,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage SAP Hana Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana
-scraped: 2026-02-17T21:32:37.456785
+scraped: 2026-02-18T05:58:26.735230
 ---
 
 # Manage SAP Hana Database extensions
@@ -7724,7 +7799,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Snowflake Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql
-scraped: 2026-02-17T05:01:09.896971
+scraped: 2026-02-18T05:43:29.253920
 ---
 
 # Manage Snowflake Database extensions
@@ -7825,7 +7900,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-02-17T21:20:36.363072
+scraped: 2026-02-18T05:40:39.360112
 ---
 
 # Manage WMI extensions
@@ -8026,7 +8101,7 @@ This is especially useful when you need to interact with custom APIs, proprietar
 ---
 title: Explore supported Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions
-scraped: 2026-02-17T21:16:57.335749
+scraped: 2026-02-18T05:35:51.174613
 ---
 
 # Explore supported Extensions

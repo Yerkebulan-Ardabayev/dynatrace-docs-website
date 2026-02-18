@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-api/basics
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 7
 
@@ -1865,7 +1865,7 @@ POST https://mySampleEnv.live.dynatrace.com/api/v1/events
 ---
 title: Migrate from Frequent issue detection API to Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/frequent-issues-to-settings
-scraped: 2026-02-16T21:24:39.624524
+scraped: 2026-02-18T05:49:00.497405
 ---
 
 # Migrate from Frequent issue detection API to Settings API
@@ -2150,7 +2150,7 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/frequentIssueDetection/07f4
 ---
 title: Migrate from Maintenance windows API to Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/maintenance-windows-to-settings
-scraped: 2026-02-17T21:33:01.087012
+scraped: 2026-02-18T05:58:58.017211
 ---
 
 # Migrate from Maintenance windows API to Settings API
@@ -3291,7 +3291,7 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows/07f476c6
 ---
 title: Migrate from Problems API v1 to Problems API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/problems-v1-to-v2
-scraped: 2026-02-17T21:33:48.205554
+scraped: 2026-02-18T05:48:37.657116
 ---
 
 # Migrate from Problems API v1 to Problems API v2
@@ -5503,7 +5503,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restE
 ---
 title: Dynatrace API - Tokens and authentication
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/dynatrace-api-authentication
-scraped: 2026-02-16T21:32:03.675529
+scraped: 2026-02-18T05:56:46.443282
 ---
 
 # Dynatrace API - Tokens and authentication

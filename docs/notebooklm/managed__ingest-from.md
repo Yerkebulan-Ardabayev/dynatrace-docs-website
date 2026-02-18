@@ -1,6 +1,6 @@
 # Dynatrace Documentation: managed/ingest-from
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 56
 
@@ -13,7 +13,7 @@ Files combined: 56
 ---
 title: Monitor AWS App Runner
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/app-runner
-scraped: 2026-02-17T21:19:47.554162
+scraped: 2026-02-18T05:39:34.902069
 ---
 
 # Monitor AWS App Runner
@@ -219,7 +219,7 @@ For AWS App Runner, monitoring consumption is based on host units. See [Applicat
 ---
 title: Amazon API Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-api-gateway
-scraped: 2026-02-17T21:29:44.014154
+scraped: 2026-02-18T05:54:32.506452
 ---
 
 # Amazon API Gateway monitoring
@@ -1874,7 +1874,7 @@ Dynatrace entities of this AWS service are not enriched with the ARN property.
 ---
 title: Amazon Athena monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-athena
-scraped: 2026-02-15T21:25:45.628072
+scraped: 2026-02-18T05:52:05.453514
 ---
 
 # Amazon Athena monitoring
@@ -2743,7 +2743,7 @@ The default or primary workgroup for Amazon Athena doesn't support gathering met
 ---
 title: Amazon Aurora monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-aurora
-scraped: 2026-02-17T21:26:01.325016
+scraped: 2026-02-18T05:53:08.860521
 ---
 
 # Amazon Aurora monitoring
@@ -3885,7 +3885,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Billing monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-billing
-scraped: 2026-02-16T09:34:43.835061
+scraped: 2026-02-18T05:50:37.439901
 ---
 
 # AWS Billing monitoring
@@ -4678,7 +4678,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon CloudFront monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cloudfront
-scraped: 2026-02-17T04:56:53.342637
+scraped: 2026-02-18T05:59:07.168201
 ---
 
 # Amazon CloudFront monitoring
@@ -5523,7 +5523,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon CloudSearch monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cloudsearch
-scraped: 2026-02-17T21:26:07.950538
+scraped: 2026-02-18T05:59:15.864345
 ---
 
 # Amazon CloudSearch monitoring
@@ -7154,7 +7154,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS DataSync monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-datasync
-scraped: 2026-02-17T21:25:24.869836
+scraped: 2026-02-18T05:50:10.569790
 ---
 
 # AWS DataSync monitoring
@@ -8017,7 +8017,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon DocumentDB (with MongoDB compatibility) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-documentdb
-scraped: 2026-02-17T04:59:43.350724
+scraped: 2026-02-18T05:47:03.099571
 ---
 
 # Amazon DocumentDB (with MongoDB compatibility) monitoring
@@ -8936,7 +8936,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon DynamoDB Accelerator (DAX) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamodb
-scraped: 2026-02-17T04:59:22.730678
+scraped: 2026-02-18T05:43:34.255591
 ---
 
 # Amazon DynamoDB Accelerator (DAX) monitoring
@@ -9936,7 +9936,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon EFS (Elastic File System) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-file-system-efs
-scraped: 2026-02-17T04:57:02.105189
+scraped: 2026-02-18T05:45:11.180441
 ---
 
 # Amazon EFS (Elastic File System) monitoring
@@ -11691,7 +11691,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon ElastiCache monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticache
-scraped: 2026-02-16T21:29:27.751815
+scraped: 2026-02-18T05:58:35.345301
 ---
 
 # Amazon ElastiCache monitoring
@@ -13533,7 +13533,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon GameLift monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-gamelift
-scraped: 2026-02-17T21:32:34.893878
+scraped: 2026-02-18T05:51:26.104232
 ---
 
 # Amazon GameLift monitoring
@@ -15333,7 +15333,7 @@ To ingest additional observability metrics
 ---
 title: AWS IoT Analytics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-iot-analytics
-scraped: 2026-02-17T21:30:52.974759
+scraped: 2026-02-18T05:59:13.858109
 ---
 
 # AWS IoT Analytics monitoring
@@ -16933,7 +16933,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS IoT monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-iot
-scraped: 2026-02-17T04:57:12.857756
+scraped: 2026-02-18T05:56:58.921299
 ---
 
 # AWS IoT monitoring
@@ -17756,7 +17756,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Keyspaces (Cassandra) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-keyspaces-cassandra
-scraped: 2026-02-17T21:28:31.506014
+scraped: 2026-02-18T05:58:14.137549
 ---
 
 # Amazon Keyspaces (Cassandra) monitoring
@@ -18580,7 +18580,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Kinesis (Data Analytics, Data Firehose, Data Streams, Video Streams) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-kinesis
-scraped: 2026-02-17T21:29:12.664779
+scraped: 2026-02-18T05:44:16.607665
 ---
 
 # Amazon Kinesis (Data Analytics, Data Firehose, Data Streams, Video Streams) monitoring
@@ -20563,7 +20563,7 @@ Dynatrace entities of this AWS service are not enriched with the ARN property.
 ---
 title: Amazon MSK (Kafka) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-msk-kafka
-scraped: 2026-02-17T05:04:58.220300
+scraped: 2026-02-18T05:46:42.204063
 ---
 
 # Amazon MSK (Kafka) monitoring
@@ -21557,7 +21557,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon Redshift monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-redshift
-scraped: 2026-02-17T21:29:35.237183
+scraped: 2026-02-18T05:49:28.438120
 ---
 
 # Amazon Redshift monitoring
@@ -23320,7 +23320,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Service Catalog monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-service-catalog
-scraped: 2026-02-16T09:35:19.671525
+scraped: 2026-02-18T05:58:49.597171
 ---
 
 # AWS Service Catalog monitoring
@@ -24895,7 +24895,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon SNS (Simple Notification Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-notification-service-sns
-scraped: 2026-02-17T05:11:07.147500
+scraped: 2026-02-18T05:48:45.170653
 ---
 
 # Amazon SNS (Simple Notification Service) monitoring
@@ -26640,7 +26640,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Amazon S3 (Simple Storage Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-storage-service-s3
-scraped: 2026-02-15T21:25:15.235591
+scraped: 2026-02-18T05:50:25.348062
 ---
 
 # Amazon S3 (Simple Storage Service) monitoring
@@ -28252,7 +28252,7 @@ Because Amazon Textract provides OCR APIs, there is no **Main Dimension**.
 ---
 title: Amazon Translate monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-translate
-scraped: 2026-02-16T09:31:28.429767
+scraped: 2026-02-18T05:58:21.681813
 ---
 
 # Amazon Translate monitoring
@@ -29046,7 +29046,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS Trusted Advisor monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-trusted-advisor
-scraped: 2026-02-17T05:01:57.811059
+scraped: 2026-02-18T05:49:18.685940
 ---
 
 # AWS Trusted Advisor monitoring
@@ -30689,7 +30689,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: AWS WAF monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-wafv2
-scraped: 2026-02-17T05:08:55.190946
+scraped: 2026-02-18T05:55:01.693861
 ---
 
 # AWS WAF monitoring
@@ -31484,7 +31484,7 @@ Dynatrace entities of this AWS service are not enriched with the ARN property.
 ---
 title: Amazon CloudWatch Metric Streams
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams
-scraped: 2026-02-17T05:03:02.050269
+scraped: 2026-02-18T05:53:01.167741
 ---
 
 # Amazon CloudWatch Metric Streams
@@ -31791,7 +31791,7 @@ For more limitations, see [Amazon CloudWatch troubleshooting pageï»¿](https:/
 ---
 title: Amazon EC2 API
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-api
-scraped: 2026-02-17T21:25:02.750166
+scraped: 2026-02-18T05:53:14.882295
 ---
 
 # Amazon EC2 API
@@ -34397,7 +34397,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Monitor Amazon Elastic Container Service (ECS) with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ecs
-scraped: 2026-02-16T09:34:31.586509
+scraped: 2026-02-18T05:57:59.267729
 ---
 
 # Monitor Amazon Elastic Container Service (ECS) with CloudWatch metrics
@@ -35234,7 +35234,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 ---
 title: Custom SSL certificate for ActiveGate
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate
-scraped: 2026-02-17T21:27:14.022789
+scraped: 2026-02-18T05:49:21.673000
 ---
 
 # Custom SSL certificate for ActiveGate
@@ -36433,7 +36433,7 @@ By default, all sensors of the z/OS Java module are enabled. In case of problems
 ---
 title: OneAgent configuration via command-line interface
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface
-scraped: 2026-02-17T21:22:49.365043
+scraped: 2026-02-18T05:56:06.399264
 ---
 
 # OneAgent configuration via command-line interface
@@ -37284,7 +37284,7 @@ Set the `--set-osagent-cap-setuid-enabled` parameter to `true` or `false` to dis
 ---
 title: OneAgent diagnostics
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics
-scraped: 2026-02-17T21:28:21.016322
+scraped: 2026-02-18T05:49:33.170475
 ---
 
 # OneAgent diagnostics
@@ -37586,7 +37586,7 @@ OneAgent diagnostics uploads the diagnostic data to the Dynatrace S3 bucket that
 ---
 title: Send Telegraf metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf
-scraped: 2026-02-17T21:20:51.911621
+scraped: 2026-02-18T05:40:37.576369
 ---
 
 # Send Telegraf metrics to Dynatrace
@@ -38015,7 +38015,7 @@ The following feature sets are available for Google Managed Microsoft AD.
 ---
 title: Monitor Google App Engine
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine
-scraped: 2026-02-17T21:19:59.985251
+scraped: 2026-02-18T05:39:28.595033
 ---
 
 # Monitor Google App Engine
@@ -38113,7 +38113,7 @@ Every time you want to update your version of Dynatrace OneAgent, you must redep
 ---
 title: Azure HDInsight monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight
-scraped: 2026-02-17T21:32:02.801747
+scraped: 2026-02-18T05:56:30.062972
 ---
 
 # Azure HDInsight monitoring
@@ -38264,7 +38264,7 @@ After you create the management zone, assign it to your dashboard (from the dash
 ---
 title: Azure Managed Instance for Apache Cassandra Monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-managed-instance-for-apache-cassandra
-scraped: 2026-02-17T21:31:25.392572
+scraped: 2026-02-18T05:44:09.218751
 ---
 
 # Azure Managed Instance for Apache Cassandra Monitoring
@@ -39537,7 +39537,7 @@ Available metrics are listed below.
 ---
 title: Azure SQL Managed Instance monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-managed-instance
-scraped: 2026-02-17T21:32:27.650990
+scraped: 2026-02-18T05:51:50.552215
 ---
 
 # Azure SQL Managed Instance monitoring
@@ -39612,7 +39612,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Kubernetes Security Posture Management
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/security-posture-management
-scraped: 2026-02-17T05:01:17.804287
+scraped: 2026-02-18T05:44:45.836238
 ---
 
 # Kubernetes Security Posture Management

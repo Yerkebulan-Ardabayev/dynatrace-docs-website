@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/dynatrace-activegate
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 16
 
@@ -13,7 +13,7 @@ Files combined: 16
 ---
 title: ActiveGate diagnostics
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-diagnostics
-scraped: 2026-02-16T09:40:15.019396
+scraped: 2026-02-18T05:53:50.633790
 ---
 
 # ActiveGate diagnostics
@@ -431,7 +431,7 @@ The diagnostic data is uploaded to the Dynatrace S3 bucket that is configured fo
 ---
 title: ActiveGate FIPS compliance
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance
-scraped: 2026-02-17T05:06:50.773546
+scraped: 2026-02-18T05:56:31.238750
 ---
 
 # ActiveGate FIPS compliance
@@ -628,7 +628,7 @@ TLS1.2, TLS1.3
 ---
 title: ActiveGate group
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-group
-scraped: 2026-02-17T21:17:15.917514
+scraped: 2026-02-18T05:35:15.275106
 ---
 
 # ActiveGate group
@@ -703,7 +703,7 @@ When connecting Dynatrace to Cloud Foundry foundations, you specify an ActiveGat
 ---
 title: Containerized ActiveGate volumes
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container/ag-container-persistence
-scraped: 2026-02-17T05:09:06.798345
+scraped: 2026-02-18T05:57:25.689610
 ---
 
 # Containerized ActiveGate volumes
@@ -1317,7 +1317,7 @@ A containerized ActiveGate configuration is not persistently stored. It is decla
 ---
 title: ActiveGate container image
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container
-scraped: 2026-02-17T21:18:41.397831
+scraped: 2026-02-18T05:35:34.836656
 ---
 
 # ActiveGate container image
@@ -3009,7 +3009,7 @@ There is a dedicated, FIPS-compliant ActiveGate image available. See [ActiveGate
 ---
 title: Execute synthetic monitors from private locations
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose
-scraped: 2026-02-17T21:18:44.967883
+scraped: 2026-02-18T05:35:27.365369
 ---
 
 # Execute synthetic monitors from private locations
@@ -3068,7 +3068,7 @@ Additionally, you can also:
 ---
 title: Install the zRemote module for z/OS monitoring
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities/zremote-purpose
-scraped: 2026-02-17T21:18:38.404204
+scraped: 2026-02-18T05:35:22.232743
 ---
 
 # Install the zRemote module for z/OS monitoring
@@ -3103,7 +3103,7 @@ For more details and configuration options, see [Install the zRemote module](/do
 ---
 title: ActiveGate purposes and functionality
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities
-scraped: 2026-02-17T21:18:35.843198
+scraped: 2026-02-18T05:35:23.999507
 ---
 
 # ActiveGate purposes and functionality
@@ -3524,7 +3524,7 @@ To verify the configuration
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements
-scraped: 2026-02-17T21:18:47.485371
+scraped: 2026-02-18T05:35:32.714889
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Linux
@@ -3915,7 +3915,7 @@ M
 ---
 title: ActiveGate on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/linux
-scraped: 2026-02-17T21:18:42.648259
+scraped: 2026-02-18T05:35:20.521620
 ---
 
 # ActiveGate on Linux
@@ -3954,7 +3954,7 @@ Dynatrace supports ActiveGate installation on Linux.
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements
-scraped: 2026-02-17T21:18:46.291878
+scraped: 2026-02-18T05:35:17.004486
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Windows
@@ -4195,7 +4195,7 @@ High
 ---
 title: ActiveGate on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/windows
-scraped: 2026-02-17T21:18:39.684142
+scraped: 2026-02-18T05:35:25.655695
 ---
 
 # ActiveGate on Windows
@@ -4234,7 +4234,7 @@ Dynatrace supports ActiveGate installation on Windows.
 ---
 title: Supported connectivity schemes for ActiveGates
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates
-scraped: 2026-02-17T21:18:43.745173
+scraped: 2026-02-18T05:35:29.096335
 ---
 
 # Supported connectivity schemes for ActiveGates

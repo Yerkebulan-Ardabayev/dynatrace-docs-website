@@ -1,7 +1,7 @@
 ---
 title: Log alerts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/alerting-on-logs
-scraped: 2026-02-17T21:18:32.333225
+scraped: 2026-02-18T05:35:49.423930
 ---
 
 # Log alerts

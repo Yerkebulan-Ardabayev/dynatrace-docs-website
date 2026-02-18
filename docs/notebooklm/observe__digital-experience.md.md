@@ -1,6 +1,6 @@
 # Dynatrace Documentation: observe/digital-experience.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Digital Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience
-scraped: 2026-02-17T21:14:44.870340
+scraped: 2026-02-18T05:32:53.665325
 ---
 
 # Digital Experience

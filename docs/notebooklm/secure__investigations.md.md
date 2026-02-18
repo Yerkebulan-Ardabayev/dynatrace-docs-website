@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/investigations.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Investigations
 source: https://www.dynatrace.com/docs/secure/investigations
-scraped: 2026-02-17T05:04:21.305684
+scraped: 2026-02-18T05:45:14.301657
 ---
 
 # Investigations

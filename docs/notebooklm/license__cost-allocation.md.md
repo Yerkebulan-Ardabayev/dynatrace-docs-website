@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/cost-allocation.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Allocate your DPS costs
 source: https://www.dynatrace.com/docs/license/cost-allocation
-scraped: 2026-02-17T21:16:29.343199
+scraped: 2026-02-18T05:39:07.403754
 ---
 
 # Allocate your DPS costs

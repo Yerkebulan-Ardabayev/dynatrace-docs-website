@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/dynatrace-oneagent
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 61
 
@@ -13,7 +13,7 @@ Files combined: 61
 ---
 title: Adaptive Traffic Management for distributed tracing
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management
-scraped: 2026-02-17T21:24:45.023805
+scraped: 2026-02-18T05:38:51.438310
 ---
 
 # Adaptive Traffic Management for distributed tracing
@@ -789,7 +789,7 @@ One last thing: to monitor your processes, you need to restart them. At any time
 ---
 title: OneAgent security on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix
-scraped: 2026-02-17T21:23:26.355976
+scraped: 2026-02-18T05:51:01.482646
 ---
 
 # OneAgent security on AIX
@@ -1213,7 +1213,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix
-scraped: 2026-02-17T21:15:14.748934
+scraped: 2026-02-18T05:33:12.532825
 ---
 
 # AIX
@@ -2429,7 +2429,7 @@ The installer prints a message at the end of OneAgent installation. Depending on
 ---
 title: OneAgent security on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux
-scraped: 2026-02-17T21:22:55.336896
+scraped: 2026-02-18T05:52:55.834010
 ---
 
 # OneAgent security on Linux
@@ -3207,7 +3207,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux
-scraped: 2026-02-17T21:15:11.115073
+scraped: 2026-02-18T05:33:18.983597
 ---
 
 # OneAgent on Linux
@@ -3804,7 +3804,7 @@ For more details on setting up Oracle WebLogic monitoring, see [Configure Oracle
 ---
 title: Uninstall OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/uninstall-oneagent-on-solaris
-scraped: 2026-02-17T21:23:34.953980
+scraped: 2026-02-18T05:53:22.861164
 ---
 
 # Uninstall OneAgent on Solaris
@@ -3896,7 +3896,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 ---
 title: Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris
-scraped: 2026-02-17T21:15:15.951853
+scraped: 2026-02-18T05:33:17.314968
 ---
 
 # Solaris
@@ -5277,7 +5277,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows
-scraped: 2026-02-17T21:15:13.506323
+scraped: 2026-02-18T05:33:08.899255
 ---
 
 # OneAgent on Windows
@@ -6869,7 +6869,7 @@ severe  [native] IMS14CR1[asid = 108] is trying to initialize with an invalid pr
 ---
 title: Customize the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote
-scraped: 2026-02-17T04:58:04.751424
+scraped: 2026-02-18T05:53:03.046717
 ---
 
 # Customize the zRemote module
@@ -7455,7 +7455,7 @@ useOldImsPgiCalc=true
 ---
 title: Install the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote
-scraped: 2026-02-17T21:18:37.170705
+scraped: 2026-02-18T05:35:30.911682
 ---
 
 # Install the zRemote module
@@ -8470,7 +8470,7 @@ Depending on your team, a single individual may be able to administer more than 
 ---
 title: Monitor file access of CICS applications
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access
-scraped: 2026-02-17T21:33:31.829030
+scraped: 2026-02-18T05:53:24.536205
 ---
 
 # Monitor file access of CICS applications
@@ -8515,7 +8515,7 @@ To turn off file access monitoring, toggle the `z/OS CICS file monitoring` senso
 ---
 title: Monitor z/OS logs
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs
-scraped: 2026-02-17T21:26:16.727015
+scraped: 2026-02-18T05:45:48.123734
 ---
 
 # Monitor z/OS logs
@@ -9681,7 +9681,7 @@ Settings API for IBM MQ tracing:
 ---
 title: Dynatrace for z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos
-scraped: 2026-02-17T21:15:12.416093
+scraped: 2026-02-18T05:33:15.604478
 ---
 
 # Dynatrace for z/OS
@@ -9868,7 +9868,7 @@ With Dynatrace, you can get [Full-Stack Monitoring with Host monitoring (DPS)](/
 ---
 title: Install OneAgent on a server
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation
-scraped: 2026-02-17T21:13:34.936391
+scraped: 2026-02-18T05:31:09.963996
 ---
 
 # Install OneAgent on a server
@@ -9962,7 +9962,7 @@ OneAgent is now set up and monitoring your host. See [Get started with Dynatrace
 ---
 title: OneAgent requirements
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oa-requirements
-scraped: 2026-02-17T21:24:46.256267
+scraped: 2026-02-18T05:38:49.682150
 ---
 
 # OneAgent requirements
@@ -10768,7 +10768,7 @@ io.opentelemetry.contrib.php.wordpress
 ---
 title: Use OneAgent with OpenTelemetry data
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel
-scraped: 2026-02-17T21:20:37.520518
+scraped: 2026-02-18T05:40:19.288442
 ---
 
 # Use OneAgent with OpenTelemetry data
@@ -11922,7 +11922,7 @@ Set the `--set-osagent-cap-setuid-enabled` parameter to `true` or `false` to dis
 ---
 title: OneAgent features
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-features
-scraped: 2026-02-17T21:15:19.787648
+scraped: 2026-02-18T05:32:16.842382
 ---
 
 # OneAgent features
@@ -12258,7 +12258,7 @@ Enable auto-update to stay current.
 ---
 title: Set up Grail permissions for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-security-context
-scraped: 2026-02-17T21:24:52.617859
+scraped: 2026-02-18T05:38:09.591275
 ---
 
 # Set up Grail permissions for OneAgent
@@ -12320,7 +12320,7 @@ The `dt.security_context` is utilized by many features in Dynatrace and availabl
 ---
 title: Troubleshooting OneAgent deep-monitoring issues
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-deep-monitoring-issues
-scraped: 2026-02-17T21:23:58.585430
+scraped: 2026-02-18T05:39:21.779681
 ---
 
 # Troubleshooting OneAgent deep-monitoring issues

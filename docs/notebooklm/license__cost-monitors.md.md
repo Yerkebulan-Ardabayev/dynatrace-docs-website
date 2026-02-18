@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/cost-monitors.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Customize cost alerts
 source: https://www.dynatrace.com/docs/license/cost-monitors
-scraped: 2026-02-17T21:16:23.353638
+scraped: 2026-02-18T05:39:13.066099
 ---
 
 # Customize cost alerts

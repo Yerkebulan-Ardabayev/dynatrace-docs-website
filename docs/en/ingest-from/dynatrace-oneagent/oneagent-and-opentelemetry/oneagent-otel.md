@@ -1,7 +1,7 @@
 ---
 title: Use OneAgent with OpenTelemetry data
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel
-scraped: 2026-02-17T21:20:37.520518
+scraped: 2026-02-18T05:40:19.288442
 ---
 
 # Use OneAgent with OpenTelemetry data

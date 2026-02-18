@@ -1,6 +1,6 @@
 # Dynatrace Documentation: analyze-explore-automate/log-monitoring
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 31
 
@@ -13,7 +13,7 @@ Files combined: 31
 ---
 title: Log sources and storage (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2
-scraped: 2026-02-17T21:27:52.892797
+scraped: 2026-02-18T05:46:21.776337
 ---
 
 # Log sources and storage (Logs Classic)
@@ -191,7 +191,7 @@ For all log ingestion options, see [Log ingestion](/docs/ingest-from/google-clou
 ---
 title: Stream Kubernetes logs with Fluent Bit (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-fluent-bit-logs-k8s
-scraped: 2026-02-17T05:06:43.821046
+scraped: 2026-02-18T05:55:55.565227
 ---
 
 # Stream Kubernetes logs with Fluent Bit (Logs Classic)
@@ -1001,7 +1001,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 ---
 title: Automatic log enrichment (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation
-scraped: 2026-02-17T21:34:30.351718
+scraped: 2026-02-18T05:51:45.957891
 ---
 
 # Automatic log enrichment (Logs Classic)
@@ -1339,7 +1339,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Log Monitoring from Journald (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-journald
-scraped: 2026-02-17T21:29:47.807910
+scraped: 2026-02-18T05:48:55.319656
 ---
 
 # Log Monitoring from Journald (Logs Classic)
@@ -1493,7 +1493,7 @@ Messages which may need to be enabled first, only useful for debugging
 ---
 title: Log Monitoring in Kubernetes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-kubernetes
-scraped: 2026-02-17T04:57:41.117891
+scraped: 2026-02-18T05:48:01.102892
 ---
 
 # Log Monitoring in Kubernetes (Logs Classic)
@@ -2315,7 +2315,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Log rotation patterns (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns
-scraped: 2026-02-17T21:30:19.441815
+scraped: 2026-02-18T05:57:07.358558
 ---
 
 # Log rotation patterns (Logs Classic)
@@ -2444,7 +2444,7 @@ The oldest log records are removed whenever new content is added to a file, resu
 ---
 title: Log ingest rules (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage
-scraped: 2026-02-17T05:09:18.817474
+scraped: 2026-02-18T05:52:01.321423
 ---
 
 # Log ingest rules (Logs Classic)
@@ -3730,7 +3730,7 @@ Yes. Content filtering conducted on OneAgent reduces both DDU costs and network 
 ---
 title: Log ingestion API (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api
-scraped: 2026-02-17T21:20:49.081592
+scraped: 2026-02-18T05:40:49.470113
 ---
 
 # Log ingestion API (Logs Classic)
@@ -3882,7 +3882,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Stream logs to Dynatrace with Fluentd on Kubernetes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-fluentd-k8s
-scraped: 2026-02-16T09:37:28.932924
+scraped: 2026-02-18T05:57:30.625839
 ---
 
 # Stream logs to Dynatrace with Fluentd on Kubernetes (Logs Classic)
@@ -3933,7 +3933,7 @@ For instructions on how to deploy Fluentd integration, see the [documentation on
 ---
 title: Stream logs to Dynatrace with Logstash (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-to-dynatrace-with-logstash
-scraped: 2026-02-17T21:30:27.105781
+scraped: 2026-02-18T05:50:45.725546
 ---
 
 # Stream logs to Dynatrace with Logstash (Logs Classic)
@@ -5141,7 +5141,7 @@ Then you will create a custom log attribute and use it for creating a log metric
 ---
 title: Log events (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events
-scraped: 2026-02-17T04:58:03.019674
+scraped: 2026-02-18T05:51:57.630104
 ---
 
 # Log events (Logs Classic)
@@ -5259,7 +5259,7 @@ Note that, in this example, while we have configured two properties (`K8 Id` and
 ---
 title: Log metrics (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics
-scraped: 2026-02-16T21:29:06.579303
+scraped: 2026-02-18T05:54:47.982647
 ---
 
 # Log metrics (Logs Classic)
@@ -5631,7 +5631,7 @@ Unique log data attributes (high-cardinality attributes) such as `span_id` and `
 ---
 title: Management zones and ingested log data (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring
-scraped: 2026-02-17T21:30:10.561659
+scraped: 2026-02-18T05:55:48.391665
 ---
 
 # Management zones and ingested log data (Logs Classic)
@@ -5835,7 +5835,7 @@ Please contact a Dynatrace product expert via live chat within your environment.
 ---
 title: Connecting log data to traces (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment
-scraped: 2026-02-17T21:15:22.561002
+scraped: 2026-02-18T05:32:18.855058
 ---
 
 # Connecting log data to traces (Logs Classic)
@@ -7021,7 +7021,7 @@ For details on configuration, see [Instrument your Python application with OpenT
 ---
 title: Sensitive data masking (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/sensitive-data-masking
-scraped: 2026-02-17T05:03:14.559420
+scraped: 2026-02-18T05:58:19.609944
 ---
 
 # Sensitive data masking (Logs Classic)
@@ -8051,7 +8051,7 @@ Be aware of the following limitations to sensitive data masking:
 ---
 title: Timestamp/splitting configuration (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration
-scraped: 2026-02-17T21:27:26.450766
+scraped: 2026-02-18T05:44:31.076939
 ---
 
 # Timestamp/splitting configuration (Logs Classic)
@@ -8404,7 +8404,7 @@ To create a timestamp configuration using the API
 ---
 title: Supported timestamp formats (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format
-scraped: 2026-02-17T21:34:36.378939
+scraped: 2026-02-18T05:45:56.744866
 ---
 
 # Supported timestamp formats (Logs Classic)
@@ -8557,7 +8557,7 @@ To verify which timezone was used for timestamp parsing, search the OneAgent log
 ---
 title: Log Monitoring configuration (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration
-scraped: 2026-02-17T05:03:52.432002
+scraped: 2026-02-18T05:43:22.166692
 ---
 
 # Log Monitoring configuration (Logs Classic)
@@ -8948,7 +8948,7 @@ If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 20
 ---
 title: Log processing examples (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples
-scraped: 2026-02-17T04:58:45.508175
+scraped: 2026-02-18T05:53:56.617855
 ---
 
 # Log processing examples (Logs Classic)
@@ -10494,7 +10494,7 @@ Result after transformation:
 ---
 title: Log processing (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-processing
-scraped: 2026-02-17T21:27:55.307394
+scraped: 2026-02-18T05:54:06.626853
 ---
 
 # Log processing (Logs Classic)
@@ -10572,7 +10572,7 @@ To create a log processing rule
 ---
 title: Upgrade to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma
-scraped: 2026-02-17T21:18:26.352707
+scraped: 2026-02-18T05:35:37.755560
 ---
 
 # Upgrade to Log Management and Analytics

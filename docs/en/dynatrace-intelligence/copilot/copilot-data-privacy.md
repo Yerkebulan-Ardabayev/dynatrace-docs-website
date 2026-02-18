@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence generative AI data privacy and security
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-data-privacy
-scraped: 2026-02-16T09:29:33.353940
+scraped: 2026-02-18T05:52:30.412677
 ---
 
 # Dynatrace Intelligence generative AI data privacy and security

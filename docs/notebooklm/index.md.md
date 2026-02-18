@@ -1,6 +1,6 @@
 # Dynatrace Documentation: index.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
