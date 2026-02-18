@@ -1,5 +1,7 @@
 {
   "_comment": "AI Chat configuration for GitHub Pages (static hosting). On local server, proxy mode is used automatically.",
-  "_setup": "Get free API key at https://console.groq.com and paste below",
+  "_setup_worker": "Deploy cloudflare-worker/worker.js to Cloudflare Workers (FREE: 100K req/day). Then paste your Worker URL below.",
+  "_setup_direct": "Alternative: Get free API key at https://console.groq.com (WARNING: key will be public!)",
+  "worker_url": "",
   "groq_api_key": ""
 }
