@@ -196,7 +196,7 @@ Dynatraces использует метаданные атрибутов для
 
 OpenTelemetry
 
-ОдинАгент
+OneAgent
 
 Настраивать
 

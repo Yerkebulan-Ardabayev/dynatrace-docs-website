@@ -4,9 +4,9 @@ source: https://www.dynatrace.com/docs/platform/oneagent
 scraped: 2026-02-06T16:19:57.523842
 ---
 
-# ОдинАгент
+# OneAgent
 
-# ОдинАгент
+# OneAgent
 
 * Последняя версия Dynatrace
 * 1 минута чтения

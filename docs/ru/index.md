@@ -15,7 +15,7 @@ scraped: 2026-02-06T15:59:29.260812
 ### Начните работу с Dynatrace или узнайте, что нового
 
 * Впервые в Dynatrace?Узнайте, как [начать](/docs/discover-dynatrace/get-started "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") всего за несколько шагов.
-* Уже на борту?Узнайте, что нового для [SaaS](/docs/whats-new/saas "Release notes for Dynatrace SaaS"), [ОдинАгент](/docs/whats-new/oneagent "Release notes for Dynatrace OneAgent") или [Активгейт](/docs/whats-new/activegate "Release notes for Dynatrace ActiveGate").
+* Уже на борту?Узнайте, что нового для [SaaS](/docs/whats-new/saas "Release notes for Dynatrace SaaS"), [OneAgent](/docs/whats-new/oneagent "Release notes for Dynatrace OneAgent") или [ActiveGate](/docs/whats-new/activegate "Release notes for Dynatrace ActiveGate").
 
 ![Дайнатрейс Печатка](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
