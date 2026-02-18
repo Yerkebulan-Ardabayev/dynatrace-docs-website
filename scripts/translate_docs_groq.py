@@ -566,6 +566,23 @@ def main():
     print(f"⏱️  Время:     {int(elapsed//60)}м {int(elapsed%60)}с")
     print()
 
+    # Автоматически обновляем nav в mkdocs.yml
+    try:
+        import subprocess
+        update_nav_script = Path(__file__).parent / 'update_nav.py'
+        if update_nav_script.exists():
+            print("🔄 Обновляю nav в mkdocs.yml...")
+            result = subprocess.run(
+                [sys.executable, str(update_nav_script)],
+                capture_output=True, text=True, encoding='utf-8'
+            )
+            if result.returncode == 0:
+                print("✅ Nav обновлён!")
+            else:
+                print(f"⚠️  Nav не обновлён: {result.stderr[:200]}")
+    except Exception as e:
+        print(f"⚠️  Ошибка обновления nav: {e}")
+
 
 if __name__ == '__main__':
     main()
