@@ -1,0 +1,1416 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/en/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Integrate OneAgent on Azure App Service for Linux and containers - Dynatrace Managed - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integrate-oneagent-on-azure-app-service-for-linux-and-containers" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-header__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Managed - Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Integrate OneAgent on Azure App Service for Linux and containers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  🎯 Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../common/" class="md-tabs__link">
+          
+  
+  
+  📊 Общее
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../saas-reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📖 SaaS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace Managed - Документация" class="md-nav__button md-logo" aria-label="Dynatrace Managed - Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace Managed - Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎯 Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бэкап
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/observe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Общее
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Общее
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../saas-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="integrate-oneagent-on-azure-app-service-for-linux-and-containers">Integrate OneAgent on Azure App Service for Linux and containers<a class="headerlink" href="#integrate-oneagent-on-azure-app-service-for-linux-and-containers" title="Permanent link">&para;</a></h1>
+<h1 id="integrate-oneagent-on-azure-app-service-for-linux-and-containers_1">Integrate OneAgent on Azure App Service for Linux and containers<a class="headerlink" href="#integrate-oneagent-on-azure-app-service-for-linux-and-containers_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>11-min read</li>
+<li>Updated on Dec 17, 2025</li>
+</ul>
+<p>Linux only</p>
+<p>App Service on Linux supports two scenarios.</p>
+<ul>
+<li><strong>Bring your own code</strong></li>
+</ul>
+<p>In the code scenario, App Service provides a base container that is maintained by the platform.</p>
+<p>This container targets:</p>
+<ul>
+<li>A development framework, such as .NET Core, PHP, or Node.js.</li>
+<li>A version of that framework, such as .NET Core 3.0 or .NET Core 3.1.</li>
+</ul>
+<p>Follow the procedure on the <strong>Built-in image</strong> tab.
+* <strong>Bring your own container</strong></p>
+<p>In the container scenario, App Service provides a host where a custom container provided by the customer can execute.</p>
+<p>For details on the differences between the two scenarios, see <a href="https://dt-url.net/jm039gu">Things you should know: Web Apps on Linuxï»¿</a>.</p>
+<p>To monitor App Services on Linux, you need to integrate OneAgent within your containerized application.</p>
+<p>Follow the procedure on the <strong>Custom image</strong> tab.</p>
+<p>Built-in image</p>
+<p>Custom image</p>
+<h2 id="integrate-dynatrace-on-built-in-image">Integrate Dynatrace on built-in image<a class="headerlink" href="#integrate-dynatrace-on-built-in-image" title="Permanent link">&para;</a></h2>
+<p>Azure App Service for Linux allows you to customize its base container at runtime using a <a href="https://dt-url.net/z2234qa">startup script or script commandï»¿</a> that must be executed in a bash shell or <a href="https://dt-url.net/at034yy">Azure Cloud Shellï»¿</a>. The script can be configured in multiple ways.</p>
+<h3 id="set-startup-script-commandfile-at-creation-time-using-azure-cli">Set startup script command/file at creation time using Azure CLI<a class="headerlink" href="#set-startup-script-commandfile-at-creation-time-using-azure-cli" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>az webapp create -n &lt;my-app&gt; -g &lt;my-resourcegroup&gt; -p &lt;my-appservice-plan&gt; --runtime &lt;runtime-tag&gt; --startup-file &lt;startup-script/command&gt;
+</code></pre></div>
+<h3 id="set-script-commandfile-at-creation-time-for-an-existing-app-service">Set script command/file at creation time for an existing App Service<a class="headerlink" href="#set-script-commandfile-at-creation-time-for-an-existing-app-service" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>az webapp config set -n &lt;my-app&gt; -g &lt;my-resourcegroup&gt; --startup-file &lt;startup-script/command&gt;
+</code></pre></div>
+<h3 id="set-script-commandfile-using-arm-template">Set script command/file using ARM template<a class="headerlink" href="#set-script-commandfile-using-arm-template" title="Permanent link">&para;</a></h3>
+<p>Use the <a href="https://docs.microsoft.com/en-us/azure/templates/microsoft.web/sites/config-web?pivots=deployment-language-arm-template#siteconfig-1">appCommandLineï»¿</a> property of your ARM template to set the startup script/command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&quot;acrUseManagedIdentityCreds&quot;: false,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>&quot;acrUserManagedIdentityId&quot;: null,
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&quot;alwaysOn&quot;: false,
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>&quot;apiDefinition&quot;: null,
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>&quot;apiManagementConfig&quot;: null,
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>&quot;appCommandLine&quot;: &quot;&lt;startup-script/command&gt;&quot;,
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>&quot;appSettings&quot;: null,
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>&quot;autoHealEnabled&quot;: false,
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>&quot;autoHealRules&quot;: null,
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>&quot;autoSwapSlotName&quot;: null,
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>...
+</code></pre></div>
+<h3 id="set-startup-script-commandfile-in-the-azure-portal">Set startup script command/file in the Azure portal<a class="headerlink" href="#set-startup-script-commandfile-in-the-azure-portal" title="Permanent link">&para;</a></h3>
+<p><img alt="AppService Linux Portal Startup" src="https://dt-cdn.net/images/screenshot-2022-12-13-at-13-42-44-1109-8955530cdd.png" /></p>
+<h3 id="script-or-command">Script or command?<a class="headerlink" href="#script-or-command" title="Permanent link">&para;</a></h3>
+<p>A startup script is the same as a startup command: it's a command that executes the script (remember to use the path of the script). However, this requires that you package the script along with your application. If you don't want to have this dependency, use startup commands.</p>
+<p>The script/command is executed within the container init script, which is implemented differently on each technology stack.</p>
+<p>For details on startup commands, see the Azure App Service for Linux documentation on <a href="https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-">What are the expected values for the Startup File section when I configure the runtime stack?ï»¿</a></p>
+<h3 id="integrate-dynatrace-using-a-startup-scriptcommand">Integrate Dynatrace using a startup script/command<a class="headerlink" href="#integrate-dynatrace-using-a-startup-scriptcommand" title="Permanent link">&para;</a></h3>
+<p>To integrate Dynatrace, the startup script/command needs to have access to a few variables.</p>
+<p>Parameter</p>
+<p>Description</p>
+<p><code>$DT_ENDPOINT</code></p>
+<p>Your Dynatrace API server endpointâuse either your environment <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">cluster endpoint</a> or an <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">ActiveGate address</a>.</p>
+<p><code>$DT_API_TOKEN</code></p>
+<p>API Token to access the Dynatrace REST APIâ<a href="/docs/dynatrace-api/basics/dynatrace-api-authentication" title="Find out how to get authenticated to use the Dynatrace API.">create an API Token</a> with the <strong>InstallerDownload</strong> scope.</p>
+<p><code>$DT_INCLUDE</code></p>
+<p>Configure required code modules, depending on the used technology stack.</p>
+<ul>
+<li><code>all</code> includes all available OneAgent code modules (<code>java</code>, <code>apache</code>, <code>nginx</code>, <code>nodejs</code>, <code>dotnet</code>, <code>php</code>, <code>go</code>, <code>sdk</code>), but it increases download package size.</li>
+<li>Alternatively, choose identifiers appropriate to your application stack, such as <code>java</code>, <code>dotnet</code>, <code>nodejs</code>, or <code>php</code>.</li>
+</ul>
+<p>For details, see <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest" title="Download the latest OneAgent installer via Dynatrace API.">API documentation</a>.</p>
+<p><code>$START_APP_CMD</code></p>
+<p>The command to start your application</p>
+<p><a href="https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-">What are the expected values for the Startup File section when I configure the runtime stack?ï»¿</a></p>
+<p>If you use a shell other than bash, make sure to adapt the script appropriately to the shell's character escape requirements.</p>
+<p>You can do this in two ways.</p>
+<ul>
+<li>App service settings Recommended</li>
+<li>Setting the values inline</li>
+</ul>
+<h4 id="monitoring-php-on-nginx">Monitoring PHP on NGINX<a class="headerlink" href="#monitoring-php-on-nginx" title="Permanent link">&para;</a></h4>
+<p>To monitor both PHP-FPM and NGINX</p>
+<ol>
+<li>Set <code>DT_INCLUDE</code> to <code>all</code>.</li>
+<li>Use the startup script with two additional commands at the end.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>echo &#39;/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so&#39; &gt;&gt; /etc/ld.so.preload
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>/etc/init.d/nginx restart
+</code></pre></div>
+<h4 id="app-service-settings">App service settings<a class="headerlink" href="#app-service-settings" title="Permanent link">&para;</a></h4>
+<p>Set the values of the above parameters using <a href="https://dt-url.net/da239ts">App Settingsï»¿</a>âthis is equivalent to setting environment variablesâand then run this command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh &amp;&amp; sh /tmp/installer-wrapper.sh
+</code></pre></div>
+<p>Java Runtime stack</p>
+<p>For apps running on the Java Runtime stack in Azure App Service, this installation method may not work as expected in some cases. For example, customers have reported issues with Alpine-based images, where the above command was interpreted as a single string rather than executed as a shell command. This caused the <code>&amp;&amp;</code> operator to be treated as part of the <code>wget</code> input instead of chaining commands.</p>
+<p>If you encounter this behavior, consider using an alternative approach to execute the script (such as a custom startup script or modifying a <a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#install--custom-image" title="Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.">custom image</a>).</p>
+<p>Alternatively, you can use the calling-only script below, which works for all Linux images.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>#!/bin/sh
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>readonly installerWrapperInstallationPath=/tmp/installer-wrapper.sh
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>readonly installerWrapperURL=https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>wget -O $installerWrapperInstallationPath -q $installerWrapperURL
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>sh $installerWrapperInstallationPath
+</code></pre></div>
+<h4 id="setting-the-values-inline">Setting the values inline<a class="headerlink" href="#setting-the-values-inline" title="Permanent link">&para;</a></h4>
+<p>You can set the needed variables only for the command that runs the OneAgent installer.</p>
+<p>To do this, you need to set the values before the command as shown below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh &amp;&amp; DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh /tmp/installer-wrapper.sh
+</code></pre></div>
+<p>Alternatively, you can use the startup file as shown below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>#!/bin/sh
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>readonly installerWrapperInstallationPath=/tmp/installer-wrapper.sh
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>readonly installerWrapperURL=https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>wget -O $installerWrapperInstallationPath -q $installerWrapperURL
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh $installerWrapperInstallationPath
+</code></pre></div>
+<h3 id="example-integrate-into-a-nodejs-application-using-azure-cli-within-a-bash-shell">Example: Integrate into a node.js application using Azure CLI within a bash shell<a class="headerlink" href="#example-integrate-into-a-nodejs-application-using-azure-cli-within-a-bash-shell" title="Permanent link">&para;</a></h3>
+<p>[<img alt="Step 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Step 1" /></p>
+<p><strong>Configure the startup command</strong>](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#step-1 "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")[<img alt="Step 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Step 2" /></p>
+<p><strong>Restart the web application twice</strong>](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#step-2 "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")</p>
+<h4 id="step-1-configure-the-startup-command">Step 1 Configure the startup command<a class="headerlink" href="#step-1-configure-the-startup-command" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>RESOURCE_GROUP=&quot;my-appservice-test&quot;
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>APPSVC=&quot;my-linux-webapp&quot;
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>DT_ENDPOINT=&quot;https://XXXXXX.live.dynatrace.com&quot;
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>DT_API_TOKEN=&quot;XXXXXX&quot;
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>DT_INCLUDE=&quot;nodejs&quot;
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>START_APP_CMD=&quot;pm2 start index.js --no-daemon&quot;
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>STARTUP_CMD=&quot;wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh &amp;&amp; DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh /tmp/installer-wrapper.sh&quot;
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>az webapp config set --resource-group $RESOURCE_GROUP --name $APPSVC --startup-file &quot;$STARTUP_CMD&quot;
+</code></pre></div>
+<h4 id="step-2-restart-the-web-application-twice">Step 2 Restart the web application twice<a class="headerlink" href="#step-2-restart-the-web-application-twice" title="Permanent link">&para;</a></h4>
+<p>After you configure the startup command, restart the web application <strong>twice</strong>.</p>
+<ul>
+<li>Restart once to initialize OneAgent installation.</li>
+<li>Restart again to start OneAgent instrumenting your application.</li>
+</ul>
+<h2 id="integrate-dynatrace-on-custom-image">Integrate Dynatrace on custom image<a class="headerlink" href="#integrate-dynatrace-on-custom-image" title="Permanent link">&para;</a></h2>
+<p>To integrate OneAgent with the application image, you have two options:</p>
+<ul>
+<li><a href="#layer">Integrate the OneAgent image layer provided by Dynatrace</a></li>
+<li><a href="#api">Download OneAgent artifacts at image build-time from Dynatrace REST API</a></li>
+</ul>
+<h3 id="option-1-integrate-using-dynatrace-offered-oneagent-image-layer">Option 1: Integrate using Dynatrace offered OneAgent image layer<a class="headerlink" href="#option-1-integrate-using-dynatrace-offered-oneagent-image-layer" title="Permanent link">&para;</a></h3>
+<p>This option requires that you have Docker v17.05+ installed on your computer.</p>
+<ol>
+<li>Sign in to Docker with your Dynatrace environment ID as the username and your PaaS token as the password.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker login -u &lt;your-environment-id&gt; &lt;your-environment-url&gt;
+</code></pre></div>
+2. Add the following lines to your application image Dockerfile, after the last <code>FROM</code> command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>COPY --from=&lt;ADDRESS&gt;/linux/oneagent-codemodules:&lt;TECHNOLOGY&gt; / /
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
+</code></pre></div>
+<p>Replace the following placeholders in the template.</p>
+<p>Parameter</p>
+<p>Description</p>
+<p><code>&lt;ADDRESS&gt;</code></p>
+<p>Your Dynatrace registry endpointâuse either your environment <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">cluster endpoint</a> or an <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">ActiveGate address</a>.</p>
+<p><code>&lt;TECHNOLOGY&gt;</code></p>
+<p>Configure required code modules, depending on the used technology stack.</p>
+<ul>
+<li><code>all</code> includes all available OneAgent code modules (<code>java</code>, <code>apache</code>, <code>nginx</code>, <code>nodejs</code>, <code>dotnet</code>, <code>php</code>, <code>go</code>, <code>sdk</code>), but it increases download package size.</li>
+<li>Alternatively, choose identifiers appropriate to your application stack, such as <code>java</code>, <code>dotnet</code>, <code>nodejs</code>, or <code>php</code>.</li>
+</ul>
+<p>For details, see the <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest" title="Download the latest OneAgent installer via Dynatrace API.">API documentation</a>.</p>
+<p><strong>What if my Docker image is based on Alpine Linux?</strong></p>
+<p>Dynatrace OneAgent supports Alpine Linuxâbased environments. To use an Alpine Linux compatible OneAgent, use image name <code>oneagent-codemodules-musl</code> (as shown in the adapted template below) instead of <code>oneagent-codemodules</code>.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>COPY --from=&lt;ADDRESS&gt;/linux/oneagent-codemodules-musl:&lt;TECHNOLOGY&gt; / /
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
+</code></pre></div>
+3. Build your application image.</p>
+<p>Build the Docker image from your Dockerfile to use it in your Kubernetes environment.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker build -t yourapp .
+</code></pre></div>
+4. Restart the web application <strong>twice</strong>.</p>
+<ul>
+<li>Restart once to initialize the OneAgent install script.</li>
+<li>Restart again to start OneAgent on the host.</li>
+</ul>
+<h3 id="option-2-integrate-using-installer-script-from-dynatrace-rest-api">Option 2: Integrate using installer script from Dynatrace REST API<a class="headerlink" href="#option-2-integrate-using-installer-script-from-dynatrace-rest-api" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Add the following two lines to your Dockerfile.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>RUN wget -O /tmp/installer.sh -q &quot;&lt;DT_ENDPOINT&gt;/api/v1/deployment/installer/agent/unix/paas-sh/latest?Api-Token=&lt;DT_API_TOKEN&gt;&amp;flavor=&lt;DT_FLAVOR&gt;&amp;include=&lt;DT_INCLUDE&gt;&quot; &amp;&amp; sh /tmp/installer.sh
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
+</code></pre></div>
+<p>Replace the following parameters in the template above.</p>
+<p>Parameter</p>
+<p>Description</p>
+<p><code>&lt;DT_ENDPOINT&gt;</code></p>
+<p>Your Dynatrace API endpointâuse either your environment <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">cluster endpoint</a> or an <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">ActiveGate address</a>.</p>
+<p><code>&lt;DT_API_TOKEN&gt;</code></p>
+<p>API Token to access the Dynatrace REST APIâ<a href="/docs/dynatrace-api/basics/dynatrace-api-authentication" title="Find out how to get authenticated to use the Dynatrace API.">create an API Token</a> with the <strong>InstallerDownload</strong> scope.</p>
+<p><code>&lt;DT_FLAVOR&gt;</code></p>
+<p>Configure the required architecture.</p>
+<ul>
+<li><code>default</code> for standard, glibc-based Linux images</li>
+<li><code>musl</code> for Alpine Linuxâbased images</li>
+</ul>
+<p><code>&lt;DT_INCLUDE&gt;</code></p>
+<p>Configure required code modules, depending on the used technology stack.</p>
+<ul>
+<li><code>all</code> includes all available OneAgent code modules (<code>java</code>, <code>apache</code>, <code>nginx</code>, <code>nodejs</code>, <code>dotnet</code>, <code>php</code>, <code>go</code>, <code>sdk</code>), but it increases download package size.</li>
+<li>Alternatively, choose identifiers appropriate to your application stack, such as <code>java</code>, <code>dotnet</code>, <code>nodejs</code>, or <code>php</code>.</li>
+</ul>
+<p>For details, see the <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest" title="Download the latest OneAgent installer via Dynatrace API.">API documentation</a>.
+2. Build your application image.</p>
+<p>Build the Docker image from your Dockerfile to use it in your Kubernetes environment.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker build -t yourapp .
+</code></pre></div>
+3. Restart the web application <strong>twice</strong>.</p>
+<ul>
+<li>Restart once to initialize the OneAgent install script.</li>
+<li>Restart again to start OneAgent on the host.</li>
+</ul>
+<h2 id="additional-configuration-optional">Additional configuration Optional<a class="headerlink" href="#additional-configuration-optional" title="Permanent link">&para;</a></h2>
+<p>Use additional environment variables to configure OneAgent for troubleshooting or advanced networking. You can either set them via your App Service Application settings or, when using a custom container image, configure them within your application image Dockerfile.</p>
+<h3 id="networking-variables">Networking variables<a class="headerlink" href="#networking-variables" title="Permanent link">&para;</a></h3>
+<p>Parameter</p>
+<p>Description</p>
+<p><code>DT_NETWORK_ZONE</code></p>
+<p>Specifies to use a network zone. For more information, see <a href="/docs/manage/network-zones" title="Find out how network zones work in Dynatrace.">network zones</a>.</p>
+<p><code>DT_PROXY</code></p>
+<p>When using a proxy, use this environment variable to pass proxy credentials. For more information, see <a href="/docs/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring" title="Install, update, and uninstall OneAgent on containers for application-only monitoring.">Set up OneAgent on containers for application-only monitoring</a>.</p>
+<h3 id="additional-metadata-for-process-grouping-and-service-detection">Additional metadata for process grouping and service detection<a class="headerlink" href="#additional-metadata-for-process-grouping-and-service-detection" title="Permanent link">&para;</a></h3>
+<p>When listing multiple tags, you need to put them in double quotes, for example: DT_TAGS="Tag1=Value1 Tag2=Value2".</p>
+<p>Parameter</p>
+<p>Description</p>
+<p><code>DT_LOCALTOVIRTUALHOSTNAME</code></p>
+<p>Multiple containers are sometimes detected as a single instance (localhost), leading to various problems in, for example, service detection or availability alerts. Use this environment variable to define a unique name for your container instance. For details, see <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1#adjusting-service-detection" title="Find out how Dynatrace Service Detection v1 detects and names different types of services.">Service Detection v1</a></p>
+<p><code>DT_APPLICATIONID</code></p>
+<p>Some technologies don't provide unique application names. In such cases, use this environment variable to provide a unique name. For more information, see <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1#web-server-naming-issues" title="Find out how Dynatrace Service Detection v1 detects and names different types of services.">Web server naming issues</a>.</p>
+<p><code>DT_TAGS</code></p>
+<p>Applies <a href="/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables" title="Find out how Dynatrace enables you to define tags based on environment variables.">custom tags</a> to your process group.</p>
+<p><code>DT_CUSTOM_PROP</code></p>
+<p>Applies <a href="/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata" title="Configure your own process-related metadata based on the unique needs of your organization or environment.">custom metadata</a> to your process group.</p>
+<p><code>DT_CLUSTER_ID</code></p>
+<p>If the <a href="/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection" title="Ways to customize process-group detection">process group detection rules</a> won't work for your use case, use this environment variable to <strong>group all processes with the same value</strong>.</p>
+<p><code>DT_NODE_ID</code></p>
+<p>If the <a href="/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection" title="Ways to customize process-group detection">process group detection rules</a> won't work for your use case, use this environment variable to <strong>separate process group instances</strong>.</p>
+<h3 id="validating-variables">Validating variables<a class="headerlink" href="#validating-variables" title="Permanent link">&para;</a></h3>
+<p>Parameter</p>
+<p>Description</p>
+<p><code>DT_LOGSTREAM</code></p>
+<p>Set this variable with <code>stdout</code> to configure the OneAgent to log errors to the console. To see additional OneAgent logs, set the log level with <code>DT_LOGLEVELCON</code> as follows.</p>
+<p><code>DT_LOGLEVELCON</code></p>
+<p>Use this environment variable to define the console log level. Valid options are: <code>NONE</code>, <code>SEVERE</code>, and <code>INFO</code>.</p>
+<p><code>DT_AGENTACTIVE</code></p>
+<p>Set to <code>true</code> or <code>false</code> to enable or disable OneAgent.</p>
+<h2 id="update-oneagent">Update OneAgent<a class="headerlink" href="#update-oneagent" title="Permanent link">&para;</a></h2>
+<p>Built-in image</p>
+<p>Custom image</p>
+<p>When an update is available, restart your application to update OneAgent.</p>
+<p>Each time you want to leverage a new version of Dynatrace OneAgent, you need to rebuild your local OneAgent code modules and application image. Any newly started pods from this application image will be monitored with the latest version of OneAgent.</p>
+<p>If you've specified a default OneAgent installation version for new hosts and applications using <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux" title="Learn about the different ways to update OneAgent on Linux.">OneAgent update settings</a>, your web apps will be automatically monitored by the defined default version of OneAgent.</p>
+<h2 id="uninstall-oneagent">Uninstall OneAgent<a class="headerlink" href="#uninstall-oneagent" title="Permanent link">&para;</a></h2>
+<p>Built-in image</p>
+<p>Custom image</p>
+<p>To uninstall OneAgent</p>
+<ol>
+<li>In Azure portal, go to your web application &gt; <strong>Configuration</strong> &gt; <strong>General settings</strong>.</li>
+<li>Remove your startup command (leave <strong>Startup Command</strong> empty).</li>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p>To uninstall OneAgent, remove references from above described Dynatrace integration from your application image and redeploy the application.</p>
+<h2 id="potential-conflict-with-application-insights">Potential conflict with Application Insights<a class="headerlink" href="#potential-conflict-with-application-insights" title="Permanent link">&para;</a></h2>
+<p>OneAgent may conflict with Azure Application Insights agents already instrumenting the application. If you don't see any monitoring data coming in, check if you have turned on Application Insights and re-try with Application Insights turned off.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/ingest-from/microsoft-azure-services" title="Set up and configure monitoring for Microsoft Azure.">Set up Dynatrace on Microsoft Azure</a></li>
+<li><a href="/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix" title="Learn which capabilities are supported by OneAgent on different operating systems and platforms.">OneAgent platform and capability support matrix</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Managed Docs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

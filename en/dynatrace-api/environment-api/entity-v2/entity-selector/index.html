@@ -969,7 +969,7 @@
 <h1 id="environment-api-v2-entity-selector_1">Environment API v2 - Entity selector<a class="headerlink" href="#environment-api-v2-entity-selector_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Reference</li>
-<li>Published Nov 20, 2020</li>
+<li>Updated on Jan 27, 2026</li>
 </ul>
 <p>The entity selector is a powerful instrument for specifying which entities you want to include to the scope of your Environment v2 API calls. It is used in several APIs, so you only have to learn the syntax once and then reuse it for multiple use cases.</p>
 <p>You must specify one of following criteria:</p>
@@ -985,6 +985,7 @@
 <li><a href="#mzid">Management zone ID</a></li>
 <li><a href="#mzname">Management zone name</a></li>
 <li><a href="#health">Health state</a></li>
+<li><a href="#deletedEntities">Inclusion of deleted entities</a></li>
 </ul>
 <p>If you provide several criteria, only results matching <strong>all</strong> criteria are included in the response.</p>
 <ul>
@@ -1375,6 +1376,35 @@
 </ul>
 <p>Case-sensitive value</p>
 <p>n/a</p>
+<h2 id="inclusion-of-deleted-entities">Inclusion of deleted entities<a class="headerlink" href="#inclusion-of-deleted-entities" title="Permanent link">&para;</a></h2>
+<p>Include or exclude entities marked as deleted. Those are limited to the following entity types:</p>
+<ul>
+<li><code>HTTP_CHECK</code></li>
+<li><code>SYNTHETIC_TEST</code></li>
+<li><code>EXTERNAL_SYNTHETIC_TEST</code></li>
+<li><code>MULTIPROTOCOL_MONITOR</code></li>
+<li><code>APPLICATION</code></li>
+<li><code>MOBILE_APPLICATION</code></li>
+<li><code>CUSTOM_APPLICATION</code></li>
+<li><code>DCRUM_APPLICATION</code></li>
+<li><code>CUSTOM_DEVICE</code></li>
+</ul>
+<p>Syntax</p>
+<p><code>deletedEntities.&lt;operator&gt;()</code></p>
+<p>Operator</p>
+<ul>
+<li><code>include</code>: include deleted entities</li>
+<li><code>exclude</code>: exclude deleted entities</li>
+</ul>
+<p>Values</p>
+<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
+<p>Example</p>
+<p><code>type(HTTP_CHECK), deletedEntities.include()</code>: Select all entities of type <code>HTTP_CHECK</code> and include the ones marked as deleted.</p>
+<p>Note</p>
+<ul>
+<li>By default, deleted entities are excluded from all results.</li>
+<li>This is not supported in <a href="/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text" title="Define rules to limit the entities accessible within a management zone.">management zone rules</a> and <a href="/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic" title="Find out how to define and apply tags manually and automatically.">automatic tagging</a>.</li>
+</ul>
 <h2 id="relationships">Relationships<a class="headerlink" href="#relationships" title="Permanent link">&para;</a></h2>
 <p>Relationships that the requested entity should have.</p>
 <p>To fetch the list of available relationships, issue the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-entity-type" title="View the details of a monitored entity type via Dynatrace API.">GET entity type</a> call and check the <strong>fromRelationships</strong> and <strong>toRelationships</strong> fields.</p>

@@ -985,14 +985,14 @@
 
 
 <h1 id="dynatrace-documentation-analyze-explore-automatelog-monitoring">Dynatrace Documentation: analyze-explore-automate/log-monitoring<a class="headerlink" href="#dynatrace-documentation-analyze-explore-automatelog-monitoring" title="Permanent link">&para;</a></h1>
-<p>Generated: 2026-02-17</p>
-<p>Files combined: 29</p>
+<p>Generated: 2026-02-18</p>
+<p>Files combined: 31</p>
 <hr />
 <h2 id="source-add-log-files-sources-v2md">Source: add-log-files-sources-v2.md<a class="headerlink" href="#source-add-log-files-sources-v2md" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Log sources and storage (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2
-scraped: 2026-02-16T09:34:34.757711</p>
+scraped: 2026-02-18T05:46:21.776337</p>
 <hr />
 <h1 id="log-sources-and-storage-logs-classic">Log sources and storage (Logs Classic)<a class="headerlink" href="#log-sources-and-storage-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-sources-and-storage-logs-classic_1">Log sources and storage (Logs Classic)<a class="headerlink" href="#log-sources-and-storage-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -1036,11 +1036,86 @@ scraped: 2026-02-16T09:34:34.757711</p>
 <p>Is this change reversible?</p>
 <p>No. After the change, all old configurations are wiped out, so be sure before you make this change.</p>
 <hr />
+<h2 id="source-cloud-provider-log-forwardingmd">Source: cloud-provider-log-forwarding.md<a class="headerlink" href="#source-cloud-provider-log-forwardingmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Cloud provider log forwarding (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/cloud-provider-log-forwarding
+scraped: 2026-02-17T21:33:13.971092</p>
+<hr />
+<h1 id="cloud-provider-log-forwarding-logs-classic">Cloud provider log forwarding (Logs Classic)<a class="headerlink" href="#cloud-provider-log-forwarding-logs-classic" title="Permanent link">&para;</a></h1>
+<h1 id="cloud-provider-log-forwarding-logs-classic_1">Cloud provider log forwarding (Logs Classic)<a class="headerlink" href="#cloud-provider-log-forwarding-logs-classic_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Overview</li>
+<li>3-min read</li>
+<li>Updated on Jan 18, 2023</li>
+</ul>
+<p>Log Monitoring Classic</p>
+<p>Dynatrace version 1.230+</p>
+<p>For the newest Dynatrace version, see <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding" title="Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.">Cloud provider log forwarding</a>.</p>
+<p>DDU consumption for Log Monitoring</p>
+<p>DDU pricing applies to cloud Log Monitoring. See <a href="/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption" title="Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.">DDUs for Log Monitoring</a> for details.</p>
+<h2 id="amazon-web-services">Amazon Web Services<a class="headerlink" href="#amazon-web-services" title="Permanent link">&para;</a></h2>
+<p>Stream or forward your logs from Amazon CloudWatch, AWS S3 or other AWS sources.</p>
+<h3 id="stream-logs-via-amazon-data-firehose">Stream logs via Amazon Data Firehose<a class="headerlink" href="#stream-logs-via-amazon-data-firehose" title="Permanent link">&para;</a></h3>
+<p>Dynatrace integration with Amazon Data Firehose provides a simple and safe way to ingest AWS logs.</p>
+<p>To enable AWS log forwarding,</p>
+<ol>
+<li>Create Amazon Data Firehose instance.</li>
+<li>Configure it with your Dynatrace environment as a destination.</li>
+<li>Connect your CloudWatch log groups by creating a subscription filter or send logs directly to Firehose from services that support it (for example, VPC Flow Logs).
+   Firehose and other created cloud resources incur AWS costs according to the standard AWS billing policy.</li>
+</ol>
+<p>To learn more, see <a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose" title="Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.">Stream logs via Amazon Data Firehose (Logs Classic)</a>.</p>
+<h3 id="log-ingestion-from-amazon-s3">Log ingestion from Amazon S3<a class="headerlink" href="#log-ingestion-from-amazon-s3" title="Permanent link">&para;</a></h3>
+<p>You can stream logs from AWS S3 to Dynatrace using a serverless architecture.</p>
+<p>The log forwarder offers:</p>
+<ul>
+<li>Out of the box parsing of AWS services, see <a href="https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder#supported-aws-services">Supported AWS Servicesï»¿</a></li>
+<li>Processing mechanism for any other use case including 3rd party logs written to s3, see <a href="https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_processing.md#log-processing">Log Processingï»¿</a></li>
+<li>Cross-region support, see <a href="https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_forwarding.md#forward-logs-from-s3-buckets-on-different-aws-regions">S3 buckets on different AWS Regionsï»¿</a></li>
+<li>Multiple AWS account support, see <a href="https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_forwarding.md#forward-logs-from-s3-buckets-on-different-aws-accounts">S3 buckets on different AWS accountsï»¿</a></li>
+</ul>
+<p>For detailed instructions on how to set up log ingestion from AWS S3, see <a href="https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder">documentation on GitHubï»¿</a>.</p>
+<h3 id="aws-lambda-log-collection">AWS Lambda log collection<a class="headerlink" href="#aws-lambda-log-collection" title="Permanent link">&para;</a></h3>
+<p>You can collect logs directly from your AWS Lambda functions and send them to Dynatrace for analysis. The solution is an alternative to the CloudWatch log forwarder with benefits in terms of cost and latency, and is also easier to set up, particularly if AWS Lambda tracing is already in place. As part of the OneAgent installation process, this feature provides a streamlined solution for collecting logs from your Lambda functions. For more information, see <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector" title="Collect logs from AWS Lambda functions">AWS Lambda documentation page</a>.</p>
+<h3 id="aws-log-monitoring-using-log-forwarder-deprecated">AWS log monitoring using log forwarder Deprecated<a class="headerlink" href="#aws-log-monitoring-using-log-forwarder-deprecated" title="Permanent link">&para;</a></h3>
+<p>You can stream logs from Amazon CloudWatch into Dynatrace logs via an ActiveGate.</p>
+<p>To enable AWS log forwarding, you need to deploy our special-purpose CloudFormation stack into your AWS account. The stack consists of a Kinesis Firehose instance and a Lambda function. These resources incur AWS costs according to standard AWS billing policy. The same applies to included self-monitoring resources (CloudWatch dashboards and metrics).</p>
+<p>For detailed instructions on how to set up AWS log forwarding, see <a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder#prereq" title="Use AWS log forwarding to ingest AWS logs.">Log monitoring with AWS log forwarder</a>.</p>
+<h3 id="stream-logs-via-amazon-data-firehose_1">Stream logs via Amazon Data Firehose<a class="headerlink" href="#stream-logs-via-amazon-data-firehose_1" title="Permanent link">&para;</a></h3>
+<p>Dynatrace integration with Amazon Data Firehose provides a simple and safe way to ingest AWS logs.</p>
+<p>To enable AWS log forwarding, you need to create Amazon Data Firehose instance and configure it with your Dynatrace environment as a destination. Then you can connect your CloudWatch log groups by creating a Subscription Filter or send logs directly to Firehose from services that support it (e.g. VPC flow logs). Firehose and other created cloud resources incur AWS costs according to the standard AWS billing policy.</p>
+<h2 id="microsoft-azure">Microsoft Azure<a class="headerlink" href="#microsoft-azure" title="Permanent link">&para;</a></h2>
+<p>Azure log forwarding allows you to stream Azure logs from Azure Event Hubs into Dynatrace logs via an Azure Function App instance. It supports both Azure resource logs and activity logs.</p>
+<p>Azure log forwarding is performed directly through Cluster API. If you don't want to use direct ingest through the Cluster API, you have to use an existing ActiveGate for log ingestion.</p>
+<p>Deployment of Azure log forwarder results in creating the following resources:</p>
+<ul>
+<li>Storage account (<code>Microsoft.Storage/storageAccounts</code>)</li>
+<li>Storage Account Blob Service (<code>Microsoft.Storage/storageAccounts/blobServices</code>)</li>
+<li>Azure App Service plan (<code>Microsoft.Web/serverfarms</code>)</li>
+<li>Azure Function App (<code>Microsoft.Web/sites</code>)</li>
+</ul>
+<p>Azure log forwarder uses Linux based Azure function by default. Windows based function is not supported.</p>
+<p>For details about the resources created, see the <a href="https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/blob/master/deployment/dynatrace-azure-forwarder.json">Azure Resource Manager file on GitHubï»¿</a></p>
+<p>For detailed instruction on how to set up Azure log forwarding see, <a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure#prereq" title="Use Azure log forwarding to ingest Azure logs.">Azure Logs</a>.</p>
+<h2 id="google-cloud">Google Cloud<a class="headerlink" href="#google-cloud" title="Permanent link">&para;</a></h2>
+<p>To set up Google Cloud monitoring for metrics and logs, you'll run the deployment script in Google Cloud Shell. During setup, a new Pub/Sub subscription will be created. GKE will run two containers: a metric forwarder and a log forwarder. After installation, you'll get metrics, logs, dashboards, and alerts for your configured services in Dynatrace. Instructions will depend on the location where you want the deployment script to run:</p>
+<ul>
+<li><a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8" title="Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.">On a new GKE Autopilot cluster created automatically</a>. Recommended</li>
+<li><a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster" title="Deploy log and metric monitoring for Google Cloud services on an existing standard GKE or GKE Autopilot cluster">On an existing GKE standard or GKE Autopilot cluster</a>.</li>
+</ul>
+<p>Depending on where you want log ingestion to be performed, you may need additional resources. For example, for Managed deployments, there is a possibility to use an AG for log ingestion. But you have to do it manually since the installation script does not deploy it.</p>
+<p>For all log ingestion options, see <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#ingestion" title="Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.">Log ingestion</a>.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption" title="Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.">DDUs for Log Monitoring Classic</a></li>
+</ul>
+<hr />
 <h2 id="source-lm-fluent-bit-logs-k8smd">Source: lm-fluent-bit-logs-k8s.md<a class="headerlink" href="#source-lm-fluent-bit-logs-k8smd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Stream Kubernetes logs with Fluent Bit (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-fluent-bit-logs-k8s
-scraped: 2026-02-17T05:06:43.821046</p>
+scraped: 2026-02-18T05:55:55.565227</p>
 <hr />
 <h1 id="stream-kubernetes-logs-with-fluent-bit-logs-classic">Stream Kubernetes logs with Fluent Bit (Logs Classic)<a class="headerlink" href="#stream-kubernetes-logs-with-fluent-bit-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="stream-kubernetes-logs-with-fluent-bit-logs-classic_1">Stream Kubernetes logs with Fluent Bit (Logs Classic)<a class="headerlink" href="#stream-kubernetes-logs-with-fluent-bit-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -1784,7 +1859,7 @@ scraped: 2026-02-17T05:06:43.821046</p>
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>2024-06-11T07:05:37.257418778Z fluentbit_output_proc_bytes_total{name=&quot;http.0&quot;} = 359630
 </code></pre></div>
 6. When <code>fluentbit_output_errors_total</code> or <code>fluentbit_output_retries_failed_total</code> metrics indicate problems, a potential reason is that you have reached <a href="https://dt-url.net/vj23poy">log monitoring limitsï»¿</a>.</p>
-<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-with-fluent-bit" title="Integrate Fluent Bit to stream logs to Dynatrace.">Stream logs to Dynatrace with Fluent Bit (Logs Classic)</a></li>
 </ul>
@@ -1793,7 +1868,7 @@ scraped: 2026-02-17T05:06:43.821046</p>
 <hr />
 <p>title: Automatic log enrichment (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation
-scraped: 2026-02-17T05:07:37.720612</p>
+scraped: 2026-02-18T05:51:45.957891</p>
 <hr />
 <h1 id="automatic-log-enrichment-logs-classic">Automatic log enrichment (Logs Classic)<a class="headerlink" href="#automatic-log-enrichment-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="automatic-log-enrichment-logs-classic_1">Automatic log enrichment (Logs Classic)<a class="headerlink" href="#automatic-log-enrichment-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -1909,7 +1984,7 @@ The <code>level</code> severity key in the Log ingestion API request parameter c
 <li><code>dt.entity.process_group_instance</code></li>
 <li><code>dt.source_entity</code></li>
 </ul>
-<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api" title="Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.">Log ingestion API</a></li>
 <li><a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa" title="Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.">Log ingestion via OneAgent</a></li>
@@ -2044,16 +2119,109 @@ scraped: 2026-02-06T16:28:21.884183</p>
 <ul>
 <li><a href="https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608">Troubleshooting log Ingestion via API - POST ingest logsï»¿</a></li>
 </ul>
-<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs" title="Push custom logs to Dynatrace via the Log Monitoring API v2.">Log Monitoring API v2 - POST ingest logs</a></li>
 </ul>
+<hr />
+<h2 id="source-log-monitoring-journaldmd">Source: log-monitoring-journald.md<a class="headerlink" href="#source-log-monitoring-journaldmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Log Monitoring from Journald (Logs Classic)
+source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-journald
+scraped: 2026-02-18T05:48:55.319656</p>
+<hr />
+<h1 id="log-monitoring-from-journald-logs-classic">Log Monitoring from Journald (Logs Classic)<a class="headerlink" href="#log-monitoring-from-journald-logs-classic" title="Permanent link">&para;</a></h1>
+<h1 id="log-monitoring-from-journald-logs-classic_1">Log Monitoring from Journald (Logs Classic)<a class="headerlink" href="#log-monitoring-from-journald-logs-classic_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Tutorial</li>
+<li>4-min read</li>
+<li>Published Apr 22, 2025</li>
+</ul>
+<p>Log Monitoring Classic</p>
+<p>OneAgent version 1.307+</p>
+<p>Log module is capable of reading, processing, and uploading entries from systemd-journald, a Linux-based centralized logging system service. Events/logs are usually stored in files located in the <code>/var/log/journal/'machine-id'/</code> directory, where <code>machine-id</code> is a long string of digits identifying the machine. These files are kept in a binary, compressed format, maintained by the systemd-journald engine to manage size per file and overall, retention, rotation, etc., according to its settings.</p>
+<h2 id="how-journald-works">How Journald works<a class="headerlink" href="#how-journald-works" title="Permanent link">&para;</a></h2>
+<p>To avoid the problems of manually tracking the files, such as rotation, decompression, or parsing, Log module uses system API calls to access the entire functionality. This is achieved by opening the system library, <code>libsystemd.so</code> and its dependencies, mapping selected functions from the library, and creating a context object, to communicate with the Journald system. This way, Log module becomes a client of Journald and can use a variety of its exposed functions.</p>
+<p>At the beginning, Log module opens a handler at the default location of the Journald context. No specific path is used, allowing the handler to open its well-known location. Then the agent reads the entries one by one, keeping track of the current position.</p>
+<h2 id="enable-journald-support">Enable Journald support<a class="headerlink" href="#enable-journald-support" title="Permanent link">&para;</a></h2>
+<p>To enable Journald log detection, follow the steps below:</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Log Monitoring</strong> &gt; <strong>Log module feature flags</strong>.</li>
+<li>Select <strong>Enable Journald log detector</strong>.</li>
+<li>Select <strong>Save changes</strong>.</li>
+</ol>
+<p>Enabling the feature flag is required to opt-in. Without it, even with configured ingest rules, Journald logs will not appear in Dynatrace.</p>
+<h2 id="configure-log-ingestion-from-journald">Configure log ingestion from Journald<a class="headerlink" href="#configure-log-ingestion-from-journald" title="Permanent link">&para;</a></h2>
+<p>You can enable log ingestion from Journald by either configuring the default Journald <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration" title="Include and exclude specific log sources already known to OneAgent for storage and analysis.">ingest rule</a>, or by configuring the tenant storage upload, for example <code>kubelet.service</code> as <code>Journald.unit</code> from Journald.</p>
+<h3 id="enable-the-default-ingestion-rule">Enable the default ingestion rule<a class="headerlink" href="#enable-the-default-ingestion-rule" title="Permanent link">&para;</a></h3>
+<p>For new accounts, the default Journald ingest rule is enabled by default, and the configuration described in this section is not needed.</p>
+<p>Follow the steps below to configure the default Journald ingest rule:</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Log Monitoring</strong> &gt; <strong>Log ingest rules</strong>.</li>
+<li>Enable the <strong>[Built-in] Ingest Journald logs</strong> rule to ingest all Journald logs.</li>
+<li>Select <strong>Save changes</strong>.</li>
+</ol>
+<h3 id="create-a-custom-ingestion-rule">Create a custom ingestion rule<a class="headerlink" href="#create-a-custom-ingestion-rule" title="Permanent link">&para;</a></h3>
+<p>Follow the steps below to configure the tenat storage upload for <code>kubelet.service</code> logs from Journad:</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Log Monitoring</strong> &gt; <strong>Log ingest rules</strong>.</li>
+<li>Select <strong>Add rule</strong> and provide the title for your configuration.</li>
+<li>Select <strong>Add matcher</strong>. This is the first matcher to match two specified process groups.</li>
+<li>From the <strong>Attribute</strong> list, select <strong>Journald Unit</strong>.</li>
+<li>Select <strong>Add value</strong> and type <code>kubelet.service</code>.</li>
+<li>Select <strong>Add matcher</strong> again to match the specified log data source.</li>
+<li>From the <strong>Attribute</strong> list, select <strong>Log source</strong>.</li>
+<li>Select <strong>Add value</strong> and enter <strong>Journald</strong> as the value.</li>
+<li>Select <strong>Save changes</strong>.</li>
+</ol>
+<h2 id="attributes-selected-in-journald">Attributes selected in journald<a class="headerlink" href="#attributes-selected-in-journald" title="Permanent link">&para;</a></h2>
+<p>Each entry is processed to gain the following attributes:</p>
+<p>Semantic attribute name</p>
+<p>Description</p>
+<p><code>Timestamp</code></p>
+<p>Retrieved by direct API call for timestamp, results in microseconds since epoch converted to agentâs timestamp domain resolution</p>
+<p><code>Content</code></p>
+<p>The extracted value of the API call for data with the <strong>MESSAGE</strong> field as a selector</p>
+<p><code>Journald.unit</code></p>
+<p>The extracted value of the API call for data with the <strong>UNIT</strong> field as a selector
+As an alternative, the <strong><em>SYSTEMD_UNIT</em></strong> field is searched. It may happen that none of the fields are found.</p>
+<p><code>LogEntryLevel</code></p>
+<p>The extracted value of the API call for data with the <strong>PRIORITY</strong> field as a selector, priority. Consult the table below for the definitions of the priority levels.</p>
+<h2 id="priority-level">Priority level<a class="headerlink" href="#priority-level" title="Permanent link">&para;</a></h2>
+<p>Journald priority codes are used to mark the importance of a message. The following table shows how these priorities translate into Dynatrace severity:</p>
+<p>Value</p>
+<p>Severity</p>
+<p>Description</p>
+<p>0</p>
+<p>Emergency</p>
+<p>System is unusable</p>
+<p>1</p>
+<p>Alert</p>
+<p>Should be corrected immediately</p>
+<p>2</p>
+<p>Critical</p>
+<p>Critical conditions</p>
+<p>3</p>
+<p>Error</p>
+<p>Error conditions</p>
+<p>4</p>
+<p>Warn</p>
+<p>May indicate that an error will occur if action is not taken</p>
+<p>5</p>
+<p>Notice</p>
+<p>Events that are unusual, but not error conditions</p>
+<p>6</p>
+<p>Info</p>
+<p>Normal operational messages that require no action</p>
+<p>7</p>
+<p>Debug</p>
+<p>Messages which may need to be enabled first, only useful for debugging</p>
 <hr />
 <h2 id="source-log-monitoring-kubernetesmd">Source: log-monitoring-kubernetes.md<a class="headerlink" href="#source-log-monitoring-kubernetesmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Log Monitoring in Kubernetes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-kubernetes
-scraped: 2026-02-17T04:57:41.117891</p>
+scraped: 2026-02-18T05:48:01.102892</p>
 <hr />
 <h1 id="log-monitoring-in-kubernetes-logs-classic">Log Monitoring in Kubernetes (Logs Classic)<a class="headerlink" href="#log-monitoring-in-kubernetes-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-monitoring-in-kubernetes-logs-classic_1">Log Monitoring in Kubernetes (Logs Classic)<a class="headerlink" href="#log-monitoring-in-kubernetes-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -2730,7 +2898,7 @@ Standard log processing features from OneAgent, including <a href="/docs/analyze
 <hr />
 <p>title: Log rotation patterns (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns
-scraped: 2026-02-17T05:02:06.316967</p>
+scraped: 2026-02-18T05:57:07.358558</p>
 <hr />
 <h1 id="log-rotation-patterns-logs-classic">Log rotation patterns (Logs Classic)<a class="headerlink" href="#log-rotation-patterns-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-rotation-patterns-logs-classic_1">Log rotation patterns (Logs Classic)<a class="headerlink" href="#log-rotation-patterns-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -2828,7 +2996,7 @@ or<br />
 <hr />
 <p>title: Log ingest rules (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage
-scraped: 2026-02-17T05:09:18.817474</p>
+scraped: 2026-02-18T05:52:01.321423</p>
 <hr />
 <h1 id="log-ingest-rules-logs-classic">Log ingest rules (Logs Classic)<a class="headerlink" href="#log-ingest-rules-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-ingest-rules-logs-classic_1">Log ingest rules (Logs Classic)<a class="headerlink" href="#log-ingest-rules-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -3951,7 +4119,7 @@ Rules with two matchers will not work here.</p>
 <hr />
 <p>title: Log ingestion API (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api
-scraped: 2026-02-17T05:01:33.788856</p>
+scraped: 2026-02-18T05:40:49.470113</p>
 <hr />
 <h1 id="log-ingestion-api-logs-classic_2">Log ingestion API (Logs Classic)<a class="headerlink" href="#log-ingestion-api-logs-classic_2" title="Permanent link">&para;</a></h1>
 <h1 id="log-ingestion-api-logs-classic_3">Log ingestion API (Logs Classic)<a class="headerlink" href="#log-ingestion-api-logs-classic_3" title="Permanent link">&para;</a></h1>
@@ -4070,7 +4238,7 @@ scraped: 2026-02-17T05:01:33.788856</p>
 <ul>
 <li><a href="https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608">Troubleshooting log Ingestion via API - POST ingest logsï»¿</a></li>
 </ul>
-<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs" title="Push custom logs to Dynatrace via the Log Monitoring API v2.">Log Monitoring API v2 - POST ingest logs</a></li>
 <li><a href="/docs/ingest-from/opentelemetry/otlp-api/ingest-logs" title="Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.">Ingest OTLP logs</a></li>
@@ -4080,7 +4248,7 @@ scraped: 2026-02-17T05:01:33.788856</p>
 <hr />
 <p>title: Stream logs to Dynatrace with Fluentd on Kubernetes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-fluentd-k8s
-scraped: 2026-02-16T09:37:28.932924</p>
+scraped: 2026-02-18T05:57:30.625839</p>
 <hr />
 <h1 id="stream-logs-to-dynatrace-with-fluentd-on-kubernetes-logs-classic">Stream logs to Dynatrace with Fluentd on Kubernetes (Logs Classic)<a class="headerlink" href="#stream-logs-to-dynatrace-with-fluentd-on-kubernetes-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="stream-logs-to-dynatrace-with-fluentd-on-kubernetes-logs-classic_1">Stream logs to Dynatrace with Fluentd on Kubernetes (Logs Classic)<a class="headerlink" href="#stream-logs-to-dynatrace-with-fluentd-on-kubernetes-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -4105,7 +4273,7 @@ scraped: 2026-02-16T09:37:28.932924</p>
 <p>Logs coming from Fluentd aren't linked with the Kubernetes workloads. Consequently, you can't search for logs by Kubernetes workload on the <strong>Log viewer</strong> page in Dynatrace. However, you can still see logs on the corresponding <strong>Kubernetes workloads</strong> pages.</p>
 <h2 id="deploy-integration">Deploy integration<a class="headerlink" href="#deploy-integration" title="Permanent link">&para;</a></h2>
 <p>For instructions on how to deploy Fluentd integration, see the <a href="https://github.com/dynatrace-oss/fluent-plugin-dynatrace/tree/main/example">documentation on GitHubï»¿</a>.</p>
-<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring" title="Monitor Kubernetes/OpenShift with Dynatrace.">Kubernetes Classic</a></li>
 </ul>
@@ -4114,7 +4282,7 @@ scraped: 2026-02-16T09:37:28.932924</p>
 <hr />
 <p>title: Stream logs to Dynatrace with Logstash (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-to-dynatrace-with-logstash
-scraped: 2026-02-15T21:30:25.078511</p>
+scraped: 2026-02-18T05:50:45.725546</p>
 <hr />
 <h1 id="stream-logs-to-dynatrace-with-logstash-logs-classic">Stream logs to Dynatrace with Logstash (Logs Classic)<a class="headerlink" href="#stream-logs-to-dynatrace-with-logstash-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="stream-logs-to-dynatrace-with-logstash-logs-classic_1">Stream logs to Dynatrace with Logstash (Logs Classic)<a class="headerlink" href="#stream-logs-to-dynatrace-with-logstash-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -4173,7 +4341,7 @@ scraped: 2026-02-15T21:30:25.078511</p>
 <hr />
 <p>title: Stream logs to Dynatrace with Fluent Bit (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-with-fluent-bit
-scraped: 2026-02-16T09:31:20.065788</p>
+scraped: 2026-02-17T21:30:49.025094</p>
 <hr />
 <h1 id="stream-logs-to-dynatrace-with-fluent-bit-logs-classic">Stream logs to Dynatrace with Fluent Bit (Logs Classic)<a class="headerlink" href="#stream-logs-to-dynatrace-with-fluent-bit-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="stream-logs-to-dynatrace-with-fluent-bit-logs-classic_1">Stream logs to Dynatrace with Fluent Bit (Logs Classic)<a class="headerlink" href="#stream-logs-to-dynatrace-with-fluent-bit-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -5102,7 +5270,7 @@ scraped: 2026-02-16T21:24:12.982633</p>
 <hr />
 <p>title: Log custom attributes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes
-scraped: 2026-02-16T21:26:08.127111</p>
+scraped: 2026-02-17T21:25:45.747786</p>
 <hr />
 <h1 id="log-custom-attributes-logs-classic">Log custom attributes (Logs Classic)<a class="headerlink" href="#log-custom-attributes-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-custom-attributes-logs-classic_1">Log custom attributes (Logs Classic)<a class="headerlink" href="#log-custom-attributes-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -5193,7 +5361,7 @@ scraped: 2026-02-16T21:26:08.127111</p>
 <hr />
 <p>title: Log events (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events
-scraped: 2026-02-17T04:58:03.019674</p>
+scraped: 2026-02-18T05:51:57.630104</p>
 <hr />
 <h1 id="log-events-logs-classic">Log events (Logs Classic)<a class="headerlink" href="#log-events-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-events-logs-classic_1">Log events (Logs Classic)<a class="headerlink" href="#log-events-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -5292,7 +5460,7 @@ scraped: 2026-02-17T04:58:03.019674</p>
 <hr />
 <p>title: Log metrics (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics
-scraped: 2026-02-16T21:29:06.579303</p>
+scraped: 2026-02-18T05:54:47.982647</p>
 <hr />
 <h1 id="log-metrics-logs-classic">Log metrics (Logs Classic)<a class="headerlink" href="#log-metrics-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-metrics-logs-classic_1">Log metrics (Logs Classic)<a class="headerlink" href="#log-metrics-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -5566,7 +5734,7 @@ Wrap keywords with double quotes.</p>
 <hr />
 <p>title: Management zones and ingested log data (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring
-scraped: 2026-02-16T21:31:59.407316</p>
+scraped: 2026-02-18T05:55:48.391665</p>
 <hr />
 <h1 id="management-zones-and-ingested-log-data-logs-classic">Management zones and ingested log data (Logs Classic)<a class="headerlink" href="#management-zones-and-ingested-log-data-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="management-zones-and-ingested-log-data-logs-classic_1">Management zones and ingested log data (Logs Classic)<a class="headerlink" href="#management-zones-and-ingested-log-data-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -5593,7 +5761,7 @@ scraped: 2026-02-16T21:31:59.407316</p>
 <p>Users must have the <strong>View logs</strong> permission on the environment level or management-zone level to be able to view the ingested and automatically assigned log data.</p>
 <p>The log viewer displays log data for up to 10,000 monitored entities per management zone. If your management zone contains more than 10,000 monitored entities, and you would like to see log data for all of your monitored entities, you can break your management zone into smaller zones of fewer than 10,000 monitored entities each.</p>
 <p>If you need to filter logs by other attributes, you can add a <a href="/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules#ui" title="Define rules to limit the entities accessible within a management zone.">rule for including log-based dimensional data</a> in a management zone. Logs satisfying the conditions of such a rule are then displayed in the log viewer after selecting a management zone using the <strong>Filter</strong> button .</p>
-<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs" title="Push custom logs to Dynatrace via the Log Monitoring API v2.">Log Monitoring API v2 - POST ingest logs</a></li>
 <li><a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api" title="Learn how Dynatrace ingests log data and what are potential limits such ingestion.">Log ingestion API (Logs Classic)</a></li>
@@ -5696,7 +5864,7 @@ scraped: 2026-02-17T04:58:23.228127</p>
 <hr />
 <p>title: Connecting log data to traces (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment
-scraped: 2026-02-17T04:47:07.508508</p>
+scraped: 2026-02-18T05:32:18.855058</p>
 <hr />
 <h1 id="connecting-log-data-to-traces-logs-classic">Connecting log data to traces (Logs Classic)<a class="headerlink" href="#connecting-log-data-to-traces-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="connecting-log-data-to-traces-logs-classic_1">Connecting log data to traces (Logs Classic)<a class="headerlink" href="#connecting-log-data-to-traces-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -6776,7 +6944,7 @@ scraped: 2026-02-17T04:47:07.508508</p>
 <p>When using OneAgent, make sure to enable the public <a href="/docs/ingest-from/extensions/concepts#eec" title="Learn more about the concept of Dynatrace Extensions.">Extension Execution Controller</a> in your Dynatrace Settings, otherwise no data will be sent.</p>
 <p>Go to <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>Extension Execution Controller</strong>. The toggles <strong>Enable Extension Execution Controller</strong> and <strong>Enable local PIPE/HTTP metric and Log Ingest API</strong> should be active.</p>
 <p>For details on configuration, see <a href="/docs/ingest-from/opentelemetry/walkthroughs/python" title="Learn how to instrument your Python application using OpenTelemetry and Dynatrace.">Instrument your Python application with OpenTelemetry</a></p>
-<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces" title="Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.">Leverage log enrichment for traces to resolve problems</a></li>
 </ul>
@@ -6785,7 +6953,7 @@ scraped: 2026-02-17T04:47:07.508508</p>
 <hr />
 <p>title: Sensitive data masking (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/sensitive-data-masking
-scraped: 2026-02-17T05:03:14.559420</p>
+scraped: 2026-02-18T05:58:19.609944</p>
 <hr />
 <h1 id="sensitive-data-masking-logs-classic">Sensitive data masking (Logs Classic)<a class="headerlink" href="#sensitive-data-masking-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="sensitive-data-masking-logs-classic_1">Sensitive data masking (Logs Classic)<a class="headerlink" href="#sensitive-data-masking-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -7707,7 +7875,7 @@ The hierarchy is as follows:</p>
 <ul>
 <li>If the masking process takes too much time, the log file affected is blocked until the restart of OneAgent or any configuration change, and then you get the <code>File not monitored - incorrect sensitive data masking rule</code> message.</li>
 </ul>
-<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_8">Related topics<a class="headerlink" href="#related-topics_8" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/manage/data-privacy-and-security" title="Learn how Dynatrace applies various security measures required to protect private data.">Data privacy and security</a></li>
 <li><a href="/docs/analyze-explore-automate/log-monitoring/log-monitoring-limits" title="Default limits for the latest version of Dynatrace Log Monitoring.">Log Monitoring default limits (Logs Classic)</a></li>
@@ -7717,7 +7885,7 @@ The hierarchy is as follows:</p>
 <hr />
 <p>title: Timestamp/splitting configuration (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration
-scraped: 2026-02-17T05:04:35.966162</p>
+scraped: 2026-02-18T05:44:31.076939</p>
 <hr />
 <h1 id="timestampsplitting-configuration-logs-classic">Timestamp/splitting configuration (Logs Classic)<a class="headerlink" href="#timestampsplitting-configuration-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="timestampsplitting-configuration-logs-classic_1">Timestamp/splitting configuration (Logs Classic)<a class="headerlink" href="#timestampsplitting-configuration-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -8006,7 +8174,7 @@ See the code block below for an example.</p>
 <hr />
 <p>title: Supported timestamp formats (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format
-scraped: 2026-02-16T21:29:11.991320</p>
+scraped: 2026-02-18T05:45:56.744866</p>
 <hr />
 <h1 id="supported-timestamp-formats-logs-classic">Supported timestamp formats (Logs Classic)<a class="headerlink" href="#supported-timestamp-formats-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="supported-timestamp-formats-logs-classic_1">Supported timestamp formats (Logs Classic)<a class="headerlink" href="#supported-timestamp-formats-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -8138,7 +8306,7 @@ Due to multiple formats of incoming log data, Log Monitoring also enables you to
 <hr />
 <p>title: Log Monitoring configuration (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration
-scraped: 2026-02-17T05:03:52.432002</p>
+scraped: 2026-02-18T05:43:22.166692</p>
 <hr />
 <h1 id="log-monitoring-configuration-logs-classic">Log Monitoring configuration (Logs Classic)<a class="headerlink" href="#log-monitoring-configuration-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-monitoring-configuration-logs-classic_1">Log Monitoring configuration (Logs Classic)<a class="headerlink" href="#log-monitoring-configuration-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -8485,7 +8653,7 @@ If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT &lt;=
 <hr />
 <p>title: Log processing examples (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples
-scraped: 2026-02-17T04:58:45.508175</p>
+scraped: 2026-02-18T05:53:56.617855</p>
 <hr />
 <h1 id="log-processing-examples-logs-classic">Log processing examples (Logs Classic)<a class="headerlink" href="#log-processing-examples-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-processing-examples-logs-classic_1">Log processing examples (Logs Classic)<a class="headerlink" href="#log-processing-examples-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -9815,7 +9983,7 @@ Whenever we want to change any attribute from the original event, we need to dec
 <hr />
 <p>title: Log processing (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-processing
-scraped: 2026-02-17T05:01:40.380710</p>
+scraped: 2026-02-18T05:54:06.626853</p>
 <hr />
 <h1 id="log-processing-logs-classic">Log processing (Logs Classic)<a class="headerlink" href="#log-processing-logs-classic" title="Permanent link">&para;</a></h1>
 <h1 id="log-processing-logs-classic_1">Log processing (Logs Classic)<a class="headerlink" href="#log-processing-logs-classic_1" title="Permanent link">&para;</a></h1>
@@ -9874,7 +10042,7 @@ scraped: 2026-02-17T05:01:40.380710</p>
 <hr />
 <p>title: Upgrade to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma
-scraped: 2026-02-16T21:21:25.880404</p>
+scraped: 2026-02-18T05:35:37.755560</p>
 <hr />
 <h1 id="upgrade-to-log-management-and-analytics">Upgrade to Log Management and Analytics<a class="headerlink" href="#upgrade-to-log-management-and-analytics" title="Permanent link">&para;</a></h1>
 <h1 id="upgrade-to-log-management-and-analytics_1">Upgrade to Log Management and Analytics<a class="headerlink" href="#upgrade-to-log-management-and-analytics_1" title="Permanent link">&para;</a></h1>

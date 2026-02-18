@@ -25,7 +25,7 @@
     
     
       
-        <title>Collector Configuration - Dynatrace Managed - Документация</title>
+        <title>Configure the OpenTelemetry Collector - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#collector-configuration" class="md-skip">
+        <a href="#configure-the-opentelemetry-collector" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Collector Configuration
+              Configure the OpenTelemetry Collector
             
           </span>
         </div>
@@ -965,8 +965,8 @@
 
 
 
-<h1 id="collector-configuration">Collector Configuration<a class="headerlink" href="#collector-configuration" title="Permanent link">&para;</a></h1>
-<h1 id="collector-configuration_1">Collector Configuration<a class="headerlink" href="#collector-configuration_1" title="Permanent link">&para;</a></h1>
+<h1 id="configure-the-opentelemetry-collector">Configure the OpenTelemetry Collector<a class="headerlink" href="#configure-the-opentelemetry-collector" title="Permanent link">&para;</a></h1>
+<h1 id="configure-the-opentelemetry-collector_1">Configure the OpenTelemetry Collector<a class="headerlink" href="#configure-the-opentelemetry-collector_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
@@ -976,7 +976,7 @@
 <p>To successfully configure your Collector instance, you need to configure each component (receiver, optional processor, and exporter) individually in the Collector YAML configuration file and enable them via additional pipeline objects.</p>
 <p>Dynatrace Collector</p>
 <p>As part of a Dynatrace Collector setup, note that you can only configure the components shipped with Dynatrace Collector.</p>
-<p>Find a full list of all supported Collector components at <a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace Collector.">Dynatrace Collector</a>.</p>
+<p>Find a full list of all supported Collector components at <a href="/docs/ingest-from/opentelemetry/collector#dt-collector-dist" title="Learn about the Dynatrace OTel Collector.">Dynatrace OTel Collector</a>.</p>
 <h2 id="configuration-example">Configuration example<a class="headerlink" href="#configuration-example" title="Permanent link">&para;</a></h2>
 <p>Here is an example YAML file for a very basic Collector configuration that can be used to export OpenTelemetry traces, metrics, and logs to Dynatrace.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>receivers:

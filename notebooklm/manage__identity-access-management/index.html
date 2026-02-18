@@ -957,10 +957,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#source-access-tokensmd" class="md-nav__link">
+  <a href="#source-rotate-tenant-tokenmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Source: access-tokens.md
+        Source: rotate-tenant-token.md
       
     </span>
   </a>
@@ -985,14 +985,75 @@
 
 
 <h1 id="dynatrace-documentation-manageidentity-access-management">Dynatrace Documentation: manage/identity-access-management<a class="headerlink" href="#dynatrace-documentation-manageidentity-access-management" title="Permanent link">&para;</a></h1>
-<p>Generated: 2026-02-17</p>
-<p>Files combined: 17</p>
+<p>Generated: 2026-02-18</p>
+<p>Files combined: 18</p>
+<hr />
+<h2 id="source-rotate-tenant-tokenmd">Source: rotate-tenant-token.md<a class="headerlink" href="#source-rotate-tenant-tokenmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Tenant token classic
+source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token
+scraped: 2026-02-18T05:54:57.934942</p>
+<hr />
+<h1 id="tenant-token-classic">Tenant token classic<a class="headerlink" href="#tenant-token-classic" title="Permanent link">&para;</a></h1>
+<h1 id="tenant-token-classic_1">Tenant token classic<a class="headerlink" href="#tenant-token-classic_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Published Feb 23, 2021</li>
+</ul>
+<p>This article discusses access tokens used in previous Dynatrace to authenticate to classic Configuration and Environment APIs. For the latest Dynatrace access, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens" title="Create personalised platform tokens to access Dynatrace services via the API in your user context.">Platform tokens</a> and <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
+<p>The tenant token is used by OneAgents and ActiveGates to report data to Dynatrace. Dynatrace automatically generates the tenant token and adds it to OneAgent and ActiveGate installers on download.</p>
+<h2 id="access-a-tenant-token">Access a tenant token<a class="headerlink" href="#access-a-tenant-token" title="Permanent link">&para;</a></h2>
+<p>To obtain a tenant token for your environment, execute the <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info" title="View the connectivity information of OneAgent via Dynatrace API.">GET connectivity information for OneAgent</a> request of the Deployment API. You will find the tenant token in the <code>tenantToken</code> field of the response body. You'll need your PaaS token to authenticate the request.</p>
+<h2 id="rotate-tenant-token">Rotate tenant token<a class="headerlink" href="#rotate-tenant-token" title="Permanent link">&para;</a></h2>
+<p>You can change the tenant token as needed (for example, to adhere to internal security policies or respond to unintended exposure). The procedure for changing the tenant token is called <em>tenant token rotation</em>.</p>
+<p>To rotate the token, you need to generate a new token, assign it to all OneAgents and ActiveGates that report data to the environment, and then disable the old token.</p>
+<p>To avoid data loss, both old and new tokens are valid during the rotation process. During rotation, do not deploy any new OneAgents until all your ActiveGates are configured with the new tenant token.</p>
+<ol>
+<li>Start the rotation and generate a new tenant token by executing the <a href="/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens/post-start" title="Initiate Dynatrace tenant token rotation.">POST start rotation request</a>.</li>
+</ol>
+<p>The request returns the new token in the <strong>active</strong> field of the response body.
+2. Add the new token to ActiveGates. For each ActiveGate:</p>
+<ol>
+<li><a href="/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate" title="Learn how you can start, stop and restart ActiveGate on Windows or Linux.">Stop ActiveGate</a>.</li>
+<li>In the <code>authorization.properties</code> file of <a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files" title="Find out where ActiveGate files are stored on Windows and Linux systems.">ActiveGate configuration directory</a>, find the entry for the required environment and specify the new token in the <strong>tenantToken</strong> field.</li>
+<li>
+<p>Depending on your <a href="/docs/ingest-from/dynatrace-activegate/capabilities" title="Learn the capabilities and uses of ActiveGate.">ActiveGate purpose</a>:</p>
+<ul>
+<li>
+<p><a href="/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose" title="Learn about the routing and monitoring capabilities and uses of ActiveGate.">Route OneAgent traffic and monitor remote technologies</a>: Find the entry for the required environment in the <code>ruxitagent.conf</code> and <code>extensions.conf</code> files, and specify the new token in the <strong>tenantToken</strong>.</p>
+<p><strong>Windows</strong>: <code>%PROGRAMFILES%\dynatrace\remotepluginmodule\agent\conf</code><br />
+<strong>Linux</strong>: <code>/opt/dynatrace/remotepluginmodule/agent/conf</code>
+      * <a href="/docs/ingest-from/dynatrace-activegate/capabilities/zremote-purpose" title="Learn about installing the zRemote module for z/OS monitoring.">Install the zRemote module for z/OS monitoring</a>: Find the entry for the required environment and specify the new token in the <strong>tenantToken</strong> field.</p>
+<p><strong>Windows</strong>: <code>%PROGRAMFILES%\dynatrace\zremote\agent\conf\ruxitagent.conf</code><br />
+<strong>Linux</strong>: <code>/opt/dynatrace/zremote/agent/conf/ruxitagent.conf</code>
+   4. Windows only Change the value of the registry entry: <code>HKEY_LOCAL_MACHINE\Software\Dynatrace\Dynatrace ActiveGate\common\tenant_token</code>.
+   5. <a href="/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate" title="Learn how you can start, stop and restart ActiveGate on Windows or Linux.">Start ActiveGate</a>.
+3. Add the new token to OneAgents. For each OneAgent:</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Add the new token to the communication settings of the OneAgent.</p>
+<p>Use the <code>--set-tenant-token</code> command of the <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#change-oneagent-communication-settings" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">OneAgent command-line interface</a>.
+   2. <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">Restart</a> OneAgent.</p>
+</li>
+</ol>
+<p>You can combine both steps into one command:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oneagentctl --restart-service --set-tenant-token={new token}
+</code></pre></div>
+4. Finish the rotation by executing the <a href="/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens/post-finish" title="Finish Dynatrace tenant token rotation.">POST finish rotation request</a>. This finishes the process and renders the old token invalid.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens" title="Rotate Dynatrace tenant tokens.">Tenant tokens API</a></li>
+<li><a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files" title="Find out where ActiveGate files are stored on Windows and Linux systems.">ActiveGate directories</a></li>
+<li><a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">OneAgent configuration via command-line interface</a></li>
+</ul>
 <hr />
 <h2 id="source-access-tokensmd">Source: access-tokens.md<a class="headerlink" href="#source-access-tokensmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Access tokens classic
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens
-scraped: 2026-02-17T04:52:31.306883</p>
+scraped: 2026-02-18T05:52:57.700545</p>
 <hr />
 <h1 id="access-tokens-classic">Access tokens classic<a class="headerlink" href="#access-tokens-classic" title="Permanent link">&para;</a></h1>
 <h1 id="access-tokens-classic_1">Access tokens classic<a class="headerlink" href="#access-tokens-classic_1" title="Permanent link">&para;</a></h1>
@@ -1073,7 +1134,7 @@ scraped: 2026-02-17T04:52:31.306883</p>
 <li>Enable the <a href="https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-secret-scanning#about-secret-scanning-for-public-repositories">GitHub secret scanning serviceï»¿</a> to identify any token pushed to a public GitHub repository</li>
 </ul>
 <p>Use this regular expression to look for tokens:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dt0[a-zA-Z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dt0[a-zA-Z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64}
 </code></pre></div>
 <p>With the rollout of Dynatrace version 1.210, this format is enabled by default (all newly generated tokens will use the new format).</p>
 <p>All existing tokens of the old format remain valid.</p>
@@ -1346,7 +1407,7 @@ scraped: 2026-02-17T04:52:31.306883</p>
 <p>Upload plugins using the command line</p>
 <p><code>PluginUpload</code></p>
 <p>Grants permission to upload OneAgent extensions via <a href="/docs/ingest-from/extensions/develop-your-extensions" title="Develop your own Extensions in Dynatrace.">Extension SDK</a>.</p>
-<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-api/environment-api/tokens-v1" title="Learn how to manage Dynatrace API authentication tokens in your environment.">Tokens API v1</a></li>
 </ul>
@@ -1355,7 +1416,7 @@ scraped: 2026-02-17T04:52:31.306883</p>
 <hr />
 <p>title: Platform tokens
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens
-scraped: 2026-02-17T05:06:17.909841</p>
+scraped: 2026-02-18T05:55:56.715982</p>
 <hr />
 <h1 id="platform-tokens">Platform tokens<a class="headerlink" href="#platform-tokens" title="Permanent link">&para;</a></h1>
 <h1 id="platform-tokens_1">Platform tokens<a class="headerlink" href="#platform-tokens_1" title="Permanent link">&para;</a></h1>
@@ -1494,11 +1555,11 @@ This is handy if you want to temporary block a token.</p>
 <p>To re-enable the creation of new platform tokens, turn on <strong>Allow to manage platform tokens</strong> and confirm the dialog with <strong>Allow</strong>.</p>
 <h3 id="allow-users-to-generate-platform-tokens-against-service-users">Allow users to generate platform tokens against service users<a class="headerlink" href="#allow-users-to-generate-platform-tokens-against-service-users" title="Permanent link">&para;</a></h3>
 <p>To allow users to generate platform tokens against existing service users, the account admin needs to assign <code>iam:service-users:use</code> permissions, and optionally conditionalize it with <code>iam:service-user-email</code> to one or more groups. An example policy could look like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ALLOW iam:service-users:use
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>WHERE iam:service-user-email IN (&quot;abc@service.sso.dynatrace.com&quot;, &quot;def@service.sso.dynatrace.com&quot;);
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ALLOW iam:service-users:use
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>WHERE iam:service-user-email IN (&quot;abc@service.sso.dynatrace.com&quot;, &quot;def@service.sso.dynatrace.com&quot;);
 </code></pre></div>
 <h2 id="platform-tokens-requirements">Platform tokens requirements<a class="headerlink" href="#platform-tokens-requirements" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1531,7 +1592,7 @@ This is handy if you want to temporary block a token.</p>
 <hr />
 <p>title: Overview of Dynatrace IAM
 source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-concepts
-scraped: 2026-02-17T05:04:49.049715</p>
+scraped: 2026-02-18T05:46:36.613895</p>
 <hr />
 <h1 id="overview-of-dynatrace-iam">Overview of Dynatrace IAM<a class="headerlink" href="#overview-of-dynatrace-iam" title="Permanent link">&para;</a></h1>
 <h1 id="overview-of-dynatrace-iam_1">Overview of Dynatrace IAM<a class="headerlink" href="#overview-of-dynatrace-iam_1" title="Permanent link">&para;</a></h1>
@@ -1574,7 +1635,7 @@ scraped: 2026-02-17T05:04:49.049715</p>
 <hr />
 <p>title: Identity and Access Management limits
 source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-limits
-scraped: 2026-02-17T04:56:41.837850</p>
+scraped: 2026-02-17T21:29:21.553191</p>
 <hr />
 <h1 id="identity-and-access-management-limits">Identity and Access Management limits<a class="headerlink" href="#identity-and-access-management-limits" title="Permanent link">&para;</a></h1>
 <h1 id="identity-and-access-management-limits_1">Identity and Access Management limits<a class="headerlink" href="#identity-and-access-management-limits_1" title="Permanent link">&para;</a></h1>
@@ -1671,7 +1732,7 @@ scraped: 2026-02-17T04:56:41.837850</p>
 <hr />
 <p>title: IAM policy reference
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements
-scraped: 2026-02-17T05:00:41.075353</p>
+scraped: 2026-02-18T05:52:16.038063</p>
 <hr />
 <h1 id="iam-policy-reference">IAM policy reference<a class="headerlink" href="#iam-policy-reference" title="Permanent link">&para;</a></h1>
 <h1 id="iam-policy-reference_1">IAM policy reference<a class="headerlink" href="#iam-policy-reference_1" title="Permanent link">&para;</a></h1>
@@ -2638,7 +2699,7 @@ scraped: 2026-02-17T05:00:41.075353</p>
 <p>Allows viewing vulnerabilities</p>
 <h3 id="vulnerability-servicevulnerabilitieswrite">vulnerability-service:vulnerabilities:write<a class="headerlink" href="#vulnerability-servicevulnerabilitieswrite" title="Permanent link">&para;</a></h3>
 <p>Allows modifying vulnerability related information</p>
-<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Working with policies</a></li>
 <li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax" title="IAM policy statement syntax.">IAM policy statement syntax and examples</a></li>
@@ -2650,7 +2711,7 @@ scraped: 2026-02-17T05:00:41.075353</p>
 <hr />
 <p>title: Upgrade role-based permissions to Dynatrace IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/migrate-roles
-scraped: 2026-02-17T05:04:24.608590</p>
+scraped: 2026-02-18T05:55:59.557615</p>
 <hr />
 <h1 id="upgrade-role-based-permissions-to-dynatrace-iam-policies">Upgrade role-based permissions to Dynatrace IAM policies<a class="headerlink" href="#upgrade-role-based-permissions-to-dynatrace-iam-policies" title="Permanent link">&para;</a></h1>
 <h1 id="upgrade-role-based-permissions-to-dynatrace-iam-policies_1">Upgrade role-based permissions to Dynatrace IAM policies<a class="headerlink" href="#upgrade-role-based-permissions-to-dynatrace-iam-policies_1" title="Permanent link">&para;</a></h1>
@@ -2682,13 +2743,13 @@ scraped: 2026-02-17T05:04:24.608590</p>
 <p><a href="/docs/manage/identity-access-management/permission-management" title="Permission management">Policies</a> leverage user, resource, data, and contextual attribution to enable you to configure access to your Dynatrace secure resources. You can secure individual data resources, apps, and services while optionally specifying business-specific access control conditions through the expressiveness of the <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax" title="IAM policy statement syntax.">policy statements syntax</a>.</p>
 <p>One or many policy statements can be combined into one policy. The policy can then be bound to one or many user groups, ultimately granting the users of those group the resource access defined by the policy.</p>
 <p>For example, the Dynatrace ABAC policy below grants the ability to install or delete (action) custom apps (resource) where (condition) app identifier (resource attribute) is prefixed with "custom" (attribute value):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ALLOW app-engine:apps:install, app-engine:apps:delete WHERE shared:app-id startsWith âcustomâ;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ALLOW app-engine:apps:install, app-engine:apps:delete WHERE shared:app-id startsWith âcustomâ;
 </code></pre></div>
 <p>The next example leverages additional contextual information (the time of the day) to restrict the ability to run apps only within business working hours.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ALLOW app-engine:apps:run WHERE shared:app-id = &quot;dynatrace.automations&quot; and global:time-of-day &gt; &quot;09:00+01:00&quot; AND global:time-of-day &lt; &quot;17:00+01:00&quot;;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ALLOW app-engine:apps:run WHERE shared:app-id = &quot;dynatrace.automations&quot; and global:time-of-day &gt; &quot;09:00+01:00&quot; AND global:time-of-day &lt; &quot;17:00+01:00&quot;;
 </code></pre></div>
 <p>Classic RBAC roles can also be expressed in policies. For example, the policy statement below grants environment access but only for a specific management zone.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ALLOW environment:roles:viewer WHERE environment:management-zone=âmgmt-euâ
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ALLOW environment:roles:viewer WHERE environment:management-zone=âmgmt-euâ
 </code></pre></div>
 <p>The ability to include classic RBAC roles in your policy statements is a very important feature of ABAC policies to help you transition from RBAC.</p>
 <p>The true power of the Dynatrace ABAC framework lies in its ability to dynamically target individual or groups of platform resources, while optionally combining available attributes to further narrow down access parameters using the expressive nature of policy statement syntax.</p>
@@ -2882,11 +2943,11 @@ scraped: 2026-02-17T05:04:24.608590</p>
 </tbody>
 </table>
 <p>If we were to create a new custom policy to assign those permissions, we could write the following policy statement:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ALLOW  environment:roles:replay-sessions-with-masking, environment:roles:replay-sessions-without-masking, environment:roles:manage-settings, environment:roles:view-sensitive-request-data , environment:roles:manage-security-problems, environment:roles:logviewer
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>WHERE environment:management-zone startsWith &quot;mgmt_na&quot;;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ALLOW  environment:roles:replay-sessions-with-masking, environment:roles:replay-sessions-without-masking, environment:roles:manage-settings, environment:roles:view-sensitive-request-data , environment:roles:manage-security-problems, environment:roles:logviewer
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>WHERE environment:management-zone startsWith &quot;mgmt_na&quot;;
 </code></pre></div>
 <p>We could then bind this policy to the <code>group_na_supp</code> group and remove the old RBAC role assignment from the group. To further optimize our new ABAC permission, we could use <strong>Dynatrace Professional</strong> rather than building a custom policy. Because <a href="/docs/manage/identity-access-management/permission-management/default-policies" title="Dynatrace default policies reference">default policies</a> are read-only, we would need a mechanism to append our <code>WHERE</code> condition above.</p>
 <p>This is where <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries" title="Restrict security policies with policy boundaries to provide tailored access to your users.">policy boundaries</a> come into play. We can store the condition <code>environment:management-zone startsWith "mgmt\_na";</code> in a policy boundary and then use it with our group, as we bind the group to the <strong>Dynatrace Professional</strong> policy, thus further restricting this permission assignment using the boundary we created.</p>
@@ -2905,7 +2966,7 @@ scraped: 2026-02-17T05:04:24.608590</p>
 <h3 id="testing-and-validation">Testing and validation<a class="headerlink" href="#testing-and-validation" title="Permanent link">&para;</a></h3>
 <p>We recommend mocking up groups and users and testing separately, ideally in a sandboxed environment if possible.</p>
 <p>Also, Dynatraceâs Enterprise API could be used to provide useful permissions information for specific users or groups. For example, the following GET request to <code>https://api.dynatrace.com</code> will return current permissions for a specific user:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>`https://api.dynatrace.com/iam/v1/resolutionaccount/:accountIdHere/effectivepermissions?entityType=user\&amp;entityId=:userIdHere`
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>`https://api.dynatrace.com/iam/v1/resolutionaccount/:accountIdHere/effectivepermissions?entityType=user\&amp;entityId=:userIdHere`
 </code></pre></div>
 <h3 id="deployment_1">Deployment<a class="headerlink" href="#deployment_1" title="Permanent link">&para;</a></h3>
 <p>Deploy policies in a phased approach to minimize user access disruptions. You may choose to do these in batches of groups or some other way more appropriate to your setup.</p>
@@ -2945,7 +3006,7 @@ scraped: 2026-02-17T05:04:24.608590</p>
 <li>Try upgrading a select set of groups first</li>
 <li>Monitor the effects of your upgrade to catch and correct any misconfigurations</li>
 </ol>
-<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Working with policies</a></li>
 <li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax" title="IAM policy statement syntax.">IAM policy statement syntax and examples</a></li>
@@ -2955,7 +3016,7 @@ scraped: 2026-02-17T05:04:24.608590</p>
 <hr />
 <p>title: Policy boundaries
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries
-scraped: 2026-02-17T05:05:27.865448</p>
+scraped: 2026-02-18T05:43:50.167415</p>
 <hr />
 <h1 id="policy-boundaries">Policy boundaries<a class="headerlink" href="#policy-boundaries" title="Permanent link">&para;</a></h1>
 <h1 id="policy-boundaries_1">Policy boundaries<a class="headerlink" href="#policy-boundaries_1" title="Permanent link">&para;</a></h1>
@@ -3002,11 +3063,11 @@ scraped: 2026-02-17T05:05:27.865448</p>
 <p>The default policies define a set of permissions to access features and data. As they are generic, they don't restrict the access to a specific records and resources.</p>
 <p><strong>Example</strong>:</p>
 <p>The <code>storage:k8s.namespace.name IN ("DEV","PREPROD")</code> is a recurring pattern in your policies and can be externalized into a policy boundary.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ALLOW storage:logs:read WHERE storage:k8s.namespace.name IN (&quot;DEV&quot;,&quot;PREPROD&quot;);
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>ALLOW storage:metrics:read WHERE storage:k8s.namespace.name IN (&quot;DEV&quot;,&quot;PREPROD&quot;);
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ALLOW storage:logs:read WHERE storage:k8s.namespace.name IN (&quot;DEV&quot;,&quot;PREPROD&quot;);
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>ALLOW storage:metrics:read WHERE storage:k8s.namespace.name IN (&quot;DEV&quot;,&quot;PREPROD&quot;);
 </code></pre></div>
 <p>Boundary <strong>K8s-dev-preprod</strong>:</p>
 <p><code>storage:k8s.namespace.name IN ("DEV","PREPROD");</code></p>
@@ -3076,28 +3137,28 @@ scraped: 2026-02-17T05:05:27.865448</p>
 <li>When more than one boundary applies to a policy, then effective statements are calculated for each boundary separately</li>
 </ul>
 <p>In certain configurations this may cause unintended unconditional access. For example when this policy:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&quot;ALLOW storage:logs:read, storage:entities:read;&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&quot;ALLOW storage:logs:read, storage:entities:read;&quot;
 </code></pre></div>
 <p>is bound to boundary one:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>storage:host.name=&quot;myHost&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>storage:host.name=&quot;myHost&quot;
 </code></pre></div>
 <p>and boundary two:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>storage:dt.security_context=&quot;mySC&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>storage:dt.security_context=&quot;mySC&quot;
 </code></pre></div>
 <p>will produce:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ALLOW storage:entities:read;
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>ALLOW storage:entities:read WHERE storage:dt.security_context = &quot;mySC&quot;;
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>ALLOW storage:logs:read WHERE storage:host.name = &quot;myHost&quot;;
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>ALLOW storage:logs:read WHERE storage:dt.security_context = &quot;mySC&quot; `
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ALLOW storage:entities:read;
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>ALLOW storage:entities:read WHERE storage:dt.security_context = &quot;mySC&quot;;
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>ALLOW storage:logs:read WHERE storage:host.name = &quot;myHost&quot;;
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>ALLOW storage:logs:read WHERE storage:dt.security_context = &quot;mySC&quot; `
 </code></pre></div>
 <p>which would effectively grant unconditional read access to storage entities, as boundary one's condition of <code>storage:host.name="myHost"</code>does not apply to permission <code>storage:entities:read</code>.</p>
 <ul>
@@ -3108,11 +3169,11 @@ scraped: 2026-02-17T05:05:27.865448</p>
 <h2 id="expressing-management-zones-inside-of-policy-boundaries">Expressing management zones inside of policy boundaries<a class="headerlink" href="#expressing-management-zones-inside-of-policy-boundaries" title="Permanent link">&para;</a></h2>
 <p>To use your management zones inside of boundaries you just need to reference them as a condition in your policy boundary.</p>
 <p>Boundary <strong>Kubernetes</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>environment:management-zone startsWith &quot;[Kubernetes]&quot;;
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>storage:k8s.namespace.name IN (&quot;DEV&quot;,&quot;PREPROD&quot;);
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>environment:management-zone startsWith &quot;[Kubernetes]&quot;;
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>storage:k8s.namespace.name IN (&quot;DEV&quot;,&quot;PREPROD&quot;);
 </code></pre></div>
 <p>This boundary includes all management zones that start with <code>[Kubernetes]</code>, as well as all the records stored in Grail for the <code>DEV</code> and <code>PREPROD</code> K8s namespaces.</p>
 <p>Be aware that the management zones referenced in your boundaries only apply to policy statements that support management zones.</p>
@@ -3133,7 +3194,7 @@ scraped: 2026-02-17T05:05:27.865448</p>
 <hr />
 <p>title: Manage IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt
-scraped: 2026-02-16T21:22:02.163806</p>
+scraped: 2026-02-18T05:41:59.539386</p>
 <hr />
 <h1 id="manage-iam-policies">Manage IAM policies<a class="headerlink" href="#manage-iam-policies" title="Permanent link">&para;</a></h1>
 <h1 id="manage-iam-policies_1">Manage IAM policies<a class="headerlink" href="#manage-iam-policies_1" title="Permanent link">&para;</a></h1>
@@ -3194,18 +3255,18 @@ scraped: 2026-02-16T21:22:02.163806</p>
 <p>Policy statement</p>
 <p>A statement specifying exactly what this policy allows.</p>
 <p>Example: Policy for Settings 2.0 Write</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ALLOW settings:objects:read;
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>ALLOW settings:objects:write;
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>ALLOW settings:schemas:read;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ALLOW settings:objects:read;
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>ALLOW settings:objects:write;
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>ALLOW settings:schemas:read;
 </code></pre></div>
 <p>You can combine multiple permissions in a single statement. Here is the same example combined into a single statement:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ALLOW settings:objects:read, settings:objects:write, settings:schemas:read;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ALLOW settings:objects:read, settings:objects:write, settings:schemas:read;
 </code></pre></div>
 <p>Combining statements is particularly useful for managing policies with complicated conditions.</p>
 <h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h3>
@@ -3248,7 +3309,7 @@ scraped: 2026-02-16T21:22:02.163806</p>
 <hr />
 <p>title: Working with policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies
-scraped: 2026-02-17T05:01:35.426471</p>
+scraped: 2026-02-18T05:43:03.622573</p>
 <hr />
 <h1 id="working-with-policies">Working with policies<a class="headerlink" href="#working-with-policies" title="Permanent link">&para;</a></h1>
 <h1 id="working-with-policies_1">Working with policies<a class="headerlink" href="#working-with-policies_1" title="Permanent link">&para;</a></h1>
@@ -3532,7 +3593,7 @@ scraped: 2026-02-16T21:25:22.167738</p>
 <p><code>type(SERVICE),fromRelationship.calls(type(SERVICE),entityName(JourneyService))</code></p>
 <p>This can also be written as <code>type(SERVICE),fromRelationship.calls(type(SERVICE) AND entityName.equals(JourneyService))</code>.</p>
 <p><img alt="Entity-selector rule based on relationships" src="https://dt-cdn.net/images/mz-sample-4-1-954-606bb32f43.png" /></p>
-<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-api/environment-api/entity-v2" title="Learn about the Dynatrace Monitored entities API.">Monitored entities API</a></li>
 <li><a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Configure the entity selector for Environment API endpoints.">Environment API v2 - Entity selector</a></li>
@@ -3546,7 +3607,7 @@ scraped: 2026-02-16T21:25:22.167738</p>
 <hr />
 <p>title: Grant access to entities with security context
 source: https://www.dynatrace.com/docs/manage/identity-access-management/use-cases/access-security-context
-scraped: 2026-02-16T21:28:26.206945</p>
+scraped: 2026-02-17T21:25:03.991881</p>
 <hr />
 <h1 id="grant-access-to-entities-with-security-context">Grant access to entities with security context<a class="headerlink" href="#grant-access-to-entities-with-security-context" title="Permanent link">&para;</a></h1>
 <h1 id="grant-access-to-entities-with-security-context_1">Grant access to entities with security context<a class="headerlink" href="#grant-access-to-entities-with-security-context_1" title="Permanent link">&para;</a></h1>
@@ -3610,22 +3671,22 @@ This option is useful if you have management zones already in place and you want
 <p>Additionally, it will set the security context for host-related entities reported from this host, such as process group instances and disks.</p>
 <p>With this option, ensure the security context is mapped using the <code>dt.security_context</code> field for the entity types of interest, as described in Option 1 above.</p>
 <p>To set a security context using <code>oneagentctl</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>./oneagentctl --set-host-property=dt.security_context=my-security-context
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>./oneagentctl --set-host-property=dt.security_context=my-security-context
 </code></pre></div>
 <h4 id="option-3-define-an-extraction-rule-for-generic-types">Option 3: Define an extraction rule for generic types<a class="headerlink" href="#option-3-define-an-extraction-rule-for-generic-types" title="Permanent link">&para;</a></h4>
 <p>For <a href="/docs/ingest-from/extend-dynatrace/extend-topology/events-entity-extraction#extract-map" title="Extract generic entities from event metadata and map events to them.">generic entity types</a>, you can add an extraction rule for <code>dt.security_context</code> and derive the security context from any detail on the data source.
 This is particularly useful for extensions where you can set the <code>dt.security_context</code> per extension configuration.</p>
 <p>Let's use the PostgreSQL extension with a simplified example, assuming a configuration with <code>dt.security_context</code> set to <code>TeamA</code>.
 For that configuration, the extension sends metric data points using the Metrics API such as:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>postgres.activity.idle,port=5432,dt.security_context=&quot;TeamA&quot;,dt.entity.sql:postgres_instance=&quot;CUSTOM_DEVICE-...&quot; 42
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>postgres.activity.idle,port=5432,dt.security_context=&quot;TeamA&quot;,dt.entity.sql:postgres_instance=&quot;CUSTOM_DEVICE-...&quot; 45
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>postgres.activity.idle,port=5432,dt.security_context=&quot;TeamA&quot;,dt.entity.sql:postgres_instance=&quot;CUSTOM_DEVICE-...&quot; 43
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>postgres.activity.idle,port=5432,dt.security_context=&quot;TeamA&quot;,dt.entity.sql:postgres_instance=&quot;CUSTOM_DEVICE-...&quot; 42
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>postgres.activity.idle,port=5432,dt.security_context=&quot;TeamA&quot;,dt.entity.sql:postgres_instance=&quot;CUSTOM_DEVICE-...&quot; 45
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>postgres.activity.idle,port=5432,dt.security_context=&quot;TeamA&quot;,dt.entity.sql:postgres_instance=&quot;CUSTOM_DEVICE-...&quot; 43
 </code></pre></div>
 <p>Based on this, you can add an extraction rule to the existing PostgreSQL extension extraction rules that sets the <code>dt.security_context</code>
 to the value of the <code>dt.security_context</code> dimension in the metric data points (<code>TeamA</code>).</p>
@@ -3646,21 +3707,21 @@ If the entity types are not listed, we recommend creating those entity types.</p
 * <code>storage:dt.security_context</code></p>
 <p>the security context of this entity. Can be a multi-value field and <code>startsWith</code> will evaluate for any matching value.</p>
 <p>For example, the following policy grants access to data with the security context set to <code>mySecurityContext</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ALLOW
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>storage:entities:read
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>WHERE
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
-<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
-<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>storage:dt.security_context = &quot;mySecurityContext&quot;;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ALLOW
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>storage:entities:read
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>WHERE
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>storage:dt.security_context = &quot;mySecurityContext&quot;;
 </code></pre></div>
-<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-api/environment-api/entity-v2/security-context" title="Create or delete security context via Dynatrace API.">Monitored entities API - security context</a></li>
 <li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements" title="Complete reference of IAM policies and corresponding conditions across all Dynatrace services.">IAM policy reference</a></li>
@@ -3671,7 +3732,7 @@ If the entity types are not listed, we recommend creating those entity types.</p
 <hr />
 <p>title: Enhance your account security with MFA TOTP
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-mfa/user-mfa
-scraped: 2026-02-17T05:09:28.373204</p>
+scraped: 2026-02-18T05:57:57.268158</p>
 <hr />
 <h1 id="enhance-your-account-security-with-mfa-totp">Enhance your account security with MFA TOTP<a class="headerlink" href="#enhance-your-account-security-with-mfa-totp" title="Permanent link">&para;</a></h1>
 <h1 id="enhance-your-account-security-with-mfa-totp_1">Enhance your account security with MFA TOTP<a class="headerlink" href="#enhance-your-account-security-with-mfa-totp_1" title="Permanent link">&para;</a></h1>
@@ -3719,7 +3780,7 @@ scraped: 2026-02-17T05:09:28.373204</p>
 <hr />
 <p>title: SAML
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml
-scraped: 2026-02-17T05:03:10.539896</p>
+scraped: 2026-02-18T05:44:00.059398</p>
 <hr />
 <h1 id="saml">SAML<a class="headerlink" href="#saml" title="Permanent link">&para;</a></h1>
 <h1 id="saml_1">SAML<a class="headerlink" href="#saml_1" title="Permanent link">&para;</a></h1>
@@ -3899,143 +3960,143 @@ scraped: 2026-02-17T05:03:10.539896</p>
 <li>Federated attribute: <code>http://schemas.microsoft.com/ws/2008/06/identity/claims/groups</code></li>
 <li>Group Claims: <code>5ab67c8d-9e0f-1ghi-23j4-56klmn7o8p9q</code>, etc.</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>&lt;AttributeStatement&gt;
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/identity/claims/tenantid&quot;&gt;
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>&lt;AttributeValue&gt;70ebe3a3-5b30-435d-9d67-7716d74ca190&lt;/AttributeValue&gt;
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/identity/claims/objectidentifier&quot;&gt;
-<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>
-<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
-<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>
-<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>&lt;AttributeValue&gt;c72581d1-f178-4a50-9816-504ee495bc15&lt;/AttributeValue&gt;
-<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>
-<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>
-<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>
-<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>
-<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>
-<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>
-<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/identity/claims/displayname&quot;&gt;
-<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>
-<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>
-<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>
-<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>&lt;AttributeValue&gt;McSample, Sandy&lt;/AttributeValue&gt;
-<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>
-<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>
-<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>
-<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>
-<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a>
-<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>
-<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/ws/2008/06/identity/claims/groups&quot;&gt;
-<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a>
-<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>
-<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a>
-<a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a>&lt;AttributeValue&gt;5ab67c8d-9e0f-1ghi-23j4-56klmn7o8p9q&lt;/AttributeValue&gt;
-<a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a>
-<a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a>
-<a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a>
-<a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a>(...)
-<a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a>
-<a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a>
-<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a>
-<a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a>&lt;AttributeValue&gt;5ba67c8d-9e0f-1ghi-23j4-56klmn7o8p9q&lt;/AttributeValue&gt;
-<a id="__codelineno-18-54" name="__codelineno-18-54" href="#__codelineno-18-54"></a>
-<a id="__codelineno-18-55" name="__codelineno-18-55" href="#__codelineno-18-55"></a>
-<a id="__codelineno-18-56" name="__codelineno-18-56" href="#__codelineno-18-56"></a>
-<a id="__codelineno-18-57" name="__codelineno-18-57" href="#__codelineno-18-57"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-58" name="__codelineno-18-58" href="#__codelineno-18-58"></a>
-<a id="__codelineno-18-59" name="__codelineno-18-59" href="#__codelineno-18-59"></a>
-<a id="__codelineno-18-60" name="__codelineno-18-60" href="#__codelineno-18-60"></a>
-<a id="__codelineno-18-61" name="__codelineno-18-61" href="#__codelineno-18-61"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/identity/claims/identityprovider&quot;&gt;
-<a id="__codelineno-18-62" name="__codelineno-18-62" href="#__codelineno-18-62"></a>
-<a id="__codelineno-18-63" name="__codelineno-18-63" href="#__codelineno-18-63"></a>
-<a id="__codelineno-18-64" name="__codelineno-18-64" href="#__codelineno-18-64"></a>
-<a id="__codelineno-18-65" name="__codelineno-18-65" href="#__codelineno-18-65"></a>&lt;AttributeValue&gt;https://sts.windows.net/70ebe3a3-5b30-435d-9d67-7716d74ca190/&lt;/AttributeValue&gt;
-<a id="__codelineno-18-66" name="__codelineno-18-66" href="#__codelineno-18-66"></a>
-<a id="__codelineno-18-67" name="__codelineno-18-67" href="#__codelineno-18-67"></a>
-<a id="__codelineno-18-68" name="__codelineno-18-68" href="#__codelineno-18-68"></a>
-<a id="__codelineno-18-69" name="__codelineno-18-69" href="#__codelineno-18-69"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-70" name="__codelineno-18-70" href="#__codelineno-18-70"></a>
-<a id="__codelineno-18-71" name="__codelineno-18-71" href="#__codelineno-18-71"></a>
-<a id="__codelineno-18-72" name="__codelineno-18-72" href="#__codelineno-18-72"></a>
-<a id="__codelineno-18-73" name="__codelineno-18-73" href="#__codelineno-18-73"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/claims/authnmethodsreferences&quot;&gt;
-<a id="__codelineno-18-74" name="__codelineno-18-74" href="#__codelineno-18-74"></a>
-<a id="__codelineno-18-75" name="__codelineno-18-75" href="#__codelineno-18-75"></a>
-<a id="__codelineno-18-76" name="__codelineno-18-76" href="#__codelineno-18-76"></a>
-<a id="__codelineno-18-77" name="__codelineno-18-77" href="#__codelineno-18-77"></a>&lt;AttributeValue&gt;http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password&lt;/AttributeValue&gt;
-<a id="__codelineno-18-78" name="__codelineno-18-78" href="#__codelineno-18-78"></a>
-<a id="__codelineno-18-79" name="__codelineno-18-79" href="#__codelineno-18-79"></a>
-<a id="__codelineno-18-80" name="__codelineno-18-80" href="#__codelineno-18-80"></a>
-<a id="__codelineno-18-81" name="__codelineno-18-81" href="#__codelineno-18-81"></a>&lt;AttributeValue&gt;http://schemas.microsoft.com/claims/multipleauthn&lt;/AttributeValue&gt;
-<a id="__codelineno-18-82" name="__codelineno-18-82" href="#__codelineno-18-82"></a>
-<a id="__codelineno-18-83" name="__codelineno-18-83" href="#__codelineno-18-83"></a>
-<a id="__codelineno-18-84" name="__codelineno-18-84" href="#__codelineno-18-84"></a>
-<a id="__codelineno-18-85" name="__codelineno-18-85" href="#__codelineno-18-85"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-86" name="__codelineno-18-86" href="#__codelineno-18-86"></a>
-<a id="__codelineno-18-87" name="__codelineno-18-87" href="#__codelineno-18-87"></a>
-<a id="__codelineno-18-88" name="__codelineno-18-88" href="#__codelineno-18-88"></a>
-<a id="__codelineno-18-89" name="__codelineno-18-89" href="#__codelineno-18-89"></a>&lt;Attribute Name=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname&quot;&gt;
-<a id="__codelineno-18-90" name="__codelineno-18-90" href="#__codelineno-18-90"></a>
-<a id="__codelineno-18-91" name="__codelineno-18-91" href="#__codelineno-18-91"></a>
-<a id="__codelineno-18-92" name="__codelineno-18-92" href="#__codelineno-18-92"></a>
-<a id="__codelineno-18-93" name="__codelineno-18-93" href="#__codelineno-18-93"></a>&lt;AttributeValue&gt;Sandy&lt;/AttributeValue&gt;
-<a id="__codelineno-18-94" name="__codelineno-18-94" href="#__codelineno-18-94"></a>
-<a id="__codelineno-18-95" name="__codelineno-18-95" href="#__codelineno-18-95"></a>
-<a id="__codelineno-18-96" name="__codelineno-18-96" href="#__codelineno-18-96"></a>
-<a id="__codelineno-18-97" name="__codelineno-18-97" href="#__codelineno-18-97"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-98" name="__codelineno-18-98" href="#__codelineno-18-98"></a>
-<a id="__codelineno-18-99" name="__codelineno-18-99" href="#__codelineno-18-99"></a>
-<a id="__codelineno-18-100" name="__codelineno-18-100" href="#__codelineno-18-100"></a>
-<a id="__codelineno-18-101" name="__codelineno-18-101" href="#__codelineno-18-101"></a>&lt;Attribute Name=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname&quot;&gt;
-<a id="__codelineno-18-102" name="__codelineno-18-102" href="#__codelineno-18-102"></a>
-<a id="__codelineno-18-103" name="__codelineno-18-103" href="#__codelineno-18-103"></a>
-<a id="__codelineno-18-104" name="__codelineno-18-104" href="#__codelineno-18-104"></a>
-<a id="__codelineno-18-105" name="__codelineno-18-105" href="#__codelineno-18-105"></a>&lt;AttributeValue&gt;McSample&lt;/AttributeValue&gt;
-<a id="__codelineno-18-106" name="__codelineno-18-106" href="#__codelineno-18-106"></a>
-<a id="__codelineno-18-107" name="__codelineno-18-107" href="#__codelineno-18-107"></a>
-<a id="__codelineno-18-108" name="__codelineno-18-108" href="#__codelineno-18-108"></a>
-<a id="__codelineno-18-109" name="__codelineno-18-109" href="#__codelineno-18-109"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-110" name="__codelineno-18-110" href="#__codelineno-18-110"></a>
-<a id="__codelineno-18-111" name="__codelineno-18-111" href="#__codelineno-18-111"></a>
-<a id="__codelineno-18-112" name="__codelineno-18-112" href="#__codelineno-18-112"></a>
-<a id="__codelineno-18-113" name="__codelineno-18-113" href="#__codelineno-18-113"></a>&lt;Attribute Name=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress&quot;&gt;
-<a id="__codelineno-18-114" name="__codelineno-18-114" href="#__codelineno-18-114"></a>
-<a id="__codelineno-18-115" name="__codelineno-18-115" href="#__codelineno-18-115"></a>
-<a id="__codelineno-18-116" name="__codelineno-18-116" href="#__codelineno-18-116"></a>
-<a id="__codelineno-18-117" name="__codelineno-18-117" href="#__codelineno-18-117"></a>&lt;AttributeValue&gt;Sandy.McSample@dynatrace.com&lt;/AttributeValue&gt;
-<a id="__codelineno-18-118" name="__codelineno-18-118" href="#__codelineno-18-118"></a>
-<a id="__codelineno-18-119" name="__codelineno-18-119" href="#__codelineno-18-119"></a>
-<a id="__codelineno-18-120" name="__codelineno-18-120" href="#__codelineno-18-120"></a>
-<a id="__codelineno-18-121" name="__codelineno-18-121" href="#__codelineno-18-121"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-122" name="__codelineno-18-122" href="#__codelineno-18-122"></a>
-<a id="__codelineno-18-123" name="__codelineno-18-123" href="#__codelineno-18-123"></a>
-<a id="__codelineno-18-124" name="__codelineno-18-124" href="#__codelineno-18-124"></a>
-<a id="__codelineno-18-125" name="__codelineno-18-125" href="#__codelineno-18-125"></a>&lt;Attribute Name=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name&quot;&gt;
-<a id="__codelineno-18-126" name="__codelineno-18-126" href="#__codelineno-18-126"></a>
-<a id="__codelineno-18-127" name="__codelineno-18-127" href="#__codelineno-18-127"></a>
-<a id="__codelineno-18-128" name="__codelineno-18-128" href="#__codelineno-18-128"></a>
-<a id="__codelineno-18-129" name="__codelineno-18-129" href="#__codelineno-18-129"></a>&lt;AttributeValue&gt;Sandy.McSample@dynatrace.com&lt;/AttributeValue&gt;
-<a id="__codelineno-18-130" name="__codelineno-18-130" href="#__codelineno-18-130"></a>
-<a id="__codelineno-18-131" name="__codelineno-18-131" href="#__codelineno-18-131"></a>
-<a id="__codelineno-18-132" name="__codelineno-18-132" href="#__codelineno-18-132"></a>
-<a id="__codelineno-18-133" name="__codelineno-18-133" href="#__codelineno-18-133"></a>&lt;/Attribute&gt;
-<a id="__codelineno-18-134" name="__codelineno-18-134" href="#__codelineno-18-134"></a>
-<a id="__codelineno-18-135" name="__codelineno-18-135" href="#__codelineno-18-135"></a>
-<a id="__codelineno-18-136" name="__codelineno-18-136" href="#__codelineno-18-136"></a>
-<a id="__codelineno-18-137" name="__codelineno-18-137" href="#__codelineno-18-137"></a>&lt;/AttributeStatement&gt;
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&lt;AttributeStatement&gt;
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/identity/claims/tenantid&quot;&gt;
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>&lt;AttributeValue&gt;70ebe3a3-5b30-435d-9d67-7716d74ca190&lt;/AttributeValue&gt;
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/identity/claims/objectidentifier&quot;&gt;
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>&lt;AttributeValue&gt;c72581d1-f178-4a50-9816-504ee495bc15&lt;/AttributeValue&gt;
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/identity/claims/displayname&quot;&gt;
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>
+<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>
+<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>
+<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>&lt;AttributeValue&gt;McSample, Sandy&lt;/AttributeValue&gt;
+<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a>
+<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a>
+<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a>
+<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a>
+<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a>
+<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a>
+<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/ws/2008/06/identity/claims/groups&quot;&gt;
+<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a>
+<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a>
+<a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a>
+<a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a>&lt;AttributeValue&gt;5ab67c8d-9e0f-1ghi-23j4-56klmn7o8p9q&lt;/AttributeValue&gt;
+<a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a>
+<a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a>
+<a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a>
+<a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a>(...)
+<a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a>
+<a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a>
+<a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a>
+<a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a>&lt;AttributeValue&gt;5ba67c8d-9e0f-1ghi-23j4-56klmn7o8p9q&lt;/AttributeValue&gt;
+<a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a>
+<a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a>
+<a id="__codelineno-19-56" name="__codelineno-19-56" href="#__codelineno-19-56"></a>
+<a id="__codelineno-19-57" name="__codelineno-19-57" href="#__codelineno-19-57"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-58" name="__codelineno-19-58" href="#__codelineno-19-58"></a>
+<a id="__codelineno-19-59" name="__codelineno-19-59" href="#__codelineno-19-59"></a>
+<a id="__codelineno-19-60" name="__codelineno-19-60" href="#__codelineno-19-60"></a>
+<a id="__codelineno-19-61" name="__codelineno-19-61" href="#__codelineno-19-61"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/identity/claims/identityprovider&quot;&gt;
+<a id="__codelineno-19-62" name="__codelineno-19-62" href="#__codelineno-19-62"></a>
+<a id="__codelineno-19-63" name="__codelineno-19-63" href="#__codelineno-19-63"></a>
+<a id="__codelineno-19-64" name="__codelineno-19-64" href="#__codelineno-19-64"></a>
+<a id="__codelineno-19-65" name="__codelineno-19-65" href="#__codelineno-19-65"></a>&lt;AttributeValue&gt;https://sts.windows.net/70ebe3a3-5b30-435d-9d67-7716d74ca190/&lt;/AttributeValue&gt;
+<a id="__codelineno-19-66" name="__codelineno-19-66" href="#__codelineno-19-66"></a>
+<a id="__codelineno-19-67" name="__codelineno-19-67" href="#__codelineno-19-67"></a>
+<a id="__codelineno-19-68" name="__codelineno-19-68" href="#__codelineno-19-68"></a>
+<a id="__codelineno-19-69" name="__codelineno-19-69" href="#__codelineno-19-69"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-70" name="__codelineno-19-70" href="#__codelineno-19-70"></a>
+<a id="__codelineno-19-71" name="__codelineno-19-71" href="#__codelineno-19-71"></a>
+<a id="__codelineno-19-72" name="__codelineno-19-72" href="#__codelineno-19-72"></a>
+<a id="__codelineno-19-73" name="__codelineno-19-73" href="#__codelineno-19-73"></a>&lt;Attribute Name=&quot;http://schemas.microsoft.com/claims/authnmethodsreferences&quot;&gt;
+<a id="__codelineno-19-74" name="__codelineno-19-74" href="#__codelineno-19-74"></a>
+<a id="__codelineno-19-75" name="__codelineno-19-75" href="#__codelineno-19-75"></a>
+<a id="__codelineno-19-76" name="__codelineno-19-76" href="#__codelineno-19-76"></a>
+<a id="__codelineno-19-77" name="__codelineno-19-77" href="#__codelineno-19-77"></a>&lt;AttributeValue&gt;http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password&lt;/AttributeValue&gt;
+<a id="__codelineno-19-78" name="__codelineno-19-78" href="#__codelineno-19-78"></a>
+<a id="__codelineno-19-79" name="__codelineno-19-79" href="#__codelineno-19-79"></a>
+<a id="__codelineno-19-80" name="__codelineno-19-80" href="#__codelineno-19-80"></a>
+<a id="__codelineno-19-81" name="__codelineno-19-81" href="#__codelineno-19-81"></a>&lt;AttributeValue&gt;http://schemas.microsoft.com/claims/multipleauthn&lt;/AttributeValue&gt;
+<a id="__codelineno-19-82" name="__codelineno-19-82" href="#__codelineno-19-82"></a>
+<a id="__codelineno-19-83" name="__codelineno-19-83" href="#__codelineno-19-83"></a>
+<a id="__codelineno-19-84" name="__codelineno-19-84" href="#__codelineno-19-84"></a>
+<a id="__codelineno-19-85" name="__codelineno-19-85" href="#__codelineno-19-85"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-86" name="__codelineno-19-86" href="#__codelineno-19-86"></a>
+<a id="__codelineno-19-87" name="__codelineno-19-87" href="#__codelineno-19-87"></a>
+<a id="__codelineno-19-88" name="__codelineno-19-88" href="#__codelineno-19-88"></a>
+<a id="__codelineno-19-89" name="__codelineno-19-89" href="#__codelineno-19-89"></a>&lt;Attribute Name=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname&quot;&gt;
+<a id="__codelineno-19-90" name="__codelineno-19-90" href="#__codelineno-19-90"></a>
+<a id="__codelineno-19-91" name="__codelineno-19-91" href="#__codelineno-19-91"></a>
+<a id="__codelineno-19-92" name="__codelineno-19-92" href="#__codelineno-19-92"></a>
+<a id="__codelineno-19-93" name="__codelineno-19-93" href="#__codelineno-19-93"></a>&lt;AttributeValue&gt;Sandy&lt;/AttributeValue&gt;
+<a id="__codelineno-19-94" name="__codelineno-19-94" href="#__codelineno-19-94"></a>
+<a id="__codelineno-19-95" name="__codelineno-19-95" href="#__codelineno-19-95"></a>
+<a id="__codelineno-19-96" name="__codelineno-19-96" href="#__codelineno-19-96"></a>
+<a id="__codelineno-19-97" name="__codelineno-19-97" href="#__codelineno-19-97"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-98" name="__codelineno-19-98" href="#__codelineno-19-98"></a>
+<a id="__codelineno-19-99" name="__codelineno-19-99" href="#__codelineno-19-99"></a>
+<a id="__codelineno-19-100" name="__codelineno-19-100" href="#__codelineno-19-100"></a>
+<a id="__codelineno-19-101" name="__codelineno-19-101" href="#__codelineno-19-101"></a>&lt;Attribute Name=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname&quot;&gt;
+<a id="__codelineno-19-102" name="__codelineno-19-102" href="#__codelineno-19-102"></a>
+<a id="__codelineno-19-103" name="__codelineno-19-103" href="#__codelineno-19-103"></a>
+<a id="__codelineno-19-104" name="__codelineno-19-104" href="#__codelineno-19-104"></a>
+<a id="__codelineno-19-105" name="__codelineno-19-105" href="#__codelineno-19-105"></a>&lt;AttributeValue&gt;McSample&lt;/AttributeValue&gt;
+<a id="__codelineno-19-106" name="__codelineno-19-106" href="#__codelineno-19-106"></a>
+<a id="__codelineno-19-107" name="__codelineno-19-107" href="#__codelineno-19-107"></a>
+<a id="__codelineno-19-108" name="__codelineno-19-108" href="#__codelineno-19-108"></a>
+<a id="__codelineno-19-109" name="__codelineno-19-109" href="#__codelineno-19-109"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-110" name="__codelineno-19-110" href="#__codelineno-19-110"></a>
+<a id="__codelineno-19-111" name="__codelineno-19-111" href="#__codelineno-19-111"></a>
+<a id="__codelineno-19-112" name="__codelineno-19-112" href="#__codelineno-19-112"></a>
+<a id="__codelineno-19-113" name="__codelineno-19-113" href="#__codelineno-19-113"></a>&lt;Attribute Name=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress&quot;&gt;
+<a id="__codelineno-19-114" name="__codelineno-19-114" href="#__codelineno-19-114"></a>
+<a id="__codelineno-19-115" name="__codelineno-19-115" href="#__codelineno-19-115"></a>
+<a id="__codelineno-19-116" name="__codelineno-19-116" href="#__codelineno-19-116"></a>
+<a id="__codelineno-19-117" name="__codelineno-19-117" href="#__codelineno-19-117"></a>&lt;AttributeValue&gt;Sandy.McSample@dynatrace.com&lt;/AttributeValue&gt;
+<a id="__codelineno-19-118" name="__codelineno-19-118" href="#__codelineno-19-118"></a>
+<a id="__codelineno-19-119" name="__codelineno-19-119" href="#__codelineno-19-119"></a>
+<a id="__codelineno-19-120" name="__codelineno-19-120" href="#__codelineno-19-120"></a>
+<a id="__codelineno-19-121" name="__codelineno-19-121" href="#__codelineno-19-121"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-122" name="__codelineno-19-122" href="#__codelineno-19-122"></a>
+<a id="__codelineno-19-123" name="__codelineno-19-123" href="#__codelineno-19-123"></a>
+<a id="__codelineno-19-124" name="__codelineno-19-124" href="#__codelineno-19-124"></a>
+<a id="__codelineno-19-125" name="__codelineno-19-125" href="#__codelineno-19-125"></a>&lt;Attribute Name=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name&quot;&gt;
+<a id="__codelineno-19-126" name="__codelineno-19-126" href="#__codelineno-19-126"></a>
+<a id="__codelineno-19-127" name="__codelineno-19-127" href="#__codelineno-19-127"></a>
+<a id="__codelineno-19-128" name="__codelineno-19-128" href="#__codelineno-19-128"></a>
+<a id="__codelineno-19-129" name="__codelineno-19-129" href="#__codelineno-19-129"></a>&lt;AttributeValue&gt;Sandy.McSample@dynatrace.com&lt;/AttributeValue&gt;
+<a id="__codelineno-19-130" name="__codelineno-19-130" href="#__codelineno-19-130"></a>
+<a id="__codelineno-19-131" name="__codelineno-19-131" href="#__codelineno-19-131"></a>
+<a id="__codelineno-19-132" name="__codelineno-19-132" href="#__codelineno-19-132"></a>
+<a id="__codelineno-19-133" name="__codelineno-19-133" href="#__codelineno-19-133"></a>&lt;/Attribute&gt;
+<a id="__codelineno-19-134" name="__codelineno-19-134" href="#__codelineno-19-134"></a>
+<a id="__codelineno-19-135" name="__codelineno-19-135" href="#__codelineno-19-135"></a>
+<a id="__codelineno-19-136" name="__codelineno-19-136" href="#__codelineno-19-136"></a>
+<a id="__codelineno-19-137" name="__codelineno-19-137" href="#__codelineno-19-137"></a>&lt;/AttributeStatement&gt;
 </code></pre></div>
 3. <strong>Validation</strong>: validate your configuration and then select <strong>Next</strong>.</p>
 </li>
@@ -4210,59 +4271,59 @@ In group mapping, you should use one of these values.</p>
 <li>
 <p>If your IdP allows you to include more than one certificate, you can add the certificate in the IdP and then upload to Dynatrace the entire updated metadata generated by your IdP.</p>
 <p>To maintain uninterrupted access to Dynatrace during certificate rotation, look at the entries between the <code>&lt;KeyDescriptor&gt;</code> tags to verify that the XML metadata contains two different certificates, as shown in the example below.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&lt;KeyDescriptor use=&quot;signing&quot;&gt;
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>&lt;KeyInfo xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>&lt;X509Data&gt;
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>&lt;X509Certificate&gt;(...) Certificate 1 (...)&lt;/X509Certificate&gt;
-<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
-<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>&lt;/X509Data&gt;
-<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
-<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
-<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
-<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>&lt;/KeyInfo&gt;
-<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>
-<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>
-<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>
-<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>&lt;/KeyDescriptor&gt;
-<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>
-<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>
-<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>
-<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>&lt;KeyDescriptor use=&quot;signing&quot;&gt;
-<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>
-<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>
-<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>
-<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>&lt;KeyInfo xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;
-<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a>
-<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a>
-<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a>
-<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a>&lt;X509Data&gt;
-<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a>
-<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a>
-<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a>
-<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a>&lt;X509Certificate&gt;(...) Certificate 2 (...)&lt;/X509Certificate&gt;
-<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a>
-<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a>
-<a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a>
-<a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a>&lt;/X509Data&gt;
-<a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a>
-<a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a>
-<a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a>
-<a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a>&lt;/KeyInfo&gt;
-<a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a>
-<a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a>
-<a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a>
-<a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a>&lt;/KeyDescriptor&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>&lt;KeyDescriptor use=&quot;signing&quot;&gt;
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>&lt;KeyInfo xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>&lt;X509Data&gt;
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>&lt;X509Certificate&gt;(...) Certificate 1 (...)&lt;/X509Certificate&gt;
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>&lt;/X509Data&gt;
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>&lt;/KeyInfo&gt;
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>&lt;/KeyDescriptor&gt;
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>
+<a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a>
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>&lt;KeyDescriptor use=&quot;signing&quot;&gt;
+<a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>
+<a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a>
+<a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>
+<a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a>&lt;KeyInfo xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;
+<a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a>
+<a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>
+<a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a>
+<a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a>&lt;X509Data&gt;
+<a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a>
+<a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a>
+<a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a>
+<a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a>&lt;X509Certificate&gt;(...) Certificate 2 (...)&lt;/X509Certificate&gt;
+<a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a>
+<a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a>
+<a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a>
+<a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a>&lt;/X509Data&gt;
+<a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a>
+<a id="__codelineno-20-47" name="__codelineno-20-47" href="#__codelineno-20-47"></a>
+<a id="__codelineno-20-48" name="__codelineno-20-48" href="#__codelineno-20-48"></a>
+<a id="__codelineno-20-49" name="__codelineno-20-49" href="#__codelineno-20-49"></a>&lt;/KeyInfo&gt;
+<a id="__codelineno-20-50" name="__codelineno-20-50" href="#__codelineno-20-50"></a>
+<a id="__codelineno-20-51" name="__codelineno-20-51" href="#__codelineno-20-51"></a>
+<a id="__codelineno-20-52" name="__codelineno-20-52" href="#__codelineno-20-52"></a>
+<a id="__codelineno-20-53" name="__codelineno-20-53" href="#__codelineno-20-53"></a>&lt;/KeyDescriptor&gt;
 </code></pre></div>
 <p>Be aware that Azure XML metadata might not contain the new certificate immediately after it is created. If you notice that the certificate is missing, wait a few minutes to allow Azure to process the new certificate and then download the XML metadata again.
    * Otherwise, copy the full <code>&lt;KeyDescriptor use="signing"&gt; (...) &lt;/KeyDescriptor&gt;</code> element in metadata, paste it under the current one, and, in the copy, replace the certificate value with your new certificate value, which is located between the <code>&lt;ds:X509Certificate&gt;</code> and <code>&lt;/ds:X509Certificate&gt;</code> tags in the <code>&lt;KeyDescriptor&gt;</code> element you just pasted.
@@ -4350,7 +4411,7 @@ In group mapping, you should use one of these values.</p>
 <hr />
 <p>title: Azure SCIM configuration for Dynatrace
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure
-scraped: 2026-02-15T21:27:14.155315</p>
+scraped: 2026-02-17T21:28:56.636566</p>
 <hr />
 <h1 id="azure-scim-configuration-for-dynatrace">Azure SCIM configuration for Dynatrace<a class="headerlink" href="#azure-scim-configuration-for-dynatrace" title="Permanent link">&para;</a></h1>
 <h1 id="azure-scim-configuration-for-dynatrace_1">Azure SCIM configuration for Dynatrace<a class="headerlink" href="#azure-scim-configuration-for-dynatrace_1" title="Permanent link">&para;</a></h1>
@@ -4526,7 +4587,7 @@ scraped: 2026-02-17T05:07:48.277977</p>
 <hr />
 <p>title: SCIM
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim
-scraped: 2026-02-17T05:09:03.419970</p>
+scraped: 2026-02-17T21:25:28.647320</p>
 <hr />
 <h1 id="scim">SCIM<a class="headerlink" href="#scim" title="Permanent link">&para;</a></h1>
 <h1 id="scim_1">SCIM<a class="headerlink" href="#scim_1" title="Permanent link">&para;</a></h1>
@@ -4674,7 +4735,7 @@ scraped: 2026-02-17T05:09:03.419970</p>
 <hr />
 <p>title: Service users
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-service-users
-scraped: 2026-02-17T05:08:28.592869</p>
+scraped: 2026-02-17T21:32:15.403490</p>
 <hr />
 <h1 id="service-users">Service users<a class="headerlink" href="#service-users" title="Permanent link">&para;</a></h1>
 <h1 id="service-users_1">Service users<a class="headerlink" href="#service-users_1" title="Permanent link">&para;</a></h1>
@@ -4745,11 +4806,11 @@ scraped: 2026-02-17T05:08:28.592869</p>
 <p>To control the use of service users even further, you can create a policy allowing users to use only specific service users as workflows or custom alerts actors.</p>
 <p>To do that, create a policy with <code>iam:service-users:use</code> set to the <code>iam:service-user-email</code> condition</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ALLOW iam:service-users:use
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>WHERE iam:service-user-email IN (&quot;be820735-3114-4d40-9c44-dfa18fa62be9@service.sso.dynatrace.com&quot;);
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ALLOW iam:service-users:use
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>WHERE iam:service-user-email IN (&quot;be820735-3114-4d40-9c44-dfa18fa62be9@service.sso.dynatrace.com&quot;);
 </code></pre></div>
 <p>Such policies are secure. You can't modify the service user identifier or assign a custom email address to a service user.</p>
 <hr />

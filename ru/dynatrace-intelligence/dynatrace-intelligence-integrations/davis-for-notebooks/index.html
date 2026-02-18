@@ -950,47 +950,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Обнаружение аномалий
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Анализ прогноза
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Связанные темы
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1007,21 +966,22 @@
 
 
 <h1 id="dynatrace-intelligence-notebooks">Dynatrace Intelligence для Notebooks<a class="headerlink" href="#dynatrace-intelligence-notebooks" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence-notebooks_1">Dynatrace Intelligence для Notebooks<a class="headerlink" href="#dynatrace-intelligence-notebooks_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Последняя версия Dynatrace</li>
 <li>Руководство по настройке</li>
 <li>2-минутное чтение</li>
 <li>Обновлено 28 января 2026 г.</li>
 </ul>
-<p>Dynatrace Intelligence для Notebooks запускает ряд анализаторов непосредственно в Notebooks, предоставляя результаты на месте и позволяя вам тонко настраивать ваши пользовательские конфигурации оповещений.</p>
+<p>Dynatrace Intelligence для Notebooks запускает ряд анализаторов直接 в Notebooks, предоставляя результаты на месте и позволяя вам тонко настраивать ваши пользовательские конфигурации оповещений.</p>
 <h2 id="_1">Обнаружение аномалий<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>С помощью <img alt="Обнаружение аномалий - новое" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Обнаружение аномалий - новое" /> <strong>Обнаружение аномалий</strong>, kết hợp с возможностями <a href="/docs/platform/grail/dynatrace-query-language" title="Как использовать язык запросов Dynatrace.">DQL</a>, вы можете создавать мощные конфигурации для обнаружения аномалий в метриках, журналах, бизнес-данных или их комбинации. Чтобы предварительно просмотреть и тонко настроить вашу конфигурацию обнаружения аномалий перед развертыванием ее в действие, используйте вариант анализа Dynatrace Intelligence для Notebooks:</p>
+<p>С помощью <img alt="Обнаружение аномалий - новое" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Обнаружение аномалий - новое" /> <strong>Обнаружение аномалий</strong>, объединенного с возможностями <a href="/docs/platform/grail/dynatrace-query-language" title="Как использовать язык запросов Dynatrace.">DQL</a>, вы можете создавать мощные конфигурации для обнаружения аномалий в метриках, журналах, бизнес-данных или их комбинации. Чтобы предварительно просмотреть и тонко настроить вашу конфигурацию Обнаружения аномалий перед развертыванием ее в действие, используйте опцию анализа Dynatrace Intelligence для Notebooks:</p>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold" title="Как Dynatrace адаптирует пороги для нескольких сущностей в рамках конфигурации обнаружения аномалий.">Автоадаптивный порог</a> — Dynatrace рассчитывает порог автоматически и адаптирует его динамически к поведению ваших данных.</li>
-<li><a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="Как Dynatrace Intelligence предлагает сезонные базовые линии порогов для области сущностей.">Сезонная базовая линия</a> — Dynatrace создает доверительную полосу для данных с сезонными закономерностями.</li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/static-thresholds" title="Когда использовать статический порог для обнаружения аномалий.">Статический порог</a> — порог, который не меняется со временем.</li>
+<li><a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="Как Dynatrace Intelligence предлагает сезонную базовую линию для области сущностей.">Сезонная базовая линия</a> — Dynatrace создает доверительный интервал для данных с сезонными закономерностями</li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/static-thresholds" title="Когда использовать статический порог для вашего обнаружения аномалий.">Статический порог</a> — порог, который не меняется со временем.</li>
 </ul>
-<p>Для каждого из этих вариантов вы можете настроить <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data" title="Как настроить оповещение о пропущенных измерениях.">оповещение о пропущенных данных</a>. Пропущенные данные и условия порога объединяются логикой <strong>ИЛИ</strong>.</p>
+<p>Для каждой из этих опций вы можете настроить <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data" title="Как настроить оповещение о пропущенных измерениях.">оповещение о пропущенных данных</a>. Пропущенные данные и условия порога объединяются логикой <strong>ИЛИ</strong>.</p>
 <p>Чтобы запустить анализ обнаружения аномалий в Notebooks</p>
 <ol>
 <li>Перейдите в <strong>Notebooks</strong> <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" />.</li>
@@ -1029,22 +989,22 @@
 <li>Добавьте раздел <strong>Query Grail</strong> и <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail" title="Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.">запросите</a> данные, которые вас интересуют, или добавьте раздел <strong>Metrics</strong> и выберите необходимую метрику.</li>
 </ol>
 <p>Для запроса DQL используйте параметр <code>interval: 1m</code>, чтобы обеспечить правильное разрешение данных для анализа.
-4. Выберите <strong>Параметры</strong>.
-5. В панели <strong>Параметры</strong> выберите <strong>Анализировать и оповещать</strong> и активируйте анализатор.
+4. Выберите <strong>Options</strong>.
+5. В панели <strong>Options</strong> выберите <strong>Анализ и оповещение</strong> и активируйте анализатор.
 6. Выберите необходимый анализатор обнаружения аномалий и настройте его параметры.
-7. Выберите <strong>Запустить анализ</strong>.</p>
-<p>Dynatrace Intelligence анализирует данные и показывает потенциальные оповещения. Обратите внимание, что это всего лишь индикативные симуляции — нет реальных оповещений, срабатывающих на основе этого анализа.</p>
+7. Выберите <strong>Run analysis</strong>.</p>
+<p>Dynatrace Intelligence анализирует данные и показывает потенциальные оповещения. Обратите внимание, что это всего лишь симуляции — реальные оповещения не срабатывают на основе этого анализа.</p>
 <p><img alt="Пример обнаружения аномалий на сезонных данных в приложении Notebooks." src="https://dt-cdn.net/images/notebooks-seasonal-anomaly-detection-1920-dbbd5f3499.png" /></p>
 <h2 id="_2">Анализ прогноза<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Прогнозный анализ Dynatrace Intelligence предвидит будущие значения любого временного ряда числовых значений на основе накопленных данных. Чтобы запустить <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Узнайте, как Dynatrace Intelligence генерирует прогнозы с помощью прогнозного ИИ.">анализ прогноза</a>:</p>
+<p>Прогнозный анализ Dynatrace Intelligence предсказывает будущие значения любой временной серии числовых значений на основе накопленных данных. Чтобы запустить <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Узнайте, как Dynatrace Intelligence генерирует прогнозы с помощью прогнозного ИИ.">анализ прогноза</a></p>
 <ol>
 <li>Перейдите в <strong>Notebooks</strong> <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" />.</li>
 <li>Откройте вашу тетрадь или создайте новую.</li>
 <li>Добавьте раздел <strong>Query Grail</strong> и <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail" title="Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.">запросите</a> данные, которые вас интересуют, или добавьте раздел <strong>Metrics</strong> и выберите необходимую метрику.</li>
-<li>Выберите <strong>Параметры</strong>.</li>
-<li>В панели <strong>Параметры</strong> выберите <strong>Анализировать и оповещать</strong> и активируйте анализатор.</li>
+<li>Выберите <strong>Options</strong>.</li>
+<li>В панели <strong>Options</strong> выберите <strong>Анализ и оповещение</strong> и активируйте анализатор.</li>
 <li>Выберите анализатор <strong>Прогноз</strong> и настройте его параметры.</li>
-<li>Выберите <strong>Запустить анализ</strong>.</li>
+<li>Выберите <strong>Run analysis</strong>.</li>
 </ol>
 <p>Dynatrace Intelligence рассчитывает прогноз и показывает его, расширяя вашу визуализацию.</p>
 <p><img alt="Пример прогноза для сезонных данных в приложении Notebooks." src="https://dt-cdn.net/images/notebooks-seasonal-prediction-1920-0137a2c619.png" /></p>
