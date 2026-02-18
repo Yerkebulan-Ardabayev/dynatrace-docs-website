@@ -64,6 +64,15 @@ jobs:
           timeout 1740 python translate_docs_groq.py || echo "Translation timed out (partial translation saved)"
           echo "Translation step completed!"
 
+      - name: Validate translations
+        if: steps.scrape.outcome == 'success'
+        continue-on-error: true
+        run: |
+          echo "Validating translation quality..."
+          cd scripts
+          python validate_translations.py --ru-dir ../docs/ru --en-dir ../docs/en || echo "Validation found issues (non-blocking)"
+          echo "Validation completed!"
+
       - name: Generate NotebookLM sources
         if: steps.scrape.outcome == 'success'
         run: |

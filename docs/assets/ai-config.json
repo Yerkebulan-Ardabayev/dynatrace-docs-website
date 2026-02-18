@@ -1,0 +1,5 @@
+{
+  "_comment": "AI Chat configuration for GitHub Pages (static hosting). On local server, proxy mode is used automatically.",
+  "_setup": "Get free API key at https://console.groq.com and paste below",
+  "groq_api_key": ""
+}

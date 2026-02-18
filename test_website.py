@@ -59,7 +59,7 @@ class WebsiteTester:
             ("ru/getting-started.md", "Russian Getting Started"),
             ("en/managed/index.md", "English Managed"),
             ("ru/managed/index.md", "Russian Managed"),
-            ("ai/gemini.md", "AI Gemini Chat"),
+            ("ai/groq.md", "AI Groq Chat"),
             ("ai/notebooklm.md", "AI NotebookLM"),
         ]
         
