@@ -41,20 +41,73 @@ MAX_CHUNK_CHARS = 10000
 
 import re
 
+# ============================================================================
+# ЗАЩИТА BRAND-ТЕРМИНОВ (placeholder-подход — 100% надёжность)
+# ============================================================================
+# LLM иногда игнорирует инструкцию "не переводи".
+# Решение: заменяем термины на плейсхолдеры ПЕРЕД отправкой,
+# восстанавливаем ПОСЛЕ получения перевода. Модель физически
+# не может перевести то, чего нет в тексте.
+
+PROTECTED_TERMS = [
+    # Dynatrace products (порядок важен! Длинные первыми)
+    'Cluster Management Console', 'Real User Monitoring',
+    'Synthetic Monitoring', 'Session Replay', 'Service Flow',
+    'Management Zone', 'Mission Control', 'Host Group', 'Host Unit',
+    'OneAgent', 'ActiveGate', 'Smartscape', 'PurePath', 'Davis AI',
+    'AppEngine', 'Dynatrace', 'Extensions', 'Environment',
+    'Grail', 'DQL', 'CMC', 'Hub',
+    # Cloud / DevOps
+    'Kubernetes', 'OpenShift', 'Docker', 'Ansible', 'Helm',
+    'REST API', 'gRPC', 'AWS', 'Azure', 'GCP',
+    'API', 'SDK', 'JSON', 'YAML', 'XML',
+]
+
+def protect_terms(text: str) -> tuple[str, dict]:
+    """Заменяет protected terms на плейсхолдеры. Возвращает (text, mapping)."""
+    mapping = {}
+    counter = 0
+    for term in PROTECTED_TERMS:
+        # Case-sensitive поиск
+        pattern = re.compile(re.escape(term))
+        if pattern.search(text):
+            placeholder = f'__KEEP{counter:03d}__'
+            mapping[placeholder] = term
+            text = pattern.sub(placeholder, text)
+            counter += 1
+    return text, mapping
+
+def restore_terms(text: str, mapping: dict) -> str:
+    """Восстанавливает оригинальные термины из плейсхолдеров."""
+    for placeholder, term in mapping.items():
+        text = text.replace(placeholder, term)
+    return text
+
+def post_fix_known_errors(text: str) -> str:
+    """Исправляет известные ошибочные переводы (на случай старого кеша)."""
+    fixes = {
+        'Один Агент': 'OneAgent', 'ОдинАгент': 'OneAgent',
+        'Один агент': 'OneAgent', 'одинагент': 'OneAgent',
+        'Активный шлюз': 'ActiveGate', 'Активгейт': 'ActiveGate',
+        'Активный Шлюз': 'ActiveGate',
+        'Чистый путь': 'PurePath', 'Чистый Путь': 'PurePath',
+        'Умная карта': 'Smartscape', 'Умный ландшафт': 'Smartscape',
+        'Консоль управления кластером': 'Cluster Management Console',
+        'Центр управления': 'Mission Control',
+        'Единица хоста': 'Host Unit', 'Группа хостов': 'Host Group',
+    }
+    for wrong, correct in fixes.items():
+        text = text.replace(wrong, correct)
+    return text
+
 TRANSLATION_PROMPT = """Переведи следующую техническую документацию Dynatrace с английского на русский.
 
 ВАЖНО:
 - Сохрани всё форматирование Markdown (заголовки, списки, код, ссылки, YAML frontmatter)
-- НЕ переводи следующие термины (оставь на английском как есть):
-  Dynatrace, OneAgent, ActiveGate, Smartscape, PurePath, Davis AI, Grail, DQL,
-  Cluster Management Console (CMC), Mission Control, Management Zone, Host Unit,
-  Host Group, Service Flow, Session Replay, Real User Monitoring (RUM),
-  Synthetic Monitoring, AppEngine, Hub, Extensions, Environment,
-  Kubernetes, Docker, Helm, OpenShift, Ansible, AWS, Azure, GCP,
-  API, SDK, REST API, gRPC, JSON, YAML, XML
+- Все слова вида __KEEP000__, __KEEP001__ и т.д. — это плейсхолдеры. НЕ ПЕРЕВОДИ их, оставь как есть!
 - Переведи качественно и профессионально
 - НЕ добавляй никаких комментариев, только перевод
-- Не добавляй вводные фразы типа "Вот перевод:" - сразу начинай с перевода
+- Не добавляй вводные фразы типа "Вот перевод:" — сразу начинай с перевода
 
 Текст для перевода:
 
@@ -226,28 +279,34 @@ def translate_text(text: str, source_file: str) -> str:
     """
     Переводит текст. Стратегия:
     1. Проверяем кеш
-    2. Пробуем Gemini Flash (основной, быстрый лимит)
-    3. Fallback на Groq (если Gemini недоступен или лимит)
-    4. Возвращаем оригинал если оба недоступны
+    2. Защищаем brand-термины плейсхолдерами
+    3. Пробуем Gemini Flash (основной)
+    4. Fallback на Groq (если Gemini недоступен)
+    5. Восстанавливаем термины + пост-фикс ошибок
+    6. Возвращаем оригинал если оба недоступны
     """
     cache_key = f"{source_file}:{hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]}"
     if cache_key in cache:
         print(f"  ↻ Из кеша")
-        return cache[cache_key]
+        # Пост-фикс даже для кешированных (на случай старых ошибок)
+        return post_fix_known_errors(cache[cache_key])
+
+    # Защищаем термины плейсхолдерами
+    protected_text, term_mapping = protect_terms(text)
 
     translation = None
 
     # 1. Пробуем Gemini
     if GEMINI_API_KEY:
         print(f"  🌟 Перевод через Gemini Flash...")
-        translation = translate_via_gemini(text)
+        translation = translate_via_gemini(protected_text)
         if translation:
             print(f"  ✅ Gemini успешно!")
 
     # 2. Fallback на Groq
     if translation is None and GROQ_API_KEY:
         print(f"  🔄 Fallback: Groq Llama 3.3 70B...")
-        translation = translate_via_groq(text)
+        translation = translate_via_groq(protected_text)
         if translation:
             print(f"  ✅ Groq успешно!")
 
@@ -255,6 +314,10 @@ def translate_text(text: str, source_file: str) -> str:
     if translation is None:
         print(f"  ⚠️  Оба API недоступны — оставляю оригинал")
         return text
+
+    # Восстанавливаем brand-термины и фиксим известные ошибки
+    translation = restore_terms(translation, term_mapping)
+    translation = post_fix_known_errors(translation)
 
     # Сохраняем в кеш
     cache[cache_key] = translation

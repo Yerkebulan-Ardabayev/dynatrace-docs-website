@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 Локальный сервер для Dynatrace Documentation
-✅ AI чат (Groq Llama - через серверный прокси)
-✅ Качественный перевод (Groq API)
+✅ AI чат (Groq Llama 3.3 70B - серверный прокси)
+✅ Rate limiting (10 req/min per IP)
+✅ Conversation history
 ✅ Автообновление документации
 ✅ Работает локально (127.0.0.1 по умолчанию)
 """
@@ -13,11 +14,18 @@ import sys
 import json
 import secrets
 import subprocess
+import time
+import threading
+from collections import defaultdict
 import requests as http_requests
 from pathlib import Path
 from datetime import datetime
 from functools import wraps
 from flask import Flask, request, jsonify, send_from_directory, abort
+from dotenv import load_dotenv
+
+# Загрузка .env (API ключи)
+load_dotenv()
 
 # Настройка кодировки для Windows
 if sys.platform == 'win32':
@@ -26,19 +34,50 @@ if sys.platform == 'win32':
 
 app = Flask(__name__, static_folder='site', static_url_path='')
 
-# Конфигурация
+# ============================================================================
+# RATE LIMITING (in-memory, без внешних зависимостей)
+# ============================================================================
+class RateLimiter:
+    """Простой rate limiter — 100% бесплатный, без Redis"""
+    def __init__(self, max_requests=10, window_seconds=60):
+        self.max_requests = max_requests
+        self.window = window_seconds
+        self.requests = defaultdict(list)
+        self.lock = threading.Lock()
+
+    def is_allowed(self, key):
+        now = time.time()
+        with self.lock:
+            self.requests[key] = [t for t in self.requests[key] if now - t < self.window]
+            if len(self.requests[key]) >= self.max_requests:
+                return False
+            self.requests[key].append(now)
+            return True
+
+    def remaining(self, key):
+        now = time.time()
+        with self.lock:
+            self.requests[key] = [t for t in self.requests[key] if now - t < self.window]
+            return max(0, self.max_requests - len(self.requests[key]))
+
+chat_limiter = RateLimiter(max_requests=10, window_seconds=60)
+
+# ============================================================================
+# КОНФИГУРАЦИЯ
+# ============================================================================
 DOCS_DIR = Path('docs')
 SITE_DIR = Path('site')
 GROQ_API_KEY = os.environ.get('GROQ_API_KEY', '')
 GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions'
 
-# Токен для защиты /api/update (генерируется при старте)
+# Токен для защиты /api/update
 UPDATE_TOKEN = os.environ.get('UPDATE_TOKEN', secrets.token_hex(16))
 
 # Информация об AI
 AI_ENABLED = bool(GROQ_API_KEY)
 if AI_ENABLED:
     print("✅ AI чат (Groq Llama 3.3 70B) активирован!")
+    print(f"🛡️  Rate limit: 10 req/min per IP")
 else:
     print("⚠️  GROQ_API_KEY не задан - AI чат недоступен")
 
@@ -66,14 +105,23 @@ def index():
     return send_from_directory(SITE_DIR, 'index.html')
 
 # ============================================================================
-# API - AI ЧАТ (СЕРВЕРНЫЙ ПРОКСИ - ключ не утекает на клиент)
+# API - AI ЧАТ (СЕРВЕРНЫЙ ПРОКСИ + RATE LIMITING)
 # ============================================================================
 
 @app.route('/api/chat', methods=['POST'])
 def chat_proxy():
-    """Прокси для Groq API - ключ остаётся на сервере"""
+    """Прокси для Groq API — ключ остаётся на сервере, rate-limited"""
     if not GROQ_API_KEY:
         return jsonify({'error': 'API key not configured on server'}), 503
+
+    # Rate limiting по IP
+    client_ip = request.remote_addr or 'unknown'
+    if not chat_limiter.is_allowed(client_ip):
+        remaining = chat_limiter.remaining(client_ip)
+        return jsonify({
+            'error': 'Превышен лимит запросов (10/мин). Подождите.',
+            'retry_after': 60
+        }), 429
 
     data = request.get_json()
     if not data or 'message' not in data:
@@ -103,20 +151,25 @@ def chat_proxy():
             timeout=30
         )
 
+        if response.status_code == 429:
+            return jsonify({'error': 'Groq rate limit. Подождите 30с.'}), 429
+
         if response.status_code != 200:
             return jsonify({'error': f'Groq API error: {response.status_code}'}), 502
 
         result = response.json()
         answer = result['choices'][0]['message']['content']
 
-        return jsonify({
+        resp = jsonify({
             'choices': [{'message': {'content': answer}}]
         })
+        resp.headers['X-RateLimit-Remaining'] = str(chat_limiter.remaining(client_ip))
+        return resp
 
     except http_requests.Timeout:
-        return jsonify({'error': 'Request timeout'}), 504
+        return jsonify({'error': 'Request timeout (30s)'}), 504
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': 'Internal server error'}), 500
 
 # ============================================================================
 # API - ОБНОВЛЕНИЕ ДОКУМЕНТАЦИИ (ЗАЩИЩЕНО ТОКЕНОМ)
@@ -133,75 +186,55 @@ def update_docs():
         print("="*70)
 
         # Шаг 1: Скачивание
-        print("\n[1/4] Скачивание документации с docs.dynatrace.com...")
+        print("\n[1/5] Скачивание документации с docs.dynatrace.com...")
         result = subprocess.run(
             ['python', 'scripts/scrape_docs.py', '--max-pages', '1000'],
-            capture_output=True,
-            text=True,
-            timeout=7200,
-            encoding='utf-8'
+            capture_output=True, text=True, timeout=7200, encoding='utf-8'
         )
-
         if result.returncode != 0:
-            print(f"❌ Ошибка скачивания: {result.stderr}")
-            return jsonify({
-                'success': False,
-                'error': f'Ошибка скачивания: {result.stderr}'
-            }), 500
-
+            return jsonify({'success': False, 'error': f'Scrape failed: {result.stderr[:200]}'}), 500
         print("✅ Скачивание завершено")
 
         # Шаг 2: Организация
-        print("\n[2/4] Организация файлов...")
+        print("\n[2/5] Организация файлов...")
         result = subprocess.run(
             ['python', 'scripts/organize_docs.py'],
-            capture_output=True,
-            text=True,
-            timeout=600,
-            encoding='utf-8'
+            capture_output=True, text=True, timeout=600, encoding='utf-8'
         )
-
         if result.returncode != 0:
-            print(f"❌ Ошибка организации: {result.stderr}")
-            return jsonify({
-                'success': False,
-                'error': f'Ошибка организации: {result.stderr}'
-            }), 500
-
+            return jsonify({'success': False, 'error': f'Organize failed: {result.stderr[:200]}'}), 500
         print("✅ Организация завершена")
 
-        # Шаг 3: Перевод (Groq - единый backend)
-        print("\n[3/4] Перевод на русский (Groq Llama 3.1 70B)...")
+        # Шаг 3: Перевод
+        print("\n[3/5] Перевод на русский (Gemini + Groq fallback)...")
         result = subprocess.run(
             ['python', 'scripts/translate_docs_groq.py'],
-            capture_output=True,
-            text=True,
-            timeout=7200,
-            encoding='utf-8'
+            capture_output=True, text=True, timeout=7200, encoding='utf-8'
         )
-
         if result.returncode != 0:
-            print(f"⚠️  Ошибка перевода (продолжаем): {result.stderr}")
-
+            print(f"⚠️  Перевод с ошибками (продолжаем): {result.stderr[:200]}")
         print("✅ Перевод завершен")
 
-        # Шаг 4: Сборка сайта
-        print("\n[4/4] Сборка сайта...")
+        # Шаг 4: Валидация переводов (NEW!)
+        print("\n[4/5] Валидация переводов...")
+        result = subprocess.run(
+            ['python', 'scripts/validate_translations.py'],
+            capture_output=True, text=True, timeout=300, encoding='utf-8',
+            cwd='scripts'
+        )
+        if result.returncode != 0:
+            print(f"⚠️  Валидация: найдены проблемы (продолжаем)")
+        else:
+            print("✅ Валидация пройдена")
+
+        # Шаг 5: Сборка сайта
+        print("\n[5/5] Сборка сайта...")
         result = subprocess.run(
             ['mkdocs', 'build'],
-            capture_output=True,
-            text=True,
-            timeout=300,
-            encoding='utf-8'
+            capture_output=True, text=True, timeout=300, encoding='utf-8'
         )
-
         if result.returncode != 0:
-            print(f"❌ Ошибка сборки: {result.stderr}")
-            return jsonify({
-                'success': False,
-                'error': f'Ошибка сборки: {result.stderr}'
-            }), 500
-
+            return jsonify({'success': False, 'error': f'Build failed: {result.stderr[:200]}'}), 500
         print("✅ Сборка завершена")
 
         print("\n" + "="*70)
@@ -215,15 +248,9 @@ def update_docs():
         })
 
     except subprocess.TimeoutExpired:
-        return jsonify({
-            'success': False,
-            'error': 'Превышено время ожидания'
-        }), 500
+        return jsonify({'success': False, 'error': 'Превышено время ожидания'}), 500
     except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
+        return jsonify({'success': False, 'error': 'Internal error'}), 500
 
 # ============================================================================
 # API - СТАТУС
@@ -232,8 +259,6 @@ def update_docs():
 @app.route('/api/status')
 def status():
     """Статус сервера и документации"""
-
-    # Подсчет файлов
     en_docs = list(DOCS_DIR.glob('en/**/*.md')) if (DOCS_DIR / 'en').exists() else []
     ru_docs = list(DOCS_DIR.glob('ru/**/*.md')) if (DOCS_DIR / 'ru').exists() else []
 
@@ -241,7 +266,8 @@ def status():
         'server': 'online',
         'ai_enabled': AI_ENABLED,
         'ai_chat_model': 'Groq Llama 3.3 70B',
-        'translation_model': 'Groq Llama 3.1 70B',
+        'translation_model': 'Gemini Flash + Groq Fallback',
+        'rate_limit': '10 req/min per IP',
         'documentation': {
             'english': len(en_docs),
             'russian': len(ru_docs),
@@ -280,7 +306,8 @@ if __name__ == '__main__':
     print()
     print("📚 Документация Dynatrace с AI чатом")
     print(f"🤖 AI чат: {'Groq Llama 3.3 70B' if AI_ENABLED else 'НЕ НАСТРОЕН (set GROQ_API_KEY)'}")
-    print(f"✨ Перевод: Groq Llama 3.1 70B")
+    print(f"🛡️  Rate limit: 10 req/min per IP")
+    print(f"✨ Перевод: Gemini Flash + Groq Fallback")
     print("🌍 Язык: Английский + Русский")
     print()
 

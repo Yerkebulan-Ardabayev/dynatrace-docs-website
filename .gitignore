@@ -56,3 +56,13 @@ api/
 # Vercel
 .vercel
 vercel.json
+
+# Playwright/Chrome profiles
+scripts/.chrome_notebooklm/
+.chrome_notebooklm/
+
+# NotebookLM generated files (large, regenerated)
+docs/notebooklm/
+
+# RAG index cache
+.rag_index_cache.json
