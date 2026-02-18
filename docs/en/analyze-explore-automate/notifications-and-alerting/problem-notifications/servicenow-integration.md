@@ -1,7 +1,7 @@
 ---
 title: Send Dynatrace notifications to ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration
-scraped: 2026-02-18T05:31:41.027681
+scraped: 2026-02-18T21:16:30.503996
 ---
 
 # Send Dynatrace notifications to ServiceNow

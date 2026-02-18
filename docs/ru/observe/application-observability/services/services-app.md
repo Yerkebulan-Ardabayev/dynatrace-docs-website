@@ -1,113 +1,123 @@
 ---
 title: Services app
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-app
-scraped: 2026-02-06T16:18:52.685581
+scraped: 2026-02-18T21:15:34.027389
 ---
 
-# Приложение «Сервисы»
+# Services app
 
-# Приложение «Сервисы»
+# Services app
 
-* Последняя версия Dynatrace
-* Приложение
-* 4-минутное чтение
-* Обновлено 12 января 2026 г.
+* Latest Dynatrace
+* App
+* 4-min read
+* Updated on Feb 04, 2026
 
-Планируется, что обработка сообщений и анализ производительности запросов к базе данных станут доступны в Dynatrace SaaS версии 1.330.
+Message Processing and Database Query Performance Analysis are projected to become available in Dynatrace SaaS version 1.330.
 
-![Услуги](https://dt-cdn.net/hub/logos/services.png "Services") **Сервисы** обеспечивают полную прозрачность ваших распределенных сервисов, позволяя командам быстро выявлять, исследовать и решать проблемы в сложных микросервисных архитектурах.Этот унифицированный интерфейс объединяет критически важные сигналы работоспособности и показатели производительности для ускорения устранения неполадок и оптимизации надежности обслуживания.
+![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** delivers comprehensive visibility into your distributed services, enabling teams to quickly identify, investigate, and resolve issues across complex microservice architectures. This unified interface consolidates critical health signals and performance metrics to accelerate troubleshooting and optimize service reliability.
 
-![Просматривайте производительность всех ваших сервисов в режиме реального времени.Найдите конкретные услуги, используя мощные фильтры.](https://cdn.hub.central.dynatrace.com/hub/1_DI39YNS_hQ7gBgG.png)![Анализируйте запросы к базе данных, выполняемые вашими службами, чтобы определить, какие операции потребляют больше всего ресурсов.](https://cdn.hub.central.dynatrace.com/hub/2_previously_5_7LmaiBa.png)![Используйте автоматизированный анализ первопричин Dynatrace Intelligence, чтобы быстро выявить и точно определить источник проблем в сервисах приложений, ускоряя анализ.](https://cdn.hub.central.dynatrace.com/hub/3_lHZzEjb_zyT76Yj.png)![Анализ отказов, сравнение сроков.](https://cdn.hub.central.dynatrace.com/hub/failure-analysis-1990-6b9d85e513_38quxQP.png)
+![View the real-time performance of all your services. Locate specific services using powerful filters.](https://cdn.hub.central.dynatrace.com/hub/1_DI39YNS_hQ7gBgG.png)![Analyze database queries executed by your services to discover which operations consume the most resources.](https://cdn.hub.central.dynatrace.com/hub/2_previously_5_7LmaiBa.png)![Use Dynatrace Intelligence's automated root cause analysis to quickly surface and pinpoint the source of issues in your application services, accelerating analysis.](https://cdn.hub.central.dynatrace.com/hub/3_lHZzEjb_zyT76Yj.png)![Failure analysis comparing timeframes.](https://cdn.hub.central.dynatrace.com/hub/failure-analysis-1990-6b9d85e513_38quxQP.png)
 
-1 из 4Просматривайте производительность всех ваших сервисов в режиме реального времени.Найдите конкретные услуги, используя мощные фильтры.
+1 of 4View the real-time performance of all your services. Locate specific services using powerful filters.
 
-## Предварительные условия
+## Prerequisites
 
-* Ваши пользователи должны иметь необходимое разрешение на использование ![Услуги](https://dt-cdn.net/hub/logos/services.png "Services") **Услуг**.
-* ![Услуги](https://dt-cdn.net/hub/logos/services.png "Services") **Службы** установлены в вашей среде.
-* Dynatrace собирает данные о ваших услугах через [OneAgent или OpenTelemetry](/docs/observe/application-observability/services#add "Learn how to monitor and analyze your services, define and use request attributes, and more.").
+* Your users should have the necessary permission to use ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
+* ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** is installed in your environment.
+* Dynatrace collects data on your services through [OneAgent or OpenTelemetry](/docs/observe/application-observability/services#add "Learn how to monitor and analyze your services, define and use request attributes, and more.").
 
-## Начать
+## Get started
 
-### Обзор работоспособности службы
+### Service health overview
 
-![Услуги](https://dt-cdn.net/hub/logos/services.png "Services") **Услуги** предоставляют интеллектуальную информационную панель состояния, на которой выявляются проблемы, требующие немедленного внимания.Вы можете фильтровать оповещения по степени серьезности и детализировать конкретные службы, испытывающие ухудшение.Когда служба переходит в критическое состояние, приложение выделяет частоту сбоев и предоставляет контекст того, что вызвало оповещение — будь то увеличение количества ошибок, скачки задержки или проблемы с инфраструктурой.
+![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** provides an intelligent health dashboard that surfaces issues demanding immediate attention. You can filter alerts by severity and drill into specific services experiencing degradation. When a service enters a critical state, the app highlights failure rates and provides context around what triggered the alertâwhether it's increased errors, latency spikes, or infrastructure problems.
 
-![Расследования предупреждений о состоянии здоровья](https://dt-cdn.net/images/health-alert-investigation-critical-filtering-1248-f719905bfe.png)
+![Health alert investigations](https://dt-cdn.net/images/health-alert-investigation-critical-filtering-1248-f719905bfe.png)
 
-### Запросы к базе данных
+### Database queries
 
-![Услуги](https://dt-cdn.net/hub/logos/services.png "Services") **Службы** собирают и анализируют запросы к базе данных, выполняемые вашими службами, отображая самые медленные запросы, ранжированные по времени и частоте выполнения.
-Чтобы узнать, какие запросы выполняет ваша служба, а также время ответа, частоту отказов и пропускную способность этих запросов.
+![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** captures and analyzes database queries executed by your services, presenting the slowest queries ranked by execution time and frequency.
+To see what queries your service is executing and the response time, failure rate, and throughput of those queries
 
-1. В таблице **Услуги** выберите услугу, чтобы перейти на страницу сведений об услуге.
-2. Перейдите на вкладку **Запросы к базе данных**.
+1. In the **Services** table, select the service to go to the service details page.
+2. Switch to the **Database queries** tab.
 
-* Узнайте, какие операции потребляют больше всего ресурсов и где индексирование или кэширование могут повысить производительность.
-* Устраните «слепые пятна» за счет интеграции наблюдаемости базы данных на уровне инфраструктуры с метриками уровня обслуживания.
+* Discover which operations consume the most resources and where indexing or caching could improve performance.
+* Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.
 
-![Запросы к базе данных — приложение «Службы»](https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png)
+![Database queries - Services app](https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png)
 
-### Анализ отказов и сравнение по времени
+### Failure analysis and time-based comparisons
 
-Наложение текущих моделей отказов на базовые периоды для немедленного выявления регресса.Визуализация различает различные типы и серьезность сбоев, помогая командам расставлять приоритеты с учетом воздействия на пользователей.
+Overlay current failure patterns against baseline periods to immediately identify regressions. The visualization distinguishes between different failure types and severities, helping teams prioritize based on user impact.
 
-Также обратитесь к варианту использования [Анализ отказов](/docs/observe/application-observability/services/failure-analysis "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.").
+Also, refer to the [Failure Analysis](/docs/observe/application-observability/services/failure-analysis "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.") use case.
 
-![Анализ отказов, сравнение сроков](https://dt-cdn.net/images/failure-analysis-comparing-timeframes-1174-f966ba23d7.png)
+![Failure analysis comparing timeframes](https://dt-cdn.net/images/failure-analysis-comparing-timeframes-1174-f966ba23d7.png)
 
-[![Приложение «Проблемы» — новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Проблемы**](/docs/dynatrace-intelligence/davis-problems-app «Используйте приложение «Проблемы», чтобы быстро выявить основную причину инцидентов в вашей среде.») отображает всю цепочку последствий от первоначального сбоя через зависимые службы, инфраструктуру и затронутых пользователей.
+[![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") maps the entire impact chain from an initial failure through dependent services, infrastructure, and affected users.
 
-Переход от ![Приложение «Проблемы» — новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Проблемы** к ![Услуги](https://dt-cdn.net/hub/logos/services.png "Services") **Анализ сбоев служб** осуществляется одним щелчком мыши, что позволяет провести беспрепятственное исследование — от обнаружения проблем на высоком уровне до детальной информации об ошибках, специфичных для конкретной службы, включая сравнение временных интервалов и журналы.
+Navigating from ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** to ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** Failure Analysis takes a single click, allowing for seamless investigation from high-level problem detection to granular service-specific error details, including timeframe comparisons and logs.
 
-![Просмотр проблемного приложения до отказа в приложении служб](https://dt-cdn.net/images/problem-app-flow-to-failures-1763-1f0cd27274.png)
+![Problem app flow to failure view in services app](https://dt-cdn.net/images/problem-app-flow-to-failures-1763-1f0cd27274.png)
 
-### Расширенная фильтрация и анализ выпусков
+### Advanced filtering and release analysis
 
-Фильтруйте представления сервисов по выпускам и десяткам аспектов, включая пространства имен Kubernetes и измерения развертывания.Сравните поведение в промежуточной и рабочей средах, чтобы выявить отклонения в конфигурации или изолировать проблемы, специфичные для среды.
+Filter service views across releases and dozens of facets, including Kubernetes namespaces and deployment dimensions. Compare behavior across staging and production to identify configuration drift or isolate environment-specific issues.
 
-![Фильтрация по выпуску и пространству имен](https://dt-cdn.net/images/filtering-by-release-and-k8s-namespace-1451-c6b95eae9d.png)
+![Filtering by release and namespace](https://dt-cdn.net/images/filtering-by-release-and-k8s-namespace-1451-c6b95eae9d.png)
 
-### Анализ и сравнение времени отклика
+### Response time analysis and comparison
 
-Отслеживайте время отклика, чтобы понять типичное поведение и худшие сценарии.Анализируйте тенденции производительности в разные периоды, чтобы точно определить, когда началось ухудшение и в чем его причина.Сопоставляйте изменения задержки с событиями развертывания или изменениями структуры трафика, чтобы быстро определить причину снижения производительности.
+Track response time to understand typical behavior versus worst-case scenarios. Analyze performance trends across different periods to identify exactly when a degradation began and what was the reason for it. Correlate latency changes with deployment events or traffic pattern shifts to quickly pinpoint the cause of performance regressions.
 
-Подробную информацию см. в [Анализ времени отклика](/docs/observe/application-observability/services/response-time-analysis "Response time analysis helps you quickly the key contributors to slow service performance in Dynatrace.").
+For details, see [Response time analysis](/docs/observe/application-observability/services/response-time-analysis "Response time analysis helps you quickly the key contributors to slow service performance in Dynatrace.").
 
-![Сравнение анализа времени отклика](https://dt-cdn.net/images/response-time-analysis-comparisons-with-p-50-p-90-1062-916cc69f80.png)
+![Response time analysis comparisons](https://dt-cdn.net/images/response-time-analysis-comparisons-with-p-50-p-90-1062-916cc69f80.png)
 
-### Обработка сообщений
+### Message processing
 
-Отслеживайте скорость публикации сообщений, скорость получения и пропускную способность обработки в топологии вашей службы.Выявляйте узкие места в асинхронных рабочих процессах, которые упускает из виду традиционный мониторинг запросов и ответов.
+Track message publish rates, receive rates, and processing throughput across your service topology. Identify bottlenecks in asynchronous workflows that traditional request-response monitoring misses.
 
-Визуализируйте частоту сбоев обработки, чтобы точно определить службы, которые сталкиваются с проблемами потребления сообщений или логики преобразования.Обеспечьте видимость пакетных заданий, обработчиков событий и интеграций на основе очередей, работающих за пределами критически важных путей взаимодействия с пользователем.
+Visualize processing failure rates to pinpoint services struggling with message consumption or transformation logic. Maintain visibility into batch jobs, event processors, and queue-based integrations operating outside critical user-facing paths.
 
-![Взаимодействие очереди сообщений по сервисам](https://dt-cdn.net/images/message-processing-per-service-publish-receive-process-1678-1e1552955c.png)
+![Message queue interaction by service](https://dt-cdn.net/images/message-processing-per-service-publish-receive-process-1678-1e1552955c.png)
 
-### Анализ производительности запросов к базе данных
+### Database query performance analysis
 
-![Услуги](https://dt-cdn.net/hub/logos/services.png "Services") **Службы** собирают и анализируют запросы к базе данных, выполняемые вашими службами, отображая самые медленные запросы, ранжированные по времени и частоте выполнения.Узнайте, какие операции потребляют больше всего ресурсов и где индексирование или кэширование могут повысить производительность.Устраните «слепые зоны» за счет интеграции наблюдения за базами данных на инфраструктурном уровне с метриками уровня обслуживания.
+![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** captures and analyzes database queries executed by your services, presenting the slowest queries ranked by execution time and frequency. Discover which operations consume the most resources and where indexing or caching could improve performance. Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.
 
-![Представление запроса к базе данных](https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png)
+![Database query view](https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png)
 
-## Концепции
+### Outbound calls
 
-Концепции, связанные с сервисами, включая распределенные трассировки и промежутки, являются центральными концепциями наблюдаемости Dynatrace.Понимание этих концепций обеспечивает эффективный мониторинг и анализ распределенных систем.См. [Концепции, связанные с обслуживанием](/docs/observe/application-observability/services/services-concepts "Understand application observability, services, and distributed tracing concepts.").
+![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** captures and analyzes outbound calls made by your services, and then presents the most frequently called and slowest external dependencies ranked by request rate and duration. The **Outbound calls** view displays request rate, error rate, average duration, and cumulative duration for each outbound call. Discover which external calls consume the most resources and where performance bottlenecks exist in your service dependencies. By integrating outbound call observability with service-level metrics, you can eliminate blind spots and quickly determine if issues originate within your service or downstream.
 
-## Учебники
+![Outbound calls tab](https://dt-cdn.net/images/scr-20260204-oxkt-1998-bc116aaf86.png)
 
-[![Центр](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Reduce span- and metric-based cardinality").
 
-### Исследуйте в Dynatrace Hub
+## Concepts
 
-Поддерживайте централизованный контроль над работоспособностью, производительностью и ресурсами служб.](https://www.dynatrace.com/hub/detail/services-1/?query=services&filter=all)[![Печатка Dynatrace](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
+Service-related concepts, including distributed traces and spans, are central concepts in Dynatrace observability. Understanding these concepts enables effective monitoring and analysis of distributed systems. See [Service-related concepts](/docs/observe/application-observability/services/services-concepts "Understand application observability, services, and distributed tracing concepts.").
 
-### Попробуйте на игровой площадке Dynatrace
+## Tutorials
 
-Получите практический опыт работы с ![Услуги](https://dt-cdn.net/hub/logos/services.png "Services") **Сервисами** в нашей общедоступной изолированной среде, взаимодействуя с примерами данных без установки программного обеспечения.](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.services/home)
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
-## Похожие темы
+### Explore in Dynatrace Hub
 
-* [Услуги](/docs/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
-* [Распределенная трассировка](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.")
-* [Анализ отказов](/docs/observe/application-observability/services/failure-analysis "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.")
+Maintain centralized control over service health, performance, and resources.](https://www.dynatrace.com/hub/detail/services-1/?query=services&filter=all)[![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
+
+### Try in Dynatrace Playground
+
+Get a hands-on experience with ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** in our public sandbox environment, interacting with sample data without installing software.](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.services/home)
+
+## Related topics
+
+
+
+* [Services](/docs/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Distributed Tracing](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.")
+* [Failure Analysis](/docs/observe/application-observability/services/failure-analysis "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.")

@@ -1,346 +1,352 @@
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-06T16:21:07.058736
+scraped: 2026-02-18T21:16:11.762227
 ---
 
-# Приложение «Облака»
+# Clouds app
 
-# Приложение «Облака»
+# Clouds app
 
-* Последняя версия Dynatrace
-* Приложение
-* 4-минутное чтение
-* Обновлено 21 января 2026 г.
+* Latest Dynatrace
+* App
+* 4-min read
+* Updated on Jan 21, 2026
 
-Новый [облачный опыт»¿](https://www.dynatrace.com/platform/cloud-monitoring/) оптимизирован для групп эксплуатации облака (платформы) и инженеров по надежности объектов (SRE) и фокусируется на сценариях использования работоспособности, устранения неполадок и оптимизации производительности в (мульти)облачных средах.
+The new [cloud experienceï»¿](https://www.dynatrace.com/platform/cloud-monitoring/) is optimized for Cloud (Platform) Operation teams and Site Reliability Engineers (SREs) and focuses on health, troubleshooting, and performance optimization use cases of (multi-)cloud environments.
 
-Центральным элементом этого опыта являются ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака**.
+The centerpiece of this experience is ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
-* Подключите свои облачные учетные записи и начните анализировать все свои облачные ресурсы за считанные минуты.
-* Анализируйте метрики, события, журналы, трассировки, метаданные и топологию виртуальных машин, бессерверных функций, баз данных, очередей, хранилищ, сетей и многого другого — в одном представлении.
-* Используйте оповещения о состоянии здоровья, чтобы обеспечить оптимальное здоровье и производительность.Сократите время на поиск и устранение неисправностей с помощью оповещений на базе искусственного интеллекта.
-* Используйте свои (существующие) облачные теги для маршрутизации уведомлений, определения прав собственности или распределения затрат.
-* Воспользуйтесь готовыми информационными панелями, чтобы сэкономить время и получить мгновенную информацию.
+* Onboard your cloud accounts and start to analyze your full cloud inventory within minutes.
+* Analyze metrics, events, logs, traces, metadata and topology from virtual machines, serverless functions, databases, queues, storage, networking, and many moreâin one view.
+* Use health alerts to ensure optimal health and performance. Reduce troubleshooting and remediation time with AI-powered alerting.
+* Leverage your (existing) cloud tags to route notifications, define ownership, or allocate costs.
+* Take advantage of ready-made dashboards to save time and get instant insights.
 
-Все базовые данные наблюдения основаны на [Грааль](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), который поддерживает гибкую аналитику с помощью [Язык запросов Dynatrace](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") в ![Ноутбуки](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Блокноты**, ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Панели мониторинга** и ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Рабочие процессы**.
+The underlying observability data is all powered by [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), which supports flexible analytics through the [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
-![Получите комплексное представление о ваших мультиоблачных средах и просмотрите весь свой облачный инвентарь.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/clouds-app-overview-aws-and-azure.png)![Детали проблем, связанных с выбранными облачными ресурсами, легко анализировать.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/8822a738-a2bf-4d75-bdfa-beabbb150a0e.png)![См. полную информацию о конфигурации облачных сервисов.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/b96f7374-5a8e-4c7a-b256-d79f469803a4.png)![Начните немедленно с готовых панелей мониторинга.Настройте их в соответствии с вашими потребностями.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/08-ready-made-dashboard-aws-lambda.png)![Используйте готовые оповещения о работоспособности и предупреждающие сигналы, а также настраиваемые шаблоны оповещений для оценки работоспособности ваших облачных сервисов.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/d7350ea9-6129-4818-8798-27514232ca8f.png)![Легко и легко настройте новое соединение с AWS.Новые облачные подключения упрощают процесс регистрации для клиентов.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/06-clouds-app-new-aws-connection_2.png)![Вы по-прежнему можете использовать Explorer Classic для классических облачных подключений.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/f743e7e6-ec1d-488c-b0ae-5d5a3a8c98e5.png)
+![Get a comprehensive view of your multi-cloud environments and see your full cloud inventory](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/clouds-app-overview-aws-and-azure.png)![Details of problems associated with selected cloud resources are easy to analyze](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/8822a738-a2bf-4d75-bdfa-beabbb150a0e.png)![See full configuration details of cloud services](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/b96f7374-5a8e-4c7a-b256-d79f469803a4.png)![Get started immediately with ready-made dashboards. Customize them according to your needs.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/08-ready-made-dashboard-aws-lambda.png)![Use ready-made health alerts and warning signals and custom alert templates to assess health of your cloud services.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/d7350ea9-6129-4818-8798-27514232ca8f.png)![Easily and seamlessly set up a new AWS connection. New Cloud Connections simplifies the onboarding experience for customers.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/06-clouds-app-new-aws-connection_2.png)![You can still use Explorer Classic for classic cloud connections](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/f743e7e6-ec1d-488c-b0ae-5d5a3a8c98e5.png)
 
-1 из 7Получите полное представление о ваших мультиоблачных средах и просмотрите весь свой облачный инвентарь
+1 of 7Get a comprehensive view of your multi-cloud environments and see your full cloud inventory
 
-## Предварительные условия
+## Prerequisites
 
-![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** автоматически устанавливаются как основное приложение, управляемое Dynatrace.
+![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** is automatically installed as a core app managed by Dynatrace.
 
-### Соединения
+### Connections
 
-Новые облачные подключения (AWS, Azure)
+New cloud connections (AWS, Azure)
 
-Классические облачные подключения (AWS, Azure, GCP)
+Classic cloud connections (AWS, Azure, GCP)
 
-* Среда Dynatrace SaaS на базе Grail и AppEngine, размещенная в любом регионе AWS или подходящем регионе Azure.
-* [лицензия ДПС](/docs/license "About Dynatrace Platform Subscription (DPS), модель лицензирования для всех возможностей Dynatrace.") требуется для следующих возможностей:
+* Dynatrace SaaS environment powered by Grail and AppEngine hosted in any AWS region or an eligible Azure region
+* [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is required with the following capabilities:
 
-+ [Метрики на базе Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
-+ [Журналы на базе Grail](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
-+ [События на базе Грааля](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+  + [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+  + [Logs powered by Grail](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
+  + [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
 
-* Среда Dynatrace SaaS на базе Grail и AppEngine.
-* Доступно для [лицензия ДПС](/docs/license "About Dynatrace Platform Subscription (DPS), модели лицензирования для всех возможностей Dynatrace.») и [классическое лицензирование](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+* Dynatrace SaaS environment powered by Grail and AppEngine
+* Available for [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") and [classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
 
-См. [концепции](#concepts) для сравнения классических и новых облачных подключений.
+See [concepts](#concepts) for the comparison between classic and new cloud connections.
 
-### Разрешения
+### Permissions
 
-В следующей таблице описаны необходимые разрешения.
+The following table describes the required permissions.
 
-Разрешение
+Permission
 
-Описание
+Description
 
-настройки:объекты:читать
+settings:objects:read
 
-Прочтите настройки владения (settings:schemaIds = встроенный:ownership.config) — требуется на вкладке «Владение» на панели сведений.
+Read settings of ownership (settings:schemaIds = builtin:ownership.config) - required by Ownership tab in details panel.
 
-унифицированный-анализ: определение экрана: чтение
+unified-analysis:screen-definition:read
 
-Прочтите подробную информацию о конфигурации экрана.Необходим для отображения панели подробностей.
+Read details screen config. Necessary for displaying details panel.
 
-Дэвис: анализаторы: выполнить
+davis:analyzers:execute
 
-Выполнить анализаторы Дэвиса.Необходимо для представления подробностей о проблемах на вкладке «Проблемы» панели подробностей.
+Execute Davis analyzers. Necessary for presenting problems details in Problems tab in details panel.
 
-хаб:каталог:читать
+hub:catalog:read
 
-Прочтите каталог Хаба.
+Read Hub catalog.
 
-настройки приложения: объекты: читать
+app-settings:objects:read
 
-Чтение объектов настроек приложения.Требуется для регистрации журналов в контексте.
+Read app settings objects. Required for onboarding logs in context.
 
-настройки приложения: объекты: запись
+app-settings:objects:write
 
-Напишите объекты настроек приложения.
+Write app settings objects.
 
-slo:slos:читай
+slo:slos:read
 
-Прочтите вкладку SLO.
+Read for SLOs tab.
 
-состояние: пользовательское-приложение-состояния: чтение
+state:user-app-states:read
 
-Чтение состояния приложения пользователя.Необходимо для представления событий на вкладке «События» панели сведений.
+Read user app state. Necessary for presenting events in Events tab in details panel.
 
-состояние: пользовательское приложение-состояния: запись
+state:user-app-states:write
 
-Сохранение состояния приложения для каждого пользователя.
+Storing per-user app state.
 
-документ:документы:читать
+document:documents:read
 
-Читайте документы.Требуется для функции предустановок фильтра.Требуется для готовых дашбордов (Обзор).
+Read documents. Required by filter presets feature. Required for ready-made dashboards (Overview).
 
 10
 
-строк на странице
+rows per page
 
-Страница
+Page
 
 1
 
-из 1
+of 1
 
-## Начать
+## Get started
 
-![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** имеет встроенный процесс адаптации, который поможет вам выполнить все необходимые шаги для начала работы.Точные действия, которые вам необходимо предпринять, зависят от вашего облачного провайдера и типа облачного подключения (новое или классическое).
+![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** has an integrated onboarding flow that guides you through all the required steps to get started. The exact steps you need to take depend on your cloud provider and the type of cloud connection (new or classic).
 
-Новые облачные подключения (AWS, предварительная версия для Azure)
+If you're new to Dynatrace AWS Cloud Platform Monitoring, we recommend starting with the new AWS connections instead of the classic ones.
 
-Классические облачные подключения (AWS, Azure, GCP)
+New cloud connections (AWS, Preview for Azure)
 
-Новые облачные подключения (AWS, предварительная версия для Azure)
+Classic cloud connections (AWS, Azure, GCP)
 
-Классические облачные подключения (AWS, Azure, GCP)
+New cloud connections (AWS, Preview for Azure)
 
-Используйте следующее руководство для установки и настройки нового облачного подключения AWS в Dynatrace.
+Classic cloud connections (AWS, Azure, GCP)
 
-[01Создайте новое соединение с AWS
+Use the following guide to set up and configure a new AWS cloud connection in Dynatrace.
 
-* Практическое руководство
-* Узнайте, как создать новое соединение AWS в приложении Clouds.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)
+[01Create a new AWS connection
 
-В ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** используйте панель заголовка приложения и выберите **Создать соединение** > **AWS (классические подключения)** или **Создать соединение** > **Azure (классические подключения)** или **Создать соединение** > **GCP (классические подключения)**.
+* How-to guide
+* Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)
 
-Все данные, полученные от классических подключений, можно анализировать на вкладке **Проводник (Классические соединения)**.
+In ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**, use the app header bar and select  **Create connection** > **AWS (Classic connections)** or  **Create connection** > **Azure (Classic connections)** or  **Create connection** > **GCP (Classic connections)**.
 
-### Обзор (Новые подключения)
+All data originating from classic connections can be analyzed in the **Explorer (Classic connections)** tab.
 
-Вкладка **Обзор нового** — это целевая страница, на которой вы можете начать исследовать ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака**, получить данные в Dynatrace и сразу просмотреть сводную информацию о состоянии работоспособности ваших сервисов AWS и/или Azure на основе новых облачных подключений.На этой странице вы можете:
+### Overview (New connections)
 
-* Выберите плитку **Сервисы AWS** или **Службы Azure**, выберите конкретную категорию услуг или щелкните счетчик в правом верхнем углу плитки, чтобы получить доступ к вкладке **Новое в Explorer** со списком выбранных сервисов.
-* Проверьте состояние работоспособности облачных сервисов в зависимости от настроек оповещений.Чтобы просмотреть список неработоспособных служб в **Explorer New**, выберите красный счетчик (если есть) в правом верхнем углу плитки.
-* Откройте готовые панели мониторинга для самых популярных сервисов (например, AWS Lambda) или выберите **Просмотреть все панели мониторинга**, чтобы просмотреть все готовые панели мониторинга для AWS и/или Azure.
+The **Overview New** tab is the landing page, where you can start discovering ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**, get data into Dynatrace, and see a summary of the health state of your AWS and/or Azure services based on new cloud connections at a glance. On that page, you can:
 
-![Приложение «Облака» |Обзор](https://dt-cdn.net/images/clouds-app-overview-3840-c1c071fe6a.png)
+* Select the **AWS services** or **Azure services** tile, choose a specific service category, or select the counter in the upper-right corner of the tile to access the **Explorer New** tab with a list of selected services.
+* Review the health state of cloud services, depending on your alert setup. To list the unhealthy services in **Explorer New**, select the red counter (if any) in the upper-right corner of the tile.
+* Open ready-made dashboards for the most popular services (for example, AWS Lambda) or select **Browse all dashboards** to list all ready-made dashboards for AWS and/or Azure.
 
-### Explorer (Новые подключения)
+  ![Clouds app | Overview](https://dt-cdn.net/images/clouds-app-overview-3840-c1c071fe6a.png)
 
-Используйте вкладку **Explorer New** для анализа своих облачных сервисов и сред AWS.Вы можете исследовать, фильтровать и анализировать данные, используя различные функции ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облаков**.
+### Explorer (New connections)
 
-* На боковой панели слева вы можете выбрать конкретную категорию услуг (например, **Контейнеры** или **Функции**) или проанализировать все службы.Кроме того, вы можете быстро фильтровать по предопределенным атрибутам, релевантным для выбранной категории.Выберите любой атрибут на боковой панели фасетов и выберите **Обновить**, чтобы получить результаты.Поле фильтра обновится в соответствии с вашим выбором.
-* Либо выберите поле фильтра вверху, чтобы просмотреть предложения и ввести параметры фильтрации.Добавьте больше утверждений, чтобы сузить результаты.Однотипные критерии группируются по логике `OR`.Критерии разных типов сгруппированы по логике `AND`.Вы можете фильтровать услуги, используя теги, статус оповещения и такие атрибуты, как имя или регион.Это поможет вам сосредоточиться на конкретных подмножествах услуг в соответствии с вашими критериями.
 
-Дополнительные сведения о синтаксисе поля фильтра см. в разделе [Поле фильтра](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
-* Вы можете исследовать данные в таблице, используя доступные перспективы:
 
-+ **Здоровье**
-+ **Использование** (для вычислительных сервисов)
-+ **Метаданные**
-+ Чтобы настроить детали результатов, которые вы видите в таблице, выберите **Настройки столбца** и выберите столбцы, которые вы хотите отобразить.
+Use the **Explorer New** tab to analyze your AWS cloud services and environments. You can explore, filter, and analyze data using various features in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
-![Приложение «Облака» |Проводник – фильтрация – использование](https://dt-cdn.net/images/clouds-app-explorer-filtering-utilization-3840-2ec09e9078.png)
-* Выберите конкретный облачный сервис в таблице, чтобы проанализировать все данные в контексте: метрики, журналы, события, метаданные, конфигурацию и топологию.
+* In the sidebar on the left, you can select a specific service category (such as  **Containers** or  **Functions**) or analyze all services. In addition, you can quickly filter by predefined attributes that are relevant for the selected category. Select any attribute in the facets sidebar and select **Update** to get results. The filter field is updated with your selection.
+* Alternatively, select the filter field at the top to view suggestions and enter filtering options. Add more statements to narrow down the results. Criteria of the same type are grouped by `OR` logic. Criteria of different types are grouped by `AND` logic. You can filter services using tags, alert status, and attributes like name or region. This helps you focus on specific subsets of services based on your criteria.
 
-Выберите ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Перейти к информационной панели**, чтобы перейти к соответствующей готовой информационной панели, сохранив при этом выбранный период времени и фильтры.
+  For more details on the filter field syntax, see [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+* You can explore data in the table using the available perspectives:
 
-![Приложение «Облака» |Проводник – просмотр подробностей](https://dt-cdn.net/images/clouds-app-explorer-details-view-3840-1790feeb80.png)
+  + **Health**
+  + **Utilization** (for compute services)
+  + **Metadata**
+  + To tailor the results details that you see in the table, select **Column settings** and select the columns you want to display.
 
-### Оповещение (новые подключения)
+  ![Clouds app | Explorer - filtering - utilization](https://dt-cdn.net/images/clouds-app-explorer-filtering-utilization-3840-2ec09e9078.png)
+* Select a specific cloud service in the table to analyze all data in context: metrics, logs, events, metadata, configuration, and topology.
 
-![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** предоставляет готовые оповещения о работоспособности и предупреждающие сигналы для ваших облачных сервисов, а также шаблоны оповещений для настройки дополнительных настраиваемых оповещений для популярных сервисов AWS.
+  Select ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Go to dashboard** to navigate to the respective ready-made dashboard while maintaining the selected timeframe and filters.
 
-#### Оповещения о состоянии здоровья и предупреждающие сигналы
+  ![Clouds app | Explorer - details view](https://dt-cdn.net/images/clouds-app-explorer-details-view-3840-1790feeb80.png)
 
-Оповещения о состоянии здоровья и предупреждающие сигналы предоставляются и поддерживаются Dynatrace сразу после установки.
+### Alerting (New connections)
 
-* Предупреждение о работоспособности создает проблему Dynatrace, которая запускает анализ первопричин в Dynatrace.
-* Предупреждение создается для ресурса, когда наблюдение не является критическим и не должно вызывать проблемы.
+![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** provides ready-made health alerts and warning signals for your cloud services, as well as alert templates for setting up additional custom alerts for popular AWS services.
 
-Оповещения о состоянии здоровья и предупреждающие сигналы отображаются в ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облаках**.
+#### Health alerts and warning signals
 
-Вы можете легко добавить готовые оповещения о работоспособности и предупреждающие сигналы для своих учетных записей AWS либо в [Подключение к AWS](/docs/ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings "Onboard your AWS environments and create AWS connections via the Settings app."), либо в ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Настройки**.
+Health alerts and warning signals are provided and maintained out of the box by Dynatrace.
 
-Если вы хотите создать новые или обновить готовые оповещения о состоянии здоровья и предупреждающие сигналы, перейдите в раздел ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Настройки** > **Анализ и оповещения** > **Оповещения** > **Облачные службы**, где вы можете создавать, обновлять, а также включать/отключать оповещения для ваших подключений.
+* A health alert creates a Dynatrace problem that triggers root-cause analysis in Dynatrace.
+* A warning is created for a resource when the observation is not critical and shouldn't raise a problem.
 
-* Область оповещения
+  Health alerts and warning signals are both surfaced in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
-+ **Актер** (пользователь службы): укажите пользователя службы Dynatrace, от имени которого выполняется оценка предупреждений (и, следовательно, запросы).Пользователю службы требуются как минимум следующие разрешения:
+You can easily adopt ready-made health alerts and warning signals for your AWS accounts either upon your [AWS connection onboarding](/docs/ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings "Onboard your AWS environments and create AWS connections via the Settings app.") or in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
 
-- `storage:metrics:read`
-- `storage:buckets:read`
-- `davis:analyzers:execute`
-+ **Область оповещения** (регион): позволяет фильтровать оценки оповещений только для определенных регионов.Например, отфильтруйте `us-east-1`, чтобы получать оповещения и предупреждения только для облачных служб, размещенных в этом регионе.
-+ Условия оповещения
-+ В зависимости от модели обнаружения настроенного оповещения вы можете настроить различные параметры, такие как порог и количество колебаний сигнала.
+If you want to create new or update ready-made health alerts and warning signals, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Alerts** > **Cloud services**, where you can create, update, and enable/disable alerts for your connections.
 
-![Настройки |Готовые оповещения](https://dt-cdn.net/images/settings-ready-made-alerts-3840-d19f21a2a8.png)![Настройки |Подробности оповещения о состоянии здоровья](https://dt-cdn.net/images/settings-health-alert-details-3840-f4fc0982c7.png)
+* Alert scope
 
-1 из 2
+  + **Actor** (service user): Provide a Dynatrace service user on whose behalf the alert evaluation (and thus queries) are executed. The service user requires at least the following permissions:
 
-#### Шаблоны оповещений
+    - `storage:metrics:read`
+    - `storage:buckets:read`
+    - `davis:analyzers:execute`
+  + **Alert scope** (region): Allows you to filter alert evaluations only for specific regions. For example, filter for `us-east-1` to get alerts and warnings only for cloud services hosted in that region.
+  + Alert conditions
+  + Depending on the detection model of the configured alert, you can customize different parameters such as threshold and number of signal fluctuations.
 
-Dynatrace предоставляет предопределенные шаблоны оповещений, позволяющие создавать дополнительные настраиваемые оповещения в популярных облачных сервисах.Эти шаблоны оповещений дополняют готовые оповещения о состоянии здоровья и предупреждающие сигналы.
+![Settings | Ready-made alerts](https://dt-cdn.net/images/settings-ready-made-alerts-3840-d19f21a2a8.png)![Settings | Health alert details](https://dt-cdn.net/images/settings-health-alert-details-3840-f4fc0982c7.png)
 
-Вы можете легко создать новый [пользовательские оповещения](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") непосредственно в ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облаках**, выбрав шаблон и **Новое оповещение**.
+1 of 2
 
-Далее вы можете настроить оповещение в мастере обнаружения аномалий или создать оповещение одним щелчком мыши.
+#### Alert templates
 
-![Приложение «Облака» |Пользовательские шаблоны оповещений](https://dt-cdn.net/images/clouds-app-custom-alerts-template-3840-e1a42bda6c.png)
+Dynatrace provides predefined alert templates to allow for additional custom alerts on popular cloud services. These alert templates are complementary to ready-made health alerts and warning signals.
 
-Все настраиваемые оповещения и дополнительную информацию о возможностях и ограничениях можно найти в [![Обнаружение аномалий — новинка](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Обнаружение аномалий**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app «Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection»).
+You can easily create new [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") directly in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** by selecting a template and  **New Alert**.
 
-### Explorer (Классические соединения)
+Next, you can either customize the alert in the Anomaly Detection wizard or create the alert with one click.
 
-Вкладка **Проводник (классические подключения)** отображает данные, поступающие от классических облачных подключений, и позволяет анализировать облачные сервисы в AWS, Azure и GCP.
+![Clouds app | Custom alert templates](https://dt-cdn.net/images/clouds-app-custom-alerts-template-3840-e1a42bda6c.png)
 
-Если вы уже использовали Dynatrace для мониторинга облачной платформы, классические соединения и **Explorer (классические соединения)** продолжат предоставлять ту же ценность.
+You can find all custom alerts and more information around capabilities and limits in [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.").
 
-![Приложение «Облака» |Проводник (Классические соединения)](https://dt-cdn.net/images/clouds-app-explorer-classic-connections-3840-a96bf1622d.png)
+### Explorer (Classic connections)
 
-## Концепции
+The **Explorer (Classic connections)** tab surfaces data coming from classic cloud connections and allows for the analysis of cloud services across AWS, Azure, and GCP.
 
-### Новые облачные подключения по сравнению с классическими облачными подключениями
+If you've already used Dynatrace for cloud platform monitoring, the classic connections and **Explorer (Classic connections)** continue to provide the same value.
 
-![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** предоставляет комплексное представление о ваших (мульти)облачных средах, позволяя оптимизировать работоспособность, производительность и использование ресурсов ваших облачных сервисов.
+![Clouds app | Explorer (Classic connections)](https://dt-cdn.net/images/clouds-app-explorer-classic-connections-3840-a96bf1622d.png)
 
-В настоящее время ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** поддерживает два типа облачных подключений:
+## Concepts
 
-Новые облачные подключения (AWS, предварительная версия для Azure)
+### New cloud connections vs classic cloud connections
 
-Новейшие подключения к облачной платформе Dynatrace предоставляют более простой, гибкий и мощный способ подключения облачных учетных записей AWS и Azure к Dynatrace.Поддержка GCP появится в ближайшее время.
+![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** provides a comprehensive view of your (multi-)cloud environments, enabling you to optimize the health, performance, and resource utilization of your cloud services.
 
-Все данные изначально хранятся в Grail и отображаются на вкладках **Новый обзор** и **Новый проводник** в ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака**.
+Currently, ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** supports two types of cloud connections:
 
-Классические соединения
+New cloud connections (AWS, Preview for Azure)
 
-Классические облачные подключения доступны для AWS, Azure и GCP в рамках предыдущей (**AWS Classic**, **Azure Classic**, **GCP Classic**) и последней версии Dynatrace.
+The newest cloud platform connections by Dynatrace provide an easier, more flexible, and more powerful way to connect AWS and Azure cloud accounts with Dynatrace. Support for GCP will follow soon.
 
-Классические подключения отображаются на вкладке **Проводник (Классическое соединение)** в ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** и не предъявляют особых требований к лицензированию.
+All data is natively stored in Grail and surfaced on the **Overview New** and **Explorer New** tabs within ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
-Вкладки **Explorer** New и **Обзор** New работают только с данными, полученными из новых подключений к облаку AWS.
+Classic connections
 
-Azure и GCP последуют этому примеру в будущем.
+The classic cloud connections are available for AWS, Azure, and GCP within the previous (**AWS Classic**, **Azure Classic**, **GCP Classic**) and latest Dynatrace.
 
-### Перспективы: здоровье, использование и метаданные (новые связи)
+Classic connections are surfaced on the **Explorer (Classic connection)** tab in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** and have no specific licensing requirements.
 
-Каждый аспект мониторинга ваших облачных сервисов можно адаптировать к вашим потребностям, отображая или скрывая столбцы в таблице.
+The **Explorer** New and **Overview** New tabs only operate upon data originating from new AWS cloud connections.
 
-* **Здоровье** — предоставляет информацию, связанную со здоровьем.
-* **Использование** (доступно для вычислительных сервисов) – обеспечивает перспективное внимание к операционной эффективности.
-* **Метаданные** – отображают дополнительную информацию, например облачные теги.
+Azure and GCP will follow in the future.
 
-#### Здоровье и персонализированные оповещения
+### Perspectives: Health, Utilization, and Metadata (New connections)
 
-В перспективе **Здоровье** вы можете увидеть состояние каждого облачного сервиса и специальные оповещения.При наведении указателя мыши на значок состояния или настраиваемого оповещения вы увидите проблемы и варианты дальнейшего анализа.
+Each perspective on monitoring your cloud services can be tailored to your needs by showing or hiding columns in the table.
 
-* Выберите **Просмотреть событие**, чтобы напрямую перейти к подробной информации, например к соответствующим показателям для соответствующей проблемы.
-* Выберите **Исследовать проблему**, чтобы войти в **Режим проблемы**.
+* **Health**âprovides health-related information
+* **Utilization** (available for compute services)âprovides perspective focuses on operational efficiency
+* **Metadata**âsurfaces additional information, such as cloud tags
 
-**Режим проблем** позволяет точно исследовать и анализировать любые проблемы, связанные со здоровьем.
+#### Health and custom alerts
 
-* В этом режиме выделяются наиболее важные показатели, связанные с оповещением, и сужаются временные рамки до времени начала и окончания выбранной проблемы.
-* Кроме того, он предлагает быстрый доступ к основной проблеме, что позволяет эффективно диагностировать и решать проблемы.
-* Вы можете использовать [Дэвис Разведка](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence generative AI."), чтобы получить дополнительную информацию о проблеме и возможных действиях по ее устранению.
+In the **Health** perspective, you can see each cloud service's health and custom alerts. When you hover over a health or custom alert badge, you see the problems and further analysis options.
 
-**Режим проблем** всегда активен при переходе от конкретной проблемы в [![Приложение «Проблемы» — новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Проблемы**](/docs/dynatrace-intelligence/davis-problems-app «Используйте приложение «Проблемы», чтобы быстро найти основную причину инцидентов в вашей среде.») к ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака**.
+* Select  **View event** to directly navigate to the details, such as relevant metrics for the respective problem.
+* Select  **Investigate problem** to enter **Problem mode**.
 
-![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** работает в **Режиме проблем**, когда проблема выделяется рядом с панелью фильтров в верхней части приложения.
+**Problem mode** enables precise investigation and analysis of any health-related issues.
 
-###Готовые дашборды (Новые подключения)
+* This mode highlights the most relevant metrics associated with the alert and narrows down the timeframe to the start and end times of the selected problem.
+* Additionally, it offers quick access to the underlying problem, allowing you to efficiently diagnose and resolve issues.
+* You can use [Davis Intelligence](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence generative AI.") to get additional insights about the problem and potential remediation steps.
 
-У вас есть доступ к следующим готовым панелям мониторинга для новой платформы AWS Cloud Platform Monitoring:
+**Problem mode** is always active when you navigate from a specific problem in [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") to ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
-* Обзор AWS
-* AWS API (API-шлюз и REST API)
-* Основа AWS
-* AWS Динамодб
-* AWS EC2 (EC2, EBS, автомасштабирование)
-* AWS ECS (включая ECS Container Insights)
-* AWS Edge Networking (маршрут 53, CloudFront)
-* АВС ЭФС
+![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** operates in **Problem mode** whenever a problem is highlighted next to the filter bar at the top of the app.
+
+### Ready-made dashboards (New connections)
+
+
+
+You have access to the following ready-made dashboards for the new AWS Cloud Platform Monitoring:
+
+* AWS Overview
+* AWS API (API Gateway and REST APIs)
+* AWS Bedrock
+* AWS Dynamo DB
+* AWS EC2 (EC2, EBS, AutoScaling)
+* AWS ECS (including ECS Container Insights)
+* AWS Edge Networking (Route 53, CloudFront)
+* AWS EFS
 * AWS ElastiCache (Redis, Memcached)
-* AWS ELB (приложение, классика, балансировка сетевой нагрузки)
+* AWS ELB (Application, Classic, Network Load Balancing)
 * AWS EventBridge
-* Сеть AWS Foundation (шлюз NAT, PrivateLink)
-* События состояния здоровья AWS.
-* АВС Лямбда
-* AWS MSK (Кафка)
-* AWS RDS (включая Аврору)
-* АВС С3
-* АВС СНС
+* AWS Foundation Networking (NAT Gateway, PrivateLink)
+* AWS Health Events
+* AWS Lambda
+* AWS MSK (Kafka)
+* AWS RDS (including Aurora)
+* AWS S3
+* AWS SNS
 * AWS SQS
 
-Доступ к готовым дашбордам можно получить через:
+The ready-made dashboards can be accessed through:
 
-* ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Панели мониторинга**
+* ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**
 
-Откройте ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Панели управления**, выберите [Готовые дашборды](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards "Use ready-made dashboards to visualize your data right out of the box.") в левом меню и найдите `aws`.
-* ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака**
+  Open ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, select [Ready-made dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards "Use ready-made dashboards to visualize your data right out of the box.") in the left menu, and search for `aws`.
+* ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**
 
-+ Откройте ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** и выберите вкладку **Обзор новых**.Затем вы можете либо напрямую выбрать одну из наиболее популярных панелей мониторинга (например, AWS Lambda), либо выбрать **Просмотреть все панели мониторинга**.
-+ ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** позволяет переходить от определенной службы к соответствующей информационной панели в контексте ( ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Перейти к информационной панели**).Выбранный период времени, сегмент и примененные фильтры будут перенесены из ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облака** на панель управления.
+  + Open ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** and select the **Overview New** tab. You can then either select one of the more popular dashboards directly (for example, AWS Lambda) or select **Browse all dashboards**.
+  + ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** allows you to navigate from a specific service to the respective dashboard in context ( ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Go to dashboard**). The selected timeframe, segment, and applied filters will be carried over from ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** to the dashboard.
 
-![Приложение «Облака» |Панель навигации](https://dt-cdn.net/images/clouds-app-dashboard-navigation-3840-d0998aa51b.png)
+![Clouds app | Dashboard navigation](https://dt-cdn.net/images/clouds-app-dashboard-navigation-3840-d0998aa51b.png)
 
-### Сегменты (Новые соединения)
+### Segments (New connections)
 
-[Сегменты](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") позволяют логически структурировать и удобно фильтровать данные наблюдения по приложениям на платформе Dynatrace.Сегменты доступны на новой вкладке **Explorer New** и их можно легко определить для новых облачных подключений, поскольку все данные (включая [Узлы Smartscape](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) хранятся в Grail.
+[Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new **Explorer New** tab and can be defined easily for new cloud connections, since all data (including [Smartscape nodes](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) is stored in Grail.
 
-Пошаговое руководство по определению сегментов для узлов Smartscape см. в разделе [Фильтрация узлов Smartscape с помощью сегментов](/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes "Learn how to filter Smartscape nodes by using segments in Dashboards.").Вы можете использовать любое основное поле Grail (а в будущем и теги) для удобного определения простых сегментов среди **Всех данных**:
+For a step-by-step guide on how to define segments for Smartscape nodes, see [Filter Smartscape nodes with segments](/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes "Learn how to filter Smartscape nodes by using segments in Dashboards."). You can use any primary Grail field (and, in the future, also tags) to conveniently define simple segments across **All data**:
 
-* [Первичные поля Грааля](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.") (например, `aws.account.id`, `aws.region`)
-* Первичные теги Грааля (в будущем)
+* [Primary Grail fields](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.") (for example, `aws.account.id`, `aws.region`)
+* Primary Grail tags (future)
 
-Пример определения сегмента по идентификатору аккаунта AWS:
+Example segment definition by AWS Account ID:
 
-![Сегмент – аккаунт AWS](https://dt-cdn.net/images/simple-segment-aws-account-3840-1b8915174b.png)
+![Segment - AWS account](https://dt-cdn.net/images/simple-segment-aws-account-3840-1b8915174b.png)
 
-В ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** (или любом другом приложении, поддерживающем сегменты) вы можете выбрать сегмент `AWS account` и выбрать один или несколько `awsAccountIDs` для фильтрации.
+In ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** (or any other app that supports segments), you can then choose the segment `AWS account` and select one or more `awsAccountIDs` for filtering.
 
-## Варианты использования
+## Use cases
 
-* Понимание вашей (мульти)облачной архитектуры и зависимостей.
-* Оцените состояние ваших облачных сервисов.
-* Устранение неполадок в ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Облаках**.
-* Анализ производительности и использования ресурсов.
+* Understand your (multi-)cloud architectures and dependencies
+* Assess health of your cloud services
+* Troubleshoot problems in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**
+* Analyze performance and resource utilization
 
-## ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
+## FAQ
 
-### Что делать, если у меня уже есть подключение к облаку?
+### What if I already have existing cloud connections?
 
-Существующие классические облачные подключения остаются без изменений и не обновляются и не удаляются автоматически.
+The existing, classic cloud connections stay as they are and are not automatically upgraded or removed.
 
-Чтобы воспользоваться новой функцией мониторинга облачной платформы AWS, вам необходимо создать новое облачное подключение для ваших учетных записей AWS.
+To benefit from the new AWS Cloud Platform Monitoring, you need to create a new cloud connection for your AWS accounts.
 
-Одна и та же учетная запись AWS для классических и новых облачных подключений.
+The same AWS Account for the classic and new cloud connections
 
-Мы не рекомендуем настраивать классическое и новое облачные подключения для одной и той же учетной записи AWS.В гетерогенном наборе учетных записей AWS классические и новые облачные подключения могут сосуществовать.
+We do not recommend setting up the classic and new cloud connections for the same AWS account. For a heterogeneous set of AWS accounts, classic and new cloud connections can co-exist.
 
-### Как мне присоединиться к предварительной версии Azure?
+### How can I join the Azure Preview?
 
-Вы можете найти дополнительную информацию и присоединиться к мониторингу облачной платформы для предварительной версии Azure через наш [Предварительный просмотр страницы программы](/docs/whats-new/preview-releases#new-cloud-platform-monitoring-for-azure "Learn about our Preview releases and how you can participate in them.").
+You can find more information and join the Cloud Platform Monitoring for Azure Preview through our [Preview program page](/docs/whats-new/preview-releases#new-cloud-platform-monitoring-for-azure "Learn about our Preview releases and how you can participate in them.").
 
-[![Центр](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
-### Исследуйте в Dynatrace Hub
+### Explore in Dynatrace Hub
 
-Подключите свои новые мультиоблачные среды и отслеживайте их ресурсы.](https://www.dynatrace.com/hub/detail/clouds/?internal_source=doc&internal_medium=link&internal_campaign=cross)
+Onboard your new multicloud environments and monitor their resources.](https://www.dynatrace.com/hub/detail/clouds/?internal_source=doc&internal_medium=link&internal_campaign=cross)

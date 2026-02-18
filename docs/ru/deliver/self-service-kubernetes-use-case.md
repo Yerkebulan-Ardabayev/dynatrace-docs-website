@@ -1,7 +1,7 @@
 ---
 title: Predict and autoscale Kubernetes workloads
 source: https://www.dynatrace.com/docs/deliver/self-service-kubernetes-use-case
-scraped: 2026-02-17T05:01:55.950106
+scraped: 2026-02-18T21:35:30.916847
 ---
 
 # Predict and autoscale Kubernetes workloads
@@ -1762,19 +1762,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-### Шаг 2: Зафиксируйте рабочий процесс прогнозирования Dynatrace Intelligence
-
-Чтобы зафиксировать рабочий процесс прогнозирования, выполните следующие действия:
-1. Откройте рабочий процесс прогнозирования в Dynatrace.
-2. Нажмите кнопку **Зафиксировать**.
-3. Введите комментарий к фиксации, чтобы описать изменения, внесенные в рабочий процесс.
-4. Нажмите кнопку **Зафиксировать**, чтобы сохранить изменения.
-
-После фиксации рабочего процесса прогнозирования он будет доступен для использования в Dynatrace. Вы можете просмотреть историю фиксаций, чтобы отслеживать изменения, внесенные в рабочий процесс.
-
-**Примечание:** Перед фиксацией рабочего процесса прогнозирования убедитесь, что вы проверили его на правильность и полноту. Если вы внесли изменения в рабочий процесс, которые не были запланированы, вы можете отменить фиксацию и вернуться к предыдущей версии.
-
-**Следующий шаг:** Настройте рабочий процесс прогнозирования для использования с OneAgent и ActiveGate.
+### Step 2 Commit Dynatrace Intelligence prediction workflow
 
 This workflow is triggered every time the first workflow detects a Kubernetes workload that should be scaled and emits a Davis event.
 

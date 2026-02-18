@@ -9,7 +9,7 @@
 ---
 title: Dynatrace Intelligence predictive AI analysis
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
-scraped: 2026-02-17T04:46:19.821220
+scraped: 2026-02-18T21:17:26.249073
 ---
 
 # Dynatrace Intelligence predictive AI analysis
@@ -964,7 +964,7 @@ This example shows the forecast for a 6-hours timeframe. Apart from an extensive
 ---
 title: Seasonal baseline
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline
-scraped: 2026-02-17T05:10:13.647668
+scraped: 2026-02-18T21:36:23.200759
 ---
 
 # Seasonal baseline
@@ -1046,7 +1046,7 @@ After the training is finished, Dynatrace uses the seasonal model to detect anom
 ---
 title: AI models
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
-scraped: 2026-02-16T21:22:51.985154
+scraped: 2026-02-18T21:23:19.912480
 ---
 
 # AI models
@@ -1087,7 +1087,7 @@ Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/seasonal
 ---
 title: Dynatrace Intelligence limits
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/davis-ai-limits
-scraped: 2026-02-17T04:59:09.274457
+scraped: 2026-02-18T21:35:01.103757
 ---
 
 # Dynatrace Intelligence limits

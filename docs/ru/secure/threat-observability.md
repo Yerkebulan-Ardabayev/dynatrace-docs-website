@@ -1,97 +1,98 @@
 ---
 title: Threat Observability
 source: https://www.dynatrace.com/docs/secure/threat-observability
-scraped: 2026-02-06T16:20:00.546819
+scraped: 2026-02-18T21:16:53.640412
 ---
 
-# Наблюдаемость угроз
+# Threat Observability
 
-# Наблюдаемость угроз
+# Threat Observability
 
-* Последняя версия Dynatrace
-* Обзор
-* Обновлено 9 декабря 2025 г.
+* Latest Dynatrace
+* Overview
+* Updated on Feb 26, 2026
 
-В мире, где масштабы данных о безопасности постоянно растут, команды DevSecOps теряются в разрозненных инструментах, перегруженные количеством предупреждений.Это приводит к пропущенным угрозам и повышенным рискам безопасности.Чтобы собрать все части головоломки и принять меры в соответствии с выводами безопасности, требуется много ручных усилий.
+In a world where security data is constantly increasing in scale, DevSecOps teams find themselves lost in siloed tooling, overwhelmed by the number of alerts. This leads to missed threats and increased security risks. A lot of manual effort is required to assemble all the puzzle pieces and act on the security findings.
 
-Dynatrace Threat Observability предлагает платформу, которая объединяет и дополняет данные безопасности контекстом времени выполнения.Это помогает разрушить информационную разрозненность между различными инструментами и средами и способствует эффективному снижению рисков.
+Dynatrace Threat Observability offers a platform that unifies and enriches the security data with the runtime context. This helps to break the informational siloes between various tools and environments and contributes to efficient risk mitigation.
 
-Используя Grail и DQL, вы можете единообразно использовать данные безопасности, созданные Dynatrace и сторонними организациями, что позволяет использовать несколько вариантов использования, которые способствуют:
+Leveraging Grail and DQL, you can uniformly consume Dynatrace-generated and third-party security findings, enabling multiple use cases that contribute to:
 
-* Приоритизация результатов с учетом контекста времени выполнения.
-* Визуализация данных безопасности и отчетность.
-* Автоматизация создания заявок и уведомлений.
-* Расследование безопасности и поиск угроз
-* Обнаружение и устранение угроз.
+* Findings prioritization with runtime context
+* Security data visualization and reporting
+* Automation of ticket creation and notifications
+* Security investigation and threat hunting
+* Threat detection and remediation
 
-Благодаря широкому спектру интеграции безопасности и приему OpenPipeline платформа наблюдения и безопасности Dynatrace взаимодействует с вашей экосистемой продуктов, обеспечивая более значительную ценность сгенерированных данных.
+With a wide range of security integrations and OpenPipeline ingest, the Dynatrace observability and security platform interoperates with your ecosystem of products, providing more significant value from the generated data.
 
-Варианты использования
+Use cases
 
-Связанные блоги
+Related blogs
 
-### Отслеживайте подозрительную активность входа в систему с помощью Dynatrace
+### Monitor suspicious sign-in activity with Dynatrace
 
-Анализируйте подозрительное и вредоносное поведение при входе в систему с помощью Dynatrace.
+Analyze suspicious and malicious sign-in behaviors with Dynatrace.
 
-* [Отслеживайте подозрительную активность входа в систему с помощью Dynatrace](/docs/secure/use-cases/monitor-sign-in-activity "Analyze suspicious and malicious sign-in behaviors with Dynatrace.")
+* [Monitor suspicious sign-in activity with Dynatrace](/docs/secure/use-cases/monitor-sign-in-activity "Analyze suspicious and malicious sign-in behaviors with Dynatrace.")
 
-### Автоматизируйте и координируйте проверки безопасности
+### Automate and orchestrate security findings
 
-Регулярно проверяйте критические уязвимости контейнера и получайте автоматические билеты Jira или оповещения Slack.
+Regularly check for critical container vulnerabilities and get automatic Jira tickets or Slack alerts.
 
-* [Автоматизируйте и координируйте обнаружение нарушений безопасности](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* [Automate and orchestrate security findings](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
 
-### Обнаружение пробелов в результатах анализа безопасности
+### Discover coverage gaps in security findings
 
-Получите представление о проверках безопасности в течение жизненного цикла разработки программного обеспечения (SDLC).
+Gain visibility into the security validations during the Software Development Lifecycle (SDLC).
 
-* [Обнаружение пробелов в результатах анализа безопасности](/docs/secure/use-cases/discover-coverage-gaps-in-security-scans "Unveil blind spots in your Software Development Lifecycle (SDLC).")
+* [Discover coverage gaps in security findings](/docs/secure/use-cases/discover-coverage-gaps-in-security-scans "Unveil blind spots in your Software Development Lifecycle (SDLC).")
 
-### Получение и обработка пользовательских результатов безопасности
+### Ingest and process custom security findings
 
-Постоянно передавайте результаты сканирования контейнеров в Dynatrace.
+Continuously ingest your container scan findings into Dynatrace.
 
-* [Прием и обработка пользовательских результатов безопасности](/docs/secure/use-cases/ingest-and-process-custom-security-findings "Continuously ingest your container scan findings.")
+* [Ingest and process custom security findings](/docs/secure/use-cases/ingest-and-process-custom-security-findings "Continuously ingest your container scan findings.")
 
-### Контекстуализация результатов контейнера во время выполнения
+### Runtime contextualization of container findings
 
-Отсортируйте обнаруженные критические уязвимости в производственных приложениях в контейнерах с уязвимыми образами контейнеров.
+Triage critical vulnerability findings in production applications on containers with vulnerable container images.
 
-* [Контекстуализация результатов контейнера во время выполнения](/docs/secure/use-cases/runtime-contextualization-of-container-findings "Triage critical vulnerability findings in production applications on containers with vulnerable container images.")
+* [Runtime contextualization of container findings](/docs/secure/use-cases/runtime-contextualization-of-container-findings "Triage critical vulnerability findings in production applications on containers with vulnerable container images.")
 
-### Визуализация и анализ результатов безопасности
+### Visualize and analyze security findings
 
-Легко просматривайте и анализируйте результаты безопасности различных продуктов и инструментов.
+Effortlessly view and analyze security findings across products and tools.
 
-* [Визуализация и анализ результатов безопасности](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
+* [Visualize and analyze security findings](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
 
-### Автоматизация уведомлений CSPM
+### CSPM Notification Automation
 
-Автоматически обрабатывайте, сортируйте, обогащайте и классифицируйте входящие оповещения безопасности.
+Automatically process, triage, enrich, and classify incoming security alerts.
 
-* [Автоматизация уведомлений CSPM](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
+* [CSPM Notification Automation](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
 
-* [Умная облачная безопасность с Dynatrace и Kiro CLIï»¿](https://www.dynatrace.com/news/blog/smarter-cloud-security-with-dynatrace-and-kiro-cli/)
-* [Получайте и обогащайте данные о безопасности и качестве SonarQube с помощью Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-sonarqube-security-and-quality-findings-with-dynatrace/)
-* [Устранение уязвимостей без помощи рук с помощью сервера Dynatrace MCP и агента кодирования GitHub Copilot»¿](https://www.dynatrace.com/news/blog/dynatrace-mcp-server-and-github-copilot-coding-agent/)
-* [Принимайте и обогащайте оповещения безопасности Microsoft Sentinel с помощью Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-microsoft-sentinel-security-alerts-with-dynatrace/)
-* [Получайте и обогащайте результаты поиска уязвимостей GitHub Advanced Security с помощью Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-github-advanced-security-vulnerability-findings-with-dynatrace/)
-* [Получайте и обогащайте результаты безопасности Amazon GuardDuty с помощью Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-amazon-guardduty-security-findings-with-dynatrace/)
-* [Принимайте и обогащайте результаты Microsoft Defender for Cloud с помощью Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-microsoft-defender-for-cloud-findings-with-dynatrace/)
-* [Dynatrace Investigations предлагает анализ репутации и контекста IP-адресов»¿](https://www.dynatrace.com/news/blog/security-investigator-offers-reputation-analysis-and-context-for-ip-addresses/)
-* [Обнаружение угроз в облачных средах: обнаружение подозрительного поведения учетной записи службы Kubernetes»¿](https://www.dynatrace.com/news/blog/threat-detection-cloud-native-kubernetes/)
-* [Обнаружение угроз в облачных средах (часть 2): как автоматизировать управление угрозами с помощью рабочих процессов»¿](https://www.dynatrace.com/news/blog/threat-detection-automate-using-workflows/)
-* [Обогатите наблюдаемые данные информацией об угрозах VirusTotal»¿](https://www.dynatrace.com/news/blog/enrich-observables-with-virustotal-threat-intelligence/)
-* [Обогатите наблюдаемые данные информацией об угрозах AbuseIPDB»¿](https://www.dynatrace.com/news/blog/enrich-observables-with-abuseipdb-threat-intelligence/)
-* [Освоение мониторинга журнала входа в систему: как защитить личность пользователя с помощью Dynatrace»¿](https://www.dynatrace.com/news/blog/sign-in-log-monitoring-secure-user-identity)
-* [Получайте и обогащайте результаты безопасности, полученные от Amazon EventBridge, с помощью Dynatraceï»¿](https://aws.amazon.com/blogs/apn/ingest-and-enrich-security-findings-delivered-by-amazon-eventbridge-with-dynatrace/)
-* [Получайте и обогащайте данные об уязвимостях Snyk с помощью Dynatrace»¿](https://dt-url.net/6i230p7)
-* [Получайте и обогащайте данные об уязвимостях Harbour с помощью Dynatrace»¿](https://dt-url.net/4603wzy)
-* [Получайте и обогащайте данные AWS Security Hub с помощью Dynatraceï»¿](https://dt-url.net/t703wux)
-* [Получайте и обогащайте результаты безопасности, полученные от Amazon EventBridge, с помощью Dynatraceï»¿](https://dt-url.net/xn03wga)
-* [Дополните выводы Tenable об уязвимостях контекстом времени выполнения Dynatrace»¿](https://dt-url.net/1023ww7)
-* [Дополните выводы об уязвимостях Amazon ECR контекстом времени выполнения»¿](https://dt-url.net/9763wjo)
-* [Держите результаты безопасности под рукой с помощью мобильного приложения Dynatrace»¿](https://dt-url.net/x883wbh)
-* [Разрушьте разрозненность: дополните выводы об уязвимостях контекстом времени выполнения»¿](https://dt-url.net/hla3weh)
-* [Оптимизируйте обмен информацией об уязвимостях и рисках с помощью интуитивно понятных и автоматизированных отчетов о безопасности»¿](https://dt-url.net/chc3w9i)
+* [Smarter vulnerability remediation with Dynatrace and Atlassian Rovo Devï»¿](https://www.dynatrace.com/news/blog/smarter-vulnerability-remediation-with-dynatrace-and-atlassian-rovo-dev/)
+* [Smarter cloud security with Dynatrace and Kiro CLIï»¿](https://www.dynatrace.com/news/blog/smarter-cloud-security-with-dynatrace-and-kiro-cli/)
+* [Ingest and enrich SonarQube security and quality findings with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-sonarqube-security-and-quality-findings-with-dynatrace/)
+* [Hands-free vulnerability remediation with Dynatrace MCP server and GitHub Copilot coding agentï»¿](https://www.dynatrace.com/news/blog/dynatrace-mcp-server-and-github-copilot-coding-agent/)
+* [Ingest and enrich Microsoft Sentinel security alerts with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-microsoft-sentinel-security-alerts-with-dynatrace/)
+* [Ingest and enrich GitHub Advanced Security vulnerability findings with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-github-advanced-security-vulnerability-findings-with-dynatrace/)
+* [Ingest and enrich Amazon GuardDuty security findings with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-amazon-guardduty-security-findings-with-dynatrace/)
+* [Ingest and enrich Microsoft Defender for Cloud findings with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-microsoft-defender-for-cloud-findings-with-dynatrace/)
+* [Dynatrace Investigations offers reputation analysis and context for IP addressesï»¿](https://www.dynatrace.com/news/blog/security-investigator-offers-reputation-analysis-and-context-for-ip-addresses/)
+* [Threat detection in cloud native environments: Detecting suspicious Kubernetes service account behaviorï»¿](https://www.dynatrace.com/news/blog/threat-detection-cloud-native-kubernetes/)
+* [Threat detection in cloud native environments (part 2): How to automate threat management using workflowsï»¿](https://www.dynatrace.com/news/blog/threat-detection-automate-using-workflows/)
+* [Enrich observables with VirusTotal threat intelligenceï»¿](https://www.dynatrace.com/news/blog/enrich-observables-with-virustotal-threat-intelligence/)
+* [Enrich observables with AbuseIPDB threat intelligenceï»¿](https://www.dynatrace.com/news/blog/enrich-observables-with-abuseipdb-threat-intelligence/)
+* [Mastering sign-in log monitoring: How to secure user identity with Dynatraceï»¿](https://www.dynatrace.com/news/blog/sign-in-log-monitoring-secure-user-identity)
+* [Ingest and enrich security findings delivered by Amazon EventBridge with Dynatraceï»¿](https://aws.amazon.com/blogs/apn/ingest-and-enrich-security-findings-delivered-by-amazon-eventbridge-with-dynatrace/)
+* [Ingest and enrich Snyk vulnerability findings with Dynatraceï»¿](https://dt-url.net/6i230p7)
+* [Ingest and enrich Harbor vulnerability findings with Dynatraceï»¿](https://dt-url.net/4603wzy)
+* [Ingest and enrich AWS Security Hub findings with Dynatraceï»¿](https://dt-url.net/t703wux)
+* [Ingest and enrich security findings delivered by Amazon EventBridge with Dynatraceï»¿](https://dt-url.net/xn03wga)
+* [Enrich Tenable vulnerability findings with Dynatrace runtime contextï»¿](https://dt-url.net/1023ww7)
+* [Enrich Amazon ECR vulnerability findings with runtime contextï»¿](https://dt-url.net/9763wjo)
+* [Keep security findings at your fingertips with the Dynatrace mobile appï»¿](https://dt-url.net/x883wbh)
+* [Break the silos: Enrich vulnerability findings with runtime contextï»¿](https://dt-url.net/hla3weh)
+* [Streamline vulnerability-risk communications with intuitive and automated security reportingï»¿](https://dt-url.net/chc3w9i)

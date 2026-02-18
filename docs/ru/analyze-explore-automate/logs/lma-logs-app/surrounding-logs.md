@@ -1,32 +1,32 @@
 ---
 title: View surrounding logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs
-scraped: 2026-02-06T16:00:10.985968
+scraped: 2026-02-18T21:17:57.519915
 ---
 
-# Просмотр окружающих журналов
+# View surrounding logs
 
-# Просмотр окружающих журналов
+# View surrounding logs
 
-* Последняя версия Dynatrace
-* Практическое руководство
-* 1 минута чтения
-* Опубликовано 2 июля 2025 г.
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Jul 02, 2025
 
-Просмотрите окружающие журналы для каждой записи журнала, чтобы лучше понять контекст данных.
+View the surrounding logs for every log record to better understand the context for the data.
 
-![Окружающие журналы ошибок журнала на основе корреляции идентификаторов трассировки](https://dt-cdn.net/images/surroundinglogs-1907-40995092b7.png)
+![Surrounding logs of a log error based on trace ID correlation](https://dt-cdn.net/images/surroundinglogs-1907-40995092b7.png)
 
-Чтобы просмотреть окружающие журналы
+To view surrounding logs
 
-1. В ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы** найдите соответствующую строку журнала в таблице результатов и откройте ее сведения.
-2. Выберите **Показать окружающие журналы**.
+1. In ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**, find a relevant log line in the result table and open its details.
+2. Select **Show surrounding logs**.
 
-Окружающие журналы отображаются в контексте, предоставленном записью журнала.
+The surrounding logs are shown for the context provided by the log record.
 
-* Если присутствует параметр `trace_id`, вы должны увидеть другие записи с тем же идентификатором трассировки.
+* If `trace_id` parameter is present, you should see other records with the same trace ID.
 
-Дополнительную информацию об автоматической корреляции см. в разделе [Подключите данные журнала к трассировкам](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.").
-* Альтернативно вы можете просмотреть окружающие журналы на предмет того же объекта топологии, например хоста.
+  For more information about automated correlation, see [Connect log data to traces](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.").
+* Alternatively, you can examine the surrounding logs for the same topology entity, for example, a host.
 
-Выберите **Выполнить запрос для 15 журналов до** или **Выполнить запрос для 15 журналов после**, чтобы расширить контекст, загрузив дополнительные данные до или после временной метки оригинала.
+  Select **Run query for 15 logs before** or **Run query for 15 logs after** to expand the context by loading more data before or after the timestamp of the original.

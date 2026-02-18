@@ -1,7 +1,7 @@
 ---
 title: Create and configure a browser monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors
-scraped: 2026-02-18T05:36:42.938245
+scraped: 2026-02-18T21:21:41.252877
 ---
 
 # Create and configure a browser monitor
@@ -10,7 +10,7 @@ scraped: 2026-02-18T05:36:42.938245
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Jan 30, 2026
+* Updated on Feb 16, 2026
 
 You can create synthetic browser monitors to check the availability of your websites. Browser monitors can be run from our [global public](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") or [private](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations "Learn how to manage private locations in the Synthetic app.") synthetic locations.
 
@@ -153,6 +153,8 @@ ActiveGate version 1.271+
 You can set up certificate authentication for browser monitors running on any [public location](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") and [private locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations "Learn how to manage private locations in the Synthetic app.") with Linux-based ActiveGates (containerized as well as non-containerized).
 
 Before first recording a clickpath on a website that requires certificate authentication, ensure that you have installed the required certificate in Chrome. Then, when you navigate to the website in the recording window, the native browser dialog simply selects the correct certificate.
+
+If there is at least one expired certificate in a chain, the whole chain can be rejected. It results in failing monitor executions. The results can be different when using the same certificate chain with an HTTP monitor or when running a curl command manually from the host.
 
 After you record the clickpath, you need to specify the certificate to use for browser monitor execution.
 

@@ -1,61 +1,61 @@
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-06T15:59:36.029559
+scraped: 2026-02-18T21:15:17.164057
 ---
 
-# Начните работу с Dynatrace
+# Get started with Dynatrace
 
-# Начните работу с Dynatrace
+# Get started with Dynatrace
 
-* Последняя версия Dynatrace
-* Практическое руководство
-* 3-минутное чтение
-* Опубликовано 9 февраля 2023 г.
+* Latest Dynatrace
+* How-to guide
+* 3-min read
+* Published Feb 09, 2023
 
-Dynatrace — это платформа мониторинга программного обеспечения, которая упрощает корпоративную облачную среду и ускоряет цифровую трансформацию.Подробнее см. [Что такое Дайнатрейс](/docs/discover-dynatrace/what-is-dynatrace "Dynatrace is an observability platform for analyzing, automating, and innovating with the power of AI. Learn how it helps deliver more secure software faster.").
+Dynatrace is a software-intelligence monitoring platform that simplifies enterprise cloud complexity and accelerates digital transformation. For more, see [What is Dynatrace](/docs/discover-dynatrace/what-is-dynatrace "Dynatrace is an observability platform for analyzing, automating, and innovating with the power of AI. Learn how it helps deliver more secure software faster.").
 
-## Начинайте!
+## Get started!
 
-Начните работу с Dynatrace всего за три шага
+Get started with Dynatrace in just three steps
 
-### Шаг 1. Зарегистрируйтесь и начните пробную версию.
+### Step 1 Sign up and start your trial
 
-* Получите 15 дней [бесплатный аккаунт Dynatrace»¿](https://www.dynatrace.com/signup/).
+* Get 15-days [free Dynatrace accountï»¿](https://www.dynatrace.com/signup/).
 
-### Шаг 2. Прием данных
+### Step 2 Ingest data
 
-* [Установить OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation "Install OneAgent on a server for the very first time.") на хосте для автоматического мониторинга и анализа производительности и состояния всей вашей ИТ-инфраструктуры,
-* или [Прием данных из OpenTelemetryï»¿](https://www.dynatrace.com/news/blog/send-opentelemetry-data-to-dynatrace/#configure-the-otel-collector-for-dynatrace) для более гибридной инфраструктуры.
+* [Install OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation "Install OneAgent on a server for the very first time.") on a host to automatically monitor and analyze the performance and health of your entire IT infrastructure,
+* or [Ingest data from OpenTelemetryï»¿](https://www.dynatrace.com/news/blog/send-opentelemetry-data-to-dynatrace/#configure-the-otel-collector-for-dynatrace) for a more hybrid infrastructure.
 
-### Шаг 3. Убедитесь, что вы получили данные.
+### Step 3 Verify you receive data
 
-* Изучите обнаруженные службы с помощью [Приложение «Сервисы»](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.") ![Услуги](https://dt-cdn.net/hub/logos/services.png "Services").
-* Просмотрите свою **идентифицированную топологию с помощью** [Смартскейп](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.").
+* Explore detected services with [Services app](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.") ![Services](https://dt-cdn.net/hub/logos/services.png "Services").
+* View your **identified topology with** [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.").
 
-### Шаг 4. Визуализация данных
+### Step 4 Visualize data
 
-* **Визуализируйте данные с помощью** [готовые дашборды](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards "Use ready-made dashboards to visualize your data right out of the box.") или начните создавать свои собственные с помощью [Панели мониторинга](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards").
+* **Visualize data with** [ready-made dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards "Use ready-made dashboards to visualize your data right out of the box.") or start building your own with [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards").
 
-### Шаг 5. Настройте уведомления
+### Step 5 Set up notifications
 
-* Настройте свой первый [уведомления](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
+* Set up your first [notifications](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
 
-## Исследуйте игровую площадку
+## Explore Playground
 
-Не готовы к установке или приему?Изучите наши функциональные возможности с помощью примеров данных в Playground, нашем [общественная песочница»¿](https://www.dynatrace.com/signup/playground/).
+Not ready to install or ingest? Explore our functionalities with sample data in Playground, our [public sandboxï»¿](https://www.dynatrace.com/signup/playground/).
 
-## Готовы к большему?
+## Ready for more?
 
-* Активно расследуйте и выявляйте первопричины проблем в контексте наших [Приложение журналов](/docs/analyze-explore-automate/logs/lma-logs-app "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.") ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs").
-[Изучите приложение Logs в нашей песочнице»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.logs/).
-* Оптимизируйте работоспособность и производительность мультиоблачных сред Kubernetes с помощью наших [Приложение Кубернетес](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.") ![Кубернетес](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes").
-[Исследуйте приложение Kubernetes в нашей песочнице»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.kubernetes/).
-* Сортируйте, расследуйте и устраняйте инциденты автоматически и в контексте с помощью нашего [Приложение «Проблемы»](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") ![Проблемы](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems").
-[Приложение «Исследуйте проблемы» в нашей песочнице»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.davis.problems/).
-* Анализируйте и фильтруйте данные трассировки с помощью [Приложение распределенного отслеживания](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.")![Распределенная трассировка](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing").
+* Proactively investigate and discover the root cause of issues in context with our [Logs app](/docs/analyze-explore-automate/logs/lma-logs-app "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.") ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs").
+  [Explore Logs app in our sandboxï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.logs/).
+* Optimize the health and performance of your multicloud Kubernetes environments with our [Kubernetes app](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.") ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes").
+  [Explore Kubernetes app in our sandboxï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.kubernetes/).
+* Triage, investigate and remediate incidents automatically and in context with our [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems").
+  [Explore Problems app in our sandboxï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.davis.problems/).
+* Analyze and filter trace data with [Distributed Tracing app](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.")![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing").
 
-## Продолжить изучение
+## Continue exploring
 
-* Присоединяйтесь к нашему [**Сообщество Dynatrace**ï»¿](https://community.dynatrace.com/t5/Start-with-Dynatrace/bd-p/GetStarted), чтобы вместе с экспертами-единомышленниками по наблюдению создавать инновации, получать ответы на свои вопросы и узнавать, с чего начать.
-* Будьте в курсе [недавно добавленные и обновленные](/docs/whats-new "Read the product news and the release notes and find out which Documentation topics are new."), а также [скоро будет добавлен функционал»¿](https://www.dynatrace.com/news/category/product-news/).
+* Join our [**Dynatrace Community**ï»¿](https://community.dynatrace.com/t5/Start-with-Dynatrace/bd-p/GetStarted) to innovate with like-minded observability experts, get answers to your questions, and explore how to get started.
+* Stay up to date with [newly added and updated](/docs/whats-new "Read the product news and the release notes and find out which Documentation topics are new.") as well as [soon to be added functionalityï»¿](https://www.dynatrace.com/news/category/product-news/).

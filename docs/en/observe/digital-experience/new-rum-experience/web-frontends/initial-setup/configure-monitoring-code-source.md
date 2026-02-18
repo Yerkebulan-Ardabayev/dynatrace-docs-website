@@ -1,7 +1,7 @@
 ---
 title: Configure the Real User Monitoring code source in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-monitoring-code-source
-scraped: 2026-02-17T21:31:19.893847
+scraped: 2026-02-18T21:35:33.379448
 ---
 
 # Configure the Real User Monitoring code source in the New RUM Experience

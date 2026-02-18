@@ -1,7 +1,7 @@
 ---
 title: Deploy OneAgent Operator on OpenShift (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-openshift-legacy
-scraped: 2026-02-17T21:33:23.058485
+scraped: 2026-02-18T21:33:18.700757
 ---
 
 # Deploy OneAgent Operator on OpenShift (deprecated)

@@ -1,167 +1,169 @@
 ---
 title: What is Dynatrace Grail?
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-grail
-scraped: 2026-02-06T16:19:39.140518
+scraped: 2026-02-18T21:15:41.345674
 ---
 
-# Что такое Dynatrace Grail?
+# What is Dynatrace Grail?
 
-# Что такое Dynatrace Grail?
+# What is Dynatrace Grail?
 
-* Последняя версия Dynatrace
-* Объяснение
-* 7-минутное чтение
-* Обновлено 28 января 2026 г.
+* Latest Dynatrace
+* Explanation
+* 7-min read
+* Updated on Jan 28, 2026
 
-Озеро данных Grail™, лежащее в основе платформы Dynatrace, обеспечивает контекстный анализ унифицированных данных наблюдения, безопасности и бизнес-данных.Он специально создан для наблюдения и сбора данных из цифровых сервисов в эксабайтном масштабе.
+The Grailâ¢ data lakehouse at the heart of the Dynatrace platform enables contextual analytics across unified observability, security, and business data. It is purpose-built for data observed and collected from digital services at exabyte scale.
 
-Будучи озером данных, Grail сочетает в себе преимущества экономической эффективности озер данных с аналитическими возможностями хранилищ данных и обеспечивает высочайшую производительность за счет массовой параллельной обработки.
+As a data lakehouse, Grail combines the cost efficiency advantages of data lakes with the analytics capabilities of data warehouses, and adds extreme performance through massively parallel processing.
 
-Грааль обеспечивает:
+Grail provides:
 
-* Ответы на вопросы, которые вы никогда раньше не могли получить с помощью контекстной аналитики.
-* Унифицированная наблюдаемость, безопасность и бизнес-данные — экономически эффективно и в эксабайтном масштабе.
-* Аналитика в реальном времени по любому вопросу в любое время с всегда гидратированным холодным/горячим хранилищем с нулевой задержкой.
-* Повышенная производительность благодаря технологии безиндексного искажения данных, а также считыванию схемы резко сокращает усилия по подготовке данных.
-* Упрощенное соответствие требованиям, поскольку Grail безопасно интегрируется с [Гипермодальный ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence."), [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!"), [АвтоматизацияДвигатель](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.") и другими как часть платформы Dynatrace.
+* Answers to questions you could never get before through contextual analytics.
+* Unified observability, security and business dataâcost effectively and at exabyte scale.
+* Any-question-any-time real-time analytics with always hydrated zero-latency cold/hot storage.
+* Increased productivity as no-index datawarping technology as well as schema-on-read drastically reduces data preparation efforts by magnitudes.
+* Simplified compliance as Grail securely integrates with [Dynatrace Intelligence hypermodal AI](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence."), [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!"), [AutomationEngine](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale."), and more as part of the Dynatrace platform.
 
-## Контекстная аналитика
+## Contextual analytics
 
-Grail дает ответы на вопросы, которые вы никогда раньше не могли получить, поскольку он объединяет наблюдаемость, безопасность и бизнес-данные, но, что еще более важно, поддерживает контекст графа с причинно-следственными зависимостями между данными.Это возможно только потому, что Grail включает в себя уникальную комбинацию подходов, основанных на графах, событиях, временных рядах и базе данных NoSQL.
+Grail provides answers to questions you could never get before as it unifies observability, security, and business data, but, even more importantly, maintains a graph context with causal dependencies among data. This is only possible as Grail incorporates a unique combination of graph, event, timeseries, and NoSQL database approaches.
 
-Контекстная аналитика одинаково хорошо работает с разнородными данными, включая метрики, журналы, трассировки, поведение пользователей, сеансы, профили, уязвимости, метаданные и многое другое, и помещает их в контекст.Контекстуализация данных выполняется полностью автоматически, без необходимости разметки или определения схем при приеме данных или во время хранения.
+Contextual analytics works on heterogeneous data, including metrics, logs, traces, user-behavior, sessions, profiles, vulnerabilities, metadata, and much more, all equally well, and puts them into context. Contextualizing data is done fully automatically, without the need for tagging or defining schemas upon data ingestion or during storage.
 
-Контекстная аналитика использует причинный искусственный интеллект Dynatrace Intelligence для отслеживания зависимостей и, следовательно, дает уникальные возможности для проведения таких расследований, как:
+Contextual analytics leverages Dynatrace Intelligence causal AI to follow dependencies and therefore, uniquely enabling investigations such as:
 
-* Понимание точной основной причины проблемы в распределенном облачном приложении микросервиса.
-* Следование по пути атаки при расследовании безопасности для оценки рисков.
-* Сегментация бизнес-данных по доходам.
-* Автоматическое отображение и анализ окружающих данных журналов и трассировки при расследовании таких проблем, как ухудшение качества проверки пользователей.
+* Understanding a precise root-cause of an issue in a distributed microservice cloud application.
+* Following the path of an attack in a security investigation to provide a risk assessment.
+* Segmenting business data by revenue.
+* Automatically showing and analyzing surrounding log and trace data when investigating problems such as user checkout degradation.
 
-## Эксабайтный масштаб
+## Exabyte scale
 
-Grail выходит за рамки обычных баз данных с поддержкой индексирования и, таким образом, обладает уникальной способностью объединять все типы данных в одном месте и разделять информацию, сохраняя при этом полную степень детализации.Это делается путем:
+Grail breaks through the limits of common index-enabled databases and thus is uniquely capable of bringing all data types together into a single place and de-siloing information, while retaining full granularity. It does this by:
 
-* Обработка и хранение до 1000 ТБ данных в день, в зависимости от каналов приема данных (например, OneAgent или API) и характера сигналов.Для обеспечения оптимальной производительности необходима индивидуальная стратегия масштабирования.Чтобы увидеть фактические ограничения, см. [Ограничения OpenPipeline](/docs/platform/openpipeline/reference/limits "Reference limits of Dynatrace OpenPipeline.").
-* Предоставление механизма запросов массовой параллельной обработки (MPP), обеспечивающего быструю обработку любого запроса в любое время без необходимости каких-либо предварительных определений.
-* Использование деформации данных для извлечения данных из всегда гидратированного холодного/горячего хранилища с нулевой задержкой, при этом устраняя накладные расходы и ограничения масштабируемости индексов.
+* Processing and storing up to 1,000 TB of data per day, depending on the data ingestion channels (such as OneAgent or API) and the nature of the signals. To ensure optimal performance, a tailored scaling strategy is essential. To see the actual limits, see [OpenPipeline limits](/docs/platform/openpipeline/reference/limits "Reference limits of Dynatrace OpenPipeline.").
+* Providing a Massive Parallel Processing (MPP) query engine, enabling rapid processing of any query any time, without requiring any upfront definitions.
+* Utilizing datawarping to retrieve data from always hydrated zero-latency cold/hot storage, while eliminating the overhead cost and scalability limits of indexes.
 
-## Всегда гидратированное холодное/горячее хранилище с нулевой задержкой
+## Always hydrated zero-latency cold/hot storage
 
-Grail совершает революцию в управлении данными, предоставляя бесшовную технологию озера данных, устраняя традиционные процессы регидратации и необходимость экспорта данных во внешние решения хранения, такие как AWS S3, для снижения затрат и, таким образом, оптимизации операций.
+Grail revolutionizes data management by natively providing seamless data-lake technology, eliminating the traditional processes of rehydration and the need to export data to external storage solutions like AWS S3 for reducing costs, and thus streamlining operations.
 
-Grail оснащен усовершенствованной автоматической системой управления холодными и горячими данными, которая гарантирует, что данные остаются полностью доступными с нулевой задержкой, эффективно предлагая всегда гидратированные данные.
+Grail features an advanced automatic cold/hot data management system that ensures data remains fully accessible with zero latency, effectively offering always-hydrated data.
 
-* Всегда гидратированный означает, что данные всегда доступны с нулевой задержкой, что исключает необходимость повторной гидратации.
-* Grail не нуждается в каком-либо индексе, что устраняет дорогостоящие накладные расходы и негибкость предопределенных схем.
-* Пользователи не заметят никакой разницы между холодными и горячими данными благодаря массовой параллельной обработке и искажению данных.
-* Grail осуществляет автоматическое управление данными на основе шаблонов доступа.
-* Grail устраняет необходимость экспорта данных во внешнее облачное хранилище и выполнения длительных и дорогостоящих операций регидратации, тем самым устраняя необходимость в отдельном озере данных.
+* Always-hydrated means that data is always available with zero latency, eliminating the need for rehydration.
+* Grail doesn't need any index, removing the costly overhead and inflexibility of predefined schemas.
+* Users will not notice any difference between cold and hot data, thanks to massively parallel processing and datawarping.
+* Grail performs automatic data management based on access patterns.
+* Grail eliminates the need to export data to external cloud storage and follow lengthy and costly rehydration operations, thus eliminating the need for a separate datalake.
 
-## Возможности Грааля
+## Capabilities of Grail
 
-Используя Grail, вы получаете такие возможности, как:
+When using Grail, you benefit from capabilities such as:
 
-* Интеграция данных: объедините все ваши разнородные данные в одном хранилище данных.
-* Обработка данных в реальном времени во время приема больших объемов.
-* Гибкое преобразование данных при приеме через OpenPipeline.
-* Простое управление хранением.
-* Бессхемная организация данных: данные всегда хранятся в контексте без необходимости определять какую-либо схему.Задавайте любые вопросы в любое время.
-* Аналитика в реальном времени без дополнительных затрат на индексирование, что позволяет искать и анализировать любые данные — текст, символы или шаблоны, независимо от того, проиндексированы ли они.
-* Аналитика и автоматизация на базе искусственного интеллекта с использованием Dynatrace Intelligence, Smartscape и AutomationEngine.
-* Исследовательский анализ данных, выполняющий сложные запросы на информационных панелях или блокнотах с использованием оптимизированного механизма запросов.
-* Управление данными: контролируйте доступ к вашим данным и приложениям с помощью единой унифицированной системы.
-* Наблюдение за данными: обеспечение доступности, надежности и качества данных.
+* Data integration: unify all your heterogenous data in one single data store.
+* Real-time data processing during high-volume ingest.
+* Flexible data transformation on ingest via OpenPipeline.
+* Easy retention management.
+* Schemaless data organization: data is always stored in context without the need to define any schema. Ask any question any time.
+* Realtime insights without index overhead, enabling you to search and analyze any kind of dataâtext, characters, or patterns, regardless of whether it's indexed.
+* AI-powered analytics and automation utilizing Dynatrace Intelligence , Smartscape, and AutomationEngine.
+* Exploratory data analytics running complex queries in Dashboards or Notebooks, utilizing an optimized query engine.
+* Data governance: control access to your data as well as your applications using a single, unified system.
+* Data observability: ensure availability, reliability, and quality of data.
 
-## Соответствие требованиям соответствия и конфиденциальности данных.
+## Meet compliance and data privacy requirements
 
-В Dynatrace мы серьезно относимся к своей ответственности за защиту ваших данных.Мы внедрили различные уровни защиты данных и строго соблюдаем принципы конфиденциальности по умолчанию и конфиденциальности по умолчанию.
+At Dynatrace, we take our responsibility to safeguard your data seriously. We have implemented different levels of data protection and strictly adhere to the principles of privacy by design and privacy by default.
 
-* Grail обеспечивает действительно жесткое удаление данных для соблюдения самых строгих требований конфиденциальности.
-* Grail предлагает детальный контроль доступа на уровне таблицы, корзины и записи, включая разрешения на основе полей для исключения полей, важных для конфиденциальности, из отображения.
-* Благодаря OneAgent и OpenPipeline Dynatrace обеспечивает маскирование и фильтрацию данных при их захвате и приеме.
-* Grail гарантирует использование ключей для конкретной среды для изоляции данных и защиты от несанкционированного доступа.
-* Прямой доступ пользователей к сохраненным данным не разрешен, что обеспечивает целостность и безопасность данных.Вместо этого извлечение данных и запросы могут выполняться только с помощью запросов DQL с использованием уровня обработки запросов, который действует как безопасный шлюз, гарантируя, что извлечение данных будет эффективным, сверхбыстрым и безопасным.
+* Grail provides true hard deletion of data for enforcing strongest privacy requirements.
+* Grail offers fine-grained access control at the table, bucket, and record level, including field-based permissions to exclude privacy-relevant fields from being displayed.
+* With OneAgent and OpenPipeline, Dynatrace provides data masking and filtering at capture and ingest.
+* Grail guarantees environment-specific keying for data isolation to protect against unauthorized access.
+* Direct access to stored data by users is not permitted, safeguarding the integrity and security of the data. Instead, data retrieval and queries can only be conducted through DQL queries using the Query Processing layer, which acts as a secure gateway, ensuring that data retrieval is efficient, super-fast, and secure.
 
-## Неизменяемое хранилище данных
+## Immutable data storage
 
-Неизменяемое хранилище данных в Grail спроектировано с использованием принципиально неизменной архитектуры данных.Это означает, что после приема данных их нельзя изменить.Все данные — будь то журналы, события, интервалы или метрики — хранятся в виде записей, каждая из которых рассматривается как атомарная неизменяемая единица.
+Immutable data storage in Grail is designed with a fundamentally immutable data architecture. This means that once data is ingested, it canât be altered. All dataâwhether logs, events, spans, or metricsâis stored as records, each of which is treated as an atomic, unchangeable unit.
 
-Эти записи группируются в упорядоченные по времени пакеты данных, каждый размером примерно 1 ГБ.Эти пакеты хранятся в облачном объектном хранилище, таком как Amazon S3, Azure Blob или Google Cloud Storage.При запросе данных Grail загружает весь пакет в память и оттуда оценивает отдельные записи.
+These records are grouped into time-ordered data packets, each approximately 1 GB in size. These packets are stored in cloud object storage such as Amazon S3, Azure Blob, or Google Cloud Storage. When data is queried, Grail loads the entire packet into memory and evaluates the individual records from there.
 
-Из-за этой архитектуры:
+Because of this architecture:
 
-* Изменение одной записи невозможно.
-* Чтобы удалить запись, необходимо перезаписать весь пакет.
-* Только авторизованные пользователи могут использовать API удаления для удаления отдельных записей или целых пакетов.
-* Каждая операция удаления полностью проверяется и протоколируется.
-* Dynatrace сама по себе не изменяет и не удаляет данные клиентов.Удаление данных с помощью Dynatrace может произойти только посредством явных запросов в службу поддержки клиентов, и даже в этом случае можно удалить только целые пакеты, а не отдельные записи внутри них.Такой подход обеспечивает целостность данных, возможность их аудита и соответствие требованиям, что делает Grail безопасной и надежной основой для наблюдения и анализа.
+* Modifying a single record is not possible.
+* To delete a record, the entire packet must be rewritten.
+* Only authorized users can use the Deletion API to delete individual records or entire packets.
+* Every deletion operation is fully audited and logged.
+* Dynatrace itself does not modify or delete customer data. Deletion of data by Dynatrace can only occur through explicit customer support requests, and even then, only entire packets can be removed, not individual records within them. This approach ensures data integrity, auditability, and compliance, making Grail a secure and reliable foundation for observability and analytics.
 
-## Руководство: использование Grail по сравнению с обычными базами данных
+## Guidance: using Grail vs. conventional databases
 
-Grail оптимизирован для обеспечения высочайшей пропускной способности и огромных объемов неизменяемых данных, собранных в одном едином месте для экономичного хранения и высокопроизводительных запросов.Он включает в себя элементы ACID и BASE, обеспечивающие полную гибкость и контекстную аналитику.
 
-Сценарий
 
-Грааль
+Grail is optimized for extreme throughput and extreme volumes of immutable data converged into one unified place for cost-effective storage and high-performance query. It incorporates elements of ACID and BASE providing full flexibility and contextual analytics.
 
-Обычные БД
+Scenario
 
-Масштаб неизменяемых данных от терабайта до эксабайта
+Grail
 
-![Применимый](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+Conventional DBs
 
-Для неоднородных данных в контексте
+From tera- to exabyte scale of immutable data
 
-![Применимый](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-Для мгновенного запроса в режиме реального времени, любой вопрос в любое время
+For heterogeneous data in context
 
-![Применимый](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-Наблюдение, данные безопасности и бизнес-данные из цифровых систем
+For real-time instant query any-question any-time
 
-![Применимый](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-Для экономической эффективности в качестве озера данных
+Observability, security data, and business data from digital systems
 
-![Применимый](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-Минимизируйте интерфейсы данных и поток данных
+For cost-effectiveness as a data lake
 
-![Применимый](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-ACID транзакционные гарантии
+Minimize data interfaces and data flow
 
-![Применимый](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-Когда вам нужны очень частые обновления записей данных
+ACID transactional guarantees
 
-![Применимый](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-Обычные базы данных либо созданы для обработки транзакционных данных в небольшом объеме в соответствии с парадигмой ACID, либо реализуют парадигму BASE, известную из баз данных NoSQL.
+When you need highly frequent updates to data records
 
-КИСЛОТА означает:
+![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
-* Атомарность: гарантирует, что транзакция либо полностью завершится, либо полностью завершится неудачно.Частичных изменений не происходит.
-* Согласованность: гарантирует, что данные остаются согласованными, соблюдая все ограничения даже во время изменений транзакций.
-* Изоляция: предотвращает взаимодействие параллельных транзакций друг с другом.Каждая транзакция видит мир так, как если бы она выполнялась последовательно.
-* Долговечность: после завершения транзакции ее изменения навсегда записываются.
+Conventional databases are either built to handle transactional data in low volume following the ACID paradigm, or implement the BASE paradigm known from NoSQL databases.
 
-Базы данных ACID используются в сценариях, где целостность и надежность данных имеют первостепенное значение.Большинство систем управления реляционными базами данных (таких как Oracle, MySQL и PostgreSQL) поддерживают парадигму ACID.
+ACID stands for:
 
-BASE является альтернативой ACID и особенно подходит для распределенных систем, где требуется высокая доступность, отказоустойчивость и масштабируемость.
+* Atomicity: Ensures that a transaction either fully completes or fails entirely. No partial changes occur.
+* Consistency: Guarantees that data remains consistent, adhering to all constraints even during transactional modifications.
+* Isolation: Prevents concurrent transactions from interfering with each other. Each transaction sees the world as if executed sequentially.
+* Durability: Once a transaction is complete, its changes are permanently recorded.
 
-БАЗА означает:
+ACID databases are used for scenarios where data integrity and reliability is paramount. Most relational database management systems (such as Oracle, MySQL, and PostgreSQL) support the ACID paradigm.
 
-* Базовая доступность: система продолжает работать даже в случае сбоев, хотя и с потенциально ограниченной функциональностью.
-* Мягкое состояние: состояние системы может меняться со временем из-за возможной согласованности.
-* Согласованность в конечном итоге: обновления распространяются по системе со временем, но не обязательно сразу.
+BASE is an alternative to ACID and is especially suited for distributed systems where high availability, fault tolerance and scalability is required.
 
-Базы данных NoSQL, такие как Cassandra, Redis и Amazon DynamoDB, являются примерами систем хранения, разработанных на основе парадигмы BASE.
+BASE stands for:
 
-## Похожие темы
+* Basically Available: The system remains operational even in the face of failures, albeit with potentially reduced functionality.
+* Soft state: The system's state may change over time due to eventual consistency.
+* Eventually consistent: Updates propagate through the system eventually, but not necessarily immediately.
 
-* [Язык запросов Dynatrace](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Аналитика журналов](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
-* [Наблюдаемость бизнеса](/docs/observe/business-observability "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")
+NoSQL databases like Cassandra, Redis, and Amazon DynamoDB are examples of storage systems designed around the BASE paradigm.
+
+## Related topics
+
+* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+* [Log Analytics](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+* [Business Observability](/docs/observe/business-observability "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")

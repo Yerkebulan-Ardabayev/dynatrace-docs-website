@@ -9,7 +9,7 @@
 ---
 title: Create service-level objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
-scraped: 2026-02-16T21:32:10.969067
+scraped: 2026-02-18T21:34:36.251123
 ---
 
 # Create service-level objectives
@@ -227,7 +227,7 @@ Due to the intersection, the result contains only the evaluations related to S-2
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-02-17T05:00:01.871971
+scraped: 2026-02-18T21:32:21.815356
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard
@@ -338,7 +338,7 @@ To copy and paste multiple tiles simultaneously
 ---
 title: View the details of a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-view
-scraped: 2026-02-17T05:01:30.494617
+scraped: 2026-02-18T21:31:48.679622
 ---
 
 # View the details of a service-level objective (SLO) tile in a dashboard
@@ -370,7 +370,7 @@ You can view details of your SLO tile in your dashboard.
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-02-17T05:00:51.250654
+scraped: 2026-02-18T21:31:03.900611
 ---
 
 # Upgrade Classic SLOs

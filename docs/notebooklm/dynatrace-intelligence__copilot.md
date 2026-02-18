@@ -9,7 +9,7 @@
 ---
 title: Embedded conversation starters
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters
-scraped: 2026-02-17T05:08:23.675955
+scraped: 2026-02-18T21:31:53.728074
 ---
 
 # Embedded conversation starters
@@ -263,7 +263,7 @@ If you have any feedback, you can provide it directly in the chat window. For mo
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-17T05:11:59.438351
+scraped: 2026-02-18T21:32:50.088082
 ---
 
 # Dynatrace Assist
@@ -495,7 +495,7 @@ In our logs and calls to LLM models, we replace values from the identified patte
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-17T04:48:17.510357
+scraped: 2026-02-18T21:16:33.177607
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -772,9 +772,11 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 
 ## Related topics
 
-* [Обзор Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах Dynatrace Intelligence generative AI.")
-* [Начало работы с Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence generative AI.")
-* [Проблемы приложения](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Проблемы, чтобы быстро найти коренную причину инцидентов в вашей среде.")
+
+
+* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
+* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 
 ---
 
@@ -783,7 +785,7 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 ---
 title: Get started with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
-scraped: 2026-02-16T21:23:35.814073
+scraped: 2026-02-18T21:22:36.457065
 ---
 
 # Get started with Dynatrace Intelligence generative AI
@@ -883,7 +885,7 @@ To configure your data access
 ---
 title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-17T04:55:42.628748
+scraped: 2026-02-18T21:22:35.362597
 ---
 
 # Dynatrace Intelligence generative AI overview
@@ -1062,7 +1064,7 @@ We are actively working on improving and extending the Dynatrace Intelligence ge
 ---
 title: Query with natural language
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
-scraped: 2026-02-17T04:56:51.312860
+scraped: 2026-02-18T21:31:21.056346
 ---
 
 # Query with natural language
@@ -1242,7 +1244,7 @@ Do not share personal or confidential information in your feedback.
 ---
 title: Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-18T05:36:34.325343
+scraped: 2026-02-18T21:21:27.509889
 ---
 
 # Dynatrace Intelligence agentic and generative AI

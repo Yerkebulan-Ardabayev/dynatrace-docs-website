@@ -1,15 +1,15 @@
 ---
 title: ActiveGate release notes
 source: https://www.dynatrace.com/docs/whats-new/activegate
-scraped: 2026-02-06T16:18:44.481210
+scraped: 2026-02-18T21:15:18.262000
 ---
 
-# Примечания к выпуску ActiveGate
+# ActiveGate release notes
 
-# Примечания к выпуску ActiveGate
+# ActiveGate release notes
 
-* Последняя версия Dynatrace
-* Примечания к выпуску
-* Обновлено 3 февраля 2026 г.
+* Latest Dynatrace
+* Release notes
+* Updated on Feb 03, 2026
 
-Невозможно отобразить DataTable.Проверьте конфигурацию.
+Unable to render DataTable. Check configuration.

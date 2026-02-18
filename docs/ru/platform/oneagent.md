@@ -1,37 +1,43 @@
 ---
 title: OneAgent
 source: https://www.dynatrace.com/docs/platform/oneagent
-scraped: 2026-02-06T16:19:57.523842
+scraped: 2026-02-18T21:16:54.959521
 ---
 
 # OneAgent
 
 # OneAgent
 
-* Последняя версия Dynatrace
-* 1 минута чтения
-* Опубликовано 29 марта 2019 г.
+* Latest Dynatrace
+* 1-min read
+* Published Mar 29, 2019
 
-[### Возможности
+[### Capabilities
 
-Узнайте о возможностях мониторинга, предлагаемых OneAgent.](/docs/platform/oneagent/supported-monitoring-types «Прочитайте обзор всех возможностей мониторинга, предлагаемых OneAgent.»)[### Как это работает
+Find out the monitoring capabilities offered by OneAgent offers.](/docs/platform/oneagent/supported-monitoring-types "Read an overview of all monitoring capabilities offered by OneAgent.")[### How it works
 
-Понять, как работает OneAgent.](/docs/platform/oneagent/how-one-agent-works «Понять, как работает OneAgent.»)
+Understand how OneAgent works.](/docs/platform/oneagent/how-one-agent-works "Understand how OneAgent works.")
 
-## Развертывание OneAgent
+[### OneAgent monitoring modes
 
-Облачные платформы
+Find out about the available monitoring modes when using OneAgent.](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.")[### Enable monitoring modes
 
-Кубернетес
+Learn how to enable monitoring modes when using OneAgent.](/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes "Learn how to enable monitoring modes when using OneAgent.")
 
-Другие контейнерные платформы
+## Deploy OneAgent
 
-Серверы
+Cloud platforms
 
-[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")AWS](/docs/ingest-from/amazon-web-services) [![Лазурь](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")Azure](/docs/ingest-from/microsoft-azure-services) [![Облако Google](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")Google Cloud](/docs/ingest-from/google-cloud-platform)
+Kubernetes
 
-[![Кубернетес](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](/docs/ingest-from/setup-on-k8s)
+Other container platforms
 
-[![Облачная литейная](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry) [![Докер](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")Docker](/docs/ingest-from/setup-on-container-platforms/docker) [![Хероку](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")Heroku](/docs/ingest-from/setup-on-container-platforms/heroku)[![Месос](https://dt-cdn.net/images/mesos-512-0c28279189.webp "Mesos")Mesos](/docs/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon)
+Servers
 
-[ЭКС](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix) [Линукс](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux) [Солярис](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris) [Окна](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows) [зОС](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos)
+[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")AWS](/docs/ingest-from/amazon-web-services) [![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")Azure](/docs/ingest-from/microsoft-azure-services) [![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")Google Cloud](/docs/ingest-from/google-cloud-platform)
+
+[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](/docs/ingest-from/setup-on-k8s)
+
+[![Cloud Foundry](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry) [![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")Docker](/docs/ingest-from/setup-on-container-platforms/docker) [![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")Heroku](/docs/ingest-from/setup-on-container-platforms/heroku) [![Mesos](https://dt-cdn.net/images/mesos-512-0c28279189.webp "Mesos")Mesos](/docs/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon)
+
+[AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix) [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux) [Solaris](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris) [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows) [zOS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos)

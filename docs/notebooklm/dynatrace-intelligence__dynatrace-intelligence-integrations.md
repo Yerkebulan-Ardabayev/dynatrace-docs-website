@@ -105,68 +105,68 @@ To learn about specific use cases and how you can use the Dynatrace Intelligence
 ## dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks.md
 
 ---
-title: Dynatrace Intelligence для Notebooks
+title: Dynatrace Intelligence for Notebooks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks
-scraped: 2026-02-17T21:22:45.689629
+scraped: 2026-02-18T21:27:23.129456
 ---
 
-# Dynatrace Intelligence для Notebooks
+# Dynatrace Intelligence for Notebooks
 
-# Dynatrace Intelligence для Notebooks
+# Dynatrace Intelligence for Notebooks
 
-* Последняя версия Dynatrace
-* Руководство по настройке
-* 2-минутное чтение
-* Обновлено 28 января 2026 г.
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Updated on Jan 28, 2026
 
-Dynatrace Intelligence для Notebooks запускает ряд анализаторов直接 в Notebooks, предоставляя результаты на месте и позволяя вам тонко настраивать ваши пользовательские конфигурации оповещений.
+Dynatrace Intelligence for Notebooks runs a range of analyzers directly in Notebooks, providing on-spot results and enabling you to fine-tune your custom alert configurations.
 
-## Обнаружение аномалий
+## Anomaly Detection
 
-С помощью ![Обнаружение аномалий - новое](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Обнаружение аномалий - новое") **Обнаружение аномалий**, объединенного с возможностями [DQL](/docs/platform/grail/dynatrace-query-language "Как использовать язык запросов Dynatrace."), вы можете создавать мощные конфигурации для обнаружения аномалий в метриках, журналах, бизнес-данных или их комбинации. Чтобы предварительно просмотреть и тонко настроить вашу конфигурацию Обнаружения аномалий перед развертыванием ее в действие, используйте опцию анализа Dynatrace Intelligence для Notebooks:
+With ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** combined with the power of [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."), you can custom-build powerful configurations to detect anomalies in metrics, logs, business data, or a combination of them. To preview and fine-tune your Anomaly Detection configuration before deploying it to action, use a Dynatrace Intelligence for Notebooks analysis option:
 
-* [Автоадаптивный порог](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "Как Dynatrace адаптирует пороги для нескольких сущностей в рамках конфигурации обнаружения аномалий.") — Dynatrace рассчитывает порог автоматически и адаптирует его динамически к поведению ваших данных.
-* [Сезонная базовая линия](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline "Как Dynatrace Intelligence предлагает сезонную базовую линию для области сущностей.") — Dynatrace создает доверительный интервал для данных с сезонными закономерностями
-* [Статический порог](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds "Когда использовать статический порог для вашего обнаружения аномалий.") — порог, который не меняется со временем.
+* [Auto-adaptive threshold](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
+* [Seasonal baseline](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace creates a confidence band for data with seasonal patterns
+* [Static threshold](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
 
-Для каждой из этих опций вы можете настроить [оповещение о пропущенных данных](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "Как настроить оповещение о пропущенных измерениях."). Пропущенные данные и условия порога объединяются логикой **ИЛИ**.
+For each of these options, you can configure a [missing data alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "How to set up an alert for missing measurements."). Missing data and threshold conditions are combined by the **OR** logic.
 
-Чтобы запустить анализ обнаружения аномалий в Notebooks
+To run an anomaly detection analysis in Notebooks
 
-1. Перейдите в **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks").
-2. Откройте вашу тетрадь или создайте новую.
-3. Добавьте раздел **Query Grail** и [запросите](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") данные, которые вас интересуют, или добавьте раздел **Metrics** и выберите необходимую метрику.
+1. Go to **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks").
+2. Open your notebook or create a new one.
+3. Add a **Query Grail** section and [query](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") the data you're interested in, or add a **Metrics** section and select the required metric.
 
-   Для запроса DQL используйте параметр `interval: 1m`, чтобы обеспечить правильное разрешение данных для анализа.
-4. Выберите **Options**.
-5. В панели **Options** выберите **Анализ и оповещение** и активируйте анализатор.
-6. Выберите необходимый анализатор обнаружения аномалий и настройте его параметры.
-7. Выберите **Run analysis**.
+   For a DQL query, use the `interval: 1m` parameter to ensure proper data resolution for the analysis.
+4. Select **Options**.
+5. In the **Options** panel, select **Analyze and alert** and activate the analyzer.
+6. Select the required anomaly detection analyzer and configure its parameters.
+7. Select **Run analysis**.
 
-Dynatrace Intelligence анализирует данные и показывает потенциальные оповещения. Обратите внимание, что это всего лишь симуляции — реальные оповещения не срабатывают на основе этого анализа.
+Dynatrace Intelligence analyses the data and shows potential alerts. Note that these are just indicative simulationsâno real alerts are triggered based on this analysis.
 
-![Пример обнаружения аномалий на сезонных данных в приложении Notebooks.](https://dt-cdn.net/images/notebooks-seasonal-anomaly-detection-1920-dbbd5f3499.png)
+![An example of anomaly detection on seasonal data in the Notebooks app.](https://dt-cdn.net/images/notebooks-seasonal-anomaly-detection-1920-dbbd5f3499.png)
 
-## Анализ прогноза
+## Forecast analysis
 
-Прогнозный анализ Dynatrace Intelligence предсказывает будущие значения любой временной серии числовых значений на основе накопленных данных. Чтобы запустить [анализ прогноза](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Узнайте, как Dynatrace Intelligence генерирует прогнозы с помощью прогнозного ИИ.")
+Dynatrace Intelligence predictive AI analysis foresees future values of any time series of numeric values based on the accumulated data. To trigger a [forecast analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
 
-1. Перейдите в **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks").
-2. Откройте вашу тетрадь или создайте новую.
-3. Добавьте раздел **Query Grail** и [запросите](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") данные, которые вас интересуют, или добавьте раздел **Metrics** и выберите необходимую метрику.
-4. Выберите **Options**.
-5. В панели **Options** выберите **Анализ и оповещение** и активируйте анализатор.
-6. Выберите анализатор **Прогноз** и настройте его параметры.
-7. Выберите **Run analysis**.
+1. Go to **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks").
+2. Open your notebook or create a new one.
+3. Add a **Query Grail** section and [query](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") the data you're interested in, or add a **Metrics** section and select the required metric.
+4. Select **Options**.
+5. In the **Options** panel, select **Analyze and alert** and activate the analyzer.
+6. Select the **Forecast** analyzer and configure its parameters.
+7. Select **Run analysis**.
 
-Dynatrace Intelligence рассчитывает прогноз и показывает его, расширяя вашу визуализацию.
+Dynatrace Intelligence calculates the forecast and shows it, extending your visualization.
 
-![Пример прогноза для сезонных данных в приложении Notebooks.](https://dt-cdn.net/images/notebooks-seasonal-prediction-1920-0137a2c619.png)
+![An example of a forecast for seasonal data in the Notebooks app.](https://dt-cdn.net/images/notebooks-seasonal-prediction-1920-0137a2c619.png)
 
-## Связанные темы
+## Related topics
 
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.")
-* [[Видео] Введение в обнаружение аномалий на основе DQL](https://www.youtube.com/watch?v=-GxLlr9oGGA)
+* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* [[Video] Introduction to Anomaly Detection based on DQLï»¿](https://www.youtube.com/watch?v=-GxLlr9oGGA)
 
 ---
 
@@ -175,7 +175,7 @@ Dynatrace Intelligence рассчитывает прогноз и показыв
 ---
 title: Dynatrace Intelligence integrations
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
-scraped: 2026-02-18T05:41:11.742490
+scraped: 2026-02-18T21:23:17.463571
 ---
 
 # Dynatrace Intelligence integrations

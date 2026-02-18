@@ -1,7 +1,7 @@
 ---
 title: Sampling with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/sampling
-scraped: 2026-02-17T05:04:00.823679
+scraped: 2026-02-18T21:29:34.506495
 ---
 
 # Sampling with the OpenTelemetry Collector

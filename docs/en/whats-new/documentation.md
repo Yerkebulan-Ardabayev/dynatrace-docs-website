@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-18T05:33:03.941336
+scraped: 2026-02-18T21:17:49.895584
 ---
 
 # New Documentation articles
@@ -419,7 +419,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Kong AI Gateway](/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong "Kong AI Gateway")
 * [NVIDIA NIM](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim "NVIDIA NIM observability")
 * [Generic network topology](/docs/ingest-from/extend-dynatrace/extend-topology/network-topology "Use the generic network topology model available in Dynatrace extensions.")
-* [AI data governance with Amazon Bedrock](/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/data-governance "Learn how to use Dynatrace to be compliant with data governance regulations")
+* [AI data governance with Amazon Bedrock](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance "Learn how to use Dynatrace to be compliant with data governance regulations")
 * [Metadata enrichment of all telemetry originating from kubernetes workloads](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment "Guides for telemetry enrichment on Kubernetes")
 * [Configure enrichment directory](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.")
 * [Cost & Carbon Optimization](/docs/observe/business-observability/cost-and-carbon-optimization "Track, analyze, and reduce your IT carbon footprint.")
@@ -859,7 +859,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Jun 12, 2023
 
 * [Dynatrace for AI Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.")
-* [Dynatrace for OpenAI Observability](/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
+* [Dynatrace for OpenAI Observability](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
 * [Dynatrace for TensorFlow and Keras Observability](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability "Learn about Dynatrace for TensorFlow and Keras Model Observability, how Dynatrace observes TensorFlow and Keras Models, and much more.")
 * [Dynatrace Intelligence DQL examples](/docs/dynatrace-intelligence/use-cases/davis-dql-examples "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")
 * [JMX data source](/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx "Learn how to create a JMX extension using the Extensions framework.")

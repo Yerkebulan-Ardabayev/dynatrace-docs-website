@@ -1,7 +1,7 @@
 ---
 title: Detect threats against your AWS Secrets with Investigations
 source: https://www.dynatrace.com/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator
-scraped: 2026-02-18T05:50:57.962617
+scraped: 2026-02-18T21:30:53.727205
 ---
 
 # Detect threats against your AWS Secrets with Investigations

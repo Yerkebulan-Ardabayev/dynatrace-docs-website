@@ -1,7 +1,7 @@
 ---
 title: Store Dynatrace images in private registries
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry
-scraped: 2026-02-18T05:51:22.205937
+scraped: 2026-02-18T21:29:28.258212
 ---
 
 # Store Dynatrace images in private registries

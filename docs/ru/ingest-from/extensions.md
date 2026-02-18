@@ -1,76 +1,76 @@
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions
-scraped: 2026-02-06T16:21:11.052760
+scraped: 2026-02-18T21:16:07.175574
 ---
 
-# Расширения
+# Extensions
 
-# Расширения
+# Extensions
 
-* Последняя версия Dynatrace
-* Обзор
-* 2 минуты чтения
-* Опубликовано 16 июня 2025 г.
+* Latest Dynatrace
+* Overview
+* 2-min read
+* Published Jun 16, 2025
 
-## Что такое расширения?
+## What are Extensions?
 
-Расширения — это модульные пакеты, которые определяют, как Dynatrace собирает и структурирует данные телеметрии из внешних источников.Каждое расширение выполняется контроллером выполнения расширений (EEC), который работает в вашей среде.
+Extensions are modular packages that define how Dynatrace collects and structures telemetry data from external sources. Each extension is executed by the Extension Execution Controller (EEC), which runs in your environment.
 
-## Как работают расширения?
+## How do Extensions work?
 
-Расширения позволяют расширить Dynatrace за пределы его готовых возможностей мониторинга.Они позволяют собирать данные телеметрии, такие как метрики, события и журналы, из внешних технологий.
+Extensions let you expand Dynatrace beyond its out-of-the-box monitoring capabilities. They allow you to collect telemetry data such as metrics, events, and logs from external technologies.
 
-С помощью расширений вы можете:
+With extensions, you can:
 
-* Прием данных из технологий, не поддерживаемых изначально.
-* Создайте индивидуальную логику мониторинга для вашей среды.
-* Визуализация и анализ пользовательских данных.
+* Ingest data from technologies not natively supported.
+* Create tailored monitoring logic for your environment.
+* Visualize and analyze custom data.
 
-## Зачем использовать расширения?
+## Why use Extensions?
 
-Расширения полезны, когда вам нужно отслеживать технологию или услугу, которые Dynatrace не обнаруживает автоматически.Они обеспечивают расширенную настройку и возможность наблюдения практически для любого источника данных.
+Extensions are useful when you need to monitor a technology or service that Dynatrace doesnât automatically detect. They provide advanced customization and observability for nearly any data source.
 
-### Основные преимущества
+### Key benefits
 
-* Автоматическое распространение в ActiveGates и OneAgent со встроенным механизмом аварийного переключения.
-* Полное моделирование топологии, включая пользовательские объекты и сопоставление отношений.
-* Богатые метаданные метрик для последовательного контекстно-зависимого мониторинга.
-* Возможность создания пользовательских расширений с учетом ваших потребностей:
+* Automatic distribution to ActiveGates and OneAgent with built-in failover.
+* Full topology modeling, including custom entities and relationship mapping.
+* Rich metric metadata for consistent context-aware monitoring.
+* Possibility to create custom extensions tailored to your needs:
 
-+ Декларативный, удобочитаемый формат YAML (для избранных источников данных кодирование не требуется).
-+ Закодированные расширения с использованием источника данных Python для обеспечения гибкости.
+  + Declarative, human-readable YAML format (no coding required for featured data sources).
+  + Coded extensions using Python data source for flexibility.
 
-### Варианты использования
+### Use cases
 
-* Мониторинг на основе SNMP: мониторинг сетевых устройств.
-* Мониторинг на основе SQL: Мониторинг баз данных SQL различных поставщиков.
-* Мониторинг на основе Prometheus: мониторинг экспортеров Prometheus.
-* Мониторинг на основе WMI: мониторинг устройств Windows.
-* Мониторинг на основе JMX: получение данных из JMX MBeans.
+* SNMP-based monitoring: Monitor network devices.
+* SQL-based monitoring: Monitor SQL databases of various vendors.
+* Prometheus-based monitoring: Monitor Prometheus exporters.
+* WMI-based monitoring: Monitor Windows devices.
+* JMX-based monitoring: Acquire data from JMX MBeans.
 
-## Начало работы с расширениями
+## Get started with Extensions
 
-[#### Изучите поддерживаемые расширения
+[#### Explore supported Extensions
 
-Узнайте больше о поддерживаемых расширениях.
+Learn more about the supported extensions.
 
-* Объяснение
+* Explanation
 
-Прочтите это объяснение](/docs/ingest-from/extensions/supported-extensions)[#### Разработайте свои собственные расширения
+Read this explanation](/docs/ingest-from/extensions/supported-extensions)[#### Develop your own Extensions
 
 Develop your own Extensions in Dynatrace.
 
-* Практическое руководство
+* How-to guide
 
 Read this guide](/docs/ingest-from/extensions/develop-your-extensions)[#### Manage Extensions
 
-Узнайте, как управлять расширениями.
+Learn how to manage extensions.
 
-* Практическое руководство
+* How-to guide
 
-Прочитайте это руководство](/docs/ingest-from/extensions/manage-extensions)
+Read this guide](/docs/ingest-from/extensions/manage-extensions)
 
-[![Центр](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
-### Исследуйте в Dynatrace Hub](https://www.dynatrace.com/hub/detail/extension-manager/)
+### Explore in Dynatrace Hub](https://www.dynatrace.com/hub/detail/extension-manager/)

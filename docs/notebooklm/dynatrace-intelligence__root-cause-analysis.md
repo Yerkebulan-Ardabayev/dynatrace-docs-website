@@ -9,7 +9,7 @@
 ---
 title: Root cause analysis concepts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/concepts
-scraped: 2026-02-17T04:45:37.595740
+scraped: 2026-02-18T21:15:48.788401
 ---
 
 # Root cause analysis concepts
@@ -166,7 +166,7 @@ Alternatively, you can set the processing state per Davis event source in [Log e
 ---
 title: Event analysis and correlation
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation
-scraped: 2026-02-17T05:00:02.976870
+scraped: 2026-02-18T21:36:29.522885
 ---
 
 # Event analysis and correlation
@@ -357,7 +357,7 @@ Business impact analysis shows the number of potentially affected real users (co
 ---
 title: Root cause analysis
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis
-scraped: 2026-02-18T05:41:10.023372
+scraped: 2026-02-18T21:23:18.710933
 ---
 
 # Root cause analysis

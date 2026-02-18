@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry interoperability in Python
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-python
-scraped: 2026-02-18T05:50:23.413900
+scraped: 2026-02-18T21:31:00.101332
 ---
 
 # OpenTelemetry interoperability in Python

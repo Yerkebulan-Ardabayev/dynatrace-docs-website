@@ -1,26 +1,21 @@
 ---
-title: AI Observability (preview)
+title: AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-02-17T21:26:42.080887
+scraped: 2026-02-18T21:31:10.368318
 ---
 
-# AI Observability (preview)
+# AI Observability
 
-# AI Observability (preview)
+# AI Observability
 
 * Latest Dynatrace
 * App
 * 4-min read
-* Updated on Jan 28, 2026
-* Preview
+* Updated on Feb 12, 2026
 
-Preview
-
-The new ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") AI Observability is available in [Preview program](/docs/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.").
+![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** is now Generally Available. Go ahead and install it now from the platform HUB!
 
 20+ technologies supported out of the box, this includes OpenAI, Amazon Bedrock, Google Gemini and Vertex, Anthropic, LangChain and a lot more!
-
-This new experience is currently part of our preview program and is governed by our preview terms. The data model, apps, and functionalities offered within the preview are not complete and may be significantly changed until the general availability.
 
 The ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** app delivers a dedicated experience for AI workloads with outâofâtheâbox analytics, autoâinstrumentation, targeted metrics, a debugging flow, and readyâmade dashboards.
 Together, these are designed to provide endâtoâend visibility across services, LLMs, agents, and protocols.
@@ -35,6 +30,10 @@ Prerequisites
   + [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
   + [Traces powered by Grail](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.")
   + [Logs powered by Grail](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
+
+Query and sampling cost for AI Observability dashboards
+
+Some out-of-the-box ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") AI Observability dashboards use span queries, which consume DPS trace query capacity even if AI Observability isnât fully configured yet or dashboards show no data. To control this, use the sampling variable on these dashboards (where available) to reduce the queried span volume, and prefer metrics-based tiles and views when possibl.
 
 ### Permissions
 
@@ -98,13 +97,15 @@ Get started
 
 Use cases
 
-![AI Observability app - Overview (Preview)](https://dt-cdn.net/images/overview-page-1920-e8cd84ac11.png)![AI Observability app - Service Health - Main (Preview)](https://dt-cdn.net/images/service-health-filtered-1920-b489f056a8.png)![AI Observability app - Onboarding (Preview)](https://dt-cdn.net/images/onboarding-app-1920-bedbc4f9f7.png)![AI Observability - Service Health - Error (Preview) ](https://dt-cdn.net/images/errors-latencies-1920-0a6fb8f618.png)![AI Observability - Service Health - Latency (Preview) ](https://dt-cdn.net/images/traffic-and-latency-1920-a3b9e3514e.png)![AI Observability -  Service Health - Cost  (Preview)](https://dt-cdn.net/images/cost-overview-1920-7969004915.png)![AI Observability -  Service Health - Guardrails (Preview)](https://dt-cdn.net/images/app-guardrails-1920-6da2e86ebc.png)![AI Observability - Debug traces)](https://dt-cdn.net/images/debug-traces-1920-2d540b770b.png)
+![AI Observability app - Overview](https://dt-cdn.net/images/overview-page-1920-e8cd84ac11.png)![AI Observability app - Service Health - Main](https://dt-cdn.net/images/service-health-filtered-1920-b489f056a8.png)![AI Observability app - Onboarding](https://dt-cdn.net/images/onboarding-app-1920-bedbc4f9f7.png)![AI Observability - Service Health - Error](https://dt-cdn.net/images/errors-latencies-1920-0a6fb8f618.png)![AI Observability - Service Health - Latency](https://dt-cdn.net/images/traffic-and-latency-1920-a3b9e3514e.png)![AI Observability -  Service Health - Cost](https://dt-cdn.net/images/cost-overview-1920-7969004915.png)![AI Observability -  Service Health - Guardrails](https://dt-cdn.net/images/app-guardrails-1920-6da2e86ebc.png)![AI Observability - Debug traces)](https://dt-cdn.net/images/debug-traces-1920-2d540b770b.png)
 
 1 of 8
 
 ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** has an integrated onboarding flow that guides you through all the required steps to get started and start ingesting data, regardless if it's through OpenTelemetry, open source auto-instrumentation libraries like OpenLLMetry from Traceloop, our OneAgent solution, or directly pulling the data from cloud providers through cloud monitoring.
 
-### Overview (Preview)
+Additionally, you can instrument your AI applications and services directly using [OpenTelemetry with GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/) for full control and standardized observability across your entire stack.
+
+### Overview
 
 The **Overview** tab is your starting point to discover AI workloads, quickly validate data ingestion, and see a highâlevel summary of health, performance, and costs across your AI services.
 
@@ -112,11 +113,11 @@ The **Overview** tab is your starting point to discover AI workloads, quickly va
 * Select any tile to open the **Service Health** page and drill down with deeper analysis: validate errors, review traffic and latency, monitor token and cost behavior, and observe guardrail outcomes.
 * Open readyâmade dashboards for popular AI services or select **Browse all dashboards** to find dashboards tagged with **[AI Observability]**. Dashboards include navigation that redirects back into the app for contextual analysis.
 
-![AI Observability app - Overview (Preview)](https://dt-cdn.net/images/overview-page-1920-e8cd84ac11.png)
+![AI Observability app - Overview](https://dt-cdn.net/images/overview-page-1920-e8cd84ac11.png)
 
-### Service Health (Preview)
+### Service Health
 
-Get a unified view of the operational state of your AI services. **Service Health (Preview)** is organized into focused tabs so you can move from a high-level pulse to root cause in a couple of clicks.
+Get a unified view of the operational state of your AI services. \*\*Service Health \*\* is organized into focused tabs so you can move from a high-level pulse to root cause in a couple of clicks.
 
 Filter your results:
 
@@ -128,13 +129,13 @@ Filter your results:
 * **Cost**: Analyze token count, token usage forecast, overall average cost, tokens per model, cached hit ratio, savings through caching, and input/output tokens. Identify cost hot spots and set proactive cost alerts.
 * **Guardrails**: Observe providerâreported guardrail outcomes: requests with guardrails enabled, overall executions and activations, activation by type (for example, PII, topics, content, words), detected PII leaks, blocked prompts, denied topics, and filtered content. Note: Dynatrace does not enforce runtime guardrails; providers expose these signals, which we capture and visualize. Configure guardrails at the provider level for lowest latency and complexity.
 
-![AI Observability - Service Health - Error (Preview) ](https://dt-cdn.net/images/errors-latencies-1920-0a6fb8f618.png)
+![AI Observability - Service Health - Error](https://dt-cdn.net/images/errors-latencies-1920-0a6fb8f618.png)
 
-![AI Observability -  Service Health - Guardrails (Preview)](https://dt-cdn.net/images/app-guardrails-1920-6da2e86ebc.png)
+![AI Observability -  Service Health - Guardrails](https://dt-cdn.net/images/app-guardrails-1920-6da2e86ebc.png)
 
 â>
 
-### Create and manage Alerts (Preview)
+### Create and manage Alerts
 
 * Create new alerts: Select **New alert** on metrics-based tiles (for example, Invocation error count, Invocation latency, Token count, Token usage forecast, Overall guardrail activation). The alert wizard is preâfilled with the current scope (time range, provider/model/service/agent filters) so you can fineâtune thresholds and notifications. Alerts appear in **Manage all alerts** for review and muting.
 * Manage all alerts: Use the **Manage all alerts** action from any tab to review, edit, or mute [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") created from Service Health cards and charts. You can also create a new alert directly from most tiles.
@@ -205,20 +206,15 @@ Yes. OTEL/OpenLLMetry integrations cover Amazon Bedrock Strands and AgentCore, O
 
 Yes, you can create custom alerts from context with preâfilled fields, embed notifications (Slack/email), and link back to investigate. Manage all alerts will drop you right away to a centralised view to review all AI Observability related alerts you and your teams have been created.
 
-### Whatâs included in the preview?
-
-The public preview includes
-
-* Onboarding and overview
-* Service Health
-* Alerts
-* Trace and prompt debugging
-
 ### What if I am already using ready-made dashboards?
 
 You can continue using your existing readyâmade dashboards, which remain available until the ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** is generally available.
-In preview, dashboards are tagged for discoverability and include navigation that redirects into ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** for deeper, contextual analysis.
+The dashboards are tagged for discoverability and include navigation that redirects into ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** for deeper, contextual analysis.
 For a more integrated and centralized workflow (instrumentation guidance, service health, proactive alerts, and inâcontext prompt/log/trace debugging), we recommend using ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** as your primary entry point, because it provides a dedicated endâtoâend experience purposeâbuilt for AI workloads. Dashboards alone can be limited or inconsistent for GenAIâspecific workflows.
+
+### Does AI Observability generate additional query cost?
+
+Some out-of-the-box ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** dashboards use span queries, which consume DPS trace query capacity, even if AI Observability isnât fully configured yet or the app/dashboards show no data. To control this, use the sampling variable on these dashboards (where available) to reduce the number of spans queried, restrict access to exploratory AI Observability dashboards to relevant users, and prefer metrics-based tiles and views when possible.
 
 ### What's coming next?
 

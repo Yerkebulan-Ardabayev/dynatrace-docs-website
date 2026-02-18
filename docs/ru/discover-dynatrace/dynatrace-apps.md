@@ -1,24 +1,24 @@
 ---
 title: Dynatrace Apps
 source: https://www.dynatrace.com/docs/discover-dynatrace/dynatrace-apps
-scraped: 2026-02-06T15:59:34.681396
+scraped: 2026-02-18T21:15:19.540291
 ---
 
-# Приложения Dynatrace
+# Dynatrace Apps
 
-# Приложения Dynatrace
+# Dynatrace Apps
 
-* Последняя версия Dynatrace
-* Обзор
-* 5-минутное чтение
-* Опубликовано 1 февраля 2024 г.
+* Latest Dynatrace
+* Overview
+* 5-min read
+* Published Feb 01, 2024
 
-Выберите приложение, чтобы начать изучать его.
+Select an app to start learning about it.
 
-Фильтровать по
+Filter by
 
-Выберите вариант
+Select an option
 
-Введите фильтр
+Type to filter
 
-Невозможно отобразить DataTable.Проверьте конфигурацию.
+Unable to render DataTable. Check configuration.

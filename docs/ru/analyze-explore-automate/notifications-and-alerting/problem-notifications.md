@@ -1,40 +1,40 @@
 ---
 title: Problem notifications
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications
-scraped: 2026-02-06T15:59:50.823777
+scraped: 2026-02-18T21:15:25.513232
 ---
 
-# Уведомления о проблемах
+# Problem notifications
 
-# Уведомления о проблемах
+# Problem notifications
 
-* 2 минуты чтения
-* Обновлено 10 октября 2022 г.
+* 2-min read
+* Updated on Oct 10, 2022
 
-Dynatrace предоставляет полную информацию о мониторинге всей вашей ИТ-операции и автоматически определяет, не соответствует ли какая-либо часть вашего развертывания требуемому качеству с точки зрения производительности или частоты ошибок.Всякий раз, когда Dynatrace обнаруживает такое аномальное поведение системы, она создает единую проблему, объединяющую все инциденты, имеющие одну и ту же основную причину.
+Dynatrace provides full-stack monitoring insights into your complete IT operation and automatically detects if any part of your deployment doesnât fulfill the required quality in terms of performance or error rates. Whenever Dynatrace detects such abnormal system behavior, it creates a single problem that contains all incidents that share the same root cause.
 
-Dynatrace позволяет автоматически отправлять уведомления о проблемах в предпочитаемую вами стороннюю службу управления инцидентами или службу ChatOps.Открытые проблемы постоянно обновляются на основе меняющегося воздействия и корреляции событий.Чтобы избежать спама в уведомлениях, уведомления о проблемах передаются сторонним системам только тогда, когда проблемы изначально обнаружены и когда они в конечном итоге решены.
+Dynatrace enables you to automatically push problem notifications to your preferred third-party incident management or ChatOps service. Open problems are continuously updated based on evolving impact and correlating events. To avoid notification spam, problem notifications are only pushed to third-party systems when problems are initially detected and when they are ultimately resolved.
 
-Управление инцидентами
+Incident management
 
-Чат-опсы
+ChatOps
 
-Управление корпоративными услугами
+Enterprise service management
 
-Пользовательские интеграции
+Custom integrations
 
-Эти системы помогают организациям управлять большим количеством инцидентов между несколькими командами.Системы управления инцидентами предлагают такие функции, как отслеживание уведомлений об инцидентах, определение уровня эскалации и графики дежурств.Обычно системы управления инцидентами предлагают широкий спектр каналов уведомлений, таких как колл-центры, пейджеры и мобильные push-уведомления.Dynatrace предлагает готовые интеграции с основными системами управления инцидентами, такими как [Опсгени](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration "Configure Opsgenie integration with Dynatrace."), [ВикторОпс](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration "Learn how to configure VictorOps integration with Dynatrace."), [ПейджерДьюти](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration "Learn how to send problem notifications from Dynatrace to PagerDuty."), [xMatters](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration "Learn how to create problem notifications by adding an xMatters webhook URL from your xMatters instance to Dynatrace settings.") и [Джира](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration "Configure Jira integration with Dynatrace.").
+These systems help organizations manage large amounts of incidents across multiple teams. Incident management systems offer features such as incident-notification tracking, escalation-level definition, and on-duty schedules. Typically, incident management systems offer a wide range of notification channels, such as call centers, pagers, and mobile push notifications. Dynatrace offers out-of-the-box integrations for major incident management systems such as [Opsgenie](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration "Configure Opsgenie integration with Dynatrace."), [VictorOps](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration "Learn how to configure VictorOps integration with Dynatrace."), [PagerDuty](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration "Learn how to send problem notifications from Dynatrace to PagerDuty."), [xMatters](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration "Learn how to create problem notifications by adding an xMatters webhook URL from your xMatters instance to Dynatrace settings."), and [Jira](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration "Configure Jira integration with Dynatrace.").
 
-[Джира](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration) [Опсгени](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration) [ПейджерДьюти](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration) [Трелло](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration) [ВикторОпс](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration) [xMatters](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration)
+[Jira](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration) [Opsgenie](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration) [PagerDuty](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration) [Trello](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration) [VictorOps](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration) [xMatters](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration)
 
-Сегодня системы чата широко используются командами DevOps для сортировки поступающих проблем, обсуждения последующих действий и архивирования извлеченных уроков.Dynatrace предлагает готовые интеграции с популярными системами ChatOps, такими как [Слабый](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems.") и [Команды Майкрософт](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration "Set up a Microsoft Teams problem-notification integration that can keep you updated on all Dynatrace-detected problems.").
+Today, chat systems are widely used by DevOps teams to triage incoming issues, discuss follow-up actions and to archive lessons learned. Dynatrace offers out-of-the-box integrations for popular ChatOps systems such as [Slack](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems.") and [Microsoft Teams](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration "Set up a Microsoft Teams problem-notification integration that can keep you updated on all Dynatrace-detected problems.").
 
-[Команды Майкрософт](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration) [Слабый](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration)
+[Microsoft Teams](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration) [Slack](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration)
 
-Системы управления корпоративными услугами широко используются крупными предприятиями для организации всех типов ИТ- и не связанных с ИТ услуг и ресурсов.Эти системы используются компаниями для организации своих ИТ-услуг в соответствии с мировыми стандартами, такими как ITIL (Библиотека инфраструктуры информационных технологий).Все инциденты, связанные с обслуживанием аппаратного и программного обеспечения, отслеживаются и запускают рабочие процессы.Dynatrace предлагает сертифицированную интеграцию с [СервисNow](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration "Connect your monitoring environment with your ServiceNow instance."), самой популярной SaaS-системой управления корпоративными услугами.
+Enterprise service-management systems are widely used by large enterprises to organize all types of IT and non-IT related services and resources. These systems are used by companies to organize their IT services according to global standards, such as ITIL (Information Technology Infrastructure Library). All hardware and software service-related incidents are tracked and trigger workflows. Dynatrace offers a certified integration with [ServiceNow](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration "Connect your monitoring environment with your ServiceNow instance."), the most popular SaaS enterprise service-management system.
 
-[СервисNow](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration)
+[ServiceNow](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration)
 
-Если Dynatrace еще не предлагает готовую интеграцию для вашей конкретной системы, вы можете настроить [интеграция электронной почты](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.") или [интеграция вебхука](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration "Learn how to integrate problem-notifications using a custom webhook.").
+If Dynatrace doesnât yet offer an out-of-the-box integration for your specific system, you can set up an [email integration](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.") or [webhook integration](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration "Learn how to integrate problem-notifications using a custom webhook.").
 
-[Электронная почта](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration) [Вебхук](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration)
+[Email](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration) [Webhook](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration)

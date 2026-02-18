@@ -1,33 +1,33 @@
 ---
 title: Adjust the log message
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/message
-scraped: 2026-02-06T16:00:21.678181
+scraped: 2026-02-18T21:17:55.025262
 ---
 
-# Настройте сообщение журнала
+# Adjust the log message
 
-# Настройте сообщение журнала
+# Adjust the log message
 
-* Последняя версия Dynatrace
-* Практическое руководство
-* 3-минутное чтение
-* Опубликовано 10 октября 2025 г.
+* Latest Dynatrace
+* How-to guide
+* 3-min read
+* Published Oct 10, 2025
 
-Приложение ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы** автоматически извлекает и выделяет сообщение журнала из записи и отображает его в отдельном столбце в таблице результатов.
+The ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** app automatically extracts and highlights a log message from a record and displays this as a separate column in the results table.
 
-Хотя полное содержимое и все атрибуты записи журнала могут быть важны для понимания основной причины, возможность быстрого сканирования сообщений может ускорить поиск соответствующих журналов и диагностику проблемы.
+While the full content and all the attributes of your log record can be important to understanding the root cause, being able to quickly scan the messages can speed up finding the relevant logs and diagnosing the problem.
 
-## Что такое сообщение журнала?
+## What is a log message?
 
-Во многих случаях журналы облачных приложений или платформ содержат определенное поле, содержащее фактическое сообщение.
+In many cases, logs from cloud-native applications or platforms contain a specific field that holds the actual message.
 
-Столбец **Сообщение журнала** – это динамически создаваемое поле, в котором, если возможно, отображается читаемая часть записи журнала.
+The **Log message** column is a dynamically generated field that shows the readable part of a log entry, if possible.
 
-### Примеры
+### Examples
 
-Запись журнала
+Log record
 
-Записать сообщение
+Log message
 
 ```
 {
@@ -57,7 +57,7 @@ scraped: 2026-02-06T16:00:21.678181
 }
 ```
 
-AMQ222165: Для очереди ответ\_очередь в настройках адреса не настроен адрес недоставленного письма.
+AMQ222165: No Dead Letter Address configured for queue answer\_queue in AddressSettings
 
 ```
 {
@@ -139,7 +139,7 @@ AMQ222165: Для очереди ответ\_очередь в настройк�
 }
 ```
 
-"Начало просмотра" path="/api/v1/namespaces/external-accounts " resourcesVersion="17603423543179000" timeout="7m10s"
+"Starting watch" path="/api/v1/namespaces/external-accounts " resourceVersion="17603423543179000" timeout="7m10s"
 
 ```
 {
@@ -165,74 +165,74 @@ level":"INFO",
 }
 ```
 
-Никаких изменений статуса.Пропуск патча
+No status changes. Skipping patch
 
-## Отображение или скрытие столбца **Сообщение журнала**
+## Display or hide **Log message** column
 
-По умолчанию:
+By default:
 
-* Отображается столбец **Сообщение журнала**.
-* Столбец **содержание** скрыт.
+* The **Log message** column is displayed
+* The **content** column is hidden
 
-Чтобы отобразить или скрыть столбец **Сообщение журнала** (или любые другие доступные столбцы)
+To display or hide the **Log message** column (or any other available columns)
 
-1. Перейдите в раздел ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журналы**.
-2. Запустите запрос для получения журналов.
-3. В правом верхнем углу таблицы результатов выберите **Настройки столбца**.
-4. В окне **Столбцы** установите или снимите флажки, чтобы отобразить или скрыть соответствующие столбцы в ![Журналы](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Журнала**.
+1. Go to ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
+2. Run a query to fetch logs.
+3. In the upper-right corner of the results table, select  **Column settings**.
+4. In the **Columns** window, select or clear checkboxes to display or hide the corresponding columns in ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
 
-* Используйте поле поиска, чтобы найти столбцы.
-* Используйте элементы управления и для изменения порядка отображения столбцов.
-5. Нажмите **Применить**, чтобы сохранить изменения и закрыть окно **Столбцы**.
+   * Use the  search box to help you find columns.
+   * Use the  and  controls to change the display order of the columns.
+5. Select **Apply** to save your changes and close the **Columns** window.
 
-## Как извлекается сообщение журнала
+## How a log message is extracted
 
-Сообщение журнала извлекается из записи журнала как часть выполнения запроса и не влечет за собой дополнительных затрат по вашей лицензии.Если сообщение по атрибутам, перечисленным ниже, не найдено, поле **content** отображается как резервное.
+A log message is extracted from the log record as part of executing a query and does not incur additional costs against your license. If no message is found from the attributes listed below, the **content** field is displayed as a fallback.
 
-### Атрибуты первого уровня
+### First-level attributes
 
-Для определенных технологий или в результате ваших правил синтаксического анализа поле с сообщением журнала доступно как атрибут первого уровня в записи журнала.Сообщение журнала извлекается из следующих атрибутов первого уровня:
+For certain technologies, or as a result of your parsing rules, the field with the log message is accessible as a first-level attribute in the log record. The log message is extracted from the following first-level attributes:
 
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
+* `msg`
+* `message`
+* `event`
+* `description`
+* `details`
 
-Для источников журналов, передаваемых в Dynatrace через API, для достижения наилучших результатов запишите сообщение журнала в любой из предыдущих атрибутов во время регистрации.
+For your log sources ingested to Dynatrace over the API, write the log message to any of the previous attributes during logging for best results.
 
-В качестве альтернативы извлеките эту читаемую информацию в атрибут первого уровня всего за несколько шагов в процессоре OpenPipeline.Подробную информацию см. в [Обработка журналов с помощью OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.").
+As an alternative, extract that readable information to a first-level attribute with just a few steps in an OpenPipeline processor. For details, see [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.").
 
-### Структурированные журналы JSON
+### Structured JSON logs
 
-Многие средства ведения журнала, такие как GCP, Serilog и log4net, или платформы облачного ведения журналов предоставляют информацию в виде структурированного JSON.Когда этот структурированный журнал хранится в поле **content** в Dynatrace, сообщение журнала извлекается из следующих стандартных ключей JSON:
+Many loggersâsuch as GCP, Serilog, and log4netâor cloud logging frameworks provide information as structured JSON. When this structured log is stored in the **content** field in Dynatrace, the log message is extracted from the following standard JSON keys:
 
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
+* `message`
+* `@message`
+* `msg`
+* `@mt`
+* `@m`
+* `body`
+* `eventName`
+* `textPayload`
+* `protoPayload.@type`
+* `protoPayload.message`
+* `textPayload.message`
+* `jsonPayload.message`
+* `messageObject.message`
+* `properties.message`
+* `properties.statusMessage`
+* `properties.status.additionalDetails`
+* `properties.log`
+* `properties.Result`
+* `status`
 
-### Неструктурированные журналы
+### Unstructured logs
 
-Когда ваш источник журнала выводит информацию в соответствии с популярным стилем logfmt, сообщение журнала извлекается из неструктурированного журнала в **content**.
+When your log source outputs information following the popular logfmt styling, the log message is extracted from the unstructured log in the **content**.
 
-Сообщение журнала обнаруживается в паре ключ/значение для следующих ключей:
+The log message is detected in a key/value pair for the following keys:
 
-* __КОД_0__
-* __КОД_0__
-* __КОД_0__
+* `msg`
+* `message`
+* `Message`

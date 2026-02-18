@@ -1,7 +1,7 @@
 ---
 title: Sensitive data masking (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/sensitive-data-masking
-scraped: 2026-02-18T05:58:19.609944
+scraped: 2026-02-18T21:31:15.833652
 ---
 
 # Sensitive data masking (Logs Classic)

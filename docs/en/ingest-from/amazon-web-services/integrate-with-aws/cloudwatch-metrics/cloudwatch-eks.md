@@ -1,7 +1,7 @@
 ---
 title: Monitor Amazon Elastic Kubernetes Service (EKS) with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-eks
-scraped: 2026-02-18T05:39:38.791857
+scraped: 2026-02-18T21:18:18.065569
 ---
 
 # Monitor Amazon Elastic Kubernetes Service (EKS) with CloudWatch metrics

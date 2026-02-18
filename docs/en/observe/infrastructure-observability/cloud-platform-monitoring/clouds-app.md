@@ -1,7 +1,7 @@
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-18T05:31:32.308990
+scraped: 2026-02-18T21:16:11.762227
 ---
 
 # Clouds app
@@ -112,6 +112,8 @@ of 1
 ## Get started
 
 ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** has an integrated onboarding flow that guides you through all the required steps to get started. The exact steps you need to take depend on your cloud provider and the type of cloud connection (new or classic).
+
+If you're new to Dynatrace AWS Cloud Platform Monitoring, we recommend starting with the new AWS connections instead of the classic ones.
 
 New cloud connections (AWS, Preview for Azure)
 

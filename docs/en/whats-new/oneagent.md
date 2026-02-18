@@ -1,7 +1,7 @@
 ---
 title: OneAgent release notes
 source: https://www.dynatrace.com/docs/whats-new/oneagent
-scraped: 2026-02-18T05:30:54.835972
+scraped: 2026-02-18T21:15:21.903399
 ---
 
 # OneAgent release notes

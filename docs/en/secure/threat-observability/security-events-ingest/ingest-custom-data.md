@@ -1,7 +1,7 @@
 ---
 title: Ingest custom security events via API
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-custom-data
-scraped: 2026-02-18T05:36:05.591080
+scraped: 2026-02-18T21:22:04.466750
 ---
 
 # Ingest custom security events via API
