@@ -12,18 +12,40 @@ Fallback:  Groq Llama 3.3 70B (100K tokens/day бесплатно)
 
 import os
 import sys
+import io
 import json
 import time
 import hashlib
 import requests
 from pathlib import Path
 
+# Fix Windows encoding (cp1251 can't handle emoji)
+if sys.platform == 'win32':
+    try:
+        if hasattr(sys.stdout, 'reconfigure'):
+            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+        elif hasattr(sys.stdout, 'buffer'):
+            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+
 # API ключи ТОЛЬКО из окружения
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '')
 GROQ_API_KEY   = os.environ.get('GROQ_API_KEY', '')
+OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
 
 GROQ_API_URL   = 'https://api.groq.com/openai/v1/chat/completions'
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent'
+OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions'
+# Бесплатные модели OpenRouter — пробуем по очереди при rate limit
+OPENROUTER_MODELS = [
+    'google/gemma-3-27b-it:free',           # Google Gemma 3 27B (работает!)
+    'meta-llama/llama-3.3-70b-instruct:free', # Llama 3.3 70B
+    'microsoft/phi-4-reasoning-plus:free',   # Microsoft Phi-4
+    'qwen/qwen3-8b:free',                   # Qwen 3 8B
+]
 
 # Директории
 DOCS_DIR = Path('../docs')
@@ -156,7 +178,7 @@ def translate_via_gemini(text: str) -> str | None:
         return None
 
     prompt = TRANSLATION_PROMPT.format(text=text)
-    max_retries = 3
+    max_retries = 5
     for attempt in range(max_retries):
         try:
             response = requests.post(
@@ -169,11 +191,16 @@ def translate_via_gemini(text: str) -> str | None:
                         'maxOutputTokens': 8192,
                     }
                 },
-                timeout=60
+                timeout=90
             )
 
             if response.status_code == 429:
-                wait = 15 * (attempt + 1)  # 15, 30, 45 sec — Gemini free 15 req/min
+                # Check if it's daily quota exhausted vs per-minute limit
+                err_text = response.text
+                if 'limit: 0' in err_text or 'quota' in err_text.lower():
+                    print(f"  ⏳ Gemini дневная квота исчерпана — пропускаю на Groq")
+                    return None
+                wait = 20 * (attempt + 1)  # 20, 40, 60, 80, 100 sec
                 print(f"  ⏳ Gemini rate limit, жду {wait}с...")
                 time.sleep(wait)
                 continue
@@ -219,7 +246,7 @@ def translate_via_groq(text: str) -> str | None:
         return None
 
     prompt = TRANSLATION_PROMPT.format(text=text)
-    max_retries = 3
+    max_retries = 6
     for attempt in range(max_retries):
         try:
             response = requests.post(
@@ -236,12 +263,17 @@ def translate_via_groq(text: str) -> str | None:
                     'top_p': 1,
                     'stream': False
                 },
-                timeout=60
+                timeout=90
             )
 
             if response.status_code == 429:
-                wait = 2 ** (attempt + 1)
-                print(f"  ⏳ Groq rate limit, жду {wait}с...")
+                retry_after = response.headers.get('retry-after', '')
+                wait = int(retry_after) if retry_after.isdigit() else min(10 * (attempt + 1), 60)
+                # Если ждать слишком долго (>60с) — сразу на следующий API
+                if wait > 60:
+                    print(f"  ⏳ Groq rate limit {wait}с — слишком долго, передаю следующему API")
+                    return None
+                print(f"  ⏳ Groq rate limit, жду {wait}с... (попытка {attempt+1}/{max_retries})")
                 time.sleep(wait)
                 continue
 
@@ -275,6 +307,68 @@ def translate_via_groq(text: str) -> str | None:
     return None
 
 
+def translate_via_openrouter(text: str) -> str | None:
+    """Перевод через OpenRouter (бесплатные модели). 3-й fallback.
+    Перебирает несколько бесплатных моделей при rate limit."""
+    if not OPENROUTER_API_KEY:
+        return None
+
+    prompt = TRANSLATION_PROMPT.format(text=text)
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+        'HTTP-Referer': 'https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website',
+        'X-Title': 'Dynatrace Docs Translator'
+    }
+
+    for model in OPENROUTER_MODELS:
+        for attempt in range(3):
+            try:
+                response = requests.post(
+                    OPENROUTER_API_URL,
+                    headers=headers,
+                    json={
+                        'model': model,
+                        'messages': [{'role': 'user', 'content': prompt}],
+                        'temperature': 0.3,
+                        'max_tokens': 8000,
+                    },
+                    timeout=120
+                )
+
+                if response.status_code == 429:
+                    wait = min(15 * (attempt + 1), 45)
+                    print(f"  ⏳ OpenRouter [{model}] rate limit, жду {wait}с...")
+                    time.sleep(wait)
+                    continue
+
+                if response.status_code != 200:
+                    err = response.json().get('error', {}).get('message', '')[:80]
+                    print(f"  ❌ OpenRouter [{model}] ошибка {response.status_code}: {err}")
+                    break  # Попробовать следующую модель
+
+                result = response.json()
+                if 'choices' not in result or not result['choices']:
+                    print(f"  ❌ OpenRouter [{model}]: пустой ответ")
+                    break
+
+                translation = result['choices'][0]['message']['content'].strip()
+                time.sleep(2.0)
+                print(f"  ✅ OpenRouter [{model}]")
+                return translation
+
+            except requests.Timeout:
+                print(f"  ⏳ OpenRouter [{model}] таймаут, повтор...")
+                time.sleep(5)
+            except Exception as e:
+                print(f"  ❌ OpenRouter [{model}] исключение: {e}")
+                break
+                continue
+            return None
+
+    return None
+
+
 def translate_text(text: str, source_file: str) -> str:
     """
     Переводит текст. Стратегия:
@@ -282,7 +376,8 @@ def translate_text(text: str, source_file: str) -> str:
     2. Защищаем brand-термины плейсхолдерами
     3. Пробуем Gemini Flash (основной)
     4. Fallback на Groq (если Gemini недоступен)
-    5. Восстанавливаем термины + пост-фикс ошибок
+    5. Fallback на OpenRouter (если Groq недоступен)
+    6. Восстанавливаем термины + пост-фикс ошибок
     6. Возвращаем оригинал если оба недоступны
     """
     cache_key = f"{source_file}:{hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]}"
@@ -310,9 +405,16 @@ def translate_text(text: str, source_file: str) -> str:
         if translation:
             print(f"  ✅ Groq успешно!")
 
-    # 3. Оба недоступны — возвращаем оригинал
+    # 3. Fallback на OpenRouter (бесплатные модели)
+    if translation is None and OPENROUTER_API_KEY:
+        print(f"  🔄 Fallback 2: OpenRouter (Llama 3.3 70B free)...")
+        translation = translate_via_openrouter(protected_text)
+        if translation:
+            print(f"  ✅ OpenRouter успешно!")
+
+    # 4. Все API недоступны — возвращаем оригинал
     if translation is None:
-        print(f"  ⚠️  Оба API недоступны — оставляю оригинал")
+        print(f"  ⚠️  Все API недоступны — оставляю оригинал")
         return text
 
     # Восстанавливаем brand-термины и фиксим известные ошибки
@@ -377,14 +479,20 @@ def main():
         print("⚠️  GEMINI_API_KEY не задан — Gemini пропускается")
 
     if GROQ_API_KEY:
-        print("✅ Groq Llama 3.3 70B — АКТИВЕН (fallback, 100K tokens/day)")
+        print("✅ Groq Llama 3.3 70B — АКТИВЕН (fallback 1, 100K tokens/day)")
     else:
         print("⚠️  GROQ_API_KEY не задан — Groq пропускается")
 
-    if not GEMINI_API_KEY and not GROQ_API_KEY:
+    if OPENROUTER_API_KEY:
+        print("✅ OpenRouter (Llama 3.3 free) — АКТИВЕН (fallback 2)")
+    else:
+        print("⚠️  OPENROUTER_API_KEY не задан — OpenRouter пропускается")
+
+    if not GEMINI_API_KEY and not GROQ_API_KEY and not OPENROUTER_API_KEY:
         print("\n❌ Ни один API ключ не задан! Перевод невозможен.")
-        print("   GEMINI_API_KEY → https://aistudio.google.com/apikey")
-        print("   GROQ_API_KEY   → https://console.groq.com")
+        print("   GEMINI_API_KEY    → https://aistudio.google.com/apikey")
+        print("   GROQ_API_KEY      → https://console.groq.com")
+        print("   OPENROUTER_API_KEY → https://openrouter.ai/keys")
         return
 
     print("=" * 70)
