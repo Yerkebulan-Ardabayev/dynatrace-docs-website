@@ -1,7 +1,7 @@
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-17T21:16:35.455838
+scraped: 2026-02-18T05:42:49.234627
 ---
 
 # Monitor Prometheus metrics

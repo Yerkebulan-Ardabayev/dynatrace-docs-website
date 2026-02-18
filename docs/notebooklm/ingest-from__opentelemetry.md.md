@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from/opentelemetry.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: OpenTelemetry and Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry
-scraped: 2026-02-17T21:20:07.805138
+scraped: 2026-02-18T05:40:13.430289
 ---
 
 # OpenTelemetry and Dynatrace

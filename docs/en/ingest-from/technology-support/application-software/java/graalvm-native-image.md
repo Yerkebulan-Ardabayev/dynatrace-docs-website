@@ -1,7 +1,7 @@
 ---
 title: GraalVM Native Image
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/graalvm-native-image
-scraped: 2026-02-17T21:20:01.334583
+scraped: 2026-02-18T05:40:04.054132
 ---
 
 # GraalVM Native Image

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: deliver/ownership
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 3
 
@@ -732,7 +732,7 @@ While only the **Team name** and **Team identifier** fields are required for cre
 ---
 title: Create and manage teams for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/ownership-teams
-scraped: 2026-02-17T21:33:08.849483
+scraped: 2026-02-18T05:53:30.335737
 ---
 
 # Create and manage teams for entity ownership

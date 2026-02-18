@@ -1,6 +1,6 @@
 # Dynatrace Documentation: semantic-dictionary.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Semantic Dictionary
 source: https://www.dynatrace.com/docs/semantic-dictionary
-scraped: 2026-02-17T21:19:26.007591
+scraped: 2026-02-18T05:38:22.384266
 ---
 
 # Semantic Dictionary

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-intelligence/dynatrace-intelligence-integrations.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace Intelligence integrations
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
-scraped: 2026-02-17T21:21:23.902460
+scraped: 2026-02-18T05:41:11.742490
 ---
 
 # Dynatrace Intelligence integrations

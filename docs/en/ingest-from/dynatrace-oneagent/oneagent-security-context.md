@@ -1,7 +1,7 @@
 ---
 title: Set up Grail permissions for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-security-context
-scraped: 2026-02-17T21:24:52.617859
+scraped: 2026-02-18T05:38:09.591275
 ---
 
 # Set up Grail permissions for OneAgent

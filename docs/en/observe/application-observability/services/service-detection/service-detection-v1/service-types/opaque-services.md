@@ -1,7 +1,7 @@
 ---
 title: Opaque services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services
-scraped: 2026-02-17T21:15:54.157674
+scraped: 2026-02-18T05:33:57.884484
 ---
 
 # Opaque services

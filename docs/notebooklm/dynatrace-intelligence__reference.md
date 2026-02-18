@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-intelligence/reference
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 4
 
@@ -13,7 +13,7 @@ Files combined: 4
 ---
 title: Dynatrace Intelligence predictive AI analysis
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
-scraped: 2026-02-17T21:15:08.703391
+scraped: 2026-02-18T05:34:11.327253
 ---
 
 # Dynatrace Intelligence predictive AI analysis
@@ -1052,7 +1052,7 @@ After the training is finished, Dynatrace uses the seasonal model to detect anom
 ---
 title: AI models
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
-scraped: 2026-02-17T21:21:21.400976
+scraped: 2026-02-18T05:41:08.354652
 ---
 
 # AI models

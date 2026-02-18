@@ -1,7 +1,7 @@
 ---
 title: Process logs with technology bundle parsers
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-technology-processor
-scraped: 2026-02-17T21:18:22.526869
+scraped: 2026-02-18T05:35:09.023276
 ---
 
 # Process logs with technology bundle parsers

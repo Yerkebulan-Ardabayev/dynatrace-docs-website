@@ -1,7 +1,7 @@
 ---
 title: Amazon DynamoDB Accelerator (DAX) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamodb
-scraped: 2026-02-17T04:59:22.730678
+scraped: 2026-02-18T05:43:34.255591
 ---
 
 # Amazon DynamoDB Accelerator (DAX) monitoring

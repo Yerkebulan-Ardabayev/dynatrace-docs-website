@@ -1,7 +1,7 @@
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-17T21:14:35.255929
+scraped: 2026-02-18T05:33:35.921436
 ---
 
 # Reduce span-based and metric-based cardinality

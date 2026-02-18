@@ -1,8 +1,8 @@
 # Dynatrace Documentation: analyze-explore-automate/workflows
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
-Files combined: 29
+Files combined: 30
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 29
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-15T21:30:29.145746
+scraped: 2026-02-18T05:48:51.907728
 ---
 
 # Email
@@ -1034,7 +1034,7 @@ We strongly recommend that you limit the permissions of your personal access tok
 ---
 title: GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
-scraped: 2026-02-16T21:29:48.005822
+scraped: 2026-02-18T05:52:33.957113
 ---
 
 # GitHub Connector
@@ -1073,7 +1073,7 @@ Learn about available actions used by GitHub Connector integration for automatin
 ---
 title: Actions for GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
-scraped: 2026-02-17T05:07:26.867628
+scraped: 2026-02-18T05:44:25.549944
 ---
 
 # Actions for GitLab Connector
@@ -1448,7 +1448,7 @@ Refer to the GitLab documentation for details on which scope is needed for which
 ---
 title: GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab
-scraped: 2026-02-17T21:32:03.976768
+scraped: 2026-02-18T05:52:10.581850
 ---
 
 # GitLab Connector
@@ -1482,7 +1482,7 @@ Learn about available actions used by GitLab Connector integration for automatin
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-02-17T21:27:27.666027
+scraped: 2026-02-18T05:52:08.883469
 ---
 
 # Set up Jenkins Connector
@@ -1599,7 +1599,7 @@ The following are solutions to problems some people had with Jira Connector acti
 ---
 title: Microsoft Entra ID Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id
-scraped: 2026-02-17T05:05:29.482723
+scraped: 2026-02-18T05:44:10.939539
 ---
 
 # Microsoft Entra ID Connector
@@ -1740,7 +1740,7 @@ The log of a successful run is shown below.
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-02-15T21:22:46.035361
+scraped: 2026-02-18T05:55:05.086347
 ---
 
 # PagerDuty
@@ -2041,7 +2041,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Event-Driven Ansible
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible
-scraped: 2026-02-17T04:57:29.413900
+scraped: 2026-02-18T05:57:36.260483
 ---
 
 # Red Hat Event-Driven Ansible
@@ -2380,7 +2380,7 @@ To create a workflow that sends an event to Event-Driven Ansible
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-17T21:19:19.124932
+scraped: 2026-02-18T05:37:04.499897
 ---
 
 # ServiceNow
@@ -2711,7 +2711,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-17T21:33:51.858955
+scraped: 2026-02-18T05:54:04.949649
 ---
 
 # Slack Connector
@@ -3732,7 +3732,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-17T04:56:47.968050
+scraped: 2026-02-18T05:58:02.841540
 ---
 
 # Actions for Text Processing Connector
@@ -4240,7 +4240,7 @@ For more information on how to start a workflow to use Text Processing, see [Wor
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-17T21:19:17.928995
+scraped: 2026-02-18T05:37:06.173509
 ---
 
 # Workflows Connectors
@@ -4775,7 +4775,7 @@ console.log( ex.params.event);
 ---
 title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-02-17T05:11:37.384117
+scraped: 2026-02-18T05:46:55.894083
 ---
 
 # Workflows actions
@@ -4875,7 +4875,7 @@ To access various workflow management commands:
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-16T21:27:04.226827
+scraped: 2026-02-18T05:47:46.279031
 ---
 
 # Manage live or draft workflows
@@ -4992,7 +4992,7 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-02-16T21:24:22.885415
+scraped: 2026-02-18T05:50:49.121603
 ---
 
 # User permissions for workflows
@@ -5181,7 +5181,7 @@ For more information, see [Service users](/docs/manage/identity-access-managemen
 ---
 title: Event triggers for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
-scraped: 2026-02-17T21:31:57.865523
+scraped: 2026-02-18T05:51:59.314107
 ---
 
 # Event triggers for workflows
@@ -5301,7 +5301,7 @@ To remedy this situation, we recommend adjusting the event trigger configuration
 ---
 title: Send email notifications for problems
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email
-scraped: 2026-02-17T21:33:16.502386
+scraped: 2026-02-18T05:43:42.904107
 ---
 
 # Send email notifications for problems
@@ -5425,13 +5425,272 @@ This workflow is a great starting point for automating incident response and imp
 ---
 
 
+## Source: workflows-tutorial-problems-slack.md
+
+
+---
+title: Send Slack notifications for problems
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack
+scraped: 2026-02-18T05:48:39.343910
+---
+
+# Send Slack notifications for problems
+
+# Send Slack notifications for problems
+
+* Latest Dynatrace
+* Tutorial
+* 4-min read
+* Updated on Oct 19, 2025
+
+Problems are automatically opened by Dynatrace when anomalies or alert conditions are detected in your environment.
+In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, build a  simple workflow that listens to problems and automatically sends ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") Slack notifications whenever a new problem is triggered.
+This guide shows you how.
+
+## What will you learn
+
+In this tutorial, you'll learn how to alert your team in real time by automatically messaging the details of a new problem to a specific Slack channel.
+
+At a short glance, you will:
+
+1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
+2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+3. Configure a [Slack message](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces").
+4. Save and run the  workflow to get email notifications.
+5. Verify your  workflow is working as expected.
+
+## Prerequisites
+
+* You should have permission to configure and run a  simple workflow.
+  For example, the permission granted with the default policy is for a [standard user](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference").
+* You should select the necessary permissions in [authorization settings](/docs/analyze-explore-automate/workflows/security#authorization-settings "Guide on security aspects of workflow automation in Dynatrace Workflows").
+
+  + You should allow the required permissions to
+
+    - Access ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+    - Write and execute a workflow.
+      For more information, see [authorization settings](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+* You have [set up Slack integration](/docs/analyze-explore-automate/workflows/actions/slack#setup-slack-integration "Send messages to Slack Workspaces").
+
+## Steps
+
+1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
+
+   1. Go to ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+   2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Workflow** in the upper-right corner of the page.
+   3. Select the workflow title.
+      By default, it is `Untitled workflow`, and enter a meaningful name.
+      The workflow type is set to  simple workflow by default.
+2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+
+   1. In the **Select trigger** section, select a  [Davis problem trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+   2. Set the **Problem state** to **active or closed**.
+      This option means that the problem can be both active or closed.
+      This setting causes the workflow to trigger twice, once when the problem becomes active and again when it is closed.
+   3. In the **Event category** drop-down list, select **Select all**.
+   4. Optional Select **Query past events** to see the most recent problem events that would have triggered this workflow.
+   5. Optional Enter **Entity tags** or **Additional custom filter query** to only trigger the workflow on the relevant problems.
+3. Configure a [Slack message](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces").
+
+   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the trigger node.
+   2. In the **Choose action** section, select ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") **Send message** action type.
+      Give the action type a meaningful title.
+   3. Select a pre-configured Slack connection.
+   4. Select a Slack connection from the **Connection** drop-down list.
+   5. Select a Slack channel for your message from the **Channel** drop-down list.
+   6. In the **Message** field, enter the following:
+
+      ```
+      {
+
+
+
+      "blocks": [
+
+
+
+      {
+
+
+
+      "type": "header",
+
+
+
+      "text": {
+
+
+
+      "type": "plain_text",
+
+
+
+      "text": "{{ ':white_check_mark:' if event()['event.status'] == 'CLOSED' else ':warning:' }} {{ 'RESOLVED' if event()['event.status'] == 'CLOSED' else 'OPEN' }} - {{ event()['event.name']}}",
+
+
+
+      "emoji": true
+
+
+
+      }
+
+
+
+      },
+
+
+
+      {
+
+
+
+      "type": "section",
+
+
+
+      "text": {
+
+
+
+      "type": "mrkdwn",
+
+
+
+      "text": "- *Problem link*: <{{ environment().url }}/ui/intent/dynatrace.davis.problems/view-problem#%7B%22event.id%22%3A%22{{ event()['event.id'] }}%22,%22event.kind%22%3A%22{{event()['event.kind']}}%22%7D|{{ event()['display_id'] }}> \n- *Impacted Entities:* `{{ event()['affected_entity_ids'] }}`\n- *Problem duration:* `{{ (event().get('resolved_problem_duration', 0) | int) / 1000000 / 1000 / 60 }} minutes`"
+
+
+
+      }
+
+
+
+      },
+
+
+
+      {
+
+
+
+      "type": "section",
+
+
+
+      "text": {
+
+
+
+      "type": "mrkdwn",
+
+
+
+      "text": {{ ('>' ~ event()['event.description']) | replace('\n', '\n>') | to_json }}
+
+
+
+      }
+
+
+
+      },
+
+
+
+      {
+
+
+
+      "type": "divider"
+
+
+
+      },
+
+
+
+      {
+
+
+
+      "type": "section",
+
+
+
+      "text": {
+
+
+
+      "type": "mrkdwn",
+
+
+
+      "text": "*Workflow link*: <{{ environment().url }}/ui/apps/dynatrace.automations/workflows/{{ execution().workflow.id }}|Workflow>"
+
+
+
+      }
+
+
+
+      }
+
+
+
+      ]
+
+
+
+      }
+      ```
+
+      This configuration uses event context placeholders to populate the Slack message with relevant problem details dynamically.
+
+      The Davis problems trigger returns the problem record.
+      You can use any field from the problem record, stored in `dt.davis.problems`, in the Slack message.
+4. Save and run the  workflow to send out Slack notifications.
+
+   1. Select  **Create draft**.
+   2. Select **Deploy**.
+   3. Select **Run** to see the selected problem event that will be used for the workflow.
+5. Verify that your  workflow is working as expected:
+
+   1. Go to your workflow.
+   2. Select **Run**.
+   3. Select **Run** again to execute the workflow.
+
+      Execution logs aren't available for a simple workflow.
+      If an error occurs, you can find the error details on the right in the task details pane.
+
+## Conclusion
+
+Youâve created a  simple workflow that sends Slack messages when problems are opened or closed.
+This setup helps to ensure that your team is immediately informed about critical issues in your environment.
+
+You can extend this workflow by
+
+* Adding conditions to handle specific problem categories or severities.
+* Adding auto remediation steps to your workflow.
+
+This workflow is a great starting point for automating incident response and improving operational awareness.
+
+## Related topics
+
+* [Create a simple workflow in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow.")
+* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Slack Connector](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces")
+
+
+---
+
+
 ## Source: use-cases.md
 
 
 ---
 title: Workflows use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases
-scraped: 2026-02-17T21:28:14.905484
+scraped: 2026-02-18T05:47:34.132304
 ---
 
 # Workflows use cases

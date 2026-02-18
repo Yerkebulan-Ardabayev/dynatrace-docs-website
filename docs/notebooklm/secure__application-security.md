@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/application-security
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 20
 
@@ -13,7 +13,7 @@ Files combined: 20
 ---
 title: Runtime Application Protection monitoring rules
 source: https://www.dynatrace.com/docs/secure/application-security/application-protection/application-protection-rules
-scraped: 2026-02-17T21:26:53.942219
+scraped: 2026-02-18T05:56:34.728326
 ---
 
 # Runtime Application Protection monitoring rules
@@ -97,7 +97,7 @@ You can edit, disable, enable, or remove rules at any time.
 ---
 title: Runtime Application Protection
 source: https://www.dynatrace.com/docs/secure/application-security/application-protection
-scraped: 2026-02-17T21:21:32.264429
+scraped: 2026-02-18T05:41:55.866741
 ---
 
 # Runtime Application Protection
@@ -224,7 +224,7 @@ Runtime Application Protection is licensed based on the consumption of [GiB-hour
 ---
 title: Security Posture Management
 source: https://www.dynatrace.com/docs/secure/application-security/security-posture-management-hub
-scraped: 2026-02-17T21:21:33.642903
+scraped: 2026-02-18T05:41:49.353432
 ---
 
 # Security Posture Management
@@ -535,7 +535,7 @@ Set up the Dynatrace [integration with Runecast Analyzer](/docs/secure/threat-ob
 ---
 title: Metrics Classic for Dynatrace Runtime Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/app-sec-metrics
-scraped: 2026-02-17T21:25:23.347771
+scraped: 2026-02-18T05:58:38.939241
 ---
 
 # Metrics Classic for Dynatrace Runtime Vulnerability Analytics
@@ -1087,7 +1087,7 @@ Define code-level vulnerability detection on a process group level.](/docs/secur
 ---
 title: Email integration for security notifications
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/security-notifications-rva/email-integration
-scraped: 2026-02-17T05:12:39.884971
+scraped: 2026-02-18T05:58:52.573963
 ---
 
 # Email integration for security notifications
@@ -1251,7 +1251,7 @@ To verify that your integration is set up correctly
 ---
 title: Jira integration for security notifications
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/security-notifications-rva/jira-integration
-scraped: 2026-02-17T21:26:21.704162
+scraped: 2026-02-18T05:48:53.584669
 ---
 
 # Jira integration for security notifications
@@ -1377,7 +1377,7 @@ To verify that your integration is set up correctly
 ---
 title: Webhook integration for security notifications
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/security-notifications-rva/webhook-integration
-scraped: 2026-02-17T05:05:36.572095
+scraped: 2026-02-18T05:44:51.029716
 ---
 
 # Webhook integration for security notifications
@@ -3117,7 +3117,7 @@ The last five status changes of the vulnerability are logged in the **Vulnerabil
 ---
 title: Manage third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities
-scraped: 2026-02-17T21:31:43.231212
+scraped: 2026-02-18T05:44:05.450360
 ---
 
 # Manage third-party vulnerabilities
@@ -4006,7 +4006,7 @@ To change the vulnerability status of
 ---
 title: Use cases for monitoring rules
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules
-scraped: 2026-02-16T21:30:43.524835
+scraped: 2026-02-18T05:55:17.474822
 ---
 
 # Use cases for monitoring rules
@@ -4209,7 +4209,7 @@ The order of the monitoring rules is important: As soon as a rule matches an ent
 ---
 title: Third-party vulnerabilities
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities
-scraped: 2026-02-17T21:15:52.904438
+scraped: 2026-02-18T05:34:02.199188
 ---
 
 # Third-party vulnerabilities
@@ -4254,7 +4254,7 @@ Create, modify, and delete custom monitoring rules for Dynatrace-monitored proce
 ---
 title: Upgrade Thirdâparty and Codeâlevel vulnerabilities to the 3rd generation experience
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics/vulnerabilities-upgrade-classic-to-latest
-scraped: 2026-02-17T21:30:23.371789
+scraped: 2026-02-18T05:50:56.074479
 ---
 
 # Upgrade Thirdâparty and Codeâlevel vulnerabilities to the 3rd generation experience
@@ -4367,7 +4367,7 @@ Connect with the Dynatrace Community to [share feedback and ask questionsï»¿]
 ---
 title: Runtime Vulnerability Analytics
 source: https://www.dynatrace.com/docs/secure/application-security/vulnerability-analytics
-scraped: 2026-02-17T21:21:30.050027
+scraped: 2026-02-18T05:41:47.492052
 ---
 
 # Runtime Vulnerability Analytics

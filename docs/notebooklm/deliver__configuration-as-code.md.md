@@ -1,6 +1,6 @@
 # Dynatrace Documentation: deliver/configuration-as-code.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Configuration as Code overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code
-scraped: 2026-02-17T05:10:12.037000
+scraped: 2026-02-18T05:47:39.314560
 ---
 
 # Configuration as Code overview

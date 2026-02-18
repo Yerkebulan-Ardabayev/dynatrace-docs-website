@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/budget-alerts.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Set budget alerts
 source: https://www.dynatrace.com/docs/license/budget-alerts
-scraped: 2026-02-17T21:16:30.577801
+scraped: 2026-02-18T05:39:01.436151
 ---
 
 # Set budget alerts

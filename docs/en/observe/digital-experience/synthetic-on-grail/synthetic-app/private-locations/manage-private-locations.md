@@ -1,7 +1,7 @@
 ---
 title: Manage private locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/manage-private-locations
-scraped: 2026-02-17T05:04:43.059388
+scraped: 2026-02-18T05:48:24.300705
 ---
 
 # Manage private locations

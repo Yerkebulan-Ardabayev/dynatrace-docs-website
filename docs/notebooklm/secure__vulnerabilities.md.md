@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/vulnerabilities.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Vulnerabilities
 source: https://www.dynatrace.com/docs/secure/vulnerabilities
-scraped: 2026-02-17T04:49:38.140019
+scraped: 2026-02-18T05:54:56.207169
 ---
 
 # Vulnerabilities

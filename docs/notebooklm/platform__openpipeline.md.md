@@ -1,6 +1,6 @@
 # Dynatrace Documentation: platform/openpipeline.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-17T21:13:54.145276
+scraped: 2026-02-18T05:31:22.958065
 ---
 
 # OpenPipeline

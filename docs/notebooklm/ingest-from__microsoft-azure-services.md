@@ -1,8 +1,8 @@
 # Dynatrace Documentation: ingest-from/microsoft-azure-services
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
-Files combined: 120
+Files combined: 121
 
 ---
 
@@ -13,7 +13,7 @@ Files combined: 120
 ---
 title: Azure Kubernetes Service (AKS)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-aks
-scraped: 2026-02-17T21:20:10.296919
+scraped: 2026-02-18T05:39:52.748181
 ---
 
 # Azure Kubernetes Service (AKS)
@@ -902,13 +902,537 @@ Location of log files
 ---
 
 
+## Source: integrate-oneagent-on-web-app-for-containers.md
+
+
+---
+title: Integrate OneAgent on Azure App Service for Linux and containers
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers
+scraped: 2026-02-18T05:49:16.586606
+---
+
+# Integrate OneAgent on Azure App Service for Linux and containers
+
+# Integrate OneAgent on Azure App Service for Linux and containers
+
+* Latest Dynatrace
+* How-to guide
+* 11-min read
+* Updated on Dec 17, 2025
+
+Linux only
+
+App Service on Linux supports two scenarios.
+
+* **Bring your own code**
+
+  In the code scenario, App Service provides a base container that is maintained by the platform.
+
+  This container targets:
+
+  + A development framework, such as .NET Core, PHP, or Node.js.
+  + A version of that framework, such as .NET Core 3.0 or .NET Core 3.1.
+
+  Follow the procedure on the **Built-in image** tab.
+* **Bring your own container**
+
+  In the container scenario, App Service provides a host where a custom container provided by the customer can execute.
+
+  For details on the differences between the two scenarios, see [Things you should know: Web Apps on Linuxï»¿](https://dt-url.net/jm039gu).
+
+  To monitor App Services on Linux, you need to integrate OneAgent within your containerized application.
+
+  Follow the procedure on the **Custom image** tab.
+
+Built-in image
+
+Custom image
+
+## Integrate Dynatrace on built-in image
+
+Azure App Service for Linux allows you to customize its base container at runtime using a [startup script or script commandï»¿](https://dt-url.net/z2234qa) that must be executed in a bash shell or [Azure Cloud Shellï»¿](https://dt-url.net/at034yy). The script can be configured in multiple ways.
+
+### Set startup script command/file at creation time using Azure CLI
+
+```
+az webapp create -n <my-app> -g <my-resourcegroup> -p <my-appservice-plan> --runtime <runtime-tag> --startup-file <startup-script/command>
+```
+
+### Set script command/file at creation time for an existing App Service
+
+```
+az webapp config set -n <my-app> -g <my-resourcegroup> --startup-file <startup-script/command>
+```
+
+### Set script command/file using ARM template
+
+Use the [appCommandLineï»¿](https://docs.microsoft.com/en-us/azure/templates/microsoft.web/sites/config-web?pivots=deployment-language-arm-template#siteconfig-1) property of your ARM template to set the startup script/command.
+
+```
+{
+
+
+
+"acrUseManagedIdentityCreds": false,
+
+
+
+"acrUserManagedIdentityId": null,
+
+
+
+"alwaysOn": false,
+
+
+
+"apiDefinition": null,
+
+
+
+"apiManagementConfig": null,
+
+
+
+"appCommandLine": "<startup-script/command>",
+
+
+
+"appSettings": null,
+
+
+
+"autoHealEnabled": false,
+
+
+
+"autoHealRules": null,
+
+
+
+"autoSwapSlotName": null,
+
+
+
+...
+```
+
+### Set startup script command/file in the Azure portal
+
+![AppService Linux Portal Startup](https://dt-cdn.net/images/screenshot-2022-12-13-at-13-42-44-1109-8955530cdd.png)
+
+### Script or command?
+
+A startup script is the same as a startup command: it's a command that executes the script (remember to use the path of the script). However, this requires that you package the script along with your application. If you don't want to have this dependency, use startup commands.
+
+The script/command is executed within the container init script, which is implemented differently on each technology stack.
+
+For details on startup commands, see the Azure App Service for Linux documentation on [What are the expected values for the Startup File section when I configure the runtime stack?ï»¿](https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-)
+
+### Integrate Dynatrace using a startup script/command
+
+To integrate Dynatrace, the startup script/command needs to have access to a few variables.
+
+Parameter
+
+Description
+
+`$DT_ENDPOINT`
+
+Your Dynatrace API server endpointâuse either your environment [cluster endpoint](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or an [ActiveGate address](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+
+`$DT_API_TOKEN`
+
+API Token to access the Dynatrace REST APIâ[create an API Token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the **InstallerDownload** scope.
+
+`$DT_INCLUDE`
+
+Configure required code modules, depending on the used technology stack.
+
+* `all` includes all available OneAgent code modules (`java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, `sdk`), but it increases download package size.
+* Alternatively, choose identifiers appropriate to your application stack, such as `java`, `dotnet`, `nodejs`, or `php`.
+
+For details, see [API documentation](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API.").
+
+`$START_APP_CMD`
+
+The command to start your application
+
+[What are the expected values for the Startup File section when I configure the runtime stack?ï»¿](https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-)
+
+If you use a shell other than bash, make sure to adapt the script appropriately to the shell's character escape requirements.
+
+You can do this in two ways.
+
+* App service settings Recommended
+* Setting the values inline
+
+#### Monitoring PHP on NGINX
+
+To monitor both PHP-FPM and NGINX
+
+1. Set `DT_INCLUDE` to `all`.
+2. Use the startup script with two additional commands at the end.
+
+   ```
+   echo '/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so' >> /etc/ld.so.preload
+
+
+
+   /etc/init.d/nginx restart
+   ```
+
+#### App service settings
+
+Set the values of the above parameters using [App Settingsï»¿](https://dt-url.net/da239ts)âthis is equivalent to setting environment variablesâand then run this command.
+
+```
+wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh && sh /tmp/installer-wrapper.sh
+```
+
+Java Runtime stack
+
+For apps running on the Java Runtime stack in Azure App Service, this installation method may not work as expected in some cases. For example, customers have reported issues with Alpine-based images, where the above command was interpreted as a single string rather than executed as a shell command. This caused the `&&` operator to be treated as part of the `wget` input instead of chaining commands.
+
+If you encounter this behavior, consider using an alternative approach to execute the script (such as a custom startup script or modifying a [custom image](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#install--custom-image "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")).
+
+Alternatively, you can use the calling-only script below, which works for all Linux images.
+
+```
+#!/bin/sh
+
+
+
+readonly installerWrapperInstallationPath=/tmp/installer-wrapper.sh
+
+
+
+readonly installerWrapperURL=https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh
+
+
+
+wget -O $installerWrapperInstallationPath -q $installerWrapperURL
+
+
+
+sh $installerWrapperInstallationPath
+```
+
+#### Setting the values inline
+
+You can set the needed variables only for the command that runs the OneAgent installer.
+
+To do this, you need to set the values before the command as shown below.
+
+```
+wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh && DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh /tmp/installer-wrapper.sh
+```
+
+Alternatively, you can use the startup file as shown below.
+
+```
+#!/bin/sh
+
+
+
+readonly installerWrapperInstallationPath=/tmp/installer-wrapper.sh
+
+
+
+readonly installerWrapperURL=https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh
+
+
+
+wget -O $installerWrapperInstallationPath -q $installerWrapperURL
+
+
+
+DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh $installerWrapperInstallationPath
+```
+
+### Example: Integrate into a node.js application using Azure CLI within a bash shell
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Configure the startup command**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#step-1 "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Restart the web application twice**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#step-2 "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")
+
+#### Step 1 Configure the startup command
+
+```
+RESOURCE_GROUP="my-appservice-test"
+
+
+
+APPSVC="my-linux-webapp"
+
+
+
+DT_ENDPOINT="https://XXXXXX.live.dynatrace.com"
+
+
+
+DT_API_TOKEN="XXXXXX"
+
+
+
+DT_INCLUDE="nodejs"
+
+
+
+START_APP_CMD="pm2 start index.js --no-daemon"
+
+
+
+STARTUP_CMD="wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh && DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh /tmp/installer-wrapper.sh"
+
+
+
+az webapp config set --resource-group $RESOURCE_GROUP --name $APPSVC --startup-file "$STARTUP_CMD"
+```
+
+#### Step 2 Restart the web application twice
+
+After you configure the startup command, restart the web application **twice**.
+
+* Restart once to initialize OneAgent installation.
+* Restart again to start OneAgent instrumenting your application.
+
+## Integrate Dynatrace on custom image
+
+To integrate OneAgent with the application image, you have two options:
+
+* [Integrate the OneAgent image layer provided by Dynatrace](#layer)
+* [Download OneAgent artifacts at image build-time from Dynatrace REST API](#api)
+
+### Option 1: Integrate using Dynatrace offered OneAgent image layer
+
+This option requires that you have Docker v17.05+ installed on your computer.
+
+1. Sign in to Docker with your Dynatrace environment ID as the username and your PaaS token as the password.
+
+   ```
+   docker login -u <your-environment-id> <your-environment-url>
+   ```
+2. Add the following lines to your application image Dockerfile, after the last `FROM` command.
+
+   ```
+   COPY --from=<ADDRESS>/linux/oneagent-codemodules:<TECHNOLOGY> / /
+
+
+
+   ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
+   ```
+
+   Replace the following placeholders in the template.
+
+   Parameter
+
+   Description
+
+   `<ADDRESS>`
+
+   Your Dynatrace registry endpointâuse either your environment [cluster endpoint](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or an [ActiveGate address](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+
+   `<TECHNOLOGY>`
+
+   Configure required code modules, depending on the used technology stack.
+
+   * `all` includes all available OneAgent code modules (`java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, `sdk`), but it increases download package size.
+   * Alternatively, choose identifiers appropriate to your application stack, such as `java`, `dotnet`, `nodejs`, or `php`.
+
+   For details, see the [API documentation](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API.").
+
+   **What if my Docker image is based on Alpine Linux?**
+
+   Dynatrace OneAgent supports Alpine Linuxâbased environments. To use an Alpine Linux compatible OneAgent, use image name `oneagent-codemodules-musl` (as shown in the adapted template below) instead of `oneagent-codemodules`.
+
+   ```
+   COPY --from=<ADDRESS>/linux/oneagent-codemodules-musl:<TECHNOLOGY> / /
+
+
+
+   ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
+   ```
+3. Build your application image.
+
+   Build the Docker image from your Dockerfile to use it in your Kubernetes environment.
+
+   ```
+   docker build -t yourapp .
+   ```
+4. Restart the web application **twice**.
+
+   * Restart once to initialize the OneAgent install script.
+   * Restart again to start OneAgent on the host.
+
+### Option 2: Integrate using installer script from Dynatrace REST API
+
+1. Add the following two lines to your Dockerfile.
+
+   ```
+   RUN wget -O /tmp/installer.sh -q "<DT_ENDPOINT>/api/v1/deployment/installer/agent/unix/paas-sh/latest?Api-Token=<DT_API_TOKEN>&flavor=<DT_FLAVOR>&include=<DT_INCLUDE>" && sh /tmp/installer.sh
+
+
+
+   ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
+   ```
+
+   Replace the following parameters in the template above.
+
+   Parameter
+
+   Description
+
+   `<DT_ENDPOINT>`
+
+   Your Dynatrace API endpointâuse either your environment [cluster endpoint](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or an [ActiveGate address](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+
+   `<DT_API_TOKEN>`
+
+   API Token to access the Dynatrace REST APIâ[create an API Token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the **InstallerDownload** scope.
+
+   `<DT_FLAVOR>`
+
+   Configure the required architecture.
+
+   * `default` for standard, glibc-based Linux images
+   * `musl` for Alpine Linuxâbased images
+
+   `<DT_INCLUDE>`
+
+   Configure required code modules, depending on the used technology stack.
+
+   * `all` includes all available OneAgent code modules (`java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, `sdk`), but it increases download package size.
+   * Alternatively, choose identifiers appropriate to your application stack, such as `java`, `dotnet`, `nodejs`, or `php`.
+
+   For details, see the [API documentation](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API.").
+2. Build your application image.
+
+   Build the Docker image from your Dockerfile to use it in your Kubernetes environment.
+
+   ```
+   docker build -t yourapp .
+   ```
+3. Restart the web application **twice**.
+
+   * Restart once to initialize the OneAgent install script.
+   * Restart again to start OneAgent on the host.
+
+## Additional configuration Optional
+
+Use additional environment variables to configure OneAgent for troubleshooting or advanced networking. You can either set them via your App Service Application settings or, when using a custom container image, configure them within your application image Dockerfile.
+
+### Networking variables
+
+Parameter
+
+Description
+
+`DT_NETWORK_ZONE`
+
+Specifies to use a network zone. For more information, see [network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.").
+
+`DT_PROXY`
+
+When using a proxy, use this environment variable to pass proxy credentials. For more information, see [Set up OneAgent on containers for application-only monitoring](/docs/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.").
+
+### Additional metadata for process grouping and service detection
+
+When listing multiple tags, you need to put them in double quotes, for example: DT\_TAGS="Tag1=Value1 Tag2=Value2".
+
+Parameter
+
+Description
+
+`DT_LOCALTOVIRTUALHOSTNAME`
+
+Multiple containers are sometimes detected as a single instance (localhost), leading to various problems in, for example, service detection or availability alerts. Use this environment variable to define a unique name for your container instance. For details, see [Service Detection v1](/docs/observe/application-observability/services/service-detection/service-detection-v1#adjusting-service-detection "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+
+`DT_APPLICATIONID`
+
+Some technologies don't provide unique application names. In such cases, use this environment variable to provide a unique name. For more information, see [Web server naming issues](/docs/observe/application-observability/services/service-detection/service-detection-v1#web-server-naming-issues "Find out how Dynatrace Service Detection v1 detects and names different types of services.").
+
+`DT_TAGS`
+
+Applies [custom tags](/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") to your process group.
+
+`DT_CUSTOM_PROP`
+
+Applies [custom metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.") to your process group.
+
+`DT_CLUSTER_ID`
+
+If the [process group detection rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") won't work for your use case, use this environment variable to **group all processes with the same value**.
+
+`DT_NODE_ID`
+
+If the [process group detection rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") won't work for your use case, use this environment variable to **separate process group instances**.
+
+### Validating variables
+
+Parameter
+
+Description
+
+`DT_LOGSTREAM`
+
+Set this variable with `stdout` to configure the OneAgent to log errors to the console. To see additional OneAgent logs, set the log level with `DT_LOGLEVELCON` as follows.
+
+`DT_LOGLEVELCON`
+
+Use this environment variable to define the console log level. Valid options are: `NONE`, `SEVERE`, and `INFO`.
+
+`DT_AGENTACTIVE`
+
+Set to `true` or `false` to enable or disable OneAgent.
+
+## Update OneAgent
+
+Built-in image
+
+Custom image
+
+When an update is available, restart your application to update OneAgent.
+
+Each time you want to leverage a new version of Dynatrace OneAgent, you need to rebuild your local OneAgent code modules and application image. Any newly started pods from this application image will be monitored with the latest version of OneAgent.
+
+If you've specified a default OneAgent installation version for new hosts and applications using [OneAgent update settings](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux."), your web apps will be automatically monitored by the defined default version of OneAgent.
+
+## Uninstall OneAgent
+
+Built-in image
+
+Custom image
+
+To uninstall OneAgent
+
+1. In Azure portal, go to your web application > **Configuration** > **General settings**.
+2. Remove your startup command (leave **Startup Command** empty).
+3. Select **Save**.
+
+To uninstall OneAgent, remove references from above described Dynatrace integration from your application image and redeploy the application.
+
+## Potential conflict with Application Insights
+
+OneAgent may conflict with Azure Application Insights agents already instrumenting the application. If you don't see any monitoring data coming in, check if you have turned on Application Insights and re-try with Application Insights turned off.
+
+## Related topics
+
+* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
+* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+
+
+---
+
+
 ## Source: monitor-app-service.md
 
 
 ---
 title: Monitor Azure App Service Plan metrics
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/monitor-app-service
-scraped: 2026-02-17T21:31:02.929002
+scraped: 2026-02-18T05:58:15.861194
 ---
 
 # Monitor Azure App Service Plan metrics
@@ -994,7 +1518,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure App Service
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice
-scraped: 2026-02-17T21:19:32.145855
+scraped: 2026-02-18T05:39:49.167762
 ---
 
 # Monitor Azure App Service
@@ -1330,7 +1854,7 @@ After installation is complete, OneAgent will begin monitoring.
 ---
 title: Azure AI - All In One monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-all-in-one
-scraped: 2026-02-17T21:27:07.794231
+scraped: 2026-02-18T05:44:39.332110
 ---
 
 # Azure AI - All In One monitoring
@@ -1409,7 +1933,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Anomaly Detector monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-anomaly-detector
-scraped: 2026-02-17T05:03:43.969760
+scraped: 2026-02-18T05:49:56.720073
 ---
 
 # Azure AI - Anomaly Detector monitoring
@@ -1484,7 +2008,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Autosuggest monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-autosuggest
-scraped: 2026-02-17T21:27:47.746364
+scraped: 2026-02-18T05:51:13.815725
 ---
 
 # Azure AI - Bing Autosuggest monitoring
@@ -1634,7 +2158,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Entity Search monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-entity-search
-scraped: 2026-02-17T21:32:47.541437
+scraped: 2026-02-18T05:44:03.563864
 ---
 
 # Azure AI - Bing Entity Search monitoring
@@ -1709,7 +2233,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Search monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-search
-scraped: 2026-02-17T21:31:11.564050
+scraped: 2026-02-18T05:49:49.799168
 ---
 
 # Azure AI - Bing Search monitoring
@@ -1784,7 +2308,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Bing Spell Check monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-spell-check
-scraped: 2026-02-17T21:29:46.598882
+scraped: 2026-02-18T05:45:41.293439
 ---
 
 # Azure AI - Bing Spell Check monitoring
@@ -2009,7 +2533,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Custom Vision Prediction monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-custom-vision-prediction
-scraped: 2026-02-17T05:04:55.004718
+scraped: 2026-02-18T05:46:15.124057
 ---
 
 # Azure AI - Custom Vision Prediction monitoring
@@ -2159,7 +2683,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Face monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-face
-scraped: 2026-02-17T21:33:26.902480
+scraped: 2026-02-18T05:45:39.609852
 ---
 
 # Azure AI - Face monitoring
@@ -2309,7 +2833,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Language Understanding (LUIS) Authoring monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-language-understanding-authoring
-scraped: 2026-02-17T21:26:48.923467
+scraped: 2026-02-18T05:56:28.297213
 ---
 
 # Azure AI - Language Understanding (LUIS) Authoring monitoring
@@ -2384,7 +2908,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Language Understanding (LUIS) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-language-understanding
-scraped: 2026-02-17T21:31:01.689480
+scraped: 2026-02-18T05:56:41.760866
 ---
 
 # Azure AI - Language Understanding (LUIS) monitoring
@@ -2460,7 +2984,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure OpenAI
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-openai
-scraped: 2026-02-17T04:59:41.355163
+scraped: 2026-02-18T05:47:57.413184
 ---
 
 # Azure OpenAI
@@ -2536,7 +3060,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Personalizer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-personalizer
-scraped: 2026-02-17T05:03:47.481260
+scraped: 2026-02-18T05:44:59.524544
 ---
 
 # Azure AI - Personalizer monitoring
@@ -2611,7 +3135,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - QnA Maker monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-qna-maker
-scraped: 2026-02-17T21:25:32.738711
+scraped: 2026-02-18T05:54:37.788879
 ---
 
 # Azure AI - QnA Maker monitoring
@@ -2760,7 +3284,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Text Analytics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-text-analytics
-scraped: 2026-02-17T05:10:28.946159
+scraped: 2026-02-18T05:56:19.738709
 ---
 
 # Azure AI - Text Analytics monitoring
@@ -2836,7 +3360,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure AI - Translator monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-translator
-scraped: 2026-02-17T21:33:35.748854
+scraped: 2026-02-18T05:47:35.790965
 ---
 
 # Azure AI - Translator monitoring
@@ -2912,7 +3436,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure API Management Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-api-management-service
-scraped: 2026-02-17T21:29:50.273502
+scraped: 2026-02-18T05:48:02.821632
 ---
 
 # Azure API Management Service monitoring
@@ -3064,7 +3588,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Application Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-application-gateway
-scraped: 2026-02-17T21:34:15.271273
+scraped: 2026-02-18T05:45:02.351134
 ---
 
 # Azure Application Gateway monitoring
@@ -3257,7 +3781,7 @@ Running the Azure App Service extension at the same time with Azure Application 
 ---
 title: Azure Machine - Azure Arc
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-arc
-scraped: 2026-02-17T21:30:11.776560
+scraped: 2026-02-18T05:50:32.088379
 ---
 
 # Azure Machine - Azure Arc
@@ -3287,7 +3811,7 @@ To learn how to enable service monitoring, see [Enable service monitoring](/docs
 ---
 title: Azure Automation Account monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-automation-account
-scraped: 2026-02-17T21:27:42.534180
+scraped: 2026-02-18T05:51:44.162427
 ---
 
 # Azure Automation Account monitoring
@@ -3356,7 +3880,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Basic Load Balancer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-basic-load-balancer
-scraped: 2026-02-17T05:01:38.768882
+scraped: 2026-02-18T05:46:08.177183
 ---
 
 # Azure Basic Load Balancer monitoring
@@ -3389,7 +3913,7 @@ To learn how to enable service monitoring, see [Enable service monitoring](/docs
 ---
 title: Azure Batch monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-batch
-scraped: 2026-02-17T21:30:15.641060
+scraped: 2026-02-18T05:51:47.638353
 ---
 
 # Azure Batch monitoring
@@ -3567,7 +4091,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Cache for Redis monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cache-for-redis
-scraped: 2026-02-16T21:27:21.541768
+scraped: 2026-02-18T05:56:40.045586
 ---
 
 # Azure Cache for Redis monitoring
@@ -3843,7 +4367,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Cognitive Services - Ink Recognizer monitoring (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cognitive-services-ink-recognizer
-scraped: 2026-02-17T21:33:21.670534
+scraped: 2026-02-18T05:45:21.118422
 ---
 
 # Azure Cognitive Services - Ink Recognizer monitoring (deprecated)
@@ -4057,7 +4581,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure Container Instances
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-instances
-scraped: 2026-02-17T05:08:26.943302
+scraped: 2026-02-18T05:54:26.898778
 ---
 
 # Monitor Azure Container Instances
@@ -4453,7 +4977,7 @@ This service monitors a part of Azure Cosmos DB Account (Microsoft.DocumentDB/da
 ---
 title: Azure Data Explorer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-explorer-cluster
-scraped: 2026-02-17T05:08:50.537514
+scraped: 2026-02-18T05:52:42.318508
 ---
 
 # Azure Data Explorer monitoring
@@ -4546,7 +5070,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Data Factory (V1, V2) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-factory
-scraped: 2026-02-17T21:31:36.530001
+scraped: 2026-02-18T05:50:27.051532
 ---
 
 # Azure Data Factory (V1, V2) monitoring
@@ -4722,7 +5246,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Data Lake Storage Gen1 monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-lake-storage-gen1
-scraped: 2026-02-15T21:24:18.834304
+scraped: 2026-02-18T05:50:54.360993
 ---
 
 # Azure Data Lake Storage Gen1 monitoring
@@ -4865,7 +5389,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Database for MariaDB monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mariadb
-scraped: 2026-02-17T05:03:54.032537
+scraped: 2026-02-18T05:57:02.329371
 ---
 
 # Azure Database for MariaDB monitoring
@@ -5072,7 +5596,7 @@ After you create the management zone, assign it to your dashboard (from the dash
 ---
 title: Azure Database for PostgreSQL (Single Server, Hyperscale, Flexible Server) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-postgresql
-scraped: 2026-02-17T21:34:32.915285
+scraped: 2026-02-18T05:47:42.861477
 ---
 
 # Azure Database for PostgreSQL (Single Server, Hyperscale, Flexible Server) monitoring
@@ -5219,7 +5743,7 @@ After you create the management zone, assign it to your dashboard (from the dash
 ---
 title: Azure Device Provisioning Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-device-provisioning-service
-scraped: 2026-02-17T21:25:52.950814
+scraped: 2026-02-18T05:49:58.393847
 ---
 
 # Azure Device Provisioning Service monitoring
@@ -5359,7 +5883,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Event Grid (Domain Topics, Topics, System Topics) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-event-grid
-scraped: 2026-02-17T21:31:14.073202
+scraped: 2026-02-18T05:47:01.016739
 ---
 
 # Azure Event Grid (Domain Topics, Topics, System Topics) monitoring
@@ -5627,7 +6151,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Firewall monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-firewall
-scraped: 2026-02-17T21:30:30.907842
+scraped: 2026-02-18T05:45:43.011366
 ---
 
 # Azure Firewall monitoring
@@ -5777,7 +6301,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Gateway Load Balancer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-gateway-load-balancer
-scraped: 2026-02-17T21:28:05.561353
+scraped: 2026-02-18T05:52:19.582116
 ---
 
 # Azure Gateway Load Balancer monitoring
@@ -5850,7 +6374,7 @@ This service monitors a part of Azure Load Balancer (Microsoft.Network/loadBalan
 ---
 title: Azure Integration Service Environment monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment
-scraped: 2026-02-17T21:30:29.663652
+scraped: 2026-02-18T05:48:15.401939
 ---
 
 # Azure Integration Service Environment monitoring
@@ -5952,7 +6476,7 @@ Azure Integration Service Environment can be connected with Azure Logic Apps. Fo
 ---
 title: Azure IoT Central Applications monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-iot-central-applications
-scraped: 2026-02-17T21:30:36.199562
+scraped: 2026-02-18T05:54:18.563523
 ---
 
 # Azure IoT Central Applications monitoring
@@ -6027,7 +6551,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure IoT Hub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-iot-hub
-scraped: 2026-02-17T21:29:04.632694
+scraped: 2026-02-18T05:58:42.482181
 ---
 
 # Azure IoT Hub monitoring
@@ -6234,7 +6758,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Logic Apps monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-logic-apps
-scraped: 2026-02-17T21:34:40.024422
+scraped: 2026-02-18T05:55:12.065436
 ---
 
 # Azure Logic Apps monitoring
@@ -6336,7 +6860,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Machine Learning monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-machine-learning
-scraped: 2026-02-17T21:26:58.981152
+scraped: 2026-02-18T05:50:50.904087
 ---
 
 # Azure Machine Learning monitoring
@@ -6587,7 +7111,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure NetApp Files monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-netapp-files
-scraped: 2026-02-17T04:59:55.881963
+scraped: 2026-02-18T05:44:20.062758
 ---
 
 # Azure NetApp Files monitoring
@@ -6683,7 +7207,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Network Interface monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-network-interface
-scraped: 2026-02-17T21:28:35.173417
+scraped: 2026-02-18T05:50:05.192401
 ---
 
 # Azure Network Interface monitoring
@@ -6753,7 +7277,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-network-watcher
-scraped: 2026-02-17T21:25:14.386837
+scraped: 2026-02-18T05:58:33.201962
 ---
 
 # Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring
@@ -6834,7 +7358,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Notification Hub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-notification-hub
-scraped: 2026-02-17T21:29:15.192196
+scraped: 2026-02-18T05:58:56.068172
 ---
 
 # Azure Notification Hub monitoring
@@ -7036,7 +7560,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Private DNS Zone monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-private-dns-zone
-scraped: 2026-02-17T04:59:38.597357
+scraped: 2026-02-18T05:50:03.480634
 ---
 
 # Azure Private DNS Zone monitoring
@@ -7201,7 +7725,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Recovery Services Vault
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-recovery-services-vault
-scraped: 2026-02-16T21:26:58.875189
+scraped: 2026-02-18T05:44:42.660850
 ---
 
 # Azure Recovery Services Vault
@@ -7416,7 +7940,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure SignalR
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-signalr
-scraped: 2026-02-17T21:28:08.094211
+scraped: 2026-02-18T05:51:23.918617
 ---
 
 # Monitor Azure SignalR
@@ -8046,7 +8570,7 @@ This service monitors a part of Azure SQL (Microsoft.Sql/servers/elasticpools). 
 ---
 title: Azure SQL Server monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-server
-scraped: 2026-02-17T21:32:17.826150
+scraped: 2026-02-18T05:44:32.805953
 ---
 
 # Azure SQL Server monitoring
@@ -8156,7 +8680,7 @@ This service monitors a part of Azure Load Balancer (Microsoft.Network/loadBalan
 ---
 title: Azure Storage Account Classic (Blob, File, Queue, Table) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account-classic
-scraped: 2026-02-17T21:27:49.117188
+scraped: 2026-02-18T05:56:07.660323
 ---
 
 # Azure Storage Account Classic (Blob, File, Queue, Table) monitoring
@@ -8378,7 +8902,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Stream Analytics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-stream-analytics
-scraped: 2026-02-17T21:33:53.123859
+scraped: 2026-02-18T05:46:34.884170
 ---
 
 # Azure Stream Analytics monitoring
@@ -8460,7 +8984,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Synapse Analytics (Synapse Workspace, Apache Spark pool, SQL pool) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-synapse-analytics
-scraped: 2026-02-16T21:30:02.367157
+scraped: 2026-02-18T05:55:46.663282
 ---
 
 # Azure Synapse Analytics (Synapse Workspace, Apache Spark pool, SQL pool) monitoring
@@ -8641,7 +9165,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Traffic Manager monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-traffic-manager
-scraped: 2026-02-17T21:31:26.620678
+scraped: 2026-02-18T05:55:51.810457
 ---
 
 # Azure Traffic Manager monitoring
@@ -8709,7 +9233,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Virtual Network Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-virtual-network-gateways
-scraped: 2026-02-16T09:27:16.808988
+scraped: 2026-02-18T05:51:32.830274
 ---
 
 # Azure Virtual Network Gateway monitoring
@@ -8787,7 +9311,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-web-application-firewall-policies
-scraped: 2026-02-17T05:08:25.332961
+scraped: 2026-02-18T05:56:55.116532
 ---
 
 # Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
@@ -8854,7 +9378,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: All Azure cloud services
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics
-scraped: 2026-02-17T21:19:39.786983
+scraped: 2026-02-18T05:39:54.074204
 ---
 
 # All Azure cloud services
@@ -9062,7 +9586,7 @@ All cloud services consume DDUs. The amount of DDU consumption per service insta
 ---
 title: Trace Azure Functions written in .NET
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet
-scraped: 2026-02-17T04:56:20.092678
+scraped: 2026-02-18T05:51:12.097479
 ---
 
 # Trace Azure Functions written in .NET
@@ -10092,7 +10616,7 @@ The underlying issue can also affect other instrumentations. Therefore, we do no
 ---
 title: Trace Azure Functions written in Node.js
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs
-scraped: 2026-02-17T21:25:35.276708
+scraped: 2026-02-18T05:51:52.406284
 ---
 
 # Trace Azure Functions written in Node.js
@@ -11005,7 +11529,7 @@ return func.HttpResponse("Hello world", status_code=200)
 ---
 title: Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions
-scraped: 2026-02-17T21:31:15.172441
+scraped: 2026-02-18T05:50:01.819888
 ---
 
 # Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
@@ -11098,7 +11622,7 @@ The Dynatrace Azure Functions integration doesn't capture the IP addresses of ou
 ---
 title: Trace Azure Functions with OpenTelemetry .NET
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/otel-native-dotnet-azure
-scraped: 2026-02-17T21:33:54.516679
+scraped: 2026-02-18T05:51:40.792782
 ---
 
 # Trace Azure Functions with OpenTelemetry .NET
@@ -11877,7 +12401,7 @@ See [Serverless monitoring](/docs/license/monitoring-consumption-classic/davis-d
 ---
 title: Monitor Azure Functions using Azure App Service (built-in)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions
-scraped: 2026-02-17T21:19:54.980877
+scraped: 2026-02-18T05:40:15.085872
 ---
 
 # Monitor Azure Functions using Azure App Service (built-in)
@@ -11928,7 +12452,7 @@ To enhance visibility for monitoring your Azure Functions health, we recommend t
 ---
 title: Migrate from Azure classic (formerly 'built-in') services to cloud services
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide
-scraped: 2026-02-16T09:36:04.208776
+scraped: 2026-02-18T05:52:32.298221
 ---
 
 # Migrate from Azure classic (formerly 'built-in') services to cloud services
@@ -12218,7 +12742,7 @@ Below you can find tables with classic services metrics and their corresponding 
 ---
 title: Classic (formerly 'built-in') Azure metrics
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics
-scraped: 2026-02-17T21:31:39.350918
+scraped: 2026-02-18T05:45:24.832833
 ---
 
 # Classic (formerly 'built-in') Azure metrics
@@ -12455,7 +12979,7 @@ For all other metrics collected by Dynatrace per configurable Azure service, see
 ---
 title: Limit API calls to Azure
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/limit-api-calls-to-azure
-scraped: 2026-02-17T21:26:02.421266
+scraped: 2026-02-18T05:47:25.647466
 ---
 
 # Limit API calls to Azure
@@ -12869,7 +13393,7 @@ See [Create activity log alerts on service notifications using the Azure portal�
 ---
 title: Tags and management zones for Azure integration
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/tags-and-management-zones-azure
-scraped: 2026-02-17T05:03:55.852738
+scraped: 2026-02-18T05:54:10.338907
 ---
 
 # Tags and management zones for Azure integration
@@ -13271,7 +13795,7 @@ type(PROCESS_GROUP), toRelationships.isPgAppOf(type(AZURE_FUNCTION_APP),fromRela
 ---
 title: Troubleshooting Azure monitoring setup
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/troubleshoot-azure-monitoring-setup
-scraped: 2026-02-17T21:30:57.840621
+scraped: 2026-02-18T05:45:22.774337
 ---
 
 # Troubleshooting Azure monitoring setup
@@ -13301,7 +13825,7 @@ This page presents common troubleshooting scenarios for Azure monitoring setup.
 ---
 title: Monitor Azure services with Azure Monitor metrics
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide
-scraped: 2026-02-17T21:19:44.980746
+scraped: 2026-02-18T05:39:33.713837
 ---
 
 # Monitor Azure services with Azure Monitor metrics
@@ -14353,7 +14877,7 @@ You can also monitor Azure logs. For more information, see [Azure Logs](/docs/in
 ---
 title: Monitor Azure Service Fabric
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-servicefabric
-scraped: 2026-02-17T21:19:43.639356
+scraped: 2026-02-18T05:40:06.903656
 ---
 
 # Monitor Azure Service Fabric
@@ -14394,7 +14918,7 @@ To deploy OneAgent on Azure Service Fabric, follow the same procedure as for [Az
 ---
 title: Monitor Azure Spring Apps
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring/monitor-azure-spring-apps
-scraped: 2026-02-16T21:31:18.631147
+scraped: 2026-02-18T05:56:26.588474
 ---
 
 # Monitor Azure Spring Apps
@@ -14494,7 +15018,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure Spring Apps
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring
-scraped: 2026-02-17T21:20:02.661885
+scraped: 2026-02-18T05:40:11.698532
 ---
 
 # Monitor Azure Spring Apps
@@ -14756,7 +15280,7 @@ Hiding a dashboard doesn't affect other users.
 ---
 title: Monitor Azure Virtual Machines
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vm
-scraped: 2026-02-17T21:20:11.663132
+scraped: 2026-02-18T05:39:32.327837
 ---
 
 # Monitor Azure Virtual Machines
@@ -15202,7 +15726,7 @@ See [network zones](/docs/manage/network-zones "Find out how network zones work 
 ---
 title: Monitor Azure Virtual Machine Scale Set (VMSS)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss
-scraped: 2026-02-17T21:19:58.773623
+scraped: 2026-02-18T05:40:00.516970
 ---
 
 # Monitor Azure Virtual Machine Scale Set (VMSS)
@@ -15623,7 +16147,7 @@ Restart-AzureRmVmss -ResourceGroupName "<Resource-Group>" -VMScaleSetName "<VMSS
 ---
 title: Azure Logs
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure
-scraped: 2026-02-17T21:19:29.662548
+scraped: 2026-02-18T05:39:51.112332
 ---
 
 # Azure Logs
@@ -16237,7 +16761,7 @@ For more information, see [Monitor Azure services with Azure Monitor metrics](/d
 ---
 title: Azure Native Dynatrace Service
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration
-scraped: 2026-02-17T05:02:25.199421
+scraped: 2026-02-18T05:47:37.584208
 ---
 
 # Azure Native Dynatrace Service

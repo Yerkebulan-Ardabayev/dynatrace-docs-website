@@ -1,6 +1,6 @@
 # Dynatrace Documentation: observe/application-observability
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 65
 
@@ -266,7 +266,7 @@ While limits that protect your environment's resources can't usually be removed,
 ---
 title: Distributed traces concepts
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/concepts
-scraped: 2026-02-17T21:24:15.534904
+scraped: 2026-02-18T05:38:28.989719
 ---
 
 # Distributed traces concepts
@@ -401,7 +401,7 @@ Analyze data down to code-level detail without ever losing the full context arou
 ---
 title: Span and trace context propagation in Distributed Traces Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/context-propagation
-scraped: 2026-02-16T09:27:28.236619
+scraped: 2026-02-18T05:56:56.844487
 ---
 
 # Span and trace context propagation in Distributed Traces Classic
@@ -484,7 +484,7 @@ While the W3C standard formally specifies HTTP propagation, Dynatrace and the br
 ---
 title: Leverage log enrichment for traces to resolve problems
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces
-scraped: 2026-02-17T21:24:02.705482
+scraped: 2026-02-18T05:37:25.360066
 ---
 
 # Leverage log enrichment for traces to resolve problems
@@ -664,7 +664,7 @@ Yes. To learn how, see [Connect your log data to user sessions and Session Repla
 ---
 title: Segment requests to improve response time degradation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/segment-request
-scraped: 2026-02-17T21:15:26.139739
+scraped: 2026-02-18T05:32:07.732388
 ---
 
 # Segment requests to improve response time degradation
@@ -737,7 +737,7 @@ You can extend your analysis:
 ---
 title: Distributed Traces Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces
-scraped: 2026-02-17T21:19:30.925319
+scraped: 2026-02-18T05:38:37.760104
 ---
 
 # Distributed Traces Classic
@@ -780,7 +780,7 @@ Upgrade Distributed Traces Classic ![Distributed Traces Classic](https://dt-cdn.
 ---
 title: Advanced Tracing Analytics powered by Grail
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/advanced-tracing-analytics
-scraped: 2026-02-17T21:15:27.875516
+scraped: 2026-02-18T05:32:09.942272
 ---
 
 # Advanced Tracing Analytics powered by Grail
@@ -2606,7 +2606,7 @@ For more examples, see the [Trace query usageï»¿](https://wkf10640.apps.dynat
 ---
 title: Retain trace data for long periods
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/data-retention
-scraped: 2026-02-17T21:14:03.296786
+scraped: 2026-02-18T05:33:46.380051
 ---
 
 # Retain trace data for long periods
@@ -2717,7 +2717,7 @@ You created a new bucket with a custom retention period of 5 years. The new buck
 ---
 title: Detect performance issues
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/detect-performance-issues
-scraped: 2026-02-17T21:15:40.287609
+scraped: 2026-02-18T05:32:28.094648
 ---
 
 # Detect performance issues
@@ -2823,7 +2823,7 @@ We analyzed trace data and identified a cluster of slow and failing requests wit
 ---
 title: Manage facets
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app/facets
-scraped: 2026-02-17T21:24:27.087614
+scraped: 2026-02-18T05:40:22.724831
 ---
 
 # Manage facets
@@ -2899,7 +2899,7 @@ The table is updated with the selected attribute(s). To change the filter select
 ---
 title: Distributed Tracing app
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app
-scraped: 2026-02-17T21:15:33.234309
+scraped: 2026-02-18T05:32:29.805129
 ---
 
 # Distributed Tracing app
@@ -3109,7 +3109,7 @@ To learn more about analyzing exceptions, see [Exception analysis](/docs/observe
 ---
 title: Exception analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/exception-analysis
-scraped: 2026-02-17T21:15:24.927205
+scraped: 2026-02-18T05:32:26.373227
 ---
 
 # Exception analysis
@@ -3251,7 +3251,7 @@ Visit the [Feedback Channelï»¿](https://dt-url.net/i003111) in the Dynatrace 
 ---
 title: Ingest traces
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/ingest-traces
-scraped: 2026-02-17T21:15:45.163688
+scraped: 2026-02-18T05:32:21.763992
 ---
 
 # Ingest traces
@@ -3323,7 +3323,7 @@ Other setup options
 ---
 title: Set up Grail permissions for Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/permissions
-scraped: 2026-02-17T21:15:44.040671
+scraped: 2026-02-18T05:32:04.411888
 ---
 
 # Set up Grail permissions for Distributed Tracing
@@ -3456,7 +3456,7 @@ To learn more about restricted view access to personal data and confidential req
 ---
 title: Configure data storage and retention for Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/storage
-scraped: 2026-02-17T21:15:35.614814
+scraped: 2026-02-18T05:32:06.075328
 ---
 
 # Configure data storage and retention for Distributed Tracing
@@ -3542,7 +3542,7 @@ With this procedure, you skip storage of spans that match the route and the pipe
 ---
 title: Span and trace context propagation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/tracking-transactions
-scraped: 2026-02-17T21:15:21.002303
+scraped: 2026-02-18T05:32:22.911941
 ---
 
 # Span and trace context propagation
@@ -3626,7 +3626,7 @@ While the W3C standard formally specifies HTTP propagation, Dynatrace and the br
 ---
 title: Use traces, DQL, and logs to spot patterns
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/use-traces-and-dql-to-spot-patterns
-scraped: 2026-02-17T21:15:30.495217
+scraped: 2026-02-18T05:31:56.107089
 ---
 
 # Use traces, DQL, and logs to spot patterns
@@ -4099,7 +4099,7 @@ If you believe that you need to have certain information at hand, [add the DQL q
 ---
 title: Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing
-scraped: 2026-02-17T21:13:36.115669
+scraped: 2026-02-18T05:31:03.674671
 ---
 
 # Distributed Tracing
@@ -4832,7 +4832,7 @@ Use size instead of len or length on any platform.
 ---
 title: Use Live Debugger with your IDE
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/ide-integration
-scraped: 2026-02-17T05:10:16.956081
+scraped: 2026-02-18T05:45:36.096190
 ---
 
 # Use Live Debugger with your IDE
@@ -4939,7 +4939,7 @@ When required, you can access all session configuration options via the header o
 ---
 title: Set up permissions for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/setup
-scraped: 2026-02-17T05:03:28.841900
+scraped: 2026-02-18T05:49:48.129645
 ---
 
 # Set up permissions for Live Debugging
@@ -5048,7 +5048,7 @@ Grants permission to read user-level Live Debugging snapshots.
 ---
 title: Live Debugger
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger
-scraped: 2026-02-17T21:21:50.482572
+scraped: 2026-02-18T05:41:00.298020
 ---
 
 # Live Debugger
@@ -5581,7 +5581,7 @@ In this case, all non-POST requests are filtered out, so you can focus your anal
 ---
 title: Multidimensional analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis
-scraped: 2026-02-17T21:21:51.773689
+scraped: 2026-02-18T05:38:36.616016
 ---
 
 # Multidimensional analysis
@@ -6143,7 +6143,7 @@ Yes. Because from time to time an ActiveGate endpoint might not be accessible to
 ---
 title: Profiling and optimization
 source: https://www.dynatrace.com/docs/observe/application-observability/profiling-and-optimization
-scraped: 2026-02-17T21:21:53.012380
+scraped: 2026-02-18T05:41:01.983335
 ---
 
 # Profiling and optimization
@@ -6182,7 +6182,7 @@ Track all application crashes and enable analysis.](/docs/observe/application-ob
 ---
 title: Calculated metrics for services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/calculated-service-metric
-scraped: 2026-02-17T05:04:50.719185
+scraped: 2026-02-18T05:52:12.290652
 ---
 
 # Calculated metrics for services
@@ -6562,7 +6562,7 @@ Your existing configuration for resource request detection is still applicable, 
 ---
 title: Failure Analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services/failure-analysis
-scraped: 2026-02-17T21:14:31.240137
+scraped: 2026-02-18T05:33:37.608670
 ---
 
 # Failure Analysis
@@ -6678,7 +6678,7 @@ Weâd love to hear your feedback and questions about the new **Failure Analy
 ---
 title: Monitor service message processing
 source: https://www.dynatrace.com/docs/observe/application-observability/services/monitor-service-message-processing
-scraped: 2026-02-17T21:19:28.412338
+scraped: 2026-02-18T05:53:12.955817
 ---
 
 # Monitor service message processing
@@ -6822,7 +6822,7 @@ by: { timeframe, interval, `Service`, dt.smartscape.service }
 ---
 title: Capture request attributes based on method arguments
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments
-scraped: 2026-02-17T21:24:42.690297
+scraped: 2026-02-18T05:37:12.720741
 ---
 
 # Capture request attributes based on method arguments
@@ -6956,7 +6956,7 @@ The following limitations apply to deep object access:
 ---
 title: Capture request attributes based on web request data
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data
-scraped: 2026-02-17T21:24:40.163703
+scraped: 2026-02-18T05:37:15.585920
 ---
 
 # Capture request attributes based on web request data
@@ -7107,7 +7107,7 @@ Step 5 enables you to extract something from the resulting string based a [regul
 ---
 title: Filter monitoring data via request attributes
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/filter-monitoring-data-via-request-attributes
-scraped: 2026-02-17T21:24:35.544484
+scraped: 2026-02-18T05:37:17.264762
 ---
 
 # Filter monitoring data via request attributes
@@ -7160,7 +7160,7 @@ Once youâve defined your request attributes, they're listed in the related 
 ---
 title: Request attributes
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes
-scraped: 2026-02-17T21:15:39.189889
+scraped: 2026-02-18T05:31:57.242091
 ---
 
 # Request attributes
@@ -7242,7 +7242,7 @@ The maximum number of request attributes that can be captured by OneAgent for a 
 ---
 title: Response time analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services/response-time-analysis
-scraped: 2026-02-17T21:14:33.687008
+scraped: 2026-02-18T05:33:34.220021
 ---
 
 # Response time analysis
@@ -7365,7 +7365,7 @@ Use response time analysis proactively to:
 ---
 title: Configure service failure detection
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection
-scraped: 2026-02-17T21:19:23.769789
+scraped: 2026-02-18T05:37:33.837641
 ---
 
 # Configure service failure detection
@@ -7518,7 +7518,7 @@ On the service level, you can visualize the **Schema ID** by selecting **More** 
 ---
 title: Service detection rules
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection
-scraped: 2026-02-17T21:24:20.623716
+scraped: 2026-02-18T05:37:39.135964
 ---
 
 # Service detection rules
@@ -8628,7 +8628,7 @@ When you create, edit, or delete a rule, data monitored after the change in serv
 ---
 title: Service naming rules
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-naming
-scraped: 2026-02-17T21:24:19.124045
+scraped: 2026-02-18T05:37:37.148183
 ---
 
 # Service naming rules
@@ -8683,7 +8683,7 @@ You can use [regular expressions](/docs/manage/tags-and-metadata/reference/regul
 ---
 title: Opaque services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services
-scraped: 2026-02-17T21:15:54.157674
+scraped: 2026-02-18T05:33:57.884484
 ---
 
 # Opaque services
@@ -8739,7 +8739,7 @@ There can be cases where a service is considered opaque even when the service is
 ---
 title: Unified services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/unified-service
-scraped: 2026-02-17T21:34:06.675248
+scraped: 2026-02-18T05:43:32.093780
 ---
 
 # Unified services
@@ -8788,7 +8788,7 @@ For details, see the [Service Detection V2 (SDv2) Overviewï»¿](https://dt-url
 ---
 title: Set up request naming
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming
-scraped: 2026-02-17T21:24:18.023900
+scraped: 2026-02-18T05:37:18.974955
 ---
 
 # Set up request naming
@@ -9002,7 +9002,7 @@ While this has been possible using request attributes alone, request naming make
 ---
 title: Service Detection v1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1
-scraped: 2026-02-17T21:15:29.135395
+scraped: 2026-02-18T05:31:59.832751
 ---
 
 # Service Detection v1
@@ -9089,7 +9089,7 @@ See [Configure service failure detection](/docs/observe/application-observabilit
 ---
 title: Customize endpoint detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2
-scraped: 2026-02-16T21:31:04.982153
+scraped: 2026-02-18T05:56:03.329149
 ---
 
 # Customize endpoint detection in Service Detection v2
@@ -9333,7 +9333,7 @@ It's not possible to delete built-in rules, however you can deactivate built-in 
 ---
 title: Customize failure detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/failure-detection-v2
-scraped: 2026-02-16T09:35:52.423183
+scraped: 2026-02-18T05:43:44.573431
 ---
 
 # Customize failure detection in Service Detection v2
@@ -9541,7 +9541,7 @@ You can delete only custom rulesets and rules, not the built-in ones.
 ---
 title: Customize service detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/service-detection-v2
-scraped: 2026-02-17T04:57:16.153042
+scraped: 2026-02-18T05:51:15.476288
 ---
 
 # Customize service detection in Service Detection v2
@@ -9695,7 +9695,7 @@ Verify that all the attributes used as parts of the **Service name template** an
 ---
 title: Customize service splitting in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/service-splitting-v2
-scraped: 2026-02-17T21:31:53.193984
+scraped: 2026-02-18T05:59:03.439391
 ---
 
 # Customize service splitting in Service Detection v2
@@ -10106,7 +10106,7 @@ Mixed depth paths
 ---
 title: Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2
-scraped: 2026-02-17T21:24:16.733124
+scraped: 2026-02-18T05:37:40.857938
 ---
 
 # Service Detection v2
@@ -10167,7 +10167,7 @@ SDv2 behavior can be configured via:
 ---
 title: Services app
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-app
-scraped: 2026-02-17T21:13:31.094714
+scraped: 2026-02-18T05:31:13.467252
 ---
 
 # Services app
@@ -10296,7 +10296,7 @@ Get a hands-on experience with ![Services](https://dt-cdn.net/hub/logos/services
 ---
 title: Service-related concepts
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-concepts
-scraped: 2026-02-17T21:14:32.464819
+scraped: 2026-02-18T05:33:32.524143
 ---
 
 # Service-related concepts
@@ -10587,7 +10587,7 @@ Follow the steps below to create a new key request configuration. Note that this
 ---
 title: Response time distribution and outlier analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis
-scraped: 2026-02-17T21:24:08.869550
+scraped: 2026-02-18T05:38:20.678771
 ---
 
 # Response time distribution and outlier analysis
@@ -10688,7 +10688,7 @@ As you can see, outlier analysis, enabled by Dynatrace response-time distributio
 ---
 title: Service analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-analysis-new
-scraped: 2026-02-17T21:30:04.675923
+scraped: 2026-02-18T05:47:13.442562
 ---
 
 # Service analysis
@@ -10865,7 +10865,7 @@ Contains a list of [logs](/docs/analyze-explore-automate/logs "Log Management an
 ---
 title: Service analysis timings
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-analysis-timing
-scraped: 2026-02-17T21:15:41.569706
+scraped: 2026-02-18T05:32:11.616940
 ---
 
 # Service analysis timings
@@ -11062,7 +11062,7 @@ Percentage of measured samples in which the method is blocked by waiting for a s
 ---
 title: Service backtrace
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-backtrace
-scraped: 2026-02-17T21:20:12.921654
+scraped: 2026-02-18T05:38:18.958593
 ---
 
 # Service backtrace
@@ -11164,7 +11164,7 @@ Dynatrace enables you to see which services call which third-party services, in 
 ---
 title: Service flow filtering
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow/service-flow-filtering
-scraped: 2026-02-17T21:24:10.159170
+scraped: 2026-02-18T05:37:20.747839
 ---
 
 # Service flow filtering
@@ -11287,7 +11287,7 @@ Learn more about additional analysis options in topics listed below.
 ---
 title: Service flow
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow
-scraped: 2026-02-17T21:19:48.780056
+scraped: 2026-02-18T05:38:33.196762
 ---
 
 # Service flow
@@ -11330,7 +11330,7 @@ As you can see in the example above, some of the services in the above service f
 ---
 title: Service response time hotspots
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-response-time-hotspots
-scraped: 2026-02-17T21:24:43.942278
+scraped: 2026-02-18T05:38:34.929424
 ---
 
 # Service response time hotspots
@@ -11463,7 +11463,7 @@ Typically, web-request services have a wide range of response times. Analyzing a
 ---
 title: Services Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic
-scraped: 2026-02-17T21:21:54.119277
+scraped: 2026-02-18T05:41:03.742734
 ---
 
 # Services Classic
@@ -11544,7 +11544,7 @@ Read this guide](/docs/observe/application-observability/services-classic/servic
 ---
 title: Services
 source: https://www.dynatrace.com/docs/observe/application-observability/services
-scraped: 2026-02-17T21:14:36.404274
+scraped: 2026-02-18T05:33:38.831349
 ---
 
 # Services

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: discover-dynatrace/get-started
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 10
 
@@ -13,7 +13,7 @@ Files combined: 10
 ---
 title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-02-15T21:24:47.895677
+scraped: 2026-02-18T05:44:54.347088
 ---
 
 # Accessibility
@@ -261,7 +261,7 @@ To see the full API documentation for the documents service
 ---
 title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-02-17T05:05:06.595849
+scraped: 2026-02-18T05:48:57.015473
 ---
 
 # Troubleshooting sign-in issues
@@ -287,7 +287,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-17T21:14:54.418319
+scraped: 2026-02-18T05:34:07.657733
 ---
 
 # Share documents
@@ -594,7 +594,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-17T21:17:08.700524
+scraped: 2026-02-18T05:34:41.602544
 ---
 
 # Filter field
@@ -889,7 +889,7 @@ Use bracket notation for subkeys with special characters (spaces, dashes, etc.) 
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-17T05:06:03.208730
+scraped: 2026-02-18T05:47:51.898402
 ---
 
 # Navigate the Dynatrace platform
@@ -1080,7 +1080,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-17T21:15:59.660284
+scraped: 2026-02-18T05:33:54.492246
 ---
 
 # What is a monitoring environment?
@@ -1176,7 +1176,7 @@ In some scenarios, however, you might need to connect your environments. For exa
 ---
 title: Platform Engineering
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/platform-engineering
-scraped: 2026-02-16T09:35:50.782539
+scraped: 2026-02-18T05:49:11.313155
 ---
 
 # Platform Engineering
@@ -1782,7 +1782,7 @@ Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe,
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-02-17T21:22:01.358021
+scraped: 2026-02-18T05:42:23.870166
 ---
 
 # Serverless monitoring

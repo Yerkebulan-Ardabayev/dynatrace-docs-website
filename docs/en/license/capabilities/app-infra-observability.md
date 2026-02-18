@@ -1,7 +1,7 @@
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability
-scraped: 2026-02-17T21:34:35.265515
+scraped: 2026-02-18T05:51:39.023916
 ---
 
 # Application & Infrastructure Observability overview (DPS)

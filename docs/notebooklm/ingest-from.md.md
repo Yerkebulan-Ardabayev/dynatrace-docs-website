@@ -1,6 +1,6 @@
 # Dynatrace Documentation: ingest-from.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Ingest data
 source: https://www.dynatrace.com/docs/ingest-from
-scraped: 2026-02-17T21:19:53.763031
+scraped: 2026-02-18T05:39:47.482108
 ---
 
 # Ingest data

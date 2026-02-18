@@ -1,6 +1,6 @@
 # Dynatrace Documentation: whats-new/technology.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: New technology support
 source: https://www.dynatrace.com/docs/whats-new/technology
-scraped: 2026-02-17T21:15:49.365586
+scraped: 2026-02-18T05:33:07.210677
 ---
 
 # New technology support

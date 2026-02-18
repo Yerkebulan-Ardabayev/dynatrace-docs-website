@@ -1,7 +1,7 @@
 ---
 title: Monitored entities API - security context
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2/security-context
-scraped: 2026-02-16T09:33:25.800014
+scraped: 2026-02-18T05:53:49.405347
 ---
 
 # Monitored entities API - security context

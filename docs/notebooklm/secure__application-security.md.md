@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/application-security.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Application Security
 source: https://www.dynatrace.com/docs/secure/application-security
-scraped: 2026-02-17T21:14:49.488413
+scraped: 2026-02-18T05:32:42.900879
 ---
 
 # Application Security

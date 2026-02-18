@@ -1,6 +1,6 @@
 # Dynatrace Documentation: managed/secure
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Resolve incidents faster with Investigations templates
 source: https://www.dynatrace.com/docs/secure/use-cases/resolve-incidents-faster-with-templates
-scraped: 2026-02-17T05:09:52.323104
+scraped: 2026-02-18T05:51:10.088106
 ---
 
 # Resolve incidents faster with Investigations templates

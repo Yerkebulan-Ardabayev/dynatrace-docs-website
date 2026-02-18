@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Spanner monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-spanner-monitoring
-scraped: 2026-02-16T21:31:50.549496
+scraped: 2026-02-18T05:48:06.535466
 ---
 
 # Google Cloud Spanner monitoring

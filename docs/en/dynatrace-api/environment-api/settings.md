@@ -1,7 +1,7 @@
 ---
 title: Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings
-scraped: 2026-02-17T21:23:57.305387
+scraped: 2026-02-18T05:39:18.461451
 ---
 
 # Settings API

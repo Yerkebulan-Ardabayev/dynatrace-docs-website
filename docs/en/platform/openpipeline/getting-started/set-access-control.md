@@ -1,7 +1,7 @@
 ---
 title: Set access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/set-access-control
-scraped: 2026-02-17T21:33:57.084290
+scraped: 2026-02-18T05:52:59.400009
 ---
 
 # Set access control in OpenPipeline

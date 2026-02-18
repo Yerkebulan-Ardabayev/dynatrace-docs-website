@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-intelligence.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence
-scraped: 2026-02-17T21:14:47.081596
+scraped: 2026-02-18T05:32:38.246727
 ---
 
 # Dynatrace Intelligence

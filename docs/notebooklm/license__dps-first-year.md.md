@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/dps-first-year.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Your first year with DPS
 source: https://www.dynatrace.com/docs/license/dps-first-year
-scraped: 2026-02-17T21:26:57.715555
+scraped: 2026-02-18T05:51:29.409294
 ---
 
 # Your first year with DPS

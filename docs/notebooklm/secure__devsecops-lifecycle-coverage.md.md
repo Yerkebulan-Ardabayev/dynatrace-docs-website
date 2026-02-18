@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/devsecops-lifecycle-coverage.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: DevSecOps Lifecycle Coverage with Snyk
 source: https://www.dynatrace.com/docs/secure/devsecops-lifecycle-coverage
-scraped: 2026-02-15T21:25:53.440068
+scraped: 2026-02-18T05:48:18.936133
 ---
 
 # DevSecOps Lifecycle Coverage with Snyk

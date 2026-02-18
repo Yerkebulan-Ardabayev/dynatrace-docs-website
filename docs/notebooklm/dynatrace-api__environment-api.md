@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-api/environment-api
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 73
 
@@ -782,7 +782,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 ---
 title: Vulnerabilities API - GET remediation item entities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-item-entities
-scraped: 2026-02-17T21:29:25.373203
+scraped: 2026-02-18T05:46:10.007554
 ---
 
 # Vulnerabilities API - GET remediation item entities
@@ -1257,7 +1257,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 ---
 title: Vulnerabilities API - GET remediation items
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-items
-scraped: 2026-02-15T21:26:58.258683
+scraped: 2026-02-18T05:58:06.596055
 ---
 
 # Vulnerabilities API - GET remediation items
@@ -3118,7 +3118,7 @@ https://mySampleEnv.live.dynatracelabs.com/api/v2/securityProblems/7412525767433
 ---
 title: Vulnerabilities API - GET vulnerable functions
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerable-functions
-scraped: 2026-02-16T09:27:44.664793
+scraped: 2026-02-18T05:53:44.143934
 ---
 
 # Vulnerabilities API - GET vulnerable functions
@@ -3971,7 +3971,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/mute
 ---
 title: Vulnerabilities API - POST unmute vulnerabilities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-problems-unmute
-scraped: 2026-02-17T21:34:16.578369
+scraped: 2026-02-18T05:49:20.469087
 ---
 
 # Vulnerabilities API - POST unmute vulnerabilities
@@ -4739,7 +4739,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 ---
 title: Vulnarabilities API - POST mute remediation items
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-items-mute
-scraped: 2026-02-17T05:08:38.695493
+scraped: 2026-02-18T05:59:08.954002
 ---
 
 # Vulnarabilities API - POST mute remediation items
@@ -5102,7 +5102,7 @@ If the request was successful, you'll see `muteStateChangeTriggered` per entity.
 ---
 title: Vulnerabilities API - POST unmute remediation items
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-items-unmute
-scraped: 2026-02-17T21:31:04.223101
+scraped: 2026-02-18T05:46:44.053238
 ---
 
 # Vulnerabilities API - POST unmute remediation items
@@ -5463,7 +5463,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 ---
 title: Vulnerabilities API - PUT mute or unmute a remediation item
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/put-remediation-items
-scraped: 2026-02-17T21:26:25.869220
+scraped: 2026-02-18T05:43:41.247083
 ---
 
 # Vulnerabilities API - PUT mute or unmute a remediation item
@@ -5718,7 +5718,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/87886434718422029
 ---
 title: Credential vault API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/credential-vault
-scraped: 2026-02-17T21:31:33.645360
+scraped: 2026-02-18T05:43:37.786286
 ---
 
 # Credential vault API
@@ -5836,7 +5836,7 @@ The request doesn't provide any configurable parameters.
 ---
 title: Deployment API - View ARNs for AWS Lambda layers
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/oneagent/get-arns-for-lambda-layers
-scraped: 2026-02-17T21:34:25.452753
+scraped: 2026-02-18T05:57:22.238721
 ---
 
 # Deployment API - View ARNs for AWS Lambda layers
@@ -5961,7 +5961,7 @@ Latest information about available AWS lambda layers
 ---
 title: Deployment API - View the latest OneAgent version for AWS Lambda Classic
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/oneagent/get-latest-version-lambda-classic
-scraped: 2026-02-17T05:00:35.624458
+scraped: 2026-02-18T05:48:10.045744
 ---
 
 # Deployment API - View the latest OneAgent version for AWS Lambda Classic
@@ -6343,7 +6343,7 @@ A list of constraint violations
 ---
 title: Environment API v2 - Entity selector
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2/entity-selector
-scraped: 2026-02-17T21:31:44.381338
+scraped: 2026-02-18T05:48:08.282154
 ---
 
 # Environment API v2 - Entity selector
@@ -6653,7 +6653,7 @@ You can use the negated criteria as part of complicated selectors, just like any
 ---
 title: Monitored entities API - security context
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2/security-context
-scraped: 2026-02-16T09:33:25.800014
+scraped: 2026-02-18T05:53:49.405347
 ---
 
 # Monitored entities API - security context
@@ -7816,7 +7816,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 ---
 title: Events API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/events-v2
-scraped: 2026-02-17T21:32:50.041025
+scraped: 2026-02-18T05:47:15.124813
 ---
 
 # Events API v2
@@ -7861,7 +7861,7 @@ Get the details of an event property.](/docs/dynatrace-api/environment-api/event
 ---
 title: Hub items API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/hub
-scraped: 2026-02-17T21:28:04.311269
+scraped: 2026-02-18T05:47:29.072867
 ---
 
 # Hub items API
@@ -8625,7 +8625,7 @@ A list of constraint violations
 ---
 title: Log Monitoring API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/log-monitoring-v2
-scraped: 2026-02-17T21:30:46.529111
+scraped: 2026-02-18T05:45:15.944593
 ---
 
 # Log Monitoring API v2
@@ -8838,7 +8838,7 @@ If you're close to reaching cardinality limits
 ---
 title: Metrics API - Metric expressions
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-expressions
-scraped: 2026-02-16T21:29:50.927774
+scraped: 2026-02-18T05:52:03.462063
 ---
 
 # Metrics API - Metric expressions
@@ -10156,7 +10156,7 @@ Metric Expressions
 ---
 title: Metrics API - FAQ
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-faq
-scraped: 2026-02-17T05:04:05.831355
+scraped: 2026-02-18T05:58:23.409816
 ---
 
 # Metrics API - FAQ
@@ -10393,7 +10393,7 @@ If you ingest a dimension with an empty value, the whole dimension tuple is drop
 ---
 title: Metrics API - Metric selector
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-selector
-scraped: 2026-02-17T21:32:07.911025
+scraped: 2026-02-18T05:55:44.943086
 ---
 
 # Metrics API - Metric selector
@@ -14579,7 +14579,7 @@ You must apply an [aggregation transformation](#aggregation) before using the un
 ---
 title: Metrics API - POST ingest data points
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics
-scraped: 2026-02-17T21:31:10.347280
+scraped: 2026-02-18T05:46:38.403871
 ---
 
 # Metrics API - POST ingest data points
@@ -14863,7 +14863,7 @@ Delete metrics older than the specified number of days.](/docs/dynatrace-api/env
 ---
 title: Metric units API - GET convert units
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metrics-units/get-unit-convert
-scraped: 2026-02-15T09:08:30.666383
+scraped: 2026-02-18T05:54:49.644862
 ---
 
 # Metric units API - GET convert units
@@ -15192,7 +15192,7 @@ A list of constraint violations
 ---
 title: Network zones API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/network-zones
-scraped: 2026-02-17T21:27:23.854709
+scraped: 2026-02-18T05:50:33.817350
 ---
 
 # Network zones API
@@ -16470,7 +16470,7 @@ Delete a comment from a specified problem.](/docs/dynatrace-api/environment-api/
 ---
 title: Remote configuration management API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/remote-configuration
-scraped: 2026-02-16T09:29:11.273866
+scraped: 2026-02-18T05:46:11.697203
 ---
 
 # Remote configuration management API
@@ -16555,7 +16555,7 @@ Get an overview of cities within a region.](/docs/dynatrace-api/environment-api/
 ---
 title: RUM cookie names API - GET cookie names
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-cookie-names-get-cookie-names
-scraped: 2026-02-17T21:28:44.062471
+scraped: 2026-02-18T05:44:57.755560
 ---
 
 # RUM cookie names API - GET cookie names
@@ -16744,7 +16744,7 @@ A list of constraint violations
 ---
 title: GET inline code
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-inline-code
-scraped: 2026-02-16T09:28:33.887130
+scraped: 2026-02-18T05:46:23.478156
 ---
 
 # GET inline code
@@ -16787,7 +16787,7 @@ The response includes a `text/plain` payload containing the most recent version 
 ---
 title: GET JavaScript tag
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag
-scraped: 2026-02-16T09:28:08.850642
+scraped: 2026-02-18T05:51:27.743223
 ---
 
 # GET JavaScript tag
@@ -16876,7 +16876,7 @@ The response includes a `text/plain` payload containing the most recent version 
 ---
 title: GET OneAgent JavaScript tag
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag
-scraped: 2026-02-17T05:07:11.638389
+scraped: 2026-02-18T05:53:18.231116
 ---
 
 # GET OneAgent JavaScript tag
@@ -16920,7 +16920,7 @@ The response includes a `text/plain` payload containing the most recent version 
 ---
 title: RUM manual insertion tags API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags
-scraped: 2026-02-16T21:29:09.227504
+scraped: 2026-02-18T05:44:41.010579
 ---
 
 # RUM manual insertion tags API
@@ -16958,7 +16958,7 @@ Retrieve the most recent inline code for manual insertion.](/docs/dynatrace-api/
 ---
 title: Service-level Objectives API classic
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/service-level-objectives-classic
-scraped: 2026-02-17T21:33:29.337671
+scraped: 2026-02-18T05:57:05.653002
 ---
 
 # Service-level Objectives API classic
@@ -17002,7 +17002,7 @@ Create an alert for an SLO.](/docs/dynatrace-api/environment-api/service-level-o
 ---
 title: Settings API - GET effective values
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/objects/get-effective-values
-scraped: 2026-02-17T04:58:06.485146
+scraped: 2026-02-18T05:59:10.742636
 ---
 
 # Settings API - GET effective values
@@ -17254,7 +17254,7 @@ A list of constraint violations
 ---
 title: Settings API - POST an object
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/objects/post-object
-scraped: 2026-02-17T21:24:01.428326
+scraped: 2026-02-18T05:39:23.489969
 ---
 
 # Settings API - POST an object
@@ -17610,7 +17610,7 @@ A schema representing an arbitrary value type.
 ---
 title: Settings API - Kubernetes app schema table
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes
-scraped: 2026-02-17T21:16:34.179124
+scraped: 2026-02-18T05:43:05.295344
 ---
 
 # Settings API - Kubernetes app schema table
@@ -17661,7 +17661,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 ---
 title: Settings API - OneAgent features schema table
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features
-scraped: 2026-02-17T21:23:56.069746
+scraped: 2026-02-18T05:39:20.095317
 ---
 
 # Settings API - OneAgent features schema table
@@ -17709,7 +17709,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 ---
 title: Settings API - GET a schema
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/get-schema
-scraped: 2026-02-17T21:24:00.112653
+scraped: 2026-02-18T05:39:16.737050
 ---
 
 # Settings API - GET a schema
@@ -18675,7 +18675,7 @@ A list of constraint violations
 ---
 title: Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings
-scraped: 2026-02-17T21:23:57.305387
+scraped: 2026-02-18T05:39:18.461451
 ---
 
 # Settings API
@@ -18755,7 +18755,7 @@ Delete an ActiveGate token your environment doesn't need anymore.](/docs/dynatra
 ---
 title: Tenant tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens
-scraped: 2026-02-17T05:04:09.131049
+scraped: 2026-02-18T05:48:50.205596
 ---
 
 # Tenant tokens API
@@ -37909,7 +37909,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 ---
 title: Topology and Smartscape API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape
-scraped: 2026-02-17T21:15:58.573674
+scraped: 2026-02-18T05:33:56.235952
 ---
 
 # Topology and Smartscape API

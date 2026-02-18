@@ -1,7 +1,7 @@
 ---
 title: Customize endpoint detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2
-scraped: 2026-02-16T21:31:04.982153
+scraped: 2026-02-18T05:56:03.329149
 ---
 
 # Customize endpoint detection in Service Detection v2

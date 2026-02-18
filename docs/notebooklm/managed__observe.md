@@ -1,6 +1,6 @@
 # Dynatrace Documentation: managed/observe
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 4
 
@@ -13,7 +13,7 @@ Files combined: 4
 ---
 title: Merged services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/merged-services
-scraped: 2026-02-16T09:30:17.346463
+scraped: 2026-02-18T05:49:31.392928
 ---
 
 # Merged services
@@ -95,7 +95,7 @@ To learn more about how to create, edit, or delete service detection rules, see 
 ---
 title: Monitor Kubernetes/OpenShift cluster utilization
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes
-scraped: 2026-02-17T21:16:53.725312
+scraped: 2026-02-18T05:42:55.049079
 ---
 
 # Monitor Kubernetes/OpenShift cluster utilization
@@ -158,7 +158,7 @@ By selecting a specific node, you can access the host details at the top of the 
 ---
 title: Monitor PostgreSQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/postgres
-scraped: 2026-02-17T05:12:36.393235
+scraped: 2026-02-18T05:57:10.820216
 ---
 
 # Monitor PostgreSQL database
@@ -274,7 +274,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: VMware vSphere monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring
-scraped: 2026-02-17T21:22:03.580425
+scraped: 2026-02-18T05:42:17.126269
 ---
 
 # VMware vSphere monitoring

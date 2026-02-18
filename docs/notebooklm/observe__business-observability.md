@@ -1,6 +1,6 @@
 # Dynatrace Documentation: observe/business-observability
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 18
 
@@ -13,7 +13,7 @@ Files combined: 18
 ---
 title: Business event analysis and examples
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-analysis
-scraped: 2026-02-17T21:16:07.718645
+scraped: 2026-02-18T05:38:00.580843
 ---
 
 # Business event analysis and examples
@@ -441,7 +441,7 @@ Select any tile and then select [**Open with** ![Open with](https://dt-cdn.net/i
 ---
 title: Ingest business events via API
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-api-ingest
-scraped: 2026-02-17T21:21:49.186054
+scraped: 2026-02-18T05:41:25.944934
 ---
 
 # Ingest business events via API
@@ -1910,7 +1910,7 @@ To authenticate a call, attach the token to the `Authorization` HTTP header prec
 ---
 title: Basic concepts of Dynatrace Business Observability
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-basic-concepts
-scraped: 2026-02-17T21:21:42.597869
+scraped: 2026-02-18T05:41:27.596103
 ---
 
 # Basic concepts of Dynatrace Business Observability
@@ -1990,7 +1990,7 @@ The business event dataflow in Dynatrace has three stages:
 ---
 title: Business event bucket assignment via classic pipeline
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-bucket-assignment
-scraped: 2026-02-17T21:21:40.077518
+scraped: 2026-02-18T05:41:43.896440
 ---
 
 # Business event bucket assignment via classic pipeline
@@ -2046,7 +2046,7 @@ matchesValue(event.provider, "www.easytrade.com")
 ---
 title: Business event metric extraction via classic pipeline
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-metric-extraction
-scraped: 2026-02-17T05:02:09.215545
+scraped: 2026-02-18T05:46:54.213252
 ---
 
 # Business event metric extraction via classic pipeline
@@ -2146,7 +2146,7 @@ If the event timestamp doesn't fall within the allowed [range](/docs/ingest-from
 ---
 title: Business event processing via classic pipeline
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-processing-classic-pipeline
-scraped: 2026-02-17T21:21:38.868525
+scraped: 2026-02-18T05:41:40.370412
 ---
 
 # Business event processing via classic pipeline
@@ -2495,7 +2495,7 @@ In the below examples, you can see how ingest pipeline processing can be used to
 ---
 title: Business events security context
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-security-context
-scraped: 2026-02-17T21:24:48.862245
+scraped: 2026-02-18T05:38:13.044045
 ---
 
 # Business events security context
@@ -2700,7 +2700,7 @@ Based on this attribute, you can now create security-related user and group poli
 ---
 title: Business event processing
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing
-scraped: 2026-02-17T21:27:41.349371
+scraped: 2026-02-18T05:48:48.516809
 ---
 
 # Business event processing
@@ -2775,7 +2775,7 @@ If you don't migrate your existing rules, it's still possible to use OpenPipelin
 ---
 title: Business event capture
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-capturing
-scraped: 2026-02-17T21:21:45.201861
+scraped: 2026-02-18T05:41:36.857781
 ---
 
 # Business event capture
@@ -3879,7 +3879,7 @@ Run in Playground
 ---
 title: Business event enrichment
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-enrichment
-scraped: 2026-02-17T05:10:41.413109
+scraped: 2026-02-18T05:58:37.229630
 ---
 
 # Business event enrichment
@@ -4629,7 +4629,7 @@ opt
 ---
 title: Business Flow
 source: https://www.dynatrace.com/docs/observe/business-observability/business-flow
-scraped: 2026-02-17T21:21:43.742123
+scraped: 2026-02-18T05:41:38.554441
 ---
 
 # Business Flow
@@ -4957,7 +4957,7 @@ Hereâs a brief list of some common business processes. Your organization wi
 ---
 title: Business reporting
 source: https://www.dynatrace.com/docs/observe/business-observability/business-reporting
-scraped: 2026-02-17T21:30:03.430363
+scraped: 2026-02-18T05:47:41.062625
 ---
 
 # Business reporting
@@ -5031,7 +5031,7 @@ To report on trends, capture the relevant business metrics as business events. E
 ---
 title: Cost & Carbon Optimization
 source: https://www.dynatrace.com/docs/observe/business-observability/cost-and-carbon-optimization
-scraped: 2026-02-17T21:21:46.421229
+scraped: 2026-02-18T05:41:42.243709
 ---
 
 # Cost & Carbon Optimization
@@ -5490,7 +5490,7 @@ Track and reduce your site infrastructure's carbon footprint.](https://www.dynat
 ---
 title: Business events end-to-end example
 source: https://www.dynatrace.com/docs/observe/business-observability/end-to-end-example
-scraped: 2026-02-17T21:21:37.567621
+scraped: 2026-02-18T05:41:33.059770
 ---
 
 # Business events end-to-end example
@@ -5866,7 +5866,7 @@ You can display your results in several ways, including the following options.
 ---
 title: Explore Business Events
 source: https://www.dynatrace.com/docs/observe/business-observability/explore-business-events
-scraped: 2026-02-17T21:21:41.370416
+scraped: 2026-02-18T05:41:34.861000
 ---
 
 # Explore Business Events
@@ -5996,7 +5996,7 @@ Understand the Dynatrace business analysis process end-to-end.](https://www.dyna
 ---
 title: Microsoft Power BI
 source: https://www.dynatrace.com/docs/observe/business-observability/extensions/microsoft-power-bi
-scraped: 2026-02-17T21:21:47.642299
+scraped: 2026-02-18T05:41:29.297351
 ---
 
 # Microsoft Power BI
@@ -6065,7 +6065,7 @@ To connect to a Dynatrace SaaS instance from Power Query Desktop, take the follo
 ---
 title: Salesforce Insights
 source: https://www.dynatrace.com/docs/observe/business-observability/extensions/salesforce-insights
-scraped: 2026-02-17T21:21:36.137059
+scraped: 2026-02-18T05:41:31.192995
 ---
 
 # Salesforce Insights

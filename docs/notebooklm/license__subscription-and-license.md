@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/subscription-and-license
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Subscription and license management (DPS pre-April 2023)
 source: https://www.dynatrace.com/docs/license/subscription-and-license/subscription-and-license-dps
-scraped: 2026-02-17T21:16:24.602353
+scraped: 2026-02-18T05:39:14.741808
 ---
 
 # Subscription and license management (DPS pre-April 2023)

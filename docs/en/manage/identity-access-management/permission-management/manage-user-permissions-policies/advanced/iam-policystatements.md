@@ -1,7 +1,7 @@
 ---
 title: IAM policy reference
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements
-scraped: 2026-02-17T21:25:08.015659
+scraped: 2026-02-18T05:52:16.038063
 ---
 
 # IAM policy reference

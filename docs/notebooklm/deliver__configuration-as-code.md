@@ -1,6 +1,6 @@
 # Dynatrace Documentation: deliver/configuration-as-code
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 13
 
@@ -629,7 +629,7 @@ Dedicated commands exist for account resources: [Account](/docs/deliver/configur
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-17T05:03:31.823164
+scraped: 2026-02-18T05:50:14.035277
 ---
 
 # Monaco resources
@@ -1144,7 +1144,7 @@ Some configuration types have special requirements for their JSON payloads and m
 ---
 title: Monaco configuration YAML file - list of special configuration types
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas
-scraped: 2026-02-17T05:01:53.184426
+scraped: 2026-02-18T05:54:08.467889
 ---
 
 # Monaco configuration YAML file - list of special configuration types
@@ -1985,7 +1985,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-17T21:26:05.272362
+scraped: 2026-02-18T05:47:48.351173
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -4334,7 +4334,7 @@ skip: true
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-17T21:28:36.376909
+scraped: 2026-02-18T05:57:26.938793
 ---
 
 # Monaco API support and access permission handling
@@ -4882,7 +4882,7 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-17T21:25:21.050331
+scraped: 2026-02-18T05:55:22.178039
 ---
 
 # Monaco concepts
@@ -4943,7 +4943,7 @@ Dynatrace resource configuration
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-17T21:32:36.222666
+scraped: 2026-02-18T05:54:00.091868
 ---
 
 # Manage configurations with Monaco
@@ -5452,7 +5452,7 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 ---
 title: Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/reference/commands-saas
-scraped: 2026-02-17T21:29:03.337056
+scraped: 2026-02-18T05:54:54.511415
 ---
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
@@ -6522,7 +6522,7 @@ Optional
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-02-16T21:26:05.486160
+scraped: 2026-02-18T05:54:15.539341
 ---
 
 # Terraform API support and access permission handling
@@ -6653,7 +6653,7 @@ Information can be found at [IAM policy reference](/docs/manage/identity-access-
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-17T21:28:24.743657
+scraped: 2026-02-18T05:44:47.611441
 ---
 
 # Terraform CLI commands

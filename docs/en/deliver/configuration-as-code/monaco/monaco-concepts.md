@@ -1,7 +1,7 @@
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-17T21:25:21.050331
+scraped: 2026-02-18T05:55:22.178039
 ---
 
 # Monaco concepts

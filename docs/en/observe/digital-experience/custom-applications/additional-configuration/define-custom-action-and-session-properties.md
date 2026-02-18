@@ -1,7 +1,7 @@
 ---
 title: Define user action and user session properties for custom applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applications/additional-configuration/define-custom-action-and-session-properties
-scraped: 2026-02-16T21:28:40.574491
+scraped: 2026-02-18T05:47:53.661604
 ---
 
 # Define user action and user session properties for custom applications

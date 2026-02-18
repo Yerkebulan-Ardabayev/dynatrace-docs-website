@@ -1,6 +1,6 @@
 # Dynatrace Documentation: discover-dynatrace/what-is-dynatrace.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: What is Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/what-is-dynatrace
-scraped: 2026-02-17T21:13:32.203369
+scraped: 2026-02-18T05:31:05.352782
 ---
 
 # What is Dynatrace

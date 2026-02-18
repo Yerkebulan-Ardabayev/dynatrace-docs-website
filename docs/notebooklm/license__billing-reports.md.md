@@ -1,6 +1,6 @@
 # Dynatrace Documentation: license/billing-reports.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Billing report
 source: https://www.dynatrace.com/docs/license/billing-reports
-scraped: 2026-02-17T21:16:31.823547
+scraped: 2026-02-18T05:39:11.888661
 ---
 
 # Billing report

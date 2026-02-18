@@ -1,6 +1,6 @@
 # Dynatrace Documentation: manage/identity-access-management
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 18
 
@@ -13,7 +13,7 @@ Files combined: 18
 ---
 title: Tenant token classic
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token
-scraped: 2026-02-17T21:25:22.238969
+scraped: 2026-02-18T05:54:57.934942
 ---
 
 # Tenant token classic
@@ -88,7 +88,7 @@ To avoid data loss, both old and new tokens are valid during the rotation proces
 ---
 title: Access tokens classic
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens
-scraped: 2026-02-17T21:26:20.463043
+scraped: 2026-02-18T05:52:57.700545
 ---
 
 # Access tokens classic
@@ -753,7 +753,7 @@ Grants permission to upload OneAgent extensions via [Extension SDK](/docs/ingest
 ---
 title: Platform tokens
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens
-scraped: 2026-02-17T21:34:27.853256
+scraped: 2026-02-18T05:55:56.715982
 ---
 
 # Platform tokens
@@ -942,7 +942,7 @@ The following services are covered by platform tokens:
 ---
 title: Overview of Dynatrace IAM
 source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-concepts
-scraped: 2026-02-17T05:04:49.049715
+scraped: 2026-02-18T05:46:36.613895
 ---
 
 # Overview of Dynatrace IAM
@@ -1064,7 +1064,7 @@ Recommended
 ---
 title: IAM policy reference
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements
-scraped: 2026-02-17T21:25:08.015659
+scraped: 2026-02-18T05:52:16.038063
 ---
 
 # IAM policy reference
@@ -2440,7 +2440,7 @@ Allows modifying vulnerability related information
 ---
 title: Upgrade role-based permissions to Dynatrace IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/migrate-roles
-scraped: 2026-02-17T05:04:24.608590
+scraped: 2026-02-18T05:55:59.557615
 ---
 
 # Upgrade role-based permissions to Dynatrace IAM policies
@@ -2707,7 +2707,7 @@ Refer to our online documentation and Dynatrace Community forums for additional 
 ---
 title: Policy boundaries
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries
-scraped: 2026-02-17T21:27:31.650380
+scraped: 2026-02-18T05:43:50.167415
 ---
 
 # Policy boundaries
@@ -2922,7 +2922,7 @@ Grail does not support management zones but uses the `storage:` fields for recor
 ---
 title: Manage IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt
-scraped: 2026-02-17T21:21:20.105125
+scraped: 2026-02-18T05:41:59.539386
 ---
 
 # Manage IAM policies
@@ -3071,7 +3071,7 @@ To apply a policy to a group, you need to bind the policy to the group. For deta
 ---
 title: Working with policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies
-scraped: 2026-02-17T21:16:01.964407
+scraped: 2026-02-18T05:43:03.622573
 ---
 
 # Working with policies
@@ -3616,7 +3616,7 @@ storage:dt.security_context = "mySecurityContext";
 ---
 title: Enhance your account security with MFA TOTP
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-mfa/user-mfa
-scraped: 2026-02-17T05:09:28.373204
+scraped: 2026-02-18T05:57:57.268158
 ---
 
 # Enhance your account security with MFA TOTP
@@ -3685,7 +3685,7 @@ Common reasons why you might not be prompted for MFA when accessing Dynatrace:
 ---
 title: SAML
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml
-scraped: 2026-02-17T21:28:27.340683
+scraped: 2026-02-18T05:44:00.059398
 ---
 
 # SAML

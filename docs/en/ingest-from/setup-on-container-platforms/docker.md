@@ -1,7 +1,7 @@
 ---
 title: Set up Dynatrace on Docker
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/docker
-scraped: 2026-02-17T21:19:34.584579
+scraped: 2026-02-18T05:38:58.114992
 ---
 
 # Set up Dynatrace on Docker

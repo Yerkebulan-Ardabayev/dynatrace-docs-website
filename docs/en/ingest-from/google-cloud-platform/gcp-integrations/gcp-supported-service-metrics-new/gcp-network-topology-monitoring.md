@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Network Topology monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-network-topology-monitoring
-scraped: 2026-02-17T04:59:18.957886
+scraped: 2026-02-18T05:58:25.044254
 ---
 
 # Google Cloud Network Topology monitoring

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: deliver/ownership-app.md
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 1
 
@@ -13,7 +13,7 @@ Files combined: 1
 ---
 title: Ownership
 source: https://www.dynatrace.com/docs/deliver/ownership-app
-scraped: 2026-02-17T21:27:38.892276
+scraped: 2026-02-18T05:56:09.369023
 ---
 
 # Ownership

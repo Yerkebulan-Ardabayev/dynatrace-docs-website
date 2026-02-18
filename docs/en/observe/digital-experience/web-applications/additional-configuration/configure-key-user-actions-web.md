@@ -1,7 +1,7 @@
 ---
 title: Configure key user actions for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-key-user-actions-web
-scraped: 2026-02-17T21:29:10.844871
+scraped: 2026-02-18T05:51:37.881833
 ---
 
 # Configure key user actions for web applications

@@ -1,6 +1,6 @@
 # Dynatrace Documentation: dynatrace-intelligence/copilot
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 8
 
@@ -268,7 +268,7 @@ If you have any feedback, you can provide it directly in the chat window. For mo
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-17T21:28:37.497202
+scraped: 2026-02-18T05:51:20.514099
 ---
 
 # Dynatrace Assist
@@ -443,7 +443,7 @@ We recommend that you start a new conversation for a new topic to improve Dynatr
 ---
 title: Dynatrace Intelligence generative AI data privacy and security
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-data-privacy
-scraped: 2026-02-16T09:29:33.353940
+scraped: 2026-02-18T05:52:30.412677
 ---
 
 # Dynatrace Intelligence generative AI data privacy and security
@@ -506,7 +506,7 @@ In our logs and calls to LLM models, we replace values from the identified patte
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-17T21:14:00.785777
+scraped: 2026-02-18T05:33:44.665999
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -900,7 +900,7 @@ To configure your data access
 ---
 title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-17T21:18:48.710946
+scraped: 2026-02-18T05:49:36.586195
 ---
 
 # Dynatrace Intelligence generative AI overview
@@ -967,7 +967,7 @@ If you would like to learn more about Dynatrace Intelligence generative AI, visi
 ---
 title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-17T21:30:43.996796
+scraped: 2026-02-18T05:45:07.423389
 ---
 
 # Dynatrace Intelligence generative AI - Tips for writing better prompts

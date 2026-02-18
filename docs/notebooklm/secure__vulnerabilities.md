@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/vulnerabilities
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 6
 
@@ -13,7 +13,7 @@ Files combined: 6
 ---
 title: Address remediation
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/address-remediation
-scraped: 2026-02-17T21:29:29.480094
+scraped: 2026-02-18T05:44:12.637403
 ---
 
 # Address remediation
@@ -226,7 +226,7 @@ Dynatrace Intelligence generative AI explanations are tailored to the nature of 
 ---
 title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/assess-coverage
-scraped: 2026-02-17T21:27:10.269613
+scraped: 2026-02-18T05:45:49.833649
 ---
 
 # Assess coverage

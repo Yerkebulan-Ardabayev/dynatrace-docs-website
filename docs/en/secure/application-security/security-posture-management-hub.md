@@ -1,7 +1,7 @@
 ---
 title: Security Posture Management
 source: https://www.dynatrace.com/docs/secure/application-security/security-posture-management-hub
-scraped: 2026-02-17T21:21:33.642903
+scraped: 2026-02-18T05:41:49.353432
 ---
 
 # Security Posture Management

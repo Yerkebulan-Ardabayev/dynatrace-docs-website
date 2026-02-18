@@ -1,7 +1,7 @@
 ---
 title: Business reporting
 source: https://www.dynatrace.com/docs/observe/business-observability/business-reporting
-scraped: 2026-02-17T21:30:03.430363
+scraped: 2026-02-18T05:47:41.062625
 ---
 
 # Business reporting

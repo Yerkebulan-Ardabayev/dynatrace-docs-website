@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure Service Fabric
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-servicefabric
-scraped: 2026-02-17T21:19:43.639356
+scraped: 2026-02-18T05:40:06.903656
 ---
 
 # Monitor Azure Service Fabric

@@ -1,7 +1,7 @@
 ---
 title: User interactions
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/user-interactions
-scraped: 2026-02-17T21:24:58.834893
+scraped: 2026-02-18T05:54:44.398841
 ---
 
 # User interactions

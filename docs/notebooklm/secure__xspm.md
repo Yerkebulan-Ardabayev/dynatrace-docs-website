@@ -1,6 +1,6 @@
 # Dynatrace Documentation: secure/xspm
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 5
 
@@ -13,7 +13,7 @@ Files combined: 5
 ---
 title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/xspm/assess-coverage
-scraped: 2026-02-17T21:29:07.120978
+scraped: 2026-02-18T05:56:18.057088
 ---
 
 # Assess coverage
@@ -111,7 +111,7 @@ See below for the potential reasons why, on the **Overview** page, in **My syste
 ---
 title: Security Posture Management concepts
 source: https://www.dynatrace.com/docs/secure/xspm/concepts
-scraped: 2026-02-17T04:58:41.804002
+scraped: 2026-02-18T05:44:23.704208
 ---
 
 # Security Posture Management concepts
@@ -320,7 +320,7 @@ Dynatrace Intelligence generative AI explanations are tailored to the nature of 
 ---
 title: Review findings
 source: https://www.dynatrace.com/docs/secure/xspm/review-findings
-scraped: 2026-02-17T21:32:38.682103
+scraped: 2026-02-18T05:57:55.613260
 ---
 
 # Review findings
@@ -419,7 +419,7 @@ On the **Overview** and the **Assessment results** pages, select any of the colu
 ---
 title: Collaborate with apps and share findings
 source: https://www.dynatrace.com/docs/secure/xspm/share-findings
-scraped: 2026-02-17T21:31:46.946663
+scraped: 2026-02-18T05:56:36.429289
 ---
 
 # Collaborate with apps and share findings

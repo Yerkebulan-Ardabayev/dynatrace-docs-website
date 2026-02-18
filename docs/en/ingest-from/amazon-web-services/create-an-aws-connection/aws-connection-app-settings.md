@@ -1,7 +1,7 @@
 ---
 title: Create an AWS connection via Settings
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings
-scraped: 2026-02-17T21:17:02.533513
+scraped: 2026-02-18T05:36:27.930739
 ---
 
 # Create an AWS connection via Settings

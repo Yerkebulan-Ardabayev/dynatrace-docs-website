@@ -1,7 +1,7 @@
 ---
 title: Management zones and ingested log data (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring
-scraped: 2026-02-17T21:30:10.561659
+scraped: 2026-02-18T05:55:48.391665
 ---
 
 # Management zones and ingested log data (Logs Classic)

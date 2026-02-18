@@ -1,6 +1,6 @@
 # Dynatrace Documentation: deliver/release-monitoring
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 3
 
@@ -213,7 +213,7 @@ In addition, a graph displays the latest 20 release validation results:
 ---
 title: Version detection strategies for deep-monitored processes
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/version-detection-strategies
-scraped: 2026-02-17T04:59:25.534551
+scraped: 2026-02-18T05:46:20.084341
 ---
 
 # Version detection strategies for deep-monitored processes

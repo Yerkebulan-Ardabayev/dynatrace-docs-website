@@ -1,6 +1,6 @@
 # Dynatrace Documentation: manage/segments
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 10
 
@@ -304,7 +304,7 @@ For more information on segment permissons see [IAM policy statements](/docs/man
 ---
 title: Analyze monitoring data with segments
 source: https://www.dynatrace.com/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data
-scraped: 2026-02-17T21:15:04.480451
+scraped: 2026-02-18T05:34:13.093648
 ---
 
 # Analyze monitoring data with segments
@@ -413,7 +413,7 @@ You've managed to filter data on a dashboard using segments and learned to quick
 ---
 title: Filter Smartscape nodes with segments
 source: https://www.dynatrace.com/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes
-scraped: 2026-02-17T21:17:05.032123
+scraped: 2026-02-18T05:36:32.559568
 ---
 
 # Filter Smartscape nodes with segments

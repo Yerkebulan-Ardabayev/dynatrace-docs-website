@@ -1,7 +1,7 @@
 ---
 title: Azure Traffic Manager monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-traffic-manager
-scraped: 2026-02-17T21:31:26.620678
+scraped: 2026-02-18T05:55:51.810457
 ---
 
 # Azure Traffic Manager monitoring

@@ -1,7 +1,7 @@
 ---
 title: Tenant token classic
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token
-scraped: 2026-02-17T21:25:22.238969
+scraped: 2026-02-18T05:54:57.934942
 ---
 
 # Tenant token classic

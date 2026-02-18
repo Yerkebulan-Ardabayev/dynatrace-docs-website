@@ -1,6 +1,6 @@
 # Dynatrace Documentation: analyze-explore-automate/metrics
 
-Generated: 2026-02-17
+Generated: 2026-02-18
 
 Files combined: 6
 
@@ -1685,7 +1685,7 @@ The following categories of Metrics Classic metrics are not supported on Grail:
 ---
 title: DQL timeseries examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/dql-examples
-scraped: 2026-02-17T21:16:18.388813
+scraped: 2026-02-18T05:38:02.414199
 ---
 
 # DQL timeseries examples
@@ -2213,7 +2213,7 @@ by:{timeframe, interval, component}
 ---
 title: Histogram metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/histograms
-scraped: 2026-02-17T04:58:53.880551
+scraped: 2026-02-18T05:53:16.541048
 ---
 
 # Histogram metrics
@@ -2292,7 +2292,7 @@ The [timeseries percentile](/docs/platform/grail/dynatrace-query-language/comman
 ---
 title: Set up Grail permissions for Metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/metrics-security-context
-scraped: 2026-02-17T05:08:00.015559
+scraped: 2026-02-18T05:43:25.855989
 ---
 
 # Set up Grail permissions for Metrics
@@ -2371,7 +2371,7 @@ Based on the created attribute, you can enforce security-related user and group 
 ---
 title: Kubernetes metrics migration guide
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/kubernetes-metric-migration
-scraped: 2026-02-17T21:31:41.871469
+scraped: 2026-02-18T05:55:53.577391
 ---
 
 # Kubernetes metrics migration guide
@@ -3061,7 +3061,7 @@ dt.entity.container_group_instance
 ---
 title: RUM metrics migration
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration
-scraped: 2026-02-17T05:04:02.517331
+scraped: 2026-02-18T05:51:55.892871
 ---
 
 # RUM metrics migration

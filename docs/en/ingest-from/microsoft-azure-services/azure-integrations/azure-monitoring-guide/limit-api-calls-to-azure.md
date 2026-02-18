@@ -1,7 +1,7 @@
 ---
 title: Limit API calls to Azure
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/limit-api-calls-to-azure
-scraped: 2026-02-17T21:26:02.421266
+scraped: 2026-02-18T05:47:25.647466
 ---
 
 # Limit API calls to Azure
