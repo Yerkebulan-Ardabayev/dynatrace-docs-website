@@ -1,177 +1,177 @@
 ---
 title: Visualize your environment through Smartscape Classic
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape-classic
-scraped: 2026-02-06T15:59:45.288886
+scraped: 2026-02-18T05:31:17.066531
 ---
 
-# Визуализируйте свою среду с помощью Smartscape Classic
+# Visualize your environment through Smartscape Classic
 
-# Визуализируйте свою среду с помощью Smartscape Classic
+# Visualize your environment through Smartscape Classic
 
-* 8-минутное чтение
-* Опубликовано 19 июля 2017 г.
+* 8-min read
+* Published Jul 19, 2017
 
-![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**, наш инструмент визуализации топологии окружающей среды, работающий практически в реальном времени, — одна из самых мощных функций Dynatrace.
+![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**, our near real-time environment-topology visualization tool, is one of the most powerful features of Dynatrace.
 
-![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Автоматическое обнаружение Smartscape Classic** обеспечивает быструю и эффективную визуализацию всех топологических зависимостей в вашей инфраструктуре, процессах и сервисах:
+![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** auto-discovery delivers a quick and efficient visualization of all the topological dependencies in your infrastructure, processes, and services:
 
-* На вертикальной оси отображаются зависимости полного стека на всех уровнях.
-* На горизонтальной оси визуализируются все отношения входящих и исходящих вызовов на каждом уровне.
+* On the vertical axis, it displays full-stack dependencies across all tiers
+* On the horizontal axis, it visualizes all ingoing and outgoing call relationships within each tier
 
-Всего несколькими щелчками мыши ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** предоставляет вам доступ к подробному топологическому представлению всей вашей среды, что дает вам больше понимания и контроля над вашей средой.
+With just a few clicks, ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** gives you access to a detailed topological view of your entire environment, giving you more insight into and control over your environment.
 
-* Принимайте более обоснованные решения, например корректируйте архитектуру служб или инфраструктуру для повышения производительности приложений.
-* Изучите межуровневые и одноуровневые взаимозависимости процессов, хостов и служб, чтобы лучше понять, как зависимости влияют на производительность ваших приложений.
-* Детализация, чтобы получить более четкое представление о проблемах.Например, Dynatrace может выявить проблему со сторонними зависимостями и помочь вам понять влияние этой проблемы на производительность вашего приложения.
+* Make better decisions, such as adjusting your service architecture or infrastructure to improve application performance.
+* Examine cross-tier and same-tier process, host, and service interdependencies to better understand how dependencies affect the performance of your applications.
+* Drill down to gain clearer insight into problems. For example, Dynatrace might identify an issue with third-party dependencies and help you understand the impact of the issue on your application's performance.
 
-## Доступ к Smartscape **Smartscape Classic**
+## Access Smartscape **Smartscape Classic**
 
-Чтобы получить доступ к классическому представлению топологии среды Smartscape, перейдите по адресу ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**.
+To access the classic Smartscape environment-topology view, go to ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**.
 
-Для начала выберите представление, которое вы хотите просмотреть:
+To start, select the view you want to see:
 
-* Выберите **Показать проблемы**, чтобы отобразить топологию [проблемы](#problems).
-* Выберите **Показать сторонние уязвимости** и укажите уровни риска (вы можете выбрать несколько), чтобы отобразить топологию [сторонние уязвимости](#vulnerabilities).
+* Select **Show problems** to display a topology of [problems](#problems)
+* Select **Show third-party vulnerabilities** and specify risk levels (you can select more than one) to display a topology of [third-party vulnerabilities](#vulnerabilities)
 
-## Проблемы
+## Problems
 
-Если выбран параметр **Показать проблемы**, каждый уровень ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** включает отдельную вкладку с индикатором работоспособности.Выберите уровень, на котором вы хотите просмотреть топологию:
+When **Show problems** is selected, each ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** tier includes a dedicated tab with a health indicator. Select the tier at which you want to view the topology:
 
-* Приложения
-* Услуги
-* Процессы
-* Хозяева
-* Дата-центры
+* Applications
+* Services
+* Processes
+* Hosts
+* Data centers
 
-На каждом уровне отображается отдельный тип объекта: приложение, служба, процесс, хост или центр обработки данных.
+Each tier shows a different entity type: application, service, process, host, or data center.
 
-* Чтобы просмотреть другой уровень, выберите вкладку этого уровня.
-* Для увеличения и уменьшения масштаба используйте кнопки **+/-** в правом верхнем углу или вращайте колесо мыши.
-* Чтобы переместить вид в другое положение, выберите и перетащите в любое место ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**.
-* Чтобы просмотреть название объекта, наведите курсор на символ объекта.Пока имя отображается, вы можете щелкнуть стрелку рядом с именем объекта, чтобы перейти на страницу обзора этого объекта.
+* To view a different tier, select that tier's tab.
+* To zoom in and out, use the **+/-** buttons at the top-right corner or rotate the mouse wheel.
+* To shift your view to a different position, select and drag anywhere in ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**.
+* To view the name of an entity, hover your cursor over the entity's symbol. While the name is displayed, you can select the arrow next to the entity name to go to that entity's overview page.
 
-В первом примере изображения ниже:
+In the first example image below:
 
-* На уровне **Хосты** отображается состояние работоспособности **1/33**. Это означает, что имеется 33 отслеживаемых хоста, и на одном из них возникла проблема.
-* Остальные четыре уровня (**Приложения**, **Службы**, **Процессы** и **Центры обработки данных**) в этом примере показывают только количество объектов на каждом уровне, поскольку все объекты на этих уровнях работоспособны.
+* The **Hosts** tier displays a health status of **1/33**, meaning there are 33 monitored hosts and 1 of them has a problem.
+* The other four tiers (**Applications**, **Services**, **Processes**, and **Data centers**) in this example show only the number of entities on each tier, because all the entities on those tiers are healthy.
 
-![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** отображает данные за последние 72 часа, поэтому его нельзя настроить с помощью переключателя временного интервала.Чтобы просмотреть зависимости между объектами одного уровня, просто выберите соответствующую вкладку слева.
+![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** displays data from the past 72 hours and therefore can't be adjusted using the timeframe selector. To view the dependencies among entities of the same tier, just select the associated tab on the left.
 
-### Приложения
+### Applications
 
-В этом примере выбрана вкладка **Приложения**, и справа отображаются **12** обнаруженных в этой среде приложений.
+In this example, the **Applications** tab is selected and the **12** detected applications in this environment are displayed on the right.
 
-![Приложения Smartscape](https://dt-cdn.net/images/smartscape-applications-1310-dc4704a941.png)
+![Smartscape applications](https://dt-cdn.net/images/smartscape-applications-1310-dc4704a941.png)
 
-Dynatrace поддерживает мониторинг веб-приложений и мобильных приложений.Символы узлов указывают тип приложения:
+Dynatrace supports monitoring of web-based applications and mobile apps. The node symbols indicates the application type:
 
-|Значок |Значение |
-|--- |--- |
-|Новый символ Smartscape |**Веб-приложение** |
-|Символ Smartscape 2 |**Мобильное приложение** |
+| Icon | Meaning |
+| --- | --- |
+| Smartscape symbol new | **Web application** |
+| Smartscape symbol 2 | **Mobile app** |
 
-Нет никаких подключений или зависимостей приложений, поскольку в Dynatrace приложения рассматриваются с точки зрения пользователя и, следовательно, представляют собой только конечные точки пользователя.Таким образом, несколько приложений могут использовать одни и те же службы, но приложения не могут быть подключены друг к другу напрямую.
+There are no application connections or dependencies because, in Dynatrace, applications are viewed from the perspective of the user and therefore only constitute user endpoints. Therefore, multiple applications may use the same services, but applications can't be connected directly to one another.
 
-### Услуги
+### Services
 
-На вкладке **Службы** отображается топология всех служб, работающих в вашей среде.
+The **Services** tab displays the topology of all the services that are running in your environment.
 
-![Сервисы Smartscape](https://dt-cdn.net/images/smartscape-services-1621-d595e2d107.png)
+![Smartscape services](https://dt-cdn.net/images/smartscape-services-1621-d595e2d107.png)
 
-**Узлы**
+**Nodes**
 
-Каждый узел представляет собой отдельную службу с символом, обозначающим базовый тип службы.
+Each node represents a different service with a symbol that signifies the underlying service type.
 
-|Значок |Значение |
-|--- |--- |
-|см. пример выше |Коммерческие логотипы, такие как дельфин MySQL, перо Apache и кот Tomcat, обозначают [технологии обслуживания, поддерживаемые Dynatrace](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").|
-|Символ Smartscape 3 |Службы неизвестных технологий обозначаются общим символом службы.Обычно это [непрозрачные услуги](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are.").|
+| Icon | Meaning |
+| --- | --- |
+| see example above | Commercial logos such as the MySQL dolphin, Apache feather, and Tomcat cat indicate [service technologies supported by Dynatrace](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks."). |
+| Smartscape symbol 3 | Services of unrecognized technologies are depicted using a generic service symbol. These are typically [opaque services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are."). |
 
-**Подключения**
+**Connections**
 
-* Стрелки на линиях подключения к выбранной службе и обратно указывают, являются ли они входящим или исходящим вызовом службы.
-* Пунктирная линия соединения указывает на то, что в течение последних двух часов не было запросов между двумя службами или что служба ничего не пересылала и не получала в течение последних двух часов.
-* Соединение устаревает и больше не отображается в ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**, если соединение было неактивно более 72 часов или если служба не получала никакой нагрузки в течение последних 72 часов.
+* Arrows on connection lines to and from the selected service indicate whether they're incoming or outgoing service calls.
+* A dashed connection line indicates that there has been no request between the two services during the last two hours, or that a service hasn't forwarded or received anything during the last two hours.
+* A connection ages out and is no longer shown in ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** if the connection has been inactive for more than 72 hours or if a service hasn't received any load during the last 72 hours.
 
-**Фильтрация отображения**
-Откройте меню «Обзор» (**â¦**) в правом верхнем углу ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**, чтобы скрыть или отобразить:
+**Filtering your display**  
+Open the Browse (**â¦**) menu in the upper-right corner of ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** to hide or show:
 
-* Неактивные запросы
-* Услуги, которые не связаны с другими услугами.
+* Inactive requests
+* Services that aren't connected to other services
 
-Обратите внимание, что вы можете заметить разницу в количестве служб, представленных на вкладке **Службы** страницы ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** и на странице **Службы**.Это связано с тем, что ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** учитывает более широкий спектр категорий услуг.
+Note that you might observe a difference in the number of services presented in **Services** tab of the ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** page versus the **Services** page. This is because ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** takes a broader scope of service categories into account.
 
-### Процессы
+### Processes
 
-На вкладке **Процессы** представлена ​​визуализация, в которой каждый узел соответствует процессу, а каждое соединение представляет собой запрос TCP/IP.
+The **Processes** tab provides a visualization within which each node corresponds to a process and each connection represents a TCP/IP request.
 
-* Показаны не все процессы, запущенные в вашей среде, поскольку количество запущенных процессов часто довольно велико.Для ясности показаны только [самые важные процессы](/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.").
-* Пунктирные линии показывают связи между процессами, которые неактивны или время ожидания истекло.
+* Not all processes running in your environment are shown because the number of running processes is often quite high. For clarity, only the [most important processes](/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.") are shown.
+* Dashed lines show connections between processes that are inactive or have timed out.
 
-![Смартскейп-процессы](https://dt-cdn.net/images/smartscape-processes-1623-2321abf3d3.png)
+![Smartscape processes](https://dt-cdn.net/images/smartscape-processes-1623-2321abf3d3.png)
 
-### Хосты
+### Hosts
 
-На вкладке **Хосты** показана топология вашей инфраструктуры с точки зрения ваших хостов.
+The **Hosts** tab shows the topology of your infrastructure from the perspective of your hosts.
 
-* Соединения представляют собой запросы TCP/IP.
-* Хосты, физические или виртуальные машины, обозначаются коммерческими логотипами операционных систем хоста.
+* Connections represent TCP/IP requests.
+* Hosts, whether physical or virtual machines, are signified with the commercial logos of the host operating systems.
 
-![Хосты Smartscape](https://dt-cdn.net/images/smartscape-hosts-1659-8c03fceb20.png)
+![Smartscape hosts](https://dt-cdn.net/images/smartscape-hosts-1659-8c03fceb20.png)
 
-Общие символы хостов используются для обозначения кандидатов на мониторинг (неизвестных хостов, которые обнаруживаются, поскольку они получают запросы TCP/IP от отслеживаемых хостов).Мы рекомендуем по возможности устанавливать Dynatrace OneAgent для мониторинга кандидатов в вашей среде.
+Generic host symbols are used to signify monitoring candidates (unknown hosts that are detected because they receive TCP/IP requests from monitored hosts). We recommend that you install Dynatrace OneAgent on monitoring candidates in your environment whenever possible.
 
-|Значок |Значение |
-|--- |--- |
-|Символ Smartscape 4 |мониторинг кандидата |
+| Icon | Meaning |
+| --- | --- |
+| Smartscape symbol 4 | monitoring candidate |
 
-Неактивные кандидаты на мониторинг — это кандидаты на мониторинг, которые не обменивались данными с хостом.Неактивные соединения между хостами и соединения с истекшим временем ожидания отображаются пунктирными линиями.
+Inactive monitoring candidates are monitoring candidates that havenât communicated with a host. Inactive connections between hosts and connections that have timed-out are visualized with dashed lines.
 
-### Дата-центры
+### Data centers
 
-На вкладке **Центры обработки данных** отображаются узлы, указывающие, где находятся ваши хосты.Если в вашей инфраструктуре есть физические серверы, соответствующие узлы дата-центров указывают города, в которых расположены дата-центры.Они обозначаются общими значками хостов.
+The **Data centers** tab displays nodes that indicate where your hosts reside. If you have physical servers in your infrastructure, the corresponding data center nodes indicate the cities where the data centers are located. These are signified with generic host icons.
 
-Если вы используете виртуальные серверы или у вас есть инфраструктура на основе PaaS, узлы центра обработки данных будут помечены соответствующим образом (например, центр обработки данных VMware, зона доступности AWS или регион Azure) и отображены с помощью соответствующих логотипов компании.
+If you use virtual servers or you have a PaaS-based infrastructure, the data center nodes will be labeled accordingly (for example, VMware data center, AWS Availability Zone, or Azure region) and visualized with the corresponding company logos.
 
-![Центры обработки данных Smartscape](https://dt-cdn.net/images/smartscape-datacenters-1625-63d687b49e.png)
+![Smartscape datacenters](https://dt-cdn.net/images/smartscape-datacenters-1625-63d687b49e.png)
 
-### Межуровневые соединения
+### Cross-tier interconnections
 
-Чтобы просмотреть межуровневые соединения, выберите любой объект на любом уровне ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**.Вертикальные зависимости объекта отображаются слева.
+Для просмотра межъярусных связей выберите любую сущность в любом ярусе ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**. Вертикальные зависимости этой сущности будут отображены слева.
 
-В этом примере выбрано веб-приложение под названием `easytravel-dynatrace-dev`.Слева вы можете увидеть, как зависимости приложений распространяются вниз на уровень центров обработки данных.
+В этом примере выбражено веб-приложение с именем `easytravel-dynatrace-dev`. Слева вы можете увидеть, как зависимости приложения простираются вниз до яруса центров обработки данных.
 
-![Смартскейп интер 1](https://dt-cdn.net/images/smartscape-inter1-1687-680a65579e.png)
+![Smartscape inter 1](https://dt-cdn.net/images/smartscape-inter1-1687-680a65579e.png)
 
-Приложение `easytravel-dynatrace-dev` выделено красным, поскольку в нем возникла проблема.Двигаясь вниз по связанным зависимостям, мы видим, что это приложение вызывает 27 служб Tomcat и 4 службы ASP/.NET.Эти службы работают на процессах одних и тех же типов технологий (те, что показаны красным, испытывают проблемы).Вы можете видеть, что эти процессы находятся на узле под управлением Windows под названием `lr-ws-l02v` (чтобы увидеть эту информацию, наведите курсор на узел узла).Поскольку на этом хосте выполняются неработоспособные процессы, этот хост также неработоспособен (обратите внимание на красную цифру **1** на плитке **Хосты** слева).
+Приложение `easytravel-dynatrace-dev` отображается красным, поскольку испытывает проблему. Двигаясь вниз по связанным зависимостям, мы видим, что это приложение вызывает 27 служб Tomcat и 4 службы ASP/.NET. Эти службы работают на процессах одного и того же типа технологии (те, что показаны красным, испытывают проблемы). Вы можете видеть, что эти процессы находятся на хосте Windows с именем `lr-ws-l02v` (чтобы увидеть эту деталь, наведите курсор на узел хоста). Поскольку неисправные процессы работают на этом хосте, этот хост также неисправен (обратите внимание на красную **1** на плитке **Hosts** слева).
 
-В этом примере показано, как можно легко обнаружить основную причину проблемы и сократить время ее устранения, исследуя связанные объекты в ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**.
+Этот пример показывает, как легко можно обнаружить первопричину проблемы и сократить время ее устранения, изучая связанные сущности в ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**.
 
-## Сторонние уязвимости
+## Уязвимости сторонних компонентов
 
-Если в ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** выбрано **Показывать сторонние уязвимости**, выберите **Уровень риска**, чтобы указать уровни риска, которые вы хотите отображать.Вы можете установить более одного флажка.
+Когда **Show third-party vulnerabilities** (Показать уязвимости сторонних компонентов) выбрано в ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**, выберите **Risk level** (Уровень риска), чтобы указать уровни риска, которые вы хотите отобразить. Вы можете выбрать несколько флажков.
 
-* Слева в вертикальном столбце показано количество затронутых узлов красным цветом и общее количество узлов серым цветом на слоях процессов и хостов.
+* На левой стороне вертикальный столбец показывает количество затронутых узлов красным цветом и общее количество узлов серым цветом на уровнях процессов и хостов.
 * На топологии затронутые узлы отображаются цветом уровня риска:
 
-+ Темно-красный для `Critical`
-+ Красный для `High`
-+ Желтый для `Medium`
-+ Синий для `Low`
+  + Темно-красный для `Critical` (Критический)
+  + Красный для `High` (Высокий)
+  + Желтый для `Medium` (Средний)
+  + Синий для `Low` (Низкий)
 
-Чтобы просмотреть уязвимости затронутых объектов, переключитесь на уровень **Процессы** или **Хосты**.(Уязвимости могут быть связаны с приложением, службой или центром обработки данных, но они не влияют на них напрямую. Затронуты могут быть только процессы или хосты.)
+Чтобы увидеть уязвимости для затронутых сущностей, переключитесь на ярус **Processes** (Процессы) или **Hosts** (Хосты). (Уязвимости могут быть связаны с приложением, службой или центром обработки данных, но они не влияют на них напрямую. Только процессы или хосты могут быть затронуты.)
 
-* Для увеличения и уменьшения масштаба используйте кнопки **+/-** в правом верхнем углу или вращайте колесо мыши.
-* Чтобы переместить вид в другое положение, выберите и перетащите в любое место ![Смартскейп](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**.
-* Чтобы просмотреть название объекта, наведите курсор на символ объекта.Пока имя отображается, вы можете щелкнуть стрелку рядом с именем объекта, чтобы перейти на страницу обзора этого объекта.
-* Чтобы просмотреть межуровневые соединения, выберите любой объект.Панель слева развернется и отобразит вертикальные зависимости объекта.
+* Чтобы увеличить и уменьшить масштаб, используйте кнопки **+/-** в правом верхнем углу или вращайте колесико мыши.
+* Чтобы изменить положение обзора, выберите и перетащите в любом месте ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic**.
+* Чтобы увидеть имя сущности, наведите курсор на символ сущности. Пока отображается имя, вы можете выбрать стрелку рядом с именем сущности, чтобы перейти на страницу обзора этой сущности.
+* Для просмотра межъярусных связей выберите любую сущность. Панель слева расширится, чтобы отобразить вертикальные зависимости сущности.
 
-Дополнительную информацию об управлении сторонними уязвимостями см. в разделе [Сторонние уязвимости](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.").
+Дополнительную информацию об управлении уязвимостями сторонних компонентов можно найти в разделе [Third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.").
 
-## Похожие темы
+## Связанные темы
 
-* [Что такое среда мониторинга?](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
-* [Топология и API Smartscape](/docs/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.")
-* [Анализ производительности](/docs/observe/digital-experience/web-applications/analyze-and-use/performance-analysis "Understand the available types of performance analysis that are provided by Dynatrace.")
-* [Концепции анализа первопричин](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.")
-* [Сторонние уязвимости](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.")
+* [What is a monitoring environment?](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") (Что такое среда мониторинга?)
+* [Topology and Smartscape API](/docs/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.") (Топология и Smartscape API)
+* [Performance analysis](/docs/observe/digital-experience/web-applications/analyze-and-use/performance-analysis "Understand the available types of performance analysis that are provided by Dynatrace.") (Анализ производительности)
+* [Root cause analysis concepts](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") (Концепции анализа первопричин)
+* [Third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.") (Уязвимости сторонних компонентов)
