@@ -31,7 +31,28 @@ if sys.platform == 'win32':
     except Exception:
         pass
 
-# API ключи ТОЛЬКО из окружения
+# Загрузка .env файла (если есть)
+def _load_dotenv():
+    env_paths = [
+        Path(__file__).parent.parent / '.env',  # корень проекта
+        Path(__file__).parent / '.env',
+        Path('.env'),
+    ]
+    for env_path in env_paths:
+        if env_path.exists():
+            with open(env_path, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#') and '=' in line:
+                        key, _, val = line.partition('=')
+                        key = key.strip()
+                        val = val.strip().strip('"').strip("'")
+                        if key and key not in os.environ:
+                            os.environ[key] = val
+            break
+_load_dotenv()
+
+# API ключи из окружения (или .env)
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '')
 GROQ_API_KEY   = os.environ.get('GROQ_API_KEY', '')
 OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
