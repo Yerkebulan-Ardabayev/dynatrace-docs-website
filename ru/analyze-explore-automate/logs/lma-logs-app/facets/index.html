@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#filter-with-facets" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -25549,67 +25549,67 @@
 
 
 
-<h1 id="_1">Фильтр с гранями<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Фильтр с гранями<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="filter-with-facets">Filter with facets<a class="headerlink" href="#filter-with-facets" title="Permanent link">&para;</a></h1>
+<h1 id="filter-with-facets_1">Filter with facets<a class="headerlink" href="#filter-with-facets_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>Практическое руководство</li>
-<li>3-минутное чтение</li>
-<li>Опубликовано 15 июня 2025 г.</li>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>3-min read</li>
+<li>Published Jun 15, 2025</li>
 </ul>
-<p>Фасеты — это быстрые фильтры для данных журнала.
-Они соответствуют парам «ключ-значение» атрибутов журнала, обнаруженным в вашей среде, и сгруппированы по категориям фасетов.
-Наиболее важные идентификаторы полей DQL по умолчанию сгруппированы в предопределенные категории.
-Фасеты также помогают оценить объем данных журнала, соответствующих каждому атрибуту.</p>
-<h2 id="_3">Фильтрация данных с помощью фасетов<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Запрос журналов в вашей среде с помощью фасетов</p>
+<p>Facets are quick filters for log data.
+They correspond to log attribute key-value pairs detected in your environment and are grouped by facet categories.
+The most important DQL field IDs are grouped by default in predefined categories.
+Facets also help you estimate the amount of log data corresponding to each attribute.</p>
+<h2 id="filter-data-with-facets">Filter data with facets<a class="headerlink" href="#filter-data-with-facets" title="Permanent link">&para;</a></h2>
+<p>To query logs in your environment with facets</p>
 <ol>
-<li>Перейдите в раздел <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong>.</li>
-<li>Разверните группы аспектов, например «Ядро» или «Источник журнала».</li>
-<li>Разверните аспект, соответствующий вашему запросу, например «Статус».</li>
-<li>Выберите значения, соответствующие вашему запросу, например «Ошибка» и «Предупреждение».</li>
-<li>Посмотрите, как генерируются фильтры в поле фильтра.</li>
-<li>Выберите столько фасетов, сколько необходимо для вашего запроса.</li>
+<li>Go to <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong>.</li>
+<li>Expand facet groups like âCoreâ or âLog sourceâ.</li>
+<li>Expand the facet relevant for your query, like âStatusâ.</li>
+<li>Select values relevant for your query, like âErrorâ and âWarningâ.</li>
+<li>Observe how the filters are generated in the Filter Field.</li>
+<li>Select as many facets as needed for your query.</li>
 </ol>
-<p>В пределах одного фасета выбранные значения объединяются с помощью оператора <code>OR</code>.Это означает, что будут включены журналы, соответствующие любому из выбранных значений для этого аспекта.
-Значения между различными фасетами объединяются с помощью оператора <code>AND</code>.Это означает, что для включения журналы должны соответствовать хотя бы одному значению из каждого выбранного фасета.
-7. Нажмите <strong>Выполнить запрос</strong>, чтобы просмотреть журналы вашей среды на основе вашего фильтра.</p>
-<h2 id="_4">Оценка объема данных с помощью фасетов<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Чтобы получить представление о том, сколько журналов с определенными атрибутами имеется в вашей среде.</p>
+<p>Within a single facet, selected values are combined using the <code>OR</code> operator. This means logs matching any of the selected values for that facet will be included.
+   Between different facets, values are combined using the <code>AND</code> operator. This means logs must match at least one value from each selected facet to be included.
+7. Press <strong>Run query</strong> to see logs from your environment based on your filter.</p>
+<h2 id="estimate-amount-of-data-with-facets">Estimate amount of data with facets<a class="headerlink" href="#estimate-amount-of-data-with-facets" title="Permanent link">&para;</a></h2>
+<p>To get a sense of how many logs with specific attributes there are in your environment</p>
 <ol>
-<li>Перейдите в раздел <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong>.</li>
-<li>Разверните группы фасетов и фасеты, соответствующие вашему запросу.</li>
-<li>Посмотрите приблизительные значения для каждого значения.</li>
+<li>Go to <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong>.</li>
+<li>Expand facet groups and facets relevant for your query.</li>
+<li>Look at the approximate values for each value.</li>
 </ol>
-<p>Числа, отображаемые для каждого значения фасета, представляют приблизительное количество журналов на основе фильтров последнего запроса.Если вы видите символ «~», это означает, что Dynatrace использует выборку при чтении данных журнала для повышения скорости реагирования.</p>
-<p>Пример:</p>
+<p>The numbers displayed for each facet value represent the approximate number of logs based on your last query filters. If you see the '~' symbol, it indicates that Dynatrace is using sampling when reading log data to improve responsiveness.</p>
+<p>Example:</p>
 <ul>
-<li>Вы запрашиваете журналы ошибок из пространства имен Kubernetes «astroshop» со следующими фильтрами: <code>k8s.namespace.name = "astroshop"</code> <code>status = "Error"</code></li>
-<li>После выполнения запроса посмотрите на фасет <code>k8s.container.name</code>.</li>
-<li>Вы увидите только имена контейнеров для журналов, поступающих из пространства имен Kubernetes «astroshop» со статусом «Ошибка».</li>
-<li>Число, отображаемое рядом с именем каждого контейнера, показывает приблизительное количество журналов с пространством имен Kubernetes «astroshop», статусом «Ошибка» и соответствующим именем контейнера.</li>
+<li>You query error logs from Kubernetes namespace âastroshopâ with following filters: <code>k8s.namespace.name = "astroshop"</code> <code>status = "Error"</code></li>
+<li>After executing query, look at the facet <code>k8s.container.name</code></li>
+<li>You will only see container names for logs coming from Kubernetes namespace âastroshopâ with the status âErrorâ</li>
+<li>Number displayed next to each container name shows the approximate number of logs with Kubernetes namespace âastroshopâ, status âErrorâ and respective container name</li>
 </ul>
-<h2 id="_5">Управление всеми аспектами<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Чтобы управлять отображением аспектов вашей среды</p>
+<h2 id="manage-all-facets">Manage all facets<a class="headerlink" href="#manage-all-facets" title="Permanent link">&para;</a></h2>
+<p>To manage which facets of your environment are displayed</p>
 <ol>
-<li>Перейдите в раздел <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong>.</li>
-<li>Выберите <strong>Значок редактирования фасетов</strong> рядом с панелью поиска фасетов.</li>
+<li>Go to <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong>.</li>
+<li>Select  <strong>Facets edit icon</strong> next to the facets search bar.</li>
 <li>
-<p>Выберите или отмените выбор элементов из предопределенных категорий.</p>
+<p>Select or deselect items from the predefined categories.</p>
 </li>
 <li>
-<p>Установите флажок категории, чтобы выбрать или отменить выбор всех аспектов в категории.</p>
+<p>Check the category box to select or deselect all facets in the category.</p>
 </li>
-<li>Выберите, чтобы просмотреть фасеты в категории и выбрать их или отменить выбор.</li>
-<li>Выберите <strong>Сохранить</strong>.</li>
+<li>Select  to view the facets in a category and select or deselect them.</li>
+<li>Select <strong>Save</strong>.</li>
 </ol>
-<h2 id="_6">Вернуться к настройкам по умолчанию<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Если вы ранее изменяли фасеты, чтобы вернуться к настройкам по умолчанию для фасетов в вашей среде.</p>
+<h2 id="revert-to-default-settings">Revert to default settings<a class="headerlink" href="#revert-to-default-settings" title="Permanent link">&para;</a></h2>
+<p>If you have previously modified the facets, to revert to the default settings for facets in your environment</p>
 <ol>
-<li>Перейдите в раздел <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong>.</li>
-<li>Выберите <strong>Значок редактирования фасетов</strong> рядом с панелью поиска фасетов.</li>
-<li>Выберите <strong>Сбросить настройки по умолчанию</strong>.</li>
-<li>Выберите <strong>Сохранить</strong>.</li>
+<li>Go to <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong>.</li>
+<li>Select  <strong>Facets edit icon</strong> next to the facets search bar.</li>
+<li>Select <strong>Reset to default</strong>.</li>
+<li>Select <strong>Save</strong>.</li>
 </ol>
 
 

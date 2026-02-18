@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#spot-trends-with-the-log-distribution-chart" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -25549,55 +25549,55 @@
 
 
 
-<h1 id="_1">Выявляйте тенденции с помощью диаграммы распределения журналов<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Выявляйте тенденции с помощью диаграммы распределения журналов<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="spot-trends-with-the-log-distribution-chart">Spot trends with the log distribution chart<a class="headerlink" href="#spot-trends-with-the-log-distribution-chart" title="Permanent link">&para;</a></h1>
+<h1 id="spot-trends-with-the-log-distribution-chart_1">Spot trends with the log distribution chart<a class="headerlink" href="#spot-trends-with-the-log-distribution-chart_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>Практическое руководство</li>
-<li>2 минуты чтения</li>
-<li>Опубликовано 2 июля 2025 г.</li>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>2-min read</li>
+<li>Published Jul 02, 2025</li>
 </ul>
-<p>Используйте диаграмму распределения журналов, доступную в разделе <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong>, чтобы выявить тенденции в ваших журналах.Ты можешь:</p>
+<p>Utilize the log distribution chart available in <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong> to spot trends in your logging. You can:</p>
 <ul>
-<li>Быстро выявляйте тенденции и аномалии.Например, внезапное увеличение количества журналов <code>ERROR</code> может означать инцидент или регресс.</li>
-<li>Детализация по конкретным состояниям журнала или временным диапазонам.</li>
-<li>Выполняйте целевые запросы, не выходя из визуализации.Взаимодействуя с диаграммой, вы можете выбрать статус журнала и более точные сроки для вашего следующего запроса.</li>
+<li>Quickly spot trends and anomalies. For example, a sudden increase in <code>ERROR</code> logs might mean an incident or regression.</li>
+<li>Drill down into specific log statuses or time ranges.</li>
+<li>Perform targeted queries without leaving the visualization. By interacting with the chart, you can choose log status and a more precise timeframe for your next query.</li>
 </ul>
-<p><img alt="Приложение журналов, показывающее диаграмму распределения журналов" src="https://dt-cdn.net/images/logs-app-chart-3840-33eaf4738e.png" /></p>
-<h2 id="_3">Обзор диаграммы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Диаграмма распределения журналов обеспечивает визуальный обзор записей журнала с течением времени.</p>
-<p>Записи журнала сгруппированы по статусу.Каждый статус представлен отдельным цветом для облегчения различения.Доступны следующие статусы:</p>
+<p><img alt="Logs app showing the log distribution chart" src="https://dt-cdn.net/images/logs-app-chart-3840-33eaf4738e.png" /></p>
+<h2 id="chart-overview">Chart overview<a class="headerlink" href="#chart-overview" title="Permanent link">&para;</a></h2>
+<p>The log distribution chart provides a visual overview of log entries over time.</p>
+<p>Log entries are grouped by status. Each status is represented by a distinct color for easy differentiation. The following statuses are available:</p>
 <ul>
-<li><strong>КОД_0</strong></li>
-<li><strong>КОД_0</strong></li>
-<li><strong>КОД_0</strong></li>
-<li><strong>КОД_0</strong></li>
+<li><code>INFO</code></li>
+<li><code>WARN</code></li>
+<li><code>ERROR</code></li>
+<li><code>NONE</code></li>
 </ul>
-<p>Эти статусы соответствуют атрибуту <code>status</code>, который создается во время приема журнала.Подробнее см. информацию об автоматическом пополнении журнала для <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs" title="Generic log ingestion automatically transforms log data into output values for the loglevel attribute.">OneAgent-</a> или <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation#transform-all-types-of-logs" title="Log ingestion API automatically transforms log data into output values for the loglevel attribute.">Журналы, полученные через API</a>.</p>
-<h2 id="_4">Взаимодействие с диаграммой распределения журналов<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Вы можете взаимодействовать с диаграммой распределения журналов, чтобы уточнить свой анализ.</p>
+<p>These statuses correspond to the <code>status</code> attribute that is created during log ingestion. For details, see the information on automatic log enrichment for <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs" title="Generic log ingestion automatically transforms log data into output values for the loglevel attribute.">OneAgent-</a> or <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation#transform-all-types-of-logs" title="Log ingestion API automatically transforms log data into output values for the loglevel attribute.">API-ingested logs</a>.</p>
+<h2 id="interact-with-log-distribution-chart">Interact with log distribution chart<a class="headerlink" href="#interact-with-log-distribution-chart" title="Permanent link">&para;</a></h2>
+<p>You can interact with the log distribution chart to refine your analysis.</p>
 <ul>
 <li>
-<p><strong>Выделение определенных статусов журнала</strong>.</p>
+<p><strong>Highlight specific log statuses</strong>.</p>
 </li>
 <li>
-<p>Выберите статус на диаграмме или легенде, чтобы сосредоточиться только на этом статусе.</p>
+<p>Select a status in the chart or legend to focus on that status only.</p>
 </li>
-<li>Для отображения нескольких статусов используйте легенду диаграммы.</li>
-<li><strong>Увеличение временного диапазона</strong>.Выделите часть диаграммы, а затем выберите <strong>Приблизить к выделенному</strong>.</li>
+<li>To display multiple statuses, use the chart legend.</li>
+<li><strong>Zoom in on a time range</strong>. Select a portion of the chart, and then select  <strong>Zoom to selection</strong>.</li>
 <li>
-<p><strong>Используйте панель инструментов диаграммы</strong>.Наведите указатель мыши на диаграмму, чтобы отобразить панель инструментов.</p>
+<p><strong>Use the chart toolbar</strong>. Hover over the chart to display the toolbar.</p>
 </li>
 <li>
-<p>Выберите (<strong>Изменить режим</strong>), чтобы переключаться между <strong>Режимом исследования</strong> (выделение отдельных статусов), <strong>Режимом масштабирования</strong> и <strong>Режимом панорамирования</strong> (исследование диаграммы по горизонтали).</p>
+<p>Select  (<strong>Change mode</strong>) to switch between the  <strong>Explore mode</strong> (highlight individual statuses),  <strong>Zoom mode</strong>, and  <strong>Pan mode</strong> (explore the chart horizontally).</p>
 </li>
-<li>Увеличение или уменьшение масштаба диаграммы.</li>
-<li>Выберите (<strong>Сброс</strong>), чтобы вернуть диаграмму в исходное состояние.</li>
+<li>Zoom further in  or out  on the chart.</li>
+<li>Select  (<strong>Reset</strong>) to bring the chart back to its original state.</li>
 </ul>
-<p>Для более быстрого и удобного взаимодействия с диаграммой распределения бревен используйте сочетания клавиш.Они отображаются при наведении курсора на значки панели инструментов.</p>
-<h2 id="_5">Влияние на выставление счетов<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Загрузка диаграммы распределения журналов и взаимодействие с ней не требует лицензии на запросы.</p>
-<p>Диаграмма распределения журналов может быть основана на выборочных данных, что означает, что отображаемые данные являются репрезентативными, и не отображаются все записи журнала.</p>
+<p>For quicker and more convenient interaction with the log distribution chart, use the keyboard shortcuts. They're displayed when you hover over the toolbar icons.</p>
+<h2 id="effect-on-billing">Effect on billing<a class="headerlink" href="#effect-on-billing" title="Permanent link">&para;</a></h2>
+<p>Loading and interacting with the log distribution chart does not consume any query license.</p>
+<p>The log distribution chart may be based on sampled data, which means the displayed data is representative, and not every log entry is shown.</p>
 
 
 

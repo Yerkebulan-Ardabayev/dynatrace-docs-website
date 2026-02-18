@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#databases-app" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -25549,188 +25549,188 @@
 
 
 
-<h1 id="_1">Приложение баз данных<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Приложение баз данных<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="databases-app">Databases app<a class="headerlink" href="#databases-app" title="Permanent link">&para;</a></h1>
+<h1 id="databases-app_1">Databases app<a class="headerlink" href="#databases-app_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>Приложение</li>
-<li>4-минутное чтение</li>
-<li>Обновлено 28 января 2026 г.</li>
+<li>Latest Dynatrace</li>
+<li>App</li>
+<li>4-min read</li>
+<li>Updated on Jan 28, 2026</li>
 </ul>
-<p>Dynatrace <img alt="Базы данных" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Базы данных</strong> позволяет вам отслеживать, анализировать и оптимизировать среду баз данных с ясностью и контролем.Он предлагает подробную информацию о производительности, работоспособности и конфигурации, помогая вам выявлять проблемы на ранней стадии и поддерживать надежность работы.</p>
-<p>Благодаря интеграции с экосистемой наблюдения Dynatrace <img alt="Базы данных" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Базы данных</strong> связывает показатели базы данных с данными приложений и инфраструктуры, обеспечивая более быстрое устранение неполадок и более разумное принятие решений.</p>
-<h2 id="_3">Предварительные условия<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Прежде чем начать, убедитесь в следующем:</p>
+<p>The Dynatrace <img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> enables you to monitor, analyze, and optimize database environments with clarity and control. It offers detailed insights into performance, health, and configuration, helping you identify issues early and maintain reliable operations.</p>
+<p>By integrating with Dynatrace observability ecosystem, <img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> connects database metrics with application and infrastructure data, supporting faster troubleshooting and smarter decision-making.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before you begin, ensure the following:</p>
 <ul>
 <li>
-<p>Конфигурация ActiveGate</p>
+<p>ActiveGate configuration</p>
 </li>
 <li>
-<p>Назначьте один или несколько <a href="/docs/ingest-from/dynatrace-activegate/activegate-group" title="Understand the basic concepts of ActiveGate groups.">Группа ActiveGate</a> для удаленного подключения к целевым серверам баз данных.</p>
+<p>Assign one or more <a href="/docs/ingest-from/dynatrace-activegate/activegate-group" title="Understand the basic concepts of ActiveGate groups.">ActiveGate group</a> to connect to the target database servers remotely.</p>
 </li>
 <li>
-<p>Необходимые компоненты</p>
+<p>Required components</p>
 </li>
 <li>
-<p>Для баз данных, требующих дополнительных компонентов (например, драйверов JDBC), установите их на все назначенные ActiveGate согласно <a href="/docs/ingest-from/extensions/concepts#ag" title="Learn more about the concept of Dynatrace Extensions.">рекомендации по расширению</a>.</p>
+<p>For databases requiring additional components (for example, JDBC drivers), install them on all designated ActiveGates according to the <a href="/docs/ingest-from/extensions/concepts#ag" title="Learn more about the concept of Dynatrace Extensions.">extension guidelines</a>.</p>
 </li>
 <li>
-<p>Сеть и <a href="/docs/observe/infrastructure-observability/databases/database-app#permissions" title="The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.">разрешения</a></p>
+<p>Network and <a href="/docs/observe/infrastructure-observability/databases/database-app#permissions" title="The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.">permissions</a></p>
 </li>
 <li>
-<p>Проверка сетевых подключений и правил брандмауэра для каждого типа базы данных.ActiveGate должен иметь возможность устанавливать прямое сетевое соединение с хостом базы данных.</p>
+<p>Validate network connectivity and firewall rules for each database type. ActiveGate should be able to establish a direct network connection to the database host.</p>
 </li>
-<li>Создайте учетную запись пользователя для мониторинга с соответствующими разрешениями (например, доступом к представлениям системы, показателям производительности и схемам).</li>
+<li>Create a monitoring user account with appropriate permissions (for example, access to system views, performance metrics, and schemas).</li>
 </ul>
-<h3 id="_4">Разрешения<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>В следующей таблице описаны необходимые разрешения.</p>
-<p>Разрешение</p>
-<p>Описание</p>
-<p>Дэвис: анализаторы: выполнить</p>
-<p>Выполнить анализатор Дэвиса для проблем с сущностями</p>
-<p>настройки:объекты:читать</p>
-<p>Чтение объектов настроек из настроек V2 для владения и SLO.</p>
-<p>настройки:объекты:запись</p>
-<p>Запись объектов настроек из настроек V2 для владения и SLO.</p>
-<p>состояние: пользовательское-приложение-состояния: чтение</p>
-<p>Чтение состояния приложения пользователя</p>
-<p>состояние: пользовательское приложение-состояния: запись</p>
-<p>Состояние пользовательского интерфейса магазина</p>
-<p>хранилище: ведра: читать</p>
-<p>Чтение корзин из корзин Грааля</p>
-<p>хранилище: объекты: чтение</p>
-<p>Чтение сущностей из Грааля</p>
-<p>хранилище: события: чтение</p>
-<p>Читать события из Грааля</p>
-<p>хранилище: журналы: чтение</p>
-<p>Чтение журналов из Grail</p>
-<p>хранилище: метрики: чтение</p>
-<p>Чтение метрик из Grail</p>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
+<p>The following table describes the required permissions.</p>
+<p>Permission</p>
+<p>Description</p>
+<p>davis:analyzers:execute</p>
+<p>Execute Davis analyzer for entity problems</p>
+<p>settings:objects:read</p>
+<p>Read settings objects from settings V2 for Ownership and SLOs</p>
+<p>settings:objects:write</p>
+<p>Write settings objects from settings V2 for Ownership and SLOs</p>
+<p>state:user-app-states:read</p>
+<p>Read user app state</p>
+<p>state:user-app-states:write</p>
+<p>Store UI state</p>
+<p>storage:buckets:read</p>
+<p>Read buckets from Grail buckets</p>
+<p>storage:entities:read</p>
+<p>Read entities from Grail</p>
+<p>storage:events:read</p>
+<p>Read events from Grail</p>
+<p>storage:logs:read</p>
+<p>Read logs from Grail</p>
+<p>storage:metrics:read</p>
+<p>Read metrics from Grail</p>
 <p>10</p>
-<p>строк на странице</p>
-<p>Страница</p>
+<p>rows per page</p>
+<p>Page</p>
 <p>1</p>
-<p>из 1</p>
-<h3 id="_5">Этапы установки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>of 1</p>
+<h3 id="installation-steps">Installation steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Установите <img alt="Базы данных" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Базы данных</strong> из Dynatrace <strong>Hub</strong>.</li>
-<li>Настройте приложение для мониторинга поддерживаемых экземпляров базы данных.Инструкции по настройке для конкретного поставщика см. в <a href="/docs/observe/infrastructure-observability/databases/database-app/get-started" title="Set up database monitoring and learn how to extend Dynatrace Databases monitoring.">Начало работы с мониторингом базы данных</a>.</li>
-<li>Добавьте необходимые конфигурации мониторинга (например, учетные данные, конечные точки) для каждого экземпляра.</li>
+<li>Install <img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> from the Dynatrace  <strong>Hub</strong>.</li>
+<li>Configure the app to monitor supported database instances. For vendor-specific setup instructions, see <a href="/docs/observe/infrastructure-observability/databases/database-app/get-started" title="Set up database monitoring and learn how to extend Dynatrace Databases monitoring.">Get started with database monitoring</a>.</li>
+<li>Add the required monitoring configurations (for example, credentials, endpoints) for each instance.</li>
 </ol>
-<h2 id="_6">Начать<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Используйте <img alt="Базы данных" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Базы данных</strong> для мониторинга, анализа и оптимизации сред баз данных.Приложение интегрируется с экосистемой наблюдения Dynatrace и предоставляет полезную информацию, которая поможет вам обеспечить надежность, повысить производительность и сократить время простоев.</p>
-<p><img alt="Получите обзор всего вашего парка баз данных" src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/171/media/DB_Overview.png" /><img alt="Получите обзор того, что происходит во всем вашем парке баз данных." src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/196/media/Overview_4.jpg" /><img alt="Полный обзор показателей активности" src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/196/media/Activity_metrics_3.jpg" /></p>
-<p>1 из 3Получите обзор всего вашего парка баз данных</p>
-<h3 id="_7">Обзор приложения «Базы данных»<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<h4 id="_8">Централизованная панель управления<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p>На вкладке <strong>Обзор</strong> представлена ​​общая информация о вашей базе данных:</p>
+<h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
+<p>Use <img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> to monitor, analyze, and optimize your database environments. The app integrates with the Dynatrace observability ecosystem and delivers actionable insights to help you ensure reliability, improve performance, and reduce downtime.</p>
+<p><img alt="Get an overview of your entire database fleet" src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/171/media/DB_Overview.png" /><img alt="Get an overview of what's happening across your entire database fleet" src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/196/media/Overview_4.jpg" /><img alt="See a full view of activity metrics" src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/196/media/Activity_metrics_3.jpg" /></p>
+<p>1 of 3Get an overview of your entire database fleet</p>
+<h3 id="databases-app-overview">Databases app overview<a class="headerlink" href="#databases-app-overview" title="Permanent link">&para;</a></h3>
+<h4 id="centralized-dashboard">Centralized dashboard<a class="headerlink" href="#centralized-dashboard" title="Permanent link">&para;</a></h4>
+<p>The <strong>Overview</strong> tab provides a high-level summary of your database landscape:</p>
 <ul>
-<li><strong>Работоспособность базы данных</strong>: визуализируйте исправные и неработоспособные экземпляры базы данных, чтобы быстро выявить проблемные области.</li>
-<li><strong>Метрики хоста</strong>: доступ к данным хостов, на которых работает OneAgent, для более глубокого анализа зависимостей ресурсов.</li>
+<li><strong>Database health</strong>: Visualize healthy and unhealthy database instances to identify problem areas quickly.</li>
+<li><strong>Host metrics</strong>: Access data from hosts running OneAgent for deeper analysis of resource dependencies.</li>
 </ul>
-<h4 id="_9">Исследование экземпляров базы данных<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<p>Откройте вкладку <strong>Проводник</strong>, чтобы просмотреть список всех отслеживаемых экземпляров.Эти экземпляры показаны в таблице <strong>Экземпляры базы данных</strong>.</p>
+<h4 id="explore-database-instances">Explore database instances<a class="headerlink" href="#explore-database-instances" title="Permanent link">&para;</a></h4>
+<p>Select the <strong>Explorer</strong> tab to view a list of all your monitored instances. The <strong>Database instances</strong> table displays these instances.</p>
 <ul>
-<li><strong>Здоровье</strong>: унифицированные статусы и проблемы, обнаруженные Davis, помогают быстро выявлять критические проблемы.</li>
-<li><strong>Использование</strong>. Такие показатели, как загрузка ЦП, потребление памяти, пользовательские вызовы и активные сеансы, дают представление об эффективности ресурсов.</li>
-<li><strong>Сведения о хосте</strong>: просмотрите показатели хоста или откройте представление <strong>Инфраструктура и операции</strong> для комплексного анализа.</li>
+<li><strong>Health</strong>: Unified statuses and Davis-detected problems help you quickly identify critical issues.</li>
+<li><strong>Utilization</strong>: Metrics such as CPU usage, memory consumption, user calls, and active sessions provide insights into resource efficiency.</li>
+<li><strong>Host details</strong>: Drill down into host metrics or access the <strong>Infrastructure and Operations</strong> view for a comprehensive analysis.</li>
 </ul>
-<h5 id="_10">Панель сведений об объекте<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
-<p>Для просмотра одного экземпляра выполните одно из следующих действий:</p>
+<h5 id="entity-details-panel">Entity details panel<a class="headerlink" href="#entity-details-panel" title="Permanent link">&para;</a></h5>
+<p>For an overview of a single instance, do one of the following:</p>
 <ul>
-<li>Перейдите на вкладку <strong>Проводник</strong> и выберите имя экземпляра в таблице <strong>Экземпляры базы данных</strong>.</li>
-<li>В крайнем правом столбце выберите значок (<strong>Производительность оператора</strong>).</li>
+<li>Go to the <strong>Explorer</strong> tab and select the instance name in the <strong>Database instances</strong> table.</li>
+<li>In the rightmost column, select the  (<strong>Statement performance</strong>) icon.</li>
 </ul>
-<p>Отсюда вы можете получить доступ к панели <strong>Сведения об объекте</strong> и проанализировать все показатели, собранные расширением.</p>
-<h4 id="_11">Анализ производительности операторов<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p>Анализируйте ресурсоемкие запросы для оптимизации производительности:</p>
+<p>From here, you can access the <strong>Entity details</strong> panel and analyze all the metrics collected by the extension.</p>
+<h4 id="statement-performance-analysis">Statement performance analysis<a class="headerlink" href="#statement-performance-analysis" title="Permanent link">&para;</a></h4>
+<p>Analyze resource-intensive queries to optimize performance:</p>
 <ul>
-<li>Фильтрация запросов по времени, процессору, диску или показателям ожидания.</li>
-<li>Доступ к планам выполнения, чтобы понять взаимодействие запросов и определить возможности оптимизации.</li>
+<li>Filter queries by time, CPU, disk, or wait metrics.</li>
+<li>Access execution plans to understand query interactions and identify optimization opportunities.</li>
 </ul>
-<h5 id="_12">Производительность оператора<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h5>
-<p>Если расширение предоставляет соответствующую информацию, вы можете отобразить <strong>Анализ производительности операторов</strong>, чтобы отслеживать производительность операторов, которые потребляют больше всего ресурсов.</p>
-<p>Чтобы сфокусировать свой анализ:</p>
+<h5 id="statement-performance">Statement performance<a class="headerlink" href="#statement-performance" title="Permanent link">&para;</a></h5>
+<p>If the extension provides related information, you can display <strong>Statement performance analysis</strong> to track the performance of statements that consume the most resources.</p>
+<p>To focus your analysis:</p>
 <ul>
-<li>Установите <strong>Операторы фильтра</strong> в строку поиска.</li>
-<li>Установите <strong>Контекстный анализ</strong> в контексте предопределенных показателей (<strong>Время</strong>, <strong>ЦП</strong>, <strong>Диск</strong> или <strong>Ожидание</strong>) или выберите значок настроек столбца, чтобы настроить столбцы и адаптировать контекст к своим потребностям.</li>
-<li>Выберите <strong>План выполнения запроса</strong>, чтобы понять, как база данных выполняет оператор оптимизации.</li>
+<li>Set the <strong>Filter statements</strong> to a search string.</li>
+<li>Set <strong>Contextual analysis</strong> to the context of predefined metrics (<strong>Time</strong>, <strong>CPU</strong>, <strong>Disk</strong>, or <strong>Waits</strong>), or select the  column settings icon to customize columns and adapt the context to your needs.</li>
+<li>Select the <strong>Request execution plan</strong> to understand how the database executes the statement for optimization.</li>
 </ul>
-<h3 id="_13">Расширенные функции<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>Приложение помогает вам активно устранять потенциальные проблемы до того, как они повлияют на работу, сократить время простоев и повысить надежность.</p>
+<h3 id="advanced-features">Advanced features<a class="headerlink" href="#advanced-features" title="Permanent link">&para;</a></h3>
+<p>The app helps you proactively address potential issues before they affect operations, reduce downtime, and improve reliability.</p>
 <ul>
-<li>Обнаружение и устранение аномалий с использованием анализа на основе искусственного интеллекта.</li>
-<li>Выявить коренные причины снижения производительности или сбоев.</li>
-<li>Получите практические рекомендации по оптимизации запросов и конфигурации.</li>
+<li>Detect and resolve anomalies that use AI-powered analysis.</li>
+<li>Pinpoint root causes of performance degradation or failures.</li>
+<li>Receive actionable recommendations for query and configuration optimizations.</li>
 </ul>
-<h3 id="_14">Преимущества<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p><img alt="Базы данных" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Базы данных</strong> помогают поддерживать надежные, эффективные и оптимизированные операции с базами данных.Приложение активно решает проблемы и предоставляет полезную информацию, позволяя вам сосредоточиться на стратегических приоритетах.</p>
+<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
+<p><img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> helps you maintain reliable, efficient, and optimized database operations. The app addresses issues proactively and provides actionable insights, allowing you to focus on strategic priorities.</p>
 <ul>
-<li><strong>Сведите к минимуму время простоя.</strong> Выявляйте и устраняйте проблемы до того, как они повлияют на работу.</li>
-<li><strong>Повышение производительности.</strong> Оптимизируйте запросы, схемы и конфигурации для повышения эффективности.</li>
-<li><strong>Гарантируйте надежность.</strong> Поддерживайте стабильную работу базы данных в различных средах.</li>
-<li><strong>Повышение производительности.</strong> Автоматизируйте задачи наблюдения и сократите необходимость устранения неполадок вручную.</li>
+<li><strong>Minimize downtime:</strong> Detect and resolve issues before they impact operations.</li>
+<li><strong>Improve performance:</strong> Optimize queries, schemas, and configurations for better efficiency.</li>
+<li><strong>Ensure reliability:</strong> Support stable database operations across diverse environments.</li>
+<li><strong>Enhance productivity:</strong> Automate observability tasks and reduce manual troubleshooting.</li>
 </ul>
-<h2 id="_15">Концепции<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
-<h3 id="_16">Оценка здоровья<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<p>Предопределенная ненастраиваемая метрика оценивает доступность, производительность, конфигурацию и использование ресурсов.</p>
-<h4 id="_17">Оповещения о состоянии здоровья и предупреждающие сигналы<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
-<p>Оповещения о состоянии здоровья и предупреждающие сигналы помогают вам контролировать вашу инфраструктуру, предоставляя четкую и полезную информацию.Эти функции уменьшают шум, вызванный проблемами инфраструктуры, и улучшают возможности оповещения, поэтому вы можете сосредоточиться на самом важном.Это достигается за счет лучшей категоризации обнаруженных неисправностей.</p>
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
+<h3 id="health-score">Health score<a class="headerlink" href="#health-score" title="Permanent link">&para;</a></h3>
+<p>A predefined, non-configurable metric evaluates availability, performance, configuration, and resource usage.</p>
+<h4 id="health-alerts-and-warning-signals">Health alerts and warning signals<a class="headerlink" href="#health-alerts-and-warning-signals" title="Permanent link">&para;</a></h4>
+<p>Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.</p>
 <ul>
-<li>В случае критических событий выдается предупреждение о работоспособности, которое запускает расследование <a href="/docs/dynatrace-intelligence/davis-problems-app" title="Use the Problems app to quickly get to the root cause of incidents in your environment.">Проблемы с Dynatrace</a>.</li>
-<li>В некритических ситуациях предупреждающий сигнал информирует вас о потенциальной проблеме.</li>
+<li>For critical events, a Health alert is raised, triggering a <a href="/docs/dynatrace-intelligence/davis-problems-app" title="Use the Problems app to quickly get to the root cause of incidents in your environment.">Dynatrace Problems</a> investigation.</li>
+<li>For non-critical situations, a Warning signal informs you of a potential challenge.</li>
 </ul>
-<p>Вы можете настроить готовые оповещения о состоянии здоровья и предупреждающие сигналы на вкладке <strong>Шаблоны оповещений</strong>.</p>
-<p>На вкладке <strong>Шаблоны оповещений</strong> мы предоставляем предварительно определенные шаблоны оповещений для наиболее популярных поставщиков баз данных.Легко создайте новое оповещение, выбрав шаблон и нажав <strong>Новое оповещение</strong>.Затем либо настройте оповещение в мастере <strong>Обнаружения аномалий</strong>, либо создайте оповещение за один шаг.</p>
-<p>Все специальные оповещения, более подробную информацию о возможностях и ограничениях можно найти в <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Обнаружение аномалий</a>.</p>
-<h3 id="_18">Аналитика<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<p>Аналитика выявляет закономерности, аномалии и тенденции на основе встроенного опыта в предметной области.Они выходят за рамки необработанных показателей и позволяют выявить значимые результаты, такие как снижение производительности, нехватка ресурсов и нарушения передовых практик.Эта информация поможет вам сосредоточиться на самом важном и быстро предпринять обоснованные корректирующие действия.</p>
-<h3 id="_19">Гибкость развертывания<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
-<p><img alt="Базы данных" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Базы данных</strong> поддерживают различные модели развертывания:</p>
+<p>You can set up the ready-made health alerts and warning signals through the <strong>Alert templates</strong> tab.</p>
+<p>In the <strong>Alert templates</strong> tab, we provide pre-defined alert templates for the most popular DB vendors. Easily create a new alert by selecting a template and <strong>New Alert</strong>. Next, either customize the alert in the <strong>Anomaly Detection</strong> wizard or create the alert with one step.</p>
+<p>Find all the custom alerts, more details of capabilities, and limits in <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Anomaly Detection</a>.</p>
+<h3 id="insights">Insights<a class="headerlink" href="#insights" title="Permanent link">&para;</a></h3>
+<p>Insights highlight patterns, anomalies, and trends based on built-in domain expertise. They go beyond raw metrics to surface meaningful findings such as performance degradation, resource bottlenecks, and violations of best practices. These insights help you focus on what matters most and take informed, corrective actions quickly.</p>
+<h3 id="deployment-flexibility">Deployment flexibility<a class="headerlink" href="#deployment-flexibility" title="Permanent link">&para;</a></h3>
+<p><img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> supports diverse deployment models:</p>
 <ul>
-<li><strong>Локально</strong>: отслеживайте традиционные настройки базы данных.</li>
-<li><strong>Облако</strong>: получите доступ к базам данных, размещенным в облаке (например, AWS RDS).</li>
-<li><strong>Гибрид</strong>: обеспечьте постоянную наблюдаемость в смешанных средах.</li>
+<li><strong>On-premises</strong>: Monitor traditional database setups.</li>
+<li><strong>Cloud</strong>: Gain visibility into cloud-hosted databases (for example, AWS RDS).</li>
+<li><strong>Hybrid</strong>: Ensure consistent observability across mixed environments.</li>
 </ul>
-<h2 id="_20">Варианты использования<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
-<h3 id="_21">Понимание состояния базы данных<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
-<p><img alt="Базы данных" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Базы данных</strong> предоставляют обзор состояния вашей базы данных в реальном времени.Приложение постоянно оценивает ключевые показатели, чтобы получить оценку работоспособности, отражающую текущее состояние среды вашей базы данных.Эта оценка состояния здоровья поможет вам быстро определить области, которые могут потребовать внимания.</p>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<h3 id="understand-database-health">Understand database health<a class="headerlink" href="#understand-database-health" title="Permanent link">&para;</a></h3>
+<p><img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> provides a real-time overview of your database's health. The app continuously evaluates key metrics to provide a health score that reflects the current state of your database environment. This health score helps you quickly identify areas that might require attention.</p>
 <ul>
-<li>Отслеживает показатели производительности, такие как время выполнения запроса, использование ресурсов и проблемы с подключением.</li>
-<li>Выделяет аномалии и потенциальные риски, влияющие на надежность базы данных.</li>
+<li>Tracks performance indicators such as query execution times, resource utilization, and connection issues.</li>
+<li>Highlights anomalies and potential risks affecting database reliability.</li>
 </ul>
-<h3 id="_22">Анализируйте и оптимизируйте производительность запросов<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
-<p>Запросы часто являются основной причиной неэффективности базы данных.Приложение предоставляет инструменты для анализа выполнения запросов и определения областей для улучшения.Это гарантирует, что ваши базы данных смогут эффективно обрабатывать рабочие нагрузки.</p>
+<h3 id="analyze-and-optimize-query-performance">Analyze and optimize query performance<a class="headerlink" href="#analyze-and-optimize-query-performance" title="Permanent link">&para;</a></h3>
+<p>Queries are often the root cause of database inefficiencies. The app provides tools to analyze query execution and identify areas for improvement. This ensures that your databases can handle workloads effectively.</p>
 <ul>
-<li>Обнаруживает медленные или неэффективные запросы, влияющие на производительность базы данных.</li>
-<li>Предоставляет рекомендации по оптимизации запросов, например переписывание запросов или добавление индексов для повышения производительности.</li>
-<li>Предлагает подробные планы выполнения, которые помогут вам понять, как запросы взаимодействуют с вашей базой данных.</li>
+<li>Detects slow or inefficient queries that impact database performance.</li>
+<li>Provides recommendations for query optimizations, such as rewriting queries or adding indexes to improve performance.</li>
+<li>Offers detailed execution plans to help you understand how queries interact with your database.</li>
 </ul>
-<h3 id="_23">Обнаружение и устранение проблем с базой данных<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
-<p><img alt="Базы данных" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Базы данных</strong> помогают решать проблемы до того, как они повлияют на работу вашей базы данных.Приложение использует возможности Dynatrace AI для выявления проблем, анализа их коренных причин и предложения практических решений.</p>
+<h3 id="detect-and-resolve-database-issues">Detect and resolve database issues<a class="headerlink" href="#detect-and-resolve-database-issues" title="Permanent link">&para;</a></h3>
+<p><img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> helps you address problems before they affect your database operations. The app uses Dynatrace AI capabilities to identify issues, analyze their root causes, and suggest actionable solutions.</p>
 <ul>
-<li>Обнаруживает аномалии в поведении базы данных с помощью анализа на базе искусственного интеллекта.</li>
-<li>Выявляет коренные причины снижения производительности или сбоев.</li>
-<li>Рекомендует шаги по исправлению ситуации, такие как изменения конфигурации или оптимизация запросов, на основе практической информации.</li>
+<li>Detects anomalies in database behavior using AI-powered analysis.</li>
+<li>Pinpoints root causes of performance degradation or failures.</li>
+<li>Recommends remediation steps, such as configuration changes or query optimizations, based on actionable insights.</li>
 </ul>
-<h3 id="dynatrace">Интеграция с Dynatrace для сквозного наблюдения<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h3>
-<p><img alt="Базы данных" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Базы данных</strong> являются частью экосистемы Dynatrace и обеспечивают комплексное наблюдение за всем вашим технологическим стеком.Приложение интегрируется с другими инструментами Dynatrace, обеспечивая единое представление вашей базы данных и ее зависимостей.</p>
+<h3 id="integrate-with-dynatrace-for-end-to-end-observability">Integrate with Dynatrace for end-to-end observability<a class="headerlink" href="#integrate-with-dynatrace-for-end-to-end-observability" title="Permanent link">&para;</a></h3>
+<p><img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> is part of the Dynatrace ecosystem and provides comprehensive observability across your entire technology stack. The app integrates with other Dynatrace tools to provide a unified view of your database and its dependencies.</p>
 <ul>
-<li><strong>Грааль</strong>: обрабатывает большие объемы данных для масштабируемой аналитики.</li>
-<li><strong>Smartscape</strong>: отображает зависимости в реальном времени для контекстно-зависимого анализа.</li>
-<li><strong>Davis AI</strong>: обнаруживает аномалии и предоставляет интеллектуальные рекомендации.</li>
+<li><strong>Grail</strong>: Processes large volumes of data for scalable analytics.</li>
+<li><strong>Smartscape</strong>: Maps real-time dependencies for context-aware analysis.</li>
+<li><strong>Davis AI</strong>: Detects anomalies and provides intelligent recommendations.</li>
 </ul>
-<p>[<img alt="Центр" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
-<h3 id="dynatrace-hub">Исследуйте в Dynatrace Hub<a class="headerlink" href="#dynatrace-hub" title="Permanent link">&para;</a></h3>
-<p>Получите обзор всех ваших баз данных, отслеживаемых расширениями.](https://www.dynatrace.com/hub/detail/database-overview/?utm_source=doc&amp;utm_medium=link&amp;utm_campaign=cross)</p>
-<h2 id="_24">Обзор документации по базам данных<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
-<p>[01Начало работы с мониторингом базы данных</p>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h3>
+<p>Get an overview of all your extension-monitored databases.](https://www.dynatrace.com/hub/detail/database-overview/?utm_source=doc&amp;utm_medium=link&amp;utm_campaign=cross)</p>
+<h2 id="databases-documentation-overview">Databases documentation overview<a class="headerlink" href="#databases-documentation-overview" title="Permanent link">&para;</a></h2>
+<p>[01Get started with database monitoring</p>
 <ul>
 <li>
-<p>Практическое руководство](/docs/observe/infrastructure-observability/databases/database-app/get-started)[02Данные, собранные с помощью мониторинга базы данных Dynatrace</p>
+<p>How-to guide](/docs/observe/infrastructure-observability/databases/database-app/get-started)[02Data collected with Dynatrace database monitoring</p>
 </li>
 <li>
-<p>Ссылка](/docs/observe/infrastructure-observability/databases/database-app/data-collected)</p>
+<p>Reference](/docs/observe/infrastructure-observability/databases/database-app/data-collected)</p>
 </li>
 </ul>
 

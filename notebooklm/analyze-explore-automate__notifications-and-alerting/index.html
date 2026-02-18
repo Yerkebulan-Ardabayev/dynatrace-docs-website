@@ -25466,10 +25466,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsmd" class="md-nav__link">
+  <a href="#analyze-explore-automatenotifications-and-alertingalerting-profilesmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        analyze-explore-automate/notifications-and-alerting/problem-notifications.md
+        analyze-explore-automate/notifications-and-alerting/alerting-profiles.md
       
     </span>
   </a>
@@ -25496,34 +25496,901 @@
 <h1 id="dynatrace-analyze-explore-automatenotifications-and-alerting">Документация Dynatrace: analyze-explore-automate/notifications-and-alerting<a class="headerlink" href="#dynatrace-analyze-explore-automatenotifications-and-alerting" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
 Сгенерировано: 2026-02-18
-Файлов в разделе: 1</p>
+Файлов в разделе: 13</p>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingalerting-profilesmd">analyze-explore-automate/notifications-and-alerting/alerting-profiles.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingalerting-profilesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Problem alerting profiles
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles
+scraped: 2026-02-18T21:22:31.986093</p>
+<hr />
+<h1 id="problem-alerting-profiles">Problem alerting profiles<a class="headerlink" href="#problem-alerting-profiles" title="Permanent link">&para;</a></h1>
+<h1 id="problem-alerting-profiles_1">Problem alerting profiles<a class="headerlink" href="#problem-alerting-profiles_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>4-min read</li>
+<li>Updated on Aug 26, 2025</li>
+</ul>
+<p>Problem alerting profiles control the delivery of problem notifications across your organization's alerting channels based on consideration of predefined filters that are based on problem severity, problem duration, custom events, and tags. Problem alerting profiles allow you to control exactly which conditions result in problem notifications and which don't. This includes all problem-push notifications that are sent via the <a href="/docs/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app" title="Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.">Dynatrace mobile app</a> and displayed in the Dynatrace web UI. Problem alerting profiles can also be used to set up filtered problem-notification integrations with third-party messaging systems like <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration" title="Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems.">Slack</a>, <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration" title="Configure Opsgenie integration with Dynatrace.">Opsgenie</a>, and <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration" title="Learn how to send problem notifications from Dynatrace to PagerDuty.">PagerDuty</a>.</p>
+<p>Each of your monitoring environments has a default alerting profile that defines the severity level that must be met before an alert is sent out for a detected problem.</p>
+<p>Your environment administrator can create new problem alerting profiles that provide fine-grained control over the routing of problem alerts for individual teams or for third-party problem notification integrations, such as Slack, HipChat, and others.</p>
+<p>To view your environment's problem alerting profiles, go to <strong>Settings</strong> &gt; <strong>Alerting</strong> &gt; <strong>Problem alerting profiles</strong>. The <code>Default</code> profile is always presented in the list. You can modify it but not delete it.</p>
+<h2 id="alerting-profile-scope">Alerting profile scope<a class="headerlink" href="#alerting-profile-scope" title="Permanent link">&para;</a></h2>
+<p>Alerting profiles provide a powerful filtering mechanism for problem notifications. By combining filter criteria, you can create custom profiles that, for example, delay notification of problems in development environments while immediately alerting on problems detected in production environments. The scope of an alerting profile is defined by</p>
+<ul>
+<li>The management zone.</li>
+<li>Severity rules.</li>
+<li>Event filters.</li>
+</ul>
+<p>These conditions are combined by the <strong>AND</strong> logic. An event must fulfill <strong>all</strong> conditions to trigger a notification based on the profile.</p>
+<p>Tag matching</p>
+<p>Tag matching in alerting profiles is exact. If you provide only a key, the tag will match entities with a given key that has no value. For example, if you specify the key <code>Apps</code> without providing any value, it will match an entity with the key <code>Apps</code> and an empty value. However, it will not match the entity <code>AppsRedis</code> that has the same key, but has a non-empty value.</p>
+<p>To match key-value tags, you need to provide both the key and the value.</p>
+<h3 id="management-zone">Management zone<a class="headerlink" href="#management-zone" title="Permanent link">&para;</a></h3>
+<p>The management zone filter reduces the amount of data the alerting profile evaluates. Instead of checking all the data your environment generates, you can focus on just the parts coming from the specified management zone.</p>
+<p>By default a new alerting profile uses <code>All</code> management zones, which means that no filter is applied. In most cases you should apply the management zone filter to reduce the profile scope to the scope of your teams' responsibility. Keep in mind that management zones can overlap. If a problem is detected on a service that is defined within multiple management zones, multiple filters will be applied.</p>
+<h3 id="severity-rules">Severity rules<a class="headerlink" href="#severity-rules" title="Permanent link">&para;</a></h3>
+<p>Severity rules filter events based on their severity level. For each alerting profile, you can specify up to 100 severity rules. These rules are combined by the <strong>OR</strong> logic. An event fulfilling <strong>any</strong> of the rules triggers a notification based on the profile.</p>
+<p>You can use the following criteria:</p>
+<ul>
+<li><a href="/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories" title="Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.">Severity level</a>.</li>
+<li>How long the problem is open before an alert is sent outâthis enables you to avoid alerts for low-severity problems that don't affect customer experience and therefore don't require immediate attention.</li>
+<li>Optional Monitoring entities that have any or all of the specified tags</li>
+</ul>
+<p>Rule criteria are combined by the <strong>AND</strong> logic. <strong>All</strong> of them must be fulfilled for the rule to be invoked.</p>
+<h3 id="event-filters">Event filters<a class="headerlink" href="#event-filters" title="Permanent link">&para;</a></h3>
+<p>Event rules filter events based on their properties. For each alerting profile, you can specify up to 20 event rules. Particularly for auto-remediation use cases, itâs helpful to trigger specific actions based on detailed information thatâs captured during abnormal situations, for example, triggering alerts in cases where problems are related to process crashes.</p>
+<p>You can use the following criteria:</p>
+<ul>
+<li>Predefined events Event type</li>
+<li>Custom events Title, description, and properties of the event</li>
+</ul>
+<p>Each of criteria can be inverted by using the <strong>negate</strong> option. For example, it turns the <strong>begins with</strong> criterion into <strong>does not begin with</strong>.</p>
+<p>The rules are combined by the following logic:</p>
+<ol>
+<li>All rules that contain negated criteria are grouped by the <strong>AND</strong> logic.</li>
+<li>All other rules are grouped by the <strong>OR</strong> logic.</li>
+<li>These two groups (negated and non-negated) are grouped by the <strong>AND</strong> logic.</li>
+</ol>
+<p><img alt="Event filter grouping" src="https://dt-cdn.net/images/alerting-profile-event-filter-2-524-60d54806d2.png" /></p>
+<h2 id="create-an-alerting-profile">Create an alerting profile<a class="headerlink" href="#create-an-alerting-profile" title="Permanent link">&para;</a></h2>
+<p>To create an alerting profile</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Alerting</strong> &gt; <strong>Problem alerting profiles</strong> and select <strong>Add alerting profile</strong>.</li>
+<li>Type a name for the new profile in the <strong>Create new alerting profile</strong> field and select <strong>Create</strong>.</li>
+<li>Define the <a href="/docs/manage/identity-access-management/permission-management/management-zones" title="Learn about management zones concepts, how to define management zones, and how to make the most of them.">management zone</a> filter.</li>
+<li>Define the <a href="/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories" title="Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.">severity-level</a> rules for the profile.</li>
+<li>
+<p>Define the event filter. You can base it one one of the following:</p>
+</li>
+<li>
+<p><code>Predefined</code>: a specific built-in event type</p>
+</li>
+<li><code>Custom</code>: a title, description, and properties of an event</li>
+<li>Review the summary of criteria for your new alerting profile and adapt them if needed.</li>
+<li>Select <strong>Done</strong> in the upper-right corner to save the new alerting profile.</li>
+</ol>
+<h2 id="alerting-profiles-api">Alerting profiles API<a class="headerlink" href="#alerting-profiles-api" title="Permanent link">&para;</a></h2>
+<p>In addition to the Dynatrace web UI, you can manage your problem alerting profiles via the <a href="/docs/dynatrace-api/configuration-api/alerting-profiles-api" title="Learn what the Dynatrace alerting profiles API offers.">Settings API</a>. Look for the <strong>Problem alerting profiles</strong> (<code>builtin:alerting.profile</code>) schema.</p>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationsemail-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsemail-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications via email
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration
+scraped: 2026-02-18T21:16:19.360247</p>
+<hr />
+<h1 id="send-dynatrace-notifications-via-email">Send Dynatrace notifications via email<a class="headerlink" href="#send-dynatrace-notifications-via-email" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-via-email_1">Send Dynatrace notifications via email<a class="headerlink" href="#send-dynatrace-notifications-via-email_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Updated on Apr 25, 2024</li>
+</ul>
+<p>For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see <a href="/docs/analyze-explore-automate/workflows/actions" title="Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.">Workflows Connectors</a>.</p>
+<p>Dynatrace offers several out-of-the-box integrations that automatically push Dynatrace problem notifications to your third-party messaging or incident-management systems. If, however, your third-party system isn't supported with an out-of-the-box integration, you can easily set up email integration. Using this approach, an email is sent out whenever Dynatrace detects a problem in your environment that affects real users.</p>
+<p>Short-lived problems</p>
+<p>Short-lived problems do not generate open problem notifications. For such problems, Dynatrace sends out only resolved problem notifications to inform you that such a problem occurred.</p>
+<p>You can customize the subject line of problem-notification emails by defining a text template that includes placeholders that are dynamically populated with relevant problem details, such as problem ID, problem impact, or problem state. By default, the body of email notifications contain an HTML-formatted description of the detected problem and a direct link to the corresponding <a href="/docs/dynatrace-intelligence/root-cause-analysis/concepts" title="Get acquainted with root cause analysis concepts.">problem details</a> page in Dynatrace.</p>
+<p>To set up email-based problem notifications</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>Select <strong>Email</strong> from the available notification types.</li>
+<li>
+<p>Configure the notification:</p>
+</li>
+<li>
+<p>Enter a <strong>Display name</strong> for this integration. This is the freeform name of this integration that will be displayed in Dynatrace on <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong> when you finish this configuration.</p>
+</li>
+<li>In the <strong>To</strong> section, select <strong>Add recipient</strong> to add the email address that should receive notifications. To add more recipients, select <strong>Add recipient</strong> for each additional <strong>To</strong> address.</li>
+<li>In the <strong>CC</strong> field, select <strong>Add recipient</strong> to add additional email addresses that should receive notifications.</li>
+<li>In the <strong>BCC</strong> field, select <strong>Add recipient</strong> to add additional email addresses that should receive notifications but should not be displayed in the email header.</li>
+<li>In the <strong>Subject</strong> field, type text and/or insert placeholders that will be automatically populated with relevant problem details, such as problem ID, state, or impact.</li>
+<li>
+<p>In the <strong>Body</strong> field, configure the problem alert message that is to appear in the body of problem-notification emails.</p>
+<p>Placeholders</p>
+<p>The <strong>Available placeholders</strong> section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values in the message.
+   * Select an <a href="/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles" title="Learn how to create and manage alerting profiles.">alerting profile</a> to filter the problem feed.
+5. Select <strong>Send test notification</strong> to make sure your email integration is working.
+6. <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationsjira-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsjira-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications to Jira
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration
+scraped: 2026-02-18T21:16:26.861853</p>
+<hr />
+<h1 id="send-dynatrace-notifications-to-jira">Send Dynatrace notifications to Jira<a class="headerlink" href="#send-dynatrace-notifications-to-jira" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-to-jira_1">Send Dynatrace notifications to Jira<a class="headerlink" href="#send-dynatrace-notifications-to-jira_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>3-min read</li>
+<li>Updated on Apr 25, 2024</li>
+</ul>
+<p>For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see <a href="/docs/analyze-explore-automate/workflows/actions" title="Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.">Workflows Connectors</a>.</p>
+<p>With Dynatrace and Jira integration, issue tickets are generated automatically for all new problems that are auto-detected in your Dynatrace environments.</p>
+<p>Atlassian Jira is the most popular issue tracking system available today. A high percentage of development and operations departments worldwide use Jira for issue management. The ability of Jira to manage issues, trigger workflows, and track code and production changes is crucial for modern DevOps departments.</p>
+<p>Easy, direct integration of Dynatrace and Atlassian Jira saves you a lot of manual work and completely automates the reporting of Dynatrace-detected problems in your monitored environment into your organization's Jira project.</p>
+<h2 id="configure-jira-integration">Configure Jira integration<a class="headerlink" href="#configure-jira-integration" title="Permanent link">&para;</a></h2>
+<p>This integration supports Jira REST API v2. Jira REST API v3 isn't supported.</p>
+<p>To configure Jira integration with Dynatrace</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>Select <strong>Jira</strong> from the available notification types.</li>
+<li>
+<p>Configure the notification:</p>
+</li>
+<li>
+<p>Enter a <strong>Display name</strong> for this integration. This is the freeform name of this integration that will be displayed in Dynatrace on <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong> when you finish this configuration.</p>
+</li>
+<li>Enter the <strong>Jira endpoint URI</strong>.</li>
+<li>
+<p>Enter the corresponding <strong>Username</strong> and <strong>API token</strong> for this Jira project.</p>
+<p>Personal Access Tokens</p>
+<p><strong>Personal Access Tokens</strong> aren't supported for the classic Jira integration. You can only use the basic authentication method.
+   * Enter the Jira <strong>Project key</strong> (not the project name) of the Jira project where new issues should be created and tracked.</p>
+<ul>
+<li>To find all available project keys: in Jira, go to <strong>Projects</strong> &gt; <strong>View all projects</strong>.</li>
+<li>
+<p>Enter the Jira <strong>Issue type</strong> that should be used for issues detected by Dynatrace.</p>
+</li>
+<li>
+<p>You must specify an issue type that's already been set up in Jira or your integration will fail.</p>
+</li>
+<li>To find all available issue types or create a new issue type: in Jira, go to <strong>Options</strong> &gt; <strong>Issues</strong>.</li>
+<li>Enter a brief <strong>Summary</strong> of the issue and a more detailed <strong>Issue description</strong>.<br />
+ Besides plain text, your summary and issue description can both include placeholders.</li>
+</ul>
+<p>Placeholders</p>
+<p>The <strong>Available placeholders</strong> section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with problem-related information.</p>
+</li>
+</ol>
+<p>You can see the example of the working JIRA configuration below:</p>
+<p><img alt="A configuration example of Jira integration for notifications and alerting" src="https://dt-cdn.net/images/example-of-jira-integration-1686-50bc46b6d7.png" />
+5. Select <strong>Send test notification</strong> to make sure your Jira integration is working.
+6. <strong>Save changes</strong>.</p>
+<h2 id="after-integration">After integration<a class="headerlink" href="#after-integration" title="Permanent link">&para;</a></h2>
+<p>With your Jira integration complete, Jira tickets are now automatically created within your Jira project for all Dynatrace auto-detected problems.</p>
+<p>Example ticket</p>
+<p><img alt="Jiraintegration 4" src="https://dt-cdn.net/images/jiraintegration-4-1646-ae8a48e8c0.png" /></p>
+<p>Dynatrace automatically updates the severity levels of issues in Jira based on their impact to your applications and customer experience.</p>
+<p>Dynatrace does not automatically close resolved issues. You need to close Jira issues manually.</p>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationsmicrosoft-teams-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsmicrosoft-teams-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications to Microsoft Teams
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration
+scraped: 2026-02-18T21:16:25.627333</p>
+<hr />
+<h1 id="send-dynatrace-notifications-to-microsoft-teams">Send Dynatrace notifications to Microsoft Teams<a class="headerlink" href="#send-dynatrace-notifications-to-microsoft-teams" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-to-microsoft-teams_1">Send Dynatrace notifications to Microsoft Teams<a class="headerlink" href="#send-dynatrace-notifications-to-microsoft-teams_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Updated on Jan 22, 2026</li>
+</ul>
+<p>For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see <a href="/docs/analyze-explore-automate/workflows/actions" title="Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.">Workflows Connectors</a>.</p>
+<p>Deprecation</p>
+<p>Due to the <a href="https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/">retirement of Office 365 connectors within Microsoft Teamsï»¿</a>, this integration is deprecated, and it won't be possible to create new connectors after August 15th, 2024. Existing connectors will continue to work until the end of March 2026.</p>
+<p>Follow the Microsoft transition instructions to switch from Office 365 connectors to Microsoft Workflows.</p>
+<p>Dynatrace notifications can be sent to your Microsoft Teams channels so that your teams are always aware of any problems in your applications, services, and infrastructure. Integrating a Microsoft Teams channel with Dynatrace gives your teams the ability to discuss incidents, evaluate solutions, and link to similar problems while remaining up to date regarding problem status and severity.</p>
+<p>To set up integration of Microsoft Teams and Dynatrace</p>
+<ol>
+<li>In Microsoft Teams, create an Incoming Webhook, as described in the <a href="https://dt-url.net/w3237oc">Microsoft official documentationï»¿</a>.</li>
+<li>In Dynatrace, go to <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>Select <strong>Custom integration</strong> from the list of available notification types.</li>
+<li>
+<p>Configure the notification:</p>
+</li>
+<li>
+<p>Enter a <strong>Display name</strong> for this integration. This is the freeform name of this integration that will be displayed in Dynatrace on <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong> when you finish this configuration.</p>
+</li>
+<li>Paste the Microsoft Teams webhook URL (Microsoft Teams Connector URL) into the <strong>Webhook URL</strong> field.</li>
+<li>Optional Turn on <strong>Accept any SSL certificate</strong>. We recommend that you use a valid SSL certificate (even for internal installations), but you can ignore the certificate for convenience.</li>
+<li>
+<p>Enter the Microsoft Teams-specific JSON payload in the format:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>&quot;title&quot;:&quot;{ProblemTitle}&quot;,
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>&quot;text&quot;:&quot;{ProblemDetailsHTML}&quot;,
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;themeColor&quot;:&quot;EA4300&quot;
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>}
+</code></pre></div>
+<p>The connector payload format can be completely customized. To read more about the Microsoft Teams Connector format, please refer to this <a href="https://docs.microsoft.com/en-us/outlook/actionable-messages/message-card-reference/">Microsoft Documentation pageï»¿</a>.
+6. Select <strong>Send test notification</strong> to make sure your Teams integration is working.
+7. <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<p>After youâve integrated Dynatrace and Microsoft Teams, youâll receive all Dynatrace-detected problems directly within your Teams channels.</p>
+<p>Example</p>
+<p><img alt="Microsoft Teams screen integrated with Dynatrace" src="https://dt-cdn.net/images/msteams-integrated-1380-16dcf8dd22.png" /></p>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationsopsgenie-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsopsgenie-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications to Opsgenie
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration
+scraped: 2026-02-18T21:16:29.366589</p>
+<hr />
+<h1 id="send-dynatrace-notifications-to-opsgenie">Send Dynatrace notifications to Opsgenie<a class="headerlink" href="#send-dynatrace-notifications-to-opsgenie" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-to-opsgenie_1">Send Dynatrace notifications to Opsgenie<a class="headerlink" href="#send-dynatrace-notifications-to-opsgenie_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Updated on Oct 10, 2022</li>
+</ul>
+<p>Dynatrace offers an out-of-the-box Opsgenie integration that automatically pushes Dynatrace problem notifications to your Opsgenie environment in multiple regions.</p>
+<p>To set up Opsgenie problem-notification integration</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>Select <strong>Opsgenie</strong> from the available notification types.</li>
+<li>
+<p>Configure the notification:</p>
+</li>
+<li>
+<p>Enter a <strong>Display name</strong> for this integration. This is the freeform name of this integration that will be displayed in Dynatrace on <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong> when you finish this configuration.</p>
+</li>
+<li><strong>Opsgenie API key</strong><br />
+     Switch over to your Opsgenie account and set up Dynatrace integration. Insert the generated Opsgenie API key into this field.</li>
+<li><strong>Opsgenie region domain</strong><br />
+     Select any Opsgenie region by starting to type the regionâs endpoint. If this field is left empty, the US region is selected by default.</li>
+<li>
+<p><strong>Message</strong><br />
+     Enter text and problem-related placeholders.</p>
+<p>Placeholders</p>
+<p>The <strong>Available placeholders</strong> section of the configuration page lists placeholders you can use for this integration. Problem notifications automatically fill in the placeholder values and include them in the corresponding Opsgenie incidents. Opsgenie incidents are automatically created when problems are detected and closed when problems are resolved. Incident details contain the detailed problem information as well as a direct link to the problem in Dynatrace.
+5. Assign an <a href="/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles" title="Learn how to create and manage alerting profiles.">Alerting profile</a>.
+6. Select <strong>Send test notification</strong> to make sure your OspGenie integration is working.
+7. <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<h2 id="priority-levels">Priority levels<a class="headerlink" href="#priority-levels" title="Permanent link">&para;</a></h2>
+<p>Dynatrace availability problems are mapped to Opsgenie P1 incidents, error problems are mapped to P2, slowdowns are mapped to P3, and so on. Dynatrace also pushes the tags of all problem-affected components along with each Opsgenie incident.</p>
+<p>The problem URL contains the pure backlink to the Dynatrace environment that pushed the problem incident.</p>
+<p>The following image shows a Dynatrace-detected problem pushed over to Opsgenie. The alert includes:</p>
+<ul>
+<li>tags of all problem-affected entities</li>
+<li>a link back to the problem in Dynatrace</li>
+<li>the problem severity detected by Dynatrace mapped to the corresponding Opsgenie priority value.</li>
+</ul>
+<p><img alt="Opsgenie card" src="https://dt-cdn.net/images/opsgenie-card-1557-319ec81575.png" /></p>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationspagerduty-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationspagerduty-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications to PagerDuty
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration
+scraped: 2026-02-18T21:16:28.123286</p>
+<hr />
+<h1 id="send-dynatrace-notifications-to-pagerduty">Send Dynatrace notifications to PagerDuty<a class="headerlink" href="#send-dynatrace-notifications-to-pagerduty" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-to-pagerduty_1">Send Dynatrace notifications to PagerDuty<a class="headerlink" href="#send-dynatrace-notifications-to-pagerduty_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>3-min read</li>
+<li>Updated on Apr 25, 2024</li>
+</ul>
+<p>For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see <a href="/docs/analyze-explore-automate/workflows/actions" title="Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.">Workflows Connectors</a>.</p>
+<p>Dynatrace offers an <a href="#out-of-the-box-integration">out-of-the-box integration</a> that automatically pushes Dynatrace problem notifications to your PagerDuty environment. This integration provides PagerDuty responders with the link to the Dynatrace problem card.</p>
+<p>Custom webhook</p>
+<p>If you want more custom notification fields, you can set up a <a href="#custom-integration">custom webhook</a> instead of the out-of-the-box integration.</p>
+<h2 id="out-of-the-box-integration">Out-of-the-box integration<a class="headerlink" href="#out-of-the-box-integration" title="Permanent link">&para;</a></h2>
+<p>To set up PagerDuty problem-notification integration</p>
+<ol>
+<li>In <strong>Dynatrace</strong>, go to <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>
+<p>Select <strong>PagerDuty</strong> from the available notification types.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+</li>
+<li>
+<p><strong>Display name</strong> is the freeform name of this integration that will be displayed in Dynatrace on <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong> when you finish this configuration.</p>
+</li>
+<li><strong>Account</strong> is your PagerDuty account name. Informational only. Not used in the API call.</li>
+<li><strong>Service name</strong><br />
+     Enter 'Dynatrace' as the target service name. Informational only. Not used in the API call.</li>
+<li>
+<p><strong>Service key</strong><br />
+     Paste your auto-generated PagerDuty service key here.</p>
+<p>This value is used in the API call and must match the PagerDuty Integration Key created by PagerDuty. A PagerDuty Integration Key is unique and associated with a PagerDuty Service defined in the PagerDuty service directory.
+4. Finalize and save.</p>
+</li>
+</ol>
+<h2 id="webhook-custom-integration">Webhook custom integration<a class="headerlink" href="#webhook-custom-integration" title="Permanent link">&para;</a></h2>
+<p>If you want more custom notification fields, use this procedure to integrate Dynatrace and PagerDuty with a custom webhook.</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Set up notifications</strong> and then select <strong>Custom integration</strong>.</li>
+<li>Configure the integration.
+   Example PagerDuty custom integration settings</li>
+</ol>
+<p><img alt="PagerDuty webhook configuration" src="https://dt-cdn.net/images/pagerduty-webhook-356-b94d1693cf.png" /></p>
+<ul>
+<li><strong>Name</strong><br />
+     Informational only. Not used in the API call.</li>
+<li><strong>Webhook URL</strong><br />
+     Must be <code>https://events.pagerduty.com/v2/enqueue</code>.</li>
+<li><strong>Custom payload</strong><br />
+     Follows the PagerDuty enqueue API payload structure.</li>
+</ul>
+<h3 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h3>
+<ul>
+<li>For general information on configuring a custom integration in Dynatrace, see <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration" title="Learn how to integrate problem-notifications using a custom webhook.">Webhook integration</a>.</li>
+<li>For the PagerDuty documentation on how to integrate PagerDuty with Dynatrace via a custom webhook, see PagerDuty's <a href="https://www.pagerduty.com/docs/guides/dynatrace-integration-guide/">Dynatrace Integration Guideï»¿</a>.</li>
+</ul>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationsservicenow-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsservicenow-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications to ServiceNow
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration
+scraped: 2026-02-18T21:16:30.503996</p>
+<hr />
+<h1 id="send-dynatrace-notifications-to-servicenow">Send Dynatrace notifications to ServiceNow<a class="headerlink" href="#send-dynatrace-notifications-to-servicenow" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-to-servicenow_1">Send Dynatrace notifications to ServiceNow<a class="headerlink" href="#send-dynatrace-notifications-to-servicenow_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>9-min read</li>
+<li>Updated on Apr 15, 2025</li>
+</ul>
+<p>For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see <a href="/docs/analyze-explore-automate/workflows/actions" title="Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.">Workflows Connectors</a>.</p>
+<p>To connect your Dynatrace monitoring environment to your ServiceNow instance, configuration is required both on the ServiceNow instance and in the Dynatrace web UI.</p>
+<p>For ServiceNow, Dynatrace offers:</p>
+<ul>
+<li><a href="#incident-integration">Incident integration</a></li>
+<li><a href="#event-integration">Event management integration</a></li>
+<li><a href="#cmdb-integration">Configuration Management Database (CMDB) integration</a></li>
+</ul>
+<h2 id="incident-integrations">Incident integrations<a class="headerlink" href="#incident-integrations" title="Permanent link">&para;</a></h2>
+<p>There are several integration options for incident management:</p>
+<ul>
+<li>Dynatrace Workflows</li>
+<li>Dynatrace Incident integration app</li>
+</ul>
+<p>Once you configure Dynatrace incident integration, Dynatrace automatically creates an incident within your ServiceNow instance for every auto-discovered problem.</p>
+<h3 id="dynatrace-workflows">Dynatrace Workflows<a class="headerlink" href="#dynatrace-workflows" title="Permanent link">&para;</a></h3>
+<p>Dynatrace Workflows allows you to model incident creation and management processes directly within Dynatrace. For more information about configuration and usage details, see <a href="/docs/analyze-explore-automate/workflows/actions/service-now" title="Automate creation of incidents in ServiceNow based on your monitoring data and events.">ServiceNow</a> workflow documentation.</p>
+<h3 id="dynatrace-incident-integration-app">Dynatrace Incident Integration app<a class="headerlink" href="#dynatrace-incident-integration-app" title="Permanent link">&para;</a></h3>
+<p>Dynatrace Incident Integration is a ServiceNow environment application that accepts and processes Dynatrace problems and allows you to create incidents within ServiceNow.</p>
+<p>If you have installed the ServiceNow Service Graph Connector for Dynatrace, the CIs (Configuration Items) will automatically be associated within the incident.</p>
+<h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h4>
+<ul>
+<li>You have an active ServiceNow ITSM module and license</li>
+<li>Your ServiceNow user has <code>web_service_admin</code> and <code>x_dynat_ruxit.Integration</code> roles</li>
+</ul>
+<h4 id="set-up-a-servicenow-configuration">Set up a ServiceNow configuration<a class="headerlink" href="#set-up-a-servicenow-configuration" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Go to <a href="https://dt-url.net/fg03qnx">Dynatrace Incident Integration page in the ServiceNow Storeï»¿</a> and select <strong>Get</strong> to install Dynatrace Incident Integration in your ServiceNow instance.</li>
+<li>Follow the <strong>Guided Setup</strong> for an initial configuration of the application.</li>
+</ol>
+<p><img alt="Guided setup" src="https://dt-cdn.net/images/2020-11-20-09-31-17-1232-dfc605d001.png" />
+3. After the application is installed, go to the new <strong>Dynatrace Incident Integration</strong> menu on your ServiceNow instance to further configure (<strong>Setup</strong>, <strong>Settings</strong>) and explore (<strong>Problems</strong>, <strong>ServiceNow Incidents</strong>) the application.</p>
+<p><img alt="Main modules" src="https://dt-cdn.net/images/2020-11-20-09-34-57-1853-d333a1780e.png" />
+4. Use the <strong>Problem to Incident Transform Map</strong> module to transform the incoming Dynatrace data in the <strong>Problems</strong> import set table (<code>x_dynat_ruxit_problems</code>) into a ServiceNow <strong>Incident</strong> table.</p>
+<p><img alt="Transform map" src="https://dt-cdn.net/images/2020-11-20-09-37-50-1866-f2d395ffed.png" /></p>
+<h4 id="set-up-a-dynatrace-configuration">Set up a Dynatrace configuration<a class="headerlink" href="#set-up-a-dynatrace-configuration" title="Permanent link">&para;</a></h4>
+<p>To create a ServiceNow problem notification</p>
+<ol>
+<li>In Dynatrace, go to <strong>Settings</strong>.</li>
+<li>Select <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>In <strong>Notification type</strong>, select <strong>ServiceNow</strong>.</li>
+<li>
+<p>Enter the requested information::</p>
+</li>
+<li>
+<p><strong>ServiceNow instance identifier</strong> refers to the "instance identifier" part of your own ServiceNow URL (<code>https://&lt;instance indentifier&gt;.service-now.com</code>) that is used by the ServiceNow API call. This ServiceNow instance identifier is mutually exclusive to the OnPremise URL field, so you can only use one of them.</p>
+</li>
+<li>In the <strong>Description field</strong>, you can customize the text message associated with problem notifications by combining any of the placeholders from <strong>Available placeholders</strong> list in any order according to your needs.</li>
+<li>Turn on <strong>Send incidents into ServiceNow ITSM</strong>.</li>
+<li>Select <strong>Send test notification</strong> to make sure your ServiceNow integration is working.</li>
+<li>Select <strong>Save changes</strong>.</li>
+</ol>
+<h2 id="event-management-integration">Event management integration<a class="headerlink" href="#event-management-integration" title="Permanent link">&para;</a></h2>
+<p>There are several integration options for event management that use Dynatrace problem notifications. You can:</p>
+<ul>
+<li>Send events using Dynatrace custom integration problem notifications</li>
+<li>Send events using Dynatrace ServiceNow problem notifications</li>
+</ul>
+<h3 id="send-events-using-dynatrace-custom-integration-problem-notifications">Send events using Dynatrace custom integration problem notifications<a class="headerlink" href="#send-events-using-dynatrace-custom-integration-problem-notifications" title="Permanent link">&para;</a></h3>
+<p>ServiceNow Event Management provides an inbound event API for third party tools to receive events.</p>
+<p>This configuration uses a custom integration Dynatrace problem notifications. You can configure custom integration notifications with the ServiceNow inbound event API URL and the JSON payload it expects.</p>
+<p>When configured, the Dynatrace problem notification will send grouped events related to a problem.</p>
+<p>If you have <strong>ServiceNow Service Graph Connector for Observability - Dynatrace</strong>, see <a href="https://www.servicenow.com/docs/bundle/xanadu-servicenow-platform/page/product/configuration-management/task/setup-push-notifications-dynatrace.html">Set up push notifications from Dynatraceï»¿</a> for configuration and usage details. Otherwise, see <a href="https://www.servicenow.com/docs/bundle/xanadu-it-operations-management/page/product/event-management/concept/dynatrace-events-integration.html">Integrate Dynatrace platform eventsï»¿</a>.</p>
+<h3 id="send-events-using-dynatrace-servicenow-problem-notifications">Send events using Dynatrace ServiceNow problem notifications<a class="headerlink" href="#send-events-using-dynatrace-servicenow-problem-notifications" title="Permanent link">&para;</a></h3>
+<p>ServiceNow Event Management provides a general purpose webhook API for receiving events the populates the ServiceNow ITOM event table (<code>em_event</code>).</p>
+<p>This configuration uses a ServiceNow Dynatrace problem notification. You can configure ServiceNow notification with the ServiceNow webhook API URL and the JSON payload it expects. For more information about the webhook API, see <a href="https://www.servicenow.com/docs/csh?topicname=send-events-via-web-service.html">Pushing events to the instance using web service APIï»¿</a>.</p>
+<p>When configured, the Dynatrace problem notification will send all events related to a problem.</p>
+<h4 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>You have an active ServiceNow ITOM module and license</li>
+<li>Your ServiceNow user has a <code>snc_platform_rest_api_access</code> role</li>
+<li>Your ServiceNow Event filters and alerting rules are set to react to incoming events sent by Dynatrace</li>
+</ul>
+<h4 id="set-up-a-servicenow-configuration_1">Set up a ServiceNow configuration<a class="headerlink" href="#set-up-a-servicenow-configuration_1" title="Permanent link">&para;</a></h4>
+<p>Your ServiceNow ITOM module and license need to be active to use this integration option.</p>
+<h4 id="set-up-a-dynatrace-configuration_1">Set up a Dynatrace configuration<a class="headerlink" href="#set-up-a-dynatrace-configuration_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Go to <strong>Settings</strong>.</li>
+<li>Select <strong>Integration</strong> &gt; <strong>Problem notifications</strong> &gt; <strong>Add notification</strong>.</li>
+<li>In <strong>Notification type</strong>, select <strong>ServiceNow</strong>.</li>
+<li>
+<p>Enter the requested information:</p>
+</li>
+<li>
+<p><strong>ServiceNow instance identifier</strong> refers to the "instance identifierâ part of your own ServiceNow URL and is used by the ServiceNow API call <code>https://&lt;instance indentifier&gt;.service-now.com</code>. This ServiceNow instance identifier is mutually exclusive to the OnPremise URL field, so you can only use one of them.</p>
+</li>
+<li>Turn on <strong>Send events into ServiceNow ITOM</strong></li>
+<li>Select <strong>Send test notification</strong>.</li>
+<li>Select <strong>Save changes</strong>.</li>
+</ol>
+<p>After you enable the push of ITOM events, all events for any problem detected by Dynatrace will be automatically pushed to the ITOM event API.</p>
+<h3 id="view-events">View events<a class="headerlink" href="#view-events" title="Permanent link">&para;</a></h3>
+<p>You can create event filters and alerting rules in the <strong>Event table</strong> view to flexibly react to incoming Dynatrace-detected events, as shown in the example below:</p>
+<p><img alt="Events-SN" src="https://dt-cdn.net/images/2020-11-26-12-33-17-1493-31560df605.png" /></p>
+<h2 id="configuration-management-database-cmdb-integration">Configuration Management Database (CMDB) integration<a class="headerlink" href="#configuration-management-database-cmdb-integration" title="Permanent link">&para;</a></h2>
+<p>ServiceNow offers a dedicated <strong>Service Graph Connector for Observability â Dynatrace</strong> application for pulling Dynatrace observability information into your ServiceNow CMDB.</p>
+<p><strong>Service Graph Connector for Observability â Dynatrace</strong> pulls the following types of topology information data:</p>
+<ul>
+<li>Hosts</li>
+<li>Processes</li>
+<li>Services</li>
+<li>Applications</li>
+</ul>
+<p>Service Graph Connector for Observability uses the relationship between various applications, application services, and infrastructure elements to create a Service Map.</p>
+<p>Some of the Dynatrace entity types are not imported into ServiceNow. For configuration and usage details, see <a href="https://www.servicenow.com/docs/bundle/xanadu-servicenow-platform/page/product/configuration-management/concept/cmdb-integration-dynatrace.html">Service Graph Connector for Observability - Dynatraceï»¿</a>.</p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
+<p>Which Dynatrace IP addresses are allowed for ServiceNow integration?</p>
+<p>For your Dynatrace instance to communicate with ServiceNow, you need to provide ServiceNow with a list of Dynatrace IP addresses that will be allowed to send information to ServiceNow. Dynatrace servers are distributed throughout various regions. The best way to ensure that you get the right IP addresses for your region is to look up the IP addresses by running the <code>nslookup</code> command. You must first create your environment in Dynatrace and then execute <code>nslookup</code>.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>C:\&gt;nslookup abc.live.dynatrace.com
+</code></pre></div>
+<p>Optionally, you can review the OneAgent download page to see the IP addresses for your region.</p>
+<h3 id="dynatrace-incident-integration">Dynatrace Incident integration<a class="headerlink" href="#dynatrace-incident-integration" title="Permanent link">&para;</a></h3>
+<p>How does the integration work?</p>
+<p>You can see an overview Dynatrace Incident integration in the flowchart below:</p>
+<p><img alt="Incident flow" src="https://dt-cdn.net/images/1-914-942bc926e8.png" /></p>
+<p>After configuring the application on both sides, problem notifications are pushed from Dynatrace to your ServiceNow instance.</p>
+<p><img alt="Incident creation" src="https://dt-cdn.net/images/2020-11-20-10-04-46-1873-71a111a8db.png" /></p>
+<p>The <strong>Scripted REST APIs</strong> module is the entry point of the Dynatrace information into ServiceNow. It pushes the data into the <strong>Problems</strong> import set table.</p>
+<p><img alt="Problem notification" src="https://dt-cdn.net/images/2020-11-20-09-46-29-1872-86d224c470.png" /></p>
+<p>The <strong>Problems</strong> import set table automatically transforms any incoming Dynatrace-detected problem into an incident within the ServiceNow incident table.</p>
+<p><img alt="Transform map" src="https://dt-cdn.net/images/2020-11-20-09-37-50-1866-f2d395ffed.png" /></p>
+<p>When a problem is closed in Dynatrace, the incident is marked as <code>Resolved</code> in ServiceNow.</p>
+<p>Which ServiceNow tables are filled by the ServiceNow Dynatrace application?</p>
+<ul>
+<li>Dynatrace sends all detected problems into the ServiceNow incident table (<code>incident</code>).</li>
+<li>All single events that are correlated with a Dynatrace-detected problem are sent to the ITOM event table (<code>em_event</code>).</li>
+<li>The relationship between a CI and a Dynatrace-detected problem is sent into the CIs Affected table (<code>task_ci</code>).</li>
+<li>If enabled, Dynatrace synchronizes all auto-discovered web services into the CMDB application services table (<code>cmdb_ci_services_discovered</code>).</li>
+<li>All hosts and process groups running on those hosts are synchronized into the CMDB server table and derived Linux and Windows server tables (<code>cmdb_ci_server</code>), and into the process groups related tables in ServiceNow (<code>cmdb_ci_appl</code>).</li>
+</ul>
+<p>How can I change the table or field where Dynatrace pushes the data?</p>
+<p>Incidents are imported through an import set table (<code>x_dynat_ruxit_problems</code>). You can reconfigure the default transformation map <strong>Problem to Incident Transformation Map</strong> to route the information to different tables or fields.</p>
+<p>Is there support for multiple environments in Dynatrace integration?</p>
+<p>Multiple Dynatrace environments can be configured within the Dynatrace environments table in ServiceNow.</p>
+<h3 id="send-events-using-dynatrace-servicenow-problem-notifications_1">Send events using Dynatrace ServiceNow problem notifications<a class="headerlink" href="#send-events-using-dynatrace-servicenow-problem-notifications_1" title="Permanent link">&para;</a></h3>
+<p>How does the integration work?</p>
+<p>You can see an overview Dynatrace Incident integration in the flowchart below:</p>
+<p><img alt="Event flow" src="https://dt-cdn.net/images/5-921-8ae4cf85e4.png" /></p>
+<h3 id="configuration-management-database-cmdb-integration_1">Configuration Management Database (CMDB) integration<a class="headerlink" href="#configuration-management-database-cmdb-integration_1" title="Permanent link">&para;</a></h3>
+<p>Which scheduled jobs pull the CMDB information from Dynatrace?</p>
+<p>Dynatrace introduces one scheduled job that pulls a subset of the topology information from Dynatrace Smartscape at regular intervals. The SG-Dynatrace scheduled job pulls all web application information along with their relation to software services, all host and process group information, and all software services and relationships. The information pull is performed using the official Dynatrace REST API.</p>
+<p>How can I automatically merge existing CIs with Dynatrace discovered CIs?</p>
+<p>Deduplication is done through <strong>ServiceNow CMDB Identification and Reconciliation</strong>. Custom CI identification rules are used to merge identical CIs based on a given attribute (for example, host names).</p>
+<h2 id="troubleshoot">Troubleshoot<a class="headerlink" href="#troubleshoot" title="Permanent link">&para;</a></h2>
+<p>Check out the following articles in the <a href="https://dt-url.net/dy122xtf">Troubleshooting forum in the Dynatrace Communityï»¿</a>.</p>
+<h3 id="general_1">General<a class="headerlink" href="#general_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://dt-url.net/7t42xdu">Events don't show up in the ITOM events tableï»¿</a></li>
+<li><a href="https://dt-url.net/eq62xe9">HTTP 403 Forbidden Access Restricted Not Authorized Error when sending a test notificationï»¿</a></li>
+<li><a href="https://dt-url.net/fcc2x29">Problem link is broken in the ServiceNow incidentï»¿</a></li>
+</ul>
+<h3 id="dynatrace-incident-integration_1">Dynatrace Incident integration<a class="headerlink" href="#dynatrace-incident-integration_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://dt-url.net/o682xbl">Incidents aren't created correctlyï»¿</a></li>
+</ul>
+<h3 id="configuration-management-database-cmdb-integration_2">Configuration Management Database (CMDB) integration<a class="headerlink" href="#configuration-management-database-cmdb-integration_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://dt-url.net/km02xrc">Dynatrace-detected hosts, process groups, applications and services don't show up in the CMDBï»¿</a></li>
+<li><a href="https://dt-url.net/n222x11">Dynatrace-monitored servers don't show up in the CMDBï»¿</a></li>
+<li><a href="https://dt-url.net/8ia2xbr">Incoming incidents aren't mapped to the affected server in the CMDBï»¿</a></li>
+</ul>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationsslack-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsslack-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications to Slack
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration
+scraped: 2026-02-18T21:16:24.346035</p>
+<hr />
+<h1 id="send-dynatrace-notifications-to-slack">Send Dynatrace notifications to Slack<a class="headerlink" href="#send-dynatrace-notifications-to-slack" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-to-slack_1">Send Dynatrace notifications to Slack<a class="headerlink" href="#send-dynatrace-notifications-to-slack_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Updated on Apr 25, 2024</li>
+</ul>
+<p>For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see <a href="/docs/analyze-explore-automate/workflows/actions" title="Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.">Workflows Connectors</a>.</p>
+<p>With a Slack problem-notification integration, your teams will always be aware of potential risks within applications, services, and infrastructure. Your teams can also use a Dynatrace-integrated Slack channel to discuss incidents, evaluate solutions, and link to similar problems.</p>
+<h2 id="set-up-slack-integration">Set up Slack integration<a class="headerlink" href="#set-up-slack-integration" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In Slack, create an Incoming Webhook, as <a href="https://api.slack.com/messaging/webhooks">described in the Slack documentationï»¿</a>.</li>
+<li>Copy the generated Webhook URL to your clipboard. The Webhook URL should look like this: <code>&lt;SLACK_WEBHOOK_URL_PLACEHOLDER&gt;</code>.</li>
+<li>In Dynatrace, go to <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>Select <strong>Slack</strong> from the available notification types.</li>
+<li>
+<p>Enter the following information:</p>
+</li>
+<li>
+<p><strong>Display name</strong>
+     This is the freeform name of this integration that will be displayed in Dynatrace on <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong> when you finish this configuration.</p>
+</li>
+<li><strong>URL</strong>
+     Paste the webhook URL</li>
+<li><strong>Channel</strong>
+     Enter the name of a Slack channel</li>
+<li>
+<p><strong>Message</strong>
+     Enter a custom message; it can contain text and problem-related placeholders</p>
+<p>Placeholders</p>
+<p>The <strong>Available placeholders</strong> section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values.
+7. Assign an <a href="/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles" title="Learn how to create and manage alerting profiles.">Alerting profile</a>.
+8. Select <strong>Send test notification</strong> to make sure your Slack integration is working.
+9. <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<p>You will receive Dynatrace problem notifications on your Slack channel with your custom message.</p>
+<p>Example</p>
+<p><img alt="An example of Slack integration" src="https://dt-cdn.net/images/example-1664-91d9af0698.png" /></p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://dt-url.net/ti03ks4">Slack problem notifications from Dynatrace don't arriveï»¿</a></li>
+</ul>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationstrello-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationstrello-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications to Trello
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration
+scraped: 2026-02-18T21:16:21.860450</p>
+<hr />
+<h1 id="send-dynatrace-notifications-to-trello">Send Dynatrace notifications to Trello<a class="headerlink" href="#send-dynatrace-notifications-to-trello" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-to-trello_1">Send Dynatrace notifications to Trello<a class="headerlink" href="#send-dynatrace-notifications-to-trello_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Updated on Oct 10, 2022</li>
+</ul>
+<p>Atlassian Trello offers a great visual way to organize your projects, no matter which kind of agile process you are following. Everything in Trello is organized in cards. Cards show the details about tasks and stories or bugs your team must solve.</p>
+<p>Dynatrace offers convenient integration with Trello that lets you visually organize all the automatically discovered incidents directly within your Trello boards. Connect your Dynatrace monitoring environment with your Trello board and directly push Dynatrace discovered problems into a specified list.</p>
+<p>To set up Trello problem-notification integration</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>Select <strong>Trello</strong> from the available notification types.</li>
+<li>
+<p>Configure the integration:</p>
+</li>
+<li>
+<p><strong>Display name</strong> is the freeform name of this integration that will be displayed in Dynatrace on <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong> when you finish this configuration.</p>
+</li>
+<li>
+<p>Enter your Trello application key.</p>
+<p>Trello application key</p>
+<p>Sign in to Trello and have Trello automatically generate an <a href="https://trello.com/app-key">application keyï»¿</a> that you can use here.
+   * Enter your Trello authorization token.
+   * Specify the Trello board to which problem cards should be assigned.
+   * Specify the Trello list to which new problem cards should be assigned.
+   * Specify the Trello list to which resolved problem cards should be assigned.
+   * Enter the card text and problem placeholders that should appear on new problem cards.</p>
+<p>Placeholders</p>
+<p>The <strong>Available placeholders</strong> section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values in the card text.
+   * Enter the card description.
+   * Assign an <a href="/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles" title="Learn how to create and manage alerting profiles.">Alerting profile</a>.
+5. Select <strong>Send test notification</strong> to make sure your Trello integration is working. It should send a test notification to Trello.
+6. If the test was successful, <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationsvictorops-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsvictorops-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications to VictorOps
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration
+scraped: 2026-02-18T21:16:20.579220</p>
+<hr />
+<h1 id="send-dynatrace-notifications-to-victorops">Send Dynatrace notifications to VictorOps<a class="headerlink" href="#send-dynatrace-notifications-to-victorops" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-to-victorops_1">Send Dynatrace notifications to VictorOps<a class="headerlink" href="#send-dynatrace-notifications-to-victorops_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Updated on Oct 10, 2022</li>
+</ul>
+<p>Dynatrace offers an out-of-the-box VictorOps integration that automatically pushes Dynatrace problem notifications to your VictorOps environment.</p>
+<p>To set up VictorOps problem-notification integration</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>Select <strong>VictorOps</strong> from the available notification types.</li>
+<li>
+<p>Configure the notification:</p>
+</li>
+<li>
+<p><strong>Display name</strong><br />
+     This is the freeform name of this integration that will be displayed in Dynatrace on <strong>Settings</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong> when you finish this configuration.</p>
+</li>
+<li>
+<p><strong>API key</strong><br />
+     Enter the auto-generated VictorOps API key here.</p>
+<p>To get your VictorOps API key</p>
+<ol>
+<li>Switch to your VictorOps account.</li>
+<li>Go to <strong>Settings</strong> &gt; <strong>Integrations</strong> &gt; <strong>Rest Endpoint</strong> &gt; <strong>Dynatrace</strong> and copy the API key.</li>
+<li>Return to Dynatrace and paste it into <strong>API key</strong>.</li>
+<li><strong>Routing key</strong><br />
+ Set a routing key to send problem notifications to the responsible team.</li>
+<li><strong>Message</strong><br />
+ Insert a custom message that includes text and problem-related placeholders.</li>
+</ol>
+<p>Placeholders</p>
+<p>The <strong>Available placeholders</strong> section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with values in the message.
+   * Assign an <a href="/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles" title="Learn how to create and manage alerting profiles.">Alerting profile</a>.
+5. Select <strong>Send test notification</strong> to make sure your VictorOps integration is working.
+6. <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationswebhook-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationswebhook-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications via webhooks
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration
+scraped: 2026-02-18T21:16:18.127436</p>
+<hr />
+<h1 id="send-dynatrace-notifications-via-webhooks">Send Dynatrace notifications via webhooks<a class="headerlink" href="#send-dynatrace-notifications-via-webhooks" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-via-webhooks_1">Send Dynatrace notifications via webhooks<a class="headerlink" href="#send-dynatrace-notifications-via-webhooks_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>3-min read</li>
+<li>Updated on Sep 11, 2024</li>
+</ul>
+<p>Dynatrace offers several out-of-the-box integrations that automatically push problem notifications to third-party incident-management and ChatOps systems.
+If however your third-party system isn't supported with an out-of-the-box integration, you can easily set up a customizable webhook integration. Using this approach, whenever Dynatrace detects a problem in your environment that affects real users, a webhook triggers an <code>HTTP POST</code> request to a target URL that you specify.</p>
+<p>The payload message of the <code>HTTP POST</code> request is completely customizable. By default, requests use valid JSON syntaxâexcept when you define a different HTTP content type header, in which case you define a different HTTP content type header and Dynatrace skips the JSON validation and doesn't escape the payload based on JSON syntax.</p>
+<p>Information placeholders, such as <strong>{ProblemTitle}</strong> and <strong>{State}</strong>, are used to fill the custom JSON with the dynamic information of each detected problem.</p>
+<p>To integrate problem-notifications using a custom webhook:</p>
+<ol>
+<li>Go to <strong>Settings Classic</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.</li>
+<li>Select <strong>Custom integration</strong> from the available notification types.</li>
+<li>
+<p>Configure the notification:</p>
+</li>
+<li>
+<p><strong>Display name</strong><br />
+     This is the freeform name of this integration that will be displayed in Dynatrace on <strong>Settings Classic</strong> &gt; <strong>Integration</strong> &gt; <strong>Problem notifications</strong> when you finish this configuration.</p>
+</li>
+<li>Optional Turn on <strong>Secret webhook URL</strong>.
+     Turn on this option to obfuscate the webhook URL (the webhook endpoint) in the notification settings, providing an additional layer of security by hiding sensitive information from display.</li>
+<li><strong>Webhook URL</strong><br />
+     Target URL where the <strong>HTTP POST</strong> should push the payload. This URL can contain HTTP parameters such as an authentication token, in case the destination system works with authentication tokens instead of basic authentication.</li>
+<li>Optional <strong>Additional HTTP headers</strong><br />
+     Specify additional HTTP header fields, such as 'Content-Type' or 'Authorization'. These custom HTTP header fields can be used if the target endpoint needs an authentication token within the HTTP header or if you would like to send different content type such as 'text/plain' or 'application/xml'.</li>
+<li>
+<p><strong>Custom payload</strong><br />
+     Once a problem is detected or resolved, this customizable payload is pushed through an <strong>HTTP POST</strong> to the target system.</p>
+<p>Placeholders</p>
+<p>The <strong>Available placeholders</strong> section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with problem-related information such as problem state or title.
+   * Optional Turn on <strong>Accept any SSL certificate</strong>.
+   * Optional Turn on <strong>Call webhook if new events merge into existing problems</strong>.
+   * Assign an <a href="/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles" title="Learn how to create and manage alerting profiles.">Alerting profile</a>.
+5. Select <strong>Send test notification</strong> to make sure your webhook integration is working.
+6. <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<h2 id="example-json-with-placeholders">Example JSON with placeholders<a class="headerlink" href="#example-json-with-placeholders" title="Permanent link">&para;</a></h2>
+<p>Here is a valid JSON web hook problem-notification definition example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&quot;ImpactedEntities&quot;: {ImpactedEntities},
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>&quot;ImpactedEntity&quot;: &quot;{ImpactedEntity}&quot;,
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&quot;PID&quot;: &quot;{PID}&quot;,
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>&quot;ProblemDetailsHTML&quot;: &quot;{ProblemDetailsHTML}&quot;,
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>&quot;ProblemDetailsJSON&quot;: {ProblemDetailsJSON},
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>&quot;ProblemID&quot;: &quot;{ProblemID}&quot;,
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>&quot;ProblemImpact&quot;: &quot;{ProblemImpact}&quot;,
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>&quot;ProblemTitle&quot;: &quot;{ProblemTitle}&quot;,
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>&quot;Problem URL&quot;: &quot;https://example.com&quot;,
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>&quot;State&quot;: &quot;{State}&quot;,
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>&quot;Tags&quot;: &quot;{Tags}&quot;
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>}
+</code></pre></div>
+<p><code>{ImpactedEntities}</code> and <code>{ProblemDetailsJSON}</code> are JSON data types and must not have quotes around them.</p>
+<p>After a problem has been detected, the placeholders are populated with the actual values and results, as shown in this example payload:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&quot;ImpactedEntities&quot;: [
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>{&quot;type&quot;: &quot;HOST&quot;, &quot;name&quot;: &quot;MyHost1&quot;, &quot;entity&quot;: &quot;HOST-XXXXXXXXXXXXX&quot; },
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>{&quot;type&quot;: &quot;SERVICE&quot;, &quot;name&quot;: &quot;MyService1&quot;, &quot;entity&quot;: &quot;SERVICE-XXXXXXXXXXXXX&quot;}
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>],
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>&quot;ImpactedEntity&quot;: &quot;MyHost1, MyService1&quot;,
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>&quot;PID&quot;: &quot;99999&quot;,
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>&quot;ProblemDetailsHTML&quot;: &quot;&lt;h1&gt;Dynatrace problem notification test run details&lt;/h1&gt;&quot;,
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>&quot;ProblemDetailsJSON&quot;: {&quot;ID&quot; : &quot;99999&quot; },
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>&quot;ProblemID&quot;: &quot;999&quot;,
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>&quot;ProblemImpact&quot;: &quot;INFRASTRUCTURE&quot;,
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>&quot;ProblemTitle&quot;: &quot;Dynatrace problem notification test run&quot;,
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>&quot;Problem URL&quot;: &quot;https://example.com&quot;,
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>&quot;State&quot;: &quot;OPEN&quot;,
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>&quot;Tags&quot;: &quot;testtag1, testtag2&quot;
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>}
+</code></pre></div>
+<hr />
+<h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationsxmatters-integrationmd">analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsxmatters-integrationmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Send Dynatrace notifications to xMatters
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration
+scraped: 2026-02-18T21:16:23.079512</p>
+<hr />
+<h1 id="send-dynatrace-notifications-to-xmatters">Send Dynatrace notifications to xMatters<a class="headerlink" href="#send-dynatrace-notifications-to-xmatters" title="Permanent link">&para;</a></h1>
+<h1 id="send-dynatrace-notifications-to-xmatters_1">Send Dynatrace notifications to xMatters<a class="headerlink" href="#send-dynatrace-notifications-to-xmatters_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>2-min read</li>
+<li>Updated on Jul 17, 2024</li>
+</ul>
+<p>xMatters is a digital service availability platform that prevents technology issues from becoming business problems. With this xMatters integration, Dynatrace actively pushes problem alerts, along with all related metadata, into your xMatters instance. You can acknowledge xMatters alerts and comment on Dynatrace-detected problems via your preferred device. xMatters automatically records your responses in Dynatrace.</p>
+<h2 id="configure-xmatters">Configure xMatters<a class="headerlink" href="#configure-xmatters" title="Permanent link">&para;</a></h2>
+<p>For configuring xMatters, see the <a href="https://help.xmatters.com/integrations/monitoring/dynatrace.htm?cshid=Dynatrace">Dynatraceï»¿</a> page in the xMatters Workflows documentation.</p>
+<p>The built-in version of xMatters integration that requires an API token is no longer available. If you require it as a reference, see the <a href="https://help.xmatters.com/integrations/monitoring/dynatrace.htm?cshid=Dynatrace#PreviousVersions">Previous versionsï»¿</a> section of the Dynatrace integration in the official xMatters documentation.</p>
+<h2 id="configure-dynatrace">Configure Dynatrace<a class="headerlink" href="#configure-dynatrace" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to <strong>Settings</strong> and select <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Select <strong>Add notification</strong>.<br />
+   Ignore <strong>Save changes</strong> until the end.</li>
+<li>Select <strong>xMatters</strong> from the available notification types.</li>
+<li>
+<p>Configure the notification:</p>
+</li>
+<li>
+<p><strong>Display name</strong>âthe freeform name of this integration that will be displayed in Dynatrace on the <strong>Problem notifications</strong> page when you finish this configuration.</p>
+</li>
+<li><strong>xMatters URL</strong>âthe xMatters webhook URL.</li>
+<li>Optional Turn on <strong>Accept any SSL certificate</strong> option. We recommend that you use a valid SSL certificate (even for internal installations), but you can ignore the certificate for convenience.</li>
+<li>Optional <strong>Additional HTTP headers</strong>âcustom HTTP header fields such as 'Content-Type' or 'Authorization' that can be used if the target endpoint needs an authentication token within the HTTP header or if you would like to send a different content type such as 'text/plain' or 'application/xml'.</li>
+<li><strong>Custom payload</strong>âonce a problem is detected or resolved, this customizable payload is pushed through an <strong>HTTP POST</strong> to the target system. Use specific placeholders to dynamically populate the payload with problem-related information, such as problem state or title.</li>
+<li>Assign an <a href="/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles" title="Learn how to create and manage alerting profiles.">Alerting profile</a>.</li>
+<li>Select <strong>Send test notification</strong> to make sure your xMatters integration is working.</li>
+<li>Select <strong>Save changes</strong>.</li>
+</ol>
+<p>After youâve finished integration with Dynatrace, youâll see your newly created xMatters integration in your list of integrations on the <strong>Problem notifications</strong> page.</p>
 <hr />
 <h2 id="analyze-explore-automatenotifications-and-alertingproblem-notificationsmd">analyze-explore-automate/notifications-and-alerting/problem-notifications.md<a class="headerlink" href="#analyze-explore-automatenotifications-and-alertingproblem-notificationsmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Problem notifications
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications
-scraped: 2026-02-06T15:59:50.823777</p>
+scraped: 2026-02-18T21:15:25.513232</p>
 <hr />
-<h1 id="_1">Уведомления о проблемах<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Уведомления о проблемах<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="problem-notifications">Problem notifications<a class="headerlink" href="#problem-notifications" title="Permanent link">&para;</a></h1>
+<h1 id="problem-notifications_1">Problem notifications<a class="headerlink" href="#problem-notifications_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>2 минуты чтения</li>
-<li>Обновлено 10 октября 2022 г.</li>
+<li>2-min read</li>
+<li>Updated on Oct 10, 2022</li>
 </ul>
-<p>Dynatrace предоставляет полную информацию о мониторинге всей вашей ИТ-операции и автоматически определяет, не соответствует ли какая-либо часть вашего развертывания требуемому качеству с точки зрения производительности или частоты ошибок.Всякий раз, когда Dynatrace обнаруживает такое аномальное поведение системы, она создает единую проблему, объединяющую все инциденты, имеющие одну и ту же основную причину.</p>
-<p>Dynatrace позволяет автоматически отправлять уведомления о проблемах в предпочитаемую вами стороннюю службу управления инцидентами или службу ChatOps.Открытые проблемы постоянно обновляются на основе меняющегося воздействия и корреляции событий.Чтобы избежать спама в уведомлениях, уведомления о проблемах передаются сторонним системам только тогда, когда проблемы изначально обнаружены и когда они в конечном итоге решены.</p>
-<p>Управление инцидентами</p>
-<p>Чат-опсы</p>
-<p>Управление корпоративными услугами</p>
-<p>Пользовательские интеграции</p>
-<p>Эти системы помогают организациям управлять большим количеством инцидентов между несколькими командами.Системы управления инцидентами предлагают такие функции, как отслеживание уведомлений об инцидентах, определение уровня эскалации и графики дежурств.Обычно системы управления инцидентами предлагают широкий спектр каналов уведомлений, таких как колл-центры, пейджеры и мобильные push-уведомления.Dynatrace предлагает готовые интеграции с основными системами управления инцидентами, такими как <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration" title="Configure Opsgenie integration with Dynatrace.">Опсгени</a>, <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration" title="Learn how to configure VictorOps integration with Dynatrace.">ВикторОпс</a>, <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration" title="Learn how to send problem notifications from Dynatrace to PagerDuty.">ПейджерДьюти</a>, <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration" title="Learn how to create problem notifications by adding an xMatters webhook URL from your xMatters instance to Dynatrace settings.">xMatters</a> и <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration" title="Configure Jira integration with Dynatrace.">Джира</a>.</p>
-<p><a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration">Джира</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration">Опсгени</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration">ПейджерДьюти</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration">Трелло</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration">ВикторОпс</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration">xMatters</a></p>
-<p>Сегодня системы чата широко используются командами DevOps для сортировки поступающих проблем, обсуждения последующих действий и архивирования извлеченных уроков.Dynatrace предлагает готовые интеграции с популярными системами ChatOps, такими как <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration" title="Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems.">Слабый</a> и <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration" title="Set up a Microsoft Teams problem-notification integration that can keep you updated on all Dynatrace-detected problems.">Команды Майкрософт</a>.</p>
-<p><a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration">Команды Майкрософт</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration">Слабый</a></p>
-<p>Системы управления корпоративными услугами широко используются крупными предприятиями для организации всех типов ИТ- и не связанных с ИТ услуг и ресурсов.Эти системы используются компаниями для организации своих ИТ-услуг в соответствии с мировыми стандартами, такими как ITIL (Библиотека инфраструктуры информационных технологий).Все инциденты, связанные с обслуживанием аппаратного и программного обеспечения, отслеживаются и запускают рабочие процессы.Dynatrace предлагает сертифицированную интеграцию с <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration" title="Connect your monitoring environment with your ServiceNow instance.">СервисNow</a>, самой популярной SaaS-системой управления корпоративными услугами.</p>
-<p><a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration">СервисNow</a></p>
-<p>Если Dynatrace еще не предлагает готовую интеграцию для вашей конкретной системы, вы можете настроить <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration" title="Get email whenever Dynatrace detects a problem in your environment that affects real users.">интеграция электронной почты</a> или <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration" title="Learn how to integrate problem-notifications using a custom webhook.">интеграция вебхука</a>.</p>
-<p><a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration">Электронная почта</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration">Вебхук</a></p>
+<p>Dynatrace provides full-stack monitoring insights into your complete IT operation and automatically detects if any part of your deployment doesnât fulfill the required quality in terms of performance or error rates. Whenever Dynatrace detects such abnormal system behavior, it creates a single problem that contains all incidents that share the same root cause.</p>
+<p>Dynatrace enables you to automatically push problem notifications to your preferred third-party incident management or ChatOps service. Open problems are continuously updated based on evolving impact and correlating events. To avoid notification spam, problem notifications are only pushed to third-party systems when problems are initially detected and when they are ultimately resolved.</p>
+<p>Incident management</p>
+<p>ChatOps</p>
+<p>Enterprise service management</p>
+<p>Custom integrations</p>
+<p>These systems help organizations manage large amounts of incidents across multiple teams. Incident management systems offer features such as incident-notification tracking, escalation-level definition, and on-duty schedules. Typically, incident management systems offer a wide range of notification channels, such as call centers, pagers, and mobile push notifications. Dynatrace offers out-of-the-box integrations for major incident management systems such as <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration" title="Configure Opsgenie integration with Dynatrace.">Opsgenie</a>, <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration" title="Learn how to configure VictorOps integration with Dynatrace.">VictorOps</a>, <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration" title="Learn how to send problem notifications from Dynatrace to PagerDuty.">PagerDuty</a>, <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration" title="Learn how to create problem notifications by adding an xMatters webhook URL from your xMatters instance to Dynatrace settings.">xMatters</a>, and <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration" title="Configure Jira integration with Dynatrace.">Jira</a>.</p>
+<p><a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration">Jira</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration">Opsgenie</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration">PagerDuty</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration">Trello</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration">VictorOps</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration">xMatters</a></p>
+<p>Today, chat systems are widely used by DevOps teams to triage incoming issues, discuss follow-up actions and to archive lessons learned. Dynatrace offers out-of-the-box integrations for popular ChatOps systems such as <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration" title="Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems.">Slack</a> and <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration" title="Set up a Microsoft Teams problem-notification integration that can keep you updated on all Dynatrace-detected problems.">Microsoft Teams</a>.</p>
+<p><a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration">Microsoft Teams</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration">Slack</a></p>
+<p>Enterprise service-management systems are widely used by large enterprises to organize all types of IT and non-IT related services and resources. These systems are used by companies to organize their IT services according to global standards, such as ITIL (Information Technology Infrastructure Library). All hardware and software service-related incidents are tracked and trigger workflows. Dynatrace offers a certified integration with <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration" title="Connect your monitoring environment with your ServiceNow instance.">ServiceNow</a>, the most popular SaaS enterprise service-management system.</p>
+<p><a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration">ServiceNow</a></p>
+<p>If Dynatrace doesnât yet offer an out-of-the-box integration for your specific system, you can set up an <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration" title="Get email whenever Dynatrace detects a problem in your environment that affects real users.">email integration</a> or <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration" title="Learn how to integrate problem-notifications using a custom webhook.">webhook integration</a>.</p>
+<p><a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration">Email</a> <a href="/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration">Webhook</a></p>
 <hr />
 
 

@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#distributed-tracing" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -25549,224 +25549,222 @@
 
 
 
-<h1 id="_1">Распределенная трассировка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Распределенная трассировка<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="distributed-tracing">Distributed Tracing<a class="headerlink" href="#distributed-tracing" title="Permanent link">&para;</a></h1>
+<h1 id="distributed-tracing_1">Distributed Tracing<a class="headerlink" href="#distributed-tracing_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>Приложение</li>
-<li>3-минутное чтение</li>
-<li>Опубликовано 15 июля 2024 г.</li>
+<li>Latest Dynatrace</li>
+<li>App</li>
+<li>3-min read</li>
+<li>Published Jul 15, 2024</li>
 </ul>
-<p>Предварительные условия</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), модель лицензирования для всех возможностей Dynatrace.">Подписка на платформу Dynatrace (DPS)</a></li>
+<li><a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS)</a></li>
 </ul>
-<h3 id="_3">Разрешения<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>В следующей таблице описаны необходимые разрешения.</p>
-<p>Разрешение</p>
-<p>Описание</p>
-<p>хранилище: ведра: читать</p>
-<p>Чтение данных сегментов</p>
-<p>хранилище: промежутки: чтение</p>
-<p>Чтение данных диапазона</p>
-<p>хранилище: объекты: чтение</p>
-<p>Чтение данных сущностей</p>
-<p>хранилище: журналы: чтение</p>
-<p>Чтение журналов</p>
-<p>состояние: пользовательское-приложение-состояния: чтение</p>
-<p>Чтение состояния приложения пользователя</p>
-<p>состояние: пользовательское приложение-состояния: запись</p>
-<p>Запись состояния приложения пользователя</p>
-<p>состояние: пользовательское приложение-состояния: удалить</p>
-<p>Удалить состояние приложения пользователя</p>
-<p>хранилище: наборы полей: чтение</p>
-<p>Чтение маскированных/чувствительных полей</p>
-<p>хранилище: фильтр-сегменты: чтение</p>
-<p>Чтение сегментов фильтра</p>
-<p>хранилище: Smartscape: читать</p>
-<p>Чтение узлов и ребер Smartscape</p>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
+<p>The following table describes the required permissions.</p>
+<p>Permission</p>
+<p>Description</p>
+<p>storage:buckets:read</p>
+<p>Read buckets data</p>
+<p>storage:spans:read</p>
+<p>Read span data</p>
+<p>storage:entities:read</p>
+<p>Read entities data</p>
+<p>storage:logs:read</p>
+<p>Read logs</p>
+<p>state:user-app-states:read</p>
+<p>Read user app state</p>
+<p>state:user-app-states:write</p>
+<p>Write user app state</p>
+<p>state:user-app-states:delete</p>
+<p>Delete user app state</p>
+<p>storage:fieldsets:read</p>
+<p>Read masked/sensitive fields</p>
+<p>storage:filter-segments:read</p>
+<p>Read filter-segments</p>
+<p>storage:smartscape:read</p>
+<p>Read smartscape nodes and edges</p>
 <p>10</p>
-<p>строк на странице</p>
-<p>Страница</p>
+<p>rows per page</p>
+<p>Page</p>
 <p>1</p>
-<p>из 1</p>
-<h2 id="_4">Установка<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Убедитесь, что это приложение <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">установлен в вашей среде</a>.</p>
-<p>Начать</p>
-<p>Концепции</p>
-<p>Варианты использования</p>
-<p>Распределенная трассировка на базе Grail помогает максимально эффективно использовать данные трассировки в Dynatrace.Он позволяет принимать и обрабатывать петабайты данных трассировки, позволяя отслеживать и устранять ошибки и проблемы с производительностью в сложных распределенных программных системах в любом масштабе.Данные трассировки следуют за Dynatrace <a href="#distributed-tracing-concepts">модель данных трассировки</a>, поэтому анализ всей связанной информации и атрибутов интуитивно понятен и может быть выполнен с помощью приложения <img alt="Распределенная трассировка" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> Distributed Tracing и языка запросов Dynatrace (DQL).Данные трассировки хранятся в Grail, поэтому вы можете использовать возможности Grail для анализа даже неизвестных неизвестных.</p>
-<p>Удобный интерфейс приложения Distributed Tracing <img alt="Распределенная трассировка" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> разработан с учетом требований инженеров, SRE и архитекторов производительности, что позволяет сразу же легко визуально анализировать данные трассировки.</p>
-<p><img alt="Быстро оцените время отклика и ошибки с помощью инструментов динамической визуализации, таких как гистограммы." src="https://cdn.hub.central.dynatrace.com/hub/1_LwL2KfK.png" /><img alt="Погрузитесь в детали трассировки и изучите связанные журналы." src="https://cdn.hub.central.dynatrace.com/hub/2_WV8DuOY.png" /><img alt="Легко отслеживайте все исключения в пределах диапазона благодаря четким взаимосвязям и цепочкам исключений, показывающим основную причину." src="https://cdn.hub.central.dynatrace.com/hub/3_5iXpQnz.png" /><img alt="Выявляйте и анализируйте исключения в трассировках с помощью читаемых трассировок стека, агрегированных данных и визуальных маркеров, выделяющих проблемные интервалы." src="https://cdn.hub.central.dynatrace.com/hub/4_Qscx7Vl.png" /></p>
-<p>1 из 4Быстро определите время отклика и ошибки с помощью инструментов динамической визуализации, таких как гистограммы.</p>
-<h2 id="_5">Учебные модули<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Чтобы научиться использовать распределенную трассировку, выполните следующий процесс:</p>
-<p>[01Анализ исключений</p>
+<p>of 1</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Make sure the app is <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">installed in your environment</a>.</p>
+<h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
+<p>Distributed Tracing powered by Grail helps you get the most out of your trace data in Dynatrace. It enables the ingestion and processing of petabytes of trace data, allowing you to monitor and troubleshoot errors and performance issues in complex distributed software systems at scale. Trace data follows the Dynatrace <a href="#distributed-tracing-concepts">trace-span data model</a>, so the analysis of all related information and attributes is intuitive and can be done via <img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong> and Dynatrace Query Language (DQL). The trace data is stored in Grail, so you can leverage the power of Grail to analyze even unknown unknowns.</p>
+<p><img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong> user-friendly interface is designed with engineers, SREs, and performance architects in mind, making it easy to visually analyze your trace data right away.</p>
+<p><img alt="Quickly understand response times and errors using dynamic visualization tools like histograms" src="https://cdn.hub.central.dynatrace.com/hub/1_LwL2KfK.png" /><img alt="Dive into the details of a trace and explore related logs" src="https://cdn.hub.central.dynatrace.com/hub/2_WV8DuOY.png" /><img alt="Easily track all exceptions within a span with clear relationships and exception chains showing root cause" src="https://cdn.hub.central.dynatrace.com/hub/3_5iXpQnz.png" /><img alt="Surface and analyze exceptions across traces with readable stack traces, aggregated insights, and visual markers highlighting problematic spans" src="https://cdn.hub.central.dynatrace.com/hub/4_Qscx7Vl.png" /></p>
+<p>1 of 4Quickly understand response times and errors using dynamic visualization tools like histograms</p>
+<h2 id="learning-modules">Learning modules<a class="headerlink" href="#learning-modules" title="Permanent link">&para;</a></h2>
+<p>Go through the following process to learn using Distributed Tracing:</p>
+<p>[01Exception analysis</p>
 <ul>
-<li>Учебник</li>
+<li>Tutorial</li>
 <li>
-<p>Анализ исключений помогает более эффективно обнаруживать, исследовать и разрешать исключения в Dynatrace.](/docs/observe/application-observability/distributed-tracing/Exception-anaанализ)[02Ingest трассировки</p>
+<p>Exception analysis helps you detect, investigate, and resolve exceptions more effectively in Dynatrace.](/docs/observe/application-observability/distributed-tracing/exception-analysis)[02Ingest traces</p>
 </li>
 <li>
-<p>Практическое руководство</p>
+<p>How-to guide</p>
 </li>
 <li>
-<p>Оснастите свои приложения OneAgent или OpenTelemetry, чтобы начать принимать данные трассировки в Dynatrace.](/docs/observe/application-observability/distributed-tracing/ingest-traces)[03Настройте разрешения Grail для распределенной трассировки</p>
+<p>Instrument your applications with OneAgent or OpenTelemetry to start ingesting trace data into Dynatrace.](/docs/observe/application-observability/distributed-tracing/ingest-traces)[03Set up Grail permissions for Distributed Tracing</p>
 </li>
 <li>
-<p>Практическое руководство</p>
+<p>How-to guide</p>
 </li>
 <li>
-<p>Управление разрешениями для распределенной трассировки на базе Grail.](/docs/observe/application-observability/distributed-tracing/permissions)[04Настройка хранения и хранения данных для распределенной трассировки</p>
+<p>Manage permissions for Distributed Tracing powered by Grail.](/docs/observe/application-observability/distributed-tracing/permissions)[04Configure data storage and retention for Distributed Tracing</p>
 </li>
 <li>
-<p>Практическое руководство</p>
+<p>How-to guide</p>
 </li>
 <li>
-<p>Управляйте хранением и хранением данных для распределенной трассировки на базе Grail.](/docs/observe/application-observability/distributed-tracing/storage)[05Распространение диапазона и контекста трассировки</p>
+<p>Manage data storage and retention for Distributed Tracing powered by Grail.](/docs/observe/application-observability/distributed-tracing/storage)[05Span and trace context propagation</p>
 </li>
 <li>
-<p>Ссылка</p>
+<p>Reference</p>
 </li>
 <li>
-<p>Понимание распространения контекста промежутка и трассировки в Dynatrace и способы их настройки.](/docs/observe/application-observability/distributed-tracing/tracking-transactions)[06Используйте трассировки, DQL и журналы для выявления закономерностей.</p>
+<p>Understand span and trace context propagation in Dynatrace and how to set them up.](/docs/observe/application-observability/distributed-tracing/tracking-transactions)[06Use traces, DQL, and logs to spot patterns</p>
 </li>
 <li>
-<p>Учебник</p>
+<p>Tutorial</p>
 </li>
 <li>
-<p>Используйте трассировки, журналы и DQL для визуализации необработанных данных и выявления аномальных закономерностей.](/docs/observe/application-observability/distributed-tracing/use-traces-and-dql-to-spot-patterns)[07Приложение Distributed Tracing</p>
+<p>Utilize traces, logs, and DQL to visualize raw data and identify abnormal patterns.](/docs/observe/application-observability/distributed-tracing/use-traces-and-dql-to-spot-patterns)[07Distributed Tracing app</p>
 </li>
 <li>
-<p>Объяснение</p>
+<p>Explanation</p>
 </li>
 <li>
-<p>Откройте для себя функциональные возможности нового приложения Distributed Tracing.](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app)[08Расширенная аналитика отслеживания на базе Grail</p>
+<p>Discover the functionalities of the new Distributed Tracing app.](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app)[08Advanced Tracing Analytics powered by Grail</p>
 </li>
 <li>
-<p>Учебник</p>
+<p>Tutorial</p>
 </li>
-<li>Изучите расширенные возможности анализа трассировки в Grail.](/docs/observe/application-observability/distributed-tracing/advanced-tracing-analytics).</li>
+<li>Explore advanced tracing analysis capabilities on Grail.](/docs/observe/application-observability/distributed-tracing/advanced-tracing-analytics)</li>
 </ul>
-<h2 id="_6">Концепции распределенной трассировки<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="_7">Распределенная трассировка<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>Распределенная трассировка — это последовательность интервалов, идентифицируемая уникальным идентификатором трассировки, которая следует по пути одного запроса при его прохождении через различные службы и компоненты в распределенной системе.В современной микросервисной среде она обычно охватывает несколько сервисов, предоставляя подробное представление о пути и производительности запроса.Трассировка содержит семантически разные атрибуты, которые позволяют интерпретировать и понимать собранные данные, помогая выявлять узкие места, ошибки и проблемы с задержкой для эффективного устранения неполадок и оптимизации.</p>
-<p><img alt="Следы и услуги" src="https://dt-cdn.net/images/traces-services-1920-59a6506038.png" /></p>
-<h3 id="_8">Варианты использования<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
+<h3 id="distributed-trace">Distributed trace<a class="headerlink" href="#distributed-trace" title="Permanent link">&para;</a></h3>
+<p>A distributed trace is a sequence of spans, identified by a unique trace ID, that follows the path of a single request as it traverses through various services and components in a distributed system. In a modern microservice environment, it typically spans multiple services, providing a detailed view of the request's journey and performance. The trace contains semantically different attributes that make it possible to interpret and understand the collected data, helping identify bottlenecks, errors, and latency issues for efficient troubleshooting and optimization.</p>
+<p><img alt="Traces and services" src="https://dt-cdn.net/images/traces-services-1920-59a6506038.png" /></p>
+<h4 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Понимать, как запросы распространяются по распределенным системам и микросервисам.</li>
-<li>Используйте для анализа запросов высококачественные данные, генерируемые распределенными системами и микросервисами.</li>
-<li>Быстро понять, как работает каждый микросервис.</li>
-<li>Следуйте <a href="/docs/dynatrace-intelligence/root-cause-analysis/concepts" title="Get acquainted with root cause analysis concepts.">Подробный анализ первопричин Dynatrace Intelligence</a>, чтобы определить причинно-следственные связи между событиями.</li>
+<li>Understand how requests propagate across distributed systems and microservices.</li>
+<li>Use high-quality data generated by distributed systems and microservices for request analysis.</li>
+<li>Quickly understand how each microservice is performing.</li>
+<li>Follow <a href="/docs/dynatrace-intelligence/root-cause-analysis/concepts" title="Get acquainted with root cause analysis concepts.">Dynatrace Intelligence root cause analysis drill-downs</a> to identify cause-effect relationships between events.</li>
 </ul>
-<h3 id="_9">Охватывать<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>Промежуток представляет собой одну операцию в распределенной трассировке, фиксирующую детали прохождения запроса через несколько служб.Каждый диапазон включает такие атрибуты, как имя, временная метка начала, список событий диапазона (например, исключений), идентификатор родительского диапазона и тип диапазона.Эта информация — <strong>контекст диапазона</strong> — помогает поместить все диапазоны и события в контекст друг друга, чтобы вы могли отслеживать и понимать производительность и поведение отдельных операций в распределенной системе.</p>
-<p>В пределах трассировки, когда действие — <em>родительский диапазон</em> — завершается, следующее действие переходит к его <em>дочернему диапазону</em>.Диапазон без родительского диапазона называется <em>корневым диапазоном</em> трассировки и указывает на начало трассировки.</p>
-<p>На изображении ниже показана трассировка, проходящая через три сервиса и создающая запрос для каждого сервиса.Каждый запрос имеет корневой диапазон, один из которых также является корнем трассировки.</p>
+<h3 id="span">Span<a class="headerlink" href="#span" title="Permanent link">&para;</a></h3>
+<p>A span represents a single operation within a distributed trace, capturing the details of the request's journey through multiple services. Each span includes attributes such as the name, the start timestamp, a list of span events (such as exceptions), the parent's span identifier, and the span kind. This informationâ<strong>span context</strong>â helps to put all spans and events in context with each other, so that you can trace and understand the performance and behavior of individual operations within the distributed system.</p>
+<p>Within a trace, when the activityâ<em>parent span</em>âis completed, the next activity passes to its <em>child span</em>. A span without a parent span is called a trace <em>root span</em> and indicates the start of a trace.</p>
+<p>The image below shows a trace traversing three services and producing a request for each service. Each request has a root span, one of which is also the root of the trace.</p>
 <ul>
-<li>A — это и первый диапазон трассировки, и первый диапазон запроса в рамках первой службы;кроме того, A — это диапазон без родительского элемента.A является одновременно корнем трассировки и запроса.</li>
-<li>C — первый диапазон запроса внутри второго сервиса;кроме того, у C есть родительский элемент (B).C — корень второго запроса.</li>
-<li>E не является первым диапазоном запроса в рамках третьего сервиса.Родитель E (D) является корнем третьего запроса.</li>
+<li>A is both the first span of the trace and the first span of the request within the first service; additionally, A is a span without a parent. A is both the root of the trace and of the request.</li>
+<li>C is the first span of the request within the second service; additionally, C has a parent (B). C is the root of the second request.</li>
+<li>E is not the first span of the request within the third service. E's parent (D) is the root of the third request.</li>
 </ul>
-<p><img alt="Трассировка анатомии" src="https://dt-cdn.net/images/trace-anatomy-1920-6ba49e1863.png" /></p>
-<p>Узнайте больше о <a href="/docs/semantic-dictionary/fields#span" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">охватывать семантические поля</a>.</p>
-<p>Контекст диапазона позволяет дочернему диапазону относиться к трассировке и его родительскому диапазону.Следовательно, контекст необходимо распространять внутри службы (по разным потокам), а также между службами и границами процессов.Обычно это происходит через заголовки HTTP (например, <a href="https://www.w3.org/TR/trace-context/">Контекст трассировки W3C»¿</a>) или через уникальные идентификаторы в системах обмена сообщениями.Чтобы узнать больше о распространении контекста, см. <a href="/docs/observe/application-observability/distributed-tracing/tracking-transactions" title="Understand span and trace context propagation in Dynatrace and how to set them up.">Распространение контекста интервала и трассировки</a>.</p>
-<h3 id="_10">Атрибут<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>Атрибуты — это пары «ключ-значение», которые предоставляют подробную информацию о диапазоне, запросе или ресурсе, например коды ответов, методы HTTP и URL-адреса.С помощью атрибутов вы можете группировать, запрашивать, находить и анализировать трассировки и интервалы.</p>
-<h3 id="_11">Варианты использования<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>Dynatraces использует метаданные атрибутов для</p>
+<p><img alt="Trace anatomy" src="https://dt-cdn.net/images/trace-anatomy-1920-6ba49e1863.png" /></p>
+<p>Learn more about <a href="/docs/semantic-dictionary/fields#span" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">span semantic fields</a>.</p>
+<p>The span context allows a child span to relate to the trace and its parent span. Therefore, the context needs to be propagated within a service (across different threads) but also across services and process boundaries. This typically happens via HTTP headers (like the <a href="https://www.w3.org/TR/trace-context/">W3C trace contextï»¿</a>) or via unique IDs in messaging systems. To learn more about context propagation, see <a href="/docs/observe/application-observability/distributed-tracing/tracking-transactions" title="Understand span and trace context propagation in Dynatrace and how to set them up.">Span and trace context propagation</a>.</p>
+<h3 id="attribute">Attribute<a class="headerlink" href="#attribute" title="Permanent link">&para;</a></h3>
+<p>Attributes are key-value pairs that provide details about a span, request, or resource such as response codes, HTTP methods, and URLs. Via attributes, you can group, query, find, and analyze your traces and spans.</p>
+<h4 id="use-cases_1">Use cases<a class="headerlink" href="#use-cases_1" title="Permanent link">&para;</a></h4>
+<p>Dynatrace uses attribute metadata to</p>
 <ul>
-<li><a href="/docs/observe/application-observability/services/service-detection/service-detection-v1" title="Find out how Dynatrace Service Detection v1 detects and names different types of services.">Обнаружение и присвоение имен службам</a>.</li>
-<li>Соберите данные о контексте трассировки и связях с другими объектами для <a href="/docs/analyze-explore-automate/smartscape-classic" title="Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.">Топология Smartscape</a>.</li>
-<li>Подключите данные журнала к трассировкам для <a href="/docs/analyze-explore-automate/logs/lma-log-enrichment" title="Connect your incoming log data to traces for more precise Dynatrace analysis.">Журналы</a> или <a href="/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment" title="Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis.">Бревна Классик</a>.</li>
-<li>Поймите, как <a href="/docs/observe/application-observability/services-classic/service-analysis-timing" title="Find out what each time in service analysis means.">график обслуживания</a> влияет на продолжительность интервала (например, время процессора, время сети или просто ожидание других потоков) и проанализируйте, какой код был выполнен в контексте интервала.</li>
+<li><a href="/docs/observe/application-observability/services/service-detection/service-detection-v1" title="Find out how Dynatrace Service Detection v1 detects and names different types of services.">Detect and name services</a>.</li>
+<li>Gather data on the trace context and relationships with other entities for <a href="/docs/analyze-explore-automate/smartscape-classic" title="Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.">Smartscape topology</a>.</li>
+<li>Connect log data to traces for <a href="/docs/analyze-explore-automate/logs/lma-log-enrichment" title="Connect your incoming log data to traces for more precise Dynatrace analysis.">Logs</a> or <a href="/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment" title="Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis.">Logs Classic</a>.</li>
+<li>Understand how the duration of a span is affected by <a href="/docs/observe/application-observability/services-classic/service-analysis-timing" title="Find out what each time in service analysis means.">service timings</a> (for example, CPU time, network time, or just waiting for other threads) and analyze which code was executed in the context of the span.</li>
 </ul>
-<h3 id="_12">Лучшие практики<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p>Если вы собираете данные трассировки через</p>
+<h4 id="best-practices">Best practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h4>
+<p>If you collect trace data via</p>
 <ul>
-<li>OpenTelemetry, определите <a href="/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings" title="Learn how to configure span settings for OpenTelemetry and OpenTracing.">захваченные настройки атрибутов</a>.</li>
-<li>OneAgent, определите <a href="/docs/observe/application-observability/services/request-attributes" title="Understand what request attributes are and learn how to use them across all levels of all service-analysis views.">запрашивает настройки атрибутов</a>.</li>
+<li>OpenTelemetry, define <a href="/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings" title="Learn how to configure span settings for OpenTelemetry and OpenTracing.">captured attribute settings</a>.</li>
+<li>OneAgent, define <a href="/docs/observe/application-observability/services/request-attributes" title="Understand what request attributes are and learn how to use them across all levels of all service-analysis views.">requests attribute settings</a>.</li>
 </ul>
-<p>Узнайте больше о семантических полях <a href="/docs/semantic-dictionary/fields#request-attributes" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">атрибуты запроса</a> и <a href="/docs/semantic-dictionary/fields#captured-attributes" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">захваченные атрибуты</a>.</p>
-<h3 id="_13">Услуга<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>Сервисы распространяются по распределенным трассировкам.В службах с горизонтальным масштабированием каждый диапазон обрабатывается конкретными <strong>экземплярами служб</strong>.Службы определяются и именуются на основе доступных атрибутов или свойств, которые собираются вместе с интервалами.</p>
-<h3 id="_14">Варианты использования<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>Learn more about <a href="/docs/semantic-dictionary/fields#request-attributes" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">request attributes</a> and <a href="/docs/semantic-dictionary/fields#captured-attributes" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">captured attributes</a> semantic fields.</p>
+<h3 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
+<p>Services are traversed by distributed traces. On horizontally scaled services, specific <strong>Service Instances</strong> process each span. Services are determined and named based on available attributes or properties that are collected along with the spans.</p>
+<h4 id="use-cases_2">Use cases<a class="headerlink" href="#use-cases_2" title="Permanent link">&para;</a></h4>
 <ul>
-<li><a href="/docs/observe/application-observability/distributed-traces/use-cases/segment-request" title="Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.">Сегментируйте запросы для уменьшения снижения времени ответа</a>.</li>
+<li><a href="/docs/observe/application-observability/distributed-traces/use-cases/segment-request" title="Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.">Segment requests to improve response time degradation</a>.</li>
 </ul>
-<h3 id="_15">Сбор данных и распространение контекста<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p>Вы можете интегрировать OpenTelemetry и OneAgent для сбора данных трассировки, таких как статус запроса, время ответа, версии, информация об инфраструктуре и другие соответствующие метаданные в качестве атрибутов.Контекст трассировки, включая уникальный идентификатор трассировки, затем распространяется по вашим приложениям и микросервисам.</p>
-<h3 id="_16">Лучшие практики<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<p>Прежде чем приступить к распределенной трассировке, узнайте, чем отличаются настройка и сбор данных трассировки между OpenTelemetry и OneAgent.Ниже приводится обзор основных отличий.</p>
+<h3 id="data-collection-and-context-propagation">Data collection and context propagation<a class="headerlink" href="#data-collection-and-context-propagation" title="Permanent link">&para;</a></h3>
+<p>You can integrate OpenTelemetry and OneAgent to collect trace dataâlike request status, response time, versions, infrastructure information, and other relevant metadata as attributes. The trace context, including the unique trace ID, is then propagated across your apps and microservices.</p>
+<h4 id="best-practices_1">Best practices<a class="headerlink" href="#best-practices_1" title="Permanent link">&para;</a></h4>
+<p>Before getting started with distributed tracing, understand how setup and trace data collection differs between OpenTelemetry and OneAgent. The following is an overview of the key differences.</p>
 <p>OpenTelemetry</p>
 <p>OneAgent</p>
-<p>Настраивать</p>
-<p>Автоматический или ручной</p>
-<p>Автоматический</p>
-<p>Захват</p>
-<p>Автоматический сбор разрешенных атрибутов диапазона.</p>
-<p>Автоматический сбор нескольких атрибутов запроса, включая метод HTTP, URL-адрес, коды ответов, данные топологии и сведения о базовых технологиях.</p>
-<p>Контекст</p>
-<p>Автоматически или вручную контекстуализированные записи журнала, в зависимости от библиотеки инструментов.</p>
-<p>Автоматически контекстуализируется</p>
+<p>Set up</p>
+<p>Automatic or manual</p>
+<p>Automatic</p>
+<p>Capturing</p>
+<p>Automatic collection of allowed span attributes.</p>
+<p>Automatic collection of several request attributes, including HTTP method, URL, response codes, topology data, and details about the underlying technologies.</p>
+<p>Context</p>
+<p>Automatically or manually contextualized log entries, depending on the instrumentation library.</p>
+<p>Automatically contextualized</p>
 <ul>
-<li>Записи журнала, созданные известными платформами журналов.</li>
-<li>Следы в Smartscape и Dynatrace Intelligence.</li>
+<li>Log entries produced by prominent log frameworks.</li>
+<li>Traces in Smartscape and Dynatrace Intelligence.</li>
 </ul>
-<p>Для начала см.</p>
+<p>To get started see</p>
 <ul>
-<li><a href="/docs/ingest-from/dynatrace-oneagent" title="Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.">Автоматическая настройка с помощью OneAgent</a></li>
-<li><a href="/docs/ingest-from/opentelemetry/getting-started" title="How to get your OpenTelemetry data into Dynatrace.">Инструментирование с помощью OpenTelemetry</a></li>
-<li><a href="/docs/ingest-from/extend-dynatrace/extend-tracing" title="Learn how to extend trace observability in Dynatrace.">Расширение распределенной трассировки</a></li>
+<li><a href="/docs/ingest-from/dynatrace-oneagent" title="Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.">Automatic setup with OneAgent</a></li>
+<li><a href="/docs/ingest-from/opentelemetry/getting-started" title="How to get your OpenTelemetry data into Dynatrace.">Instrumentation with OpenTelemetry</a></li>
+<li><a href="/docs/ingest-from/extend-dynatrace/extend-tracing" title="Learn how to extend trace observability in Dynatrace.">Extend distributed tracing</a></li>
 </ul>
-<p>Используйте OpenTelemetry в сочетании с OneAgent, чтобы улучшить зону наблюдения, используя лучшее из обоих.</p>
-<h2 id="_17">Варианты использования<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
-<p>Используйте <img alt="Распределенная трассировка" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> распределенную трассировку для:</p>
+<p>Use OpenTelemetry in combination with OneAgent to enhance your observability coverage, using the best of both.</p>
+<h2 id="use-cases_3">Use cases<a class="headerlink" href="#use-cases_3" title="Permanent link">&para;</a></h2>
+<p>Use <img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong> for:</p>
 <ul>
-<li>Устранение неполадок: узнайте, почему запросы не выполняются, и предотвратите проблемы в будущем.</li>
-<li>Оптимизация производительности. Изучите <a href="/docs/observe/application-observability/distributed-tracing/detect-performance-issues" title="Analyze your trace data and detected which requests are slow and why with the Distributed Tracing app.">производительность системы</a> и выявите узкие места, чтобы повысить надежность и удобство для пользователей.</li>
-<li>Подробный анализ: просмотрите отдельные детали трассировки для более глубокого понимания.</li>
-<li>Исследовательский анализ. Используйте анализ в свободной форме, чтобы на лету обнаруживать и исследовать неизвестные неизвестные.</li>
-<li>Обнаружение неизвестных неизвестных: будьте готовы к неизвестному, используя анализ в свободной форме для исследования и анализа данных на лету.</li>
-<li>Синтез трассировок и сигналов мониторинга: просматривайте данные трассировки в контексте других сигналов, таких как журналы, бизнес-события или показатели.</li>
+<li>Troubleshooting: Find out why requests fail and prevent future issues.</li>
+<li>Performance optimization: Understand <a href="/docs/observe/application-observability/distributed-tracing/detect-performance-issues" title="Analyze your trace data and detected which requests are slow and why with the Distributed Tracing app.">system performance</a> and identify bottlenecks to improve reliability and user experience.</li>
+<li>Detailed analysis: Look into individual trace details for deeper insights.</li>
+<li>Exploratory analysis: Use free-form analysis to discover and explore unknown unknowns on the fly.</li>
+<li>Discovering unknown unknowns: Be prepared for the unknown by using free-form analysis to explore and dissect data on the fly.</li>
+<li>Synthesizing traces and monitoring signals: View trace data in context with other signal like logs, business events, or metrics.</li>
 </ul>
-<p><img alt="Центр" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
-<h2 id="dynatrace-hub">Исследуйте в Dynatrace Hub<a class="headerlink" href="#dynatrace-hub" title="Permanent link">&para;</a></h2>
-<p>Анализируйте и нарезайте распределенные трассировки по любому атрибуту и ​​из любого источника.</p>
-<p><a href="https://www.dynatrace.com/hub/detail/distributed-tracing/?internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross">Dynatrace Hubï»¿</a></p>
-<h2 id="_18">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
-<p>Почему я вижу сообщение «Новый интерфейс трассировки скоро появится в вашей среде!»при запуске приложения распределенной трассировки?</p>
-<p>Новый интерфейс отслеживания внедряется поэтапно, чтобы расширить доступ для клиентов Dynatrace SaaS DPS до марта 2025 года. Сроки доступности зависят от географического региона и общего объема отслеживания вашей учетной записи.Для получения дополнительной информации обратитесь к своему менеджеру по работе с клиентами.</p>
-<p>Доступны ли трассировки в классических представлениях Distributed Traces?</p>
-<p>Да.Начав анализировать трассировки в приложении Distributed Tracing, вы можете продолжать использовать Distributed Traces Classic одновременно.</p>
-<p>Какой пакет лицензирования охватывает распределенную трассировку?</p>
-<p>DPS FullStack и/или Custom Traces Classic.При использовании нового приложения Distributed Tracing никаких дополнительных затрат не взимается.</p>
-<p>Я изменил грани.Могу ли я сбросить их рекомендуемым способом?</p>
-<p>Да.Перейдите в раздел <strong>Распределенная трассировка</strong> <img alt="Распределенная трассировка" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> и выберите <strong>Показать фасеты</strong> &gt; <strong>Восстановить значения по умолчанию</strong>.</p>
-<p>Как удалить ссылки span.kind с нулевой длительностью?</p>
-<p>Обновите OneAgent до последней версии.</p>
-<p>Не все трассировки, доступные в Distributed Traces Classic, видны в приложении Distributed Tracing.</p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<p>Why do I see the message "The new tracing experience is coming to your environment soon!" when starting the Distributed Tracing app?</p>
+<p>The new tracing experience is rolled out in stages to extend access to Dynatrace SaaS DPS customers until March 2025. The availability timing depends on the geographic region and the overall trace volume of your account. For more information, reach out to your Customer Success Manager.</p>
+<p>Are traces in Distributed Traces Classic views still available?</p>
+<p>Yes. Once you start analyzing traces in the Distributed Tracing app, you can continue to use Distributed Traces Classic side by side.</p>
+<p>Which licensing package covers Distributed Tracing?</p>
+<p>DPS FullStack and/or Custom Traces Classic. No additional costs apply when you're using the new Distributed Tracing app.</p>
+<p>I modified facets. Can I reset them to the recommended way?</p>
+<p>Yes. Go to <img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong> and select <strong>Show facets</strong> &gt; <strong>Reset to default</strong>.</p>
+<p>How can I remove span.kind links with null duration?</p>
+<p>Update to the latest version of OneAgent.</p>
+<p>Not all traces available in Distributed Traces Classic are visible in the Distributed Tracing app.</p>
 <ul>
-<li>Убедитесь, что у вас установлена ​​последняя версия OneAgent.</li>
-<li>Убедитесь, что <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-features" title="Manage OneAgent features globally and per process group.">Функция OneAgent</a> <strong>расширение контекста трассировки тега пересылки 4</strong> включено;это гарантирует совместимость трассировок, собранных OneAgent, со стандартом контекста трассировки W3C.</li>
+<li>Make sure you have the latest version of OneAgent.</li>
+<li>Make sure the <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-features" title="Manage OneAgent features globally and per process group.">OneAgent feature</a> <strong>Forward Tag 4 trace context extension</strong> is on; this ensures OneAgent-captured traces are compatible with the W3C trace context standard.</li>
 </ul>
-<p>Я вижу неполные сквозные трассировки в приложении Distributed Tracing, которые отображаются полными в Distributed Traces Classic.</p>
+<p>I see incomplete end-to-end traces in the Distributed Tracing app that are shown complete in Distributed Traces Classic.</p>
 <ul>
-<li>Убедитесь, что у вас установлена ​​последняя версия OneAgent.</li>
-<li>Убедитесь, что <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-features" title="Manage OneAgent features globally and per process group.">Функция OneAgent</a> <strong>расширение контекста трассировки тега пересылки 4</strong> включено;это гарантирует совместимость трассировок, собранных OneAgent, со стандартом контекста трассировки W3C.</li>
+<li>Make sure you have the latest version of OneAgent.</li>
+<li>Make sure the <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-features" title="Manage OneAgent features globally and per process group.">OneAgent feature</a> <strong>Forward Tag 4 trace context extension</strong> is on; this ensures OneAgent-captured traces are compatible with the W3C trace context standard.</li>
 </ul>
-<p>Как я могу фильтровать трассировки, собранные OneAgent или полученные через OpenTelemetry?</p>
+<p>How can I filter for traces that are collected by OneAgent or ingested via OpenTelemetry?</p>
 <ol>
-<li>Перейдите к разделу <strong>Распределенная трассировка</strong> <img alt="Распределенная трассировка" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" />.</li>
-<li>В списке фасетов введите <code>span source</code> и выберите интересующий вас источник.</li>
+<li>Go to <img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong>.</li>
+<li>In the facet list, enter <code>span source</code> and select the source you're interested in.</li>
 </ol>
-<p>Поддерживает ли новый опыт распределенной трассировки межсредовую трассировку?</p>
-<p>Еще нет.</p>
-<h2 id="_19">Похожие темы<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>Does the new distributed tracing experience support cross-environment tracing?</p>
+<p>Not yet.</p>
+<p><img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h3>
+<p>Analyze and slice distributed traces by any attribute and from any source.</p>
+<p><a href="https://www.dynatrace.com/hub/detail/distributed-tracing/?internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross">Dynatrace Hubï»¿</a></p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Язык запросов Dynatrace</a></li>
-<li><a href="/docs/platform/grail/dynatrace-grail" title="Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.">Что такое Dynatrace Grail?</a></li>
-<li><a href="/docs/observe/application-observability/distributed-tracing/tracking-transactions" title="Understand span and trace context propagation in Dynatrace and how to set them up.">Распространение контекста интервала и трассировки</a></li>
+<li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
+<li><a href="/docs/platform/grail/dynatrace-grail" title="Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.">What is Dynatrace Grail?</a></li>
+<li><a href="/docs/observe/application-observability/distributed-tracing/tracking-transactions" title="Understand span and trace context propagation in Dynatrace and how to set them up.">Span and trace context propagation</a></li>
 </ul>
 
 

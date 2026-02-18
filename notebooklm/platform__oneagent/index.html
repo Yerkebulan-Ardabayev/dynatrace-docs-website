@@ -25466,10 +25466,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#platformoneagentmd" class="md-nav__link">
+  <a href="#platformoneagenthow-one-agent-worksmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        platform/oneagent.md
+        platform/oneagent/how-one-agent-works.md
       
     </span>
   </a>
@@ -25496,33 +25496,872 @@
 <h1 id="dynatrace-platformoneagent">Документация Dynatrace: platform/oneagent<a class="headerlink" href="#dynatrace-platformoneagent" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
 Сгенерировано: 2026-02-18
-Файлов в разделе: 1</p>
+Файлов в разделе: 6</p>
+<hr />
+<h2 id="platformoneagenthow-one-agent-worksmd">platform/oneagent/how-one-agent-works.md<a class="headerlink" href="#platformoneagenthow-one-agent-worksmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: How OneAgent works
+source: https://www.dynatrace.com/docs/platform/oneagent/how-one-agent-works
+scraped: 2026-02-18T21:24:16.456893</p>
+<hr />
+<h1 id="how-oneagent-works">How OneAgent works<a class="headerlink" href="#how-oneagent-works" title="Permanent link">&para;</a></h1>
+<h1 id="how-oneagent-works_1">How OneAgent works<a class="headerlink" href="#how-oneagent-works_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>2-min read</li>
+<li>Published Oct 13, 2018</li>
+</ul>
+<p>OneAgent comprises a set of specialized processes that run on each monitored host. It collects metrics from the operating system on which it runs, and compares the metrics to expected performance values. The most important metrics are then reported to Dynatrace.</p>
+<h2 id="processes">Processes<a class="headerlink" href="#processes" title="Permanent link">&para;</a></h2>
+<p>In addition, OneAgent detects which processes run on each host and collects performance metrics for the most important processes. OneAgent can also perform more detailed monitoring of specific technologies (such as Java, Node.js, .NET, and others) by injecting itself into those processes and monitoring their performance from within. This provides you with code-level insights into the services that your applications rely on.</p>
+<h2 id="real-user-monitoring">Real user monitoring<a class="headerlink" href="#real-user-monitoring" title="Permanent link">&para;</a></h2>
+<p>To deliver Real User Monitoring, OneAgent injects a JavaScript tag into the HTML of each application page that is rendered by your web servers. With these JavaScript tags in placeâalong with a corresponding module that is automatically installed on your web server and requires no configurationâOneAgent is able to monitor the response times and performance experienced by your customers in their mobile and desktop browsers.</p>
+<h2 id="log-monitoring">Log monitoring<a class="headerlink" href="#log-monitoring" title="Permanent link">&para;</a></h2>
+<p>OneAgent is also capable of monitoring the log files of a specific host or a specific process group. It can discover and analyze system or process-created logs. Depending on your configuration, you can store these log files, which makes the log data available independently of the log files themselves. This can be beneficial in the following situations:</p>
+<ul>
+<li>Short log-retention periods</li>
+<li>Volatile log storage</li>
+<li>Legal requirements to keep logs archived centrally</li>
+</ul>
+<h2 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h2>
+<p>OneAgent can dig deeper and get network metrics at the process level. Thanks to process-to-process monitoring of network communications Dynatrace can:</p>
+<ul>
+<li>Ensure high-quality process communications over networks.</li>
+<li>Understand your network topology in dynamic environments.</li>
+<li>Monitor process-level network capacity.</li>
+<li>Perform integrated network health monitoring.</li>
+</ul>
+<h2 id="communication">Communication<a class="headerlink" href="#communication" title="Permanent link">&para;</a></h2>
+<p>Communication from OneAgent to Dynatrace is outbound only and Dynatrace never initiates communication with OneAgent. Because of this, when using Dynatrace, there is no need to open ports for inbound communication.<br />
+OneAgent can connect directly to Dynatrace Cluster or it can communicate via one or more <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">Dynatrace ActiveGates</a>. Simultaneous connection via multiple ActiveGates is possible. OneAgent determines which ActiveGates to communicate through based on the information it receives from Dynatrace Cluster.</p>
+<p>OneAgent reports its collected data via HTTP/S requests to the ActiveGates or the Dynatrace Cluster. If <a href="/docs/observe/application-observability/live-debugger" title="Get familiar with the Live Debugger capabilities in Dynatrace.">Live Debugger</a> is enabled, the OneAgent will create a WebSocket session to the ActiveGates or the Cluster to allow realtime communication and reporting of its collected snapshots. WebSocket sessions are multiplexed by the ActiveGates to limit network load and are load balanced by the OneAgents.</p>
+<hr />
+<h2 id="platformoneagentmonitoring-modesenable-monitoring-modesmd">platform/oneagent/monitoring-modes/enable-monitoring-modes.md<a class="headerlink" href="#platformoneagentmonitoring-modesenable-monitoring-modesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Enable OneAgent monitoring modes
+source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes
+scraped: 2026-02-18T21:24:15.273731</p>
+<hr />
+<h1 id="enable-oneagent-monitoring-modes">Enable OneAgent monitoring modes<a class="headerlink" href="#enable-oneagent-monitoring-modes" title="Permanent link">&para;</a></h1>
+<h1 id="enable-oneagent-monitoring-modes_1">Enable OneAgent monitoring modes<a class="headerlink" href="#enable-oneagent-monitoring-modes_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>8-min read</li>
+<li>Published Nov 26, 2025</li>
+</ul>
+<p>By default, <a href="/docs/ingest-from/dynatrace-oneagent" title="Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.">OneAgent</a> runs in Full-Stack monitoring mode, giving you complete visibility across hosts, processes, and services. If you prefer a lighter approach, you can switch to one of the two alternative modes that focus on essential infrastructure metrics:</p>
+<ul>
+<li>Infrastructure monitoring mode</li>
+<li>Discovery mode</li>
+</ul>
+<h2 id="select-a-default-monitoring-mode">Select a default monitoring mode<a class="headerlink" href="#select-a-default-monitoring-mode" title="Permanent link">&para;</a></h2>
+<p>You can define a default monitoring mode before installing OneAgent. This will change the default <strong>Full-Stack</strong> monitoring mode on the OneAgent deployment page (for Linux, Windows, and AIX operating systems) and in the <img alt="Discovery &amp; Coverage" src="https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png" title="Discovery &amp; Coverage" /> <strong>Discovery &amp; Coverage</strong> app (when deploying OneAgent from the <strong>Install OneAgent</strong> page).</p>
+<p>To define a default monitoring mode</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent default mode</strong>.</li>
+<li>Select a <strong>OneAgent default monitoring mode</strong> from the dropdown list.</li>
+<li>Select <strong>Save changes</strong>.</li>
+</ol>
+<p>The selected value will be set as a default value for the chosen OneAgent deployment mode.</p>
+<h2 id="enable-infrastructure-monitoring-mode">Enable Infrastructure monitoring mode<a class="headerlink" href="#enable-infrastructure-monitoring-mode" title="Permanent link">&para;</a></h2>
+<p>You can turn on Infrastructure monitoring mode at the host level, either during or after OneAgent installation.</p>
+<p>During OneAgent installation</p>
+<p>To turn on Infrastructure monitoring mode during OneAgent installation, use the <code>--set-monitoring-mode=infra-only</code> parameter.</p>
+<p>For more information, see the <a href="/docs/ingest-from/dynatrace-oneagent" title="Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.">OneAgent installation</a> documentation that's specific to your environment.</p>
+<p>After OneAgent installation</p>
+<p>To turn on Infrastructure monitoring mode after OneAgent installation, use one of these options:</p>
+<ul>
+<li>
+<p>In Dynatrace</p>
+</li>
+<li>
+<p>Go to <img alt="Hosts" src="https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png" title="Hosts" /> <strong>Hosts Classic</strong> and open a host overview page.</p>
+</li>
+<li>Select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Settings</strong> in the upper-right corner to display the <strong>Host settings</strong> page.</li>
+<li>Select <strong>Host monitoring</strong>.</li>
+<li>Go to <strong>Monitoring Mode</strong> and in the drop-down menu select <strong>Infrastructure</strong>.</li>
+<li>Select <strong>Save changes</strong>.</li>
+<li>Use the <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">OneAgent command-line interface</a> to set the <code>--set-monitoring-mode=infra-only</code> parameter.</li>
+<li>Use the <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a> to turn on Infrastructure Monitoring mode at scale.</li>
+<li>To download the schema, use <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="View a settings schema via the Dynatrace API.">GET a schema</a> with <code>builtin:host.monitoring</code> as the schemaId and create your configuration object using <a href="/docs/dynatrace-api/environment-api/settings/objects/post-object" title="Create or validate a settings object via the Dynatrace API.">POST an object</a>.</li>
+</ul>
+<h3 id="process-injection">Process injection<a class="headerlink" href="#process-injection" title="Permanent link">&para;</a></h3>
+<p>Process injection provides you with additional data for Infrastructure Observability. Process injection is enabled by default.</p>
+<p>If you run your OneAgent as a container with Infrastructure monitoring mode enabled, process injection will not be performed.</p>
+<p>Infrastructure monitoring mode enables you to monitor any infrastructure component and backing service written in Java. You can monitor backing services supported by default (for example, Kafka or ActiveMQ), and you can also build your own custom <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions" title="Learn how to extend Dynatrace monitoring to include applications you've instrumented with JMX.">JMX and PMI extensions</a> for infrastructure components and use them in Infrastructure monitoring mode.</p>
+<p>Additionally, with process injection, Infrastructure monitoring mode provides runtime metrics for:</p>
+<ul>
+<li>Java</li>
+<li>.NET</li>
+<li>Node.js</li>
+<li>Golang</li>
+<li>PHP</li>
+<li>Web servers such as Apache HTTP, NGINX, or Microsoft IIS.</li>
+</ul>
+<h3 id="disable-process-auto-injection">Disable process auto-injection<a class="headerlink" href="#disable-process-auto-injection" title="Permanent link">&para;</a></h3>
+<p>We don't recommend turning off auto-injection, but if you're required to do so due to strict security requirements, you can choose among various options. Turning off auto-injection also prevents Dynatrace from discovering vulnerabilities or live debugging in your environment, even if you enable <a href="/docs/secure/application-security" title="Access the Dynatrace Application Security functionalities.">Application Security</a> or <a href="/docs/observe/application-observability/live-debugger" title="Get familiar with the Live Debugger capabilities in Dynatrace.">Live Debugger</a>. You can turn off automatic injection at the host or environment level.</p>
+<h4 id="disable-auto-injection-for-a-single-host">Disable auto-injection for a single host<a class="headerlink" href="#disable-auto-injection-for-a-single-host" title="Permanent link">&para;</a></h4>
+<p>After OneAgent installation with UI</p>
+<ol>
+<li>Go to <img alt="Hosts" src="https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png" title="Hosts" /> <strong>Hosts Classic</strong> and open a host overview page.</li>
+<li>Select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Settings</strong> in the upper-right corner to display the <strong>Host settings</strong> page.</li>
+<li>Select <strong>Host Monitoring</strong>.</li>
+<li>Go to <strong>Advanced settings</strong>.</li>
+<li>Turn off <strong>ProcessAgent Injection</strong>, then select <strong>Save changes</strong>.</li>
+<li>Restart the monitored processes on the host.</li>
+</ol>
+<p>After OneAgent installation with command line</p>
+<p>Use the <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">OneAgent command line interface</a> to set the <code>--set-auto-injection-enabled=false</code> parameter.</p>
+<p>If you use oneagentctl to turn off automatic injection, you won't be able to control auto-injection in Infrastructure monitoring mode using the Dynatrace web UI at <strong>Settings &gt; Monitoring &gt; Monitored technologies</strong> or <a href="/docs/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-monitoring/put-monitoring-configuration" title="Update the monitoring configuration of a OneAgent instance via the Dynatrace API.">OneAgent monitoring configuration API</a>.</p>
+<h4 id="disable-auto-injection-for-an-environment">Disable auto-injection for an environment<a class="headerlink" href="#disable-auto-injection-for-an-environment" title="Permanent link">&para;</a></h4>
+<p>Define custom process monitoring rules</p>
+<p>You can turn off process injection for particular process groups using custom process monitoring rules.</p>
+<p>Custom process monitoring rules give you fine-grained control over which processes OneAgent injects into, with an approach that scales easily within large environments. You donât need to adjust your system configuration, and a few rules can cover thousands of processes.</p>
+<p>For more information, see <a href="/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring#rules" title="Ways to customize process-group monitoring">Process deep monitoring</a>.</p>
+<p>Disable runtime metrics</p>
+<p>You can disable the collection on JMX/PMI and runtime metrics, which will result in disabling auto-injection in Infrastructure monitoring mode.</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Monitoring</strong> &gt; <strong>Monitored technologies</strong>.</li>
+<li>In the list of supported technologies, search for the <strong>Java/.NET/Node.js/Golang/PHP runtime metrics + WebServer metrics in Infrastructure Mode</strong> entry.</li>
+<li>Select the pencil icon <img alt="Edit" src="https://dt-cdn.net/images/edit-icon-a083c62c49.svg" title="Edit" /> to edit it and then disable it.</li>
+<li>Restart all processes on your infrastructure-monitored hosts.</li>
+</ol>
+<p>Disable selected extensions</p>
+<p>You can also turn off selected extensions collecting the metrics at the environment level.</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Monitoring</strong> &gt; <strong>Monitored technologies</strong>.</li>
+<li>Supported technologies</li>
+</ol>
+<p>Custom extensions</p>
+<ol>
+<li>In the list of supported technologies, search for technologies marked as <strong>JMX monitoring</strong> in the <strong>Type</strong> column.</li>
+<li>Select the pencil icon <img alt="Edit" src="https://dt-cdn.net/images/edit-icon-a083c62c49.svg" title="Edit" /> to edit an extension of your choice.</li>
+<li>
+<p>Turn off <strong>Monitor the environment for hosts in infrastructure-only monitoring mode</strong>.</p>
+</li>
+<li>
+<p>In the list of custom extensions, search for extensions marked as <strong>JMX</strong> or <strong>PMI</strong> in the <strong>Extension type</strong> column.</p>
+</li>
+<li>Select the extension name of your choice.</li>
+<li>Turn off <strong>Monitor the environment for hosts in infrastructure-only monitoring mode</strong>.</li>
+</ol>
+<p>The setting at the host level takes precedence over environment settings. If a host is configured to <strong>Use host configuration</strong> for the extension and the extension isn't activated on this host, the environment configuration won't be applied. To make sure an extension is active on a single host level:</p>
+<ol>
+<li>Go to <img alt="Hosts" src="https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png" title="Hosts" /> <strong>Hosts Classic</strong> and find an infrastructure-monitored host. You can filter by <strong>Monitoring mode: Infrastructure only</strong>.</li>
+<li>Open the host page.</li>
+<li>Select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Settings</strong> in the upper-right corner to display the <strong>Host settings</strong> page.</li>
+<li>In the <strong>Monitored technologies</strong> table, search for extensions of type <strong>JMX extension</strong>, <strong>JMX monitoring</strong>, or <strong>PMI extension</strong>.</li>
+<li>Select <strong>Edit</strong>. Use the <strong>Activate <code>&lt;extension name&gt;</code> on this host</strong> control.</li>
+</ol>
+<h3 id="filter-hosts-by-injection-status">Filter hosts by injection status<a class="headerlink" href="#filter-hosts-by-injection-status" title="Permanent link">&para;</a></h3>
+<p>When you turn off auto-injection, you can find such hosts using the <strong>Auto-injection</strong> filter on the <strong>Deployment Status</strong> page or <a href="/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents" title="Check the configuration of OneAgent instances on your hosts via Dynatrace API.">OneAgent on a host - GET a list of hosts with OneAgent details</a>.</p>
+<p>Use Dynatrace web UI</p>
+<ol>
+<li>Go to <strong>Deployment Status</strong> and then select the <strong>OneAgents</strong> tab.</li>
+<li>
+<p>Select the <strong>Filter by</strong> box, select <strong>Auto-injection</strong>, and select <strong>Disabled manually</strong>. You can also use one of the filters below to check other reasons. Note that a filter appears only if a host with a respective status is available in your deployment.</p>
+</li>
+<li>
+<p><strong>Enabled</strong><br />
+  Auto-injection was successfully enabled.</p>
+</li>
+<li><strong>Disabled manually</strong><br />
+  Auto-injection was disabled <a href="#after-install">after OneAgent installation</a>, either using the Dynatrace web UI or <code>oneagentctl</code>.</li>
+<li><strong>Disabled on installation</strong><br />
+  Auto-injection was disabled <a href="#during-install">during OneAgent installation</a>.</li>
+<li><strong>Disabled on sanity check</strong><br />
+  Auto-injection wasn't enabled due to a failed test performed by the OneAgent installer before OneAgent installation started. Check the OneAgent installer log for details.</li>
+<li><strong>Failed on installation</strong><br />
+  Auto-injection failed due to an error during OneAgent installation. Check the OneAgent installer log for details.</li>
+</ol>
+<p>Use Dynatrace API</p>
+<p>Run the <a href="/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents" title="Check the configuration of OneAgent instances on your hosts via Dynatrace API.">OneAgent on a host - GET a list of hosts with OneAgent details</a> call with the <code>autoInjection</code> parameter set to <code>DISABLED_MANUAL</code>. The returned payload contains the list of OneAgents with auto-injection disabled <a href="#after-install">after OneAgent installation</a> via either the Dynatrace web UI or <code>oneagentctl</code>.</p>
+<h2 id="enable-discovery-monitoring-mode">Enable Discovery monitoring mode<a class="headerlink" href="#enable-discovery-monitoring-mode" title="Permanent link">&para;</a></h2>
+<p>You can turn on Discovery mode at the host level, either during or after OneAgent installation.</p>
+<p>During OneAgent installation</p>
+<p>To turn on Discovery mode during OneAgent installation, use the <code>--set-monitoring-mode=discovery</code> parameter.</p>
+<p>For more information, see the <a href="/docs/ingest-from/dynatrace-oneagent" title="Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.">OneAgent installation</a> documentation that's specific to your environment.</p>
+<p>After OneAgent installation</p>
+<p>To turn on Discovery mode after OneAgent installation, use one of these options:</p>
+<ul>
+<li>
+<p>In Dynatrace</p>
+</li>
+<li>
+<p>Go to <img alt="Hosts" src="https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png" title="Hosts" /> <strong>Hosts Classic</strong> and open a host overview page.</p>
+</li>
+<li>Select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Settings</strong> in the upper-right corner to display the <strong>Host settings</strong> page.</li>
+<li>Select <strong>Host monitoring</strong>.</li>
+<li>Go to <strong>Monitoring Mode</strong> and in the drop-down menu select <strong>Discovery</strong>.</li>
+<li>Select <strong>Save changes</strong>.</li>
+<li>Use the <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">OneAgent command-line interface</a> to set the <code>--set-monitoring-mode=discovery</code> parameter.</li>
+</ul>
+<h3 id="code-module-injection">Code-module injection<a class="headerlink" href="#code-module-injection" title="Permanent link">&para;</a></h3>
+<p>For <a href="/docs/secure/application-security" title="Access the Dynatrace Application Security functionalities.">Application Security</a> and <a href="/docs/observe/application-observability/live-debugger" title="Get familiar with the Live Debugger capabilities in Dynatrace.">Live Debugger</a> to work in Discovery mode, code-module injection is required. Code-module injection is disabled by default.</p>
+<p>After <a href="#enable-discovery-mode">turning on Discovery mode</a>, you can turn on the code-module injection for a single host.</p>
+<ol>
+<li>Go to the settings page of the desired host and select <strong>Host monitoring</strong>.</li>
+<li>Go to <strong>Advanced settings</strong>.</li>
+<li>Turn on <strong>CodeModule Injection</strong>, then select <strong>Save changes</strong>.</li>
+<li>Restart the monitored processes on the host.</li>
+</ol>
+<p>For details on how Application Security works in Discovery mode, see <a href="/docs/secure/application-security#discovery" title="Access the Dynatrace Application Security functionalities.">Application Security: Discovery mode</a>.</p>
+<hr />
+<h2 id="platformoneagentmonitoring-modesmonitoring-modesmd">platform/oneagent/monitoring-modes/monitoring-modes.md<a class="headerlink" href="#platformoneagentmonitoring-modesmonitoring-modesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: OneAgent monitoring modes
+source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/monitoring-modes
+scraped: 2026-02-18T21:17:31.083839</p>
+<hr />
+<h1 id="oneagent-monitoring-modes">OneAgent monitoring modes<a class="headerlink" href="#oneagent-monitoring-modes" title="Permanent link">&para;</a></h1>
+<h1 id="oneagent-monitoring-modes_1">OneAgent monitoring modes<a class="headerlink" href="#oneagent-monitoring-modes_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Explanation</li>
+<li>5-min read</li>
+<li>Updated on Nov 26, 2025</li>
+</ul>
+<p>Using <a href="/docs/ingest-from/dynatrace-oneagent" title="Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.">OneAgent</a> to collect performance and health data from your environment gives you deep observability across applications, services, and infrastructure. To accommodate different use cases and resource requirements, OneAgent supports multiple monitoring modes.</p>
+<p>If you don't need full-stack monitoring, you can choose one of the two lightweight modes that focus on essential infrastructure metrics:</p>
+<ul>
+<li>Infrastructure monitoring mode</li>
+<li>Discovery monitoring mode</li>
+</ul>
+<p>Here is an overview of available monitoring options for each monitoring mode.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Full stack</th>
+<th>Infrastructure</th>
+<th>Discovery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Topology discovery (hybrid cloud discovery and Smartscape)</td>
+<td>GA</td>
+<td>GA</td>
+<td>GA</td>
+</tr>
+<tr>
+<td>Host criticality (detection of external services and app dependencies)</td>
+<td>GA</td>
+<td>GA</td>
+<td>GA</td>
+</tr>
+<tr>
+<td>Basic monitoring (host health, filesystem, OS Services)</td>
+<td>GA</td>
+<td>GA</td>
+<td>GA</td>
+</tr>
+<tr>
+<td>Host process details</td>
+<td>GA</td>
+<td>GA</td>
+<td></td>
+</tr>
+<tr>
+<td>Detailed disk analysis</td>
+<td>GA</td>
+<td>GA</td>
+<td></td>
+</tr>
+<tr>
+<td>Network analysis</td>
+<td>GA</td>
+<td>GA</td>
+<td></td>
+</tr>
+<tr>
+<td>Memory analysis</td>
+<td>GA</td>
+<td>GA</td>
+<td></td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>opt-in</td>
+<td>opt-in</td>
+<td></td>
+</tr>
+<tr>
+<td>Custom metrics</td>
+<td>15 / 256 MiB</td>
+<td>100 / host</td>
+<td></td>
+</tr>
+<tr>
+<td>Log Management</td>
+<td>opt-in</td>
+<td>opt-in</td>
+<td>opt-in</td>
+</tr>
+<tr>
+<td>Tracing and profiling</td>
+<td>GA</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Process injection</td>
+<td>GA</td>
+<td>opt-out</td>
+<td></td>
+</tr>
+<tr>
+<td>Application Security<a href="#fn-1-1-def">1</a></td>
+<td>opt-in</td>
+<td>opt-in</td>
+<td>opt-in</td>
+</tr>
+<tr>
+<td>Live Debugger</td>
+<td>opt-in</td>
+<td>opt-in</td>
+<td>opt-in</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>For more information on Infrastructure mode and Discovery mode for Application Security, see <a href="/docs/secure/application-security#monitoring-modes" title="Access the Dynatrace Application Security functionalities.">Monitoring modes for Application Security</a>.</p>
+<h2 id="infrastructure-monitoring-mode">Infrastructure monitoring mode<a class="headerlink" href="#infrastructure-monitoring-mode" title="Permanent link">&para;</a></h2>
+<p>OneAgent auto-injection</p>
+<p>OneAgent in Infrastructure monitoring mode automatically injects into processes to be able to monitor backing services written in Java and runtime metrics for supported languages. Learn how to <a href="/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes#disable-auto-injection" title="Learn how to enable monitoring modes when using OneAgent.">turn off auto-injection</a>.</p>
+<p>Full-stack monitoring mode provides comprehensive application performance monitoring, including code-level visibility, in-depth process monitoring, and infrastructure monitoring (including PaaS platforms). However, if your focus is more on infrastructure health rather than in-depth application analysis, you can configure OneAgent to use Infrastructure monitoring mode, which focuses on physical and virtual infrastructure, log monitoring, and AIOps capabilities.</p>
+<p>For more details, see <a href="/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes#enable-infrastructure-monitoring-mode" title="Learn how to enable monitoring modes when using OneAgent.">Enable Infrastructure monitoring mode</a>.</p>
+<h2 id="discovery-monitoring-mode">Discovery monitoring mode<a class="headerlink" href="#discovery-monitoring-mode" title="Permanent link">&para;</a></h2>
+<p>OneAgent version 1.281+</p>
+<p>Discovery monitoring mode provides basic metrics enabling you to discover your hosts and processes and learn the potential to extend your monitoring.</p>
+<p>We recommend deploying OneAgent in Full-Stack monitoring mode to monitor your business-critical applications. Similarly, we recommend monitoring critical infrastructure, such as databases, queues, and messaging systems, with Infrastructure Observability. OneAgent in Discovery mode can be deployed across the remainder of your infrastructure for complete visibility, thanks to its relatively low cost.</p>
+<p>Discovery mode is available only if you're using the Dynatrace Platform Subscription model. License consumption is via the <strong>Foundation &amp; Discovery</strong> capability. To learn more, see <a href="/docs/license/capabilities/app-infra-observability#discovery" title="Learn about the different Application &amp; Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.">Application &amp; Infrastructure Observability overview (DPS)</a>.</p>
+<p>For more details, see <a href="/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes#enable-discovery-mode" title="Learn how to enable monitoring modes when using OneAgent.">Enable Discovery monitoring mode</a>.</p>
+<p>The following built-in metrics are available in Discovery mode:</p>
+<p>CPU</p>
+<table>
+<thead>
+<tr>
+<th>Metric key</th>
+<th>Name and description</th>
+<th>Unit</th>
+<th>Aggregations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>builtin:host.cpu.entConfig</td>
+<td>AIX Entitlement configured Capacity Entitlement is the number of virtual processors assigned to the AIX partition. It's measured in fractions of processor equal to 0.1 or 0.01. For more information about entitlement, see <a href="https://dt-url.net/3n234vz">Assigning the appropriate processor entitled capacity</a> in official IBM documentation.</td>
+<td>Ratio</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.entc</td>
+<td>AIX Entitlement used Percentage of entitlement used. Capacity Entitlement is the number of virtual cores assigned to the AIX partition. See for more information about entitlement, see <a href="https://dt-url.net/3n234vz">Assigning the appropriate processor entitled capacity</a> in official IBM documentation.</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.idle</td>
+<td>CPU idle Average CPU time, when the CPU didn't have anything to do</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.iowait</td>
+<td>CPU I/O wait Percentage of time when CPU was idle during which the system had an outstanding I/O request. It is not available on Windows.</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.load</td>
+<td>System load The average number of processes that are being executed by CPU or waiting to be executed by CPU over the last minute</td>
+<td>Ratio</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.load15m</td>
+<td>System load15m The average number of processes that are being executed by CPU or waiting to be executed by CPU over the last 15 minutes</td>
+<td>Ratio</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.load5m</td>
+<td>System load5m The average number of processes that are being executed by CPU or waiting to be executed by CPU over the last 5 minutes</td>
+<td>Ratio</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.other</td>
+<td>CPU other Average CPU time spent on other tasks: servicing interrupt requests (IRQ), running virtual machines under the control of the host's kernel (meaning the host is a hypervisor for VMs). It's available only for Linux hosts</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.physc</td>
+<td>AIX Physical consumed Total CPUs consumed by the AIX partition</td>
+<td>Ratio</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.steal</td>
+<td>CPU steal Average CPU time, when a virtual machine waits to get CPU cycles from the hypervisor. In a virtual environment, CPU cycles are shared across virtual machines on the hypervisor server. If your virtualized host displays a high CPU steal, it means CPU cycles are being taken away from your virtual machine to serve other purposes. It may indicate an overloaded hypervisor. It's available only for Linux hosts</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.system</td>
+<td>CPU system Average CPU time when CPU was running in kernel mode</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.usage</td>
+<td>CPU usage % Percentage of CPU time when CPU was utilized. A value close to 100% means most host processing resources are in use, and host CPUs can't handle additional work</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.cpu.user</td>
+<td>CPU user Average CPU time when CPU was running in user mode</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.kernelThreads.blocked</td>
+<td>AIX Kernel threads blocked Length of the swap queue. The swap queue contains the threads ready to run but swapped out with the currently running threads</td>
+<td>Count</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.kernelThreads.ioEventWait</td>
+<td>AIX Kernel threads I/O event wait Number of threads that are waiting for file system direct (cio) + Number of processes that are asleep waiting for buffered I/O</td>
+<td>Count</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.kernelThreads.ioMessageWait</td>
+<td>AIX Kernel threads I/O message wait Number of threads that are sleeping and waiting for raw I/O operations at a particular time. Raw I/O operation allows applications to direct write to the Logical Volume Manager (LVM) layer</td>
+<td>Count</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.kernelThreads.running</td>
+<td>AIX Kernel threads runnable Number of runnable threads (running or waiting for run time) (threads ready). The average number of runnable threads is seen in the first column of the vmstat command output</td>
+<td>Count</td>
+<td>autoavgmaxmin</td>
+</tr>
+</tbody>
+</table>
+<p>Memory</p>
+<table>
+<thead>
+<tr>
+<th>Metric key</th>
+<th>Name and description</th>
+<th>Unit</th>
+<th>Aggregations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>builtin:host.mem.avail.bytes</td>
+<td>Memory available The amount of memory (RAM) available on the host. The memory that is available for allocation to new or existing processes. Available memory is an estimation of how much memory is available for use without swapping.</td>
+<td>Byte</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.mem.avail.pct</td>
+<td>Memory available % The percentage of memory (RAM) available on the host. The memory that is available for allocation to new or existing processes. Available memory is an estimation of how much memory is available for use without swapping. Shows available memory as percentages.</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.mem.kernel</td>
+<td>Kernel memory The memory used by the system kernel. It includes memory used by core components of OS along with any device drivers. Typically, the number will be very small.</td>
+<td>Byte</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.mem.recl</td>
+<td>Memory reclaimable The memory usage for specific purposes. Reclaimable memory is calculated as available memory (estimation of how much memory is available for use without swapping) minus free memory (amount of memory that is currently not used for anything). For more information on reclaimable memory, see <a href="https://www.dynatrace.com/news/blog/improved-host-memory-metrics-now-include-reclaimable-memory/">this blog post</a>.</td>
+<td>Byte</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.mem.total</td>
+<td>Memory total The amount of memory (RAM) installed on the system.</td>
+<td>Byte</td>
+<td>autovalue</td>
+</tr>
+<tr>
+<td>builtin:host.mem.usage</td>
+<td>Memory used % Shows percentage of memory currently used. Used memory is calculated by OneAgent as follows: used = total - available. So the used memory metric displayed in Dynatrace analysis views is not equal to the used memory metric displayed by system tools. At the same time, it's important to remember that system tools report used memory the way they do due to historical reasons, and that this particular method of calculating used memory isn't really representative of how the Linux kernel manages memory in modern systems. The difference in these measurements is in fact quite significant, too. Note: Calculated by taking 100% - "Memory available %".</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.mem.used</td>
+<td>Memory used Used memory is calculated by OneAgent as follows: used = total - available. So the used memory metric displayed in Dynatrace analysis views is not equal to the used memory metric displayed by system tools. At the same time, it's important to remember that system tools report used memory the way they do due to historical reasons, and that this particular method of calculating used memory isn't really representative of how the Linux kernel manages memory in modern systems. The difference in these measurements is in fact quite significant, too.</td>
+<td>Byte</td>
+<td>autoavgmaxmin</td>
+</tr>
+</tbody>
+</table>
+<p>Availability</p>
+<table>
+<thead>
+<tr>
+<th>Metric key</th>
+<th>Name and description</th>
+<th>Unit</th>
+<th>Aggregations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>builtin:host.availability.state</td>
+<td>Host availability Host availability state metric reported in 1 minute intervals</td>
+<td>Count</td>
+<td>autovalue</td>
+</tr>
+<tr>
+<td>builtin:host.uptime</td>
+<td>Host uptime Time since last host boot up. Requires OneAgent 1.259+. The metric is not supported for application-only OneAgent deployments.</td>
+<td>Second</td>
+<td>autoavgmaxmin</td>
+</tr>
+</tbody>
+</table>
+<p>Disk</p>
+<table>
+<thead>
+<tr>
+<th>Metric key</th>
+<th>Name and description</th>
+<th>Unit</th>
+<th>Aggregations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>builtin:host.disk.avail</td>
+<td>Disk available Amount of free space available for user in file system. On Linux and AIX it is free space available for unprivileged user. It doesn't contain part of free space reserved for the root.</td>
+<td>Byte</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.disk.bytesRead</td>
+<td>Disk read bytes per second Speed of read from file system in bytes per second</td>
+<td>Byte/second</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.disk.bytesWritten</td>
+<td>Disk write bytes per second Speed of write to file system in bytes per second</td>
+<td>Byte/second</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.disk.free</td>
+<td>Disk available % Percentage of free space available for user in file system. On Linux and AIX it is % of free space available for unprivileged user. It doesn't contain part of free space reserved for the root.</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.disk.used</td>
+<td>Disk used Amount of used space in file system</td>
+<td>Byte</td>
+<td>autoavgmaxmin</td>
+</tr>
+</tbody>
+</table>
+<p>Network</p>
+<table>
+<thead>
+<tr>
+<th>Metric key</th>
+<th>Name and description</th>
+<th>Unit</th>
+<th>Aggregations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>builtin:host.net.nic.bytesRx</td>
+<td>NIC bytes received Network interface bytes received on the host</td>
+<td>Byte/second</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.net.nic.bytesTx</td>
+<td>NIC bytes sent on host Network interface bytes sent on the host</td>
+<td>Byte/second</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.net.nic.linkUtilRx</td>
+<td>NIC receive link utilization Network interface receive link utilization on the host</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+<tr>
+<td>builtin:host.net.nic.linkUtilTx</td>
+<td>NIC transmit link utilization Network interface transmit link utilization on the host</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+</tr>
+</tbody>
+</table>
+<h2 id="virtualization-monitoring">Virtualization monitoring<a class="headerlink" href="#virtualization-monitoring" title="Permanent link">&para;</a></h2>
+<p>Dynatrace supports <a href="/docs/observe/infrastructure-observability/vmware-vsphere-monitoring" title="Monitor VMware vSphere with Dynatrace.">virtualization monitoring</a>. To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see <a href="/docs/observe/infrastructure-observability/vmware-vsphere-monitoring" title="Monitor VMware vSphere with Dynatrace.">Set up virtualization monitoring</a>.</p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<p>What happens when OneAgent injects itself into the monitored technology?</p>
+<p>Along with injection, the injected module becomes dynamically linked to the monitored technology. Consequently, it becomes an integral part of the monitored process and can only be removed with a process restart. Depending on the OS (Windows/Linux/AIX), injection is performed in slightly different ways, but the outcome is quite similar.</p>
+<p>I have turned off injection, but I can see that the Dynatrace deep code modules are still injected into monitored technologies.</p>
+<p>The injection rules refer to the point in time when the process of a supported technology is started. After it is started, the deep-code monitoring module of OneAgent remains dynamically linked to the monitored technology and can be unloaded only by restarting the monitored process.</p>
+<p>I have restarted/disabled/stopped OneAgent, but the injected modules remain active. What's going on?</p>
+<p>With injection, the injected module becomes dynamically linked to the monitored technology. Consequently, it becomes an integral part of the monitored process and can be removed only by restarting the monitored process.</p>
+<p>How does OneAgent monitor processes?</p>
+<p>OneAgent injects into a process each time a new process is started in the system. OneAgent identifies the launched process (by name, location, user space, and so on) and, if it's supported for injection and if the injection rules don't exclude it, OneAgent sets up a dynamic link between the monitored process and one of the OneAgent deep-code monitoring modules.</p>
+<p>I have disabled OneAgent in the web UI, but I still see the process active on the host and some form of network traffic is still going on between OneAgent and the Dynatrace cluster. I thought that disabled OneAgents would stop all activity.</p>
+<p>Disabled OneAgents effectively stop monitoring your environment. However, the core of OneAgent, which is responsible for communication with the Dynatrace cluster, remains active. Because communication between OneAgent and Dynatrace clusters is always invoked on the OneAgent side, OneAgent needs to keep sending its status and asking the cluster if it needs to start monitoring again.</p>
+<hr />
+<h2 id="platformoneagentresource-attributesmd">platform/oneagent/resource-attributes.md<a class="headerlink" href="#platformoneagentresource-attributesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Resource attributes
+source: https://www.dynatrace.com/docs/platform/oneagent/resource-attributes
+scraped: 2026-02-18T21:30:31.739033</p>
+<hr />
+<h1 id="resource-attributes">Resource attributes<a class="headerlink" href="#resource-attributes" title="Permanent link">&para;</a></h1>
+<h1 id="resource-attributes_1">Resource attributes<a class="headerlink" href="#resource-attributes_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>6-min read</li>
+<li>Updated on Jul 23, 2025</li>
+</ul>
+<h2 id="host-level-resource-attributes">Host-level resource attributes<a class="headerlink" href="#host-level-resource-attributes" title="Permanent link">&para;</a></h2>
+<p>All monitoring artifacts that leave a given host, that is have the host as its resource, are enriched with the host-level resource attributes.</p>
+<p>Host-level resource attributes are resource attributes of monitored hosts. All events raised by and measurements coming from OneAgent components running on a given host are enriched with those attributes. You can then use them in your queries to structure and filter the monitoring data.</p>
+<p>You can also use some of the attributes to create policies to manage data access. See <a href="/docs/semantic-dictionary/fields" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">Global field reference</a> and search for fields tagged as Permission</p>
+<p>If you have access to a host with OneAgent installed, you can inspect the <code>dt_host_metadata.json</code> and <code>dt_host_metadata.properties</code> to see the scope of resource attributes enrichment provided by OneAgent. For more information, see <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">Enrich ingested data with Dynatrace-specific dimensions</a>.</p>
+<h3 id="custom-host-level-attributes">Custom host-level attributes<a class="headerlink" href="#custom-host-level-attributes" title="Permanent link">&para;</a></h3>
+<p>You can create your own attributes by configuring key-value tags and properties set via <a href="/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts" title="Learn how to tag and set additional properties for a monitored host.">oneagentctl</a> or through <a href="/docs/ingest-from/bulk-configuration" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration management of OneAgents and ActiveGates</a>. Custom tags and properties defined this way are reported as flat, first-level resource attributes.</p>
+<p>The key tags with no value are ignored.</p>
+<p>Tags assigned through <a href="/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic" title="Find out how to define and apply tags manually and automatically.">automated rules</a>, <a href="/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables" title="Find out how Dynatrace enables you to define tags based on environment variables.">environment variables</a>, and <a href="/docs/dynatrace-api/environment-api/topology-and-smartscape" title="Learn about the Dynatrace Topology and Smartscape API.">Topology and Smartscape API</a> are not included.</p>
+<p>As the keys depend on your configuration, they aren't covered by Semantic Dictionary.</p>
+<p>Tag names can't be prefixed with <code>dt.</code> except for the following tags that are subject to your configuration:</p>
+<ul>
+<li><code>dt.security_context</code> - attribute to manage data access using policies. See <a href="/docs/manage/identity-access-management/use-cases/access-security-context" title="Grant access to entities with security context">Grant access to entities with security context</a>.</li>
+<li><code>dt.cost.costcenter</code> - attribute to assign usage to a Cost Center. See <a href="/docs/license/cost-allocation" title="Learn how to allocate costs to cost centers and products.">Allocate your DPS costs</a>.</li>
+<li><code>dt.cost.product</code> - attribute to assign usage to a Product or Application ID. See <a href="/docs/license/cost-allocation" title="Learn how to allocate costs to cost centers and products.">Allocate your DPS costs</a>.</li>
+</ul>
+<p>Attributes coming from custom properties and tags don't override the built-in enrichments if they have the same name. When creating your custom properties and tags, check <a href="/docs/semantic-dictionary/fields" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">Global field reference</a> to make sure your name isn't already used.</p>
+<h4 id="handling-name-clashes-when-merging-custom-properties-and-tags">Handling name clashes when merging custom properties and tags<a class="headerlink" href="#handling-name-clashes-when-merging-custom-properties-and-tags" title="Permanent link">&para;</a></h4>
+<p>Host-level resource attributes can be imported from host custom properties and tags. The <code>hostcustomproperties.conf</code> and <code>hostautotag.conf</code> files are the sources for these attributes. If they follow the <code>key=value</code> pattern, the same keys can exist in both files but with different values. When merged, the content from <code>hostautotag.conf</code> takes priority over the content from <code>hostcustomproperties.conf</code>, as tags take priority in case of a name clash.</p>
+<p>If a name clash happens when merging resource attributes at different levels, the lowest level takes priority.</p>
+<h3 id="general-host-level-attributes">General host-level attributes<a class="headerlink" href="#general-host-level-attributes" title="Permanent link">&para;</a></h3>
+<p>All host-level resource attributes follow <a href="/docs/semantic-dictionary" title="The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.">Semantic Dictionary</a>, unless stated otherwise.</p>
+<p>Attribute</p>
+<p>Description</p>
+<p>Custom host tags</p>
+<p>See <a href="#custom">Custom attributes</a></p>
+<p><code>dt.host_group.id</code></p>
+<p>Note that difference between <code>dt.entity.host_group</code> and <code>dt.host_group.id</code>:</p>
+<ul>
+<li><code>dt.host_group.id</code> is a name of the <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups" title="Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.">host group</a>. It's human-readable host group identifier, for example <code>MyHostGroup</code>.</li>
+<li><code>dt.entity.host_group</code> is an identifier of host group entity in Dynatrace model. The identifier of the entity is not the same as the human readable identifier of the host group. It's created automatically and its format is for example <code>HOST_GROUP-008786529C8EE446</code>.</li>
+</ul>
+<p>For more information, see <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups" title="Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.">Organize your environment using host groups</a>.</p>
+<p><code>dt.entity.host</code></p>
+<p>An entity ID of an entity of type HOST.</p>
+<p><code>dt.entity.host_group</code></p>
+<p>An entity ID of an entity of type <code>HOST_GROUP</code>.</p>
+<p><code>dt.security_context</code></p>
+<p>The security context is used to set up access permissions for monitored entities in Grail and needs to be configured. See <a href="#custom">Custom attributes</a></p>
+<p><code>dt.cost.costcenter</code></p>
+<p>The attribute is used to assign usage to a Cost Center and needs to be configured. See <a href="#custom">Custom attributes</a></p>
+<p><code>dt.cost.product</code></p>
+<p>The attribute is used to assign usage to a Product or Application ID and needs to be configured. See <a href="#custom">Custom attributes</a></p>
+<p><code>host.name</code></p>
+<p>The host name as determined depending on the data source, for example OneAgent, Extensions, or OpenTelemetry. Host name can be modified based on naming rules.</p>
+<p>Note that this not an entity ID of an entity of type <code>HOST</code> (<code>dt.entity.host</code>).</p>
+<h4 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h4>
+<p>Attribute</p>
+<p>Description</p>
+<p><code>dt.entity.ec2_instance</code></p>
+<p>An entity ID of an entity of type <code>EC2_INSTANCE</code>.</p>
+<p><code>dt.entity.aws_availability_zone</code></p>
+<p>An entity ID of an entity of type <code>AWS_AVAILABILITY_ZONE</code>.</p>
+<p><code>aws.availability_zone</code></p>
+<p>A specific availability zone in given AWS Region. For example, <code>usâeastâ1a</code>.</p>
+<p><code>aws.region</code></p>
+<p>A specific geographical AWS Cloud location. For example, <code>usâeastâ1</code>.</p>
+<p><code>aws.resource.id</code></p>
+<p>The unique identifier of the resource.</p>
+<h4 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h4>
+<p>Attribute</p>
+<p>Description</p>
+<p><code>dt.entity.azure_vm</code></p>
+<p>An entity ID of an entity of type <code>AZURE_VM</code>, retrieved from the <code>instanceId</code> field of Azure instance metadata.</p>
+<p><code>dt.entity.azure_region</code></p>
+<p>An entity ID of an entity of type <code>AZURE_REGION</code>.</p>
+<p><code>azure.location</code></p>
+<p>A specific geographical location of Azure Cloud resource, retrieved from the <code>location</code> field of Azure instance metadata.</p>
+<p><code>azure.vmid</code></p>
+<p>Azure Virtual Machine unique 128bits identifier.</p>
+<h4 id="google-cloud">Google Cloud<a class="headerlink" href="#google-cloud" title="Permanent link">&para;</a></h4>
+<p>Attribute</p>
+<p>Description</p>
+<p><code>gcp.instance.id</code></p>
+<p>A permanent identifier that is unique within your Google Cloud project.</p>
+<p><code>gcp.project.id</code></p>
+<p>The identifier of the GCP project associated with this resource.</p>
+<p><code>dt.entity.gcp_zone</code></p>
+<p>An entity ID of an entity of type <code>GCP_ZONE</code>.</p>
+<p><code>gcp.zone</code></p>
+<p>A zone is a subset of a region. Each region has three or more zones. For example, <code>europe-west3-c</code>.</p>
+<p><code>gcp.region</code></p>
+<p>A region is a specific geographical location where you can host your resources. For example, <code>europe-west3</code>.</p>
+<h4 id="openstack">OpenStack<a class="headerlink" href="#openstack" title="Permanent link">&para;</a></h4>
+<p>Attribute</p>
+<p>Description</p>
+<p><code>openstack.availability_zone</code></p>
+<p>A specific availability zone in a given OpenStack region. For example, <code>us-east-1a</code>.</p>
+<p><code>openstack.instance_uuid</code></p>
+<p>UUID of an OpenStack instance.</p>
+<h4 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h4>
+<p>Attribute</p>
+<p>Description</p>
+<p><code>k8s.cluster.uid</code></p>
+<p>As the Kubernetes cluster name is not readily available, Dynatrace identifies the cluster by the UID of the kube-system namespace. Available only in Dynatrace Operator deployments.</p>
+<p><code>k8s.node.name</code></p>
+<p>A Kubernetes name of the Node. Available only in Dynatrace Operator deployments.</p>
+<h4 id="bosh">BOSH<a class="headerlink" href="#bosh" title="Permanent link">&para;</a></h4>
+<p>Attribute</p>
+<p>Description</p>
+<p><code>bosh.instance_id</code></p>
+<p>A unique identifier assigned to each deployed BOSH instance.</p>
+<p><code>bosh.availability_zone</code></p>
+<p>A specific geographical BOSH location. For example, <code>us-east-1a</code>.</p>
+<p><code>bosh.name</code></p>
+<p>A unique identifier to a deployment or instance.</p>
+<h3 id="resource-attributes-normalization">Resource attributes normalization<a class="headerlink" href="#resource-attributes-normalization" title="Permanent link">&para;</a></h3>
+<p>To ensure consistent and reliable metric ingestion, resource attributes normalization is applied to all relevant internal metric keys and values. This process helps prevent metrics from being dropped due to invalid or malformed dimensions.</p>
+<h4 id="dimension-key-rules">Dimension key rules<a class="headerlink" href="#dimension-key-rules" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Rule description</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Invalid Characters</strong></td>
+<td>An invalid character or a series of invalid characters is replaced with one underscore <code>_</code>. For example, <code>zaÃ³$%Ä</code> is replaced with <code>za_</code>.</td>
+</tr>
+<tr>
+<td><strong>Empty Keys</strong></td>
+<td>Dimensions with no valid characters are skipped</td>
+</tr>
+<tr>
+<td><strong>Key Length Limit</strong></td>
+<td>OneAgent version 1.317+ Max. 350 characters (previously max. 100 characters)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dimension-value-rules">Dimension value rules<a class="headerlink" href="#dimension-value-rules" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Rule description</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Allowed Characters</strong></td>
+<td>All non-control characters (ASCII &amp; Unicode)</td>
+</tr>
+<tr>
+<td><strong>Control Characters</strong></td>
+<td>Not allowed. A control character (that is a character used as an instruction and is not displayed; for example, line break, tab) or a series of those characters is replaced with one underscore <code>_</code>.</td>
+</tr>
+<tr>
+<td><strong>Value Length Limit</strong></td>
+<td>OneAgent version 1.313+ Max. 2048 characters (previously max. 255 characters)</td>
+</tr>
+<tr>
+<td><strong>Quoted Values</strong></td>
+<td>If value starts and ends with <code>"</code>, it is escaped</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dimension-limits">Dimension limits<a class="headerlink" href="#dimension-limits" title="Permanent link">&para;</a></h4>
+<p>To align with the current specification, a specific dimension hierarchy and defined limits are used to prevent warnings and metric drops caused by exceeding those limits.</p>
+<p>By default, the global dimension limit is equal to <code>100</code> and the customer-defined dimension limit is 40% of the global limit.</p>
+<hr />
+<h2 id="platformoneagentsupported-monitoring-typesmd">platform/oneagent/supported-monitoring-types.md<a class="headerlink" href="#platformoneagentsupported-monitoring-typesmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: OneAgent monitoring capabilities
+source: https://www.dynatrace.com/docs/platform/oneagent/supported-monitoring-types
+scraped: 2026-02-18T21:20:10.981465</p>
+<hr />
+<h1 id="oneagent-monitoring-capabilities">OneAgent monitoring capabilities<a class="headerlink" href="#oneagent-monitoring-capabilities" title="Permanent link">&para;</a></h1>
+<h1 id="oneagent-monitoring-capabilities_1">OneAgent monitoring capabilities<a class="headerlink" href="#oneagent-monitoring-capabilities_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>3-min read</li>
+<li>Published Oct 12, 2018</li>
+</ul>
+<p>OneAgent offers a rich set of monitoring capabilities.</p>
+<h2 id="real-user-monitoring_1">Real User Monitoring<a class="headerlink" href="#real-user-monitoring_1" title="Permanent link">&para;</a></h2>
+<p>Real User Monitoring analyzes the performance of all user interaction with your applications, whether the interactions take place in a browser or on a mobile device. Real user monitoring also enables application availability monitoring, verification of correct display of UI elements, third-party content provider performance analysis, backend service performance analysis (down to the code level), and performance analysis of all underlying infrastructure. For details, see <a href="/docs/observe/digital-experience/rum-concepts/rum-overview" title="Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.">Real User Monitoring</a>.</p>
+<h2 id="mobile-app-monitoring">Mobile app monitoring<a class="headerlink" href="#mobile-app-monitoring" title="Permanent link">&para;</a></h2>
+<p>OneAgent supports real user monitoring for mobile applications as well. The process of monitoring the user experience of your native mobile applications is fundamentally different from monitoring browser-based web applications. This is because mobile-app monitoring involves the compilation, packaging, and shipment of a monitoring library along with your own mobile application package. The process of instrumenting your mobile application largely depends on the platform of your mobile application. Dynatrace supports both Android and iOS platforms. For details, see <a href="/docs/observe/digital-experience/rum-concepts/rum-overview" title="Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.">Real User Monitoring</a>.</p>
+<h2 id="server-side-service-monitoring">Server-side service monitoring<a class="headerlink" href="#server-side-service-monitoring" title="Permanent link">&para;</a></h2>
+<p>Web applications consist of web pages that are served by web servers (for example, Apache Tomcat) and web containers (for example, Docker). The web requests that are sent to a specific Tomcat server are an example of a server-side service. Server-side services may be of various types like web services, web containers, database requests, and custom services. OneAgent can provide information such as which applications or services use which other services and whether or not a service makes calls to other services or databases. For details, see <a href="/docs/observe/application-observability/services" title="Learn how to monitor and analyze your services, define and use request attributes, and more.">Services</a>.</p>
+<h2 id="network-process-and-host-monitoring">Network, process, and host monitoring<a class="headerlink" href="#network-process-and-host-monitoring" title="Permanent link">&para;</a></h2>
+<p>OneAgent enables monitoring throughout your entire infrastructure including your hosts, processes, and network. You can perform log monitoring and view information such as the total traffic of your network, the CPU usage of your hosts, the response time of your processes, and more. OneAgent also provides detailed topological information so that you know, for example, which processes run on which hosts and how your processes are interconnected. For details, see <a href="/docs/license/capabilities/app-infra-observability" title="Learn about the different Application &amp; Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.">Application &amp; Infrastructure Observability overview (DPS)</a>.</p>
+<h2 id="cloud-and-virtual-machine-monitoring">Cloud and virtual machine monitoring<a class="headerlink" href="#cloud-and-virtual-machine-monitoring" title="Permanent link">&para;</a></h2>
+<p>OneAgent monitors your entire stack, including private, public, and hybrid cloud environments. Whether you run on AWS, Azure, Cloud Foundry, or OpenStack, OneAgent auto-detects all virtualized components and keeps up with all changes. OneAgent can be integrated with your virtualized infrastructure, allowing you to connect the dots between the dependencies of the vCenters in your data center, the processes that run on them, and your applications. For details, see <a href="/docs/ingest-from/amazon-web-services" title="Set up and configure monitoring for Amazon Web Services.">Amazon Web Services</a>.</p>
+<h2 id="docker-container-monitoring">Docker container monitoring<a class="headerlink" href="#docker-container-monitoring" title="Permanent link">&para;</a></h2>
+<p>OneAgent seamlessly integrates with existing Docker environments and automatically monitors your containerized applications and services. Thereâs no need to modify your Docker images, modify run commands, or create additional containers to enable Docker monitoring. Simply install OneAgent on your hosts that serve containerized applications and services. OneAgent automatically detects the creation and termination of containers and monitors the applications and services contained within those containers. For details, see <a href="/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups" title="Overview on container groups monitoring">Monitor container groups</a>.</p>
+<h2 id="root-cause-analysis">Root-cause analysis<a class="headerlink" href="#root-cause-analysis" title="Permanent link">&para;</a></h2>
+<p>A key feature of OneAgent is the ability to continuously monitor every aspect of your applications, services, and infrastructure and to automatically learn the baseline performance metrics related to these components. Dynatrace also automatically learns the baseline response times and failure rates of all requests that are vital to the success of your business. Based on these baseline values, Dynatrace determines when a detected slowdown or error-rate increase justifies the generation of a new problem event. For details, see <a href="/docs/dynatrace-intelligence" title="Get familiar with the capabilities of Dynatrace Intelligence.">Dynatrace Intelligence</a>.</p>
+<p>For a complete list of the technologies that can be monitored by OneAgent, please see <a href="/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix" title="Learn which capabilities are supported by OneAgent on different operating systems and platforms.">OneAgent capabilities</a>.</p>
 <hr />
 <h2 id="platformoneagentmd">platform/oneagent.md<a class="headerlink" href="#platformoneagentmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: OneAgent
 source: https://www.dynatrace.com/docs/platform/oneagent
-scraped: 2026-02-06T16:19:57.523842</p>
+scraped: 2026-02-18T21:16:54.959521</p>
 <hr />
 <h1 id="oneagent">OneAgent<a class="headerlink" href="#oneagent" title="Permanent link">&para;</a></h1>
 <h1 id="oneagent_1">OneAgent<a class="headerlink" href="#oneagent_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>1 минута чтения</li>
-<li>Опубликовано 29 марта 2019 г.</li>
+<li>Latest Dynatrace</li>
+<li>1-min read</li>
+<li>Published Mar 29, 2019</li>
 </ul>
-<p>[### Возможности</p>
-<p>Узнайте о возможностях мониторинга, предлагаемых OneAgent.](/docs/platform/oneagent/supported-monitoring-types «Прочитайте обзор всех возможностей мониторинга, предлагаемых OneAgent.»)[### Как это работает</p>
-<p>Понять, как работает OneAgent.](/docs/platform/oneagent/how-one-agent-works «Понять, как работает OneAgent.»)</p>
-<h2 id="oneagent_2">Развертывание OneAgent<a class="headerlink" href="#oneagent_2" title="Permanent link">&para;</a></h2>
-<p>Облачные платформы</p>
-<p>Кубернетес</p>
-<p>Другие контейнерные платформы</p>
-<p>Серверы</p>
-<p><a href="/docs/ingest-from/amazon-web-services"><img alt="AWS" src="https://dt-cdn.net/images/aws-512-eed109b7f1.png" title="AWS" />AWS</a> <a href="/docs/ingest-from/microsoft-azure-services"><img alt="Лазурь" src="https://dt-cdn.net/images/azure-512-a93a37d351.png" title="Azure" />Azure</a> <a href="/docs/ingest-from/google-cloud-platform"><img alt="Облако Google" src="https://dt-cdn.net/images/gcp-512-db85a455ae.webp" title="Google Cloud" />Google Cloud</a></p>
-<p><a href="/docs/ingest-from/setup-on-k8s"><img alt="Кубернетес" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" />Kubernetes</a></p>
-<p><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry"><img alt="Облачная литейная" src="https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png" title="Cloud Foundry" />Cloud Foundry</a> <a href="/docs/ingest-from/setup-on-container-platforms/docker"><img alt="Докер" src="https://dt-cdn.net/images/docker-512-0c0977826e.webp" title="Docker" />Docker</a> <a href="/docs/ingest-from/setup-on-container-platforms/heroku"><img alt="Хероку" src="https://dt-cdn.net/images/heroku-512-984aa81b41.webp" title="Heroku" />Heroku</a><a href="/docs/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon"><img alt="Месос" src="https://dt-cdn.net/images/mesos-512-0c28279189.webp" title="Mesos" />Mesos</a></p>
-<p><a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix">ЭКС</a> <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux">Линукс</a> <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris">Солярис</a> <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows">Окна</a> <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos">зОС</a></p>
+<p>[### Capabilities</p>
+<p>Find out the monitoring capabilities offered by OneAgent offers.](/docs/platform/oneagent/supported-monitoring-types "Read an overview of all monitoring capabilities offered by OneAgent.")[### How it works</p>
+<p>Understand how OneAgent works.](/docs/platform/oneagent/how-one-agent-works "Understand how OneAgent works.")</p>
+<p>[### OneAgent monitoring modes</p>
+<p>Find out about the available monitoring modes when using OneAgent.](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.")[### Enable monitoring modes</p>
+<p>Learn how to enable monitoring modes when using OneAgent.](/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes "Learn how to enable monitoring modes when using OneAgent.")</p>
+<h2 id="deploy-oneagent">Deploy OneAgent<a class="headerlink" href="#deploy-oneagent" title="Permanent link">&para;</a></h2>
+<p>Cloud platforms</p>
+<p>Kubernetes</p>
+<p>Other container platforms</p>
+<p>Servers</p>
+<p><a href="/docs/ingest-from/amazon-web-services"><img alt="AWS" src="https://dt-cdn.net/images/aws-512-eed109b7f1.png" title="AWS" />AWS</a> <a href="/docs/ingest-from/microsoft-azure-services"><img alt="Azure" src="https://dt-cdn.net/images/azure-512-a93a37d351.png" title="Azure" />Azure</a> <a href="/docs/ingest-from/google-cloud-platform"><img alt="Google Cloud" src="https://dt-cdn.net/images/gcp-512-db85a455ae.webp" title="Google Cloud" />Google Cloud</a></p>
+<p><a href="/docs/ingest-from/setup-on-k8s"><img alt="Kubernetes" src="https://dt-cdn.net/images/kubernetes-512-90e7075764.png" title="Kubernetes" />Kubernetes</a></p>
+<p><a href="/docs/ingest-from/setup-on-container-platforms/cloud-foundry"><img alt="Cloud Foundry" src="https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png" title="Cloud Foundry" />Cloud Foundry</a> <a href="/docs/ingest-from/setup-on-container-platforms/docker"><img alt="Docker" src="https://dt-cdn.net/images/docker-512-0c0977826e.webp" title="Docker" />Docker</a> <a href="/docs/ingest-from/setup-on-container-platforms/heroku"><img alt="Heroku" src="https://dt-cdn.net/images/heroku-512-984aa81b41.webp" title="Heroku" />Heroku</a> <a href="/docs/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon"><img alt="Mesos" src="https://dt-cdn.net/images/mesos-512-0c28279189.webp" title="Mesos" />Mesos</a></p>
+<p><a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix">AIX</a> <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux">Linux</a> <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris">Solaris</a> <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows">Windows</a> <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos">zOS</a></p>
 <hr />
 
 

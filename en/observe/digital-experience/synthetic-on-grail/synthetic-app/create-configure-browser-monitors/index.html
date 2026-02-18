@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
-<li>Updated on Jan 30, 2026</li>
+<li>Updated on Feb 16, 2026</li>
 </ul>
 <p>You can create synthetic browser monitors to check the availability of your websites. Browser monitors can be run from our <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations" title="Learn about all currently available public Synthetic Monitoring locations.">global public</a> or <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations" title="Learn how to manage private locations in the Synthetic app.">private</a> synthetic locations.</p>
 <p>Go to <img alt="Synthetic Classic" src="https://dt-cdn.net/images/synthetic-512-83ec796e54.png" title="Synthetic Classic" /> <strong>Synthetic</strong> &gt;  <strong>New monitor</strong> &gt; <strong>Browser</strong>. The configuration settings are split into the following sections:</p>
@@ -25614,6 +25614,7 @@
 <p>ActiveGate version 1.271+</p>
 <p>You can set up certificate authentication for browser monitors running on any <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations" title="Learn about all currently available public Synthetic Monitoring locations.">public location</a> and <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations" title="Learn how to manage private locations in the Synthetic app.">private locations</a> with Linux-based ActiveGates (containerized as well as non-containerized).</p>
 <p>Before first recording a clickpath on a website that requires certificate authentication, ensure that you have installed the required certificate in Chrome. Then, when you navigate to the website in the recording window, the native browser dialog simply selects the correct certificate.</p>
+<p>If there is at least one expired certificate in a chain, the whole chain can be rejected. It results in failing monitor executions. The results can be different when using the same certificate chain with an HTTP monitor or when running a curl command manually from the host.</p>
 <p>After you record the clickpath, you need to specify the certificate to use for browser monitor execution.</p>
 <ol>
 <li>Select <strong>Add certificate</strong>.</li>

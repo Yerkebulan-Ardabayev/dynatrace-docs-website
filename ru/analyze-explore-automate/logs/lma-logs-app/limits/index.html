@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#limits-in-logs" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -25549,30 +25549,30 @@
 
 
 
-<h1 id="_1">Ограничения в журналах<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Ограничения в журналах<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="limits-in-logs">Limits in Logs<a class="headerlink" href="#limits-in-logs" title="Permanent link">&para;</a></h1>
+<h1 id="limits-in-logs_1">Limits in Logs<a class="headerlink" href="#limits-in-logs_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>Ссылка</li>
-<li>1 минута чтения</li>
-<li>Опубликовано 19 января 2026 г.</li>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>1-min read</li>
+<li>Published Jan 19, 2026</li>
 </ul>
-<p>На этой странице описаны ограничения, которые применяются при запросе и просмотре журналов в <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong>, а также способы изменения ограничений по умолчанию.</p>
-<h2 id="_3">Строки результатов запроса (<strong>Ограничение количества записей</strong>)<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>По умолчанию <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong> отображают максимум 1000 строк в результате вашего запроса.</p>
-<p>Вы можете настроить параметр <strong>Лимит записи</strong> до 50 000 строк, чтобы просмотреть больше результатов в одном запросе.</p>
-<h2 id="_4">Сканированные данные на каждый запрос (<strong>Ограничение количества прочитанных данных</strong>)<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong> считывают максимум 500 ГБ данных на каждый запрос.Запрос останавливается после достижения этого предела.</p>
-<p>Вы можете настроить параметр <strong>Лимит чтения данных</strong> на желаемое значение, чтобы сканировать больше данных, но вы не можете установить для него неограниченное значение.</p>
-<h2 id="_5">Размер данных результата (<strong>Ограничение размера результата</strong>)<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Размер результата данных, возвращаемых запросом, по умолчанию ограничен 100 МБ.</p>
-<p>Вы можете уменьшить параметр <strong>Предел размера результата</strong> и выбрать значение от 1 до 100 МБ в зависимости от ваших потребностей.</p>
-<h2 id="_6">Настройка ограничений<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Чтобы настроить ограничения для ваших запросов в <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong></p>
+<p>This page describes the limits that apply when querying and viewing logs in <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong>, as well as how to change the default limits.</p>
+<h2 id="query-result-rows-record-limit">Query result rows (<strong>Record limit</strong>)<a class="headerlink" href="#query-result-rows-record-limit" title="Permanent link">&para;</a></h2>
+<p>By default, <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong> displays a maximum of 1000 rows as a result of your query.</p>
+<p>You can adjust the <strong>Record limit</strong> setting up to 50,000 rows to view more results in a single query.</p>
+<h2 id="scanned-data-per-query-read-data-limit">Scanned data per query (<strong>Read data limit</strong>)<a class="headerlink" href="#scanned-data-per-query-read-data-limit" title="Permanent link">&para;</a></h2>
+<p><img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong> reads a maximum of 500 GB of data per query. The query stops after reaching this limit.</p>
+<p>You can adjust the <strong>Read data limit</strong> setting to your desired value to scan more data, but you cannot set it to unlimited.</p>
+<h2 id="result-data-size-result-size-limit">Result data size (<strong>Result size limit</strong>)<a class="headerlink" href="#result-data-size-result-size-limit" title="Permanent link">&para;</a></h2>
+<p>The result size of data returned by a query is limited to 100 MB by default.</p>
+<p>You can reduce the <strong>Result size limit</strong> setting and choose a value between 1 and 100 MB based on your needs.</p>
+<h2 id="adjust-limits">Adjust limits<a class="headerlink" href="#adjust-limits" title="Permanent link">&para;</a></h2>
+<p>To adjust the limits for your queries in <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong></p>
 <ol>
-<li>Перейдите в раздел <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong>.</li>
-<li>В правом верхнем углу рядом с пунктом <strong>Выполнить запрос</strong> выберите (<strong>Меню Действия</strong>) &gt; <strong>Настройки приложения</strong>.</li>
-<li>На панели <strong>Настройки приложения</strong> настройте нужные ограничения.</li>
+<li>Go to <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong>.</li>
+<li>In the upper-right corner, next to <strong>Run query</strong>, select  (<strong>Actions menu</strong>) &gt;  <strong>App settings</strong>.</li>
+<li>In the <strong>App settings</strong> pane, adjust the desired limits.</li>
 </ol>
 
 

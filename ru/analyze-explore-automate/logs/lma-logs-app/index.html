@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#logs-app" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -25549,130 +25549,130 @@
 
 
 
-<h1 id="_1">Приложение журналов<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Приложение журналов<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="logs-app">Logs app<a class="headerlink" href="#logs-app" title="Permanent link">&para;</a></h1>
+<h1 id="logs-app_1">Logs app<a class="headerlink" href="#logs-app_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>Приложение</li>
-<li>4-минутное чтение</li>
-<li>Обновлено 1 июля 2025 г.</li>
+<li>Latest Dynatrace</li>
+<li>App</li>
+<li>4-min read</li>
+<li>Updated on Jul 01, 2025</li>
 </ul>
-<p>Предварительные условия</p>
-<h3 id="_3">Разрешения<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>В следующей таблице описаны необходимые разрешения.</p>
-<p>Разрешение</p>
-<p>Описание</p>
-<p>хранилище: промежутки: чтение</p>
-<p>разрешить чтение интервалов, переменных сегментов (необязательно)</p>
-<p>хранилище: bizevents: читать</p>
-<p>разрешить чтение бизнес-событий, переменных сегментов (необязательно)</p>
-<p>хранилище: метрики: чтение</p>
-<p>разрешить чтение показателей, переменных сегментов (необязательно)</p>
-<p>хранилище: события: чтение</p>
-<p>разрешить чтение событий, переменных сегментов (необязательно)</p>
-<p>хранилище:security.events:прочитать</p>
-<p>разрешить чтение событий безопасности, переменных сегментов (необязательно)</p>
-<p>хранилище: журналы: чтение</p>
-<p>разрешить читать логи</p>
-<p>хранилище: user.sessions: читать</p>
-<p>разрешить чтение пользовательских сессий, переменных сегментов (необязательно)</p>
-<p>хранилище: user.events: читать</p>
-<p>разрешить чтение пользовательских событий</p>
-<p>хранилище: ведра: читать</p>
-<p>разрешить читать логи</p>
-<p>хранилище: файлы: чтение</p>
-<p>разрешить выполнять соединения в таблицах поиска</p>
+<p>Prerequisites</p>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
+<p>The following table describes the required permissions.</p>
+<p>Permission</p>
+<p>Description</p>
+<p>storage:spans:read</p>
+<p>allow to read spans, Segments Variables (Optional)</p>
+<p>storage:bizevents:read</p>
+<p>allow to read biz events, Segments Variables (Optional)</p>
+<p>storage:metrics:read</p>
+<p>allow to read metrics, Segments Variables (Optional)</p>
+<p>storage:events:read</p>
+<p>allow to read events, Segments Variables (Optional)</p>
+<p>storage:security.events:read</p>
+<p>allow to read security events, Segments Variables (Optional)</p>
+<p>storage:logs:read</p>
+<p>allow to read logs</p>
+<p>storage:user.sessions:read</p>
+<p>allow to read user sessions, Segments Variables (Optional)</p>
+<p>storage:user.events:read</p>
+<p>allow to read user events</p>
+<p>storage:buckets:read</p>
+<p>allow to read logs</p>
+<p>storage:files:read</p>
+<p>allow to do joins on the lookup tables</p>
 <p>10</p>
-<p>строк на странице</p>
-<p>Страница</p>
+<p>rows per page</p>
+<p>Page</p>
 <p>1</p>
-<p>из 1</p>
-<h2 id="_4">Установка<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Убедитесь, что это приложение <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">установлен в вашей среде</a>.</p>
-<p>Начать</p>
-<p>Концепции</p>
-<p><img alt="Динамическая гистограмма с интуитивно понятным фильтром «укажи и щелкни» предоставляет уникальные возможности для упрощенного и своевременного изучения журналов." src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/85/media/3.png" /><img alt="Функция «Объяснение журналов» предоставляет практические шаги и аналитическую информацию, позволяющую сократить анализ первопричин и сократить время на действия, что позволяет быстрее устранять проблемы." src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/85/media/2.png" /><img alt="Четкие, упорядоченные тенденции серьезности с быстрыми и интуитивно понятными параметрами фильтрации помогают легко исследовать журналы со структурой JSON и другие журналы." src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/85/media/1.png" /><img alt="Сократите MTTR, превратив необработанные журналы в управляемую информацию — в контексте вашей трассировки или окружающих объектов топологии." src="https://dt-cdn.net/hub/logs-hub-4.png" /><img alt="Подробности журнала отображаются в богатом контексте одним щелчком мыши — доступ к связанным трассировкам, топологии и многому другому.Мгновенные фильтры превращают информацию в точный поиск." src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/85/media/4.png" /></p>
-<p>1 из 5Динамическая гистограмма с интуитивно понятным фильтром «укажи и щелкни» предоставляет уникальные возможности для упрощенного и своевременного просмотра журналов.</p>
-<p>[01Журналы запросов и фильтров</p>
+<p>of 1</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Make sure the app is <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">installed in your environment</a>.</p>
+<p>Get started</p>
+<p>Concepts</p>
+<p><img alt="The dynamic histogram chart with intuitive point-and-click filter provide unique experience for simplified and timely exploration of logs." src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/85/media/3.png" /><img alt="The &quot;Explain Logs&quot; feature provides actionable steps and insights to cut your root cause analysis and time to action, enabling you to resolve faster." src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/85/media/2.png" /><img alt="Clear, stacked severity trends with swift and intuitive filtering options help to explore JSON-structured and other logs easily." src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/85/media/1.png" /><img alt="Cut MTTR by turning raw logs into guided insights - In context of your trace, or surrounding topology entities." src="https://dt-cdn.net/hub/logs-hub-4.png" /><img alt="Log details surface rich context in one click - access to linked traces, topology, and more. Instant filters turn insights into precise searches." src="https://cdn.hub.central.dynatrace.com/hub/console/drafts/85/media/4.png" /></p>
+<p>1 of 5The dynamic histogram chart with intuitive point-and-click filter provide unique experience for simplified and timely exploration of logs.</p>
+<p>[01Query and filter logs</p>
 <ul>
-<li>Практическое руководство</li>
+<li>How-to guide</li>
 <li>
-<p>Изучите журналы с помощью запросов DQL и операторов фильтрации в приложении Dynatrace Logs.](/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter)[02Выявляйте тенденции с помощью диаграммы распределения журналов.</p>
+<p>Explore logs with DQL queries and filter statements in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter)[02Spot trends with the log distribution chart</p>
 </li>
 <li>
-<p>Практическое руководство</p>
+<p>How-to guide</p>
 </li>
 <li>
-<p>Получите визуальный обзор записей журнала, сгруппированных по статусу, чтобы выявлять тенденции, выявлять аномалии и выполнять целевые запросы, не выходя из визуализации.](/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart)[03Просмотр окружающих журналов</p>
+<p>Get a visual overview of log entries grouped by status to spot trends, identify anomalies, and perform targeted queries without leaving the visualization.](/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart)[03View surrounding logs</p>
 </li>
 <li>
-<p>Практическое руководство</p>
+<p>How-to guide</p>
 </li>
 <li>
-<p>Используйте окружающие журналы для понимания данных журналов в контексте приложения Dynatrace Logs.](/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs)[04Фильтр с фасетами</p>
+<p>Use surrounding logs to understand log data in context in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs)[04Filter with facets</p>
 </li>
 <li>
-<p>Практическое руководство</p>
+<p>How-to guide</p>
 </li>
 <li>
-<p>Фильтр с помощью фасетов в приложении Dynatrace Logs.](/docs/analyze-explore-automate/logs/lma-logs-app/facets)[05Настройте сообщение журнала</p>
+<p>Filter with facets in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/facets)[05Adjust the log message</p>
 </li>
 <li>
-<p>Практическое руководство</p>
+<p>How-to guide</p>
 </li>
 <li>
-<p>Настройте сообщение журнала в приложении Dynatrace Logs.](/docs/analyze-explore-automate/logs/lma-logs-app/message)[06Ограничения в журналах</p>
+<p>Adjust the log message in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/message)[06Limits in Logs</p>
 </li>
 <li>
-<p>Ссылка</p>
+<p>Reference</p>
 </li>
-<li>Узнайте об ограничениях, применимых к приложению «Журналы», и о том, как их изменить.](/docs/analyze-explore-automate/logs/lma-logs-app/limits)</li>
+<li>Learn about the limits that apply to the Logs app and how to modify these limits.](/docs/analyze-explore-automate/logs/lma-logs-app/limits)</li>
 </ul>
-<h2 id="_5">О журналах<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p><img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong> — это отправная точка для поиска соответствующих записей журнала без написания запросов.</p>
+<h2 id="about-logs">About Logs<a class="headerlink" href="#about-logs" title="Permanent link">&para;</a></h2>
+<p><img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong> is your starting point to finding relevant log records without writing queries.</p>
 <ul>
-<li>Найдите нужные журналы.
-Легко фильтруйте журналы без написания DQL и находите нужные журналы.</li>
-<li>Проактивное расследование.
-Выявляйте проблемы и получайте ценную информацию, исследуя диаграмму распределения журналов с течением времени.</li>
+<li>Find the logs youâre looking for.
+  Easily filter your logs without writing DQL, and find the logs you need.</li>
+<li>Proactive investigation.
+  Uncover problems and insights by investigating log distribution chart over time.</li>
 <li>
-<p>Откройте для себя основную причину проблем из контекста.
-Изучите окружающие интересующие журналы, чтобы понять контекст и основную причину ошибок:</p>
+<p>Discover the root cause of issues from context.
+  Investigate the surrounding logs of interest to understand the context and root cause of errors:</p>
 </li>
 <li>
-<p>Найдите основную причину и проверьте, не является ли журнал только признаком проблемы.</p>
+<p>Find the root cause &amp; check if a log is only a symptom of issues.</p>
 </li>
-<li>На основе трассировок: отображать детали транзакций в распределенной среде.</li>
-<li>На основе источника: анализируйте выбранную запись в контексте одного компонента.</li>
-<li>Расширьте свой анализ.
-Быстро перемещайтесь между деталями журнала и связанными хостами, кластерами Kubernetes, трассировками или другими объектами.
-Это поможет вам понять влияние отдельной записи в контексте связанных метрик и трассировок.</li>
-<li>Поделитесь своими выводами.
-Продолжайте свое путешествие, войдя в <img alt="Ноутбуки" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Блокноты</strong>, <img alt="Панели мониторинга" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Панели мониторинга</strong>, <img alt="Расследования" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Расследования</strong> или автоматизируйте их с помощью <img alt="Рабочие процессы" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Рабочие процессы</strong>.</li>
+<li>Based on traces: show transaction details in a distributed environment.</li>
+<li>Based on source: analyze the selected record in the context of a single component.</li>
+<li>Expand your analysis.
+  Quickly navigate between log details and related hosts, Kubernetes clusters, traces, or other entities.
+  This helps you understand the impact of a single record in the context of related metrics and traces.</li>
+<li>Share your findings.
+  Continue your journey with logs in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>, <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, <img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong>, or automate with <img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong>.</li>
 </ul>
-<h2 id="_6">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Могу ли я редактировать запрос DQL?</p>
-<p>В меню выберите <strong>Редактировать запрос DQL</strong> рядом с кнопкой <strong>Выполнить запрос</strong>.</p>
-<p>Как лицензируются журналы?</p>
-<p>Запрос журналов работает на основе того же лицензирования, что и другие функции управления журналами и аналитики.</p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<p>Can I edit the DQL query?</p>
+<p>Select <strong>Edit DQL query</strong> from the menu, besides the <strong>Run query</strong> button.</p>
+<p>How are logs licensed?</p>
+<p>Querying logs works based on the same licensing as other Log Management and Analytics feature.</p>
 <ul>
-<li>Если у вас есть <strong>Сохранять</strong> и <strong>Запрос</strong> как отдельные элементы прейскуранта, вы используете лицензию только для запрашиваемого тома журнала в байтах.
-Для получения дополнительной информации см. <a href="/docs/license/capabilities/log-analytics/dps-log-query" title="Learn how your consumption of the Log Management &amp; Analytics - Query DPS capability is billed and charged.">Рассчитайте потребление Log Management &amp; Analytics – Query (DPS)</a>.</li>
-<li>Если в прейскуранте указано <strong>Сохранять с включенными запросами</strong>, за включенные запросы плата не взимается.
-Для получения дополнительной информации см. <a href="/docs/license/capabilities/log-analytics#log-retain-included-queries" title="Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.">Аналитика журналов (DPS)</a>.</li>
+<li>If you have <strong>Retain</strong> and <strong>Query</strong> as separate rate-card items, you only consume the license for queried log volume in bytes.
+  For more info, see <a href="/docs/license/capabilities/log-analytics/dps-log-query" title="Learn how your consumption of the Log Management &amp; Analytics - Query DPS capability is billed and charged.">Calculate your consumption of Log Management &amp; Analytics - Query (DPS)</a>.</li>
+<li>If you have <strong>Retain with Included Queries</strong> on your rate card, there is no cost to for included queries.
+  For more info, see <a href="/docs/license/capabilities/log-analytics#log-retain-included-queries" title="Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.">Log Analytics (DPS)</a>.</li>
 </ul>
-<p>Следующие действия бесплатны:</p>
+<p>The following actions are free of charge:</p>
 <ul>
-<li>Фасеты и предложения полей фильтра.</li>
-<li>Формирование диаграммы распределения журналов.</li>
-<li>Поиск ранее полученных результатов (с помощью поля поиска над таблицей).</li>
+<li>Facets and Filter field suggestions.</li>
+<li>Generating the log distribution chart.</li>
+<li>Searching for previously returned results (using the searchbox above the table).</li>
 </ul>
-<p>Лицензия используется только тогда, когда вы нажимаете кнопку <strong>Выполнить запрос</strong> или используете <strong>Окружающие журналы</strong>.</p>
-<p>Как настроить доступ к журналам?</p>
-<p>Пользователи должны иметь доступ к платформе Dynatrace и журналам, хранящимся в Grail (<a href="/docs/platform/upgrade#built-in-policies" title="Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.">посмотреть встроенные политики доступа</a> для данных журналов).Приложение заменяет экран <strong>Журналы и события</strong>, поэтому пользователи, которые ранее обращались к журналам, могут использовать <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong>.</p>
-<p>[<img alt="Центр" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
-<h3 id="dynatrace-hub">Исследуйте в Dynatrace Hub<a class="headerlink" href="#dynatrace-hub" title="Permanent link">&para;</a></h3>
-<p>Найдите соответствующие записи журнала без написания запросов DQL.](https://www.dynatrace.com/hub/detail/logs/?internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross/)</p>
+<p>The license is consumed only when you click the <strong>Run query</strong> button or when you use <strong>Surrounding logs</strong>.</p>
+<p>How to configure access to Logs?</p>
+<p>The users must have access to the Dynatrace Platform and logs stored in Grail (<a href="/docs/platform/upgrade#built-in-policies" title="Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.">see the built-in access policies</a> for log data). The application replaces the <strong>Logs and Events</strong> screen, so users who accessed logs previously can use <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong>.</p>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h3>
+<p>Find relevant log records without writing DQL queries.](https://www.dynatrace.com/hub/detail/logs/?internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross/)</p>
 
 
 

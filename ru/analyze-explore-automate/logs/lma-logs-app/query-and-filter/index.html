@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#query-and-filter-logs" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -25549,74 +25549,74 @@
 
 
 
-<h1 id="_1">Журналы запросов и фильтров<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Журналы запросов и фильтров<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="query-and-filter-logs">Query and filter logs<a class="headerlink" href="#query-and-filter-logs" title="Permanent link">&para;</a></h1>
+<h1 id="query-and-filter-logs_1">Query and filter logs<a class="headerlink" href="#query-and-filter-logs_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>Практическое руководство</li>
-<li>4-минутное чтение</li>
-<li>Опубликовано 2 июля 2025 г.</li>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>4-min read</li>
+<li>Published Jul 02, 2025</li>
 </ul>
-<p>В <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong> вы можете создавать запросы, использовать фильтры, искать определенные строки журнала и многое другое.</p>
-<h2 id="logs">Создайте запрос в журналах <strong>Logs</strong><a class="headerlink" href="#logs" title="Permanent link">&para;</a></h2>
-<p>Запросите журналы, указав оператор сегмента и фильтра с ключами и значениями с вашими условиями поиска, компараторами и логическими операторами.</p>
+<p>In <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong>, you can build queries, use filters, search for particular log lines, and more.</p>
+<h2 id="build-a-query-in-logs-logs">Build a query in Logs <strong>Logs</strong><a class="headerlink" href="#build-a-query-in-logs-logs" title="Permanent link">&para;</a></h2>
+<p>Query logs by specifying a segment and filter statement with keys and values with your search terms, comparators, and logical operators.</p>
 <ul>
-<li><strong>Сегмент</strong>: общий фильтр для данных наблюдения в приложениях на платформе Dynatrace.</li>
-<li><strong>Ключ</strong>: поле или атрибут, по которому требуется фильтровать.</li>
-<li><strong>Значение</strong>: конкретное значение, которое вы ищете.</li>
-<li><strong>Логический оператор</strong>: соединяет несколько операторов фильтра.</li>
+<li><strong>Segment</strong>: A common filter for observability data across apps on the Dynatrace platform.</li>
+<li><strong>Key</strong>: The field or attribute you want to filter on.</li>
+<li><strong>Value</strong>: The specific value that you're looking for.</li>
+<li><strong>Logical operator</strong>: Connects multiple filter statements.</li>
 </ul>
-<p>По умолчанию все операторы фильтра подключены к <code>AND</code>.
-* <strong>Компаратор</strong>: определяет тип сравнения.</p>
-<p><img alt="Поле фильтра в приложении «Журналы»" src="https://dt-cdn.net/images/untitled-001-1835-80e79a2919.png" /></p>
-<p><a href="/docs/analyze-explore-automate/logs/lma-logs-app/facets" title="Filter with facets in the Dynatrace Logs app.">Фильтр с гранями</a>, чтобы автоматически добавлять ключи и значения в фильтр.</p>
-<p>Используйте средство выбора даты, чтобы применить правильный временной интервал для вашего запроса.</p>
-<p>Выберите <strong>Выполнить запрос</strong>, чтобы выполнить запрос.</p>
-<p>После того как ваш запрос вернет записи в таблицу результатов, вы можете выполнить поиск по ключевым словам в этих данных.Используйте поле <strong>Искать в результатах</strong>, чтобы отфильтровать таблицу по ключевому слову.Эта фильтрация не выполняет новый запрос, а только показывает уже возвращенные и загруженные результаты в вашем браузере.</p>
-<h2 id="_3">Использовать сегменты <strong>Сегменты</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>По возможности применяйте сегментный фильтр к вашему запросу.</p>
+<p>By default, all filter statements are <code>AND</code> connected.
+* <strong>Comparator</strong>: Determines the type of comparison.</p>
+<p><img alt="Filter field in Logs app" src="https://dt-cdn.net/images/untitled-001-1835-80e79a2919.png" /></p>
+<p><a href="/docs/analyze-explore-automate/logs/lma-logs-app/facets" title="Filter with facets in the Dynatrace Logs app.">Filter with facets</a> to add keys and and values to your filter automatically.</p>
+<p>Use the date picker to apply the correct timeframe for your query.</p>
+<p>Select <strong>Run query</strong> to execute the query.</p>
+<p>After your query has returned records in the result table, you can search for keywords in this data. Use the <strong>Search in results</strong> field to filter the table using your keyword. This filtering does not execute a new query but only shows the already returned and loaded results in your browser.</p>
+<h2 id="use-segments-segments">Use Segments <strong>Segments</strong><a class="headerlink" href="#use-segments-segments" title="Permanent link">&para;</a></h2>
+<p>Apply a segment filter to your query whenever possible.</p>
 <ul>
-<li>Сегменты позволяют фильтровать журналы и другие наблюдаемые данные с помощью единого фильтра.</li>
-<li>Сегменты удобны для ограничения ваших запросов только определенными сегментами Grail, что уменьшает объем данных, которые необходимо сканировать для получения релевантных результатов.</li>
+<li>Segments let you filter on logs and other observability data with a consistent filter.</li>
+<li>Segments are convenient to limit your queries to only specific Grail buckets, which reduces the amount of data that you need to scan to get the relevant results.</li>
 </ul>
-<p>Дополнительные сведения см. в <a href="/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket" title="Segment logs by bucket with segments">Сегментировать журналы по сегментам</a> и <a href="/docs/analyze-explore-automate/logs/lma-best-practices#use-bucket-filters" title="Best practices for setting up Log Management and Analytics with Dynatrace.">лучшие практики для журналов</a>.
-* Сегменты позволяют сохранять и повторно использовать часто используемые фильтры, которые применимы в <img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналах</strong> и в других приложениях Dynatrace.</p>
-<h2 id="-">Изучите последние фильтры и фильтры-штифты<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
-<p><img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong> сохраняют недавно использованные фильтры, чтобы вы могли повторно применить их одним щелчком мыши.Вы также можете сохранить фильтры, закрепив их.</p>
-<p>Выберите поле фильтра и проверьте раздел <strong>Недавно использованные фильтры</strong>.В этом разделе отображаются недавно примененные вами фильтры, причем самые последние находятся вверху.Когда вы вводите новый оператор фильтра, этот список сокращается до аналогичных операторов из недавно использованных фильтров.</p>
-<p>Выберите (<strong>Закрепить фильтр</strong>), чтобы закрепить любой созданный вами фильтр.Если поле фильтра пусто, выберите его и прокрутите вниз до раздела <strong>Закрепленные фильтры</strong>, чтобы просмотреть ранее закрепленные фильтры.Открепите фильтр, снова выбрав (<strong>Закрепить фильтр</strong>).</p>
-<h2 id="_4">Поиск фразы в логах<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Если вам нужно найти журналы, содержащие определенную фразу, у вас есть несколько вариантов: от самой широкой до более узкой фильтрации.</p>
-<h3 id="_5">Поиск по всем полям<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>Используйте <code>*</code> вместо ключевого имени и <code>~</code> в качестве компаратора для поиска вашей фразы во всех полях записи журнала, соответствующих вашим фильтрам.</p>
-<p>Например, фильтр <code>* ~ "failed to charge card"</code> соответствует журналам, которые содержат эту фразу в любом поле.</p>
-<p>Это эквивалентно использованию команды DQL <a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search «Команды фильтрации и поиска DQL»"><code>search</code></a>.</p>
-<h3 id="content">Поиск по <code>content</code><a class="headerlink" href="#content" title="Permanent link">&para;</a></h3>
-<p>Обычно исходные полезные данные журнала сохраняются в поле <code>content</code> записи журнала.Ограничьте поиск этим полем, чтобы повысить производительность запроса.</p>
-<p>Например, фильтр <code>content ~ "failed to charge card"</code> соответствует журналам, которые содержат эту фразу в поле <code>content</code>.</p>
-<p>Это эквивалентно использованию строковой функции <a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase «Список строковых функций DQL.»"><code>matchesPhrase</code></a> DQL.</p>
-<h3 id="_6">Подстановочный знак в значении<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>Вы также можете указать только часть значения с помощью подстановочного знака, используя <code>*</code> в поисковом запросе.</p>
-<p>Например, фильтр <code>content = "*card*"</code> соответствует журналам, содержащим фразу <code>card</code> в поле <code>content</code>.</p>
-<p>Это эквивалентно использованию строковой функции <a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesValue «Список строковых функций DQL.»"><code>matchesValue</code></a>.</p>
-<p>Полную информацию см. в <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field" title="The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.">Поле фильтра</a>.</p>
-<h2 id="_7">Фильтрация по полю с несколькими значениями<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>По умолчанию все операторы фильтра связаны с логическим оператором <code>AND</code>.Например, <code>status = ERROR</code> <code>status = WARN</code> не возвращает результатов, поскольку одна запись журнала не может иметь два статуса.</p>
-<p>Для запроса по полю с разными значениями используйте оператор <code>in</code>.Например, <code>status in (ERROR, WARN)</code> возвращает журналы со статусом <code>ERROR</code> или <code>WARN</code>.Альтернативно вы можете использовать <code>OR</code> для объединения нескольких операторов фильтра.</p>
-<h2 id="_8">Используйте автоматические предложения для фильтров журналов<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p><img alt="Журналы" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Журналы</strong> предоставляют предложения по автозаполнению ключей, компараторов и значений.</p>
+<p>For additional details, see <a href="/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket" title="Segment logs by bucket with segments">Segment logs by bucket</a> and the <a href="/docs/analyze-explore-automate/logs/lma-best-practices#use-bucket-filters" title="Best practices for setting up Log Management and Analytics with Dynatrace.">best practices for logs</a>.
+* Segments let you save and reuse commonly used filters, which are applicable in <img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong> and across other Dynatrace apps.</p>
+<h2 id="explore-recent-filters-and-pin-filters">Explore recent filters and pin filters<a class="headerlink" href="#explore-recent-filters-and-pin-filters" title="Permanent link">&para;</a></h2>
+<p><img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong> saves your recently used filters so that you can re-apply them with just a click. You can also persist filters by pinning them.</p>
+<p>Select the filter field and check the <strong>Recently used filters</strong> section. The section displays filters you have recently applied, with the most recent on top. As you type a new filter statement, this list is reduced to match similar statements from your recently used filters.</p>
+<p>Select  (<strong>Pin filter</strong>) to pin any filter that you've created. When the filter field is empty, select it and scroll down to the <strong>Pinned filters</strong> section to view your previously pinned filters. Unpin a filter by selecting  (<strong>Pin filter</strong>) again.</p>
+<h2 id="search-for-a-phrase-in-logs">Search for a phrase in logs<a class="headerlink" href="#search-for-a-phrase-in-logs" title="Permanent link">&para;</a></h2>
+<p>If you need to find logs that contain a specific phrase, you have multiple options, which range from broadest to more narrow filtering.</p>
+<h3 id="search-from-all-fields">Search from all fields<a class="headerlink" href="#search-from-all-fields" title="Permanent link">&para;</a></h3>
+<p>Use <code>*</code> instead of a keyname and <code>~</code> as the comparator to search for your phrase from all the fields of the log record that match your filters.</p>
+<p>For example, the <code>* ~ "failed to charge card"</code> filter matches logs that contain this phrase in any field.</p>
+<p>This is equivalent to using the <a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search" title="DQL filter and search commands"><code>search</code></a> DQL command.</p>
+<h3 id="search-from-content">Search from <code>content</code><a class="headerlink" href="#search-from-content" title="Permanent link">&para;</a></h3>
+<p>Typically, original log payload is preserved in the <code>content</code> field of the log record. Restrict your search to this field to increase query performance.</p>
+<p>For example, the <code>content ~ "failed to charge card"</code> filter matches logs that contain this phrase in the <code>content</code> field.</p>
+<p>This is equivalent to using the <a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase" title="A list of DQL string functions."><code>matchesPhrase</code></a> DQL string function.</p>
+<h3 id="wildcard-in-value">Wildcard in value<a class="headerlink" href="#wildcard-in-value" title="Permanent link">&para;</a></h3>
+<p>You can also specify just a part of the value with a wildcard by using <code>*</code> in your search term.</p>
+<p>For example, the <code>content = "*card*"</code> filter matches logs that contain the <code>card</code> phrase in the <code>content</code> field.</p>
+<p>This is equivalent to using the <a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesValue" title="A list of DQL string functions."><code>matchesValue</code></a> DQL string function.</p>
+<p>For the full reference, see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field" title="The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.">Filter field</a>.</p>
+<h2 id="filter-on-a-field-with-multiple-values">Filter on a field with multiple values<a class="headerlink" href="#filter-on-a-field-with-multiple-values" title="Permanent link">&para;</a></h2>
+<p>By default, all filter statements are connected with the <code>AND</code> logical operator. For example, <code>status = ERROR</code> <code>status = WARN</code> returns no results, as one a log record cannot have two statuses.</p>
+<p>To query by a field with different values, use the <code>in</code> operator. For example, <code>status in (ERROR, WARN)</code> returns logs that have either the <code>ERROR</code> or <code>WARN</code> status. Alternatively, you can use <code>OR</code> to combine multiple filter statements.</p>
+<h2 id="leverage-automatic-suggestions-for-log-filters">Leverage automatic suggestions for log filters<a class="headerlink" href="#leverage-automatic-suggestions-for-log-filters" title="Permanent link">&para;</a></h2>
+<p><img alt="Logs" src="https://dt-cdn.net/images/logs-256-ae0a9ca67f.png" title="Logs" /> <strong>Logs</strong> provides autocomplete suggestions for keys, comparators, and values.</p>
 <ul>
-<li>Выберите поле фильтра, чтобы получить список предложений для наиболее распространенных или релевантных полей для фильтрации.</li>
-<li>После выбора поля вы получаете список предложений для компараторов.</li>
-<li>После выбора компаратора вы получаете список предлагаемых значений для этого поля.Это не поддерживается для поля <code>content</code>.</li>
+<li>Select the filter field to get a list of suggestions for most common or relevant fields for filtering.</li>
+<li>After choosing a field, you get a list of suggestions for comparators.</li>
+<li>After choosing a comparator, you get a list of suggestions for values for this field. This is not supported for the <code>content</code> field.</li>
 </ul>
-<p>Обратите внимание, что предложения представлены на основе фактических значений, запрошенных в фоновом режиме из данных журнала, но стоимость запроса для контекстно релевантных предложений не взимается.</p>
-<h2 id="_9">Похожие темы<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>Note that suggestions are presented based on actual values queried in the background from your log data, but there is no query cost for contextually relevant suggestions.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field" title="The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.">Поле фильтра</a></li>
-<li><a href="/docs/analyze-explore-automate/logs/lma-logs-app/facets" title="Filter with facets in the Dynatrace Logs app.">Фильтр с гранями</a></li>
-<li><a href="/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket" title="Segment logs by bucket with segments">Сегментировать журналы по сегментам</a></li>
-<li><a href="/docs/analyze-explore-automate/logs/lma-best-practices" title="Best practices for setting up Log Management and Analytics with Dynatrace.">Лучшие практики управления журналами и аналитики</a></li>
+<li><a href="/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field" title="The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.">Filter field</a></li>
+<li><a href="/docs/analyze-explore-automate/logs/lma-logs-app/facets" title="Filter with facets in the Dynatrace Logs app.">Filter with facets</a></li>
+<li><a href="/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket" title="Segment logs by bucket with segments">Segment logs by bucket</a></li>
+<li><a href="/docs/analyze-explore-automate/logs/lma-best-practices" title="Best practices for setting up Log Management and Analytics with Dynatrace.">Log Management and Analytics best practices</a></li>
 </ul>
 
 

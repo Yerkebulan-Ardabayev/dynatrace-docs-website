@@ -25690,40 +25690,40 @@ Open the Browse (<strong>â¦</strong>) menu in the upper-right corner of <img
 <p>If you use virtual servers or you have a PaaS-based infrastructure, the data center nodes will be labeled accordingly (for example, VMware data center, AWS Availability Zone, or Azure region) and visualized with the corresponding company logos.</p>
 <p><img alt="Smartscape datacenters" src="https://dt-cdn.net/images/smartscape-datacenters-1625-63d687b49e.png" /></p>
 <h3 id="cross-tier-interconnections">Cross-tier interconnections<a class="headerlink" href="#cross-tier-interconnections" title="Permanent link">&para;</a></h3>
-<p>Для просмотра межъярусных связей выберите любую сущность в любом ярусе <img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png" title="Smartscape" /> <strong>Smartscape Classic</strong>. Вертикальные зависимости этой сущности будут отображены слева.</p>
-<p>В этом примере выбражено веб-приложение с именем <code>easytravel-dynatrace-dev</code>. Слева вы можете увидеть, как зависимости приложения простираются вниз до яруса центров обработки данных.</p>
+<p>To view cross-tier connections, select any entity in any <img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png" title="Smartscape" /> <strong>Smartscape Classic</strong> tier. The vertical dependencies of the entity are then displayed on the left.</p>
+<p>In this example, a web application called <code>easytravel-dynatrace-dev</code> is selected. On the left you can see how the application dependencies extend downward to the data centers tier.</p>
 <p><img alt="Smartscape inter 1" src="https://dt-cdn.net/images/smartscape-inter1-1687-680a65579e.png" /></p>
-<p>Приложение <code>easytravel-dynatrace-dev</code> отображается красным, поскольку испытывает проблему. Двигаясь вниз по связанным зависимостям, мы видим, что это приложение вызывает 27 служб Tomcat и 4 службы ASP/.NET. Эти службы работают на процессах одного и того же типа технологии (те, что показаны красным, испытывают проблемы). Вы можете видеть, что эти процессы находятся на хосте Windows с именем <code>lr-ws-l02v</code> (чтобы увидеть эту деталь, наведите курсор на узел хоста). Поскольку неисправные процессы работают на этом хосте, этот хост также неисправен (обратите внимание на красную <strong>1</strong> на плитке <strong>Hosts</strong> слева).</p>
-<p>Этот пример показывает, как легко можно обнаружить первопричину проблемы и сократить время ее устранения, изучая связанные сущности в <img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png" title="Smartscape" /> <strong>Smartscape Classic</strong>.</p>
-<h2 id="_1">Уязвимости сторонних компонентов<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Когда <strong>Show third-party vulnerabilities</strong> (Показать уязвимости сторонних компонентов) выбрано в <img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png" title="Smartscape" /> <strong>Smartscape Classic</strong>, выберите <strong>Risk level</strong> (Уровень риска), чтобы указать уровни риска, которые вы хотите отобразить. Вы можете выбрать несколько флажков.</p>
+<p>The <code>easytravel-dynatrace-dev</code> application is red because it's experiencing a problem. Moving downward through the related dependencies, we can see that this application calls 27 Tomcat services and 4 ASP/.NET services. These services run on processes of the same technology types (those shown in red are experiencing problems). You can see that these processes reside on a Windows-based host called <code>lr-ws-l02v</code> (to see this detail, hover your cursor over the host node). Because the unhealthy processes are running on this host, this host is also unhealthy (note the red <strong>1</strong> on the <strong>Hosts</strong> tile on the left).</p>
+<p>This example reveals how you can easily discover the root cause of a problem and reduce problem resolution time by exploring the related entities in <img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png" title="Smartscape" /> <strong>Smartscape Classic</strong>.</p>
+<h2 id="third-party-vulnerabilities">Third-party vulnerabilities<a class="headerlink" href="#third-party-vulnerabilities" title="Permanent link">&para;</a></h2>
+<p>When <strong>Show third-party vulnerabilities</strong> is selected in <img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png" title="Smartscape" /> <strong>Smartscape Classic</strong>, select <strong>Risk level</strong> to specify the risk levels you want to display. You can select more than one checkbox.</p>
 <ul>
-<li>На левой стороне вертикальный столбец показывает количество затронутых узлов красным цветом и общее количество узлов серым цветом на уровнях процессов и хостов.</li>
+<li>On the left side, the vertical column shows the number of affected nodes in red and the total count of nodes in gray on the processes and hosts layers.</li>
 <li>
-<p>На топологии затронутые узлы отображаются цветом уровня риска:</p>
+<p>On the topology, affected nodes are displayed in the color of the risk level:</p>
 </li>
 <li>
-<p>Темно-красный для <code>Critical</code> (Критический)</p>
+<p>Dark red for <code>Critical</code></p>
 </li>
-<li>Красный для <code>High</code> (Высокий)</li>
-<li>Желтый для <code>Medium</code> (Средний)</li>
-<li>Синий для <code>Low</code> (Низкий)</li>
+<li>Red for <code>High</code></li>
+<li>Yellow for <code>Medium</code></li>
+<li>Blue for <code>Low</code></li>
 </ul>
-<p>Чтобы увидеть уязвимости для затронутых сущностей, переключитесь на ярус <strong>Processes</strong> (Процессы) или <strong>Hosts</strong> (Хосты). (Уязвимости могут быть связаны с приложением, службой или центром обработки данных, но они не влияют на них напрямую. Только процессы или хосты могут быть затронуты.)</p>
+<p>To see vulnerabilities for affected entities, switch to the <strong>Processes</strong> or <strong>Hosts</strong> tier. (Vulnerabilities can be related to an application, service, or data center, but they don't impact them directly. Only processes or hosts can be impacted.)</p>
 <ul>
-<li>Чтобы увеличить и уменьшить масштаб, используйте кнопки <strong>+/-</strong> в правом верхнем углу или вращайте колесико мыши.</li>
-<li>Чтобы изменить положение обзора, выберите и перетащите в любом месте <img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png" title="Smartscape" /> <strong>Smartscape Classic</strong>.</li>
-<li>Чтобы увидеть имя сущности, наведите курсор на символ сущности. Пока отображается имя, вы можете выбрать стрелку рядом с именем сущности, чтобы перейти на страницу обзора этой сущности.</li>
-<li>Для просмотра межъярусных связей выберите любую сущность. Панель слева расширится, чтобы отобразить вертикальные зависимости сущности.</li>
+<li>To zoom in and out, use the <strong>+/-</strong> buttons in the upper-right corner or rotate the mouse wheel.</li>
+<li>To shift your view to a different position, select and drag anywhere in <img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png" title="Smartscape" /> <strong>Smartscape Classic</strong>.</li>
+<li>To view the name of an entity, hover your cursor over the entity's symbol. While the name is displayed, you can select the arrow next to the entity name to go to that entity's overview page.</li>
+<li>To view cross-tier connections, select any entity. The panel on the left expands to display the vertical dependencies of the entity.</li>
 </ul>
-<p>Дополнительную информацию об управлении уязвимостями сторонних компонентов можно найти в разделе <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities" title="Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.">Third-party vulnerabilities</a>.</p>
-<h2 id="_2">Связанные темы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>For more information on managing third-party vulnerabilities, see <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities" title="Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.">Third-party vulnerabilities</a>.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">What is a monitoring environment?</a> (Что такое среда мониторинга?)</li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape" title="Learn about the Dynatrace Topology and Smartscape API.">Topology and Smartscape API</a> (Топология и Smartscape API)</li>
-<li><a href="/docs/observe/digital-experience/web-applications/analyze-and-use/performance-analysis" title="Understand the available types of performance analysis that are provided by Dynatrace.">Performance analysis</a> (Анализ производительности)</li>
-<li><a href="/docs/dynatrace-intelligence/root-cause-analysis/concepts" title="Get acquainted with root cause analysis concepts.">Root cause analysis concepts</a> (Концепции анализа первопричин)</li>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities" title="Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.">Third-party vulnerabilities</a> (Уязвимости сторонних компонентов)</li>
+<li><a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">What is a monitoring environment?</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape" title="Learn about the Dynatrace Topology and Smartscape API.">Topology and Smartscape API</a></li>
+<li><a href="/docs/observe/digital-experience/web-applications/analyze-and-use/performance-analysis" title="Understand the available types of performance analysis that are provided by Dynatrace.">Performance analysis</a></li>
+<li><a href="/docs/dynatrace-intelligence/root-cause-analysis/concepts" title="Get acquainted with root cause analysis concepts.">Root cause analysis concepts</a></li>
+<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities" title="Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.">Third-party vulnerabilities</a></li>
 </ul>
 
 

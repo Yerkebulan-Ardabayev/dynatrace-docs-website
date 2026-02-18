@@ -25482,15 +25482,16 @@
 <li>4-min read</li>
 <li>Updated on Jan 28, 2026</li>
 </ul>
-<p>AI observability is the practice of monitoring, analyzing, and visualizing the internal states, inputs, and outputs of AI models embedded in modern applications. It helps ensure correctness, reliability, and effectiveness, while also supporting compliance requirements. By observing AI systems, data scientists, engineers, and operators can uncover insights to optimize and refine performance of your whole stack.</p>
-<p>AI architectures are often complex, dynamic, and probabilistic, operating in unpredictable environments. Observability and transparency are critical to detect biases, understand limitations, and identify potential issuesâan emphasis highlighted by emerging regulations like the <a href="https://dt-url.net/xv038bv">European Union Artificial Intelligence Actï»¿</a>.</p>
+<p>AI observability is the practice of collecting, analyzing, and correlating telemetry across your tech stack to understand how AI systems, agents, and LLMs behave in all environments including production. It enables real-time visibility into LLMs, AI agents, orchestration layers, and their downstream impact on your application and infrastructure.</p>
+<p>AI observability delivers actionable insights that enable developers, SREs, and platform teams to debug, optimize, and improve AI-powered services, ensuring they stay reliable, performant, cost-efficient, and meet quality standards.</p>
+<p>Full-stack observability for AI apps is especially critical when working with AI platforms like OpenAI, Anthropic, Gemini (Google Cloud), Amazon Bedrock, Azure AI Foundry, and Vertex AI, where model execution happens externally and opaquely, yet directly affects business-critical workflows.</p>
 <p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
 <h3 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h3>
 <p>Get a holistic view of the AI-generated parts of your system such as LLM, vector databases, and prompt engineering frameworks to gain comprehensive insights.](https://www.dynatrace.com/hub/?filter=ai-ml-observability&amp;internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross)</p>
 <h2 id="dynatrace-end-to-end-ai-and-llm-observability">Dynatrace end-to-end AI and LLM observability<a class="headerlink" href="#dynatrace-end-to-end-ai-and-llm-observability" title="Permanent link">&para;</a></h2>
 <p>Dynatrace unifies metrics, logs, traces, problem analytics, and root cause information in dashboards and notebooks, providing a single operational view of your AI-powered cloud applications end-to-end.</p>
-<p>Use Dynatrace with <a href="/docs/observe/dynatrace-for-ai-observability/get-started" title="Learn how to set up OpenLLMetry to observe an AI/ML model.">Traceloop OpenLLMetry</a> to gain detailed insights into your generative AI stack.</p>
-<p><img alt="Full AI/ML observability with Dynatrace" src="https://dt-cdn.net/images/integrations-1824-fe1c64037f.png" /></p>
+<p>Use Dynatrace with <a href="/docs/observe/dynatrace-for-ai-observability/get-started" title="Learn how to set up OpenLLMetry to observe an AI/ML model.">Traceloop OpenLLMetry</a> or <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/">OpenTelemetry with GenAI semantic conventionsï»¿</a> to gain detailed insights into your generative AI stack.</p>
+<p><img alt="Full AI/ML observability with Dynatrace" src="https://dt-cdn.net/images/ai-obs-tech-stack-latest-1892-88a8b44f2c.png" /></p>
 <p>This approach covers the complete AI stack, from foundational models and vector databases to RAG orchestration frameworks, ensuring visibility across every layer of modern AI applications.</p>
 <h2 id="key-metrics-for-ai-observability">Key metrics for AI observability<a class="headerlink" href="#key-metrics-for-ai-observability" title="Permanent link">&para;</a></h2>
 <ul>
@@ -25511,7 +25512,7 @@
 <li><strong>Anomaly Detection</strong>: Automated alerts for deviations from normal patterns.</li>
 <li><strong>Explainability &amp; Interpretability</strong>: Techniques to illuminate a model's decision-making process.</li>
 </ul>
-<p><img alt="Unlock your AI and LLM observability with Dynatrace" src="https://dt-cdn.net/images/2-service-dashboard-3840-c19987541f.png" /></p>
+<p><img alt="Unlock your AI and LLM observability with Dynatrace" src="https://dt-cdn.net/images/ai-obs-a-b-test-7233-74b08ff0a7.png" /></p>
 <h2 id="key-use-cases-for-ai-observability">Key use cases for AI observability<a class="headerlink" href="#key-use-cases-for-ai-observability" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Monitor service health and performance</strong>: Track real-time metrics (request counts, durations, and error rates). Stay aligned with SLOs.</li>
@@ -25520,6 +25521,9 @@
 <li><strong>Build trust, reduce compliance and audit risks</strong>: Track every input and output for an audit trail. Query all data in real time and store for future reference. Maintain full data lineage from prompt to response.</li>
 </ul>
 <p>By embracing AI observability, organizations improve reliability, trustworthiness, and overall performance, leading to more robust and responsible AI deployments.</p>
+<h3 id="observing-agents-and-agentic-workloads">Observing Agents and Agentic workloads<a class="headerlink" href="#observing-agents-and-agentic-workloads" title="Permanent link">&para;</a></h3>
+<p>Get visibility into Agentic AI workloads: agent execution paths, tool invocations, and inter-agent communication. Monitor and debug Agent interactions such as function calling, LLM calls, tool-use, RAG, and resolve performance, latency, cost, and reliability issues.
+Dynatrace integrates with workloads such as OpenAI Agent SDK, LangChain/LangGraph Agents, CrewAI, Amazon Bedrock Agentcore, MCP tools, Google ADK, and <a href="https://www.dynatrace.com/hub/?filter=ai-ml-observability">many moreï»¿</a>.</p>
 <h3 id="observing-model-providers-and-platforms">Observing model providers and platforms<a class="headerlink" href="#observing-model-providers-and-platforms" title="Permanent link">&para;</a></h3>
 <p>Dynatrace integrates with providers such as <a href="/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai" title="OpenAI observability">OpenAI</a>, <a href="/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock" title="Bedrock observability">Amazon Bedrock</a>, <a href="/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim" title="NVIDIA NIM observability">NVIDIA NIM</a>, <a href="/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama" title="Ollama observability">Ollama</a> to monitor performance (token consumption, latency, availability, and errors) at scale.</p>
 <h3 id="observing-semantic-caches-and-vector-databases">Observing semantic caches and vector databases<a class="headerlink" href="#observing-semantic-caches-and-vector-databases" title="Permanent link">&para;</a></h3>

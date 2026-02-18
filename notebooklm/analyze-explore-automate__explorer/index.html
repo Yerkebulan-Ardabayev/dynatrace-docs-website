@@ -25466,10 +25466,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#analyze-explore-automateexplorermd" class="md-nav__link">
+  <a href="#analyze-explore-automateexplorerexplorer-troubleshootingmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        analyze-explore-automate/explorer.md
+        analyze-explore-automate/explorer/explorer-troubleshooting.md
       
     </span>
   </a>
@@ -25496,476 +25496,527 @@
 <h1 id="dynatrace-analyze-explore-automateexplorer">Документация Dynatrace: analyze-explore-automate/explorer<a class="headerlink" href="#dynatrace-analyze-explore-automateexplorer" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
 Сгенерировано: 2026-02-18
-Файлов в разделе: 1</p>
+Файлов в разделе: 2</p>
+<hr />
+<h2 id="analyze-explore-automateexplorerexplorer-troubleshootingmd">analyze-explore-automate/explorer/explorer-troubleshooting.md<a class="headerlink" href="#analyze-explore-automateexplorerexplorer-troubleshootingmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Data Explorer FAQ
+source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer/explorer-troubleshooting
+scraped: 2026-02-17T21:25:36.520613</p>
+<hr />
+<h1 id="data-explorer-faq">Data Explorer FAQ<a class="headerlink" href="#data-explorer-faq" title="Permanent link">&para;</a></h1>
+<h1 id="data-explorer-faq_1">Data Explorer FAQ<a class="headerlink" href="#data-explorer-faq_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>1-min read</li>
+<li>Published Mar 10, 2022</li>
+</ul>
+<p>Why am I not seeing all series of my metric?</p>
+<ul>
+<li>The <em>default</em> number of displayed series per metric is <code>20</code>. Consequently, some series might be missing in Data Explorer. To ensure the series data you're looking for is displayed, provide more specific filters such as a management zone or an entity name filter.</li>
+<li>The <em>maximum</em> number of displayed series per metric is <code>100</code>. Note that this limit applies even if you remove the <a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector#limit" title="Configure the metric selector for the Metric v2 API."><strong>limit</strong> transformation</a> from the metric selector on the <a href="/docs/analyze-explore-automate/explorer/explorer-advanced-query-editor" title="Build advanced queries using the Data Explorer advanced mode."><strong>Code</strong> tab</a>.</li>
+</ul>
+<p>If series data is absent for a metric expression, see <a href="/docs/dynatrace-api/environment-api/metric-v2/metric-faq#empty-result-metric-expression" title="Frequently asked questions about the Metrics API v2.">Why is the result of my metric expression empty?</a>.</p>
+<p>Why are some table cells empty when they should have values?</p>
+<p>The root cause of this issue is often the same as for <a href="#missing-series">Why am I not seeing all series of my metric?</a></p>
+<p>The metric series are limited to a certain number.</p>
+<p>Suppose you query <code>builtin:host.cpu.usage</code> and <code>builtin:host.cpu.idle</code> split by <code>dt.entity.host</code>. For both metrics, the top 100 hosts are requested per default. But the top 100 hosts of the <code>builtin:host.cpu.usage</code> metric probably diverges from the top 100 hosts of the <code>builtin:host.cpu.idle</code> metric, leading to empty cells in the table for some hosts.</p>
+<p>Why do I see different availability values in Data Explorer than on the Host and Process pages?</p>
+<p>The metrics <code>builtin:host.availability</code> and <code>builtin:pgi.availability</code> are based on timeseries data provided by the OneAgents, whereas the availability values shown on the Host and Process pages are calculated by dedicated events. Thus, the values may diverge.</p>
+<p>In the future, the availability shown in the Host and Process pages will be based on the availability metrics as well.</p>
+<p>Why do chart values dip at the current (now) time?</p>
+<p>If your charts show a misleading drop in values at the end (current time), you can manually adjust the timeframe to subtract the last one or two time buckets.</p>
+<p>To temporarily adjust the timeframe</p>
+<ol>
+<li>Open the timeframe selector.</li>
+<li>Subtract one or two buckets from the end of the timeframe. For example, change <code>-2h</code> to <code>-2h-2m</code>.</li>
+</ol>
+<p>To set the adjusted timeframe as the default timeframe for the dashboard</p>
+<ol>
+<li>Edit the dashboard.</li>
+<li>Under <strong>Edit dashboard</strong>, select the <strong>Settings</strong> tab.</li>
+<li>Turn on <strong>Default timeframe</strong>.</li>
+<li>Select and edit the timeframe. For example, change <code>-2h</code> to <code>-2h-2m</code>.</li>
+<li>Select <strong>Done</strong>.</li>
+</ol>
+<p>For a discussion of this issue, see <a href="https://community.dynatrace.com/t5/Dynatrace-product-ideas/RFE-Correction-required-onDashboard-Charts-showing-dip-at/idi-p/144070">Correction required on Dashboard Charts showing dip at current timeï»¿</a> in the Dynatrace Community.</p>
+<p>For more about timeframes, see <a href="/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe" title="Learn about Dynatrace dashboard timeframe and management zone settings.">Dynatrace dashboard timeframe and management zone settings</a>.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-faq" title="Frequently asked questions about the Metrics API v2.">Metrics API - FAQ</a></li>
+</ul>
 <hr />
 <h2 id="analyze-explore-automateexplorermd">analyze-explore-automate/explorer.md<a class="headerlink" href="#analyze-explore-automateexplorermd" title="Permanent link">&para;</a></h2>
 <hr />
-<p>title: Обозреватель данных
+<p>title: Data Explorer
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer
-scraped: 2026-02-17T21:23:49.809763</p>
+scraped: 2026-02-18T21:27:35.368560</p>
 <hr />
-<h1 id="_1">Обозреватель данных<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Обозреватель данных<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="data-explorer">Data Explorer<a class="headerlink" href="#data-explorer" title="Permanent link">&para;</a></h1>
+<h1 id="data-explorer_1">Data Explorer<a class="headerlink" href="#data-explorer_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>7-минутное чтение</li>
-<li>Обновлено 03 октября 2025 г.</li>
+<li>7-min read</li>
+<li>Updated on Oct 03, 2025</li>
 </ul>
-<p>Обозреватель данных значительно расширяет ваши возможности запроса и визуализации метрик.</p>
+<p>Data Explorer greatly enhances your abilities to query and visualize metrics.</p>
 <ul>
-<li>Анализируйте многомерные метрики, будь то встроенные в Dynatrace или полученные из StatsD, Prometheus, Telegraf и других каналов.</li>
-<li>Выберите тип визуализации.</li>
-<li>Добавьте свою визуализацию прямо в классические панели мониторинга для простого доступа и обмена.</li>
-<li>Предоставляет основу для расчета метрик в визуализациях на классических панелях мониторинга.</li>
+<li>Analyze multidimensional metrics, whether built into Dynatrace or ingested from StatsD, Prometheus, Telegraf, and other channels.</li>
+<li>Choose a visualization type.</li>
+<li>Add your visualization right to your classic dashboards for easy access and sharing.</li>
+<li>Provides a foundation for metric calculation in visualizations on classic dashboards.</li>
 </ul>
-<p>Быстрый старт</p>
-<p>Если вы предпочитаете пропустить технические детали на данный момент и учиться, делая, попробуйте <a href="/docs/analyze-explore-automate/explorer/explorer-quick-start" title="Используя Обозреватель данных, создайте свой первый запрос, выберите визуализацию и прикрепите результаты к панели мониторинга.">Быстрый старт Обозревателя данных</a>. Вы узнаете, как:</p>
+<p>Quick start</p>
+<p>If you prefer to skip the technical details for now and learn by doing, try the <a href="/docs/analyze-explore-automate/explorer/explorer-quick-start" title="Using Data Explorer, create your first query, select a visualization, and pin the results to a dashboard.">Data Explorer quick start</a>. You'll learn how to:</p>
 <ul>
-<li>Использовать шаблон</li>
-<li>Создать простую визуализацию с нуля</li>
-<li>Использовать визуализацию напрямую в Обозревателе данных</li>
-<li>Прикрепить визуализацию к панели мониторинга для будущего использования и обмена</li>
+<li>Use a template</li>
+<li>Create a simple visualization from scratch</li>
+<li>Use the visualization directly in Data Explorer</li>
+<li>Pin the visualization to a dashboard for future use and sharing</li>
 </ul>
-<p>Но если вы хотите получить детали сейчас, прочитайте ниже.</p>
-<h2 id="_3">Компоненты запроса и понятия<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Каждый запрос метрики состоит из нескольких необязательных компонентов. Например, этот запрос:</p>
-<p><img alt="Пример запроса" src="https://dt-cdn.net/images/query-sample-1340-f8a8829de6.png" /></p>
-<p>имеет следующие компоненты:</p>
+<p>But if you want the details now, read below.</p>
+<h2 id="query-components-and-concepts">Query components and concepts<a class="headerlink" href="#query-components-and-concepts" title="Permanent link">&para;</a></h2>
+<p>Every metric query is composed of multiple optional components. For example, this query:</p>
+<p><img alt="Sample query" src="https://dt-cdn.net/images/query-sample-1340-f8a8829de6.png" /></p>
+<p>has the following components:</p>
 <ul>
-<li><strong>Имя метрики:</strong> <code>CPU usage %</code> (<code>builtin:host.cpu.usage</code>)</li>
-<li><strong>Агрегация:</strong> <code>Average</code> (<code>avg</code>)</li>
-<li><strong>Разделить по:</strong> <code>Host</code> (<code>dt.entity.host</code>)</li>
-<li><strong>Фильтровать по:</strong> <code>Host</code>: <code>OS type</code>: <code>Linux</code></li>
+<li><strong>Metric name:</strong> <code>CPU usage %</code> (<code>builtin:host.cpu.usage</code>)</li>
+<li><strong>Aggregation:</strong> <code>Average</code> (<code>avg</code>)</li>
+<li><strong>Split by:</strong> <code>Host</code> (<code>dt.entity.host</code>)</li>
+<li><strong>Filter by:</strong> <code>Host</code>: <code>OS type</code>: <code>Linux</code></li>
 </ul>
-<p>см. ниже для описаний этих и других возможных компонентов запроса.</p>
-<p>Редактор запроса помогает вам выбрать настройки запроса, совместимые с запросом, который вы настраиваете.</p>
-<p>В примере ниже, если вы наведете курсор на иконку <strong>i</strong> (информация) в списке выбора для <strong>Rate</strong>, редактор объясняет, почему настройка недоступна для текущего запроса.</p>
-<p><img alt="Обозреватель данных: Редактор запроса: Информационный всплывающий" src="https://dt-cdn.net/images/info-rate-710-80bead2920.png" /></p>
-<h3 id="_4">Имя метрики<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>В редакторе запроса выберите имя метрики из списка, отображаемого в поле <strong>Выбрать метрику...</strong>. Это может быть встроенная метрика или метрика, полученная из канала, такого как StatsD, Prometheus или Telegraf через нашу метрику API.</p>
-<p>Чтобы выбрать метрику</p>
+<p>See below for descriptions of these and other possible query components.</p>
+<p>The query editor helps you to select query settings that are compatible with the query you are configuring.</p>
+<p>In the example below, if you hover over the <strong>i</strong> (information) icon in the selection list for <strong>Rate</strong>, the editor explains why the setting is unavailable for the current query.</p>
+<p><img alt="Data Explorer: Query editor: Info pop-up" src="https://dt-cdn.net/images/info-rate-710-80bead2920.png" /></p>
+<h3 id="metric-name">Metric name<a class="headerlink" href="#metric-name" title="Permanent link">&para;</a></h3>
+<p>In the query editor, select the metric name from the list displayed in the <strong>Select metricâ¦</strong> box. This can be a built-in metric or a metric ingested from a channel such as StatsD, Prometheus, or Telegraf over our metrics API.</p>
+<p>To select the metric</p>
 <ul>
-<li>Вы можете ввести или вставить имя метрики напрямую в поле, чтобы найти все совпадающие метрики. В этом примере есть несколько совпадений. Мы выбираем метрику в категории Host, чтобы добавить ее в наш запрос.</li>
+<li>You can type or paste a metric name directly into the box to find all matching metrics. In this example, there are multiple matches. We select the metric in the Host category to add it to our query.</li>
 </ul>
-<p><img alt="Обозреватель данных: Выбор метрики: ввод и выбор" src="https://dt-cdn.net/images/metric-selector-metric-type-471-10a8a83a2e.png" /></p>
+<p><img alt="Data Explorer: metric selector: type and select" src="https://dt-cdn.net/images/metric-selector-metric-type-471-10a8a83a2e.png" /></p>
 <ul>
-<li>Если вы добавили в избранное какие-либо метрики в <a href="/docs/analyze-explore-automate/dashboards-classic/metrics-browser" title="Просмотр метрик с помощью обозревателя метрик Dynatrace.">Обозревателе метрик</a>, эти метрики отображаются в верхней части списка в выборе метрики.</li>
+<li>If you have favorited any metrics in the <a href="/docs/analyze-explore-automate/dashboards-classic/metrics-browser" title="Browse metrics with the Dynatrace metrics browser.">Metrics browser</a> browser, those metrics are displayed at the top of the list in the metric selector.</li>
 </ul>
-<p><img alt="Обозреватель данных: Выбор метрики: избранное" src="https://dt-cdn.net/images/metric-selector-favorites-475-665c98b195.png" />
-* Вы можете выбрать категорию метрик, чтобы сосредоточить список метрик.</p>
-<p><img alt="Обозреватель данных: Выбор метрики: категории" src="https://dt-cdn.net/images/metric-selector-categories-476-5cbd27551a.png" /></p>
+<p><img alt="Data Explorer: metric selector: favorites" src="https://dt-cdn.net/images/metric-selector-favorites-475-665c98b195.png" />
+* You can select a metric category to focus the list of metrics.</p>
+<p><img alt="Data Explorer: metric selector: categories" src="https://dt-cdn.net/images/metric-selector-categories-476-5cbd27551a.png" /></p>
 <ul>
-<li>Когда вы наведете курсор на любую метрику в списке, боковая панель отображает подробную информацию о этой метрике.</li>
+<li>When you hover over any metric in the list, a side panel displays details about that metric.</li>
 </ul>
-<p><img alt="Обозреватель данных: Выбор метрики: подробная информация о метрике" src="https://dt-cdn.net/images/metric-selector-metric-details-964-cd2f59a371.png" /></p>
-<p>Чтобы увидеть больше информации о этой метрике, выберите <strong>Просмотреть всю информацию о метрике</strong>. Это открывает <a href="/docs/analyze-explore-automate/dashboards-classic/metrics-browser" title="Просмотр метрик с помощью обозревателя метрик Dynatrace.">Обозреватель метрик</a> в новой вкладке (чтобы вы не потеряли свою работу в Обозревателе данных) с множеством полезных деталей о выбранной метрике.</p>
-<h3 id="_5">Пространственная агрегация<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>Пространственная агрегация позволяет вам указать, как должны быть agregированы результирующие данные запроса метрики по измерениям.</p>
-<p>Запрос всегда предоставит статистически наиболее точные результаты для данного запроса, даже если некоторые метрики предоставляют разные статистики, что зависит от природы каждой метрики.</p>
-<p>Чтобы изменить эту агрегацию, выберите одну из списка, следующего за именем метрики в редакторе запроса:</p>
-<p><img alt="Обозреватель данных: Редактор запроса: выбор пространственной агрегации" src="https://dt-cdn.net/images/aggregation-select-579-2c3184b61a.png" /></p>
-<p>Каждая метрика предоставляет те же возможные пространственные агрегации: <code>Auto</code>, <code>Average</code>, <code>Count</code>, <code>Maximum</code>, <code>Minimum</code>, <code>Sum</code>, <code>Median</code>, <code>Percentile 10th</code>, <code>Percentile 75th</code> и <code>Percentile 90th</code>.</p>
-<h3 id="_6">Разделить по<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>По умолчанию запрос не разделяется по каким-либо измерениям с помощью агрегации метрики. Когда вы разделяете по измерению, такое как хост, агрегация используется для каждого хоста.</p>
-<p>Чтобы разделить по измерению</p>
+<p><img alt="Data Explorer: metric selector: metric details" src="https://dt-cdn.net/images/metric-selector-metric-details-964-cd2f59a371.png" /></p>
+<p>To see more information about that metric, select <strong>View all metric information</strong>. This opens the <a href="/docs/analyze-explore-automate/dashboards-classic/metrics-browser" title="Browse metrics with the Dynatrace metrics browser.">Metrics browser</a> in a new tab (so you don't lose your work in Data Explorer) with lots of useful details about the selected metric.</p>
+<h3 id="space-aggregation">Space aggregation<a class="headerlink" href="#space-aggregation" title="Permanent link">&para;</a></h3>
+<p>The space aggregation enables you to specify how the resulting data points of a metric query are supposed to be aggregated across dimensions.</p>
+<p>The query will always provide the statistically most accurate results for a given query, even if certain metrics provide different statistics, which depends on the nature of each metric.</p>
+<p>To change this aggregation, select one from the list immediately following the metric name in the query editor:</p>
+<p><img alt="Data Explorer: Query editor: select space aggregation" src="https://dt-cdn.net/images/aggregation-select-579-2c3184b61a.png" /></p>
+<p>Every metric provides the same possible space aggregations: <code>Auto</code>, <code>Average</code>, <code>Count</code>, <code>Maximum</code>, <code>Minimum</code>, <code>Sum</code>, <code>Median</code>, <code>Percentile 10th</code>, <code>Percentile 75th</code>, and <code>Percentile 90th</code>.</p>
+<h3 id="split-by">Split by<a class="headerlink" href="#split-by" title="Permanent link">&para;</a></h3>
+<p>By default, a query does not split by any dimensions using the metric's aggregation. When splitting by a dimension such as host, the aggregation is used for each host.</p>
+<p>To split by a dimension</p>
 <ol>
-<li>Если <strong>Разделить по</strong> не отображается в редакторе запроса, выберите  и затем выберите <code>Разделить по</code> из списка.</li>
-<li>Установите <strong>Разделить по</strong> на измерение, по которому вы хотите разделить запрос.</li>
+<li>If <strong>Split by</strong> is not already displayed in the query editor, select  and then select <code>Split by</code> from the list.</li>
+<li>Set <strong>Split by</strong> to the dimension by which you want to split the query.</li>
 </ol>
-<h4 id="_7">Пример<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p>Если метрика <code>CPU usage %</code>, <code>Host</code> — единственное доступное измерение. В <strong>Разделить по</strong> выберите <code>Host</code>.</p>
-<h3 id="_8">Сортировать по<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>По умолчанию результаты сортируются в порядке убывания на основе выбранной агрегации.</p>
-<p>Чтобы установить порядок сортировки</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<p>If the row's metric is <code>CPU usage %</code>, <code>Host</code> is the only available dimension. In <strong>Split by</strong>, select <code>Host</code>.</p>
+<h3 id="sort-by">Sort by<a class="headerlink" href="#sort-by" title="Permanent link">&para;</a></h3>
+<p>By default, results are sorted in descending order based on the aggregation chosen.</p>
+<p>To set the sort order</p>
 <ol>
-<li>Если <strong>Сортировать по</strong> не отображается в редакторе запроса, выберите  и затем выберите <code>Сортировать по</code> из списка.</li>
-<li>Установите <strong>Сортировать по</strong> на измерение, по которому вы хотите сортировать.</li>
-<li>Выберите порядок сортировки: <code>ASC</code> (по возрастанию) или <code>DESC</code> (по убыванию).</li>
+<li>If <strong>Sort by</strong> is not already displayed in the query editor, select  and then select <code>Sort by</code> from the list.</li>
+<li>Set <strong>Sort by</strong> to the dimension by which you want to sort.</li>
+<li>Select the sort order: <code>ASC</code> (ascending) or <code>DESC</code> (descending).</li>
 </ol>
-<h3 id="_9">Скорость<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>Чтобы установить скорость</p>
+<h3 id="rate">Rate<a class="headerlink" href="#rate" title="Permanent link">&para;</a></h3>
+<p>To set the rate</p>
 <ol>
-<li>Если <strong>Скорость</strong> не отображается в редакторе запроса, выберите  и затем выберите <code>Скорость</code> из списка.</li>
-<li>Установите <strong>Скорость</strong> на <code>None</code>, <code>Per second</code>, <code>Per minute</code> или <code>Per hour</code>.</li>
+<li>If <strong>Rate</strong> is not already displayed in the query editor, select  and then select <code>Rate</code> from the list.</li>
+<li>Set <strong>Rate</strong> to <code>None</code>, <code>Per second</code>, <code>Per minute</code>, or <code>Per hour</code>.</li>
 </ol>
-<h3 id="_10">Фильтровать по<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>Область определяется любым фильтром, который вы устанавливаете. По умолчанию область — <code>(включить все)</code>.</p>
-<p>Чтобы отфильтровать запрос (изменить область)</p>
+<h3 id="filter-by">Filter by<a class="headerlink" href="#filter-by" title="Permanent link">&para;</a></h3>
+<p>The scope is determined by any filter you set. By default, the scope is <code>(include all)</code>.</p>
+<p>To filter your query (change the scope)</p>
 <ol>
-<li>Если <strong>Фильтровать по</strong> не отображается в редакторе запроса, выберите  и затем выберите <code>Фильтровать по</code> из списка.</li>
+<li>If <strong>Filter by</strong> is not already displayed in the query editor, select  and then select <code>Filter by</code> from the list.</li>
 <li>
-<p>В <strong>Фильтровать по</strong>:</p>
+<p>In <strong>Filter by</strong>:</p>
 </li>
 <li>
-<p>Выберите доступное измерение</p>
+<p>Select an available dimension</p>
 </li>
-<li>Укажите атрибут</li>
-<li>Укажите значение атрибута</li>
+<li>Specify an attribute</li>
+<li>Specify an attribute value</li>
 </ol>
-<p>Вы можете добавить несколько фильтров.</p>
-<h4 id="_11">Пример<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p>Если метрика <strong>Action count (by Apdex category) [web]</strong> (<code>builtin:apps.web.actionCount.category</code>) и вы хотите отфильтровать для конкретного веб-приложения с именем <code>My web application</code></p>
+<p>You can add multiple filters.</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<p>If the metric is <strong>Action count (by Apdex category) [web]</strong> (<code>builtin:apps.web.actionCount.category</code>) and you want to filter for a specific web application named <code>My web application</code></p>
 <ol>
-<li>Если <strong>Фильтровать по</strong> не отображается, отобразите его.</li>
-<li>В <strong>Фильтровать по</strong> выберите <code>Web application</code>, затем выберите <code>Name</code>, и затем выберите <code>My web application</code></li>
+<li>If <strong>Filter by</strong> is not already displayed, display it.</li>
+<li>In <strong>Filter by</strong>, select <code>Web application</code>, then select <code>Name</code>, and then select <code>My web application</code></li>
 </ol>
-<p>см. также <a href="#автоматически-расширенный-фильтр">Автоматически расширенный фильтр</a></p>
-<h3 id="_12">Ограничение<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p>По умолчанию количество метрик, которые вы видите, если они разделены по измерению, равно 20.</p>
-<p>Чтобы установить явное ограничение</p>
+<p>See also <a href="#auto-extended-filtering">Auto-extended filtering</a></p>
+<h3 id="limit">Limit<a class="headerlink" href="#limit" title="Permanent link">&para;</a></h3>
+<p>By default, the number of metrics you see if they are split by a dimension is 20.</p>
+<p>To set an explicit limit</p>
 <ol>
-<li>Если <strong>Ограничение</strong> не отображается в редакторе запроса, выберите  и затем выберите <code>Ограничение</code> из списка.</li>
-<li>Установите <strong>Ограничение</strong> на <code>1</code>, <code>10</code>, <code>20</code> или <code>100</code>.</li>
+<li>If <strong>Limit</strong> is not already displayed in the query editor, select  and then select <code>Limit</code> from the list.</li>
+<li>Set <strong>Limit</strong> to <code>1</code>, <code>10</code>, <code>20</code>, or <code>100</code>.</li>
 </ol>
-<p>Чтобы удалить ограничение, включите <strong>Расширенный режим</strong> и удалите компонент <code>:limit(n)</code> запроса.</p>
-<h3 id="_13">Глобальное ограничение<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p><strong>Глобальное ограничение</strong> выравнивает записи по нескольким метрикам с одинаковой размерностью (<strong>Разделить по</strong> преобразование). Если <strong>Глобальное ограничение</strong> установлено для метрики, только записи, соответствующие измерениям этой метрики, включаются в результат.</p>
-<p><strong>Глобальное ограничение</strong> отображается автоматически, если выполнены все следующие условия:</p>
+<p>To remove the limit, turn on <strong>Advanced mode</strong> and delete the <code>:limit(n)</code> component of the query.</p>
+<h3 id="global-limit">Global limit<a class="headerlink" href="#global-limit" title="Permanent link">&para;</a></h3>
+<p>The <strong>global limit</strong> aligns records across multiple metrics with the same dimensionality (<strong>Split by</strong> transformation). If the <strong>Global limit</strong> is set for a metric, only records that match the dimensions of that metric are included in the result.</p>
+<p>The <strong>Global limit</strong> is automatically displayed if all of the following conditions are met:</p>
 <ul>
-<li>Выбрана визуализация <strong>Таблица</strong>.</li>
-<li>Добавлено не менее двух метрик в таблицу.</li>
-<li>Не менее двух метрик имеют одинаковое преобразование <strong>Разделить по</strong>.</li>
+<li><strong>Table</strong> visualization is selected.</li>
+<li>At least two metrics are added to the table.</li>
+<li>At least two metrics have the same <strong>Split by</strong> transformation.</li>
 </ul>
-<p>Только одна метрика может быть помечена как <strong>Глобальное ограничение</strong>. Метрика, помеченная как <strong>Глобальное ограничение</strong>, переопределяет преобразование <strong>Ограничение</strong> для всех других метрик с одинаковым преобразованием <strong>Разделить по</strong>. В этом случае <strong>Ограничение</strong> для этих метрик будет отображаться как недоступное.</p>
-<p>В <strong>Расширенном режиме</strong> <strong>Глобальное ограничение</strong> всегда отображается, независимо от условий.</p>
-<h3 id="_14">По умолчанию<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p>Чтобы установить значение по умолчанию</p>
+<p>Only one metric can be marked as the <strong>Global limit</strong>. The metric marked as <strong>Global limit</strong> overrides the <strong>Limit</strong> transformation of all other metrics with the same <strong>Split by</strong> transformation. In this case, the <strong>Limit</strong> for these metrics will appear disabled.</p>
+<p>In the <strong>Advanced mode</strong>, the <strong>Global limit</strong> is always visible regardless of the conditions.</p>
+<h3 id="default">Default<a class="headerlink" href="#default" title="Permanent link">&para;</a></h3>
+<p>To set the default value</p>
 <ol>
-<li>Если <strong>По умолчанию</strong> не отображается в редакторе запроса, выберите  и затем выберите <code>По умолчанию</code> из списка.</li>
-<li>Установите <strong>По умолчанию</strong> на желаемое значение по умолчанию.</li>
+<li>If <strong>Default</strong> is not already displayed in the query editor, select  and then select <code>Default</code> from the list.</li>
+<li>Set <strong>Default</strong> to the desired default value.</li>
 </ol>
-<h3 id="_15">Сдвиг во времени<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p>Чтобы установить значение сдвига во времени</p>
+<h3 id="timeshift">Timeshift<a class="headerlink" href="#timeshift" title="Permanent link">&para;</a></h3>
+<p>To set a timeshift value</p>
 <ol>
-<li>Если <strong>Сдвиг во времени</strong> не отображается в редакторе запроса, выберите  и затем выберите <code>Сдвиг во времени</code> из списка.</li>
-<li>Установите <strong>Сдвиг во времени</strong> на число (положительное или отрицательное).</li>
-<li>Выберите единицу (секунда, минута, час, день, неделя) из соседнего списка.</li>
+<li>If <strong>Timeshift</strong> is not already displayed in the query editor, select  and then select <code>Timeshift</code> from the list.</li>
+<li>Set <strong>Timeshift</strong> to a number (positive or negative).</li>
+<li>Select a unit (second, minute, hour, day, week) from the adjacent list.</li>
 </ol>
-<h4 id="_16">Пример<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
-<p>Чтобы сдвинуть назад на две минуты:</p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<p>To shift back two minutes:</p>
 <ol>
-<li>Установите <strong>Сдвиг во времени</strong> на <code>-2</code></li>
-<li>Установите единицу на <code>минуту</code></li>
+<li>Set <strong>Timeshift</strong> to <code>-2</code></li>
+<li>Set the unit to <code>minute</code></li>
 </ol>
-<h2 id="_17">Команды запроса<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
-<p>Используйте эти команды в редакторе запроса, чтобы выбрать компоненты запроса и установить значения.</p>
-<h3 id="_18">Визуализация<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<p>По умолчанию используется визуализация в виде графика. Чтобы изменить визуализацию, выберите одну из вариантов в верхнем левом углу определения запроса.</p>
-<p><img alt="Выбор визуализации" src="https://dt-cdn.net/images/visualization-select-285-c06615cee7.png" /></p>
-<p>Доступны следующие типы визуализаций:</p>
+<h2 id="query-commands">Query commands<a class="headerlink" href="#query-commands" title="Permanent link">&para;</a></h2>
+<p>Use these commands in the query editor to select query components and set values.</p>
+<h3 id="visualization">Visualization<a class="headerlink" href="#visualization" title="Permanent link">&para;</a></h3>
+<p>The default visualization is a graph. To change the visualization, select one from the list in the upper-left corner of your query definition.</p>
+<p><img alt="Select visualization" src="https://dt-cdn.net/images/visualization-select-285-c06615cee7.png" /></p>
+<p>The following visualization types are available:</p>
 <ul>
-<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph" title="Настройте и используйте визуализацию графика в Data Explorer и прикрепите ее к вашим панелям управления в виде плитки графика.">График</a></li>
-<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column" title="Настройте и используйте визуализацию столбчатой диаграммы в Data Explorer и отобразите ее на ваших панелях управления.">Столбчатая диаграмма</a></li>
-<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area" title="Настройте и используйте визуализацию диаграммы площадей в Data Explorer и отобразите ее на ваших панелях управления.">Диаграмма площадей</a></li>
-<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie" title="Настройте и используйте визуализацию круговой диаграммы/торта в Data Explorer и отобразите ее на ваших панелях управления.">Круговая диаграмма</a></li>
-<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value" title="Настройте и используйте визуализацию одиночного значения в Data Explorer и отобразите ее на ваших панелях управления.">Одиночное значение</a></li>
-<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table" title="Настройте и используйте визуализацию таблицы в Data Explorer и отобразите ее на ваших панелях управления.">Таблица</a></li>
-<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list" title="Настройте визуализацию списка лучших в Data Explorer и отобразите ее на ваших панелях управления.">Список лучших</a></li>
-<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap" title="Настройте и используйте визуализацию тепловой карты в Data Explorer и прикрепите ее к вашим панелям управления в виде плитки тепловой карты.">Тепловая карта</a></li>
-<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb" title="Настройте и используйте визуализацию пчелиных сот в Data Explorer и отобразите ее на ваших панелях управления.">Пчелиные соты</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph" title="Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.">Graph</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column" title="Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.">Stacked column</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area" title="Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.">Stacked area</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie" title="Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.">Pie</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value" title="Configure and use a single-value visualization in Data Explorer and display it on your dashboards.">Single value</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table" title="Configure and use a table visualization in Data Explorer and display it on your dashboards.">Table</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list" title="Configure a top-list visualization in Data Explorer and display it on your dashboards.">Top list</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap" title="Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.">Heatmap</a></li>
+<li><a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb" title="Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.">Honeycomb</a></li>
 </ul>
-<h3 id="_19">Плюс<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
-<p>Чтобы добавить или удалить преобразования метрик для строки в редакторе запросов, выберите  и затем выберите или очистите флажки по мере необходимости.</p>
-<p><img alt="Кнопка Плюс метрики" src="https://dt-cdn.net/images/data-explorer-metric-plus-button-46-3104fd992d.png" /></p>
+<h3 id="plus">Plus<a class="headerlink" href="#plus" title="Permanent link">&para;</a></h3>
+<p>To add or remove metric transformations for a row in the query editor, select  and then select or clear checkboxes as needed.</p>
+<p><img alt="Metric Plus button" src="https://dt-cdn.net/images/data-explorer-metric-plus-button-46-3104fd992d.png" /></p>
 <ul>
-<li><strong>Все</strong> — отображать все доступные поля (см. ниже)</li>
-<li><a href="#default">По умолчанию</a></li>
-<li><a href="#filter-by">Фильтр по</a></li>
-<li><a href="#limit">Ограничение</a></li>
-<li><a href="#rate">Скорость</a></li>
-<li><a href="#sort-by">Сортировка по</a></li>
-<li><a href="#split-by">Разделение по</a></li>
-<li><a href="#timeshift">Сдвиг во времени</a></li>
+<li><strong>All</strong>âdisplay all available fields (see below)</li>
+<li><a href="#default">Default</a></li>
+<li><a href="#filter-by">Filter by</a></li>
+<li><a href="#limit">Limit</a></li>
+<li><a href="#rate">Rate</a></li>
+<li><a href="#sort-by">Sort by</a></li>
+<li><a href="#split-by">Split by</a></li>
+<li><a href="#timeshift">Timeshift</a></li>
 </ul>
-<h3 id="_20">Добавить метрику<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
-<p>Чтобы добавить новую пустую строку, выберите <strong>Добавить метрику</strong> и затем определите запрос для этой строки.</p>
-<h3 id="_21">Дублировать метрику<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
-<p>Чтобы создать копию метрики, которую вы уже добавили в запрос, выберите  &gt; <strong>Дублировать</strong> и затем отредактируйте копию по мере необходимости.</p>
-<p><img alt="Меню Дополнительно для метрики " src="https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png" /></p>
-<h3 id="_22">Добавить событие метрики<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
-<p>Если вы видите что-то в диаграмме Data Explorer, что вы хотите продолжать наблюдать, легко создать событие метрики.</p>
-<p>Чтобы создать событие метрики из Data Explorer</p>
+<h3 id="add-metric">Add metric<a class="headerlink" href="#add-metric" title="Permanent link">&para;</a></h3>
+<p>To add a new empty row, select <strong>Add metric</strong> and then define that row's query.</p>
+<h3 id="duplicate-metric">Duplicate metric<a class="headerlink" href="#duplicate-metric" title="Permanent link">&para;</a></h3>
+<p>To make a copy of a metric that you have already added to the query, select  &gt; <strong>Duplicate</strong> and then edit the copy as needed.</p>
+<p><img alt="Metric More menu " src="https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png" /></p>
+<h3 id="add-metric-event">Add metric event<a class="headerlink" href="#add-metric-event" title="Permanent link">&para;</a></h3>
+<p>If you see something in a Data Explorer chart that you want to continue observing, it's easy to create a metric event.</p>
+<p>To create a metric event from Data Explorer</p>
 <ol>
-<li>Выберите  &gt; <strong>Добавить событие метрики</strong> в редакторе запросов.</li>
+<li>Select  &gt; <strong>Add metric event</strong> in the query editor.</li>
 </ol>
-<p><img alt="Меню Дополнительно для метрики " src="https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png" /></p>
-<p>Открывается страница <strong>Настройки</strong> &gt; <strong>Обнаружение аномалий</strong> &gt; <strong>События метрик</strong> в новом окне браузера (чтобы вы не потеряли свою работу в Data Explorer) с выбранным <strong>Добавить событие метрики</strong> и уже заполненными полями метрик, где это возможно, из вашего запроса.
-2. Завершите определение события метрики и сохраните изменения.
-3. Закройте это окно браузера и вернитесь в первое окно браузера, чтобы продолжить то, что вы делали в Data Explorer.</p>
-<p>Для получения подробной информации о событиях метрик см. <a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Узнайте о событиях метрик в Dynatrace">События метрик</a>.</p>
-<h3 id="_23">Переставить метрики<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
-<p>Порядок, в котором перечислены метрики в вашем запросе, влияет на следующее:</p>
+<p><img alt="Metric More menu " src="https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png" /></p>
+<p>The <strong>Settings</strong> &gt; <strong>Anomaly detection</strong> &gt; <strong>Metric events</strong> page is displayed in a new browser window (so you don't lose your work in Data Explorer) with <strong>Add metric event</strong> selected and the metric fields already filled in where possible from your query.
+2. Complete the metric event definition and save your changes.
+3. Close that browser window and return to the first browser window to continue what you were doing in Data Explorer.</p>
+<p>For details on metric events, see <a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Learn about metric events in Dynatrace">Metric events</a>.</p>
+<h3 id="reorder-metrics">Reorder metrics<a class="headerlink" href="#reorder-metrics" title="Permanent link">&para;</a></h3>
+<p>The order in which metrics are listed in your query affects the following:</p>
 <ul>
-<li>Порядок отрисовки элементов рисунка: метрики запроса отрисовываются в порядке сверху вниз, поэтому последняя из них отрисовывается поверх остальных</li>
-<li>Порядок столбцов в визуализации таблицы</li>
-<li>Порядок отображения настроек в панели <strong>Настройки</strong></li>
+<li>Order in which elements of a drawing are rendered: a query's metrics are rendered in order from top to bottom, so the last one is rendered on top of the others</li>
+<li>Order of columns in a table visualization</li>
+<li>Order in which settings are displayed in the <strong>Settings</strong> panel</li>
 </ul>
-<p>Чтобы изменить порядок метрик в вашем запросе, выберите и перетащите метрику в новое положение в списке метрик.</p>
-<p><img alt="Перетащить метрику, чтобы переставить список" src="https://dt-cdn.net/images/data-explorer-drag-metric-69-84144c5cd2.png" /></p>
-<p>Перезапустите запрос, чтобы увидеть ваши изменения.</p>
-<h3 id="_24">Переключить метрику<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
-<p>Чтобы включить или выключить метрики, вы можете выбрать букву рядом с метрикой, которую вы хотите включить в ваш запрос, или выбрать иконку глаза .</p>
-<p><img alt="Data Explorer: Переключить метрику" src="https://dt-cdn.net/images/eye-toggle-metric-1238-d343b9cc0e.png" /></p>
-<h3 id="_25">Удалить метрику<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
-<p>Чтобы удалить метрику, выберите  &gt; <strong>Удалить</strong>.</p>
-<p><img alt="Меню Дополнительно для метрики " src="https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png" /></p>
-<h3 id="_26">Запустить запрос<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
-<p>Выберите <strong>Запустить запрос</strong>, чтобы запустить текущий конфигурированный запрос и отобразить визуализацию результатов. Текст рядом с кнопкой <strong>Запустить запрос</strong> отображает статус последнего запуска.</p>
-<p><img alt="Data Explorer: Статус запуска запроса" src="https://dt-cdn.net/images/query-run-status-596-20a651d897.png" /></p>
-<h3 id="_27">Расширенный режим<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
-<p>Чтобы полностью использовать возможности запросов <a href="/docs/dynatrace-api/environment-api/metric-v2" title="Получить информацию о метриках через Metrics v2 API.">Metrics API v2</a> из веб-интерфейса, включите <strong>Расширенный режим</strong> для запроса.</p>
-<p><img alt="Расширенный режим: переключатель" src="https://dt-cdn.net/images/query-advanced-turn-on-185-dda5887b1a.png" /></p>
-<p><strong>Расширенный режим</strong> позволяет создавать <a href="/docs/dynatrace-api/environment-api/metric-v2/metric-expressions" title="Используйте выражения метрик, чтобы применить арифметические операции в запросе данных через Metrics API v2.">выражения метрик</a>, сдвиги во времени и многое другое直接 в веб-интерфейсе и, конечно же, использовать эту силу, чтобы создать визуализации для ваших панелей управления. Начните с проверки <a href="/docs/dynatrace-api/environment-api/metric-v2/metric-expressions#examples" title="Используйте выражения метрик, чтобы применить арифметические операции в запросе данных через Metrics API v2.">примеров выражений метрик</a>.</p>
-<p>Для получения подробной информации о <strong>Расширенном режиме</strong> см. <a href="/docs/analyze-explore-automate/explorer/explorer-advanced-query-editor" title="Создайте расширенные запросы, используя редактор расширенного запроса Data Explorer">Редактор расширенного запроса Data Explorer</a>.</p>
-<h2 id="_28">Базовые значения<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
-<p>Чтобы помочь вам выявить аномалии, вы можете использовать базовые значения, чтобы добавить полосу доверия к линии метрики на диаграмме. Затем вы можете увидеть, когда значение выходит за пределы полосы доверия.
-Расчет базового значения основан на модели <a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="Как Dynatrace Intelligence предлагает пороговые значения сезонного базового значения для области сущностей.">Сезонное базовое значение</a> которая используется для создания <a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Узнайте о событиях метрик в Dynatrace.">событий метрик</a> для обнаружения аномалий.</p>
+<p>To change the order of metrics in your query, select and drag the metric to a new position in the list of metrics.</p>
+<p><img alt="Drag metric to reorder list" src="https://dt-cdn.net/images/data-explorer-drag-metric-69-84144c5cd2.png" /></p>
+<p>Rerun the query to see your changes.</p>
+<h3 id="toggle-metric">Toggle metric<a class="headerlink" href="#toggle-metric" title="Permanent link">&para;</a></h3>
+<p>To toggle metrics on and off, you can select the letter next to the metric you want to include in your query, or you can select the eye icon .</p>
+<p><img alt="Data Explorer: Toggle metric" src="https://dt-cdn.net/images/eye-toggle-metric-1238-d343b9cc0e.png" /></p>
+<h3 id="delete-metric">Delete metric<a class="headerlink" href="#delete-metric" title="Permanent link">&para;</a></h3>
+<p>To delete a metric, select  &gt; <strong>Delete</strong>.</p>
+<p><img alt="Metric More menu " src="https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png" /></p>
+<h3 id="run-query">Run query<a class="headerlink" href="#run-query" title="Permanent link">&para;</a></h3>
+<p>Select <strong>Run query</strong> to run the currently configured query and display a visualization of the results. The text next to the <strong>Run query</strong> button displays the status of the most recent run.</p>
+<p><img alt="Data Explorer: Query run status" src="https://dt-cdn.net/images/query-run-status-596-20a651d897.png" /></p>
+<h3 id="advanced-mode">Advanced mode<a class="headerlink" href="#advanced-mode" title="Permanent link">&para;</a></h3>
+<p>To fully utilize the power of the <a href="/docs/dynatrace-api/environment-api/metric-v2" title="Retrieve metric information via Metrics v2 API.">Metrics API v2</a> queries from within the web UI, turn on <strong>Advanced mode</strong> for the query.</p>
+<p><img alt="Advanced mode: switch" src="https://dt-cdn.net/images/query-advanced-turn-on-185-dda5887b1a.png" /></p>
+<p><strong>Advanced mode</strong> enables you to create <a href="/docs/dynatrace-api/environment-api/metric-v2/metric-expressions" title="Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.">metric expressions</a>, timeframe shifts, and much more directly in the web UI and, of course, use this power to create vizualizations for your dashboards. Start by checking out <a href="/docs/dynatrace-api/environment-api/metric-v2/metric-expressions#examples" title="Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.">metric expression examples</a>.</p>
+<p>For <strong>Advanced mode</strong> details, see <a href="/docs/analyze-explore-automate/explorer/explorer-advanced-query-editor" title="Build advanced queries using the Data Explorer advanced mode.">Data Explorer Advanced mode query editor</a>.</p>
+<h2 id="baselines">Baselines<a class="headerlink" href="#baselines" title="Permanent link">&para;</a></h2>
+<p>To help you identify anomalies, you can use baselining to add a confidence band to a metric's line on the chart. Then you can see when the value goes outside the confidence band.
+The baseline calculation is based on the <a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.">Seasonal baseline</a> model which is used to create <a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Learn about metric events in Dynatrace">metric events</a> for anomaly detection.</p>
 <ul>
-<li>Базовые значения применяются только к визуализации <strong>График</strong>.</li>
-<li>Базовые значения не добавляются к плитке панели управления, когда вы прикрепляете диаграмму к панели управления.</li>
-<li>Временной интервал, используемый для определения базового значения, определяется текущим разрешением:</li>
+<li>Baselines apply only to the <code>Graph</code> visualization.</li>
+<li>Baselines are not added to the dashboard tile when you pin a chart to a dashboard.</li>
+<li>The timeframe used to infer the baseline is determined by the currently selected resolution:</li>
 </ul>
-<p>Диапазон разрешения</p>
-<p>Примеры разрешения</p>
-<p>Временной интервал базового значения</p>
-<p>разрешение &lt; 5 минут</p>
+<p>Resolution range</p>
+<p>Resolution examples</p>
+<p>Baseline timeframe</p>
+<p>resolution &lt; 5 minutes</p>
 <ul>
-<li>1 минута</li>
+<li>1 minute</li>
 </ul>
-<p><strong>предыдущие 14 дней</strong></p>
-<p>5 минут ≤ разрешение &lt; 1 час</p>
+<p><strong>previous 14 days</strong></p>
+<p>5 minutes â¥ resolution &lt; 1 hour</p>
 <ul>
-<li>5 минут</li>
-<li>10 минут</li>
-<li>30 минут</li>
+<li>5 minutes</li>
+<li>10 minutes</li>
+<li>30 minutes</li>
 </ul>
-<p><strong>предыдущие 28 дней</strong></p>
-<p>1 час ≤ разрешение &lt; 1 день</p>
+<p><strong>previous 28 days</strong></p>
+<p>1 hour â¥ resolution &lt; 1 day</p>
 <ul>
-<li>1 час</li>
-<li>6 часов</li>
-<li>12 часов</li>
+<li>1 hour</li>
+<li>6 hours</li>
+<li>12 hours</li>
 </ul>
-<p><strong>400 дней</strong></p>
-<p>разрешение ≥ 1 день</p>
+<p><strong>400 days</strong></p>
+<p>resolution â¥ 1 day</p>
 <ul>
-<li>1 день</li>
-<li>1 неделя</li>
-<li>1 месяц</li>
+<li>1 day</li>
+<li>1 week</li>
+<li>1 month</li>
 </ul>
-<p><strong>5 лет</strong></p>
-<h3 id="_29">Добавить базовое значение<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<p><strong>5 years</strong></p>
+<h3 id="add-a-baseline">Add a baseline<a class="headerlink" href="#add-a-baseline" title="Permanent link">&para;</a></h3>
 <ol>
-<li>На графике выберите линию для метрики, которую вы хотите базировать.</li>
-<li>В всплывающем окне выберите <strong>Добавить базовое значение</strong>.</li>
-<li>Подождите немного, пока базовое значение будет рассчитано (<code>Loading</code>). Затем график перерисовывается с отображением базового значения для выбранной метрики.</li>
+<li>On the graph, select the line for the metric you want to baseline.</li>
+<li>In the pop-up, select <strong>Add baseline</strong>.</li>
+<li>Wait a moment while the baseline is calculated (<code>Loading</code>). The graph is then redrawn with the baseline displayed for the metric you selected.</li>
 </ol>
-<h3 id="_30">Скрыть или отобразить базовое значение<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
-<p>Базовые значения перечислены отдельно в легенде диаграммы. Например, если вы добавите базовое значение к метрике <code>CPU usage %</code> в визуализации <strong>График</strong>, легенда перечисляет <code>CPU usage %</code> и <code>CPU usage % - базовое значение</code>. Выберите записи легенды, чтобы переключить их отображение на или выключить.</p>
-<h3 id="_31">Удалить базовое значение<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<h3 id="hide-or-show-a-baseline">Hide or show a baseline<a class="headerlink" href="#hide-or-show-a-baseline" title="Permanent link">&para;</a></h3>
+<p>Baselines are listed separately in the chart legend. For example, if you add a baseline to the <code>CPU usage %</code> metric in a <code>Graph</code> visualization, the legend lists <code>CPU usage %</code> and <code>CPU usage % - baseline</code>. Select the legend entries to toggle their display on or off.</p>
+<h3 id="remove-a-baseline">Remove a baseline<a class="headerlink" href="#remove-a-baseline" title="Permanent link">&para;</a></h3>
 <ol>
-<li>На графике выберите линию для метрики, от которой вы хотите удалить базовое значение.</li>
-<li>В всплывающем окне выберите <strong>Удалить базовое значение</strong>. График перерисовывается с удаленным базовым значением.</li>
+<li>On the graph, select the line for the metric from which you want to remove the baseline.</li>
+<li>In the pop-up window, select <strong>Remove baseline</strong>. The graph is redrawn with the baseline removed.</li>
 </ol>
-<h3 id="_32">Сравнение с базовыми значениями событий метрик<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
-<p>Вы можете заметить различия между базовыми значениями в Data Explorer и событиями метрик. Эти функции предлагают разные подходы, подходящие для их разных контекстов. В целом, конфигурация Data Explorer фиксирована, а конфигурация событий метрик настраиваема.</p>
+<h3 id="compared-to-metric-event-baselines">Compared to metric event baselines<a class="headerlink" href="#compared-to-metric-event-baselines" title="Permanent link">&para;</a></h3>
+<p>You may notice differences between baselines in Data Explorer and metric events. These features offer different approaches to suit their different contexts. In general, the Data Explorer configuration is fixed, while the metric events configuration is configurable.</p>
 <p><strong>Data Explorer</strong></p>
-<p><strong>События метрик</strong></p>
-<p><strong>Примеры</strong></p>
+<p><strong>Metric events</strong></p>
+<p><strong>Samples</strong></p>
 <p><code>5</code></p>
-<p>Настроить</p>
-<p><strong>Примеры нарушения</strong></p>
+<p>Configurable</p>
+<p><strong>Violating samples</strong></p>
 <p><code>3</code></p>
-<p>Настроить</p>
-<p><strong>Примеры снятия сигнала</strong></p>
+<p>Configurable</p>
+<p><strong>Dealerting samples</strong></p>
 <p><code>5</code></p>
-<p>Настроить</p>
-<p><strong>Сигнал при отсутствии данных</strong></p>
+<p>Configurable</p>
+<p><strong>Alert on no data</strong></p>
 <p><code>false</code></p>
-<p>Настроить</p>
-<p><strong>Толерантность</strong> (влияет на ширину полосы доверия)</p>
+<p>Configurable</p>
+<p><strong>Tolerance</strong> (affects width of confidence band)</p>
 <p><code>4</code></p>
-<p>Настроить (диапазон: <code>0.1</code> до <code>10</code>)</p>
-<p><strong>Разрешение</strong> (влияет на детализацию)</p>
-<p>Настроить</p>
-<p><code>1</code> минута</p>
-<p><strong>Время обучения</strong></p>
-<p>Мгновенное</p>
-<p>Ежедневное</p>
-<p>Для получения подробной информации о сезонном базовом значении см. <a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="Как Dynatrace Intelligence предлагает пороговые значения сезонного базового значения для области сущностей.">Сезонное базовое значение</a>.</p>
-<h3 id="_33">Часто задаваемые вопросы о базовых значениях<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
-<h1 id="_34">Как рассчитывается базовая линия?<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h1>
-<p>Расчет базовой линии основан на сезонной модели базовой линии, используемой для создания <a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Узнайте о событиях метрик в Dynatrace">событий метрик</a> для обнаружения аномалий. Для получения подробной информации о внутренней работе модели см. <a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="Как Dynatrace Intelligence предлагает пороги сезонной базовой линии для области сущностей.">Сезонная базовая линия</a>.</p>
-<h1 id="_35">Почему базовая линия отличается от предварительного просмотра сезонной базовой линии модели?<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h1>
-<p>Хотя модель базовой линии основана на <a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="Как Dynatrace Intelligence предлагает пороги сезонной базовой линии для области сущностей.">сезонной базовой линии</a>, есть несколько причин, почему результирующие базовые линии могут различаться:</p>
+<p>Configurable (range: <code>0.1</code> to <code>10</code>)</p>
+<p><strong>Resolution</strong> (affects granularity)</p>
+<p>Configurable</p>
+<p><code>1</code> minute</p>
+<p><strong>Training time</strong></p>
+<p>Instantaneous</p>
+<p>Daily</p>
+<p>For details on seasonal baselining, see <a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.">Seasonal baseline</a>.</p>
+<h3 id="baselines-faq">Baselines FAQ<a class="headerlink" href="#baselines-faq" title="Permanent link">&para;</a></h3>
+<p>How is the baseline calculated?</p>
+<p>The baseline calculation is based on the seasonal baseline model used to create <a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Learn about metric events in Dynatrace">metric events</a> for anomaly detection. For details on the inner workings of the model, see <a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.">Seasonal baseline</a>.</p>
+<p>Why is the baseline different from the seasonal baseline model preview?</p>
+<p>Although the baseline model is based on the <a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.">seasonal baseline</a> model, there are several reasons why the resulting baselines can differ:</p>
 <ul>
-<li><strong>Разрешение</strong>: Базовая линия в Data Explorer получается из данных в зависимости от текущего выбранного разрешения, как описано выше. Сезонная базовая линия модели событий метрик всегда учитывает поведение из данных с разрешением 1 минута. Если разрешения различаются, результирующая базовая линия различается, поскольку значения метрик также различаются.</li>
-<li><strong>Временной интервал базовой линии</strong>: Временной интервал, используемый для определения базовой линии, определяется текущим выбранным разрешением, как описано выше. Поскольку конфигурации событий метрик всегда используют данные с разрешением 1 минута, временной интервал обучения может различаться, что также может привести к различным базовым линиям.</li>
-<li><strong>Параметры модели</strong>: Базовая линия в Data Explorer использует фиксированные параметры по умолчанию для обучения модели базовой линии:</li>
-<li>Толерантность = 4</li>
-<li>Условие оповещения = 'Оповещать, если метрика находится вне'</li>
-<li>Без оповещения о пропущенных данных
-    Если параметры различаются в конфигурации события метрики, результирующая базовая линия может различаться.</li>
+<li><strong>Resolution</strong>: The baseline in Data Explorer is derived from the data depending on the currently selected resolution as described above. A seasonal baseline model of a metric event configuration always learns the behavior from 1-minute resolution data. If the resolutions are different, the resulting baseline differs as the metric values are also different.</li>
+<li><strong>Baseline timeframe</strong>: The timeframe used to infer the baseline is determined by the currently selected resolution as described above. As metric event configurations always use 1-minute resolution data, the training timeframe can differ, which also can lead to different baselines.</li>
+<li>
+<p><strong>Model parameters</strong>: The baseline in Data Explorer uses fixed default parameters to train a baseline model:</p>
+</li>
+<li>
+<p>Tolerance = 4</p>
+</li>
+<li>Alert condition = 'Alert if metric is outside'</li>
+<li>No alert on missing data
+    If the parameters are different in the metric event configuration, the resulting baseline can be different.</li>
 </ul>
-<h2 id="_36">Коррелированные метрики<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
-<p>Dynatrace Davis учитывает доменное знание и топологию при вычислении связанных сигналов наблюдаемости. Davis ранжирует наиболее релевантные сигналы вверху, а балл Davis для каждого обнаруженного сигнала указывает, насколько близко сигнал соответствует поведению сигнала-эталона в течение выбранного временного интервала. <a href="/docs/dynatrace-intelligence" title="Ознакомьтесь с возможностями Dynatrace Intelligence.">Больше о Davis</a>.</p>
-<h3 id="_37">Добавление коррелированных метрик<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
-<p>Обратите внимание, что эта опция доступна только если вы <strong>Разделили</strong> запрос по размеру.</p>
+<h2 id="correlated-metrics">Correlated metrics<a class="headerlink" href="#correlated-metrics" title="Permanent link">&para;</a></h2>
+<p>Dynatrace DavisÂ® takes domain-specific knowledge and topology into account when computing connected observability signals. Davis ranks the most relevant signals on top, and the Davis score for each detected signal indicates how closely the signal matches the reference signal's behavior during the selected timeframe. <a href="/docs/dynatrace-intelligence" title="Get familiar with the capabilities of Dynatrace Intelligence.">More about DavisÂ® AI</a>.</p>
+<h3 id="add-correlated-metrics">Add correlated metrics<a class="headerlink" href="#add-correlated-metrics" title="Permanent link">&para;</a></h3>
+<p>Note that this option is available only if you <strong>Split by</strong> a dimension in the query.</p>
 <ol>
-<li>Перейдите в <strong>Data Explorer</strong> (стандартный или расширенный режим), создайте запрос серии метрик, разделенной по связанному размеру, и отобразите его в визуализации <code>График</code>.</li>
+<li>Go to <strong>Data Explorer</strong> (standard or advanced mode), create a query of a metric series split by a related dimension, and display it in the <code>Graph</code> visualization.</li>
 </ol>
-<p>Коррелированные метрики доступны <em>только</em>, если вы:</p>
+<p>Correlated metrics are available <em>only</em> if you:</p>
 <ul>
-<li>Выберите визуализацию <code>График</code></li>
-<li>Укажите запрос, который <strong>Разделен</strong> по размеру, связанному с выбранной серией данных</li>
+<li>Select the <code>Graph</code> visualization</li>
+<li>Specify a query that is <strong>Split by</strong> a dimension related to the selected data series</li>
 </ul>
-<p>Попробуйте этот пример:</p>
-<p><img alt="Коррелированные метрики: запрос: стандартный режим" src="https://dt-cdn.net/images/query-cpu-usage-1217-d0a8083c84.png" /></p>
-<p>Это выглядит так в <strong>Расширенном режиме</strong>:</p>
-<p><img alt="Коррелированные метрики: запрос: расширенный режим" src="https://dt-cdn.net/images/query-cpu-usage-advanced-mode-1220-9fb8efd9b1.png" /></p>
+<p>Try this example:</p>
+<p><img alt="Correlated metrics: query: standard mode" src="https://dt-cdn.net/images/query-cpu-usage-1217-d0a8083c84.png" /></p>
+<p>That's this in <strong>Advanced mode</strong>:</p>
+<p><img alt="Correlated metrics: query: advanced mode" src="https://dt-cdn.net/images/query-cpu-usage-advanced-mode-1220-9fb8efd9b1.png" /></p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>builtin:host.cpu.usage:splitBy(&quot;dt.entity.host&quot;):sort(value(auto,descending)):limit(20)
 </code></pre></div>
-2. Выберите <strong>Выполнить запрос</strong>, чтобы построить график запроса.
-3. Выберите (нажмите на) линию на графике, чтобы отобразить всплывающее окно связанных опций.
-4. В всплывающем окне выберите <strong>Посмотреть коррелированные метрики</strong>.</p>
-<p>Панель <strong>Davis для корреляционного анализа</strong> перечисляет метрики, которые, на основе анализа корреляции Davis AI, коррелируют с выбранной серией. Эта корреляция определяется формой серии, а не значениями.</p>
-<p>Что отображает анализатор?</p>
+2. Select <strong>Run query</strong> to graph the query.
+3. Select (click on) a line on the graph to display a pop-up window of related options.
+4. In the pop-up window, select <strong>See correlated metrics</strong>.</p>
+<p>The <strong>Davis for Correlation analysis</strong> side panel lists metrics that, based on Davis AI correlation analysis, are correlated to the selected series. This correlation is determined by the shape of the series, not the values.</p>
+<p>What does the analyzer display?</p>
 <ul>
-<li><strong>Сигнал-эталон</strong> представляет собой серию данных, которую вы выбрали на графике. Формы других серий метрик сравниваются с формой этой серии.</li>
+<li><strong>Reference signal</strong> represents the data series you selected on the graph. Other shapes of other metric series are compared to the shape of this series.</li>
 <li>
-<p><strong>Связанные сигналы</strong> — это другие серии метрик, которые имеют подобную форму, отсортированные от наиболее подобной до наименее подобной. Чем более подобна форма, тем ближе корреляция.</p>
-<p>Для каждой коррелированной метрики анализатор отображает:</p>
+<p><strong>Connected signals</strong> are other metric series that have a similar shape, sorted by most similar to least similar. The more similar the shape, the closer the correlation.</p>
+<p>For each correlated metric, the analyzer displays:</p>
 <ul>
-<li>Имя метрики</li>
-<li>Размер</li>
-<li>ID сущности</li>
+<li>Metric name</li>
+<li>Dimension</li>
+<li>ID of the entity</li>
 </ul>
-<p>Корреляции иногда группируются.
-5. В панели выберите любую перечисленную метрику, чтобы автоматически добавить ее в ваш текущий запрос.</p>
+<p>Correlations are sometimes grouped.
+5. In the side panel, select any listed metric to automatically add it to your current query.</p>
 </li>
 <li>
-<p>Вы можете добавить несколько коррелированных метрик в ваш запрос</p>
+<p>You can add multiple correlated metrics to your query</p>
 </li>
-<li>Вы можете добавить одну и ту же метрику несколько раз, а затем отредактировать запрос</li>
-<li>После добавления коррелированных метрик выберите <strong>Выполнить запрос</strong>, чтобы обновить график.</li>
+<li>You can add the same metric multiple times and then edit the query</li>
+<li>After you add correlated metrics, select <strong>Run query</strong> to update the graph.</li>
 </ul>
-<h3 id="_38">Коррелированные метрики: Часто задаваемые вопросы<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
-<p>Что означает "корреляция" в этом контексте?</p>
-<p>Для определения корреляции анализатор проверяет форму серии данных, а не значения. Две серии с очень подобными формами коррелируют.</p>
-<p>Почему опция "Посмотреть коррелированные метрики" недоступна?</p>
-<p>Возможные причины, почему вы не видите опцию "Посмотреть коррелированные метрики", включают:</p>
+<h3 id="correlated-metrics-faq">Correlated metrics FAQ<a class="headerlink" href="#correlated-metrics-faq" title="Permanent link">&para;</a></h3>
+<p>What does "correlation" mean in this context?</p>
+<p>To determine correlation, the analyzer checks the shape of the data series, not the values. Two series with very similar shapes are correlated.</p>
+<p>Why is the "See correlated metrics" option unavailable?</p>
+<p>Possible reasons why you see no "See correlated metrics" option include:</p>
 <ul>
-<li>Вы не выбрали визуализацию <code>График</code></li>
-<li>Вы не <strong>Разделили</strong> запрос по размеру</li>
-<li>Вы не выполнили запрос, чтобы построить график</li>
-<li>Вы не выбрали (нажали на) линию на графике</li>
+<li>You didn't select the <code>Graph</code> visualization</li>
+<li>You didn't <strong>Split by</strong> a dimension in your query</li>
+<li>You didn't run the query to draw a graph</li>
+<li>You didn't select (click on) a line in the graph</li>
 </ul>
-<p>Что означает "Не найдены связанные сигналы"?</p>
-<p>Если отображается "Не найдены связанные сигналы", возможные причины включают:</p>
+<p>What does "No connected signals found" mean?</p>
+<p>If <code>No connected signals found</code> is displayed, possibilities include:</p>
 <ul>
-<li>Слишком мало вариации в выборке (например, метрика, представляющая собой прямую линию)</li>
-<li>Слишком мало точек данных в выборке (например, в очень коротком временном интервале)</li>
+<li>Too little variance in the sample (for example, a metric that is a straight line)</li>
+<li>Too few data points in the sample (for example, in a very short timeframe)</li>
 </ul>
-<h2 id="_39">Фокус<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h2>
-<p>Чтобы временно удалить потенциальный мусор с вашего графика и сосредоточиться на одной метрике, вы можете скрыть все, кроме выбранной серии метрик.</p>
+<h2 id="focus">Focus<a class="headerlink" href="#focus" title="Permanent link">&para;</a></h2>
+<p>To temporarily remove potential clutter from your graph and focus on a single metric, you can hide everything but a selected metric series.</p>
 <ul>
-<li>Фокус применяется только к визуализации <code>График</code>.</li>
-<li>Фокус не меняет ваш запрос и не влияет на плитку панели мониторинга, когда вы прикрепляете график к панели мониторинга.</li>
+<li>Focus applies only to the <code>Graph</code> visualization.</li>
+<li>Focus does not change your query and does not affect the dashboard tile when you pin a chart to a dashboard.</li>
 </ul>
-<h3 id="_40">Сосредоточьтесь на серии метрик<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h3>
+<h3 id="focus-on-a-metric-series">Focus on a metric series<a class="headerlink" href="#focus-on-a-metric-series" title="Permanent link">&para;</a></h3>
 <ol>
-<li>На линейном графике выберите линию для метрики, на которую вы хотите сосредоточиться.</li>
-<li>Во всплывающем окне выберите <strong>Фокус</strong>.</li>
+<li>On a line graph, select the line for the metric you want to focus on.</li>
+<li>In the pop-up, select <strong>Focus</strong>.</li>
 </ol>
-<p>График перерисовывается с отображением только выбранной метрики.</p>
-<h3 id="_41">Удалить фокус<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<p>The graph is redrawn with only the selected metric displayed.</p>
+<h3 id="remove-focus">Remove focus<a class="headerlink" href="#remove-focus" title="Permanent link">&para;</a></h3>
 <ol>
-<li>На графике выберите линию для метрики, на которую вы сосредоточились.</li>
-<li>Во всплывающем окне выберите <strong>Удалить фокус</strong>.</li>
+<li>On the graph, select the line for the metric you have focused on.</li>
+<li>In the pop-up, select <strong>Remove focus</strong>.</li>
 </ol>
-<p>График перерисовывается для отображения всех метрик.</p>
-<h2 id="_42">Результат<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h2>
-<p>Раздел <strong>Результат</strong> отображает выбранную визуализацию результатов вашего запроса.</p>
-<h3 id="_43">Взаимодействие с визуализацией<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
-<p>Вы можете навести курсор и выбрать элементы визуализации, чтобы просмотреть подробности, углубиться в соответствующие страницы Dynatrace и изменить визуализацию, чтобы помочь вам выявить проблемы.</p>
-<p>В этом примере — визуализация <code>График</code>, показывающая линейный график метрики <code>CPU usage %</code> для хостов — визуализация показывала хост, который вел себя нестабильно, поэтому мы выбрали его, чтобы просмотреть подробности о хосте во всплывающем окне.</p>
-<p><img alt="Data Explorer линейный график всплывающее окно" src="https://dt-cdn.net/images/graph-pop-up-options-391-827a7747d3.png" /></p>
-<p>В этом примере у вас есть следующие опции:</p>
+<p>The graph is redrawn to display all metrics.</p>
+<h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
+<p>The <strong>Result</strong> section displays the selected visualization of your query results.</p>
+<h3 id="interact-with-visualization">Interact with visualization<a class="headerlink" href="#interact-with-visualization" title="Permanent link">&para;</a></h3>
+<p>You can hover over and select visualization elements to view details, drill down to relevant Dynatrace pages, and alter the visualization to help you identify problems.</p>
+<p>In this exampleâa <code>Graph</code> visualization showing a line chart of the <code>CPU usage %</code> metric for hostsâthe visualization was showing a host behaving erratically, so we selected it to see details about the host in a pop-up window.</p>
+<p><img alt="Data Explorer line graph pop-up" src="https://dt-cdn.net/images/graph-pop-up-options-391-827a7747d3.png" /></p>
+<p>In this example, you have the following options:</p>
 <ul>
-<li>Выберите <strong>Фокус</strong>, чтобы временно сосредоточиться на одной метрике. Для получения подробной информации см. <a href="#focus">Фокус</a>.</li>
-<li>Выберите <strong>Добавить базовую линию</strong>, чтобы добавить базовую линию для выбранной метрики. Для получения подробной информации см. <a href="#baselines">Базовые линии</a>.</li>
-<li>Выберите <strong>Посмотреть коррелированные метрики</strong>, чтобы перечислить коррелированные метрики и опционально добавить некоторые из них в ваш запрос. Для получения подробной информации см. <a href="#correlated-metrics">Коррелированные метрики</a>.</li>
-<li>Выберите <strong>Просмотреть хост</strong>, чтобы перейти на страницу подробностей этого хоста.</li>
-<li>Выберите <strong>Просмотреть список хостов</strong>, чтобы перейти на страницу <strong>Хосты</strong>.</li>
+<li>Select <strong>Focus</strong> to temperarily focus your graph on a single metric. For details, see <a href="#focus">Focus</a>.</li>
+<li>Select <strong>Add baseline</strong> to add a baseline for the selected metric. For details, see <a href="#baselines">Baselines</a>.</li>
+<li>Select <strong>See correlated metrics</strong> to list correlated metrics and optionally add a selection of them to your query. For details, see <a href="#correlated-metrics">Correlated metrics</a>.</li>
+<li>Select <strong>View host</strong> to drill down directly to the details page for that host.</li>
+<li>Select <strong>View host list</strong> to go to the <strong>Hosts</strong> page.</li>
 </ul>
-<p>Опции, доступные во всплывающем окне, зависят от запроса и визуализации, которую вы настроили.</p>
-<h3 id="_44">Прикрепить к панели мониторинга<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
-<p>Когда вы удовлетворены вашим запросом, вы можете добавить его на панель мониторинга.</p>
+<p>The options available in the pop-up window depend on the query and visualization you configured.</p>
+<h3 id="pin-to-dashboard">Pin to dashboard<a class="headerlink" href="#pin-to-dashboard" title="Permanent link">&para;</a></h3>
+<p>When you're satisfied with your query, you can add it to a dashboard.</p>
 <ol>
-<li>Выберите <strong>Прикрепить к панели мониторинга</strong>.</li>
-<li>Выберите панель мониторинга, для которой у вас есть разрешение на редактирование.</li>
-<li>Выберите <strong>Прикрепить</strong>.</li>
+<li>Select <strong>Pin to dashboard</strong>.</li>
+<li>Select a dashboard for which you have edit permission.</li>
+<li>Select <strong>Pin</strong>.</li>
 </ol>
-<p>Для получения подробной информации см. <a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard" title="Узнайте, как прикрепить плитки к вашим панелям мониторинга.">Прикрепить плитки к вашей панели мониторинга</a>.</p>
-<h3 id="_45">Поделиться результатами<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
-<p>Если вы выполняете анализ в Data Explorer и находитесь некоторые интересные результаты, которые вы хотите поделиться с другими аутентифицированными пользователями, или если вы хотите иметь возможность вернуться к одним и тем же результатам позже с помощью более позднего временного интервала</p>
+<p>For details, see <a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard" title="Learn to pin tiles to your dashboards.">Pin tiles to your dashboard</a>.</p>
+<h3 id="share-your-results">Share your results<a class="headerlink" href="#share-your-results" title="Permanent link">&para;</a></h3>
+<p>If you are doing analysis in Data Explorer and find some interesting results that you want to share with other authenticated users, or if you want to be able to revisit the same results yourself using a later timeframe</p>
 <ol>
-<li>Перейдите в <strong>Data Explorer</strong> и, в разделе <strong>Результат</strong>, выберите  &gt; <strong>Поделиться ссылкой</strong>.</li>
+<li>Go to <strong>Data Explorer</strong> and, in the <strong>Result</strong> section, select  &gt; <strong>Share link</strong>.</li>
 <li>
-<p>Определите временной интервал, который следует связать с ссылкой:</p>
-</li>
-<li>
-<p>Чтобы поделиться ссылкой с текущим временным интервалом, включите <strong>Использовать текущий временной интервал</strong>.</p>
-</li>
-<li>В противном случае ссылка на запрос будет указывать текущий запрос и настройки, за исключением временного интервала.</li>
-<li>Выберите <strong>Скопировать</strong>, чтобы скопировать ссылку в ваш буфер обмена.</li>
-<li>Поделитесь ссылкой с любым другим аутентифицированным пользователем Dynatrace или сохраните копию для вашего собственного использования.</li>
-</ol>
-<h3 id="csv">Экспорт в файл CSV<a class="headerlink" href="#csv" title="Permanent link">&para;</a></h3>
-<p>Чтобы экспортировать в файл с разделителями-запятыми (CSV)</p>
-<ol>
-<li>
-<p>Перейдите в <strong>Data Explorer</strong> и, в разделе <strong>Результат</strong>, выберите  &gt; <strong>Экспорт CSV</strong>.</p>
+<p>Determine the timeframe to associate with the link:</p>
 </li>
 <li>
-<p>Экспорт CSV доступен для всех визуализаций, за исключением <a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb" title="Настройте и используйте визуализацию сотовой в Data Explorer и отобразите ее на ваших панелях мониторинга.">сотовой</a> и <a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value" title="Настройте и используйте визуализацию одно значение в Data Explorer и отобразите ее на ваших панелях мониторинга.">одно значение</a></p>
+<p>To share the link with the current timeframe, turn on <strong>Use the current timeframe</strong>.</p>
 </li>
-<li>Значения, экспортированные в файл CSV, отражают форматирование, указанное с помощью настроек <strong>Единица</strong> и <strong>Формат</strong> в разделе <strong>Настройки</strong>.</li>
-<li>Файл CSV результатов сохраняется на вашем локальном компьютере.</li>
+<li>Otherwise, the shared query link will specify the current query and settings except the timeframe.</li>
+<li>Select <strong>Copy</strong> to copy the link to your clipboard.</li>
+<li>Share the link with any other authenticated Dynatrace user or keep a copy for your own use.</li>
 </ol>
-<p>Имя файла указывает на метрики, дату и временной интервал.</p>
-<p>Например:</p>
-<ul>
-<li><code>CPU usage % (24 мая 2022 г., 11:41 - 13:41).csv</code> — содержит результаты из метрики <code>CPU usage %</code>, выполненной 24 мая 2022 г. для временного интервала 2 часов с 11:41 до 13:41.</li>
-<li><code>CPU usage % +1 (24 мая 2022 г., 13:19 - 13:49).csv</code> — содержит результаты из метрики <code>CPU usage %</code> и еще одной метрики, выполненной 24 мая 2022 г. для временного интервала 30 минут с 13:19 до 13:49.</li>
-</ul>
-<h3 id="api">Использование в API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
-<p>После выполнения запроса у вас есть возможность скопировать запрос для использования в запросе API.</p>
+<h3 id="export-to-csv-file">Export to CSV file<a class="headerlink" href="#export-to-csv-file" title="Permanent link">&para;</a></h3>
+<p>To export to a comma-separated values (CSV) file</p>
 <ol>
-<li>Перейдите в <strong>Data Explorer</strong> и в разделе <strong>Result</strong> выберите  &gt; <strong>Copy request</strong>.</li>
-<li>Выберите, использовать ли временной интервал результата.</li>
-<li>Выберите формат ответа: JSON или CSV.</li>
-<li>Выберите <strong>Copy</strong>, чтобы скопировать запрос в буфер обмена, или просто выберите и скопируйте части запроса, которые вы хотите использовать.</li>
-<li>Необязательно выберите <strong>Get a token</strong>, чтобы перейти на страницу <strong>Generate access token</strong> и получить токен для запроса.</li>
+<li>
+<p>Go to <strong>Data Explorer</strong> and, in the <strong>Result</strong> section, select  &gt; <strong>Export CSV</strong>.</p>
+</li>
+<li>
+<p>CSV export is available for all visualizations except <a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb" title="Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.">honeycomb</a> and <a href="/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value" title="Configure and use a single-value visualization in Data Explorer and display it on your dashboards.">single value</a></p>
+</li>
+<li>Values exported to a CSV file reflect the formatting specified with the <strong>Unit</strong> and <strong>Format</strong> settings in the <strong>Settings</strong> section.</li>
+<li>A CSV file of the results is saved to your local machine.</li>
 </ol>
-<h2 id="_46">Примеры<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h2>
-<h3 id="_47">Таблица с двумя метриками (разделение)<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
-<p>В этом примере мы выбираем метрики <code>CPU usage %</code> и <code>Memory used %</code>, разбиваем их по хостам для обоих, и отображаем их в виде таблицы, чтобы строки были хостами, а столбцы показывали значения метрик для каждого хоста.</p>
+<p>The file name indicates the metrics, date, and timeframe.</p>
+<p>For example:</p>
 <ul>
-<li><strong>A:</strong> <code>CPU usage %</code> (<code>builtin:host.cpu.usage</code>), <code>Average</code>, Разделить по <code>Host</code></li>
-<li><strong>B:</strong> <code>Memory used %</code> (<code>builtin:host.mem.usage</code>), <code>Average</code>, Разделить по <code>Host</code></li>
+<li><code>CPU usage % (May 24, 2022, 11_41 - 13_41).csv</code>âcontains results from metric <code>CPU usage %</code>, run on May 24, 2022, for a two-hour timeframe of 11:41-13:41.</li>
+<li><code>CPU usage % +1 (May 24, 2022, 13_19 - 13_49).csv</code>âcontains results from metric <code>CPU usage %</code> and one more metric, run on May 24, 2022, for a half-hour timeframe of 13:19-13:49.</li>
+</ul>
+<h3 id="use-in-api">Use in API<a class="headerlink" href="#use-in-api" title="Permanent link">&para;</a></h3>
+<p>After you run a query, you have the option to copy the request for use in an API request.</p>
+<ol>
+<li>Go to <strong>Data Explorer</strong> and, in the <strong>Result</strong> section, select  &gt; <strong>Copy request</strong>.</li>
+<li>Select whether to use the timeframe of the result.</li>
+<li>Select a response format: JSON or CSV.</li>
+<li>Select <strong>Copy</strong> to copy the request to your clipboard, or just select and copy portions of the request that you want to use.</li>
+<li>Optional Select <strong>Get a token</strong> to go to the <strong>Generate access token</strong> page and get a token for the request.</li>
+</ol>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="table-with-two-metrics-split">Table with two metrics (split)<a class="headerlink" href="#table-with-two-metrics-split" title="Permanent link">&para;</a></h3>
+<p>In this example, we select metrics <code>CPU usage %</code> and <code>Memory used %</code>, break it down by host for both, and display it as a table so that the rows are hosts and the columns show the metric values per host.</p>
+<ul>
+<li><strong>A:</strong> <code>CPU usage %</code> (<code>builtin:host.cpu.usage</code>), <code>Average</code>, Split by <code>Host</code></li>
+<li><strong>B:</strong> <code>Memory used %</code> (<code>builtin:host.mem.usage</code>), <code>Average</code>, Split by <code>Host</code></li>
 <li><strong>Visualization:</strong> <code>Table</code></li>
 </ul>
-<p>Вы можете использовать <strong>Global limit</strong>, чтобы выровнять записи по этим двум метрикам. Например, если <strong>Global limit</strong> задан для метрики <strong>A</strong>, в результат будут включены только записи, которые соответствуют размерности метрики <strong>A</strong>.</p>
-<p>Полный запрос должен выглядеть следующим образом:</p>
-<p><img alt="Data Explorer: Таблица с двумя метриками (разделение)" src="https://dt-cdn.net/images/visualization-example-table-two-metrics-split-1590-45fa100eb8.png" /></p>
-<p>Пример плитки:</p>
-<p><img alt="Пример таблицы плитки" src="https://dt-cdn.net/images/example-tile-table-342-b738cc1b64.png" /></p>
-<h3 id="_48">График с двумя метриками<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h3>
-<p>В этом примере мы выбираем те же метрики и отображаем их в виде графика.</p>
-<p>Когда вы устанавливаете <strong>Visualization</strong> в <code>Graph</code>, отображаются <strong>Settings</strong>, где вы можете выбрать, как график каждой метрики. В этом случае <code>CPU usage %</code> является графиком области (область между 0 и значением метрики заполнена), а <code>Memory used %</code> является графиком линии (одна линия, представляющая значение метрики во времени).</p>
+<p>You can use the <strong>Global limit</strong> to align records across these two metrics. For example, if the <strong>Global limit</strong> is set for metric <strong>A</strong>, only records that match metric's <strong>A</strong> dimension are included in the result.</p>
+<p>The complete query should look like this:</p>
+<p><img alt="Data Explorer: Table with two metrics (split)" src="https://dt-cdn.net/images/visualization-example-table-two-metrics-split-1590-45fa100eb8.png" /></p>
+<p>Example tile:</p>
+<p><img alt="Example table tile" src="https://dt-cdn.net/images/example-tile-table-342-b738cc1b64.png" /></p>
+<h3 id="graph-with-two-metrics">Graph with two metrics<a class="headerlink" href="#graph-with-two-metrics" title="Permanent link">&para;</a></h3>
+<p>In this example, we select the same metrics and display them as a graph.</p>
+<p>When you set <strong>Visualization</strong> to <code>Graph</code>, the <strong>Settings</strong> are displayed, where you can select how to graph each metric. In this case, <code>CPU usage %</code> is an area chart (the area between 0 and the value of the metric is filled in) and <code>Memory used %</code> is a line chart (a single line representing the value of the metric over time).</p>
 <ul>
-<li><strong>A:</strong> <code>CPU usage %</code> (<code>builtin:host.cpu.usage</code>), <code>Average</code>, Разделить по <code>Host</code></li>
-<li><strong>B:</strong> <code>Memory used %</code> (<code>builtin:host.mem.usage</code>), <code>Average</code>, Разделить по <code>Host</code></li>
+<li><strong>A:</strong> <code>CPU usage %</code> (<code>builtin:host.cpu.usage</code>), <code>Average</code>, Split by <code>Host</code></li>
+<li><strong>B:</strong> <code>Memory used %</code> (<code>builtin:host.mem.usage</code>), <code>Average</code>, Split by <code>Host</code></li>
 <li><strong>Visualization:</strong> <code>Graph</code></li>
 <li>
 <p><strong>Visual settings:</strong></p>
@@ -25975,101 +26026,101 @@ scraped: 2026-02-17T21:23:49.809763</p>
 </li>
 <li><strong>B</strong> = <code>Line</code></li>
 </ul>
-<p>Вы можете использовать <strong>Global limit</strong>, чтобы выровнять записи по этим двум метрикам. Например, если <strong>Global limit</strong> задан для метрики <strong>A</strong>, в результат будут включены только записи, которые соответствуют размерности метрики <strong>A</strong>.</p>
-<p>Полный запрос должен выглядеть следующим образом:</p>
-<p><img alt="График с двумя метриками: Data Explorer" src="https://dt-cdn.net/images/visualization-example-graph-area-and-line-1586-2d9ef73a87.png" /></p>
-<p>Пример плитки:</p>
-<p><img alt="График с двумя метриками: плитка панели" src="https://dt-cdn.net/images/graph-tile-870-488b205898.png" /></p>
-<h2 id="_49">Автоматическое расширение фильтров<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h2>
-<p>Автоматические расширения фильтров используют Dynatrace топологию (модель сущностей), чтобы предложить дополнительные размерности фильтров, недоступные в исходной метрике. Они работают как на уровне плитки, так и на уровне панели.</p>
+<p>You can use the <strong>Global limit</strong> to align records across these two metrics. For example, if the <strong>Global limit</strong> is set for metric <strong>A</strong>, only records that match metric's <strong>A</strong> dimension are included in the result.</p>
+<p>The complete query should look like this:</p>
+<p><img alt="Graph with two metrics: Data Explorer" src="https://dt-cdn.net/images/visualization-example-graph-area-and-line-1586-2d9ef73a87.png" /></p>
+<p>Example tile:</p>
+<p><img alt="Graph with two metrics: dashboard tile" src="https://dt-cdn.net/images/graph-tile-870-488b205898.png" /></p>
+<h2 id="auto-extended-filtering">Auto-extended filtering<a class="headerlink" href="#auto-extended-filtering" title="Permanent link">&para;</a></h2>
+<p>Auto-extended filters leverage the Dynatrace topology (entity model) to offer additional filter dimensions not available in the original metric. They work on both the tile level and the dashboard level.</p>
 <ul>
-<li>На уровне плитки выберите их, когда задаете <strong>Filter by</strong> в Data Explorer, просто выбрав исходную размерность метрики, которой назначено отношение. Например, метрика, которая захватывает производительность для событий Synthetic, имеет отношение к Synthetic-монитору. Используя топологию, вы можете сначала выбрать связанное событие Synthetic в фильтре, а затем, кроме имени, тега, идентификатора или состояния здоровья, вы также получаете дополнительную возможность выбрать связанный монитор.</li>
-<li>На уровне панели, хотя вы не можете выбрать желаемые отношения, Dynatrace автоматически расширяет метрики, где это возможно, поэтому, когда вы передаете динамический фильтр, он может применяться к плитке с этой метрикой.</li>
+<li>On a tile level, select them when you set <strong>Filter by</strong> in Data Explorer by simply selecting the original dimension of a metric that has the relationship assigned. For example, a metric that captures the performance for Synthetic events has a relationship to a Synthetic monitor. Using the topology, you can first select the related Synthetic event in the filter and then, besides the name, tag, id, or health state, you also get an additional option to pick the related monitor.</li>
+<li>On a dashboard level, while you can't pick desired relationships, Dynatrace automatically extends the metrics where possible, so that, when you pass a dynamic filter, it can apply to a tile with that metric.</li>
 </ul>
-<h3 id="1-synthetic-synthetic-">Пример 1: Метрика Synthetic шага, расширенная Synthetic-монитором<a class="headerlink" href="#1-synthetic-synthetic-" title="Permanent link">&para;</a></h3>
-<p>Некоторые метрики производительности для событий Synthetic не имеют возможности фильтровать их по монитору. Однако одно и то же событие может произойти в нескольких мониторах, и чтобы посмотреть на производительность одного монитора, вам нужно возможность фильтровать их.</p>
-<p>С автоматически расширенными фильтрами вы можете теперь фильтровать по Synthetic-тестовому шагу.</p>
+<h3 id="example-1-synthetic-step-metric-extended-by-synthetic-monitor">Example 1: Synthetic step metric extended by Synthetic monitor<a class="headerlink" href="#example-1-synthetic-step-metric-extended-by-synthetic-monitor" title="Permanent link">&para;</a></h3>
+<p>Some performance metrics for Synthetic events lack the ability to filter them by monitor. However, the same event could happen in multiple monitors, and to look at a single monitor's performance you need the ability to filter for them.</p>
+<p>With automatically extended filters, you can now filter on the Synthetic test step.</p>
 <ol>
-<li>Выберите метрику (например, <code>Action duration - load action (by event) [browser monitor]</code>). Она имеет тип сущности <code>SYNTHETIC_TEST_STEP</code>.</li>
+<li>Select the metric (for example, <code>Action duration - load action (by event) [browser monitor]</code>). It has entity type <code>SYNTHETIC_TEST_STEP</code>.</li>
 </ol>
-<p><img alt="Выберите метрику" src="https://dt-cdn.net/images/example2a-974-d735f4540c.png" /></p>
+<p><img alt="Select metric" src="https://dt-cdn.net/images/example2a-974-d735f4540c.png" /></p>
 <ol>
-<li>Добавьте фильтр.</li>
+<li>Add the filter.</li>
 </ol>
-<p><img alt="Выберите фильтр" src="https://dt-cdn.net/images/example2b-242-030d352107.png" /></p>
+<p><img alt="Select filter" src="https://dt-cdn.net/images/example2b-242-030d352107.png" /></p>
 <ol>
-<li>Выберите автоматически расширенную размерность.</li>
+<li>Select auto-extended dimension.</li>
 </ol>
-<p><img alt="Выберите размерность" src="https://dt-cdn.net/images/example2c-423-ccc78806c5.png" /></p>
+<p><img alt="Select dimension" src="https://dt-cdn.net/images/example2c-423-ccc78806c5.png" /></p>
 <ol>
-<li>Результирующий фильтр.</li>
+<li>Resulting filter.</li>
 </ol>
-<p><img alt="Окончательный фильтр" src="https://dt-cdn.net/images/example2d-828-13b6907765.png" /></p>
-<p>Кроме того, вы можете теперь использовать автоматически расширенные фильтры на вашей панели, поэтому нет необходимости настраивать несколько плиток, чтобы увидеть одну и ту же метрику для разных мониторов или разных хостов.</p>
+<p><img alt="Final filter" src="https://dt-cdn.net/images/example2d-828-13b6907765.png" /></p>
+<p>Moreover, you can now use auto-extended filters on your dashboard, so there's no need to configure multiple tiles to see the same metric for different monitors or different hosts.</p>
 <ol>
-<li>На вкладке <strong>Dynamic filters</strong> страницы настроек вашей панели добавьте фильтр для <code>Custom dimension</code>.</li>
+<li>On the <strong>Dynamic filters</strong> tab of your dashboard's <strong>Dashboard settings</strong> page, add a filter for <code>Custom dimension</code>.</li>
 </ol>
-<p><img alt="Панель фильтров - добавить фильтр для Custom dimension" src="https://dt-cdn.net/images/example2e-949-6467cdaee6.png" /></p>
+<p><img alt="Dashboard filter - add filter for Custom dimension" src="https://dt-cdn.net/images/example2e-949-6467cdaee6.png" /></p>
 <ol>
-<li>Выберите <code>Synthetic monitor</code>.</li>
+<li>Select <code>Synthetic monitor</code>.</li>
 </ol>
-<p><img alt="Панель фильтров - выберите Synthetic monitor" src="https://dt-cdn.net/images/example2f-607-ccff44de90.png" /></p>
+<p><img alt="Dashboard filter - select Synthetic monitor" src="https://dt-cdn.net/images/example2f-607-ccff44de90.png" /></p>
 <ol>
-<li>Сохраните изменения и отобразите панель. Теперь вы можете фильтровать все плитки на панели по Synthetic-монитору. Панель автоматически проверит для каждой плитки, существует ли такое отношение. Итак, каждая плитка (без фильтров, установленных на уровне плитки) с метрикой Synthetic-события будет фильтроваться в момент, когда отношение существует между шагом в плитке и монитором, который вы выбрали.</li>
+<li>Save your changes and display the dashboard. Now you can filter all tiles on the dashboard by Synthetic monitor. The dashboard will automatically, for each tile, check whether any such relationship exists. So every tile (without filters set on a tile level) that has a Synthetic event metric will be filtered the moment a relationship exists between the step in the tile and the monitor you picked.</li>
 </ol>
-<p><img alt="Панель фильтров - теперь вы можете фильтровать плитки на панели по Synthetic-монитору" src="https://dt-cdn.net/images/example2g-600-455cccbf4c.png" /></p>
-<h3 id="2">Пример 2: Метрика хоста, расширенная<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>Здесь мы расширяем метрику хоста по экземпляру EC2.</p>
+<p><img alt="Dashboard filter - now you can filter tiles on dashboard by Synthetic monitor" src="https://dt-cdn.net/images/example2g-600-455cccbf4c.png" /></p>
+<h3 id="example-2-host-metric-extended">Example 2: Host metric extended<a class="headerlink" href="#example-2-host-metric-extended" title="Permanent link">&para;</a></h3>
+<p>Here, we extend the host metric by EC2 instance.</p>
 <ol>
-<li>Создайте плитку, связанную с хостом, с метрикой хоста (например, <code>CPU usage %</code> - <code>builtin:host.cpu.usage</code>).</li>
-<li>Примените связанный фильтр, такой как <code>EC2 instance (runsOn)</code>.</li>
+<li>Create a host-related tile with a host metric (for example, <code>CPU usage %</code> - <code>builtin:host.cpu.usage</code>).</li>
+<li>Apply a related filter such as <code>EC2 instance (runsOn)</code>.</li>
 </ol>
-<p>Теперь плитка со всеми хостами фильтруется только для хостов, работающих на этом экземпляре EC2. Это возможно даже в том случае, если размерность <code>EC2 instance</code> не существует на исходной метрике хоста. Используя топологию (модель сущностей), Dynatrace может фильтровать хосты на основе этого отношения.</p>
-<p><img alt="Пример автоматически расширенного фильтра" src="https://dt-cdn.net/images/ec2-instance-1299-33a6e9da4e.png" /></p>
-<p>В этом варианте метрика хоста расширяется хост-группой.</p>
+<p>Now the tile with all hosts is filtered to only the hosts running on that EC2 instance. This is possible even though the dimension <code>EC2 instance</code> does not exist on the original host metric. By leveraging the topology (entity model), Dynatrace can filter the hosts based on that relationship.</p>
+<p><img alt="Automatically extended filtering example" src="https://dt-cdn.net/images/ec2-instance-1299-33a6e9da4e.png" /></p>
+<p>In this variation, the host metric is extended by host group.</p>
 <ol>
-<li>Установите фильтр для <code>Host.Host Group (isInstanceOf)</code> и закрепите плитку на вашей панели.</li>
+<li>Set a filter for <code>Host.Host Group (isInstanceOf)</code> and pin the tile to our dashboard.</li>
 </ol>
-<p><img alt="Метрика хоста расширяется хост-группой." src="https://dt-cdn.net/images/example2h-779-0e1e452a5a.png" />
-2. Теперь вы можете фильтровать плитки панели по хост-группе.</p>
-<p><img alt="Фильтруйте плитки панели по хост-группе." src="https://dt-cdn.net/images/example2i-598-212748528d.png" /></p>
-<h2 id="_50">Примечания и ограничения<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h2>
+<p><img alt="Host metric is extended by host group." src="https://dt-cdn.net/images/example2h-779-0e1e452a5a.png" />
+2. We are now able to filter the dashboard tiles by host group.</p>
+<p><img alt="Filter the dashboard tiles by host group." src="https://dt-cdn.net/images/example2i-598-212748528d.png" /></p>
+<h2 id="notes-and-limitations">Notes and limitations<a class="headerlink" href="#notes-and-limitations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>10 метрик максимум на одну визуализацию</li>
-<li>До 100 рядов на одну метрику</li>
+<li>10 metrics maximum per visualization</li>
+<li>Up to 100 series per metric</li>
 </ul>
-<p>Для визуализации Honeycomb вы можете обойти это ограничение: включите <strong>Advanced mode</strong> и удалите <code>:limit(100)</code> из запроса.
-* В отличие от многомерного анализа, Data Explorer использует долгосрочные метрические данные, а не <a href="/docs/observe/application-observability/multidimensional-analysis#data-source" title="Настройте представление многомерного анализа и сохраните его как рассчитанную метрику.">данные трассировки и запроса</a>, поэтому значения на визуализациях могут отличаться от значений в многомерном анализе.
-* Чтобы предотвратить проблемы с производительностью на плитках панели, созданных с помощью Data Explorer, максимальное количество точек данных для запроса на плитке панели составляет 4 000. На основе выбранного временного интервала и примененного пользовательского разрешения Dynatrace проектирует количество точек данных для результата запроса. Если проектируемое количество точек данных превышает 4 000, Dynatrace автоматически переключает разрешение на достаточно высокое, чтобы поддерживать количество точек данных ниже 4 000.</p>
-<p>Обратите внимание, что это не применяется к визуализациям в Data Explorer, где вы можете иметь более 4 000 точек данных. Это применяется только к плиткам панели, созданным с помощью Data Explorer, где комбинация разрешения/временного интервала, выбранная на панели, приводит к более чем 4 000 точкам данных.
-* Примеры нотации порядка величины в Dynatrace:</p>
-<p>Нотация</p>
-<p>Коэффициент</p>
-<p>Значение</p>
+<p>For a Honeycomb visualization, you can bypass this limit: turn on <strong>Advanced mode</strong> and delete <code>:limit(100)</code> from the query.
+* Unlike multidimensional analysis, Data Explorer uses long-term metric data, not <a href="/docs/observe/application-observability/multidimensional-analysis#data-source" title="Configure a multidimensional analysis view and save it as a calculated metric.">trace and request data</a>, so values on visualizations might differ from values in multidimensional analysis.
+* To prevent performance issues on dashboard tiles created with Data Explorer, the maximum number of data points for a query on a dashboard tile is 4,000. Based on the selected timeframe and the applied custom resolution, Dynatrace projects the number of data points for the query result. If the projected number of data points exceeds 4,000, Dynatrace automatically switches to a resolution high enough to keep the number of data points below 4,000.</p>
+<p>Note that this does not apply to visualizations in Data Explorer itself, where you can have more than 4,000 data points. It applies only to dashboard tiles created with Data Explorer where the resolution/timeframe combination selected on the dashboard results in more than 4,000 data points.
+* Examples of order-of-magnitude notation in Dynatrace:</p>
+<p>Notation</p>
+<p>Factor</p>
+<p>Meaning</p>
 <p>k</p>
 <p>10^3</p>
-<p>кило, тысяча</p>
+<p>kilo, thousand</p>
 <p>M</p>
 <p>10^6</p>
-<p>мега, миллион</p>
+<p>mega, million</p>
 <p>G</p>
 <p>10^9</p>
-<p>гига, миллиард</p>
+<p>giga, billion</p>
 <p>T</p>
 <p>10^12</p>
-<p>тера, триллион</p>
-<p>Для подробностей см. <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation" title="Dynatrace нотация порядка величины для отображения значений метрик">Нотация порядка величины</a>.</p>
-<h3 id="fold">Преобразование Fold и разрешение<a class="headerlink" href="#fold" title="Permanent link">&para;</a></h3>
-<p>Обратите внимание, что настройка <strong>Преобразование Fold</strong> влияет на разрешение.</p>
+<p>tera, trillion</p>
+<p>For details, see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation" title="Dynatrace order-of-magnitude notation for displaying metric values">Order-of-magnitude notation</a>.</p>
+<h3 id="fold-transformation-and-resolution">Fold transformation and resolution<a class="headerlink" href="#fold-transformation-and-resolution" title="Permanent link">&para;</a></h3>
+<p>Be aware that the <strong>Fold transformation</strong> setting affects the resolution.</p>
 <ul>
-<li>Если <strong>Преобразование Fold</strong> установлено в <code>Auto</code> для визуализации <code>Table</code>, <code>Single value</code>, <code>Top list</code> или <code>Honeycomb</code>, используется разрешение <code>Inf</code> (бесконечность), чтобы сохранить обратную совместимость. Если выбранный селектор метрики не поддерживает разрешение <code>Inf</code>, преобразование <code>fold</code> автоматически добавляется в конец запроса.</li>
-<li>Если <strong>Преобразование Fold</strong> установлено в значение, отличное от <code>Auto</code>, используется <code>fold</code>.</li>
+<li>If <strong>Fold transformation</strong> is set to <code>Auto</code> for visualization <code>Table</code>, <code>Single value</code>, <code>Top list</code>, or <code>Honeycomb</code>, the <code>Inf</code> (infinity) resolution is used to maintain backward compatibility. If the chosen metric selector doesn't support the <code>Inf</code> resolution, the <code>fold</code> transformation is automatically added to the end of the query.</li>
+<li>If <strong>Fold transformation</strong> is set to a value other than <code>Auto</code>, <code>fold</code> is used.</li>
 </ul>
-<p>Поскольку все селекторы метрик запрашиваются с помощью одного и того же общего механизма (либо <code>fold</code>, либо <code>Inf</code>), добавление нового селектора, требующего <code>fold</code>, может изменить результат других селекторов.</p>
-<p>Чтобы осмотреть фактический запрос, используемый Data Explorer, перейдите в раздел <strong>Result</strong> в Data Explorer и выберите  &gt; <strong>Copy request</strong>.</p>
-<h2 id="_51">Связанные темы<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h2>
+<p>Because all metric selectors are queried using the same total value mechanism (either <code>fold</code> or <code>Inf</code>), adding a new selector that requires <code>fold</code> might change the result of the other selectors.</p>
+<p>To inspect the actual query used by Data Explorer, go to the <strong>Result</strong> section in Data Explorer and select  &gt; <strong>Copy request</strong>.</p>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector" title="Настройте селектор метрик для метрики v2 API.">Метрики API - Селектор метрик</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector" title="Configure the metric selector for the Metric v2 API.">Metrics API - Metric selector</a></li>
 </ul>
 <hr />
 

@@ -25545,40 +25545,38 @@
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
 <li>15-min read</li>
-<li>Updated on Jan 28, 2026</li>
+<li>Updated on Feb 17, 2026</li>
 </ul>
-<p>Dynatrace Dashboards and Notebooks offer the following options for exploring your data:</p>
+<p>Dynatrace <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time."><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong></a> and <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> offer the following options for exploring your data:</p>
 <ul>
-<li>Use <a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI</a> and natural language to access data stored in Grail.</li>
-<li>Get started with our Explore interface for data types such as logs, metrics, and events.</li>
-<li>Advance with DQL to leverage the full power of Grail.</li>
+<li>Use <a href="#copilot">Dynatrace Intelligence generative AI</a> and natural language to access data stored in Grail.</li>
+<li>Get started with our Explore interface for data types such as <a href="#explore-logs">logs</a>, <a href="#explore-metrics">metrics</a>, and <a href="#explore-business-events">business events</a>.</li>
+<li>Advance with <a href="#create-a-dql-query">DQL</a> to leverage the full power of Grail.</li>
 </ul>
 <h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <p>To explore data such as logs, metrics, or business events with our point-and-click interface</p>
 <ol>
-<li>In your document, open the  <strong>Add</strong> menu and select one of the following options, depending on what you want to explore.</li>
+<li>In your document, open the  <strong>Add</strong> menu and select an option, depending on what you want to explore.</li>
 </ol>
 <p>For this example, select  <strong>Logs</strong>, but there are other options.</p>
 <p>List options</p>
-<p>Option</p>
-<p>Description</p>
-<p><strong>Prompt</strong></p>
-<p>Enter a <a href="#copilot">plain-text query</a> to get AI-powered insights from Grail.</p>
-<p><strong>Logs</strong></p>
-<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-logs" title="Explore your data with our point-and-click interface.">Explore logs</a> via the UI. We use this option in the example that follows.</p>
-<p><strong>Metrics</strong></p>
-<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-metrics" title="Explore your data with our point-and-click interface.">Explore metrics</a> via the UI.</p>
-<p><strong>Events</strong></p>
-<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-events" title="Explore your data with our point-and-click interface.">Explore events</a> via the UI.</p>
-<p><strong>Problems</strong></p>
-<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-problems" title="Explore your data with our point-and-click interface.">Explore problems</a> via the UI.</p>
-<p><strong>Traces</strong></p>
-<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-traces" title="Explore your data with our point-and-click interface.">Explore traces</a> via the UI.</p>
-<p><strong>Business Events</strong></p>
-<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-business-events" title="Explore your data with our point-and-click interface.">Explore business events</a> via the UI.</p>
-<p><strong>Security events</strong></p>
-<p><a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-security-events" title="Explore your data with our point-and-click interface.">Explore events</a> via the UI.</p>
-<p>The layouts differ slightly between Dashboards and Notebooks to suit the different contexts, but the functionality is the same.
+<p>We walk you through the following options below:</p>
+<ul>
+<li><strong>Prompt</strong>âEnter a <a href="#copilot">plain-text query</a> to get AI-powered insights from Grail.</li>
+<li><strong>Logs</strong>â<a href="#explore-logs">Explore logs</a> via the UI. We use this option in the example that follows.</li>
+<li><strong>Metrics</strong>â<a href="#explore-metrics">Explore metrics</a> via the UI.</li>
+<li><strong>Business Events</strong>â<a href="#explore-business-events">Explore business events</a> via the UI.</li>
+</ul>
+<p>After you try those options, you'll be ready to explore the following <a href="#explore-others">additional options</a> with little or no additional explanation.</p>
+<ul>
+<li><strong>Events</strong></li>
+<li><strong>Problems</strong></li>
+<li><strong>Traces</strong></li>
+<li><strong>User sessions</strong></li>
+<li><strong>Security events</strong></li>
+<li><strong>User events</strong></li>
+</ul>
+<p>The layouts differ slightly between <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> and <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> to suit the different contexts, but the functionality is the same.
 2. Use the displayed elements to define your exploration.</p>
 <p>In this example, we focus on <strong>Logs</strong>. By default, the filter field and a default limit of 20 is added.</p>
 <ul>
@@ -25591,6 +25589,59 @@
 </ul>
 <p>Operator</p>
 <p>Description</p>
+<p><code>~</code></p>
+<p>Use a tilde to get one of two effects:</p>
+<p>To match on a specific field</p>
+<ol>
+<li>
+<p>In the  filter bar</p>
+<ul>
+<li>Select the field name</li>
+<li>Select the tilde (<code>~</code>) as the operator</li>
+<li>Enter the term you want to match<ol>
+<li>Select <strong>Run</strong>.</li>
+</ol>
+</li>
+</ul>
+<p>For example, when exploring log data, <code>content</code> <code>~</code> <code>error</code> lists log entries that have "error" in the "content" field.</p>
+<p>In DQL, this translates to <a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase" title="A list of DQL string functions.">matchesPhrase</a>, such as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch logs
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| filter matchesPhrase(content, &quot;error&quot;)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>| limit 20
+</code></pre></div>
+</li>
+</ol>
+<p>To search all data</p>
+<ol>
+<li>
+<p>In the  filter bar</p>
+<ul>
+<li>Enter an asterisk (<code>*</code>)</li>
+<li>Select the tilde (<code>~</code>) as the operator</li>
+<li>Enter the term you want to search for</li>
+</ul>
+<p>Alternative: Click in the  filter bar, scroll down to the bottom of the list of suggestions, select <code>Search a phrase in all data</code>, and enter the search term between the quotation marks. (This bar is hidden when there is no splitting set, or when there is more than one building block with a metric selected.)
+     4. Select <strong>Run</strong>.</p>
+<p>For example, when exploring log data, <code>*</code> <code>~</code> <code>error</code> lists log entries that have "error".</p>
+<p>In DQL, this translates to <a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search" title="DQL filter and search commands">search</a>, such as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fetch logs
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| search &quot;error&quot;
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>| limit 20
+</code></pre></div>
+</li>
+</ol>
 <p><code>=</code></p>
 <p>equals</p>
 <p><code>!=</code></p>
@@ -25720,9 +25771,9 @@ Then you can edit the DQL directly as needed, and you're free to delete the expl
 <li>To have Dynatrace once again automatically select a visualization, turn <strong>Auto select</strong> back on.</li>
 </ul>
 <h2 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">&para;</a></h2>
-<p>This exploration functionality is the same in <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* and </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks<strong><em>*. We use </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** in this example.</p>
+<p>This exploration functionality is the same in <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> and <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>. We use <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> in this example.</p>
 <ol>
-<li>Open <strong><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks<strong><em>* and select  </em>*Notebook</strong> in the app header to create a new document.</li>
+<li>Open <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and select  <strong>Notebook</strong> in the app header to create a new document.</li>
 <li>In the empty document, open the  <strong>Add</strong> menu and select  <strong>Logs</strong>.</li>
 <li>Inspect the results (initially, results are automatically fetched).</li>
 </ol>
@@ -25757,7 +25808,7 @@ Then you can edit the DQL directly as needed, and you're free to delete the expl
 <li>Add <code>=</code> as an operator by either selecting it from the suggestions from the auto complete or by typing it.</li>
 <li>Enter the string you want to search for.</li>
 </ol>
-<p>If you are using Dashboards, you can also reference existing <a href="#dashboard-component-variable">variables</a> by entering a <code>$</code> sign and selecting the desired variable. In this example, we are looking for logs that contain the string <code>crash</code> somewhere in the content, so enter <code>crash</code>.
+<p>If you are using <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, you can also reference existing <a href="#dashboard-component-variable">variables</a> by entering a <code>$</code> sign and selecting the desired variable. In this example, we are looking for logs that contain the string <code>crash</code> somewhere in the content, so enter <code>crash</code>.
 4. Add <code>*</code> a wildcard before and after your filter term such that the results are restricted to logs where the <strong>content</strong> field contains <code>crash</code> instead of only considering exact matches.
 5. Select <strong>Run</strong> and inspect the results.</p>
 <p>Now the results are restricted to logs where the <strong>log.source</strong> field contains <code>oneagent</code> and the content contains the string <code>crash</code>. If you want to search for all occurrences where either one or the other filter applies, add an <code>OR</code> between the two filters.</p>
@@ -25788,7 +25839,7 @@ Then you can edit the DQL directly as needed, and you're free to delete the expl
 <h3 id="bucketize">Bucketize<a class="headerlink" href="#bucketize" title="Permanent link">&para;</a></h3>
 <p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
 <ol>
-<li>Open the  <strong>Command</strong> menu for the metric and select <strong>Bucketize</strong>.</li>
+<li>Open the  <strong>Command</strong> menu and select <strong>Bucketize</strong>.</li>
 <li>Select the field for which you want to create the buckets.</li>
 <li>Set the <strong>Bucketize</strong> value.</li>
 </ol>
@@ -25809,9 +25860,9 @@ Then you can edit the DQL directly as needed, and you're free to delete the expl
 <p>If the <strong>Limit</strong> setting is not displayed,  <strong>Limit</strong> and then set the value.</p>
 <h2 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h2>
 <h3 id="add">Add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
-<p>This exploration functionality is the same in <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* and </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks<strong><em>*. We use </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** in these examples.</p>
+<p>This exploration functionality is the same in <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> and <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>. We use <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> in these examples.</p>
 <ol>
-<li>Open <strong><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks<strong><em>* and select  </em>*Notebook</strong> in the app header to create a new notebook.</li>
+<li>Open <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and select  <strong>Notebook</strong> in the app header to create a new notebook.</li>
 <li>In the empty notebook, open the  <strong>Add</strong> menu and select  <strong>Metrics</strong>.</li>
 <li>Use the metric selector to select the metric you want to explore.</li>
 </ol>
@@ -25887,12 +25938,6 @@ Then you can edit the DQL directly as needed, and you're free to delete the expl
 <p><img alt="Explore metrics example: select Split by" src="https://dt-cdn.net/images/explore-metrics-split-by-select-917-6ced2b5191.png" /></p>
 <p>Now we get a separate line per host.</p>
 <p><img alt="Explore metrics example: Split by dt.entity.host" src="https://dt-cdn.net/images/explore-metrics-split-by-select-dt-entity-host-921-02cdc26859.png" /></p>
-<h3 id="limit-results">Limit results<a class="headerlink" href="#limit-results" title="Permanent link">&para;</a></h3>
-<p>To focus our exploration, we can set a limit on the results returned. If you add multiple metrics to your query, the limit applies to all of them.</p>
-<ol>
-<li>Select  <strong>Limit</strong> to add a <strong>Limit</strong>.</li>
-<li>Set <strong>Limit</strong> to the maximum number of records we want to return. In this case, we set the limit to 5, and then we ran it again to see the following results.</li>
-</ol>
 <h3 id="compare-to-previous-period">Compare to previous period<a class="headerlink" href="#compare-to-previous-period" title="Permanent link">&para;</a></h3>
 <p>To shift the metric to a previous period and add it for comparison</p>
 <ol>
@@ -25939,14 +25984,6 @@ Then you can edit the DQL directly as needed, and you're free to delete the expl
 <li>Open the  <strong>Command</strong> menu for the metric and select <strong>Bucketize</strong>.</li>
 <li>Set the <strong>Bucketize</strong> value.</li>
 </ol>
-<h3 id="interval">Interval<a class="headerlink" href="#interval" title="Permanent link">&para;</a></h3>
-<p>The interval defines the time granularity for metrics, determining how data is grouped and aggregated over time. It is expressed as a duration of each time slot (for example, 1h, 5m) for aggregating data points.</p>
-<p>If you add multiple metrics to your query, the interval applies to all of them, ensuring consistency in data granularity across all metrics.</p>
-<ol>
-<li>Select  <strong>Interval</strong> to add an <strong>Interval</strong> selector to your query.</li>
-<li>Select an interval.</li>
-</ol>
-<p>For details on how an interval is used in DQL, see <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL metric commands">timeseries</a>.</p>
 <h3 id="expressions">Expressions<a class="headerlink" href="#expressions" title="Permanent link">&para;</a></h3>
 <p>Add expressions to apply arithmetic based on your selected metrics.</p>
 <ol>
@@ -25968,18 +26005,70 @@ Then you can edit the DQL directly as needed, and you're free to delete the expl
 <p>For example, to calculate the total disk capacity, we simply add both metrics together using <code>A+B</code>
 4. Select <strong>Run</strong> and inspect the results.</p>
 <p><img alt="Explore metrics example: expression" src="https://dt-cdn.net/images/explore-metrics-example-expression-662-b59f306f98.png" /></p>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
-<p>This exploration functionality is the same as described for logs.</p>
-<p>To start exploring events</p>
+<h3 id="sort_1">Sort<a class="headerlink" href="#sort_1" title="Permanent link">&para;</a></h3>
+<p>To sort your results</p>
 <ol>
-<li>Open <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* or </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** and select  in an empty notebook or the document header of a dashboard.</li>
-<li>Select  <strong>Events</strong> to add a section or tile based on it.</li>
+<li>Select  <strong>Sort</strong>.</li>
+<li>
+<p>After you select <strong>Sort</strong>, use the <strong>Sort by</strong> menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.</p>
+</li>
+<li>
+<p><code>value.A</code>  is selected by default</p>
+</li>
+<li>Sort applies to all metrics included in the query</li>
+</ol>
+<h3 id="limit_1">Limit<a class="headerlink" href="#limit_1" title="Permanent link">&para;</a></h3>
+<p>To focus our exploration, we can set a limit on the results returned. If you add multiple metrics to your query, the limit applies to all of them.</p>
+<ol>
+<li>Select  <strong>Limit</strong> to add a <strong>Limit</strong>.</li>
+<li>Set <strong>Limit</strong> to the maximum number of records we want to return. In this case, we set the limit to 5, and then we ran it again to see the following results.</li>
+</ol>
+<h3 id="interval">Interval<a class="headerlink" href="#interval" title="Permanent link">&para;</a></h3>
+<p>The interval defines the time granularity for metrics, determining how data is grouped and aggregated over time. It is expressed as a duration of each time slot (for example, 1h, 5m) for aggregating data points.</p>
+<p>If you add multiple metrics to your query, the interval applies to all of them, ensuring consistency in data granularity across all metrics.</p>
+<ol>
+<li>Select  <strong>Interval</strong> to add an <strong>Interval</strong> selector to your query.</li>
+<li>Select an interval.</li>
+</ol>
+<p>For details on how an interval is used in DQL, see <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL metric commands">timeseries</a>.</p>
+<h2 id="business-events">Business events<a class="headerlink" href="#business-events" title="Permanent link">&para;</a></h2>
+<p>This exploration functionality is the same as described for logs.</p>
+<p>To start exploring business events</p>
+<ol>
+<li>Open <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> or <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and select  in an empty notebook or the document header of a dashboard.</li>
+<li>Select  <strong>Business Events</strong> to add a section or tile based on it.</li>
 <li>Inspect the results (if no results are initially displayed, select  <strong>Run</strong>).</li>
 </ol>
-<p>Done. You have fetched the first 20 events with just a few clicks.</p>
+<p>Done. You have fetched the first 20 business events with just a few clicks.</p>
 <p>To make it more useful, now click in the  box to get filter suggestions.</p>
 <p>Filter suggestions are available for any field apart from content.</p>
-<p><img alt="Explore events example: Notebooks, no filters" src="https://dt-cdn.net/images/explore-events-example-default-notebooks-1618-71dfb794ff.png" /></p>
+<p><img alt="Explore business events example: Notebooks, no filters" src="https://dt-cdn.net/images/explore-business-events-example-default-notebooks-1620-fa7dd14bad.png" /></p>
+<h3 id="filter-by-eventprovider">Filter by event.provider<a class="headerlink" href="#filter-by-eventprovider" title="Permanent link">&para;</a></h3>
+<p>Let's add an <strong>event.provider</strong> filter to return only those business events where the <strong>event.provider</strong> field contains a certain string.</p>
+<p>To do this, we need to specify</p>
+<ul>
+<li>The field you want to filter by</li>
+<li>The operator that decides how the filter is applied</li>
+<li>
+<p>The filter value (a string that needs to occur somewhere in the <strong>event.provider</strong> field)</p>
+</li>
+<li>
+<p>Insert your cursor in the filter field and either select <strong>event.provider</strong> from the suggested fields or type it in.</p>
+</li>
+<li>Add <code>=</code> as an operator by either selecting it from the suggestions or by typing it in.</li>
+<li>Enter an event provider you want to filter by.</li>
+<li>Select <strong>Run</strong> and inspect the results.</li>
+</ul>
+<p>Now the results are restricted to logs where the <strong>event.provider</strong> field contains our filter value.</p>
+<h3 id="filter-by-eventtype">Filter by event.type<a class="headerlink" href="#filter-by-eventtype" title="Permanent link">&para;</a></h3>
+<p>Now let's further refine exploration by specifying an event type.</p>
+<ol>
+<li>Insert your cursor in the filter field immediately after our previously added <strong>event.provider</strong> filter and either select <strong>event.type</strong> from the suggested fields or type it in.</li>
+<li>Add <code>=</code> as an operator by either selecting it from the suggestions or by typing it in.</li>
+<li>Enter the event type you want to filter by.</li>
+<li>Select <strong>Run</strong> and inspect the results.</li>
+</ol>
+<p>Now the results are restricted to business events where the <strong>event.provider</strong> and <strong>event.type</strong> match our filter values.</p>
 <h3 id="summarize_1">Summarize<a class="headerlink" href="#summarize_1" title="Permanent link">&para;</a></h3>
 <p>To summarize your results</p>
 <ol>
@@ -25995,62 +26084,6 @@ Then you can edit the DQL directly as needed, and you're free to delete the expl
 <li>After you select <strong>Convert to time series</strong>, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.</li>
 </ol>
 <h3 id="bucketize_2">Bucketize<a class="headerlink" href="#bucketize_2" title="Permanent link">&para;</a></h3>
-<p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
-<ol>
-<li>Open the  <strong>Command</strong> menu for the metric and select <strong>Bucketize</strong>.</li>
-<li>Select the field for which you want to create the buckets.</li>
-<li>Set the <strong>Bucketize</strong> value.</li>
-</ol>
-<h3 id="sort_1">Sort<a class="headerlink" href="#sort_1" title="Permanent link">&para;</a></h3>
-<p>To sort your results</p>
-<ol>
-<li>Select  <strong>Sort</strong>.</li>
-<li>
-<p>After you select <strong>Sort</strong>, use the <strong>Sort by</strong> menu to select the field you want to sort by, and to choose whether you want the results in ascending or descending order.</p>
-</li>
-<li>
-<p><code>value.A</code>  is selected by default</p>
-</li>
-<li>Sort applies to all metrics included in the query</li>
-</ol>
-<h3 id="limit_1">Limit<a class="headerlink" href="#limit_1" title="Permanent link">&para;</a></h3>
-<p>To change the limit of your results, change the value of <strong>Limit</strong> to the maximum number of records you want to return.</p>
-<p>If the <strong>Limit</strong> setting is not displayed,  <strong>Limit</strong> and then set the value.</p>
-<h2 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h2>
-<p>A <code>problem</code> in Dynatrace represents an anomaly from a normal behavior or state, such as a slow service response or user-login process. Whenever a problem is detected, Dynatrace raises a specific problem event indicating such an anomaly. Every problem update is exported to Grail. Use the <strong>Problems</strong> explorer to query Grail for problems matching your search filters.</p>
-<ol>
-<li>Open <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* or </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** and select  in an empty notebook or the document header of a dashboard.</li>
-<li>Select  <strong>Problems</strong> to add a section or tile based on it.</li>
-</ol>
-<p>If you run it like that, with <strong>Limit</strong> set to <code>20</code> (the default), you get the first 20 results of fetching problem records from Grail.</p>
-<p>DQL equivalent</p>
-<p>In DQL, this is the equivalent of:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch dt.davis.problems
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| limit 20
-</code></pre></div>
-3. Inspect the results (if no results are initially displayed, select  <strong>Run</strong>).</p>
-<p>Done. You have fetched the first 20 problems with just a few clicks.</p>
-<p>To make it more useful, now click in the  box to get filter suggestions.</p>
-<p>Filter suggestions are available for any field apart from content.</p>
-<p><img alt="Explore problems example: Notebooks, no filters" src="https://dt-cdn.net/images/explore-problems-example-default-notebooks-1627-5a6b1b8abb.png" /></p>
-<h3 id="summarize_2">Summarize<a class="headerlink" href="#summarize_2" title="Permanent link">&para;</a></h3>
-<p>To summarize your results</p>
-<ol>
-<li>Open the  <strong>Command</strong> menu and select <strong>Summarize</strong>.</li>
-<li>Specify how you want to summarize the results.</li>
-</ol>
-<p>You can choose between aggregation options and you can select the field by which the results are aggregated.</p>
-<h3 id="convert-to-time-series_2">Convert to time series<a class="headerlink" href="#convert-to-time-series_2" title="Permanent link">&para;</a></h3>
-<p>You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.</p>
-<p>To convert log-based events to a time series format</p>
-<ol>
-<li>Open the  <strong>Command</strong> menu and select <strong>Convert to time series</strong>.</li>
-<li>After you select <strong>Convert to time series</strong>, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.</li>
-</ol>
-<h3 id="bucketize_3">Bucketize<a class="headerlink" href="#bucketize_3" title="Permanent link">&para;</a></h3>
 <p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
 <ol>
 <li>Open the  <strong>Command</strong> menu and select <strong>Bucketize</strong>.</li>
@@ -26072,202 +26105,44 @@ Then you can edit the DQL directly as needed, and you're free to delete the expl
 <h3 id="limit_2">Limit<a class="headerlink" href="#limit_2" title="Permanent link">&para;</a></h3>
 <p>To change the limit of your results, change the value of <strong>Limit</strong> to the maximum number of records you want to return.</p>
 <p>If the <strong>Limit</strong> setting is not displayed,  <strong>Limit</strong> and then set the value.</p>
-<h2 id="traces">Traces<a class="headerlink" href="#traces" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open <strong><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> </strong>Dashboards<strong><em>* or </em>*<img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks**** and select  in an empty notebook or the document header of a dashboard.</li>
-<li>Select  <strong>Traces</strong> to add a section or tile based on it.</li>
-</ol>
-<p>If you run it like that, with <strong>Limit</strong> set to <code>20</code> (the default), you get the first 20 results of fetching spans from Grail.</p>
-<p>DQL equivalent</p>
-<p>In DQL, this is the equivalent of:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fetch spans
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| limit 20
-</code></pre></div>
-3. Inspect the results (if no results are initially displayed, select  <strong>Run</strong>).</p>
-<p>Done. You have fetched the first 20 spans with just a few clicks.</p>
-<p>To make it more useful, now click in the  box to get filter suggestions.</p>
-<p>Filter suggestions are available for any field apart from content.</p>
-<p><img alt="Explore traces example: Notebooks, no filters" src="https://dt-cdn.net/images/explore-traces-example-default-notebooks-1614-9e75005b4e.png" /></p>
-<h3 id="summarize_3">Summarize<a class="headerlink" href="#summarize_3" title="Permanent link">&para;</a></h3>
-<p>To summarize your results</p>
-<ol>
-<li>Open the  <strong>Command</strong> menu and select <strong>Summarize</strong>.</li>
-<li>Specify how you want to summarize the results.</li>
-</ol>
-<p>You can choose between aggregation options and you can select the field by which the results are aggregated.</p>
-<h3 id="convert-to-time-series_3">Convert to time series<a class="headerlink" href="#convert-to-time-series_3" title="Permanent link">&para;</a></h3>
-<p>You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.</p>
-<p>To convert log-based events to a time series format</p>
-<ol>
-<li>Open the  <strong>Command</strong> menu and select <strong>Convert to time series</strong>.</li>
-<li>After you select <strong>Convert to time series</strong>, use the dropdown menu to select the field you want to count the occurences of the logs by. The time slots are automatically adjusted to the timeframe selected on top of the dashboard or for the respective section in a notebook.</li>
-</ol>
-<h3 id="bucketize_4">Bucketize<a class="headerlink" href="#bucketize_4" title="Permanent link">&para;</a></h3>
-<p>The bucketize command is used to group metric data into fixed-size ranges (buckets) for histogram visualizations. It defines the bucket size, which directly influences the granularity and scale of the x-axis in the chart.</p>
-<ol>
-<li>Open the  <strong>Command</strong> menu and select <strong>Bucketize</strong>.</li>
-<li>Select the field for which you want to create the buckets.</li>
-<li>Set the <strong>Bucketize</strong> value.</li>
-</ol>
-<h3 id="sort_3">Sort<a class="headerlink" href="#sort_3" title="Permanent link">&para;</a></h3>
-<h3 id="_1">Сортировка результатов<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Выберите <strong>Сортировка</strong>.</li>
-<li>
-<p>После выбора <strong>Сортировка</strong> используйте меню <strong>Сортировать по</strong>, чтобы выбрать поле, по которому вы хотите сортировать, и выбрать, хотите ли вы результаты в порядке возрастания или убывания.</p>
-</li>
-<li>
-<p><code>value.A</code> выбрано по умолчанию</p>
-</li>
-<li>Сортировка применяется ко всем метрикам, включенным в запрос</li>
-</ol>
-<h3 id="_2">Ограничение<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>Чтобы изменить ограничение результатов, измените значение <strong>Ограничение</strong> на максимальное количество записей, которые вы хотите вернуть.</p>
-<p>Если настройка <strong>Ограничение</strong> не отображается, выберите <strong>Ограничение</strong> и затем установите значение.</p>
-<h2 id="-">Бизнес-события<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
-<p>Эта функция исследования идентична описанной для журналов.</p>
-<p>Чтобы начать исследование бизнес-событий</p>
-<ol>
-<li>Откройте <strong><img alt="Панели управления" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Панели управления" /> </strong>Панели управления<strong><em>* или </em>*<img alt="Тетради" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Тетради" /> </strong>Тетради**** и выберите в пустой тетради или заголовке документа панели управления.</li>
-<li>Выберите <strong>Бизнес-события</strong>, чтобы добавить раздел или плитку на основе этого.</li>
-<li>Просмотрите результаты (если результаты не отображаются изначально, выберите <strong>Выполнить</strong>).</li>
-</ol>
-<p>Готово. Вы извлекли первые 20 бизнес-событий всего за несколько кликов.</p>
-<p>Чтобы сделать это более полезным, теперь нажмите в поле, чтобы получить предложения фильтров.</p>
-<p>Предложения фильтров доступны для любого поля, кроме содержимого.</p>
-<p><img alt="Пример исследования бизнес-событий: Тетради, без фильтров" src="https://dt-cdn.net/images/explore-business-events-example-default-notebooks-1620-fa7dd14bad.png" /></p>
-<h3 id="eventprovider">Фильтр по event.provider<a class="headerlink" href="#eventprovider" title="Permanent link">&para;</a></h3>
-<p>Давайте добавим фильтр <strong>event.provider</strong>, чтобы вернуть только те бизнес-события, где поле <strong>event.provider</strong> содержит определенную строку.</p>
-<p>Для этого нам нужно указать</p>
+<h2 id="explore-other-areas">Explore other areas<a class="headerlink" href="#explore-other-areas" title="Permanent link">&para;</a></h2>
+<p>In the previous sections, we have shown how to use the  <strong>Prompt</strong> for AI-based exploration, and how to explore  <strong>Metrics</strong>,  <strong>Logs</strong>, and  <strong>Business Events</strong> through our point-and-click UI.</p>
+<p>You can also explore the following areas in similar fashion:</p>
 <ul>
-<li>Поле, по которому вы хотите фильтровать</li>
-<li>Оператор, который решает, как применяется фильтр</li>
-<li>
-<p>Значение фильтра (строка, которая должна встречаться где-то в поле <strong>event.provider</strong>)</p>
-</li>
-<li>
-<p>Вставьте курсор в поле фильтра и либо выберите <strong>event.provider</strong> из предложенных полей, либо введите его вручную.</p>
-</li>
-<li>Добавьте <code>=</code> как оператор либо выбрав его из предложений, либо введя его вручную.</li>
-<li>Введите поставщика события, по которому вы хотите фильтровать.</li>
-<li>Выберите <strong>Выполнить</strong> и просмотрите результаты.</li>
+<li><strong>Events</strong></li>
+<li><strong>Problems</strong></li>
+<li><strong>Traces</strong></li>
+<li><strong>User sessions</strong></li>
+<li><strong>Security events</strong></li>
+<li><strong>User events</strong></li>
 </ul>
-<p>Теперь результаты ограничены журналами, где поле <strong>event.provider</strong> содержит наше значение фильтра.</p>
-<h3 id="eventtype">Фильтр по event.type<a class="headerlink" href="#eventtype" title="Permanent link">&para;</a></h3>
-<p>Теперь давайте еще больше уточним исследование, указав тип события.</p>
+<p>In all cases, the functionality is similar.</p>
 <ol>
-<li>Вставьте курсор в поле фильтра сразу после нашего предыдущего фильтра <strong>event.provider</strong> либо выберите <strong>event.type</strong> из предложенных полей, либо введите его вручную.</li>
-<li>Добавьте <code>=</code> как оператор либо выбрав его из предложений, либо введя его вручную.</li>
-<li>Введите тип события, по которому вы хотите фильтровать.</li>
-<li>Выберите <strong>Выполнить</strong> и просмотрите результаты.</li>
+<li>Go to <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> or <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>Create a new notebook or dashboard.</li>
+<li>Select  and choose one of the above options (for example,  <strong>Events</strong>) to add a corresponding notebook section or dashboard tile.</li>
+<li>Inspect the results. If no results are initially displayed, select  <strong>Run</strong>.</li>
 </ol>
-<p>Теперь результаты ограничены бизнес-событиями, где <strong>event.provider</strong> и <strong>event.type</strong> соответствуют нашим значениям фильтра.</p>
-<h3 id="_3">Суммировать<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>Чтобы суммировать результаты</p>
+<p>From that point, you can apply what you've learned from the previous examples to focus your exploration.</p>
+<h2 id="query-grail">Query Grail<a class="headerlink" href="#query-grail" title="Permanent link">&para;</a></h2>
+<p>When you're exploring data, you're automatically creating a <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">DQL</a> query that you can view, copy, and use as the basis of more complex queries.</p>
+<h3 id="show-dql">Show DQL<a class="headerlink" href="#show-dql" title="Permanent link">&para;</a></h3>
+<p>To see the DQL that is created automatically during your exploration with the point-and-click interface, select <strong>DQL</strong>. This shows you the DQL that you can  copy and use elsewhere.</p>
+<p><img alt="Example: show DQL in an Explore tile" src="https://dt-cdn.net/images/explore-logs-show-dql-closed-636-58a6cfcf79.png" /></p>
+<p><img alt="Example: show DQL in an Explore tile: expanded" src="https://dt-cdn.net/images/explore-logs-show-dql-open-633-3242ed63eb.png" /></p>
+<h3 id="create-a-dql-query">Create a DQL query<a class="headerlink" href="#create-a-dql-query" title="Permanent link">&para;</a></h3>
+<p>When you're satisfied with the results but want to advance with more complex DQL commands, you can easily create a standard notebook section or dashboard tile based on it.</p>
 <ol>
-<li>Откройте меню <strong>Команда</strong> и выберите <strong>Суммировать</strong>.</li>
-<li>Укажите, как вы хотите суммировать результаты.</li>
+<li>Open the  menu and select  <strong>Create DQL section</strong> or  <strong>Create DQL tile</strong></li>
+<li>Edit the resulting query section or tile as needed.</li>
+<li>If you no longer need the UI-constructed version, you can delete it and just use the duplicate notebook section or dashboard tile with the DQL query.</li>
 </ol>
-<p>Вы можете выбрать между вариантами агрегации и выбрать поле, по которому результаты будут агрегированы.</p>
-<h3 id="_4">Преобразовать в временной ряд<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>Вы можете преобразовать события на основе журналов в формат временного ряда, подходящий для визуализации с помощью графических визуализаций. Это делается путем подсчета вхождений полей, указанных для каждого временного интервала.</p>
-<p>Чтобы преобразовать события на основе журналов в формат временного ряда</p>
+<p>The result of this step is equivalent to</p>
 <ol>
-<li>Откройте меню <strong>Команда</strong> и выберите <strong>Преобразовать в временной ряд</strong>.</li>
-<li>После выбора <strong>Преобразовать в временной ряд</strong> используйте выпадающее меню, чтобы выбрать поле, по которому вы хотите подсчитать вхождения журналов. Временные интервалы автоматически корректируются в соответствии с выбранным временем на верхней части панели управления или для соответствующего раздела в тетради.</li>
+<li>Open the  menu and select  <strong>DQL</strong>.</li>
+<li>Write a DQL query (without UI assistance) to do everything you did in the previous examples.</li>
 </ol>
-<h3 id="_5">Группировать<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>Команда группировки используется для группировки данных метрик в фиксированные диапазоны (корзины) для гистограммных визуализаций. Она определяет размер корзины, который напрямую влияет на детализацию и масштаб оси X в диаграмме.</p>
-<ol>
-<li>Откройте меню <strong>Команда</strong> и выберите <strong>Группировать</strong>.</li>
-<li>Выберите поле, для которого вы хотите создать корзины.</li>
-<li>Установите значение <strong>Группировать</strong>.</li>
-</ol>
-<h3 id="_6">Сортировка<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>Чтобы сортировать результаты</p>
-<ol>
-<li>Выберите <strong>Сортировка</strong>.</li>
-<li>
-<p>После выбора <strong>Сортировка</strong> используйте меню <strong>Сортировать по</strong>, чтобы выбрать поле, по которому вы хотите сортировать, и выбрать, хотите ли вы результаты в порядке возрастания или убывания.</p>
-</li>
-<li>
-<p><code>value.A</code> выбрано по умолчанию</p>
-</li>
-<li>Сортировка применяется ко всем метрикам, включенным в запрос</li>
-</ol>
-<h3 id="_7">Ограничение<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>Чтобы изменить ограничение результатов, измените значение <strong>Ограничение</strong> на максимальное количество записей, которые вы хотите вернуть.</p>
-<p>Если настройка <strong>Ограничение</strong> не отображается, выберите <strong>Ограничение</strong> и затем установите значение.</p>
-<h2 id="_8">События безопасности<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>Эта функция исследования идентична описанной для журналов.</p>
-<p>Чтобы начать исследование событий безопасности</p>
-<ol>
-<li>Откройте <strong><img alt="Панели управления" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Панели управления" /> </strong>Панели управления<strong><em>* или </em>*<img alt="Тетради" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Тетради" /> </strong>Тетради**** и выберите в пустой тетради или заголовке документа панели управления.</li>
-<li>Выберите <strong>События безопасности</strong>, чтобы добавить раздел или плитку на основе этого.</li>
-<li>Просмотрите результаты (если результаты не отображаются изначально, выберите <strong>Выполнить</strong>).</li>
-</ol>
-<p>Готово. Вы извлекли первые 20 событий безопасности всего за несколько кликов.</p>
-<p>Чтобы сделать это более полезным, теперь нажмите в поле, чтобы получить предложения фильтров.</p>
-<p>Предложения фильтров доступны для любого поля, кроме содержимого.</p>
-<p><img alt="Пример исследования событий безопасности: Тетради, без фильтров" src="https://dt-cdn.net/images/explore-security-events-example-default-notebooks-1615-e3f261347b.png" /></p>
-<h3 id="_9">Суммировать<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>Чтобы суммировать результаты</p>
-<ol>
-<li>Откройте меню <strong>Команда</strong> и выберите <strong>Суммировать</strong>.</li>
-<li>Укажите, как вы хотите суммировать результаты.</li>
-</ol>
-<p>Вы можете выбрать между вариантами агрегации и выбрать поле, по которому результаты будут агрегированы.</p>
-<h3 id="_10">Преобразовать в временной ряд<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>Вы можете преобразовать события на основе журналов в формат временного ряда, подходящий для визуализации с помощью графических визуализаций. Это делается путем подсчета вхождений полей, указанных для каждого временного интервала.</p>
-<p>Чтобы преобразовать события на основе журналов в формат временного ряда</p>
-<ol>
-<li>Откройте меню <strong>Команда</strong> и выберите <strong>Преобразовать в временной ряд</strong>.</li>
-<li>После выбора <strong>Преобразовать в временной ряд</strong> используйте выпадающее меню, чтобы выбрать поле, по которому вы хотите подсчитать вхождения журналов. Временные интервалы автоматически корректируются в соответствии с выбранным временем на верхней части панели управления или для соответствующего раздела в тетради.</li>
-</ol>
-<h3 id="_11">Группировать<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>Команда группировки используется для группировки данных метрик в фиксированные диапазоны (корзины) для гистограммных визуализаций. Она определяет размер корзины, который напрямую влияет на детализацию и масштаб оси X в диаграмме.</p>
-<ol>
-<li>Откройте меню <strong>Команда</strong> и выберите <strong>Группировать</strong>.</li>
-<li>Выберите поле, для которого вы хотите создать корзины.</li>
-<li>Установите значение <strong>Группировать</strong>.</li>
-</ol>
-<h3 id="_12">Сортировка<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p>Чтобы сортировать результаты</p>
-<ol>
-<li>Выберите <strong>Сортировка</strong>.</li>
-<li>
-<p>После выбора <strong>Сортировка</strong> используйте меню <strong>Сортировать по</strong>, чтобы выбрать поле, по которому вы хотите сортировать, и выбрать, хотите ли вы результаты в порядке возрастания или убывания.</p>
-</li>
-<li>
-<p><code>value.A</code> выбрано по умолчанию</p>
-</li>
-<li>Сортировка применяется ко всем метрикам, включенным в запрос</li>
-</ol>
-<h3 id="_13">Ограничение<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>Чтобы изменить ограничение результатов, измените значение <strong>Ограничение</strong> на максимальное количество записей, которые вы хотите вернуть.</p>
-<p>Если настройка <strong>Ограничение</strong> не отображается, выберите <strong>Ограничение</strong> и затем установите значение.</p>
-<h2 id="grail">Запрос Grail<a class="headerlink" href="#grail" title="Permanent link">&para;</a></h2>
-<p>Когда вы исследуете данные, вы автоматически создаете запрос <a href="/docs/platform/grail/dynatrace-query-language" title="Как использовать язык запросов Dynatrace">DQL</a> , который вы можете просмотреть, скопировать и использовать в качестве основы для более сложных запросов.</p>
-<h3 id="dql">Показать DQL<a class="headerlink" href="#dql" title="Permanent link">&para;</a></h3>
-<p>Чтобы увидеть DQL, созданный автоматически во время исследования с помощью интерфейса point-and-click, выберите <strong>DQL</strong>. Это показывает вам DQL, который вы можете скопировать и использовать в другом месте.</p>
-<p><img alt="Пример: показать DQL в плитке Explore" src="https://dt-cdn.net/images/explore-logs-show-dql-closed-636-58a6cfcf79.png" /></p>
-<p><img alt="Пример: показать DQL в плитке Explore: расширено" src="https://dt-cdn.net/images/explore-logs-show-dql-open-633-3242ed63eb.png" /></p>
-<h3 id="dql_1">Создать запрос DQL<a class="headerlink" href="#dql_1" title="Permanent link">&para;</a></h3>
-<p>Когда вы удовлетворены результатами, но хотите продолжить с более сложными командами DQL, вы можете легко создать стандартный раздел тетради или плитку панели управления на основе этого.</p>
-<ol>
-<li>Откройте меню и выберите <strong>Создать раздел DQL</strong> или <strong>Создать плитку DQL</strong></li>
-<li>Отредактируйте получившийся раздел запроса или плитку по мере необходимости.</li>
-<li>Если вам больше не нужна версия, созданная интерфейсом, вы можете удалить ее и использовать только дубликат раздела тетради или плитки панели управления с запросом DQL.</li>
-</ol>
-<p>Результат этого шага эквивалентен</p>
-<ol>
-<li>Откройте меню и выберите <strong>DQL</strong>.</li>
-<li>Напишите запрос DQL (без помощи интерфейса), чтобы сделать все, что вы сделали в предыдущих примерах.</li>
-</ol>
-<p>Это делает его отличным инструментом для начинающих и экспертов.</p>
+<p>That's what makes this a great tool for beginners and experts.</p>
 
 
 

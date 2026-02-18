@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#kubernetes-classic" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -25549,41 +25549,41 @@
 
 
 
-<h1 id="_1">Кубернетес Классический<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Кубернетес Классический<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="kubernetes-classic">Kubernetes Classic<a class="headerlink" href="#kubernetes-classic" title="Permanent link">&para;</a></h1>
+<h1 id="kubernetes-classic_1">Kubernetes Classic<a class="headerlink" href="#kubernetes-classic_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>1 минута чтения</li>
-<li>Обновлено 28 сентября 2022 г.</li>
+<li>1-min read</li>
+<li>Updated on Sep 28, 2022</li>
 </ul>
-<p>Dynatrace обеспечивает комплексный мониторинг Kubernetes, охватывающий все — от уровня приложений до уровня инфраструктуры.</p>
-<h2 id="_3">Предварительные условия<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Dynatrace provides full-stack monitoring for Kubernetes, covering everything from the application layer down to the infrastructure layer.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="/docs/ingest-from/setup-on-k8s/deployment" title="Deploy Dynatrace Operator on Kubernetes">Установка и настройка интеграции Dynatrace в Kubernetes</a></li>
-<li><a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring" title="Monitor the Kubernetes API using Dynatrace">Подключите свой кластер к Dynatrace</a></li>
+<li><a href="/docs/ingest-from/setup-on-k8s/deployment" title="Deploy Dynatrace Operator on Kubernetes">Set up and configure Dynatrace integration on Kubernetes</a></li>
+<li><a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring" title="Monitor the Kubernetes API using Dynatrace">Connect your cluster to Dynatrace</a></li>
 </ol>
-<p>См. <a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Настройте Dynatrace в Kubernetes</a> для получения дополнительных опций и подробностей.</p>
-<h2 id="_4">Функции мониторинга по умолчанию<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Чтобы узнать, как настроить функции мониторинга по умолчанию для кластеров Kubernetes/OpenShift, см. <a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings" title="Configure default monitoring settings for all new Kubernetes/OpenShift clusters in your environment.">Глобальные настройки мониторинга по умолчанию для Kubernetes/OpenShift</a>.</p>
-<h2 id="_5">Просмотр результатов мониторинга<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Чтобы узнать, как анализировать результаты мониторинга в Dynatrace, см.:</p>
+<p>See <a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Set up Dynatrace on Kubernetes</a> for further options and details.</p>
+<h2 id="default-monitoring-features">Default monitoring features<a class="headerlink" href="#default-monitoring-features" title="Permanent link">&para;</a></h2>
+<p>To learn how to configure default monitoring features for Kubernetes/OpenShift clusters, see <a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings" title="Configure default monitoring settings for all new Kubernetes/OpenShift clusters in your environment.">Global default monitoring settings for Kubernetes/OpenShift</a></p>
+<h2 id="view-monitoring-results">View monitoring results<a class="headerlink" href="#view-monitoring-results" title="Permanent link">&para;</a></h2>
+<p>To learn how to analyze monitoring results in Dynatrace, see:</p>
 <ul>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes" title="Monitor the health and utilization of your Kubernetes/OpenShift cluster resources.">Мониторинг использования кластера Kubernetes/OpenShift</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes" title="Extend visibility into Kubernetes/OpenShift events.">Мониторинг событий Kubernetes/OpenShift</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes" title="Enable Kubernetes/OpenShift workloads integration for Dynatrace monitoring.">Мониторинг рабочих нагрузок Kubernetes/OpenShift</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes" title="Enable Kubernetes/OpenShift service integration for Dynatrace monitoring.">Мониторинг сервисов Kubernetes/OpenShift</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes" title="Available metrics for monitoring Kubernetes/OpenShift clusters">Мониторинг показателей Kubernetes/OpenShift</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics" title="Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.">Мониторинг показателей Prometheus</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments" title="Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.">Организуйте развертывания Kubernetes/OpenShift по тегам.</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics" title="Enable Kubernetes/OpenShift monitoring for persistent volume claims metrics.">Отслеживайте заявки на постоянные тома в Kubernetes/OpenShift.</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues" title="Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.">Оповещение о распространенных проблемах Kubernetes/OpenShift</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes" title="Keep track of vulnerabilities in Kubernetes/OpenShift.">Мониторинг уязвимостей в Kubernetes/OpenShift</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes" title="Keep track of SLOs for Kubernetes/OpenShift.">Мониторинг целей уровня обслуживания в Kubernetes/OpenShift</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics" title="Istio metric ingestion and topology detection">Метрики прокси Istio/Envoy</a></li>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings" title="Configure default monitoring settings for all new Kubernetes/OpenShift clusters in your environment.">Глобальные настройки мониторинга по умолчанию для Kubernetes/OpenShift</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes" title="Monitor the health and utilization of your Kubernetes/OpenShift cluster resources.">Monitor Kubernetes/OpenShift cluster utilization</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes" title="Extend visibility into Kubernetes/OpenShift events.">Monitor Kubernetes/OpenShift events</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes" title="Enable Kubernetes/OpenShift workloads integration for Dynatrace monitoring.">Monitor Kubernetes/OpenShift workloads</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes" title="Enable Kubernetes/OpenShift service integration for Dynatrace monitoring.">Monitor Kubernetes/OpenShift services</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes" title="Available metrics for monitoring Kubernetes/OpenShift clusters">Monitor Kubernetes/OpenShift metrics</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics" title="Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.">Monitor Prometheus metrics</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments" title="Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.">Organize Kubernetes/OpenShift deployments by tags</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics" title="Enable Kubernetes/OpenShift monitoring for persistent volume claims metrics.">Monitor persistent volume claims on Kubernetes/OpenShift</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues" title="Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.">Alert on common Kubernetes/OpenShift issues</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes" title="Keep track of vulnerabilities in Kubernetes/OpenShift.">Monitor vulnerabilities in Kubernetes/OpenShift</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes" title="Keep track of SLOs for Kubernetes/OpenShift.">Monitor service-level objectives in Kubernetes/OpenShift</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics" title="Istio metric ingestion and topology detection">Istio/Envoy proxy metrics</a></li>
+<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings" title="Configure default monitoring settings for all new Kubernetes/OpenShift clusters in your environment.">Global default monitoring settings for Kubernetes/OpenShift</a></li>
 </ul>
-<h2 id="_6">Похожие темы<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Настройте Dynatrace в Kubernetes</a></li>
+<li><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Set up Dynatrace on Kubernetes</a></li>
 </ul>
 
 

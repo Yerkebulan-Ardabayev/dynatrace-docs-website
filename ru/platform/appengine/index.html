@@ -25552,34 +25552,34 @@
 <h1 id="appengine">AppEngine<a class="headerlink" href="#appengine" title="Permanent link">&para;</a></h1>
 <h1 id="appengine_1">AppEngine<a class="headerlink" href="#appengine_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>2 минуты чтения</li>
-<li>Обновлено 28 января 2026 г.</li>
+<li>Latest Dynatrace</li>
+<li>2-min read</li>
+<li>Updated on Jan 28, 2026</li>
 </ul>
-<p>С появлением Dynatrace AppEngine вы теперь можете создавать собственные приложения на основе всех данных наблюдения, собранных Dynatrace.</p>
-<p>По сравнению с другими функциями платформы Dynatrace, приложения Dynatrace меньше по размеру, автономны и ориентированы на конкретные случаи использования.Но приложение Dynatrace не является изолированным приложением: платформа Dynatrace реализует <a href="https://developer.dynatrace.com/develop/intents/">концепция намерения»¿</a>, который обеспечивает взаимодействие между приложениями Dynatrace.</p>
-<h2 id="appengine_2">Почему AppEngine?<a class="headerlink" href="#appengine_2" title="Permanent link">&para;</a></h2>
-<p>Следующие области делают AppEngine уникальным:</p>
+<p>With the introduction of the Dynatrace AppEngine, you can now build custom apps on top of all the observability data collected by Dynatrace.</p>
+<p>Compared to other Dynatrace platform functionality, Dynatrace apps are smaller, self-contained, and focused on specific use cases. But a Dynatrace app is not an isolated application: the Dynatrace platform implements an <a href="https://developer.dynatrace.com/develop/intents/">intent conceptï»¿</a> that allows interoperability between Dynatrace apps.</p>
+<h2 id="why-appengine">Why AppEngine?<a class="headerlink" href="#why-appengine" title="Permanent link">&para;</a></h2>
+<p>The following areas make AppEngine unique:</p>
 <ul>
-<li><strong>Логика в данные.</strong> С помощью AppEngine вы превращаете логику в данные.Написание приложений на платформе Dynatrace позволяет вам использовать такие возможности, как Smartscape on Grail и Dynatrace Intelligence, для решения ваших пользовательских сценариев использования рядом с местом хранения данных.</li>
-<li><strong>Безопасная и масштабируемая среда выполнения приложений.</strong> AppEngine повышает безопасность ваших данных, гарантируя, что логика и данные остаются в пределах границ безопасности, и все работает в пределах определенной области.Более того, AppEngine гарантирует, что ваше приложение масштабируется в соответствии с вашими потребностями.</li>
-<li><strong>Интегрирует вашу среду:</strong> AppEngine позволяет вам реализовать любую интеграцию со сторонними системами для решения всех ваших индивидуальных сценариев использования.</li>
+<li><strong>Logic to data:</strong> With AppEngine, you bring logic to data. Writing apps on the Dynatrace platform allows you to utilize the capabilities like Smartscape on Grail and Dynatrace Intelligence to solve your custom use cases close to where the data is stored.</li>
+<li><strong>Secure and scalable app runtime:</strong> AppEngine adds security to your data by ensuring logic and data stay within the security boundaries and everything runs within a defined scope. Furthermore, AppEngine makes sure your app scales up to your needs.</li>
+<li><strong>Integrates your environment:</strong> AppEngine enables you to create any integration to third-party systems to solve all your custom use cases.</li>
 </ul>
-<p>Приложения Dynatrace являются автономными и ориентированы на конкретные случаи использования.Однако приложение Dynatrace не является изолированным приложением.Он взаимодействует с возможностями платформы Dynatrace через API, с другими приложениями через <a href="https://developer.dynatrace.com/develop/intents/">намерения»¿</a> или с общедоступными сторонними системами.Приложения Dynatrace также могут взаимодействовать с вашими локальными системами через EdgeConnect, который вы можете запустить в своей корпоративной сети.</p>
-<p><img alt="Архитектура AppEngine" src="https://dt-cdn.net/images/architecture-diagram-2056-09a196c931.webp" /></p>
-<h2 id="_1">Строительные блоки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Пользовательский интерфейс приложения Dynatrace написан как одностраничное приложение React и использует TypeScript для повышения удобства разработки.Платформа Dynatrace предоставляет обширную цепочку инструментов, максимально упрощающую жизнь разработчика приложений:</p>
+<p>Dynatrace apps are self-contained and focus on specific use cases. However, a Dynatrace app isn't an isolated application. It interacts with the capabilities of the Dynatrace platform via APIs, with other apps via <a href="https://developer.dynatrace.com/develop/intents/">intentsï»¿</a>, or with publicly available third-party systems. Dynatrace apps can also interact with your on-premises systems via EdgeConnect, which you can run in your corporate network.</p>
+<p><img alt="AppEngine architecture" src="https://dt-cdn.net/images/architecture-diagram-2056-09a196c931.webp" /></p>
+<h2 id="building-blocks">Building blocks<a class="headerlink" href="#building-blocks" title="Permanent link">&para;</a></h2>
+<p>The user interface of a Dynatrace app is written as a React single-page application and uses TypeScript to enhance the developer experience. The Dynatrace platform provides an extensive toolchain to make the life of an app developer as easy as possible:</p>
 <ul>
-<li><a href="https://developer.dynatrace.com/reference/design-system/"><strong>Система проектирования Strato</strong>ï»¿</a> и токены дизайна предоставляют фундаментальные и настраиваемые компоненты пользовательского интерфейса.</li>
-<li><a href="https://developer.dynatrace.com/reference/sdks/"><strong>TypeScript SDK</strong>ï»¿</a> позволяет приложениям взаимодействовать с <a href="https://developer.dynatrace.com/platform-services/">Услуги платформы Dynatrace»¿</a> (запрос данных, служба документов, служба состояния и т. д.).</li>
-<li><a href="https://developer.dynatrace.com/develop/functions/"><strong>функции приложения</strong>ï»¿</a> в качестве серверной части вашего приложения, написанного на TypeScript и запускаемого в <a href="https://developer.dynatrace.com/reference/javascript-runtime/">Среда выполнения Dynatrace JavaScript»¿</a>.</li>
-<li><a href="https://developer.dynatrace.com/reference/app-toolkit/"><strong>Набор инструментов приложения Dynatrace</strong>ï»¿</a> позволяет легко создавать, создавать и развертывать приложения и их функции.</li>
+<li>The <a href="https://developer.dynatrace.com/reference/design-system/"><strong>Strato design system</strong>ï»¿</a> and design tokens provide fundamental and customizable UI components.</li>
+<li><a href="https://developer.dynatrace.com/reference/sdks/"><strong>TypeScript SDKs</strong>ï»¿</a> allow apps to interact with the <a href="https://developer.dynatrace.com/platform-services/">Dynatrace platform servicesï»¿</a> (querying data, document service, state service, etc.).</li>
+<li><a href="https://developer.dynatrace.com/develop/functions/"><strong>app functions</strong>ï»¿</a> as the backend for your app, written in TypeScript and run within the <a href="https://developer.dynatrace.com/reference/javascript-runtime/">Dynatrace JavaScript runtimeï»¿</a>.</li>
+<li>The <a href="https://developer.dynatrace.com/reference/app-toolkit/"><strong>Dynatrace app Toolkit</strong>ï»¿</a> allows you to easily create, build, and deploy apps and their functions.</li>
 </ul>
-<h2 id="_2">Узнать больше<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Учебные пособия, практические руководства и технические справочники для разработчиков приложений Dynatrace можно найти по адресу <a href="https://dt-url.net/developers">Dynatrace Developer»¿</a>.Есть что-то для каждого уровня квалификации.</p>
-<h2 id="_3">Похожие темы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="learn-more">Learn more<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h2>
+<p>For tutorials, how-to guides, and technical references for Dynatrace app developers, head over to <a href="https://dt-url.net/developers">Dynatrace Developerï»¿</a>. There's something for every skill level.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://www.dynatrace.com/news/blog/appengine-custom-apps-for-data-insights/">AppEngine позволяет организациям создавать собственные приложения для лучшего анализа данных»¿</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/appengine-custom-apps-for-data-insights/">AppEngine empowers organizations to create custom apps for better data insightsï»¿</a></li>
 </ul>
 
 
