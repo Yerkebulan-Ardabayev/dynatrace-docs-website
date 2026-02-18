@@ -1,19 +1,15 @@
-# Dynatrace Documentation: dynatrace-intelligence/root-cause-analysis
-
-Generated: 2026-02-18
-
-Files combined: 2
-
+# Документация Dynatrace: dynatrace-intelligence/root-cause-analysis
+Язык: Русский (RU)
+Сгенерировано: 2026-02-18
+Файлов в разделе: 3
 ---
 
-
-## Source: concepts.md
-
+## dynatrace-intelligence/root-cause-analysis/concepts.md
 
 ---
 title: Root cause analysis concepts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/concepts
-scraped: 2026-02-18T05:32:20.018406
+scraped: 2026-02-17T04:45:37.595740
 ---
 
 # Root cause analysis concepts
@@ -108,6 +104,8 @@ In the following scenario, a problem that has a performance incident in the infr
 4. Eventually, the service-level problems begin to affect the user experience of customers who are interacting with the application via desktop or mobile browsers. At this point in the problem life span, you have an application problem with one root cause in the infrastructure layer and additional root causes in the service layer.
 5. Because Dynatrace understands all the dependencies in your environment, it correlates the performance degradation problem your customers are experiencing with the original performance problem in the infrastructure layer, facilitating quick problem resolution.
 
+
+
 ## Problem timing
 
 The Dynatrace Intelligence root-cause engine collects all Davis events that belong to the same incident. As a result, Dynatrace Intelligence causal AI generates a problem that references all incident-relevant information such as individual Davis events that were detected on the impacted topology graph.
@@ -161,17 +159,14 @@ If you want to receive alerts immediately after the problem is detected, you can
 
 Alternatively, you can set the processing state per Davis event source in [Log events](/docs/analyze-explore-automate/logs/lma-analysis "Explore log data with a log viewer or create custom attributes, log events, and metrics to process and analyze your log data in Dynatrace.") configuration.
 
-
 ---
 
-
-## Source: event-analysis-and-correlation.md
-
+## dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md
 
 ---
 title: Event analysis and correlation
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation
-scraped: 2026-02-18T05:49:26.345533
+scraped: 2026-02-17T05:00:02.976870
 ---
 
 # Event analysis and correlation
@@ -276,6 +271,8 @@ Deduplication of events based on the causal topology is a highly sophisticated p
 
 ### Custom-defined event correlation
 
+
+
 While event correlation and deduplication are fully automatic, some use cases require more fine-grained control of deduplication. To achieve that, you can use Dynatrace Intelligence control properties of ingested events. For example, **dt.event.allow\_davis\_merge** defines whether Dynatrace Intelligence can merge events into a larger problem. Such properties are agnostic to the ingestion channel. See the list of available properties below.
 
 Property
@@ -353,5 +350,51 @@ In addition to finding the root cause of the problem, Dynatrace Intelligence tra
 
 Business impact analysis shows the number of potentially affected real users (collected from the incoming traces), the number of traces, and their service endpoints. It also provides a statistical evaluation of how strongly the individual endpoint and user actions are affected by the problem.
 
+---
+
+## dynatrace-intelligence/root-cause-analysis.md
+
+---
+title: Root cause analysis
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis
+scraped: 2026-02-18T05:41:10.023372
+---
+
+# Root cause analysis
+
+# Root cause analysis
+
+* Latest Dynatrace
+* Explanation
+* 1-min read
+* Updated on Jan 28, 2026
+
+Dynatrace Intelligence causal AI root cause analysis automatically evaluates all captured and ingested information and highlights entities within the causal topology identified as the root cause of a complex situation. It offers a context-aware approach that uses available context information, such as the code-level information topology, to determine the precise cause of the issue.
+
+## Use cases
+
+* Save time by including all relevant anomalies and ranking root cause contributors to determine the primary cause.
+* Reduce the alert load by combining multiple connected anomalies into a single problem.
+* Improve the precision of root cause analysis using all the available data from multiple sources.
+
+[#### Root cause analysis concepts
+
+Get acquainted with root cause analysis concepts.
+
+* Explanation
+
+Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis/concepts)[#### Event analysis and correlation
+
+Gain an understanding of the Events section on each host, process, and service overview page.
+
+* Explanation
+
+Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation)[#### Detection of frequent issues
+
+Understand how Dynatrace detects and manages recurring problem patterns as frequent issues.
+
+* Explanation
+
+Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues)
 
 ---
