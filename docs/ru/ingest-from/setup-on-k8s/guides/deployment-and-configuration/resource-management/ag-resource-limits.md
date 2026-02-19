@@ -1,7 +1,7 @@
 ---
 title: Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits
-scraped: 2026-02-18T21:33:04.023361
+scraped: 2026-02-19T21:21:40.708937
 ---
 
 # Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
@@ -11,7 +11,7 @@ scraped: 2026-02-18T21:33:04.023361
 * Latest Dynatrace
 * Reference
 * 5-min read
-* Updated on Jan 26, 2026
+* Updated on Feb 18, 2026
 
 Setting appropriate resource requests (and limits, when needed) keeps Dynatrace ActiveGate instances stable and predictable. This guide details sizing methods based on scale and workload.
 
@@ -173,15 +173,19 @@ We recommend running ActiveGates without CPU limits.
 The following examples apply the reasoning of splitting the ActiveGates into units with separate concerns. One ActiveGate is responsible for Kubernetes platform monitoring and Kubernetes security posture management, whereas the 2nd ActiveGate is then responsible for agent traffic routing, telemetry ingest and extensions.
 Adjust requests (and limits if required) to fit your environment.
 
-### Kubernetes platform monitoring
+The following manifests includes two DynaKube resources for configuring ActiveGates:
 
-This Dynakube resource declares the ActiveGate that is used for the Kubernetes platform monitoring.
+* **k8s-monitoring** â Configures an ActiveGate dedicated to Kubernetes platform monitoring.
+* **agents** â Configures an ActiveGate that supports OneAgent, telemetry ingest, and additional features.
+
+You can apply both manifests at once or apply only the DynaKube you need.
 
 CPU limits are commented out. We recommend defining requests only so the ActiveGate can use additional CPU when available. If limits are required, set them equal to or higher than requests.
 
 This snippet includes configuration for Kubernetes Security Posture Management. It's a complementing, opt-in security feature next to Kubernetes platform monitoring.
+This snippet also includes configurations for log monitoring, extensions and telemetry ingest. These sections are considered optional on a per-section basis.
 
-DynaKube for Kubernetes platform monitoring
+DynaKubes for both Kubernetes platform monitoring and OneAgent, telemetry ingest, and additional features
 
 ```
 apiVersion: dynatrace.com/v1beta5
@@ -221,14 +225,6 @@ apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
 
 
 tokens: <SECRET NAME>
-
-
-
-metadataEnrichment:
-
-
-
-enabled: true
 
 
 
@@ -329,19 +325,13 @@ memory: 10Gi
 
 
 #tag: 1.5.2
-```
 
-### OneAgent, telemetry ingest and other features
 
-This Dynakube resource declares the ActiveGate that is taking over the OneAgent traffic routing function and other features (except Kubernetes platform monitoring and KSPM).
 
-CPU limits are commented out. We recommend defining requests only so the ActiveGate can use additional CPU when available. If limits are required, set them equal to or higher than requests.
+---
 
-This snippet includes configurations for log monitoring, extensions and telemetry ingest. These sections are considered optional on a per-section basis.
 
-DynaKube for OneAgent, telemetry ingest and other features
 
-```
 apiVersion: dynatrace.com/v1beta5
 
 

@@ -1,7 +1,7 @@
 ---
 title: Web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends
-scraped: 2026-02-18T21:34:45.414670
+scraped: 2026-02-19T21:24:25.456743
 ---
 
 # Web frontends

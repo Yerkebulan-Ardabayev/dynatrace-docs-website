@@ -1,7 +1,7 @@
 ---
 title: Anomaly Detection DQL writing guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice
-scraped: 2026-02-18T21:36:06.061780
+scraped: 2026-02-19T21:24:22.788888
 ---
 
 # Anomaly Detection DQL writing guide

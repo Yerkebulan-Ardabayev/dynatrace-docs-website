@@ -1,7 +1,7 @@
 ---
 title: Monitor persistent volume claims on Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics
-scraped: 2026-02-18T21:26:42.122168
+scraped: 2026-02-19T21:31:10.430314
 ---
 
 # Monitor persistent volume claims on Kubernetes/OpenShift

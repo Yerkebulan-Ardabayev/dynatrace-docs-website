@@ -1,26 +1,26 @@
 ---
-title: Content resources API
+title: Ресурсы контента API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/content-resources
-scraped: 2026-02-18T21:32:16.282748
+scraped: 2026-02-19T21:25:58.106460
 ---
 
-# Content resources API
+# Ресурсы контента API
 
-# Content resources API
+# Ресурсы контента API
 
-* Reference
-* Published Sep 23, 2020
+* Справка
+* Опубликовано 23 сентября 2020 г.
 
-The **Content resources** API enables you to manage the configuration of content providers. You can also manage the same configuration in the Dynatrace UI at **Settings > Web and mobile monitoring > Content resources**.
+**Ресурсы контента** API позволяют управлять конфигурацией поставщиков контента. Вы также можете управлять той же конфигурацией в интерфейсе Dynatrace в разделе **Настройки > Мониторинг веб- и мобильных приложений > Ресурсы контента**.
 
-[### View configuration
+[### Просмотр конфигурации
 
-Get an overview of content providers configuration.](/docs/dynatrace-api/configuration-api/rum/content-resources/get-configuration "Read the configuration of content providers via the Dynatrace API.")[### Update configuration
+Получите обзор конфигурации поставщиков контента.](/docs/dynatrace-api/configuration-api/rum/content-resources/get-configuration "Прочитайте конфигурацию поставщиков контента через Dynatrace API.")[### Обновление конфигурации
 
-Update configuration of content providers.](/docs/dynatrace-api/configuration-api/rum/content-resources/put-configuration "Update the configuration of content providers via the Dynatrace API.")
+Обновите конфигурацию поставщиков контента.](/docs/dynatrace-api/configuration-api/rum/content-resources/put-configuration "Обновите конфигурацию поставщиков контента через Dynatrace API.")
 
-## Related topics
+## Связанные темы
 
-* [Configure first-party, third-party, and CDN resource detection for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web "Manually define third-party and CDN providers along with auto-detected providers for your web applications.")
-* [Configure first-party, third-party, and CDN resource detection for mobile applications](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-third-party-and-cdn-content-detection-mobile "Manually define third-party and CDN providers along with auto-detected providers for your mobile applications.")
-* [Configure first-party, third-party, and CDN resource detection for custom applications](/docs/observe/digital-experience/custom-applications/additional-configuration/configure-third-party-and-cdn-content-detection-custom "Manually define third-party and CDN providers along with auto-detected providers for your custom applications.")
+* [Настройка обнаружения ресурсов первого, третьего уровня и CDN для веб-приложений](/docs/observe/digital-experience/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web "Ручная настройка поставщиков третьего уровня и CDN вместе с автоматически обнаруженными поставщиками для ваших веб-приложений.")
+* [Настройка обнаружения ресурсов первого, третьего уровня и CDN для мобильных приложений](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-third-party-and-cdn-content-detection-mobile "Ручная настройка поставщиков третьего уровня и CDN вместе с автоматически обнаруженными поставщиками для ваших мобильных приложений.")
+* [Настройка обнаружения ресурсов первого, третьего уровня и CDN для пользовательских приложений](/docs/observe/digital-experience/custom-applications/additional-configuration/configure-third-party-and-cdn-content-detection-custom "Ручная настройка поставщиков третьего уровня и CDN вместе с автоматически обнаруженными поставщиками для ваших пользовательских приложений.")

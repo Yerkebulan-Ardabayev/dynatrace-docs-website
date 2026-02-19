@@ -1,7 +1,7 @@
 ---
 title: Supported data types in segments
 source: https://www.dynatrace.com/docs/manage/segments/reference/segments-reference-data-types
-scraped: 2026-02-18T21:22:41.343662
+scraped: 2026-02-19T21:15:39.293515
 ---
 
 # Supported data types in segments

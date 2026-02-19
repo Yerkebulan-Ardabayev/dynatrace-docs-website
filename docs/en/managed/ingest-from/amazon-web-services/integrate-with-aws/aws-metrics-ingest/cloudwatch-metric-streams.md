@@ -1,7 +1,7 @@
 ---
 title: Amazon CloudWatch Metric Streams
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams
-scraped: 2026-02-18T05:53:01.167741
+scraped: 2026-02-19T21:25:59.547213
 ---
 
 # Amazon CloudWatch Metric Streams

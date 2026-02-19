@@ -1,26 +1,26 @@
 ---
 title: AWS PrivateLink API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/aws-privatelink
-scraped: 2026-02-18T21:36:27.051920
+scraped: 2026-02-19T21:30:14.859666
 ---
 
 # AWS PrivateLink API
 
 # AWS PrivateLink API
 
-* Reference
-* Published Nov 19, 2020
+* Ссылка
+* Опубликовано 19 ноября 2020 года
 
-[### View configuration
+[### Просмотр конфигурации
 
-Get an overview of AWS PrivateLink.](/docs/dynatrace-api/configuration-api/aws-privatelink/get-configuration "Read the configuration of AWS PrivateLink via Dynatrace API.")[### Update configuration
+Получить обзор AWS PrivateLink.](/docs/dynatrace-api/configuration-api/aws-privatelink/get-configuration "Прочитать конфигурацию AWS PrivateLink через Dynatrace API.")[### Обновление конфигурации
 
-Update configuration of AWS PrivateLink.](/docs/dynatrace-api/configuration-api/aws-privatelink/put-configuration "Update the configuration of AWS PrivateLink via Dynatrace API.")
+Обновить конфигурацию AWS PrivateLink.](/docs/dynatrace-api/configuration-api/aws-privatelink/put-configuration "Обновить конфигурацию AWS PrivateLink через Dynatrace API.")
 
-[### View allowlist
+[### Просмотр белого списка
 
-View accounts in the AWS PrivateLink allowlist.](/docs/dynatrace-api/configuration-api/aws-privatelink/get-allowlist "View the AWS PrivateLink allowlist via Dynatrace API.")[### Add to allowlist
+Просмотреть учетные записи в белом списке AWS PrivateLink.](/docs/dynatrace-api/configuration-api/aws-privatelink/get-allowlist "Просмотреть белый список AWS PrivateLink через Dynatrace API.")[### Добавление в белый список
 
-Add an account to the AWS PrivateLink allowlist.](/docs/dynatrace-api/configuration-api/aws-privatelink/put-allowlist "Add your AWS account to the AWS PrivateLink allowlist via Dynatrace API.")[### Remove from allowlist
+Добавить учетную запись в белый список AWS PrivateLink.](/docs/dynatrace-api/configuration-api/aws-privatelink/put-allowlist "Добавить вашу учетную запись AWS в белый список AWS PrivateLink через Dynatrace API.")[### Удаление из белого списка
 
-Remove and account from the AWS PrivateLink allowlist.](/docs/dynatrace-api/configuration-api/aws-privatelink/delete-allowlist "Remove your AWS account from the AWS PrivateLink allowlist via Dynatrace API.")
+Удалить учетную запись из белого списка AWS PrivateLink.](/docs/dynatrace-api/configuration-api/aws-privatelink/delete-allowlist "Удалить вашу учетную запись AWS из белого списка AWS PrivateLink через Dynatrace API.")

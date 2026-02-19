@@ -1,7 +1,7 @@
 ---
 title: Monitor AWS Fargate
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate
-scraped: 2026-02-18T21:18:16.537935
+scraped: 2026-02-19T21:14:54.846510
 ---
 
 # Monitor AWS Fargate
@@ -347,7 +347,7 @@ See [network zones](/docs/manage/network-zones "Find out how network zones work 
 
 For AWS Fargate, monitoring consumption is based on host units. To learn how host units are calculated for Dynatrace application and infrastructure monitoring, see [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
-## Troubleshoot
+## Troubleshooting
 
 * [Application image OneAgent integration problemsï»¿](https://dt-url.net/yu23mli)
 

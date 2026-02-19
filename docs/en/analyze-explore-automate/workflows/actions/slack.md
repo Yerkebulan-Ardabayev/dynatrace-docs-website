@@ -1,7 +1,7 @@
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-18T05:54:04.949649
+scraped: 2026-02-19T21:27:17.784142
 ---
 
 # Slack Connector
@@ -1010,4 +1010,4 @@ The following are solutions to problems some people had with Slack integration.
 
 ## Related topics
 
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")

@@ -1,7 +1,7 @@
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-18T21:26:39.689533
+scraped: 2026-02-19T21:26:24.310310
 ---
 
 # Monitor Prometheus metrics
@@ -818,7 +818,7 @@ If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes enviro
 * Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of [included metrics per host unit](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). After this quota is exceeded, any additional metrics consume [DDUs](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 * Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume [DDUs](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
-## Troubleshoot
+## Troubleshooting
 
 To troubleshoot Prometheus integration issues, download the [Kubernetes Monitoring Statistics extensionï»¿](https://dt-url.net/n903xmb). For more information, see the community article on [How to troubleshoot missing Prometheus metricsï»¿](https://dt-url.net/3m02ozr).
 

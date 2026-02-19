@@ -1,7 +1,7 @@
 ---
 title: Upgrade to the latest Dynatrace
 source: https://www.dynatrace.com/docs/platform/upgrade
-scraped: 2026-02-18T21:29:27.120968
+scraped: 2026-02-19T21:26:59.609245
 ---
 
 # Upgrade to the latest Dynatrace

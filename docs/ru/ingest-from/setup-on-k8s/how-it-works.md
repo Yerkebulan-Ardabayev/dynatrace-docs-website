@@ -1,7 +1,7 @@
 ---
 title: How it works
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works
-scraped: 2026-02-18T05:50:08.567629
+scraped: 2026-02-19T21:24:00.200965
 ---
 
 # How it works

@@ -1,7 +1,7 @@
 ---
 title: Services app
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-app
-scraped: 2026-02-18T21:15:34.027389
+scraped: 2026-02-19T21:11:38.750867
 ---
 
 # Services app
@@ -10,10 +10,8 @@ scraped: 2026-02-18T21:15:34.027389
 
 * Latest Dynatrace
 * App
-* 4-min read
-* Updated on Feb 04, 2026
-
-Message Processing and Database Query Performance Analysis are projected to become available in Dynatrace SaaS version 1.330.
+* 5-min read
+* Updated on Feb 18, 2026
 
 ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** delivers comprehensive visibility into your distributed services, enabling teams to quickly identify, investigate, and resolve issues across complex microservice architectures. This unified interface consolidates critical health signals and performance metrics to accelerate troubleshooting and optimize service reliability.
 
@@ -34,19 +32,6 @@ Message Processing and Database Query Performance Analysis are projected to beco
 ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** provides an intelligent health dashboard that surfaces issues demanding immediate attention. You can filter alerts by severity and drill into specific services experiencing degradation. When a service enters a critical state, the app highlights failure rates and provides context around what triggered the alertâwhether it's increased errors, latency spikes, or infrastructure problems.
 
 ![Health alert investigations](https://dt-cdn.net/images/health-alert-investigation-critical-filtering-1248-f719905bfe.png)
-
-### Database queries
-
-![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** captures and analyzes database queries executed by your services, presenting the slowest queries ranked by execution time and frequency.
-To see what queries your service is executing and the response time, failure rate, and throughput of those queries
-
-1. In the **Services** table, select the service to go to the service details page.
-2. Switch to the **Database queries** tab.
-
-* Discover which operations consume the most resources and where indexing or caching could improve performance.
-* Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.
-
-![Database queries - Services app](https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png)
 
 ### Failure analysis and time-based comparisons
 
@@ -86,9 +71,52 @@ Visualize processing failure rates to pinpoint services struggling with message 
 
 ### Database query performance analysis
 
-![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** captures and analyzes database queries executed by your services, presenting the slowest queries ranked by execution time and frequency. Discover which operations consume the most resources and where indexing or caching could improve performance. Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.
+With the **Database queries** view, ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** provides detailed visibility into database queries executed by your services.
 
-![Database query view](https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png)
+You can access the **Database queries** view in two different ways:
+
+* Select  **Database queries** on the left side of ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** to see all queries executed across your services.
+* Select the required service, and go to the **Database queries** tab to view the queries made by this particular service.
+
+Both options provide query performance information, with a default view that shows the top queries ranked by cumulative duration.
+
+![Database queries - Services app](https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png)
+
+Redis statements often include unique identifiers or values, which results in thousands of distinct entries shown in the **Database queries** view. For tips on how to reduce cardinality for such database statements, refer to [Database queries: Normalize Redis commands](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality#database-queries "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.").
+
+#### Use cases
+
+* Discover which operations consume the most resources and where indexing or caching could improve performance.
+* Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.
+
+#### Understand the query list
+
+The **Database queries** view displays metrics about your most resource-intensive queries, sorted by cumulative duration.
+
+The following information is available for each database query:
+
+* **Query**: Full SQL or database operation.
+* **System**: Database type, for example, PostgreSQL or Redis.
+* **Errors**: Failed execution count.
+* **Query count**: Total executions in the timeframe.
+* **Average duration**: Average execution time per query.
+* **Cumulative duration**: Total time your service spent on this query.
+
+Select  (**Expand row**) on the left of the query to display its time-series charts. These three time-series charts visualize the performance trends:
+
+* **Queries per minute**: Shows execution frequency patterns and spikes.
+* **Query duration**: Tracks average response time changes over time.
+* **Error rate**: Displays query failure percentage.
+
+#### Find performance bottlenecks
+
+Sort the database query list by one of the following parameters:
+
+* **Cumulative duration** to immediately see which queries are consuming the most total time in your service.
+* **Average duration** to find your slowest queries.
+* **Query count** to identify high-frequency operations that might benefit from caching or indexing.
+
+Remember that a query executing thousands of times with a modest duration can impact performance just as much as a slow query with fewer executions. By seeing both frequency and duration together, you can prioritize optimization efforts where they'll have the greatest impact.
 
 ### Outbound calls
 
@@ -96,7 +124,7 @@ Visualize processing failure rates to pinpoint services struggling with message 
 
 ![Outbound calls tab](https://dt-cdn.net/images/scr-20260204-oxkt-1998-bc116aaf86.png)
 
-URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Reduce span- and metric-based cardinality").
+URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.").
 
 ## Concepts
 

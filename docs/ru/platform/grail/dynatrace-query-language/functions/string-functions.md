@@ -1,7 +1,7 @@
 ---
 title: String functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions/string-functions
-scraped: 2026-02-18T21:19:44.514002
+scraped: 2026-02-19T21:18:08.972644
 ---
 
 # String functions

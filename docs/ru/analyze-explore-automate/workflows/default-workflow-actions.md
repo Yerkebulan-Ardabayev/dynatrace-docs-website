@@ -1,44 +1,44 @@
 ---
-title: Действия в рабочих процессах
+title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-02-18T05:46:55.894083
+scraped: 2026-02-19T21:34:19.867807
 ---
 
-# Действия в рабочих процессах
+# Workflows actions
 
-# Действия в рабочих процессах
+# Workflows actions
 
-* Последнее Dynatrace
-* Обзор
-* 1-минутное чтение
-* Опубликовано 02 апр. 2024 г.
+* Latest Dynatrace
+* Overview
+* 1-min read
+* Published Apr 02, 2024
 
-Действие — это универсальная, многоразовая функция, настроенная и запущенная задачей [task](/docs/analyze-explore-automate/workflows#concept-task "Автоматизируйте ИТ-процессы с помощью Dynatrace рабочих процессов — реагируйте на события, планируйте задачи и подключайте сервисы."). Например, действие может быть **Выполнить JavaScript**, а задача будет выполнять действие с определенной конфигурацией для получения деталей проблемы проекта. Действия — это инструменты, которые необходимо собрать в вашем рабочем процессе, чтобы он соответствовал вашему индивидуальному процессу. Действия предоставляются из коробки Dynatrace и могут быть установлены через Dynatrace Hub.
+An action is a generic, reusable function configured and triggered by a [task](/docs/analyze-explore-automate/workflows#concept-task "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). For example, an action could be **Run JavaScript**, while a task would execute the action with a specific configuration to `get problem details` project. Actions are the tools to be assembled in your workflow to fit your custom process. Actions are provided out of the box by Dynatrace and can be installed via Dynatrace Hub.
 
-## Действия в рабочих процессах
+## Workflows actions
 
-[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Выполнить JavaScript
+### Run JavaScript
 
-Используйте действие **Выполнить JavaScript**, чтобы запустить код JavaScript.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Выполните действие JavaScript для ваших рабочих процессов.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **Run JavaScript** action to run JavaScript code.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Execute JavaScript action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Выполнить запрос DQL
+### Execute DQL Query action
 
-Используйте действие **Выполнить запрос DQL**, чтобы выполнить запросы DQL.](/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action "Выполните действие запроса DQL для ваших рабочих процессов.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **Execute DQL Query** action for executing DQL queries.](/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action "Execute DQL query action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Действие HTTP-запроса
+### HTTP Request action
 
-Используйте действие **HTTP-запрос**, чтобы выполнить HTTP-запросы.](/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action "Выполните действие HTTP-запроса для ваших рабочих процессов.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **HTTP Request** action for executing HTTP requests.](/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action "Execute HTTP request action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Запрос на утверждение
+### Request approval
 
-Используйте действие **Запрос на утверждение**, чтобы добавить шаг утверждения для ручного подтверждения.](/docs/analyze-explore-automate/workflows/default-workflow-actions/approval-request-workflow-action "Добавьте шаг утверждения в ваши рабочие процессы.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **Request approval** action to add an approval step for manual confirmation.](/docs/analyze-explore-automate/workflows/default-workflow-actions/approval-request-workflow-action "Add an approval step to your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Выполнить рабочий процесс
+### Run Workflow action
 
-Используйте действие **Выполнить рабочий процесс**, чтобы модульно использовать рабочие процессы.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-workflow-action "Выполните рабочий процесс как задачу в другом рабочем процессе.")
+Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-workflow-action "Run a workflow as a task in another workflow.")
 
-## Связанные темы
+## Related topics
 
-* [Язык запросов Dynatrace](/docs/platform/grail/dynatrace-query-language "Как использовать язык запросов Dynatrace.")
+* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")

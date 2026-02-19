@@ -1,7 +1,7 @@
 ---
 title: Geographic regions - IP address mapping rules API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address
-scraped: 2026-02-15T09:06:33.210172
+scraped: 2026-02-19T21:31:56.738600
 ---
 
 # Geographic regions - IP address mapping rules API

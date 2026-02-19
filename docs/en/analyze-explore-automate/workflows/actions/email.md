@@ -1,7 +1,7 @@
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-18T05:48:51.907728
+scraped: 2026-02-19T21:27:33.242734
 ---
 
 # Email
@@ -228,4 +228,4 @@ The message size is limited to 256 KiB. Larger payloads will result in an action
 
 ## Related topics
 
-* [Send email notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")

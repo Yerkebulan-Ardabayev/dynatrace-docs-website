@@ -1,7 +1,7 @@
 ---
 title: Integrate on Google Cloud Functions Python
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python
-scraped: 2026-02-18T21:29:05.137060
+scraped: 2026-02-19T21:19:18.300322
 ---
 
 # Integrate on Google Cloud Functions Python

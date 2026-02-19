@@ -1,7 +1,7 @@
 ---
 title: Reverse proxy or load balancer for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-oneagent
-scraped: 2026-02-18T21:31:17.068604
+scraped: 2026-02-19T21:29:52.662418
 ---
 
 # Reverse proxy or load balancer for OneAgent

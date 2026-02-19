@@ -1,7 +1,7 @@
 ---
 title: Get started with Kubernetes platform monitoring + Application observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/application-observability
-scraped: 2026-02-18T21:26:13.433253
+scraped: 2026-02-19T21:23:06.553825
 ---
 
 # Get started with Kubernetes platform monitoring + Application observability
@@ -71,6 +71,8 @@ helm repo remove dynatrace
 The installation process is independent of whether you are using Kubernetes or OpenShift. The platform is auto-detected during the installation.
 
 1. Install Dynatrace Operator
+
+   If you are using Helm version 4.0+, you must use `--rollback-on-failure` instead of the `--atomic` flag.
 
    You have two options:
 

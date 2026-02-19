@@ -1,7 +1,7 @@
 ---
 title: Custom queries, segmentation, and aggregation of session data
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data
-scraped: 2026-02-18T21:20:35.037918
+scraped: 2026-02-19T21:18:24.414434
 ---
 
 # Custom queries, segmentation, and aggregation of session data
@@ -555,7 +555,7 @@ The `WHERE` and `FILTER` functions aren't interchangeable. While you can use the
 
 
 
-### Часто используемые функции
+### Frequently used functions
 
 
 

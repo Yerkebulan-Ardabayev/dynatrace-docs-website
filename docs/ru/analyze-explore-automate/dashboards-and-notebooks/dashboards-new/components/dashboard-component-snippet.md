@@ -1,7 +1,7 @@
 ---
 title: Add a snippet to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
-scraped: 2026-02-18T21:17:19.663609
+scraped: 2026-02-19T21:12:21.772655
 ---
 
 # Add a snippet to a dashboard

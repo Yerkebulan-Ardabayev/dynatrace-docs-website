@@ -1,26 +1,26 @@
 ---
-title: Geographic regions - IP address mapping rules API
+title: Географические регионы - правила сопоставления IP-адресов API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address
-scraped: 2026-02-15T09:06:33.210172
+scraped: 2026-02-19T21:31:56.738600
 ---
 
-# Geographic regions - IP address mapping rules API
+# Географические регионы - правила сопоставления IP-адресов API
 
-# Geographic regions - IP address mapping rules API
+# Географические регионы - правила сопоставления IP-адресов API
 
-* Reference
-* Published Sep 24, 2020
+* Справочник
+* Опубликовано 24 сентября 2020 г.
 
-The **Geographic regions - IP address mapping rules** API enables you to manage the configuration of IP address mapping to geographic locations. You can also manage the same configuration in the Dynatrace UI at **Settings > Web and mobile monitoring > Map IP addresses to locations**.
+**Географические регионы - правила сопоставления IP-адресов** API позволяет вам управлять конфигурацией сопоставления IP-адресов с географическими местами. Вы также можете управлять той же конфигурацией в интерфейсе Dynatrace в разделе **Настройки > Мониторинг веб- и мобильных приложений > Сопоставление IP-адресов с местами**.
 
-[### View configuration
+[### Просмотр конфигурации
 
-Get an overview of IP address mappings.](/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address/get-configuration "Read the configuration of IP address mapping via the Dynatrace API.")[### Update configuration
+Получите обзор сопоставления IP-адресов.](/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address/get-configuration "Прочитайте конфигурацию сопоставления IP-адресов через Dynatrace API.")[### Обновление конфигурации
 
-Update configuration of IP address mappings.](/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address/put-configuration "Update the configuration of IP address mapping via the Dynatrace API.")
+Обновите конфигурацию сопоставления IP-адресов.](/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-address/put-configuration "Обновите конфигурацию сопоставления IP-адресов через Dynatrace API.")
 
-## Related topics
+## Связанные темы
 
-* [Map internal IP addresses to locations for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are.")
-* [Map internal IP addresses to locations for mobile applications](/docs/observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are.")
-* [Map internal IP addresses to locations for custom applications](/docs/observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.")
+* [Сопоставление внутренних IP-адресов с местами для веб-приложений](/docs/observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Настройте Dynatrace, чтобы использовать локальные адреса для понимания того, где находятся пользователи ваших веб-приложений.")
+* [Сопоставление внутренних IP-адресов с местами для мобильных приложений](/docs/observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Настройте Dynatrace, чтобы использовать локальные адреса для понимания того, где находятся пользователи ваших мобильных приложений.")
+* [Сопоставление внутренних IP-адресов с местами для пользовательских приложений](/docs/observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Настройте Dynatrace, чтобы использовать локальные адреса для понимания того, где находятся пользователи ваших пользовательских приложений.")

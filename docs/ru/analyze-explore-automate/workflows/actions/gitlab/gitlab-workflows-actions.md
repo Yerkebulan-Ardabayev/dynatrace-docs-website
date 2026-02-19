@@ -1,7 +1,7 @@
 ---
 title: Actions for GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
-scraped: 2026-02-18T05:44:25.549944
+scraped: 2026-02-19T21:23:54.475554
 ---
 
 # Actions for GitLab Connector

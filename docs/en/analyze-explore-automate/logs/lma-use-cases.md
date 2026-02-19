@@ -1,7 +1,7 @@
 ---
 title: Log Management and Analytics use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases
-scraped: 2026-02-18T21:20:55.889248
+scraped: 2026-02-19T21:34:42.503265
 ---
 
 # Log Management and Analytics use cases

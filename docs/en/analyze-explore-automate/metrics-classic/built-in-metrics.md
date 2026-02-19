@@ -1,7 +1,7 @@
 ---
 title: Built-in classic metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/built-in-metrics
-scraped: 2026-02-17T05:12:33.122620
+scraped: 2026-02-19T21:34:10.210171
 ---
 
 # Built-in classic metrics

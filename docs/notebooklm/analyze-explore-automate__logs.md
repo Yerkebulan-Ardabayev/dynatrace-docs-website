@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/logs
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-02-19
 Файлов в разделе: 51
 ---
 
@@ -92,7 +92,7 @@ For detailed instructions, see [Create log alerts for a log event or summary of 
 ---
 title: Log content analysis
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-analysis
-scraped: 2026-02-18T21:19:31.774658
+scraped: 2026-02-19T21:18:30.877580
 ---
 
 # Log content analysis
@@ -147,7 +147,7 @@ With enriched log data, you can check for the specific user inside your applicat
 ---
 title: Log Management and Analytics best practices
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-best-practices
-scraped: 2026-02-17T21:19:21.395849
+scraped: 2026-02-19T21:16:51.821636
 ---
 
 # Log Management and Analytics best practices
@@ -669,7 +669,7 @@ For more information, see [Log Management and Analytics best practices](/docs/an
 ---
 title: DQL matcher in logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher
-scraped: 2026-02-17T05:00:56.656564
+scraped: 2026-02-19T21:23:56.115672
 ---
 
 # DQL matcher in logs
@@ -1411,7 +1411,7 @@ All the matcher expressions used in either log events, metrics, processing or bu
 ---
 title: Log processing with classic pipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing
-scraped: 2026-02-18T21:22:55.997361
+scraped: 2026-02-19T21:18:54.548988
 ---
 
 # Log processing with classic pipeline
@@ -1511,7 +1511,7 @@ To create a log processing rule
 ---
 title: Log Management and Analytics default limits
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-limits
-scraped: 2026-02-18T21:22:54.731538
+scraped: 2026-02-19T21:18:55.890873
 ---
 
 # Log Management and Analytics default limits
@@ -1691,7 +1691,7 @@ If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 20
 ---
 title: Connect log data to traces
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-enrichment
-scraped: 2026-02-18T21:16:05.905325
+scraped: 2026-02-19T21:12:35.701768
 ---
 
 # Connect log data to traces
@@ -2887,7 +2887,7 @@ format: winston.format.simple()
 ---
 title: Syslog ingestion with ActiveGate
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog
-scraped: 2026-02-18T21:30:02.692494
+scraped: 2026-02-19T21:30:17.834438
 ---
 
 # Syslog ingestion with ActiveGate
@@ -6057,7 +6057,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 ---
 title: Automatic log enrichment
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa
-scraped: 2026-02-18T21:20:42.520174
+scraped: 2026-02-19T21:17:03.758666
 ---
 
 # Automatic log enrichment
@@ -7591,7 +7591,7 @@ Starting with OneAgent version `1.249`, you can activate/inactivate your rules b
 ---
 title: Stream Kubernetes logs with Dynatrace Log Module
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes
-scraped: 2026-02-18T05:46:18.356272
+scraped: 2026-02-19T21:31:07.768318
 ---
 
 # Stream Kubernetes logs with Dynatrace Log Module
@@ -10062,7 +10062,7 @@ To create a timestamp configuration using the API
 ---
 title: Windows event logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-windows-event-logs
-scraped: 2026-02-18T21:34:06.368018
+scraped: 2026-02-19T21:29:05.813198
 ---
 
 # Windows event logs
@@ -10822,7 +10822,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Push logs with Cloudflare
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-push-logs-with-cloudflare
-scraped: 2026-02-18T05:48:32.438942
+scraped: 2026-02-19T21:20:30.626321
 ---
 
 # Push logs with Cloudflare
@@ -11173,7 +11173,7 @@ An example JSON response is shown in the code block below.
 ---
 title: Stream syslog to Dynatrace with Fluentd
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-send-syslogs-via-fluentd
-scraped: 2026-02-18T05:46:40.112752
+scraped: 2026-02-19T21:31:22.959833
 ---
 
 # Stream syslog to Dynatrace with Fluentd
@@ -11400,7 +11400,7 @@ For instructions on how to deploy Fluentd integration, see the [documentation on
 ---
 title: Stream Logs with Cribl
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-cribl
-scraped: 2026-02-18T21:33:27.587898
+scraped: 2026-02-19T21:32:15.900584
 ---
 
 # Stream Logs with Cribl
@@ -11852,7 +11852,7 @@ Log Monitoring API automatically process ingested logs by:
 ---
 title: Log processing with OpenPipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline
-scraped: 2026-02-18T21:16:40.555208
+scraped: 2026-02-19T21:13:12.141219
 ---
 
 # Log processing with OpenPipeline
@@ -12437,7 +12437,7 @@ We recommend utilizing log processing with OpenPipeline as a scalable, powerful 
 ---
 title: Filter with facets
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/facets
-scraped: 2026-02-18T21:17:52.429976
+scraped: 2026-02-19T21:12:31.364659
 ---
 
 # Filter with facets
@@ -12514,7 +12514,7 @@ If you have previously modified the facets, to revert to the default settings fo
 ---
 title: Limits in Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/limits
-scraped: 2026-02-18T21:17:58.779504
+scraped: 2026-02-19T21:12:32.680419
 ---
 
 # Limits in Logs
@@ -12561,7 +12561,7 @@ To adjust the limits for your queries in ![Logs](https://dt-cdn.net/images/logs-
 ---
 title: Spot trends with the log distribution chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart
-scraped: 2026-02-18T21:17:53.679680
+scraped: 2026-02-19T21:12:30.045779
 ---
 
 # Spot trends with the log distribution chart
@@ -12624,7 +12624,7 @@ The log distribution chart may be based on sampled data, which means the display
 ---
 title: Adjust the log message
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/message
-scraped: 2026-02-18T21:17:55.025262
+scraped: 2026-02-19T21:12:24.557619
 ---
 
 # Adjust the log message
@@ -12867,7 +12867,7 @@ The log message is detected in a key/value pair for the following keys:
 ---
 title: Query and filter logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter
-scraped: 2026-02-18T21:17:56.258123
+scraped: 2026-02-19T21:12:27.251691
 ---
 
 # Query and filter logs
@@ -12981,7 +12981,7 @@ Note that suggestions are presented based on actual values queried in the backgr
 ---
 title: View surrounding logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs
-scraped: 2026-02-18T21:17:57.519915
+scraped: 2026-02-19T21:12:25.927629
 ---
 
 # View surrounding logs
@@ -13018,7 +13018,7 @@ The surrounding logs are shown for the context provided by the log record.
 ---
 title: Logs app
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app
-scraped: 2026-02-18T21:15:36.289875
+scraped: 2026-02-19T21:11:41.928815
 ---
 
 # Logs app
@@ -13276,7 +13276,7 @@ processing\_prepare\_input\_error
 ---
 title: Troubleshooting Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-troubleshooting
-scraped: 2026-02-18T21:34:38.688131
+scraped: 2026-02-19T21:29:51.316870
 ---
 
 # Troubleshooting Log Management and Analytics
@@ -13328,7 +13328,7 @@ If OneAgent is not ingesting log records from a log file despite a log file is c
 ---
 title: Set up alerts based on events extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events
-scraped: 2026-02-18T21:31:33.710755
+scraped: 2026-02-19T21:34:38.166677
 ---
 
 # Set up alerts based on events extracted from logs
@@ -13448,6 +13448,7 @@ More information about event properties is available at:
 * [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
 * [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 * [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
 
 ---
 
@@ -13456,7 +13457,7 @@ More information about event properties is available at:
 ---
 title: Set up custom alerts based on metrics extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics
-scraped: 2026-02-17T04:57:42.723210
+scraped: 2026-02-19T21:28:14.139312
 ---
 
 # Set up custom alerts based on metrics extracted from logs
@@ -13576,6 +13577,7 @@ Detected anomalies can trigger automations using simple workflows as described i
 * [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.")
 * [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 * [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
 
 ---
 
@@ -13584,7 +13586,7 @@ Detected anomalies can trigger automations using simple workflows as described i
 ---
 title: Detect problems with Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs
-scraped: 2026-02-17T05:02:01.273233
+scraped: 2026-02-19T21:23:26.547264
 ---
 
 # Detect problems with Logs
@@ -13817,7 +13819,7 @@ Otherwise, your next step should be to contact the team responsible for maintain
 ---
 title: Create log metric
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric
-scraped: 2026-02-18T21:19:36.591495
+scraped: 2026-02-19T21:17:09.030912
 ---
 
 # Create log metric
@@ -14028,7 +14030,7 @@ For more information, check the **Related topics** section and see [Log Manageme
 ---
 title: Optimize performance and costs of dashboards running log queries
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-log-query-dashboard
-scraped: 2026-02-18T05:52:14.043160
+scraped: 2026-02-19T21:30:55.560799
 ---
 
 # Optimize performance and costs of dashboards running log queries
@@ -14254,7 +14256,7 @@ Best practices:
 ---
 title: Log Management and Analytics use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases
-scraped: 2026-02-18T21:20:55.889248
+scraped: 2026-02-19T21:34:42.503265
 ---
 
 # Log Management and Analytics use cases
@@ -14353,7 +14355,7 @@ Using a combination of metrics based on logs and [custom alerts](/docs/dynatrace
 ---
 title: Log on Grail examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-on-grail-examples
-scraped: 2026-02-18T21:19:17.168322
+scraped: 2026-02-19T21:16:25.561991
 ---
 
 # Log on Grail examples
@@ -15494,7 +15496,7 @@ The user access granting process depends on whether you are a new or existing us
 ---
 title: Log Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs
-scraped: 2026-02-18T21:16:08.267613
+scraped: 2026-02-19T21:13:53.633091
 ---
 
 # Log Analytics

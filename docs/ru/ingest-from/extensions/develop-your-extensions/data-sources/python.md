@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Extensions Python SDK
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/python
-scraped: 2026-02-18T05:49:25.180689
+scraped: 2026-02-19T21:27:05.343594
 ---
 
 # Dynatrace Extensions Python SDK

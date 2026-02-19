@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-02-19
 Файлов в разделе: 31
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-18T05:48:51.907728
+scraped: 2026-02-19T21:27:33.242734
 ---
 
 # Email
@@ -236,7 +236,7 @@ The message size is limited to 256 KiB. Larger payloads will result in an action
 
 ## Related topics
 
-* [Send email notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
 
 ---
 
@@ -245,7 +245,7 @@ The message size is limited to 256 KiB. Larger payloads will result in an action
 ---
 title: Actions for GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions
-scraped: 2026-02-18T21:32:29.670429
+scraped: 2026-02-19T21:32:39.897766
 ---
 
 # Actions for GitHub Connector
@@ -948,7 +948,7 @@ Select scopes > repo (Full control of private repositories).
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-17T21:25:49.293696
+scraped: 2026-02-19T21:23:47.044636
 ---
 
 # Set up GitHub Connector
@@ -1061,7 +1061,7 @@ Learn about available actions used by GitHub Connector integration for automatin
 ---
 title: Actions for GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
-scraped: 2026-02-18T05:44:25.549944
+scraped: 2026-02-19T21:23:54.475554
 ---
 
 # Actions for GitLab Connector
@@ -1432,7 +1432,7 @@ Refer to the GitLab documentation for details on which scope is needed for which
 ---
 title: GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab
-scraped: 2026-02-18T05:52:10.581850
+scraped: 2026-02-19T21:28:29.591493
 ---
 
 # GitLab Connector
@@ -1463,7 +1463,7 @@ Learn about available actions used by GitLab Connector integration for automatin
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-02-18T05:52:08.883469
+scraped: 2026-02-19T21:27:35.896813
 ---
 
 # Set up Jenkins Connector
@@ -1525,7 +1525,7 @@ To configure a connection
 ---
 title: Jira Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jira
-scraped: 2026-02-18T21:36:02.071821
+scraped: 2026-02-19T21:22:41.734627
 ---
 
 # Jira Connector
@@ -2007,7 +2007,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Event-Driven Ansible
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible
-scraped: 2026-02-18T05:57:36.260483
+scraped: 2026-02-19T21:33:42.123255
 ---
 
 # Red Hat Event-Driven Ansible
@@ -2674,7 +2674,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-18T05:54:04.949649
+scraped: 2026-02-19T21:27:17.784142
 ---
 
 # Slack Connector
@@ -3685,7 +3685,7 @@ The following are solutions to problems some people had with Slack integration.
 
 ## Related topics
 
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
 
 ---
 
@@ -4305,7 +4305,7 @@ Text Processing provides a set of `set` and `get` actions for manipulating conte
 ---
 title: DQL query action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
-scraped: 2026-02-18T21:30:57.487238
+scraped: 2026-02-19T21:19:53.237004
 ---
 
 # DQL query action for Workflows
@@ -4382,7 +4382,7 @@ The result of the HTTP request action is a JSON structure that includes
 ---
 title: Run JavaScript action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action
-scraped: 2026-02-18T21:34:05.085207
+scraped: 2026-02-19T21:23:40.301718
 ---
 
 # Run JavaScript action for Workflows
@@ -4719,49 +4719,49 @@ console.log( ex.params.event);
 ## analyze-explore-automate/workflows/default-workflow-actions.md
 
 ---
-title: Действия в рабочих процессах
+title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-02-18T05:46:55.894083
+scraped: 2026-02-19T21:34:19.867807
 ---
 
-# Действия в рабочих процессах
+# Workflows actions
 
-# Действия в рабочих процессах
+# Workflows actions
 
-* Последнее Dynatrace
-* Обзор
-* 1-минутное чтение
-* Опубликовано 02 апр. 2024 г.
+* Latest Dynatrace
+* Overview
+* 1-min read
+* Published Apr 02, 2024
 
-Действие — это универсальная, многоразовая функция, настроенная и запущенная задачей [task](/docs/analyze-explore-automate/workflows#concept-task "Автоматизируйте ИТ-процессы с помощью Dynatrace рабочих процессов — реагируйте на события, планируйте задачи и подключайте сервисы."). Например, действие может быть **Выполнить JavaScript**, а задача будет выполнять действие с определенной конфигурацией для получения деталей проблемы проекта. Действия — это инструменты, которые необходимо собрать в вашем рабочем процессе, чтобы он соответствовал вашему индивидуальному процессу. Действия предоставляются из коробки Dynatrace и могут быть установлены через Dynatrace Hub.
+An action is a generic, reusable function configured and triggered by a [task](/docs/analyze-explore-automate/workflows#concept-task "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). For example, an action could be **Run JavaScript**, while a task would execute the action with a specific configuration to `get problem details` project. Actions are the tools to be assembled in your workflow to fit your custom process. Actions are provided out of the box by Dynatrace and can be installed via Dynatrace Hub.
 
-## Действия в рабочих процессах
+## Workflows actions
 
-[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Выполнить JavaScript
+### Run JavaScript
 
-Используйте действие **Выполнить JavaScript**, чтобы запустить код JavaScript.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Выполните действие JavaScript для ваших рабочих процессов.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **Run JavaScript** action to run JavaScript code.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Execute JavaScript action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Выполнить запрос DQL
+### Execute DQL Query action
 
-Используйте действие **Выполнить запрос DQL**, чтобы выполнить запросы DQL.](/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action "Выполните действие запроса DQL для ваших рабочих процессов.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **Execute DQL Query** action for executing DQL queries.](/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action "Execute DQL query action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Действие HTTP-запроса
+### HTTP Request action
 
-Используйте действие **HTTP-запрос**, чтобы выполнить HTTP-запросы.](/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action "Выполните действие HTTP-запроса для ваших рабочих процессов.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **HTTP Request** action for executing HTTP requests.](/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action "Execute HTTP request action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Запрос на утверждение
+### Request approval
 
-Используйте действие **Запрос на утверждение**, чтобы добавить шаг утверждения для ручного подтверждения.](/docs/analyze-explore-automate/workflows/default-workflow-actions/approval-request-workflow-action "Добавьте шаг утверждения в ваши рабочие процессы.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **Request approval** action to add an approval step for manual confirmation.](/docs/analyze-explore-automate/workflows/default-workflow-actions/approval-request-workflow-action "Add an approval step to your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Выполнить рабочий процесс
+### Run Workflow action
 
-Используйте действие **Выполнить рабочий процесс**, чтобы модульно использовать рабочие процессы.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-workflow-action "Выполните рабочий процесс как задачу в другом рабочем процессе.")
+Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-workflow-action "Run a workflow as a task in another workflow.")
 
-## Связанные темы
+## Related topics
 
-* [Язык запросов Dynatrace](/docs/platform/grail/dynatrace-query-language "Как использовать язык запросов Dynatrace.")
+* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
 
 ---
 
@@ -4853,7 +4853,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-17T21:29:09.587321
+scraped: 2026-02-19T21:28:43.101247
 ---
 
 # Get notified about workflow changes
@@ -5112,7 +5112,7 @@ For more information, see [Service users](/docs/manage/identity-access-managemen
 ---
 title: Event triggers for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
-scraped: 2026-02-18T21:32:57.567952
+scraped: 2026-02-19T21:22:29.082968
 ---
 
 # Event triggers for workflows
@@ -5614,7 +5614,7 @@ This workflow is a great starting point for automating incident response and imp
 ---
 title: Workflows use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases
-scraped: 2026-02-18T05:47:34.132304
+scraped: 2026-02-19T21:24:24.110973
 ---
 
 # Workflows use cases
@@ -5634,7 +5634,7 @@ Workflows Email Problems
 
 In this use case, you set up a  workflow to alert your team in real time by emailing the details of a new problem to a specific ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") email recipient.
 
-* [Send email notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
 
 ### Send Slack messages for problems using simple workflow
 
@@ -5642,7 +5642,7 @@ Workflows Slack Connector Problems
 
 In this use case, you set up a  workflow to alert your team in real time by messaging the details of a new problem to a specific ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") Slack channel.
 
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
 
 ### Detect threats in cloud-native environments
 
@@ -5683,7 +5683,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-18T21:19:45.650853
+scraped: 2026-02-19T21:15:57.886268
 ---
 
 # Workflows

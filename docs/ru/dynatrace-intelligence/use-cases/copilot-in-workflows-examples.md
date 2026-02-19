@@ -1,7 +1,7 @@
 ---
 title: Summarize open problems with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
-scraped: 2026-02-16T21:28:18.160161
+scraped: 2026-02-19T21:26:55.605507
 ---
 
 # Summarize open problems with Workflows

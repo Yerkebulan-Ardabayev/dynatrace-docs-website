@@ -1,7 +1,7 @@
 ---
 title: Capture request attributes based on web request data
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data
-scraped: 2026-02-18T21:20:41.239745
+scraped: 2026-02-19T21:18:18.066616
 ---
 
 # Capture request attributes based on web request data

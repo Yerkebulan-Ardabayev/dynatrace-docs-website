@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-02-19
 Файлов в разделе: 17
 ---
 
@@ -905,7 +905,7 @@ The following details apply to metric data points:
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability
-scraped: 2026-02-18T21:30:58.562141
+scraped: 2026-02-19T21:25:43.067544
 ---
 
 # Application & Infrastructure Observability overview (DPS)
@@ -938,7 +938,7 @@ For each OneAgent installed in your infrastructure, you can choose the monitorin
 ---
 title: AppEngine Functions (Serverless Functions) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/appengine-functions
-scraped: 2026-02-18T05:43:36.091215
+scraped: 2026-02-19T21:23:42.950256
 ---
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
@@ -1470,7 +1470,7 @@ Use DQL to analyze event data in context with relevant data on the Dynatrace pla
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-18T21:17:51.188494
+scraped: 2026-02-19T21:12:28.660257
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1604,7 +1604,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-18T21:20:52.133579
+scraped: 2026-02-19T21:16:54.463996
 ---
 
 # Log Analytics (DPS)
@@ -1724,7 +1724,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-18T21:21:35.044076
+scraped: 2026-02-19T21:23:34.770001
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1886,7 +1886,7 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-18T21:19:41.279053
+scraped: 2026-02-19T21:17:43.890697
 ---
 
 # Traces powered by Grail overview (DPS)
@@ -1977,7 +1977,7 @@ When other data types are also read in a query, this can result in consumption o
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-02-18T21:19:56.375424
+scraped: 2026-02-19T21:17:15.610243
 ---
 
 # Understanding DPS capabilities

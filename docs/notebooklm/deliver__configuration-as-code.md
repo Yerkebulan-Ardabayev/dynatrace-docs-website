@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-02-19
 Файлов в разделе: 14
 ---
 
@@ -622,7 +622,7 @@ In this example, we define these objects.
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-18T21:29:35.840790
+scraped: 2026-02-19T21:32:09.112993
 ---
 
 # Monaco resources
@@ -1136,7 +1136,7 @@ Some configuration types have special requirements for their JSON payloads and m
 ---
 title: Monaco configuration YAML file - list of special configuration types
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas
-scraped: 2026-02-17T05:01:53.184426
+scraped: 2026-02-19T21:21:25.119889
 ---
 
 # Monaco configuration YAML file - list of special configuration types
@@ -1976,7 +1976,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-18T21:30:17.157195
+scraped: 2026-02-19T21:29:47.284767
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -3164,7 +3164,7 @@ While this sample shows users, service users, policies, and groups defined in a 
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-02-17T05:07:42.982276
+scraped: 2026-02-19T21:22:07.467868
 ---
 
 # Monaco configuration YAML file structure
@@ -4327,7 +4327,7 @@ skip: true
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-17T05:06:15.123293
+scraped: 2026-02-19T21:26:23.018569
 ---
 
 # Monaco API support and access permission handling
@@ -4863,9 +4863,9 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 
 
 
-## Связанные темы
+## Related topics
 
-* [Файл конфигурации Monaco в формате YAML - список специальных типов конфигурации](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "Это список специальных типов конфигурации Monaco.")
+* [Monaco configuration YAML file - list of special configuration types](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "This is a list of Monaco special configuration types.")
 
 ---
 
@@ -4874,7 +4874,7 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-18T21:32:41.221242
+scraped: 2026-02-19T21:25:13.234634
 ---
 
 # Monaco concepts
@@ -4932,7 +4932,7 @@ Dynatrace resource configuration
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-16T09:29:08.031533
+scraped: 2026-02-19T21:25:16.137436
 ---
 
 # Manage configurations with Monaco
@@ -6641,7 +6641,7 @@ Information can be found at [IAM policy reference](/docs/manage/identity-access-
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-18T21:32:13.707925
+scraped: 2026-02-19T21:19:51.940062
 ---
 
 # Terraform CLI commands
@@ -8047,7 +8047,7 @@ To modify the Terraform configuration
 ---
 title: Terraform tutorials overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials
-scraped: 2026-02-17T05:04:29.621269
+scraped: 2026-02-19T21:23:58.885751
 ---
 
 # Terraform tutorials overview
@@ -8070,7 +8070,7 @@ We provide a tutorial to help you [Configure automated notifications using Terra
 ---
 title: Configuration as Code overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code
-scraped: 2026-02-17T05:10:12.037000
+scraped: 2026-02-19T21:25:34.760410
 ---
 
 # Configuration as Code overview

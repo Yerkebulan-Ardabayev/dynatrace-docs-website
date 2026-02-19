@@ -1,7 +1,7 @@
 ---
 title: Private synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations
-scraped: 2026-02-18T21:21:56.620131
+scraped: 2026-02-19T21:31:45.925607
 ---
 
 # Private synthetic locations
@@ -308,7 +308,7 @@ Private Synthetic locations require a clean installation of ActiveGate specifica
 
 Manually editing the `custom.properties` file is not enough to enable the ActiveGate to execute synthetic monitors.
 
-## Troubleshoot
+## Troubleshooting
 
 [Can't see screenshots in browser monitor resultsï»¿](https://dt-url.net/mfw2xmb)
 

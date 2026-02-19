@@ -1,67 +1,67 @@
 ---
-title: Web application configuration API
+title: Конфигурация веб-приложения API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api
-scraped: 2026-02-18T05:54:23.364598
+scraped: 2026-02-19T21:21:52.636456
 ---
 
-# Web application configuration API
+# Конфигурация веб-приложения API
 
-# Web application configuration API
+# Конфигурация веб-приложения API
 
-* Reference
-* Published Jan 24, 2019
+* Справка
+* Опубликовано 24 января 2019 г.
 
-The **Web application configuration** API enables you to manage configuration of [web applications](/docs/discover-dynatrace/get-started/glossary#app "Get acquainted with Dynatrace terminology.").
+**Конфигурация веб-приложения** API позволяет управлять конфигурацией [веб-приложений](/docs/discover-dynatrace/get-started/glossary#app "Ознакомьтесь с терминологией Dynatrace.").
 
-This API only supports web applications. For mobile and custom applications, see [Mobile and custom app API](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Learn what the Dynatrace mobile and custom app config API offers.").
+Эта API поддерживает только веб-приложения. Для мобильных и пользовательских приложений см. [Мобильная и пользовательская конфигурация приложения API](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Узнайте, что предлагает конфигурация мобильного и пользовательского приложения Dynatrace API.").
 
-[### List all
+[### Список всех
 
-Get an overview of all web applications.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/get-all "List all web applications via the Dynatrace API.")[### View a web application
+Получите обзор всех веб-приложений.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/get-all "Список всех веб-приложений через Dynatrace API."[### Просмотр веб-приложения
 
-Get parameters of a web application by its ID.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/get-web-application "View parameters of a web application via the Dynatrace API.")
+Получите параметры веб-приложения по его ID.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/get-web-application "Просмотр параметров веб-приложения через Dynatrace API.")
 
-[### Create a web application
+[### Создание веб-приложения
 
-Create a new web application with the exact parameters you need.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/post-web-application "Create a web application via the Dynatrace API.")[### Edit a web application
+Создайте новое веб-приложение с необходимыми параметрами.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/post-web-application "Создание веб-приложения через Dynatrace API."[### Редактирование веб-приложения
 
-Update an existing web application or create a new application with the specified ID.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/put-web-application "Update a web application via the Dynatrace API.")[### Delete a web application
+Обновите существующее веб-приложение или создайте новое приложение с указанным ID.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/put-web-application "Обновление веб-приложения через Dynatrace API."[### Удаление веб-приложения
 
-Delete a web application you don't need anymore.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application "Delete a web application via the Dynatrace API.")
+Удалите веб-приложение, которое больше не нужно.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application "Удаление веб-приложения через Dynatrace API.")
 
-Default application is pre-configured in your Dynatrace environment. By default all traffic goes to this application. After you configure your own [applications](/docs/discover-dynatrace/get-started/glossary#app "Get acquainted with Dynatrace terminology."), all the traffic, which doesn't fit to any of your applications, goes to the default one.
+По умолчанию приложение предварительно настроено в вашей среде Dynatrace. По умолчанию все трафик направляется в это приложение. После того, как вы настроите свои собственные [приложения](/docs/discover-dynatrace/get-started/glossary#app "Ознакомьтесь с терминологией Dynatrace."), весь трафик, который не соответствует ни одному из ваших приложений, направляется в приложение по умолчанию.
 
-[### View configuration
+[### Просмотр конфигурации
 
-Get the parameters of the default web application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/default-application/get-configuration "View configuration of the default web application via the Dynatrace API.")[### Update configuration
+Получите параметры веб-приложения по умолчанию.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/default-application/get-configuration "Просмотр конфигурации веб-приложения по умолчанию через Dynatrace API."[### Обновление конфигурации
 
-Update the parameters of the default web application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/default-application/put-configuration "Update configuration of the default web application via the Dynatrace API.")
+Обновите параметры веб-приложения по умолчанию.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/default-application/put-configuration "Обновление конфигурации веб-приложения по умолчанию через Dynatrace API.")
 
-### Check data privacy
+### Проверка конфиденциальности данных
 
-View the data privacy parameters for
+Просмотрите параметры конфиденциальности данных для
 
-* [All applications](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-all-web-apps "View data privacy configuration of all applications via the Dynatrace API.")
-* [A specific application](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-web-app "View data privacy configuration of an application via the Dynatrace API.")
-* [The default application](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-default-app "View data privacy configuration of the default application via the Dynatrace API.")
+* [Все приложения](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-all-web-apps "Просмотр конфигурации конфиденциальности данных всех приложений через Dynatrace API."
+* [Конкретное приложение](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-web-app "Просмотр конфигурации конфиденциальности данных приложения через Dynatrace API."
+* [Приложение по умолчанию](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-default-app "Просмотр конфигурации конфиденциальности данных приложения по умолчанию через Dynatrace API.")
 
-### Update data privacy
+### Обновление конфиденциальности данных
 
-View the data privacy parameters for
+Просмотрите параметры конфиденциальности данных для
 
-* [A specific application](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-web-app "Edit data privacy configuration of an application via the Dynatrace API.")
-* [The default application](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-default-app "Edit data privacy configuration of the default application via the Dynatrace API.")
+* [Конкретное приложение](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-web-app "Редактирование конфигурации конфиденциальности данных приложения через Dynatrace API."
+* [Приложение по умолчанию](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-default-app "Редактирование конфигурации конфиденциальности данных приложения по умолчанию через Dynatrace API.")
 
-[### View key user actions
+[### Просмотр ключевых действий пользователя
 
-Get the list of key user actions in an application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/get-configuration "View key user actions of a web application via the Dynatrace API.")[### Edit key user actions list
+Получите список ключевых действий пользователя в приложении.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/get-configuration "Просмотр ключевых действий пользователя веб-приложения через Dynatrace API."[### Редактирование списка ключевых действий пользователя
 
-Mark a user action as the key action in an application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/post-configuration "Add a key user action to a web application via the Dynatrace API.")[### Delete a key user action
+Отметьте действие пользователя как ключевое действие в приложении.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/post-configuration "Добавление ключевого действия пользователя в веб-приложение через Dynatrace API."[### Удаление ключевого действия пользователя
 
-Remove a user action from the list of key actions in an application.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/del-configuration "Remove a key user action from a web application via the Dynatrace API.")
+Удалите действие пользователя из списка ключевых действий в приложении.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/del-configuration "Удаление ключевого действия пользователя из веб-приложения через Dynatrace API.")
 
-[### View error rules
+[### Просмотр правил ошибок
 
-Get an overview of error rules configuration.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/get-configuration "Read error rules of an application via the Dynatrace API.")[### Update error rules
+Получите обзор конфигурации правил ошибок.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/get-configuration "Чтение правил ошибок приложения через Dynatrace API."[### Обновление правил ошибок
 
-Update configuration of configuration.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/put-configuration "Update error rules of an application via the Dynatrace API.")
+Обновите конфигурацию правил ошибок.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/put-configuration "Обновление правил ошибок приложения через Dynatrace API.")

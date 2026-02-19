@@ -1,7 +1,7 @@
 ---
 title: Configure additional settings for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/additional-settings
-scraped: 2026-02-17T21:32:22.668169
+scraped: 2026-02-19T21:22:21.267410
 ---
 
 # Configure additional settings for Live Debugging
@@ -11,7 +11,7 @@ scraped: 2026-02-17T21:32:22.668169
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Published Jan 29, 2025
+* Updated on Feb 19, 2026
 
 ## Manage Opt-in/Opt-out
 
@@ -139,8 +139,12 @@ You can set the data masking rules through the Live Debugger settings page.
 5. Select the rule type:
 
    * **Redact by variable name**  
-     When masking by variable name, the entire value of any variable matching that name will be redacted.  
-     For example, adding a rule for the variable name `secretKey` replaces the output `secretKey:12345` with `secretKey:\*\*\*`.
+     When masking by variable name, the entire value of any variable matching that name will be redacted. You can specify how the variable name should match:
+
+     **Equals**: Match variables with names that are exactly the same as the input string (for example, `foo` matches only `foo`).
+     **Contains**: Match variables with names that include the input string (for example, `foo` matches `myfoobar` or `foo123`).
+     **Starts with**: Match variables with names that begin with the input string (for example, `foo` matches `foobar` or `foo123`).
+     **Ends with**: Match variables with names that end with the input string (for example, `foo` matches `myfoo` or `barfoo`).
    * **Redact by regex**  
      When masking by regular expression, all variable values matches to that expression will be redacted.
      For example, adding a rule regarding the variable value `\[0-9]+` will replace `nameAndPassword:LordHelmet-12345` with `nameAndPassword:LordHelmet-\*\*\*\*`.

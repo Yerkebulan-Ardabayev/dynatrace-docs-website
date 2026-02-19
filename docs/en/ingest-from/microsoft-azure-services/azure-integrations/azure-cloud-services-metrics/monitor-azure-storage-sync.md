@@ -1,7 +1,7 @@
 ---
 title: Azure Storage Sync monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-sync
-scraped: 2026-02-18T21:31:12.840964
+scraped: 2026-02-19T21:30:12.155872
 ---
 
 # Azure Storage Sync monitoring

@@ -1,7 +1,7 @@
 ---
 title: Amazon Translate monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-translate
-scraped: 2026-02-18T05:58:21.681813
+scraped: 2026-02-19T21:28:04.285059
 ---
 
 # Amazon Translate monitoring

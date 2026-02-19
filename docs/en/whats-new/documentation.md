@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-18T21:17:49.895584
+scraped: 2026-02-19T21:13:21.344454
 ---
 
 # New Documentation articles
@@ -70,7 +70,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Response time analysis](/docs/observe/application-observability/services/response-time-analysis "Response time analysis helps you quickly the key contributors to slow service performance in Dynatrace.")
 * [Data privacy in the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/data-privacy "Learn how to ensure that your RUM setup complies with the data privacy regulations of your region.")
 * [Radware Alteon Load Balancer extension](/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer "Monitor your Radware Alteon Network Load Balancers through SNMP")
-* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Reduce span- and metric-based cardinality")
+* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.")
 * [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.")
 * [Sizing guide for Dynatrace ActiveGate](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")
 * [Configure URL path pattern matching in Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2 "Find out how to get better endpoint names for frameworks without route templates by setting up URL pattern matching rules.")
@@ -107,7 +107,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Dec 15, 2025
 
 * [Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace](/docs/secure/use-cases/ai-remediation-kiro-cli "Prioritize and remediate cloud misconfigurations with Dynatrace and Kiro CLI.")
-* [Enable Experience Analytics](/docs/observe/digital-experience/new-rum-experience/user-interactions "Learn how to capture and analyze user interactions.")
+* [Enable Experience Analytics](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions "Learn how to configure and customize user interaction capturing for web frontends.")
 * [Stonebranch Universal Automation Center extension](/docs/observe/infrastructure-observability/extensions/stonebranch-uac "Monitor Stonebranch Universal Automation Center (UAC) via OpenTelemetry.")
 * [Enhance your account security with MFA TOTP](/docs/manage/identity-access-management/user-and-group-management/access-mfa/user-mfa "Learn how to secure your user account with MFA TOTP.")
 * [Data model of the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/concepts/data-model "Get familiar with the data model at the heart of the New RUM Experience.")
@@ -211,8 +211,8 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Oct 13, 2025
 
 * [Settings](/docs/manage/settings "Introduction to Dynatrace settings")
-* [Send email notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
 * [Scaling](/docs/ingest-from/opentelemetry/collector/scaling "How to scale the OpenTelemetry Collector.")
 * [Ingest Sonatype Lifecycle security events and audit logs](/docs/secure/threat-observability/security-events-ingest/ingest-sonatype "Ingest Sonatype Lifecycle security events and audit logs into Dynatrace as security events.")
 

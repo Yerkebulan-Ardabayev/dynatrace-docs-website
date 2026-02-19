@@ -1,7 +1,7 @@
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-02-18T21:17:07.202957
+scraped: 2026-02-19T21:14:20.143747
 ---
 
 # Technology support
@@ -969,7 +969,7 @@ Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-a
 
 | Monitoring frameworks | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7, 1.8 - 1.11.0, 1.11.1 - 1.27, 1.28 - 1.39 |
+| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7, 1.8 - 1.11.0, 1.11.1 - 1.27, 1.28 - 1.40 |
 
 | Logging frameworks | Versions |
 | --- | --- |

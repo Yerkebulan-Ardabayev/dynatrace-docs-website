@@ -1,7 +1,7 @@
 ---
 title: Adjust the sensitivity of anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection
-scraped: 2026-02-18T21:27:26.934116
+scraped: 2026-02-19T21:15:48.390423
 ---
 
 # Adjust the sensitivity of anomaly detection

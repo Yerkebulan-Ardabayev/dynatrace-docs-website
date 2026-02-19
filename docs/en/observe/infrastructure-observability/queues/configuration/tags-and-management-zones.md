@@ -1,7 +1,7 @@
 ---
 title: Queue tags and management zones
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/configuration/tags-and-management-zones
-scraped: 2026-02-18T05:54:39.522098
+scraped: 2026-02-19T21:21:48.717362
 ---
 
 # Queue tags and management zones

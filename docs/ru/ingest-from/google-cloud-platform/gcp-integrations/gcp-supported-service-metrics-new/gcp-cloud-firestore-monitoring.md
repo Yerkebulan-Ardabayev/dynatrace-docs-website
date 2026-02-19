@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Firestore monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-firestore-monitoring
-scraped: 2026-02-18T21:33:41.079467
+scraped: 2026-02-19T21:30:50.223388
 ---
 
 # Google Cloud Firestore monitoring

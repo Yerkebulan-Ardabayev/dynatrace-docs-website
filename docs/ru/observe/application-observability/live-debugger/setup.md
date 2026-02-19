@@ -1,7 +1,7 @@
 ---
 title: Set up permissions for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/setup
-scraped: 2026-02-18T21:36:20.507169
+scraped: 2026-02-19T21:29:08.523867
 ---
 
 # Set up permissions for Live Debugging
@@ -64,10 +64,19 @@ Grants permission to set user-level Live Debugging breakpoints.
 * `dev-obs:k8s.namespace.name` - the name of the namespace that the pod is running in.
 
   operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `dev-obs:k8s.cluster.name` â the name of the cluster that the pod is running in.
+
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
 * `dev-obs:dt.entity.process_group` - the process group your application is a part of.
 
   operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
 * `dev-obs:dt.process_group.detected_name` â the detected name of the process group your application is a part of.
+
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `dev-obs:host.group` â the host group your application is a part of.
+
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `dev-obs:host.name` â the host name your application is a part of.
 
   operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
 

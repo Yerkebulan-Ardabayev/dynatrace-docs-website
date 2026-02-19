@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry interoperability
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability
-scraped: 2026-02-18T21:28:51.391578
+scraped: 2026-02-19T21:19:14.121216
 ---
 
 # OpenTelemetry interoperability

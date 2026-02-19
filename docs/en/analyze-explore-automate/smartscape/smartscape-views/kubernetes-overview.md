@@ -1,7 +1,7 @@
 ---
 title: Kubernetes overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview
-scraped: 2026-02-18T21:36:25.678011
+scraped: 2026-02-19T21:25:48.318864
 ---
 
 # Kubernetes overview
