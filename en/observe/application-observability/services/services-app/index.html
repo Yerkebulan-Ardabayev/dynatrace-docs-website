@@ -25479,10 +25479,9 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>App</li>
-<li>4-min read</li>
-<li>Updated on Feb 04, 2026</li>
+<li>5-min read</li>
+<li>Updated on Feb 18, 2026</li>
 </ul>
-<p>Message Processing and Database Query Performance Analysis are projected to become available in Dynatrace SaaS version 1.330.</p>
 <p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> delivers comprehensive visibility into your distributed services, enabling teams to quickly identify, investigate, and resolve issues across complex microservice architectures. This unified interface consolidates critical health signals and performance metrics to accelerate troubleshooting and optimize service reliability.</p>
 <p><img alt="View the real-time performance of all your services. Locate specific services using powerful filters." src="https://cdn.hub.central.dynatrace.com/hub/1_DI39YNS_hQ7gBgG.png" /><img alt="Analyze database queries executed by your services to discover which operations consume the most resources." src="https://cdn.hub.central.dynatrace.com/hub/2_previously_5_7LmaiBa.png" /><img alt="Use Dynatrace Intelligence's automated root cause analysis to quickly surface and pinpoint the source of issues in your application services, accelerating analysis." src="https://cdn.hub.central.dynatrace.com/hub/3_lHZzEjb_zyT76Yj.png" /><img alt="Failure analysis comparing timeframes." src="https://cdn.hub.central.dynatrace.com/hub/failure-analysis-1990-6b9d85e513_38quxQP.png" /></p>
 <p>1 of 4View the real-time performance of all your services. Locate specific services using powerful filters.</p>
@@ -25496,20 +25495,6 @@
 <h3 id="service-health-overview">Service health overview<a class="headerlink" href="#service-health-overview" title="Permanent link">&para;</a></h3>
 <p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> provides an intelligent health dashboard that surfaces issues demanding immediate attention. You can filter alerts by severity and drill into specific services experiencing degradation. When a service enters a critical state, the app highlights failure rates and provides context around what triggered the alertâwhether it's increased errors, latency spikes, or infrastructure problems.</p>
 <p><img alt="Health alert investigations" src="https://dt-cdn.net/images/health-alert-investigation-critical-filtering-1248-f719905bfe.png" /></p>
-<h3 id="database-queries">Database queries<a class="headerlink" href="#database-queries" title="Permanent link">&para;</a></h3>
-<p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> captures and analyzes database queries executed by your services, presenting the slowest queries ranked by execution time and frequency.
-To see what queries your service is executing and the response time, failure rate, and throughput of those queries</p>
-<ol>
-<li>In the <strong>Services</strong> table, select the service to go to the service details page.</li>
-<li>
-<p>Switch to the <strong>Database queries</strong> tab.</p>
-</li>
-<li>
-<p>Discover which operations consume the most resources and where indexing or caching could improve performance.</p>
-</li>
-<li>Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.</li>
-</ol>
-<p><img alt="Database queries - Services app" src="https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png" /></p>
 <h3 id="failure-analysis-and-time-based-comparisons">Failure analysis and time-based comparisons<a class="headerlink" href="#failure-analysis-and-time-based-comparisons" title="Permanent link">&para;</a></h3>
 <p>Overlay current failure patterns against baseline periods to immediately identify regressions. The visualization distinguishes between different failure types and severities, helping teams prioritize based on user impact.</p>
 <p>Also, refer to the <a href="/docs/observe/application-observability/services/failure-analysis" title="Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.">Failure Analysis</a> use case.</p>
@@ -25529,12 +25514,49 @@ To see what queries your service is executing and the response time, failure rat
 <p>Visualize processing failure rates to pinpoint services struggling with message consumption or transformation logic. Maintain visibility into batch jobs, event processors, and queue-based integrations operating outside critical user-facing paths.</p>
 <p><img alt="Message queue interaction by service" src="https://dt-cdn.net/images/message-processing-per-service-publish-receive-process-1678-1e1552955c.png" /></p>
 <h3 id="database-query-performance-analysis">Database query performance analysis<a class="headerlink" href="#database-query-performance-analysis" title="Permanent link">&para;</a></h3>
-<p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> captures and analyzes database queries executed by your services, presenting the slowest queries ranked by execution time and frequency. Discover which operations consume the most resources and where indexing or caching could improve performance. Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.</p>
-<p><img alt="Database query view" src="https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png" /></p>
+<p>With the <strong>Database queries</strong> view, <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> provides detailed visibility into database queries executed by your services.</p>
+<p>You can access the <strong>Database queries</strong> view in two different ways:</p>
+<ul>
+<li>Select  <strong>Database queries</strong> on the left side of <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> to see all queries executed across your services.</li>
+<li>Select the required service, and go to the <strong>Database queries</strong> tab to view the queries made by this particular service.</li>
+</ul>
+<p>Both options provide query performance information, with a default view that shows the top queries ranked by cumulative duration.</p>
+<p><img alt="Database queries - Services app" src="https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png" /></p>
+<p>Redis statements often include unique identifiers or values, which results in thousands of distinct entries shown in the <strong>Database queries</strong> view. For tips on how to reduce cardinality for such database statements, refer to <a href="/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality#database-queries" title="Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.">Database queries: Normalize Redis commands</a>.</p>
+<h4 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Discover which operations consume the most resources and where indexing or caching could improve performance.</li>
+<li>Eliminate blind spots by integrating infrastructure-layer database observability with service-level metrics.</li>
+</ul>
+<h4 id="understand-the-query-list">Understand the query list<a class="headerlink" href="#understand-the-query-list" title="Permanent link">&para;</a></h4>
+<p>The <strong>Database queries</strong> view displays metrics about your most resource-intensive queries, sorted by cumulative duration.</p>
+<p>The following information is available for each database query:</p>
+<ul>
+<li><strong>Query</strong>: Full SQL or database operation.</li>
+<li><strong>System</strong>: Database type, for example, PostgreSQL or Redis.</li>
+<li><strong>Errors</strong>: Failed execution count.</li>
+<li><strong>Query count</strong>: Total executions in the timeframe.</li>
+<li><strong>Average duration</strong>: Average execution time per query.</li>
+<li><strong>Cumulative duration</strong>: Total time your service spent on this query.</li>
+</ul>
+<p>Select  (<strong>Expand row</strong>) on the left of the query to display its time-series charts. These three time-series charts visualize the performance trends:</p>
+<ul>
+<li><strong>Queries per minute</strong>: Shows execution frequency patterns and spikes.</li>
+<li><strong>Query duration</strong>: Tracks average response time changes over time.</li>
+<li><strong>Error rate</strong>: Displays query failure percentage.</li>
+</ul>
+<h4 id="find-performance-bottlenecks">Find performance bottlenecks<a class="headerlink" href="#find-performance-bottlenecks" title="Permanent link">&para;</a></h4>
+<p>Sort the database query list by one of the following parameters:</p>
+<ul>
+<li><strong>Cumulative duration</strong> to immediately see which queries are consuming the most total time in your service.</li>
+<li><strong>Average duration</strong> to find your slowest queries.</li>
+<li><strong>Query count</strong> to identify high-frequency operations that might benefit from caching or indexing.</li>
+</ul>
+<p>Remember that a query executing thousands of times with a modest duration can impact performance just as much as a slow query with fewer executions. By seeing both frequency and duration together, you can prioritize optimization efforts where they'll have the greatest impact.</p>
 <h3 id="outbound-calls">Outbound calls<a class="headerlink" href="#outbound-calls" title="Permanent link">&para;</a></h3>
 <p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> captures and analyzes outbound calls made by your services, and then presents the most frequently called and slowest external dependencies ranked by request rate and duration. The <strong>Outbound calls</strong> view displays request rate, error rate, average duration, and cumulative duration for each outbound call. Discover which external calls consume the most resources and where performance bottlenecks exist in your service dependencies. By integrating outbound call observability with service-level metrics, you can eliminate blind spots and quickly determine if issues originate within your service or downstream.</p>
 <p><img alt="Outbound calls tab" src="https://dt-cdn.net/images/scr-20260204-oxkt-1998-bc116aaf86.png" /></p>
-<p>URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in <a href="/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality" title="Reduce span- and metric-based cardinality">Reduce span-based and metric-based cardinality</a>.</p>
+<p>URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in <a href="/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality" title="Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.">Reduce span-based and metric-based cardinality</a>.</p>
 <h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
 <p>Service-related concepts, including distributed traces and spans, are central concepts in Dynatrace observability. Understanding these concepts enables effective monitoring and analysis of distributed systems. See <a href="/docs/observe/application-observability/services/services-concepts" title="Understand application observability, services, and distributed tracing concepts.">Service-related concepts</a>.</p>
 <h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>

@@ -25480,7 +25480,7 @@
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
 <li>3-min read</li>
-<li>Published Jan 29, 2025</li>
+<li>Updated on Feb 19, 2026</li>
 </ul>
 <h2 id="manage-opt-inopt-out">Manage Opt-in/Opt-out<a class="headerlink" href="#manage-opt-inopt-out" title="Permanent link">&para;</a></h2>
 <p>Grants permission to control opt-in/opt-out code monitoring for the entire environment or by scope.</p>
@@ -25583,12 +25583,15 @@
 </li>
 <li>
 <p><strong>Redact by variable name</strong><br />
-     When masking by variable name, the entire value of any variable matching that name will be redacted.<br />
-     For example, adding a rule for the variable name <code>secretKey</code> replaces the output <code>secretKey:12345</code> with <code>secretKey:\*\*\*</code>.</p>
+     When masking by variable name, the entire value of any variable matching that name will be redacted. You can specify how the variable name should match:</p>
+<p><strong>Equals</strong>: Match variables with names that are exactly the same as the input string (for example, <code>foo</code> matches only <code>foo</code>).
+ <strong>Contains</strong>: Match variables with names that include the input string (for example, <code>foo</code> matches <code>myfoobar</code> or <code>foo123</code>).
+ <strong>Starts with</strong>: Match variables with names that begin with the input string (for example, <code>foo</code> matches <code>foobar</code> or <code>foo123</code>).
+ <strong>Ends with</strong>: Match variables with names that end with the input string (for example, <code>foo</code> matches <code>myfoo</code> or <code>barfoo</code>).
+   * <strong>Redact by regex</strong><br />
+ When masking by regular expression, all variable values matches to that expression will be redacted.
+ For example, adding a rule regarding the variable value <code>\[0-9]+</code> will replace <code>nameAndPassword:LordHelmet-12345</code> with <code>nameAndPassword:LordHelmet-\*\*\*\*</code>.</p>
 </li>
-<li><strong>Redact by regex</strong><br />
-     When masking by regular expression, all variable values matches to that expression will be redacted.
-     For example, adding a rule regarding the variable value <code>\[0-9]+</code> will replace <code>nameAndPassword:LordHelmet-12345</code> with <code>nameAndPassword:LordHelmet-\*\*\*\*</code>.</li>
 </ol>
 <p>Defined rules can be reordered, and they are executed in the order in which they appear on the <strong>Sensitive data masking</strong> page.</p>
 <p>The redacted data is replaced, by default, with the string <code>\*\*\*</code>.</p>

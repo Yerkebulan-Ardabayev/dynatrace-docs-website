@@ -25495,8 +25495,8 @@
 
 <h1 id="dynatrace-observedynatrace-for-ai-observability">Документация Dynatrace: observe/dynatrace-for-ai-observability<a class="headerlink" href="#dynatrace-observedynatrace-for-ai-observability" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-18
-Файлов в разделе: 13</p>
+Сгенерировано: 2026-02-19
+Файлов в разделе: 14</p>
 <hr />
 <h2 id="observedynatrace-for-ai-observabilityai-observability-appmd">observe/dynatrace-for-ai-observability/ai-observability-app.md<a class="headerlink" href="#observedynatrace-for-ai-observabilityai-observability-appmd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -25664,7 +25664,7 @@ For a more integrated and centralized workflow (instrumentation guidance, servic
 <hr />
 <p>title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-18T05:45:53.334027</p>
+scraped: 2026-02-19T21:26:41.739370</p>
 <hr />
 <h1 id="kong-ai-gateway">Kong AI Gateway<a class="headerlink" href="#kong-ai-gateway" title="Permanent link">&para;</a></h1>
 <h1 id="kong-ai-gateway_1">Kong AI Gateway<a class="headerlink" href="#kong-ai-gateway_1" title="Permanent link">&para;</a></h1>
@@ -26765,7 +26765,7 @@ scraped: 2026-02-18T21:23:11.066458</p>
 <hr />
 <p>title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-18T21:23:16.159076</p>
+scraped: 2026-02-19T21:25:19.226787</p>
 <hr />
 <h1 id="nvidia-nim">NVIDIA NIM<a class="headerlink" href="#nvidia-nim" title="Permanent link">&para;</a></h1>
 <h1 id="nvidia-nim_1">NVIDIA NIM<a class="headerlink" href="#nvidia-nim_1" title="Permanent link">&para;</a></h1>
@@ -27402,7 +27402,7 @@ scraped: 2026-02-18T21:23:08.889320</p>
 <hr />
 <p>title: TensorFlow Keras observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability
-scraped: 2026-02-17T05:07:13.406346</p>
+scraped: 2026-02-19T21:19:45.201455</p>
 <hr />
 <h1 id="tensorflow-keras-observability">TensorFlow Keras observability<a class="headerlink" href="#tensorflow-keras-observability" title="Permanent link">&para;</a></h1>
 <h1 id="tensorflow-keras-observability_1">TensorFlow Keras observability<a class="headerlink" href="#tensorflow-keras-observability_1" title="Permanent link">&para;</a></h1>
@@ -27863,11 +27863,165 @@ scraped: 2026-02-18T21:23:15.011966</p>
 <li><a href="/docs/observe/dynatrace-for-ai-observability/sample-use-cases/self-service-ai-observability-tutorial" title="Learn how to use Dynatrace to have deep insights into your RAG pipelines.">Observability of Retrieval-Augmented Generation pipelines</a></li>
 </ul>
 <hr />
+<h2 id="observedynatrace-for-ai-observabilitysample-use-casesdata-governancemd">observe/dynatrace-for-ai-observability/sample-use-cases/data-governance.md<a class="headerlink" href="#observedynatrace-for-ai-observabilitysample-use-casesdata-governancemd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: AI data governance with Amazon Bedrock
+source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
+scraped: 2026-02-19T21:31:20.468451</p>
+<hr />
+<h1 id="ai-data-governance-with-amazon-bedrock_2">AI data governance with Amazon Bedrock<a class="headerlink" href="#ai-data-governance-with-amazon-bedrock_2" title="Permanent link">&para;</a></h1>
+<h1 id="ai-data-governance-with-amazon-bedrock_3">AI data governance with Amazon Bedrock<a class="headerlink" href="#ai-data-governance-with-amazon-bedrock_3" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Tutorial</li>
+<li>5-min read</li>
+<li>Updated on Dec 10, 2025</li>
+</ul>
+<p>Emerging AI regulations such as the <a href="https://dt-url.net/xv038bv">European Union Artificial Intelligence Actï»¿</a> provide the means to deploy a comprehensive strategy combining organizational and AI model oversight, covering everything from model training to AI/user interactions.</p>
+<p>When running your AI models through Amazon Bedrock, Dynatrace helps you to comply with regulatory record-keeping requirements.</p>
+<h2 id="what-you-will-learn_1">What you will learn<a class="headerlink" href="#what-you-will-learn_1" title="Permanent link">&para;</a></h2>
+<p>In this tutorial, we first configure your model training and deployment observability. Afterward, we configure your application to observe user inference requests.</p>
+<h2 id="steps_1">Steps<a class="headerlink" href="#steps_1" title="Permanent link">&para;</a></h2>
+<p>The general steps are as follows:</p>
+<ol>
+<li>Configure Dynatrace</li>
+<li>Configure your AWS account to send data to your Dynatrace tenant</li>
+<li>Configure your application</li>
+</ol>
+<p>See below for the details of each step.</p>
+<p>[<img alt="Step 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Step 1" /></p>
+<p><strong>Configure Dynatrace</strong>](#preparation)[<img alt="Step 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Step 2" /></p>
+<p><strong>Configure your AWS account</strong>](#aws)[<img alt="Step 3" src="https://dt-cdn.net/images/step-3-350cf6c19a.svg" title="Step 3" /></p>
+<p><strong>Configure your application</strong>](#app)</p>
+<h3 id="step-1-configure-dynatrace_1">Step 1 Configure Dynatrace<a class="headerlink" href="#step-1-configure-dynatrace_1" title="Permanent link">&para;</a></h3>
+<p>In this step, we create a Dynatrace token and we configure <a href="/docs/platform/openpipeline" title="Scale Dynatrace platform data handling with Dynatrace OpenPipeline.">OpenPipeline</a> to retain the data for 5+ years.</p>
+<h4 id="create-dynatrace-token_1">Create Dynatrace token<a class="headerlink" href="#create-dynatrace-token_1" title="Permanent link">&para;</a></h4>
+<p>To create a Dynatrace token</p>
+<ol>
+<li>In Dynatrace, go to <strong>Access Tokens</strong>.<br />
+   To find <strong>Access Tokens</strong>, press <strong>CTRL+K</strong> to search for and select <strong>Access Tokens</strong>.</li>
+<li>In <strong>Access Tokens</strong>, select <strong>Generate new token</strong>.</li>
+<li>Enter a <strong>Token name</strong> for your new token.</li>
+<li>Give your new token the following permissions:</li>
+<li>
+<p>Search for and select all of the following scopes.</p>
+</li>
+<li>
+<p><strong>Ingest bizevents</strong> (<code>bizevents.ingest</code>)</p>
+</li>
+<li><strong>Ingest metrics</strong> (<code>metrics.ingest</code>)</li>
+<li><strong>Ingest logs</strong> (<code>logs.ingest</code>)</li>
+<li><strong>Ingest events</strong> (<code>events.ingest</code>)</li>
+<li><strong>Ingest OpenTelemetry traces</strong> (<code>openTelemetryTrace.ingest</code>)</li>
+<li>Select <strong>Generate token</strong>.</li>
+<li>Copy the generated token to the clipboard. Store the token in a password manager for future use.</li>
+</ol>
+<p>You can only access your token once upon creation. You can't reveal it afterward.</p>
+<h4 id="configure-openpipeline_1">Configure OpenPipeline<a class="headerlink" href="#configure-openpipeline_1" title="Permanent link">&para;</a></h4>
+<p>The default retention period for BizEvents is 35 days. Depending on the regulations, this might not be enough.</p>
+<p>To change the retention period, you can create a custom Grail bucket.</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Storage management</strong> &gt; <strong>Bucket storage management</strong>.</li>
+<li>In <strong>Bucket Storage Management</strong>, select  <strong>Bucket</strong>.</li>
+<li>
+<p>On <strong>New bucket</strong>:</p>
+</li>
+<li>
+<p>Set <strong>Bucket name</strong> (for example, <code>gen_ai_events</code>)</p>
+</li>
+<li>Set <strong>Retention period (in days)</strong> (for example, <code>1,825</code>, which is about 5 years)</li>
+<li>Set <strong>Bucket table type</strong> to <code>bizevents</code></li>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p><img alt="Grail Bucket Creation" src="https://dt-cdn.net/images/bucket-creation-1380-125022930c.png" /></p>
+<p>When the bucket is available, we can configure OpenPipeline to redirect AI-relevant events to storage there.</p>
+<ol>
+<li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>OpenPipeline</strong> &gt; <strong>Business events</strong> &gt; <strong>Pipelines</strong>.</li>
+<li>On the <strong>Pipelines</strong> tab, select  <strong>Pipeline</strong> and name your pipeline (for example, <code>AI Data Governance</code>).</li>
+<li>On the <strong>Storage</strong> tab, select  <strong>Processor</strong> &gt; <strong>Bucket assignment</strong>.</li>
+<li>
+<p>Configure the processor:</p>
+</li>
+<li>
+<p>Enter a <strong>Name</strong> for the processor</p>
+</li>
+<li>Set <strong>Matching condition</strong> to <code>true</code></li>
+<li>Set <strong>Storage</strong> to the bucket you created in the previous procedure</li>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p><img alt="OpenPipeline Bucket Assignment" src="https://dt-cdn.net/images/pipeline-creation-1383-70370d9b88.png" /></p>
+<p>Finally, we route the ingestion of AI events to the pipeline.</p>
+<ol>
+<li>Still in <strong>OpenPipeline</strong> &gt; <strong>Business events</strong>, select the <strong>Dynamic routing</strong> tab.</li>
+<li>
+<p>On the <strong>Dynamic routing</strong> tab, select  <strong>Dynamic route</strong> to <strong>Add a new dynamic route</strong>.</p>
+</li>
+<li>
+<p>Enter a <strong>Name</strong> for the new route (for example, <code>AI Event Routing</code>)</p>
+</li>
+<li>Set <strong>Matching condition</strong> to <code>matchesValue(event.type,"gen_ai.auditing")</code></li>
+<li>Set <strong>Pipeline</strong> to the pipeline you created in the previous procedure.</li>
+<li>Select <strong>Add</strong>.</li>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p>Finally, to mark it as the first pipeline to trigger, drag it  up to be the first row in the table.</p>
+<p><img alt="OpenPipeline Routing" src="https://dt-cdn.net/images/pipeline-routing-1381-ec77347761.png" /></p>
+<h3 id="step-2-configure-your-aws-account_1">Step 2 Configure your AWS account<a class="headerlink" href="#step-2-configure-your-aws-account_1" title="Permanent link">&para;</a></h3>
+<p>Amazon Bedrock emits events for every configuration action executed, such as when you deploy a new model or when the fine-tuning of your model finishes.</p>
+<p>We can set up a rule to forward these events to Dynatrace. Please refer to our <a href="https://github.com/dynatrace-oss/cloud-snippets/tree/main/aws/eventbridge-events-to-dynatrace#ingest-as-bizevents">integration with Amazon EventBridge using BizEventï»¿</a> to configure the rule.</p>
+<p>The only change is in the <a href="https://github.com/dynatrace-oss/cloud-snippets/blob/8785beb90e9d5c53de4f8420bf5e68b6ac673a09/aws/eventbridge-events-to-dynatrace/biz-events.yaml#L115"><code>InputTemplate</code> fieldï»¿</a>, where the property <code>"type"</code> should be set to <code>gen_ai.auditing</code>. This change is required to match the values that OpenPipeline uses to redirect the events to our Grail bucket.</p>
+<p>Expand to see how the AWS configuration should look</p>
+<p><img alt="AWS &lt;-&gt; Dynatrace connection" src="https://dt-cdn.net/images/aws-dynatrace-connection-3352-4347fe5fc8.png" /></p>
+<p><img alt="AWS CloudTrail Transformer configuration" src="https://dt-cdn.net/images/aws-cloudtrail-transformer-1610-501eddb13f.png" /></p>
+<p><img alt="AWS CloudTrail Target configuration" src="https://dt-cdn.net/images/aws-cloudtrail-target-2744-0f4e467998.png" /></p>
+<h3 id="step-3-configure-your-application_1">Step 3 Configure your application<a class="headerlink" href="#step-3-configure-your-application_1" title="Permanent link">&para;</a></h3>
+<p>We can leverage OpenTelemetry to provide auto-instrumentation that collects traces and metrics of your AI workloads, particularly our fork of <a href="https://dt-url.net/0sa3uau">OpenLLMetryï»¿</a>.</p>
+<p>Important Notice</p>
+<p>The libraries utilized in this sample use case are currently under development and are in an alpha state. They may contain bugs or undergo significant changes. Use at your own risk.
+We highly value your feedback to improve these libraries. Please report any issues, bugs, or suggestions on our GitHub issues page.</p>
+<p>To install, use the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pip install -i https://test.pypi.org/simple/ dynatrace-openllmetry-sdk==0.0.1a4
+</code></pre></div>
+<p>Afterward, add the following code at the beginning of your main file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>from traceloop.sdk import Traceloop
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>headers = { &quot;Authorization&quot;: &quot;Api-Token &lt;YOUR_DT_API_TOKEN&gt;&quot; }
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>Traceloop.init(
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>app_name=&quot;&lt;your-service&gt;&quot;,
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>api_endpoint=&quot;https://&lt;YOUR_ENV&gt;.live.dynatrace.com/api/v2/otlp&quot;,
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>headers=headers
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>)
+</code></pre></div>
+<p>And that's it! <img alt="Progressive delivery" src="https://cdn.bfldr.com/B686QPH3/at/r898jztffhg3nzc7fxwh6pf/DT1015.svg?auto=webp&amp;width=72&amp;height=72" title="Progressive delivery" /></p>
+<p>Now you can:</p>
+<ul>
+<li>Fetch all the user/AI interactions, training status, and more on demand.</li>
+<li>Use <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.">Notebooks</a><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> or <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">Dashboards</a><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> to create data-driven documents for custom analytics on it.</li>
+</ul>
+<p><img alt="GenAI Compliance Auditing" src="https://dt-cdn.net/images/gen-ai-auditing-7680-1f44c8a6bf.png" /></p>
+<hr />
 <h2 id="observedynatrace-for-ai-observabilitysample-use-casesopenai-observabilitymd">observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability.md<a class="headerlink" href="#observedynatrace-for-ai-observabilitysample-use-casesopenai-observabilitymd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability
-scraped: 2026-02-18T21:33:32.285342</p>
+scraped: 2026-02-19T21:23:37.503881</p>
 <hr />
 <h1 id="openai-observability_2">OpenAI Observability<a class="headerlink" href="#openai-observability_2" title="Permanent link">&para;</a></h1>
 <h1 id="openai-observability_3">OpenAI Observability<a class="headerlink" href="#openai-observability_3" title="Permanent link">&para;</a></h1>
@@ -27906,53 +28060,53 @@ scraped: 2026-02-18T21:33:32.285342</p>
 <ol>
 <li>Set your OpenAI or Azure OpenAI credentials as environment variables.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>export OPENAI_API_KEY=your_api_key
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>export OPENAI_API_KEY=your_api_key
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>export AZURE_OPENAI_API_KEY=your_api_key
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>export AZURE_OPENAI_API_VERSION=&#39;2024-08-01-preview&#39;
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>export AZURE_OPENAI_ENDPOINT=your_endpoint
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>export AZURE_OPENAI_DEPLOYMENT=your_deployment
-</code></pre></div>
-<p>Alternatively, set the environment variables in an <code>.env</code> file in <code>python-backend</code> and load them with <code>python-dotenv</code>.
-2. Install backend dependencies.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>cd python-backend
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>python3.12 -m venv .venv
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>source .venv/bin/activate
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
-<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
-<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
-<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>pip install -r requirements.txt
-</code></pre></div>
-3. Install UI dependencies.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>cd ui
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>export AZURE_OPENAI_API_KEY=your_api_key
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>npm install
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>export AZURE_OPENAI_API_VERSION=&#39;2024-08-01-preview&#39;
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>export AZURE_OPENAI_ENDPOINT=your_endpoint
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>export AZURE_OPENAI_DEPLOYMENT=your_deployment
+</code></pre></div>
+<p>Alternatively, set the environment variables in an <code>.env</code> file in <code>python-backend</code> and load them with <code>python-dotenv</code>.
+2. Install backend dependencies.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>cd python-backend
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>python3.12 -m venv .venv
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>source .venv/bin/activate
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>pip install -r requirements.txt
+</code></pre></div>
+3. Install UI dependencies.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>cd ui
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>npm install
 </code></pre></div>
 4. Start the app.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>npm run dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>npm run dev
 </code></pre></div>
 <p>The frontend is available at <code>http://localhost:3000</code>. This command also starts the backend.</p>
 <h2 id="observe-openai-request-costs-using-logs">Observe OpenAI request costs using logs<a class="headerlink" href="#observe-openai-request-costs-using-logs" title="Permanent link">&para;</a></h2>
 <p>Using logs to collect and observe OpenAI request costs is both simple and powerful. It allows the owner of the service to write a log line using a standard Node.js logging framework such as <a href="https://www.npmjs.com/package/winston">Winstonï»¿</a> and to collect and analyze those logs within Dynatrace.</p>
 <p>The following code snippet writes a Winston log line containing the OpenAI request token counts.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>logger.log(&#39;info&#39;, `OpenAI response promt_tokens:${response.data.usage.prompt_tokens} completion_tokens:${response.data.usage.completion_tokens} total_tokens:${response.data.usage.total_tokens}`);
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>logger.log(&#39;info&#39;, `OpenAI response promt_tokens:${response.data.usage.prompt_tokens} completion_tokens:${response.data.usage.completion_tokens} total_tokens:${response.data.usage.total_tokens}`);
 </code></pre></div>
 <p>The OpenAI request log lines can be viewed in the Dynatrace log viewer.</p>
 <p>We recommend that you also enable trace context enrichment for Node.js logs (go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent features</strong> and turn on <strong>Node.js Trace/span context enrichment for logs</strong>) to automatically map all log lines to their captured request traces.</p>
@@ -27963,79 +28117,79 @@ scraped: 2026-02-18T21:33:32.285342</p>
 <p>Each request to an OpenAI model, such as GPT-5.2 or GPT-5.1, reports back how many tokens were used for the request prompt (the length of your text question) and how many tokens the model generated as a response.</p>
 <p>By extracting token measurements from the returning payload and reporting them through OneAgent, users can observe the token consumption across all OpenAI-enhanced services in their monitoring environment.</p>
 <p>To extract the token count from the OpenAI response and report those measurements to the local OneAgent, add the following instrumentation to your Node.js service.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>function report_metric(openai_response) {
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>var post_data = &quot;openai.promt_token_count,model=&quot; + openai_response.model + &quot; &quot; + openai_response.usage.prompt_tokens + &quot;\n&quot;;
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
-<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
-<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>post_data += &quot;openai.completion_token_count,model=&quot; + openai_response.model + &quot; &quot; + openai_response.usage.completion_tokens + &quot;\n&quot;;
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
-<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>
-<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
-<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>post_data += &quot;openai.total_token_count,model=&quot; + openai_response.model + &quot; &quot; + openai_response.usage.total_tokens + &quot;\n&quot;;
-<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>
-<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
-<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>
-<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>console.log(post_data);
-<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>
-<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>
-<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>
-<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>var post_options = {
-<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>
-<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>
-<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a>
-<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>host: &#39;localhost&#39;,
-<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>
-<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a>
-<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>
-<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a>port: &#39;14499&#39;,
-<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>
-<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a>
-<a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a>
-<a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a>path: &#39;/metrics/ingest&#39;,
-<a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a>
-<a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a>
-<a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a>
-<a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a>method: &#39;POST&#39;,
-<a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a>
-<a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a>
-<a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a>
-<a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a>headers: {
-<a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a>
-<a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a>
-<a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a>
-<a id="__codelineno-24-45" name="__codelineno-24-45" href="#__codelineno-24-45"></a>&#39;Content-Type&#39;: &#39;text/plain&#39;,
-<a id="__codelineno-24-46" name="__codelineno-24-46" href="#__codelineno-24-46"></a>
-<a id="__codelineno-24-47" name="__codelineno-24-47" href="#__codelineno-24-47"></a>
-<a id="__codelineno-24-48" name="__codelineno-24-48" href="#__codelineno-24-48"></a>
-<a id="__codelineno-24-49" name="__codelineno-24-49" href="#__codelineno-24-49"></a>&#39;Content-Length&#39;: Buffer.byteLength(post_data)
-<a id="__codelineno-24-50" name="__codelineno-24-50" href="#__codelineno-24-50"></a>
-<a id="__codelineno-24-51" name="__codelineno-24-51" href="#__codelineno-24-51"></a>
-<a id="__codelineno-24-52" name="__codelineno-24-52" href="#__codelineno-24-52"></a>
-<a id="__codelineno-24-53" name="__codelineno-24-53" href="#__codelineno-24-53"></a>}
-<a id="__codelineno-24-54" name="__codelineno-24-54" href="#__codelineno-24-54"></a>
-<a id="__codelineno-24-55" name="__codelineno-24-55" href="#__codelineno-24-55"></a>
-<a id="__codelineno-24-56" name="__codelineno-24-56" href="#__codelineno-24-56"></a>
-<a id="__codelineno-24-57" name="__codelineno-24-57" href="#__codelineno-24-57"></a>};
-<a id="__codelineno-24-58" name="__codelineno-24-58" href="#__codelineno-24-58"></a>
-<a id="__codelineno-24-59" name="__codelineno-24-59" href="#__codelineno-24-59"></a>
-<a id="__codelineno-24-60" name="__codelineno-24-60" href="#__codelineno-24-60"></a>
-<a id="__codelineno-24-61" name="__codelineno-24-61" href="#__codelineno-24-61"></a>var metric_req = http.request(post_options, (resp) =&gt; {}).on(&quot;error&quot;, (err) =&gt; { console.log(err); });
-<a id="__codelineno-24-62" name="__codelineno-24-62" href="#__codelineno-24-62"></a>
-<a id="__codelineno-24-63" name="__codelineno-24-63" href="#__codelineno-24-63"></a>
-<a id="__codelineno-24-64" name="__codelineno-24-64" href="#__codelineno-24-64"></a>
-<a id="__codelineno-24-65" name="__codelineno-24-65" href="#__codelineno-24-65"></a>metric_req.write(post_data);
-<a id="__codelineno-24-66" name="__codelineno-24-66" href="#__codelineno-24-66"></a>
-<a id="__codelineno-24-67" name="__codelineno-24-67" href="#__codelineno-24-67"></a>
-<a id="__codelineno-24-68" name="__codelineno-24-68" href="#__codelineno-24-68"></a>
-<a id="__codelineno-24-69" name="__codelineno-24-69" href="#__codelineno-24-69"></a>metric_req.end();
-<a id="__codelineno-24-70" name="__codelineno-24-70" href="#__codelineno-24-70"></a>
-<a id="__codelineno-24-71" name="__codelineno-24-71" href="#__codelineno-24-71"></a>
-<a id="__codelineno-24-72" name="__codelineno-24-72" href="#__codelineno-24-72"></a>
-<a id="__codelineno-24-73" name="__codelineno-24-73" href="#__codelineno-24-73"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>function report_metric(openai_response) {
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>var post_data = &quot;openai.promt_token_count,model=&quot; + openai_response.model + &quot; &quot; + openai_response.usage.prompt_tokens + &quot;\n&quot;;
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>post_data += &quot;openai.completion_token_count,model=&quot; + openai_response.model + &quot; &quot; + openai_response.usage.completion_tokens + &quot;\n&quot;;
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>post_data += &quot;openai.total_token_count,model=&quot; + openai_response.model + &quot; &quot; + openai_response.usage.total_tokens + &quot;\n&quot;;
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>console.log(post_data);
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>var post_options = {
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>
+<a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>
+<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>host: &#39;localhost&#39;,
+<a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a>
+<a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a>
+<a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>
+<a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a>port: &#39;14499&#39;,
+<a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a>
+<a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a>
+<a id="__codelineno-26-32" name="__codelineno-26-32" href="#__codelineno-26-32"></a>
+<a id="__codelineno-26-33" name="__codelineno-26-33" href="#__codelineno-26-33"></a>path: &#39;/metrics/ingest&#39;,
+<a id="__codelineno-26-34" name="__codelineno-26-34" href="#__codelineno-26-34"></a>
+<a id="__codelineno-26-35" name="__codelineno-26-35" href="#__codelineno-26-35"></a>
+<a id="__codelineno-26-36" name="__codelineno-26-36" href="#__codelineno-26-36"></a>
+<a id="__codelineno-26-37" name="__codelineno-26-37" href="#__codelineno-26-37"></a>method: &#39;POST&#39;,
+<a id="__codelineno-26-38" name="__codelineno-26-38" href="#__codelineno-26-38"></a>
+<a id="__codelineno-26-39" name="__codelineno-26-39" href="#__codelineno-26-39"></a>
+<a id="__codelineno-26-40" name="__codelineno-26-40" href="#__codelineno-26-40"></a>
+<a id="__codelineno-26-41" name="__codelineno-26-41" href="#__codelineno-26-41"></a>headers: {
+<a id="__codelineno-26-42" name="__codelineno-26-42" href="#__codelineno-26-42"></a>
+<a id="__codelineno-26-43" name="__codelineno-26-43" href="#__codelineno-26-43"></a>
+<a id="__codelineno-26-44" name="__codelineno-26-44" href="#__codelineno-26-44"></a>
+<a id="__codelineno-26-45" name="__codelineno-26-45" href="#__codelineno-26-45"></a>&#39;Content-Type&#39;: &#39;text/plain&#39;,
+<a id="__codelineno-26-46" name="__codelineno-26-46" href="#__codelineno-26-46"></a>
+<a id="__codelineno-26-47" name="__codelineno-26-47" href="#__codelineno-26-47"></a>
+<a id="__codelineno-26-48" name="__codelineno-26-48" href="#__codelineno-26-48"></a>
+<a id="__codelineno-26-49" name="__codelineno-26-49" href="#__codelineno-26-49"></a>&#39;Content-Length&#39;: Buffer.byteLength(post_data)
+<a id="__codelineno-26-50" name="__codelineno-26-50" href="#__codelineno-26-50"></a>
+<a id="__codelineno-26-51" name="__codelineno-26-51" href="#__codelineno-26-51"></a>
+<a id="__codelineno-26-52" name="__codelineno-26-52" href="#__codelineno-26-52"></a>
+<a id="__codelineno-26-53" name="__codelineno-26-53" href="#__codelineno-26-53"></a>}
+<a id="__codelineno-26-54" name="__codelineno-26-54" href="#__codelineno-26-54"></a>
+<a id="__codelineno-26-55" name="__codelineno-26-55" href="#__codelineno-26-55"></a>
+<a id="__codelineno-26-56" name="__codelineno-26-56" href="#__codelineno-26-56"></a>
+<a id="__codelineno-26-57" name="__codelineno-26-57" href="#__codelineno-26-57"></a>};
+<a id="__codelineno-26-58" name="__codelineno-26-58" href="#__codelineno-26-58"></a>
+<a id="__codelineno-26-59" name="__codelineno-26-59" href="#__codelineno-26-59"></a>
+<a id="__codelineno-26-60" name="__codelineno-26-60" href="#__codelineno-26-60"></a>
+<a id="__codelineno-26-61" name="__codelineno-26-61" href="#__codelineno-26-61"></a>var metric_req = http.request(post_options, (resp) =&gt; {}).on(&quot;error&quot;, (err) =&gt; { console.log(err); });
+<a id="__codelineno-26-62" name="__codelineno-26-62" href="#__codelineno-26-62"></a>
+<a id="__codelineno-26-63" name="__codelineno-26-63" href="#__codelineno-26-63"></a>
+<a id="__codelineno-26-64" name="__codelineno-26-64" href="#__codelineno-26-64"></a>
+<a id="__codelineno-26-65" name="__codelineno-26-65" href="#__codelineno-26-65"></a>metric_req.write(post_data);
+<a id="__codelineno-26-66" name="__codelineno-26-66" href="#__codelineno-26-66"></a>
+<a id="__codelineno-26-67" name="__codelineno-26-67" href="#__codelineno-26-67"></a>
+<a id="__codelineno-26-68" name="__codelineno-26-68" href="#__codelineno-26-68"></a>
+<a id="__codelineno-26-69" name="__codelineno-26-69" href="#__codelineno-26-69"></a>metric_req.end();
+<a id="__codelineno-26-70" name="__codelineno-26-70" href="#__codelineno-26-70"></a>
+<a id="__codelineno-26-71" name="__codelineno-26-71" href="#__codelineno-26-71"></a>
+<a id="__codelineno-26-72" name="__codelineno-26-72" href="#__codelineno-26-72"></a>
+<a id="__codelineno-26-73" name="__codelineno-26-73" href="#__codelineno-26-73"></a>}
 </code></pre></div>
 <p>The three new OpenAI token consumption metrics are available in Dynatrace.</p>
 <p><img alt="OpenAI token consumption metrics collected in Dynatrace" src="https://dt-cdn.net/images/openai-dashboard-2-2551-f433fa0e84.png" /></p>
@@ -28048,7 +28202,7 @@ scraped: 2026-02-18T21:33:32.285342</p>
 <hr />
 <p>title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-02-18T21:16:44.050681</p>
+scraped: 2026-02-19T21:14:10.231163</p>
 <hr />
 <h1 id="ai-and-llm-observability">AI and LLM Observability<a class="headerlink" href="#ai-and-llm-observability" title="Permanent link">&para;</a></h1>
 <h1 id="ai-and-llm-observability_1">AI and LLM Observability<a class="headerlink" href="#ai-and-llm-observability_1" title="Permanent link">&para;</a></h1>

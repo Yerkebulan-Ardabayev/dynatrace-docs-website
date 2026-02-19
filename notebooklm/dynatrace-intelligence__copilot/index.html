@@ -25495,7 +25495,7 @@
 
 <h1 id="dynatrace-dynatrace-intelligencecopilot">Документация Dynatrace: dynatrace-intelligence/copilot<a class="headerlink" href="#dynatrace-dynatrace-intelligencecopilot" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-02-19
 Файлов в разделе: 9</p>
 <hr />
 <h2 id="dynatrace-intelligencecopilotchat-with-davis-copilotcopilot-conv-startersmd">dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters.md<a class="headerlink" href="#dynatrace-intelligencecopilotchat-with-davis-copilotcopilot-conv-startersmd" title="Permanent link">&para;</a></h2>
@@ -25717,7 +25717,7 @@ scraped: 2026-02-18T21:31:53.728074</p>
 <hr />
 <p>title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-18T21:32:50.088082</p>
+scraped: 2026-02-19T21:34:36.830745</p>
 <hr />
 <h1 id="dynatrace-assist">Dynatrace Assist<a class="headerlink" href="#dynatrace-assist" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-assist_1">Dynatrace Assist<a class="headerlink" href="#dynatrace-assist_1" title="Permanent link">&para;</a></h1>
@@ -25725,9 +25725,9 @@ scraped: 2026-02-18T21:32:50.088082</p>
 <li>Latest Dynatrace</li>
 <li>App</li>
 <li>2-min read</li>
-<li>Updated on Jan 28, 2026</li>
+<li>Updated on Feb 11, 2026</li>
 </ul>
-<p><strong>Dynatrace Assist</strong> allows you to chat with Dynatrace Assist and ask general help questions to help you with onboarding to Dynatrace and understanding our core concepts.</p>
+<p><strong>Dynatrace Assist</strong> allows you to chat with Dynatrace Intelligence and ask questions about the data in your environment, as well as general questions to help you with onboarding to Dynatrace and understanding our core concepts.</p>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
 <p>Permission</p>
@@ -25757,18 +25757,25 @@ scraped: 2026-02-18T21:32:50.088082</p>
 <p>Page</p>
 <p>1</p>
 <p>of 1</p>
+<p>To use  <strong>Dynatrace Assist</strong> with generative AI features, you only need the following permissions:</p>
+<ul>
+<li><code>document:documents:write</code></li>
+<li><code>document:documents:read</code></li>
+<li><code>document:documents:delete</code></li>
+<li><code>davis-copilot:conversations:execute</code></li>
+<li><code>hub:catalog:read</code></li>
+</ul>
+<p>You require the remaining permissions in the table only if you want to use the full extent of agentic Dynatrace Assist capabilities. For more information, see <a href="#assist-agentic-permissions">Dynatrace Assist agentic permissions</a>.</p>
 <p>For more information, see <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence generative AI.">Getting started with Dynatrace Intelligence generative AI</a>.</p>
-<p>Get started</p>
-<p>Content sources</p>
-<p>Prompt examples</p>
+<h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <p><img alt="Get started quickly and easily by asking Dynatrace Assist a question. Try out one of the examples to see what's possible." src="https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/efd72baf-d142-45ee-b52a-51aea2450093.png" /><img alt="Ask Dynatrace Assist to summarize all open problems to get a quick overview of your environment." src="https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/8d9a51ac-e9a7-4152-9158-235e6e1fef66.png" /><img alt="Ask Dynatrace Assist to explain your logs to quickly get the insights, potential impact, likely causes and recommended next steps." src="https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/e9aa5b44-ceb3-4113-894c-4cdc32f5d94e.png" /><img alt="Get help with identifying and fixing vulnerabilities, such as SQL injections." src="https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/9282285e-db29-48d0-b368-92ac20460a5f.png" /></p>
 <p>1 of 4Get started quickly and easily by asking Dynatrace Assist a question. Try out one of the examples to see what's possible.</p>
-<h2 id="use-dynatrace-assist-conversational-interface">Use Dynatrace Assist conversational interface<a class="headerlink" href="#use-dynatrace-assist-conversational-interface" title="Permanent link">&para;</a></h2>
+<h3 id="use-dynatrace-assist-conversational-interface">Use Dynatrace Assist conversational interface<a class="headerlink" href="#use-dynatrace-assist-conversational-interface" title="Permanent link">&para;</a></h3>
 <p>After enabling Dynatrace Intelligence generative AI on your environment and setting the user permissions, you should see a new icon  below the <strong>Search</strong>  in the dock.</p>
 <ol>
 <li>In Dynatrace, select  <strong>Dynatrace Assist</strong>.</li>
 <li>A new window opens with the chat interface.</li>
-<li>Type your question. See <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#prompt-examples" title="Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.">examples</a> for inspiration.</li>
+<li>Type your question. See <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts" title="Learn what kind of prompts work well in Dynatrace Assist.">examples</a> for inspiration.</li>
 <li>
 <p>Select <strong>Run</strong> <img alt="Run" src="https://dt-cdn.net/images/run-c2f8c2f63c.svg" title="Run" /> and wait for the response to be generated.</p>
 </li>
@@ -25784,19 +25791,37 @@ scraped: 2026-02-18T21:32:50.088082</p>
 <ul>
 <li>I'm sorry, but I can't respond to this request. Please try rephrasing it or adding additional context.</li>
 </ul>
-<h2 id="give-feedback">Give feedback<a class="headerlink" href="#give-feedback" title="Permanent link">&para;</a></h2>
+<h3 id="use-agentic-dynatrace-assist">Use agentic Dynatrace Assist<a class="headerlink" href="#use-agentic-dynatrace-assist" title="Permanent link">&para;</a></h3>
+<p><strong>Dynatrace Assist</strong> allows you to use Dynatrace agentic AI and <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server" title="Learn about the Dynatrace MCP server and how you can connect to it.">MCP tools and capabilities</a> to access and analyze your environment data and use it to perform tasks (such as listing problems or generating and executing DQL queries) in addition to answering general questions about Dynatrace.</p>
+<p>Agentic  <strong>Dynatrace Assist</strong> shares some additional information, such as tool call results, with enterprise vendors hosting the LLMs that Dynatrace agentic and generative AI are based on. For more information about third parties, see <a href="/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data" title="Learn about frequently asked questions and find your answers.">Is my data used to train Dynatrace Intelligence generative AI?</a>.</p>
+<p>With agentic AI enabled, you can ask  <strong>Dynatrace Assist</strong> to analyze and provide insights on the data and security of your environment. For examples, see <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts#assist-ask-about-the-data" title="Learn what kind of prompts work well in Dynatrace Assist.">Ask about the data in your environment</a>.</p>
+<h4 id="dynatrace-assist-agentic-permissions"><strong>Dynatrace Assist</strong> agentic permissions<a class="headerlink" href="#dynatrace-assist-agentic-permissions" title="Permanent link">&para;</a></h4>
+<p><strong>Dynatrace Assist</strong> respects your user permissions. This means that all agentic  <strong>Dynatrace Assist</strong> calls are done within the scope of your user permissions and the results won't include anything outside of it.</p>
+<p>To use the agentic  <strong>Dynatrace Assist</strong>, you need to</p>
+<ul>
+<li>Have sufficient permissions.</li>
+<li>
+<p>Have agentic AI enabled for  <strong>Dynatrace Assist</strong>. To enable agentic AI</p>
+</li>
+<li>
+<p>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Generative and agentic AI</strong>.</p>
+</li>
+<li>Ensure that <strong>Enable generative AI</strong> is turned on.</li>
+<li>Turn on <strong>Enable agentic AI</strong>.</li>
+</ul>
+<p>Agentic  <strong>Dynatrace Assist</strong> might not be available for you if you don't meet the prerequisites mentioned above or if you access  <strong>Dynatrace Assist</strong> from the <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters" title="Learn how to trigger predefined prompts in various Dynatrace applications.">Embedded conversation starters</a>.</p>
+<p>You will also need additional permissions for calling the agentic AI tools. For the list of tools and permissions they require, see <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server" title="Learn about the Dynatrace MCP server and how you can connect to it.">MCP tools</a>.</p>
+<h4 id="pii-masking">PII masking<a class="headerlink" href="#pii-masking" title="Permanent link">&para;</a></h4>
+<p>Agentic  <strong>Dynatrace Assist</strong> doesn't provide any PII masking. In order to protect your data, when  <strong>Dynatrace Assist</strong> detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.</p>
+<h4 id="calling-multiple-tools">Calling multiple tools<a class="headerlink" href="#calling-multiple-tools" title="Permanent link">&para;</a></h4>
+<p>While interacting with  <strong>Dynatrace Assist</strong> in agentic mode, <strong>Assist</strong> can call up to 10 internal MCP tools per response. If your request requires  <strong>Dynatrace Assist</strong> to call more than 10 tools simultaneously, it'll be unable to complete the interaction.</p>
+<h3 id="give-feedback">Give feedback<a class="headerlink" href="#give-feedback" title="Permanent link">&para;</a></h3>
 <p>You can provide feedback using the built-in feedback mechanism.</p>
 <p>Select <img alt="Thumb up" src="https://dt-cdn.net/images/thumbsup-65185abaeb.svg" title="Thumb up" /> if Dynatrace Assist has generated a response that has met your expectations and interpreted your prompt correctly.</p>
 <p>Select <img alt="Thumb down" src="https://dt-cdn.net/images/thumbsdown-b83de466e8.svg" title="Thumb down" /> if Dynatrace Assist has generated a response that has failed to meet your expectations or has incorrectly interpreted your prompt. Please provide additional context for us to understand how we can improve this functionality to meet your needs and expectations.</p>
-<h2 id="learning-modules">Learning modules<a class="headerlink" href="#learning-modules" title="Permanent link">&para;</a></h2>
-<p>Go through the following process to learn using  <strong>Dynatrace Assist</strong></p>
-<p>[01Embedded conversation starters</p>
-<ul>
-<li>Reference</li>
-<li>Learn how to trigger predefined prompts in various Dynatrace applications.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)</li>
-</ul>
-<p><strong>Dynatrace Assist</strong> enriches its answers based on the official Dynatrace sources, such as Dynatrace Documentation and Dynatrace Community. For details, see below.</p>
-<h2 id="sources-consulted-to-generate-responses">Sources consulted to generate responses<a class="headerlink" href="#sources-consulted-to-generate-responses" title="Permanent link">&para;</a></h2>
+<p>Your feedback isn't used to automatically train any models. It's reviewed only by the product team to monitor the response quality and improve the core product offering.</p>
+<h3 id="sources-consulted-to-generate-responses">Sources consulted to generate responses<a class="headerlink" href="#sources-consulted-to-generate-responses" title="Permanent link">&para;</a></h3>
+<p><strong>Dynatrace Assist</strong> enriches its answers based on the official Dynatrace sources, such as:</p>
 <ul>
 <li>Dynatrace Documentation</li>
 <li><a href="https://developer.dynatrace.com/">Dynatrace Developerï»¿</a></li>
@@ -25805,37 +25830,34 @@ scraped: 2026-02-18T21:32:50.088082</p>
 <li><a href="https://www.dynatrace.com/news/product-news/">Dynatrace news and resourcesï»¿</a></li>
 <li><a href="https://www.dynatrace.com/">Dynatrace websiteï»¿</a></li>
 </ul>
-<p><strong>Dynatrace Assist</strong> can help answer your questions for a variety of different topics and use cases that relate to Dynatrace specifically, as well as software, observability, and technology in general. See the examples below to understand what kind of questions  <strong>Dynatrace Assist</strong> can help you with.</p>
-<p>We recommend that you start a new conversation for a new topic to improve Dynatrace Assist response accuracy.</p>
-<h2 id="get-started-with-dynatrace">Get started with Dynatrace<a class="headerlink" href="#get-started-with-dynatrace" title="Permanent link">&para;</a></h2>
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
+<p>Go through the following process to learn using  <strong>Dynatrace Assist</strong></p>
+<p>[01Embedded conversation starters</p>
 <ul>
-<li>How do I get started with sending OpenTelemetry to Dynatrace?</li>
-<li>What are Dynatrace workflows, how do I get started with them, and how will this improve the way I work with Dynatrace?</li>
-<li>Introduce all basic DQL commands and provide examples of each one.</li>
+<li>Reference</li>
+<li>
+<p>Learn how to trigger predefined prompts in various Dynatrace applications.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)[02Dynatrace Assist prompt examples</p>
+</li>
+<li>
+<p>Reference</p>
+</li>
+<li>Learn what kind of prompts work well in Dynatrace Assist.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts)</li>
 </ul>
-<h2 id="understand-how-dynatrace-works">Understand how Dynatrace works<a class="headerlink" href="#understand-how-dynatrace-works" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<p>You can use agentic  <strong>Dynatrace Assist</strong> to:</p>
 <ul>
-<li>What is the difference between an event and a problem in Dynatrace?</li>
-<li>How is the Dynatrace Security Score calculated, and why is this important for my environment?</li>
-<li>What are the reasons why I canât find historical data, and how can I fix this?</li>
-</ul>
-<h2 id="how-to-configure-parts-of-dynatrace">How to configure parts of Dynatrace<a class="headerlink" href="#how-to-configure-parts-of-dynatrace" title="Permanent link">&para;</a></h2>
-<ul>
-<li>How can I configure an SLO?</li>
-<li>How do I set up an alert?</li>
-<li>How do I set a maintenance window via API?</li>
-</ul>
-<h2 id="get-help-with-onboarding-to-dynatrace-app-development">Get help with onboarding to Dynatrace App development<a class="headerlink" href="#get-help-with-onboarding-to-dynatrace-app-development" title="Permanent link">&para;</a></h2>
-<ul>
-<li>What is the Dynatrace AppEngine and how do I get started with building my own app?</li>
-<li>What are the requirements for using the Dynatrace App Toolkit? What are the tutorial steps for getting started?</li>
-<li>Does Dynatrace have a design system and how can it help me build an app?</li>
+<li>Ask general questions about the Dynatrace product.</li>
+<li>Make use of the MCP tools and capabilities.</li>
+<li>Perform tasks without the need to open the app or drill-down to another app.</li>
+<li>Combine tools in one request to perform multiple tasks.</li>
+<li>Combine tools to perform tasks and get answers to general questions at the same time.</li>
 </ul>
 <h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence generative AI.">Get started with Dynatrace Intelligence generative AI</a></li>
 <li><a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters" title="Learn how to trigger predefined prompts in various Dynatrace applications.">Embedded conversation starters</a></li>
 <li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Learn about frequently asked questions and find your answers.">Dynatrace Intelligence generative AI FAQ</a></li>
+<li><a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp" title="Learn about the Dynatrace MCP server and how you can connect to it.">Dynatrace MCP server</a></li>
 </ul>
 <hr />
 <h2 id="dynatrace-intelligencecopilotcopilot-data-privacymd">dynatrace-intelligence/copilot/copilot-data-privacy.md<a class="headerlink" href="#dynatrace-intelligencecopilotcopilot-data-privacymd" title="Permanent link">&para;</a></h2>
@@ -25859,7 +25881,7 @@ scraped: 2026-02-16T09:29:33.353940</p>
 <p>Each data request is sent to the LLM individually, over an SSL-encrypted service, processed by respective enterprise vendors, and sent back to Dynatrace. If your environment is located in EMEA, your prompts are processed in an EU region. If your environment is located in NORAM, LATAM, or APAC, your prompts are processed in a US region.</p>
 <p>Dynatrace may store the prompts submitted to Dynatrace Intelligence generative AI and the responses provided by the LLMs to understand the use cases, contextualize the feedback on the responses, and identify additional user expectations.</p>
 <p>Learn more about the <a href="/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI architecture and data flow</a>.</p>
-<h2 id="pii-masking">PII masking<a class="headerlink" href="#pii-masking" title="Permanent link">&para;</a></h2>
+<h2 id="pii-masking_1">PII masking<a class="headerlink" href="#pii-masking_1" title="Permanent link">&para;</a></h2>
 <p>Dynatrace version 1.305+</p>
 <p>Starting with Dynatrace version 1.305, PII masking is in place for user prompts. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.</p>
 <p>Currently masked fields include:</p>
@@ -25887,7 +25909,7 @@ scraped: 2026-02-16T09:29:33.353940</p>
 <hr />
 <p>title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-18T21:16:33.177607</p>
+scraped: 2026-02-19T21:13:05.520218</p>
 <hr />
 <h1 id="discover-relevant-troubleshooting-guides-with-dynatrace-intelligence-generative-ai">Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI<a class="headerlink" href="#discover-relevant-troubleshooting-guides-with-dynatrace-intelligence-generative-ai" title="Permanent link">&para;</a></h1>
 <h1 id="discover-relevant-troubleshooting-guides-with-dynatrace-intelligence-generative-ai_1">Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI<a class="headerlink" href="#discover-relevant-troubleshooting-guides-with-dynatrace-intelligence-generative-ai_1" title="Permanent link">&para;</a></h1>
@@ -26148,7 +26170,7 @@ scraped: 2026-02-18T21:16:33.177607</p>
 <hr />
 <p>title: Get started with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
-scraped: 2026-02-18T21:22:36.457065</p>
+scraped: 2026-02-19T21:18:39.450735</p>
 <hr />
 <h1 id="get-started-with-dynatrace-intelligence-generative-ai">Get started with Dynatrace Intelligence generative AI<a class="headerlink" href="#get-started-with-dynatrace-intelligence-generative-ai" title="Permanent link">&para;</a></h1>
 <h1 id="get-started-with-dynatrace-intelligence-generative-ai_1">Get started with Dynatrace Intelligence generative AI<a class="headerlink" href="#get-started-with-dynatrace-intelligence-generative-ai_1" title="Permanent link">&para;</a></h1>
@@ -26221,7 +26243,7 @@ scraped: 2026-02-18T21:22:36.457065</p>
 <hr />
 <p>title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-18T21:22:35.362597</p>
+scraped: 2026-02-19T21:16:18.395019</p>
 <hr />
 <h1 id="dynatrace-intelligence-generative-ai-overview">Dynatrace Intelligence generative AI overview<a class="headerlink" href="#dynatrace-intelligence-generative-ai-overview" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-generative-ai-overview_1">Dynatrace Intelligence generative AI overview<a class="headerlink" href="#dynatrace-intelligence-generative-ai-overview_1" title="Permanent link">&para;</a></h1>
@@ -26268,7 +26290,7 @@ scraped: 2026-02-18T21:22:35.362597</p>
 <hr />
 <p>title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-17T05:12:34.697816</p>
+scraped: 2026-02-19T21:27:31.845258</p>
 <hr />
 <h1 id="dynatrace-intelligence-generative-ai-tips-for-writing-better-prompts">Dynatrace Intelligence generative AI - Tips for writing better prompts<a class="headerlink" href="#dynatrace-intelligence-generative-ai-tips-for-writing-better-prompts" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-generative-ai-tips-for-writing-better-prompts_1">Dynatrace Intelligence generative AI - Tips for writing better prompts<a class="headerlink" href="#dynatrace-intelligence-generative-ai-tips-for-writing-better-prompts_1" title="Permanent link">&para;</a></h1>
@@ -26365,7 +26387,7 @@ scraped: 2026-02-17T05:12:34.697816</p>
 <hr />
 <p>title: Query with natural language
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
-scraped: 2026-02-18T21:31:21.056346</p>
+scraped: 2026-02-19T21:31:36.713395</p>
 <hr />
 <h1 id="query-with-natural-language">Query with natural language<a class="headerlink" href="#query-with-natural-language" title="Permanent link">&para;</a></h1>
 <h1 id="query-with-natural-language_1">Query with natural language<a class="headerlink" href="#query-with-natural-language_1" title="Permanent link">&para;</a></h1>
@@ -26528,7 +26550,7 @@ scraped: 2026-02-18T21:31:21.056346</p>
 <hr />
 <p>title: Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-18T21:21:27.509889</p>
+scraped: 2026-02-19T21:34:11.575607</p>
 <hr />
 <h1 id="dynatrace-intelligence-agentic-and-generative-ai">Dynatrace Intelligence agentic and generative AI<a class="headerlink" href="#dynatrace-intelligence-agentic-and-generative-ai" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-agentic-and-generative-ai_1">Dynatrace Intelligence agentic and generative AI<a class="headerlink" href="#dynatrace-intelligence-agentic-and-generative-ai_1" title="Permanent link">&para;</a></h1>
@@ -26539,7 +26561,7 @@ scraped: 2026-02-18T21:21:27.509889</p>
 <li>Updated on Jan 28, 2026</li>
 </ul>
 <p>Dynatrace Intelligence generative AI developed by Dynatrace allows you to explore data through natural language, helping with onboarding and boosting productivity. Dynatrace Intelligence generative AI takes your prompt and translates it to DQL, and is capable of auto-executing generated DQL queries.</p>
-<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases_1">Use cases<a class="headerlink" href="#use-cases_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Get familiar with DQL faster by translating natural language requests into ready-to-use queries.</li>
 <li>Save time by generating and executing generated DQL queries instead of writing them manually.</li>
@@ -26600,7 +26622,7 @@ scraped: 2026-02-18T21:21:27.509889</p>
 <li>Reference</li>
 </ul>
 <p>Read this reference](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)</p>
-<p>For more information about what kind of prompts work well in  <strong>Dynatrace Assist</strong>, see <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#prompt-examples" title="Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.">prompt examples</a></p>
+<p>For more information about what kind of prompts work well in  <strong>Dynatrace Assist</strong>, see <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts" title="Learn what kind of prompts work well in Dynatrace Assist.">prompt examples</a>.</p>
 <h2 id="vector-based-document-matching">Vector-based document matching<a class="headerlink" href="#vector-based-document-matching" title="Permanent link">&para;</a></h2>
 <p>[#### Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI</p>
 <p>Learn how Dynatrace Intelligence generative AI can suggest troubleshooting guides for problem remediation.</p>

@@ -25479,13 +25479,14 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>Tutorial</li>
-<li>6-min read</li>
-<li>Updated on Feb 04, 2026</li>
+<li>10-min read</li>
+<li>Updated on Feb 18, 2026</li>
 </ul>
-<p>OpenPipeline processing allows you to normalize span and metric data to prevent high cardinality issues that can make aggregations and analysis unusable.</p>
-<p>The following use cases show how to reduce cardinality in different views in <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong>:</p>
+<p>OpenPipeline processing allows you to normalize span and metric data to prevent high-cardinality issues that can make aggregations and analysis unusable.</p>
+<p>The following use cases show how to reduce cardinality in three different views in <a href="/docs/observe/application-observability/services/services-app" title="Maintain centralized control over service health, performance, and resources with the Services app."><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong></a>:</p>
 <ul>
 <li><a href="#outbound-calls">Outbound calls</a></li>
+<li><a href="#database-queries">Database queries</a>: This tab shows aggregated metrics for database calls made by your service.</li>
 <li><a href="/docs/observe/application-observability/services/monitor-service-message-processing" title="Monitor service message processing">Message processing</a></li>
 </ul>
 <h2 id="outbound-calls">Outbound calls<a class="headerlink" href="#outbound-calls" title="Permanent link">&para;</a></h2>
@@ -25547,6 +25548,247 @@
 4. Select <strong>Save</strong>.</p>
 </li>
 </ol>
+<h2 id="database-queries">Database queries<a class="headerlink" href="#database-queries" title="Permanent link">&para;</a></h2>
+<p>Redis statements often include unique identifiers or values, for example, <code>GET user:12345</code>, <code>GET user:12346</code>, and <code>GET user:12347</code> or <code>SET order:123</code>, <code>SET order:124</code>, and <code>SET order:125</code>. This high cardinality results in thousands of distinct entries shown in the <a href="/docs/observe/application-observability/services/services-app#database-queries" title="Maintain centralized control over service health, performance, and resources with the Services app."><strong>Database queries</strong> view</a> in <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong>.</p>
+<p>Unlike parameterized SQL databases, where OneAgent or OpenTelemetry automatically handles normalization, Redis commands require manual cardinality handling via an OpenPipeline pipeline. In this section, we'll utilize a processing rule to transform these commands into normalized patterns such as <code>GET</code> or <code>SET</code>, making your Redis query data more actionable.</p>
+<h3 id="1-create-a-pipeline">1. Create a pipeline<a class="headerlink" href="#1-create-a-pipeline" title="Permanent link">&para;</a></h3>
+<p>First, let's create a pipeline that contains a processing rule for reducing the cardinality of your Redis statements. As <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> utilizes the <code>db.query.text</code> attribute, you'll tweak this particular attribute to normalize the Redis statements displayed in the <strong>Database queries</strong> view.</p>
+<p>To create a pipeline</p>
+<ol>
+<li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>OpenPipeline</strong> &gt; <strong>Spans</strong>.</li>
+<li>Go to the <strong>Pipelines</strong> tab, and select  <strong>Pipeline</strong>.</li>
+<li>Enter <strong>DB statement normalization</strong> as a pipeline name.</li>
+<li>
+<p>On the <strong>Processing</strong> tab, select &gt;  <strong>Processor</strong> &gt; <strong>DQL</strong>, and configure a new DQL processor:</p>
+</li>
+<li>
+<p><strong>Name</strong>: <strong>Redis</strong></p>
+</li>
+<li>
+<p><strong>Matching condition</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>db.system == &quot;redis&quot; and (isNotNull(db.statement) or isNotNull(db.query.text))
+</code></pre></div>
+<p>Explain this matching condition</p>
+<ul>
+<li><code>db.system == "redis"</code>: Match all <code>redis</code> database systems.</li>
+<li><code>(isNotNull(db.statement) or isNotNull(db.query.text))</code>: Require that either the old <code>db.statement</code> or the new <code>db.query.text</code> attribute is used in your Redis database spans.</li>
+</ul>
+<p><code>db.statement</code> is still common for some OpenTelemetry instrumentations.
+   * <strong>DQL processor definition</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>fieldsAdd db.query.text = coalesce(db.query.text, db.statement)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>| fieldsAdd db.query.text.orig = db.query.text
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>| fieldsAdd blankPos = indexOf(db.query.text.orig, &quot; &quot;)
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>| fieldsAdd db.query.text = if (blankPos &gt; 0, substring(db.query.text, from: 0, to: blankPos), else: &quot;*&quot;)
+</code></pre></div>
+<p>Explain this processor definition</p>
+<ul>
+<li><code>fieldsAdd db.query.text = coalesce(db.query.text, db.statement)</code>: Make sure that the matching condition works for both the old <code>db.statement</code> and the new <code>db.query.text</code> attribute.</li>
+</ul>
+<p>Many OpenTelemetry instrumentations still use <code>db.statement</code> instead of <code>db.query.text</code>. This line ensures that both fields are respected, as <code>coalesce()</code> returns the first non-null argument.
+ + <code>fieldsAdd db.query.text.orig = db.query.text</code>: Store the original value of the <code>db.query.text</code> attribute.</p>
+<p>While the low cardinality of <code>db.query.text</code> is important in <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong>, preserving the original value of the <code>db.query.text</code> attribute is quite beneficial and can be leveraged for further drill-downs.
+ + <code>fieldsAdd blankPos = indexOf(db.query.text.orig, " ")</code> and <code>fieldsAdd db.query.text = if (blankPos &gt; 0, substring(db.query.text, from: 0, to: blankPos), else: "*")</code>: Simplify the <code>db.query.text</code> attribute by extracting the new value from the start of the text up to the first blank space.</p>
+<p>A Redis database query is the value until the first blank space of the statement, so this blank space is found, and then only the part until that blank space is kept as <code>db.query.text</code>.
+5. Select <strong>Save</strong> in the upper-right corner of the page.</p>
+</li>
+</ol>
+<p>You should see the <strong>DB statement normalization</strong> pipeline in the list of pipelines.</p>
+<p>If you have other databases with high-cardinality database statements, add additional DQL processors to your <strong>DB statement normalization</strong> pipeline. Configure the processors according to your situation. For additional examples, see <a href="#db-queries-dql-processor-examples">Explore other DQL processors</a>.</p>
+<h3 id="2-create-a-dynamic-route">2. Create a dynamic route<a class="headerlink" href="#2-create-a-dynamic-route" title="Permanent link">&para;</a></h3>
+<p>Now that you have created a new pipeline and defined a cardinality-reducing DQL processor, activate this processor by connecting it to OpenPipeline via a dynamic route. This way, your pipeline can receive the span data.</p>
+<p>To create a dynamic route</p>
+<ol>
+<li>On the <strong>Spans</strong> page, go to the <strong>Dynamic routing</strong> tab.</li>
+<li>Select  <strong>Dynamic route</strong>.</li>
+<li>
+<p>Define your dynamic route:</p>
+</li>
+<li>
+<p><strong>Name</strong>: <strong>DB statement normalization</strong></p>
+</li>
+<li>
+<p><strong>Matching condition</strong>:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>isNotNull(db.statement) and (isNotNull(db.statement) or isNotNull(db.query.text))
+</code></pre></div>
+   * <strong>Pipeline</strong>: Select the previously created <strong>DB statement normalization</strong> pipeline from the list of custom pipelines.
+4. Select <strong>Add</strong>, and then select <strong>Save</strong>.</p>
+</li>
+</ol>
+<p>You should see the <strong>DB statement normalization</strong> dynamic route in the list of dynamic routes.</p>
+<h3 id="3-explore-other-dql-processorsoptional">3. Explore other DQL processorsOptional<a class="headerlink" href="#3-explore-other-dql-processorsoptional" title="Permanent link">&para;</a></h3>
+<p>As mentioned before, you can add additional DQL processors when you encounter high-cardinality database queries.</p>
+<p>Check the sections below for three additional examples of the DQL processor. When you add a new processor, set <strong>Matching condition</strong> to <code>db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))</code>, and set <strong>DQL processor definition</strong> to the value provided in one of the examples below.</p>
+<p>Before introducing a new DQL processor, you can use <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> to check how a DQL processor transforms your data.</p>
+<ol>
+<li>Go to <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
+<li>Select  <strong>Notebook</strong> in the app header to create a new notebook.</li>
+<li>Open the  (<strong>Add</strong>) menu, and select  <strong>DQL</strong>.</li>
+<li>In the query section, enter the required DQL query.</li>
+<li>Select  <strong>Run</strong> to execute the DQL query.</li>
+</ol>
+<p>Original: Full cardinality</p>
+<p>Use the following DQL query to count the original number of Redis statements (before cardinality reduction).</p>
+<p><strong>DQL query in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks****:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>fetch spans
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| filter db.system == &quot;redis&quot; and (isNotNull(db.statement) or isNotNull(db.query.text))
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>| summarize count(), by: { db.query.text }
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>| sort `count()` desc
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Option 1: Abbreviated</p>
+<p>This DQL processor replaces <code>db.query.text</code> with the first 15 characters + <code>*</code>. This option is good for quick cardinality reduction regardless of the content format.</p>
+<p><strong>DQL processor definition</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>| fieldsAdd db.query.text.orig = db.query.text
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>| fieldsAdd db.query.text = concat(substring(db.query.text, from: 0, to: 15), &quot;*&quot;)
+</code></pre></div>
+<p><strong>DQL query in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks****:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>fetch spans
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>| filter db.system == &quot;redis&quot; and (isNotNull(db.statement) or isNotNull(db.query.text))
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>| fieldsAdd db.query.text.orig = db.query.text
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>| fieldsAdd db.query.text = concat(substring(db.query.text, from: 0, to: 15), &quot;*&quot;)
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>| summarize count(), by: { db.query.text }
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>| sort `count()` desc
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Option 2: Redis command only</p>
+<p>This DQL processor extracts the first word in <code>db.query.text</code> by cutting at the first space. This option is great to get only the Redis commands, for example, <code>GET</code> or <code>SET</code>.</p>
+<p><strong>DQL processor definition</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>| fieldsAdd db.query.text.orig = db.query.text
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>| fieldsAdd blankPos = indexOf(db.query.text.orig, &quot; &quot;)
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>| fieldsAdd db.query.text = if(blankPos &gt; 0, substring(db.query.text, from: 0, to: blankPos), else: &quot;*&quot;)
+</code></pre></div>
+<p><strong>DQL query in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks****:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>fetch spans
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>| filter db.system == &quot;redis&quot; and (isNotNull(db.statement) or isNotNull(db.query.text))
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>| fieldsAdd db.query.text.orig = db.query.text
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>| fieldsAdd blankPos = indexOf(db.query.text.orig, &quot; &quot;)
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>| fieldsAdd db.query.text = if(blankPos &gt; 0, substring(db.query.text, from: 0, to: blankPos), else: &quot;*&quot;)
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>| summarize count(), by: { db.query.text }
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>| sort `count()` desc
+</code></pre></div>
+<p>Run in Playground</p>
+<p>Option 3: DB operation name</p>
+<p>This DQL processor sets <code>db.query.text</code> to the value of <code>db.operation.name</code>. Use this option when you want to see a Redis operation instead of a database query text.</p>
+<p><strong>DQL processor definition</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>| fieldsAdd db.query.text.orig = db.query.text
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>| fieldsAdd db.query.text = if(isNotNull(db.operation.name), db.operation.name, else: &quot;*&quot;)
+</code></pre></div>
+<p><strong>DQL query in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> </strong>Notebooks****:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>fetch spans
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>| filter db.system == &quot;redis&quot; and (isNotNull(db.statement) or isNotNull(db.query.text))
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>| fieldsAdd db.query.text.orig = db.query.text
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>| fieldsAdd db.query.text = if(isNotNull(db.operation.name), db.operation.name, else: &quot;*&quot;)
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>| summarize count(), by: { db.query.text }
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>| sort `count()` desc
+</code></pre></div>
+<p>Run in Playground</p>
+<p>After you've created the <strong>DB statement normalization</strong> pipeline and activated it by creating a dynamic route, you should see that the cardinality of your Redis statements has significantly reduced when you check the <strong>Database queries</strong> view in <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong>. For example, statements like <code>GET as:1:swuq:abc-677d3b</code>, <code>SET as:1:rl:wf:d1d42f</code>, or <code>DECRBY as:1:paec:wis70158</code> now appear as <code>GET</code>, <code>SET</code>, and <code>DECRBY</code>. Such normalized Redis queries allow for easier and more effective analysis.</p>
 <h2 id="message-processing">Message processing<a class="headerlink" href="#message-processing" title="Permanent link">&para;</a></h2>
 <p><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> includes a <strong>Message processing</strong> view that aggregates metrics for messaging operations. High cardinality occurs when temporary queues are created with unique identifiers in their names (such as <code>amq.gen-6dggtCpu</code>, <code>async-job-2jrmsi5y</code>, or <code>orders-reply-2n68vy4g</code>), generating thousands of distinct queue names that make aggregations unusable.</p>
 <p>Most instrumentations keep the cardinality of <code>messaging.destination.name</code> low by using non-standard fields like <code>messaging.temp.queue.hash</code> for high-cardinality data or by setting <code>messaging.destination.temporary</code>. However, when instrumentation doesn't follow these practices, OpenPipeline processing rules can normalize temporary queue names into patterns or flag them as temporary.</p>
@@ -25557,19 +25799,19 @@
 <li>Select  <strong>New section</strong> &gt; <strong>DQL</strong>.</li>
 <li>Copy and paste the following query into the edit box and select  <strong>Run</strong>.</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>fetch spans
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>| filter isNotNull(messaging.system) and isNotNull(messaging.destination.name)
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>| summarize count=count(), distinctCount=countDistinct(messaging.destination.name), by:{messaging.system, messaging.destination.temporary}
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>| fieldsAdd cardinality_ratio = toDouble(distinctCount) / toDouble(count)
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>fetch spans
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>| filter isNotNull(messaging.system) and isNotNull(messaging.destination.name)
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>| summarize count=count(), distinctCount=countDistinct(messaging.destination.name), by:{messaging.system, messaging.destination.temporary}
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>| fieldsAdd cardinality_ratio = toDouble(distinctCount) / toDouble(count)
 </code></pre></div>
 4. Examine the results for high cardinality ratios.</p>
 <p>Systems showing high cardinality ratios (above <code>0.5</code>) without <code>messaging.destination.temporary</code> set indicate queues that would:</p>
@@ -25593,14 +25835,14 @@
 <li><strong>Name</strong>: <code>Temporary queue selector</code> (or any name you like)</li>
 <li>
 <p><strong>Matching Condition</strong>: The following matches all messaging spans that were detected as not temporary and match the specific destination pattern <code>odaRequestQueue*</code> that we want to override to be considered temporary.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>messaging.destination.temporary == false and
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>messaging.destination.temporary == false and
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
 </code></pre></div>
    * <strong>DQL processor definition</strong>: The only action to perform is to overwrite the existing value from false to true.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>fieldsAdd messaging.destination.temporary = true
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>fieldsAdd messaging.destination.temporary = true
 </code></pre></div>
 </li>
 </ul>
@@ -25610,7 +25852,7 @@
 <li><strong>Name</strong>: <code>Destination renamer</code> (or any name you like)</li>
 <li>
 <p><strong>Matching Condition</strong>: The following matches all spans that are related to messaging destinations starting with <code>odaRequestQueue</code>.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
 </code></pre></div>
    * <strong>Add fields</strong>: To replace the original content, you can simply add the field again with the corrected value. In this case, the original string that ends with consecutive numbers is replaced with a static string only containing the first, constant part of the destination name.</p>
 <p>Enter the following and then select <strong>Add</strong>:</p>
@@ -25634,7 +25876,7 @@
 </li>
 <li>
 <p><strong>Matching Condition</strong>: The following matches all spans that are related to messaging destinations starting with <code>odaRequestQueue</code>.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>matchesPhrase(messaging.destination.name, &quot;odaRequestQueue*&quot;)
 </code></pre></div>
    * <strong>Pipeline</strong>: Select from the list.
 4. Select <strong>Save</strong>.</p>

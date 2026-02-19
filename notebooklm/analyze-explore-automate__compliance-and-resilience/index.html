@@ -25495,87 +25495,88 @@
 
 <h1 id="dynatrace-analyze-explore-automatecompliance-and-resilience">Документация Dynatrace: analyze-explore-automate/compliance-and-resilience<a class="headerlink" href="#dynatrace-analyze-explore-automatecompliance-and-resilience" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-02-19
 Файлов в разделе: 2</p>
 <hr />
 <h2 id="analyze-explore-automatecompliance-and-resiliencecompliance-assistantmd">analyze-explore-automate/compliance-and-resilience/compliance-assistant.md<a class="headerlink" href="#analyze-explore-automatecompliance-and-resiliencecompliance-assistantmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Compliance Assistant
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant
-scraped: 2026-02-18T05:45:46.424578</p>
+scraped: 2026-02-19T21:19:49.108761</p>
 <hr />
 <h1 id="compliance-assistant">Compliance Assistant<a class="headerlink" href="#compliance-assistant" title="Permanent link">&para;</a></h1>
+<h1 id="compliance-assistant_1">Compliance Assistant<a class="headerlink" href="#compliance-assistant_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>Приложение</li>
-<li>3 мин на чтение</li>
-<li>Обновлено 28 января 2026 г.</li>
-<li>Предварительный просмотр</li>
+<li>Latest Dynatrace</li>
+<li>App</li>
+<li>3-min read</li>
+<li>Updated on Jan 28, 2026</li>
+<li>Preview</li>
 </ul>
-<p>О приложении</p>
-<p><img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /> <strong>Compliance Assistant</strong> собирает информацию из различных источников и приложений для поддержания видимости в реальном времени статуса соответствия требованиям для критически важных приложений и систем.</p>
-<p>Он использует возможности наблюдаемости, безопасности и другие возможности платформы Dynatrace, усиленные Dynatrace Intelligence, для повышения операционной устойчивости и безопасности.</p>
-<p>Предварительные условия</p>
-<h2 id="_1">Настройка источников и приложений<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>About the app</p>
+<p><img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /> <strong>Compliance Assistant</strong> collects information from various sources and applications to maintain real-time visibility into the status of compliance across critical applications and systems.</p>
+<p>It leverages the Dynatrace platform's observability, security, and other capabilities, enhanced by Dynatrace Intelligence, to bolster its operational resilience and security posture.</p>
+<p>Prerequisites</p>
+<h2 id="set-up-sources-and-applications">Set up sources and applications<a class="headerlink" href="#set-up-sources-and-applications" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Чтобы в полной мере воспользоваться преимуществами <strong>Security Posture Management</strong> <img alt="xSPM" src="https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png" title="xSPM" />, ознакомьтесь с разделом <a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management#prereq" title="Настройка и включение Security Posture Management в Kubernetes.">Предварительные условия</a> и инструкциями по <a href="/docs/secure/xspm#start" title="Обнаружение, управление и принятие мер в отношении проблем безопасности и соответствия требованиям.">Началу работы</a>.</li>
-<li>Настройте <a href="/docs/secure/application-security/vulnerability-analytics" title="Мониторинг, визуализация, анализ и устранение уязвимостей сторонних компонентов и уязвимостей на уровне кода, отслеживание хода устранения и создание правил мониторинга.">Dynatrace Runtime Vulnerability Analytics</a>.</li>
-<li>Настройте <a href="/docs/secure/application-security/application-protection" title="Настройка и конфигурирование Dynatrace Runtime Application Protection для мониторинга атак и уязвимостей на уровне кода, вызванных атаками.">Dynatrace Runtime Application Protection</a>.</li>
-<li><a href="/docs/manage/hub#install" title="См. информацию о Dynatrace Hub.">Установите</a> <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong></li>
+<li>To take full advantage of <img alt="xSPM" src="https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png" title="xSPM" /> <strong>Security Posture Management</strong>, see <a href="/docs/ingest-from/setup-on-k8s/deployment/security-posture-management#prereq" title="Configure and enable Security Posture Management in Kubernetes.">Prerequisites</a> and how to <a href="/docs/secure/xspm#start" title="Detect, manage, and take action on security and compliance findings.">Get started</a>.</li>
+<li>Set up <a href="/docs/secure/application-security/vulnerability-analytics" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Dynatrace Runtime Vulnerability Analytics</a></li>
+<li>Set up <a href="/docs/secure/application-security/application-protection" title="Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.">Dynatrace Runtime Application Protection</a></li>
+<li><a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">Install</a> <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong></li>
 </ul>
-<h2 id="_2">Установка<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Убедитесь, что приложение <a href="/docs/manage/hub#install" title="См. информацию о Dynatrace Hub.">установлено в вашей среде</a>.</p>
-<p>Начните работу</p>
-<p>Основные понятия</p>
-<p>Варианты использования</p>
-<p><img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /> <strong>Compliance Assistant</strong> поддерживает вас в достижении и управлении соответствием нормативным требованиям и сертификациям "из коробки", начиная с <a href="#dora">DORA (Digital Operational Resilience Act)</a>.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Make sure the app is <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">installed in your environment</a>.</p>
+<p>Get started</p>
+<p>Concepts</p>
+<p>Use cases</p>
+<p><img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /> <strong>Compliance Assistant</strong> supports you in achieving and managing compliance with regulations and certifications out-of-the-box, starting with <a href="#dora">DORA (Digital Operational Resilience Act)</a>.</p>
 <p><img alt="Compliance Assistant overview" src="https://dt-cdn.net/hub/Compliance_Assistant_Preview_qb0fIUx.png" /></p>
-<p>1 из 1</p>
-<h2 id="compliance-assistant_1">Навигация в Compliance Assistant<a class="headerlink" href="#compliance-assistant_1" title="Permanent link">&para;</a></h2>
-<p><img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /> <strong>Compliance Assistant</strong> предоставляет следующие возможности:</p>
+<p>1 of 1</p>
+<h2 id="navigate-compliance-assistant">Navigate Compliance Assistant<a class="headerlink" href="#navigate-compliance-assistant" title="Permanent link">&para;</a></h2>
+<p><img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /> <strong>Compliance Assistant</strong> provides the following interactions:</p>
 <ul>
-<li>Открыть шаблон отчета
-  Выберите <strong>ICT incident reporting notebook</strong> в правом верхнем углу страницы, чтобы получить доступ к шаблону отчета об инциденте в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
+<li>Open reporting template
+  Select  <strong>ICT incident reporting notebook</strong> in the upper-right corner of the page to access an incident reporting template in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
 </ul>
-<p>Обратите внимание, что это <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents" title="Используйте готовые документы прямо из коробки.">готовый документ</a>.
-* Открыть нормативный акт DORA</p>
-<p>В каждом виджете вы можете найти главу нормативного акта DORA, к которой он относится.</p>
+<p>Note that this is a <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents" title="Use ready-made documents right out of the box.">ready-made document</a>.
+* Open DORA regulation</p>
+<p>Within each widget, you can find a chapter from DORA regulation to which it refers.</p>
 <p><img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
-<h2 id="dynatrace-hub">Изучите в Dynatrace Hub<a class="headerlink" href="#dynatrace-hub" title="Permanent link">&para;</a></h2>
-<p>Управляйте соответствием требованиям с помощью автоматизированных проверок и обработки инцидентов "из коробки".</p>
+<h2 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h2>
+<p>Manage compliance with automated checks and incident handling out-of-the-box.</p>
 <p><a href="https://www.dynatrace.com/hub/detail/compliance-assistant/?query=compl&amp;filter=all">Dynatrace Hubï»¿</a></p>
-<p>Чтобы помочь достичь надежной позиции соответствия требованиям DORA, Dynatrace:</p>
+<p>To help achieve a strong DORA compliance posture, Dynatrace:</p>
 <ul>
-<li>Объединяет данные из всей платформы безопасности и наблюдаемости Dynatrace для создания комплексного обзора соответствия требованиям в соответствии с главами DORA.</li>
-<li>Поддерживает видимость в реальном времени статуса соответствия требованиям для отслеживаемых систем.</li>
-<li>Поддерживает отчетность об инцидентах, как того требует DORA.</li>
+<li>Consolidates data from across the Dynatrace security and observability platform to create a comprehensive compliance overview in line with Chapters of DORA.</li>
+<li>Maintains real-time visibility into compliance status across monitored systems.</li>
+<li>Supports reporting of incidents as required by DORA.</li>
 </ul>
-<h2 id="dora">Соответствие требованиям DORA<a class="headerlink" href="#dora" title="Permanent link">&para;</a></h2>
-<p>DORA — это нормативный акт ЕС, который повышает цифровую операционную устойчивость финансового сектора. Он стремится обеспечить способность финансовых организаций выдерживать и восстанавливаться после серьезных операционных сбоев, включая кибератаки.</p>
-<h2 id="_3">Соответствие конфигурации ИКТ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Виджет соответствия конфигурации ИКТ собирает информацию из <strong>Runecast</strong> и <strong>Security Posture Management</strong> для непрерывного сканирования конфигураций и получения обзора их соответствия требованиям DORA.</p>
-<h2 id="_4">Уязвимости ИКТ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Виджет уязвимостей ИКТ собирает информацию из <img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong> (с примененным фильтром <code>Уровень риска</code>).</p>
-<h2 id="_5">Инциденты, связанные с критически важными службами ИКТ<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Виджет инцидентов, связанных с критически важными службами ИКТ, собирает информацию из:</p>
+<h2 id="dora-compliance">DORA compliance<a class="headerlink" href="#dora-compliance" title="Permanent link">&para;</a></h2>
+<p>DORA is an EU regulation that enhances the digital operational resilience of the financial sector. It strives to ensure financial entities can withstand and recover from severe operational disruptions, including cyber-attacks.</p>
+<h2 id="ict-configuration-compliance">ICT configuration compliance<a class="headerlink" href="#ict-configuration-compliance" title="Permanent link">&para;</a></h2>
+<p>ICT configuration compliance widget gathers information from <strong>Runecast</strong> and <strong>Security Posture Management</strong> to continuously scan configurations and get an overview of how they meet DORA requirements.</p>
+<h2 id="ict-vulnerabilities">ICT vulnerabilities<a class="headerlink" href="#ict-vulnerabilities" title="Permanent link">&para;</a></h2>
+<p>ICT vulnerabilities gathers information from <img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong> (with <code>Risk level</code> filter applied).</p>
+<h2 id="incidents-ict-critical-services">Incidents ICT critical services<a class="headerlink" href="#incidents-ict-critical-services" title="Permanent link">&para;</a></h2>
+<p>Incidents ICT critical services widget gathers information from:</p>
 <ul>
-<li><strong>Атаки</strong> <img alt="Attacks" src="https://dt-cdn.net/images/attacks-512-b922840b12.png" title="Attacks" /> — если произошел инцидент безопасности, помогает обнаружить и классифицировать атаку на вашу среду в реальном времени.</li>
-<li><strong>Проблемы</strong> <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> — если произошел инцидент, связанный с устойчивостью, анализирует аномальное поведение системы и проблемы с производительностью, обнаруженные Dynatrace Intelligence.</li>
-<li>Используйте <a href="/docs/manage/segments" title="Сегменты логически структурируют данные мониторинга в Grail и функционируют как удобные фильтры для данных, к которым пользователи имеют доступ на основе разрешений.">сегменты</a>, чтобы удобно фильтровать инциденты наблюдаемости и безопасности, влияющие на критически важную службу в соответствии с DORA.</li>
+<li><strong>Attacks</strong> <img alt="Attacks" src="https://dt-cdn.net/images/attacks-512-b922840b12.png" title="Attacks" />âif there's a security incident, helps detect and classify an attack on your environment in real time.</li>
+<li><strong>Problems</strong> <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" />âif there's a resilience incident, analyzes abnormal system behavior and performance problems detected by Dynatrace Intelligence.</li>
+<li>Use <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">segments</a> to conveniently filter observability and security incidents impacting a critical service under DORA.</li>
 </ul>
-<p>Виджет <strong>Уязвимости ИКТ</strong> показывает вам последние инциденты, связанные с устойчивостью и безопасностью, но вы можете просмотреть все инциденты наблюдаемости ИКТ в <strong>Проблемах</strong> <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> и просмотреть все инциденты безопасности ИКТ в <strong>Атаках</strong> <img alt="Attacks" src="https://dt-cdn.net/images/attacks-512-b922840b12.png" title="Attacks" />.</p>
-<h2 id="_6">Покрытие мониторинга ИКТ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Виджет покрытия мониторинга ИКТ собирает информацию из:</p>
+<p><strong>ICT vulnerabilities</strong> widget shows you most recent resilience and security incidents, but you can view all ICT Observability in <strong>Problems</strong> <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> and view all ICT Security incidents in <strong>Attacks</strong> <img alt="Attacks" src="https://dt-cdn.net/images/attacks-512-b922840b12.png" title="Attacks" />.</p>
+<h2 id="ict-monitoring-coverage">ICT Monitoring Coverage<a class="headerlink" href="#ict-monitoring-coverage" title="Permanent link">&para;</a></h2>
+<p>ICT Monitoring Coverage widget gather information from:</p>
 <ul>
-<li><img alt="Discovery &amp; Coverage" src="https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png" title="Discovery &amp; Coverage" /> <strong>Discovery &amp; Coverage</strong> — предотвращает неожиданные сбои, обнаруживая и устраняя пробелы в покрытии мониторингом.</li>
+<li><img alt="Discovery &amp; Coverage" src="https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png" title="Discovery &amp; Coverage" /> <strong>Discovery &amp; Coverage</strong>âprevents unexpected outages by detecting and remediating monitoring coverage gaps.</li>
 </ul>
-<h2 id="_7">Варианты использования<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>Compliance Assistant позволяет вам легко достичь и управлять соответствием требованиям DORA:</p>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<p>Compliance Assistant enables you to easily achieve and manage your DORA compliance:</p>
 <ul>
-<li>Поддерживайте видимость в реальном времени статуса соответствия требованиям DORA для критически важных приложений и систем.</li>
-<li>Объединяйте информацию со всей платформы Dynatrace, оптимизированную для конкретных нормативных требований, отображаемую в адаптированном представлении.</li>
-<li>Определяйте критические инциденты и поддерживайте свою команду своевременными и точными отчетами в соответствии с требованиями DORA.</li>
-<li>Автоматизируйте отчетность, предоставляя автоматизированные рабочие процессы и шаблоны, предписанные регулирующими органами.</li>
+<li>Maintain real-time visibility into the status of DORA compliance across critical applications and systems.</li>
+<li>Consolidate insights from across the Dynatrace platform streamlined to specific regulatory requirements displayed in a tailored view.</li>
+<li>Identify critical incidents and support your team with timely and accurate reporting per DORA requirements.</li>
+<li>Automate reporting by providing automated workflows and templates as prescribed by regulators.</li>
 </ul>
 <hr />
 <h2 id="analyze-explore-automatecompliance-and-resiliencemd">analyze-explore-automate/compliance-and-resilience.md<a class="headerlink" href="#analyze-explore-automatecompliance-and-resiliencemd" title="Permanent link">&para;</a></h2>
@@ -25584,8 +25585,8 @@ scraped: 2026-02-18T05:45:46.424578</p>
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience
 scraped: 2026-02-18T05:47:32.440648</p>
 <hr />
-<h1 id="_8">Соблюдение требований и устойчивость<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
-<h1 id="_9">Соблюдение требований и устойчивость<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+<h1 id="_1">Соблюдение требований и устойчивость<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_2">Соблюдение требований и устойчивость<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Последнее Dynatrace</li>
 <li>Объяснение</li>
@@ -25593,7 +25594,7 @@ scraped: 2026-02-18T05:47:32.440648</p>
 <li>Обновлено 28 января 2026 г.</li>
 </ul>
 <p>Используя Dynatrace унифицированную наблюдаемость и безопасность, вы можете автоматизировать до 80% технических задач, необходимых для управления соблюдением требований и устойчивостью в крупном масштабе. Этот подход решает динамические глобальные нормативные требования для операционной устойчивости, подчеркивая растущую зависимость от безопасных, устойчивых и надежных ИТ-сред.</p>
-<h2 id="_10">Важность устойчивости в сложном нормативном ландшафте<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_3">Важность устойчивости в сложном нормативном ландшафте<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>В современную цифровую эпоху операционная устойчивость имеет первостепенное значение для бизнеса, стремящегося поддерживать бесперебойную работу и защищать свою репутацию. Способность быстро реагировать на инциденты больше не достаточна; организации должны проактивно предотвращать проблемы и управлять рисками, чтобы обеспечить непрерывную доставку услуг. Эта необходимость усиливается все более сложным нормативным и соответствующим ландшафтом, где глобальные стандарты требуют строгих мер для защиты данных, обеспечения непрерывности услуг и смягчения рисков.</p>
 <p>Навигация по этим правилам, сохраняя при этом высокие стандарты производительности и безопасности, является сложной задачей. Несоблюдение требований может привести к операционным сбоям, суровым штрафам и ущербу репутации. Следовательно, достижение операционной устойчивости не только означает соблюдение требований, но и обеспечение долгосрочной устойчивости и защиту бизнеса от потенциальных угроз.</p>
 <h2 id="dynatrace">Dynatrace: ваш партнер в соблюдении требований и устойчивости<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h2>
@@ -25605,38 +25606,38 @@ scraped: 2026-02-18T05:47:32.440648</p>
 </ul>
 <h2 id="1-">Шаг 1: Понять сложность ИТ-систем в режиме реального времени<a class="headerlink" href="#1-" title="Permanent link">&para;</a></h2>
 <p>Dynatrace помогает вам комплексно картографировать всю ИТ-среду в режиме реального времени. Он дает вам видимость того, какие компоненты отслеживаются, а какие нет, и помогает автоматизировать трудоемкие проверки конфигурации соблюдения требований.</p>
-<h3 id="_11">Обнаружение и покрытие<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h3 id="_4">Обнаружение и покрытие<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/ingest-from/discovery-coverage-app" title="Обнаружить и устранить пробелы в покрытии мониторинга в крупном масштабе.">Обнаружение и покрытие</a> <img alt="Обнаружение и покрытие" src="https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png" title="Обнаружение и покрытие" /> помогает предотвратить неожиданные сбои, обнаруживая и устраняя пробелы в покрытии мониторинга во всей вашей организации.</p>
 <p><img alt="Обнаружение и покрытие" src="https://dt-cdn.net/images/image001-1432-0bb965c934.png" /></p>
 <h3 id="smartscape">Smartscape<a class="headerlink" href="#smartscape" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/analyze-explore-automate/smartscape-classic" title="Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде.">Smartscape</a> топология визуализирует отношения между приложениями, услугами, процессами, хостами и центрами данных, подчеркивая проблемы и уязвимости.</p>
 <p><img alt="Smartscape" src="https://dt-cdn.net/images/image002-1432-082bf6d3ac.png" /></p>
-<h3 id="_12">Управление безопасностью<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_5">Управление безопасностью<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/secure/application-security/security-posture-management-hub" title="Оцените, управляйте и принимайте меры по неправильной конфигурации и нарушениям безопасности и соблюдению требований.">Управление безопасностью</a> помогает обнаружить, визуализировать, проанализировать и устранить проблемы безопасности и соблюдения требований, включая неправильную конфигурацию и оценки соблюдения требований.</p>
 <p><img alt="Управление безопасностью" src="https://dt-cdn.net/images/image003-1432-112de6ebf6.png" /></p>
-<h3 id="_13">Помощник соблюдения требований<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h3 id="_6">Помощник соблюдения требований<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant" title="Объедините информацию из Dynatrace платформы наблюдаемости и безопасности в едином панеле.">Помощник соблюдения требований</a> <img alt="Помощник соблюдения требований" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Помощник соблюдения требований" /> предоставляет специальный вид, адаптированный для цифрового акта операционной устойчивости (DORA) Европейского Союза.</p>
 <p><img alt="Помощник соблюдения требований" src="https://dt-cdn.net/images/image004-1429-db68e2e050.png" /></p>
 <h2 id="2">Шаг 2: Проактивно предотвратить и расставить приоритеты инцидентов производительности и безопасности<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>Dynatrace помогает вам сосредоточиться на предотвращении инцидентов до их возникновения, управлении рисками проактивно и расстановке приоритетов инцидентов для устранения, когда они возникают.</p>
-<h3 id="_14">Проблемы<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h3 id="_7">Проблемы<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/dynatrace-intelligence/davis-problems-app" title="Используйте приложение Проблемы, чтобы быстро добраться до коренной причины инцидентов в вашей среде.">Проблемы</a> <img alt="Проблемы" src="https://dt-cdn.net/images/problems-512-34e46d913e.png" title="Проблемы" /> использует Dynatrace Intelligence для автоматического анализа вашей системы и обнаружения аномального поведения, такого как проблемы с производительностью или стабильностью. Он также исследует влияние и коренную причину инцидента и снижает среднее время ремонта (MTTR).</p>
 <p><img alt="Проблемы" src="https://dt-cdn.net/images/image005-1432-d25b248ded.png" /></p>
-<h3 id="_15">Уязвимости<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h3 id="_8">Уязвимости<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/secure/vulnerabilities" title="Расставьте приоритеты и эффективно управляйте уязвимостями в ваших отслеживаемых средах."><img alt="Уязвимости" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Уязвимости" /> <strong>Уязвимости</strong></a> - это наша Dynatrace платформа Runtime Vulnerability Analytics для обнаружения, визуализации, анализа, мониторинга и устранения уязвимостей в вашем приложении.</p>
 <p><img alt="Уязвимости" src="https://dt-cdn.net/images/image006-1432-e6c3ac31aa.png" /></p>
-<h3 id="_16">Защита приложений в режиме реального времени<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<h3 id="_9">Защита приложений в режиме реального времени<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/secure/application-security/application-protection" title="Настройте и.configure Dynatrace Защиту приложений в режиме реального времени для мониторинга атак и атак, сгенерированных кодом уязвимостей.">Защита приложений в режиме реального времени</a> помогает вам получить обзор всех атак в вашей среде в режиме реального времени. Используя кодовые идеи и анализ транзакций, Dynatrace Защита приложений в режиме реального времени автоматически обнаруживает атаки на приложения в вашей среде.</p>
 <p><img alt="Атаки" src="https://dt-cdn.net/images/image007-1432-e9d4630b53.png" /></p>
-<h3 id="_17">Сторожевой охранник надежности сайта<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<h3 id="_10">Сторожевой охранник надежности сайта<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/deliver/site-reliability-guardian" title="Автоматически проверьте производительность, доступность и целевые показатели емкости ваших критически важных услуг, чтобы принять правильное решение о выпуске.">Сторожевой охранник надежности сайта</a> <img alt="Сторожевой охранник надежности сайта" src="https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg" title="Сторожевой охранник надежности сайта" /> предоставляет автоматический анализ воздействия изменений для проверки доступности услуг, производительности и целевых показателей емкости в различных системах. Это позволяет инженерам платформы DevOps принимать правильные решения о выпуске новых версий и позволяет SRE применять Цели уровня обслуживания (SLO) для своих критически важных услуг.</p>
 <p><img alt="Сторожевой охранник надежности сайта" src="https://dt-cdn.net/images/image008-1428-ba22e79c5e.png" /></p>
 <h2 id="3">Шаг 3: Автоматизировать ручные задачи для повышения производительности<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>Автоматизация в Dynatrace позволяет вам автоматизировать задачи в вашем ИТ-ландшафте, устранять проблемы и визуализировать процессы для повышения производительности и сосредоточения на стратегических инициативах.</p>
-<h3 id="_18">Рабочие процессы<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h3 id="_11">Рабочие процессы<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/analyze-explore-automate/workflows" title="Автоматизируйте ИТ-процессы с помощью Dynatrace Рабочих процессов - реагируйте на события, планируйте задачи и подключайте услуги.">Рабочие процессы</a> <img alt="Рабочие процессы" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Рабочие процессы" /> собирает серию действий для построения процессов в графических представлениях. Рабочие процессы могут быть запущены вручную, по расписанию или по событиям в Dynatrace, таким как аномалии, обнаруженные Dynatrace Intelligence.</p>
 <p><img alt="Рабочие процессы" src="https://dt-cdn.net/images/image009-1428-01287f82a0.png" /></p>
-<h2 id="_19">Связанные темы<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<h2 id="_12">Связанные темы<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.dynatrace.com/news/blog/dynatrace-for-executives-security-compliance/">Dynatrace для руководителей - Безопасность и соблюдение требований</a></li>
 </ul>
