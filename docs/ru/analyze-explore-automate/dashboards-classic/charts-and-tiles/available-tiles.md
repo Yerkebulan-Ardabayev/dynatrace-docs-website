@@ -1,7 +1,7 @@
 ---
 title: Available tiles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles
-scraped: 2026-02-17T21:27:21.422138
+scraped: 2026-02-19T21:31:14.859466
 ---
 
 # Available tiles
@@ -1206,28 +1206,30 @@ To configure this tile type from the dashboard editor
 
 ### Log query table
 
-Отображает события журнала, соответствующие конкретному запросу журнальных данных. В таблице отображаются только столбцы, настроенные в просмотрщике журналов для этого запроса.
 
-#### Конфигурация
 
-Чтобы закрепить этот тип плитки на вашей панели мониторинга с установленными фильтрами
+Displays log events matching the specific log data query. Only columns configured in the log viewer for that query are displayed in the table tile.
 
-1. Перейдите к ![Журналы и события](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Журналы и события") **Журналы и события Classic**.
-2. В **Просмотрщике журналов** введите запрос журнала, который должен быть отражен в плитке.
-3. Необязательно выберите **Параметры таблицы**, чтобы указать, какие столбцы таблицы отображать.
-4. Выберите **Закрепить на панели мониторинга**, выберите целевую панель мониторинга, а затем выберите **Закрепить**.
-5. Выберите **Открыть панель мониторинга**, чтобы увидеть новую плитку на панели мониторинга.
+#### Configuration
 
-   * Плитка отображает результаты запроса, который вы указали в **Просмотрщике журналов**.
-   * Отображаются только столбцы, которые вы указали с помощью **Параметров таблицы**.
+To pin this tile type to your dashboard with filters set
 
-Чтобы настроить этот тип плитки из редактора панели мониторинга
+1. Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
+2. In **Log Viewer**, enter the log query that you want the tile to reflect.
+3. Optional Select **Table options** to specify which table columns to display.
+4. Select **Pin to dashboard**, select the target dashboard, and then select **Pin**.
+5. Select **Open dashboard** to see the new tile on the dashboard.
 
-1. Перетащите плитку **Таблица запроса журнала** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, на вашу панель мониторинга.
-2. Выберите **Настроить плитку**, чтобы отобразить **Просмотрщик журналов**.
-3. Введите запрос журнала.
-4. Необязательно выберите **Параметры таблицы**, чтобы указать, какие столбцы таблицы отображать.
-5. Выберите **Сохранить изменения в панели мониторинга**, чтобы вернуться к редактированию плитки **Таблица запроса журнала** на панели мониторинга.
-6. Необязательно выберите пользовательский временной интервал.
-7. Необязательно выберите пользовательскую зону управления.
-8. Необязательно выберите среду.
+   * The tile displays the results of the query you specified in **Log Viewer**.
+   * Only the columns you specified with **Table options** are displayed.
+
+To configure this tile type from the dashboard editor
+
+1. Drag a **Log query table** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard.
+2. Select **Configure tile** to display **Log Viewer**.
+3. Enter a log query.
+4. Optional Select **Table options** to specify which table columns to display.
+5. Select **Save changes to dashboard** to return to editing the **Log query table** tile on the dashboard.
+6. Optional Select a custom timeframe.
+7. Optional Select a custom management zone.
+8. Optional Select an environment.

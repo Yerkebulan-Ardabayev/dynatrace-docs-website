@@ -1,7 +1,7 @@
 ---
 title: Azure App Configuration monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-app-configuration
-scraped: 2026-02-17T21:31:29.003450
+scraped: 2026-02-19T21:29:13.957309
 ---
 
 # Azure App Configuration monitoring

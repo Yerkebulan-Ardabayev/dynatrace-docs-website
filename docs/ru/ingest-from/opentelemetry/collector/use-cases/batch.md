@@ -1,7 +1,7 @@
 ---
 title: Batch OTLP requests with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/batch
-scraped: 2026-02-18T21:32:28.225603
+scraped: 2026-02-19T21:22:05.741390
 ---
 
 # Batch OTLP requests with the OpenTelemetry Collector

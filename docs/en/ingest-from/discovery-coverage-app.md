@@ -1,7 +1,7 @@
 ---
 title: Discovery & Coverage
 source: https://www.dynatrace.com/docs/ingest-from/discovery-coverage-app
-scraped: 2026-02-18T21:32:12.432237
+scraped: 2026-02-19T21:26:43.152778
 ---
 
 # Discovery & Coverage

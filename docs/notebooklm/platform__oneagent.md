@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/oneagent
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-02-19
 Файлов в разделе: 6
 ---
 
@@ -266,7 +266,7 @@ For details on how Application Security works in Discovery mode, see [Applicatio
 ---
 title: OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/monitoring-modes
-scraped: 2026-02-18T21:17:31.083839
+scraped: 2026-02-19T21:14:29.599973
 ---
 
 # OneAgent monitoring modes
@@ -676,7 +676,7 @@ By default, the global dimension limit is equal to `100` and the customer-define
 ---
 title: OneAgent monitoring capabilities
 source: https://www.dynatrace.com/docs/platform/oneagent/supported-monitoring-types
-scraped: 2026-02-18T21:20:10.981465
+scraped: 2026-02-19T21:17:39.844848
 ---
 
 # OneAgent monitoring capabilities
@@ -726,7 +726,7 @@ For a complete list of the technologies that can be monitored by OneAgent, pleas
 ---
 title: OneAgent
 source: https://www.dynatrace.com/docs/platform/oneagent
-scraped: 2026-02-18T21:16:54.959521
+scraped: 2026-02-19T21:14:07.538264
 ---
 
 # OneAgent

@@ -1,7 +1,7 @@
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-18T21:15:31.679452
+scraped: 2026-02-19T21:11:40.537374
 ---
 
 # Dashboards

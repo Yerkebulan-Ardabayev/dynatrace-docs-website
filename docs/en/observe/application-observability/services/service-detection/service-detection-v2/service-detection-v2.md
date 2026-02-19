@@ -1,7 +1,7 @@
 ---
 title: Customize service detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/service-detection-v2
-scraped: 2026-02-18T05:51:15.476288
+scraped: 2026-02-19T21:29:38.021517
 ---
 
 # Customize service detection in Service Detection v2

@@ -1,7 +1,7 @@
 ---
 title: Send Dynatrace notifications to Microsoft Teams
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration
-scraped: 2026-02-18T21:16:25.627333
+scraped: 2026-02-19T21:13:33.691217
 ---
 
 # Send Dynatrace notifications to Microsoft Teams

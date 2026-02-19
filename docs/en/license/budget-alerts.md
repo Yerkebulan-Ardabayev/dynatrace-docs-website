@@ -1,7 +1,7 @@
 ---
 title: Set budget alerts
 source: https://www.dynatrace.com/docs/license/budget-alerts
-scraped: 2026-02-18T21:20:01.197406
+scraped: 2026-02-19T21:17:16.919057
 ---
 
 # Set budget alerts

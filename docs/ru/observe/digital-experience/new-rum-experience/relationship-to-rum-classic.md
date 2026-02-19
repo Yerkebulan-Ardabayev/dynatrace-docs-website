@@ -1,7 +1,7 @@
 ---
 title: Relationship between the New RUM Experience and RUM Classic
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/relationship-to-rum-classic
-scraped: 2026-02-18T21:33:17.322065
+scraped: 2026-02-19T21:22:58.355582
 ---
 
 # Relationship between the New RUM Experience and RUM Classic

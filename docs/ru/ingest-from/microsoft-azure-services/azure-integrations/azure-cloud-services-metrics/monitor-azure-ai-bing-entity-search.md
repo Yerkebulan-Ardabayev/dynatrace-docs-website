@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Bing Entity Search monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-entity-search
-scraped: 2026-02-18T05:44:03.563864
+scraped: 2026-02-19T21:30:48.938762
 ---
 
 # Azure AI - Bing Entity Search monitoring

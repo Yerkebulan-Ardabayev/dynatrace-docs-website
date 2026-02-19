@@ -1,7 +1,7 @@
 ---
 title: Content resources API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/content-resources
-scraped: 2026-02-18T21:32:16.282748
+scraped: 2026-02-19T21:25:58.106460
 ---
 
 # Content resources API

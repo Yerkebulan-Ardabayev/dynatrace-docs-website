@@ -1,7 +1,7 @@
 ---
 title: OneAgent file aging mechanism
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism
-scraped: 2026-02-18T21:28:08.646023
+scraped: 2026-02-19T21:28:48.586969
 ---
 
 # OneAgent file aging mechanism
@@ -10,7 +10,7 @@ scraped: 2026-02-18T21:28:08.646023
 
 * Latest Dynatrace
 * 6-min read
-* Updated on Sep 08, 2022
+* Updated on Feb 19, 2026
 
 OneAgent in the installer-based deployment uses a built-in aging mechanism that makes sure the OneAgent files are kept within a reasonable size.
 
@@ -51,6 +51,8 @@ The file aging mechanism checks the files and subdirectories in the main log dir
 * The total directory size is above 1 GB
 * Any file in this directory is older than 14 days
 
+Files are removed from any subdirectory that contains more than 1000 files (newest files are preserved; oldest files are removed).
+
 There are additional rules for subdirectories:
 
 * `{log-dir}/process`  
@@ -58,7 +60,6 @@ There are additional rules for subdirectories:
 
   + The files in this directory use more than 300 MB in total
   + Any file in this directory is older than 14 days
-  + This directory contains more than 1000 files (newest files are preserved; oldest files are removed)
 * `{log-dir}/installer`  
   Files are removed when any of these conditions are true:
 
@@ -70,7 +71,6 @@ There are additional rules for subdirectories:
 
   + The files in this directory use more than 100 MB in total
   + Any file in this directory is older than 14 days
-  + This directory contains more than 1000 files (newest files are preserved; oldest files are removed)
 
 ### Data storage directory
 

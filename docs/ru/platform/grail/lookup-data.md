@@ -1,7 +1,7 @@
 ---
 title: Lookup data in Grail
 source: https://www.dynatrace.com/docs/platform/grail/lookup-data
-scraped: 2026-02-17T21:29:48.967944
+scraped: 2026-02-19T21:25:05.970527
 ---
 
 # Lookup data in Grail

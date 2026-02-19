@@ -1,7 +1,7 @@
 ---
 title: Azure Power BI Embedded monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-power-bi
-scraped: 2026-02-18T21:36:15.106464
+scraped: 2026-02-19T21:34:17.112816
 ---
 
 # Azure Power BI Embedded monitoring

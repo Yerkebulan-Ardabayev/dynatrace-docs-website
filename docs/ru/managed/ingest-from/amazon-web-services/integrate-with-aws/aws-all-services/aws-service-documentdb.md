@@ -1,7 +1,7 @@
 ---
 title: Amazon DocumentDB (with MongoDB compatibility) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-documentdb
-scraped: 2026-02-18T21:33:10.700092
+scraped: 2026-02-19T21:22:04.383690
 ---
 
 # Amazon DocumentDB (with MongoDB compatibility) monitoring

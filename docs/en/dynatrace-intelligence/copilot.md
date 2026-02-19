@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-18T21:21:27.509889
+scraped: 2026-02-19T21:34:11.575607
 ---
 
 # Dynatrace Intelligence agentic and generative AI
@@ -86,7 +86,7 @@ Learn how to trigger predefined prompts in various Dynatrace applications.
 
 Read this reference](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)
 
-For more information about what kind of prompts work well in  **Dynatrace Assist**, see [prompt examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#prompt-examples "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
+For more information about what kind of prompts work well in  **Dynatrace Assist**, see [prompt examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Learn what kind of prompts work well in Dynatrace Assist.").
 
 ## Vector-based document matching
 

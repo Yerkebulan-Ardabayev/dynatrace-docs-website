@@ -1,7 +1,7 @@
 ---
 title: Set up cross-environment tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/analysis/connect-environments
-scraped: 2026-02-18T21:26:27.597474
+scraped: 2026-02-19T21:30:26.831893
 ---
 
 # Set up cross-environment tracing

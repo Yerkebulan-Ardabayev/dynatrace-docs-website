@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/anomaly-detection
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-02-19
 Файлов в разделе: 16
 ---
 
@@ -117,7 +117,7 @@ To change threshold settings for a specific host
 ---
 title: Adjust the sensitivity of anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection
-scraped: 2026-02-18T21:27:26.934116
+scraped: 2026-02-19T21:15:48.390423
 ---
 
 # Adjust the sensitivity of anomaly detection
@@ -167,7 +167,7 @@ To configure detection sensitivity on the global level
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-18T21:27:29.282286
+scraped: 2026-02-19T21:15:44.563089
 ---
 
 # Anomaly Detection status types
@@ -246,7 +246,7 @@ Some of the error messages might be more complicated than others. Here are some 
 ---
 title: Configure a simple custom alert
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad
-scraped: 2026-02-17T05:12:14.553424
+scraped: 2026-02-19T21:30:09.422806
 ---
 
 # Configure a simple custom alert
@@ -352,7 +352,7 @@ To convert a metric event to the custom alert configuration
 ---
 title: Anomaly Detection DQL writing guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice
-scraped: 2026-02-18T21:36:06.061780
+scraped: 2026-02-19T21:24:22.788888
 ---
 
 # Anomaly Detection DQL writing guide
@@ -729,7 +729,7 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 ---
 title: Anomaly Detection app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
-scraped: 2026-02-18T21:21:28.640444
+scraped: 2026-02-19T21:15:47.061467
 ---
 
 # Anomaly Detection app
@@ -895,7 +895,7 @@ Detect anomalies in timeseries using ![Anomaly Detection - new](https://dt-cdn.n
 ---
 title: Anomaly detection configuration
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-02-18T21:27:28.031262
+scraped: 2026-02-19T21:15:53.752950
 ---
 
 # Anomaly detection configuration
@@ -1023,7 +1023,7 @@ You can provide additional parameters as key-value pairs. For a list of possible
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-02-18T21:27:25.727274
+scraped: 2026-02-19T21:15:55.048821
 ---
 
 # Auto-adaptive thresholds for anomaly detection
@@ -1073,7 +1073,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ---
 title: Automated multi-dimensional baselining
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining
-scraped: 2026-02-18T21:27:31.565252
+scraped: 2026-02-19T21:15:45.917313
 ---
 
 # Automated multi-dimensional baselining
@@ -1378,7 +1378,7 @@ If there are sparse counts across many entities (for example, an error count acr
 ---
 title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-02-18T21:19:30.694623
+scraped: 2026-02-19T21:15:49.724206
 ---
 
 # Metric events
@@ -1500,7 +1500,7 @@ batchjob.executions,dt.entity.host=HOST-2222222,dt.entity.process_group_instance
 ---
 title: Automate alerts with API
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api
-scraped: 2026-02-18T21:27:24.452905
+scraped: 2026-02-19T21:15:51.090745
 ---
 
 # Automate alerts with API
@@ -1950,7 +1950,7 @@ You have learned how to set up and configure a custom alert via API. Now you can
 ---
 title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-02-18T21:27:30.477339
+scraped: 2026-02-19T21:15:52.410018
 ---
 
 # Static thresholds for anomaly detection
@@ -1989,7 +1989,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ---
 title: Anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
-scraped: 2026-02-18T21:17:28.596973
+scraped: 2026-02-19T21:12:08.109161
 ---
 
 # Anomaly detection

@@ -1,7 +1,7 @@
 ---
 title: Monitor Snowflake database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/snowflake
-scraped: 2026-02-18T05:56:24.823683
+scraped: 2026-02-19T21:31:25.825322
 ---
 
 # Monitor Snowflake database

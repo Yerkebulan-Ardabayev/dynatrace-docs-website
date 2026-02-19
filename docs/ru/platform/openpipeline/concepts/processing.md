@@ -1,7 +1,7 @@
 ---
 title: Processing in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/processing
-scraped: 2026-02-18T21:18:53.805900
+scraped: 2026-02-19T21:18:03.497621
 ---
 
 # Processing in OpenPipeline

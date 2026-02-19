@@ -1,32 +1,32 @@
 ---
-title: Request attributes API
+title: Атрибуты запроса API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/request-attributes-api
-scraped: 2026-02-18T21:20:36.284203
+scraped: 2026-02-19T21:18:28.240788
 ---
 
-# Request attributes API
+# Атрибуты запроса API
 
-# Request attributes API
+# Атрибуты запроса API
 
-* Reference
-* Published Dec 05, 2018
+* Справка
+* Опубликовано 05 дек. 2018 г.
 
-The **Request attributes** API enables you to manage the configuration of [request attributes](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+**Атрибуты запроса** API позволяют вам управлять конфигурацией [атрибутов запроса](/docs/observe/application-observability/services/request-attributes "Понимание того, что такое атрибуты запроса и изучение того, как использовать их на всех уровнях всех видов анализа служб.").
 
-[### List all
+[### Список всех
 
-Get an overview of all request attributes.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/get-all "View all request attributes of your environment via the Dynatrace API.")[### View a request attribute
+Получить обзор всех атрибутов запроса.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/get-all "Просмотр всех атрибутов запроса вашей среды через Dynatrace API.")[### Просмотр атрибута запроса
 
-Get parameters of a request attribute by its ID.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/get-request-attribute "View a request attribute via the Dynatrace API.")
+Получить параметры атрибута запроса по его ID.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/get-request-attribute "Просмотр атрибута запроса через Dynatrace API.")
 
-[### Create a request attribute
+[### Создание атрибута запроса
 
-Create a new request attribute with the exact parameters you need.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/post-request-attribute "Create a request attribute via the Dynatrace API.")[### Edit a request attribute
+Создание нового атрибута запроса с точными параметрами, которые вам нужны.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/post-request-attribute "Создание атрибута запроса через Dynatrace API.")[### Редактирование атрибута запроса
 
-Update an existing request attribute or create a new request attribute with the specified ID.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/put-request-attribute "Update a request attribute via the Dynatrace API.")[### Delete a request attribute
+Обновление существующего атрибута запроса или создание нового атрибута запроса с указанным ID.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/put-request-attribute "Обновление атрибута запроса через Dynatrace API.")[### Удаление атрибута запроса
 
-Delete a request attribute you don't need anymore.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/del-request-attribute "Delete a request attribute via the Dynatrace API.")
+Удаление атрибута запроса, который вам больше не нужен.](/docs/dynatrace-api/configuration-api/service-api/request-attributes-api/del-request-attribute "Удаление атрибута запроса через Dynatrace API.")
 
-## Related topics
+## Связанные темы
 
-* [Request attributes](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
+* [Атрибуты запроса](/docs/observe/application-observability/services/request-attributes "Понимание того, что такое атрибуты запроса и изучение того, как использовать их на всех уровнях всех видов анализа служб.")

@@ -1,7 +1,7 @@
 ---
 title: Permissions for service-level objective (SLO) tiles in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
-scraped: 2026-02-17T05:11:56.110305
+scraped: 2026-02-19T21:32:34.157099
 ---
 
 # Permissions for service-level objective (SLO) tiles in a dashboard

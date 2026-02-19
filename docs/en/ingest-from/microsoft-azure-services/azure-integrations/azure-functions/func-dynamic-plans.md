@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure Functions on Consumption Plans
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans
-scraped: 2026-02-18T21:30:27.495939
+scraped: 2026-02-19T21:22:23.579410
 ---
 
 # Monitor Azure Functions on Consumption Plans

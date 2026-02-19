@@ -1,7 +1,7 @@
 ---
 title: Set up agentless RUM in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring
-scraped: 2026-02-18T05:46:57.576998
+scraped: 2026-02-19T21:20:11.068901
 ---
 
 # Set up agentless RUM in the New RUM Experience
@@ -41,7 +41,7 @@ To create a frontend for agentless RUM
 4. In the **Select instrumentation method** step, select **Agentless**.
 5. Select **Create**.
 6. In the **Setup** step, check under **Select capability and settings** if **RUM** is enabled. If it isnât enabled, select  **Override** and turn it on.
-7. If you want to capture [user interactions](/docs/observe/digital-experience/new-rum-experience/user-interactions "Learn how to capture and analyze user interactions.") such as clicks and scrolls, enable **User Interactions**.
+7. If you want to capture [user interactions](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions "Learn how to configure and customize user interaction capturing for web frontends.") such as clicks and scrolls, enable **User Interactions**.
 8. To ensure compliance with applicable data privacy regulations, configure the required settings under **End users' data privacy**. For more information about the available options, see [Configure data privacy settings for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web "Learn about the available settings that help you ensure your web frontends comply with data privacy regulations.").
 9. Under **Copy JavaScript tag**, select  to copy the RUM JavaScript to the clipboard.
 

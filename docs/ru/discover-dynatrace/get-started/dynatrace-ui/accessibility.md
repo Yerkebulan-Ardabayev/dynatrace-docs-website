@@ -1,7 +1,7 @@
 ---
 title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-02-18T05:44:54.347088
+scraped: 2026-02-19T21:31:28.557596
 ---
 
 # Accessibility

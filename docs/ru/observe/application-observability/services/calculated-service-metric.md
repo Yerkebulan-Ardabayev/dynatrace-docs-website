@@ -1,7 +1,7 @@
 ---
 title: Calculated metrics for services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/calculated-service-metric
-scraped: 2026-02-18T05:52:12.290652
+scraped: 2026-02-19T21:32:57.236405
 ---
 
 # Calculated metrics for services

@@ -1,7 +1,7 @@
 ---
 title: Monaco configuration YAML file - list of special configuration types
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas
-scraped: 2026-02-18T05:54:08.467889
+scraped: 2026-02-19T21:21:25.119889
 ---
 
 # Monaco configuration YAML file - list of special configuration types

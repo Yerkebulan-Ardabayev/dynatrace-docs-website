@@ -1,7 +1,7 @@
 ---
 title: Support for SQL bind variables
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-services-classic/support-for-sql-bind-variables
-scraped: 2026-02-18T21:33:34.795042
+scraped: 2026-02-19T21:31:31.270411
 ---
 
 # Support for SQL bind variables

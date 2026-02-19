@@ -1,7 +1,7 @@
 ---
 title: Workflows use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases
-scraped: 2026-02-18T05:47:34.132304
+scraped: 2026-02-19T21:24:24.110973
 ---
 
 # Workflows use cases
@@ -21,7 +21,7 @@ Workflows Email Problems
 
 In this use case, you set up a  workflow to alert your team in real time by emailing the details of a new problem to a specific ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") email recipient.
 
-* [Send email notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
 
 ### Send Slack messages for problems using simple workflow
 
@@ -29,7 +29,7 @@ Workflows Slack Connector Problems
 
 In this use case, you set up a  workflow to alert your team in real time by messaging the details of a new problem to a specific ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") Slack channel.
 
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
 
 ### Detect threats in cloud-native environments
 

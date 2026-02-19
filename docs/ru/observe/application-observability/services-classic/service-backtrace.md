@@ -1,7 +1,7 @@
 ---
 title: Service backtrace
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-backtrace
-scraped: 2026-02-18T21:20:03.538569
+scraped: 2026-02-19T21:14:50.638230
 ---
 
 # Service backtrace

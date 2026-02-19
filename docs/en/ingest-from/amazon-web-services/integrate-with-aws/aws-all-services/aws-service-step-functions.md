@@ -1,7 +1,7 @@
 ---
 title: AWS Step Functions monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-step-functions
-scraped: 2026-02-18T21:36:00.855828
+scraped: 2026-02-19T21:28:51.862067
 ---
 
 # AWS Step Functions monitoring

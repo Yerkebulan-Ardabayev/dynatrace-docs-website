@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry interoperability in Python
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-python
-scraped: 2026-02-18T21:31:00.101332
+scraped: 2026-02-19T21:28:08.673650
 ---
 
 # OpenTelemetry interoperability in Python
@@ -10,7 +10,7 @@ scraped: 2026-02-18T21:31:00.101332
 
 * How-to guide
 * 10-min read
-* Updated on Jan 16, 2026
+* Updated on Feb 19, 2026
 
 OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.") to the OpenTelemetry Python instrumentation to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
 
@@ -21,14 +21,15 @@ OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/do
 
   | OneAgent version | Maximum OpenTelemetry API version |
   | --- | --- |
+  | 1.331+ | 1.39.x |
   | 1.329+ | 1.38.x |
   | 1.323+ | 1.36.x |
-  | 1.321+ | 1.35.x |
 
 ### Older versions
 
 | OneAgent version | Maximum OpenTelemetry API version |
 | --- | --- |
+| 1.321+ | 1.35.x |
 | 1.319+ | 1.34.x |
 | 1.315+ | 1.32.x |
 | 1.313+ | 1.31.x |

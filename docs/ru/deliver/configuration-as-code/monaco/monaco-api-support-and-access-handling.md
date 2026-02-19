@@ -1,7 +1,7 @@
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-17T05:06:15.123293
+scraped: 2026-02-19T21:26:23.018569
 ---
 
 # Monaco API support and access permission handling
@@ -537,6 +537,6 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 
 
 
-## Связанные темы
+## Related topics
 
-* [Файл конфигурации Monaco в формате YAML - список специальных типов конфигурации](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "Это список специальных типов конфигурации Monaco.")
+* [Monaco configuration YAML file - list of special configuration types](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "This is a list of Monaco special configuration types.")

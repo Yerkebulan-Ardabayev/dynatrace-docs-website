@@ -1,26 +1,26 @@
 ---
-title: Allowed beacon domains API
+title: Разрешенные домены биконов API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors
-scraped: 2026-02-18T05:54:02.973304
+scraped: 2026-02-19T21:30:43.477933
 ---
 
-# Allowed beacon domains API
+# Разрешенные домены биконов API
 
-# Allowed beacon domains API
+# Разрешенные домены биконов API
 
-* Reference
-* Published Sep 23, 2020
+* Ссылка
+* Опубликовано 23 сентября 2020 г.
 
-The **Allowed beacon domains** API enables you to manage the list of RUM beacon origins that must be accepted by OneAgent and ActiveGate.
+**Разрешенные домены биконов** API позволяет вам управлять списком источников биконов RUM, которые должны быть приняты OneAgent и ActiveGate.
 
-To manage the RUM beacon origins list in the Dynatrace web UI, go to **Settings** > **Web and mobile monitoring** > **Beacon origins for CORS**.
+Чтобы управлять списком источников биконов RUM в веб-интерфейсе Dynatrace, перейдите в **Настройки** > **Мониторинг веб- и мобильных приложений** > **Источники биконов для CORS**.
 
-[### View configuration
+[### Просмотр конфигурации
 
-Get an overview of allowed beacon origins.](/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors/get-configuration "Read allowed beacon domains list via the Dynatrace API.")[### Update configuration
+Получите обзор разрешенных источников биконов.](/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors/get-configuration "Прочитайте список разрешенных доменов биконов через Dynatrace API.")[### Обновление конфигурации
 
-Update configuration of allowed beacon origins.](/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors/put-configuration "Update allowed beacon domains list via the Dynatrace API.")
+Обновите конфигурацию разрешенных источников биконов.](/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors/put-configuration "Обновите список разрешенных доменов биконов через Dynatrace API.")
 
-## Related topics
+## Связанные темы
 
-* [Configure beacon origin allowlist for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.")
+* [Настройка белого списка источников биконов для веб-приложений](/docs/observe/digital-experience/web-applications/additional-configuration/configure-beacon-domain-allowlist "Укажите источники, с которых должны быть приняты биконы RUM с другим происхождением.")

@@ -1,7 +1,7 @@
 ---
 title: Set up Grail permissions for Metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/metrics-security-context
-scraped: 2026-02-18T05:43:25.855989
+scraped: 2026-02-19T21:27:07.993712
 ---
 
 # Set up Grail permissions for Metrics

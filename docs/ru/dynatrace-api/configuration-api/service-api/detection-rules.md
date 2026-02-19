@@ -1,72 +1,72 @@
 ---
-title: Service detection API
+title: Обнаружение сервисов API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/detection-rules
-scraped: 2026-02-18T21:20:20.416246
+scraped: 2026-02-19T21:18:35.249314
 ---
 
-# Service detection API
+# Обнаружение сервисов API
 
-# Service detection API
+# Обнаружение сервисов API
 
-* Reference
-* Published Jun 19, 2019
+* Ссылка
+* Опубликовано 19 июня 2019 г.
 
-The **Rule-based service detection** API enables you to manage the configuration of service detection rules.
+**Обнаружение сервисов на основе правил** API позволяет вам управлять конфигурацией правил обнаружения сервисов.
 
-### List all
+### Список всех
 
-Get an overview of all service detection rules for:
+Получите обзор всех правил обнаружения сервисов для:
 
-* [Full web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/get-all "View all service detection rules for full web requests via the Dynatrace API.")
-* [Opaque web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/get-all "View all service detection rules for opaque and external web requests via the Dynatrace API.")
-* [Full web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/get-all "View all service detection rules for full web services via the Dynatrace API.")
-* [Opaque web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/get-all "View all service detection rules for external and opaque web services via the Dynatrace API.")
+* [Полные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/get-all "Просмотрите все правила обнаружения сервисов для полных веб-запросов через Dynatrace API.")
+* [Непрозрачные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/get-all "Просмотрите все правила обнаружения сервисов для непрозрачных и внешних веб-запросов через Dynatrace API.")
+* [Полные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/get-all "Просмотрите все правила обнаружения сервисов для полных веб-сервисов через Dynatrace API.")
+* [Непрозрачные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/get-all "Просмотрите все правила обнаружения сервисов для внешних и непрозрачных веб-сервисов через Dynatrace API.")
 
-### View a rule
+### Просмотр правила
 
-Get parameters of a service detection rule for:
+Получите параметры правила обнаружения сервиса для:
 
-* [Full web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/get-a-rule "View a service detection rule for full web requests via the Dynatrace API.")
-* [Opaque web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/get-a-rule "View a service detection rule for opaque and external web requests via the Dynatrace API.")
-* [Full web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/get-a-rule "View a service detection rule for full web services via the Dynatrace API.")
-* [Opaque web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/get-rule "View a service detection rule for external and opaque web services via the Dynatrace API.")
+* [Полные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/get-a-rule "Просмотрите правило обнаружения сервиса для полных веб-запросов через Dynatrace API.")
+* [Непрозрачные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/get-a-rule "Просмотрите правило обнаружения сервиса для непрозрачных и внешних веб-запросов через Dynatrace API.")
+* [Полные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/get-a-rule "Просмотрите правило обнаружения сервиса для полных веб-сервисов через Dynatrace API.")
+* [Непрозрачные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/get-rule "Просмотрите правило обнаружения сервиса для внешних и непрозрачных веб-сервисов через Dynatrace API.")
 
-### Reorder rules
+### Перестановка правил
 
-Service detection rules are evaluated one after another. The first matching rule is applied and further processing stops. Reorder service detection rules to achieve the order of evaluation you need.
+Правила обнаружения сервисов оцениваются одно за другим. Первое совпадающее правило применяется, и дальнейшая обработка останавливается. Переставьте правила обнаружения сервисов, чтобы добиться необходимого порядка оценки.
 
-* [Full web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/reorder-rules "Reorder service detection rules for full web requests via the Dynatrace API.")
-* [Opaque web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/reorder-rules "Reorder service detection rules for opaque and external web requests via the Dynatrace API.")
-* [Full web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/reorder-rules "Reorder service detection rules for full web services via the Dynatrace API.")
-* [Opaque web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/reorder-rules "Reorder service detection rules for external and opaque web services via the Dynatrace API.")
+* [Полные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/reorder-rules "Переставьте правила обнаружения сервисов для полных веб-запросов через Dynatrace API.")
+* [Непрозрачные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/reorder-rules "Переставьте правила обнаружения сервисов для непрозрачных и внешних веб-запросов через Dynatrace API.")
+* [Полные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/reorder-rules "Переставьте правила обнаружения сервисов для полных веб-сервисов через Dynatrace API.")
+* [Непрозрачные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/reorder-rules "Переставьте правила обнаружения сервисов для внешних и непрозрачных веб-сервисов через Dynatrace API.")
 
-### Create a rule
+### Создание правила
 
-Create a new service detection rule for:
+Создайте новое правило обнаружения сервиса для:
 
-* [Full web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/post-a-rule "Create a service detection rule for full web requests via the Dynatrace API.")
-* [Opaque web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/post-a-rule "Create a service detection rule for opaque and external web requests via the Dynatrace API.")
-* [Full web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/post-a-rule "Create a service detection rule for full web services via the Dynatrace API.")
-* [Opaque web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/post-rule "Create a service detection rule for external and opaque web services via the Dynatrace API.")
+* [Полные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/post-a-rule "Создайте правило обнаружения сервиса для полных веб-запросов через Dynatrace API.")
+* [Непрозрачные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/post-a-rule "Создайте правило обнаружения сервиса для непрозрачных и внешних веб-запросов через Dynatrace API.")
+* [Полные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/post-a-rule "Создайте правило обнаружения сервиса для полных веб-сервисов через Dynatrace API.")
+* [Непрозрачные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/post-rule "Создайте правило обнаружения сервиса для внешних и непрозрачных веб-сервисов через Dynatrace API.")
 
-### Edit a rule
+### Редактирование правила
 
-Update an existing service detection rule or create a new rule with the specified ID.
+Обновите существующее правило обнаружения сервиса или создайте новое правило с указанным идентификатором.
 
-* [Full web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/put-a-rule "Edit a service detection rule for full web requests via the Dynatrace API.")
-* [Opaque web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/put-a-rule "Edit a service detection rule for opaque and external web requests via the Dynatrace API.")
-* [Full web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/put-a-rule "Edit a service detection rule for full web services via the Dynatrace API.")
-* [Opaque web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/put-rule "Edit a service detection rule for external and opaque web services via the Dynatrace API.")
+* [Полные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/put-a-rule "Редактируйте правило обнаружения сервиса для полных веб-запросов через Dynatrace API.")
+* [Непрозрачные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/put-a-rule "Редактируйте правило обнаружения сервиса для непрозрачных и внешних веб-запросов через Dynatrace API.")
+* [Полные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/put-a-rule "Редактируйте правило обнаружения сервиса для полных веб-сервисов через Dynatrace API.")
+* [Непрозрачные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/put-rule "Редактируйте правило обнаружения сервиса для внешних и непрозрачных веб-сервисов через Dynatrace API.")
 
-### Delete a rule
+### Удаление правила
 
-Delete a service detection rule you don't need anymore.
+Удалите правило обнаружения сервиса, которое вам больше не нужно.
 
-* [Full web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/del-a-rule "Delete a service detection rule for full web requests via the Dynatrace API.")
-* [Opaque web requests](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/del-a-rule "Delete a service detection rule for opaque and external web requests via the Dynatrace API.")
-* [Full web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/del-a-rule "Delete a service detection rule for full web services via the Dynatrace API.")
-* [Opaque web services](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/delete-rule "Delete a service detection rule for external and opaque web services via the Dynatrace API.")
+* [Полные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/del-a-rule "Удалите правило обнаружения сервиса для полных веб-запросов через Dynatrace API.")
+* [Непрозрачные веб-запросы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/del-a-rule "Удалите правило обнаружения сервиса для непрозрачных и внешних веб-запросов через Dynatrace API.")
+* [Полные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/del-a-rule "Удалите правило обнаружения сервиса для полных веб-сервисов через Dynatrace API.")
+* [Непрозрачные веб-сервисы](/docs/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/delete-rule "Удалите правило обнаружения сервиса для внешних и непрозрачных веб-сервисов через Dynatrace API.")
 
-## Related topics
+## Связанные темы
 
-* [Service Detection v1](/docs/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Обнаружение сервисов v1](/docs/observe/application-observability/services/service-detection/service-detection-v1 "Узнайте, как Dynatrace Обнаружение сервисов v1 обнаруживает и именует различные типы сервисов.")

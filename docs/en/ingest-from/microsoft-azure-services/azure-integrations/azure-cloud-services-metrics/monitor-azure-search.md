@@ -1,7 +1,7 @@
 ---
 title: Azure Search Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-search
-scraped: 2026-02-17T21:32:58.186034
+scraped: 2026-02-19T21:19:38.196443
 ---
 
 # Azure Search Service monitoring

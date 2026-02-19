@@ -1,56 +1,56 @@
 ---
-title: Failure detection API
+title: Обнаружение сбоев API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/failure-detection
-scraped: 2026-02-18T21:31:32.605920
+scraped: 2026-02-19T21:27:04.011792
 ---
 
-# Failure detection API
+# Обнаружение сбоев API
 
-# Failure detection API
+# Обнаружение сбоев API
 
-* Reference
-* Published Jan 11, 2021
+* Справка
+* Опубликовано 11 января 2021 г.
 
-[### List all parameter sets
+[### Список всех наборов параметров
 
-Get an overview of all parameter sets for failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-all "View all failure detection parameter sets of your monitoring environment via the Dynatrace API.")[### View a parameter set
+Получите обзор всех наборов параметров для правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-all "Просмотрите все наборы параметров обнаружения сбоев вашей среды мониторинга через Dynatrace API.")[### Просмотр набора параметров
 
-View the configuration of all parameter sets for failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-parameter-set "View a failure detection parameter set via the Dynatrace API.")
+Просмотрите конфигурацию всех наборов параметров для правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-parameter-set "Просмотрите набор параметров обнаружения сбоев через Dynatrace API.")
 
-[### Create a parameter set
+[### Создание набора параметров
 
-Create a new parameter set for failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/post-parameter-set "Create a failure detection parameter set via the Dynatrace API.")
+Создайте новый набор параметров для правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/post-parameter-set "Создайте набор параметров обнаружения сбоев через Dynatrace API.")
 
-### Edit a parameter set
+### Редактирование набора параметров
 
-* [Update an existing parameter set](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/put-parameter-set "Edit a failure detection parameter set via the Dynatrace API.") for failure detection rules.
-* [Change the ID](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/change-id "Change the ID of a failure detection parameter set via the Dynatrace API.") of a parameter set.
+* [Обновление существующего набора параметров](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/put-parameter-set "Редактирование набора параметров обнаружения сбоев через Dynatrace API.") для правил обнаружения сбоев.
+* [Изменение идентификатора](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/change-id "Изменение идентификатора набора параметров обнаружения сбоев через Dynatrace API.") набора параметров.
 
-[### Delete a parameter set
+[### Удаление набора параметров
 
-Delete a parameter set for failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/delete-parameter-set "Delete a failure detection parameter set via the Dynatrace API.")
+Удалите набор параметров для правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/delete-parameter-set "Удалите набор параметров обнаружения сбоев через Dynatrace API.")
 
-[### List all rules
+[### Список всех правил
 
-Get an overview of all failure detection rules.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-all "View all failure detection rules of your monitoring environment via the Dynatrace API.")[### View a rule
+Получите обзор всех правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-all "Просмотрите все правила обнаружения сбоев вашей среды мониторинга через Dynatrace API.")[### Просмотр правила
 
-View the configuration of a failure detection rule.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-rule "View a failure detection rule via the Dynatrace API.")[### Reorder rules
+Просмотрите конфигурацию правила обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-rule "Просмотрите правило обнаружения сбоев через Dynatrace API.")[### Перестановка правил
 
-Failure detection rules are evaluated one after another. The first matching rule is applied, and further processing stops.
+Правила обнаружения сбоев оцениваются одно за другим. Первое соответствующее правило применяется, и дальнейшая обработка останавливается.
 
-Reorder the rules to achieve the order of evaluation you need.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/reorder-rules "Change the order of failure detection rules via the Dynatrace API.")[### Create a rule
+Переставьте правила, чтобы добиться необходимого порядка оценки.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/reorder-rules "Измените порядок правил обнаружения сбоев через Dynatrace API.")[### Создание правила
 
-Create a new failure detection rule.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/post-rule "Create a failure detection rule via the Dynatrace API.")
+Создайте новое правило обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/post-rule "Создайте правило обнаружения сбоев через Dynatrace API.")
 
-### Edit a rule
+### Редактирование правила
 
-* [Update an existing](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/put-rule "Edit a failure detection rule via the Dynatrace API.") failure detection rule.
-* [Change the ID](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/change-id "Change the ID of a failure detection rule via the Dynatrace API.") of a rule.
+* [Обновление существующего](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/put-rule "Редактирование правила обнаружения сбоев через Dynatrace API.") правила обнаружения сбоев.
+* [Изменение идентификатора](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/change-id "Изменение идентификатора правила обнаружения сбоев через Dynatrace API.") правила.
 
-[### Delete a rule
+[### Удаление правила
 
-Delete a failure detection rule you don't need anymore.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/delete-rule "Delete a failure detection rule via the Dynatrace API.")
+Удалите правило обнаружения сбоев, которое вам больше не нужно.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/delete-rule "Удалите правило обнаружения сбоев через Dynatrace API.")
 
-## Related topics
+## Связанные темы
 
-* [Configure service failure detection](/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
+* [Настройка обнаружения сбоев службы](/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection "Узнайте, какие типы ошибок службы Dynatrace автоматически обнаруживает, и как настроить параметры обнаружения сбоев в соответствии с вашими конкретными требованиями.")

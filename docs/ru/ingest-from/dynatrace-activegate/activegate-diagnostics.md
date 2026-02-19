@@ -1,7 +1,7 @@
 ---
 title: ActiveGate diagnostics
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-diagnostics
-scraped: 2026-02-18T21:35:06.259797
+scraped: 2026-02-19T21:31:37.949765
 ---
 
 # ActiveGate diagnostics

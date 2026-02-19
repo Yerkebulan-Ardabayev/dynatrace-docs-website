@@ -1,7 +1,7 @@
 ---
 title: Set up an auto-injected frontend in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend
-scraped: 2026-02-18T21:33:39.845373
+scraped: 2026-02-19T21:31:59.453270
 ---
 
 # Set up an auto-injected frontend in the New RUM Experience
@@ -81,7 +81,7 @@ To create an auto-injected frontend
 6. In the **Setup** > **Configure frontend detection rule** step, configure the matcher and the pattern for your frontend detection rule.
 7. Select **Save frontend detection rule**.
 8. Under **Select capability and settings**, check if **RUM** is enabled. If it isnât, select  **Override** and turn it on.
-9. If you want to capture [user interactions](/docs/observe/digital-experience/new-rum-experience/user-interactions "Learn how to capture and analyze user interactions.") such as clicks and scrolls, enable **User Interactions**.
+9. If you want to capture [user interactions](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions "Learn how to configure and customize user interaction capturing for web frontends.") such as clicks and scrolls, enable **User Interactions**.
 10. To ensure compliance with applicable data privacy regulations, configure the required settings under **End users' data privacy**. For more information about the available options, see [Configure data privacy settings for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web "Learn about the available settings that help you ensure your web frontends comply with data privacy regulations.").
 11. Select **Next** > **Go to new frontend**.
 

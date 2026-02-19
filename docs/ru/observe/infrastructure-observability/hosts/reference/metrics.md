@@ -1,7 +1,7 @@
 ---
 title: Host metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/reference/metrics
-scraped: 2026-02-16T21:25:20.701450
+scraped: 2026-02-19T21:26:07.865090
 ---
 
 # Host metrics

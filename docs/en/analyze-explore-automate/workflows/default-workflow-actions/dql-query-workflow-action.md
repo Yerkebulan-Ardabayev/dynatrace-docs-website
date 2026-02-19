@@ -1,7 +1,7 @@
 ---
 title: DQL query action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
-scraped: 2026-02-18T21:30:57.487238
+scraped: 2026-02-19T21:19:53.237004
 ---
 
 # DQL query action for Workflows

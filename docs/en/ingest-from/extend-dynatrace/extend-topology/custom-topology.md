@@ -1,7 +1,7 @@
 ---
 title: Define custom topology
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/custom-topology
-scraped: 2026-02-17T21:29:38.975852
+scraped: 2026-02-19T21:25:41.746114
 ---
 
 # Define custom topology

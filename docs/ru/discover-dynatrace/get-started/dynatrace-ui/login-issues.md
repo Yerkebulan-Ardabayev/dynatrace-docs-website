@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-02-18T21:34:50.222360
+scraped: 2026-02-19T21:24:35.309881
 ---
 
 # Troubleshooting sign-in issues

@@ -1,444 +1,444 @@
 ---
-title: Dynatrace API - Tokens and authentication
+title: Dynatrace API - Токены и аутентификация
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/dynatrace-api-authentication
-scraped: 2026-02-18T05:56:46.443282
+scraped: 2026-02-19T21:19:54.535387
 ---
 
-# Dynatrace API - Tokens and authentication
+# Dynatrace API - Токены и аутентификация
 
-# Dynatrace API - Tokens and authentication
+# Dynatrace API - Токены и аутентификация
 
-* Reference
-* Published Aug 23, 2018
+* Ссылка
+* Опубликовано 23 августа 2018 г.
 
-To be authenticated to use the Dynatrace API, you need a valid [access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") or a valid [personal access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes."). Access to the API is fine-grained, meaning that you also need the proper scopes assigned to the token. See the description of each request to find out which scopes are required to use it.
+Чтобы быть аутентифицированным для использования Dynatrace API, вам нужен действительный [токен доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Изучите концепцию токена доступа и его области.") или действительный [личный токен доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Изучите концепцию личного токена доступа и его области."). Доступ к API является тонко-зернистым, то есть вам также нужны соответствующие области, назначенные токену. См. описание каждого запроса, чтобы узнать, какие области необходимы для его использования.
 
-For details on OAuth clients, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Для получения подробной информации об OAuth-клиентах см. [OAuth-клиенты](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управляйте аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.").
 
-## Token format
+## Формат токена
 
-Dynatrace uses a unique token format consisting of three components separated by dots (`.`).
+Dynatrace использует уникальный формат токена, состоящий из трех компонентов, разделенных точками (`.`).
 
-### Token example
+### Пример токена
 
 `<DYNATRACE_TOKEN_PLACEHOLDER>`
 
-### Token components
+### Компоненты токена
 
-Component name
+Название компонента
 
-Component description
+Описание компонента
 
 prefix
 
-The **prefix** identifies the token type.
+**Префикс** идентифицирует тип токена.
 
-In our example: `dt0s01`
+В нашем примере: `dt0s01`
 
-See [Token prefixes](#token-format-prefixes) below for a table of standard prefixes.
+См. [Префиксы токена](#token-format-prefixes) ниже для таблицы стандартных префиксов.
 
 public portion
 
-The **public portion** of the token is a 24-character public identifier.
+**Публичная часть** токена - это 24-символьный публичный идентификатор.
 
-In our example: `ST2EY72KQINMH574WMNVI7YN`
+В нашем примере: `ST2EY72KQINMH574WMNVI7YN`
 
 token identifier
 
-The **token identifier** is the combination of the **prefix** and the **public portion**. A token identifier can be safely displayed in the UI and can be used for logging purposes.
+**Идентификатор токена** - это сочетание **префикса** и **публичной части**. Идентификатор токена можно безопасно отображать в интерфейсе пользователя и использовать для целей ведения журнала.
 
-In our example: `<DYNATRACE_TOKEN_PLACEHOLDER>`
+В нашем примере: `<DYNATRACE_TOKEN_PLACEHOLDER>`
 
 secret portion
 
-The **secret portion** of the token is a 64-character string that should be treated like a password:
+**Секретная часть** токена - это 64-символьная строка, которую следует behand как пароль:
 
-* Don't display it
-* Don't store it in log files
-* Rotate it instantly if it's leaked
+* Не отображайте ее
+* Не храните в файлах журнала
+* Немедленно замените, если она была скомпрометирована
 
-In our example: `G3DFPBEJYMODIDAEX454M7YWBUVEFOWKPRVMWFASS64NFH52PX6BNDVFFM572RZM`
+В нашем примере: `G3DFPBEJYMODIDAEX454M7YWBUVEFOWKPRVMWFASS64NFH52PX6BNDVFFM572RZM`
 
-### Token prefixes
+### Префиксы токена
 
-Prefix
+Префикс
 
-Description
+Описание
 
 `dt0s01`
 
-This is an API token. It's used as an authorization method: a valid token allows the user to make changes within the Dynatrace account through SCIM.
+Это токен API. Он используется в качестве метода аутентификации: действительный токен позволяет пользователю вносить изменения в учетную запись Dynatrace через SCIM.
 
-* It is generated once.
-* Do not reveal the secret portion of a `dt0s01` token.
-* The public portion is used for identification in the web UI, but you generally should not reveal it (or any portion of this token).
-* This token remains in effect until invalidated by the customer, so you must rotate it instantly if it is ever leaked.
+* Он генерируется один раз.
+* Не раскрывайте секретную часть токена `dt0s01`.
+* Публичная часть используется для идентификации в веб-интерфейсе, но вы обычно не должны раскрывать ее (или любую часть этого токена).
+* Этот токен остается в силе до тех пор, пока не будет отменен клиентом, поэтому вы должны немедленно заменить его, если он был скомпрометирован.
 
 `dt0s02`
 
-OAuth2 Clients created by users through Account Management to be used with Dynatrace Apps and Account Management API.
+OAuth2-клиенты, созданные пользователями через Управление учетной записью для использования с приложениями Dynatrace и API Управления учетной записью.
 
 `dt0s03`
 
-OAuth2 Clients for internal and external services and integrations.
+OAuth2-клиенты для внутренних и внешних сервисов и интеграций.
 
 `dt0s04`
 
-Chat and identity linking.
+Связывание чата и идентификации.
 
 `dt0s06`
 
-This is an OAuth2 Refresh Token, which is used to retrieve a new Access Token and generally changes frequently (typically every 5 to 15 minutes).
+Это OAuth2-токен обновления, который используется для получения нового токена доступа и обычно часто меняется (обычно каждые 5-15 минут).
 
 `dt0s08`
 
-OAuth2 Clients for internal and external services and integrations.
+OAuth2-клиенты для внутренних и внешних сервисов и интеграций.
 
 `dt0s09`
 
-Chat and identity linking.
+Связывание чата и идентификации.
 
 `dt0s16`
 
-Platform Token enabling programmatic access to Dynatrace platform services.
+Платформенный токен, обеспечивающий программный доступ к сервисам платформы Dynatrace.
 
-## Generate a token
+## Генерация токена
 
-Access token
+Токен доступа
 
-Personal access token
+Личный токен доступа
 
-To generate an access token:
+Чтобы сгенерировать токен доступа:
 
-1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
-2. Select **Generate new token**.
-3. Enter a name for your token.  
-   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.
-4. Select the required scopes for the token.
-5. Select **Generate token**.
-6. Copy the generated token to the clipboard. Store the token in a password manager for future use.
+1. Перейдите к ![Токены доступа](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Токены доступа") **Токены доступа**.
+2. Выберите **Сгенерировать новый токен**.
+3. Введите имя для вашего токена.  
+   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставляете осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять токенами и, возможно, удалять их, когда они больше не нужны.
+4. Выберите необходимые области для токена.
+5. Выберите **Сгенерировать токен**.
+6. Скопируйте сгенерированный токен в буфер обмена. Храните токен в менеджере паролей для будущего использования.
 
-   You can only access your token once upon creation. You can't reveal it afterward.
+   Вы можете получить доступ к вашему токену только один раз при создании. Вы не сможете получить к нему доступ позже.
 
-To generate a personal access token
+Чтобы сгенерировать личный токен доступа:
 
-1. Go to **Personal Access Tokens** (accessible via the [user menu](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the latest Dynatrace") in the previous Dynatrace).
-2. Select **Generate new token**.
-3. Enter a name for your token.  
-   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.
-4. Select the required scopes for the token.
-5. Select **Generate token**.
-6. Copy the generated token to the clipboard. Store the token in a password manager for future use.
+1. Перейдите к **Личным токенам доступа** (доступно через [меню пользователя](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Перейдите к последнему Dynatrace") в предыдущем Dynatrace).
+2. Выберите **Сгенерировать новый токен**.
+3. Введите имя для вашего токена.  
+   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставляете осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять токенами и, возможно, удалять их, когда они больше не нужны.
+4. Выберите необходимые области для токена.
+5. Выберите **Сгенерировать токен**.
+6. Скопируйте сгенерированный токен в буфер обмена. Храните токен в менеджере паролей для будущего использования.
 
-   You can only access your token once upon creation. You can't reveal it afterward.
+   Вы можете получить доступ к вашему токену только один раз при создании. Вы не сможете получить к нему доступ позже.
 
-You can assign multiple scopes to a single token, or you can generate several tokens, each with different access levels and use them accordinglyâcheck your organization's security policies for the best practice.
+Вы можете назначить несколько областей одному токену или сгенерировать несколько токенов, каждый с разными уровнями доступа, и использовать их соответствующим образом - проверьте политику безопасности вашей организации для лучшей практики.
 
-To change the scope of an existing token, use the [PUT a token call](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token "Update an access token via Dynatrace API.") of the Access tokens API. Note that you need to submit the existing scopes if you want to keep them. Any existing scope missing in the payload is removed.
+Чтобы изменить область существующего токена, используйте вызов [PUT токена](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token "Обновите токен доступа через Dynatrace API.") API токенов доступа. Обратите внимание, что вам необходимо передать существующие области, если вы хотите сохранить их. Любая существующая область, отсутствующая в полезной нагрузке, удаляется.
 
-Alternatively, you can use the [POST a token](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token "Create an access token via Dynatrace API.") call to generate a token.
+Альтернативно вы можете использовать вызов [POST токена](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token "Создайте токен доступа через Dynatrace API.") для генерации токена.
 
-## Token scopes
+## Области токена
 
-Access token
+Токен доступа
 
-Personal access token
+Личный токен доступа
 
 ### OpenPipeline
 
-Name
+Имя
 
-API value
+API значение
 
-Description
+Описание
 
-OpenPipeline - Ingest Events
+OpenPipeline - Ингестируемые события
 
 `openpipeline.events`
 
-Grants access to [POST Built-in generic events](/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-builtin "Ingest generic events from built-in endpoints via OpenPipeline Ingest API.") request of the OpenPipeline Ingest API.
+Предоставляет доступ к запросу [POST Встроенные общие события](/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-builtin "Ингестируйте общие события из встроенных конечных точек через OpenPipeline Ingest API.") API OpenPipeline Ingest.
 
-OpenPipeline - Ingest Events, Software Development Lifecycle
+OpenPipeline - Ингестируемые события, Жизненный цикл разработки программного обеспечения
 
 `openpipeline.events_sdlc`
 
-Grants access to [POST Built-in SLDC events](/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-builtin "Ingest SDLC events from built-in endpoints via OpenPipeline Ingest API.") request of the OpenPipeline Ingest API.
+Предоставляет доступ к запросу [POST Встроенные события SDLC](/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-builtin "Ингестируйте события SDLC из встроенных конечных точек через OpenPipeline Ingest API.") API OpenPipeline Ingest.
 
-OpenPipeline - Ingest Events, Software Development Lifecycle (Custom)
+OpenPipeline - Ингестируемые события, Жизненный цикл разработки программного обеспечения (Пользовательский)
 
 `openpipeline.events_sdlc.custom`
 
-Grants access to [POST Custom SLDC events](/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-custom-endpoint "Configure a custom SDLC event endpoint via OpenPipeline Ingest API.") request of the OpenPipeline Ingest API.
+Предоставляет доступ к запросу [POST Пользовательские события SDLC](/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-custom-endpoint "Настройте пользовательскую конечную точку события SDLC через OpenPipeline Ingest API.") API OpenPipeline Ingest.
 
-OpenPipeline - Ingest Security Events (Built-in)
+OpenPipeline - Ингестируемые события безопасности (Встроенные)
 
 `openpipeline.events_security`
 
-Grants access to [POST Built-in security events](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-builtin "Ingest security events from built-in endpoints via OpenPipeline Ingest API.") request of the OpenPipeline Ingest API.
+Предоставляет доступ к запросу [POST Встроенные события безопасности](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-builtin "Ингестируйте события безопасности из встроенных конечных точек через OpenPipeline Ingest API.") API OpenPipeline Ingest.
 
-OpenPipeline - Ingest Security Events (Custom)
+OpenPipeline - Ингестируемые события безопасности (Пользовательские)
 
 `openpipeline.events_security.custom`
 
-Grants access to [POST Custom security events](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-custom-endpoint "Configure a custom security event endpoint via OpenPipeline Ingest API.") request of the OpenPipeline Ingest API.
+Предоставляет доступ к запросу [POST Пользовательские события безопасности](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-custom-endpoint "Настройте пользовательскую конечную точку события безопасности через OpenPipeline Ingest API.") API OpenPipeline Ingest.
 
-OpenPipeline - Ingest Events (Custom)
+OpenPipeline - Ингестируемые события (Пользовательские)
 
 `openpipeline.events.custom`
 
-Grants access to [POST Custom generic event endpoint](/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-custom-endpoint "Configure a custom generic event endpoint via OpenPipeline Ingest API.") request of the OpenPipeline Ingest API.
+Предоставляет доступ к запросу [POST Пользовательская конечная точка общего события](/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-custom-endpoint "Настройте пользовательскую конечную точку общего события через OpenPipeline Ingest API.") API OpenPipeline Ingest.
 
 ### API v2
 
-Name
+Имя
 
-API value
+API значение
 
-Description
+Описание
 
-Read ActiveGates
+Чтение ActiveGate
 
 `activeGates.read`
 
-Grants access to GET requests of the [ActiveGates API](/docs/dynatrace-api/environment-api/activegates "Learn what the Dynatrace ActiveGate API offers.").
+Предоставляет доступ к GET-запросам [ActiveGate API](/docs/dynatrace-api/environment-api/activegates "Узнайте, что предлагает Dynatrace ActiveGate API.").
 
-Write ActiveGates
+Запись ActiveGate
 
 `activeGates.write`
 
-Grants access to POST and DELETE requests of the [ActiveGates API](/docs/dynatrace-api/environment-api/activegates "Learn what the Dynatrace ActiveGate API offers.").
+Предоставляет доступ к POST- и DELETE-запросам [ActiveGate API](/docs/dynatrace-api/environment-api/activegates "Узнайте, что предлагает Dynatrace ActiveGate API.").
 
-Create ActiveGate tokens
+Создание токенов ActiveGate
 
 `activeGateTokenManagement.create`
 
-Grants access to the POST request of the ActiveGate tokens API.
+Предоставляет доступ к POST-запросу токенов ActiveGate API.
 
-Read ActiveGate tokens
+Чтение токенов ActiveGate
 
 `activeGateTokenManagement.read`
 
-Grants access to GET requests of the ActiveGate tokens API.
+Предоставляет доступ к GET-запросам токенов ActiveGate API.
 
-Write ActiveGate tokens
+Запись токенов ActiveGate
 
 `activeGateTokenManagement.write`
 
-Grants access to POST and DELETE requests of the ActiveGate tokens API.
+Предоставляет доступ к POST- и DELETE-запросам токенов ActiveGate API.
 
-Read API tokens
+Чтение токенов API
 
 `apiTokens.read`
 
-Grants access to GET requests of the [Access tokens API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.").
+Предоставляет доступ к GET-запросам [Access токенов API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Управляйте Dynatrace API аутентификационными токенами.").
 
-Write API tokens
+Запись токенов API
 
 `apiTokens.write`
 
-Grants access to POST, PUT, and DELETE requests of the [Access tokens API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.").
+Предоставляет доступ к POST-, PUT- и DELETE-запросам [Access токенов API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Управляйте Dynatrace API аутентификационными токенами.").
 
-Read attacks
+Чтение атак
 
 `attacks.read`
 
-Grants access to GET requests of the Attacks API and the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") for Application Protection (`builtin:appsec.attack-protection-settings`, `builtin:appsec.attack-protection-advanced-config`, and `builtin:appsec.attack-protection-allowlist-config schemas`).
+Предоставляет доступ к GET-запросам Атак API и [Настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Настройки API.") для Application Protection (`builtin:appsec.attack-protection-settings`, `builtin:appsec.attack-protection-advanced-config` и `builtin:appsec.attack-protection-allowlist-config schemas`).
 
-Write Application Protection settings
+Запись настроек Application Protection
 
 `attacks.write`
 
-Grants access to POST, PUT, and DELETE requests of the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") for Application Protection (`builtin:appsec.attack-protection-settings`, `builtin:appsec.attack-protection-advanced-config`, and `builtin:appsec.attack-protection-allowlist-config schemas`).
+Предоставляет доступ к POST-, PUT- и DELETE-запросам [Настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Настройки API.") для Application Protection (`builtin:appsec.attack-protection-settings`, `builtin:appsec.attack-protection-advanced-config` и `builtin:appsec.attack-protection-allowlist-config schemas`).
 
-Read audit logs
+Чтение аудитных журналов
 
 `auditLogs.read`
 
-Grants access to the [audit log](/docs/manage/data-privacy-and-security/configuration/audit-logs-api "Learn how to manage audit logs using an API.").
+Предоставляет доступ к [аудитному журналу](/docs/manage/data-privacy-and-security/configuration/audit-logs-api "Узнайте, как управлять аудитными журналами с помощью API.").
 
-Read credential vault entries
+Чтение записей хранилища учетных данных
 
 `credentialVault.read`
 
-Grants access to GET requests of the [Credential vault API](/docs/dynatrace-api/environment-api/credential-vault "Learn what the Dynatrace API for credentials offers.").
+Предоставляет доступ к GET-запросам [Хранилища учетных данных API](/docs/dynatrace-api/environment-api/credential-vault "Узнайте, что предлагает Dynatrace API для учетных данных.").
 
-Write credential vault entries
+Запись записей хранилища учетных данных
 
 `credentialVault.write`
 
-Grants access to POST, PUT, and DELETE requests of the [Credential vault API](/docs/dynatrace-api/environment-api/credential-vault "Learn what the Dynatrace API for credentials offers.").
+Предоставляет доступ к POST-, PUT- и DELETE-запросам [Хранилища учетных данных API](/docs/dynatrace-api/environment-api/credential-vault "Узнайте, что предлагает Dynatrace API для учетных данных.").
 
-Read entities
+Чтение сущностей
 
 `entities.read`
 
-Grants access to GET requests of the [Monitored entities](/docs/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") and [Custom tags](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.") APIs.
+Предоставляет доступ к GET-запросам [Отслеживаемых сущностей](/docs/dynatrace-api/environment-api/entity-v2 "Узнайте об Dynatrace Отслеживаемых сущностях API.") и [Пользовательских тегов](/docs/dynatrace-api/environment-api/custom-tags "Управляйте пользовательскими тегами отслеживаемых сущностей через Dynatrace API.") API.
 
-Write entities
+Запись сущностей
 
 `entities.write`
 
-Grants access to POST, PUT, and DELETE requests of the [Monitored entities](/docs/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") and [Custom tags](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.") APIs.
+Предоставляет доступ к POST-, PUT- и DELETE-запросам [Отслеживаемых сущностей](/docs/dynatrace-api/environment-api/entity-v2 "Узнайте об Dynatrace Отслеживаемых сущностях API.") и [Пользовательских тегов](/docs/dynatrace-api/environment-api/custom-tags "Управляйте пользовательскими тегами отслеживаемых сущностей через Dynatrace API.") API.
 
-Ingest events
+Ввод событий
 
 `events.ingest`
 
-Grants access to POST request of the [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.").
+Предоставляет доступ к POST-запросу [Событий API v2](/docs/dynatrace-api/environment-api/events-v2 "Узнайте, что можно сделать с помощью Dynatrace Событий API v2.").
 
-Read events
+Чтение событий
 
 `events.read`
 
-Grants access to GET requests of the [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.").
+Предоставляет доступ к GET-запросам [Событий API v2](/docs/dynatrace-api/environment-api/events-v2 "Узнайте, что можно сделать с помощью Dynatrace Событий API v2.").
 
-Read extensions monitoring configuration
+Чтение конфигурации мониторинга расширений
 
 `extensionConfigurations.read`
 
-Grants access to GET requests from the **Extensions monitoring configuration** section of the [Extensions 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API.").
+Предоставляет доступ к GET-запросам из раздела **Конфигурация мониторинга расширений** [Расширений 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Узнайте, как управлять расширениями с помощью Dynatrace Расширений 2.0 API.").
 
-Write extensions monitoring configuration
+Запись конфигурации мониторинга расширений
 
 `extensionConfigurations.write`
 
-Grants access to POST, PUT, and DELETE requests from the **Extensions monitoring configuration** section of the [Extensions 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API.").
+Предоставляет доступ к POST-, PUT- и DELETE-запросам из раздела **Конфигурация мониторинга расширений** [Расширений 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Узнайте, как управлять расширениями с помощью Dynatrace Расширений 2.0 API.").
 
-Read extensions environment configuration
+Чтение конфигурации окружения расширений
 
 `extensionEnvironment.read`
 
-Grants access to GET requests from the **Extensions environment configuration** section of the [Extensions 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API.").
+Предоставляет доступ к GET-запросам из раздела **Конфигурация окружения расширений** [Расширений 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Узнайте, как управлять расширениями с помощью Dynatrace Расширений 2.0 API.").
 
-Write extensions environment configuration
+Запись конфигурации окружения расширений
 
 `extensionEnvironment.write`
 
-Grants access to POST, PUT, and DELETE requests from the **Extensions environment configuration** section of the [Extensions 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API.").
+Предоставляет доступ к POST-, PUT- и DELETE-запросам из раздела **Конфигурация окружения расширений** [Расширений 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Узнайте, как управлять расширениями с помощью Dynatrace Расширений 2.0 API.").
 
-Read extensions
+Чтение расширений
 
 `extensions.read`
 
-Grants access to GET requests from the **Extensions** section of the [Extensions 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API.").
+Предоставляет доступ к GET-запросам из раздела **Расширения** [Расширений 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Узнайте, как управлять расширениями с помощью Dynatrace Расширений 2.0 API.").
 
-Write extensions
+Запись расширений
 
 `extensions.write`
 
-Grants access to POST, PUT, and DELETE requests from the **Extensions** section of the [Extensions 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API.").
+Предоставляет доступ к POST-, PUT- и DELETE-запросам из раздела **Расширения** [Расширений 2.0 API](/docs/dynatrace-api/environment-api/extensions-20 "Узнайте, как управлять расширениями с помощью Dynatrace Расширений 2.0 API.").
 
-Read Geographic regions
+Чтение географических регионов
 
 `geographicRegions.read`
 
-Grants access to the [Geographic regions API](/docs/dynatrace-api/environment-api/rum/geographic-regions "View requests available through the Dynatrace Geographic regions API.").
+Предоставляет доступ к [Географическим регионам API](/docs/dynatrace-api/environment-api/rum/geographic-regions "Просмотрите запросы, доступные через Dynatrace Географические регионы API.").
 
-Install and update Hub items
+Установка и обновление элементов Hub
 
 `hub.install`
 
-Grants permission to install and update extensions via the [Hub items API](/docs/dynatrace-api/environment-api/hub "Learn how to access Dynatrace Hub features via the Hub items API.").
+Предоставляет разрешение на установку и обновление расширений через [Элементы Hub API](/docs/dynatrace-api/environment-api/hub "Узнайте, как получить доступ к функциям Dynatrace Hub через элементы Hub API.").
 
-Read Hub related data
+Чтение данных, связанных с Hub
 
 `hub.read`
 
-Grants access to GET requests of the [Hub items API](/docs/dynatrace-api/environment-api/hub "Learn how to access Dynatrace Hub features via the Hub items API.").
+Предоставляет доступ к GET-запросам [Элементов Hub API](/docs/dynatrace-api/environment-api/hub "Узнайте, как получить доступ к функциям Dynatrace Hub через элементы Hub API.").
 
-Manage metadata of Hub items
+Управление метаданными элементов Hub
 
 `hub.write`
 
-Grants permission to manage metadata of Hub items via the [Hub items API](/docs/dynatrace-api/environment-api/hub "Learn how to access Dynatrace Hub features via the Hub items API.").
+Предоставляет разрешение на управление метаданными элементов Hub через [Элементы Hub API](/docs/dynatrace-api/environment-api/hub "Узнайте, как получить доступ к функциям Dynatrace Hub через элементы Hub API.").
 
-Read JavaScript mapping files
+Чтение файлов сопоставления JavaScript
 
 `javaScriptMappingFiles.read`
 
-Write JavaScript mapping files
+Запись файлов сопоставления JavaScript
 
 `javaScriptMappingFiles.write`
 
-Ingest logs
+Ввод журналов
 
 `logs.ingest`
 
-Grants access to the [POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.") request of the Log Monitoring API v2 as well as the [OpenTelemetry log ingest API](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+Предоставляет доступ к запросу [POST ввод журналов](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Отправьте пользовательские журналы в Dynatrace через Мониторинг журналов API v2.") Мониторинга журналов API v2, а также [OpenTelemetry журнал ввод API](/docs/ingest-from/opentelemetry/otlp-api "Узнайте об OTLP API конечных точках, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
 
-Read logs
+Чтение журналов
 
 `logs.read`
 
-Grants access to the GET requests of the [Log Monitoring API v2](/docs/dynatrace-api/environment-api/log-monitoring-v2 "Find out what you can do with the Log Monitoring API v2.")
+Предоставляет доступ к GET-запросам [Мониторинга журналов API v2](/docs/dynatrace-api/environment-api/log-monitoring-v2 "Узнайте, что можно сделать с помощью Мониторинга журналов API v2.").
 
-Ingest metrics
+Ввод метрик
 
 `metrics.ingest`
 
-Grants access to the [POST ingest data points](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.") request of the Metrics v2 API as well as the [OpenTelemetry metrics ingest API](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+Предоставляет доступ к запросу [POST ввод данных](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ввод пользовательских метрик в Dynatrace через Метрики v2 API.") Метрик v2 API, а также [OpenTelemetry метрик ввод API](/docs/ingest-from/opentelemetry/otlp-api "Узнайте об OTLP API конечных точках, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
 
-Read metrics
+Чтение метрик
 
 `metrics.read`
 
-Grants access to GET requests of the [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
+Предоставляет доступ к GET-запросам [Метрик API v2](/docs/dynatrace-api/environment-api/metric-v2 "Получите информацию о метриках через Метрики v2 API.").
 
-Write metrics
+Запись метрик
 
 `metrics.write`
 
-Grants access to the [DELETE a custom metric](/docs/dynatrace-api/environment-api/metric-v2/delete-metric "Delete a metric ingested via Metrics v2 API.") request of the Metrics API v2.
+Предоставляет доступ к запросу [Удаление пользовательской метрики](/docs/dynatrace-api/environment-api/metric-v2/delete-metric "Удалите метрику, введенную через Метрики v2 API.") Метрик API v2.
 
-Read network zones
+Чтение сетевых зон
 
 `networkZones.read`
 
-Grants access to GET requests of the [Network zones API](/docs/dynatrace-api/environment-api/network-zones "Manage network zones via the Dynatrace API.").
+Предоставляет доступ к GET-запросам [Сетевые зоны API](/docs/dynatrace-api/environment-api/network-zones "Управляйте сетевыми зонами через Dynatrace API.").
 
-Write network zones
+Запись сетевых зон
 
 `networkZones.write`
 
-Grants access to POST, PUT, and DELETE requests of the [Network zones API](/docs/dynatrace-api/environment-api/network-zones "Manage network zones via the Dynatrace API.").
+Предоставляет доступ к POST-, PUT- и DELETE-запросам [Сетевые зоны API](/docs/dynatrace-api/environment-api/network-zones "Управляйте сетевыми зонами через Dynatrace API.").
 
-Read OneAgents
+Чтение OneAgent
 
 `oneAgents.read`
 
-Grants access to GET requests of the [OneAgents API](/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents "Check the configuration of OneAgent instances on your hosts via Dynatrace API.").
+Предоставляет доступ к GET-запросам [OneAgent API](/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents "Проверьте конфигурацию экземпляров OneAgent на ваших хостах через Dynatrace API.").
 
-Write OneAgents
+Запись OneAgent
 
 `oneAgents.write`
 
-Grants access to POST and DELETE requests of the [OneAgents API](/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents "Check the configuration of OneAgent instances on your hosts via Dynatrace API.").
+Предоставляет доступ к POST- и DELETE-запросам [OneAgent API](/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents "Проверьте конфигурацию экземпляров OneAgent на ваших хостах через Dynatrace API.").
 
-Ingest OpenTelemetry traces
+Ввод трасс OpenTelemetry
 
 `openTelemetryTrace.ingest`
 
-Grants permission to [ingest OpenTelemetry traces](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+Предоставляет разрешение на [ввод трасс OpenTelemetry](/docs/ingest-from/opentelemetry "Узнайте, как интегрировать и вводить данные OpenTelemetry (трассы, метрики и журналы) в Dynatrace.").
 
-Read problems
+Чтение проблем
 
 `problems.read`
 
-Grants access to GET requests of the [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers.").
+Предоставляет доступ к GET-запросам [Проблем API v2](/docs/dynatrace-api/environment-api/problems-v2 "Узнайте, что предлагает Dynatrace Проблемы v2 API.").
 
-Write problems
+Запись проблем
 
 `problems.write`
 
-Grants access to POST, PUT, and DELETE requests of the [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers.").
+Предоставляет доступ к POST-, PUT- и DELETE-запросам [Проблем API v2](/docs/dynatrace-api/environment-api/problems-v2 "Узнайте, что предлагает Dynatrace Проблемы v2 API.").
 
-Read releases
+Чтение выпусков
 
 `releases.read`
 
-Grants access to the [Releases API](/docs/dynatrace-api/environment-api/releaseapi "Find out what the Dynatrace Releases API offers.").
+Предоставляет доступ к [Выпускам API](/docs/dynatrace-api/environment-api/releaseapi "Узнайте, что предлагает Dynatrace Выпуски API.").
 
-Read security problems
+Чтение проблем безопасности
 
 `securityProblems.read`
 

@@ -1,7 +1,7 @@
 ---
 title: Monitor Kubernetes/OpenShift metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes
-scraped: 2026-02-18T21:26:40.904258
+scraped: 2026-02-19T21:32:54.510992
 ---
 
 # Monitor Kubernetes/OpenShift metrics

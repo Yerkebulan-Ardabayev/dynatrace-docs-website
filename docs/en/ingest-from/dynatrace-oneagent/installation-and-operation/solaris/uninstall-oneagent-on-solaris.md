@@ -1,7 +1,7 @@
 ---
 title: Uninstall OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/uninstall-oneagent-on-solaris
-scraped: 2026-02-18T21:28:33.585798
+scraped: 2026-02-19T21:29:15.233917
 ---
 
 # Uninstall OneAgent on Solaris

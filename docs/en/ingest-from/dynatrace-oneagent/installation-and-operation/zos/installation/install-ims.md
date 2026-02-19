@@ -1,7 +1,7 @@
 ---
 title: Install the IMS module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims
-scraped: 2026-02-18T21:28:54.351699
+scraped: 2026-02-19T21:19:12.796059
 ---
 
 # Install the IMS module
