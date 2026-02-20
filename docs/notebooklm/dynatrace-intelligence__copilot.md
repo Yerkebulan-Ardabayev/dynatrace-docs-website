@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/copilot
 Язык: Русский (RU)
-Сгенерировано: 2026-02-19
+Сгенерировано: 2026-02-20
 Файлов в разделе: 9
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Embedded conversation starters
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters
-scraped: 2026-02-18T21:31:53.728074
+scraped: 2026-02-20T21:19:29.017892
 ---
 
 # Embedded conversation starters
@@ -263,7 +263,7 @@ If you have any feedback, you can provide it directly in the chat window. For mo
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-19T21:34:36.830745
+scraped: 2026-02-20T21:27:56.592538
 ---
 
 # Dynatrace Assist
@@ -464,7 +464,7 @@ You can use agentic  **Dynatrace Assist** to:
 ---
 title: Dynatrace Intelligence generative AI data privacy and security
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-data-privacy
-scraped: 2026-02-16T09:29:33.353940
+scraped: 2026-02-20T21:23:58.134843
 ---
 
 # Dynatrace Intelligence generative AI data privacy and security
@@ -494,7 +494,7 @@ Learn more about the [Dynatrace Intelligence generative AI architecture and data
 
 Dynatrace version 1.305+
 
-Starting with Dynatrace version 1.305, PII masking is in place for user prompts. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.
+PII masking is in place for user prompts interacting with all standard generative AI functionality. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.
 
 Currently masked fields include:
 
@@ -511,6 +511,8 @@ Currently masked fields include:
 
 In our logs and calls to LLM models, we replace values from the identified patterns above with fake patterns. This means that you'll be able see IBANs in logs, for example, but they'll be made up of random numbers, replacing the original values included in your prompts.
 
+Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to protect your data, when  **Dynatrace Assist** detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.
+
 ## Related topics
 
 * [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
@@ -524,7 +526,7 @@ In our logs and calls to LLM models, we replace values from the identified patte
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-19T21:13:05.520218
+scraped: 2026-02-20T21:08:02.481345
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -914,7 +916,7 @@ To configure your data access
 ---
 title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-19T21:16:18.395019
+scraped: 2026-02-20T21:09:56.761082
 ---
 
 # Dynatrace Intelligence generative AI overview
@@ -978,7 +980,7 @@ If you would like to learn more about Dynatrace Intelligence generative AI, visi
 ---
 title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-19T21:27:31.845258
+scraped: 2026-02-20T21:28:01.717876
 ---
 
 # Dynatrace Intelligence generative AI - Tips for writing better prompts
@@ -1093,7 +1095,7 @@ We are actively working on improving and extending the Dynatrace Intelligence ge
 ---
 title: Query with natural language
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
-scraped: 2026-02-19T21:31:36.713395
+scraped: 2026-02-20T21:28:31.346870
 ---
 
 # Query with natural language
@@ -1273,7 +1275,7 @@ Do not share personal or confidential information in your feedback.
 ---
 title: Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-19T21:34:11.575607
+scraped: 2026-02-20T21:20:16.001143
 ---
 
 # Dynatrace Intelligence agentic and generative AI

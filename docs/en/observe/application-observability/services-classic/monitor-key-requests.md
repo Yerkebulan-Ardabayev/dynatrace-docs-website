@@ -1,7 +1,7 @@
 ---
 title: Monitor key requests
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/monitor-key-requests
-scraped: 2026-02-19T21:15:25.442680
+scraped: 2026-02-20T21:20:39.938816
 ---
 
 # Monitor key requests

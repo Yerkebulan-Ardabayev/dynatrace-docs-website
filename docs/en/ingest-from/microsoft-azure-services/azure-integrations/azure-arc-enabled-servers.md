@@ -1,7 +1,7 @@
 ---
 title: Microsoft Azure Arc-enabled servers
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-arc-enabled-servers
-scraped: 2026-02-19T21:22:22.487972
+scraped: 2026-02-20T21:24:19.989152
 ---
 
 # Microsoft Azure Arc-enabled servers

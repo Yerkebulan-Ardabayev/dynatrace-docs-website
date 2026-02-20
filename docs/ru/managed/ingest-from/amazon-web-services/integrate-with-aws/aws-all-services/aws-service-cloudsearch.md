@@ -1,7 +1,7 @@
 ---
 title: Amazon CloudSearch monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cloudsearch
-scraped: 2026-02-19T21:28:50.182602
+scraped: 2026-02-20T21:20:29.556863
 ---
 
 # Amazon CloudSearch monitoring

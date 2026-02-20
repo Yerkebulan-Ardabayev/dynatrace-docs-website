@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities
 source: https://www.dynatrace.com/docs/secure/vulnerabilities
-scraped: 2026-02-19T21:24:41.277423
+scraped: 2026-02-20T21:19:08.089534
 ---
 
 # Vulnerabilities

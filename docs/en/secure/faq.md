@@ -1,7 +1,7 @@
 ---
 title: Application Security FAQ
 source: https://www.dynatrace.com/docs/secure/faq
-scraped: 2026-02-19T21:25:38.987903
+scraped: 2026-02-20T21:22:42.456116
 ---
 
 # Application Security FAQ
@@ -10,7 +10,7 @@ scraped: 2026-02-19T21:25:38.987903
 
 * Latest Dynatrace
 * Troubleshooting
-* Updated on Jan 29, 2026
+* Updated on Feb 23, 2026
 
 See below for answers to some of the most frequently asked questions about Dynatrace Application Security, grouped by topics.
 
@@ -61,12 +61,12 @@ When you enable Application Security (Runtime Vulnerability Analytics or Runtime
 
 * To disable Runtime Vulnerability Analytics
 
-  1. Go to **Settings (New)** > **Analyze and alert** > **General settings**.
+  1. Go to **Settings** > **Analyze and alert** > **General settings**.
   2. Under **Third-party Vulnerability Analytics**, turn off **Enable Third-party Vulnerability Analytics**.
   3. Under **Code-level Vulnerability Analytics**, turn off **Enable Code-level Vulnerability Analytics**.
 * To disable Runtime Application Protection
 
-  1. Go to **Settings (New)** > **Analyze and alert** > **Application security** > **Application protection (New)**.
+  1. Go to **Settings** > **Analyze and alert** > **Application security** > **Application protection (New)**.
   2. Turn off Runtime Application Protection.
 
 ### Can I manually start a security scan?
@@ -119,7 +119,7 @@ deprecated
 
 In [![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries."), you can:
 
-* Use the recommended fixes from [Davis Security Advisor](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") to upgrade to a non-vulnerable version of the vulnerable component
+* Use the recommended [DSA fixes](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") to upgrade to a non-vulnerable version of the vulnerable component
 * [Set up tracking links for affected entities and follow up with their remediation progress](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
 
 ### When is a vulnerability marked as resolved?
@@ -349,7 +349,7 @@ Your custom rules override the global third-party vulnerability detection contro
 
 ### Where can I find examples of monitoring rule configurations?
 
-If you need guidance for setting up monitoring rules in common scenarios such as monitoring only specific hosts, processes, Kubernetes namespaces, Kubernetes nodes, or excluding certain processes, you can refer to [Use cases for monitoring rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules "Common scenarios for defining monitoring rules for vulnerabilities based on resource attributes and Kubernetes labels."). It provides practical examples that show how to configure rules for a variety of environments and requirements.
+If you need guidance for setting up monitoring rules in common scenarios such as monitoring only specific hosts, processes, Kubernetes namespaces, Kubernetes nodes, or excluding certain processes, you can refer to [Use cases for new monitoring rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#usecases "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes."). It provides practical examples that show how to configure rules for a variety of environments and requirements.
 
 ### How can I limit Runtime Vulnerability Analytics monitoring to a specific management zone?
 
@@ -363,8 +363,8 @@ To enable Runtime Vulnerability Analytics only for selected parts of your enviro
 
 You can follow these example use cases:
 
-* [Monitor only the processes on specific hosts](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules#monitor-processes-specific-host "Common scenarios for defining monitoring rules for vulnerabilities based on resource attributes and Kubernetes labels.")
-* [Monitor only processes running in a specific Kubernetes namespace](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules#processes-specific-namespace "Common scenarios for defining monitoring rules for vulnerabilities based on resource attributes and Kubernetes labels.")
+* [Monitor only the processes on specific hosts](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#monitor-processes-specific-host "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")
+* [Monitor only processes running in a specific Kubernetes namespace](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#processes-specific-namespace "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")
 
 These examples show how to disable global monitoring and then create resourceâattribute monitoring rules that selectively enable monitoring for the entities you choose.
 

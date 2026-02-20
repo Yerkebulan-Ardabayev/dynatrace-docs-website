@@ -1,7 +1,7 @@
 ---
 title: Preset Dynatrace dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset
-scraped: 2026-02-19T21:21:17.242882
+scraped: 2026-02-20T21:12:44.389772
 ---
 
 # Preset Dynatrace dashboards

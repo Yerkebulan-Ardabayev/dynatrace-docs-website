@@ -1,7 +1,7 @@
 ---
 title: Azure Mesh Application monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-mesh-application
-scraped: 2026-02-19T21:22:14.062170
+scraped: 2026-02-20T21:19:33.342981
 ---
 
 # Azure Mesh Application monitoring

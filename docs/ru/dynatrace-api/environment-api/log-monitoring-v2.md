@@ -1,36 +1,36 @@
 ---
-title: Log Monitoring API v2
+title: Мониторинг журналов API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/log-monitoring-v2
-scraped: 2026-02-19T21:21:47.369507
+scraped: 2026-02-20T21:16:14.622299
 ---
 
-# Log Monitoring API v2
+# Мониторинг журналов API v2
 
-# Log Monitoring API v2
+# Мониторинг журналов API v2
 
-* Reference
-* Updated on Nov 20, 2025
+* Справка
+* Обновлено 20 ноября 2025 г.
 
-Log Monitoring API v2 deprecation
+Устаревание Мониторинга журналов API v2
 
-The `search`, `export`, and `aggregate` endpoints of this API are deprecated and will be removed by the end of 2027. Use the [Logs on Grail APIï»¿](https://dt-url.net/zb0381u) instead.
+Пункты `search`, `export` и `aggregate` этого API устарели и будут удалены к концу 2027 года. Вместо этого используйте [Журналы на Grail API](https://dt-url.net/zb0381u).
 
-[### Search
+[### Поиск
 
-Fetch a limited number of log records matching your criteria.
+Получить ограниченное количество записей журнала, соответствующих вашим критериям.
 
-Deprecated](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-search-logs "Fetch log records via the Log Monitoring API v2.")[### Export
+Устаревший](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-search-logs "Получить записи журнала через Мониторинг журналов API v2.")[### Экспорт
 
-Fetch an unlimited number of log records matching your criteria.
+Получить неограниченное количество записей журнала, соответствующих вашим критериям.
 
-Deprecated](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-export-logs "Fetch log records via the Log Monitoring API v2.")[### Aggregate
+Устаревший](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-export-logs "Получить записи журнала через Мониторинг журналов API v2.")[### Агрегация
 
-Fetch aggregated log records matching your criteria.
+Получить агрегированные записи журнала, соответствующие вашим критериям.
 
-Deprecated](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-aggregate-logs "Fetch the aggregated log records via the Log Monitoring API v2.")[### Ingest
+Устаревший](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-aggregate-logs "Получить агрегированные записи журнала через Мониторинг журналов API v2.")[### Ввод
 
-Push custom log records to Dynatrace.](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+Отправить пользовательские записи журнала в Dynatrace.](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Отправить пользовательские журналы в Dynatrace через Мониторинг журналов API v2.")
 
-## Related topics
+## Связанные темы
 
-* [Log Monitoring Classic](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* [Классический Мониторинг журналов](/docs/analyze-explore-automate/log-monitoring "Узнайте, как включить Мониторинг журналов, какие идеи может предоставить Мониторинг журналов, и многое другое.")

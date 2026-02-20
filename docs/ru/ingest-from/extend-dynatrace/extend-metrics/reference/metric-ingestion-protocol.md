@@ -1,7 +1,7 @@
 ---
 title: Metric ingestion protocol
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol
-scraped: 2026-02-19T21:30:39.120931
+scraped: 2026-02-20T21:16:39.362966
 ---
 
 # Metric ingestion protocol

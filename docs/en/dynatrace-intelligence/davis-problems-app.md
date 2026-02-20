@@ -1,7 +1,7 @@
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-19T21:11:44.773946
+scraped: 2026-02-20T21:07:00.972234
 ---
 
 # Problems app
@@ -11,7 +11,7 @@ scraped: 2026-02-19T21:11:44.773946
 * Latest Dynatrace
 * App
 * 15-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 17, 2026
 
 Quickly triaging, investigating, and remediating incoming incidents is the core challenge for operations teams. ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** supports them by automatically analyzing complex incidents, collecting all the context, and presenting the root cause and impact within a consistent view.
 
@@ -115,11 +115,13 @@ By default, ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-
 * A feed of all problems in the last 2 hours. To help operation teams spot open problems regardless of which filter is set, open problems remain on top of the feed no matter how long they are open.
 * A problem chart at the top visualizes any abnormality with a high number of problems in the past. Select a peak on the chart to drill into it and investigate further.
 
-![Problems app - problem feed view](https://dt-cdn.net/images/problem-table-1920-1ff1983035.webp)
+![An example of the Problems app problem feed view](https://dt-cdn.net/images/problems-app-problem-feed-view-1920-f7f665e813.png)
 
 #### Filtering
 
-To focus on your domain and triage problems that affect it, set filters. The two most common filtersâ**Status** and **Category**âhave selectable settings to the left of the table for quick access. To set other filters, use the filter bar above the table.
+To focus on your domain and triage problems that affect it, set filters. The three most common filtersâ**Status**, **Category**, and **Impact**âhave selectable settings to the left of the table for quick access. Your selections there automatically add the corresponding filters to the  filter bar above the table.
+
+To set other filters, enter them directly in the filter bar.
 
 * **Status**âCan be `Active` or `Closed`.
 
@@ -128,6 +130,9 @@ To focus on your domain and triage problems that affect it, set filters. The two
 * **Category**âIndicates the nature of the incident, such as slowdowns, errors, resource-related issues, or availability incidents.
 
   + If you select one or more categories in the controls on the left, the corresponding filters are also displayed in the filter bar.
+* **Impact**âIndicates the type of the impacted area, such as frontends, services, infrastructure, or environments.
+
+  + If you select one or more impact areas in the controls on the left, the corresponding filters are also displayed in the filter bar.
 
 Filtering with the filter bar allows you to focus your feed on problems based on multiple criteria, such as status, number of affected entities, root cause entity, and more. Place your cursor in the input field to see all the available options. By default, filtering criteria are combined by the **AND** logic. For each criterion, Dynatrace Intelligence provides a list of suggested values, based on your problem feed.
 
@@ -137,6 +142,24 @@ For example, to see problems that are raised due to an increase of JavaScript er
 * `Duration>1h`
 * `Category=Error`
 * `Name=JavaScript error rate increase`
+
+By using the filter bar, you can also narrow your feed to focus on specific impact areas (such as `Frontend`, `Service`, or `Infrastructure`) with the `Impact` parameter, or use text search to find problems that contain a specific string. To use search, you can:
+
+* Input any text in the filter bar and select **Search in all data**.
+* Enter `* ~ <your_text>` in the filter bar and select **Update**.
+
+Fields considered for text search
+
+The following fields in the problem record are considered for the text search:
+
+* `event.id`
+* `event.name`
+* `event.description`
+* `event.status`
+* `display_id`
+* `labels.alerting_profile`
+* `entity_tags`
+* `root_cause_entity_name`
 
 The problem filter bar supports Boolean logic filters. This allows you to combine **AND** and **OR** criteria and create complex filters using parentheses to group Boolean terms. You can see a Boolean logic filter statement within ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** app in the example below.
 

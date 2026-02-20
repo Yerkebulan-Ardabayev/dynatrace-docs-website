@@ -1,7 +1,7 @@
 ---
 title: Gain insights
 source: https://www.dynatrace.com/docs/secure/xspm/gain-insights
-scraped: 2026-02-17T21:28:52.849076
+scraped: 2026-02-20T21:23:24.515118
 ---
 
 # Gain insights

@@ -1,7 +1,7 @@
 ---
 title: Set up the Dynatrace Google Cloud metric integration on a GKE cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only
-scraped: 2026-02-19T21:21:11.400979
+scraped: 2026-02-20T21:21:01.211672
 ---
 
 # Set up the Dynatrace Google Cloud metric integration on a GKE cluster

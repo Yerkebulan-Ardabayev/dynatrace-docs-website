@@ -1,7 +1,7 @@
 ---
 title: GET OneAgent JavaScript tag
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag
-scraped: 2026-02-19T21:34:22.605030
+scraped: 2026-02-20T21:18:18.674143
 ---
 
 # GET OneAgent JavaScript tag

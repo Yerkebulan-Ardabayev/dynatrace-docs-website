@@ -1,7 +1,7 @@
 ---
 title: Runtime Application Protection
 source: https://www.dynatrace.com/docs/secure/application-security/application-protection
-scraped: 2026-02-19T21:22:12.732299
+scraped: 2026-02-20T21:21:14.866932
 ---
 
 # Runtime Application Protection
@@ -10,7 +10,17 @@ scraped: 2026-02-19T21:22:12.732299
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Nov 03, 2025
+* Updated on Feb 23, 2026
+
+What youâll find on this page
+
+* [Explore Runtime Application Protection capabilities](#capabilities)
+* [How RAP detects and analyzes attacks](#mechanism)
+* [Review prerequisites](#prereq)
+* [Check supported technologies](#tech)
+* [How to enable and configure RAP](#start)
+* [What you can do with RAP next](#next)
+* [Understand how RAP is licensed](#consumption)
 
 Dynatrace Runtime Application Protection leverages code-level insights and transaction analysis to detect and block exploitation attempts on your applications automatically and in real time.
 
@@ -32,7 +42,7 @@ Dynatrace Runtime Application Protection leverages code-level insights and trans
 Before you begin, ensure your environment meets the necessary requirements:
 
 * You're using a supported version of Dynatrace. Review the [release notes](/docs/whats-new "Read the product news and the release notes and find out which Documentation topics are new.") for currently supported versions.
-* For Runtime Application Protection to work properly, make sure deep monitoring is enabled in **Settings** > **Processes and containers** > **Process group monitoring**.
+* For Runtime Application Protection to work properly, make sure deep monitoring is enabled in **Settings** > **Process and contextualize** > **Process groups** > **Process group monitoring**.
 
   For .NET, Go, and Python technologies, for which automatic deep monitoring is disabled, you need to manually enable deep monitoring on each host. For more information, see [Process deep monitoring](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring").
 
@@ -68,7 +78,7 @@ Enable Runtime Application Protection
 
 To enable Runtime Application Protection globally on your environment
 
-1. Go to **Settings (New)** > **Analyze and alert** > **Application security** > **Application protection (New**).
+1. Go to **Settings** > **Analyze and alert** > **Application security** > **Application protection (New**).
 2. Enable Runtime Application Protection.
 3. Select **Enable**.
 4. Restart your processes.
@@ -77,7 +87,7 @@ Define the global attack control
 
 To define the global attack control for all process groups
 
-1. Go to **Settings (New)** > **Analyze and alert** > **Application security** > **Application protection (New)** > **Monitoring rules** > **Default rules**.
+1. Go to **Settings** > **Analyze and alert** > **Application security** > **Application protection (New)** > **Monitoring rules** > **Default rules**.
 2. Edit the attack control per technology:
 
 * **Off; incoming attacks NOT detected or blocked.**âMonitoring is disabled; no attacks in the selected technology are reported.
@@ -91,14 +101,14 @@ If you define [custom monitoring rules](/docs/secure/application-security/applic
 
 Enable OneAgent monitoring
 
-1. Go to **Settings (New)** and select **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+1. Go to **Settings** and select **Collect and capture** > **General monitoring settings** > **OneAgent features**.
 2. Filter by `code-level attack evaluation` and enable the feature for the technologies you want to monitor.
 3. Select **Save changes**.
 4. Restart your processes.
 
 OneAgent version 1.309 To detect SSRF attacks, you also need to enable SSRF attack evaluation. See below for instructions.
 
-1. Go to **Settings (New)** and select **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+1. Go to **Settings** and select **Collect and capture** > **General monitoring settings** > **OneAgent features**.
 2. Find and enable `Java SSRF code-level vulnerability and attack evaluation`.
 3. Select **Save changes**.
 4. Restart your processes.
@@ -112,7 +122,10 @@ After you set up Runtime Application Protection, you can
 
 ## Consumption
 
-Runtime Application Protection is licensed based on the consumption of [GiB-hours](/docs/license/capabilities/application-security/runtime-application-protection "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.") if you're using the [Dynatrace Platform Subscription (DPS) licensing model](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), or [Application Security units (ASUs)](/docs/license/monitoring-consumption-classic/application-security-units "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.") if you're using the [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+Runtime Application Protection consumption depends on your Dynatrace licensing model:
+
+* [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."): measured in GiBâhours. For details, see [Calculate your consumption of Runtime Application Protection (RAP) (DPS)](/docs/license/capabilities/application-security/runtime-application-protection "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.").
+* [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."): measured in Application Security units (ASUs). For details, see [Application Security monitoring (ASUs)](/docs/license/monitoring-consumption-classic/application-security-units "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
 
 ## Related topics
 

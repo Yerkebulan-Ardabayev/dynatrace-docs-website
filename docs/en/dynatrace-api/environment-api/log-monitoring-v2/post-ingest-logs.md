@@ -1,7 +1,7 @@
 ---
 title: Log Monitoring API v2 - POST ingest logs
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs
-scraped: 2026-02-17T21:29:32.028076
+scraped: 2026-02-20T21:26:56.391694
 ---
 
 # Log Monitoring API v2 - POST ingest logs
@@ -41,6 +41,7 @@ When using log processing with the custom processing pipeline (OpenPipeline), in
 | --- | --- | --- | --- | --- |
 | content-type | string | (Optional) Allows to provide content type with query parameter. Has priority over value provided in Content-Type header. | query | Optional |
 | structure | string | (Optional) Data model used for structuring the input into log records. Allowed values: `raw`, `flattened`. For more details, refer to the [documentationï»¿](https://dt-url.net/lyi2yte). The element can hold these values * `raw` * `flattened` | query | Optional |
+| X-Dynatrace-Attr | string | (Optional) Contains ampersandâseparated keyâvalue pairs representing additional log attributes to be added to each ingested log record. If the same key appears multiple times, all values are captured as a multiâvalue attribute. Query parameters take precedence over values provided in this header. | header | Optional |
 | X-Dynatrace-Options | string | (Optional) Contains ampersand-separated Dynatrace-specific parameters. Query parameter takes precedence over the header value. For more details, refer to the [documentationï»¿](https://dt-url.net/lyi2yte). | header | Optional |
 | body | [LogMessageJson](#openapi-definition-LogMessageJson) | The body of the request. Contains one or more log events to be ingested.  The endpoint accepts one of the following payload types, defined by the **Accept** header:  * `text/plain`: supports only one log event. * `application/json`: supports multiple log events in a single JSON array payload. * `application/jsonl`, `application/jsonlines`, `application/x-ndjson`, `application/jsonlines+json`, or `application/x-jsonlines`: supports multiple log events as JSON-lines payload (one JSON object per line). | body | Optional |
 
@@ -81,6 +82,13 @@ Each log event from the input is mapped to a single Dynatrace log record contain
     - `date`
     - `published_date`
     - `syslog.timestamp`
+    - `time`
+    - `epochSecond`
+    - `startTime`
+    - `datetime`
+    - `ts`
+    - `timeMillis`
+    - `@t`
   + Supported formats: `UTC milliseconds`, `RFC3339`, and `RFC3164`.
   + For unsupported timestamp formats, the current timestamp is used, and the value of the unsupported format is stored in the `unparsed_timestamp` attribute (for Log Monitoring Classic, this attribute isn't indexed).
   + Log events older than the *Log Age* limit are discarded. Timestamps more than 10 minutes ahead of the current time are replaced with the current time. See the **Limitations** section below for details.
@@ -294,6 +302,7 @@ Please refer to the following documentation pages:
 * `dt.http.application_id`
 * `dt.http.context_root`
 * `dt.ingest.debug_messages`
+* `dt.ingest.origin`
 * `dt.ingest.warnings`
 * `dt.kubernetes.cluster.id`
 * `dt.kubernetes.cluster.name`

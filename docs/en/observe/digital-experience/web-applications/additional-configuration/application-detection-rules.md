@@ -1,7 +1,7 @@
 ---
 title: Check application detection rules
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/application-detection-rules
-scraped: 2026-02-19T21:30:35.218932
+scraped: 2026-02-20T21:28:52.824734
 ---
 
 # Check application detection rules

@@ -1,14 +1,13 @@
 ---
 title: Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/use-cases/alert-use-case
-scraped: 2026-02-17T04:57:19.343982
+scraped: 2026-02-20T21:21:24.256612
 ---
 
 # Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 
 # Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 
-* Latest Dynatrace
 * Tutorial
 * 2-min read
 * Published Sep 28, 2023

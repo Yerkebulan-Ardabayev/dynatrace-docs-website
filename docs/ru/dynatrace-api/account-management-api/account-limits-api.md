@@ -1,17 +1,17 @@
 ---
-title: Account limits API
+title: Ограничения аккаунта API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/account-limits-api
-scraped: 2026-02-17T04:56:58.403398
+scraped: 2026-02-20T21:16:01.394886
 ---
 
-# Account limits API
+# Ограничения аккаунта API
 
-# Account limits API
+# Ограничения аккаунта API
 
-* Latest Dynatrace
-* Reference
-* Published Dec 04, 2025
+* Последнее Dynatrace
+* Справочник
+* Опубликовано дек 04, 2025
 
-[### List account limits
+[### Список ограничений аккаунта
 
-Get an overview of account limits assigned to your Dynatrace account.](/docs/dynatrace-api/account-management-api/account-limits-api/get-account-limits "Get a list of assigned account limits via the Dynatrace API.")
+Получите обзор ограничений аккаунта, назначенных вашему аккаунту Dynatrace.](/docs/dynatrace-api/account-management-api/account-limits-api/get-account-limits "Получите список назначенных ограничений аккаунта через Dynatrace API.")

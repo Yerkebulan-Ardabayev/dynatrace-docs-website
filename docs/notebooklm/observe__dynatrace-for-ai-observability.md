@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/dynatrace-for-ai-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-19
+Сгенерировано: 2026-02-20
 Файлов в разделе: 14
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-02-18T21:31:10.368318
+scraped: 2026-02-20T21:20:00.993310
 ---
 
 # AI Observability
@@ -245,7 +245,7 @@ Review all observable AI technologies in the Dynatrace Hub.](https://www.dynatra
 ---
 title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-19T21:26:41.739370
+scraped: 2026-02-20T21:19:59.642378
 ---
 
 # Kong AI Gateway
@@ -1602,7 +1602,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: TensorFlow Keras observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability
-scraped: 2026-02-19T21:19:45.201455
+scraped: 2026-02-20T21:18:50.443573
 ---
 
 # TensorFlow Keras observability
@@ -2038,7 +2038,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: AI data governance with Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
-scraped: 2026-02-19T21:31:20.468451
+scraped: 2026-02-20T21:26:27.605769
 ---
 
 # AI data governance with Amazon Bedrock
@@ -2449,7 +2449,7 @@ Our simple example of a Node.js service entirely depends on the ChatGPT model re
 ---
 title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-02-19T21:14:10.231163
+scraped: 2026-02-20T21:08:40.618380
 ---
 
 # AI and LLM Observability

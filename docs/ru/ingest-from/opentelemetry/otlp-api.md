@@ -1,7 +1,7 @@
 ---
 title: Dynatrace OTLP API endpoints
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api
-scraped: 2026-02-19T21:18:11.696572
+scraped: 2026-02-20T21:20:46.358736
 ---
 
 # Dynatrace OTLP API endpoints

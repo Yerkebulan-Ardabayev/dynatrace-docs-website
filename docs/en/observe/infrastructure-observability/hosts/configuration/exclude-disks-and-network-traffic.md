@@ -1,7 +1,7 @@
 ---
 title: Exclude disks and network traffic from host monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic
-scraped: 2026-02-17T21:32:26.385516
+scraped: 2026-02-20T21:21:28.301593
 ---
 
 # Exclude disks and network traffic from host monitoring

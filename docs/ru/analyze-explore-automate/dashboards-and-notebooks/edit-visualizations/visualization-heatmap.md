@@ -1,7 +1,7 @@
 ---
 title: Heatmap visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-heatmap
-scraped: 2026-02-19T21:16:40.393977
+scraped: 2026-02-20T21:10:29.269360
 ---
 
 # Heatmap visualization

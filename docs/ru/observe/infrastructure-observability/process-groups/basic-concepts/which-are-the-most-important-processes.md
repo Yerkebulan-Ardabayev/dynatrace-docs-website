@@ -1,7 +1,7 @@
 ---
 title: Which are the most important processes?
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes
-scraped: 2026-02-19T21:14:16.802577
+scraped: 2026-02-20T21:09:27.053268
 ---
 
 # Which are the most important processes?

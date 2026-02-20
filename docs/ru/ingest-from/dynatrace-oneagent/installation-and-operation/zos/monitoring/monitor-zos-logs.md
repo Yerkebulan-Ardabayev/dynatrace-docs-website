@@ -1,7 +1,7 @@
 ---
 title: Monitor z/OS logs
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs
-scraped: 2026-02-19T21:19:23.836131
+scraped: 2026-02-20T21:11:12.034564
 ---
 
 # Monitor z/OS logs

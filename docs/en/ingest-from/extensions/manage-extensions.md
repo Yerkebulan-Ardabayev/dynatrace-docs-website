@@ -1,7 +1,7 @@
 ---
 title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-02-18T21:20:44.869293
+scraped: 2026-02-20T21:28:49.948004
 ---
 
 # Manage Extensions
@@ -51,6 +51,10 @@ settings:objects:read
 
 Read settings objects
 
+settings:objects:write
+
+Write settings objects
+
 state:user-app-states:read
 
 For reading any data
@@ -58,10 +62,6 @@ For reading any data
 state:user-app-states:write
 
 Write user preferences
-
-state:user-app-states:read
-
-Read user preferences
 
 10
 

@@ -1,7 +1,7 @@
 ---
 title: Ingest AWS Security Hub security findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub
-scraped: 2026-02-19T21:26:09.354988
+scraped: 2026-02-20T21:24:10.727141
 ---
 
 # Ingest AWS Security Hub security findings
@@ -83,7 +83,7 @@ These are stored in a bucket called `default_securityevents` (for details, see: 
 
 ### Monitor data
 
-Once you ingest your AWS Security Hub data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **AWS Security Hub**).
+Once you ingest your AWS Security Hub data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **AWS Security Hub**).
 
 ![security hub](https://dt-cdn.net/images/2025-03-25-11-46-26-1920-ffd9b3b4d1.png)
 
@@ -100,21 +100,21 @@ You can view
 
 You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **AWS Security Hub**.
+1. In **Settings**, open **AWS Security Hub**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
 You can create your own [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **AWS Security Hub**.
+1. In **Settings**, open **AWS Security Hub**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
 
 You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
-1. In Dynatrace, go to **Settings** > **AWS Security Hub**.
+1. In **Settings**, open **AWS Security Hub**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -122,7 +122,7 @@ You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks
 
 You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.").
 
-1. In Dynatrace, open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
+1. Open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Filter for **Provider** > **AWS Security Hub**.
 
 ### Support and mapping
@@ -315,7 +315,7 @@ experimental
 
 To stop sending events to Dynatrace
 
-1. In Dynatrace, go to **Settings** > **AWS Security Hub**.
+1. In **Settings**, open **AWS Security Hub**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 

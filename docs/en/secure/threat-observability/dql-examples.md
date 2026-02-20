@@ -1,7 +1,7 @@
 ---
 title: DQL examples for security data
 source: https://www.dynatrace.com/docs/secure/threat-observability/dql-examples
-scraped: 2026-02-19T21:16:27.392672
+scraped: 2026-02-20T21:10:38.930709
 ---
 
 # DQL examples for security data

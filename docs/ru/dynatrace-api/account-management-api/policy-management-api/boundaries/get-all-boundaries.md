@@ -1,307 +1,187 @@
 ---
-title: Policy management API - GET all policy boundaries
+title: Управление политиками API - GET все границы политики
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-all-boundaries
-scraped: 2026-02-19T21:25:14.697468
+scraped: 2026-02-20T21:21:25.629547
 ---
 
-# Policy management API - GET all policy boundaries
+# Управление политиками API - GET все границы политики
 
-# Policy management API - GET all policy boundaries
+# Управление политиками API - GET все границы политики
 
-* Latest Dynatrace
-* Reference
-* Published Nov 20, 2025
+* Последнее Dynatrace
+* Справочник
+* Опубликовано 20 ноября 2025 г.
 
-Gets a list of policy boundaries within a level.
+Получает список границ политики внутри уровня.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
 GET
 
 `https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries`
 
-## Authentication
+## Аутентификация
 
-To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Чтобы выполнить этот запрос, вам необходимо иметь разрешение **Разрешить конфигурацию политики IAM для среды** (`iam-policies-management`) в вашем токене. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-## Parameters
+## Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| size | integer | - | query | Optional |
-| page | integer | - | query | Optional |
-| accountId | - | The ID of the policy boundary level. Use the UUID of the account. | path | Required |
+| size | integer | - | query | Необязательно |
+| page | integer | - | query | Необязательно |
+| accountId | - | Идентификатор уровня границы политики. Используйте UUID учетной записи. | path | Обязательно |
 
-## Response
+## Ответ
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| size | integer | - | query | Optional |
-| page | integer | - | query | Optional |
-| accountId | - | The ID of the policy boundary level. Use the UUID of the account. | path | Required |
+| size | integer | - | query | Необязательно |
+| page | integer | - | query | Необязательно |
+| accountId | - | Идентификатор уровня границы политики. Используйте UUID учетной записи. | path | Обязательно |
 
-## Example
+## Пример
 
-In this example, the request retrieves all the policy boundaries that apply to the account with the `accountId` **f1a2b3c4-d5e6-7890-ab12-34cd56ef7890**. Only the first three entries are returned.
+В этом примере запрос получает все границы политики, которые применяются к учетной записи с `accountId` **f1a2b3c4-d5e6-7890-ab12-34cd56ef7890**. Возвращаются только первые три записи.
 
 #### Curl
 
 ```
 curl --request GET \
-
-
-
+ 
 --url 'https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890' \
-
-
-
+ 
 --header 'accept: application/json' \
-
-
-
+ 
 --header 'Authorization: Bearer abcdefjhij1234567890'
 ```
 
-#### Request URL
+#### URL запроса
 
 ```
 https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890
 ```
 
-#### Response body
+#### Тело ответа
 
 ```
 {
-
-
-
+ 
 "pageSize": 100,
-
-
-
+ 
 "pageNumber": 1,
-
-
-
+ 
 "totalCount": 22,
-
-
-
+ 
 "content": [
-
-
-
+ 
 {
-
-
-
+ 
 "uuid": "a13f7b92-4c8e-4d3a-a1f7-9e3b6c2d8f01",
-
-
-
+ 
 "levelType": "account",
-
-
-
+ 
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
-
-
-
+ 
 "name": "Bnd1",
-
-
-
+ 
 "boundaryQuery": "storage:dt.security_context = '${bindParam:bucket-name-param}';",
-
-
-
+ 
 "boundaryConditions": [
-
-
-
+ 
 {
-
-
-
+ 
 "name": "storage:dt.security_context",
-
-
-
+ 
 "operator": "EQ",
-
-
-
+ 
 "values": [
-
-
-
+ 
 "${bindParam:bucket-name-param}"
-
-
-
+ 
 ]
-
-
-
+ 
 }
-
-
-
+ 
 ],
-
-
-
+ 
 "metadata": {}
-
-
-
+ 
 },
-
-
-
+ 
 {
-
-
-
+ 
 "uuid": "345a2b02-678e-45ff-92c1-4b4fd5er3b0f",
-
-
-
+ 
 "levelType": "account",
-
-
-
+ 
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
-
-
-
+ 
 "name": "bnd101",
-
-
-
+ 
 "boundaryQuery": "storage:gcp.project.id = \"123\";",
-
-
-
+ 
 "boundaryConditions": [
-
-
-
+ 
 {
-
-
-
+ 
 "name": "storage:gcp.project.id",
-
-
-
+ 
 "operator": "EQ",
-
-
-
+ 
 "values": [
-
-
-
+ 
 "123"
-
-
-
+ 
 ]
-
-
-
+ 
 }
-
-
-
+ 
 ],
-
-
-
+ 
 "metadata": {}
-
-
-
+ 
 },
-
-
-
+ 
 {
-
-
-
+ 
 "uuid": "a567b345-2345-4ab5-b8d1-0e9a65ae678f",
-
-
-
+ 
 "levelType": "account",
-
-
-
+ 
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
-
-
-
+ 
 "name": "bnd101_alpha",
-
-
-
+ 
 "boundaryQuery": "storage:dt.security_context = 'alpha';\n//storage:bucket-name = 'alpha';",
-
-
-
+ 
 "boundaryConditions": [
-
-
-
+ 
 {
-
-
-
+ 
 "name": "storage:dt.security_context",
-
-
-
+ 
 "operator": "EQ",
-
-
-
+ 
 "values": [
-
-
-
+ 
 "alpha"
-
-
-
+ 
 ]
-
-
-
+ 
 }
-
-
-
+ 
 ],
-
-
-
+ 
 "metadata": {}
-
-
-
+ 
 },
-
-
-
+ 
 ]
-
-
-
+ 
 }
 ```
 
-#### Response code
+#### Код ответа
 
-Success (200) - Successful response - list of policy boundaries
+Успех (200) - Успешный ответ - список границ политики

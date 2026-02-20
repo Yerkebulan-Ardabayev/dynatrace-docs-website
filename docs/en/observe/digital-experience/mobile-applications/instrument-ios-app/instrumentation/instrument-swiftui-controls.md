@@ -1,7 +1,7 @@
 ---
 title: Instrument SwiftUI controls
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls
-scraped: 2026-02-18T21:26:12.081383
+scraped: 2026-02-20T21:14:16.726735
 ---
 
 # Instrument SwiftUI controls
@@ -10,7 +10,7 @@ scraped: 2026-02-18T21:26:12.081383
 
 * How-to guide
 * 13-min read
-* Updated on May 22, 2025
+* Updated on Feb 18, 2026
 
 OneAgent for iOS version 8.249+
 
@@ -491,7 +491,63 @@ To enable line number mapping for Objective-C projects
    <true/>
    ```
 2. Add the special `AppDelegate.m` placeholder to the main class.
-3. Add the `[Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];` line to the main class in either the `init` or the `didFinishLaunchingWithOptions` method.
+3. Add the `[Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];` line to the main class in either the `init` or the `didFinishLaunchingWithOptions` method (not in both).
+
+   didFinishLaunchingWithOptions
+
+   init
+
+   ```
+   - (BOOL)application:(UIApplication *)application
+
+
+
+   didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+
+
+   [Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];
+
+
+
+   // ... your existing setup code
+
+
+
+   return YES;
+
+
+
+   }
+   ```
+
+   ```
+   - (instancetype)init {
+
+
+
+   self = [super init];
+
+
+
+   if (self) {
+
+
+
+   [Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];
+
+
+
+   }
+
+
+
+   return self;
+
+
+
+   }
+   ```
 
    During the build, the SwiftUI instrumentor replaces part of this line with the generated line number mapping.
 

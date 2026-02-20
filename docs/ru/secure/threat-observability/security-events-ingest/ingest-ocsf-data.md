@@ -1,7 +1,7 @@
 ---
 title: Ingest vulnerability findings in OCSF format
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-ocsf-data
-scraped: 2026-02-18T21:22:21.182038
+scraped: 2026-02-20T21:28:40.827447
 ---
 
 # Ingest vulnerability findings in OCSF format
@@ -67,7 +67,7 @@ Once data is ingested into Grail, you can visualize, analyze, and automate data 
 
 ### Monitor data
 
-Once you ingest your OCSF data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **OCSF**).
+Once you ingest your OCSF data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **OCSF**).
 
 You can view:
 
@@ -84,7 +84,7 @@ You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-a
 
 To use a dashboard template:
 
-1. In Dynatrace, go to **Settings** > **OCSF**.
+1. In **Settings**, open **OCSF**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
@@ -93,7 +93,7 @@ You can create your own [workflows](/docs/analyze-explore-automate/workflows "Au
 
 To use a workflow template:
 
-1. In Dynatrace, go to **Settings** > **OCSF**.
+1. In **Settings**, open **OCSF**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
@@ -102,7 +102,7 @@ You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/noteboo
 
 To query ingested data:
 
-1. In Dynatrace, go to **Settings** > **OCSF**.
+1. In **Settings**, open **OCSF**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -114,7 +114,7 @@ For OCSF, Dynatrace supports vulnerability findings (regardless of the source) f
 
 To stop sending events to Dynatrace:
 
-1. In Dynatrace, go to **Settings** > **OCSF**.
+1. In **Settings**, open **OCSF**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 

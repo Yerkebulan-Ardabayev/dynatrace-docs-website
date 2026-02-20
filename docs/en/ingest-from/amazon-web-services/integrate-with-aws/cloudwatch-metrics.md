@@ -1,7 +1,7 @@
 ---
 title: Monitor Amazon Web Services with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics
-scraped: 2026-02-18T05:55:34.816706
+scraped: 2026-02-20T21:29:06.440264
 ---
 
 # Monitor Amazon Web Services with CloudWatch metrics
@@ -79,9 +79,11 @@ https://sts.<REGION>.amazonaws.com/
 https://sts.amazonaws.com/
 ```
 
-AWS STS global endpoint is not supported. Make sure that `sts.<REGION>.amazonaws.com` is accessible for the regions you want to monitor.
+Starting with Dynatrace version 1.329, the AWS STS global endpoint is not supported. Make sure that `sts.<REGION>.amazonaws.com` is accessible for the regions you want to monitor.
 
-See [AWS STS Regionalized endpointsï»¿](https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html) for more details.
+The `us-west-2` region is now the default region for ActiveGate. In case of connectivity issues, ensure that the `sts.us-west-2.amazonaws.com` endpoint is enabled.
+
+See [AWS STS Regionalized endpointsï»¿](https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html) for details.
 
 * AWS Resource Groups Tagging
 

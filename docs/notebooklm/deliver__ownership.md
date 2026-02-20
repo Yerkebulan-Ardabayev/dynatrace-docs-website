@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/ownership
 Язык: Русский (RU)
-Сгенерировано: 2026-02-19
+Сгенерировано: 2026-02-20
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Assign ownership teams to monitored entities
 source: https://www.dynatrace.com/docs/deliver/ownership/assign-ownership
-scraped: 2026-02-19T21:32:42.736838
+scraped: 2026-02-20T21:18:58.453618
 ---
 
 # Assign ownership teams to monitored entities
@@ -528,7 +528,7 @@ Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "E
 ---
 title: Best practices for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/best-practices
-scraped: 2026-02-17T05:08:43.800611
+scraped: 2026-02-20T21:21:53.268698
 ---
 
 # Best practices for entity ownership
@@ -894,7 +894,7 @@ The API snippets for reading, creating, updating, and deleting teams are availab
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-02-18T21:34:46.691171
+scraped: 2026-02-20T21:16:04.001755
 ---
 
 # Ownership Classic

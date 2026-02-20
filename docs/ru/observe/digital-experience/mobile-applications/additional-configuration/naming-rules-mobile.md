@@ -1,7 +1,7 @@
 ---
 title: Create custom user action names for mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/additional-configuration/naming-rules-mobile
-scraped: 2026-02-18T21:34:42.691814
+scraped: 2026-02-20T21:20:09.430239
 ---
 
 # Create custom user action names for mobile applications

@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/dynatrace-intelligence-integrations
 Язык: Русский (RU)
-Сгенерировано: 2026-02-19
+Сгенерировано: 2026-02-20
 Файлов в разделе: 3
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Dynatrace Intelligence (Preview) app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows
-scraped: 2026-02-18T05:45:03.972584
+scraped: 2026-02-20T21:18:25.546095
 ---
 
 # Dynatrace Intelligence (Preview) app
@@ -107,7 +107,7 @@ To learn about specific use cases and how you can use the Dynatrace Intelligence
 ---
 title: Dynatrace Intelligence for Notebooks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks
-scraped: 2026-02-19T21:15:29.566080
+scraped: 2026-02-20T21:11:00.847396
 ---
 
 # Dynatrace Intelligence for Notebooks

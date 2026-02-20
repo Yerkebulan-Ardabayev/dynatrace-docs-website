@@ -1,7 +1,7 @@
 ---
 title: Runtime Application Protection monitoring rules
 source: https://www.dynatrace.com/docs/secure/application-security/application-protection/application-protection-rules
-scraped: 2026-02-19T21:32:24.523925
+scraped: 2026-02-20T21:11:54.103027
 ---
 
 # Runtime Application Protection monitoring rules
@@ -10,7 +10,13 @@ scraped: 2026-02-19T21:32:24.523925
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Jul 25, 2025
+* Updated on Feb 23, 2026
+
+What youâll find on this page
+
+* [How to define attackâhandling rules to block, monitor, or ignore attacks](#handling-rules)
+* [How to create exception (allowlist) rules for attacks you consider safe](#exception-rules)
+* [Frequently asked questions](#faq)
 
 Dynatrace Runtime Application Protection rules allow you to
 
@@ -22,7 +28,7 @@ Dynatrace Runtime Application Protection rules allow you to
 
 To create an attack rule
 
-1. Go to **Settings (New)** > **Analyze and alert** > **Application security** > **Application protection (New)**.
+1. Go to **Settings** > **Analyze and alert** > **Application security** > **Application protection (New)**.
 2. On the **Monitoring rules** tab, select  **Add new rule**.
 3. Define the rule:
 
@@ -43,7 +49,7 @@ You can edit, disable, enable, or remove rules at any time.
 
 Based on specific criteria, you can create an exception monitoring rule for the attack.
 
-1. Go to **Settings (New)** > **Analyze and alert** > **Application security** > **Application protection (New)**.
+1. Go to **Settings** > **Analyze and alert** > **Application security** > **Application protection (New)**.
 2. On the **Allowlist rules** tab, select  **Add new rule**.
 3. Define the exception rule:
 

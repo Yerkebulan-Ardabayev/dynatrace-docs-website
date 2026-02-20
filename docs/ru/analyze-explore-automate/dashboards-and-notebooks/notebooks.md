@@ -1,7 +1,7 @@
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-19T21:13:14.219417
+scraped: 2026-02-20T21:07:57.098359
 ---
 
 # Notebooks

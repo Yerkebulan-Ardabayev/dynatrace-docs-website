@@ -1,7 +1,7 @@
 ---
 title: Configure OpenTelemetry tracing with Istio
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/integrations/istio
-scraped: 2026-02-19T21:30:46.197998
+scraped: 2026-02-20T21:17:47.933049
 ---
 
 # Configure OpenTelemetry tracing with Istio

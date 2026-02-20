@@ -1,7 +1,7 @@
 ---
 title: Runtimes
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software
-scraped: 2026-02-18T21:29:13.087202
+scraped: 2026-02-20T21:11:40.761296
 ---
 
 # Runtimes

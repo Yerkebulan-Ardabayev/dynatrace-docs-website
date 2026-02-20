@@ -1,7 +1,7 @@
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-19T21:15:44.563089
+scraped: 2026-02-20T21:10:54.121279
 ---
 
 # Anomaly Detection status types

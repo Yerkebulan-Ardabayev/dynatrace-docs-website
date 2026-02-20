@@ -1,40 +1,40 @@
 ---
-title: Remote configuration management API
+title: Управление удаленной конфигурацией API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/remote-configuration
-scraped: 2026-02-18T05:46:11.697203
+scraped: 2026-02-20T21:20:55.913876
 ---
 
-# Remote configuration management API
+# Управление удаленной конфигурацией API
 
-# Remote configuration management API
+# Управление удаленной конфигурацией API
 
-* Reference
-* Published Oct 06, 2022
+* Справочник
+* Опубликовано 06 октября 2022 г.
 
 ### OneAgent
 
-[Start a job](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/post-config-job "Start a new configuration job for OneAgents remotely using the Dynatrace API.")
+[Запустить задание](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/post-config-job "Запустить новое задание конфигурации для OneAgent удаленно с помощью Dynatrace API.")
 
-[Preview a job](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/post-job-preview "Preview a configuration job for OneAgents using the Dynatrace API.")
+[Предварительный просмотр задания](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/post-job-preview "Предварительный просмотр задания конфигурации для OneAgent с помощью Dynatrace API.")
 
-[View current job](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/get-current-job "View parameters of a current configuration job for OneAgents using the Dynatrace API.")
+[Просмотр текущего задания](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/get-current-job "Просмотр параметров текущего задания конфигурации для OneAgent с помощью Dynatrace API.")
 
-[List completed jobs](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/get-finished-jobs "Get an overview of completed configuration jobs for OneAgents using the Dynatrace API.")
+[Список завершенных заданий](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/get-finished-jobs "Получить обзор завершенных заданий конфигурации для OneAgent с помощью Dynatrace API.")
 
-[View a job](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/get-job "View parameters of a configuration job for OneAgents using the Dynatrace API.")
+[Просмотр задания](/docs/dynatrace-api/environment-api/remote-configuration/oneagent/get-job "Просмотр параметров задания конфигурации для OneAgent с помощью Dynatrace API.")
 
 ### ActiveGate
 
-[Start a job](/docs/dynatrace-api/environment-api/remote-configuration/activegate/post-config-job "Start a new configuration job for ActiveGates remotely using the Dynatrace API.")
+[Запустить задание](/docs/dynatrace-api/environment-api/remote-configuration/activegate/post-config-job "Запустить новое задание конфигурации для ActiveGate удаленно с помощью Dynatrace API.")
 
-[Preview a job](/docs/dynatrace-api/environment-api/remote-configuration/activegate/post-job-preview "Preview a configuration job for ActiveGates using the Dynatrace API.")
+[Предварительный просмотр задания](/docs/dynatrace-api/environment-api/remote-configuration/activegate/post-job-preview "Предварительный просмотр задания конфигурации для ActiveGate с помощью Dynatrace API.")
 
-[View current job](/docs/dynatrace-api/environment-api/remote-configuration/activegate/get-current-job "View parameters of a current configuration job for ActiveGates using the Dynatrace API.")
+[Просмотр текущего задания](/docs/dynatrace-api/environment-api/remote-configuration/activegate/get-current-job "Просмотр параметров текущего задания конфигурации для ActiveGate с помощью Dynatrace API.")
 
-[List completed jobs](/docs/dynatrace-api/environment-api/remote-configuration/activegate/get-finished-jobs "Get an overview of completed configuration jobs for ActiveGates using the Dynatrace API.")
+[Список завершенных заданий](/docs/dynatrace-api/environment-api/remote-configuration/activegate/get-finished-jobs "Получить обзор завершенных заданий конфигурации для ActiveGate с помощью Dynatrace API.")
 
-[View a job](/docs/dynatrace-api/environment-api/remote-configuration/activegate/get-job "View parameters of a configuration job for ActiveGates using the Dynatrace API.")
+[Просмотр задания](/docs/dynatrace-api/environment-api/remote-configuration/activegate/get-job "Просмотр параметров задания конфигурации для ActiveGate с помощью Dynatrace API.")
 
-## Related topics
+## Связанные темы
 
-* [Remote configuration management of OneAgents and ActiveGates](/docs/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.")
+* [Управление удаленной конфигурацией OneAgent и ActiveGate](/docs/ingest-from/bulk-configuration "Выполнить конфигурацию OneAgent и ActiveGate на хостах из страницы состояния развертывания или в крупном масштабе с помощью Dynatrace API.")

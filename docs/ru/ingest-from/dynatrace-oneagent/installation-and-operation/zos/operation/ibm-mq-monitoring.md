@@ -1,7 +1,7 @@
 ---
 title: Set up IBM MQ tracing on z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/ibm-mq-monitoring
-scraped: 2026-02-18T21:36:19.357066
+scraped: 2026-02-20T21:17:49.233702
 ---
 
 # Set up IBM MQ tracing on z/OS

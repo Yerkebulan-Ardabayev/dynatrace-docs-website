@@ -1,7 +1,7 @@
 ---
 title: Log viewer (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer
-scraped: 2026-02-19T21:28:44.516983
+scraped: 2026-02-20T21:29:15.615969
 ---
 
 # Log viewer (Logs Classic)
@@ -208,4 +208,6 @@ To export table data
 
 ## Log details
 
-Уникальные атрибуты журнала данных (атрибуты с высокой кардинальностью), такие как `span_id` и `trace_id`, генерируют излишне обширные списки доступных атрибутов, что может повлиять на производительность просмотрщика журналов. Из-за этого они не перечислены в **Доступных атрибутах**. Вы можете по-прежнему использовать их в расширенном запросе поиска.
+
+
+Unique log data attributes (high-cardinality attributes) such as `span_id` and `trace_id` generate unnecessarily excessive lists of available attributes that may impact log viewer performance. Because of this, they aren't listed in **Available attributes**. You can still use them in an advanced search query.

@@ -1,7 +1,7 @@
 ---
 title: Send Dynatrace notifications via webhooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration
-scraped: 2026-02-19T21:13:37.669836
+scraped: 2026-02-20T21:09:14.120833
 ---
 
 # Send Dynatrace notifications via webhooks

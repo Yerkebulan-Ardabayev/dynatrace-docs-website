@@ -1,7 +1,7 @@
 ---
 title: Ingest Runecast Analyzer compliance findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer
-scraped: 2026-02-19T21:21:36.326778
+scraped: 2026-02-20T21:18:35.015966
 ---
 
 # Ingest Runecast Analyzer compliance findings
@@ -39,7 +39,7 @@ See below for the [Runecast](#runecast) and [Dynatrace](#dt) requirements.
 * Dynatrace version 1.313+
 * Support:
 
-  + Review the [Supported compliance standards and technologies](/docs/secure/application-security/security-posture-management-hub#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+  + Review the [Supported compliance standards and technologies](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 * Permissions:
 
   + To query ingested data: `storage:security.events:read`.
@@ -122,6 +122,10 @@ Once you set up the Runecast Analyzer integration, you can
 * Query [compliance events](/docs/semantic-dictionary/model/security-events#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
   + For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see [Query compliance events](/docs/secure/threat-observability/dql-examples#compliance "DQL examples for security data powered by Grail.").
+
+### Licensing and cost
+
+For billing information, see [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Related topics
 

@@ -1,7 +1,7 @@
 ---
 title: Ingest Amazon ECR container vulnerability findings and scan events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data
-scraped: 2026-02-19T21:27:02.680905
+scraped: 2026-02-20T21:16:36.871061
 ---
 
 # Ingest Amazon ECR container vulnerability findings and scan events
@@ -82,7 +82,7 @@ These are stored in a bucket called `default_securityevents` (for details, see: 
 
 ### Monitor data
 
-Once you ingest your Amazon ECR data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **Amazon ECR**).
+Once you ingest your Amazon ECR data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **Amazon ECR**).
 
 ![amazon ecr](https://dt-cdn.net/images/2025-03-25-12-20-07-1920-c3fb043a87.png)
 
@@ -101,7 +101,7 @@ You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-a
 
 To use a dashboard template
 
-1. In Dynatrace, go to **Settings** > **Amazon ECR**.
+1. In **Settings**, open **Amazon ECR**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
@@ -110,7 +110,7 @@ You can create your own [workflows](/docs/analyze-explore-automate/workflows "Au
 
 To use a workflow template
 
-1. In Dynatrace, go to **Settings** > **Amazon ECR**.
+1. In **Settings**, open **Amazon ECR**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
@@ -119,7 +119,7 @@ You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks
 
 To query ingested data
 
-1. In Dynatrace, go to **Settings** > **Amazon ECR**.
+1. In **Settings**, open **Amazon ECR**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -127,7 +127,7 @@ To query ingested data
 
 To stop sending events to Dynatrace
 
-1. In Dynatrace, go to **Settings** > **Amazon ECR**.
+1. In **Settings**, open **Amazon ECR**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 

@@ -1,7 +1,7 @@
 ---
 title: Amazon VPC NAT Gateways monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-vpc
-scraped: 2026-02-19T21:33:01.585322
+scraped: 2026-02-20T21:27:09.353878
 ---
 
 # Amazon VPC NAT Gateways monitoring

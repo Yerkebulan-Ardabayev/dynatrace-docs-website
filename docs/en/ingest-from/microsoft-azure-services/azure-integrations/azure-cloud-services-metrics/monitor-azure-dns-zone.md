@@ -1,7 +1,7 @@
 ---
 title: Azure DNS Zone monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-dns-zone
-scraped: 2026-02-18T21:29:51.951757
+scraped: 2026-02-20T21:25:06.775595
 ---
 
 # Azure DNS Zone monitoring

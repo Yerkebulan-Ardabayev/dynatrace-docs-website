@@ -1,7 +1,7 @@
 ---
 title: Amazon Redshift monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-redshift
-scraped: 2026-02-19T21:33:08.733305
+scraped: 2026-02-20T21:14:41.123252
 ---
 
 # Amazon Redshift monitoring

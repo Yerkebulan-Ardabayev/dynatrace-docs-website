@@ -1,7 +1,7 @@
 ---
 title: Classic (formerly 'built-in') AWS metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/default-aws-metrics
-scraped: 2026-02-18T05:48:20.741207
+scraped: 2026-02-20T21:26:19.732887
 ---
 
 # Classic (formerly 'built-in') AWS metrics

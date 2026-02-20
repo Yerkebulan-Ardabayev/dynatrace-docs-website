@@ -1,7 +1,7 @@
 ---
 title: Serverless compute support matrix
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/serverless-compute-services
-scraped: 2026-02-19T21:20:49.027971
+scraped: 2026-02-20T21:22:46.684587
 ---
 
 # Serverless compute support matrix

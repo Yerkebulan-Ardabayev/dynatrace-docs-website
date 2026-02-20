@@ -1,7 +1,7 @@
 ---
 title: Threat Observability concepts
 source: https://www.dynatrace.com/docs/secure/threat-observability/concepts
-scraped: 2026-02-19T21:33:25.301752
+scraped: 2026-02-20T21:16:50.377615
 ---
 
 # Threat Observability concepts
@@ -147,7 +147,7 @@ Findings include details such as:
 
 
 
-A compliance event is a type of security event specific to the [Security Posture Management capability](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). It represents the assessment of a resource in the context of the rule specified in the compliance standard.
+A compliance event is a type of security event specific to the [Security Posture Management capability](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). It represents the assessment of a resource in the context of the rule specified in the compliance standard.
 
 | Event types | Description |
 | --- | --- |

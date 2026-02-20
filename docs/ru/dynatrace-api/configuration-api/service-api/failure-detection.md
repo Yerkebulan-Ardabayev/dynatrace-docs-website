@@ -1,14 +1,14 @@
 ---
 title: Обнаружение сбоев API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/failure-detection
-scraped: 2026-02-19T21:27:04.011792
+scraped: 2026-02-20T21:22:37.246993
 ---
 
 # Обнаружение сбоев API
 
 # Обнаружение сбоев API
 
-* Справка
+* Ссылка
 * Опубликовано 11 января 2021 г.
 
 [### Список всех наборов параметров
@@ -36,9 +36,9 @@ scraped: 2026-02-19T21:27:04.011792
 
 Просмотрите конфигурацию правила обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-rule "Просмотрите правило обнаружения сбоев через Dynatrace API.")[### Перестановка правил
 
-Правила обнаружения сбоев оцениваются одно за другим. Первое соответствующее правило применяется, и дальнейшая обработка останавливается.
+Правила обнаружения сбоев оцениваются одно за другим. Первое совпадающее правило применяется, и дальнейшая обработка останавливается.
 
-Переставьте правила, чтобы добиться необходимого порядка оценки.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/reorder-rules "Измените порядок правил обнаружения сбоев через Dynatrace API.")[### Создание правила
+Переставьте правила, чтобы достичь необходимого порядка оценки.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/reorder-rules "Измените порядок правил обнаружения сбоев через Dynatrace API.")[### Создание правила
 
 Создайте новое правило обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/post-rule "Создайте правило обнаружения сбоев через Dynatrace API.")
 

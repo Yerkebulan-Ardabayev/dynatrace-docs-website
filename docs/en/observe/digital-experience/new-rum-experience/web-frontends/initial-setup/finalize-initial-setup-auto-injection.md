@@ -1,7 +1,7 @@
 ---
 title: Finalize the initial setup for your auto-injected frontend
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-auto-injection
-scraped: 2026-02-19T21:29:49.953656
+scraped: 2026-02-20T21:27:13.355959
 ---
 
 # Finalize the initial setup for your auto-injected frontend
