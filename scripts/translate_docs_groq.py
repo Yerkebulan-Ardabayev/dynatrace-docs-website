@@ -384,8 +384,6 @@ def translate_via_openrouter(text: str) -> str | None:
             except Exception as e:
                 print(f"  ❌ OpenRouter [{model}] исключение: {e}")
                 break
-                continue
-            return None
 
     return None
 
@@ -433,10 +431,10 @@ def translate_text(text: str, source_file: str) -> str:
         if translation:
             print(f"  ✅ OpenRouter успешно!")
 
-    # 4. Все API недоступны — возвращаем оригинал
+    # 4. Все API недоступны — возвращаем None (НЕ записываем оригинал!)
     if translation is None:
-        print(f"  ⚠️  Все API недоступны — оставляю оригинал")
-        return text
+        print(f"  ⚠️  Все API недоступны — пропускаю файл")
+        return None
 
     # Восстанавливаем brand-термины и фиксим известные ошибки
     translation = restore_terms(translation, term_mapping)
@@ -474,10 +472,16 @@ def translate_file(en_file: Path):
         translated_parts = []
         for ci, chunk in enumerate(chunks, 1):
             print(f"  📦 Часть {ci}/{len(chunks)}...")
-            translated_parts.append(translate_text(chunk, f"{relative_path}#chunk{ci}"))
+            result = translate_text(chunk, f"{relative_path}#chunk{ci}")
+            if result is None:
+                print(f"  ⚠️  Не удалось перевести часть {ci} — пропускаю файл")
+                return
+            translated_parts.append(result)
         translated = '\n\n'.join(translated_parts)
     else:
         translated = translate_text(content, str(relative_path))
+        if translated is None:
+            return
 
     try:
         ru_file.parent.mkdir(parents=True, exist_ok=True)
