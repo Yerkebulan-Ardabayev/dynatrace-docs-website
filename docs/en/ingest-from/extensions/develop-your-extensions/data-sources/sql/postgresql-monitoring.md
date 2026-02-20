@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring
-scraped: 2026-02-18T21:35:04.935092
+scraped: 2026-02-20T21:23:12.507642
 ---
 
 # PostgreSQL monitoring configuration
@@ -242,6 +242,60 @@ To define the PostgreSQL Database server, add the following details in the `endp
 ### Authentication
 
 Authentication details passed to the Dynatrace API when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
+
+#### Basic
+
+Basic authentication requires only a username and password.
+
+```
+"authentication": {
+
+
+
+"scheme": "basic",
+
+
+
+"username": "username",
+
+
+
+"password": "password"
+
+
+
+}
+```
+
+#### AWS IAM
+
+ActiveGate version 1.325+
+
+Allows connection to Amazon RDS or Amazon Aurora databases using AWS IAM database authentication. Requires AWS Identity and Access Management (IAM) set up and an AWS IAM identity available to the ActiveGate host (for example, an attached IAM role).
+
+The ActiveGate uses the IAM role assigned to it to authenticate, so there's no need to store a database password. You provide a username and a region (AWS region code, for example, `eu-central-1`). If `auto-detect` is used (ActiveGate version 1.331+) as the region value, the ActiveGate's region will be used. Otherwise, the region must match the region where the database is hosted.
+
+**Note**: AWS IAM authentication requires SSL/TLS to be enabled. Set `ssl` to `true` in your endpoint configuration. For more information, see [SSL](#ssl).
+
+```
+"authentication": {
+
+
+
+"scheme": "identity_aws",
+
+
+
+"username": "username",
+
+
+
+"region": "eu-central-1"
+
+
+
+}
+```
 
 #### Credential vault
 

@@ -1,7 +1,7 @@
 ---
 title: Remote environment data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/remote-environment-data
-scraped: 2026-02-19T21:27:20.604106
+scraped: 2026-02-20T21:19:30.565911
 ---
 
 # Remote environment data

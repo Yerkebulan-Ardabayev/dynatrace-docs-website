@@ -1,7 +1,7 @@
 ---
 title: Band chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-band
-scraped: 2026-02-19T21:16:38.988517
+scraped: 2026-02-20T21:10:09.468794
 ---
 
 # Band chart visualization

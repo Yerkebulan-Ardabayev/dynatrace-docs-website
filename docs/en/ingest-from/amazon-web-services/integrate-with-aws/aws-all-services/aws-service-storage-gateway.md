@@ -1,7 +1,7 @@
 ---
 title: AWS Storage Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-storage-gateway
-scraped: 2026-02-19T21:23:16.476547
+scraped: 2026-02-20T21:24:56.981596
 ---
 
 # AWS Storage Gateway monitoring

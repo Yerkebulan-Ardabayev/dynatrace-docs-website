@@ -1,7 +1,7 @@
 ---
 title: Configure the RUM cookie domain for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-the-cookie-domain
-scraped: 2026-02-17T05:07:34.843047
+scraped: 2026-02-20T21:19:48.662723
 ---
 
 # Configure the RUM cookie domain for web applications

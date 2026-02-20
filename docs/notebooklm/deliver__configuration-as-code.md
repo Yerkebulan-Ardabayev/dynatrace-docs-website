@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-02-19
+Сгенерировано: 2026-02-20
 Файлов в разделе: 14
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Account configuration for Monaco account management
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/account-configuration
-scraped: 2026-02-16T09:30:22.332747
+scraped: 2026-02-20T21:28:28.752642
 ---
 
 # Account configuration for Monaco account management
@@ -611,9 +611,11 @@ In this example, we define these objects.
 
 ## Commands
 
-Поскольку конфигурация на уровне учетной записи обычно отличается от конфигурации на уровне среды и меняется реже, существующие команды, такие как `monaco deploy`, игнорируют любую конфигурацию учетной записи, которая может быть определена в файле манифеста.
 
-Существуют специальные команды для ресурсов учетной записи: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "Как использовать приложение Monaco CLI, включая аргументы и опции.").
+
+Because account-level configuration is usually distinct from environment-level configuration and changes less frequently, existing commands like `monaco deploy` ignore any account configuration that may be defined in a manifest file.
+
+Dedicated commands exist for account resources: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "How to use the Monaco CLI application, including arguments and options.").
 
 ---
 
@@ -622,7 +624,7 @@ In this example, we define these objects.
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-19T21:32:09.112993
+scraped: 2026-02-20T21:11:50.090120
 ---
 
 # Monaco resources
@@ -1136,7 +1138,7 @@ Some configuration types have special requirements for their JSON payloads and m
 ---
 title: Monaco configuration YAML file - list of special configuration types
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas
-scraped: 2026-02-19T21:21:25.119889
+scraped: 2026-02-20T21:13:46.753744
 ---
 
 # Monaco configuration YAML file - list of special configuration types
@@ -1976,7 +1978,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-19T21:29:47.284767
+scraped: 2026-02-20T21:20:13.312799
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -3164,7 +3166,7 @@ While this sample shows users, service users, policies, and groups defined in a 
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-02-19T21:22:07.467868
+scraped: 2026-02-20T21:22:16.912298
 ---
 
 # Monaco configuration YAML file structure
@@ -4327,7 +4329,7 @@ skip: true
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-19T21:26:23.018569
+scraped: 2026-02-20T21:15:06.265723
 ---
 
 # Monaco API support and access permission handling
@@ -4874,7 +4876,7 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-19T21:25:13.234634
+scraped: 2026-02-20T21:18:17.400759
 ---
 
 # Monaco concepts
@@ -4932,7 +4934,7 @@ Dynatrace resource configuration
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-19T21:25:16.137436
+scraped: 2026-02-20T21:12:11.290333
 ---
 
 # Manage configurations with Monaco
@@ -5440,7 +5442,7 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 ---
 title: Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/reference/commands-saas
-scraped: 2026-02-17T04:59:00.750736
+scraped: 2026-02-20T21:13:12.127980
 ---
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
@@ -6641,7 +6643,7 @@ Information can be found at [IAM policy reference](/docs/manage/identity-access-
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-19T21:19:51.940062
+scraped: 2026-02-20T21:12:34.797496
 ---
 
 # Terraform CLI commands
@@ -6819,47 +6821,49 @@ The reasons are added as comments at the beginning of each file.
 ## deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification.md
 
 ---
-title: Настройка автоматических уведомлений с помощью Terraform и Configuration as Code
+title: Configure automated notifications using Terraform and Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-02-16T21:27:45.110164
+scraped: 2026-02-20T21:20:49.150756
 ---
 
-# Настройка автоматических уведомлений с помощью Terraform и Configuration as Code
+# Configure automated notifications using Terraform and Configuration as Code
+
+# Configure automated notifications using Terraform and Configuration as Code
 
 * Latest Dynatrace
-* Урок
-* 2-минутное чтение
-* Обновлено 05 ноября 2025 г.
+* Tutorial
+* 2-min read
+* Updated on Nov 05, 2025
 
-Этот урок объясняет, как настроить уведомление о событии с помощью последней версии Dynatrace.
+This tutorial explains how to configure an event notification with the latest Dynatrace.
 
-Уведомление состоит из
+The notification consists of
 
-* Настройки [пользовательского оповещения](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.") , которое вызывает событие оповещения, если выполнено определенное условие.
-* Простого рабочего процесса, который автоматически отправляет электронное письмо, когда событие оповещения активно.
+* A [custom alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") configuration, which raises an alerting event if a certain conditions is met.
+* A simple workflow that automatically sends an email when the alerting event is active.
 
-## Предварительные условия
+## Prerequisites
 
-* Terraform CLI с установленным провайдером Dynatrace и доступным по пути.
-  Для получения дополнительной информации см. [Установка Terraform CLI и настройка Configuration as Code через Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Установите Terraform CLI и настройте Configuration as Code Dynatrace через Terraform.").
-* Клиент OAuth или платформенный токен с следующими разрешениями.
-  Для получения дополнительной информации см. [Создание токена доступа к API](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup "Описывает различные варианты, которые провайдер Terraform может использовать для аутентификации вызовов API Dynatrace.").
+* Terraform CLI with the Dynatrace provider installed and available under PATH.
+  For more information, see [Install Terraform CLI and set up Configuration as Code via Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.").
+* OAuth client or platform token with the following permissions.
+  For more information, see [Create API access token](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
 
-  + Просмотр объектов настроек для схемы (`settings:objects:read`)
-  + Создание объектов настроек для схемы (`settings:objects:write`)
-  + Просмотр рабочих процессов (`automation:workflows:read`)
-  + Создание и редактирование рабочих процессов (`automation:workflows:write`)
+  + View settings objects for schema (`settings:objects:read`)
+  + Create settings objects for schema (`settings:objects:write`)
+  + View workflows (`automation:workflows:read`)
+  + Create and edit workflows (`automation:workflows:write`)
 
-  Пользователь Terraform должен иметь все необходимые разрешения для запуска автоматических конфигураций, таких как пользовательские оповещения или рабочие процессы.
-  Отсутствие или неправильное разрешение может привести к непредвиденному поведению.
+  The Terraform user needs to have all required permissions to run the run automated configurations such as custom alerts or workflows.
+  Missing or wrong permission can lead to an unexpected behavior.
 
-## Что вы узнаете
+## What will you learn
 
-Вы узнаете, как настроить [пользовательское оповещение](/docs/dynatrace-intelligence/anomaly-detection "Как Dynatrace обнаруживает аномалии в вашей среде.") и [рабочий процесс](/docs/analyze-explore-automate/workflows "Автоматизируйте процессы ИТ с помощью рабочих процессов Dynatrace — реагируйте на события, планируйте задачи и подключайте службы.") с действием электронной почты.
+You'll learn how to configure a [custom alert](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.") and a [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") with an email action.
 
-## Шаги
+## Steps
 
-### Создание конфигурации Terraform
+### Build Terraform configuration
 
 To build a configuration for raising an event and a simple workflow for sending an email in case of a raised event
 
@@ -8047,7 +8051,7 @@ To modify the Terraform configuration
 ---
 title: Terraform tutorials overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials
-scraped: 2026-02-19T21:23:58.885751
+scraped: 2026-02-20T21:26:34.228393
 ---
 
 # Terraform tutorials overview
@@ -8070,7 +8074,7 @@ We provide a tutorial to help you [Configure automated notifications using Terra
 ---
 title: Configuration as Code overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code
-scraped: 2026-02-19T21:25:34.760410
+scraped: 2026-02-20T21:15:37.278711
 ---
 
 # Configuration as Code overview

@@ -1,7 +1,7 @@
 ---
 title: Ingest Microsoft Defender for Cloud security events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-defender
-scraped: 2026-02-18T21:22:13.536106
+scraped: 2026-02-20T21:15:16.120708
 ---
 
 # Ingest Microsoft Defender for Cloud security events
@@ -74,7 +74,7 @@ See below for the Microsoft Defender for Cloud and Dynatrace requirements.
 
 ### Monitor data
 
-Once you ingest your Microsoft Defender for Cloud data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**).
+Once you ingest your Microsoft Defender for Cloud data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **Microsoft Defender for Cloud**).
 
 ![msftdefender](https://dt-cdn.net/images/2025-06-05-11-31-30-1437-f22714114f.png)
 
@@ -91,21 +91,21 @@ You can view
 
 You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**.
+1. In **Settings**, open **Microsoft Defender for Cloud**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
 You can create your own [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**.
+1. In **Settings**, open **Microsoft Defender for Cloud**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
 
 You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
-1. In Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**.
+1. In **Settings**, open **Microsoft Defender for Cloud**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -113,14 +113,14 @@ You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/noteboo
 
 You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.").
 
-1. In Dynatrace, open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
+1. Open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Filter for **Provider** > **Microsoft Defender for Cloud**.
 
 ### Delete connections
 
 To stop sending events to Dynatrace
 
-1. In Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**.
+1. In **Settings**, open **Microsoft Defender for Cloud**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 

@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/openpipeline
 Язык: Русский (RU)
-Сгенерировано: 2026-02-19
+Сгенерировано: 2026-02-20
 Файлов в разделе: 18
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Owner-based access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/access-control
-scraped: 2026-02-18T21:33:44.656346
+scraped: 2026-02-20T21:26:24.922507
 ---
 
 # Owner-based access control in OpenPipeline
@@ -899,7 +899,7 @@ To change how logs are processed, you can modify the matching condition to exclu
 ---
 title: Set access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/set-access-control
-scraped: 2026-02-19T21:31:43.403034
+scraped: 2026-02-20T21:25:17.555788
 ---
 
 # Set access control in OpenPipeline
@@ -2285,7 +2285,7 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-19T21:17:53.727356
+scraped: 2026-02-20T21:23:07.226655
 ---
 
 # OpenPipeline limits
@@ -3690,7 +3690,7 @@ Conclusion
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-19T21:11:56.941077
+scraped: 2026-02-20T21:07:47.515470
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -4176,7 +4176,7 @@ After applying these rules, queues with high cardinality will either have `messa
 ---
 title: Extract metrics from spans and distributed traces
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans
-scraped: 2026-02-19T21:19:43.687364
+scraped: 2026-02-20T21:15:42.796884
 ---
 
 # Extract metrics from spans and distributed traces
@@ -5227,7 +5227,7 @@ You successfully structured syslog logs according to pre-defined processing rule
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-19T21:13:45.482548
+scraped: 2026-02-20T21:08:41.890378
 ---
 
 # OpenPipeline

@@ -1,7 +1,7 @@
 ---
 title: Queue concepts
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/queue-concepts
-scraped: 2026-02-19T21:21:32.294487
+scraped: 2026-02-20T21:18:55.662867
 ---
 
 # Queue concepts

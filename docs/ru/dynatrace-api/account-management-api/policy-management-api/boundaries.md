@@ -1,25 +1,25 @@
 ---
-title: Policy management API - Boundaries
+title: Управление политиками API - Границы
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries
-scraped: 2026-02-18T21:32:38.739250
+scraped: 2026-02-20T21:12:28.921042
 ---
 
-# Policy management API - Boundaries
+# Управление политиками API - Границы
 
-# Policy management API - Boundaries
+# Управление политиками API - Границы
 
-* Latest Dynatrace
-* Reference
-* Published Nov 20, 2025
+* Последнее Dynatrace
+* Справочник
+* Опубликовано 20 нояб. 2025 г.
 
-[### List all policy boundaries
+[### Список всех границ политик
 
-Get an overview of all policy boundaries of a level.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-all-boundaries "View all policy boundaries of a level via the Policy management API.")[### View a policy boundary
+Получите обзор всех границ политик уровня.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-all-boundaries "Просмотр всех границ политик уровня через управление политиками API.")[### Просмотр границы политики
 
-View parameters of a policy boundary.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-boundary "View a policy boundary via the Policy management API.")[### Create a policy boundary
+Просмотр параметров границы политики.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-boundary "Просмотр границы политики через управление политиками API.")[### Создание границы политики
 
-Create a new policy boundary.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary "Create a new boundary via the Policy management API.")[### Update a policy boundary
+Создание новой границы политики.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary "Создание новой границы через управление политиками API.")[### Обновление границы политики
 
-Edit an existing policy boundary.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/put-boundary "Edit a policy boundary via the Policy management API.")[### Delete a policy boundary
+Редактирование существующей границы политики.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/put-boundary "Редактирование границы политики через управление политиками API.")[### Удаление границы политики
 
-Delete a policy boundary you no longer need.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary "Delete a policy boundary via the Policy management API.")
+Удаление границы политики, которая больше не нужна.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary "Удаление границы политики через управление политиками API.")

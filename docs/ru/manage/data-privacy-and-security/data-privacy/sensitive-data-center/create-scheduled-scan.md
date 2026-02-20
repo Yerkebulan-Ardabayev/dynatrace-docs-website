@@ -1,7 +1,7 @@
 ---
 title: Create scheduled scan in Sensitive Data Center
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-scheduled-scan
-scraped: 2026-02-19T21:21:08.110948
+scraped: 2026-02-20T21:22:35.971673
 ---
 
 # Create scheduled scan in Sensitive Data Center

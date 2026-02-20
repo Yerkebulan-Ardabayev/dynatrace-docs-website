@@ -1,7 +1,7 @@
 ---
 title: Unified services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/unified-service
-scraped: 2026-02-19T21:28:05.660995
+scraped: 2026-02-20T21:28:16.331683
 ---
 
 # Unified services

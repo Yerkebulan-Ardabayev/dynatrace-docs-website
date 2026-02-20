@@ -1,7 +1,7 @@
 ---
 title: Containerized ActiveGate volumes
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container/ag-container-persistence
-scraped: 2026-02-19T21:20:46.048153
+scraped: 2026-02-20T21:19:03.060378
 ---
 
 # Containerized ActiveGate volumes

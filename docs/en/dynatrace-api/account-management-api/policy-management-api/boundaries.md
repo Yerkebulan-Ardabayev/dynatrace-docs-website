@@ -1,7 +1,7 @@
 ---
 title: Policy management API - Boundaries
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries
-scraped: 2026-02-18T21:32:38.739250
+scraped: 2026-02-20T21:12:28.921042
 ---
 
 # Policy management API - Boundaries

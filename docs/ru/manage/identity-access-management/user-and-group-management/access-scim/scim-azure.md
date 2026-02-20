@@ -1,7 +1,7 @@
 ---
 title: Azure SCIM configuration for Dynatrace
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure
-scraped: 2026-02-19T21:26:35.898199
+scraped: 2026-02-20T21:26:53.974925
 ---
 
 # Azure SCIM configuration for Dynatrace

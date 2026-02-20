@@ -1,7 +1,7 @@
 ---
 title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/xspm/assess-coverage
-scraped: 2026-02-19T21:28:38.833933
+scraped: 2026-02-20T21:14:42.421046
 ---
 
 # Assess coverage
@@ -16,7 +16,7 @@ The following options to assess coverage are available.
 
 ## Review system coverage
 
-On the **Overview** page, the **System coverage** donut chart helps you determine the percentage of monitored systems on which [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
+On the **Overview** page, the **System coverage** donut chart helps you determine the percentage of monitored systems on which [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
 
 ![system coverage](https://dt-cdn.net/images/2024-11-08-08-15-45-387-114cb209db.png)
 
@@ -26,7 +26,7 @@ If you later on disable Security Posture Management on your system, you keep the
 
 ### Improve system coverage
 
-To improve [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") coverage on your systems
+To improve [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") coverage on your systems
 
 1. On the **Overview** page, in the **My systems** table, search for systems labeled `Not enabled`.
 2. For each system you want to cover, select **Enable SPM**.
@@ -34,7 +34,7 @@ To improve [Security Posture Management](/docs/secure/application-security/secur
 
 ## Review compliance status per environment
 
-On the **Overview** page, the compliance standard cards help you determine your compliance status per environment for each [supported compliance standard](/docs/secure/application-security/security-posture-management-hub#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). You can view
+On the **Overview** page, the compliance standard cards help you determine your compliance status per environment for each [supported compliance standard](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). You can view
 
 * The percentage of passed rules
 * The total number of rules and how many of them are [passed, manual, and failed](/docs/secure/xspm/concepts#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.")
@@ -83,7 +83,7 @@ See below for the potential reasons why, on the **Overview** page, in **My syste
 
 * Security Posture Management isn't enabled on that system. In this case, the system is labeled `Not enabled`. Select **Enable SPM** to navigate to the Settings page of that system and enable Security Posture Management.
 
-* The initial assessment is still in progress. In this case, the system is labeled `No data`. Please allow around one hour for the assessment to finish. For details of the assessment mechanism, see [How it works](/docs/secure/application-security/security-posture-management-hub#mechanism "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+* The initial assessment is still in progress. In this case, the system is labeled `No data`. Please allow around one hour for the assessment to finish. For details of the assessment mechanism, see [How it works](/docs/secure/application-security/spm#mechanism "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 ## Related topics
 

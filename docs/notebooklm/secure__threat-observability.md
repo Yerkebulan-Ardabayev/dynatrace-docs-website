@@ -1,6 +1,6 @@
 # Документация Dynatrace: secure/threat-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-19
+Сгенерировано: 2026-02-20
 Файлов в разделе: 24
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Threat Observability concepts
 source: https://www.dynatrace.com/docs/secure/threat-observability/concepts
-scraped: 2026-02-19T21:33:25.301752
+scraped: 2026-02-20T21:16:50.377615
 ---
 
 # Threat Observability concepts
@@ -155,7 +155,7 @@ Findings include details such as:
 
 
 
-A compliance event is a type of security event specific to the [Security Posture Management capability](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). It represents the assessment of a resource in the context of the rule specified in the compliance standard.
+A compliance event is a type of security event specific to the [Security Posture Management capability](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). It represents the assessment of a resource in the context of the rule specified in the compliance standard.
 
 | Event types | Description |
 | --- | --- |
@@ -227,7 +227,7 @@ For more information and the complete security model specification, see [Securit
 ---
 title: DQL examples for security data
 source: https://www.dynatrace.com/docs/secure/threat-observability/dql-examples
-scraped: 2026-02-19T21:16:27.392672
+scraped: 2026-02-20T21:10:38.930709
 ---
 
 # DQL examples for security data
@@ -2541,7 +2541,7 @@ AND object.name == "demo-kspm"
 ---
 title: Grail security table migration guide
 source: https://www.dynatrace.com/docs/secure/threat-observability/migration
-scraped: 2026-02-19T21:21:54.000224
+scraped: 2026-02-20T21:28:12.272211
 ---
 
 # Grail security table migration guide
@@ -2921,7 +2921,7 @@ Enrich observables with threat intelligence from AbuseIPDB.](https://www.dynatra
 ---
 title: Ingest Akamai security logs and events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-akamai
-scraped: 2026-02-19T21:30:52.779381
+scraped: 2026-02-20T21:29:02.025003
 ---
 
 # Ingest Akamai security logs and events
@@ -3103,7 +3103,7 @@ Ingest logs and security events from Akamai products.](https://www.dynatrace.com
 ---
 title: Ingest Amazon GuardDuty security findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-amazon-guardduty
-scraped: 2026-02-19T21:30:51.431648
+scraped: 2026-02-20T21:29:29.249677
 ---
 
 # Ingest Amazon GuardDuty security findings
@@ -3185,7 +3185,7 @@ See below for the [Amazon GuardDuty](#aws) and [Dynatrace](#dt) requirements.
 
 ### Monitor data
 
-Once you ingest your Amazon GuardDuty data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **Amazon GuardDuty**).
+Once you ingest your Amazon GuardDuty data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **Amazon GuardDuty**).
 
 ![guardduty](https://dt-cdn.net/images/2025-05-27-09-26-29-1431-96bb80a495.png)
 
@@ -3202,21 +3202,21 @@ You can view
 
 You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **Amazon GuardDuty**.
+1. In **Settings**, open **Amazon GuardDuty**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
 You can create your own [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **Amazon GuardDuty**.
+1. In **Settings**, open **Amazon GuardDuty**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
 
 You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
-1. In Dynatrace, go to **Settings** > **Amazon GuardDuty**.
+1. In **Settings**, open **Amazon GuardDuty**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -3224,14 +3224,14 @@ You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks
 
 You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.").
 
-1. In Dynatrace, open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
+1. Open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Filter for **Provider** > **Amazon GuardDuty**.
 
 ### Delete connections
 
 To stop sending events to Dynatrace
 
-1. In Dynatrace, go to **Settings** > **Amazon GuardDuty**.
+1. In **Settings**, open **Amazon GuardDuty**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 
@@ -3300,7 +3300,7 @@ Ingest Amazon GuardDuty detection findings.](https://www.dynatrace.com/hub/detai
 ---
 title: Ingest Amazon ECR container vulnerability findings and scan events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data
-scraped: 2026-02-19T21:27:02.680905
+scraped: 2026-02-20T21:16:36.871061
 ---
 
 # Ingest Amazon ECR container vulnerability findings and scan events
@@ -3381,7 +3381,7 @@ These are stored in a bucket called `default_securityevents` (for details, see: 
 
 ### Monitor data
 
-Once you ingest your Amazon ECR data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **Amazon ECR**).
+Once you ingest your Amazon ECR data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **Amazon ECR**).
 
 ![amazon ecr](https://dt-cdn.net/images/2025-03-25-12-20-07-1920-c3fb043a87.png)
 
@@ -3400,7 +3400,7 @@ You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-a
 
 To use a dashboard template
 
-1. In Dynatrace, go to **Settings** > **Amazon ECR**.
+1. In **Settings**, open **Amazon ECR**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
@@ -3409,7 +3409,7 @@ You can create your own [workflows](/docs/analyze-explore-automate/workflows "Au
 
 To use a workflow template
 
-1. In Dynatrace, go to **Settings** > **Amazon ECR**.
+1. In **Settings**, open **Amazon ECR**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
@@ -3418,7 +3418,7 @@ You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks
 
 To query ingested data
 
-1. In Dynatrace, go to **Settings** > **Amazon ECR**.
+1. In **Settings**, open **Amazon ECR**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -3426,7 +3426,7 @@ To query ingested data
 
 To stop sending events to Dynatrace
 
-1. In Dynatrace, go to **Settings** > **Amazon ECR**.
+1. In **Settings**, open **Amazon ECR**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 
@@ -3455,7 +3455,7 @@ Ingest Amazon Elastic Container Registry vulnerability findings and scan events.
 ---
 title: Ingest AWS Security Hub security findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub
-scraped: 2026-02-19T21:26:09.354988
+scraped: 2026-02-20T21:24:10.727141
 ---
 
 # Ingest AWS Security Hub security findings
@@ -3537,7 +3537,7 @@ These are stored in a bucket called `default_securityevents` (for details, see: 
 
 ### Monitor data
 
-Once you ingest your AWS Security Hub data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **AWS Security Hub**).
+Once you ingest your AWS Security Hub data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **AWS Security Hub**).
 
 ![security hub](https://dt-cdn.net/images/2025-03-25-11-46-26-1920-ffd9b3b4d1.png)
 
@@ -3554,21 +3554,21 @@ You can view
 
 You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **AWS Security Hub**.
+1. In **Settings**, open **AWS Security Hub**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
 You can create your own [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **AWS Security Hub**.
+1. In **Settings**, open **AWS Security Hub**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
 
 You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
-1. In Dynatrace, go to **Settings** > **AWS Security Hub**.
+1. In **Settings**, open **AWS Security Hub**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -3576,7 +3576,7 @@ You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks
 
 You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.").
 
-1. In Dynatrace, open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
+1. Open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Filter for **Provider** > **AWS Security Hub**.
 
 ### Support and mapping
@@ -3771,7 +3771,7 @@ experimental
 
 To stop sending events to Dynatrace
 
-1. In Dynatrace, go to **Settings** > **AWS Security Hub**.
+1. In **Settings**, open **AWS Security Hub**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 
@@ -4692,7 +4692,7 @@ Ingest GitHub Advanced Security (GHAS) security events and audit logs.](https://
 ---
 title: Ingest Harbor vulnerability findings, scans, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-harbor-data
-scraped: 2026-02-19T21:32:55.897996
+scraped: 2026-02-20T21:21:57.379792
 ---
 
 # Ingest Harbor vulnerability findings, scans, and audit logs
@@ -4899,7 +4899,7 @@ Ingest Harbor vulnerability findings, scans, and audit logs.](https://www.dynatr
 ---
 title: Ingest Microsoft Defender for Cloud security events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-defender
-scraped: 2026-02-18T21:22:13.536106
+scraped: 2026-02-20T21:15:16.120708
 ---
 
 # Ingest Microsoft Defender for Cloud security events
@@ -4972,7 +4972,7 @@ See below for the Microsoft Defender for Cloud and Dynatrace requirements.
 
 ### Monitor data
 
-Once you ingest your Microsoft Defender for Cloud data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**).
+Once you ingest your Microsoft Defender for Cloud data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **Microsoft Defender for Cloud**).
 
 ![msftdefender](https://dt-cdn.net/images/2025-06-05-11-31-30-1437-f22714114f.png)
 
@@ -4989,21 +4989,21 @@ You can view
 
 You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**.
+1. In **Settings**, open **Microsoft Defender for Cloud**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
 You can create your own [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**.
+1. In **Settings**, open **Microsoft Defender for Cloud**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
 
 You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
-1. In Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**.
+1. In **Settings**, open **Microsoft Defender for Cloud**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -5011,14 +5011,14 @@ You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/noteboo
 
 You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.").
 
-1. In Dynatrace, open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
+1. Open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Filter for **Provider** > **Microsoft Defender for Cloud**.
 
 ### Delete connections
 
 To stop sending events to Dynatrace
 
-1. In Dynatrace, go to **Settings** > **Microsoft Defender for Cloud**.
+1. In **Settings**, open **Microsoft Defender for Cloud**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 
@@ -5221,7 +5221,7 @@ For billing information, see [Events powered by Grail](/docs/license/capabilitie
 ---
 title: Ingest Microsoft Sentinel security events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-sentinel
-scraped: 2026-02-19T21:32:44.190654
+scraped: 2026-02-20T21:13:25.278724
 ---
 
 # Ingest Microsoft Sentinel security events
@@ -5306,7 +5306,7 @@ See below for the Microsoft Sentinel and Dynatrace requirements.
 
 ### Monitor data
 
-Once you ingest your Microsoft Sentinel data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **Microsoft Sentinel**).
+Once you ingest your Microsoft Sentinel data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **Microsoft Sentinel**).
 
 ![overview-connection](https://dt-cdn.net/images/settings-dynatrace-microsoft-sentinel-3941-9844470c4c.png)
 
@@ -5323,21 +5323,21 @@ You can view
 
 You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **Microsoft Sentinel**.
+1. In **Settings**, open **Microsoft Sentinel**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
 You can create your own [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
 
-1. In Dynatrace, go to **Settings** > **Microsoft Sentinel**.
+1. In **Settings**, open **Microsoft Sentinel**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
 
 You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
-1. In Dynatrace, go to **Settings** > **Microsoft Sentinel**.
+1. In **Settings**, open **Microsoft Sentinel**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -5345,14 +5345,14 @@ You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/noteboo
 
 You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.").
 
-1. In Dynatrace, open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
+1. Open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Filter for **Provider** > **Microsoft Sentinel**.
 
 ### Delete connections
 
 To stop sending events to Dynatrace
 
-1. In Dynatrace, go to **Settings** > **Microsoft Sentinel**.
+1. In **Settings**, open **Microsoft Sentinel**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 
@@ -5421,7 +5421,7 @@ Ingest Microsoft Sentinel security findings.](https://www.dynatrace.com/hub/deta
 ---
 title: Ingest vulnerability findings in OCSF format
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-ocsf-data
-scraped: 2026-02-18T21:22:21.182038
+scraped: 2026-02-20T21:28:40.827447
 ---
 
 # Ingest vulnerability findings in OCSF format
@@ -5487,7 +5487,7 @@ Once data is ingested into Grail, you can visualize, analyze, and automate data 
 
 ### Monitor data
 
-Once you ingest your OCSF data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings** > **OCSF**).
+Once you ingest your OCSF data into Grail, you can monitor your data in the app (in Dynatrace, go to **Settings**, then search for and select **OCSF**).
 
 You can view:
 
@@ -5504,7 +5504,7 @@ You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-a
 
 To use a dashboard template:
 
-1. In Dynatrace, go to **Settings** > **OCSF**.
+1. In **Settings**, open **OCSF**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
@@ -5513,7 +5513,7 @@ You can create your own [workflows](/docs/analyze-explore-automate/workflows "Au
 
 To use a workflow template:
 
-1. In Dynatrace, go to **Settings** > **OCSF**.
+1. In **Settings**, open **OCSF**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
@@ -5522,7 +5522,7 @@ You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/noteboo
 
 To query ingested data:
 
-1. In Dynatrace, go to **Settings** > **OCSF**.
+1. In **Settings**, open **OCSF**.
 2. Select **Open with** .
 3. Select **Investigations** or **Notebooks**.
 
@@ -5534,7 +5534,7 @@ For OCSF, Dynatrace supports vulnerability findings (regardless of the source) f
 
 To stop sending events to Dynatrace:
 
-1. In Dynatrace, go to **Settings** > **OCSF**.
+1. In **Settings**, open **OCSF**.
 2. For the connection you want to delete, select  **Delete**.
 3. Follow the on-screen instructions to delete the resources. If you used values different from those specified in the setup dialog, adjust them accordingly.
 
@@ -5563,7 +5563,7 @@ Ingest security findings in Open Cybersecurity Schema Framework (OCSF) format.](
 ---
 title: Ingest Qualys vulnerability findings, scan events, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-qualys
-scraped: 2026-02-19T21:32:20.383671
+scraped: 2026-02-20T21:20:45.266445
 ---
 
 # Ingest Qualys vulnerability findings, scan events, and audit logs
@@ -5758,7 +5758,7 @@ The Qualys Detection Score (QDS) has a range from 1 to 100. To map this to the 1
 ---
 title: Ingest Runecast Analyzer compliance findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer
-scraped: 2026-02-19T21:21:36.326778
+scraped: 2026-02-20T21:18:35.015966
 ---
 
 # Ingest Runecast Analyzer compliance findings
@@ -5796,7 +5796,7 @@ See below for the [Runecast](#runecast) and [Dynatrace](#dt) requirements.
 * Dynatrace version 1.313+
 * Support:
 
-  + Review the [Supported compliance standards and technologies](/docs/secure/application-security/security-posture-management-hub#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+  + Review the [Supported compliance standards and technologies](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 * Permissions:
 
   + To query ingested data: `storage:security.events:read`.
@@ -5879,6 +5879,10 @@ Once you set up the Runecast Analyzer integration, you can
 * Query [compliance events](/docs/semantic-dictionary/model/security-events#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
   + For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see [Query compliance events](/docs/secure/threat-observability/dql-examples#compliance "DQL examples for security data powered by Grail.").
+
+### Licensing and cost
+
+For billing information, see [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Related topics
 
@@ -6353,7 +6357,7 @@ Ingest SonarQube vulnerability findings, metrics, and audit logs.](https://www.d
 ---
 title: Ingest Sonatype Lifecycle security events and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-sonatype
-scraped: 2026-02-19T21:22:15.403645
+scraped: 2026-02-20T21:25:50.266709
 ---
 
 # Ingest Sonatype Lifecycle security events and audit logs
@@ -6557,7 +6561,7 @@ Ingest Sonatype vulnerability findings, scans, and audit logs.](https://www.dyna
 ---
 title: Ingest Tenable vulnerability findings, scan events, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-tenable-data
-scraped: 2026-02-19T21:23:57.535012
+scraped: 2026-02-20T21:15:56.083460
 ---
 
 # Ingest Tenable vulnerability findings, scan events, and audit logs
@@ -6955,7 +6959,7 @@ Ingest Tenable vulnerability findings, scan events, and audit logs.](https://www
 ---
 title: Enrich threat observables with VirusTotal
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/virustotal-enrich
-scraped: 2026-02-18T21:22:01.735203
+scraped: 2026-02-20T21:23:00.695529
 ---
 
 # Enrich threat observables with VirusTotal
@@ -6964,7 +6968,7 @@ scraped: 2026-02-18T21:22:01.735203
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Jan 07, 2026
+* Updated on Feb 23, 2026
 
 Enrich threat observables with VirusTotal and analyze them in Dynatrace.
 
@@ -7032,9 +7036,8 @@ To run the enrichment workflow action, all the permissions above need to be enab
 
    1. How to set up outbound connections
 
-   1. In **Settings**, go to **Preferences** > **Limit Outbound Connections**.
-   2. Select **Add item** and add the domain.
-   3. Select **Save changes**.
+   1. In **Settings**, go to **General** > **External requests**.
+   2. In **Allowlist**, select **New host pattern** and add the domain.
 5. Test the connection to ensure the correct configuration and save it.
 
 ## Details
@@ -7101,7 +7104,7 @@ Enrich observables with threat intelligence from VirusTotal.](https://www.dynatr
 ---
 title: Security integrations
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest
-scraped: 2026-02-19T21:13:50.866694
+scraped: 2026-02-20T21:08:55.080282
 ---
 
 # Security integrations
@@ -7157,7 +7160,7 @@ After configuring enrichment sources, you can apply them to:
 ---
 title: Threat Observability
 source: https://www.dynatrace.com/docs/secure/threat-observability
-scraped: 2026-02-19T21:13:57.380258
+scraped: 2026-02-20T21:08:32.766582
 ---
 
 # Threat Observability

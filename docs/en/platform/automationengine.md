@@ -1,7 +1,7 @@
 ---
 title: AutomationEngine
 source: https://www.dynatrace.com/docs/platform/automationengine
-scraped: 2026-02-19T21:13:58.714213
+scraped: 2026-02-20T21:08:43.183490
 ---
 
 # AutomationEngine

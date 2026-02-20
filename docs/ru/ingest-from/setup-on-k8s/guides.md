@@ -1,7 +1,7 @@
 ---
 title: Guides
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides
-scraped: 2026-02-19T21:19:46.438815
+scraped: 2026-02-20T21:20:30.905700
 ---
 
 # Guides

@@ -1,7 +1,7 @@
 ---
 title: End-of-life announcements
 source: https://www.dynatrace.com/docs/whats-new/technology/end-of-life-announcements
-scraped: 2026-02-18T21:35:46.077776
+scraped: 2026-02-20T21:16:22.227735
 ---
 
 # End-of-life announcements
@@ -69,7 +69,7 @@ ActiveGate version 1.299 is the latest release that supports Python Extensions 1
 
 Migrate all Python extensions 1.0 to the new Extensions to maintain a secure, supported environment.
 
-* [Migrate Python extensionsï»¿](https://developer.dynatrace.com/develop/dynatrace-extensions-vscode/guides/migrate/python-migrate/)
+* [Migrate Python extensionsï»¿](https://developer.dynatrace.com/develop/extensions/dynatrace-extensions-vscode/guides/migrate/python-migrate/)
 * [Video: A Practical Guide to Building Python Based Extensions with Dynatraceï»¿](https://www.youtube.com/watch?v=g-lPIZx66BA)
 
 To remain supported, [update your OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") to the latest version.

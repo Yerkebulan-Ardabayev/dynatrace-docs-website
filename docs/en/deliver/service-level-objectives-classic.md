@@ -1,7 +1,7 @@
 ---
 title: Service-Level Objectives Classic
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives-classic
-scraped: 2026-02-17T21:30:42.768274
+scraped: 2026-02-20T21:16:46.439804
 ---
 
 # Service-Level Objectives Classic

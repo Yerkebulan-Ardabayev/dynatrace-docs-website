@@ -1,7 +1,7 @@
 ---
 title: Create USQL custom metrics for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions
-scraped: 2026-02-18T05:53:34.070542
+scraped: 2026-02-20T21:23:16.661602
 ---
 
 # Create USQL custom metrics for web applications

@@ -1,7 +1,7 @@
 ---
 title: Define user action and user session properties for mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/additional-configuration/define-mobile-action-and-session-properties
-scraped: 2026-02-18T21:32:03.034460
+scraped: 2026-02-20T21:16:06.666367
 ---
 
 # Define user action and user session properties for mobile applications

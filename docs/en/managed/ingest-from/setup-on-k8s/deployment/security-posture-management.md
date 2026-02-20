@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Security Posture Management
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/security-posture-management
-scraped: 2026-02-19T21:28:57.200583
+scraped: 2026-02-20T21:26:42.077123
 ---
 
 # Kubernetes Security Posture Management
@@ -54,10 +54,10 @@ Once data is ingested into Grail, you can analyze your clusters' security postur
 
 Dynatrace version 1.305+ Dynatrace Operator version 1.5.0+ ActiveGate version 1.321+
 
-* [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is licensed based on the consumption of [host-hours](/docs/license/capabilities/application-security/security-posture-management "Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.") and requires the [Dynatrace Platform Subscription (DPS) licensing model](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+* [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is licensed based on the consumption of [host-hours](/docs/license/capabilities/application-security/security-posture-management "Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.") and requires the [Dynatrace Platform Subscription (DPS) licensing model](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 
   If you're using [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), or if you're on DPS but don't see the SPM capability enabled in your DPS rate card, please contact a Dynatrace product expert via live chat.
-* Review the [Supported compliance standards and technologies](/docs/secure/application-security/security-posture-management-hub#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+* Review the [Supported compliance standards and technologies](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 * [Set up Kubernetes monitoring](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes").
 
 * Support is limited to compatibility with upstream Kubernetes and available for x86-64 CPU architectures only.
@@ -89,7 +89,7 @@ If you already created a secret with a token in a previous deployment of Dynatra
 
    * Kubernetes Security Posture Management:
 
-     + `spec.kspm: {}`: Enables the KSPM Node Configuration Collector DaemonSet (for details, see [How it works](/docs/secure/application-security/security-posture-management-hub#mechanism "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."))
+     + `spec.kspm: {}`: Enables the KSPM Node Configuration Collector DaemonSet (for details, see [How it works](/docs/secure/application-security/spm#mechanism "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."))
 
      KSPM mounts the hosts root filesystem by default. If you want to limit that to specific paths, you can use the field `spec.kspm.mappedHostPaths`. The `spec.kspm.mappedHostPaths` field defines the host paths that are mounted to the container. For a list of suggested paths, see the [Dynatrace Operator repository sampleï»¿](https://dt-url.net/ky03zzm).
    * ActiveGate with Kubernetes monitoring and additional configuration:
@@ -497,7 +497,7 @@ Up to 100 nodes and 3,000 pods per Kubernetes cluster can be covered by Kubernet
 ## Further resources
 
 * For a use case scenario, see [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.").
-* For a list of frequently asked questions on Kubernetes Security Posture Management, see [FAQ](/docs/secure/application-security/security-posture-management-hub#faq "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+* For a list of frequently asked questions on Kubernetes Security Posture Management, see [FAQ](/docs/secure/application-security/spm#faq "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 * For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see [Query compliance events](/docs/secure/threat-observability/dql-examples#compliance "DQL examples for security data powered by Grail.").
 * For an overview of security data usage, see [Security data on Grail](/docs/secure/threat-observability/concepts#security-data "Basic concepts related to Threat Observability").
 

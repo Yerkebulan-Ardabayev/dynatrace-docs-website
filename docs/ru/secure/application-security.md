@@ -1,7 +1,7 @@
 ---
 title: Application Security
 source: https://www.dynatrace.com/docs/secure/application-security
-scraped: 2026-02-19T21:14:02.657465
+scraped: 2026-02-20T21:08:47.163719
 ---
 
 # Application Security
@@ -10,9 +10,15 @@ scraped: 2026-02-19T21:14:02.657465
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Feb 04, 2026
+* Updated on Feb 23, 2026
 
-Dynatrace Application Security delivers real-time protection and deep visibility into your application landscape. By combining automated vulnerability detection, runtime threat prevention, and posture management, it empowers teams to secure modern cloud-native environments with precision and scale. Explore the feature overviews, configuration steps, operational modes, and usage guidance.
+What youâll find on this page
+
+* [Explore Application Security capabilities](#start)
+* [How monitoring modes shape data and analysis](#monitoring-modes)
+* [Deepen your understanding: videos, tutorials, blogs](#resources)
+
+Dynatrace Application Security delivers real-time protection and deep visibility into your application landscape. By combining automated vulnerability detection, runtime application protection, and security posture management, it empowers teams to secure modern cloud-native environments with precision and scale. Explore the feature overviews, configuration steps, operational modes, and usage guidance.
 
 ## Get started
 
@@ -22,13 +28,13 @@ If you're using the [Dynatrace classic licensing](/docs/license/monitoring-consu
 
 * [**Dynatrace Runtime Vulnerability Analytics (RVA)**](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."): Identify critical vulnerabilities instantly with automated risk and impact assessments, thanks to in-depth analysis of data access paths and production execution.
 * [**Dynatrace Runtime Application Protection (RAP)**](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities."): Defend your applications in real time by detecting and blocking attacks through advanced code-level insights and transaction analysis.
-* [**Dynatrace Security Posture Management (SPM)**](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."): Maintain robust security by assessing, prioritizing, and addressing misconfigurations and compliance violations efficiently.
+* [**Dynatrace Security Posture Management (SPM)**](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."): Maintain robust security by assessing, prioritizing, and addressing misconfigurations and compliance violations efficiently.
 
 ## Monitoring modes coverage
 
 The effectiveness and depth of Application Security insights depend on the deployed monitoring mode. This section explains how each mode impacts data collection and analysis.
 
-[**Dynatrace Security Posture Management (SPM)**](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") works independently of monitoring modes. For details, see [FAQ](/docs/secure/application-security/security-posture-management-hub#monitoring "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+[**Dynatrace Security Posture Management (SPM)**](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") works independently of monitoring modes. For details, see [FAQ](/docs/secure/application-security/spm#monitoring "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 ### Support overview
 
@@ -71,7 +77,7 @@ Code-level vulnerabilities
 
 Attacks
 
-* In an Infrastructure Monitoring deployment, Dynatrace Intelligence cannot [adapt the Dynatrace Security Score](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score#score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
+* In an Infrastructure Monitoring deployment, Dynatrace Intelligence cannot [adapt the Dynatrace Security Score](/docs/secure/vulnerabilities/concepts#dss-calculation "Concepts that are specific to the Dynatrace Vulnerabilities app."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
 * Infrastructure Monitoring mode lacks environmental information, such as reachable data assets or public internet exposure, and limits information on related entities, such as databases and services. A full assessment can be performed only on vulnerabilities that have all related hosts under Full-Stack Monitoring.
 
   + If related hosts are running in Infrastructure Monitoring mode, there's not enough data sent by OneAgents to examine whether there's exposure or sensitive data affected, therefore the values for **public internet exposure** and **reachable data assets** are set to `Not available`.
@@ -90,9 +96,9 @@ Same capabilities as Full-Stack Monitoring mode.
 * If you're using the [Dynatrace Platform Subscription (DPS) licensing model](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), see [Host monitoring (DPS): Infrastructure Monitoring](/docs/license/capabilities/app-infra-observability/infrastructure-monitoring "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.").
 * If you're using the [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), see [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
+
+
 ### Discovery mode
-
-
 
 [Discovery mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes#discovery "Find out more about the available monitoring modes when using OneAgent.") is a lightweight monitoring mode that provides basic monitoring. The following functionalities are provided:
 
@@ -117,7 +123,7 @@ Code-level vulnerabilities
 
 Attacks
 
-* In a Discovery mode deployment, Dynatrace Intelligence cannot [adapt the Dynatrace Security Score](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score#score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
+* In a Discovery mode deployment, Dynatrace Intelligence cannot [adapt the Dynatrace Security Score](/docs/secure/vulnerabilities/concepts#dss-calculation "Concepts that are specific to the Dynatrace Vulnerabilities app."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
 * Discovery mode lacks environmental information, such as reachable data assets or public internet exposure, and limits information on related entities, such as databases and services. A full assessment can be performed only on vulnerabilities that have all related hosts under Full-Stack Monitoring.
 
   + If related hosts are running in Discovery mode, not enough data is sent by OneAgents to examine whether there's exposure or sensitive data affected, so the values for **public internet exposure** and **reachable data assets** are set to `Not available`.
@@ -189,6 +195,7 @@ FAQ
 
   How to achieve cloud native hyperscale security with Dynatrace
 
+* [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-awareï»¿](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/)
 * [Introduction to Application Security conceptsï»¿](https://university.dynatrace.com/learn/courses/313/introduction-to-appsec)
 * [Dynatrace Application Security overviewï»¿](https://university.dynatrace.com/learn/courses/85/introduction/lessons/484/dynatrace-application-security)
 * [Activate Application Securityï»¿](https://university.dynatrace.com/learn/courses/88/configuring-application-security/lessons/382/activating-application-security)
@@ -199,7 +206,6 @@ FAQ
 * [Manage code-level vulnerabilitiesï»¿](https://university.dynatrace.com/learn/courses/86/runtime-vulnerability-analytics/lessons/479/managing-code-level-vulnerabilities)
 * [Application Security case study: log4jï»¿](https://university.dynatrace.com/learn/courses/87/case-studies/lessons/478/application-security-case-study-log4j)
 
-* [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-awareï»¿](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/)
 * [Remediating CVE-2025-3248: How Dynatrace Application Security protects Agentic AI applicationsï»¿](https://www.dynatrace.com/news/blog/remediating-cve-2025-3248-how-dynatrace-application-security-protects-agentic-ai-applications/)
 * [Supply chain security: How to detect malicious software packages with Dynatraceï»¿](https://www.dynatrace.com/news/blog/supply-chain-security-how-to-detect-malicious-software-packages-with-dynatrace/)
 * [Kubernetes security essentials: Container misconfigurations â From theory to exploitationï»¿](https://www.dynatrace.com/news/blog/kubernetes-security-essentials-container-misconfigurations-from-theory-to-exploitation/)
@@ -227,7 +233,7 @@ FAQ
 * [Protect your organization from zero-day vulnerabilitiesï»¿](https://www.dynatrace.com/news/blog/protect-against-zero-day-vulnerabilities/)
 * [Find vulnerabilities in your codeâdonât wait for someone to exploit themï»¿](https://www.dynatrace.com/news/blog/code-level-vulnerability-detection/)
 * [Dynatrace DevSecOps Lifecycle Coverage with Snyk eliminates security coverage blind spotsï»¿](https://www.dynatrace.com/news/blog/dynatrace-and-snyk-to-unify-security-insights/)
-* [Davis Security Advisor extends Application Securityï»¿](https://www.dynatrace.com/news/blog/davis-security-advisor-extends-dynatrace-application-security/)
+* [What is application security? And why it needs a new approachï»¿](https://www.dynatrace.com/news/blog/davis-security-advisor-extends-dynatrace-application-security/)
 
 [Application Security FAQ](/docs/secure/faq "Frequently asked questions about Dynatrace Application Security.")
 

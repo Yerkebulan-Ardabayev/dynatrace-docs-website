@@ -1,7 +1,7 @@
 ---
 title: Deploy OneAgent Operator on OpenShift (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-openshift-legacy
-scraped: 2026-02-18T21:33:18.700757
+scraped: 2026-02-20T21:13:34.834622
 ---
 
 # Deploy OneAgent Operator on OpenShift (deprecated)
@@ -489,7 +489,7 @@ The following table shows the permissions needed for OneAgent Operator.
 
 See [Docker limitations](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container.") for details.
 
-## Troubleshoot
+## Troubleshooting
 
 Find out how to [troubleshoot issues](/docs/ingest-from/setup-on-k8s/deployment/troubleshooting#deploy "This page will assist you in navigating any challenges you may encounter while working with the Dynatrace Operator and its various components.") that you may encounter when deploying OneAgent on OpenShift.
 

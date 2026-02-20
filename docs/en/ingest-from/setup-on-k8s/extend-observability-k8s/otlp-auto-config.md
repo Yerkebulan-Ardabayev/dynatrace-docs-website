@@ -1,7 +1,7 @@
 ---
 title: Enable automatic OpenTelemetry OTLP exporter configuration
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config
-scraped: 2026-02-19T21:31:24.494461
+scraped: 2026-02-20T21:18:04.100823
 ---
 
 # Enable automatic OpenTelemetry OTLP exporter configuration

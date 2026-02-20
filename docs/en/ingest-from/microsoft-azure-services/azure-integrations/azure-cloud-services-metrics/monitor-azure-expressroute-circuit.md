@@ -1,7 +1,7 @@
 ---
 title: Azure ExpressRoute Circuit monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-expressroute-circuit
-scraped: 2026-02-19T21:32:50.303756
+scraped: 2026-02-20T21:14:11.319493
 ---
 
 # Azure ExpressRoute Circuit monitoring

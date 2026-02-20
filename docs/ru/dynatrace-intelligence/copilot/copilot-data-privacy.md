@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence generative AI data privacy and security
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-data-privacy
-scraped: 2026-02-16T09:29:33.353940
+scraped: 2026-02-20T21:23:58.134843
 ---
 
 # Dynatrace Intelligence generative AI data privacy and security
@@ -31,7 +31,7 @@ Learn more about the [Dynatrace Intelligence generative AI architecture and data
 
 Dynatrace version 1.305+
 
-Starting with Dynatrace version 1.305, PII masking is in place for user prompts. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.
+PII masking is in place for user prompts interacting with all standard generative AI functionality. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.
 
 Currently masked fields include:
 
@@ -47,6 +47,8 @@ Currently masked fields include:
 * Canadian Social Insurance Number (SIN)
 
 In our logs and calls to LLM models, we replace values from the identified patterns above with fake patterns. This means that you'll be able see IBANs in logs, for example, but they'll be made up of random numbers, replacing the original values included in your prompts.
+
+Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to protect your data, when  **Dynatrace Assist** detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.
 
 ## Related topics
 

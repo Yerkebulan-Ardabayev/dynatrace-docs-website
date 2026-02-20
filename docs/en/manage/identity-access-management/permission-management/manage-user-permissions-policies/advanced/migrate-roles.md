@@ -1,7 +1,7 @@
 ---
 title: Upgrade role-based permissions to Dynatrace IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/migrate-roles
-scraped: 2026-02-18T05:55:59.557615
+scraped: 2026-02-20T21:19:43.475356
 ---
 
 # Upgrade role-based permissions to Dynatrace IAM policies

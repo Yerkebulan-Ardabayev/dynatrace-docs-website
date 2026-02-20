@@ -1,19 +1,19 @@
 ---
 title: Конфигурация веб-приложения API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api
-scraped: 2026-02-19T21:21:52.636456
+scraped: 2026-02-20T21:21:50.568347
 ---
 
 # Конфигурация веб-приложения API
 
 # Конфигурация веб-приложения API
 
-* Справка
+* Справочник
 * Опубликовано 24 января 2019 г.
 
 **Конфигурация веб-приложения** API позволяет управлять конфигурацией [веб-приложений](/docs/discover-dynatrace/get-started/glossary#app "Ознакомьтесь с терминологией Dynatrace.").
 
-Эта API поддерживает только веб-приложения. Для мобильных и пользовательских приложений см. [Мобильная и пользовательская конфигурация приложения API](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Узнайте, что предлагает конфигурация мобильного и пользовательского приложения Dynatrace API.").
+Эта API поддерживает только веб-приложения. Для мобильных и пользовательских приложений см. [Конфигурация мобильных и пользовательских приложений API](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Узнайте, что предлагает конфигурация мобильных и пользовательских приложений Dynatrace API.").
 
 [### Список всех
 
@@ -41,15 +41,15 @@ scraped: 2026-02-19T21:21:52.636456
 
 Просмотрите параметры конфиденциальности данных для
 
-* [Все приложения](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-all-web-apps "Просмотр конфигурации конфиденциальности данных всех приложений через Dynatrace API."
-* [Конкретное приложение](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-web-app "Просмотр конфигурации конфиденциальности данных приложения через Dynatrace API."
+* [Все приложения](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-all-web-apps "Просмотр конфигурации конфиденциальности данных всех приложений через Dynatrace API.")
+* [Конкретное приложение](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-web-app "Просмотр конфигурации конфиденциальности данных приложения через Dynatrace API.")
 * [Приложение по умолчанию](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-default-app "Просмотр конфигурации конфиденциальности данных приложения по умолчанию через Dynatrace API.")
 
 ### Обновление конфиденциальности данных
 
 Просмотрите параметры конфиденциальности данных для
 
-* [Конкретное приложение](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-web-app "Редактирование конфигурации конфиденциальности данных приложения через Dynatrace API."
+* [Конкретное приложение](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-web-app "Редактирование конфигурации конфиденциальности данных приложения через Dynatrace API.")
 * [Приложение по умолчанию](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-default-app "Редактирование конфигурации конфиденциальности данных приложения по умолчанию через Dynatrace API.")
 
 [### Просмотр ключевых действий пользователя
@@ -62,6 +62,6 @@ scraped: 2026-02-19T21:21:52.636456
 
 [### Просмотр правил ошибок
 
-Получите обзор конфигурации правил ошибок.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/get-configuration "Чтение правил ошибок приложения через Dynatrace API."[### Обновление правил ошибок
+Получите обзор конфигурации правил ошибок.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/get-configuration "Просмотр правил ошибок приложения через Dynatrace API."[### Обновление правил ошибок
 
 Обновите конфигурацию правил ошибок.](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/put-configuration "Обновление правил ошибок приложения через Dynatrace API.")

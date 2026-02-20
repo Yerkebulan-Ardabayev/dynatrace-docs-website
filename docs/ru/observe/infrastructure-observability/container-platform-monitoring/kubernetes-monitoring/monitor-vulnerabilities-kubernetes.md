@@ -1,7 +1,7 @@
 ---
 title: Monitor vulnerabilities in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes
-scraped: 2026-02-19T21:25:23.344160
+scraped: 2026-02-20T21:23:31.197015
 ---
 
 # Monitor vulnerabilities in Kubernetes/OpenShift

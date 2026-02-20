@@ -1,7 +1,7 @@
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-02-19T21:14:20.143747
+scraped: 2026-02-20T21:09:31.506792
 ---
 
 # Technology support
@@ -508,7 +508,7 @@ Bellsoft Liberica v21+ 32-bit are not supported
 | [Apache Tomcatï»¿](https://tomcat.apache.org/) | 6, 7, 8, 8.5, 9, 10[1](#fn-application-servers-1-def), 11[1](#fn-application-servers-1-def) |
 | [Fujitsu Interstageï»¿](https://www.fujitsu.com/global/products/software/middleware/application-infrastructure/interstage/) | 12.0[2](#fn-application-servers-2-def) |
 | [IBM WebSphere Application Serverï»¿](https://www.ibm.com/products/software) | 8.5.5, 9.0, 8.5[3](#fn-application-servers-3-def) |
-| [IBM WebSphere Libertyï»¿](https://developer.ibm.com/wasdev/websphere-liberty/) | 8.5 - 25[4](#fn-application-servers-4-def) |
+| [IBM WebSphere Libertyï»¿](https://developer.ibm.com/wasdev/websphere-liberty/) | 8.5 - 26[4](#fn-application-servers-4-def) |
 | [JBoss Enterprise Application Platformï»¿](https://developers.redhat.com/products/eap/overview) | 7, 8 |
 | [Oracle WebLogicï»¿](https://www.oracle.com/middleware/technologies/weblogic.html) | 11g[5](#fn-application-servers-5-def), 12c, 14c |
 | [Payaraï»¿](https://www.payara.fish/) | 5, 6, 7 |
@@ -661,7 +661,7 @@ Wildfly 8,9,10
 | DataStax client for Apache Cassandra | 2.1[1](#fn-database-frameworks-1-def), 3[1](#fn-database-frameworks-1-def), 4[1](#fn-database-frameworks-1-def) |
 | JDBC | 4+[1](#fn-database-frameworks-1-def) |
 | [Jedis Redisï»¿](https://github.com/xetorthio/jedis) | 2, 3[1](#fn-database-frameworks-1-def), 4[1](#fn-database-frameworks-1-def), 5[1](#fn-database-frameworks-1-def), 6[1](#fn-database-frameworks-1-def), 7[1](#fn-database-frameworks-1-def) |
-| [Lettuceï»¿](https://lettuce.io/) | 5.1 - 5.3[1](#fn-database-frameworks-1-def), 6.0.3 - 6.1.6[1](#fn-database-frameworks-1-def), 6.1.8 - 6.8[1](#fn-database-frameworks-1-def), 7.0 - 7.2[1](#fn-database-frameworks-1-def) |
+| [Lettuceï»¿](https://lettuce.io/) | 5.1 - 5.3[1](#fn-database-frameworks-1-def), 6.0.3 - 6.1.6[1](#fn-database-frameworks-1-def), 6.1.8 - 6.8[1](#fn-database-frameworks-1-def), 7.0 - 7.4[1](#fn-database-frameworks-1-def) |
 | [MongoDB Reactive Streams driverï»¿](https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current/) | 4.10+[1](#fn-database-frameworks-1-def), 5.0+[1](#fn-database-frameworks-1-def) |
 | [MongoDB asynchronous driverï»¿](https://mongodb.github.io/mongo-java-driver/3.0/driver-async/) | 3.0 - 3.6.4[1](#fn-database-frameworks-1-def) |
 | [MongoDB synchronous driver ï»¿](https://docs.mongodb.com/ecosystem/drivers/java/) | 2[1](#fn-database-frameworks-1-def), 3.0 - 3.6[1](#fn-database-frameworks-1-def), 3.7 - 3.11[1](#fn-database-frameworks-1-def), 3.12 - 4.11[1](#fn-database-frameworks-1-def), 5.0[1](#fn-database-frameworks-1-def) |

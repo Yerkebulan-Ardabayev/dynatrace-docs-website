@@ -1,7 +1,7 @@
 ---
 title: Enrich threat observables with VirusTotal
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/virustotal-enrich
-scraped: 2026-02-18T21:22:01.735203
+scraped: 2026-02-20T21:23:00.695529
 ---
 
 # Enrich threat observables with VirusTotal
@@ -10,7 +10,7 @@ scraped: 2026-02-18T21:22:01.735203
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Jan 07, 2026
+* Updated on Feb 23, 2026
 
 Enrich threat observables with VirusTotal and analyze them in Dynatrace.
 
@@ -78,9 +78,8 @@ To run the enrichment workflow action, all the permissions above need to be enab
 
    1. How to set up outbound connections
 
-   1. In **Settings**, go to **Preferences** > **Limit Outbound Connections**.
-   2. Select **Add item** and add the domain.
-   3. Select **Save changes**.
+   1. In **Settings**, go to **General** > **External requests**.
+   2. In **Allowlist**, select **New host pattern** and add the domain.
 5. Test the connection to ensure the correct configuration and save it.
 
 ## Details

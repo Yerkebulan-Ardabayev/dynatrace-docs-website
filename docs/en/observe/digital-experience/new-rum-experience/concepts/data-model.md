@@ -1,7 +1,7 @@
 ---
 title: Data model of the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/concepts/data-model
-scraped: 2026-02-18T21:34:07.582321
+scraped: 2026-02-20T21:13:13.374479
 ---
 
 # Data model of the New RUM Experience
@@ -10,7 +10,7 @@ scraped: 2026-02-18T21:34:07.582321
 
 * Latest Dynatrace
 * Explanation
-* Updated on Jan 07, 2026
+* Updated on Feb 12, 2026
 
 The New RUM Experience provides deep visibility into how end users interact with the frontends of your applications. It delivers insights into user behavior and experience, along with performance metrics and error details. This page outlines the underlying data model and how the captured data is organized in Grail.
 
@@ -48,12 +48,14 @@ To learn more about pages, views, and navigations in web frontends, see [Pages, 
 
 Early Access
 
-**User interactions** represent activities performed by an end user on the application's frontend. Capturing them can be enabled as described in [User interactions](/docs/observe/digital-experience/new-rum-experience/user-interactions "Learn how to capture and analyze user interactions."). The specific types of interactions depend on the frontend technology:
+**User interactions** represent activities performed by an end user on the application's frontend. The specific types of interactions depend on the frontend technology:
 
-* For web applications, this includes events such as clicks, scrolls, hover, and mouseover.
+* For web applications, this includes events such as clicks, scrolls, and mouseover.
 * For mobile applications, it includes mobile touches.
 
 For a complete list of user interactions, see [User interactions](/docs/semantic-dictionary/model/rum/user-events/user-interactions) in the Semantic Dictionary.
+
+Capturing user interactions can be enabled as described in [Configure user interaction capturing for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions "Learn how to configure and customize user interaction capturing for web frontends.") and [Configure user interaction capturing for mobile frontends](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/user-interactions-mobile "Learn how to configure user interaction capturing for mobile frontends.").
 
 In RUM Classic, user interactions were only recorded when they were part of a user action involving a request. In the New RUM Experience, this restriction does not applyâinteractions can be captured independently of any request.
 

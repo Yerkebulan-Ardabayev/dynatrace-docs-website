@@ -1,7 +1,7 @@
 ---
 title: Settings
 source: https://www.dynatrace.com/docs/manage/settings
-scraped: 2026-02-19T21:22:39.084884
+scraped: 2026-02-20T21:26:07.391644
 ---
 
 # Settings

@@ -1,7 +1,7 @@
 ---
 title: Select a snippet format in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats
-scraped: 2026-02-19T21:19:58.765265
+scraped: 2026-02-20T21:14:20.599420
 ---
 
 # Select a snippet format in the New RUM Experience

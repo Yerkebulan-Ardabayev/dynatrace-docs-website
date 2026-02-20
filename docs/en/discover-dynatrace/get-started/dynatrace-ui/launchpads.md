@@ -1,7 +1,7 @@
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-19T21:16:33.168277
+scraped: 2026-02-20T21:10:03.811896
 ---
 
 # Launchpads

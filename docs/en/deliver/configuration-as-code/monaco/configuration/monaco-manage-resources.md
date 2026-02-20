@@ -1,7 +1,7 @@
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-19T21:32:09.112993
+scraped: 2026-02-20T21:11:50.090120
 ---
 
 # Monaco resources

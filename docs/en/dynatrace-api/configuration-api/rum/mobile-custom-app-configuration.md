@@ -1,7 +1,7 @@
 ---
 title: Mobile and custom app API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration
-scraped: 2026-02-18T05:56:32.946289
+scraped: 2026-02-20T21:12:12.595654
 ---
 
 # Mobile and custom app API

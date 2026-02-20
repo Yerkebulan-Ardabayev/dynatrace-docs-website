@@ -1,7 +1,7 @@
 ---
 title: Public Synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations
-scraped: 2026-02-18T21:21:40.091550
+scraped: 2026-02-20T21:15:29.364733
 ---
 
 # Public Synthetic locations

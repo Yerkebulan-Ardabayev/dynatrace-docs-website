@@ -1,7 +1,7 @@
 ---
 title: Stream logs to Dynatrace with Fluent Bit (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-with-fluent-bit
-scraped: 2026-02-17T21:30:49.025094
+scraped: 2026-02-20T21:28:18.958380
 ---
 
 # Stream logs to Dynatrace with Fluent Bit (Logs Classic)

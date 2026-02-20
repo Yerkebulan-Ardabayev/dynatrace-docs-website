@@ -1,7 +1,7 @@
 ---
 title: RUM metrics migration
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration
-scraped: 2026-02-19T21:22:37.722244
+scraped: 2026-02-20T21:18:40.231883
 ---
 
 # RUM metrics migration

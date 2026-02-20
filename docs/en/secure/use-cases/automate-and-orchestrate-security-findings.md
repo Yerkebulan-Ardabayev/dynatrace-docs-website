@@ -1,7 +1,7 @@
 ---
 title: Automate and orchestrate security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/automate-and-orchestrate-security-findings
-scraped: 2026-02-19T21:28:33.276843
+scraped: 2026-02-20T21:21:09.639498
 ---
 
 # Automate and orchestrate security findings
@@ -48,7 +48,7 @@ Key use cases include:
      + [Slack workflow sampleï»¿](https://dt-url.net/a643qqd)
      + [Jira workflow sampleï»¿](https://dt-url.net/l103p3t)
 
-   For some integrations, such as [Amazon ECR](/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data "Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.") or [AWS Security Hub](/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub "Ingest AWS Security Hub security findings and analyze them in Dynatrace."), workflow samples are available in the app in the **Try our templates** section (go to **Settings (new)** > **Connections** and select the app).
+   For some integrations, such as [Amazon ECR](/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data "Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.") or [AWS Security Hub](/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub "Ingest AWS Security Hub security findings and analyze them in Dynatrace."), workflow samples are available in the app in the **Try our templates** section (in **Settings**, search for and select the app).
 2. Open [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), select ![Import](https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg "Import") **Upload**, then select the downloaded file.
 
 Example result:

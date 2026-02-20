@@ -1,7 +1,7 @@
 ---
 title: Azure Event Hubs (Clusters) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-event-hubs
-scraped: 2026-02-18T21:30:22.574249
+scraped: 2026-02-20T21:25:31.437070
 ---
 
 # Azure Event Hubs (Clusters) monitoring

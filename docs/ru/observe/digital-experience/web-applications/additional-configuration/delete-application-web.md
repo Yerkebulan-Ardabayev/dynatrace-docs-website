@@ -1,7 +1,7 @@
 ---
 title: Delete a web application
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/delete-application-web
-scraped: 2026-02-19T21:34:28.291846
+scraped: 2026-02-20T21:16:32.770913
 ---
 
 # Delete a web application

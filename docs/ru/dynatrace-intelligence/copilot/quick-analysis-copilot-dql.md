@@ -1,7 +1,7 @@
 ---
 title: Query with natural language
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
-scraped: 2026-02-19T21:31:36.713395
+scraped: 2026-02-20T21:28:31.346870
 ---
 
 # Query with natural language

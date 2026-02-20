@@ -1,7 +1,7 @@
 ---
 title: Stay compliant with Security Posture Management
 source: https://www.dynatrace.com/docs/secure/use-cases/stay-compliant
-scraped: 2026-02-18T05:54:51.364754
+scraped: 2026-02-20T21:17:42.568081
 ---
 
 # Stay compliant with Security Posture Management
@@ -14,7 +14,7 @@ scraped: 2026-02-18T05:54:51.364754
 
 Early Adopter
 
-In this tutorial you will learn how [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") can help you stay compliant with the [security hardening guidelines and regulatory compliance standards](/docs/secure/application-security/security-posture-management-hub#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+In this tutorial you will learn how [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") can help you stay compliant with the [security hardening guidelines and regulatory compliance standards](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 ## Target audience
 
@@ -102,10 +102,10 @@ Use [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c
 
 ## Further resources
 
-[Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+[Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
 
 [Security Posture Management](/docs/secure/xspm "Detect, manage, and take action on security and compliance findings.")
 
 ## Related topics
 
-* [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")

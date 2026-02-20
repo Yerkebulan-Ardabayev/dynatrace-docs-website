@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-19T21:13:21.344454
+scraped: 2026-02-20T21:07:38.184186
 ---
 
 # New Documentation articles
@@ -368,7 +368,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Apr 30, 2025
 
 * [Vulnerability evaluation](/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
-* [Use cases for monitoring rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules "Common scenarios for defining monitoring rules for vulnerabilities based on resource attributes and Kubernetes labels.")
+* [Use cases for monitoring rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")
 
 ## Apr 14, 2025
 
@@ -465,9 +465,9 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.")
 * [Discovery & Coverage app](/docs/ingest-from/discovery-coverage-app "Discover and remediate monitoring coverage gaps at scale.")
 * [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")
-* [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
-* [Get started with Kubernetes Security Posture Management (KSPM)](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
-* [Supported compliance standards and technologies](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Get started with Kubernetes Security Posture Management (KSPM)](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Supported compliance standards and technologies](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
 * [Assess coverage](/docs/secure/xspm/assess-coverage "Review the Security Posture Management coverage of your systems at a glance.")
 * [Concepts](/docs/secure/xspm/concepts "Concepts that are specific to the Dynatrace Security Posture Management app.")
 * [Gain insights](/docs/secure/xspm/gain-insights "Drill into results that can help you fix misconfigurations and noncompliance.")
@@ -843,7 +843,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 
 * [Query monitored entities in Grail](/docs/platform/grail/querying-monitored-entities "Find out how to query monitored entities in Grail.")
-* [DevSecOps Lifecycle Coverage with Snyk](/docs/secure/devsecops-lifecycle-coverage "Set up and configure DevSecOps Lifecycle Coverage with Snyk.")
+* [DevSecOps Lifecycle Coverage with Snyk](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments.")
 * [Performance](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")
 * [Ingest OpenTelemetry traces](/docs/ingest-from/opentelemetry/otlp-api/ingest-traces "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply.")
 * [Ingest OpenTelemetry metrics](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")

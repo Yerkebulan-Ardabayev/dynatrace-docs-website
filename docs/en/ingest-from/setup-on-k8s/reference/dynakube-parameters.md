@@ -1,7 +1,7 @@
 ---
 title: DynaKube parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-scraped: 2026-02-17T21:29:20.303529
+scraped: 2026-02-20T21:22:19.410697
 ---
 
 # DynaKube parameters for Dynatrace Operator
@@ -10,7 +10,7 @@ scraped: 2026-02-17T21:29:20.303529
 
 * Latest Dynatrace
 * 57-min read
-* Updated on Jan 02, 2026
+* Updated on Feb 12, 2026
 
 This page will help you to understand and configure the DynaKube [Kubernetes Custom Resourceï»¿](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), enabling you to optimize your Dynatrace Operator setup according to your specific requirements.
 
@@ -593,7 +593,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring pods. | Not applicable | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | Not applicable | ResourceRequirements |
 | `tolerations` | Set tolerations for the LogMonitoring pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
-| `args` | Set additional arguments for the LogMonitoring main container. | Not applicable | []string |
+| `args` | Set additional arguments for the LogMonitoring init container. | Not applicable | []string |
 
 ## `.spec.templates.logMonitoring.imageRef`
 
@@ -962,7 +962,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring pods. | Not applicable | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | Not applicable | ResourceRequirements |
 | `tolerations` | Set tolerations for the LogMonitoring pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
-| `args` | Set additional arguments for the LogMonitoring main container. | Not applicable | []string |
+| `args` | Set additional arguments for the LogMonitoring init container. | Not applicable | []string |
 
 ## `.spec.templates.logMonitoring.imageRef`
 
@@ -1308,7 +1308,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring Pods. | Not applicable | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | Not applicable | ResourceRequirements |
 | `tolerations` | Set tolerations for the LogMonitoring Pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
-| `args` | Set additional arguments for the LogMonitoring main container. | Not applicable | []string |
+| `args` | Set additional arguments for the LogMonitoring init container. | Not applicable | []string |
 
 ## `.spec.templates.logMonitoring.imageRef`
 
@@ -1637,7 +1637,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | Not applicable | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the NodeConfigurationCollector | Not applicable | corev1.NodeAffinity |
 | `tolerations` | Set tolerations for the LogMonitoring Pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
-| `args` | Set additional arguments for the LogMonitoring main container. | Not applicable | []string |
+| `args` | Set additional arguments for the LogMonitoring init container. | Not applicable | []string |
 | `updateStrategy` | Define the NodeConfigurationCollector daemonSet updateStrategy. | Not applicable | appsv1.DaemonSetUpdateStrategy |
 
 ## `.spec.templates.logMonitoring.imageRef`
