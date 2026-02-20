@@ -25,7 +25,7 @@
     
     
       
-        <title>Policy management API - DELETE a policy boundary - Dynatrace Managed - Документация</title>
+        <title>Управление политиками API - УДАЛИТЬ границу политики - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#policy-management-api-delete-a-policy-boundary" class="md-skip">
+        <a href="#api-" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Policy management API - DELETE a policy boundary
+              Управление политиками API - УДАЛИТЬ границу политики
             
           </span>
         </div>
@@ -25474,94 +25474,94 @@
 
 
 
-<h1 id="policy-management-api-delete-a-policy-boundary">Policy management API - DELETE a policy boundary<a class="headerlink" href="#policy-management-api-delete-a-policy-boundary" title="Permanent link">&para;</a></h1>
-<h1 id="policy-management-api-delete-a-policy-boundary_1">Policy management API - DELETE a policy boundary<a class="headerlink" href="#policy-management-api-delete-a-policy-boundary_1" title="Permanent link">&para;</a></h1>
+<h1 id="api-">Управление политиками API - УДАЛИТЬ границу политики<a class="headerlink" href="#api-" title="Permanent link">&para;</a></h1>
+<h1 id="api-_1">Управление политиками API - УДАЛИТЬ границу политики<a class="headerlink" href="#api-_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Reference</li>
 <li>Published Nov 20, 2025</li>
 </ul>
-<p>Deletes a policy boundary by uuid within a level. You can't delete a global-level boundary, as these are managed by Dynatrace.</p>
+<p>Удаляет границу политики по uuid внутри уровня. Вы не можете удалить глобальную границу, поскольку они управляются Dynatrace.</p>
 <p>DELETE</p>
 <p><code>https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries/{policyBoundaryUuid}</code></p>
-<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
-<p>To execute this request, you need the <strong>Allow IAM policy configuration for environments</strong> (<code>iam-policies-management</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<h2 id="_1">Аутентификация<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Чтобы выполнить этот запрос, вам необходимо иметь разрешение <strong>Allow IAM policy configuration for environments</strong> (<code>iam-policies-management</code>) присвоенное к вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
+<h2 id="_2">Параметры<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>policyBoundaryUuid</td>
 <td>-</td>
-<td>The ID of the required boundary.</td>
+<td>ID необходимой границы.</td>
 <td>path</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>accountId</td>
 <td>-</td>
-<td>The ID of the policy boundary level. Use the UUID of the account.</td>
+<td>ID уровня границы политики. Используйте UUID учетной записи.</td>
 <td>path</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
-<h3 id="response-codes">Response codes<a class="headerlink" href="#response-codes" title="Permanent link">&para;</a></h3>
+<h2 id="_3">Ответ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">Код ответа<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Type</th>
-<th>Description</th>
+<th>Код</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>204</strong></td>
 <td>-</td>
-<td>Successful response - policy boundary deleted</td>
+<td>Успешный ответ - граница политики удалена</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
 <td><a href="#openapi-definition-ErrorDto">ErrorDto</a></td>
-<td>Failed. The request is invalid</td>
+<td>Неудача. Запрос недействителен</td>
 </tr>
 <tr>
 <td><strong>404</strong></td>
 <td><a href="#openapi-definition-ErrorDto">ErrorDto</a></td>
-<td>Failed. The specified resource is not found.</td>
+<td>Неудача. Указанный ресурс не найден.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response-body-objects">Response body objects<a class="headerlink" href="#response-body-objects" title="Permanent link">&para;</a></h3>
-<h4 id="the-errordto-object">The <code>ErrorDto</code> object<a class="headerlink" href="#the-errordto-object" title="Permanent link">&para;</a></h4>
+<h3 id="_5">Объекты ответа<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="errordto">Объект <code>ErrorDto</code><a class="headerlink" href="#errordto" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>code</td>
 <td>number</td>
-<td>The code of the error.</td>
+<td>Код ошибки.</td>
 </tr>
 <tr>
 <td>message</td>
 <td>string</td>
-<td>A short description of the error.</td>
+<td>Краткое описание ошибки.</td>
 </tr>
 <tr>
 <td>errorsMap</td>
@@ -25570,7 +25570,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="response-body-json-models">Response body JSON models<a class="headerlink" href="#response-body-json-models" title="Permanent link">&para;</a></h3>
+<h3 id="json">Модели ответа JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -25589,8 +25589,8 @@
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>}
 </code></pre></div>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>In this example, the request deletes a policy boundary with policy boundary <code>UUID</code> of <strong>9a7b6c54-3d2e-4f10-a8b2-7cde9012f345</strong> for the <code>accountID</code> <strong>f1a2b3c4-d5e6-7890-ab12-34cd56ef7890</strong>.</p>
+<h2 id="_6">Пример<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>В этом примере запрос удаляет границу политики с UUID границы <strong>9a7b6c54-3d2e-4f10-a8b2-7cde9012f345</strong> для <code>accountID</code> <strong>f1a2b3c4-d5e6-7890-ab12-34cd56ef7890</strong>.</p>
 <h4 id="curl">Curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl --request DELETE \
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -25602,11 +25602,11 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>--header &#39;Authorization: Bearer abcdefjhij1234567890&#39;
 </code></pre></div>
-<h4 id="request-url">Request URL<a class="headerlink" href="#request-url" title="Permanent link">&para;</a></h4>
+<h4 id="url">URL запроса<a class="headerlink" href="#url" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries/9a7b6c54-3d2e-4f10-a8b2-7cde9012f345
 </code></pre></div>
-<h4 id="response-code">Response code<a class="headerlink" href="#response-code" title="Permanent link">&para;</a></h4>
-<p>204 - Successful response - policy boundary deleted.</p>
+<h4 id="_7">Код ответа<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>204 - Успешный ответ - граница политики удалена.</p>
 
 
 

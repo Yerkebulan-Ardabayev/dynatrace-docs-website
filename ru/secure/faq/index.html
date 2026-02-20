@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>Troubleshooting</li>
-<li>Updated on Jan 29, 2026</li>
+<li>Updated on Feb 23, 2026</li>
 </ul>
 <p>See below for answers to some of the most frequently asked questions about Dynatrace Application Security, grouped by topics.</p>
 <p>For troubleshooting articles related to Application Security, visit <a href="https://dt-url.net/dy122xtf">Dynatrace Communityï»¿</a>.</p>
@@ -25525,7 +25525,7 @@
 <p>To disable Runtime Vulnerability Analytics</p>
 </li>
 <li>
-<p>Go to <strong>Settings (New)</strong> &gt; <strong>Analyze and alert</strong> &gt; <strong>General settings</strong>.</p>
+<p>Go to <strong>Settings</strong> &gt; <strong>Analyze and alert</strong> &gt; <strong>General settings</strong>.</p>
 </li>
 <li>Under <strong>Third-party Vulnerability Analytics</strong>, turn off <strong>Enable Third-party Vulnerability Analytics</strong>.</li>
 <li>Under <strong>Code-level Vulnerability Analytics</strong>, turn off <strong>Enable Code-level Vulnerability Analytics</strong>.</li>
@@ -25533,7 +25533,7 @@
 <p>To disable Runtime Application Protection</p>
 </li>
 <li>
-<p>Go to <strong>Settings (New)</strong> &gt; <strong>Analyze and alert</strong> &gt; <strong>Application security</strong> &gt; <strong>Application protection (New)</strong>.</p>
+<p>Go to <strong>Settings</strong> &gt; <strong>Analyze and alert</strong> &gt; <strong>Application security</strong> &gt; <strong>Application protection (New)</strong>.</p>
 </li>
 <li>Turn off Runtime Application Protection.</li>
 </ul>
@@ -25572,7 +25572,7 @@
 <p>deprecated</p>
 <p>In <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities" title="Monitor the security issues of your third-party libraries."><img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong></a>, you can:</p>
 <ul>
-<li>Use the recommended fixes from <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor" title="Get recommendations for security fixes from Davis Security Advisor.">Davis Security Advisor</a> to upgrade to a non-vulnerable version of the vulnerable component</li>
+<li>Use the recommended <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor" title="Get recommendations for security fixes from Davis Security Advisor.">DSA fixes</a> to upgrade to a non-vulnerable version of the vulnerable component</li>
 <li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking" title="Track the remediation progress of vulnerabilities.">Set up tracking links for affected entities and follow up with their remediation progress</a></li>
 </ul>
 <h3 id="when-is-a-vulnerability-marked-as-resolved">When is a vulnerability marked as resolved?<a class="headerlink" href="#when-is-a-vulnerability-marked-as-resolved" title="Permanent link">&para;</a></h3>
@@ -25767,7 +25767,7 @@ To stop receiving notifications for this vulnerability, you can:</p>
 </ul>
 <p>Your custom rules override the global third-party vulnerability detection control setting. Any entity that doesn't match one of your rules will follow the global thirdâparty vulnerability detection setting.</p>
 <h3 id="where-can-i-find-examples-of-monitoring-rule-configurations">Where can I find examples of monitoring rule configurations?<a class="headerlink" href="#where-can-i-find-examples-of-monitoring-rule-configurations" title="Permanent link">&para;</a></h3>
-<p>If you need guidance for setting up monitoring rules in common scenarios such as monitoring only specific hosts, processes, Kubernetes namespaces, Kubernetes nodes, or excluding certain processes, you can refer to <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules" title="Common scenarios for defining monitoring rules for vulnerabilities based on resource attributes and Kubernetes labels.">Use cases for monitoring rules</a>. It provides practical examples that show how to configure rules for a variety of environments and requirements.</p>
+<p>If you need guidance for setting up monitoring rules in common scenarios such as monitoring only specific hosts, processes, Kubernetes namespaces, Kubernetes nodes, or excluding certain processes, you can refer to <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#usecases" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Use cases for new monitoring rules</a>. It provides practical examples that show how to configure rules for a variety of environments and requirements.</p>
 <h3 id="how-can-i-limit-runtime-vulnerability-analytics-monitoring-to-a-specific-management-zone">How can I limit Runtime Vulnerability Analytics monitoring to a specific management zone?<a class="headerlink" href="#how-can-i-limit-runtime-vulnerability-analytics-monitoring-to-a-specific-management-zone" title="Permanent link">&para;</a></h3>
 <p>Content below refers to the classic <img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong> app, which is deprecated.</p>
 <p><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Create a monitoring rule</a> that says <code>Do not monitor</code> if the management zone does not equal <code>&lt;your-management-zone&gt;</code>. After you add, edit, or remove a rule, allow up to 15 minutes for your changes to take effect.</p>
@@ -25775,8 +25775,8 @@ To stop receiving notifications for this vulnerability, you can:</p>
 <p>To enable Runtime Vulnerability Analytics only for selected parts of your environment, create monitoring rules that apply to the specific hosts or Kubernetes namespaces you want to monitor.</p>
 <p>You can follow these example use cases:</p>
 <ul>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules#monitor-processes-specific-host" title="Common scenarios for defining monitoring rules for vulnerabilities based on resource attributes and Kubernetes labels.">Monitor only the processes on specific hosts</a></li>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules#processes-specific-namespace" title="Common scenarios for defining monitoring rules for vulnerabilities based on resource attributes and Kubernetes labels.">Monitor only processes running in a specific Kubernetes namespace</a></li>
+<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#monitor-processes-specific-host" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Monitor only the processes on specific hosts</a></li>
+<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#processes-specific-namespace" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Monitor only processes running in a specific Kubernetes namespace</a></li>
 </ul>
 <p>These examples show how to disable global monitoring and then create resourceâattribute monitoring rules that selectively enable monitoring for the entities you choose.</p>
 <h2 id="change-status">Change status<a class="headerlink" href="#change-status" title="Permanent link">&para;</a></h2>

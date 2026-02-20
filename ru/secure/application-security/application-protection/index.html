@@ -25479,7 +25479,17 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
-<li>Updated on Nov 03, 2025</li>
+<li>Updated on Feb 23, 2026</li>
+</ul>
+<p>What youâll find on this page</p>
+<ul>
+<li><a href="#capabilities">Explore Runtime Application Protection capabilities</a></li>
+<li><a href="#mechanism">How RAP detects and analyzes attacks</a></li>
+<li><a href="#prereq">Review prerequisites</a></li>
+<li><a href="#tech">Check supported technologies</a></li>
+<li><a href="#start">How to enable and configure RAP</a></li>
+<li><a href="#next">What you can do with RAP next</a></li>
+<li><a href="#consumption">Understand how RAP is licensed</a></li>
 </ul>
 <p>Dynatrace Runtime Application Protection leverages code-level insights and transaction analysis to detect and block exploitation attempts on your applications automatically and in real time.</p>
 <h2 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">&para;</a></h2>
@@ -25497,7 +25507,7 @@
 <p>Before you begin, ensure your environment meets the necessary requirements:</p>
 <ul>
 <li>You're using a supported version of Dynatrace. Review the <a href="/docs/whats-new" title="Read the product news and the release notes and find out which Documentation topics are new.">release notes</a> for currently supported versions.</li>
-<li>For Runtime Application Protection to work properly, make sure deep monitoring is enabled in <strong>Settings</strong> &gt; <strong>Processes and containers</strong> &gt; <strong>Process group monitoring</strong>.</li>
+<li>For Runtime Application Protection to work properly, make sure deep monitoring is enabled in <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>Process groups</strong> &gt; <strong>Process group monitoring</strong>.</li>
 </ul>
 <p>For .NET, Go, and Python technologies, for which automatic deep monitoring is disabled, you need to manually enable deep monitoring on each host. For more information, see <a href="/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring" title="Ways to customize process-group monitoring">Process deep monitoring</a>.</p>
 <h2 id="supported-technologies">Supported technologies<a class="headerlink" href="#supported-technologies" title="Permanent link">&para;</a></h2>
@@ -25552,7 +25562,7 @@
 <p>Enable Runtime Application Protection</p>
 <p>To enable Runtime Application Protection globally on your environment</p>
 <ol>
-<li>Go to <strong>Settings (New)</strong> &gt; <strong>Analyze and alert</strong> &gt; <strong>Application security</strong> &gt; <strong>Application protection (New</strong>).</li>
+<li>Go to <strong>Settings</strong> &gt; <strong>Analyze and alert</strong> &gt; <strong>Application security</strong> &gt; <strong>Application protection (New</strong>).</li>
 <li>Enable Runtime Application Protection.</li>
 <li>Select <strong>Enable</strong>.</li>
 <li>Restart your processes.</li>
@@ -25560,7 +25570,7 @@
 <p>Define the global attack control</p>
 <p>To define the global attack control for all process groups</p>
 <ol>
-<li>Go to <strong>Settings (New)</strong> &gt; <strong>Analyze and alert</strong> &gt; <strong>Application security</strong> &gt; <strong>Application protection (New)</strong> &gt; <strong>Monitoring rules</strong> &gt; <strong>Default rules</strong>.</li>
+<li>Go to <strong>Settings</strong> &gt; <strong>Analyze and alert</strong> &gt; <strong>Application security</strong> &gt; <strong>Application protection (New)</strong> &gt; <strong>Monitoring rules</strong> &gt; <strong>Default rules</strong>.</li>
 <li>
 <p>Edit the attack control per technology:</p>
 </li>
@@ -25577,14 +25587,14 @@
 </ol>
 <p>Enable OneAgent monitoring</p>
 <ol>
-<li>Go to <strong>Settings (New)</strong> and select <strong>Collect and capture</strong> &gt; <strong>General monitoring settings</strong> &gt; <strong>OneAgent features</strong>.</li>
+<li>Go to <strong>Settings</strong> and select <strong>Collect and capture</strong> &gt; <strong>General monitoring settings</strong> &gt; <strong>OneAgent features</strong>.</li>
 <li>Filter by <code>code-level attack evaluation</code> and enable the feature for the technologies you want to monitor.</li>
 <li>Select <strong>Save changes</strong>.</li>
 <li>Restart your processes.</li>
 </ol>
 <p>OneAgent version 1.309 To detect SSRF attacks, you also need to enable SSRF attack evaluation. See below for instructions.</p>
 <ol>
-<li>Go to <strong>Settings (New)</strong> and select <strong>Collect and capture</strong> &gt; <strong>General monitoring settings</strong> &gt; <strong>OneAgent features</strong>.</li>
+<li>Go to <strong>Settings</strong> and select <strong>Collect and capture</strong> &gt; <strong>General monitoring settings</strong> &gt; <strong>OneAgent features</strong>.</li>
 <li>Find and enable <code>Java SSRF code-level vulnerability and attack evaluation</code>.</li>
 <li>Select <strong>Save changes</strong>.</li>
 <li>Restart your processes.</li>
@@ -25596,7 +25606,11 @@
 <li><a href="/docs/secure/application-security/application-protection/application-protection-rules" title="Create, modify, and delete rules for specific attacks.">Set up Runtime Application Protection monitoring rules</a>.</li>
 </ul>
 <h2 id="consumption">Consumption<a class="headerlink" href="#consumption" title="Permanent link">&para;</a></h2>
-<p>Runtime Application Protection is licensed based on the consumption of <a href="/docs/license/capabilities/application-security/runtime-application-protection" title="Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.">GiB-hours</a> if you're using the <a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS) licensing model</a>, or <a href="/docs/license/monitoring-consumption-classic/application-security-units" title="Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.">Application Security units (ASUs)</a> if you're using the <a href="/docs/license/monitoring-consumption-classic" title="Understand how Dynatrace monitoring consumption is calculated for classic licensing.">Dynatrace classic licensing</a>.</p>
+<p>Runtime Application Protection consumption depends on your Dynatrace licensing model:</p>
+<ul>
+<li><a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS)</a>: measured in GiBâhours. For details, see <a href="/docs/license/capabilities/application-security/runtime-application-protection" title="Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.">Calculate your consumption of Runtime Application Protection (RAP) (DPS)</a>.</li>
+<li><a href="/docs/license/monitoring-consumption-classic" title="Understand how Dynatrace monitoring consumption is calculated for classic licensing.">Dynatrace classic licensing</a>: measured in Application Security units (ASUs). For details, see <a href="/docs/license/monitoring-consumption-classic/application-security-units" title="Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.">Application Security monitoring (ASUs)</a>.</li>
+</ul>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/secure/faq" title="Frequently asked questions about Dynatrace Application Security.">Application Security FAQ</a></li>

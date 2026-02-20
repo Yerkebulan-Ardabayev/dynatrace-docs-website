@@ -25531,8 +25531,9 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://sts.amazonaws.com/
 </code></pre></div>
-<p>AWS STS global endpoint is not supported. Make sure that <code>sts.&lt;REGION&gt;.amazonaws.com</code> is accessible for the regions you want to monitor.</p>
-<p>See <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html">AWS STS Regionalized endpointsï»¿</a> for more details.</p>
+<p>Starting with Dynatrace version 1.329, the AWS STS global endpoint is not supported. Make sure that <code>sts.&lt;REGION&gt;.amazonaws.com</code> is accessible for the regions you want to monitor.</p>
+<p>The <code>us-west-2</code> region is now the default region for ActiveGate. In case of connectivity issues, ensure that the <code>sts.us-west-2.amazonaws.com</code> endpoint is enabled.</p>
+<p>See <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html">AWS STS Regionalized endpointsï»¿</a> for details.</p>
 <ul>
 <li>AWS Resource Groups Tagging</li>
 </ul>

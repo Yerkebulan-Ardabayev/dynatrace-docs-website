@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-dynatrace-intelligencedavis-problems-app">Документация Dynatrace: dynatrace-intelligence/davis-problems-app<a class="headerlink" href="#dynatrace-dynatrace-intelligencedavis-problems-app" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-19
+Сгенерировано: 2026-02-20
 Файлов в разделе: 2</p>
 <hr />
 <h2 id="dynatrace-intelligencedavis-problems-appproblems-app-custom-problem-field-examplesmd">dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples.md<a class="headerlink" href="#dynatrace-intelligencedavis-problems-appproblems-app-custom-problem-field-examplesmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Dynatrace Intelligence causal AI use cases
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples
-scraped: 2026-02-19T21:13:15.805487</p>
+scraped: 2026-02-20T21:08:01.038258</p>
 <hr />
 <h1 id="dynatrace-intelligence-causal-ai-use-cases">Dynatrace Intelligence causal AI use cases<a class="headerlink" href="#dynatrace-intelligence-causal-ai-use-cases" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-causal-ai-use-cases_1">Dynatrace Intelligence causal AI use cases<a class="headerlink" href="#dynatrace-intelligence-causal-ai-use-cases_1" title="Permanent link">&para;</a></h1>
@@ -25615,7 +25615,7 @@ scraped: 2026-02-19T21:13:15.805487</p>
 <hr />
 <p>title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-19T21:11:44.773946</p>
+scraped: 2026-02-20T21:07:00.972234</p>
 <hr />
 <h1 id="problems-app">Problems app<a class="headerlink" href="#problems-app" title="Permanent link">&para;</a></h1>
 <h1 id="problems-app_1">Problems app<a class="headerlink" href="#problems-app_1" title="Permanent link">&para;</a></h1>
@@ -25623,7 +25623,7 @@ scraped: 2026-02-19T21:11:44.773946</p>
 <li>Latest Dynatrace</li>
 <li>App</li>
 <li>15-min read</li>
-<li>Updated on Jan 28, 2026</li>
+<li>Updated on Feb 17, 2026</li>
 </ul>
 <p>Quickly triaging, investigating, and remediating incoming incidents is the core challenge for operations teams. <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> supports them by automatically analyzing complex incidents, collecting all the context, and presenting the root cause and impact within a consistent view.</p>
 <p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>, backed by data from Grail and Dynatrace Intelligence analysis, helps operational and site reliability teams reduce the mean time to repair (MTTR) by presenting every aspect of the incident.</p>
@@ -25685,9 +25685,10 @@ scraped: 2026-02-19T21:11:44.773946</p>
 <li>A feed of all problems in the last 2 hours. To help operation teams spot open problems regardless of which filter is set, open problems remain on top of the feed no matter how long they are open.</li>
 <li>A problem chart at the top visualizes any abnormality with a high number of problems in the past. Select a peak on the chart to drill into it and investigate further.</li>
 </ul>
-<p><img alt="Problems app - problem feed view" src="https://dt-cdn.net/images/problem-table-1920-1ff1983035.webp" /></p>
+<p><img alt="An example of the Problems app problem feed view" src="https://dt-cdn.net/images/problems-app-problem-feed-view-1920-f7f665e813.png" /></p>
 <h4 id="filtering">Filtering<a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h4>
-<p>To focus on your domain and triage problems that affect it, set filters. The two most common filtersâ<strong>Status</strong> and <strong>Category</strong>âhave selectable settings to the left of the table for quick access. To set other filters, use the filter bar above the table.</p>
+<p>To focus on your domain and triage problems that affect it, set filters. The three most common filtersâ<strong>Status</strong>, <strong>Category</strong>, and <strong>Impact</strong>âhave selectable settings to the left of the table for quick access. Your selections there automatically add the corresponding filters to the  filter bar above the table.</p>
+<p>To set other filters, enter them directly in the filter bar.</p>
 <ul>
 <li>
 <p><strong>Status</strong>âCan be <code>Active</code> or <code>Closed</code>.</p>
@@ -25702,6 +25703,12 @@ scraped: 2026-02-19T21:11:44.773946</p>
 <li>
 <p>If you select one or more categories in the controls on the left, the corresponding filters are also displayed in the filter bar.</p>
 </li>
+<li>
+<p><strong>Impact</strong>âIndicates the type of the impacted area, such as frontends, services, infrastructure, or environments.</p>
+</li>
+<li>
+<p>If you select one or more impact areas in the controls on the left, the corresponding filters are also displayed in the filter bar.</p>
+</li>
 </ul>
 <p>Filtering with the filter bar allows you to focus your feed on problems based on multiple criteria, such as status, number of affected entities, root cause entity, and more. Place your cursor in the input field to see all the available options. By default, filtering criteria are combined by the <strong>AND</strong> logic. For each criterion, Dynatrace Intelligence provides a list of suggested values, based on your problem feed.</p>
 <p>For example, to see problems that are raised due to an increase of JavaScript errors and that persist for longer than 1 hour, use the following filter criteria:</p>
@@ -25710,6 +25717,23 @@ scraped: 2026-02-19T21:11:44.773946</p>
 <li><code>Duration&gt;1h</code></li>
 <li><code>Category=Error</code></li>
 <li><code>Name=JavaScript error rate increase</code></li>
+</ul>
+<p>By using the filter bar, you can also narrow your feed to focus on specific impact areas (such as <code>Frontend</code>, <code>Service</code>, or <code>Infrastructure</code>) with the <code>Impact</code> parameter, or use text search to find problems that contain a specific string. To use search, you can:</p>
+<ul>
+<li>Input any text in the filter bar and select <strong>Search in all data</strong>.</li>
+<li>Enter <code>* ~ &lt;your_text&gt;</code> in the filter bar and select <strong>Update</strong>.</li>
+</ul>
+<p>Fields considered for text search</p>
+<p>The following fields in the problem record are considered for the text search:</p>
+<ul>
+<li><code>event.id</code></li>
+<li><code>event.name</code></li>
+<li><code>event.description</code></li>
+<li><code>event.status</code></li>
+<li><code>display_id</code></li>
+<li><code>labels.alerting_profile</code></li>
+<li><code>entity_tags</code></li>
+<li><code>root_cause_entity_name</code></li>
 </ul>
 <p>The problem filter bar supports Boolean logic filters. This allows you to combine <strong>AND</strong> and <strong>OR</strong> criteria and create complex filters using parentheses to group Boolean terms. You can see a Boolean logic filter statement within <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> app in the example below.</p>
 <p><img alt="Powerful Boolean Filters within the Problems Filter Bar." src="https://dt-cdn.net/images/complex-problem-filters-1920-db9346a85b.png" /></p>

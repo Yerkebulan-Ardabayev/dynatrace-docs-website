@@ -25691,13 +25691,8 @@
 </ul>
 <h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
 <p>Authentication details passed to the Dynatrace API when activating monitoring configuration are obfuscated and it's impossible to retrieve them.</p>
-<h4 id="credential-vault">Credential vault<a class="headerlink" href="#credential-vault" title="Permanent link">&para;</a></h4>
-<p>The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:</p>
-<ul>
-<li><strong>Credential type</strong>âUser and password</li>
-<li><strong>Credential scope</strong>âSynthetic (in case of external vault usage) and Extension authentication scopes enabled</li>
-<li><strong>Owner access only</strong> is enabled only for credential owners</li>
-</ul>
+<h4 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h4>
+<p>Basic authentication requires only a username and password.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&quot;authentication&quot;: {
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -25706,20 +25701,68 @@
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>&quot;useCredentialVault&quot;: true,
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>&quot;username&quot;: &quot;username&quot;,
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>&quot;credentialVaultId&quot;: &quot;some-credential-vault-id&quot;
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>&quot;password&quot;: &quot;password&quot;
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>}
 </code></pre></div>
+<h4 id="aws-iam">AWS IAM<a class="headerlink" href="#aws-iam" title="Permanent link">&para;</a></h4>
+<p>ActiveGate version 1.325+</p>
+<p>Allows connection to Amazon RDS or Amazon Aurora databases using AWS IAM database authentication. Requires AWS Identity and Access Management (IAM) set up and an AWS IAM identity available to the ActiveGate host (for example, an attached IAM role).</p>
+<p>The ActiveGate uses the IAM role assigned to it to authenticate, so there's no need to store a database password. You provide a username and a region (AWS region code, for example, <code>eu-central-1</code>). If <code>auto-detect</code> is used (ActiveGate version 1.331+) as the region value, the ActiveGate's region will be used. Otherwise, the region must match the region where the database is hosted.</p>
+<p><strong>Note</strong>: AWS IAM authentication requires SSL/TLS to be enabled. Set <code>ssl</code> to <code>true</code> in your endpoint configuration. For more information, see <a href="#ssl">SSL</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&quot;authentication&quot;: {
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>&quot;scheme&quot;: &quot;identity_aws&quot;,
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>&quot;username&quot;: &quot;username&quot;,
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>&quot;region&quot;: &quot;eu-central-1&quot;
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>}
+</code></pre></div>
+<h4 id="credential-vault">Credential vault<a class="headerlink" href="#credential-vault" title="Permanent link">&para;</a></h4>
+<p>The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:</p>
+<ul>
+<li><strong>Credential type</strong>âUser and password</li>
+<li><strong>Credential scope</strong>âSynthetic (in case of external vault usage) and Extension authentication scopes enabled</li>
+<li><strong>Owner access only</strong> is enabled only for credential owners</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&quot;authentication&quot;: {
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>&quot;scheme&quot;: &quot;basic&quot;,
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>&quot;useCredentialVault&quot;: true,
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>&quot;credentialVaultId&quot;: &quot;some-credential-vault-id&quot;
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>}
+</code></pre></div>
 <h3 id="ssl">SSL<a class="headerlink" href="#ssl" title="Permanent link">&para;</a></h3>
 <p>ActiveGate version 1.269+</p>
 <p>Enable SSL to make the data source verify the server certificate and use SSL encryption instead of native encryption.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&quot;ssl&quot;: true
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&quot;ssl&quot;: true
 </code></pre></div>
 <h4 id="enable-ssl-without-a-local-truststore">Enable SSL without a local truststore<a class="headerlink" href="#enable-ssl-without-a-local-truststore" title="Permanent link">&para;</a></h4>
 <p>When SSL is enabled and the server's certificate chain is publicly verifiable (for example, issued by Azure or other well-known CAs), there's no need to manually create a truststore. The system will automatically trust the server's certificate based on the trusted CAs in the environment.</p>
@@ -25728,7 +25771,7 @@
 <li>In the <code>userdata</code> directory on the ActiveGates running the SQL data source, manually create a PKCS12 truststore with the name <code>sqlds_truststore</code> and password <code>sqlds_truststore</code>.</li>
 </ol>
 <p>Command to create a truststore with keytool:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>keytool -genkey -keystore sqlds_truststore -storepass sqlds_truststore -keyalg DSA
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>keytool -genkey -keystore sqlds_truststore -storepass sqlds_truststore -keyalg DSA
 </code></pre></div>
 <p>Location of <code>userdata</code> directory:</p>
 <ul>
@@ -25737,19 +25780,19 @@
 <li>Add the server's certificate to it.</li>
 </ul>
 <p>Command to import a certificate with keytool:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>keytool -import -keystore sqlds_truststore -file .\ora.crt -alias oracle
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>keytool -import -keystore sqlds_truststore -file .\ora.crt -alias oracle
 </code></pre></div>
 <h4 id="validate-ssl-certificates">Validate SSL certificates<a class="headerlink" href="#validate-ssl-certificates" title="Permanent link">&para;</a></h4>
 <p>ActiveGate version 1.269+</p>
 <p>The certificate is additionally validated with hostname, which means that the domain from the certificate must match the one from the endpoint passed in the monitoring configuration.</p>
 <p>Enable this option when connecting to databases using custom certificates.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&quot;validateCertificates&quot;: true
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&quot;validateCertificates&quot;: true
 </code></pre></div>
 <h3 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h3>
 <p>Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see <a href="/docs/ingest-from/extensions/develop-your-extensions/sign-extensions" title="Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.">Sign extension</a>.</p>
 <p>The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see <a href="/docs/ingest-from/dynatrace-activegate/activegate-group" title="Understand the basic concepts of ActiveGate groups.">ActiveGate group</a>.</p>
 <p>Use the following format when defining the ActiveGate group:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&quot;scope&quot;: &quot;ag_group-&lt;ActiveGate-group-name&gt;&quot;,
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&quot;scope&quot;: &quot;ag_group-&lt;ActiveGate-group-name&gt;&quot;,
 </code></pre></div>
 <p>Replace <code>&lt;ActiveGate-group-name&gt;</code> with the actual name.</p>
 

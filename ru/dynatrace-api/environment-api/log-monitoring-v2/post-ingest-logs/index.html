@@ -25540,6 +25540,13 @@
 <td>Optional</td>
 </tr>
 <tr>
+<td>X-Dynatrace-Attr</td>
+<td>string</td>
+<td>(Optional) Contains ampersandâseparated keyâvalue pairs representing additional log attributes to be added to each ingested log record. If the same key appears multiple times, all values are captured as a multiâvalue attribute. Query parameters take precedence over values provided in this header.</td>
+<td>header</td>
+<td>Optional</td>
+</tr>
+<tr>
 <td>X-Dynatrace-Options</td>
 <td>string</td>
 <td>(Optional) Contains ampersand-separated Dynatrace-specific parameters. Query parameter takes precedence over the header value. For more details, refer to the <a href="https://dt-url.net/lyi2yte">documentationï»¿</a>.</td>
@@ -25591,6 +25598,13 @@
 <li><code>date</code></li>
 <li><code>published_date</code></li>
 <li><code>syslog.timestamp</code></li>
+<li><code>time</code></li>
+<li><code>epochSecond</code></li>
+<li><code>startTime</code></li>
+<li><code>datetime</code></li>
+<li><code>ts</code></li>
+<li><code>timeMillis</code></li>
+<li><code>@t</code></li>
 <li>Supported formats: <code>UTC milliseconds</code>, <code>RFC3339</code>, and <code>RFC3164</code>.</li>
 <li>For unsupported timestamp formats, the current timestamp is used, and the value of the unsupported format is stored in the <code>unparsed_timestamp</code> attribute (for Log Monitoring Classic, this attribute isn't indexed).</li>
 <li>Log events older than the <em>Log Age</em> limit are discarded. Timestamps more than 10 minutes ahead of the current time are replaced with the current time. See the <strong>Limitations</strong> section below for details.</li>
@@ -25795,6 +25809,7 @@
 <li><code>dt.http.application_id</code></li>
 <li><code>dt.http.context_root</code></li>
 <li><code>dt.ingest.debug_messages</code></li>
+<li><code>dt.ingest.origin</code></li>
 <li><code>dt.ingest.warnings</code></li>
 <li><code>dt.kubernetes.cluster.id</code></li>
 <li><code>dt.kubernetes.cluster.name</code></li>

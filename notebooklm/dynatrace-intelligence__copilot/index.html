@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-dynatrace-intelligencecopilot">Документация Dynatrace: dynatrace-intelligence/copilot<a class="headerlink" href="#dynatrace-dynatrace-intelligencecopilot" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-19
+Сгенерировано: 2026-02-20
 Файлов в разделе: 9</p>
 <hr />
 <h2 id="dynatrace-intelligencecopilotchat-with-davis-copilotcopilot-conv-startersmd">dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters.md<a class="headerlink" href="#dynatrace-intelligencecopilotchat-with-davis-copilotcopilot-conv-startersmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Embedded conversation starters
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters
-scraped: 2026-02-18T21:31:53.728074</p>
+scraped: 2026-02-20T21:19:29.017892</p>
 <hr />
 <h1 id="embedded-conversation-starters">Embedded conversation starters<a class="headerlink" href="#embedded-conversation-starters" title="Permanent link">&para;</a></h1>
 <h1 id="embedded-conversation-starters_1">Embedded conversation starters<a class="headerlink" href="#embedded-conversation-starters_1" title="Permanent link">&para;</a></h1>
@@ -25717,7 +25717,7 @@ scraped: 2026-02-18T21:31:53.728074</p>
 <hr />
 <p>title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-19T21:34:36.830745</p>
+scraped: 2026-02-20T21:27:56.592538</p>
 <hr />
 <h1 id="dynatrace-assist">Dynatrace Assist<a class="headerlink" href="#dynatrace-assist" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-assist_1">Dynatrace Assist<a class="headerlink" href="#dynatrace-assist_1" title="Permanent link">&para;</a></h1>
@@ -25864,7 +25864,7 @@ scraped: 2026-02-19T21:34:36.830745</p>
 <hr />
 <p>title: Dynatrace Intelligence generative AI data privacy and security
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-data-privacy
-scraped: 2026-02-16T09:29:33.353940</p>
+scraped: 2026-02-20T21:23:58.134843</p>
 <hr />
 <h1 id="dynatrace-intelligence-generative-ai-data-privacy-and-security">Dynatrace Intelligence generative AI data privacy and security<a class="headerlink" href="#dynatrace-intelligence-generative-ai-data-privacy-and-security" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-generative-ai-data-privacy-and-security_1">Dynatrace Intelligence generative AI data privacy and security<a class="headerlink" href="#dynatrace-intelligence-generative-ai-data-privacy-and-security_1" title="Permanent link">&para;</a></h1>
@@ -25883,7 +25883,7 @@ scraped: 2026-02-16T09:29:33.353940</p>
 <p>Learn more about the <a href="/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI architecture and data flow</a>.</p>
 <h2 id="pii-masking_1">PII masking<a class="headerlink" href="#pii-masking_1" title="Permanent link">&para;</a></h2>
 <p>Dynatrace version 1.305+</p>
-<p>Starting with Dynatrace version 1.305, PII masking is in place for user prompts. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.</p>
+<p>PII masking is in place for user prompts interacting with all standard generative AI functionality. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.</p>
 <p>Currently masked fields include:</p>
 <ul>
 <li>Email address</li>
@@ -25898,6 +25898,7 @@ scraped: 2026-02-16T09:29:33.353940</p>
 <li>Canadian Social Insurance Number (SIN)</li>
 </ul>
 <p>In our logs and calls to LLM models, we replace values from the identified patterns above with fake patterns. This means that you'll be able see IBANs in logs, for example, but they'll be made up of random numbers, replacing the original values included in your prompts.</p>
+<p>Agentic  <strong>Dynatrace Assist</strong> doesn't provide any PII masking. In order to protect your data, when  <strong>Dynatrace Assist</strong> detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.</p>
 <h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI overview</a></li>
@@ -25909,7 +25910,7 @@ scraped: 2026-02-16T09:29:33.353940</p>
 <hr />
 <p>title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-19T21:13:05.520218</p>
+scraped: 2026-02-20T21:08:02.481345</p>
 <hr />
 <h1 id="discover-relevant-troubleshooting-guides-with-dynatrace-intelligence-generative-ai">Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI<a class="headerlink" href="#discover-relevant-troubleshooting-guides-with-dynatrace-intelligence-generative-ai" title="Permanent link">&para;</a></h1>
 <h1 id="discover-relevant-troubleshooting-guides-with-dynatrace-intelligence-generative-ai_1">Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI<a class="headerlink" href="#discover-relevant-troubleshooting-guides-with-dynatrace-intelligence-generative-ai_1" title="Permanent link">&para;</a></h1>
@@ -26243,7 +26244,7 @@ scraped: 2026-02-19T21:18:39.450735</p>
 <hr />
 <p>title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-19T21:16:18.395019</p>
+scraped: 2026-02-20T21:09:56.761082</p>
 <hr />
 <h1 id="dynatrace-intelligence-generative-ai-overview">Dynatrace Intelligence generative AI overview<a class="headerlink" href="#dynatrace-intelligence-generative-ai-overview" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-generative-ai-overview_1">Dynatrace Intelligence generative AI overview<a class="headerlink" href="#dynatrace-intelligence-generative-ai-overview_1" title="Permanent link">&para;</a></h1>
@@ -26290,7 +26291,7 @@ scraped: 2026-02-19T21:16:18.395019</p>
 <hr />
 <p>title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-19T21:27:31.845258</p>
+scraped: 2026-02-20T21:28:01.717876</p>
 <hr />
 <h1 id="dynatrace-intelligence-generative-ai-tips-for-writing-better-prompts">Dynatrace Intelligence generative AI - Tips for writing better prompts<a class="headerlink" href="#dynatrace-intelligence-generative-ai-tips-for-writing-better-prompts" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-generative-ai-tips-for-writing-better-prompts_1">Dynatrace Intelligence generative AI - Tips for writing better prompts<a class="headerlink" href="#dynatrace-intelligence-generative-ai-tips-for-writing-better-prompts_1" title="Permanent link">&para;</a></h1>
@@ -26387,7 +26388,7 @@ scraped: 2026-02-19T21:27:31.845258</p>
 <hr />
 <p>title: Query with natural language
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
-scraped: 2026-02-19T21:31:36.713395</p>
+scraped: 2026-02-20T21:28:31.346870</p>
 <hr />
 <h1 id="query-with-natural-language">Query with natural language<a class="headerlink" href="#query-with-natural-language" title="Permanent link">&para;</a></h1>
 <h1 id="query-with-natural-language_1">Query with natural language<a class="headerlink" href="#query-with-natural-language_1" title="Permanent link">&para;</a></h1>
@@ -26550,7 +26551,7 @@ scraped: 2026-02-19T21:31:36.713395</p>
 <hr />
 <p>title: Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-19T21:34:11.575607</p>
+scraped: 2026-02-20T21:20:16.001143</p>
 <hr />
 <h1 id="dynatrace-intelligence-agentic-and-generative-ai">Dynatrace Intelligence agentic and generative AI<a class="headerlink" href="#dynatrace-intelligence-agentic-and-generative-ai" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-agentic-and-generative-ai_1">Dynatrace Intelligence agentic and generative AI<a class="headerlink" href="#dynatrace-intelligence-agentic-and-generative-ai_1" title="Permanent link">&para;</a></h1>

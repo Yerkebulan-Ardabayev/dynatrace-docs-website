@@ -25566,7 +25566,7 @@
 <p>Learn more about the <a href="/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI architecture and data flow</a>.</p>
 <h2 id="pii-masking">PII masking<a class="headerlink" href="#pii-masking" title="Permanent link">&para;</a></h2>
 <p>Dynatrace version 1.305+</p>
-<p>Starting with Dynatrace version 1.305, PII masking is in place for user prompts. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.</p>
+<p>PII masking is in place for user prompts interacting with all standard generative AI functionality. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.</p>
 <p>Currently masked fields include:</p>
 <ul>
 <li>Email address</li>
@@ -25581,6 +25581,7 @@
 <li>Canadian Social Insurance Number (SIN)</li>
 </ul>
 <p>In our logs and calls to LLM models, we replace values from the identified patterns above with fake patterns. This means that you'll be able see IBANs in logs, for example, but they'll be made up of random numbers, replacing the original values included in your prompts.</p>
+<p>Agentic  <strong>Dynatrace Assist</strong> doesn't provide any PII masking. In order to protect your data, when  <strong>Dynatrace Assist</strong> detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI overview</a></li>

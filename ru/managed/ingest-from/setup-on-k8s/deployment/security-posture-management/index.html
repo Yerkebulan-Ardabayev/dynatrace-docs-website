@@ -25524,10 +25524,10 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Dynatrace version 1.305+ Dynatrace Operator version 1.5.0+ ActiveGate version 1.321+</p>
 <ul>
-<li><a href="/docs/secure/application-security/security-posture-management-hub" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">Security Posture Management</a> is licensed based on the consumption of <a href="/docs/license/capabilities/application-security/security-posture-management" title="Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.">host-hours</a> and requires the <a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS) licensing model</a>.</li>
+<li><a href="/docs/secure/application-security/spm" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">Security Posture Management</a> is licensed based on the consumption of <a href="/docs/license/capabilities/application-security/security-posture-management" title="Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.">host-hours</a> and requires the <a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS) licensing model</a>.</li>
 </ul>
 <p>If you're using <a href="/docs/license/monitoring-consumption-classic" title="Understand how Dynatrace monitoring consumption is calculated for classic licensing.">Dynatrace classic licensing</a>, or if you're on DPS but don't see the SPM capability enabled in your DPS rate card, please contact a Dynatrace product expert via live chat.
-* Review the <a href="/docs/secure/application-security/security-posture-management-hub#support" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">Supported compliance standards and technologies</a>.
+* Review the <a href="/docs/secure/application-security/spm#support" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">Supported compliance standards and technologies</a>.
 * <a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Set up Kubernetes monitoring</a>.</p>
 <ul>
 <li>Support is limited to compatibility with upstream Kubernetes and available for x86-64 CPU architectures only.</li>
@@ -25558,7 +25558,7 @@
 <li>
 <p>Kubernetes Security Posture Management:</p>
 <ul>
-<li><code>spec.kspm: {}</code>: Enables the KSPM Node Configuration Collector DaemonSet (for details, see <a href="/docs/secure/application-security/security-posture-management-hub#mechanism" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">How it works</a>)</li>
+<li><code>spec.kspm: {}</code>: Enables the KSPM Node Configuration Collector DaemonSet (for details, see <a href="/docs/secure/application-security/spm#mechanism" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">How it works</a>)</li>
 </ul>
 <p>KSPM mounts the hosts root filesystem by default. If you want to limit that to specific paths, you can use the field <code>spec.kspm.mappedHostPaths</code>. The <code>spec.kspm.mappedHostPaths</code> field defines the host paths that are mounted to the container. For a list of suggested paths, see the <a href="https://dt-url.net/ky03zzm">Dynatrace Operator repository sampleï»¿</a>.
    * ActiveGate with Kubernetes monitoring and additional configuration:</p>
@@ -25946,7 +25946,7 @@
 <h2 id="further-resources">Further resources<a class="headerlink" href="#further-resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li>For a use case scenario, see <a href="/docs/secure/use-cases/stay-compliant" title="Stay on top of your security measures, policies, and practices.">Stay compliant with Security Posture Management</a>.</li>
-<li>For a list of frequently asked questions on Kubernetes Security Posture Management, see <a href="/docs/secure/application-security/security-posture-management-hub#faq" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">FAQ</a>.</li>
+<li>For a list of frequently asked questions on Kubernetes Security Posture Management, see <a href="/docs/secure/application-security/spm#faq" title="Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.">FAQ</a>.</li>
 <li>For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see <a href="/docs/secure/threat-observability/dql-examples#compliance" title="DQL examples for security data powered by Grail.">Query compliance events</a>.</li>
 <li>For an overview of security data usage, see <a href="/docs/secure/threat-observability/concepts#security-data" title="Basic concepts related to Threat Observability">Security data on Grail</a>.</li>
 </ul>
