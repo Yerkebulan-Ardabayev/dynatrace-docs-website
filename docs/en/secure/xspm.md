@@ -1,7 +1,7 @@
 ---
 title: Security Posture Management
 source: https://www.dynatrace.com/docs/secure/xspm
-scraped: 2026-02-19T21:28:00.221994
+scraped: 2026-02-21T21:23:28.190825
 ---
 
 # Security Posture Management
@@ -36,8 +36,8 @@ Key use cases include:
 
 Prerequisites
 
-* Review the [supported compliance standards and technologies](/docs/secure/application-security/security-posture-management-hub#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
-* To take full advantage of the [Security Posture Management functionality](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."), you need to [deploy Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.").
+* Review the [supported compliance standards and technologies](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+* To take full advantage of the [Security Posture Management functionality](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."), you need to [deploy Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.").
 * Permissions: For a list of permissions required, go to  **Hub**, select ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, and display **Technical information**.
 * Prior knowledge: Understand Kubernetes.
 
@@ -60,7 +60,7 @@ To get started, follow the steps below.
 
 Optional
 
-You can configure which of your systems (or clusters, in the case of [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")) monitored by Dynatrace is covered by [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+You can configure which of your systems (or clusters, in the case of [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")) monitored by Dynatrace is covered by [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 1. Open ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**.
 2. On the **Overview** page, in the **My systems** table, enable or disable the desired systems.
@@ -100,7 +100,7 @@ Alternatively, you can enable or disable standards directly from ![Settings](htt
 1. Go to **Settings** > **Analyze and alert** > **Application Security** > **Security Posture Management**.
 2. Enable or disable the desired standards.
 
-Dynatrace assesses data received from your systems and searches for misconfigurations against the [supported compliance standards](/docs/secure/application-security/security-posture-management-hub#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). Results are reported in the app.
+Dynatrace assesses data received from your systems and searches for misconfigurations against the [supported compliance standards](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). Results are reported in the app.
 
 Try ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** and [share your feedbackï»¿](https://dt-url.net/1m03u6q) to help us improve.
 
@@ -131,7 +131,7 @@ Related blogs
 
 [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.")
 
-For a list of frequently asked questions regarding Security Posture Management, see [FAQ](/docs/secure/application-security/security-posture-management-hub#faq "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+For a list of frequently asked questions regarding Security Posture Management, see [FAQ](/docs/secure/application-security/spm#faq "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 * [Kubernetes security essentials: Container misconfigurations â From theory to exploitationï»¿](https://www.dynatrace.com/news/blog/kubernetes-security-essentials-container-misconfigurations-from-theory-to-exploitation/)
 * [Revolutionizing cloud security with observability context: Dynatrace Cloud Security addressing CADRï»¿](https://www.dynatrace.com/news/blog/revolutionizing-cloud-security-observability-cadr/)

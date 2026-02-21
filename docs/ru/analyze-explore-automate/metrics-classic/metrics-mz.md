@@ -1,7 +1,7 @@
 ---
 title: Filter classic metrics by management zone
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/metrics-mz
-scraped: 2026-02-20T21:16:09.332697
+scraped: 2026-02-21T21:17:58.023119
 ---
 
 # Filter classic metrics by management zone

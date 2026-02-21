@@ -1,23 +1,23 @@
 ---
-title: Platform tokens API
+title: Токены платформы API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/platform-tokens-api
-scraped: 2026-02-18T05:57:53.958137
+scraped: 2026-02-21T21:24:31.470924
 ---
 
-# Platform tokens API
+# Токены платформы API
 
-# Platform tokens API
+# Токены платформы API
 
-* Latest Dynatrace
-* Reference
-* Published Dec 04, 2025
+* Последнее Dynatrace
+* Справочник
+* Опубликовано дек 04, 2025
 
-[### List all platform tokens
+[### Список всех токенов платформы
 
-Get an overview of all platform tokens in your Dynatrace account.](/docs/dynatrace-api/account-management-api/platform-tokens-api/get-all-platform-tokens "Get an overview of platform tokens in your Dynatrace account via the Dynatrace API.")[### Delete a platform token
+Получите обзор всех токенов платформы в вашем Dynatrace аккаунте.](/docs/dynatrace-api/account-management-api/platform-tokens-api/get-all-platform-tokens "Получите обзор токенов платформы в вашем Dynatrace аккаунте через Dynatrace API.")[### Удаление токена платформы
 
-Delete a platform token.](/docs/dynatrace-api/account-management-api/platform-tokens-api/delete-platform-token "Delete a platform token from your Dynatrace account via the Dynatrace API.")[### Edit a platform token's expiration date
+Удалите токен платформы.](/docs/dynatrace-api/account-management-api/platform-tokens-api/delete-platform-token "Удалите токен платформы из вашего Dynatrace аккаунта через Dynatrace API.")[### Редактирование даты истечения срока действия токена платформы
 
-Edit the expiration date of a platform token.](/docs/dynatrace-api/account-management-api/platform-tokens-api/put-platform-token-exp-date "Edit a platform token in your Dynatrace account via the Dynatrace API.")[### Edit a platform token's status
+Редактируйте дату истечения срока действия токена платформы.](/docs/dynatrace-api/account-management-api/platform-tokens-api/put-platform-token-exp-date "Редактируйте токен платформы в вашем Dynatrace аккаунте через Dynatrace API.")[### Редактирование статуса токена платформы
 
-Edit the status of a platform token.](/docs/dynatrace-api/account-management-api/platform-tokens-api/put-platform-token-status "Edit a platform token in your Dynatrace account via the Dynatrace API.")
+Редактируйте статус токена платформы.](/docs/dynatrace-api/account-management-api/platform-tokens-api/put-platform-token-status "Редактируйте токен платформы в вашем Dynatrace аккаунте через Dynatrace API.")

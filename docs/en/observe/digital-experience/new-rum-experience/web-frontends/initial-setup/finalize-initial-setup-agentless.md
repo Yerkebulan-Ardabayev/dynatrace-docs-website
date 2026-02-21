@@ -1,7 +1,7 @@
 ---
 title: Finalize the initial setup for your agentless frontend
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-agentless
-scraped: 2026-02-19T21:33:10.086171
+scraped: 2026-02-21T21:24:58.538598
 ---
 
 # Finalize the initial setup for your agentless frontend

@@ -1,7 +1,7 @@
 ---
 title: Обнаружение сбоев API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-api/failure-detection
-scraped: 2026-02-20T21:22:37.246993
+scraped: 2026-02-21T21:18:36.208334
 ---
 
 # Обнаружение сбоев API
@@ -13,7 +13,7 @@ scraped: 2026-02-20T21:22:37.246993
 
 [### Список всех наборов параметров
 
-Получите обзор всех наборов параметров для правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-all "Просмотрите все наборы параметров обнаружения сбоев вашей среды мониторинга через Dynatrace API.")[### Просмотр набора параметров
+Получите обзор всех наборов параметров для правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-all "Просмотрите все наборы параметров обнаружения сбоев в вашей среде мониторинга через Dynatrace API.")[### Просмотр набора параметров
 
 Просмотрите конфигурацию всех наборов параметров для правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-parameter-set "Просмотрите набор параметров обнаружения сбоев через Dynatrace API.")
 
@@ -32,7 +32,7 @@ scraped: 2026-02-20T21:22:37.246993
 
 [### Список всех правил
 
-Получите обзор всех правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-all "Просмотрите все правила обнаружения сбоев вашей среды мониторинга через Dynatrace API.")[### Просмотр правила
+Получите обзор всех правил обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-all "Просмотрите все правила обнаружения сбоев в вашей среде мониторинга через Dynatrace API.")[### Просмотр правила
 
 Просмотрите конфигурацию правила обнаружения сбоев.](/docs/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-rule "Просмотрите правило обнаружения сбоев через Dynatrace API.")[### Перестановка правил
 
@@ -53,4 +53,4 @@ scraped: 2026-02-20T21:22:37.246993
 
 ## Связанные темы
 
-* [Настройка обнаружения сбоев службы](/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection "Узнайте, какие типы ошибок службы Dynatrace автоматически обнаруживает, и как настроить параметры обнаружения сбоев в соответствии с вашими конкретными требованиями.")
+* [Настройка обнаружения сбоев службы](/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection "Узнайте, какие типы ошибок службы Dynatrace обнаруживает автоматически, и как настроить параметры обнаружения сбоев в соответствии с вашими конкретными требованиями.")

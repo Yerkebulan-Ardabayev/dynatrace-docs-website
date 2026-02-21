@@ -1,7 +1,7 @@
 ---
 title: Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris
-scraped: 2026-02-20T21:09:34.152086
+scraped: 2026-02-21T21:06:59.778285
 ---
 
 # Solaris

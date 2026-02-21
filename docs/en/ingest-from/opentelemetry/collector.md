@@ -1,7 +1,7 @@
 ---
 title: Dynatrace OTel Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector
-scraped: 2026-02-20T21:11:47.349173
+scraped: 2026-02-21T21:19:23.493945
 ---
 
 # Dynatrace OTel Collector

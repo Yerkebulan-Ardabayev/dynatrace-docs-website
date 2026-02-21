@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Platform Subscription API - Cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation
-scraped: 2026-02-20T21:20:25.434853
+scraped: 2026-02-21T21:20:26.959663
 ---
 
 # Dynatrace Platform Subscription API - Cost allocation

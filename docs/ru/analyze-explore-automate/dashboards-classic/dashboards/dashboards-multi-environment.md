@@ -1,7 +1,7 @@
 ---
 title: Create remote/multi-environment Dynatrace dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment
-scraped: 2026-02-18T21:26:30.118956
+scraped: 2026-02-21T21:12:13.150473
 ---
 
 # Create remote/multi-environment Dynatrace dashboards
@@ -127,62 +127,64 @@ Now that you have established a link to the remote environment, you can create d
 
 ### Create a tile that displays remote data
 
-Чтобы создать плитку, которая получает данные из удаленной среды
 
-1. Отобразите панель мониторинга, на которой будет отображаться плитка.
-2. Выберите **Редактировать**.
-3. Выберите или добавьте плитку, на которой вы хотите отобразить данные из удаленной среды.  
-   Раздел **Environment** панели настроек плитки отображает имя среды, из которой эта плитка получает данные мониторинга.
 
-   * **По умолчанию (локально)** настраивает плитку на получение данных из локальной среды Dynatrace.
-   * Все другие перечисленные среды являются удаленными средами, для которых установлено соединение.
-4. Выберите удаленную среду, которую вы хотите, чтобы выбранная плитка запрашивала.  
-   Если вы назвали удаленную среду `Бостон` при добавлении удаленной среды в предыдущей процедуре, `Бостон` должен быть в этом списке.
+To create a tile that pulls data from the remote environment
 
-   ![Пример: выбор удаленной среды для плитки](https://dt-cdn.net/images/select-tile-environment-example-317-72348cc81f.png)
-5. Выберите **Готово**, чтобы отобразить завершенную панель мониторинга.
-6. Наведите указатель мыши на иконку фильтра плитки, чтобы увидеть выбор среды.
+1. Display the dashboard that will display the tile.
+2. Select **Edit**.
+3. Select or add a tile on which you want to display data from the remote environment.  
+   The **Environment** section of the tile settings pane displays the name of the environment from which that tile pulls monitoring data.
 
-   ![Пример: отображение фильтров плитки, чтобы увидеть выбор удаленной среды](https://dt-cdn.net/images/tile-remote-environment-tooltip-example-495-96be8d3ec4.png)
+   * **Default (local)** configures the tile to pull its data from the local Dynatrace environment.
+   * All other listed environments are remote environments for which a connection has been established.
+4. Select the remote environment that you want the selected tile to query.  
+   If you named the remote environment `Boston` when you added the remote environment in the previous procedure, `Boston` should be on this list.
 
-## Примеры
+   ![Example: select remote environment for tile](https://dt-cdn.net/images/select-tile-environment-example-317-72348cc81f.png)
+5. Select **Done** to display the finished dashboard.
+6. Hover over the tile filter icon to see the environment selection.
 
-### Одни и те же плитки, разные среды
+   ![Example: display tile filters to see remote environment selection](https://dt-cdn.net/images/tile-remote-environment-tooltip-example-495-96be8d3ec4.png)
 
-В этом примере мы создаем панель мониторинга, которая отображает состояние здоровья хоста и сетевой статус для локальной среды и удаленной среды рядом. Мы предполагаем, что вы уже добавили удаленную среду в свою локальную среду.
+## Examples
 
-1. Перейдите к ![Классические панели мониторинга](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Классические панели мониторинга") **Классические панели мониторинга**, выберите **Создать панель мониторинга**, дайте ей имя и выберите **Создать**.
-2. Перетащите две плитки **Заголовок** на панель мониторинга (или перетащите одну и затем клонируйте ее).
-3. Отредактируйте один заголовок, чтобы он говорил **Локально**, и другой, чтобы он говорил **Удаленно**.
-4. Перетащите две плитки **Состояние здоровья хоста** на панель мониторинга (или перетащите одну и затем клонируйте ее).  
-   Поместите одну под заголовком **Локально** и другую под заголовком **Удаленно**.
-5. Перетащите две плитки **Сетевой статус** на панель мониторинга (или перетащите одну и затем клонируйте ее).  
-   Поместите одну под заголовком **Локально** и другую под заголовком **Удаленно**.
+### Same tiles, different environments
 
-   На этом этапе все плитки запрашивают локальную среду, поэтому у вас есть две одинаковые плитки **Состояние здоровья хоста** и две одинаковые плитки **Сетевой статус**.
+In this example, we create a dashboard that shows the host health and network status for the local environment and a remote environment side by side. We assume that you have already added the remote environment to your local environment.
 
-   ![Одинаковые плитки, одна и та же среда](https://dt-cdn.net/images/same-tiles-same-environments-595-51063546a9.png)
-6. Под заголовком **Удаленно** отредактируйте плитки **Состояние здоровья хоста** и **Сетевой статус**, чтобы обе они запрашивали удаленную среду (`Бостон` в этом примере).
+1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, select **Create dashboard**, give it a name, and select **Create**.
+2. Drag two **Header** tiles to the dashboard (or drag one and then clone it).
+3. Edit one header to say **Local** and the other to say **Remote**.
+4. Drag two **Host health** tiles to the dashboard (or drag one and then clone it).  
+   Position one under the **Local** header and the other under the **Remote** header.
+5. Drag two **Network status** tiles to the dashboard (or drag one and then clone it).  
+   Position one under the **Local** header and the other under the **Remote** header.
 
-   ![Пример: выбор удаленной среды для плитки](https://dt-cdn.net/images/select-tile-environment-example-317-72348cc81f.png)
-7. Выберите **Готово**, чтобы отобразить панель мониторинга.
+   At this point, all of the tiles query the local environment, so you have two identical **Host health** tiles and two identical **Network status** tiles.
 
-   * Плитки под **Локально** по-прежнему отображают локальную информацию о хосте и сети.
-   * Плитки под **Удаленно** теперь запрашивают удаленную среду:
+   ![Same tiles, same environments](https://dt-cdn.net/images/same-tiles-same-environments-595-51063546a9.png)
+6. Under the **Remote** header, edit the **Host health** and **Network status** tiles so that both of them query the remote environment (`Boston` in this example).
 
-     + Удаленные плитки отображают состояние здоровья хоста и сетевой статус для удаленной среды, а не для локальной среды по умолчанию.
-     + Удаленные плитки каждая отображают иконку фильтра. Наведите указатель мыши на иконку, чтобы увидеть имя среды.
+   ![Example: select remote environment for tile](https://dt-cdn.net/images/select-tile-environment-example-317-72348cc81f.png)
+7. Select **Done** to display the dashboard.
 
-   ![Одинаковые плитки, разные среды](https://dt-cdn.net/images/same-tiles-different-environments-595-d747473897.png)
+   * The tiles under **Local** still display local host and network information.
+   * The tiles under **Remote** now query the remote environment:
 
-Вы можете, конечно, добавить другие типы плиток и указать на дополнительные удаленные среды.
+     + The remote tiles display the host health and network status for the remote environment, not the default local environment.
+     + The remote tiles each display a filter icon. Hover over the icon to see the environment name.
 
-## Устранение неполадок
+   ![Same tiles, different environments](https://dt-cdn.net/images/same-tiles-different-environments-595-d747473897.png)
 
-[Сообщение `Verification failed, please check your settings: Constraints violated.` отображается при добавлении удаленной среды](https://dt-url.net/t903mr6)
+You can of course add other tile types and point to additional remote environments.
 
-## Связанные темы
+## Troubleshooting
 
-* [Классические панели мониторинга API](/docs/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией панели мониторинга через классическую конфигурацию Dynatrace API. ")
-* [Удаленные среды API](/docs/dynatrace-api/configuration-api/remote-environments "Управляйте конфигурациями удаленных сред Dynatrace через конфигурацию Dynatrace API. ")
-* [Что такое среда мониторинга?](/docs/discover-dynatrace/get-started/monitoring-environment "Поймите и узнайте, как работать с средами мониторинга. ")
+[`Verification failed, please check your settings: Constraints violated.` message displayed when adding a remote environmentï»¿](https://dt-url.net/t903mr6)
+
+## Related topics
+
+* [Dashboards Classic API](/docs/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")
+* [Remote environments API](/docs/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")
+* [What is a monitoring environment?](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")

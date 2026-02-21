@@ -1,7 +1,7 @@
 ---
 title: Manage IBM Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db
-scraped: 2026-02-20T21:16:13.324840
+scraped: 2026-02-21T21:17:36.490017
 ---
 
 # Manage IBM Database extensions

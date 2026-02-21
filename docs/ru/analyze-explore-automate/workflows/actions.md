@@ -1,7 +1,7 @@
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-18T21:22:33.089517
+scraped: 2026-02-21T21:16:08.705114
 ---
 
 # Workflows Connectors
@@ -11,7 +11,7 @@ scraped: 2026-02-18T21:22:33.089517
 * Latest Dynatrace
 * Overview
 * 3-min read
-* Updated on Feb 05, 2026
+* Updated on Feb 17, 2026
 
 You can select Workflows Connectors from the Dynatrace Platform catalog. The Workflows Connectors have various actions you can use in your workflow task. For example, you can use actions to create Jira tasks, send Slack notifications, and direct them based on extracted entity ownership information.
 
@@ -53,11 +53,15 @@ PagerDuty workflow actions come bundled with **PagerDuty** Connector, which you 
 
 ### Red Hat Ansible Connector
 
-Red Hat Ansible workflow actions come bundled with **Red Hat Ansible** Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible "Automate running of Ansible jobs based on your monitoring data and events.")[![Azure Connector](https://dt-cdn.net/images/azure-for-workflows-lcgzeur-256-0e765fdb69.png "Azure Connector")
+Red Hat Ansible workflow actions come bundled with **Red Hat Ansible** Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible "Automate running of Ansible jobs based on your monitoring data and events.")[![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector")
 
-### Azure Connector
+### Microsoft Entra ID Connector
 
-Workflow actions come bundled with **Azure Connector**, which you can install in your environment via Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")[![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows")
+Microsoft Entra ID workflow actions come bundled with **Microsoft Entra ID** Connector, which you can install in your environment via Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")[![Microsoft Azure Connector](https://dt-cdn.net/images/azure-for-workflows-lcgzeur-256-0e765fdb69.png "Microsoft Azure Connector")
+
+### Microsoft Azure Connector
+
+Microsoft Azure workflow actions come bundled with **Microsoft Azure** Connector, which you can install in your environment via Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/azure "The Microsoft Azure Connector integration provides powerful actions for various Azure Services, for example, virtual machines and storage.")[![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows")
 
 ### ServiceNow Connector
 

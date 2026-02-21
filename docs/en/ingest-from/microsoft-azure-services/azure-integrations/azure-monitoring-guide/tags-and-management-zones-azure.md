@@ -1,7 +1,7 @@
 ---
 title: Tags and management zones for Azure integration
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/tags-and-management-zones-azure
-scraped: 2026-02-20T21:24:31.577595
+scraped: 2026-02-21T21:20:42.131195
 ---
 
 # Tags and management zones for Azure integration

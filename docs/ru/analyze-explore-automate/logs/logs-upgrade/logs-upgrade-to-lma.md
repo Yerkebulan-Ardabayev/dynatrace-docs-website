@@ -1,7 +1,7 @@
 ---
 title: Upgrade Log Monitoring Classic to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma
-scraped: 2026-02-20T21:15:17.427588
+scraped: 2026-02-21T21:23:19.861603
 ---
 
 # Upgrade Log Monitoring Classic to Log Management and Analytics

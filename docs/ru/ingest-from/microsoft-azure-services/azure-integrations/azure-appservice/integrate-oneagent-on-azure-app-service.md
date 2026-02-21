@@ -1,7 +1,7 @@
 ---
 title: Integrate OneAgent on Azure App Service for Windows
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-azure-app-service
-scraped: 2026-02-18T21:26:05.741245
+scraped: 2026-02-21T21:13:45.014063
 ---
 
 # Integrate OneAgent on Azure App Service for Windows
@@ -836,7 +836,7 @@ If the application is running at the time of removal, the site extension recogni
 
 For Azure App Service, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
-## Troubleshoot
+## Troubleshooting
 
 * [No route registered for /dynatrace/ when accessing the site extensionï»¿](https://dt-url.net/44038l8)
 * [503 Service Unavailable for Web App and Kuduï»¿](https://dt-url.net/o62387e)

@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Apigee monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apigee-monitoring
-scraped: 2026-02-20T21:13:07.913942
+scraped: 2026-02-21T21:17:52.886575
 ---
 
 # Google Cloud Apigee monitoring

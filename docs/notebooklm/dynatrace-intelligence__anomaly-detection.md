@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/anomaly-detection
 Язык: Русский (RU)
-Сгенерировано: 2026-02-20
+Сгенерировано: 2026-02-21
 Файлов в разделе: 16
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Adjust the sensitivity of anomaly detection for infrastructure
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
-scraped: 2026-02-18T21:27:43.070234
+scraped: 2026-02-21T21:09:11.431000
 ---
 
 # Adjust the sensitivity of anomaly detection for infrastructure
@@ -167,7 +167,7 @@ To configure detection sensitivity on the global level
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-20T21:10:54.121279
+scraped: 2026-02-21T21:19:15.567649
 ---
 
 # Anomaly Detection status types
@@ -731,7 +731,7 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 ---
 title: Anomaly Detection app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
-scraped: 2026-02-20T21:10:55.498090
+scraped: 2026-02-21T21:14:30.024473
 ---
 
 # Anomaly Detection app
@@ -1025,7 +1025,7 @@ You can provide additional parameters as key-value pairs. For a list of possible
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-02-20T21:10:59.468519
+scraped: 2026-02-21T21:22:10.789230
 ---
 
 # Auto-adaptive thresholds for anomaly detection
@@ -1194,7 +1194,7 @@ You should consider this design choice when configuring alerting settings to ens
 ---
 title: Metric key events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events
-scraped: 2026-02-20T21:25:39.314483
+scraped: 2026-02-21T21:24:27.644588
 ---
 
 # Metric key events
@@ -1380,7 +1380,7 @@ If there are sparse counts across many entities (for example, an error count acr
 ---
 title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-02-20T21:10:56.783091
+scraped: 2026-02-21T21:13:56.733264
 ---
 
 # Metric events
@@ -1952,7 +1952,7 @@ You have learned how to set up and configure a custom alert via API. Now you can
 ---
 title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-02-20T21:10:49.097959
+scraped: 2026-02-21T21:19:32.809305
 ---
 
 # Static thresholds for anomaly detection
@@ -1991,7 +1991,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ---
 title: Anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
-scraped: 2026-02-20T21:07:24.963805
+scraped: 2026-02-21T21:08:12.481322
 ---
 
 # Anomaly detection

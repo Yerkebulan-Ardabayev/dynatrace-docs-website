@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/reference
 Язык: Русский (RU)
-Сгенерировано: 2026-02-20
+Сгенерировано: 2026-02-21
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Dynatrace Intelligence predictive AI analysis
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
-scraped: 2026-02-20T21:07:26.321189
+scraped: 2026-02-21T21:08:17.749417
 ---
 
 # Dynatrace Intelligence predictive AI analysis
@@ -1046,7 +1046,7 @@ After the training is finished, Dynatrace uses the seasonal model to detect anom
 ---
 title: AI models
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
-scraped: 2026-02-18T21:23:19.912480
+scraped: 2026-02-21T21:14:26.182275
 ---
 
 # AI models

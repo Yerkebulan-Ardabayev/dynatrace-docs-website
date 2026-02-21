@@ -1,7 +1,7 @@
 ---
 title: Manage Dynatrace deployments using GitOps
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops
-scraped: 2026-02-20T21:20:58.617551
+scraped: 2026-02-21T21:21:01.041945
 ---
 
 # Manage Dynatrace deployments using GitOps

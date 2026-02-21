@@ -1,7 +1,7 @@
 ---
 title: Business event processing via classic pipeline
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-processing-classic-pipeline
-scraped: 2026-02-18T21:24:24.186740
+scraped: 2026-02-21T21:14:11.309609
 ---
 
 # Business event processing via classic pipeline

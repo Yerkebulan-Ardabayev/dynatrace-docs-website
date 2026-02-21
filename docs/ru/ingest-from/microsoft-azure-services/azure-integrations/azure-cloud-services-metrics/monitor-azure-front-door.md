@@ -1,7 +1,7 @@
 ---
 title: Azure Front Door (classic) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-front-door
-scraped: 2026-02-20T21:19:52.542251
+scraped: 2026-02-21T21:26:20.114862
 ---
 
 # Azure Front Door (classic) monitoring

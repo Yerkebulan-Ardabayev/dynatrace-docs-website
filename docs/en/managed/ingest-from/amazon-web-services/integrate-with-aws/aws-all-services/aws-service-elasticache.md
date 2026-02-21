@@ -1,7 +1,7 @@
 ---
 title: Amazon ElastiCache monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticache
-scraped: 2026-02-18T05:58:35.345301
+scraped: 2026-02-21T21:25:42.612509
 ---
 
 # Amazon ElastiCache monitoring

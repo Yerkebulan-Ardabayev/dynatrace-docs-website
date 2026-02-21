@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure Virtual Machines
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vm
-scraped: 2026-02-19T21:15:21.324839
+scraped: 2026-02-21T21:12:45.028546
 ---
 
 # Monitor Azure Virtual Machines

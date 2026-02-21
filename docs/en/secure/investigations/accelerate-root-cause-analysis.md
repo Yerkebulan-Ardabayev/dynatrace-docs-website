@@ -1,7 +1,7 @@
 ---
 title: Accelerate root cause analysis
 source: https://www.dynatrace.com/docs/secure/investigations/accelerate-root-cause-analysis
-scraped: 2026-02-20T21:15:32.219336
+scraped: 2026-02-21T21:22:16.965760
 ---
 
 # Accelerate root cause analysis

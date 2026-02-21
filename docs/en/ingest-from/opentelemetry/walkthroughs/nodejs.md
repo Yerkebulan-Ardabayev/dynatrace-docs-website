@@ -1,7 +1,7 @@
 ---
 title: Instrument your JavaScript application on Node.js with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/nodejs
-scraped: 2026-02-20T21:16:54.561505
+scraped: 2026-02-21T21:22:30.378503
 ---
 
 # Instrument your JavaScript application on Node.js with OpenTelemetry

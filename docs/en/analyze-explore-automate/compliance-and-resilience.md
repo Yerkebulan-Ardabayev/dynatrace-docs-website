@@ -1,7 +1,7 @@
 ---
 title: Compliance and resilience
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience
-scraped: 2026-02-18T05:47:32.440648
+scraped: 2026-02-21T21:16:19.502904
 ---
 
 # Compliance and resilience
@@ -47,7 +47,7 @@ Dynatrace helps you comprehensively map the entire IT environment in real time. 
 
 ### Security Posture Management
 
-[Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") helps detect, visualize, analyze, and remediate security posture and compliance findings, including misconfigurations and regulatory compliance assessments.
+[Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") helps detect, visualize, analyze, and remediate security posture and compliance findings, including misconfigurations and regulatory compliance assessments.
 
 ![Security Posture Management](https://dt-cdn.net/images/image003-1432-112de6ebf6.png)
 

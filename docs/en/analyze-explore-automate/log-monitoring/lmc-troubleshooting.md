@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Log Monitoring (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting
-scraped: 2026-02-20T21:26:38.253475
+scraped: 2026-02-21T21:21:08.403519
 ---
 
 # Troubleshooting Log Monitoring (Logs Classic)

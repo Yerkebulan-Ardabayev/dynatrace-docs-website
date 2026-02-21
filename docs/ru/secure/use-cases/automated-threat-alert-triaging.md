@@ -1,7 +1,7 @@
 ---
 title: Automated threat-alert triaging
 source: https://www.dynatrace.com/docs/secure/use-cases/automated-threat-alert-triaging
-scraped: 2026-02-18T05:48:34.092962
+scraped: 2026-02-21T21:25:27.417608
 ---
 
 # Automated threat-alert triaging
@@ -43,7 +43,7 @@ The same scenario can be applied to other supported integrations for enrichment 
 
 Import the sample workflow available as a template in the **AbuseIPDB** app.
 
-1. In Dynatrace, open **Settings** > **AbuseIPDB**.
+1. In Dynatrace, open **Settings**, then search for and select **AbuseIPDB**.
 2. In **Templates**, select and import the sample workflow.
 
 2. Enable enrichment
@@ -71,3 +71,7 @@ Example notification:
 5. Save workflow
 
 Schedule and save the workflow to be triggered automatically.
+
+## Related topics
+
+* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")

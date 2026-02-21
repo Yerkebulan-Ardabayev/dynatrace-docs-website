@@ -1,7 +1,7 @@
 ---
 title: Azure Recovery Services Vault
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-recovery-services-vault
-scraped: 2026-02-18T21:36:11.458184
+scraped: 2026-02-21T21:27:28.521940
 ---
 
 # Azure Recovery Services Vault

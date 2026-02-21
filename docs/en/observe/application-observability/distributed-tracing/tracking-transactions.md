@@ -1,7 +1,7 @@
 ---
 title: Span and trace context propagation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/tracking-transactions
-scraped: 2026-02-20T21:08:07.420748
+scraped: 2026-02-21T21:08:57.948580
 ---
 
 # Span and trace context propagation

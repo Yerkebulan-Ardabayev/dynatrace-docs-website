@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/davis-problems-app
 Язык: Русский (RU)
-Сгенерировано: 2026-02-20
+Сгенерировано: 2026-02-21
 Файлов в разделе: 2
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Dynatrace Intelligence causal AI use cases
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples
-scraped: 2026-02-20T21:08:01.038258
+scraped: 2026-02-21T21:07:20.593607
 ---
 
 # Dynatrace Intelligence causal AI use cases
@@ -162,7 +162,7 @@ This approach allows you to enhance the overall efficiency and effectiveness of 
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-20T21:07:00.972234
+scraped: 2026-02-21T21:06:42.721313
 ---
 
 # Problems app

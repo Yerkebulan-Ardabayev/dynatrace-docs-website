@@ -1,7 +1,7 @@
 ---
 title: OpenPipeline processing examples
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/processing-examples
-scraped: 2026-02-19T21:18:47.791539
+scraped: 2026-02-21T21:11:29.477239
 ---
 
 # OpenPipeline processing examples

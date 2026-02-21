@@ -1,7 +1,7 @@
 ---
 title: Notebooks and Dashboards use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/use-cases
-scraped: 2026-02-20T21:13:05.335553
+scraped: 2026-02-21T21:26:42.288604
 ---
 
 # Notebooks and Dashboards use cases

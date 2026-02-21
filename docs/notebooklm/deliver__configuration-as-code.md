@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-02-20
+Сгенерировано: 2026-02-21
 Файлов в разделе: 14
 ---
 
@@ -624,7 +624,7 @@ Dedicated commands exist for account resources: [Account](/docs/deliver/configur
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-20T21:11:50.090120
+scraped: 2026-02-21T21:19:04.381121
 ---
 
 # Monaco resources
@@ -1978,7 +1978,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-20T21:20:13.312799
+scraped: 2026-02-21T21:22:39.028836
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -4329,7 +4329,7 @@ skip: true
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-20T21:15:06.265723
+scraped: 2026-02-21T21:20:19.757676
 ---
 
 # Monaco API support and access permission handling
@@ -4876,7 +4876,7 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-20T21:18:17.400759
+scraped: 2026-02-21T21:25:23.423784
 ---
 
 # Monaco concepts
@@ -4934,7 +4934,7 @@ Dynatrace resource configuration
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-20T21:12:11.290333
+scraped: 2026-02-21T21:26:11.692828
 ---
 
 # Manage configurations with Monaco

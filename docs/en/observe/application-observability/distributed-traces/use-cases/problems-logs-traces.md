@@ -1,7 +1,7 @@
 ---
 title: Leverage log enrichment for traces to resolve problems
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces
-scraped: 2026-02-20T21:17:50.537773
+scraped: 2026-02-21T21:20:03.120647
 ---
 
 # Leverage log enrichment for traces to resolve problems

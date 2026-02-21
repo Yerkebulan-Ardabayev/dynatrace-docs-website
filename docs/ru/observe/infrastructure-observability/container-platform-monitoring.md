@@ -1,7 +1,7 @@
 ---
 title: Container platform monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring
-scraped: 2026-02-18T21:23:00.662341
+scraped: 2026-02-21T21:15:44.905303
 ---
 
 # Container platform monitoring

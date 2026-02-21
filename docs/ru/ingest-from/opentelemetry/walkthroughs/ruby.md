@@ -1,7 +1,7 @@
 ---
 title: Instrument your Ruby application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/ruby
-scraped: 2026-02-18T21:26:10.696882
+scraped: 2026-02-21T21:13:32.321356
 ---
 
 # Instrument your Ruby application with OpenTelemetry

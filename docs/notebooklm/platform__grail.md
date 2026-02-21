@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/grail
 Язык: Русский (RU)
-Сгенерировано: 2026-02-20
+Сгенерировано: 2026-02-21
 Файлов в разделе: 23
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: What is Dynatrace Grail?
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-grail
-scraped: 2026-02-20T21:07:44.702070
+scraped: 2026-02-21T21:08:55.695941
 ---
 
 # What is Dynatrace Grail?
@@ -637,7 +637,7 @@ b79cb3ba-745e-5d9a-8903-4a02327a7e09
 ---
 title: Dynatrace Pattern Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language
-scraped: 2026-02-20T21:27:23.941915
+scraped: 2026-02-21T21:14:31.110959
 ---
 
 # Dynatrace Pattern Language
@@ -1048,7 +1048,7 @@ Traverses source nodes to target nodes in the specified direction, following edg
 ---
 title: DQL data types
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/data-types
-scraped: 2026-02-20T21:10:37.123105
+scraped: 2026-02-21T21:21:54.191049
 ---
 
 # DQL data types
@@ -1460,7 +1460,7 @@ A set of key-value pair data whose value can be any DQL data type.
 ---
 title: DQL best practices
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-best-practices
-scraped: 2026-02-20T21:24:40.642972
+scraped: 2026-02-21T21:25:22.193670
 ---
 
 # DQL best practices
@@ -2120,7 +2120,7 @@ events
 ---
 title: Use DQL queries
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-guide
-scraped: 2026-02-20T21:10:46.471457
+scraped: 2026-02-21T21:11:15.016140
 ---
 
 # Use DQL queries
@@ -2520,7 +2520,7 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
 ---
 title: DQL use cases
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-use-cases
-scraped: 2026-02-19T21:26:29.878161
+scraped: 2026-02-21T21:27:01.854530
 ---
 
 # DQL use cases
@@ -5878,7 +5878,7 @@ upper(content)
 ---
 title: DQL functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions
-scraped: 2026-02-20T21:10:42.477235
+scraped: 2026-02-21T21:16:26.806701
 ---
 
 # DQL functions
@@ -6889,7 +6889,7 @@ Creates a record from the keys and values of the parameter.
 ---
 title: DQL operators
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/operators
-scraped: 2026-02-20T21:10:01.220871
+scraped: 2026-02-21T21:24:05.360923
 ---
 
 # DQL operators
@@ -7932,7 +7932,7 @@ Only strings allow patterns.
 ---
 title: Dynatrace Query Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language
-scraped: 2026-02-20T21:07:19.569445
+scraped: 2026-02-21T21:08:11.293309
 ---
 
 # Dynatrace Query Language
@@ -8345,7 +8345,7 @@ fetch spans
 ---
 title: Configure advanced permissions with security context
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/advanced-permission-setup
-scraped: 2026-02-20T21:24:59.612509
+scraped: 2026-02-21T21:20:44.670033
 ---
 
 # Configure advanced permissions with security context
@@ -8442,7 +8442,7 @@ You can also use [policy boundaries](/docs/manage/identity-access-management/per
 ---
 title: Permissions in Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
-scraped: 2026-02-20T21:10:30.713711
+scraped: 2026-02-21T21:10:55.642980
 ---
 
 # Permissions in Grail
@@ -9189,7 +9189,7 @@ ALLOW storage:system:read;
 ---
 title: Organize data
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
-scraped: 2026-02-20T21:19:05.618208
+scraped: 2026-02-21T21:11:08.930131
 ---
 
 # Organize data
@@ -11128,7 +11128,7 @@ Only Smartscape nodes can be filtered using segments, meaning that Smartscape ed
 ---
 title: Grail
 source: https://www.dynatrace.com/docs/platform/grail
-scraped: 2026-02-20T21:08:38.031958
+scraped: 2026-02-21T21:07:36.845310
 ---
 
 # Grail

@@ -1,7 +1,7 @@
 ---
 title: Threat Observability
 source: https://www.dynatrace.com/docs/secure/threat-observability
-scraped: 2026-02-20T21:08:32.766582
+scraped: 2026-02-21T21:07:37.934473
 ---
 
 # Threat Observability

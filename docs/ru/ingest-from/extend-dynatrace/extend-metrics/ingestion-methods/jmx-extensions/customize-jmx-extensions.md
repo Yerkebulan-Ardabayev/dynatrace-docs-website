@@ -1,7 +1,7 @@
 ---
 title: Customize JMX extensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions/customize-jmx-extensions
-scraped: 2026-02-20T21:11:52.746797
+scraped: 2026-02-21T21:21:35.469224
 ---
 
 # Customize JMX extensions
