@@ -25,7 +25,7 @@
     
     
       
-        <title>Migrate from Topology and Smartscape API to Monitored entities API - Dynatrace Managed - Документация</title>
+        <title>Перейти от Topology и Smartscape API к Monitored entities API - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#migrate-from-topology-and-smartscape-api-to-monitored-entities-api" class="md-skip">
+        <a href="#topology-smartscape-api-monitored-entities-api" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Migrate from Topology and Smartscape API to Monitored entities API
+              Перейти от Topology и Smartscape API к Monitored entities API
             
           </span>
         </div>
@@ -25474,30 +25474,30 @@
 
 
 
-<h1 id="migrate-from-topology-and-smartscape-api-to-monitored-entities-api">Migrate from Topology and Smartscape API to Monitored entities API<a class="headerlink" href="#migrate-from-topology-and-smartscape-api-to-monitored-entities-api" title="Permanent link">&para;</a></h1>
-<h1 id="migrate-from-topology-and-smartscape-api-to-monitored-entities-api_1">Migrate from Topology and Smartscape API to Monitored entities API<a class="headerlink" href="#migrate-from-topology-and-smartscape-api-to-monitored-entities-api_1" title="Permanent link">&para;</a></h1>
+<h1 id="topology-smartscape-api-monitored-entities-api">Перейти от Topology и Smartscape API к Monitored entities API<a class="headerlink" href="#topology-smartscape-api-monitored-entities-api" title="Permanent link">&para;</a></h1>
+<h1 id="topology-smartscape-api-monitored-entities-api_1">Перейти от Topology и Smartscape API к Monitored entities API<a class="headerlink" href="#topology-smartscape-api-monitored-entities-api_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Reference</li>
-<li>Published Mar 22, 2023</li>
+<li>Ссылка</li>
+<li>Опубликовано 22 марта 2023 г.</li>
 </ul>
-<p>The <a href="/docs/dynatrace-api/environment-api/topology-and-smartscape" title="Learn about the Dynatrace Topology and Smartscape API.">Topology and Smartscape API</a> has been deprecated with <a href="/docs/whats-new/dynatrace-api/sprint-242" title="Changelog for Dynatrace API version 1.242">Dynatrace version 1.263</a>. Its replacement is the <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Learn about the Dynatrace Monitored entities API.">Monitored entities API</a>. We recommend that you migrate to the new API at your earliest convenience.</p>
-<p>This migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.</p>
-<h2 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h2>
-<p>The Monitored entities API offers you the following new features:</p>
+<p><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape" title="Узнайте о Dynatrace Topology и Smartscape API.">Topology и Smartscape API</a> был заменен с <a href="/docs/whats-new/dynatrace-api/sprint-242" title="Журнал изменений для Dynatrace API версии 1.242">Dynatrace версией 1.263</a>. Его заменой является <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о Dynatrace Monitored entities API.">Monitored entities API</a>. Мы рекомендуем перейти на новую API как можно скорее.</p>
+<p>Этот переход влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на область действия токена для аутентификации запросов.</p>
+<h2 id="_1">Новые функции<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Monitored entities API предлагает следующие новые функции:</p>
 <ul>
-<li>Entity type agnostic endpointâyou can query every type of entity via the same URL</li>
-<li>Powerful <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Configure the entity selector for Environment API endpoints.">entity selector</a> that helps you to filter entities you want to read</li>
-<li>Unified timeframe selector</li>
-<li>Customizable return valueâyou can control which entity properties are included in the response</li>
-<li>Entity types endpoints</li>
-<li>Custom tags endpoints</li>
+<li>Конечная точка, независимая от типа сущности — вы можете запрашивать любые типы сущностей через один и тот же URL</li>
+<li>Мощный <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Настройте селектор сущностей для Environment API конечных точек.">селектор сущностей</a> для фильтрации сущностей, которые вы хотите прочитать</li>
+<li>Унифицированный селектор временного интервала</li>
+<li>Настраиваемое возвращаемое значение — вы можете контролировать, какие свойства сущности включены в ответ</li>
+<li>Конечные точки типов сущностей</li>
+<li>Конечные точки пользовательских тегов</li>
 </ul>
-<h2 id="base-url">Base URL<a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h2>
+<h2 id="url">Базовый URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>new Monitored entities</th>
-<th>old Topology and Smartscape</th>
+<th>новые Monitored entities</th>
+<th>старый Topology и Smartscape</th>
 </tr>
 </thead>
 <tbody>
@@ -25515,52 +25515,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="authentication-token-scope">Authentication token scope<a class="headerlink" href="#authentication-token-scope" title="Permanent link">&para;</a></h2>
+<h2 id="_2">Область действия токена аутентификации<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>new Monitored entities</th>
-<th>old Topology and Smartscape</th>
+<th>новые Monitored entities</th>
+<th>старый Topology и Smartscape</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Read entities</strong> (<code>entities.read</code>) <strong>Write entities</strong> (<code>entities.write</code>)</td>
-<td><strong>Access problem and event feed, metrics, and topology</strong> (<code>DataExport</code>)</td>
+<td><strong>Чтение сущностей</strong> (<code>entities.read</code>) <strong>Запись сущностей</strong> (<code>entities.write</code>)</td>
+<td><strong>Доступ к ленте проблем и событий, метрикам и топологии</strong> (<code>DataExport</code>)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
-<p>To learn about new query/body parameters, see the documentation of individual requests in <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Learn about the Dynatrace Monitored entities API.">Monitored entities API</a>.</p>
-<h2 id="changes-in-workflow">Changes in workflow<a class="headerlink" href="#changes-in-workflow" title="Permanent link">&para;</a></h2>
-<p>With the upgrade to the Monitored entities API, some workflows require sending additional requests or calling additional endpoints. Be sure to adapt your automation accordingly.</p>
-<h3 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h3>
-<p>When you query entities in a bulk, pagination is used to reduce the payload size.</p>
+<h2 id="_3">Параметры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о Dynatrace Monitored entities API.">Monitored entities API</a>.</p>
+<h2 id="_4">Изменения в рабочем процессе<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>С обновлением до Monitored entities API некоторые рабочие процессы требуют отправки дополнительных запросов или вызова дополнительных конечных точек. Убедитесь, что вы адаптируете свою автоматизацию соответственно.</p>
+<h3 id="_5">Пагинация<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Когда вы запрашиваете сущности в批ке, используется пагинация для уменьшения размера полезной нагрузки.</p>
 <ol>
-<li>Specify the number of entities per page in the <strong>pageSize</strong> query parameter.</li>
-<li>Use the cursor from the <strong>nextPageKey</strong> field of the previous response in the <strong>nextPageKey</strong> query parameter to obtain subsequent pages.</li>
+<li>Укажите количество сущностей на странице в параметре запроса <strong>pageSize</strong>.</li>
+<li>Используйте курсор из поля <strong>nextPageKey</strong> предыдущего ответа в параметре запроса <strong>nextPageKey</strong>, чтобы получить последующие страницы.</li>
 </ol>
-<h3 id="create-custom-devices">Create custom devices<a class="headerlink" href="#create-custom-devices" title="Permanent link">&para;</a></h3>
-<p>In the Monitored entities API, you can't assign tags to the custom device upon creation. If you need to assign tags to your custom device, use a separate request to the <a href="/docs/dynatrace-api/environment-api/custom-tags/post-tags" title="Assign custom tags to monitored entities via Dynatrace API.">POST custom tags</a> endpoint.</p>
-<h3 id="report-data-to-custom-devices">Report data to custom devices<a class="headerlink" href="#report-data-to-custom-devices" title="Permanent link">&para;</a></h3>
-<p>In the Monitored entities API, you can't report data to custom devices. Use the <a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Ingest custom metrics to Dynatrace via Metrics v2 API.">POST ingest data points</a> call instead.</p>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<p>Here are some examples of differences in API usage.</p>
-<h3 id="list-entities">List entities<a class="headerlink" href="#list-entities" title="Permanent link">&para;</a></h3>
-<p>In this example, we're querying the list of hosts that were active within the last 2 hours. Also, we don't need the full information about the host: we only need monitoring mode and the list of tags, assigned to the host. The result is truncated to two entries.</p>
-<p>Compare the following tabs to see how we do this using the new Monitored entities API and the deprecated Topology and Smartscape API:</p>
+<h3 id="_6">Создание пользовательских устройств<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>В Monitored entities API вы не можете присвоить теги пользовательскому устройству при его создании. Если вам нужно присвоить теги вашему пользовательскому устройству, используйте отдельный запрос к конечной точке <a href="/docs/dynatrace-api/environment-api/custom-tags/post-tags" title="Присвойте пользовательские теги отслеживаемым сущностям через Dynatrace API.">POST пользовательские теги</a>.</p>
+<h3 id="_7">Отчетность данных в пользовательские устройства<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>В Monitored entities API вы не можете отчитываться о данных в пользовательские устройства. Вместо этого используйте вызов <a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Ингестируйте пользовательские метрики в Dynatrace через Metrics v2 API.">POST ингестируемые данные</a>.</p>
+<h2 id="_8">Примеры<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Вот некоторые примеры различий в использовании API.</p>
+<h3 id="_9">Список сущностей<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>В этом примере мы запрашиваем список хостов, которые были активны в течение последних 2 часов. Кроме того, нам не нужна полная информация о хосте: нам нужен только режим мониторинга и список тегов, присвоенных хосту. Результат обрезан до двух записей.</p>
+<p>Сравните следующие вкладки, чтобы увидеть, как мы делаем это, используя новые Monitored entities API и устаревший Topology и Smartscape API:</p>
 <p>Monitored entities API</p>
-<p>Topology and Smartscape API</p>
-<p>In the Monitored entities API:</p>
+<p>Topology и Smartscape API</p>
+<p>В Monitored entities API:</p>
 <ul>
-<li>You can control which fields are returned (via the <strong>fields</strong> parameter). In this example, we use the <strong>monitoringMode</strong> and <strong>tags</strong> fields. Type, display name, and entity ID are always included in the response.</li>
-<li>The timeframe is defined via the <strong>from</strong> query parameter. It supports multiple formats; see the individual request documentation to learn more about them.</li>
-<li>The result of the query is split into pages. You can control the page size with the <strong>pageSize</strong> parameter. In this example, the parameter is not set; therefore, the default of 50 entries per page is used.</li>
+<li>Вы можете контролировать, какие поля возвращаются (через параметр <strong>fields</strong>). В этом примере мы используем поля <strong>monitoringMode</strong> и <strong>tags</strong>. Тип, отображаемое имя и идентификатор сущности всегда включены в ответ.</li>
+<li>Временной интервал определяется через параметр запроса <strong>from</strong>. Он поддерживает несколько форматов; см. документацию отдельных запросов, чтобы узнать больше о них.</li>
+<li>Результат запроса разделен на страницы. Вы можете контролировать размер страницы с помощью параметра <strong>pageSize</strong>. В этом примере параметр не установлен; поэтому используется значение по умолчанию — 50 записей на странице.</li>
 </ul>
-<h4 id="request-url">Request URL<a class="headerlink" href="#request-url" title="Permanent link">&para;</a></h4>
+<h4 id="url-">URL-адрес запроса<a class="headerlink" href="#url-" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://mySampleEnv.live.dynatrace.com/api/v2/entities?fields=properties.monitoringMode,tags&amp;entitySelector=type(%22HOST%22)&amp;from=now-2h
 </code></pre></div>
-<h4 id="query-parameters">Query parameters<a class="headerlink" href="#query-parameters" title="Permanent link">&para;</a></h4>
+<h4 id="_10">Параметры запроса<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fields=properties.monitoringMode,tags
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -25571,7 +25571,7 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>from=now-2h
 </code></pre></div>
-<h4 id="response-body">Response body<a class="headerlink" href="#response-body" title="Permanent link">&para;</a></h4>
+<h4 id="_11">Тело ответа<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
@@ -25716,7 +25716,7 @@
 <a id="__codelineno-2-142" name="__codelineno-2-142" href="#__codelineno-2-142"></a>
 <a id="__codelineno-2-143" name="__codelineno-2-143" href="#__codelineno-2-143"></a>
 <a id="__codelineno-2-144" name="__codelineno-2-144" href="#__codelineno-2-144"></a>
-<a id="__codelineno-2-145" name="__codelineno-2-145" href="#__codelineno-2-145"></a>&quot;properties&quot;: {
+<a id="__codelineno-2-145" name="__codelineno-2-145" href="#__codelineno-2-145"></a>&quot;properties&quot;:?
 <a id="__codelineno-2-146" name="__codelineno-2-146" href="#__codelineno-2-146"></a>
 <a id="__codelineno-2-147" name="__codelineno-2-147" href="#__codelineno-2-147"></a>
 <a id="__codelineno-2-148" name="__codelineno-2-148" href="#__codelineno-2-148"></a>
@@ -25814,23 +25814,23 @@
 <a id="__codelineno-2-240" name="__codelineno-2-240" href="#__codelineno-2-240"></a>
 <a id="__codelineno-2-241" name="__codelineno-2-241" href="#__codelineno-2-241"></a>}
 </code></pre></div>
-<p>In the Topology and Smartscape API:</p>
+<p>В Topology и Smartscape API:</p>
 <ul>
-<li>You have limited control over returned fieldsâyou can use <strong>includeDetails</strong> to remove some properties, but you can't select particular fields to be included.</li>
-<li>The timeframe is defined via the <strong>relativeTime</strong> query parameter, which provides a limited amount of pre-defined values. Alternatively, you can use <strong>startTimestamp</strong> and <strong>endTimestamp</strong> fields. Additionally, the timeframe size is restricted to 3 days.</li>
-<li>All the entities are returned in a single payload; pagination is not available.</li>
+<li>У вас есть ограниченный контроль над возвращаемыми полями — вы можете использовать <strong>includeDetails</strong>, чтобы удалить некоторые свойства, но вы не можете выбрать конкретные поля для включения.</li>
+<li>Временной интервал определяется через параметр запроса <strong>relativeTime</strong>, который предоставляет ограниченное количество предопределенных значений. Альтернативно вы можете использовать поля <strong>startTimestamp</strong> и <strong>endTimestamp</strong>. Кроме того, размер временного интервала ограничен 3 днями.</li>
+<li>Все сущности возвращаются в одном полезном грузе; пагинация недоступна.</li>
 </ul>
-<h4 id="request-url_1">Request URL<a class="headerlink" href="#request-url_1" title="Permanent link">&para;</a></h4>
+<h4 id="url-_1">URL-адрес запроса<a class="headerlink" href="#url-_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts?relativeTime=2hours&amp;includeDetails=false
 </code></pre></div>
-<h4 id="query-parameters_1">Query parameters<a class="headerlink" href="#query-parameters_1" title="Permanent link">&para;</a></h4>
+<h4 id="_12">Параметры запроса<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>relativeTime=2hours
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>includeDetails=false
 </code></pre></div>
-<h4 id="response-body_1">Response body<a class="headerlink" href="#response-body_1" title="Permanent link">&para;</a></h4>
+<h4 id="_13">Тело ответа<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
@@ -25979,7 +25979,7 @@
 <a id="__codelineno-5-146" name="__codelineno-5-146" href="#__codelineno-5-146"></a>
 <a id="__codelineno-5-147" name="__codelineno-5-147" href="#__codelineno-5-147"></a>
 <a id="__codelineno-5-148" name="__codelineno-5-148" href="#__codelineno-5-148"></a>
-<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a>&quot;agentVersion&quot;: {
+<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a>&quot;agentVersion&quot;:?
 <a id="__codelineno-5-150" name="__codelineno-5-150" href="#__codelineno-5-150"></a>
 <a id="__codelineno-5-151" name="__codelineno-5-151" href="#__codelineno-5-151"></a>
 <a id="__codelineno-5-152" name="__codelineno-5-152" href="#__codelineno-5-152"></a>
@@ -26211,7 +26211,7 @@
 <a id="__codelineno-5-378" name="__codelineno-5-378" href="#__codelineno-5-378"></a>
 <a id="__codelineno-5-379" name="__codelineno-5-379" href="#__codelineno-5-379"></a>
 <a id="__codelineno-5-380" name="__codelineno-5-380" href="#__codelineno-5-380"></a>
-<a id="__codelineno-5-381" name="__codelineno-5-381" href="#__codelineno-5-381"></a>&quot;agentVersion&quot;: {
+<a id="__codelineno-5-381" name="__codelineno-5-381" href="#__codelineno-5-381"></a>&quot;agentVersion&quot;:?
 <a id="__codelineno-5-382" name="__codelineno-5-382" href="#__codelineno-5-382"></a>
 <a id="__codelineno-5-383" name="__codelineno-5-383" href="#__codelineno-5-383"></a>
 <a id="__codelineno-5-384" name="__codelineno-5-384" href="#__codelineno-5-384"></a>
@@ -26271,7 +26271,7 @@
 <a id="__codelineno-5-438" name="__codelineno-5-438" href="#__codelineno-5-438"></a>
 <a id="__codelineno-5-439" name="__codelineno-5-439" href="#__codelineno-5-439"></a>
 <a id="__codelineno-5-440" name="__codelineno-5-440" href="#__codelineno-5-440"></a>
-<a id="__codelineno-5-441" name="__codelineno-5-441" href="#__codelineno-5-441"></a>}
+<a id="__codelineno-5-441" name="__codelineno-5-441" href="#__codelineno-5-441"></a>)
 <a id="__codelineno-5-442" name="__codelineno-5-442" href="#__codelineno-5-442"></a>
 <a id="__codelineno-5-443" name="__codelineno-5-443" href="#__codelineno-5-443"></a>
 <a id="__codelineno-5-444" name="__codelineno-5-444" href="#__codelineno-5-444"></a>
@@ -26295,7 +26295,7 @@
 <a id="__codelineno-5-462" name="__codelineno-5-462" href="#__codelineno-5-462"></a>
 <a id="__codelineno-5-463" name="__codelineno-5-463" href="#__codelineno-5-463"></a>
 <a id="__codelineno-5-464" name="__codelineno-5-464" href="#__codelineno-5-464"></a>
-<a id="__codelineno-5-465" name="__codelineno-5-465" href="#__codelineno-5-465"></a>}
+<a id="__codelineno-5-465" name="__codelineno-5-465" href="#__codelineno-5-465"></a>)
 <a id="__codelineno-5-466" name="__codelineno-5-466" href="#__codelineno-5-466"></a>
 <a id="__codelineno-5-467" name="__codelineno-5-467" href="#__codelineno-5-467"></a>
 <a id="__codelineno-5-468" name="__codelineno-5-468" href="#__codelineno-5-468"></a>
@@ -26303,25 +26303,29 @@
 <a id="__codelineno-5-470" name="__codelineno-5-470" href="#__codelineno-5-470"></a>
 <a id="__codelineno-5-471" name="__codelineno-5-471" href="#__codelineno-5-471"></a>
 <a id="__codelineno-5-472" name="__codelineno-5-472" href="#__codelineno-5-472"></a>
-<a id="__codelineno-5-473" name="__codelineno-5-473" href="#__codelineno-5-473"></a>}
+<a id="__codelineno-5-473" name="__codelineno-5-473" href="#__codelineno-5-473"></a>)
 <a id="__codelineno-5-474" name="__codelineno-5-474" href="#__codelineno-5-474"></a>
 <a id="__codelineno-5-475" name="__codelineno-5-475" href="#__codelineno-5-475"></a>
 <a id="__codelineno-5-476" name="__codelineno-5-476" href="#__codelineno-5-476"></a>
 <a id="__codelineno-5-477" name="__codelineno-5-477" href="#__codelineno-5-477"></a>]
+<a id="__codelineno-5-478" name="__codelineno-5-478" href="#__codelineno-5-478"></a>
+<a id="__codelineno-5-479" name="__codelineno-5-479" href="#__codelineno-5-479"></a>
+<a id="__codelineno-5-480" name="__codelineno-5-480" href="#__codelineno-5-480"></a>
+<a id="__codelineno-5-481" name="__codelineno-5-481" href="#__codelineno-5-481"></a>}
 </code></pre></div>
-<h3 id="assign-entity-tags">Assign entity tags<a class="headerlink" href="#assign-entity-tags" title="Permanent link">&para;</a></h3>
-<p>In this example, we assign additional tags (<strong>Datacenter:Linz</strong> and <strong>Rack:014</strong>) to hosts from the list entities example.</p>
-<p>Compare the following tabs to see how we do this using the new Monitored entities API and the deprecated Topology and Smartscape API:</p>
-<p>Monitored entities API</p>
-<p>Topology and Smartscape API</p>
-<p>In the new Monitored entities API, you can assign tags to multiple entities at the same time by selecting them via the <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Configure the entity selector for Environment API endpoints.">entity selector</a>. In this example, we select hosts by their entity IDs.</p>
-<h4 id="request-url_2">Request URL<a class="headerlink" href="#request-url_2" title="Permanent link">&para;</a></h4>
+<h3 id="_14">Присвоение тегов сущности<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>В этом примере мы присваиваем дополнительные теги (<strong>Datacenter:Linz</strong> и <strong>Rack:014</strong>) хостам из списка сущностей example.</p>
+<p>Сравните следующие вкладки, чтобы увидеть, как мы делаем это с помощью новых Мониторимых сущностей API и устаревшей Топологии и Smartscape API:</p>
+<p>Мониторимые сущности API</p>
+<p>Топология и Smartscape API</p>
+<p>В новых Мониторимых сущностях API вы можете присваивать теги нескольким сущностям одновременно, выбирая их через <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Настройте селектор сущностей для Environment API конечных точек.">селектор сущностей</a>. В этом примере мы выбираем хосты по их идентификаторам сущностей.</p>
+<h4 id="url_1">URL запроса<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>https://mySampleEnv.live.dynatrace.com/api/v2/tags?entitySelector=entityId(%22HOST-01A00204B50FF735%22,%22HOST-0AF138A0258C7DFF%22)
 </code></pre></div>
-<h4 id="query-parameters_2">Query parameters<a class="headerlink" href="#query-parameters_2" title="Permanent link">&para;</a></h4>
+<h4 id="_15">Параметры запроса<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>entitySelector=entityId(&quot;HOST-01A00204B50FF735&quot;,&quot;HOST-0AF138A0258C7DFF&quot;)
 </code></pre></div>
-<h4 id="request-body">Request body<a class="headerlink" href="#request-body" title="Permanent link">&para;</a></h4>
+<h4 id="_16">Тело запроса<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
@@ -26368,7 +26372,7 @@
 <a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>
 <a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>}
 </code></pre></div>
-<h4 id="response-body_2">Response body<a class="headerlink" href="#response-body_2" title="Permanent link">&para;</a></h4>
+<h4 id="_17">Тело ответа<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
@@ -26425,7 +26429,7 @@
 <a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>
 <a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>
 <a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>
-<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>}
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>)
 <a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>
 <a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>
 <a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>
@@ -26435,12 +26439,12 @@
 <a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>
 <a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>}
 </code></pre></div>
-<p>In the deprecated Topology and Smartscape API, you can assign tags to one entity at a time. The example shows the tag assignment for only one of two hosts. A second request with the same payload is needed to assign tags to another host.</p>
-<p>Moreover, the tags are not stored in the <code>key:value</code> format. You can only set the <code>key</code> part of the tag via this API.</p>
-<h4 id="request-url_3">Request URL<a class="headerlink" href="#request-url_3" title="Permanent link">&para;</a></h4>
+<p>В устаревшей Топологии и Smartscape API вы можете присваивать теги только одной сущности за раз. Пример показывает присвоение тега только одному из двух хостов. Для присвоения тегов другому хосту требуется второй запрос с тем же полезным содержимым.</p>
+<p>Кроме того, теги не хранятся в формате <code>key:value</code>. Вы можете задать только часть <code>key</code> тега через этот API.</p>
+<h4 id="url_2">URL запроса<a class="headerlink" href="#url_2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-01A00204B50FF735
 </code></pre></div>
-<h4 id="request-body_1">Request body<a class="headerlink" href="#request-body_1" title="Permanent link">&para;</a></h4>
+<h4 id="_18">Тело запроса<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
@@ -26463,20 +26467,20 @@
 <a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
 <a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>}
 </code></pre></div>
-<h3 id="create-custom-devices_1">Create custom devices<a class="headerlink" href="#create-custom-devices_1" title="Permanent link">&para;</a></h3>
-<p>In this example, we create a custom device with the ID of <code>restExample</code> and the following parameters:</p>
+<h3 id="_19">Создание пользовательских устройств<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>В этом примере мы создаем пользовательское устройство с идентификатором <code>restExample</code> и следующими параметрами:</p>
 <ul>
-<li>type: <code>F5-Firewall</code></li>
-<li>IP address <code>172.16.115.211</code></li>
-<li>listen port <code>9999</code></li>
+<li>тип: <code>F5-Firewall</code></li>
+<li>IP-адрес <code>172.16.115.211</code></li>
+<li>порт прослушивания <code>9999</code></li>
 </ul>
-<p>Compare the following tabs to see how we do this using the new Monitored entities API and the deprecated Topology and Smartscape API:</p>
-<p>Monitored entities API</p>
-<p>Topology and Smartscape API</p>
-<h4 id="request-url_4">Request URL<a class="headerlink" href="#request-url_4" title="Permanent link">&para;</a></h4>
+<p>Сравните следующие вкладки, чтобы увидеть, как мы делаем это с помощью новых Мониторимых сущностей API и устаревшей Топологии и Smartscape API:</p>
+<p>Мониторимые сущности API</p>
+<p>Топология и Smartscape API</p>
+<h4 id="url_3">URL запроса<a class="headerlink" href="#url_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>https://mySampleEnv.live.dynatrace.com/api/v2/entities/custom
 </code></pre></div>
-<h4 id="request-body_2">Request body<a class="headerlink" href="#request-body_2" title="Permanent link">&para;</a></h4>
+<h4 id="_20">Тело запроса<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>{
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
@@ -26509,7 +26513,7 @@
 <a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>
 <a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>
 <a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>
-<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>&quot;properties&quot;: {
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>&quot;properties&quot;: 
 <a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>
 <a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>
 <a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>
@@ -26523,7 +26527,7 @@
 <a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>
 <a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>}
 </code></pre></div>
-<h4 id="response-body_3">Response body<a class="headerlink" href="#response-body_3" title="Permanent link">&para;</a></h4>
+<h4 id="_21">Тело ответа<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>{
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
@@ -26538,10 +26542,10 @@
 <a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
 <a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>}
 </code></pre></div>
-<h4 id="request-url_5">Request URL<a class="headerlink" href="#request-url_5" title="Permanent link">&para;</a></h4>
+<h4 id="url_4">URL запроса<a class="headerlink" href="#url_4" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restExample
 </code></pre></div>
-<h4 id="request-body_3">Request body<a class="headerlink" href="#request-body_3" title="Permanent link">&para;</a></h4>
+<h4 id="_22">Тело запроса<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>{
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
@@ -26574,7 +26578,7 @@
 <a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
 <a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>
 <a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>
-<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>&quot;properties&quot;: {
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>&quot;properties&quot;: 
 <a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>
 <a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>
 <a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>
@@ -26582,13 +26586,13 @@
 <a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a>
 <a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a>
 <a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a>
-<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a>}
+<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a>)
 <a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a>
 <a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a>
 <a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a>
 <a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a>}
 </code></pre></div>
-<h4 id="response-body_4">Response body<a class="headerlink" href="#response-body_4" title="Permanent link">&para;</a></h4>
+<h4 id="_23">Тело ответа<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>{
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
@@ -26603,10 +26607,10 @@
 <a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
 <a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>}
 </code></pre></div>
-<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<h2 id="_24">Связанные темы<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Manage Dynatrace API authentication tokens.">Access tokens API</a></li>
-<li><a href="/docs/dynatrace-api/environment-api/tokens-v1" title="Learn how to manage Dynatrace API authentication tokens in your environment.">Tokens API v1</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управление Dynatrace API аутентификационными токенами.">Токены доступа API</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/tokens-v1" title="Узнайте, как управлять Dynatrace API аутентификационными токенами в вашей среде.">Токены API v1</a></li>
 </ul>
 
 

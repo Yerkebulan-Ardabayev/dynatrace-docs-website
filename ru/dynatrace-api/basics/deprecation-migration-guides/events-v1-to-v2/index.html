@@ -25,7 +25,7 @@
     
     
       
-        <title>Migrate from Events API v1 to Events API v2 - Dynatrace Managed - Документация</title>
+        <title>Перейти с Events API v1 на Events API v2 - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#migrate-from-events-api-v1-to-events-api-v2" class="md-skip">
+        <a href="#events-api-v1-events-api-v2" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Migrate from Events API v1 to Events API v2
+              Перейти с Events API v1 на Events API v2
             
           </span>
         </div>
@@ -25474,31 +25474,31 @@
 
 
 
-<h1 id="migrate-from-events-api-v1-to-events-api-v2">Migrate from Events API v1 to Events API v2<a class="headerlink" href="#migrate-from-events-api-v1-to-events-api-v2" title="Permanent link">&para;</a></h1>
-<h1 id="migrate-from-events-api-v1-to-events-api-v2_1">Migrate from Events API v1 to Events API v2<a class="headerlink" href="#migrate-from-events-api-v1-to-events-api-v2_1" title="Permanent link">&para;</a></h1>
+<h1 id="events-api-v1-events-api-v2">Перейти с Events API v1 на Events API v2<a class="headerlink" href="#events-api-v1-events-api-v2" title="Permanent link">&para;</a></h1>
+<h1 id="events-api-v1-events-api-v2_1">Перейти с Events API v1 на Events API v2<a class="headerlink" href="#events-api-v1-events-api-v2_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Reference</li>
-<li>Published Nov 25, 2022</li>
+<li>Справочник</li>
+<li>Опубликовано 25 ноября 2022 г.</li>
 </ul>
-<p><a href="/docs/dynatrace-api/environment-api/events-v1" title="Find out what you can do with the Dynatrace Events API.">Events API v1</a> has been deprecated with <a href="/docs/whats-new/dynatrace-api/sprint-243" title="Changelog for Dynatrace API version 1.243">Dynatrace version 1.243</a>. Its replacement is <a href="/docs/dynatrace-api/environment-api/events-v2" title="Find out what you can do with the Dynatrace Events API v2.">Events API v2</a>. We recommend that you migrate to the new API at your earliest convenience.</p>
-<p>The migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.</p>
-<h2 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h2>
-<p>Events API v2 offers you the following new features:</p>
+<p><a href="/docs/dynatrace-api/environment-api/events-v1" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API.">Events API v1</a> был заменен <a href="/docs/whats-new/dynatrace-api/sprint-243" title="Журнал изменений для Dynatrace API версии 1.243">Dynatrace версией 1.243</a>. Его заменой является <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API v2.">Events API v2</a>. Мы рекомендуем перейти на новую API как можно скорее.</p>
+<p>Миграция затрагивает URL-адреса конечных точек, параметры запроса и параметры тела запроса/ответа, а также объем токена для аутентификации запросов.</p>
+<h2 id="_1">Новые функции<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Events API v2 предлагает следующие новые функции:</p>
 <ul>
-<li>The <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Configure the entity selector for Environment API endpoints.">entity selector</a> helps you to filter events in read requests and ingest events that affect multiple entities.</li>
-<li>Improved event filtering via an event selector.</li>
-<li>Unified timeframe selector.</li>
-<li>Event properties endpoints.</li>
-<li>Event types endpoints.</li>
+<li><a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Настройте селектор сущностей для Environment API конечных точек.">Селектор сущностей</a> помогает вам фильтровать события в запросах на чтение и ингестировать события, которые влияют на несколько сущностей.</li>
+<li>Улучшенная фильтрация событий через селектор событий.</li>
+<li>Унифицированный селектор временного интервала.</li>
+<li>Конечные точки свойств событий.</li>
+<li>Конечные точки типов событий.</li>
 </ul>
-<h2 id="licensing">Licensing<a class="headerlink" href="#licensing" title="Permanent link">&para;</a></h2>
-<p>The <a href="/docs/dynatrace-api/environment-api/events-v2/post-event" title="Ingests an event via the Dynatrace API.">ingestion</a> of custom events consumes <a href="/docs/license/monitoring-consumption-classic/davis-data-units" title="Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).">Davis Data Units (DDUs)</a> from the events pool.</p>
-<h2 id="base-url">Base URL<a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h2>
+<h2 id="_2">Лицензирование<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a href="/docs/dynatrace-api/environment-api/events-v2/post-event" title="Ингестирует событие через Dynatrace API.">Ингестия</a> пользовательских событий потребляет <a href="/docs/license/monitoring-consumption-classic/davis-data-units" title="Поймите, как потребление мониторинга Dynatrace рассчитывается на основе единиц данных Davis (DDU).">Единицы данных Davis (DDU)</a> из пула событий.</p>
+<h2 id="url">Базовый URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>new Events v2</th>
-<th>old Events v1</th>
+<th>новый Events v2</th>
+<th>старый Events v1</th>
 </tr>
 </thead>
 <tbody>
@@ -25508,33 +25508,33 @@
 </tr>
 </tbody>
 </table>
-<h2 id="authentication-token-scope">Authentication token scope<a class="headerlink" href="#authentication-token-scope" title="Permanent link">&para;</a></h2>
+<h2 id="_3">Область действия токена аутентификации<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>new Events v2</th>
-<th>old Events v1</th>
+<th>новый Events v2</th>
+<th>старый Events v1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Read events</strong> (<code>events.read</code>) <strong>Ingest events</strong> (<code>events.ingest</code>)</td>
-<td><strong>Access problem and event feed, metrics, and topology</strong> (<code>DataExport</code>)</td>
+<td><strong>Чтение событий</strong> (<code>events.read</code>) <strong>Ингестия событий</strong> (<code>events.ingest</code>)</td>
+<td><strong>Доступ к ленте проблем и событий, метрикам и топологии</strong> (<code>DataExport</code>)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
-<p>To learn about new query/body parameters, see the documentation of individual requests in <a href="/docs/dynatrace-api/environment-api/events-v2" title="Find out what you can do with the Dynatrace Events API v2.">Events API v2</a>.</p>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<p>Here are some examples of differences in API usage.</p>
-<h3 id="list-events-within-a-timeframe">List events within a timeframe<a class="headerlink" href="#list-events-within-a-timeframe" title="Permanent link">&para;</a></h3>
-<p>In this example, we query a list of open availability events on hosts that happened within the last two hours.</p>
+<h2 id="_4">Параметры<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API v2.">Events API v2</a>.</p>
+<h2 id="_5">Примеры<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Вот некоторые примеры различий в использовании API.</p>
+<h3 id="_6">Список событий в течение временного интервала<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>В этом примере мы запрашиваем список открытых событий доступности на хостах, которые произошли в течение последних двух часов.</p>
 <p>Events v2</p>
 <p>Events v1</p>
-<h4 id="request-url">Request URL<a class="headerlink" href="#request-url" title="Permanent link">&para;</a></h4>
+<h4 id="url-">URL-адрес запроса<a class="headerlink" href="#url-" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType(&quot;AVAILABILITY_EVENT&quot;),status(&quot;OPEN&quot;)&amp;from=now-2h&amp;entitySelector=type(&quot;HOST&quot;)
 </code></pre></div>
-<h4 id="response-body">Response body<a class="headerlink" href="#response-body" title="Permanent link">&para;</a></h4>
+<h4 id="_7">Тело ответа<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -25579,11 +25579,11 @@
 <a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
 <a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
 <a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
-<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>&quot;entityId&quot;: {
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>&quot;entityId&quot;:).
 <a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
 <a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
 <a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
-<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>&quot;entityId&quot;: {
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>&quot;entityId&quot;:,
 <a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
 <a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
@@ -25851,11 +25851,11 @@
 <a id="__codelineno-1-314" name="__codelineno-1-314" href="#__codelineno-1-314"></a>
 <a id="__codelineno-1-315" name="__codelineno-1-315" href="#__codelineno-1-315"></a>
 <a id="__codelineno-1-316" name="__codelineno-1-316" href="#__codelineno-1-316"></a>
-<a id="__codelineno-1-317" name="__codelineno-1-317" href="#__codelineno-1-317"></a>}
+<a id="__codelineno-1-317" name="__codelineno-1-317" href="#__codelineno-1-317"></a>)
 <a id="__codelineno-1-318" name="__codelineno-1-318" href="#__codelineno-1-318"></a>
 <a id="__codelineno-1-319" name="__codelineno-1-319" href="#__codelineno-1-319"></a>
 <a id="__codelineno-1-320" name="__codelineno-1-320" href="#__codelineno-1-320"></a>
-<a id="__codelineno-1-321" name="__codelineno-1-321" href="#__codelineno-1-321"></a>],
+<a id="__codelineno-1-321" name="__codelineno-1-321" href="#__codelineno-1-321"></a>},
 <a id="__codelineno-1-322" name="__codelineno-1-322" href="#__codelineno-1-322"></a>
 <a id="__codelineno-1-323" name="__codelineno-1-323" href="#__codelineno-1-323"></a>
 <a id="__codelineno-1-324" name="__codelineno-1-324" href="#__codelineno-1-324"></a>
@@ -25903,11 +25903,11 @@
 <a id="__codelineno-1-366" name="__codelineno-1-366" href="#__codelineno-1-366"></a>
 <a id="__codelineno-1-367" name="__codelineno-1-367" href="#__codelineno-1-367"></a>
 <a id="__codelineno-1-368" name="__codelineno-1-368" href="#__codelineno-1-368"></a>
-<a id="__codelineno-1-369" name="__codelineno-1-369" href="#__codelineno-1-369"></a>&quot;entityId&quot;: {
+<a id="__codelineno-1-369" name="__codelineno-1-369" href="#__codelineno-1-369"></a>&quot;entityId&quot;:,
 <a id="__codelineno-1-370" name="__codelineno-1-370" href="#__codelineno-1-370"></a>
 <a id="__codelineno-1-371" name="__codelineno-1-371" href="#__codelineno-1-371"></a>
 <a id="__codelineno-1-372" name="__codelineno-1-372" href="#__codelineno-1-372"></a>
-<a id="__codelineno-1-373" name="__codelineno-1-373" href="#__codelineno-1-373"></a>&quot;entityId&quot;: {
+<a id="__codelineno-1-373" name="__codelineno-1-373" href="#__codelineno-1-373"></a>&quot;entityId&quot;:,
 <a id="__codelineno-1-374" name="__codelineno-1-374" href="#__codelineno-1-374"></a>
 <a id="__codelineno-1-375" name="__codelineno-1-375" href="#__codelineno-1-375"></a>
 <a id="__codelineno-1-376" name="__codelineno-1-376" href="#__codelineno-1-376"></a>
@@ -26011,7 +26011,7 @@
 <a id="__codelineno-1-474" name="__codelineno-1-474" href="#__codelineno-1-474"></a>
 <a id="__codelineno-1-475" name="__codelineno-1-475" href="#__codelineno-1-475"></a>
 <a id="__codelineno-1-476" name="__codelineno-1-476" href="#__codelineno-1-476"></a>
-<a id="__codelineno-1-477" name="__codelineno-1-477" href="#__codelineno-1-477"></a>}
+<a id="__codelineno-1-477" name="__codelineno-1-477" href="#__codelineno-1-477"></a>)
 <a id="__codelineno-1-478" name="__codelineno-1-478" href="#__codelineno-1-478"></a>
 <a id="__codelineno-1-479" name="__codelineno-1-479" href="#__codelineno-1-479"></a>
 <a id="__codelineno-1-480" name="__codelineno-1-480" href="#__codelineno-1-480"></a>
@@ -26051,7 +26051,7 @@
 <a id="__codelineno-1-514" name="__codelineno-1-514" href="#__codelineno-1-514"></a>
 <a id="__codelineno-1-515" name="__codelineno-1-515" href="#__codelineno-1-515"></a>
 <a id="__codelineno-1-516" name="__codelineno-1-516" href="#__codelineno-1-516"></a>
-<a id="__codelineno-1-517" name="__codelineno-1-517" href="#__codelineno-1-517"></a>}
+<a id="__codelineno-1-517" name="__codelineno-1-517" href="#__codelineno-1-517"></a>)
 <a id="__codelineno-1-518" name="__codelineno-1-518" href="#__codelineno-1-518"></a>
 <a id="__codelineno-1-519" name="__codelineno-1-519" href="#__codelineno-1-519"></a>
 <a id="__codelineno-1-520" name="__codelineno-1-520" href="#__codelineno-1-520"></a>
@@ -26091,7 +26091,7 @@
 <a id="__codelineno-1-554" name="__codelineno-1-554" href="#__codelineno-1-554"></a>
 <a id="__codelineno-1-555" name="__codelineno-1-555" href="#__codelineno-1-555"></a>
 <a id="__codelineno-1-556" name="__codelineno-1-556" href="#__codelineno-1-556"></a>
-<a id="__codelineno-1-557" name="__codelineno-1-557" href="#__codelineno-1-557"></a>}
+<a id="__codelineno-1-557" name="__codelineno-1-557" href="#__codelineno-1-557"></a>)
 <a id="__codelineno-1-558" name="__codelineno-1-558" href="#__codelineno-1-558"></a>
 <a id="__codelineno-1-559" name="__codelineno-1-559" href="#__codelineno-1-559"></a>
 <a id="__codelineno-1-560" name="__codelineno-1-560" href="#__codelineno-1-560"></a>
@@ -26115,7 +26115,7 @@
 <a id="__codelineno-1-578" name="__codelineno-1-578" href="#__codelineno-1-578"></a>
 <a id="__codelineno-1-579" name="__codelineno-1-579" href="#__codelineno-1-579"></a>
 <a id="__codelineno-1-580" name="__codelineno-1-580" href="#__codelineno-1-580"></a>
-<a id="__codelineno-1-581" name="__codelineno-1-581" href="#__codelineno-1-581"></a>}
+<a id="__codelineno-1-581" name="__codelineno-1-581" href="#__codelineno-1-581"></a>)
 <a id="__codelineno-1-582" name="__codelineno-1-582" href="#__codelineno-1-582"></a>
 <a id="__codelineno-1-583" name="__codelineno-1-583" href="#__codelineno-1-583"></a>
 <a id="__codelineno-1-584" name="__codelineno-1-584" href="#__codelineno-1-584"></a>
@@ -26129,11 +26129,11 @@
 <a id="__codelineno-1-592" name="__codelineno-1-592" href="#__codelineno-1-592"></a>
 <a id="__codelineno-1-593" name="__codelineno-1-593" href="#__codelineno-1-593"></a>}
 </code></pre></div>
-<p>In Events API v1, it is not possible to filter the events feed by event status. Also, it is not possible to select multiple entities via the entity selector. You can only specify particular entities. For illustration purposes, the example payload shows the same events, but you would have to find them in the payload by external means.</p>
-<h4 id="request-url_1">Request URL<a class="headerlink" href="#request-url_1" title="Permanent link">&para;</a></h4>
+<p>В Events API v1 невозможно фильтровать ленту событий по статусу события. Кроме того, невозможно выбрать несколько сущностей через селектор сущностей. Вы можете указать только конкретные сущности. Для иллюстрации примера полезная нагрузка показывает одни и те же события, но вы должны найти их в полезной нагрузке с помощью внешних средств.</p>
+<h4 id="url-_1">URL-адрес запроса<a class="headerlink" href="#url-_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GET https://mySampleEnv.live.dynatrace.com/api/v1/events?relativeTime=2hours?eventType=AVAILABILITY_EVENT
 </code></pre></div>
-<h4 id="response-body_1">Response body<a class="headerlink" href="#response-body_1" title="Permanent link">&para;</a></h4>
+<h4 id="_8">Тело ответа<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -26242,7 +26242,7 @@
 <a id="__codelineno-3-106" name="__codelineno-3-106" href="#__codelineno-3-106"></a>
 <a id="__codelineno-3-107" name="__codelineno-3-107" href="#__codelineno-3-107"></a>
 <a id="__codelineno-3-108" name="__codelineno-3-108" href="#__codelineno-3-108"></a>
-<a id="__codelineno-3-109" name="__codelineno-3-109" href="#__codelineno-3-109"></a>}
+<a id="__codelineno-3-109" name="__codelineno-3-109" href="#__codelineno-3-109"></a>)
 <a id="__codelineno-3-110" name="__codelineno-3-110" href="#__codelineno-3-110"></a>
 <a id="__codelineno-3-111" name="__codelineno-3-111" href="#__codelineno-3-111"></a>
 <a id="__codelineno-3-112" name="__codelineno-3-112" href="#__codelineno-3-112"></a>
@@ -26254,7 +26254,7 @@
 <a id="__codelineno-3-118" name="__codelineno-3-118" href="#__codelineno-3-118"></a>
 <a id="__codelineno-3-119" name="__codelineno-3-119" href="#__codelineno-3-119"></a>
 <a id="__codelineno-3-120" name="__codelineno-3-120" href="#__codelineno-3-120"></a>
-<a id="__codelineno-3-121" name="__codelineno-3-121" href="#__codelineno-3-121"></a>&quot;customProperties&quot;: {
+<a id="__codelineno-3-121" name="__codelineno-3-121" href="#__codelineno-3-121"></a>&quot;customProperties&quot;:,
 <a id="__codelineno-3-122" name="__codelineno-3-122" href="#__codelineno-3-122"></a>
 <a id="__codelineno-3-123" name="__codelineno-3-123" href="#__codelineno-3-123"></a>
 <a id="__codelineno-3-124" name="__codelineno-3-124" href="#__codelineno-3-124"></a>
@@ -26346,7 +26346,7 @@
 <a id="__codelineno-3-210" name="__codelineno-3-210" href="#__codelineno-3-210"></a>
 <a id="__codelineno-3-211" name="__codelineno-3-211" href="#__codelineno-3-211"></a>
 <a id="__codelineno-3-212" name="__codelineno-3-212" href="#__codelineno-3-212"></a>
-<a id="__codelineno-3-213" name="__codelineno-3-213" href="#__codelineno-3-213"></a>}
+<a id="__codelineno-3-213" name="__codelineno-3-213" href="#__codelineno-3-213"></a>)
 <a id="__codelineno-3-214" name="__codelineno-3-214" href="#__codelineno-3-214"></a>
 <a id="__codelineno-3-215" name="__codelineno-3-215" href="#__codelineno-3-215"></a>
 <a id="__codelineno-3-216" name="__codelineno-3-216" href="#__codelineno-3-216"></a>
@@ -26366,7 +26366,7 @@
 <a id="__codelineno-3-230" name="__codelineno-3-230" href="#__codelineno-3-230"></a>
 <a id="__codelineno-3-231" name="__codelineno-3-231" href="#__codelineno-3-231"></a>
 <a id="__codelineno-3-232" name="__codelineno-3-232" href="#__codelineno-3-232"></a>
-<a id="__codelineno-3-233" name="__codelineno-3-233" href="#__codelineno-3-233"></a>}
+<a id="__codelineno-3-233" name="__codelineno-3-233" href="#__codelineno-3-233"></a>)
 <a id="__codelineno-3-234" name="__codelineno-3-234" href="#__codelineno-3-234"></a>
 <a id="__codelineno-3-235" name="__codelineno-3-235" href="#__codelineno-3-235"></a>
 <a id="__codelineno-3-236" name="__codelineno-3-236" href="#__codelineno-3-236"></a>
@@ -26376,14 +26376,14 @@
 <a id="__codelineno-3-240" name="__codelineno-3-240" href="#__codelineno-3-240"></a>
 <a id="__codelineno-3-241" name="__codelineno-3-241" href="#__codelineno-3-241"></a>}
 </code></pre></div>
-<h3 id="ingest-a-third-party-event">Ingest a third-party event<a class="headerlink" href="#ingest-a-third-party-event" title="Permanent link">&para;</a></h3>
-<p>In this example, we ingest a custom info event affecting all hosts whose hostname begins with <code>prod</code>.</p>
+<h3 id="_9">Ингестирование события третьей стороны<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>В этом примере мы ингестируем пользовательское событие информационного типа, которое влияет на все хосты, имя которых начинается с <code>prod</code>.</p>
 <p>Events v2</p>
 <p>Events v1</p>
-<h4 id="request-url_2">Request URL<a class="headerlink" href="#request-url_2" title="Permanent link">&para;</a></h4>
+<h4 id="url-_2">URL-адрес запроса<a class="headerlink" href="#url-_2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>POST https://mySampleEnv.live.dynatrace.com/api/v2/events
 </code></pre></div>
-<h4 id="request-body">Request body<a class="headerlink" href="#request-body" title="Permanent link">&para;</a></h4>
+<h4 id="_10">Тело запроса<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
@@ -26408,7 +26408,7 @@
 <a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
 <a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>&quot;properties&quot;: {
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>&quot;properties&quot;:,
 <a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
 <a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
 <a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
@@ -26421,16 +26421,12 @@
 <a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
 <a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
 <a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>}
-<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
-<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
-<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>}
 </code></pre></div>
-<p>In the Events API v1, it is not possible to select multiple entities via the entity selector. You have to either specify each entity or rely on tags.</p>
-<h4 id="request-url_3">Request URL<a class="headerlink" href="#request-url_3" title="Permanent link">&para;</a></h4>
+<p>В Events API v1 невозможно выбрать несколько сущностей через селектор сущностей. Вы должны указать каждую сущность или полагаться на теги.</p>
+<h4 id="url-_3">URL-адрес запроса<a class="headerlink" href="#url-_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>POST https://mySampleEnv.live.dynatrace.com/api/v1/events
 </code></pre></div>
-<h4 id="request-body_1">Request body<a class="headerlink" href="#request-body_1" title="Permanent link">&para;</a></h4>
+<h4 id="_11">Тело запроса<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
@@ -26451,7 +26447,7 @@
 <a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
 <a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
 <a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>&quot;attachRules&quot;: {
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>&quot;attachRules&quot;:,
 <a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
 <a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
 <a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
@@ -26495,7 +26491,7 @@
 <a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>
 <a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>
 <a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>
-<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>}
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>)
 <a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>
 <a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>
 <a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>
@@ -26503,28 +26499,24 @@
 <a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a>
 <a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a>
 <a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a>
-<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a>}
+<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a>]
 <a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a>
 <a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a>
 <a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a>
-<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a>]
+<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a>},
 <a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a>
 <a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a>
 <a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a>
-<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a>},
+<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a>&quot;source&quot;: &quot;REST API&quot;
 <a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a>
 <a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a>
 <a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a>
-<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a>&quot;source&quot;: &quot;REST API&quot;
-<a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a>
-<a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a>
-<a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a>
-<a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a>}
+<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a>}
 </code></pre></div>
-<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<h2 id="_12">Связанные темы<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/events-v2" title="Find out what you can do with the Dynatrace Events API v2.">Events API v2</a></li>
-<li><a href="/docs/dynatrace-api/environment-api/events-v1" title="Find out what you can do with the Dynatrace Events API.">Events API v1</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API v2.">Events API v2</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/events-v1" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API.">Events API v1</a></li>
 </ul>
 
 
