@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows
-scraped: 2026-02-18T21:27:56.580472
+scraped: 2026-02-21T21:10:01.149054
 ---
 
 # Install OneAgent on Windows

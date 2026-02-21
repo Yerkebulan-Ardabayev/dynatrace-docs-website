@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-02-20
+Сгенерировано: 2026-02-21
 Файлов в разделе: 17
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-02-18T21:23:57.021370
+scraped: 2026-02-21T21:15:22.710200
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -115,7 +115,7 @@ These metrics are also available via the Environment API and your **Account Mana
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-02-18T21:28:28.631473
+scraped: 2026-02-21T21:10:29.619304
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -547,7 +547,7 @@ When using the metric "(DPS) Total metric data points billed for Full-Stack moni
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-02-18T21:23:58.287003
+scraped: 2026-02-21T21:15:21.422431
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -764,7 +764,7 @@ The example below shows that one of the Infrastructure monitored hosts reported 
 ---
 title: Calculate your consumption of Mainframe Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/mainframe
-scraped: 2026-02-18T21:28:29.862757
+scraped: 2026-02-21T21:10:32.419456
 ---
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
@@ -938,7 +938,7 @@ For each OneAgent installed in your infrastructure, you can choose the monitorin
 ---
 title: AppEngine Functions (Serverless Functions) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/appengine-functions
-scraped: 2026-02-20T21:15:49.541523
+scraped: 2026-02-21T21:26:12.853003
 ---
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
@@ -982,7 +982,7 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-02-18T05:47:08.126331
+scraped: 2026-02-21T21:17:27.097817
 ---
 
 # Application Security overview (DPS)
@@ -1020,7 +1020,7 @@ These vulnerabilities include
 
 ## Security Posture Management (SPM)
 
-[Security Posture Management (SPM)](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") provides ongoing monitoring and automated assessment for KubernetesÂ® environments.
+[Security Posture Management (SPM)](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") provides ongoing monitoring and automated assessment for KubernetesÂ® environments.
 With insights into configuration, compliance issues, and risk management, customers can maintain a strong security posture.
 
 This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes."), which focuses on identifying and mitigating security risks in your Kubernetes clusters.
@@ -1029,7 +1029,7 @@ This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/
 
 * [Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
-* [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
 
 ---
@@ -1470,7 +1470,7 @@ Use DQL to analyze event data in context with relevant data on the Dynatrace pla
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-20T21:09:17.841703
+scraped: 2026-02-21T21:07:07.496298
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1604,7 +1604,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-20T21:24:14.758159
+scraped: 2026-02-21T21:10:51.587358
 ---
 
 # Log Analytics (DPS)
@@ -1724,7 +1724,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-20T21:15:28.230579
+scraped: 2026-02-21T21:18:09.953811
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1886,7 +1886,7 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-19T21:17:43.890697
+scraped: 2026-02-21T21:11:06.445236
 ---
 
 # Traces powered by Grail overview (DPS)

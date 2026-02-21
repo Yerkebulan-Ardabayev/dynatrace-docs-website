@@ -1,7 +1,7 @@
 ---
 title: Integrate Dynatrace Lambda Layer on container images
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/deploy-oneagent-on-lambda-container-images
-scraped: 2026-02-19T21:31:19.086145
+scraped: 2026-02-21T21:26:57.819014
 ---
 
 # Integrate Dynatrace Lambda Layer on container images

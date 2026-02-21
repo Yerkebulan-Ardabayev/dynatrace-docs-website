@@ -1,7 +1,7 @@
 ---
 title: Google Cloud reCAPTCHA Enterprise monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-recaptcha-enterprise-monitoring
-scraped: 2026-02-20T21:14:58.021595
+scraped: 2026-02-21T21:18:13.643111
 ---
 
 # Google Cloud reCAPTCHA Enterprise monitoring

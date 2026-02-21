@@ -1,7 +1,7 @@
 ---
 title: Security Posture Management concepts
 source: https://www.dynatrace.com/docs/secure/xspm/concepts
-scraped: 2026-02-18T05:44:23.704208
+scraped: 2026-02-21T21:20:37.438284
 ---
 
 # Security Posture Management concepts
@@ -14,7 +14,7 @@ scraped: 2026-02-18T05:44:23.704208
 
 ## Results
 
-**Results** are findings from Dynatrace in relation to your security and compliance posture, based on the rules of the [supported compliance standards](/docs/secure/application-security/security-posture-management-hub#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+**Results** are findings from Dynatrace in relation to your security and compliance posture, based on the rules of the [supported compliance standards](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 **Rules** are specific configuration and other process requirements defined in the compliance standards.
 
@@ -40,7 +40,7 @@ To increase the number of results based on automatic assessment, we recommend th
 
 ### View
 
-Results are displayed for all your monitored systems on which [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
+Results are displayed for all your monitored systems on which [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
 
 * The **Overview** page shows the total number of failed, manual, and passed rules per monitored system.
 * The **Assessment results** page shows a table with all results, sorted automatically in descending order, starting from the ones deserving the most attention (failed rules with critical severity) to those less important (not relevant rules with low severity).

@@ -1,7 +1,7 @@
 ---
 title: Data retention periods
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods
-scraped: 2026-02-19T21:17:45.252136
+scraped: 2026-02-21T21:11:07.838143
 ---
 
 # Data retention periods

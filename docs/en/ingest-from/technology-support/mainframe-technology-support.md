@@ -1,7 +1,7 @@
 ---
 title: Mainframe technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/mainframe-technology-support
-scraped: 2026-02-18T21:26:03.145232
+scraped: 2026-02-21T21:10:38.721961
 ---
 
 # Mainframe technology support

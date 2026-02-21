@@ -1,7 +1,7 @@
 ---
 title: Page load waterfall
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/experience-vitals/waterfall
-scraped: 2026-02-20T21:27:47.635930
+scraped: 2026-02-21T21:23:24.600731
 ---
 
 # Page load waterfall

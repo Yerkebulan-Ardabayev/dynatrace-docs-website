@@ -1,7 +1,7 @@
 ---
 title: Instrument mobile apps with Dynatrace React Native plugin
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native
-scraped: 2026-02-18T21:25:34.954900
+scraped: 2026-02-21T21:13:07.110360
 ---
 
 # Instrument mobile apps with Dynatrace React Native plugin

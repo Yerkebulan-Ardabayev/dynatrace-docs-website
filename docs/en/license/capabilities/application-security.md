@@ -1,7 +1,7 @@
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-02-18T05:47:08.126331
+scraped: 2026-02-21T21:17:27.097817
 ---
 
 # Application Security overview (DPS)
@@ -39,7 +39,7 @@ These vulnerabilities include
 
 ## Security Posture Management (SPM)
 
-[Security Posture Management (SPM)](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") provides ongoing monitoring and automated assessment for KubernetesÂ® environments.
+[Security Posture Management (SPM)](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") provides ongoing monitoring and automated assessment for KubernetesÂ® environments.
 With insights into configuration, compliance issues, and risk management, customers can maintain a strong security posture.
 
 This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes."), which focuses on identifying and mitigating security risks in your Kubernetes clusters.
@@ -48,5 +48,5 @@ This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/
 
 * [Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
-* [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

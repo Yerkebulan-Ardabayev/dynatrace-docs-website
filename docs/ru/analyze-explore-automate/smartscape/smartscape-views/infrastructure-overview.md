@@ -1,7 +1,7 @@
 ---
 title: Infrastructure overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview
-scraped: 2026-02-20T21:20:28.030352
+scraped: 2026-02-21T21:20:04.180646
 ---
 
 # Infrastructure overview

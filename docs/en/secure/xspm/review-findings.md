@@ -1,7 +1,7 @@
 ---
 title: Review findings
 source: https://www.dynatrace.com/docs/secure/xspm/review-findings
-scraped: 2026-02-19T21:26:03.374100
+scraped: 2026-02-21T21:24:22.518147
 ---
 
 # Review findings

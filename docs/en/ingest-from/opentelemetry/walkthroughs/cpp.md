@@ -1,7 +1,7 @@
 ---
 title: Instrument your C++ application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/cpp
-scraped: 2026-02-20T21:23:50.150234
+scraped: 2026-02-21T21:13:18.861041
 ---
 
 # Instrument your C++ application with OpenTelemetry

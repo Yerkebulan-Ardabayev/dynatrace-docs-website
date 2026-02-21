@@ -1,7 +1,7 @@
 ---
 title: Release validation
 source: https://www.dynatrace.com/docs/deliver/quality-gates
-scraped: 2026-02-20T21:12:36.269451
+scraped: 2026-02-21T21:18:59.956997
 ---
 
 # Release validation

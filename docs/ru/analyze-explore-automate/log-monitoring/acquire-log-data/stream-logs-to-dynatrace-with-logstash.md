@@ -1,7 +1,7 @@
 ---
 title: Stream logs to Dynatrace with Logstash (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-to-dynatrace-with-logstash
-scraped: 2026-02-19T21:19:42.468734
+scraped: 2026-02-21T21:25:28.724889
 ---
 
 # Stream logs to Dynatrace with Logstash (Logs Classic)

@@ -1,7 +1,7 @@
 ---
 title: Set up host name determination in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-host-name-determination
-scraped: 2026-02-20T21:22:12.557220
+scraped: 2026-02-21T21:24:52.043621
 ---
 
 # Set up host name determination in the New RUM Experience

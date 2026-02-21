@@ -1,7 +1,7 @@
 ---
 title: Change user experience score thresholds for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-user-experience-score-web
-scraped: 2026-02-20T21:12:54.154347
+scraped: 2026-02-21T21:19:14.368241
 ---
 
 # Change user experience score thresholds for web applications

@@ -1,7 +1,7 @@
 ---
 title: Monitor file access of CICS applications
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access
-scraped: 2026-02-20T21:11:27.565288
+scraped: 2026-02-21T21:17:31.598230
 ---
 
 # Monitor file access of CICS applications

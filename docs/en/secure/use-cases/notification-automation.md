@@ -1,7 +1,7 @@
 ---
 title: CSPM Notification Automation
 source: https://www.dynatrace.com/docs/secure/use-cases/notification-automation
-scraped: 2026-02-18T21:24:07.182292
+scraped: 2026-02-21T21:14:39.889548
 ---
 
 # CSPM Notification Automation
@@ -1246,3 +1246,7 @@ Congratulations! Youâve now set up an automation that empowers your securit
 The following is a tutorial by the internal customer of Dynatrace CSPM Notification Automation.
 
 CSPM Notification Automation with Dynatrace
+
+## Related topics
+
+* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")

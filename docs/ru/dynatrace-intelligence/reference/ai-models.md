@@ -1,7 +1,7 @@
 ---
 title: AI models
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
-scraped: 2026-02-18T21:23:19.912480
+scraped: 2026-02-21T21:14:26.182275
 ---
 
 # AI models

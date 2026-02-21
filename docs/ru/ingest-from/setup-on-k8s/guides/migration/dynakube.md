@@ -1,7 +1,7 @@
 ---
 title: Migration guide for DynaKube API versions
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/dynakube
-scraped: 2026-02-15T21:23:32.205216
+scraped: 2026-02-21T21:27:17.244385
 ---
 
 # Migration guide for DynaKube API versions

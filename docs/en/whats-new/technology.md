@@ -1,7 +1,7 @@
 ---
 title: New technology support
 source: https://www.dynatrace.com/docs/whats-new/technology
-scraped: 2026-02-20T21:07:32.048407
+scraped: 2026-02-21T21:08:06.035104
 ---
 
 # New technology support

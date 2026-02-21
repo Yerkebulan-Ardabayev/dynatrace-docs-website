@@ -1,222 +1,223 @@
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-18T21:22:34.275335
+scraped: 2026-02-21T21:16:10.962860
 ---
 
 # ServiceNow
 
 # ServiceNow
 
-* Последнее Dynatrace
-* 7-минутное чтение
-* Обновлено 18 ноября 2025 г.
+* Latest Dynatrace
+* 7-min read
+* Updated on Nov 18, 2025
 
-Ваша среда Dynatrace может интегрироваться с средой ServiceNow с помощью коннектора ServiceNow ![ServiceNow для рабочих процессов](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow для рабочих процессов"), что позволяет создавать инциденты на основе ваших данных мониторинга и событий автоматически. Кроме того, вы можете получать группы из ServiceNow и импортировать их как [команды владения](/docs/deliver/ownership/ownership-teams#import-teams "Определите команды с идентификаторами команд, описаниями, обязанностями и информацией о маршрутизации для владения сущностями.").
+Your Dynatrace environment can integrate with a ServiceNow environment using ServiceNow Connector ![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows"), enabling you to create incidents based on your monitoring data and events automatically.
+Furthermore, you can retrieve groups from ServiceNow and import them as [Ownership teams](/docs/deliver/ownership/ownership-teams#import-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
 
-## Настройка интеграции
+## Configure the integration
 
-[![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Предоставить разрешения для рабочих процессов**](/docs/analyze-explore-automate/workflows/actions/service-now#permissions "Автоматизировать создание инцидентов в ServiceNow на основе ваших данных мониторинга и событий.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/service-now#permissions "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Создать учетные данные аутентификации ServiceNow**](/docs/analyze-explore-automate/workflows/actions/service-now#authentication "Автоматизировать создание инцидентов в ServiceNow на основе ваших данных мониторинга и событий.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Create ServiceNow authentication credentials**](/docs/analyze-explore-automate/workflows/actions/service-now#authentication "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Настроить подключение к ServiceNow**](/docs/analyze-explore-automate/workflows/actions/service-now#connection "Автоматизировать создание инцидентов в ServiceNow на основе ваших данных мониторинга и событий.")
+**Configure ServiceNow connection**](/docs/analyze-explore-automate/workflows/actions/service-now#connection "Automate creation of incidents in ServiceNow based on your monitoring data and events.")
 
-### Шаг 1: Предоставить разрешения для рабочих процессов
+### Step 1 Grant permissions to Workflows
 
-Некоторые разрешения необходимы рабочим процессам для выполнения действий от вашего имени. Другие разрешения необходимы действиями, которые поставляются с коннектором ServiceNow.
+Some permissions are required by Workflows to run actions on your behalf. Other permissions are required by actions that come bundled with ServiceNow Connector itself.
 
-Чтобы тонко настроить разрешения, предоставленные рабочим процессам
+To fine-tune permissions granted to Workflows
 
-1. Перейдите в **Рабочие процессы** и выберите **Настройки** > **Настройки авторизации**.
-2. Выберите следующие разрешения, кроме общих разрешений для рабочих процессов.
+1. Go to **Workflows** and select **Settings** > **Authorization settings**.
+2. Select the following permissions besides the general Workflows permission.
 
-   * Разрешения, необходимые для действий рабочего процесса ServiceNow:
+   * Permissions needed for ServiceNow workflow actions:
 
      + `app-settings:objects:read`
 
-Для получения более подробной информации о разрешениях пользователей для рабочих процессов см. [Разрешения пользователей для рабочих процессов](/docs/analyze-explore-automate/workflows/security#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Рабочих процессах").
+For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
-### Шаг 2: Создать учетные данные аутентификации ServiceNow
+### Step 2 Create ServiceNow authentication credentials
 
-Войдите в свою среду ServiceNow и создайте базовые учетные данные аутентификации с следующими разрешениями. Вам понадобятся эти учетные данные на следующем шаге.
+Sign in to your ServiceNow instance and create basic authentication credentials with the following permissions. You will need these credentials in the next step.
 
-Разрешения пользователя ServiceNow:
+ServiceNow user permissions:
 
-* Поиск, создание и обновление инцидентов (таблица инцидент)
-* Чтение категорий (таблица sys\_choice, элемент category)
-* Чтение подкатегорий (таблица sys\_choice, элемент subcategory)
-* Чтение групп назначения (таблица sys\_user\_group)
-* Чтение кодов разрешения (таблица sys\_choice, элемент close\_code)
+* Search, create and update incidents (table incident)
+* Read categories (table sys\_choice, element category)
+* Read subcategories (table sys\_choice, element subcategory)
+* Read assignment groups (table sys\_user\_group)
+* Read resolution codes (table sys\_choice, element close\_code)
 
-### Шаг 3: Настроить подключение к ServiceNow
+### Step 3 Configure ServiceNow connection
 
-Вам необходимо настроить подключение для каждой из ваших сред ServiceNow.
+You need a configured connection for each of your ServiceNow environments.
 
-Чтобы настроить подключение
+To configure a connection
 
-1. Перейдите в **Настройки** и выберите **Подключения** > **Коннекторы** > **ServiceNow**.
-2. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Подключение**
-3. Опишите свое подключение к ServiceNow.
+1. Go to **Settings** and select **Connections** > **Connectors** > **ServiceNow**.
+2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Connection**
+3. Describe your ServiceNow connection.
 
-   * **Имя подключения**: Введите осмысленное имя для вашего подключения.
-   * **URL экземпляра ServiceNow**: Добавьте URL вашей среды ServiceNow.
-   * **Тип** Либо используйте базовую аутентификацию, либо учетные данные клиента.
+   * **Connection name**: Provide a meaningful name for your connection.
+   * **ServiceNow Instance URL**: Add the URL of your ServiceNow environment.
+   * **Type** Either use basic authentication or client credentials.
 
-     + Для **Базовой аутентификации** введите имя пользователя и пароль.
-     + Для **Учетных данных клиента** введите идентификатор клиента и секрет клиента.
-4. Выберите **Создать**.
+     + For **Basic Authentication**, provide your username and password.
+     + For **Client Credentials**, provide your client id and client secret.
+4. Select **Create**.
 
-## Доступные действия
+## Available actions
 
-Следующие действия рабочего процесса доступны для интеграции с ServiceNow. Каждое действие соответствует конечной точке API ServiceNow API.
+The following workflow actions are available for the ServiceNow integration. Each action corresponds to an endpoint of the ServiceNow API.
 
-Действие
+Action
 
-Описание
+Description
 
-Конечная точка API ServiceNow API
+ServiceNow API endpoint
 
-**Создать инцидент**
+**Create Incident**
 
-Создает инцидент в вашей среде ServiceNow. Инцидент представляет собой проблему или вопрос, который необходимо решить и устранить.
+Creates an incident in your ServiceNow environment. An incident represents a problem or an issue that needs to be addressed and resolved.
 
 `POST /api/now/v2/table/incident`
 
-**Создать уязвимый элемент**
+**Create a vulnerability item**
 
-Создает уязвимый элемент в вашей среде ServiceNow.
+Creates a vulnerability item in your ServiceNow environment.
 
 `POST /api/now/v2/table/sn_vul_vulnerable_item`
 
-**Получить группы**
+**Get Groups**
 
-Получает группы из вашей среды ServiceNow.
+Get groups from your ServiceNow environment.
 
 `GET /api/now/v2/table/sys_user_group`
 
-**Комментарий**
+**Comment**
 
-Создает комментарий к записи в вашей среде ServiceNow.
+Create a comment on an entry in your ServiceNow environment.
 
 `PUT /api/now/v2/table/${tableName}/${sysId}`
 
-**Комментарий к инциденту**
+**Comment on an incident**
 
-Добавляет новый комментарий к записи инцидента ServiceNow.
+Add a new comment to a ServiceNow incident record.
 
 `PUT /api/now/v2/table/incident/${sys_id}`
 
-**Поиск**
+**Search**
 
-Общее действие поиска, которое позволяет искать вашу среду ServiceNow.
+Generic search action that allows searching your ServiceNow environment.
 
 `GET /api/now/v2/table/${tableName}`
 
-**Поиск инцидентов**
+**Search incidents**
 
-Запрашивает ServiceNow, чтобы получить список инцидентов, соответствующих заданным критериям.
+Query ServiceNow to retrieve a list of incidents matching specified criteria.
 
 `GET /api/now/v2/table/incident`
 
-**Разрешить инцидент**
+**Resolve incident**
 
-Обновляет инцидент ServiceNow, чтобы отметить его как разрешенный.
+Update a ServiceNow incident to mark it as resolved.
 
 `PUT /api/now/v2/table/incident/${sys_id}`
 
-**Создать запись**
+**Create record**
 
-Создает новую запись в указанной таблице ServiceNow.
+Create a new record in a specified ServiceNow table.
 
 `POST /api/now/v2/table/${tableName}`
 
-**Обновить запись**
+**Update record**
 
-Обновляет существующую запись в указанной таблице ServiceNow.
+Update an existing record in a specified ServiceNow table.
 
 `PUT /api/now/v2/table/${tableName}/${sys_id}`
 
-## Создать инцидент ServiceNow
+## Create a ServiceNow incident
 
-Чтобы создать инцидент ServiceNow в вашем рабочем процессе ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+To raise a ServiceNow incident in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-1. В панели **Выбрать действие** найдите ServiceNow и выберите **Создать инцидент**.
-2. В действии **Создать инцидент** выберите [Подключение](#connection) к вашей среде ServiceNow.
-3. Настройте поля ввода по мере необходимости.
+1. In the **Choose action** pane, search for ServiceNow and select **Create Incident**.
+2. In the **Create Incident** action, select the [Connection](#connection) to your ServiceNow environment.
+3. Configure the input fields as needed.
 
-   | Поле | Описание | Обязательно |
+   | Field | Description | Required |
    | --- | --- | --- |
-   | **Идентификатор корреляции** | Уникальный идентификатор (в большинстве случаев это идентификатор события Dynatrace). | Необязательно |
-   | **Заявитель** | Пользователь, который сообщает об инциденте. | Необязательно |
-   | **Категория** | Категория инцидента. Варианты категорий получаются путем запроса таблицы `sys_choice` с `sysparm_query: 'name=incident^element=category^inactive=false'`. | Обязательно |
-   | **Подкатегория** | Подкатегория инцидента. Варианты подкатегорий получаются путем запроса таблицы `sys_choice` с `sysparm_query: 'name=incident^element=subcategory^inactive=false^dependent_value=${category}'`. | Обязательно |
-   | **Воздействие** | Воздействие инцидента. | Обязательно |
-   | **Срочность** | Срочность инцидента. | Обязательно |
-   | **Группа назначения** | Группа, которая будет работать над инцидентом. Варианты групп назначения получаются путем запроса таблицы `sys_user_group` с `sysparm_display_value: 'all'`. | Обязательно |
-   | **Элемент конфигурации** | Пострадавшая сущность. | Необязательно |
-   | **Краткое описание** | Краткое описание инцидента. | Необязательно |
-   | **Описание** | Подробное описание инцидента. | Необязательно |
+   | **Correlation ID** | Unique identifier (in most cases, this is the Dynatrace event ID). | Optional |
+   | **Caller** | The user who reports the incident. | Optional |
+   | **Category** | The category of the incident. Category options are derived by querying the `sys_choice` table with `sysparm_query: 'name=incident^element=category^inactive=false'`. | Required |
+   | **Subcategory** | The subcategory of the incident. Subcategory options are derived by querying the `sys_choice` table with `sysparm_query: 'name=incident^element=subcategory^inactive=false^dependent_value=${category}'`. | Required |
+   | **Impact** | The impact of the incident. | Required |
+   | **Urgency** | The urgency of the incident. | Required |
+   | **Assignment Group** | The group that will work on the incident. Assignment groups options are derived by querying the `sys_user_group` table with `sysparm_display_value: 'all'`. | Required |
+   | **Configuration item** | The affected entity. | Optional |
+   | **Short description** | A brief description of the incident. | Optional |
+   | **Description** | A detailed description of the incident. | Optional |
 
-   Для получения более подробной информации см. [официальную документацию ServiceNow](https://dt-url.net/vc039n0).
+   For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
-## Создать уязвимый элемент в ServiceNow
+## Create a vulnerability item in ServiceNow
 
-Чтобы создать уязвимый элемент ServiceNow в вашем рабочем процессе ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+To create a ServiceNow vulnerability item in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-1. В панели **Выбрать действие** найдите ServiceNow и выберите **Создать уязвимый элемент**.
-2. В действии **Создать уязвимый элемент** выберите [Подключение](#connection) к вашей среде ServiceNow.
-3. Настройте поля ввода по мере необходимости.
+1. In the **Choose action** pane, search for ServiceNow and select **Create a vulnerability item**.
+2. In the **Create a vulnerability item** action, select the [Connection](#connection) to your ServiceNow environment.
+3. Configure the input fields as needed.
 
-   | Поле | Описание | Обязательно |
+   | Field | Description | Required |
    | --- | --- | --- |
-   | **Внешний идентификатор** | Идентификатор, связанный с уязвимым элементом | Необязательно |
-   | **Описание** | Подробное описание уязвимого элемента | Необязательно |
-   | **Краткое описание** | Краткое описание уязвимого элемента | Необязательно |
-   | **Балл риска** | Балл риска уязвимого элемента | Необязательно |
-   | **Рейтинг риска** | Рейтинг риска уязвимого элемента | Необязательно |
-   | **Источник** | Источник, который обнаружил уязвимый элемент | Необязательно |
-   | **Балл риска источника** | Балл риска в системе источника уязвимого элемента | Необязательно |
-   | **Элемент конфигурации** | Пострадавшая сущность | Необязательно |
-   | **Дата обнаружения** | Дата обнаружения | Необязательно |
-   | **Приоритет** | Приоритет уязвимого элемента | Необязательно |
+   | **External ID** | ID which is associated with the vulnerable item | Optional |
+   | **Description** | A detailed description of the vulnerability item | Optional |
+   | **Short description** | A brief description of the vulnerability item | Optional |
+   | **Risk score** | The risk score of the vulnerability item | Optional |
+   | **Risk rating** | The risk rating of the vulnerability item | Optional |
+   | **Source** | The source which detected the vulnerable item | Optional |
+   | **Source risk score** | The risk score in the source system of the vulnerability item | Optional |
+   | **Configuration item** | The affected entity | Optional |
+   | **First found** | The date of the detection | Optional |
+   | **Priority** | The priority of the vulnerability item | Optional |
 
-   Для получения более подробной информации см. [официальную документацию ServiceNow](https://dt-url.net/vc039n0).
+   For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
-## Получить группы из ServiceNow
+## Get Groups from ServiceNow
 
-Чтобы получить группы из ServiceNow в вашем рабочем процессе ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+To fetch groups from ServiceNow in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-1. В панели **Выбрать действие** найдите ServiceNow и выберите **Получить группы**.
-2. В действии **Получить группы** выберите [Подключение](#connection) к вашей среде ServiceNow.
-3. Настройте поля ввода по мере необходимости.
+1. In the **Choose action** pane, search for ServiceNow and select **Get Groups**.
+2. In the **Get Group** action, select the [Connection](#connection) to your ServiceNow environment.
+3. Configure the input fields as needed.
 
-   | Поле | Описание | Обязательно |
+   | Field | Description | Required |
    | --- | --- | --- |
-   | **SysParm Query** | Закодированный запрос, используемый для фильтрации набора результатов | Необязательно |
-   | **Ограничение** | Максимальное количество результатов для возврата (по умолчанию: 100) | Необязательно |
+   | **SysParm Query** | An encoded query used to filter the result set | Optional |
+   | **Limit** | Maximum number of results to return (Default: 100) | Optional |
 
-   Для получения более подробной информации см. [официальную документацию ServiceNow](https://dt-url.net/vc039n0).
+   For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
-## Создать комментарий в ServiceNow
+## Create comment in ServiceNow
 
-Чтобы создать комментарий к записи в таблице ServiceNow в вашем рабочем процессе ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+To create a comment on an entry in a ServiceNow table in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-1. В панели **Выбрать действие** найдите ServiceNow и выберите **Создать комментарий**.
-2. В действии **Создать комментарий** выберите [Подключение](#connection) к вашей среде ServiceNow.
-3. Настройте поля ввода по мере необходимости.
+1. In the **Choose action** pane, search for ServiceNow and select **Create Comment**.
+2. In the **Create Comment** action, select the [Connection](#connection) to your ServiceNow environment.
+3. Configure the input fields as needed.
 
-   | Поле | Описание | Обязательно |
+   | Field | Description | Required |
    | --- | --- | --- |
-   | **Таблица** | Имя таблицы записи, к которой будет добавлен комментарий | Обязательно |
-   | **Уникальный идентификатор записи (sys\_id)** | Идентификатор sys\_id записи, к которой будет добавлен комментарий | Обязательно |
-   | **Комментарий** | Комментарий, который будет создан | Обязательно |
+   | **Table** | The table name of the entry to comment on | Required |
+   | **Unique record identifier (sys\_id)** | The sys\_id of the entry to comment on | Required |
+   | **Comment** | The comment that will be created | Required |
 
-   Для получения более подробной информации см. [официальную документацию ServiceNow](https://dt-url.net/vc039n0).
+   For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
-## Комментарий к инциденту в ServiceNow
+## Comment on an incident in ServiceNow
 
 
 

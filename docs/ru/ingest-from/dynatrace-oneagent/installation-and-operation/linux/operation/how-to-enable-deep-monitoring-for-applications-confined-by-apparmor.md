@@ -1,7 +1,7 @@
 ---
 title: How to enable deep monitoring for applications confined by AppArmor
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/how-to-enable-deep-monitoring-for-applications-confined-by-apparmor
-scraped: 2026-02-18T21:28:11.041444
+scraped: 2026-02-21T21:09:53.319397
 ---
 
 # How to enable deep monitoring for applications confined by AppArmor

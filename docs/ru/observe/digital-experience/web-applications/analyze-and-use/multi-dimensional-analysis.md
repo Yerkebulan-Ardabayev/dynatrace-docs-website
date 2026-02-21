@@ -1,7 +1,7 @@
 ---
 title: Multidimensional analysis for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/multi-dimensional-analysis
-scraped: 2026-02-18T21:25:17.295324
+scraped: 2026-02-21T21:12:19.432001
 ---
 
 # Multidimensional analysis for web applications

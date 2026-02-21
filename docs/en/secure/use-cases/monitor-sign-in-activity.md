@@ -1,7 +1,7 @@
 ---
 title: Monitor suspicious sign-in activity with Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/monitor-sign-in-activity
-scraped: 2026-02-18T21:24:09.786659
+scraped: 2026-02-21T21:14:37.217276
 ---
 
 # Monitor suspicious sign-in activity with Dynatrace
@@ -296,11 +296,11 @@ Failures = count(), Users = collectDistinct(audit.identity),
 
 Dynatrace Intelligence automatically identifies anomalous trends and deviations in sign-in logs, significantly enhancing your organization's ability to detect potential threats swiftly. Dynatrace Intelligence continuously analyzes user sign-in patterns, providing proactive alerts when anomalies are detected.
 
-To detect anomalous peaks within the observed sign-in logs with Davis
+To detect anomalous peaks within the observed sign-in logs with Dynatrace Intelligence
 
 1. Select any of the time-based charts, then select **Open with**.
 
-   ![davis02](https://dt-cdn.net/images/sssssss-1102-25711b87e5.png)
+   ![open-with](https://dt-cdn.net/images/sssssss-1102-25711b87e5.png)
 2. Select **Notebooks**.
 3. In the notebook document that opens, select **Options**.
 4. In the **Options** panel, select **Analyze and alert** and activate the analyzer.

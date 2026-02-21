@@ -1,51 +1,51 @@
 ---
-title: Управление политиками API - POST граница политики
+title: Policy management API - POST a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary
-scraped: 2026-02-20T21:23:39.691761
+scraped: 2026-02-21T21:23:00.167932
 ---
 
-# Управление политиками API - POST граница политики
+# Policy management API - POST a policy boundary
 
-# Управление политиками API - POST граница политики
+# Policy management API - POST a policy boundary
 
 * Latest Dynatrace
 * Reference
 * Published Nov 20, 2025
 
-Создает новую границу политики внутри уровня. Вы не можете создать глобальную границу уровня, поскольку они управляются Dynatrace.
+Creates a new policy boundary within a level. You can't create a global-level boundary, as these are managed by Dynatrace.
 
-Запрос потребляет и производит полезную нагрузку `application/json`.
+The request consumes and produces an `application/json` payload.
 
 POST
 
 `https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries`
 
-## Аутентификация
+## Authentication
 
-Чтобы выполнить этот запрос, вам необходимо иметь разрешение **Allow IAM policy configuration for environments** (`iam-policies-management`) в вашем токене. Чтобы узнать, как получить и использовать его, см. [OAuth-клиенты](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.").
+To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
 
-## Параметры
+## Parameters
 
-| Параметр | Тип | Описание | В | Обязательный |
+| Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| accountId | - | Идентификатор уровня границы политики. Используйте UUID учетной записи. | path | Обязательный |
-| body | [PolicyBoundaryDto](#openapi-definition-PolicyBoundaryDto) | JSON тело запроса. Содержит новую границу политики | body | Обязательный |
+| accountId | - | The ID of the policy boundary level. Use the UUID of the account. | path | Required |
+| body | [PolicyBoundaryDto](#openapi-definition-PolicyBoundaryDto) | The JSON body of the request. Contains new policy boundary | body | Required |
 
-### Объекты тела запроса
+### Request body objects
 
-#### Объект `PolicyBoundaryDto`
+#### The `PolicyBoundaryDto` object
 
-| Элемент | Тип | Описание | Обязательный |
+| Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| name | string | Отображаемое имя границы политики. | Обязательный |
-| boundaryQuery | string | Запрос границы политики. | Обязательный |
-| metadata | [Map](#openapi-definition-Map) | Метаданные границы политики. | Обязательный |
+| name | string | The display name of the policy boundary. | Required |
+| boundaryQuery | string | The boundary query of the policy boundary. | Required |
+| metadata | [Map](#openapi-definition-Map) | The metadata of the policy boundary. | Required |
 
-#### Объект `Map`
+#### The `Map` object
 
-### Модель тела запроса JSON
+### Request body JSON model
 
-Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.
+This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
 
 ```
 {
@@ -67,49 +67,49 @@ POST
 }
 ```
 
-## Ответ
+## Response
 
-### Код ответа
+### Response codes
 
-| Код | Тип | Описание |
+| Code | Type | Description |
 | --- | --- | --- |
-| **201** | [PolicyBoundaryOverview](#openapi-definition-PolicyBoundaryOverview) | Успешный ответ - граница политики создана |
-| **400** | [ErrorDto](#openapi-definition-ErrorDto) | Неудача. Запрос недействителен |
-| **404** | [ErrorDto](#openapi-definition-ErrorDto) | Неудача. Указанный ресурс не найден. |
+| **201** | [PolicyBoundaryOverview](#openapi-definition-PolicyBoundaryOverview) | Successful response - policy boundary created |
+| **400** | [ErrorDto](#openapi-definition-ErrorDto) | Failed. The request is invalid |
+| **404** | [ErrorDto](#openapi-definition-ErrorDto) | Failed. The specified resource is not found. |
 
-### Объекты тела ответа
+### Response body objects
 
-#### Объект `PolicyBoundaryOverview`
+#### The `PolicyBoundaryOverview` object
 
-| Элемент | Тип | Описание |
+| Element | Type | Description |
 | --- | --- | --- |
 | uuid | string | - |
 | levelType | string | - |
 | levelId | string | - |
-| name | string | Отображаемое имя границы политики. |
-| boundaryQuery | string | Запрос границы политики. |
+| name | string | The display name of the policy boundary. |
+| boundaryQuery | string | The boundary query of the policy boundary. |
 | boundaryConditions | [Condition[]](#openapi-definition-Condition) | - |
-| metadata | [Map](#openapi-definition-Map) | Метаданные границы политики. |
+| metadata | [Map](#openapi-definition-Map) | The metadata of the policy boundary. |
 
-#### Объект `Condition`
+#### The `Condition` object
 
-| Элемент | Тип | Описание |
+| Element | Type | Description |
 | --- | --- | --- |
-| name | string | Имя условия.  Оно указывает, какая часть **сервисов** проверяется условием. |
-| operator | string | Оператор условия. |
-| values | string[] | Список ссылочных значений условия. |
+| name | string | The name of the condition.  It indicates which part of the **services** is checked by the condition. |
+| operator | string | The operator of the condition. |
+| values | string[] | A list of reference values of the condition. |
 
-#### Объект `Map`
+#### The `Map` object
 
-#### Объект `ErrorDto`
+#### The `ErrorDto` object
 
-| Элемент | Тип | Описание |
+| Element | Type | Description |
 | --- | --- | --- |
-| code | number | Код ошибки. |
-| message | string | Краткое описание ошибки. |
+| code | number | The code of the error. |
+| message | string | A short description of the error. |
 | errorsMap | object | - |
 
-### Модели тела ответа JSON
+### Response body JSON models
 
 ```
 {
@@ -164,7 +164,7 @@ POST
 
 
 
-)
+}
 
 
 
@@ -199,42 +199,42 @@ POST
 }
 ```
 
-## Проверка полезной нагрузки
+## Validate payload
 
-Мы рекомендуем проверить полезную нагрузку перед отправкой ее с фактическим запросом. Код ответа **200** указывает на действительную полезную нагрузку.
+We recommend that you validate the payload before submitting it with an actual request. A response code of **200** indicates a valid payload.
 
-Запрос потребляет полезную нагрузку `application/json`.
+The request consumes an `application/json` payload.
 
 POST
 
 `https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries/validation`
 
-### Аутентификация
+### Authentication
 
-Чтобы выполнить этот запрос, вам необходимо иметь разрешение **Allow IAM policy configuration for environments** (`iam-policies-management`) в вашем токене. Чтобы узнать, как получить и использовать его, см. [OAuth-клиенты](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.").
+To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
 
-### Параметры
+### Parameters
 
-| Параметр | Тип | Описание | В | Обязательный |
+| Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| accountId | - | Идентификатор уровня границы политики. Используйте UUID учетной записи. | path | Обязательный |
-| body | [PolicyBoundaryDto](#openapi-definition-PolicyBoundaryDto) | JSON тело запроса. Содержит новую границу политики | body | Обязательный |
+| accountId | - | The ID of the policy boundary level. Use the UUID of the account. | path | Required |
+| body | [PolicyBoundaryDto](#openapi-definition-PolicyBoundaryDto) | The JSON body of the request. Contains new policy boundary | body | Required |
 
-### Объекты тела запроса
+### Request body objects
 
-#### Объект `PolicyBoundaryDto`
+#### The `PolicyBoundaryDto` object
 
-| Элемент | Тип | Описание | Обязательный |
+| Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| name | string | Отображаемое имя границы политики. | Обязательный |
-| boundaryQuery | string | Запрос границы политики. | Обязательный |
-| metadata | [Map](#openapi-definition-Map) | Метаданные границы политики. | Обязательный |
+| name | string | The display name of the policy boundary. | Required |
+| boundaryQuery | string | The boundary query of the policy boundary. | Required |
+| metadata | [Map](#openapi-definition-Map) | The metadata of the policy boundary. | Required |
 
-#### Объект `Map`
+#### The `Map` object
 
-### Модель тела запроса JSON
+### Request body JSON model
 
-Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.
+This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
 
 ```
 {
@@ -256,9 +256,9 @@ POST
 }
 ```
 
-## Пример
+## Example
 
-В этом примере запрос создает новую границу политики внутри уровня. Это новая граница политики для `accountID` **f1a2b3c4-d5e6-7890-ab12-34cd56ef7890**.
+In this example, the request creates a new policy boundary within a level. It a new policy boundary for the `accountID` **f1a2b3c4-d5e6-7890-ab12-34cd56ef7890**.
 
 #### Curl
 
@@ -302,13 +302,13 @@ curl --request POST \
 }'
 ```
 
-#### URL запроса
+#### Request URL
 
 ```
 https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries
 ```
 
-#### Тело запроса
+#### Request body
 
 ```
 {
@@ -330,7 +330,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 }
 ```
 
-#### Тело ответа
+#### Response body
 
 ```
 {
@@ -385,7 +385,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 
 
 
-)
+}
 
 
 
@@ -400,6 +400,6 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 }
 ```
 
-#### Код ответа
+#### Response code
 
-201 - Успешный ответ - граница политики создана.
+201 - Successful response - policy boundary created.

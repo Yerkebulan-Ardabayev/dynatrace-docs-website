@@ -1,7 +1,7 @@
 ---
 title: Set up EdgeConnect
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect
-scraped: 2026-02-19T21:30:04.847288
+scraped: 2026-02-21T21:20:59.765609
 ---
 
 # Set up EdgeConnect

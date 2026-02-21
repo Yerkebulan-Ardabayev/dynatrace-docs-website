@@ -1,7 +1,7 @@
 ---
 title: Visualize your environment through Smartscape Classic
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape-classic
-scraped: 2026-02-20T21:07:08.826368
+scraped: 2026-02-21T21:06:43.822518
 ---
 
 # Visualize your environment through Smartscape Classic

@@ -1,7 +1,7 @@
 ---
 title: Message queues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues
-scraped: 2026-02-20T21:26:30.357962
+scraped: 2026-02-21T21:15:43.628246
 ---
 
 # Message queues

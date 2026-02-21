@@ -1,7 +1,7 @@
 ---
 title: Profiling and optimization
 source: https://www.dynatrace.com/docs/observe/application-observability/profiling-and-optimization
-scraped: 2026-02-18T21:23:33.275057
+scraped: 2026-02-21T21:15:13.974537
 ---
 
 # Profiling and optimization

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence generative AI FAQ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-faq
-scraped: 2026-02-18T21:35:10.280103
+scraped: 2026-02-21T21:25:37.838325
 ---
 
 # Dynatrace Intelligence generative AI FAQ

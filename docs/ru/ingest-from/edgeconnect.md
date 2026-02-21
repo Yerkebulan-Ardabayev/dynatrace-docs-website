@@ -1,7 +1,7 @@
 ---
 title: Configure and deploy EdgeConnect
 source: https://www.dynatrace.com/docs/ingest-from/edgeconnect
-scraped: 2026-02-20T21:11:33.024517
+scraped: 2026-02-21T21:16:17.147478
 ---
 
 # Configure and deploy EdgeConnect

@@ -1,42 +1,42 @@
 ---
-title: Hub элементы API
+title: Hub items API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/hub
-scraped: 2026-02-20T21:20:22.732701
+scraped: 2026-02-21T21:21:10.878770
 ---
 
-# Hub элементы API
+# Hub items API
 
-# Hub элементы API
+# Hub items API
 
-* Справочник
-* Опубликовано 07 февр. 2023 г.
+* Reference
+* Published Feb 07, 2023
 
-[### Список категорий
+[### List categories
 
-Просмотр категорий Hub элементов.](/docs/dynatrace-api/environment-api/hub/get-categories "Просмотр категорий Hub элементов через возможности Hub API.")[### Список элементов
+View categories of Hub items.](/docs/dynatrace-api/environment-api/hub/get-categories "View categories of Hub items via the Hub capabilities API.")[### List items
 
-Просмотр Hub элементов.](/docs/dynatrace-api/environment-api/hub/get-items "Просмотр Hub элементов через возможности Hub API.")[### Получение технологии
+View Hub items.](/docs/dynatrace-api/environment-api/hub/get-items "View Hub items via the Hub capabilities API.")[### Get technology
 
-Просмотр деталей технологии.](/docs/dynatrace-api/environment-api/hub/get-technology "Просмотр деталей технологии через возможности Hub API.")
+View technology details.](/docs/dynatrace-api/environment-api/hub/get-technology "View technology details via the Hub capabilities API.")
 
 ## Extensions v1
 
-[### Просмотр расширения v1
+[### View an extension v1
 
-Получение обзора версии 1 расширения.](/docs/dynatrace-api/environment-api/hub/get-extension-v1 "Просмотр деталей версии 1 расширения через возможности Hub API.")[### Загрузка расширения v1
+Get an overview of a version 1 extension.](/docs/dynatrace-api/environment-api/hub/get-extension-v1 "View details about a version 1 extension via the Hub capabilities API.")[### Download an extension v1
 
-Загрузка артефакта версии 1 расширения.](/docs/dynatrace-api/environment-api/hub/get-extension-v1-artifact "Загрузка артефакта версии 1 расширения через возможности Hub API.")
+Download the artifact of a version 1 extension.](/docs/dynatrace-api/environment-api/hub/get-extension-v1-artifact "Download the artifact of a version 1 extension via the Hub capabilities API.")
 
 ## Extensions 2.0
 
-[### Просмотр расширения 2.0
+[### View an extension 2.0
 
-Получение обзора расширения 2.0.](/docs/dynatrace-api/environment-api/hub/get-extension-20 "Просмотр деталей расширения 2.0 через возможности Hub API.")[### Добавление расширения 2.0 в среду
+Get an overview of an extension 2.0.](/docs/dynatrace-api/environment-api/hub/get-extension-20 "View the details of an extension 2.0 via the Hub capabilities API.")[### Add an extension 2.0 to environment
 
-Регистрация расширения 2.0 в вашей среде.](/docs/dynatrace-api/environment-api/hub/post-extension-20-to-evironment "Добавление расширения 2.0 в вашу среду через возможности Hub API.")[### Обновление расширения 2.0
+Register an extension 2.0 in your environment.](/docs/dynatrace-api/environment-api/hub/post-extension-20-to-evironment "Add an extension 2.0 to your environment via the Hub capabilities API.")[### Update an extension 2.0
 
-Обновление расширения 2.0 до последней версии.](/docs/dynatrace-api/environment-api/hub/post-update-extension-20 "Обновление расширения 2.0 через возможности Hub API.")[### Обновление метаданных расширения 2.0
+Update an extension 2.0 to the latest version.](/docs/dynatrace-api/environment-api/hub/post-update-extension-20 "Update an extension 2.0 via the Hub capabilities API.")[### Update an extension 2.0 metadata
 
-Обновление метаданных расширения 2.0.](/docs/dynatrace-api/environment-api/hub/put-update-extension-20-metadata "Обновление метаданных расширения 2.0 через возможности Hub API.")[### Добавление заметок к выпуску расширения 2.0
+Update the metadata of an extension 2.0.](/docs/dynatrace-api/environment-api/hub/put-update-extension-20-metadata "Update the metadata of an extension 2.0 via the Hub capabilities API.")[### Add release notes to an extension 2.0 release
 
-Установка заметок к выпуску расширения 2.0.](/docs/dynatrace-api/environment-api/hub/put-extension-20-release-notes "Установка заметок к выпуску расширения 2.0 через возможности Hub API.")
+Set the release notes of an extension 2.0 release.](/docs/dynatrace-api/environment-api/hub/put-extension-20-release-notes "Set the release notes of an extension 2.0 release via the Hub capabilities API.")

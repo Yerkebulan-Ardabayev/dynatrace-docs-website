@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-02-20
+Сгенерировано: 2026-02-21
 Файлов в разделе: 11
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-02-19T21:31:28.557596
+scraped: 2026-02-21T21:16:33.670160
 ---
 
 # Accessibility
@@ -48,7 +48,7 @@ Any ACR posted below, or anywhere else on the Dynatrace website, or otherwise pu
 ---
 title: Data visualizations
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
-scraped: 2026-02-17T05:08:33.518703
+scraped: 2026-02-21T21:22:59.009066
 ---
 
 # Data visualizations
@@ -248,7 +248,7 @@ To see the full API documentation for the documents service
 ---
 title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-02-20T21:24:43.288580
+scraped: 2026-02-21T21:18:25.516097
 ---
 
 # Troubleshooting sign-in issues
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-20T21:07:15.655094
+scraped: 2026-02-21T21:08:22.800148
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-20T21:09:55.427260
+scraped: 2026-02-21T21:10:19.338896
 ---
 
 # Filter field
@@ -869,7 +869,7 @@ Use bracket notation for subkeys with special characters (spaces, dashes, etc.) 
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-20T21:28:58.059855
+scraped: 2026-02-21T21:26:16.402428
 ---
 
 # Navigate the Dynatrace platform
@@ -1059,7 +1059,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-20T21:09:28.381460
+scraped: 2026-02-21T21:07:25.947115
 ---
 
 # What is a monitoring environment?
@@ -1761,7 +1761,7 @@ Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe,
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-02-18T21:23:05.322183
+scraped: 2026-02-21T21:15:38.826001
 ---
 
 # Serverless monitoring
@@ -1854,7 +1854,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-20T21:06:51.474525
+scraped: 2026-02-21T21:06:38.143139
 ---
 
 # Get started with Dynatrace

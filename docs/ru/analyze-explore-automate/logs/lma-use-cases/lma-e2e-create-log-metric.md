@@ -1,7 +1,7 @@
 ---
 title: Create log metric
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric
-scraped: 2026-02-19T21:17:09.030912
+scraped: 2026-02-21T21:18:11.339593
 ---
 
 # Create log metric

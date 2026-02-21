@@ -1,7 +1,7 @@
 ---
 title: Azure Automation Account monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-automation-account
-scraped: 2026-02-20T21:22:07.149884
+scraped: 2026-02-21T21:25:57.397930
 ---
 
 # Azure Automation Account monitoring

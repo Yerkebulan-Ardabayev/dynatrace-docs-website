@@ -1,7 +1,7 @@
 ---
 title: Transform and filter data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/transform
-scraped: 2026-02-20T21:12:22.996572
+scraped: 2026-02-21T21:17:13.675426
 ---
 
 # Transform and filter data with the OpenTelemetry Collector

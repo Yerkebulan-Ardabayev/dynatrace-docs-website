@@ -1,7 +1,7 @@
 ---
 title: Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock
-scraped: 2026-02-18T21:23:11.066458
+scraped: 2026-02-21T21:14:07.221875
 ---
 
 # Amazon Bedrock
