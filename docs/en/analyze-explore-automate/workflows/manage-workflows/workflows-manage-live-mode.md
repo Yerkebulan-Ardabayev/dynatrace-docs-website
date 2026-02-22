@@ -1,7 +1,7 @@
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-20T21:12:31.604552
+scraped: 2026-02-22T21:29:41.043146
 ---
 
 # Manage live or draft workflows

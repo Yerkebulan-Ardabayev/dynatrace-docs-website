@@ -1,7 +1,7 @@
 ---
 title: Gauge chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge
-scraped: 2026-02-20T21:10:05.203543
+scraped: 2026-02-22T21:13:27.806089
 ---
 
 # Gauge chart

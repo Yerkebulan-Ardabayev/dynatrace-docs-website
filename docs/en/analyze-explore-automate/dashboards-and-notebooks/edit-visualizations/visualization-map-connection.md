@@ -1,7 +1,7 @@
 ---
 title: Connection map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection
-scraped: 2026-02-20T21:10:08.024887
+scraped: 2026-02-22T21:13:26.610102
 ---
 
 # Connection map visualization

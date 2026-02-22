@@ -1,6 +1,6 @@
 # Документация Dynatrace: ingest-from/extensions
 Язык: Русский (RU)
-Сгенерировано: 2026-02-21
+Сгенерировано: 2026-02-22
 Файлов в разделе: 38
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Distribute custom dashboards with your extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/custom-dashboards
-scraped: 2026-02-20T21:16:55.886946
+scraped: 2026-02-22T21:27:09.343443
 ---
 
 # Distribute custom dashboards with your extensions
@@ -383,7 +383,7 @@ To configure the ActiveGate for the dedicated performance profile
 ---
 title: Extension Execution Controller custom configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/eec-custom-configuration
-scraped: 2026-02-21T21:17:18.716560
+scraped: 2026-02-22T21:22:29.445069
 ---
 
 # Extension Execution Controller custom configuration
@@ -517,7 +517,7 @@ Only Dynatrace extensions can be elevated, while custom ones cannot. In case an 
 ---
 title: Customize data with extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/extension-customize
-scraped: 2026-02-20T21:14:56.723590
+scraped: 2026-02-22T21:21:42.966728
 ---
 
 # Customize data with extensions
@@ -922,7 +922,7 @@ sampleLog: |
 ---
 title: About Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/concepts
-scraped: 2026-02-20T21:18:57.017714
+scraped: 2026-02-22T21:23:40.388687
 ---
 
 # About Extensions
@@ -1775,7 +1775,7 @@ See [Prometheus data source reference](/docs/ingest-from/extensions/develop-your
 ---
 title: Dynatrace Extensions Python SDK
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/python
-scraped: 2026-02-21T21:19:25.633508
+scraped: 2026-02-22T21:27:29.467024
 ---
 
 # Dynatrace Extensions Python SDK
@@ -1812,7 +1812,7 @@ For more information, see:
 ---
 title: Troubleshooting
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/troubleshooting
-scraped: 2026-02-21T21:16:46.033409
+scraped: 2026-02-22T21:22:43.013525
 ---
 
 # Troubleshooting
@@ -1884,7 +1884,7 @@ Monitoring configurations are provided with a set of advanced settings that affe
 ---
 title: SNMP data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions
-scraped: 2026-02-20T21:20:32.276442
+scraped: 2026-02-22T21:29:42.315693
 ---
 
 # SNMP data source
@@ -1983,7 +1983,7 @@ For example, the SNMP devices used in our tests were equipped with 20 communicat
 ---
 title: IBM Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring
-scraped: 2026-02-21T21:18:49.170584
+scraped: 2026-02-22T21:22:58.977123
 ---
 
 # IBM Database monitoring configuration
@@ -2322,7 +2322,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: JDBC monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring
-scraped: 2026-02-19T21:21:00.405226
+scraped: 2026-02-22T21:23:16.676106
 ---
 
 # JDBC monitoring configuration
@@ -3973,7 +3973,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SAP Hana Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring
-scraped: 2026-02-20T21:16:12.004066
+scraped: 2026-02-22T21:22:32.135309
 ---
 
 # SAP Hana Database monitoring configuration
@@ -4302,7 +4302,7 @@ To define the SAP Hana Database server, put `ngdbc.jar` file in the following lo
 ---
 title: Snowflake Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
-scraped: 2026-02-21T21:27:23.480786
+scraped: 2026-02-22T21:24:00.951534
 ---
 
 # Snowflake Database monitoring configuration
@@ -4607,7 +4607,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SQL data source reference
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference
-scraped: 2026-02-20T21:12:26.071152
+scraped: 2026-02-22T21:24:55.155994
 ---
 
 # SQL data source reference
@@ -6474,7 +6474,7 @@ Save the `root.pem` certificate file in the following location:
 ---
 title: Develop your own Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
-scraped: 2026-02-21T21:21:11.953785
+scraped: 2026-02-22T21:20:35.257826
 ---
 
 # Develop your own Extensions
@@ -6551,7 +6551,7 @@ Find solutions to common issues with our expert-written troubleshooting articles
 ---
 title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-02-21T21:26:47.975429
+scraped: 2026-02-22T21:20:36.555676
 ---
 
 # Manage Extensions
@@ -7072,7 +7072,7 @@ Explore ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0
 ---
 title: Manage SNMP extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/snmp
-scraped: 2026-02-21T21:15:49.380489
+scraped: 2026-02-22T21:19:02.659889
 ---
 
 # Manage SNMP extensions
@@ -7317,7 +7317,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Microsoft SQL Server extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
-scraped: 2026-02-21T21:16:00.232230
+scraped: 2026-02-22T21:19:06.468079
 ---
 
 # Manage Microsoft SQL Server extensions
@@ -7503,7 +7503,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Oracle Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-02-21T21:16:07.605168
+scraped: 2026-02-22T21:19:16.747701
 ---
 
 # Manage Oracle Database extensions
@@ -7611,7 +7611,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage PostgreSQL extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql
-scraped: 2026-02-20T21:25:52.901964
+scraped: 2026-02-22T21:24:53.725095
 ---
 
 # Manage PostgreSQL extensions
@@ -7705,7 +7705,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage SAP Hana Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana
-scraped: 2026-02-21T21:18:48.058020
+scraped: 2026-02-22T21:23:12.747224
 ---
 
 # Manage SAP Hana Database extensions
@@ -7816,7 +7816,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Snowflake Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql
-scraped: 2026-02-21T21:17:48.303311
+scraped: 2026-02-22T21:22:56.265588
 ---
 
 # Manage Snowflake Database extensions
@@ -7914,7 +7914,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-02-21T21:15:53.238933
+scraped: 2026-02-22T21:19:10.454959
 ---
 
 # Manage WMI extensions
@@ -8109,7 +8109,7 @@ This is especially useful when you need to interact with custom APIs, proprietar
 ---
 title: Explore supported Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions
-scraped: 2026-02-20T21:23:04.807947
+scraped: 2026-02-22T21:20:34.040483
 ---
 
 # Explore supported Extensions
@@ -8156,7 +8156,7 @@ With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions
-scraped: 2026-02-21T21:08:26.341919
+scraped: 2026-02-22T21:10:01.591364
 ---
 
 # Extensions

@@ -1,7 +1,7 @@
 ---
 title: Known solutions and workarounds
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/known-solutions-and-workarounds
-scraped: 2026-02-21T21:12:59.444066
+scraped: 2026-02-22T21:16:24.725081
 ---
 
 # Known solutions and workarounds

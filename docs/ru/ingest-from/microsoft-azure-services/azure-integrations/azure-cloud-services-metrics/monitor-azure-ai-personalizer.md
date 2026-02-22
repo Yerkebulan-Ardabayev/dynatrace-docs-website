@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Personalizer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-personalizer
-scraped: 2026-02-21T21:23:49.974528
+scraped: 2026-02-22T21:24:38.945766
 ---
 
 # Azure AI - Personalizer monitoring

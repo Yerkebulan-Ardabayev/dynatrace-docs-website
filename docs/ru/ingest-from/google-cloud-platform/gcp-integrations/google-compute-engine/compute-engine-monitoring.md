@@ -1,7 +1,7 @@
 ---
 title: Google Compute Engine with Operations suite metrics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine/compute-engine-monitoring
-scraped: 2026-02-21T21:25:40.884414
+scraped: 2026-02-22T21:29:50.085751
 ---
 
 # Google Compute Engine with Operations suite metrics monitoring
@@ -31,7 +31,7 @@ After deploying the integration, you can see metrics from monitored services in 
 
 ## Metric table
 
-Следующие наборы функций доступны для Google Compute Engine.
+The following feature sets are available for Google Compute Engine.
 
 | Feature set | Name | Unit | GCP metric identifier |
 | --- | --- | --- | --- |

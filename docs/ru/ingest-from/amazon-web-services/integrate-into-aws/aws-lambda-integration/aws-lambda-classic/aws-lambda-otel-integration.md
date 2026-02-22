@@ -1,7 +1,7 @@
 ---
 title: Trace .NET Lambda functions
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration
-scraped: 2026-02-20T21:11:07.785292
+scraped: 2026-02-22T21:21:23.412403
 ---
 
 # Trace .NET Lambda functions

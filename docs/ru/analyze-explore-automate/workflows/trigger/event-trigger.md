@@ -1,7 +1,7 @@
 ---
 title: Event triggers for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
-scraped: 2026-02-21T21:23:12.489026
+scraped: 2026-02-22T21:22:53.404387
 ---
 
 # Event triggers for workflows

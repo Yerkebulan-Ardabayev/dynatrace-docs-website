@@ -1,7 +1,7 @@
 ---
 title: Business Flow
 source: https://www.dynatrace.com/docs/observe/business-observability/business-flow
-scraped: 2026-02-21T21:14:16.348163
+scraped: 2026-02-22T21:17:46.627223
 ---
 
 # Business Flow

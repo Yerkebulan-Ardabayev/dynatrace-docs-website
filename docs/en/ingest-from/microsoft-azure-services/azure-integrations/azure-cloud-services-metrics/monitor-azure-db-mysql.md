@@ -1,7 +1,7 @@
 ---
 title: Azure Database for MySQL monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mysql
-scraped: 2026-02-19T21:23:38.850436
+scraped: 2026-02-22T21:23:05.956588
 ---
 
 # Azure Database for MySQL monitoring

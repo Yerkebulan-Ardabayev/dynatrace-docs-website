@@ -1,7 +1,7 @@
 ---
 title: Trace Azure Functions with OpenTelemetry .NET
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/otel-native-dotnet-azure
-scraped: 2026-02-21T21:22:00.895945
+scraped: 2026-02-22T21:24:20.599831
 ---
 
 # Trace Azure Functions with OpenTelemetry .NET

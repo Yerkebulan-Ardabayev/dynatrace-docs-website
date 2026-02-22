@@ -1,7 +1,7 @@
 ---
 title: DDUs for Log Management and Analytics
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics
-scraped: 2026-02-21T21:23:30.575111
+scraped: 2026-02-22T21:25:27.790582
 ---
 
 # DDUs for Log Management and Analytics

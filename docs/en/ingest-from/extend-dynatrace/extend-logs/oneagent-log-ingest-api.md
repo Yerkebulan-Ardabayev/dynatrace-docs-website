@@ -1,7 +1,7 @@
 ---
 title: OneAgent log ingest API
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api
-scraped: 2026-02-21T21:25:09.017477
+scraped: 2026-02-22T21:28:59.169221
 ---
 
 # OneAgent log ingest API

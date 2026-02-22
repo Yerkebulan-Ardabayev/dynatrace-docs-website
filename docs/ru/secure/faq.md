@@ -1,7 +1,7 @@
 ---
 title: Application Security FAQ
 source: https://www.dynatrace.com/docs/secure/faq
-scraped: 2026-02-21T21:11:38.597567
+scraped: 2026-02-22T21:17:27.508450
 ---
 
 # Application Security FAQ

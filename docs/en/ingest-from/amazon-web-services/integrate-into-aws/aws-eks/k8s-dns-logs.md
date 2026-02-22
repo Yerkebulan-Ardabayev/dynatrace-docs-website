@@ -1,7 +1,7 @@
 ---
 title: Ingest Kubernetes DNS logs from AWS
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-eks/k8s-dns-logs
-scraped: 2026-02-20T21:22:49.321947
+scraped: 2026-02-22T21:25:52.166335
 ---
 
 # Ingest Kubernetes DNS logs from AWS

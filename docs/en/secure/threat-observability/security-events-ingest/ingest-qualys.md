@@ -1,7 +1,7 @@
 ---
 title: Ingest Qualys vulnerability findings, scan events, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-qualys
-scraped: 2026-02-20T21:20:45.266445
+scraped: 2026-02-22T21:19:52.799408
 ---
 
 # Ingest Qualys vulnerability findings, scan events, and audit logs

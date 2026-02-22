@@ -1,7 +1,7 @@
 ---
 title: Observe Argo CD deployment and application health with Dashboards and SDLC events
 source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/deployment-observability-use-case-argocd
-scraped: 2026-02-21T21:22:50.530322
+scraped: 2026-02-22T21:25:29.116392
 ---
 
 # Observe Argo CD deployment and application health with Dashboards and SDLC events

@@ -1,7 +1,7 @@
 ---
 title: Configure auto-update for Dynatrace Operator managed components
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components
-scraped: 2026-02-20T21:22:38.559735
+scraped: 2026-02-22T21:23:39.148536
 ---
 
 # Configure auto-update for Dynatrace Operator managed components

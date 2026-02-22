@@ -1,7 +1,7 @@
 ---
 title: Set up agentless RUM in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring
-scraped: 2026-02-21T21:19:29.423697
+scraped: 2026-02-22T21:26:29.489066
 ---
 
 # Set up agentless RUM in the New RUM Experience

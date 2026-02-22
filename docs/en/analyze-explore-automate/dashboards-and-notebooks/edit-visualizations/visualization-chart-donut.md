@@ -1,7 +1,7 @@
 ---
 title: Donut visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-donut
-scraped: 2026-02-20T21:10:22.170537
+scraped: 2026-02-22T21:13:29.138148
 ---
 
 # Donut visualization

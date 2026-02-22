@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/release-monitoring
 Язык: Русский (RU)
-Сгенерировано: 2026-02-21
+Сгенерировано: 2026-02-22
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Issue-tracking integration
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
-scraped: 2026-02-20T21:19:51.204760
+scraped: 2026-02-22T21:23:20.461782
 ---
 
 # Issue-tracking integration
@@ -99,7 +99,7 @@ The following is a solution to a problem some people had with [Automated release
 ---
 title: Monitor releases with Dynatrace
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/monitor-releases-with-dynatrace
-scraped: 2026-02-21T21:24:34.994454
+scraped: 2026-02-22T21:29:34.150814
 ---
 
 # Monitor releases with Dynatrace

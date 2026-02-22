@@ -1,7 +1,7 @@
 ---
 title: Get started with Kubernetes platform monitoring + Application observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/application-observability
-scraped: 2026-02-21T21:13:55.557022
+scraped: 2026-02-22T21:17:06.799098
 ---
 
 # Get started with Kubernetes platform monitoring + Application observability

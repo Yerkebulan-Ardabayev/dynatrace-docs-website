@@ -1,7 +1,7 @@
 ---
 title: Ingest and process custom security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/ingest-and-process-custom-security-findings
-scraped: 2026-02-21T21:14:34.782882
+scraped: 2026-02-22T21:18:48.400411
 ---
 
 # Ingest and process custom security findings

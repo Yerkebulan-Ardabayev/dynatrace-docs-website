@@ -1,17 +1,17 @@
 ---
 title: Миграция из профилей оповещений API в Настройки API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/alerting-profiles-to-settings
-scraped: 2026-02-21T21:18:14.972627
+scraped: 2026-02-22T21:24:56.639325
 ---
 
 # Миграция из профилей оповещений API в Настройки API
 
 # Миграция из профилей оповещений API в Настройки API
 
-* Справочник
+* Ссылка
 * Опубликовано 20 декабря 2022 г.
 
-[Профили оповещений API](/docs/dynatrace-api/configuration-api/alerting-profiles-api "Узнайте, что предлагают профили оповещений Dynatrace API.") были объявлены устаревшими с [Dynatrace версии 1.249](/docs/whats-new/dynatrace-api/sprint-249 "Журнал изменений для Dynatrace API версии 1.249"). Их заменой являются [Настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагают Настройки Dynatrace API.") с схемой **Профили оповещений о проблемах** (`builtin:alerting.profile`). Мы рекомендуем вам мигрировать в новую API как можно скорее.
+[Профили оповещений API](/docs/dynatrace-api/configuration-api/alerting-profiles-api "Узнайте, что предлагают профили оповещений Dynatrace API.") были заменены с [версией 1.249 Dynatrace](/docs/whats-new/dynatrace-api/sprint-249 "Журнал изменений для Dynatrace API версии 1.249"). Их заменой являются [Настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагают Настройки Dynatrace API.") с схемой **Профили оповещений о проблемах** (`builtin:alerting.profile`). Мы рекомендуем вам мигрировать в новые API как можно скорее.
 
 Миграция влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на объем токена для аутентификации запросов.
 
@@ -29,21 +29,21 @@ scraped: 2026-02-21T21:18:14.972627
 
 ## Параметры
 
-Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагают Настройки Dynatrace API.").
+Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Настройках API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагают Настройки Dynatrace API.").
 
-В рамках Settings 2.0 каждый профиль оповещения представлен объектом настроек. Объект содержит некоторую метаинформацию (например, объем или метку времени создания) и саму конфигурацию, инкапсулированную в объекте **value**. Содержимое объекта **value** по сути является таким же, как конфигурация в устаревших Профили оповещений API. Чтобы узнать о параметрах конфигурации профиля оповещения, запросите схему **Профили оповещений о проблемах** (`builtin:alerting.profile`) с помощью запроса [GET-схема](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотрите схему настроек через Dynatrace API.").
+В рамках Settings 2.0 каждый профиль оповещения представлен объектом настроек. Объект содержит некоторые метаданные (например, объем или метку времени создания) и саму конфигурацию, инкапсулированную в объект **value**. Содержимое объекта **value** по сути такое же, как конфигурация в устаревших Профили оповещений API. Чтобы узнать о параметрах конфигурации профиля оповещения, запросите схему **Профили оповещений о проблемах** (`builtin:alerting.profile`) с помощью запроса [GET-схема](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотрите схему настроек через Dynatrace API.").
 
 ## Примеры
 
 Вот некоторые примеры различий в использовании API.
 
-### Список профилей оповещения
+### Список профилей оповещений
 
 Settings 2.0
 
-Профили оповещения
+Профили оповещений
 
-Чтобы просмотреть все профили оповещения, вам необходимо запрос [GET-объекты](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотрите несколько объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в `builtin:alerting.profile` и **scope** в `environment`.
+Чтобы перечислить все профили оповещений, вам нужно запрос [GET-объекты](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотрите несколько объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в `builtin:alerting.profile` и **scope** в `environment`.
 
 #### URL-адрес запроса
 
@@ -198,8 +198,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=bui
 
 
 
-"tagFilterIncludeMode": "НИЧЕГО"
-
+"tagFilterIncludeMode": "НЕТ"
 
 
 },
@@ -229,9 +228,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=bui
 "Holox Cluster"
 
 
-
 ]
-
 
 
 },
@@ -250,8 +247,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=bui
 
 
 
-"tagFilterIncludeMode": "НИЧЕГО"
-
+"tagFilterIncludeMode": "НЕТ"
 
 
 },
@@ -270,40 +266,34 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=bui
 
 
 
-"tagFilterIncludeMode": "НИЧЕГО"
-
+"tagFilterIncludeMode": "НЕТ"
 
 
 }
 
 
+]
 
-],
 
+,
 
 
 "eventFilters": []
 
 
-
 }
 
 
-
-}
-
+]
 
 
-],
-
+,
 
 
 "totalCount": 2,
 
 
-
 "pageSize": 100
-
 
 
 }
@@ -337,7 +327,6 @@ GET https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 "name": "Синтетические чрезвычайные ситуации"
 
 
-
 },
 
 
@@ -353,13 +342,10 @@ GET https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 "name": "Высокая загрузка ЦП"
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -369,11 +355,11 @@ GET https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 
 Settings 2.0
 
-Профили оповещения
+Профили оповещений
 
-Чтобы создать профиль оповещения, вам необходимо запрос [POST-объект](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создайте или проверьте объект настроек через Dynatrace API."). В теле запроса установите **schemaId** в `builtin:alerting.profile` и **scope** в `environment`. Предоставьте конфигурацию профиля оповещения в объекте **value**.
+Чтобы создать профиль оповещения, вам нужно запрос [POST-объект](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создайте или проверьте объект настроек через Dynatrace API."). В теле запроса установите **schemaId** в `builtin:alerting.profile` и **scope** в `environment`. Предоставьте конфигурацию профиля оповещения в объекте **value**.
 
-Ответ содержит идентификатор объекта, который вам необходимо изменить настройки.
+Ответ содержит идентификатор объекта, который вам нужно изменить настройки.
 
 #### URL-адрес запроса
 
@@ -424,28 +410,25 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 
 
 
-"tagFilterIncludeMode": "НИЧЕГО"
-
+"tagFilterIncludeMode": "НЕТ"
 
 
 }
 
 
+]
 
-],
 
+,
 
 
 "eventFilters": []
 
 
-
 }
 
 
-
 }
-
 
 
 ]
@@ -469,9 +452,7 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 "objectId": "vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQzYjAwNDMwOC01ZTZjLTNkNGMtOTNjMS01ZTBiOWRhZTlhZjW-71TeFdrerQ"
 
 
-
 }
-
 
 
 ]
@@ -483,7 +464,7 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 POST https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 ```
 
-Ответ содержит идентификатор конфигурации, который вам необходимо изменить настройки.
+Ответ содержит идентификатор конфигурации, который вам нужно изменить настройки.
 
 #### Тело запроса
 
@@ -512,20 +493,19 @@ POST https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 
 
 
-"tagFilterIncludeMode": "НИЧЕГО"
+"tagFilterIncludeMode": "НЕТ"
 
 
-
-)
-
+}
 
 
-],
+]
 
+
+,
 
 
 "eventFilters": []
-
 
 
 }
@@ -545,7 +525,6 @@ POST https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 "name": "Пример профиля оповещения"
 
 
-
 }
 ```
 
@@ -553,9 +532,9 @@ POST https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 
 Settings 2.0
 
-Профили оповещения
+Профили оповещений
 
-Чтобы отредактировать профиль оповещения, вам необходимо запрос [PUT-объект](/docs/dynatrace-api/environment-api/settings/objects/put-object "Отредактируйте объект настроек через Dynatrace API.").
+Чтобы отредактировать профиль оповещения, вам нужно запрос [PUT-объект](/docs/dynatrace-api/environment-api/settings/objects/put-object "Отредактируйте объект настроек через Dynatrace API.").
 
 #### URL-адрес запроса
 
@@ -621,25 +600,22 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 "InraWin"
 
 
+]
+
+
+}
+
 
 ]
 
 
-
-)
-
-
-
-],
-
+,
 
 
 "eventFilters": []
 
 
-
-)
-
+}
 
 
 }
@@ -663,9 +639,7 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 "objectId": "vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQzYjAwNDMwOC01ZTZjLTNkNGMtOTNjMS01ZTBiOWRhZTlhZjW-71TeFdrerQ"
 
 
-
-)
-
+}
 
 
 ]
@@ -723,21 +697,19 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles/2640173c-e
 "InraWin"
 
 
+]
+
+
+}
+
 
 ]
 
 
-
-)
-
-
-
-],
-
+,
 
 
 "eventFilters": []
-
 
 
 }

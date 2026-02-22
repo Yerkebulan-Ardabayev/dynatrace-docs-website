@@ -1,28 +1,28 @@
 ---
-title: Network zones API
+title: Зоны сети API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/network-zones
-scraped: 2026-02-21T21:18:51.725721
+scraped: 2026-02-22T21:27:42.085838
 ---
 
-# Network zones API
+# Зоны сети API
 
-# Network zones API
+# Зоны сети API
 
-* Reference
-* Published Mar 05, 2020
+* Справка
+* Опубликовано 05 марта 2020 г.
 
-[### List all network zones
+[### Список всех зон сети
 
-Get an overview of all network zones available in your Dynatrace environment.](/docs/dynatrace-api/environment-api/network-zones/get-all "List all network zones of your monitoring environment via the Dynatrace API.")[### View a network zone
+Получите обзор всех зон сети, доступных в вашей среде Dynatrace.](/docs/dynatrace-api/environment-api/network-zones/get-all "Список всех зон сети вашей среды мониторинга через Dynatrace API.")[### Просмотр зоны сети
 
-Get the numbers of OneAgents using the network zone by its ID.](/docs/dynatrace-api/environment-api/network-zones/get-network-zone "View the configuration of a network zone via the Dynatrace API.")
+Получите количество OneAgent, использующих зону сети по ее ID.](/docs/dynatrace-api/environment-api/network-zones/get-network-zone "Просмотр конфигурации зоны сети через Dynatrace API.")
 
-[### Edit a network zone
+[### Редактирование зоны сети
 
-Update the existing configuration of a network zone.](/docs/dynatrace-api/environment-api/network-zones/put-network-zone "Update a network zone via the Dynatrace API.")[### Delete a network zone
+Обновите существующую конфигурацию зоны сети.](/docs/dynatrace-api/environment-api/network-zones/put-network-zone "Обновление зоны сети через Dynatrace API.")[### Удаление зоны сети
 
-Delete the network zone you no longer need.](/docs/dynatrace-api/environment-api/network-zones/del-network-zone "Delete a network zone via the Dynatrace API.")[### View configuration
+Удалите зону сети, которая вам больше не нужна.](/docs/dynatrace-api/environment-api/network-zones/del-network-zone "Удаление зоны сети через Dynatrace API.")[### Просмотр конфигурации
 
-Get an overview of the global network zones configuration.](/docs/dynatrace-api/environment-api/network-zones/get-global-config "Retrieve the global network zones configuration via the Dynatrace API.")[### Update configuration
+Получите обзор глобальной конфигурации зон сети.](/docs/dynatrace-api/environment-api/network-zones/get-global-config "Получение глобальной конфигурации зон сети через Dynatrace API.")[### Обновление конфигурации
 
-Update the global configuration of network zones.](/docs/dynatrace-api/environment-api/network-zones/put-global-config "Edit the global network zones configuration via the Dynatrace API.")
+Обновите глобальную конфигурацию зон сети.](/docs/dynatrace-api/environment-api/network-zones/put-global-config "Редактирование глобальной конфигурации зон сети через Dynatrace API.")

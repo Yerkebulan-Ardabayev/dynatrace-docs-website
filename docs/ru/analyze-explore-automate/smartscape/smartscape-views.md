@@ -1,7 +1,7 @@
 ---
 title: Smartscape views
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views
-scraped: 2026-02-20T21:24:34.307709
+scraped: 2026-02-22T21:25:50.858924
 ---
 
 # Smartscape views

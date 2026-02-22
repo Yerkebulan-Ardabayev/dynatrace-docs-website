@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/infrastructure-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-21
+Сгенерировано: 2026-02-22
 Файлов в разделе: 87
 ---
 
@@ -113,7 +113,7 @@ Tracking of services and dependencies is not limited to Azure. Thanks to Dynatra
 ---
 title: Create a new AWS connection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection
-scraped: 2026-02-20T21:25:40.637645
+scraped: 2026-02-22T21:20:46.808793
 ---
 
 # Create a new AWS connection
@@ -161,7 +161,7 @@ To set up a new AWS connection
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-21T21:08:28.551229
+scraped: 2026-02-22T21:10:04.088655
 ---
 
 # Clouds app
@@ -551,7 +551,7 @@ All metrics published to the Operations API (formerly Stackdriver) can be automa
 ---
 title: Use cases
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/use-cases
-scraped: 2026-02-21T21:24:47.106311
+scraped: 2026-02-22T21:28:12.324798
 ---
 
 # Use cases
@@ -625,7 +625,7 @@ To learn how to analyze monitoring results in Dynatrace, see [Cloud Foundry metr
 ---
 title: Monitor container groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups
-scraped: 2026-02-21T21:15:42.529099
+scraped: 2026-02-22T21:18:19.180560
 ---
 
 # Monitor container groups
@@ -699,7 +699,7 @@ Select  in the upper-right corner of a chart to:
 ---
 title: Container monitoring rules
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules
-scraped: 2026-02-21T21:15:41.265508
+scraped: 2026-02-22T21:18:14.125940
 ---
 
 # Container monitoring rules
@@ -1374,7 +1374,7 @@ Explorer — это общий интерфейс Dynatrace для монито�
 ---
 title: Alert on common Kubernetes/OpenShift issues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
-scraped: 2026-02-21T21:22:23.238930
+scraped: 2026-02-22T21:15:00.499328
 ---
 
 # Alert on common Kubernetes/OpenShift issues
@@ -2456,7 +2456,7 @@ always
 ---
 title: Global default monitoring settings for Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings
-scraped: 2026-02-18T21:26:38.403223
+scraped: 2026-02-22T21:15:05.854026
 ---
 
 # Global default monitoring settings for Kubernetes/OpenShift
@@ -2527,7 +2527,7 @@ To use the default settings when connecting a cluster, the [Connection settings 
 ---
 title: Organize Kubernetes/OpenShift deployments by tags
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments
-scraped: 2026-02-18T21:26:34.865252
+scraped: 2026-02-22T21:14:59.190560
 ---
 
 # Organize Kubernetes/OpenShift deployments by tags
@@ -2839,7 +2839,7 @@ By selecting a specific node, you can access the host details at the top of the 
 ---
 title: Monitor Kubernetes/OpenShift events
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes
-scraped: 2026-02-18T21:26:48.594935
+scraped: 2026-02-22T21:14:52.087381
 ---
 
 # Monitor Kubernetes/OpenShift events
@@ -3040,7 +3040,7 @@ DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs f
 ---
 title: Istio/Envoy proxy metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics
-scraped: 2026-02-19T21:28:12.757780
+scraped: 2026-02-22T21:15:01.857430
 ---
 
 # Istio/Envoy proxy metrics
@@ -3094,7 +3094,7 @@ Istio monitoring by OneAgent is supported for the classic full-stack, cloud-nati
 ---
 title: Monitor Kubernetes/OpenShift metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes
-scraped: 2026-02-19T21:32:54.510992
+scraped: 2026-02-22T21:14:57.778562
 ---
 
 # Monitor Kubernetes/OpenShift metrics
@@ -3149,7 +3149,7 @@ For a list of all available metrics, see [Workload metrics](/docs/analyze-explor
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-20T21:28:27.316361
+scraped: 2026-02-22T21:14:55.179621
 ---
 
 # Monitor Prometheus metrics
@@ -3982,7 +3982,7 @@ To troubleshoot Prometheus integration issues, download the [Kubernetes Monitori
 ---
 title: Monitor persistent volume claims on Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics
-scraped: 2026-02-20T21:25:16.236961
+scraped: 2026-02-22T21:14:56.424374
 ---
 
 # Monitor persistent volume claims on Kubernetes/OpenShift
@@ -4043,7 +4043,7 @@ This feature is available only if your Kubernetes cluster is [connected to a loc
 ---
 title: Monitor Kubernetes/OpenShift services
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes
-scraped: 2026-02-21T21:21:51.485065
+scraped: 2026-02-22T21:14:53.398840
 ---
 
 # Monitor Kubernetes/OpenShift services
@@ -4121,7 +4121,7 @@ Existing management zones need to be manually updated to cover Kubernetes servic
 ---
 title: Monitor service-level objectives in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes
-scraped: 2026-02-21T21:21:49.125244
+scraped: 2026-02-22T21:14:48.462298
 ---
 
 # Monitor service-level objectives in Kubernetes/OpenShift
@@ -4185,7 +4185,7 @@ If no SLOs are found, you can
 ---
 title: Monitor vulnerabilities in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes
-scraped: 2026-02-21T21:18:44.699571
+scraped: 2026-02-22T21:14:49.594333
 ---
 
 # Monitor vulnerabilities in Kubernetes/OpenShift
@@ -4239,7 +4239,7 @@ If you're missing the [security permissions](/docs/secure/application-security#p
 ---
 title: Monitor Kubernetes/OpenShift workloads
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes
-scraped: 2026-02-21T21:18:23.335831
+scraped: 2026-02-22T21:14:50.742792
 ---
 
 # Monitor Kubernetes/OpenShift workloads
@@ -4346,7 +4346,7 @@ You can use management zones to control user access to the monitoring data of sp
 ---
 title: Kubernetes Classic
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring
-scraped: 2026-02-21T21:09:07.548076
+scraped: 2026-02-22T21:09:05.445359
 ---
 
 # Kubernetes Classic
@@ -4444,7 +4444,7 @@ Address Kubernetes issues using out-of-the-box alerting mechanisms.](/docs/obser
 ---
 title: Container platform monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring
-scraped: 2026-02-21T21:15:44.905303
+scraped: 2026-02-22T21:18:16.673277
 ---
 
 # Container platform monitoring
@@ -4486,7 +4486,7 @@ Monitor Heroku with Dynatrace.](/docs/observe/infrastructure-observability/conta
 ---
 title: Data collected with Dynatrace database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/data-collected
-scraped: 2026-02-20T21:25:32.747745
+scraped: 2026-02-22T21:20:39.010022
 ---
 
 # Data collected with Dynatrace database monitoring
@@ -4596,7 +4596,7 @@ This architecture ensures that monitoring remains lightweight and scalable, even
 ---
 title: Monitor IBM DB2 database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/ibm-db2
-scraped: 2026-02-20T21:28:54.127284
+scraped: 2026-02-22T21:22:05.455616
 ---
 
 # Monitor IBM DB2 database
@@ -4641,7 +4641,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor MariaDB database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mariadb
-scraped: 2026-02-20T21:19:44.765327
+scraped: 2026-02-22T21:28:34.998082
 ---
 
 # Monitor MariaDB database
@@ -4687,7 +4687,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor Microsoft SQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql
-scraped: 2026-02-21T21:22:37.484608
+scraped: 2026-02-22T21:24:37.316759
 ---
 
 # Monitor Microsoft SQL database
@@ -4793,7 +4793,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor Oracle database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/oracle
-scraped: 2026-02-21T21:19:41.330389
+scraped: 2026-02-22T21:22:21.573779
 ---
 
 # Monitor Oracle database
@@ -4887,7 +4887,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor Snowflake database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/snowflake
-scraped: 2026-02-21T21:20:58.442968
+scraped: 2026-02-22T21:26:13.385955
 ---
 
 # Monitor Snowflake database
@@ -4933,7 +4933,7 @@ You can benefit from Snowflake monitoring in these [use cases](/docs/observe/inf
 ---
 title: Get started with database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started
-scraped: 2026-02-19T21:26:48.619414
+scraped: 2026-02-22T21:20:40.439932
 ---
 
 # Get started with database monitoring
@@ -4991,7 +4991,7 @@ Monitor MariaDB instances with performance metrics and query insights.](/docs/ob
 ---
 title: Troubleshooting
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/troubleshooting
-scraped: 2026-02-21T21:16:32.404069
+scraped: 2026-02-22T21:27:19.749991
 ---
 
 # Troubleshooting
@@ -5009,7 +5009,7 @@ scraped: 2026-02-21T21:16:32.404069
 ---
 title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-02-21T21:08:30.834241
+scraped: 2026-02-22T21:10:02.875320
 ---
 
 # Databases app
@@ -5641,7 +5641,7 @@ To mitigate this, you should either use this feature for troubleshooting only or
 ---
 title: Varnish Cache extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/extensions/varnish-cache-1
-scraped: 2026-02-21T21:13:54.184778
+scraped: 2026-02-22T21:16:34.084294
 ---
 
 # Varnish Cache extension
@@ -5988,7 +5988,7 @@ Monitor the statistics of your Varnish Cache instances.](https://www.dynatrace.c
 ---
 title: Disk Analytics extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/disk-analytics
-scraped: 2026-02-21T21:09:10.324399
+scraped: 2026-02-22T21:13:03.324774
 ---
 
 # Disk Analytics extension
@@ -6392,7 +6392,7 @@ If some tiles do not show data, check if the user has access to read the metrics
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions
-scraped: 2026-02-21T21:15:36.419028
+scraped: 2026-02-22T21:18:17.941374
 ---
 
 # Extensions
@@ -6437,7 +6437,7 @@ With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55
 ---
 title: Exclude disks and network traffic from host monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic
-scraped: 2026-02-20T21:21:28.301593
+scraped: 2026-02-22T21:26:59.663176
 ---
 
 # Exclude disks and network traffic from host monitoring
@@ -6621,7 +6621,7 @@ Network interface
 ---
 title: Organize your environment using host groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups
-scraped: 2026-02-21T21:11:13.806113
+scraped: 2026-02-22T21:15:13.692819
 ---
 
 # Organize your environment using host groups
@@ -6718,7 +6718,7 @@ Host groups can also be used in [tagging rules](/docs/manage/tags-and-metadata/s
 ---
 title: Host-level settings
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-02-21T21:06:54.376777
+scraped: 2026-02-22T21:08:39.830548
 ---
 
 # Host-level settings
@@ -7205,7 +7205,7 @@ Maintenance windows are displayed as gray bars at the top of the **Host availabi
 ---
 title: OS services monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/os-services
-scraped: 2026-02-21T21:09:14.052790
+scraped: 2026-02-22T21:13:02.073732
 ---
 
 # OS services monitoring
@@ -7624,7 +7624,7 @@ On Linux, systemd OS services with the following startup types are supported:
 ---
 title: Process availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/process-availability
-scraped: 2026-02-21T21:09:19.542058
+scraped: 2026-02-22T21:12:56.589804
 ---
 
 # Process availability
@@ -8327,7 +8327,7 @@ Learn how to run OneAgent diagnostics.](/docs/ingest-from/dynatrace-oneagent/one
 ---
 title: Containers
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/containers
-scraped: 2026-02-21T21:10:18.108592
+scraped: 2026-02-22T21:12:45.133179
 ---
 
 # Containers
@@ -8389,7 +8389,7 @@ Other perspectives provide additional columns, including **Containerization type
 ---
 title: Data centers
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers
-scraped: 2026-02-21T21:10:27.075950
+scraped: 2026-02-22T21:12:43.887802
 ---
 
 # Data centers
@@ -8439,7 +8439,7 @@ Here's what each column in the  **Data centers** view stands for.
 ---
 title: Hosts
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts
-scraped: 2026-02-21T21:10:20.660403
+scraped: 2026-02-22T21:12:37.453642
 ---
 
 # Hosts
@@ -8504,7 +8504,7 @@ Read this guide](/docs/platform/oneagent/monitoring-modes/enable-monitoring-mode
 ---
 title: Networks
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/networks
-scraped: 2026-02-21T21:10:25.775613
+scraped: 2026-02-22T21:12:33.509962
 ---
 
 # Networks
@@ -8551,7 +8551,7 @@ The **Health** perspective includes the following default columns:
 ---
 title: Processes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/processes
-scraped: 2026-02-21T21:10:16.791169
+scraped: 2026-02-22T21:12:36.186417
 ---
 
 # Processes
@@ -8611,7 +8611,7 @@ The **Health** perspective includes the following default columns:
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-21T21:07:00.911538
+scraped: 2026-02-22T21:08:37.328776
 ---
 
 # Infrastructure & Operations
@@ -8938,7 +8938,7 @@ View the status of all data centers and hosts and identify the root cause of inf
 ---
 title: Enable Kubernetes experience for existing clusters
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters
-scraped: 2026-02-21T21:09:05.237912
+scraped: 2026-02-22T21:09:04.114122
 ---
 
 # Enable Kubernetes experience for existing clusters
@@ -8978,7 +8978,7 @@ When you enable Kubernetes clusters for the new Kubernetes experience, Dynatrace
 ---
 title: Kubernetes Enhanced Object Visibility Preview
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview
-scraped: 2026-02-21T21:26:27.215530
+scraped: 2026-02-22T21:28:22.634565
 ---
 
 # Kubernetes Enhanced Object Visibility Preview
@@ -9229,7 +9229,7 @@ A quick video tutorial on how to install Dynatrace Operator.](https://dt-cdn.net
 ---
 title: Permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions
-scraped: 2026-02-21T21:09:06.399299
+scraped: 2026-02-22T21:09:06.829091
 ---
 
 # Permissions
@@ -9983,7 +9983,7 @@ Explore further how Dynatrace can transform your approach to Kubernetes manageme
 ---
 title: Kubernetes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app
-scraped: 2026-02-21T21:06:53.263716
+scraped: 2026-02-22T21:07:59.156148
 ---
 
 # Kubernetes
@@ -10202,7 +10202,7 @@ Automated change impact analysis for your deployment and release processes.
 ---
 title: Ingest NetFlow records into Dynatrace
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/ingest-netflow-records
-scraped: 2026-02-21T21:27:31.058057
+scraped: 2026-02-22T21:29:16.366644
 ---
 
 # Ingest NetFlow records into Dynatrace
@@ -10437,7 +10437,7 @@ fetch logs
 ---
 title: Extended network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer
-scraped: 2026-02-21T21:09:12.539556
+scraped: 2026-02-22T21:13:05.970386
 ---
 
 # Extended network monitoring
@@ -10688,7 +10688,7 @@ After it's collected, NetTracer data is available as metrics throughout Dynatrac
 ---
 title: Troubleshooting network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring
-scraped: 2026-02-21T21:21:46.812925
+scraped: 2026-02-22T21:23:53.257474
 ---
 
 # Troubleshooting network monitoring
@@ -10779,7 +10779,7 @@ Read this guide](/docs/observe/infrastructure-observability/networks/ingest-netf
 ---
 title: Which are the most important processes?
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes
-scraped: 2026-02-21T21:07:31.453749
+scraped: 2026-02-22T21:09:28.963453
 ---
 
 # Which are the most important processes?
@@ -10836,7 +10836,7 @@ If you run Apache HTTP Server, for example, you may be accustomed to seeing long
 ---
 title: Process group detection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection
-scraped: 2026-02-21T21:09:18.451807
+scraped: 2026-02-22T21:13:11.683696
 ---
 
 # Process group detection
@@ -11331,7 +11331,7 @@ condition: "$eq(-d)"
 ---
 title: Process deep monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring
-scraped: 2026-02-21T21:09:20.854031
+scraped: 2026-02-22T21:12:55.407074
 ---
 
 # Process deep monitoring
@@ -11503,7 +11503,7 @@ If short-lived processes that start up frequently are being injected, disable th
 ---
 title: Process groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups
-scraped: 2026-02-21T21:15:40.170745
+scraped: 2026-02-22T21:18:12.962957
 ---
 
 # Process groups
@@ -12561,7 +12561,7 @@ Example of a management zone based on the entity selector
 ---
 title: Configure message queue monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/configuration
-scraped: 2026-02-20T21:26:03.473951
+scraped: 2026-02-22T21:26:44.146727
 ---
 
 # Configure message queue monitoring
@@ -12750,7 +12750,7 @@ The following is a distributed trace example with a producer service, queue enti
 ---
 title: Message queues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues
-scraped: 2026-02-21T21:15:43.628246
+scraped: 2026-02-22T21:18:11.650325
 ---
 
 # Message queues
@@ -13040,7 +13040,7 @@ You can use the [Settings API](/docs/dynatrace-api/environment-api/settings "Fin
 ---
 title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-02-21T21:07:46.593637
+scraped: 2026-02-22T21:09:34.116451
 ---
 
 # Infrastructure Observability

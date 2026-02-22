@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/root-cause-analysis
 Язык: Русский (RU)
-Сгенерировано: 2026-02-21
+Сгенерировано: 2026-02-22
 Файлов в разделе: 3
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Root cause analysis concepts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/concepts
-scraped: 2026-02-21T21:07:30.407814
+scraped: 2026-02-22T21:09:20.661803
 ---
 
 # Root cause analysis concepts
@@ -166,7 +166,7 @@ Alternatively, you can set the processing state per Davis event source in [Log e
 ---
 title: Event analysis and correlation
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation
-scraped: 2026-02-21T21:27:08.036116
+scraped: 2026-02-22T21:25:10.917261
 ---
 
 # Event analysis and correlation
@@ -357,7 +357,7 @@ Business impact analysis shows the number of potentially affected real users (co
 ---
 title: Root cause analysis
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis
-scraped: 2026-02-21T21:14:28.770726
+scraped: 2026-02-22T21:19:25.620031
 ---
 
 # Root cause analysis

@@ -1,7 +1,7 @@
 ---
 title: Dot map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot
-scraped: 2026-02-20T21:10:12.425833
+scraped: 2026-02-22T21:13:23.950812
 ---
 
 # Dot map visualization

@@ -1,7 +1,7 @@
 ---
 title: Define user action and user session properties for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/define-user-action-and-session-properties
-scraped: 2026-02-20T21:14:59.357885
+scraped: 2026-02-22T21:26:52.874694
 ---
 
 # Define user action and user session properties for web applications

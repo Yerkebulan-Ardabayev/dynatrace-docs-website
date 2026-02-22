@@ -1,7 +1,7 @@
 ---
 title: Migration of DynaKube v1beta3 to v1beta4
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta4
-scraped: 2026-02-21T21:17:24.748078
+scraped: 2026-02-22T21:29:11.186585
 ---
 
 # Migration of DynaKube v1beta3 to v1beta4

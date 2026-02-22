@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure services with Azure Monitor metrics
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide
-scraped: 2026-02-19T21:14:35.417134
+scraped: 2026-02-22T21:10:59.711750
 ---
 
 # Monitor Azure services with Azure Monitor metrics

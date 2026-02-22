@@ -1,30 +1,30 @@
 ---
-title: Monitored entities API
+title: Мониторимые сущности API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2
-scraped: 2026-02-21T21:11:10.220460
+scraped: 2026-02-22T21:15:12.330465
 ---
 
-# Monitored entities API
+# Мониторимые сущности API
 
-# Monitored entities API
+# Мониторимые сущности API
 
-* Reference
-* Published May 28, 2020
+* Справочник
+* Опубликовано 28 мая 2020 г.
 
-[### List entities
+[### Список сущностей
 
-Get an overview of entities you're monitoring with Dynatrace.](/docs/dynatrace-api/environment-api/entity-v2/get-entities-list "View a list of monitored entities via Dynatrace API.")[### View an entity
+Получите обзор сущностей, которые вы отслеживаете с помощью Dynatrace.](/docs/dynatrace-api/environment-api/entity-v2/get-entities-list "Просмотр списка мониторимых сущностей через Dynatrace API.")[### Просмотр сущности
 
-Get the properties of a particular entity.](/docs/dynatrace-api/environment-api/entity-v2/get-entity "View parameters of a monitored entity via Dynatrace API.")[### Select the data you need
+Получите свойства конкретной сущности.](/docs/dynatrace-api/environment-api/entity-v2/get-entity "Просмотр параметров мониторимой сущности через Dynatrace API.")[### Выбор необходимых данных
 
-Learn how to use entity selector to fine-tune the entity scope of your query.](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")[### List entity types
+Узнайте, как использовать селектор сущностей, чтобы уточнить объем сущностей вашего запроса.](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройка селектора сущностей для Environment API конечных точек.")[### Список типов сущностей
 
-Get an overview of entity types you're monitoring with Dynatrace.](/docs/dynatrace-api/environment-api/entity-v2/get-all-entity-types "View all types of monitored entities in your environment via Dynatrace API.")[### View an entity type
+Получите обзор типов сущностей, которые вы отслеживаете с помощью Dynatrace.](/docs/dynatrace-api/environment-api/entity-v2/get-all-entity-types "Просмотр всех типов мониторимых сущностей в вашей среде через Dynatrace API.")[### Просмотр типа сущности
 
-Get the properties of a particular entity type.](/docs/dynatrace-api/environment-api/entity-v2/get-entity-type "View the details of a monitored entity type via Dynatrace API.")[### Create custom device
+Получите свойства конкретного типа сущности.](/docs/dynatrace-api/environment-api/entity-v2/get-entity-type "Просмотр деталей мониторимого типа сущности через Dynatrace API.")[### Создание пользовательского устройства
 
-Create or update a custom device with the exact parameters you need.](/docs/dynatrace-api/environment-api/entity-v2/post-custom-device "Create or update a custom device via Dynatrace API.")
+Создайте или обновите пользовательское устройство с необходимыми параметрами.](/docs/dynatrace-api/environment-api/entity-v2/post-custom-device "Создание или обновление пользовательского устройства через Dynatrace API.")
 
-## Related topics
+## Связанные темы
 
-* [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.")
+* [Пользовательские теги API](/docs/dynatrace-api/environment-api/custom-tags "Управление пользовательскими тегами мониторимых сущностей через Dynatrace API.")

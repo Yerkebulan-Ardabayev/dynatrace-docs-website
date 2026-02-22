@@ -1,7 +1,7 @@
 ---
 title: Hosts API - GET a host
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-a-host
-scraped: 2026-02-21T21:11:47.691971
+scraped: 2026-02-22T21:15:40.575199
 ---
 
 # Hosts API - GET a host

@@ -1,6 +1,6 @@
 # Документация Dynatrace: secure/threat-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-21
+Сгенерировано: 2026-02-22
 Файлов в разделе: 24
 ---
 
@@ -227,7 +227,7 @@ For more information and the complete security model specification, see [Securit
 ---
 title: DQL examples for security data
 source: https://www.dynatrace.com/docs/secure/threat-observability/dql-examples
-scraped: 2026-02-20T21:10:38.930709
+scraped: 2026-02-22T21:14:08.490904
 ---
 
 # DQL examples for security data
@@ -2541,7 +2541,7 @@ AND object.name == "demo-kspm"
 ---
 title: Grail security table migration guide
 source: https://www.dynatrace.com/docs/secure/threat-observability/migration
-scraped: 2026-02-21T21:23:02.359663
+scraped: 2026-02-22T21:25:17.153244
 ---
 
 # Grail security table migration guide
@@ -2775,7 +2775,7 @@ fetch events
 ---
 title: Enrich threat observables with AbuseIPDB
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/abuseipdb-enrich
-scraped: 2026-02-18T21:22:03.031405
+scraped: 2026-02-22T21:20:05.716897
 ---
 
 # Enrich threat observables with AbuseIPDB
@@ -2784,7 +2784,7 @@ scraped: 2026-02-18T21:22:03.031405
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Jan 07, 2026
+* Updated on Feb 23, 2026
 
 Enrich threat observables with AbuseIPDB and analyze them in Dynatrace.
 
@@ -2850,11 +2850,10 @@ To run the enrichment workflow action, all the permissions above need to be enab
 
    Allowed outbound connections are extended automatically with `api.abuseipdb.com`.
 
-   How to set up outbound connections
+   1. How to set up outbound connections
 
-   1. In **Settings**, go to **Preferences** > **Limit Outbound Connections**.
-   2. Select **Add item** and add the domain.
-   3. Select **Save changes**.
+   1. In **Settings**, go to **General** > **External requests**.
+   2. In **Allowlist**, select **New host pattern** and add the domain.
 5. Test the connection to ensure the correct configuration and save it.
 
 ## Details
@@ -2921,7 +2920,7 @@ Enrich observables with threat intelligence from AbuseIPDB.](https://www.dynatra
 ---
 title: Ingest Akamai security logs and events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-akamai
-scraped: 2026-02-21T21:19:59.713683
+scraped: 2026-02-22T21:20:03.245603
 ---
 
 # Ingest Akamai security logs and events
@@ -3103,7 +3102,7 @@ Ingest logs and security events from Akamai products.](https://www.dynatrace.com
 ---
 title: Ingest Amazon GuardDuty security findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-amazon-guardduty
-scraped: 2026-02-20T21:29:29.249677
+scraped: 2026-02-22T21:19:59.441823
 ---
 
 # Ingest Amazon GuardDuty security findings
@@ -3300,7 +3299,7 @@ Ingest Amazon GuardDuty detection findings.](https://www.dynatrace.com/hub/detai
 ---
 title: Ingest Amazon ECR container vulnerability findings and scan events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data
-scraped: 2026-02-21T21:21:31.802420
+scraped: 2026-02-22T21:20:08.295729
 ---
 
 # Ingest Amazon ECR container vulnerability findings and scan events
@@ -3455,7 +3454,7 @@ Ingest Amazon Elastic Container Registry vulnerability findings and scan events.
 ---
 title: Ingest AWS Security Hub security findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub
-scraped: 2026-02-20T21:24:10.727141
+scraped: 2026-02-22T21:20:13.155093
 ---
 
 # Ingest AWS Security Hub security findings
@@ -3800,7 +3799,7 @@ Ingest AWS Security Hub vulnerabilities, detections, and compliance findings.](h
 ---
 title: Ingest custom security events via API
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-custom-data
-scraped: 2026-02-19T21:20:59.026469
+scraped: 2026-02-22T21:20:14.682188
 ---
 
 # Ingest custom security events via API
@@ -4409,7 +4408,7 @@ For billing information, see [Events powered by Grail](/docs/license/capabilitie
 ---
 title: Ingest GitHub Advanced Security security events and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-github-advanced-security
-scraped: 2026-02-21T21:25:51.228518
+scraped: 2026-02-22T21:20:06.941979
 ---
 
 # Ingest GitHub Advanced Security security events and audit logs
@@ -4692,7 +4691,7 @@ Ingest GitHub Advanced Security (GHAS) security events and audit logs.](https://
 ---
 title: Ingest Harbor vulnerability findings, scans, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-harbor-data
-scraped: 2026-02-21T21:20:40.921340
+scraped: 2026-02-22T21:19:53.973790
 ---
 
 # Ingest Harbor vulnerability findings, scans, and audit logs
@@ -4899,7 +4898,7 @@ Ingest Harbor vulnerability findings, scans, and audit logs.](https://www.dynatr
 ---
 title: Ingest Microsoft Defender for Cloud security events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-defender
-scraped: 2026-02-20T21:15:16.120708
+scraped: 2026-02-22T21:20:02.075836
 ---
 
 # Ingest Microsoft Defender for Cloud security events
@@ -5085,7 +5084,7 @@ Ingest Microsoft Defender for Cloud security findings and scan events.](https://
 ---
 title: Ingest Microsoft Entra ID sign-in logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-entra-id
-scraped: 2026-02-18T21:22:12.236996
+scraped: 2026-02-22T21:19:56.826272
 ---
 
 # Ingest Microsoft Entra ID sign-in logs
@@ -5221,7 +5220,7 @@ For billing information, see [Events powered by Grail](/docs/license/capabilitie
 ---
 title: Ingest Microsoft Sentinel security events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-sentinel
-scraped: 2026-02-20T21:13:25.278724
+scraped: 2026-02-22T21:19:58.002405
 ---
 
 # Ingest Microsoft Sentinel security events
@@ -5421,7 +5420,7 @@ Ingest Microsoft Sentinel security findings.](https://www.dynatrace.com/hub/deta
 ---
 title: Ingest vulnerability findings in OCSF format
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-ocsf-data
-scraped: 2026-02-20T21:28:40.827447
+scraped: 2026-02-22T21:20:11.901038
 ---
 
 # Ingest vulnerability findings in OCSF format
@@ -5563,7 +5562,7 @@ Ingest security findings in Open Cybersecurity Schema Framework (OCSF) format.](
 ---
 title: Ingest Qualys vulnerability findings, scan events, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-qualys
-scraped: 2026-02-20T21:20:45.266445
+scraped: 2026-02-22T21:19:52.799408
 ---
 
 # Ingest Qualys vulnerability findings, scan events, and audit logs
@@ -5745,11 +5744,9 @@ The Qualys Detection Score (QDS) has a range from 1 to 100. To map this to the 1
 
 ## Related topics
 
-
-
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Security events](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")
+* [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных Dynatrace платформы с помощью Dynatrace OpenPipeline.")
+* [Язык запросов Dynatrace](/docs/platform/grail/dynatrace-query-language "Как использовать язык запросов Dynatrace.") 
+* [События безопасности](/docs/semantic-dictionary/model/security-events "Ознакомьтесь с моделями словаря семантики, связанными с событиями безопасности.")
 
 ---
 
@@ -5758,7 +5755,7 @@ The Qualys Detection Score (QDS) has a range from 1 to 100. To map this to the 1
 ---
 title: Ingest Runecast Analyzer compliance findings
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer
-scraped: 2026-02-21T21:27:34.622721
+scraped: 2026-02-22T21:20:00.898172
 ---
 
 # Ingest Runecast Analyzer compliance findings
@@ -5897,7 +5894,7 @@ For billing information, see [Events powered by Grail](/docs/license/capabilitie
 ---
 title: Ingest Snyk vulnerability findings, scans, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-snyk-data
-scraped: 2026-02-21T21:23:58.880546
+scraped: 2026-02-22T21:20:04.443150
 ---
 
 # Ingest Snyk vulnerability findings, scans, and audit logs
@@ -6108,7 +6105,7 @@ Ingest Snyk vulnerability findings, scans, and audit logs.](https://www.dynatrac
 ---
 title: Ingest SonarQube security and quality events, metrics, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-sonarqube-data
-scraped: 2026-02-21T21:24:10.703104
+scraped: 2026-02-22T21:20:10.722370
 ---
 
 # Ingest SonarQube security and quality events, metrics, and audit logs
@@ -6357,7 +6354,7 @@ Ingest SonarQube vulnerability findings, metrics, and audit logs.](https://www.d
 ---
 title: Ingest Sonatype Lifecycle security events and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-sonatype
-scraped: 2026-02-20T21:25:50.266709
+scraped: 2026-02-22T21:19:51.633777
 ---
 
 # Ingest Sonatype Lifecycle security events and audit logs
@@ -6561,7 +6558,7 @@ Ingest Sonatype vulnerability findings, scans, and audit logs.](https://www.dyna
 ---
 title: Ingest Tenable vulnerability findings, scan events, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-tenable-data
-scraped: 2026-02-21T21:16:39.071770
+scraped: 2026-02-22T21:19:55.451081
 ---
 
 # Ingest Tenable vulnerability findings, scan events, and audit logs
@@ -6959,7 +6956,7 @@ Ingest Tenable vulnerability findings, scan events, and audit logs.](https://www
 ---
 title: Enrich threat observables with VirusTotal
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/virustotal-enrich
-scraped: 2026-02-20T21:23:00.695529
+scraped: 2026-02-22T21:20:09.483744
 ---
 
 # Enrich threat observables with VirusTotal
@@ -7104,7 +7101,7 @@ Enrich observables with threat intelligence from VirusTotal.](https://www.dynatr
 ---
 title: Security integrations
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest
-scraped: 2026-02-21T21:08:27.404100
+scraped: 2026-02-22T21:09:59.043645
 ---
 
 # Security integrations
@@ -7160,7 +7157,7 @@ After configuring enrichment sources, you can apply them to:
 ---
 title: Threat Observability
 source: https://www.dynatrace.com/docs/secure/threat-observability
-scraped: 2026-02-21T21:07:37.934473
+scraped: 2026-02-22T21:09:41.539138
 ---
 
 # Threat Observability

@@ -1,42 +1,42 @@
 ---
-title: Metrics API v2
+title: Метрики API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2
-scraped: 2026-02-21T21:10:50.514063
+scraped: 2026-02-22T21:19:49.122021
 ---
 
-# Metrics API v2
+# Метрики API v2
 
-# Metrics API v2
+# Метрики API v2
 
-* Reference
-* Updated on Jan 22, 2026
+* Справочник
+* Обновлено 22 января 2026 г.
 
-[### Get all
+[### Получить все
 
-Get an overview of all metrics available in your environment.](/docs/dynatrace-api/environment-api/metric-v2/get-all-metrics "List all metrics available in your monitoring environment via Metrics v2 API.")[### Get description
+Получите обзор всех метрик, доступных в вашей среде.](/docs/dynatrace-api/environment-api/metric-v2/get-all-metrics "Список всех метрик, доступных в вашей среде мониторинга через Метрики v2 API.")[### Получить описание
 
-Get the full descriptor of a metric.](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.")[### Read data points
+Получите полный дескриптор метрики.](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "Просмотр дескриптора метрики через Метрики v2 API.")[### Чтение точек данных
 
-Get data points from metrics you need.
+Получите точки данных из метрик, которые вам нужны.
 
-For each metric you can get either one aggregated data point of a list of data points.](/docs/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.")
+Для каждой метрики можно получить либо одну агрегированную точку данных, либо список точек данных.](/docs/dynatrace-api/environment-api/metric-v2/get-data-points "Чтение точек данных одной или нескольких метрик через Метрики v2 API.")
 
-[### Select the data you need
+[### Выбор необходимых данных
 
-The Metrics API is a flexible instrument for obtaining data. Learn how to use metric selector transformations to fine-tune the scope of data you're reading.](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.")[### Modify data on read
+Метрики API - это гибкий инструмент для получения данных. Узнайте, как использовать преобразования селектора метрик, чтобы уточнить объем данных, которые вы читаете.](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Настройка селектора метрик для Метрик v2 API.")[### Модификация данных при чтении
 
-In addition to transforming your metric, you can perform simple arithmetic operations right in your query. Learn how to use metric expressions to modify the data you're reading.](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
+Помимо преобразования вашей метрики, вы можете выполнять простые арифметические операции прямо в вашем запросе. Узнайте, как использовать выражения метрик, чтобы изменить данные, которые вы читаете.](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Использование выражений метрик для применения арифметических операций в запросе точек данных через Метрики API v2.")
 
-[### Ingest custom metrics
+[### Ввод пользовательских метрик
 
-Push custom data points to Dynatrace.](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.")[### Delete a metric
+Отправьте пользовательские точки данных в Dynatrace.](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ввод пользовательских метрик в Dynatrace через Метрики v2 API.")[### Удаление метрики
 
-Delete a metric you no longer need.](/docs/dynatrace-api/environment-api/metric-v2/delete-metric "Delete a metric ingested via Metrics v2 API.")[### Delete metrics
+Удалите метрику, которая вам больше не нужна.](/docs/dynatrace-api/environment-api/metric-v2/delete-metric "Удаление метрики, введенной через Метрики v2 API.")[### Удаление метрик
 
-Delete metrics older than the specified number of days.](/docs/dynatrace-api/environment-api/metric-v2/delete-metrics "Delete metrics ingested via Metrics v2 API.")
+Удалите метрики, которые старше указанного количества дней.](/docs/dynatrace-api/environment-api/metric-v2/delete-metrics "Удаление метрик, введенных через Метрики v2 API.")
 
-## Related topics
+## Связанные темы
 
-* [Built-in classic metrics](/docs/analyze-explore-automate/metrics-classic/built-in-metrics "Explore the complete list of built-in Dynatrace metrics.")
-* [Extend metric observability](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.")
-* [Metric units API](/docs/dynatrace-api/environment-api/metrics-units "Learn about units that Dynatrace metrics use via the Dynatrace API.")
+* [Встроенные классические метрики](/docs/analyze-explore-automate/metrics-classic/built-in-metrics "Изучение полного списка встроенных метрик Dynatrace.") 
+* [Расширение наблюдаемости метрик](/docs/ingest-from/extend-dynatrace/extend-metrics "Узнайте, как расширить наблюдаемость метрик в Dynatrace.") 
+* [Единицы измерения метрик API](/docs/dynatrace-api/environment-api/metrics-units "Узнайте об единицах измерения, которые используют метрики Dynatrace через Dynatrace API.")

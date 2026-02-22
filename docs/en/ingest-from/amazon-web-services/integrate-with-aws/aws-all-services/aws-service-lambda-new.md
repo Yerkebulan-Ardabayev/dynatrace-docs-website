@@ -1,7 +1,7 @@
 ---
 title: AWS Lambda monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-lambda-new
-scraped: 2026-02-20T21:15:09.183876
+scraped: 2026-02-22T21:24:52.537645
 ---
 
 # AWS Lambda monitoring

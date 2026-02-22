@@ -1,19 +1,19 @@
 ---
-title: Переход с обнаружения частых проблем API на Настройки API
+title: Переход с обнаружения частых проблем API на настройки API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/frequent-issues-to-settings
-scraped: 2026-02-21T21:23:13.705033
+scraped: 2026-02-22T21:22:16.283466
 ---
 
-# Переход с обнаружения частых проблем API на Настройки API
+# Переход с обнаружения частых проблем API на настройки API
 
-# Переход с обнаружения частых проблем API на Настройки API
+# Переход с обнаружения частых проблем API на настройки API
 
 * Ссылка
-* Опубликовано 22 декабря 2022 года
+* Опубликовано 22 декабря 2022 г.
 
-[Обнаружение частых проблем API](/docs/dynatrace-api/configuration-api/frequent-issue-detection-api "Управление конфигурацией обнаружения частых проблем через Dynatrace API.") было устарено с [Dynatrace версии 1.249](/docs/whats-new/dynatrace-api/sprint-249 "Журнал изменений Dynatrace API версии 1.249"). Его заменой является [Настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Настройки API.") с схемой **Обнаружение частых проблем** (`builtin:anomaly-detection.frequent-issues`). Мы рекомендуем перейти на новую API как можно скорее.
+[Обнаружение частых проблем API](/docs/dynatrace-api/configuration-api/frequent-issue-detection-api "Управление конфигурацией обнаружения частых проблем через Dynatrace API.") было объявлено устаревшим с [Dynatrace версии 1.249](/docs/whats-new/dynatrace-api/sprint-249 "Журнал изменений Dynatrace API версии 1.249"). Его заменой является [Настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Настройки API.") с схемой **Обнаружение частых проблем** (`builtin:anomaly-detection.frequent-issues`). Мы рекомендуем перейти на новую API как можно скорее.
 
-Миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.
+Миграция влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на область действия токена для аутентификации запросов.
 
 ## Базовый URL
 
@@ -31,7 +31,7 @@ scraped: 2026-02-21T21:23:13.705033
 
 Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Настройки API.").
 
-В рамках Настроек 2.0 каждая конфигурация обнаружения частых проблем представлена объектом настроек. Объект содержит некоторые метаданные (например, область или метка времени создания) и саму конфигурацию, инкапсулированную в объект **значение**. Чтобы узнать о параметрах конфигурации обнаружения частых проблем, запросите схему **Обнаружение частых проблем** (`builtin:anomaly-detection.frequent-issues`) с помощью запроса [Получить схему](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотреть схему настроек через Dynatrace API.").
+В рамках Настройки 2.0 каждая конфигурация обнаружения частых проблем представлена объектом настроек. Объект содержит некоторые метаданные (например, область или метка времени создания) и саму конфигурацию, инкапсулированную в объект **value**. Чтобы узнать о параметрах конфигурации обнаружения частых проблем, выполните запрос **Обнаружение частых проблем** (`builtin:anomaly-detection.frequent-issues`) с помощью запроса [GET-схема](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API.").
 
 ## Примеры
 
@@ -43,7 +43,7 @@ scraped: 2026-02-21T21:23:13.705033
 
 Обнаружение частых проблем
 
-Чтобы просмотреть конфигурации обнаружения частых проблем, вам необходим запрос [Получить объекты](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотреть несколько объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в `builtin:anomaly-detection.frequent-issues` и **scope** в `environment`.
+Чтобы просмотреть конфигурации обнаружения частых проблем, вам необходим запрос [GET-объекты](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотр нескольких объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в `builtin:anomaly-detection.frequent-issues` и **scope** в `environment`.
 
 #### URL-адрес запроса
 
@@ -167,7 +167,7 @@ GET https://mySampleEnv.live.dynatrace.com/config/v1/frequentIssueDetection
 
 Обнаружение частых проблем
 
-Чтобы отредактировать окно обслуживания, вам необходим запрос [Изменить объект](/docs/dynatrace-api/environment-api/settings/objects/put-object "Изменить объект настроек через Dynatrace API."). В теле запроса установите **schemaId** в `builtin:anomaly-detection.frequent-issues` и **scope** в `environment`. Предоставьте конфигурацию обнаружения частых проблем в объекте **значение**.
+Чтобы отредактировать окно обслуживания, вам необходим запрос [PUT-объект](/docs/dynatrace-api/environment-api/settings/objects/put-object "Редактирование объекта настроек через Dynatrace API."). В теле запроса установите **schemaId** в `builtin:anomaly-detection.frequent-issues` и **scope** в `environment`. Предоставьте конфигурацию обнаружения частых проблем в объекте **value**.
 
 #### URL-адрес запроса
 

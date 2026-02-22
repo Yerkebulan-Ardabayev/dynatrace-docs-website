@@ -1,7 +1,7 @@
 ---
 title: Install the CICS module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics
-scraped: 2026-02-20T21:11:21.797081
+scraped: 2026-02-22T21:21:20.065881
 ---
 
 # Install the CICS module

@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/use-cases
 Язык: Русский (RU)
-Сгенерировано: 2026-02-21
+Сгенерировано: 2026-02-22
 Файлов в разделе: 6
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Generative AI quick analysis examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-examples
-scraped: 2026-02-21T21:22:09.628966
+scraped: 2026-02-22T21:24:04.907116
 ---
 
 # Generative AI quick analysis examples
@@ -1462,7 +1462,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-21T21:22:32.977814
+scraped: 2026-02-22T21:14:12.908737
 ---
 
 # Dynatrace Intelligence DQL examples

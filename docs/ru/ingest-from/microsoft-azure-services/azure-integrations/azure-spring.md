@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure Spring Apps
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring
-scraped: 2026-02-20T21:17:26.196611
+scraped: 2026-02-22T21:11:04.933021
 ---
 
 # Monitor Azure Spring Apps

@@ -1,7 +1,7 @@
 ---
 title: Go
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/go
-scraped: 2026-02-21T21:12:51.534093
+scraped: 2026-02-22T21:17:10.608025
 ---
 
 # Go
