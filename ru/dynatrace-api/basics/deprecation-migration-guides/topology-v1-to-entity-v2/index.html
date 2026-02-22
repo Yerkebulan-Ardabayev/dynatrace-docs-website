@@ -25480,12 +25480,12 @@
 <li>Ссылка</li>
 <li>Опубликовано 22 марта 2023 г.</li>
 </ul>
-<p><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape" title="Узнайте о Dynatrace Topology и Smartscape API.">Topology и Smartscape API</a> был заменен с <a href="/docs/whats-new/dynatrace-api/sprint-242" title="Журнал изменений для Dynatrace API версии 1.242">Dynatrace версией 1.263</a>. Его заменой является <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о Dynatrace Monitored entities API.">Monitored entities API</a>. Мы рекомендуем перейти на новую API как можно скорее.</p>
-<p>Этот переход влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на область действия токена для аутентификации запросов.</p>
+<p><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape" title="Узнайте о Dynatrace Topology и Smartscape API.">Topology и Smartscape API</a> был заменен с <a href="/docs/whats-new/dynatrace-api/sprint-242" title="Журнал изменений для Dynatrace API версии 1.242">Dynatrace версии 1.263</a>. Его заменой является <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о Dynatrace Monitored entities API.">Monitored entities API</a>. Мы рекомендуем вам перейти на новую API как можно скорее.</p>
+<p>Этот переход влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на объем токена для аутентификации запросов.</p>
 <h2 id="_1">Новые функции<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Monitored entities API предлагает следующие новые функции:</p>
+<p>Monitored entities API предлагает вам следующие новые функции:</p>
 <ul>
-<li>Конечная точка, независимая от типа сущности — вы можете запрашивать любые типы сущностей через один и тот же URL</li>
+<li>Конечная точка, независимая от типа сущности — вы можете запрашивать любой тип сущности через один и тот же URL</li>
 <li>Мощный <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Настройте селектор сущностей для Environment API конечных точек.">селектор сущностей</a> для фильтрации сущностей, которые вы хотите прочитать</li>
 <li>Унифицированный селектор временного интервала</li>
 <li>Настраиваемое возвращаемое значение — вы можете контролировать, какие свойства сущности включены в ответ</li>
@@ -25515,7 +25515,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_2">Область действия токена аутентификации<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">Объем аутентификационного токена<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -25533,21 +25533,21 @@
 <h2 id="_3">Параметры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о Dynatrace Monitored entities API.">Monitored entities API</a>.</p>
 <h2 id="_4">Изменения в рабочем процессе<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>С обновлением до Monitored entities API некоторые рабочие процессы требуют отправки дополнительных запросов или вызова дополнительных конечных точек. Убедитесь, что вы адаптируете свою автоматизацию соответственно.</p>
+<p>С переходом на Monitored entities API некоторые рабочие процессы требуют отправки дополнительных запросов или вызова дополнительных конечных точек. Убедитесь, что вы адаптируете свою автоматизацию соответственно.</p>
 <h3 id="_5">Пагинация<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>Когда вы запрашиваете сущности в批ке, используется пагинация для уменьшения размера полезной нагрузки.</p>
+<p>Когда вы запрашиваете сущности в пакете, используется пагинация для уменьшения размера полезной нагрузки.</p>
 <ol>
 <li>Укажите количество сущностей на странице в параметре запроса <strong>pageSize</strong>.</li>
 <li>Используйте курсор из поля <strong>nextPageKey</strong> предыдущего ответа в параметре запроса <strong>nextPageKey</strong>, чтобы получить последующие страницы.</li>
 </ol>
 <h3 id="_6">Создание пользовательских устройств<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>В Monitored entities API вы не можете присвоить теги пользовательскому устройству при его создании. Если вам нужно присвоить теги вашему пользовательскому устройству, используйте отдельный запрос к конечной точке <a href="/docs/dynatrace-api/environment-api/custom-tags/post-tags" title="Присвойте пользовательские теги отслеживаемым сущностям через Dynatrace API.">POST пользовательские теги</a>.</p>
-<h3 id="_7">Отчетность данных в пользовательские устройства<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>В Monitored entities API вы не можете отчитываться о данных в пользовательские устройства. Вместо этого используйте вызов <a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Ингестируйте пользовательские метрики в Dynatrace через Metrics v2 API.">POST ингестируемые данные</a>.</p>
+<h3 id="_7">Отчетность данных для пользовательских устройств<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>В Monitored entities API вы не можете отчитываться о данных для пользовательских устройств. Вместо этого используйте вызов <a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Принять пользовательские метрики в Dynatrace через Metrics v2 API.">POST принять метрики</a>.</p>
 <h2 id="_8">Примеры<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>Вот некоторые примеры различий в использовании API.</p>
 <h3 id="_9">Список сущностей<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>В этом примере мы запрашиваем список хостов, которые были активны в течение последних 2 часов. Кроме того, нам не нужна полная информация о хосте: нам нужен только режим мониторинга и список тегов, присвоенных хосту. Результат обрезан до двух записей.</p>
+<p>В этом примере мы запрашиваем список хостов, которые были активны в течение последних 2 часов. Кроме того, нам не нужна полная информация о хосте: нам нужен только режим мониторинга и список тегов, присвоенных хосту. Результат усечен до двух записей.</p>
 <p>Сравните следующие вкладки, чтобы увидеть, как мы делаем это, используя новые Monitored entities API и устаревший Topology и Smartscape API:</p>
 <p>Monitored entities API</p>
 <p>Topology и Smartscape API</p>
@@ -25555,7 +25555,7 @@
 <ul>
 <li>Вы можете контролировать, какие поля возвращаются (через параметр <strong>fields</strong>). В этом примере мы используем поля <strong>monitoringMode</strong> и <strong>tags</strong>. Тип, отображаемое имя и идентификатор сущности всегда включены в ответ.</li>
 <li>Временной интервал определяется через параметр запроса <strong>from</strong>. Он поддерживает несколько форматов; см. документацию отдельных запросов, чтобы узнать больше о них.</li>
-<li>Результат запроса разделен на страницы. Вы можете контролировать размер страницы с помощью параметра <strong>pageSize</strong>. В этом примере параметр не установлен; поэтому используется значение по умолчанию — 50 записей на странице.</li>
+<li>Результат запроса разделен на страницы. Вы можете контролировать размер страницы с помощью параметра <strong>pageSize</strong>. В этом примере параметр не задан; поэтому используется значение по умолчанию — 50 записей на странице.</li>
 </ul>
 <h4 id="url-">URL-адрес запроса<a class="headerlink" href="#url-" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://mySampleEnv.live.dynatrace.com/api/v2/entities?fields=properties.monitoringMode,tags&amp;entitySelector=type(%22HOST%22)&amp;from=now-2h
@@ -25608,7 +25608,7 @@
 <a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
 <a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
 <a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
-<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>&quot;properties&quot;: {
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>&quot;properties&quot;:).
 <a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
 <a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
 <a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
@@ -25716,7 +25716,7 @@
 <a id="__codelineno-2-142" name="__codelineno-2-142" href="#__codelineno-2-142"></a>
 <a id="__codelineno-2-143" name="__codelineno-2-143" href="#__codelineno-2-143"></a>
 <a id="__codelineno-2-144" name="__codelineno-2-144" href="#__codelineno-2-144"></a>
-<a id="__codelineno-2-145" name="__codelineno-2-145" href="#__codelineno-2-145"></a>&quot;properties&quot;:?
+<a id="__codelineno-2-145" name="__codelineno-2-145" href="#__codelineno-2-145"></a>&quot;properties&quot;:.
 <a id="__codelineno-2-146" name="__codelineno-2-146" href="#__codelineno-2-146"></a>
 <a id="__codelineno-2-147" name="__codelineno-2-147" href="#__codelineno-2-147"></a>
 <a id="__codelineno-2-148" name="__codelineno-2-148" href="#__codelineno-2-148"></a>
@@ -25816,9 +25816,9 @@
 </code></pre></div>
 <p>В Topology и Smartscape API:</p>
 <ul>
-<li>У вас есть ограниченный контроль над возвращаемыми полями — вы можете использовать <strong>includeDetails</strong>, чтобы удалить некоторые свойства, но вы не можете выбрать конкретные поля для включения.</li>
-<li>Временной интервал определяется через параметр запроса <strong>relativeTime</strong>, который предоставляет ограниченное количество предопределенных значений. Альтернативно вы можете использовать поля <strong>startTimestamp</strong> и <strong>endTimestamp</strong>. Кроме того, размер временного интервала ограничен 3 днями.</li>
-<li>Все сущности возвращаются в одном полезном грузе; пагинация недоступна.</li>
+<li>У вас ограниченный контроль над возвращаемыми полями — вы можете использовать <strong>includeDetails</strong>, чтобы удалить некоторые свойства, но вы не можете выбрать конкретные поля для включения.</li>
+<li>Временной интервал определяется через параметр запроса <strong>relativeTime</strong>, который предоставляет ограниченное количество предустановленных значений. Альтернативно вы можете использовать поля <strong>startTimestamp</strong> и <strong>endTimestamp</strong>. Кроме того, размер временного интервала ограничен 3 днями.</li>
+<li>Все сущности возвращаются в одном полезном нагрузке; пагинация недоступна.</li>
 </ul>
 <h4 id="url-_1">URL-адрес запроса<a class="headerlink" href="#url-_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts?relativeTime=2hours&amp;includeDetails=false
@@ -25979,7 +25979,7 @@
 <a id="__codelineno-5-146" name="__codelineno-5-146" href="#__codelineno-5-146"></a>
 <a id="__codelineno-5-147" name="__codelineno-5-147" href="#__codelineno-5-147"></a>
 <a id="__codelineno-5-148" name="__codelineno-5-148" href="#__codelineno-5-148"></a>
-<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a>&quot;agentVersion&quot;:?
+<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a>&quot;agentVersion&quot;:.
 <a id="__codelineno-5-150" name="__codelineno-5-150" href="#__codelineno-5-150"></a>
 <a id="__codelineno-5-151" name="__codelineno-5-151" href="#__codelineno-5-151"></a>
 <a id="__codelineno-5-152" name="__codelineno-5-152" href="#__codelineno-5-152"></a>
@@ -26039,7 +26039,7 @@
 <a id="__codelineno-5-206" name="__codelineno-5-206" href="#__codelineno-5-206"></a>
 <a id="__codelineno-5-207" name="__codelineno-5-207" href="#__codelineno-5-207"></a>
 <a id="__codelineno-5-208" name="__codelineno-5-208" href="#__codelineno-5-208"></a>
-<a id="__codelineno-5-209" name="__codelineno-5-209" href="#__codelineno-5-209"></a>}
+<a id="__codelineno-5-209" name="__codelineno-5-209" href="#__codelineno-5-209"></a>)
 <a id="__codelineno-5-210" name="__codelineno-5-210" href="#__codelineno-5-210"></a>
 <a id="__codelineno-5-211" name="__codelineno-5-211" href="#__codelineno-5-211"></a>
 <a id="__codelineno-5-212" name="__codelineno-5-212" href="#__codelineno-5-212"></a>
@@ -26139,167 +26139,167 @@
 <a id="__codelineno-5-306" name="__codelineno-5-306" href="#__codelineno-5-306"></a>
 <a id="__codelineno-5-307" name="__codelineno-5-307" href="#__codelineno-5-307"></a>
 <a id="__codelineno-5-308" name="__codelineno-5-308" href="#__codelineno-5-308"></a>
-<a id="__codelineno-5-309" name="__codelineno-5-309" href="#__codelineno-5-309"></a>}
+<a id="__codelineno-5-309" name="__codelineno-5-309" href="#__codelineno-5-309"></a>)
 <a id="__codelineno-5-310" name="__codelineno-5-310" href="#__codelineno-5-310"></a>
 <a id="__codelineno-5-311" name="__codelineno-5-311" href="#__codelineno-5-311"></a>
 <a id="__codelineno-5-312" name="__codelineno-5-312" href="#__codelineno-5-312"></a>
-<a id="__codelineno-5-313" name="__codelineno-5-313" href="#__codelineno-5-313"></a>],
+<a id="__codelineno-5-313" name="__codelineno-5-313" href="#__codelineno-5-313"></a>]
 <a id="__codelineno-5-314" name="__codelineno-5-314" href="#__codelineno-5-314"></a>
 <a id="__codelineno-5-315" name="__codelineno-5-315" href="#__codelineno-5-315"></a>
 <a id="__codelineno-5-316" name="__codelineno-5-316" href="#__codelineno-5-316"></a>
-<a id="__codelineno-5-317" name="__codelineno-5-317" href="#__codelineno-5-317"></a>&quot;fromRelationships&quot;: {},
+<a id="__codelineno-5-317" name="__codelineno-5-317" href="#__codelineno-5-317"></a>},
 <a id="__codelineno-5-318" name="__codelineno-5-318" href="#__codelineno-5-318"></a>
 <a id="__codelineno-5-319" name="__codelineno-5-319" href="#__codelineno-5-319"></a>
 <a id="__codelineno-5-320" name="__codelineno-5-320" href="#__codelineno-5-320"></a>
-<a id="__codelineno-5-321" name="__codelineno-5-321" href="#__codelineno-5-321"></a>&quot;toRelationships&quot;: {},
+<a id="__codelineno-5-321" name="__codelineno-5-321" href="#__codelineno-5-321"></a>&quot;fromRelationships&quot;: {},
 <a id="__codelineno-5-322" name="__codelineno-5-322" href="#__codelineno-5-322"></a>
 <a id="__codelineno-5-323" name="__codelineno-5-323" href="#__codelineno-5-323"></a>
 <a id="__codelineno-5-324" name="__codelineno-5-324" href="#__codelineno-5-324"></a>
-<a id="__codelineno-5-325" name="__codelineno-5-325" href="#__codelineno-5-325"></a>&quot;osType&quot;: &quot;WINDOWS&quot;,
+<a id="__codelineno-5-325" name="__codelineno-5-325" href="#__codelineno-5-325"></a>&quot;toRelationships&quot;: {},
 <a id="__codelineno-5-326" name="__codelineno-5-326" href="#__codelineno-5-326"></a>
 <a id="__codelineno-5-327" name="__codelineno-5-327" href="#__codelineno-5-327"></a>
 <a id="__codelineno-5-328" name="__codelineno-5-328" href="#__codelineno-5-328"></a>
-<a id="__codelineno-5-329" name="__codelineno-5-329" href="#__codelineno-5-329"></a>&quot;osArchitecture&quot;: &quot;X86&quot;,
+<a id="__codelineno-5-329" name="__codelineno-5-329" href="#__codelineno-5-329"></a>&quot;osType&quot;: &quot;WINDOWS&quot;,
 <a id="__codelineno-5-330" name="__codelineno-5-330" href="#__codelineno-5-330"></a>
 <a id="__codelineno-5-331" name="__codelineno-5-331" href="#__codelineno-5-331"></a>
 <a id="__codelineno-5-332" name="__codelineno-5-332" href="#__codelineno-5-332"></a>
-<a id="__codelineno-5-333" name="__codelineno-5-333" href="#__codelineno-5-333"></a>&quot;osVersion&quot;: &quot;Windows Server 2008 R2 Datacenter Service Pack 1, ver. 6.1.7601&quot;,
+<a id="__codelineno-5-333" name="__codelineno-5-333" href="#__codelineno-5-333"></a>&quot;osArchitecture&quot;: &quot;X86&quot;,
 <a id="__codelineno-5-334" name="__codelineno-5-334" href="#__codelineno-5-334"></a>
 <a id="__codelineno-5-335" name="__codelineno-5-335" href="#__codelineno-5-335"></a>
 <a id="__codelineno-5-336" name="__codelineno-5-336" href="#__codelineno-5-336"></a>
-<a id="__codelineno-5-337" name="__codelineno-5-337" href="#__codelineno-5-337"></a>&quot;hypervisorType&quot;: &quot;XEN&quot;,
+<a id="__codelineno-5-337" name="__codelineno-5-337" href="#__codelineno-5-337"></a>&quot;osVersion&quot;: &quot;Windows Server 2008 R2 Datacenter Service Pack 1, ver. 6.1.7601&quot;,
 <a id="__codelineno-5-338" name="__codelineno-5-338" href="#__codelineno-5-338"></a>
 <a id="__codelineno-5-339" name="__codelineno-5-339" href="#__codelineno-5-339"></a>
 <a id="__codelineno-5-340" name="__codelineno-5-340" href="#__codelineno-5-340"></a>
-<a id="__codelineno-5-341" name="__codelineno-5-341" href="#__codelineno-5-341"></a>&quot;ipAddresses&quot;: [
+<a id="__codelineno-5-341" name="__codelineno-5-341" href="#__codelineno-5-341"></a>&quot;hypervisorType&quot;: &quot;XEN&quot;,
 <a id="__codelineno-5-342" name="__codelineno-5-342" href="#__codelineno-5-342"></a>
 <a id="__codelineno-5-343" name="__codelineno-5-343" href="#__codelineno-5-343"></a>
 <a id="__codelineno-5-344" name="__codelineno-5-344" href="#__codelineno-5-344"></a>
-<a id="__codelineno-5-345" name="__codelineno-5-345" href="#__codelineno-5-345"></a>&quot;192.168.0.2&quot;,
+<a id="__codelineno-5-345" name="__codelineno-5-345" href="#__codelineno-5-345"></a>&quot;ipAddresses&quot;: [
 <a id="__codelineno-5-346" name="__codelineno-5-346" href="#__codelineno-5-346"></a>
 <a id="__codelineno-5-347" name="__codelineno-5-347" href="#__codelineno-5-347"></a>
 <a id="__codelineno-5-348" name="__codelineno-5-348" href="#__codelineno-5-348"></a>
-<a id="__codelineno-5-349" name="__codelineno-5-349" href="#__codelineno-5-349"></a>&quot;192.168.0.3&quot;
+<a id="__codelineno-5-349" name="__codelineno-5-349" href="#__codelineno-5-349"></a>&quot;192.168.0.2&quot;,
 <a id="__codelineno-5-350" name="__codelineno-5-350" href="#__codelineno-5-350"></a>
 <a id="__codelineno-5-351" name="__codelineno-5-351" href="#__codelineno-5-351"></a>
 <a id="__codelineno-5-352" name="__codelineno-5-352" href="#__codelineno-5-352"></a>
-<a id="__codelineno-5-353" name="__codelineno-5-353" href="#__codelineno-5-353"></a>],
+<a id="__codelineno-5-353" name="__codelineno-5-353" href="#__codelineno-5-353"></a>&quot;192.168.0.3&quot;
 <a id="__codelineno-5-354" name="__codelineno-5-354" href="#__codelineno-5-354"></a>
 <a id="__codelineno-5-355" name="__codelineno-5-355" href="#__codelineno-5-355"></a>
 <a id="__codelineno-5-356" name="__codelineno-5-356" href="#__codelineno-5-356"></a>
-<a id="__codelineno-5-357" name="__codelineno-5-357" href="#__codelineno-5-357"></a>&quot;bitness&quot;: &quot;64bit&quot;,
+<a id="__codelineno-5-357" name="__codelineno-5-357" href="#__codelineno-5-357"></a>],
 <a id="__codelineno-5-358" name="__codelineno-5-358" href="#__codelineno-5-358"></a>
 <a id="__codelineno-5-359" name="__codelineno-5-359" href="#__codelineno-5-359"></a>
 <a id="__codelineno-5-360" name="__codelineno-5-360" href="#__codelineno-5-360"></a>
-<a id="__codelineno-5-361" name="__codelineno-5-361" href="#__codelineno-5-361"></a>&quot;cpuCores&quot;: 1,
+<a id="__codelineno-5-361" name="__codelineno-5-361" href="#__codelineno-5-361"></a>&quot;bitness&quot;: &quot;64bit&quot;,
 <a id="__codelineno-5-362" name="__codelineno-5-362" href="#__codelineno-5-362"></a>
 <a id="__codelineno-5-363" name="__codelineno-5-363" href="#__codelineno-5-363"></a>
 <a id="__codelineno-5-364" name="__codelineno-5-364" href="#__codelineno-5-364"></a>
-<a id="__codelineno-5-365" name="__codelineno-5-365" href="#__codelineno-5-365"></a>&quot;logicalCpuCores&quot;: 2,
+<a id="__codelineno-5-365" name="__codelineno-5-365" href="#__codelineno-5-365"></a>&quot;cpuCores&quot;: 1,
 <a id="__codelineno-5-366" name="__codelineno-5-366" href="#__codelineno-5-366"></a>
 <a id="__codelineno-5-367" name="__codelineno-5-367" href="#__codelineno-5-367"></a>
 <a id="__codelineno-5-368" name="__codelineno-5-368" href="#__codelineno-5-368"></a>
-<a id="__codelineno-5-369" name="__codelineno-5-369" href="#__codelineno-5-369"></a>&quot;cloudType&quot;: &quot;EC2&quot;,
+<a id="__codelineno-5-369" name="__codelineno-5-369" href="#__codelineno-5-369"></a>&quot;logicalCpuCores&quot;: 2,
 <a id="__codelineno-5-370" name="__codelineno-5-370" href="#__codelineno-5-370"></a>
 <a id="__codelineno-5-371" name="__codelineno-5-371" href="#__codelineno-5-371"></a>
 <a id="__codelineno-5-372" name="__codelineno-5-372" href="#__codelineno-5-372"></a>
-<a id="__codelineno-5-373" name="__codelineno-5-373" href="#__codelineno-5-373"></a>&quot;monitoringMode&quot;: &quot;FULL_STACK&quot;,
+<a id="__codelineno-5-373" name="__codelineno-5-373" href="#__codelineno-5-373"></a>&quot;cloudType&quot;: &quot;EC2&quot;,
 <a id="__codelineno-5-374" name="__codelineno-5-374" href="#__codelineno-5-374"></a>
 <a id="__codelineno-5-375" name="__codelineno-5-375" href="#__codelineno-5-375"></a>
 <a id="__codelineno-5-376" name="__codelineno-5-376" href="#__codelineno-5-376"></a>
-<a id="__codelineno-5-377" name="__codelineno-5-377" href="#__codelineno-5-377"></a>&quot;networkZoneId&quot;: &quot;default&quot;,
+<a id="__codelineno-5-377" name="__codelineno-5-377" href="#__codelineno-5-377"></a>&quot;monitoringMode&quot;: &quot;FULL_STACK&quot;,
 <a id="__codelineno-5-378" name="__codelineno-5-378" href="#__codelineno-5-378"></a>
 <a id="__codelineno-5-379" name="__codelineno-5-379" href="#__codelineno-5-379"></a>
 <a id="__codelineno-5-380" name="__codelineno-5-380" href="#__codelineno-5-380"></a>
-<a id="__codelineno-5-381" name="__codelineno-5-381" href="#__codelineno-5-381"></a>&quot;agentVersion&quot;:?
+<a id="__codelineno-5-381" name="__codelineno-5-381" href="#__codelineno-5-381"></a>&quot;networkZoneId&quot;: &quot;default&quot;,
 <a id="__codelineno-5-382" name="__codelineno-5-382" href="#__codelineno-5-382"></a>
 <a id="__codelineno-5-383" name="__codelineno-5-383" href="#__codelineno-5-383"></a>
 <a id="__codelineno-5-384" name="__codelineno-5-384" href="#__codelineno-5-384"></a>
-<a id="__codelineno-5-385" name="__codelineno-5-385" href="#__codelineno-5-385"></a>&quot;major&quot;: 1,
+<a id="__codelineno-5-385" name="__codelineno-5-385" href="#__codelineno-5-385"></a>&quot;agentVersion&quot;:.
 <a id="__codelineno-5-386" name="__codelineno-5-386" href="#__codelineno-5-386"></a>
 <a id="__codelineno-5-387" name="__codelineno-5-387" href="#__codelineno-5-387"></a>
 <a id="__codelineno-5-388" name="__codelineno-5-388" href="#__codelineno-5-388"></a>
-<a id="__codelineno-5-389" name="__codelineno-5-389" href="#__codelineno-5-389"></a>&quot;minor&quot;: 247,
+<a id="__codelineno-5-389" name="__codelineno-5-389" href="#__codelineno-5-389"></a>&quot;major&quot;: 1,
 <a id="__codelineno-5-390" name="__codelineno-5-390" href="#__codelineno-5-390"></a>
 <a id="__codelineno-5-391" name="__codelineno-5-391" href="#__codelineno-5-391"></a>
 <a id="__codelineno-5-392" name="__codelineno-5-392" href="#__codelineno-5-392"></a>
-<a id="__codelineno-5-393" name="__codelineno-5-393" href="#__codelineno-5-393"></a>&quot;revision&quot;: 277,
+<a id="__codelineno-5-393" name="__codelineno-5-393" href="#__codelineno-5-393"></a>&quot;minor&quot;: 247,
 <a id="__codelineno-5-394" name="__codelineno-5-394" href="#__codelineno-5-394"></a>
 <a id="__codelineno-5-395" name="__codelineno-5-395" href="#__codelineno-5-395"></a>
 <a id="__codelineno-5-396" name="__codelineno-5-396" href="#__codelineno-5-396"></a>
-<a id="__codelineno-5-397" name="__codelineno-5-397" href="#__codelineno-5-397"></a>&quot;timestamp&quot;: &quot;20221006-094946&quot;,
+<a id="__codelineno-5-397" name="__codelineno-5-397" href="#__codelineno-5-397"></a>&quot;revision&quot;: 277,
 <a id="__codelineno-5-398" name="__codelineno-5-398" href="#__codelineno-5-398"></a>
 <a id="__codelineno-5-399" name="__codelineno-5-399" href="#__codelineno-5-399"></a>
 <a id="__codelineno-5-400" name="__codelineno-5-400" href="#__codelineno-5-400"></a>
-<a id="__codelineno-5-401" name="__codelineno-5-401" href="#__codelineno-5-401"></a>&quot;sourceRevision&quot;: &quot;&quot;
+<a id="__codelineno-5-401" name="__codelineno-5-401" href="#__codelineno-5-401"></a>&quot;timestamp&quot;: &quot;20221006-094946&quot;,
 <a id="__codelineno-5-402" name="__codelineno-5-402" href="#__codelineno-5-402"></a>
 <a id="__codelineno-5-403" name="__codelineno-5-403" href="#__codelineno-5-403"></a>
 <a id="__codelineno-5-404" name="__codelineno-5-404" href="#__codelineno-5-404"></a>
-<a id="__codelineno-5-405" name="__codelineno-5-405" href="#__codelineno-5-405"></a>},
+<a id="__codelineno-5-405" name="__codelineno-5-405" href="#__codelineno-5-405"></a>&quot;sourceRevision&quot;: &quot;&quot;
 <a id="__codelineno-5-406" name="__codelineno-5-406" href="#__codelineno-5-406"></a>
 <a id="__codelineno-5-407" name="__codelineno-5-407" href="#__codelineno-5-407"></a>
 <a id="__codelineno-5-408" name="__codelineno-5-408" href="#__codelineno-5-408"></a>
-<a id="__codelineno-5-409" name="__codelineno-5-409" href="#__codelineno-5-409"></a>&quot;consumedHostUnits&quot;: 0.5,
+<a id="__codelineno-5-409" name="__codelineno-5-409" href="#__codelineno-5-409"></a>},
 <a id="__codelineno-5-410" name="__codelineno-5-410" href="#__codelineno-5-410"></a>
 <a id="__codelineno-5-411" name="__codelineno-5-411" href="#__codelineno-5-411"></a>
 <a id="__codelineno-5-412" name="__codelineno-5-412" href="#__codelineno-5-412"></a>
-<a id="__codelineno-5-413" name="__codelineno-5-413" href="#__codelineno-5-413"></a>&quot;userLevel&quot;: &quot;SUPERUSER&quot;,
+<a id="__codelineno-5-413" name="__codelineno-5-413" href="#__codelineno-5-413"></a>&quot;consumedHostUnits&quot;: 0.5,
 <a id="__codelineno-5-414" name="__codelineno-5-414" href="#__codelineno-5-414"></a>
 <a id="__codelineno-5-415" name="__codelineno-5-415" href="#__codelineno-5-415"></a>
 <a id="__codelineno-5-416" name="__codelineno-5-416" href="#__codelineno-5-416"></a>
-<a id="__codelineno-5-417" name="__codelineno-5-417" href="#__codelineno-5-417"></a>&quot;autoInjection&quot;: &quot;ENABLED&quot;,
+<a id="__codelineno-5-417" name="__codelineno-5-417" href="#__codelineno-5-417"></a>&quot;userLevel&quot;: &quot;SUPERUSER&quot;,
 <a id="__codelineno-5-418" name="__codelineno-5-418" href="#__codelineno-5-418"></a>
 <a id="__codelineno-5-419" name="__codelineno-5-419" href="#__codelineno-5-419"></a>
 <a id="__codelineno-5-420" name="__codelineno-5-420" href="#__codelineno-5-420"></a>
-<a id="__codelineno-5-421" name="__codelineno-5-421" href="#__codelineno-5-421"></a>&quot;softwareTechnologies&quot;: [
+<a id="__codelineno-5-421" name="__codelineno-5-421" href="#__codelineno-5-421"></a>&quot;autoInjection&quot;: &quot;ENABLED&quot;,
 <a id="__codelineno-5-422" name="__codelineno-5-422" href="#__codelineno-5-422"></a>
 <a id="__codelineno-5-423" name="__codelineno-5-423" href="#__codelineno-5-423"></a>
 <a id="__codelineno-5-424" name="__codelineno-5-424" href="#__codelineno-5-424"></a>
-<a id="__codelineno-5-425" name="__codelineno-5-425" href="#__codelineno-5-425"></a>{
+<a id="__codelineno-5-425" name="__codelineno-5-425" href="#__codelineno-5-425"></a>&quot;softwareTechnologies&quot;: [
 <a id="__codelineno-5-426" name="__codelineno-5-426" href="#__codelineno-5-426"></a>
 <a id="__codelineno-5-427" name="__codelineno-5-427" href="#__codelineno-5-427"></a>
 <a id="__codelineno-5-428" name="__codelineno-5-428" href="#__codelineno-5-428"></a>
-<a id="__codelineno-5-429" name="__codelineno-5-429" href="#__codelineno-5-429"></a>&quot;type&quot;: &quot;CITRIX&quot;,
+<a id="__codelineno-5-429" name="__codelineno-5-429" href="#__codelineno-5-429"></a>{
 <a id="__codelineno-5-430" name="__codelineno-5-430" href="#__codelineno-5-430"></a>
 <a id="__codelineno-5-431" name="__codelineno-5-431" href="#__codelineno-5-431"></a>
 <a id="__codelineno-5-432" name="__codelineno-5-432" href="#__codelineno-5-432"></a>
-<a id="__codelineno-5-433" name="__codelineno-5-433" href="#__codelineno-5-433"></a>&quot;edition&quot;: null,
+<a id="__codelineno-5-433" name="__codelineno-5-433" href="#__codelineno-5-433"></a>&quot;type&quot;: &quot;CITRIX&quot;,
 <a id="__codelineno-5-434" name="__codelineno-5-434" href="#__codelineno-5-434"></a>
 <a id="__codelineno-5-435" name="__codelineno-5-435" href="#__codelineno-5-435"></a>
 <a id="__codelineno-5-436" name="__codelineno-5-436" href="#__codelineno-5-436"></a>
-<a id="__codelineno-5-437" name="__codelineno-5-437" href="#__codelineno-5-437"></a>&quot;version&quot;: null
+<a id="__codelineno-5-437" name="__codelineno-5-437" href="#__codelineno-5-437"></a>&quot;edition&quot;: null,
 <a id="__codelineno-5-438" name="__codelineno-5-438" href="#__codelineno-5-438"></a>
 <a id="__codelineno-5-439" name="__codelineno-5-439" href="#__codelineno-5-439"></a>
 <a id="__codelineno-5-440" name="__codelineno-5-440" href="#__codelineno-5-440"></a>
-<a id="__codelineno-5-441" name="__codelineno-5-441" href="#__codelineno-5-441"></a>)
+<a id="__codelineno-5-441" name="__codelineno-5-441" href="#__codelineno-5-441"></a>&quot;version&quot;: null
 <a id="__codelineno-5-442" name="__codelineno-5-442" href="#__codelineno-5-442"></a>
 <a id="__codelineno-5-443" name="__codelineno-5-443" href="#__codelineno-5-443"></a>
 <a id="__codelineno-5-444" name="__codelineno-5-444" href="#__codelineno-5-444"></a>
-<a id="__codelineno-5-445" name="__codelineno-5-445" href="#__codelineno-5-445"></a>],
+<a id="__codelineno-5-445" name="__codelineno-5-445" href="#__codelineno-5-445"></a>)
 <a id="__codelineno-5-446" name="__codelineno-5-446" href="#__codelineno-5-446"></a>
 <a id="__codelineno-5-447" name="__codelineno-5-447" href="#__codelineno-5-447"></a>
 <a id="__codelineno-5-448" name="__codelineno-5-448" href="#__codelineno-5-448"></a>
-<a id="__codelineno-5-449" name="__codelineno-5-449" href="#__codelineno-5-449"></a>&quot;managementZones&quot;: [
+<a id="__codelineno-5-449" name="__codelineno-5-449" href="#__codelineno-5-449"></a>]
 <a id="__codelineno-5-450" name="__codelineno-5-450" href="#__codelineno-5-450"></a>
 <a id="__codelineno-5-451" name="__codelineno-5-451" href="#__codelineno-5-451"></a>
 <a id="__codelineno-5-452" name="__codelineno-5-452" href="#__codelineno-5-452"></a>
-<a id="__codelineno-5-453" name="__codelineno-5-453" href="#__codelineno-5-453"></a>{
+<a id="__codelineno-5-453" name="__codelineno-5-453" href="#__codelineno-5-453"></a>},
 <a id="__codelineno-5-454" name="__codelineno-5-454" href="#__codelineno-5-454"></a>
 <a id="__codelineno-5-455" name="__codelineno-5-455" href="#__codelineno-5-455"></a>
 <a id="__codelineno-5-456" name="__codelineno-5-456" href="#__codelineno-5-456"></a>
-<a id="__codelineno-5-457" name="__codelineno-5-457" href="#__codelineno-5-457"></a>&quot;id&quot;: &quot;-4279023605659327282&quot;,
+<a id="__codelineno-5-457" name="__codelineno-5-457" href="#__codelineno-5-457"></a>&quot;managementZones&quot;: [
 <a id="__codelineno-5-458" name="__codelineno-5-458" href="#__codelineno-5-458"></a>
 <a id="__codelineno-5-459" name="__codelineno-5-459" href="#__codelineno-5-459"></a>
 <a id="__codelineno-5-460" name="__codelineno-5-460" href="#__codelineno-5-460"></a>
-<a id="__codelineno-5-461" name="__codelineno-5-461" href="#__codelineno-5-461"></a>&quot;name&quot;: &quot;frontend&quot;
+<a id="__codelineno-5-461" name="__codelineno-5-461" href="#__codelineno-5-461"></a>{
 <a id="__codelineno-5-462" name="__codelineno-5-462" href="#__codelineno-5-462"></a>
 <a id="__codelineno-5-463" name="__codelineno-5-463" href="#__codelineno-5-463"></a>
 <a id="__codelineno-5-464" name="__codelineno-5-464" href="#__codelineno-5-464"></a>
-<a id="__codelineno-5-465" name="__codelineno-5-465" href="#__codelineno-5-465"></a>)
+<a id="__codelineno-5-465" name="__codelineno-5-465" href="#__codelineno-5-465"></a>&quot;id&quot;: &quot;-4279023605659327282&quot;,
 <a id="__codelineno-5-466" name="__codelineno-5-466" href="#__codelineno-5-466"></a>
 <a id="__codelineno-5-467" name="__codelineno-5-467" href="#__codelineno-5-467"></a>
 <a id="__codelineno-5-468" name="__codelineno-5-468" href="#__codelineno-5-468"></a>
-<a id="__codelineno-5-469" name="__codelineno-5-469" href="#__codelineno-5-469"></a>]
+<a id="__codelineno-5-469" name="__codelineno-5-469" href="#__codelineno-5-469"></a>&quot;name&quot;: &quot;frontend&quot;
 <a id="__codelineno-5-470" name="__codelineno-5-470" href="#__codelineno-5-470"></a>
 <a id="__codelineno-5-471" name="__codelineno-5-471" href="#__codelineno-5-471"></a>
 <a id="__codelineno-5-472" name="__codelineno-5-472" href="#__codelineno-5-472"></a>
@@ -26311,14 +26311,22 @@
 <a id="__codelineno-5-478" name="__codelineno-5-478" href="#__codelineno-5-478"></a>
 <a id="__codelineno-5-479" name="__codelineno-5-479" href="#__codelineno-5-479"></a>
 <a id="__codelineno-5-480" name="__codelineno-5-480" href="#__codelineno-5-480"></a>
-<a id="__codelineno-5-481" name="__codelineno-5-481" href="#__codelineno-5-481"></a>}
+<a id="__codelineno-5-481" name="__codelineno-5-481" href="#__codelineno-5-481"></a>)
+<a id="__codelineno-5-482" name="__codelineno-5-482" href="#__codelineno-5-482"></a>
+<a id="__codelineno-5-483" name="__codelineno-5-483" href="#__codelineno-5-483"></a>
+<a id="__codelineno-5-484" name="__codelineno-5-484" href="#__codelineno-5-484"></a>
+<a id="__codelineno-5-485" name="__codelineno-5-485" href="#__codelineno-5-485"></a>]
+<a id="__codelineno-5-486" name="__codelineno-5-486" href="#__codelineno-5-486"></a>
+<a id="__codelineno-5-487" name="__codelineno-5-487" href="#__codelineno-5-487"></a>
+<a id="__codelineno-5-488" name="__codelineno-5-488" href="#__codelineno-5-488"></a>
+<a id="__codelineno-5-489" name="__codelineno-5-489" href="#__codelineno-5-489"></a>}
 </code></pre></div>
 <h3 id="_14">Присвоение тегов сущности<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p>В этом примере мы присваиваем дополнительные теги (<strong>Datacenter:Linz</strong> и <strong>Rack:014</strong>) хостам из списка сущностей example.</p>
-<p>Сравните следующие вкладки, чтобы увидеть, как мы делаем это с помощью новых Мониторимых сущностей API и устаревшей Топологии и Smartscape API:</p>
-<p>Мониторимые сущности API</p>
+<p>В этом примере мы присваиваем дополнительные теги (<strong>Datacenter:Linz</strong> и <strong>Rack:014</strong>) хостам из списка сущностей примера.</p>
+<p>Сравните следующие вкладки, чтобы увидеть, как мы делаем это, используя новые сущности API и устаревшую топологию и Smartscape API:</p>
+<p>Сущности API</p>
 <p>Топология и Smartscape API</p>
-<p>В новых Мониторимых сущностях API вы можете присваивать теги нескольким сущностям одновременно, выбирая их через <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Настройте селектор сущностей для Environment API конечных точек.">селектор сущностей</a>. В этом примере мы выбираем хосты по их идентификаторам сущностей.</p>
+<p>В новых сущностях API вы можете присваивать теги нескольким сущностям одновременно, выбирая их через <a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Настройте селектор сущностей для Environment API конечных точек.">селектор сущностей</a>. В этом примере мы выбираем хосты по их идентификаторам сущностей.</p>
 <h4 id="url_1">URL запроса<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>https://mySampleEnv.live.dynatrace.com/api/v2/tags?entitySelector=entityId(%22HOST-01A00204B50FF735%22,%22HOST-0AF138A0258C7DFF%22)
 </code></pre></div>
@@ -26439,7 +26447,7 @@
 <a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>
 <a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>}
 </code></pre></div>
-<p>В устаревшей Топологии и Smartscape API вы можете присваивать теги только одной сущности за раз. Пример показывает присвоение тега только одному из двух хостов. Для присвоения тегов другому хосту требуется второй запрос с тем же полезным содержимым.</p>
+<p>В устаревшей топологии и Smartscape API вы можете присваивать теги только одной сущности одновременно. В примере показано присвоение тегов только одному из двух хостов. Для присвоения тегов другому хосту требуется второй запрос с тем же полезным содержимым.</p>
 <p>Кроме того, теги не хранятся в формате <code>key:value</code>. Вы можете задать только часть <code>key</code> тега через этот API.</p>
 <h4 id="url_2">URL запроса<a class="headerlink" href="#url_2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-01A00204B50FF735
@@ -26474,8 +26482,8 @@
 <li>IP-адрес <code>172.16.115.211</code></li>
 <li>порт прослушивания <code>9999</code></li>
 </ul>
-<p>Сравните следующие вкладки, чтобы увидеть, как мы делаем это с помощью новых Мониторимых сущностей API и устаревшей Топологии и Smartscape API:</p>
-<p>Мониторимые сущности API</p>
+<p>Сравните следующие вкладки, чтобы увидеть, как мы делаем это, используя новые сущности API и устаревшую топологию и Smartscape API:</p>
+<p>Сущности API</p>
 <p>Топология и Smartscape API</p>
 <h4 id="url_3">URL запроса<a class="headerlink" href="#url_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>https://mySampleEnv.live.dynatrace.com/api/v2/entities/custom
@@ -26513,7 +26521,7 @@
 <a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>
 <a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>
 <a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>
-<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>&quot;properties&quot;: 
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>&quot;properties&quot;: {
 <a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>
 <a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>
 <a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>
@@ -26521,7 +26529,7 @@
 <a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>
 <a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>
 <a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>
-<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>}
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>)
 <a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>
 <a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>
 <a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>
@@ -26578,7 +26586,7 @@
 <a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
 <a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>
 <a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>
-<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>&quot;properties&quot;: 
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>&quot;properties&quot;: {
 <a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>
 <a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>
 <a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>
@@ -26609,8 +26617,8 @@
 </code></pre></div>
 <h2 id="_24">Связанные темы<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управление Dynatrace API аутентификационными токенами.">Токены доступа API</a></li>
-<li><a href="/docs/dynatrace-api/environment-api/tokens-v1" title="Узнайте, как управлять Dynatrace API аутентификационными токенами в вашей среде.">Токены API v1</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управление Dynatrace API токенами аутентификации.">Токены доступа API</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/tokens-v1" title="Узнайте, как управлять Dynatrace API токенами аутентификации в вашей среде.">Токены API v1</a></li>
 </ul>
 
 

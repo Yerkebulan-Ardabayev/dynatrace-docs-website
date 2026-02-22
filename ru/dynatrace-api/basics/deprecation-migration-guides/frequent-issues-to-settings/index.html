@@ -25,7 +25,7 @@
     
     
       
-        <title>Переход с обнаружения частых проблем API на Настройки API - Dynatrace Managed - Документация</title>
+        <title>Переход с обнаружения частых проблем API на настройки API - Dynatrace Managed - Документация</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Переход с обнаружения частых проблем API на Настройки API
+              Переход с обнаружения частых проблем API на настройки API
             
           </span>
         </div>
@@ -25474,14 +25474,14 @@
 
 
 
-<h1 id="api-api">Переход с обнаружения частых проблем API на Настройки API<a class="headerlink" href="#api-api" title="Permanent link">&para;</a></h1>
-<h1 id="api-api_1">Переход с обнаружения частых проблем API на Настройки API<a class="headerlink" href="#api-api_1" title="Permanent link">&para;</a></h1>
+<h1 id="api-api">Переход с обнаружения частых проблем API на настройки API<a class="headerlink" href="#api-api" title="Permanent link">&para;</a></h1>
+<h1 id="api-api_1">Переход с обнаружения частых проблем API на настройки API<a class="headerlink" href="#api-api_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Ссылка</li>
-<li>Опубликовано 22 декабря 2022 года</li>
+<li>Опубликовано 22 декабря 2022 г.</li>
 </ul>
-<p><a href="/docs/dynatrace-api/configuration-api/frequent-issue-detection-api" title="Управление конфигурацией обнаружения частых проблем через Dynatrace API.">Обнаружение частых проблем API</a> было устарено с <a href="/docs/whats-new/dynatrace-api/sprint-249" title="Журнал изменений Dynatrace API версии 1.249">Dynatrace версии 1.249</a>. Его заменой является <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a> с схемой <strong>Обнаружение частых проблем</strong> (<code>builtin:anomaly-detection.frequent-issues</code>). Мы рекомендуем перейти на новую API как можно скорее.</p>
-<p>Миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.</p>
+<p><a href="/docs/dynatrace-api/configuration-api/frequent-issue-detection-api" title="Управление конфигурацией обнаружения частых проблем через Dynatrace API.">Обнаружение частых проблем API</a> было объявлено устаревшим с <a href="/docs/whats-new/dynatrace-api/sprint-249" title="Журнал изменений Dynatrace API версии 1.249">Dynatrace версии 1.249</a>. Его заменой является <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a> с схемой <strong>Обнаружение частых проблем</strong> (<code>builtin:anomaly-detection.frequent-issues</code>). Мы рекомендуем перейти на новую API как можно скорее.</p>
+<p>Миграция влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на область действия токена для аутентификации запросов.</p>
 <h2 id="url">Базовый URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -25514,13 +25514,13 @@
 </table>
 <h2 id="_2">Параметры<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a>.</p>
-<p>В рамках Настроек 2.0 каждая конфигурация обнаружения частых проблем представлена объектом настроек. Объект содержит некоторые метаданные (например, область или метка времени создания) и саму конфигурацию, инкапсулированную в объект <strong>значение</strong>. Чтобы узнать о параметрах конфигурации обнаружения частых проблем, запросите схему <strong>Обнаружение частых проблем</strong> (<code>builtin:anomaly-detection.frequent-issues</code>) с помощью запроса <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="Просмотреть схему настроек через Dynatrace API.">Получить схему</a>.</p>
+<p>В рамках Настройки 2.0 каждая конфигурация обнаружения частых проблем представлена объектом настроек. Объект содержит некоторые метаданные (например, область или метка времени создания) и саму конфигурацию, инкапсулированную в объект <strong>value</strong>. Чтобы узнать о параметрах конфигурации обнаружения частых проблем, выполните запрос <strong>Обнаружение частых проблем</strong> (<code>builtin:anomaly-detection.frequent-issues</code>) с помощью запроса <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="Просмотр схемы настроек через Dynatrace API.">GET-схема</a>.</p>
 <h2 id="_3">Примеры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>Вот некоторые примеры различий в использовании API.</p>
 <h3 id="_4">Просмотр конфигурации<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>Настройки 2.0</p>
 <p>Обнаружение частых проблем</p>
-<p>Чтобы просмотреть конфигурации обнаружения частых проблем, вам необходим запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/get-objects" title="Просмотреть несколько объектов настроек через Dynatrace API.">Получить объекты</a>. В параметрах запроса установите <strong>schemaIds</strong> в <code>builtin:anomaly-detection.frequent-issues</code> и <strong>scope</strong> в <code>environment</code>.</p>
+<p>Чтобы просмотреть конфигурации обнаружения частых проблем, вам необходим запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/get-objects" title="Просмотр нескольких объектов настроек через Dynatrace API.">GET-объекты</a>. В параметрах запроса установите <strong>schemaIds</strong> в <code>builtin:anomaly-detection.frequent-issues</code> и <strong>scope</strong> в <code>environment</code>.</p>
 <h4 id="url-">URL-адрес запроса<a class="headerlink" href="#url-" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=builtin:anomaly-detection.frequent-issues&amp;scopes=environment
 </code></pre></div>
@@ -25628,7 +25628,7 @@
 <h3 id="_7">Обновление конфигурации<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>Настройки 2.0</p>
 <p>Обнаружение частых проблем</p>
-<p>Чтобы отредактировать окно обслуживания, вам необходим запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/put-object" title="Изменить объект настроек через Dynatrace API.">Изменить объект</a>. В теле запроса установите <strong>schemaId</strong> в <code>builtin:anomaly-detection.frequent-issues</code> и <strong>scope</strong> в <code>environment</code>. Предоставьте конфигурацию обнаружения частых проблем в объекте <strong>значение</strong>.</p>
+<p>Чтобы отредактировать окно обслуживания, вам необходим запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/put-object" title="Редактирование объекта настроек через Dynatrace API.">PUT-объект</a>. В теле запроса установите <strong>schemaId</strong> в <code>builtin:anomaly-detection.frequent-issues</code> и <strong>scope</strong> в <code>environment</code>. Предоставьте конфигурацию обнаружения частых проблем в объекте <strong>value</strong>.</p>
 <h4 id="url-_2">URL-адрес запроса<a class="headerlink" href="#url-_2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AAAABAClidWlsdGluOmFub21hbHktZGV0ZWN0aW9uLmZyZXF1ZW50LWlzc3VlcwAGdGVuYW50AAZ0ZW5hbnQAJDNiNjk1ZjA4LWNhZDEtM2Y2OC04ZDM4LTQyODZkNzkzNjlkNL7vVN4V2t6t
 </code></pre></div>

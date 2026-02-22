@@ -25,7 +25,7 @@
     
     
       
-        <title>Policy management API - POST a policy boundary - Dynatrace Managed - Документация</title>
+        <title>Управление политиками API - POST граница политики - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#policy-management-api-post-a-policy-boundary" class="md-skip">
+        <a href="#api-post" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Policy management API - POST a policy boundary
+              Управление политиками API - POST граница политики
             
           </span>
         </div>
@@ -25459,6 +25459,353 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аутентификация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Параметры
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Параметры">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объекты тела запроса
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Объекты тела запроса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policyboundarydto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект PolicyBoundaryDto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модель тела запроса JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ответ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ответ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Код ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объекты тела ответа
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Объекты тела ответа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policyboundaryoverview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект PolicyBoundaryOverview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект Condition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errordto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект ErrorDto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модели тела ответа JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка полезной нагрузки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Проверка полезной нагрузки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аутентификация
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Параметры
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объекты тела запроса
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Объекты тела запроса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policyboundarydto_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект PolicyBoundaryDto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модель тела запроса JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Пример">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL запроса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тело запроса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тело ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Код ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -25474,82 +25821,81 @@
 
 
 
-<h1 id="policy-management-api-post-a-policy-boundary">Policy management API - POST a policy boundary<a class="headerlink" href="#policy-management-api-post-a-policy-boundary" title="Permanent link">&para;</a></h1>
-<h1 id="policy-management-api-post-a-policy-boundary_1">Policy management API - POST a policy boundary<a class="headerlink" href="#policy-management-api-post-a-policy-boundary_1" title="Permanent link">&para;</a></h1>
+<h1 id="api-post">Управление политиками API - POST граница политики<a class="headerlink" href="#api-post" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Reference</li>
 <li>Published Nov 20, 2025</li>
 </ul>
-<p>Creates a new policy boundary within a level. You can't create a global-level boundary, as these are managed by Dynatrace.</p>
-<p>The request consumes and produces an <code>application/json</code> payload.</p>
+<p>Создает новую границу политики внутри уровня. Вы не можете создать глобальную границу политики, поскольку они управляются Dynatrace.</p>
+<p>Запрос потребляет и производит полезную нагрузку <code>application/json</code>.</p>
 <p>POST</p>
 <p><code>https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries</code></p>
-<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
-<p>To execute this request, you need the <strong>Allow IAM policy configuration for environments</strong> (<code>iam-policies-management</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<h2 id="_1">Аутентификация<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Чтобы выполнить этот запрос, вам необходимо иметь разрешение <strong>Allow IAM policy configuration for environments</strong> (<code>iam-policies-management</code>) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
+<h2 id="_2">Параметры<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountId</td>
 <td>-</td>
-<td>The ID of the policy boundary level. Use the UUID of the account.</td>
+<td>Идентификатор уровня границы политики. Используйте UUID учетной записи.</td>
 <td>path</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>body</td>
 <td><a href="#openapi-definition-PolicyBoundaryDto">PolicyBoundaryDto</a></td>
-<td>The JSON body of the request. Contains new policy boundary</td>
+<td>JSON тело запроса. Содержит новую границу политики</td>
 <td>body</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-objects">Request body objects<a class="headerlink" href="#request-body-objects" title="Permanent link">&para;</a></h3>
-<h4 id="the-policyboundarydto-object">The <code>PolicyBoundaryDto</code> object<a class="headerlink" href="#the-policyboundarydto-object" title="Permanent link">&para;</a></h4>
+<h3 id="_3">Объекты тела запроса<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="policyboundarydto">Объект <code>PolicyBoundaryDto</code><a class="headerlink" href="#policyboundarydto" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>name</td>
 <td>string</td>
-<td>The display name of the policy boundary.</td>
-<td>Required</td>
+<td>Отображаемое имя границы политики.</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>boundaryQuery</td>
 <td>string</td>
-<td>The boundary query of the policy boundary.</td>
-<td>Required</td>
+<td>Запрос границы политики.</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>metadata</td>
 <td><a href="#openapi-definition-Map">Map</a></td>
-<td>The metadata of the policy boundary.</td>
-<td>Required</td>
+<td>Метаданные границы политики.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-map-object">The <code>Map</code> object<a class="headerlink" href="#the-map-object" title="Permanent link">&para;</a></h4>
-<h3 id="request-body-json-model">Request body JSON model<a class="headerlink" href="#request-body-json-model" title="Permanent link">&para;</a></h3>
-<p>This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.</p>
+<h4 id="map">Объект <code>Map</code><a class="headerlink" href="#map" title="Permanent link">&para;</a></h4>
+<h3 id="json">Модель тела запроса JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h3>
+<p>Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -25568,42 +25914,42 @@
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>}
 </code></pre></div>
-<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
-<h3 id="response-codes">Response codes<a class="headerlink" href="#response-codes" title="Permanent link">&para;</a></h3>
+<h2 id="_4">Ответ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">Код ответа<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Type</th>
-<th>Description</th>
+<th>Код</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>201</strong></td>
 <td><a href="#openapi-definition-PolicyBoundaryOverview">PolicyBoundaryOverview</a></td>
-<td>Successful response - policy boundary created</td>
+<td>Успешный ответ - граница политики создана</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
 <td><a href="#openapi-definition-ErrorDto">ErrorDto</a></td>
-<td>Failed. The request is invalid</td>
+<td>Неудача. Запрос недействителен</td>
 </tr>
 <tr>
 <td><strong>404</strong></td>
 <td><a href="#openapi-definition-ErrorDto">ErrorDto</a></td>
-<td>Failed. The specified resource is not found.</td>
+<td>Неудача. Указанный ресурс не найден.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response-body-objects">Response body objects<a class="headerlink" href="#response-body-objects" title="Permanent link">&para;</a></h3>
-<h4 id="the-policyboundaryoverview-object">The <code>PolicyBoundaryOverview</code> object<a class="headerlink" href="#the-policyboundaryoverview-object" title="Permanent link">&para;</a></h4>
+<h3 id="_6">Объекты тела ответа<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="policyboundaryoverview">Объект <code>PolicyBoundaryOverview</code><a class="headerlink" href="#policyboundaryoverview" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -25625,12 +25971,12 @@
 <tr>
 <td>name</td>
 <td>string</td>
-<td>The display name of the policy boundary.</td>
+<td>Отображаемое имя границы политики.</td>
 </tr>
 <tr>
 <td>boundaryQuery</td>
 <td>string</td>
-<td>The boundary query of the policy boundary.</td>
+<td>Запрос границы политики.</td>
 </tr>
 <tr>
 <td>boundaryConditions</td>
@@ -25640,57 +25986,57 @@
 <tr>
 <td>metadata</td>
 <td><a href="#openapi-definition-Map">Map</a></td>
-<td>The metadata of the policy boundary.</td>
+<td>Метаданные границы политики.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-condition-object">The <code>Condition</code> object<a class="headerlink" href="#the-condition-object" title="Permanent link">&para;</a></h4>
+<h4 id="condition">Объект <code>Condition</code><a class="headerlink" href="#condition" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>name</td>
 <td>string</td>
-<td>The name of the condition.  It indicates which part of the <strong>services</strong> is checked by the condition.</td>
+<td>Имя условия.  Оно указывает, какая часть <strong>сервисов</strong> проверяется условием.</td>
 </tr>
 <tr>
 <td>operator</td>
 <td>string</td>
-<td>The operator of the condition.</td>
+<td>Оператор условия.</td>
 </tr>
 <tr>
 <td>values</td>
 <td>string[]</td>
-<td>A list of reference values of the condition.</td>
+<td>Список ссылочных значений условия.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-map-object_1">The <code>Map</code> object<a class="headerlink" href="#the-map-object_1" title="Permanent link">&para;</a></h4>
-<h4 id="the-errordto-object">The <code>ErrorDto</code> object<a class="headerlink" href="#the-errordto-object" title="Permanent link">&para;</a></h4>
+<h4 id="map_1">Объект <code>Map</code><a class="headerlink" href="#map_1" title="Permanent link">&para;</a></h4>
+<h4 id="errordto">Объект <code>ErrorDto</code><a class="headerlink" href="#errordto" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>code</td>
 <td>number</td>
-<td>The code of the error.</td>
+<td>Код ошибки.</td>
 </tr>
 <tr>
 <td>message</td>
 <td>string</td>
-<td>A short description of the error.</td>
+<td>Краткое описание ошибки.</td>
 </tr>
 <tr>
 <td>errorsMap</td>
@@ -25699,7 +26045,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="response-body-json-models">Response body JSON models<a class="headerlink" href="#response-body-json-models" title="Permanent link">&para;</a></h3>
+<h3 id="json_1">Модели тела ответа JSON<a class="headerlink" href="#json_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -25752,7 +26098,7 @@
 <a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
 <a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
-<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>}
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>)
 <a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
 <a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>
 <a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>
@@ -25784,76 +26130,76 @@
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>}
 </code></pre></div>
-<h2 id="validate-payload">Validate payload<a class="headerlink" href="#validate-payload" title="Permanent link">&para;</a></h2>
-<p>We recommend that you validate the payload before submitting it with an actual request. A response code of <strong>200</strong> indicates a valid payload.</p>
-<p>The request consumes an <code>application/json</code> payload.</p>
+<h2 id="_7">Проверка полезной нагрузки<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Мы рекомендуем проверить полезную нагрузку перед отправкой ее с фактическим запросом. Код ответа <strong>200</strong> указывает на действительную полезную нагрузку.</p>
+<p>Запрос потребляет полезную нагрузку <code>application/json</code>.</p>
 <p>POST</p>
 <p><code>https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries/validation</code></p>
-<h3 id="authentication_1">Authentication<a class="headerlink" href="#authentication_1" title="Permanent link">&para;</a></h3>
-<p>To execute this request, you need the <strong>Allow IAM policy configuration for environments</strong> (<code>iam-policies-management</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<h3 id="_8">Аутентификация<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Чтобы выполнить этот запрос, вам необходимо иметь разрешение <strong>Allow IAM policy configuration for environments</strong> (<code>iam-policies-management</code>) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
+<h3 id="_9">Параметры<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountId</td>
 <td>-</td>
-<td>The ID of the policy boundary level. Use the UUID of the account.</td>
+<td>Идентификатор уровня границы политики. Используйте UUID учетной записи.</td>
 <td>path</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>body</td>
 <td><a href="#openapi-definition-PolicyBoundaryDto">PolicyBoundaryDto</a></td>
-<td>The JSON body of the request. Contains new policy boundary</td>
+<td>JSON тело запроса. Содержит новую границу политики</td>
 <td>body</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-objects_1">Request body objects<a class="headerlink" href="#request-body-objects_1" title="Permanent link">&para;</a></h3>
-<h4 id="the-policyboundarydto-object_1">The <code>PolicyBoundaryDto</code> object<a class="headerlink" href="#the-policyboundarydto-object_1" title="Permanent link">&para;</a></h4>
+<h3 id="_10">Объекты тела запроса<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h4 id="policyboundarydto_1">Объект <code>PolicyBoundaryDto</code><a class="headerlink" href="#policyboundarydto_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>name</td>
 <td>string</td>
-<td>The display name of the policy boundary.</td>
-<td>Required</td>
+<td>Отображаемое имя границы политики.</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>boundaryQuery</td>
 <td>string</td>
-<td>The boundary query of the policy boundary.</td>
-<td>Required</td>
+<td>Запрос границы политики.</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>metadata</td>
 <td><a href="#openapi-definition-Map">Map</a></td>
-<td>The metadata of the policy boundary.</td>
-<td>Required</td>
+<td>Метаданные границы политики.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-map-object_2">The <code>Map</code> object<a class="headerlink" href="#the-map-object_2" title="Permanent link">&para;</a></h4>
-<h3 id="request-body-json-model_1">Request body JSON model<a class="headerlink" href="#request-body-json-model_1" title="Permanent link">&para;</a></h3>
-<p>This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.</p>
+<h4 id="map_2">Объект <code>Map</code><a class="headerlink" href="#map_2" title="Permanent link">&para;</a></h4>
+<h3 id="json_2">Модель тела запроса JSON<a class="headerlink" href="#json_2" title="Permanent link">&para;</a></h3>
+<p>Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -25872,8 +26218,8 @@
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>}
 </code></pre></div>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>In this example, the request creates a new policy boundary within a level. It a new policy boundary for the <code>accountID</code> <strong>f1a2b3c4-d5e6-7890-ab12-34cd56ef7890</strong>.</p>
+<h2 id="_11">Пример<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>В этом примере запрос создает новую границу политики внутри уровня. Это новая граница политики для <code>accountID</code> <strong>f1a2b3c4-d5e6-7890-ab12-34cd56ef7890</strong>.</p>
 <h4 id="curl">Curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl --request POST \
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -25913,10 +26259,10 @@
 <a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
 <a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>}&#39;
 </code></pre></div>
-<h4 id="request-url">Request URL<a class="headerlink" href="#request-url" title="Permanent link">&para;</a></h4>
+<h4 id="url">URL запроса<a class="headerlink" href="#url" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries
 </code></pre></div>
-<h4 id="request-body">Request body<a class="headerlink" href="#request-body" title="Permanent link">&para;</a></h4>
+<h4 id="_12">Тело запроса<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>{
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
@@ -25935,7 +26281,7 @@
 <a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
 <a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>}
 </code></pre></div>
-<h4 id="response-body">Response body<a class="headerlink" href="#response-body" title="Permanent link">&para;</a></h4>
+<h4 id="_13">Тело ответа<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
@@ -26002,8 +26348,8 @@
 <a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>
 <a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>}
 </code></pre></div>
-<h4 id="response-code">Response code<a class="headerlink" href="#response-code" title="Permanent link">&para;</a></h4>
-<p>201 - Successful response - policy boundary created.</p>
+<h4 id="_14">Код ответа<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p>201 - Успешный ответ - граница политики создана.</p>
 
 
 

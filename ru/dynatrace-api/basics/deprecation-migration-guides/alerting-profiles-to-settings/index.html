@@ -25477,10 +25477,10 @@
 <h1 id="api-api">Миграция из профилей оповещений API в Настройки API<a class="headerlink" href="#api-api" title="Permanent link">&para;</a></h1>
 <h1 id="api-api_1">Миграция из профилей оповещений API в Настройки API<a class="headerlink" href="#api-api_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Справочник</li>
+<li>Ссылка</li>
 <li>Опубликовано 20 декабря 2022 г.</li>
 </ul>
-<p><a href="/docs/dynatrace-api/configuration-api/alerting-profiles-api" title="Узнайте, что предлагают профили оповещений Dynatrace API.">Профили оповещений API</a> были объявлены устаревшими с <a href="/docs/whats-new/dynatrace-api/sprint-249" title="Журнал изменений для Dynatrace API версии 1.249">Dynatrace версии 1.249</a>. Их заменой являются <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагают Настройки Dynatrace API.">Настройки API</a> с схемой <strong>Профили оповещений о проблемах</strong> (<code>builtin:alerting.profile</code>). Мы рекомендуем вам мигрировать в новую API как можно скорее.</p>
+<p><a href="/docs/dynatrace-api/configuration-api/alerting-profiles-api" title="Узнайте, что предлагают профили оповещений Dynatrace API.">Профили оповещений API</a> были заменены с <a href="/docs/whats-new/dynatrace-api/sprint-249" title="Журнал изменений для Dynatrace API версии 1.249">версией 1.249 Dynatrace</a>. Их заменой являются <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагают Настройки Dynatrace API.">Настройки API</a> с схемой <strong>Профили оповещений о проблемах</strong> (<code>builtin:alerting.profile</code>). Мы рекомендуем вам мигрировать в новые API как можно скорее.</p>
 <p>Миграция влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на объем токена для аутентификации запросов.</p>
 <h2 id="url">Базовый URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
 <table>
@@ -25513,14 +25513,14 @@
 </tbody>
 </table>
 <h2 id="_2">Параметры<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагают Настройки Dynatrace API.">Настройки API</a>.</p>
-<p>В рамках Settings 2.0 каждый профиль оповещения представлен объектом настроек. Объект содержит некоторую метаинформацию (например, объем или метку времени создания) и саму конфигурацию, инкапсулированную в объекте <strong>value</strong>. Содержимое объекта <strong>value</strong> по сути является таким же, как конфигурация в устаревших Профили оповещений API. Чтобы узнать о параметрах конфигурации профиля оповещения, запросите схему <strong>Профили оповещений о проблемах</strong> (<code>builtin:alerting.profile</code>) с помощью запроса <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="Просмотрите схему настроек через Dynatrace API.">GET-схема</a>.</p>
+<p>Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагают Настройки Dynatrace API.">Настройках API</a>.</p>
+<p>В рамках Settings 2.0 каждый профиль оповещения представлен объектом настроек. Объект содержит некоторые метаданные (например, объем или метку времени создания) и саму конфигурацию, инкапсулированную в объект <strong>value</strong>. Содержимое объекта <strong>value</strong> по сути такое же, как конфигурация в устаревших Профили оповещений API. Чтобы узнать о параметрах конфигурации профиля оповещения, запросите схему <strong>Профили оповещений о проблемах</strong> (<code>builtin:alerting.profile</code>) с помощью запроса <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="Просмотрите схему настроек через Dynatrace API.">GET-схема</a>.</p>
 <h2 id="_3">Примеры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>Вот некоторые примеры различий в использовании API.</p>
-<h3 id="_4">Список профилей оповещения<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">Список профилей оповещений<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>Settings 2.0</p>
-<p>Профили оповещения</p>
-<p>Чтобы просмотреть все профили оповещения, вам необходимо запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/get-objects" title="Просмотрите несколько объектов настроек через Dynatrace API.">GET-объекты</a>. В параметрах запроса установите <strong>schemaIds</strong> в <code>builtin:alerting.profile</code> и <strong>scope</strong> в <code>environment</code>.</p>
+<p>Профили оповещений</p>
+<p>Чтобы перечислить все профили оповещений, вам нужно запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/get-objects" title="Просмотрите несколько объектов настроек через Dynatrace API.">GET-объекты</a>. В параметрах запроса установите <strong>schemaIds</strong> в <code>builtin:alerting.profile</code> и <strong>scope</strong> в <code>environment</code>.</p>
 <h4 id="url-">URL-адрес запроса<a class="headerlink" href="#url-" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=builtin:alerting.profile&amp;scopes=environment
 </code></pre></div>
@@ -25669,115 +25669,105 @@
 <a id="__codelineno-1-142" name="__codelineno-1-142" href="#__codelineno-1-142"></a>
 <a id="__codelineno-1-143" name="__codelineno-1-143" href="#__codelineno-1-143"></a>
 <a id="__codelineno-1-144" name="__codelineno-1-144" href="#__codelineno-1-144"></a>
-<a id="__codelineno-1-145" name="__codelineno-1-145" href="#__codelineno-1-145"></a>&quot;tagFilterIncludeMode&quot;: &quot;НИЧЕГО&quot;
+<a id="__codelineno-1-145" name="__codelineno-1-145" href="#__codelineno-1-145"></a>&quot;tagFilterIncludeMode&quot;: &quot;НЕТ&quot;
 <a id="__codelineno-1-146" name="__codelineno-1-146" href="#__codelineno-1-146"></a>
 <a id="__codelineno-1-147" name="__codelineno-1-147" href="#__codelineno-1-147"></a>
-<a id="__codelineno-1-148" name="__codelineno-1-148" href="#__codelineno-1-148"></a>
-<a id="__codelineno-1-149" name="__codelineno-1-149" href="#__codelineno-1-149"></a>},
+<a id="__codelineno-1-148" name="__codelineno-1-148" href="#__codelineno-1-148"></a>},
+<a id="__codelineno-1-149" name="__codelineno-1-149" href="#__codelineno-1-149"></a>
 <a id="__codelineno-1-150" name="__codelineno-1-150" href="#__codelineno-1-150"></a>
 <a id="__codelineno-1-151" name="__codelineno-1-151" href="#__codelineno-1-151"></a>
-<a id="__codelineno-1-152" name="__codelineno-1-152" href="#__codelineno-1-152"></a>
-<a id="__codelineno-1-153" name="__codelineno-1-153" href="#__codelineno-1-153"></a>{
+<a id="__codelineno-1-152" name="__codelineno-1-152" href="#__codelineno-1-152"></a>{
+<a id="__codelineno-1-153" name="__codelineno-1-153" href="#__codelineno-1-153"></a>
 <a id="__codelineno-1-154" name="__codelineno-1-154" href="#__codelineno-1-154"></a>
 <a id="__codelineno-1-155" name="__codelineno-1-155" href="#__codelineno-1-155"></a>
-<a id="__codelineno-1-156" name="__codelineno-1-156" href="#__codelineno-1-156"></a>
-<a id="__codelineno-1-157" name="__codelineno-1-157" href="#__codelineno-1-157"></a>&quot;severityLevel&quot;: &quot;КОНФЛИКТ_РЕСУРСОВ&quot;,
+<a id="__codelineno-1-156" name="__codelineno-1-156" href="#__codelineno-1-156"></a>&quot;severityLevel&quot;: &quot;КОНФЛИКТ_РЕСУРСОВ&quot;,
+<a id="__codelineno-1-157" name="__codelineno-1-157" href="#__codelineno-1-157"></a>
 <a id="__codelineno-1-158" name="__codelineno-1-158" href="#__codelineno-1-158"></a>
 <a id="__codelineno-1-159" name="__codelineno-1-159" href="#__codelineno-1-159"></a>
-<a id="__codelineno-1-160" name="__codelineno-1-160" href="#__codelineno-1-160"></a>
-<a id="__codelineno-1-161" name="__codelineno-1-161" href="#__codelineno-1-161"></a>&quot;delayInMinutes&quot;: 30,
+<a id="__codelineno-1-160" name="__codelineno-1-160" href="#__codelineno-1-160"></a>&quot;delayInMinutes&quot;: 30,
+<a id="__codelineno-1-161" name="__codelineno-1-161" href="#__codelineno-1-161"></a>
 <a id="__codelineno-1-162" name="__codelineno-1-162" href="#__codelineno-1-162"></a>
 <a id="__codelineno-1-163" name="__codelineno-1-163" href="#__codelineno-1-163"></a>
-<a id="__codelineno-1-164" name="__codelineno-1-164" href="#__codelineno-1-164"></a>
-<a id="__codelineno-1-165" name="__codelineno-1-165" href="#__codelineno-1-165"></a>&quot;tagFilterIncludeMode&quot;: &quot;ВКЛЮЧИТЬ_ЛЮБОЙ&quot;,
+<a id="__codelineno-1-164" name="__codelineno-1-164" href="#__codelineno-1-164"></a>&quot;tagFilterIncludeMode&quot;: &quot;ВКЛЮЧИТЬ_ЛЮБОЙ&quot;,
+<a id="__codelineno-1-165" name="__codelineno-1-165" href="#__codelineno-1-165"></a>
 <a id="__codelineno-1-166" name="__codelineno-1-166" href="#__codelineno-1-166"></a>
 <a id="__codelineno-1-167" name="__codelineno-1-167" href="#__codelineno-1-167"></a>
-<a id="__codelineno-1-168" name="__codelineno-1-168" href="#__codelineno-1-168"></a>
-<a id="__codelineno-1-169" name="__codelineno-1-169" href="#__codelineno-1-169"></a>&quot;tagFilter&quot;: [
+<a id="__codelineno-1-168" name="__codelineno-1-168" href="#__codelineno-1-168"></a>&quot;tagFilter&quot;: [
+<a id="__codelineno-1-169" name="__codelineno-1-169" href="#__codelineno-1-169"></a>
 <a id="__codelineno-1-170" name="__codelineno-1-170" href="#__codelineno-1-170"></a>
 <a id="__codelineno-1-171" name="__codelineno-1-171" href="#__codelineno-1-171"></a>
-<a id="__codelineno-1-172" name="__codelineno-1-172" href="#__codelineno-1-172"></a>
-<a id="__codelineno-1-173" name="__codelineno-1-173" href="#__codelineno-1-173"></a>&quot;Holox Cluster&quot;
+<a id="__codelineno-1-172" name="__codelineno-1-172" href="#__codelineno-1-172"></a>&quot;Holox Cluster&quot;
+<a id="__codelineno-1-173" name="__codelineno-1-173" href="#__codelineno-1-173"></a>
 <a id="__codelineno-1-174" name="__codelineno-1-174" href="#__codelineno-1-174"></a>
-<a id="__codelineno-1-175" name="__codelineno-1-175" href="#__codelineno-1-175"></a>
+<a id="__codelineno-1-175" name="__codelineno-1-175" href="#__codelineno-1-175"></a>]
 <a id="__codelineno-1-176" name="__codelineno-1-176" href="#__codelineno-1-176"></a>
-<a id="__codelineno-1-177" name="__codelineno-1-177" href="#__codelineno-1-177"></a>]
-<a id="__codelineno-1-178" name="__codelineno-1-178" href="#__codelineno-1-178"></a>
+<a id="__codelineno-1-177" name="__codelineno-1-177" href="#__codelineno-1-177"></a>
+<a id="__codelineno-1-178" name="__codelineno-1-178" href="#__codelineno-1-178"></a>},
 <a id="__codelineno-1-179" name="__codelineno-1-179" href="#__codelineno-1-179"></a>
 <a id="__codelineno-1-180" name="__codelineno-1-180" href="#__codelineno-1-180"></a>
-<a id="__codelineno-1-181" name="__codelineno-1-181" href="#__codelineno-1-181"></a>},
-<a id="__codelineno-1-182" name="__codelineno-1-182" href="#__codelineno-1-182"></a>
+<a id="__codelineno-1-181" name="__codelineno-1-181" href="#__codelineno-1-181"></a>
+<a id="__codelineno-1-182" name="__codelineno-1-182" href="#__codelineno-1-182"></a>{
 <a id="__codelineno-1-183" name="__codelineno-1-183" href="#__codelineno-1-183"></a>
 <a id="__codelineno-1-184" name="__codelineno-1-184" href="#__codelineno-1-184"></a>
-<a id="__codelineno-1-185" name="__codelineno-1-185" href="#__codelineno-1-185"></a>{
-<a id="__codelineno-1-186" name="__codelineno-1-186" href="#__codelineno-1-186"></a>
+<a id="__codelineno-1-185" name="__codelineno-1-185" href="#__codelineno-1-185"></a>
+<a id="__codelineno-1-186" name="__codelineno-1-186" href="#__codelineno-1-186"></a>&quot;severityLevel&quot;: &quot;НЕДОСТУПНОСТЬ_МОНИТОРИНГА&quot;,
 <a id="__codelineno-1-187" name="__codelineno-1-187" href="#__codelineno-1-187"></a>
 <a id="__codelineno-1-188" name="__codelineno-1-188" href="#__codelineno-1-188"></a>
-<a id="__codelineno-1-189" name="__codelineno-1-189" href="#__codelineno-1-189"></a>&quot;severityLevel&quot;: &quot;НЕДОСТУПНОСТЬ_МОНИТОРИНГА&quot;,
-<a id="__codelineno-1-190" name="__codelineno-1-190" href="#__codelineno-1-190"></a>
+<a id="__codelineno-1-189" name="__codelineno-1-189" href="#__codelineno-1-189"></a>
+<a id="__codelineno-1-190" name="__codelineno-1-190" href="#__codelineno-1-190"></a>&quot;delayInMinutes&quot;: 0,
 <a id="__codelineno-1-191" name="__codelineno-1-191" href="#__codelineno-1-191"></a>
 <a id="__codelineno-1-192" name="__codelineno-1-192" href="#__codelineno-1-192"></a>
-<a id="__codelineno-1-193" name="__codelineno-1-193" href="#__codelineno-1-193"></a>&quot;delayInMinutes&quot;: 0,
-<a id="__codelineno-1-194" name="__codelineno-1-194" href="#__codelineno-1-194"></a>
+<a id="__codelineno-1-193" name="__codelineno-1-193" href="#__codelineno-1-193"></a>
+<a id="__codelineno-1-194" name="__codelineno-1-194" href="#__codelineno-1-194"></a>&quot;tagFilterIncludeMode&quot;: &quot;НЕТ&quot;
 <a id="__codelineno-1-195" name="__codelineno-1-195" href="#__codelineno-1-195"></a>
 <a id="__codelineno-1-196" name="__codelineno-1-196" href="#__codelineno-1-196"></a>
-<a id="__codelineno-1-197" name="__codelineno-1-197" href="#__codelineno-1-197"></a>&quot;tagFilterIncludeMode&quot;: &quot;НИЧЕГО&quot;
+<a id="__codelineno-1-197" name="__codelineno-1-197" href="#__codelineno-1-197"></a>},
 <a id="__codelineno-1-198" name="__codelineno-1-198" href="#__codelineno-1-198"></a>
 <a id="__codelineno-1-199" name="__codelineno-1-199" href="#__codelineno-1-199"></a>
 <a id="__codelineno-1-200" name="__codelineno-1-200" href="#__codelineno-1-200"></a>
-<a id="__codelineno-1-201" name="__codelineno-1-201" href="#__codelineno-1-201"></a>},
+<a id="__codelineno-1-201" name="__codelineno-1-201" href="#__codelineno-1-201"></a>{
 <a id="__codelineno-1-202" name="__codelineno-1-202" href="#__codelineno-1-202"></a>
 <a id="__codelineno-1-203" name="__codelineno-1-203" href="#__codelineno-1-203"></a>
 <a id="__codelineno-1-204" name="__codelineno-1-204" href="#__codelineno-1-204"></a>
-<a id="__codelineno-1-205" name="__codelineno-1-205" href="#__codelineno-1-205"></a>{
+<a id="__codelineno-1-205" name="__codelineno-1-205" href="#__codelineno-1-205"></a>&quot;severityLevel&quot;: &quot;ДОСТУПНОСТЬ&quot;,
 <a id="__codelineno-1-206" name="__codelineno-1-206" href="#__codelineno-1-206"></a>
 <a id="__codelineno-1-207" name="__codelineno-1-207" href="#__codelineno-1-207"></a>
 <a id="__codelineno-1-208" name="__codelineno-1-208" href="#__codelineno-1-208"></a>
-<a id="__codelineno-1-209" name="__codelineno-1-209" href="#__codelineno-1-209"></a>&quot;severityLevel&quot;: &quot;ДОСТУПНОСТЬ&quot;,
+<a id="__codelineno-1-209" name="__codelineno-1-209" href="#__codelineno-1-209"></a>&quot;delayInMinutes&quot;: 0,
 <a id="__codelineno-1-210" name="__codelineno-1-210" href="#__codelineno-1-210"></a>
 <a id="__codelineno-1-211" name="__codelineno-1-211" href="#__codelineno-1-211"></a>
 <a id="__codelineno-1-212" name="__codelineno-1-212" href="#__codelineno-1-212"></a>
-<a id="__codelineno-1-213" name="__codelineno-1-213" href="#__codelineno-1-213"></a>&quot;delayInMinutes&quot;: 0,
+<a id="__codelineno-1-213" name="__codelineno-1-213" href="#__codelineno-1-213"></a>&quot;tagFilterIncludeMode&quot;: &quot;НЕТ&quot;
 <a id="__codelineno-1-214" name="__codelineno-1-214" href="#__codelineno-1-214"></a>
 <a id="__codelineno-1-215" name="__codelineno-1-215" href="#__codelineno-1-215"></a>
-<a id="__codelineno-1-216" name="__codelineno-1-216" href="#__codelineno-1-216"></a>
-<a id="__codelineno-1-217" name="__codelineno-1-217" href="#__codelineno-1-217"></a>&quot;tagFilterIncludeMode&quot;: &quot;НИЧЕГО&quot;
+<a id="__codelineno-1-216" name="__codelineno-1-216" href="#__codelineno-1-216"></a>}
+<a id="__codelineno-1-217" name="__codelineno-1-217" href="#__codelineno-1-217"></a>
 <a id="__codelineno-1-218" name="__codelineno-1-218" href="#__codelineno-1-218"></a>
-<a id="__codelineno-1-219" name="__codelineno-1-219" href="#__codelineno-1-219"></a>
+<a id="__codelineno-1-219" name="__codelineno-1-219" href="#__codelineno-1-219"></a>]
 <a id="__codelineno-1-220" name="__codelineno-1-220" href="#__codelineno-1-220"></a>
-<a id="__codelineno-1-221" name="__codelineno-1-221" href="#__codelineno-1-221"></a>}
-<a id="__codelineno-1-222" name="__codelineno-1-222" href="#__codelineno-1-222"></a>
+<a id="__codelineno-1-221" name="__codelineno-1-221" href="#__codelineno-1-221"></a>
+<a id="__codelineno-1-222" name="__codelineno-1-222" href="#__codelineno-1-222"></a>,
 <a id="__codelineno-1-223" name="__codelineno-1-223" href="#__codelineno-1-223"></a>
 <a id="__codelineno-1-224" name="__codelineno-1-224" href="#__codelineno-1-224"></a>
-<a id="__codelineno-1-225" name="__codelineno-1-225" href="#__codelineno-1-225"></a>],
+<a id="__codelineno-1-225" name="__codelineno-1-225" href="#__codelineno-1-225"></a>&quot;eventFilters&quot;: []
 <a id="__codelineno-1-226" name="__codelineno-1-226" href="#__codelineno-1-226"></a>
 <a id="__codelineno-1-227" name="__codelineno-1-227" href="#__codelineno-1-227"></a>
-<a id="__codelineno-1-228" name="__codelineno-1-228" href="#__codelineno-1-228"></a>
-<a id="__codelineno-1-229" name="__codelineno-1-229" href="#__codelineno-1-229"></a>&quot;eventFilters&quot;: []
+<a id="__codelineno-1-228" name="__codelineno-1-228" href="#__codelineno-1-228"></a>}
+<a id="__codelineno-1-229" name="__codelineno-1-229" href="#__codelineno-1-229"></a>
 <a id="__codelineno-1-230" name="__codelineno-1-230" href="#__codelineno-1-230"></a>
-<a id="__codelineno-1-231" name="__codelineno-1-231" href="#__codelineno-1-231"></a>
+<a id="__codelineno-1-231" name="__codelineno-1-231" href="#__codelineno-1-231"></a>]
 <a id="__codelineno-1-232" name="__codelineno-1-232" href="#__codelineno-1-232"></a>
-<a id="__codelineno-1-233" name="__codelineno-1-233" href="#__codelineno-1-233"></a>}
-<a id="__codelineno-1-234" name="__codelineno-1-234" href="#__codelineno-1-234"></a>
+<a id="__codelineno-1-233" name="__codelineno-1-233" href="#__codelineno-1-233"></a>
+<a id="__codelineno-1-234" name="__codelineno-1-234" href="#__codelineno-1-234"></a>,
 <a id="__codelineno-1-235" name="__codelineno-1-235" href="#__codelineno-1-235"></a>
 <a id="__codelineno-1-236" name="__codelineno-1-236" href="#__codelineno-1-236"></a>
-<a id="__codelineno-1-237" name="__codelineno-1-237" href="#__codelineno-1-237"></a>}
+<a id="__codelineno-1-237" name="__codelineno-1-237" href="#__codelineno-1-237"></a>&quot;totalCount&quot;: 2,
 <a id="__codelineno-1-238" name="__codelineno-1-238" href="#__codelineno-1-238"></a>
 <a id="__codelineno-1-239" name="__codelineno-1-239" href="#__codelineno-1-239"></a>
-<a id="__codelineno-1-240" name="__codelineno-1-240" href="#__codelineno-1-240"></a>
-<a id="__codelineno-1-241" name="__codelineno-1-241" href="#__codelineno-1-241"></a>],
+<a id="__codelineno-1-240" name="__codelineno-1-240" href="#__codelineno-1-240"></a>&quot;pageSize&quot;: 100
+<a id="__codelineno-1-241" name="__codelineno-1-241" href="#__codelineno-1-241"></a>
 <a id="__codelineno-1-242" name="__codelineno-1-242" href="#__codelineno-1-242"></a>
-<a id="__codelineno-1-243" name="__codelineno-1-243" href="#__codelineno-1-243"></a>
-<a id="__codelineno-1-244" name="__codelineno-1-244" href="#__codelineno-1-244"></a>
-<a id="__codelineno-1-245" name="__codelineno-1-245" href="#__codelineno-1-245"></a>&quot;totalCount&quot;: 2,
-<a id="__codelineno-1-246" name="__codelineno-1-246" href="#__codelineno-1-246"></a>
-<a id="__codelineno-1-247" name="__codelineno-1-247" href="#__codelineno-1-247"></a>
-<a id="__codelineno-1-248" name="__codelineno-1-248" href="#__codelineno-1-248"></a>
-<a id="__codelineno-1-249" name="__codelineno-1-249" href="#__codelineno-1-249"></a>&quot;pageSize&quot;: 100
-<a id="__codelineno-1-250" name="__codelineno-1-250" href="#__codelineno-1-250"></a>
-<a id="__codelineno-1-251" name="__codelineno-1-251" href="#__codelineno-1-251"></a>
-<a id="__codelineno-1-252" name="__codelineno-1-252" href="#__codelineno-1-252"></a>
-<a id="__codelineno-1-253" name="__codelineno-1-253" href="#__codelineno-1-253"></a>}
+<a id="__codelineno-1-243" name="__codelineno-1-243" href="#__codelineno-1-243"></a>}
 </code></pre></div>
 <h4 id="url-_1">URL-адрес запроса<a class="headerlink" href="#url-_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GET https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
@@ -25802,38 +25792,34 @@
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>&quot;name&quot;: &quot;Синтетические чрезвычайные ситуации&quot;
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>},
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>},
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
 <a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>{
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>{
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
 <a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
 <a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>&quot;id&quot;: &quot;39115830-1852-3f0c-a73a-f355a19d338b&quot;,
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>&quot;id&quot;: &quot;39115830-1852-3f0c-a73a-f355a19d338b&quot;,
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
 <a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
 <a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>&quot;name&quot;: &quot;Высокая загрузка ЦП&quot;
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>&quot;name&quot;: &quot;Высокая загрузка ЦП&quot;
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
 <a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>}
 <a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>}
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>]
 <a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
 <a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>]
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>}
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>}
 </code></pre></div>
 <h3 id="_7">Создание профиля оповещения<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>Settings 2.0</p>
-<p>Профили оповещения</p>
-<p>Чтобы создать профиль оповещения, вам необходимо запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/post-object" title="Создайте или проверьте объект настроек через Dynatrace API.">POST-объект</a>. В теле запроса установите <strong>schemaId</strong> в <code>builtin:alerting.profile</code> и <strong>scope</strong> в <code>environment</code>. Предоставьте конфигурацию профиля оповещения в объекте <strong>value</strong>.</p>
-<p>Ответ содержит идентификатор объекта, который вам необходимо изменить настройки.</p>
+<p>Профили оповещений</p>
+<p>Чтобы создать профиль оповещения, вам нужно запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/post-object" title="Создайте или проверьте объект настроек через Dynatrace API.">POST-объект</a>. В теле запроса установите <strong>schemaId</strong> в <code>builtin:alerting.profile</code> и <strong>scope</strong> в <code>environment</code>. Предоставьте конфигурацию профиля оповещения в объекте <strong>value</strong>.</p>
+<p>Ответ содержит идентификатор объекта, который вам нужно изменить настройки.</p>
 <h4 id="url-_2">URL-адрес запроса<a class="headerlink" href="#url-_2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 </code></pre></div>
@@ -25878,31 +25864,28 @@
 <a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
 <a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
 <a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
-<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>&quot;tagFilterIncludeMode&quot;: &quot;НИЧЕГО&quot;
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>&quot;tagFilterIncludeMode&quot;: &quot;НЕТ&quot;
 <a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
 <a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>
-<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
-<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>}
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>}
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>
 <a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>
-<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>]
 <a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
-<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>],
-<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>,
 <a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
 <a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>
 <a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>&quot;eventFilters&quot;: []
 <a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
 <a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>
-<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>
-<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>}
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>}
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>
 <a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>
-<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>}
 <a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>
-<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>}
-<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>
-<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>
-<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>
-<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>]
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>]
 </code></pre></div>
 <h4 id="_9">Тело ответа<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[
@@ -25920,17 +25903,15 @@
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>&quot;objectId&quot;: &quot;vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQzYjAwNDMwOC01ZTZjLTNkNGMtOTNjMS01ZTBiOWRhZTlhZjW-71TeFdrerQ&quot;
 <a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
 <a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>}
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>}
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
 <a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>]
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>]
 </code></pre></div>
 <h4 id="url-_3">URL-адрес запроса<a class="headerlink" href="#url-_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>POST https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 </code></pre></div>
-<p>Ответ содержит идентификатор конфигурации, который вам необходимо изменить настройки.</p>
+<p>Ответ содержит идентификатор конфигурации, который вам нужно изменить настройки.</p>
 <h4 id="_10">Тело запроса<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
@@ -25956,23 +25937,22 @@
 <a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
 <a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
 <a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
-<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>&quot;tagFilterIncludeMode&quot;: &quot;НИЧЕГО&quot;
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>&quot;tagFilterIncludeMode&quot;: &quot;НЕТ&quot;
 <a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
 <a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
-<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
-<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>)
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>}
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>
 <a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
-<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>]
 <a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>
-<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>],
-<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>,
 <a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>
 <a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>
 <a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>&quot;eventFilters&quot;: []
 <a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>
 <a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>
-<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>
-<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>}
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>}
 </code></pre></div>
 <h4 id="_11">Тело ответа<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{
@@ -25986,13 +25966,12 @@
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>&quot;name&quot;: &quot;Пример профиля оповещения&quot;
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>}
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>}
 </code></pre></div>
 <h3 id="_12">Редактирование профиля оповещения<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>Settings 2.0</p>
-<p>Профили оповещения</p>
-<p>Чтобы отредактировать профиль оповещения, вам необходимо запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/put-object" title="Отредактируйте объект настроек через Dynatrace API.">PUT-объект</a>.</p>
+<p>Профили оповещений</p>
+<p>Чтобы отредактировать профиль оповещения, вам нужно запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/put-object" title="Отредактируйте объект настроек через Dynatrace API.">PUT-объект</a>.</p>
 <h4 id="url-_4">URL-адрес запроса<a class="headerlink" href="#url-_4" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQzYjAwNDMwOC01ZTZjLTNkNGMtOTNjMS01ZTBiOWRhZTlhZjW-71TeFdrerQ
 </code></pre></div>
@@ -26052,28 +26031,25 @@
 <a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>&quot;InraWin&quot;
 <a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>
 <a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>
-<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>
-<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>]
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>]
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>
 <a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>
-<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>}
 <a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>
-<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>)
-<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>]
 <a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>
 <a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>
-<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>],
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>,
 <a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>
 <a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>
-<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>
-<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>&quot;eventFilters&quot;: []
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>&quot;eventFilters&quot;: []
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>
 <a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>
-<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>}
 <a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>
-<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>)
-<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>
-<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>
-<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a>
-<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a>}
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>
+<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>}
 </code></pre></div>
 <h4 id="_14">Тело ответа<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>[
@@ -26091,12 +26067,10 @@
 <a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>&quot;objectId&quot;: &quot;vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQzYjAwNDMwOC01ZTZjLTNkNGMtOTNjMS01ZTBiOWRhZTlhZjW-71TeFdrerQ&quot;
 <a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
 <a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>)
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>}
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>
 <a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>]
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>]
 </code></pre></div>
 <h4 id="url-_5">URL-адрес запроса<a class="headerlink" href="#url-_5" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>PUT https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles/2640173c-e9a8-31dc-9584-696969c716f5
@@ -26145,24 +26119,22 @@
 <a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a>&quot;InraWin&quot;
 <a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>
 <a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a>
-<a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a>
-<a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>]
+<a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a>]
+<a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>
 <a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a>
-<a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a>
+<a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a>}
 <a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a>
-<a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a>)
-<a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a>
+<a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a>
+<a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a>]
 <a id="__codelineno-14-51" name="__codelineno-14-51" href="#__codelineno-14-51"></a>
 <a id="__codelineno-14-52" name="__codelineno-14-52" href="#__codelineno-14-52"></a>
-<a id="__codelineno-14-53" name="__codelineno-14-53" href="#__codelineno-14-53"></a>],
+<a id="__codelineno-14-53" name="__codelineno-14-53" href="#__codelineno-14-53"></a>,
 <a id="__codelineno-14-54" name="__codelineno-14-54" href="#__codelineno-14-54"></a>
 <a id="__codelineno-14-55" name="__codelineno-14-55" href="#__codelineno-14-55"></a>
-<a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>
-<a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a>&quot;eventFilters&quot;: []
+<a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>&quot;eventFilters&quot;: []
+<a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a>
 <a id="__codelineno-14-58" name="__codelineno-14-58" href="#__codelineno-14-58"></a>
-<a id="__codelineno-14-59" name="__codelineno-14-59" href="#__codelineno-14-59"></a>
-<a id="__codelineno-14-60" name="__codelineno-14-60" href="#__codelineno-14-60"></a>
-<a id="__codelineno-14-61" name="__codelineno-14-61" href="#__codelineno-14-61"></a>}
+<a id="__codelineno-14-59" name="__codelineno-14-59" href="#__codelineno-14-59"></a>}
 </code></pre></div>
 <h2 id="_16">Связанные темы<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <ul>
