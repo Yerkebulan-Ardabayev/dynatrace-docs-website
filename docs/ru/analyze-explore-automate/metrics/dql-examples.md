@@ -1,7 +1,7 @@
 ---
 title: DQL timeseries examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/dql-examples
-scraped: 2026-02-21T21:25:31.265070
+scraped: 2026-02-22T21:14:15.783674
 ---
 
 # DQL timeseries examples

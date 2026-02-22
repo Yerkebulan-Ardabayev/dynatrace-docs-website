@@ -1,7 +1,7 @@
 ---
 title: Access your DPS cost overview
 source: https://www.dynatrace.com/docs/license/cost-overview
-scraped: 2026-02-21T21:25:49.732285
+scraped: 2026-02-22T21:14:38.073180
 ---
 
 # Access your DPS cost overview

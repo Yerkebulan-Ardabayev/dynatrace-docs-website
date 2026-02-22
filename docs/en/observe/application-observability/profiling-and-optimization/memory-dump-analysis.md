@@ -1,7 +1,7 @@
 ---
 title: Analyze memory dumps
 source: https://www.dynatrace.com/docs/observe/application-observability/profiling-and-optimization/memory-dump-analysis
-scraped: 2026-02-21T21:20:45.749066
+scraped: 2026-02-22T21:28:28.053030
 ---
 
 # Analyze memory dumps

@@ -1,7 +1,7 @@
 ---
 title: Migrate from Alerting profiles API to Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/alerting-profiles-to-settings
-scraped: 2026-02-21T21:18:14.972627
+scraped: 2026-02-22T21:24:56.639325
 ---
 
 # Migrate from Alerting profiles API to Settings API

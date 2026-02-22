@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence
-scraped: 2026-02-21T21:07:35.787994
+scraped: 2026-02-22T21:09:45.140143
 ---
 
 # Dynatrace Intelligence

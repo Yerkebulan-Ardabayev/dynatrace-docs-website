@@ -1,7 +1,7 @@
 ---
 title: Единицы измерения API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metrics-units
-scraped: 2026-02-20T21:26:31.649933
+scraped: 2026-02-22T21:24:44.065505
 ---
 
 # Единицы измерения API

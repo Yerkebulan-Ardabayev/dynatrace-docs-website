@@ -1,7 +1,7 @@
 ---
 title: Smartscape
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape
-scraped: 2026-02-20T21:21:16.213484
+scraped: 2026-02-22T21:25:15.911771
 ---
 
 # Smartscape

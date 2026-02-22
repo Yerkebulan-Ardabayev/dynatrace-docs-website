@@ -1,7 +1,7 @@
 ---
 title: Single value visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value
-scraped: 2026-02-20T21:10:02.706579
+scraped: 2026-02-22T21:13:22.631053
 ---
 
 # Single value visualization

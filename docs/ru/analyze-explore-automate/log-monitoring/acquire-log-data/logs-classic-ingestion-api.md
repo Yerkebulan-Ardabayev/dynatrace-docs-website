@@ -1,7 +1,7 @@
 ---
 title: Log ingestion API (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api
-scraped: 2026-02-21T21:15:54.301130
+scraped: 2026-02-22T21:19:14.183509
 ---
 
 # Log ingestion API (Logs Classic)

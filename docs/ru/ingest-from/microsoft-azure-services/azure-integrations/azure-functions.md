@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure Functions using Azure App Service (built-in)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions
-scraped: 2026-02-19T21:15:16.618277
+scraped: 2026-02-22T21:11:19.067886
 ---
 
 # Monitor Azure Functions using Azure App Service (built-in)

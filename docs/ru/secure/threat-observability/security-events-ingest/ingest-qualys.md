@@ -1,7 +1,7 @@
 ---
 title: Ingest Qualys vulnerability findings, scan events, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-qualys
-scraped: 2026-02-20T21:20:45.266445
+scraped: 2026-02-22T21:19:52.799408
 ---
 
 # Ingest Qualys vulnerability findings, scan events, and audit logs
@@ -183,8 +183,6 @@ The Qualys Detection Score (QDS) has a range from 1 to 100. To map this to the 1
 
 ## Related topics
 
-
-
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Security events](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")
+* [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных Dynatrace платформы с помощью Dynatrace OpenPipeline.")
+* [Язык запросов Dynatrace](/docs/platform/grail/dynatrace-query-language "Как использовать язык запросов Dynatrace.") 
+* [События безопасности](/docs/semantic-dictionary/model/security-events "Ознакомьтесь с моделями словаря семантики, связанными с событиями безопасности.")

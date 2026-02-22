@@ -1,7 +1,7 @@
 ---
 title: New Real User Monitoring Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience
-scraped: 2026-02-21T21:15:32.536716
+scraped: 2026-02-22T21:18:30.486107
 ---
 
 # New Real User Monitoring Experience

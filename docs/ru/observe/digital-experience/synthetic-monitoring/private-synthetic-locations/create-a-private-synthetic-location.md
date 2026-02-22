@@ -1,7 +1,7 @@
 ---
 title: Create a private Synthetic location
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
-scraped: 2026-02-18T21:21:48.945290
+scraped: 2026-02-22T21:20:16.417614
 ---
 
 # Create a private Synthetic location
@@ -1094,7 +1094,7 @@ Private Synthetic locations require a clean installation of ActiveGate specifica
 
 Manually editing the `custom.properties` file is not enough to enable the ActiveGate to execute synthetic monitors.
 
-## Troubleshoot
+## Troubleshooting
 
 [Can't see screenshots in browser monitor resultsï»¿](https://dt-url.net/mfw2xmb)
 

@@ -1,7 +1,7 @@
 ---
 title: Extend metric observability
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics
-scraped: 2026-02-21T21:22:46.653875
+scraped: 2026-02-22T21:27:50.043977
 ---
 
 # Extend metric observability

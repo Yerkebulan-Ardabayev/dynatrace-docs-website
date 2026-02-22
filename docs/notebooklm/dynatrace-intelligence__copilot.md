@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/copilot
 Язык: Русский (RU)
-Сгенерировано: 2026-02-21
+Сгенерировано: 2026-02-22
 Файлов в разделе: 9
 ---
 
@@ -526,7 +526,7 @@ Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to prote
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-21T21:07:11.872254
+scraped: 2026-02-22T21:09:18.018493
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -816,7 +816,7 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 ---
 title: Get started with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
-scraped: 2026-02-21T21:10:52.955546
+scraped: 2026-02-22T21:15:30.873906
 ---
 
 # Get started with Dynatrace Intelligence generative AI
@@ -916,7 +916,7 @@ To configure your data access
 ---
 title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-21T21:10:54.167930
+scraped: 2026-02-22T21:14:01.222418
 ---
 
 # Dynatrace Intelligence generative AI overview
@@ -980,7 +980,7 @@ If you would like to learn more about Dynatrace Intelligence generative AI, visi
 ---
 title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-20T21:28:01.717876
+scraped: 2026-02-22T21:28:38.793669
 ---
 
 # Dynatrace Intelligence generative AI - Tips for writing better prompts
@@ -1275,7 +1275,7 @@ Do not share personal or confidential information in your feedback.
 ---
 title: Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-21T21:14:24.898917
+scraped: 2026-02-22T21:19:23.090396
 ---
 
 # Dynatrace Intelligence agentic and generative AI

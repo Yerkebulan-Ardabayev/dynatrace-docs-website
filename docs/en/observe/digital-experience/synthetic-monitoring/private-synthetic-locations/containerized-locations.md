@@ -1,7 +1,7 @@
 ---
 title: Containerized, auto-scalable private Synthetic locations on Kubernetes
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations
-scraped: 2026-02-20T21:19:17.921135
+scraped: 2026-02-22T21:23:08.795667
 ---
 
 # Containerized, auto-scalable private Synthetic locations on Kubernetes

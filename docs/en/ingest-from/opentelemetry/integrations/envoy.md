@@ -1,7 +1,7 @@
 ---
 title: Configure OpenTelemetry tracing with Envoy
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/integrations/envoy
-scraped: 2026-02-21T21:13:38.852972
+scraped: 2026-02-22T21:10:51.027706
 ---
 
 # Configure OpenTelemetry tracing with Envoy

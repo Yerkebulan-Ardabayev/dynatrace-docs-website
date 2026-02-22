@@ -1,7 +1,7 @@
 ---
 title: Node.js
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nodejs
-scraped: 2026-02-21T21:13:29.541778
+scraped: 2026-02-22T21:16:16.842316
 ---
 
 # Node.js

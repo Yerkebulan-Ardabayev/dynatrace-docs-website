@@ -1,7 +1,7 @@
 ---
 title: Ввод данных
 source: https://www.dynatrace.com/docs/ingest-from
-scraped: 2026-02-21T21:15:37.730295
+scraped: 2026-02-22T21:11:35.773396
 ---
 
 # Ввод данных
@@ -79,7 +79,7 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Discovery & Coverage
 
-Обнаружьте слепые пятна и включите правильный уровень наблюдаемости в правильных местах легко в большом масштабе.](/docs/ingest-from/discovery-coverage-app "Обнаружьте и устраните пробелы в покрытии мониторинга в большом масштабе.")
+Обнаружьте слепые пятна и включите правильный уровень наблюдаемости в правильных местах легко и в крупном масштабе.](/docs/ingest-from/discovery-coverage-app "Обнаружьте и устраните пробелы в покрытии мониторинга в крупном масштабе.")
 
 [![Frontend](https://dt-cdn.net/images/frontend-512-e5705a0aec.png "Frontend")
 
@@ -89,7 +89,7 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Synthetic Monitoring
 
-Вам нужно отслеживать доступность и производительность ваших приложений 24/7 из глобальных мест? Настройте Synthetic Monitoring.](/docs/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать монитор браузера для одного URL, кликпата браузера или HTTP-монитора.")[![Extensions Classic](https://dt-cdn.net/images/extensions-512-1b8ed0c785.png "Extensions Classic")
+Вам нужно отслеживать доступность и производительность ваших приложений 24/7 из глобальных мест? Настройте Synthetic Monitoring.](/docs/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и том, как создать монитор браузера для одного URL, кликпата браузера или HTTP-монитора.")[![Extensions Classic](https://dt-cdn.net/images/extensions-512-1b8ed0c785.png "Extensions Classic")
 
 ### Расширение
 

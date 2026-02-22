@@ -1,7 +1,7 @@
 ---
 title: Log processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing
-scraped: 2026-02-21T21:14:57.486765
+scraped: 2026-02-22T21:18:46.918554
 ---
 
 # Log processing

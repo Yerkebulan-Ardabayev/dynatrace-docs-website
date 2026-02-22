@@ -1,15 +1,15 @@
 ---
 title: Управление удаленной конфигурацией API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/remote-configuration
-scraped: 2026-02-20T21:20:55.913876
+scraped: 2026-02-22T21:25:23.581217
 ---
 
 # Управление удаленной конфигурацией API
 
 # Управление удаленной конфигурацией API
 
-* Справочник
-* Опубликовано 06 октября 2022 г.
+* Справка
+* Опубликовано 06 окт. 2022 г.
 
 ### OneAgent
 
@@ -37,4 +37,4 @@ scraped: 2026-02-20T21:20:55.913876
 
 ## Связанные темы
 
-* [Управление удаленной конфигурацией OneAgent и ActiveGate](/docs/ingest-from/bulk-configuration "Выполнить конфигурацию OneAgent и ActiveGate на хостах из страницы состояния развертывания или в крупном масштабе с помощью Dynatrace API.")
+* [Управление удаленной конфигурацией OneAgent и ActiveGate](/docs/ingest-from/bulk-configuration "Выполнить конфигурацию OneAgent и ActiveGate на хостах со страницы состояния развертывания или в масштабе с помощью Dynatrace API.")

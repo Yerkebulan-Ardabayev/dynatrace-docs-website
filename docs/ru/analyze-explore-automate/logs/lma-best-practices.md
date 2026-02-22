@@ -1,7 +1,7 @@
 ---
 title: Log Management and Analytics best practices
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-best-practices
-scraped: 2026-02-21T21:10:48.167440
+scraped: 2026-02-22T21:19:50.388638
 ---
 
 # Log Management and Analytics best practices

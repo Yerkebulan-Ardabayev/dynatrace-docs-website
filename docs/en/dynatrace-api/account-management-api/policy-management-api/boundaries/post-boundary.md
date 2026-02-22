@@ -1,7 +1,7 @@
 ---
 title: Policy management API - POST a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary
-scraped: 2026-02-21T21:23:00.167932
+scraped: 2026-02-22T21:24:06.310938
 ---
 
 # Policy management API - POST a policy boundary

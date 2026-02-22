@@ -1,7 +1,7 @@
 ---
 title: Ingest GitHub Advanced Security security events and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-github-advanced-security
-scraped: 2026-02-21T21:25:51.228518
+scraped: 2026-02-22T21:20:06.941979
 ---
 
 # Ingest GitHub Advanced Security security events and audit logs

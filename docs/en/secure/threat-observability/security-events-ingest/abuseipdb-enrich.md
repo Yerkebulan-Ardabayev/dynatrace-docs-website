@@ -1,7 +1,7 @@
 ---
 title: Enrich threat observables with AbuseIPDB
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/abuseipdb-enrich
-scraped: 2026-02-18T21:22:03.031405
+scraped: 2026-02-22T21:20:05.716897
 ---
 
 # Enrich threat observables with AbuseIPDB
@@ -10,7 +10,7 @@ scraped: 2026-02-18T21:22:03.031405
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Jan 07, 2026
+* Updated on Feb 23, 2026
 
 Enrich threat observables with AbuseIPDB and analyze them in Dynatrace.
 
@@ -76,11 +76,10 @@ To run the enrichment workflow action, all the permissions above need to be enab
 
    Allowed outbound connections are extended automatically with `api.abuseipdb.com`.
 
-   How to set up outbound connections
+   1. How to set up outbound connections
 
-   1. In **Settings**, go to **Preferences** > **Limit Outbound Connections**.
-   2. Select **Add item** and add the domain.
-   3. Select **Save changes**.
+   1. In **Settings**, go to **General** > **External requests**.
+   2. In **Allowlist**, select **New host pattern** and add the domain.
 5. Test the connection to ensure the correct configuration and save it.
 
 ## Details

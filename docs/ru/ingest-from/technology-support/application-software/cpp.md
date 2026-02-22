@@ -1,7 +1,7 @@
 ---
 title: C++
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/cpp
-scraped: 2026-02-21T21:13:52.714460
+scraped: 2026-02-22T21:16:55.355482
 ---
 
 # C++

@@ -1,7 +1,7 @@
 ---
 title: Your first year with DPS
 source: https://www.dynatrace.com/docs/license/dps-first-year
-scraped: 2026-02-21T21:20:21.027518
+scraped: 2026-02-22T21:26:51.702155
 ---
 
 # Your first year with DPS

@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-02-21
+Сгенерировано: 2026-02-22
 Файлов в разделе: 11
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-02-21T21:16:33.670160
+scraped: 2026-02-22T21:27:11.892021
 ---
 
 # Accessibility
@@ -48,7 +48,7 @@ Any ACR posted below, or anywhere else on the Dynatrace website, or otherwise pu
 ---
 title: Data visualizations
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
-scraped: 2026-02-21T21:22:59.009066
+scraped: 2026-02-22T21:28:41.439883
 ---
 
 # Data visualizations
@@ -96,7 +96,7 @@ Common interactions and features of data visualizations in the latest Dynatrace.
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-20T21:10:03.811896
+scraped: 2026-02-22T21:14:02.490472
 ---
 
 # Launchpads
@@ -248,7 +248,7 @@ To see the full API documentation for the documents service
 ---
 title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-02-21T21:18:25.516097
+scraped: 2026-02-22T21:27:44.495203
 ---
 
 # Troubleshooting sign-in issues
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-21T21:08:22.800148
+scraped: 2026-02-22T21:08:51.287979
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-21T21:10:19.338896
+scraped: 2026-02-22T21:12:34.921322
 ---
 
 # Filter field
@@ -869,7 +869,7 @@ Use bracket notation for subkeys with special characters (spaces, dashes, etc.) 
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-21T21:26:16.402428
+scraped: 2026-02-22T21:29:09.767876
 ---
 
 # Navigate the Dynatrace platform
@@ -1059,7 +1059,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-21T21:07:25.947115
+scraped: 2026-02-22T21:09:26.594243
 ---
 
 # What is a monitoring environment?
@@ -1152,7 +1152,7 @@ In some scenarios, however, you might need to connect your environments. For exa
 ---
 title: Platform Engineering
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/platform-engineering
-scraped: 2026-02-20T21:15:41.361569
+scraped: 2026-02-22T21:23:58.197557
 ---
 
 # Platform Engineering
@@ -1761,7 +1761,7 @@ Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe,
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-02-21T21:15:38.826001
+scraped: 2026-02-22T21:18:15.440502
 ---
 
 # Serverless monitoring
@@ -1854,7 +1854,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-21T21:06:38.143139
+scraped: 2026-02-22T21:07:47.903120
 ---
 
 # Get started with Dynatrace

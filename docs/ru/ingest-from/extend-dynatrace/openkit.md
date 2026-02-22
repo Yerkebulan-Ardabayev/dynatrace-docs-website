@@ -1,7 +1,7 @@
 ---
 title: Extend user experience and behavior data
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/openkit
-scraped: 2026-02-21T21:15:55.574922
+scraped: 2026-02-22T21:19:05.157172
 ---
 
 # Extend user experience and behavior data

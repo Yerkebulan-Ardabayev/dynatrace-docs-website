@@ -1,7 +1,7 @@
 ---
 title: OneAgent configuration via command-line interface
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface
-scraped: 2026-02-21T21:09:31.244728
+scraped: 2026-02-22T21:11:50.475779
 ---
 
 # OneAgent configuration via command-line interface

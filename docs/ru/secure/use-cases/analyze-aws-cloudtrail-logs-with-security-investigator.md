@@ -1,7 +1,7 @@
 ---
 title: Analyze AWS CloudTrail logs with Investigations
 source: https://www.dynatrace.com/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator
-scraped: 2026-02-21T21:21:52.918988
+scraped: 2026-02-22T21:26:14.788459
 ---
 
 # Analyze AWS CloudTrail logs with Investigations

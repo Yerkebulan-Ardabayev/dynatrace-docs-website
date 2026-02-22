@@ -1,7 +1,7 @@
 ---
 title: Hosts API - GET all hosts
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-all
-scraped: 2026-02-21T21:11:46.003395
+scraped: 2026-02-22T21:15:34.371383
 ---
 
 # Hosts API - GET all hosts

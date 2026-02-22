@@ -1,7 +1,7 @@
 ---
 title: Create and manage teams for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/ownership-teams
-scraped: 2026-02-21T21:27:18.451744
+scraped: 2026-02-22T21:26:00.192310
 ---
 
 # Create and manage teams for entity ownership

@@ -1,7 +1,7 @@
 ---
 title: Trace Python, Node.js, and Java Lambda functions
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension
-scraped: 2026-02-21T21:20:15.332622
+scraped: 2026-02-22T21:21:27.503588
 ---
 
 # Trace Python, Node.js, and Java Lambda functions

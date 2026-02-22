@@ -1,7 +1,7 @@
 ---
 title: Billing report
 source: https://www.dynatrace.com/docs/license/billing-reports
-scraped: 2026-02-19T21:17:12.826647
+scraped: 2026-02-22T21:14:32.183235
 ---
 
 # Billing report

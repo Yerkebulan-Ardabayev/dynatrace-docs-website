@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/site-reliability-guardian
 Язык: Русский (RU)
-Сгенерировано: 2026-02-21
+Сгенерировано: 2026-02-22
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Site Reliability guardian event structure
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/event-structure
-scraped: 2026-02-21T21:22:27.868600
+scraped: 2026-02-22T21:22:26.967414
 ---
 
 # Site Reliability guardian event structure
@@ -255,7 +255,7 @@ all
 ---
 title: Guardian execution context
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/execution-context
-scraped: 2026-02-21T21:26:18.905702
+scraped: 2026-02-22T21:24:02.124333
 ---
 
 # Guardian execution context
@@ -448,7 +448,7 @@ You can view older results by opening a guardian and selecting a different timef
 ---
 title: Site Reliability Guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
-scraped: 2026-02-21T21:15:02.597535
+scraped: 2026-02-22T21:19:47.795078
 ---
 
 # Site Reliability Guardian

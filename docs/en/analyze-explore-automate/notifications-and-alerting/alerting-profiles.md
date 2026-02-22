@@ -1,7 +1,7 @@
 ---
 title: Problem alerting profiles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles
-scraped: 2026-02-21T21:16:09.756894
+scraped: 2026-02-22T21:10:40.688169
 ---
 
 # Problem alerting profiles
