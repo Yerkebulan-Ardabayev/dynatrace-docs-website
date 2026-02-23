@@ -1,20 +1,20 @@
 ---
-title: Атаки API
+title: Attacks API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/attacks
-scraped: 2026-02-20T21:26:44.661160
+scraped: 2026-02-23T21:28:11.070500
 ---
 
-# Атаки API
+# Attacks API
 
-# Атаки API
+# Attacks API
 
-* Справка
-* Опубликовано 30 августа 2023 г.
+* Reference
+* Published Aug 30, 2023
 
-[### Список атак](/docs/dynatrace-api/environment-api/application-security/attacks/get-attacks "Просмотр списка атак через Dynatrace API.")[### Подробности об атаке](/docs/dynatrace-api/environment-api/application-security/attacks/get-attack-details "Просмотр подробностей об атаке через Dynatrace API.")
+[### List attacks](/docs/dynatrace-api/environment-api/application-security/attacks/get-attacks "View the list of attacks via Dynatrace API.")[### View attack details](/docs/dynatrace-api/environment-api/application-security/attacks/get-attack-details "View details of an attack via Dynatrace API.")
 
-## Связанные темы
+## Related topics
 
-* [Безопасность приложений](/docs/secure/application-security "Доступ к функциям безопасности приложений Dynatrace. ")
-* [Советник по безопасности Davis API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "Просмотр рекомендаций советника по безопасности Davis через Dynatrace API. ")
-* [Угрозы и эксплойты](/docs/secure/threats-and-exploits "Понимание, классификация и расследование результатов обнаружения и оповещений.")
+* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
+* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
+* [Threats & Exploits](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.")

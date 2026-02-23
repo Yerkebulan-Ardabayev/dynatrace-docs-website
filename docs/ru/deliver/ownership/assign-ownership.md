@@ -1,7 +1,7 @@
 ---
 title: Assign ownership teams to monitored entities
 source: https://www.dynatrace.com/docs/deliver/ownership/assign-ownership
-scraped: 2026-02-22T21:27:53.943756
+scraped: 2026-02-23T21:35:38.589145
 ---
 
 # Assign ownership teams to monitored entities

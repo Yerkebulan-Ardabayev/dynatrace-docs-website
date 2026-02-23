@@ -1,7 +1,7 @@
 ---
 title: Metrics API v2 - Best practices
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/best-practices
-scraped: 2026-02-22T21:25:01.012192
+scraped: 2026-02-23T21:31:59.083013
 ---
 
 # Metrics API v2 - Best practices

@@ -1,7 +1,7 @@
 ---
 title: User action metrics
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/user-action-metrics
-scraped: 2026-02-22T21:17:18.424572
+scraped: 2026-02-23T21:22:24.175994
 ---
 
 # User action metrics

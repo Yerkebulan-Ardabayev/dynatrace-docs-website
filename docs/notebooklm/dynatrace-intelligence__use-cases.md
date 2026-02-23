@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/use-cases
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 6
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Generative AI quick analysis examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-examples
-scraped: 2026-02-22T21:24:04.907116
+scraped: 2026-02-23T21:36:21.006259
 ---
 
 # Generative AI quick analysis examples
@@ -882,7 +882,7 @@ fetch dt.davis.problems, from:bin(now(), 24h) - 365d
 ---
 title: Optimize DQL cost with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql
-scraped: 2026-02-17T05:12:44.777769
+scraped: 2026-02-23T21:35:41.211367
 ---
 
 # Optimize DQL cost with Workflows
@@ -1310,7 +1310,7 @@ Once a new problem appears, you should receive an email from `no-reply@dev.apps.
 ---
 title: Create log alerts for a log event or summary of log data
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/create-alert-in-logs
-scraped: 2026-02-20T21:21:39.593082
+scraped: 2026-02-23T21:32:29.197240
 ---
 
 # Create log alerts for a log event or summary of log data
@@ -1462,7 +1462,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-22T21:14:12.908737
+scraped: 2026-02-23T21:27:35.825130
 ---
 
 # Dynatrace Intelligence DQL examples

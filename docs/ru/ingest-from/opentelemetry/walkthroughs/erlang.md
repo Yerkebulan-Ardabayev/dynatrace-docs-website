@@ -1,7 +1,7 @@
 ---
 title: Instrument your Erlang application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/erlang
-scraped: 2026-02-22T21:16:20.704059
+scraped: 2026-02-23T21:22:37.848088
 ---
 
 # Instrument your Erlang application with OpenTelemetry

@@ -1,16 +1,16 @@
 ---
 title: Управление сервисными пользователями API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/service-user-management-api
-scraped: 2026-02-20T21:21:42.320002
+scraped: 2026-02-23T21:30:12.537385
 ---
 
 # Управление сервисными пользователями API
 
 # Управление сервисными пользователями API
 
-* Последнее Dynatrace
-* Справка
-* Опубликовано 04 дек. 2025 г.
+* Latest Dynatrace
+* Reference
+* Published Dec 04, 2025
 
 [### Список всех сервисных пользователей
 

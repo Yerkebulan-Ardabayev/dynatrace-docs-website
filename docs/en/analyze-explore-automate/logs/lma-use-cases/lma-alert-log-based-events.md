@@ -1,7 +1,7 @@
 ---
 title: Set up alerts based on events extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events
-scraped: 2026-02-21T21:27:19.637737
+scraped: 2026-02-23T21:38:22.640931
 ---
 
 # Set up alerts based on events extracted from logs

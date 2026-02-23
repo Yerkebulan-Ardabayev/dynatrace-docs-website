@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/copilot
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 9
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Embedded conversation starters
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters
-scraped: 2026-02-20T21:19:29.017892
+scraped: 2026-02-23T21:37:15.774546
 ---
 
 # Embedded conversation starters
@@ -263,7 +263,7 @@ If you have any feedback, you can provide it directly in the chat window. For mo
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-21T21:23:59.996515
+scraped: 2026-02-23T21:26:46.987169
 ---
 
 # Dynatrace Assist
@@ -464,7 +464,7 @@ You can use agentic  **Dynatrace Assist** to:
 ---
 title: Dynatrace Intelligence generative AI data privacy and security
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-data-privacy
-scraped: 2026-02-21T21:26:36.393043
+scraped: 2026-02-23T21:28:52.198661
 ---
 
 # Dynatrace Intelligence generative AI data privacy and security
@@ -526,7 +526,7 @@ Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to prote
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-22T21:09:18.018493
+scraped: 2026-02-23T21:20:58.526891
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -816,7 +816,7 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 ---
 title: Get started with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
-scraped: 2026-02-22T21:15:30.873906
+scraped: 2026-02-23T21:32:35.265936
 ---
 
 # Get started with Dynatrace Intelligence generative AI
@@ -916,7 +916,7 @@ To configure your data access
 ---
 title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-22T21:14:01.222418
+scraped: 2026-02-23T21:31:03.606338
 ---
 
 # Dynatrace Intelligence generative AI overview
@@ -980,7 +980,7 @@ If you would like to learn more about Dynatrace Intelligence generative AI, visi
 ---
 title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-22T21:28:38.793669
+scraped: 2026-02-23T21:32:25.368320
 ---
 
 # Dynatrace Intelligence generative AI - Tips for writing better prompts
@@ -1275,7 +1275,7 @@ Do not share personal or confidential information in your feedback.
 ---
 title: Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-22T21:19:23.090396
+scraped: 2026-02-23T21:26:11.262475
 ---
 
 # Dynatrace Intelligence agentic and generative AI

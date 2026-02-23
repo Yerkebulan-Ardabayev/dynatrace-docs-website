@@ -1,7 +1,7 @@
 ---
 title: DQL functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions
-scraped: 2026-02-22T21:13:56.532760
+scraped: 2026-02-23T21:25:57.767975
 ---
 
 # DQL functions

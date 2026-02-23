@@ -1,7 +1,7 @@
 ---
 title: Adjust Apdex settings for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-apdex-web
-scraped: 2026-02-22T21:25:19.637013
+scraped: 2026-02-23T21:33:17.768901
 ---
 
 # Adjust Apdex settings for web applications

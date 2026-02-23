@@ -1,7 +1,7 @@
 ---
 title: Ingest Sonatype Lifecycle security events and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-sonatype
-scraped: 2026-02-22T21:19:51.633777
+scraped: 2026-02-23T21:29:26.559885
 ---
 
 # Ingest Sonatype Lifecycle security events and audit logs

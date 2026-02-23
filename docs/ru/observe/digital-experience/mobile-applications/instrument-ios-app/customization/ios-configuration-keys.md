@@ -1,7 +1,7 @@
 ---
 title: OneAgent for iOS configuration keys
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys
-scraped: 2026-02-22T21:28:53.965312
+scraped: 2026-02-23T21:26:52.074108
 ---
 
 # OneAgent for iOS configuration keys

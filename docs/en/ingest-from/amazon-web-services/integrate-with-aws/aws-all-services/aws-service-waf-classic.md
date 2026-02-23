@@ -1,7 +1,7 @@
 ---
 title: AWS WAF Classic monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-waf-classic
-scraped: 2026-02-21T21:16:21.880629
+scraped: 2026-02-23T21:38:49.009720
 ---
 
 # AWS WAF Classic monitoring

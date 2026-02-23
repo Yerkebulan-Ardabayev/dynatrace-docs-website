@@ -1,7 +1,7 @@
 ---
 title: Manage Oracle Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-02-22T21:19:16.747701
+scraped: 2026-02-23T21:28:06.194126
 ---
 
 # Manage Oracle Database extensions

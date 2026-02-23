@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities API - PUT mute or unmute a remediation item
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/put-remediation-items
-scraped: 2026-02-22T21:24:21.897835
+scraped: 2026-02-23T21:31:43.065720
 ---
 
 # Vulnerabilities API - PUT mute or unmute a remediation item

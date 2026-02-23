@@ -1,7 +1,7 @@
 ---
 title: Access tokens classic
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens
-scraped: 2026-02-22T21:17:41.297341
+scraped: 2026-02-23T21:24:02.439240
 ---
 
 # Access tokens classic

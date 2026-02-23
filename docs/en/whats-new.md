@@ -1,7 +1,7 @@
 ---
 title: What's new in Dynatrace
 source: https://www.dynatrace.com/docs/whats-new
-scraped: 2026-02-22T21:08:06.844128
+scraped: 2026-02-23T21:18:49.734023
 ---
 
 # What's new in Dynatrace

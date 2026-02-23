@@ -1,7 +1,7 @@
 ---
 title: Apply memory limits to the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/memory
-scraped: 2026-02-20T21:14:03.030160
+scraped: 2026-02-23T21:32:31.705770
 ---
 
 # Apply memory limits to the OpenTelemetry Collector

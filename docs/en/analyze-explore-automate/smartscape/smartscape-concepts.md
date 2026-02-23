@@ -1,7 +1,7 @@
 ---
 title: Smartscape concepts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-concepts
-scraped: 2026-02-21T21:25:48.562769
+scraped: 2026-02-23T21:37:48.108279
 ---
 
 # Smartscape concepts

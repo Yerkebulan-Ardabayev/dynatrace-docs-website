@@ -1,7 +1,7 @@
 ---
 title: Amazon DynamoDB monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamodb-new
-scraped: 2026-02-15T09:13:53.543098
+scraped: 2026-02-23T21:28:04.994295
 ---
 
 # Amazon DynamoDB monitoring

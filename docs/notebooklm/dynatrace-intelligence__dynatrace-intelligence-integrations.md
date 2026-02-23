@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/dynatrace-intelligence-integrations
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 3
 ---
 
@@ -107,7 +107,7 @@ To learn about specific use cases and how you can use the Dynatrace Intelligence
 ---
 title: Dynatrace Intelligence for Notebooks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks
-scraped: 2026-02-22T21:14:29.478299
+scraped: 2026-02-23T21:29:30.080128
 ---
 
 # Dynatrace Intelligence for Notebooks

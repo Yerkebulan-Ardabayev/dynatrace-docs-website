@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id
-scraped: 2026-02-18T05:44:10.939539
+scraped: 2026-02-23T21:33:04.966923
 ---
 
 # Microsoft Entra ID Connector
@@ -13,7 +13,7 @@ scraped: 2026-02-18T05:44:10.939539
 * Updated on Jun 18, 2025
 
 Your Dynatrace environment can integrate with Microsoft Entra ID (formerly Azure Active Directory) in automation [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
-Microsoft Entra ID Connector ![Azure Connector](https://dt-cdn.net/images/azure-for-workflows-lcgzeur-256-0e765fdb69.png "Azure Connector") enables you to use prebuilt actions in Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") to automate importing teams from Entra ID (based on various triggers) for defining entity ownership and other use cases in Dynatrace.
+Microsoft Entra ID Connector ![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector") enables you to use prebuilt actions in Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") to automate importing teams from Entra ID (based on various triggers) for defining entity ownership and other use cases in Dynatrace.
 Microsoft Entra ID Connector connects to the Azure Cloud via the [Microsoft Graph APIï»¿](https://developer.microsoft.com/en-us/graph).
 
 ## Setup

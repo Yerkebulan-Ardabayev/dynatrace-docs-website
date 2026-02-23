@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/anomaly-detection
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 16
 ---
 
@@ -167,7 +167,7 @@ To configure detection sensitivity on the global level
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-22T21:14:24.519338
+scraped: 2026-02-23T21:40:02.648834
 ---
 
 # Anomaly Detection status types
@@ -246,7 +246,7 @@ Some of the error messages might be more complicated than others. Here are some 
 ---
 title: Configure a simple custom alert
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad
-scraped: 2026-02-22T21:27:33.136953
+scraped: 2026-02-23T21:39:10.621933
 ---
 
 # Configure a simple custom alert
@@ -352,7 +352,7 @@ To convert a metric event to the custom alert configuration
 ---
 title: Anomaly Detection DQL writing guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice
-scraped: 2026-02-20T21:13:37.471215
+scraped: 2026-02-23T21:25:03.136948
 ---
 
 # Anomaly Detection DQL writing guide
@@ -519,7 +519,7 @@ When creating a custom alert:
 ---
 title: Anomaly Detection DQL optimization guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization
-scraped: 2026-02-20T21:12:27.664550
+scraped: 2026-02-23T21:36:51.500557
 ---
 
 # Anomaly Detection DQL optimization guide
@@ -897,7 +897,7 @@ Detect anomalies in timeseries using ![Anomaly Detection - new](https://dt-cdn.n
 ---
 title: Anomaly detection configuration
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-02-22T21:14:19.334421
+scraped: 2026-02-23T21:38:05.184771
 ---
 
 # Anomaly detection configuration
@@ -1025,7 +1025,7 @@ You can provide additional parameters as key-value pairs. For a list of possible
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-02-22T21:14:16.902431
+scraped: 2026-02-23T21:37:42.077549
 ---
 
 # Auto-adaptive thresholds for anomaly detection
@@ -1280,7 +1280,7 @@ Two types of filters are available:
 ---
 title: Metric selector events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events
-scraped: 2026-02-22T21:24:11.550463
+scraped: 2026-02-23T21:35:48.954260
 ---
 
 # Metric selector events
@@ -1380,7 +1380,7 @@ If there are sparse counts across many entities (for example, an error count acr
 ---
 title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-02-22T21:14:26.871011
+scraped: 2026-02-23T21:23:57.340458
 ---
 
 # Metric events
@@ -1952,7 +1952,7 @@ You have learned how to set up and configure a custom alert via API. Now you can
 ---
 title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-02-22T21:14:18.043831
+scraped: 2026-02-23T21:39:29.565927
 ---
 
 # Static thresholds for anomaly detection
@@ -1991,7 +1991,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ---
 title: Anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
-scraped: 2026-02-22T21:08:57.096823
+scraped: 2026-02-23T21:19:55.651830
 ---
 
 # Anomaly detection

@@ -1,7 +1,7 @@
 ---
 title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-02-19T21:27:44.615085
+scraped: 2026-02-23T21:36:35.331467
 ---
 
 # Add a service-level objective (SLO) tile to a dashboard

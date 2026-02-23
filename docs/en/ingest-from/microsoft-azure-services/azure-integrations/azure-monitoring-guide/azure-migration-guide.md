@@ -1,7 +1,7 @@
 ---
 title: Migrate from Azure classic (formerly 'built-in') services to cloud services
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide
-scraped: 2026-02-22T21:27:47.062095
+scraped: 2026-02-23T21:40:06.671015
 ---
 
 # Migrate from Azure classic (formerly 'built-in') services to cloud services

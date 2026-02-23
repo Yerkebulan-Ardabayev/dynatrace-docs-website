@@ -1,17 +1,17 @@
 ---
-title: Ограничения аккаунта API
+title: Ограничения учетной записи API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/account-limits-api
-scraped: 2026-02-22T21:29:39.690268
+scraped: 2026-02-23T21:31:05.837957
 ---
 
-# Ограничения аккаунта API
+# Ограничения учетной записи API
 
-# Ограничения аккаунта API
+# Ограничения учетной записи API
 
 * Последнее Dynatrace
-* Справка
-* Опубликовано дек 04, 2025
+* Справочник
+* Опубликовано 04 дек. 2025 г.
 
-[### Список ограничений аккаунта
+[### Список ограничений учетной записи
 
-Получите обзор ограничений аккаунта, назначенных вашему аккаунту Dynatrace.](/docs/dynatrace-api/account-management-api/account-limits-api/get-account-limits "Получите список назначенных ограничений аккаунта через Dynatrace API.")
+Получите обзор ограничений учетной записи, назначенных вашей учетной записи Dynatrace.](/docs/dynatrace-api/account-management-api/account-limits-api/get-account-limits "Получите список назначенных ограничений учетной записи через Dynatrace API.")

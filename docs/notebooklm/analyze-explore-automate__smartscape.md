@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/smartscape
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 12
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Smartscape concepts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-concepts
-scraped: 2026-02-21T21:25:48.562769
+scraped: 2026-02-23T21:37:48.108279
 ---
 
 # Smartscape concepts
@@ -125,7 +125,7 @@ By optimizing the graph's size, you can ensure a stable and uninterrupted experi
 ---
 title: View topology
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology
-scraped: 2026-02-21T21:24:09.286848
+scraped: 2026-02-23T21:35:58.657793
 ---
 
 # View topology
@@ -239,7 +239,7 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 ---
 title: Visual Resolution Path
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path
-scraped: 2026-02-21T21:27:20.936026
+scraped: 2026-02-23T21:29:22.353181
 ---
 
 # Visual Resolution Path
@@ -363,7 +363,7 @@ Visualize the topology around any selected entity to gain immediate insights on 
 ---
 title: AWS EC2 ecosystem overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview
-scraped: 2026-02-22T21:29:06.039992
+scraped: 2026-02-23T21:25:37.014172
 ---
 
 # AWS EC2 ecosystem overview
@@ -437,7 +437,7 @@ To use the **AWS EC2 Instance Ecosystem** effectively, we recommend that you:
 ---
 title: Infrastructure overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview
-scraped: 2026-02-22T21:23:36.704293
+scraped: 2026-02-23T21:35:06.540679
 ---
 
 # Infrastructure overview
@@ -578,7 +578,7 @@ To use **Kubernetes overview** effectively, we recommend that you:
 ---
 title: Problem graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph
-scraped: 2026-02-22T21:25:14.645053
+scraped: 2026-02-23T21:34:24.323244
 ---
 
 # Problem graph
@@ -641,7 +641,7 @@ To use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "S
 ---
 title: Service dependency graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph
-scraped: 2026-02-22T21:22:49.681414
+scraped: 2026-02-23T21:28:07.374977
 ---
 
 # Service dependency graph
@@ -699,7 +699,7 @@ To use **Service dependency graph** effectively, we recommend that you:
 ---
 title: Smartscape on Grail view
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view
-scraped: 2026-02-22T21:24:30.788941
+scraped: 2026-02-23T21:27:14.238869
 ---
 
 # Smartscape on Grail view
@@ -758,7 +758,7 @@ To use the **Smartscape on Grail** view effectively, we recommend that you:
 ---
 title: Smartscape views
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views
-scraped: 2026-02-22T21:25:50.858924
+scraped: 2026-02-23T21:29:01.231428
 ---
 
 # Smartscape views

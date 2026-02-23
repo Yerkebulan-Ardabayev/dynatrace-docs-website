@@ -1,7 +1,7 @@
 ---
 title: Detect problems with Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs
-scraped: 2026-02-21T21:21:30.609225
+scraped: 2026-02-23T21:35:56.369823
 ---
 
 # Detect problems with Logs

@@ -1,7 +1,7 @@
 ---
 title: OneAgent file aging mechanism
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism
-scraped: 2026-02-22T21:12:14.081413
+scraped: 2026-02-23T21:35:42.535086
 ---
 
 # OneAgent file aging mechanism

@@ -1,7 +1,7 @@
 ---
 title: Extended network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer
-scraped: 2026-02-22T21:13:05.970386
+scraped: 2026-02-23T21:38:42.193306
 ---
 
 # Extended network monitoring

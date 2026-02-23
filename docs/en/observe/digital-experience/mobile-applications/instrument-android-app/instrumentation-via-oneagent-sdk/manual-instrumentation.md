@@ -1,7 +1,7 @@
 ---
 title: Manually instrument your application using OneAgent SDK for Android
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation
-scraped: 2026-02-20T21:26:35.579920
+scraped: 2026-02-23T21:28:36.743563
 ---
 
 # Manually instrument your application using OneAgent SDK for Android

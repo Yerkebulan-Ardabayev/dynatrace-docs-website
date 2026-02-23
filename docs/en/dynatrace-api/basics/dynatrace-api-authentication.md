@@ -1,7 +1,7 @@
 ---
 title: Dynatrace API - Tokens and authentication
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/dynatrace-api-authentication
-scraped: 2026-02-22T21:25:30.597179
+scraped: 2026-02-23T21:32:09.570539
 ---
 
 # Dynatrace API - Tokens and authentication

@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/openpipeline
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 18
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Owner-based access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/access-control
-scraped: 2026-02-20T21:26:24.922507
+scraped: 2026-02-23T21:32:26.646258
 ---
 
 # Owner-based access control in OpenPipeline
@@ -2285,7 +2285,7 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-22T21:15:08.500189
+scraped: 2026-02-23T21:27:33.318718
 ---
 
 # OpenPipeline limits
@@ -3690,7 +3690,7 @@ Conclusion
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-22T21:08:27.256547
+scraped: 2026-02-23T21:19:45.423543
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -4176,7 +4176,7 @@ After applying these rules, queues with high cardinality will either have `messa
 ---
 title: Extract metrics from spans and distributed traces
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans
-scraped: 2026-02-22T21:19:34.630633
+scraped: 2026-02-23T21:32:53.310552
 ---
 
 # Extract metrics from spans and distributed traces
@@ -5227,7 +5227,7 @@ You successfully structured syslog logs according to pre-defined processing rule
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-22T21:09:46.380867
+scraped: 2026-02-23T21:19:38.009881
 ---
 
 # OpenPipeline

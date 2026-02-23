@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry interoperability in Java
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java
-scraped: 2026-02-22T21:21:28.841028
+scraped: 2026-02-23T21:24:18.568985
 ---
 
 # OpenTelemetry interoperability in Java

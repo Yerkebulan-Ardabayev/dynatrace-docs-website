@@ -1,7 +1,7 @@
 ---
 title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-02-22T21:14:26.871011
+scraped: 2026-02-23T21:23:57.340458
 ---
 
 # Metric events

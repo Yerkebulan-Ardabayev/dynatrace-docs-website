@@ -1,6 +1,6 @@
 # Документация Dynatrace: ingest-from/dynatrace-oneagent
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 63
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Adaptive Traffic Management concepts
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-concepts
-scraped: 2026-02-19T21:26:49.992356
+scraped: 2026-02-23T21:33:50.225151
 ---
 
 # Adaptive Traffic Management concepts
@@ -82,7 +82,7 @@ To control how much of your [Full-Stack included trace volume](#full-stack-inclu
 ---
 title: Adaptive Traffic Management for distributed tracing
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management
-scraped: 2026-02-21T21:26:37.547302
+scraped: 2026-02-23T21:38:40.794723
 ---
 
 # Adaptive Traffic Management for distributed tracing
@@ -852,7 +852,7 @@ One last thing: to monitor your processes, you need to restart them. At any time
 ---
 title: OneAgent security on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix
-scraped: 2026-02-22T21:11:44.900017
+scraped: 2026-02-23T21:24:40.582690
 ---
 
 # OneAgent security on AIX
@@ -952,7 +952,7 @@ We're aware that global read and write permissions on OneAgent directories get f
 ---
 title: Automated injection of deep-code monitoring on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection
-scraped: 2026-02-22T21:11:43.622710
+scraped: 2026-02-23T21:29:09.830242
 ---
 
 # Automated injection of deep-code monitoring on AIX
@@ -1263,7 +1263,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix
-scraped: 2026-02-22T21:08:31.116826
+scraped: 2026-02-23T21:19:24.590626
 ---
 
 # AIX
@@ -2085,7 +2085,7 @@ If you need to change the proxy address after installation, use `--set-proxy` in
 ---
 title: Install OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux
-scraped: 2026-02-22T21:12:16.585596
+scraped: 2026-02-23T21:24:07.613366
 ---
 
 # Install OneAgent on Linux
@@ -3227,7 +3227,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux
-scraped: 2026-02-22T21:08:34.811560
+scraped: 2026-02-23T21:19:23.400697
 ---
 
 # OneAgent on Linux
@@ -3903,7 +3903,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 ---
 title: Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris
-scraped: 2026-02-22T21:08:32.346964
+scraped: 2026-02-23T21:19:29.739881
 ---
 
 # Solaris
@@ -5269,7 +5269,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows
-scraped: 2026-02-22T21:08:33.576488
+scraped: 2026-02-23T21:19:25.748413
 ---
 
 # OneAgent on Windows
@@ -5317,7 +5317,7 @@ You can install OneAgent on Windows using installer provided as a self-extractin
 ---
 title: Install the CICS module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics
-scraped: 2026-02-22T21:21:20.065881
+scraped: 2026-02-23T21:24:21.291429
 ---
 
 # Install the CICS module
@@ -5878,7 +5878,7 @@ severe  [native] CICS14CR1[asid = 108] is trying to initialize with an invalid p
 ---
 title: Install the IMS module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims
-scraped: 2026-02-22T21:21:17.507221
+scraped: 2026-02-23T21:24:10.219264
 ---
 
 # Install the IMS module
@@ -6860,7 +6860,7 @@ severe  [native] IMS14CR1[asid = 108] is trying to initialize with an invalid pr
 ---
 title: Customize the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote
-scraped: 2026-02-22T21:24:34.634301
+scraped: 2026-02-23T21:26:26.674668
 ---
 
 # Customize the zRemote module
@@ -7803,7 +7803,7 @@ sc query "Dynatrace zRemote"
 ---
 title: Download z/OS product datasets
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets
-scraped: 2026-02-22T21:22:51.094333
+scraped: 2026-02-23T21:40:04.057941
 ---
 
 # Download z/OS product datasets
@@ -8455,7 +8455,7 @@ Depending on your team, a single individual may be able to administer more than 
 ---
 title: Monitor file access of CICS applications
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access
-scraped: 2026-02-22T21:21:13.254577
+scraped: 2026-02-23T21:24:32.106159
 ---
 
 # Monitor file access of CICS applications
@@ -8497,7 +8497,7 @@ To turn off file access monitoring, toggle the `z/OS CICS file monitoring` senso
 ---
 title: Monitor z/OS logs
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs
-scraped: 2026-02-22T21:21:30.079398
+scraped: 2026-02-23T21:24:11.698311
 ---
 
 # Monitor z/OS logs
@@ -8647,7 +8647,7 @@ This metadata is used to map the logs to the entity model of z/OS processes.
 ---
 title: Monitor JMX metrics on z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics
-scraped: 2026-02-22T21:21:15.933194
+scraped: 2026-02-23T21:24:15.821043
 ---
 
 # Monitor JMX metrics on z/OS
@@ -9653,7 +9653,7 @@ Settings API for IBM MQ tracing:
 ---
 title: Dynatrace for z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos
-scraped: 2026-02-22T21:08:38.638270
+scraped: 2026-02-23T21:19:30.867407
 ---
 
 # Dynatrace for z/OS
@@ -9839,7 +9839,7 @@ With Dynatrace, you can get [Full-Stack Monitoring with Host monitoring (DPS)](/
 ---
 title: Install OneAgent on a server
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation
-scraped: 2026-02-22T21:07:56.314248
+scraped: 2026-02-23T21:18:50.816851
 ---
 
 # Install OneAgent on a server
@@ -10022,7 +10022,7 @@ Dependent on OneAgent code module, memory demand might peak at application start
 ---
 title: OneAgent file aging mechanism
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism
-scraped: 2026-02-22T21:12:14.081413
+scraped: 2026-02-23T21:35:42.535086
 ---
 
 # OneAgent file aging mechanism
@@ -10168,7 +10168,7 @@ To prevent unnecessary delays in your application's startup, the OneAgent bulk p
 ---
 title: Enable the OpenTelemetry Span Sensor for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration
-scraped: 2026-02-17T21:26:27.224446
+scraped: 2026-02-23T21:32:37.867116
 ---
 
 # Enable the OpenTelemetry Span Sensor for OneAgent
@@ -10222,7 +10222,7 @@ Existing tracers are replaced and will no longer work after you enable OpenTelem
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7, 1.8 - 1.11.0, 1.11.1 - 1.27, 1.28 - 1.39 |
+| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7, 1.8 - 1.11.0, 1.11.1 - 1.27, 1.28 - 1.40 |
 
 Opt-in
 
@@ -11887,7 +11887,7 @@ Set the `--set-osagent-cap-setuid-enabled` parameter to `true` or `false` to dis
 ---
 title: OneAgent features
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-features
-scraped: 2026-02-22T21:08:36.101297
+scraped: 2026-02-23T21:19:28.592641
 ---
 
 # OneAgent features
@@ -12745,7 +12745,7 @@ export DT_HOME=/opt/dynatrace/oneagent
 ---
 title: Dynatrace OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent
-scraped: 2026-02-22T21:10:36.469388
+scraped: 2026-02-23T21:20:43.653988
 ---
 
 # Dynatrace OneAgent

@@ -1,7 +1,7 @@
 ---
 title: Install the z/OS Java module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java
-scraped: 2026-02-22T21:21:24.807389
+scraped: 2026-02-23T21:24:14.567258
 ---
 
 # Install the z/OS Java module

@@ -1,7 +1,7 @@
 ---
 title: Add Markdown to dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
-scraped: 2026-02-22T21:08:54.105415
+scraped: 2026-02-23T21:19:59.567955
 ---
 
 # Add Markdown to dashboard

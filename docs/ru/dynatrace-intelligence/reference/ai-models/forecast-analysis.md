@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence predictive AI analysis
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
-scraped: 2026-02-22T21:09:01.318304
+scraped: 2026-02-23T21:19:48.249827
 ---
 
 # Dynatrace Intelligence predictive AI analysis

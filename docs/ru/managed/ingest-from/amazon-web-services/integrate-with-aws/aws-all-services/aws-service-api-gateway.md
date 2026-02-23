@@ -1,7 +1,7 @@
 ---
 title: Amazon API Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-api-gateway
-scraped: 2026-02-21T21:17:07.240560
+scraped: 2026-02-23T21:30:01.273266
 ---
 
 # Amazon API Gateway monitoring

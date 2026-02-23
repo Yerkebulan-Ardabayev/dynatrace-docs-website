@@ -1,7 +1,7 @@
 ---
 title: Digital Experience Monitoring (DEM) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/digital-experience-monitoring
-scraped: 2026-02-22T21:24:13.924602
+scraped: 2026-02-23T21:34:50.834207
 ---
 
 # Digital Experience Monitoring (DEM) overview (DPS)

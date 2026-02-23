@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Immersive Reader monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-immersive-reader
-scraped: 2026-02-22T21:25:48.289212
+scraped: 2026-02-23T21:26:37.079841
 ---
 
 # Azure AI - Immersive Reader monitoring

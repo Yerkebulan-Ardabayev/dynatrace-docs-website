@@ -1,7 +1,7 @@
 ---
 title: Deploy Dynatrace OTel Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/deployment
-scraped: 2026-02-22T21:26:35.192956
+scraped: 2026-02-23T21:27:27.284323
 ---
 
 # Deploy Dynatrace OTel Collector

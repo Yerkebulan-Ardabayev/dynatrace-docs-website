@@ -1,7 +1,7 @@
 ---
 title: Full-stack observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack
-scraped: 2026-02-22T21:16:31.396172
+scraped: 2026-02-23T21:22:50.999872
 ---
 
 # Full-stack observability

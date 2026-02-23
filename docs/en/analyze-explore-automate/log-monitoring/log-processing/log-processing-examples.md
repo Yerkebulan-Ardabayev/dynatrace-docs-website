@@ -1,7 +1,7 @@
 ---
 title: Log processing examples (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples
-scraped: 2026-02-21T21:19:40.165564
+scraped: 2026-02-23T21:30:56.915272
 ---
 
 # Log processing examples (Logs Classic)

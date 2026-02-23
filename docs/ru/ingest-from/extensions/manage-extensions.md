@@ -1,7 +1,7 @@
 ---
 title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-02-22T21:20:36.555676
+scraped: 2026-02-23T21:31:18.176629
 ---
 
 # Manage Extensions
