@@ -1,7 +1,7 @@
 ---
 title: Metrics API - Metric expressions
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-expressions
-scraped: 2026-02-22T21:23:00.627164
+scraped: 2026-02-23T21:24:49.748154
 ---
 
 # Metrics API - Metric expressions

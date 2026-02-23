@@ -1,7 +1,7 @@
 ---
 title: Ingest Snyk vulnerability findings, scans, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-snyk-data
-scraped: 2026-02-22T21:20:04.443150
+scraped: 2026-02-23T21:33:53.990407
 ---
 
 # Ingest Snyk vulnerability findings, scans, and audit logs

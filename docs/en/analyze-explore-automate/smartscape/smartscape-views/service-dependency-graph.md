@@ -1,7 +1,7 @@
 ---
 title: Service dependency graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph
-scraped: 2026-02-22T21:22:49.681414
+scraped: 2026-02-23T21:28:07.374977
 ---
 
 # Service dependency graph

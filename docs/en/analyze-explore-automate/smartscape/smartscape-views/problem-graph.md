@@ -1,7 +1,7 @@
 ---
 title: Problem graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph
-scraped: 2026-02-22T21:25:14.645053
+scraped: 2026-02-23T21:34:24.323244
 ---
 
 # Problem graph

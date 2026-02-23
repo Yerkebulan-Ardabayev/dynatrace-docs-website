@@ -1,7 +1,7 @@
 ---
 title: Tenant tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens
-scraped: 2026-02-21T21:20:54.281768
+scraped: 2026-02-23T21:34:31.731885
 ---
 
 # Tenant tokens API

@@ -1,7 +1,7 @@
 ---
 title: Ingest Zipkin data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/zipkin
-scraped: 2026-02-22T21:28:30.807803
+scraped: 2026-02-23T21:30:25.419663
 ---
 
 # Ingest Zipkin data with the OpenTelemetry Collector

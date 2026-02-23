@@ -1,7 +1,7 @@
 ---
 title: Configure user interaction capturing for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions
-scraped: 2026-02-20T21:21:04.112390
+scraped: 2026-02-23T21:36:13.523981
 ---
 
 # Configure user interaction capturing for web frontends

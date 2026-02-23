@@ -1,7 +1,7 @@
 ---
 title: Runtime instrumentation
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation
-scraped: 2026-02-22T21:17:02.832335
+scraped: 2026-02-23T21:23:19.882072
 ---
 
 # Runtime instrumentation

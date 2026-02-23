@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/reference
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Dynatrace Intelligence predictive AI analysis
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
-scraped: 2026-02-22T21:09:01.318304
+scraped: 2026-02-23T21:19:48.249827
 ---
 
 # Dynatrace Intelligence predictive AI analysis
@@ -964,7 +964,7 @@ This example shows the forecast for a 6-hours timeframe. Apart from an extensive
 ---
 title: Seasonal baseline
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline
-scraped: 2026-02-20T21:24:22.562612
+scraped: 2026-02-23T21:25:19.390484
 ---
 
 # Seasonal baseline
@@ -1087,7 +1087,7 @@ Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/seasonal
 ---
 title: Dynatrace Intelligence limits
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/davis-ai-limits
-scraped: 2026-02-22T21:23:10.191139
+scraped: 2026-02-23T21:25:01.988893
 ---
 
 # Dynatrace Intelligence limits

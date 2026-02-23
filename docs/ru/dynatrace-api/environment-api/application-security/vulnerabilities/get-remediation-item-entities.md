@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities API - GET remediation item entities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-item-entities
-scraped: 2026-02-18T05:46:10.007554
+scraped: 2026-02-23T21:35:28.336942
 ---
 
 # Vulnerabilities API - GET remediation item entities

@@ -1,7 +1,7 @@
 ---
 title: Extract metrics from spans and distributed traces
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans
-scraped: 2026-02-22T21:19:34.630633
+scraped: 2026-02-23T21:32:53.310552
 ---
 
 # Extract metrics from spans and distributed traces

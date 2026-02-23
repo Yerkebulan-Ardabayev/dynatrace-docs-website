@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux
-scraped: 2026-02-22T21:12:16.585596
+scraped: 2026-02-23T21:24:07.613366
 ---
 
 # Install OneAgent on Linux

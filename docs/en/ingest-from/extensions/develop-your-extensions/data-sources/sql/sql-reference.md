@@ -1,7 +1,7 @@
 ---
 title: SQL data source reference
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference
-scraped: 2026-02-22T21:24:55.155994
+scraped: 2026-02-23T21:39:21.399750
 ---
 
 # SQL data source reference

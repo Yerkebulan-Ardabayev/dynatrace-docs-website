@@ -1,71 +1,71 @@
 ---
-title: Dynatrace Platform Subscription API - manage cost allocation
+title: Dynatrace Платформа Подписки API - управление распределением затрат
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/manage-cost-allocation
-scraped: 2026-02-19T21:30:28.321159
+scraped: 2026-02-23T21:36:32.701272
 ---
 
-# Dynatrace Platform Subscription API - manage cost allocation
+# Dynatrace Платформа Подписки API - управление распределением затрат
 
-# Dynatrace Platform Subscription API - manage cost allocation
+# Dynatrace Платформа Подписки API - управление распределением затрат
 
-* Latest Dynatrace
-* Reference
-* Published Oct 18, 2024
+* Последнее Dynatrace
+* Справка
+* Опубликовано 18 октября 2024 г.
 
-The Dynatrace Cost Allocation feature incorporates two fields for cost centers and products. You can use either or both fields. These fields reflect your company's cost allocation structure, enabling you to develop two distinct perspectives: one based on your cost centers (for example, departments) and another based on your products or services (for example, Applicationname or ApplicationID). Of course, you can customize the use of these fields to fit your company's organizational framework.
+Функция распределения затрат Dynatrace включает два поля для центров затрат и продуктов. Вы можете использовать одно или оба поля. Эти поля отражают структуру распределения затрат вашей компании, что позволяет вам развивать две разные перспективы: одну на основе ваших центров затрат (например, отделов) и другую на основе ваших продуктов или услуг (например, Applicationname или ApplicationID). Конечно, вы можете настроить использование этих полей в соответствии с организационной структурой вашей компании.
 
-Use Dynatrace Platform Subscription API to manage your products and cost centers at scale.
+Используйте Dynatrace Платформу Подписки API, чтобы управлять вашими продуктами и центрами затрат в большом масштабе.
 
-## GET cost centers
+## GET центры затрат
 
-Lists all the defined cost centers.
+Отображает все определенные центры затрат.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
 GET
 
 `https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters`
 
-### Authentication
+### Аутентификация
 
-To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Чтобы выполнить этот запрос, вам необходимо назначить область **Разрешить чтение для ресурсов использования и потребления** (`account-uac-read`) вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-### Parameters
+### Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| page | number | The number of the requested page. Can be increased as long as **hasNextPage** is true in the response. | query | Optional |
-| page-size | number | Defines the requested number of entries for the next page. | query | Optional |
+| accountUuid | строка | Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице **Управление учетной записью** > **Идентификация и управление доступом** > **Клиенты OAuth**, во время создания клиента OAuth. | путь | Обязательный |
+| page | число | Номер запрошенной страницы. Можно увеличивать, пока **hasNextPage** равен true в ответе. | запрос | Необязательный |
+| page-size | число | Определяет количество запрошенных записей для следующей страницы. | запрос | Необязательный |
 
-### Response
+### Ответ
 
-### Response codes
+### Код ответа
 
-| Code | Type | Description |
+| Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [PaginatedFieldValueDto](#openapi-definition-PaginatedFieldValueDto) | Success. The response contains a page of allowed cost-allocation values for the costcenter field. |
-| **400** | - | The request was unacceptable, often due to missing a required parameter |
-| **401** | - | No valid session provided |
-| **403** | - | Access denied |
-| **500** | - | Something went wrong on Account Management's end |
+| **200** | [PaginatedFieldValueDto](#openapi-definition-PaginatedFieldValueDto) | Успех. Ответ содержит страницу разрешенных значений распределения затрат для поля costcenter. |
+| **400** | - | Запрос был неприемлемым, часто из-за отсутствия обязательного параметра |
+| **401** | - | Нет действительной сессии |
+| **403** | - | Доступ запрещен |
+| **500** | - | Что-то пошло не так на стороне Управления учетной записью |
 
-### Response body objects
+### Объекты тела ответа
 
-#### The `PaginatedFieldValueDto` object
+#### Объект `PaginatedFieldValueDto`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| records | [FieldValueDto[]](#openapi-definition-FieldValueDto) | The records on the current page. |
-| hasNextPage | boolean | Indicates if there is another page to load. |
+| records | [FieldValueDto[]](#openapi-definition-FieldValueDto) | Записи на текущей странице. |
+| hasNextPage | логический | Указывает, есть ли другая страница для загрузки. |
 
-#### The `FieldValueDto` object
+#### Объект `FieldValueDto`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| key | string | The key of this value. |
+| key | строка | Ключ этого значения. |
 
-### Response body JSON models
+### Тело ответа JSON модели
 
 ```
 {
@@ -80,7 +80,7 @@ To execute this request, you need the **Allow read access for usage and consumpt
 
 
 
-"key": "string"
+"key": "строка"
 
 
 
@@ -99,44 +99,44 @@ To execute this request, you need the **Allow read access for usage and consumpt
 }
 ```
 
-## POST cost centers
+## POST центры затрат
 
-Add the provided value to the cost center field.
+Добавьте предоставленное значение в поле центра затрат.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
 POST
 
 `https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters`
 
-## Authentication
+## Аутентификация
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Чтобы выполнить этот запрос, вам необходимо назначить разрешение **Разрешить запись для ресурсов использования и потребления** (`account-uac-write`) вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-### Parameters
+### Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| body | [FieldValuesRequestDto](#openapi-definition-FieldValuesRequestDto) | - | body | Required |
+| accountUuid | строка | Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице **Управление учетной записью** > **Идентификация и управление доступом** > **Клиенты OAuth**, во время создания клиента OAuth. | путь | Обязательный |
+| body | [FieldValuesRequestDto](#openapi-definition-FieldValuesRequestDto) | - | тело | Обязательный |
 
-### Request body objects
+### Объекты тела запроса
 
-#### The `FieldValuesRequestDto` object
+#### Объект `FieldValuesRequestDto`
 
-| Element | Type | Description | Required |
+| Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| values | [FieldValueDto[]](#openapi-definition-FieldValueDto) | The requested values. | Required |
+| values | [FieldValueDto[]](#openapi-definition-FieldValueDto) | Запрошенные значения. | Обязательный |
 
-#### The `FieldValueDto` object
+#### Объект `FieldValueDto`
 
-| Element | Type | Description | Required |
+| Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| key | string | The key of this value. | Required |
+| key | строка | Ключ этого значения. | Обязательный |
 
-### Request body JSON model
+### Тело запроса JSON модель
 
-This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
+Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.
 
 ```
 {
@@ -151,7 +151,7 @@ This is a model of the request body, showing the possible elements. It has to be
 
 
 
-"key": "string"
+"key": "строка"
 
 
 
@@ -166,56 +166,56 @@ This is a model of the request body, showing the possible elements. It has to be
 }
 ```
 
-### Response
+### Ответ
 
-### Response codes
+### Код ответа
 
-| Code | Description |
+| Код | Описание |
 | --- | --- |
-| **204** | The response doesn't have a body. The values were added to the field. |
-| **400** | The existing and provided values combined should not contain duplicate keys. |
-| **401** | No valid session provided |
-| **403** | Access denied |
-| **500** | Something went wrong on Account Management's end |
+| **204** | Ответ не имеет тела. Значения были добавлены в поле. |
+| **400** | Существующие и предоставленные значения в совокупности не должны содержать дубликаты ключей. |
+| **401** | Нет действительной сессии |
+| **403** | Доступ запрещен |
+| **500** | Что-то пошло не так на стороне Управления учетной записью |
 
-## PUT cost centers
+## PUT центры затрат
 
-Replace the current values to the cost center field.
+Замените текущие значения поля центра затрат.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
 PUT
 
 `https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters`
 
-## Authentication
+## Аутентификация
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Чтобы выполнить этот запрос, вам необходимо назначить разрешение **Разрешить запись для ресурсов использования и потребления** (`account-uac-write`) вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-### Parameters
+### Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| body | [FieldValuesRequestDto](#openapi-definition-FieldValuesRequestDto) | - | body | Required |
+| accountUuid | строка | Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице **Управление учетной записью** > **Идентификация и управление доступом** > **Клиенты OAuth**, во время создания клиента OAuth. | путь | Обязательный |
+| body | [FieldValuesRequestDto](#openapi-definition-FieldValuesRequestDto) | - | тело | Обязательный |
 
-### Request body objects
+### Объекты тела запроса
 
-#### The `FieldValuesRequestDto` object
+#### Объект `FieldValuesRequestDto`
 
-| Element | Type | Description | Required |
+| Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| values | [FieldValueDto[]](#openapi-definition-FieldValueDto) | The requested values. | Required |
+| values | [FieldValueDto[]](#openapi-definition-FieldValueDto) | Запрошенные значения. | Обязательный |
 
-#### The `FieldValueDto` object
+#### Объект `FieldValueDto`
 
-| Element | Type | Description | Required |
+| Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| key | string | The key of this value. | Required |
+| key | строка | Ключ этого значения. | Обязательный |
 
-### Request body JSON model
+### Тело запроса JSON модель
 
-This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
+Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.
 
 ```
 {
@@ -230,7 +230,7 @@ This is a model of the request body, showing the possible elements. It has to be
 
 
 
-"key": "string"
+"key": "строка"
 
 
 
@@ -245,103 +245,101 @@ This is a model of the request body, showing the possible elements. It has to be
 }
 ```
 
-### Response
+### Ответ
 
-### Response codes
+### Код ответа
 
-| Code | Description |
+| Код | Описание |
 | --- | --- |
-| **204** | The response doesn't have a body. The values of the field were replaced. |
-| **400** | The provided values should not contain duplicate keys. |
-| **401** | No valid session provided |
-| **403** | Access denied |
-| **500** | Something went wrong on Account Management's end |
+| **204** | Ответ не имеет тела. Значения поля были заменены. |
+| **400** | Предоставленные значения не должны содержать дубликаты ключей. |
+| **401** | Нет действительной сессии |
+| **403** | Доступ запрещен |
+| **500** | Что-то пошло не так на стороне Управления учетной записью |
 
-## DELETE cost centers
+## DELETE центры затрат
 
-Delete a value by key on the cost center field.
+Удалите значение по ключу в поле центра затрат.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
 DELETE
 
 `https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters/{key}`
 
-## Authentication
+## Аутентификация
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Чтобы выполнить этот запрос, вам необходимо назначить разрешение **Разрешить запись для ресурсов использования и потребления** (`account-uac-write`) вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-### Parameters
+### Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| key | string | The key for the field value. | path | Required |
+| accountUuid | строка | Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице **Управление учетной записью** > **Идентификация и управление доступом** > **Клиенты OAuth**, во время создания клиента OAuth. | путь | Обязательный |
+| key | строка | Ключ значения поля. | путь | Обязательный |
 
-### Response
+### Ответ
 
-### Response codes
+### Код ответа
 
-| Code | Description |
+| Код | Описание |
 | --- | --- |
-| **204** | The given value on the costcenter field was deleted. |
-| **400** | The request was unacceptable, often due to missing a required parameter |
-| **401** | No valid session provided |
-| **403** | Access denied |
-| **500** | Something went wrong on Account Management's end |
+| **204** | Указанное значение в поле costcenter было удалено. |
+| **400** | Запрос был неприемлемым, часто из-за отсутствия обязательного параметра |
+| **401** | Нет действительной сессии |
+| **403** | Доступ запрещен |
+| **500** | Что-то пошло не так на стороне Управления учетной записью |
 
-## GET products
+## GET продукты
 
-Lists all the defined products.
+Отображает все определенные продукты.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
 GET
 
 `https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products`
 
-### Authentication
+### Аутентификация
 
-To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Чтобы выполнить этот запрос, вам необходимо назначить область **Разрешить чтение для ресурсов использования и потребления** (`account-uac-read`) вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-### Parameters
+### Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| page | number | The number of the requested page. Can be increased as long as **hasNextPage** is true in the response. | query | Optional |
-| page-size | number | Defines the requested number of entries for the next page. | query | Optional |
+| accountUuid | строка | Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице **Управление учетной записью** > **Идентификация и управление доступом** > **Клиенты OAuth**, во время создания клиента OAuth. | путь | Обязательный |
+| page | число | Номер запрошенной страницы. Можно увеличивать, пока **hasNextPage** равен true в ответе. | запрос | Необязательный |
+| page-size | число | Определяет количество запрошенных записей для следующей страницы. | запрос | Необязательный |
 
-### Response
+### Ответ
 
-### Response codes
+### Код ответа
 
-
-
-| Code | Type | Description |
+| Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [PaginatedFieldValueDto](#openapi-definition-PaginatedFieldValueDto) | Success. The response contains a page of allowed cost-allocation values for the product field. |
-| **400** | - | The request was unacceptable, often due to missing a required parameter |
-| **401** | - | No valid session provided |
-| **403** | - | Access denied |
-| **500** | - | Something went wrong on Account Management's end |
+| **200** | [PaginatedFieldValueDto](#openapi-definition-PaginatedFieldValueDto) | Успех. Ответ содержит страницу разрешенных значений распределения затрат для поля продукта. |
+| **400** | - | Запрос был недопустим, часто из-за отсутствия обязательного параметра |
+| **401** | - | Не предоставлена действительная сессия |
+| **403** | - | Доступ запрещен |
+| **500** | - | Что-то пошло не так на стороне управления учетной записью |
 
-### Response body objects
+### Объекты тела ответа
 
-#### The `PaginatedFieldValueDto` object
+#### Объект `PaginatedFieldValueDto`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| records | [FieldValueDto[]](#openapi-definition-FieldValueDto) | The records on the current page. |
-| hasNextPage | boolean | Indicates if there is another page to load. |
+| records | [FieldValueDto[]](#openapi-definition-FieldValueDto) | Записи на текущей странице. |
+| hasNextPage | boolean | Указывает, есть ли еще страница для загрузки. |
 
-#### The `FieldValueDto` object
+#### Объект `FieldValueDto`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| key | string | The key of this value. |
+| key | string | Ключ этого значения. |
 
-### Response body JSON models
+### Модели тела ответа JSON
 
 ```
 {
@@ -375,44 +373,44 @@ To execute this request, you need the **Allow read access for usage and consumpt
 }
 ```
 
-## POST products
+## POST продукты
 
-Add the provided value to the product field.
+Добавьте предоставленное значение в поле продукта.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
 POST
 
 `https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products`
 
-## Authentication
+## Аутентификация
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Чтобы выполнить этот запрос, вам необходимо разрешение **Разрешить запись для ресурсов использования и потребления** (`account-uac-write`) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-### Parameters
+### Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| body | [FieldValuesRequestDto](#openapi-definition-FieldValuesRequestDto) | - | body | Required |
+| accountUuid | string | Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице **Управление учетной записью** > **Управление идентификацией и доступом** > **Клиенты OAuth**, во время создания клиента OAuth. | path | Обязательный |
+| body | [FieldValuesRequestDto](#openapi-definition-FieldValuesRequestDto) | - | body | Обязательный |
 
-### Request body objects
+### Объекты тела запроса
 
-#### The `FieldValuesRequestDto` object
+#### Объект `FieldValuesRequestDto`
 
-| Element | Type | Description | Required |
+| Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| values | [FieldValueDto[]](#openapi-definition-FieldValueDto) | The requested values. | Required |
+| values | [FieldValueDto[]](#openapi-definition-FieldValueDto) | Запрошенные значения. | Обязательный |
 
-#### The `FieldValueDto` object
+#### Объект `FieldValueDto`
 
-| Element | Type | Description | Required |
+| Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| key | string | The key of this value. | Required |
+| key | string | Ключ этого значения. | Обязательный |
 
-### Request body JSON model
+### Модель тела запроса JSON
 
-This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
+Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.
 
 ```
 {
@@ -442,56 +440,56 @@ This is a model of the request body, showing the possible elements. It has to be
 }
 ```
 
-### Response
+### Ответ
 
-### Response codes
+### Код ответа
 
-| Code | Description |
+| Код | Описание |
 | --- | --- |
-| **204** | The response doesn't have a body. The values were added to the field. |
-| **400** | The existing and provided values combined should not contain duplicate keys. |
-| **401** | No valid session provided |
-| **403** | Access denied |
-| **500** | Something went wrong on Account Management's end |
+| **204** | Ответ не имеет тела. Значения были добавлены в поле. |
+| **400** | Существующие и предоставленные значения, объединенные, не должны содержать дублирующиеся ключи. |
+| **401** | Не предоставлена действительная сессия |
+| **403** | Доступ запрещен |
+| **500** | Что-то пошло не так на стороне управления учетной записью |
 
-## PUT products
+## PUT продукты
 
-Replace the current values to the product field.
+Замените текущие значения поля продукта.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
 PUT
 
 `https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products`
 
-## Authentication
+## Аутентификация
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Чтобы выполнить этот запрос, вам необходимо разрешение **Разрешить запись для ресурсов использования и потребления** (`account-uac-write`) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-### Parameters
+### Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| body | [FieldValuesRequestDto](#openapi-definition-FieldValuesRequestDto) | - | body | Required |
+| accountUuid | string | Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице **Управление учетной записью** > **Управление идентификацией и доступом** > **Клиенты OAuth**, во время создания клиента OAuth. | path | Обязательный |
+| body | [FieldValuesRequestDto](#openapi-definition-FieldValuesRequestDto) | - | body | Обязательный |
 
-### Request body objects
+### Объекты тела запроса
 
-#### The `FieldValuesRequestDto` object
+#### Объект `FieldValuesRequestDto`
 
-| Element | Type | Description | Required |
+| Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| values | [FieldValueDto[]](#openapi-definition-FieldValueDto) | The requested values. | Required |
+| values | [FieldValueDto[]](#openapi-definition-FieldValueDto) | Запрошенные значения. | Обязательный |
 
-#### The `FieldValueDto` object
+#### Объект `FieldValueDto`
 
-| Element | Type | Description | Required |
+| Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| key | string | The key of this value. | Required |
+| key | string | Ключ этого значения. | Обязательный |
 
-### Request body JSON model
+### Модель тела запроса JSON
 
-This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.
+Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.
 
 ```
 {
@@ -521,51 +519,51 @@ This is a model of the request body, showing the possible elements. It has to be
 }
 ```
 
-### Response
+### Ответ
 
-### Response codes
+### Код ответа
 
-| Code | Description |
+| Код | Описание |
 | --- | --- |
-| **204** | The response doesn't have a body. The values of the field were replaced. |
-| **400** | The provided values should not contain duplicate keys. |
-| **401** | No valid session provided |
-| **403** | Access denied |
-| **500** | Something went wrong on Account Management's end |
+| **204** | Ответ не имеет тела. Значения поля были заменены. |
+| **400** | Предоставленные значения не должны содержать дублирующиеся ключи. |
+| **401** | Не предоставлена действительная сессия |
+| **403** | Доступ запрещен |
+| **500** | Что-то пошло не так на стороне управления учетной записью |
 
-## DELETE products
+## DELETE продукты
 
-Delete a value by key on the cost center field.
+Удалите значение по ключу в поле продукта.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
 DELETE
 
 `https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products/{key}`
 
-## Authentication
+## Аутентификация
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+Чтобы выполнить этот запрос, вам необходимо разрешение **Разрешить запись для ресурсов использования и потребления** (`account-uac-write`) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-### Parameters
+### Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| key | string | The key for the field value. | path | Required |
+| accountUuid | string | Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице **Управление учетной записью** > **Управление идентификацией и доступом** > **Клиенты OAuth**, во время создания клиента OAuth. | path | Обязательный |
+| key | string | Ключ для значения поля. | path | Обязательный |
 
-### Response
+### Ответ
 
-### Response codes
+### Код ответа
 
-| Code | Description |
+| Код | Описание |
 | --- | --- |
-| **204** | The given value on the product field was deleted. |
-| **400** | The request was unacceptable, often due to missing a required parameter |
-| **401** | No valid session provided |
-| **403** | Access denied |
-| **500** | Something went wrong on Account Management's end |
+| **204** | Значение в поле продукта было удалено. |
+| **400** | Запрос был недопустим, часто из-за отсутствия обязательного параметра |
+| **401** | Не предоставлена действительная сессия |
+| **403** | Доступ запрещен |
+| **500** | Что-то пошло не так на стороне управления учетной записью |
 
-## Related topics
+## Связанные темы
 
-* [Allocate your DPS costs](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.")
+* [Распределите затраты DPS](/docs/license/cost-allocation "Узнайте, как распределить затраты на центры затрат и продукты.")

@@ -1,7 +1,7 @@
 ---
 title: Ingest vulnerability findings in OCSF format
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-ocsf-data
-scraped: 2026-02-22T21:20:11.901038
+scraped: 2026-02-23T21:38:59.575359
 ---
 
 # Ingest vulnerability findings in OCSF format

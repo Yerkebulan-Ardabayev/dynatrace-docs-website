@@ -1,7 +1,7 @@
 ---
 title: Anomaly Detection DQL optimization guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization
-scraped: 2026-02-20T21:12:27.664550
+scraped: 2026-02-23T21:36:51.500557
 ---
 
 # Anomaly Detection DQL optimization guide

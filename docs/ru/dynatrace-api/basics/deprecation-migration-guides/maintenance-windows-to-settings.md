@@ -1,21 +1,21 @@
 ---
 title: Перейти от окон обслуживания API к настройкам API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/maintenance-windows-to-settings
-scraped: 2026-02-21T21:16:47.493584
+scraped: 2026-02-23T21:38:50.633692
 ---
 
 # Перейти от окон обслуживания API к настройкам API
 
 # Перейти от окон обслуживания API к настройкам API
 
-* Ссылка
+* Справка
 * Опубликовано 21 декабря 2022 г.
 
-[Окна обслуживания API](/docs/dynatrace-api/configuration-api/maintenance-windows-api "Узнайте, что предлагает конфигурация окон обслуживания Dynatrace API.") были заменены на [настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагают настройки Dynatrace API.") с схемой **Окна обслуживания** (`builtin:alerting.maintenance-window`). Мы рекомендуем перейти на новые настройки API как можно скорее.
+[Окна обслуживания API](/docs/dynatrace-api/configuration-api/maintenance-windows-api "Узнайте, что предлагает конфигурация окон обслуживания Dynatrace API.") были устаревшими с [версией Dynatrace 1.240](/docs/whats-new/dynatrace-api/sprint-240 "Журнал изменений для версии Dynatrace API 1.240"). Их заменой являются [настройки API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагают настройки Dynatrace API.") с схемой **Окна обслуживания** (`builtin:alerting.maintenance-window`). Мы рекомендуем перейти на новую версию API как можно скорее.
 
-Миграция влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на область действия токена для аутентификации запросов.
+Миграция влияет на URL-адреса конечных точек, параметры запроса и параметры тела запроса/ответа, а также на область действия токена для аутентификации запросов.
 
-## Базовый URL-адрес
+## Базовый URL
 
 | новые настройки 2.0 | старые окна обслуживания |
 | --- | --- |
@@ -31,7 +31,7 @@ scraped: 2026-02-21T21:16:47.493584
 
 Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [настройках API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагают настройки Dynatrace API.").
 
-В рамках настроек 2.0 каждое окно обслуживания представлено объектом настроек. Объект содержит некоторые метаданные (например, область или метка времени создания) и саму конфигурацию, инкапсулированную в объект **значение**. Чтобы узнать о параметрах конфигурации окна обслуживания, запросите схему **Окна обслуживания** (`builtin:alerting.maintenance-window`) с помощью запроса [GET-схемы](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API.").
+В рамках настроек 2.0 каждое окно обслуживания представлено объектом настроек. Объект содержит некоторые метаданные (например, область или метка времени создания) и саму конфигурацию, инкапсулированную в объект **значение**. Чтобы узнать о параметрах конфигурации окна обслуживания, запросите схему **Окна обслуживания** (`builtin:alerting.maintenance-window`) с помощью запроса [Получить схему](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотрите схему настроек через Dynatrace API.").
 
 ## Примеры
 
@@ -43,7 +43,7 @@ scraped: 2026-02-21T21:16:47.493584
 
 Окна обслуживания
 
-Чтобы просмотреть все окна обслуживания, вам необходим запрос [GET-объектов](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотр нескольких объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в `builtin:alerting.maintenance-window` и **scope** в `environment`.
+Чтобы просмотреть все окна обслуживания, вам необходим запрос [Получить объекты](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотрите несколько объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в `builtin:alerting.maintenance-window` и **scope** в `environment`.
 
 #### URL-адрес запроса
 
@@ -55,76 +55,313 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=bui
 
 ```
 {
+
+
+
 "items": [
+
+
+
 {
-"objectId": "vu9U3hXa3q0AAAABACNidWlsdGluOmFsZXJ0aW5nLm1haW50ZW5hbmNlLXdpbmRvdwAGdGVuYW50AAZ0ZW5hbnQAJDgwMzdjNWM3LTdkNTgtNGQyYy04YzJkLWViMTYxMTBkZTE2Mr7vVN4V2t6t",
-"value": {
+
+
+
+"objectId":
+
+
+
+"vu9U3hXa3q0AAAABACNidWlsdGluOmFsZXJ0aW5nLm1haW50ZW5hbmNlLXdpbmRvdwAGdGVuYW50AAZ0ZW5hbnQAJDgwMzdjNWM3LTdkNTgtNGQyYy04YzJkLWViMTYxMTBkZTE2Mr7vVN4V2t6t",
+
+
+
+"value": 
+
+
+
+{
+
+
+
 "enabled": true,
-"generalProperties": {
+
+
+
+"generalProperties": 
+
+
+
+{
+
+
+
 "name": "Масштабирование синтетики",
+
+
+
 "description": "Окно обслуживания для адаптации синтетических мониторов",
+
+
+
 "maintenanceType": "ПЛАНОВОЕ",
+
+
+
 "suppression": "ОБНАРУЖИТЬ_ПРОБЛЕМЫ_НЕ_ОПОВЕЩАТЬ",
+
+
+
 "disableSyntheticMonitorExecution": false
+
+
+
 },
-"schedule": {
+
+
+
+"schedule": 
+
+
+
+{
+
+
+
 "scheduleType": "ОДНОРАЗОВО",
-"onceRecurrence": {
+
+
+
+"onceRecurrence": 
+
+
+
+{
+
+
+
 "startTime": "2022-12-22T09:00:00",
+
+
+
 "endTime": "2022-12-22T12:00:00",
+
+
+
 "timeZone": "UTC"
+
+
+
 }
+
+
+
 },
+
+
+
 "filters": [
+
+
+
 {
+
+
+
 "entityType": "ХОСТ",
+
+
+
 "entityTags": [
+
+
+
 "[AWS]Использование:Синтетика"
+
+
+
 ],
+
+
+
 "managementZones": []
+
+
+
 }
+
+
+
 ]
-}
+
+
+
 },
+
+
+
 {
+
+
+
 "objectId": "vu9U3hXa3q0AAAABACNidWlsdGluOmFsZXJ0aW5nLm1haW50ZW5hbmNlLXdpbmRvdwAGdGVuYW50AAZ0ZW5hbnQAJDE3NDgxMWYxLWQ2NjYtNGJhNy1iZmU3LTk5ZGYzMjIyNjY3Mr7vVN4V2t6t",
-"value": {
+
+
+
+"value": 
+
+
+
+{
+
+
+
 "enabled": true,
-"generalProperties": {
+
+
+
+"generalProperties": 
+
+
+
+{
+
+
+
 "name": "Проблема с предпроизводственной средой",
+
+
+
 "maintenanceType": "НЕПЛАНОВОЕ",
+
+
+
 "suppression": "НЕ_ОБНАРУЖИТЬ_ПРОБЛЕМЫ",
+
+
+
 "disableSyntheticMonitorExecution": false
+
+
+
 },
-"schedule": {
+
+
+
+"schedule": 
+
+
+
+{
+
+
+
 "scheduleType": "ОДНОРАЗОВО",
-"onceRecurrence": {
+
+
+
+"onceRecurrence": 
+
+
+
+{
+
+
+
 "startTime": "2022-12-10T10:00:00",
+
+
+
 "endTime": "2022-12-10T14:00:00",
+
+
+
 "timeZone": "Europe/Vienna"
+
+
+
 }
+
+
+
 },
+
+
+
 "filters": [
+
+
+
 {
+
+
+
 "entityType": "СЕРВИС",
+
+
+
 "entityTags": [
+
+
+
 "Env-pre-prod"
+
+
+
 ],
+
+
+
 "managementZones": []
+
+
+
 },
+
+
+
 {
+
+
+
 "entityType": "ПРОЦЕССНАЯ_ГРУППА",
+
+
+
 "entityTags": [
+
+
+
 "Env-pre-prod"
+
+
+
 ],
+
+
+
 "managementZones": []
+
+
+
 }
+
+
+
 ]
-}
-}
-],
+
+
+
+},
+
+
+
 "totalCount": 2,
-"pageSize": 100
+
+
+
+"pageSize": 100,
+
+
+
 }
 ```
 
@@ -138,29 +375,65 @@ GET https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows
 
 ```
 {
+
+
+
 "values": [
+
+
+
 {
+
+
+
 "id": "00564256-a294-4ed5-9de6-ecba61500ed2",
+
+
+
 "name": "Масштабирование синтетики",
+
+
+
 "description": "Окно обслуживания для адаптации синтетических мониторов"
+
+
+
 },
+
+
+
 {
+
+
+
 "id": "01ba0f45-7abe-46a3-94b9-ce377f684973",
+
+
+
 "name": "Проблема с предпроизводственной средой"
+
+
+
 }
+
+
+
 ]
+
+
+
 }
 ```
 
-### Создание окна обслуживания
+### Создать окно обслуживания
 
 Настройки 2.0
 
 Окна обслуживания
 
-Чтобы создать окно обслуживания, вам необходим запрос [POST-объекта](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создание или проверка объекта настроек через Dynatrace API."). В теле запроса установите **schemaId** в `builtin:alerting.maintenance-window` и **scope** в `environment`. Предоставьте конфигурацию окна обслуживания в объекте **значение**.
+Чтобы создать окно обслуживания, вам необходим запрос [Создать объект](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создайте или проверьте объект настроек через Dynatrace API."). В теле запроса установите **schemaId** в `builtin:alerting.maintenance-window` и **scope** в `environment`. Предоставьте конфигурацию окна обслуживания в объекте **значение**.
 
-Ответ содержит идентификатор объекта, который необходимо изменить настройки.
+Ответ содержит идентификатор объекта, который вам необходимо изменить настройки.
 
 #### URL-адрес запроса
 
@@ -172,43 +445,181 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 
 ```
 [
+
+
+
 {
+
+
+
 "schemaId": "builtin:alerting.maintenance-window",
+
+
+
 "scope": "environment",
-"value": {
-"enabled": true,
-"generalProperties": {
-"name": "Пример окна обслуживания",
-"maintenanceType": "ПЛАНОВОЕ",
-"suppression": "ОБНАРУЖИТЬ_ПРОБЛЕМЫ_И_ОПОВЕЩАТЬ",
-"disableSyntheticMonitorExecution": false
-},
-"schedule": {
-"scheduleType": "ЕЖЕМЕСЯЧНО",
-"monthlyRecurrence": {
-"dayOfMonth": 1,
-"timeWindow": {
-"startTime": "06:00:00",
-"endTime": "06:30:00",
-"timeZone": "Europe/Vienna"
-},
-"recurrenceRange": {
-"scheduleStartDate": "2022-01-01",
-"scheduleEndDate": "2022-12-31"
-}
-}
-},
-"filters": [
+
+
+
+"value": 
+
+
+
 {
+
+
+
+"enabled": true,
+
+
+
+"generalProperties": 
+
+
+
+{
+
+
+
+"name": "Пример окна обслуживания",
+
+
+
+"maintenanceType": "ПЛАНОВОЕ",
+
+
+
+"suppression": "ОБНАРУЖИТЬ_ПРОБЛЕМЫ_И_ОПОВЕЩАТЬ",
+
+
+
+"disableSyntheticMonitorExecution": false
+
+
+
+},
+
+
+
+"schedule": 
+
+
+
+{
+
+
+
+"scheduleType": "ЕЖЕМЕСЯЧНО",
+
+
+
+"monthlyRecurrence": 
+
+
+
+{
+
+
+
+"dayOfMonth": 1,
+
+
+
+"timeWindow": 
+
+
+
+{
+
+
+
+"startTime": "06:00:00",
+
+
+
+"endTime": "06:30:00",
+
+
+
+"timeZone": "Europe/Vienna"
+
+
+
+},
+
+
+
+"recurrenceRange": 
+
+
+
+{
+
+
+
+"scheduleStartDate": "2022-01-01",
+
+
+
+"scheduleEndDate": "2022-12-31"
+
+
+
+}
+
+
+
+},
+
+
+
+"filters": [
+
+
+
+{
+
+
+
 "entityType": "СЕРВИС",
+
+
+
 "entityTags": [
+
+
+
 "stage:pre-production"
+
+
+
 ],
+
+
+
 "managementZones": []
+
+
+
 }
+
+
+
 ]
+
+
+
+},
+
+
+
+"objectId": "vu9U3hXa3q0AAAABACNidWlsdGluOmFsZXJ0aW5nLm1haW50ZW5hbmNlLXdpbmRvdwAGdGVuYW50AAZ0ZW5hbnQAJDVhMjg2NmE5LTJjZjQtMzIwZC1hNjMxLTI0NTAwYTQ4NmU5Zr7vVN4V2t6t"
+
+
+
 }
-}
+
+
+
 ]
 ```
 
@@ -216,10 +627,25 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 
 ```
 [
+
+
+
 {
+
+
+
 "code": 200,
+
+
+
 "objectId": "vu9U3hXa3q0AAAABACNidWlsdGluOmFsZXJ0aW5nLm1haW50ZW5hbmNlLXdpbmRvdwAGdGVuYW50AAZ0ZW5hbnQAJDVhMjg2NmE5LTJjZjQtMzIwZC1hNjMxLTI0NTAwYTQ4NmU5Zr7vVN4V2t6t"
+
+
+
 }
+
+
+
 ]
 ```
 
@@ -229,45 +655,159 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 POST https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows
 ```
 
-Ответ содержит идентификатор конфигурации, который необходимо изменить настройки.
+Ответ содержит идентификатор конфигурации, который вам необходимо изменить настройки.
 
 #### Тело запроса
 
 ```
 {
+
+
+
 "name": "Пример окна обслуживания",
+
+
+
 "description": "",
+
+
+
 "type": "ПЛАНОВОЕ",
+
+
+
 "enabled": true,
+
+
+
 "suppression": "ОБНАРУЖИТЬ_ПРОБЛЕМЫ_И_ОПОВЕЩАТЬ",
+
+
+
 "suppressSyntheticMonitorsExecution": false,
-"scope": {
+
+
+
+"scope": 
+
+
+
+{
+
+
+
 "entities": [],
+
+
+
 "matches": [
+
+
+
 {
+
+
+
 "type": "СЕРВИС",
+
+
+
 "tags": [
+
+
+
 {
+
+
+
 "context": "CONTEXTLESS",
+
+
+
 "key": "stage",
+
+
+
 "value": "pre-production"
+
+
+
 }
+
+
+
 ],
+
+
+
 "tagCombination": "AND"
+
+
+
 }
+
+
+
 ]
+
+
+
 },
-"schedule": {
+
+
+
+"schedule": 
+
+
+
+{
+
+
+
 "recurrenceType": "ЕЖЕМЕСЯЧНО",
-"recurrence": {
+
+
+
+"recurrence": 
+
+
+
+{
+
+
+
 "dayOfMonth": 1,
+
+
+
 "startTime": "06:00",
+
+
+
 "durationMinutes": 30
+
+
+
 },
+
+
+
 "start": "2022-01-01 00:00",
+
+
+
 "end": "2022-12-31 23:59",
+
+
+
 "zoneId": "Europe/Vienna"
+
+
+
 }
+
+
+
 }
 ```
 
@@ -275,12 +815,21 @@ POST https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows
 
 ```
 {
+
+
+
 "id": "07f476c6-f1ed-4519-848d-61e52f7e2f24",
+
+
+
 "name": "Пример окна обслуживания"
+
+
+
 }
 ```
 
-### Редактирование окна обслуживания
+### Редактировать окно обслуживания
 
 Настройки 2.0
 
@@ -317,27 +866,27 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 
 
 
-"generalProperties":?
+"generalProperties": {
 
 
 
-"name": "Пример окна обслуживания",?
+"name": "Пример окна обслуживания",
 
 
 
-"maintenanceType": "PLANNED",?
+"maintenanceType": "PLANNED",
 
 
 
-"suppression": "DETECT_PROBLEMS_AND_ALERT",?
+"suppression": "DETECT_PROBLEMS_AND_ALERT",
 
 
 
-"disableSyntheticMonitorExecution": false?
+"disableSyntheticMonitorExecution": false
 
 
 
-},?
+},
 
 
 
@@ -345,7 +894,7 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 
 
 
-"scheduleType": "MONTHLY",?
+"scheduleType": "MONTHLY",
 
 
 
@@ -369,7 +918,7 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 
 
 
-"timeZone": "Europe/Vienna"?
+"timeZone": "Europe/Vienna"
 
 
 
@@ -385,7 +934,7 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 
 
 
-"scheduleEndDate": "2022-12-31"?
+"scheduleEndDate": "2022-12-31"
 
 
 
@@ -401,7 +950,7 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 
 
 
-"filters":?
+"filters": [?
 
 
 
@@ -413,11 +962,11 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 
 
 
-"entityTags":?
+"entityTags": [?
 
 
 
-"stage:pre-production"?
+"stage:pre-production"
 
 
 
@@ -425,11 +974,11 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 
 
 
-"managementZones":?
+"managementZones": [?
 
 
 
-"5561909168316319665"?
+"5561909168316319665"
 
 
 
@@ -446,6 +995,10 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 
 
 ?
+
+
+
+]
 
 
 

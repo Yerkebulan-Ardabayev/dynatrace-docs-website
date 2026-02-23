@@ -1,7 +1,7 @@
 ---
 title: Google Cloud supported service metrics (legacy)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/legacy/gcp-supported-service-metrics-legacy
-scraped: 2026-02-20T21:22:15.305700
+scraped: 2026-02-23T21:34:33.027394
 ---
 
 # Google Cloud supported service metrics (legacy)

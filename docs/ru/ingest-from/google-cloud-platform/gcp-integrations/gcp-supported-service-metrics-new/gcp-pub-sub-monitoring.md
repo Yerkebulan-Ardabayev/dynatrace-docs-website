@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Pub/Sub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-monitoring
-scraped: 2026-02-20T21:22:56.518723
+scraped: 2026-02-23T21:36:34.012779
 ---
 
 # Google Cloud Pub/Sub monitoring

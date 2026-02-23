@@ -1,7 +1,7 @@
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-22T21:29:09.767876
+scraped: 2026-02-23T21:34:52.173120
 ---
 
 # Navigate the Dynatrace platform

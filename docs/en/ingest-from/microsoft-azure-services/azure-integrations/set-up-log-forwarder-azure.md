@@ -1,7 +1,7 @@
 ---
 title: Azure Logs
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure
-scraped: 2026-02-22T21:11:34.621697
+scraped: 2026-02-23T21:36:47.642756
 ---
 
 # Azure Logs

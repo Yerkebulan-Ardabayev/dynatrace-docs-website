@@ -1,7 +1,7 @@
 ---
 title: Account configuration for Monaco account management
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/account-configuration
-scraped: 2026-02-22T21:23:07.318288
+scraped: 2026-02-23T21:37:52.105940
 ---
 
 # Account configuration for Monaco account management

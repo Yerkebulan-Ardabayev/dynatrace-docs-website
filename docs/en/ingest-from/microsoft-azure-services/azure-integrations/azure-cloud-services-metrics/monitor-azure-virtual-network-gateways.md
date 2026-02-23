@@ -1,7 +1,7 @@
 ---
 title: Azure Virtual Network Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-virtual-network-gateways
-scraped: 2026-02-22T21:29:58.628795
+scraped: 2026-02-23T21:27:57.095582
 ---
 
 # Azure Virtual Network Gateway monitoring

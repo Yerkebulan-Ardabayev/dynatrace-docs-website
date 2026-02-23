@@ -1,7 +1,7 @@
 ---
 title: Settings API - GET effective values
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/objects/get-effective-values
-scraped: 2026-02-22T21:26:45.438431
+scraped: 2026-02-23T21:24:55.090081
 ---
 
 # Settings API - GET effective values

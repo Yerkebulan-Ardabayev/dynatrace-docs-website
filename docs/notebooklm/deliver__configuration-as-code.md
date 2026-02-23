@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 14
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Account configuration for Monaco account management
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/account-configuration
-scraped: 2026-02-22T21:23:07.318288
+scraped: 2026-02-23T21:37:52.105940
 ---
 
 # Account configuration for Monaco account management
@@ -624,7 +624,7 @@ Dedicated commands exist for account resources: [Account](/docs/deliver/configur
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-21T21:19:04.381121
+scraped: 2026-02-23T21:33:12.841556
 ---
 
 # Monaco resources
@@ -4876,7 +4876,7 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-22T21:24:23.121404
+scraped: 2026-02-23T21:31:40.505304
 ---
 
 # Monaco concepts
@@ -4934,7 +4934,7 @@ Dynatrace resource configuration
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-21T21:26:11.692828
+scraped: 2026-02-23T21:26:48.167826
 ---
 
 # Manage configurations with Monaco
@@ -5442,7 +5442,7 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 ---
 title: Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/reference/commands-saas
-scraped: 2026-02-20T21:13:12.127980
+scraped: 2026-02-23T21:36:02.684080
 ---
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
@@ -6515,7 +6515,7 @@ Optional
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-02-16T21:26:05.486160
+scraped: 2026-02-23T21:38:43.290202
 ---
 
 # Terraform API support and access permission handling
@@ -6823,7 +6823,7 @@ The reasons are added as comments at the beginning of each file.
 ---
 title: Configure automated notifications using Terraform and Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-02-22T21:23:02.055917
+scraped: 2026-02-23T21:32:22.724252
 ---
 
 # Configure automated notifications using Terraform and Configuration as Code

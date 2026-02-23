@@ -1,7 +1,7 @@
 ---
 title: DPL Universally Unique Identifiers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-uuid-numbers
-scraped: 2026-02-22T21:28:48.037522
+scraped: 2026-02-23T21:33:47.287258
 ---
 
 # DPL Universally Unique Identifiers

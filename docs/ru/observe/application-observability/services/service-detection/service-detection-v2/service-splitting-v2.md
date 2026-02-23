@@ -1,7 +1,7 @@
 ---
 title: Customize service splitting in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/service-splitting-v2
-scraped: 2026-02-19T21:27:56.357054
+scraped: 2026-02-23T21:34:16.167273
 ---
 
 # Customize service splitting in Service Detection v2

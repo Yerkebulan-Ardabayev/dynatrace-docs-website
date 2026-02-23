@@ -1,7 +1,7 @@
 ---
 title: Dynatrace dashboard timeframe and management zone settings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe
-scraped: 2026-02-22T21:17:17.080630
+scraped: 2026-02-23T21:22:21.686728
 ---
 
 # Dynatrace dashboard timeframe and management zone settings

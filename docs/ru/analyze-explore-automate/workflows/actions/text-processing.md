@@ -1,7 +1,7 @@
 ---
 title: Text Processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
-scraped: 2026-02-22T21:26:40.599610
+scraped: 2026-02-23T21:38:21.328078
 ---
 
 # Text Processing

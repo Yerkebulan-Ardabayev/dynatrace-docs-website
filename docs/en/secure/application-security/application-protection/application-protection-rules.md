@@ -1,7 +1,7 @@
 ---
 title: Runtime Application Protection monitoring rules
 source: https://www.dynatrace.com/docs/secure/application-security/application-protection/application-protection-rules
-scraped: 2026-02-20T21:11:54.103027
+scraped: 2026-02-23T21:34:49.742892
 ---
 
 # Runtime Application Protection monitoring rules

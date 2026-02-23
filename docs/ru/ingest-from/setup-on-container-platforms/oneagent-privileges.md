@@ -1,7 +1,7 @@
 ---
 title: OneAgent privileges for container monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/oneagent-privileges
-scraped: 2026-02-20T21:18:53.014844
+scraped: 2026-02-23T21:30:27.991568
 ---
 
 # OneAgent privileges for container monitoring

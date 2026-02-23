@@ -1,7 +1,7 @@
 ---
 title: Amazon GameLift monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-gamelift
-scraped: 2026-02-19T21:30:21.215502
+scraped: 2026-02-23T21:26:30.733724
 ---
 
 # Amazon GameLift monitoring

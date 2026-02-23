@@ -1,7 +1,7 @@
 ---
 title: Log monitoring with AWS log forwarder
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder
-scraped: 2026-02-19T21:33:17.025678
+scraped: 2026-02-23T21:34:11.172850
 ---
 
 # Log monitoring with AWS log forwarder

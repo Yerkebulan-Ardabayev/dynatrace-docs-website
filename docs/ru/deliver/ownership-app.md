@@ -1,7 +1,7 @@
 ---
 title: Ownership
 source: https://www.dynatrace.com/docs/deliver/ownership-app
-scraped: 2026-02-22T21:22:04.220491
+scraped: 2026-02-23T21:30:36.873187
 ---
 
 # Ownership

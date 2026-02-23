@@ -1,7 +1,7 @@
 ---
 title: Enrich ingested data with Dynatrace-specific dimensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-data
-scraped: 2026-02-22T21:27:38.306770
+scraped: 2026-02-23T21:36:37.603542
 ---
 
 # Enrich ingested data with Dynatrace-specific dimensions

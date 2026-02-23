@@ -1,7 +1,7 @@
 ---
 title: Stream logs to Dynatrace with Fluent Bit
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit
-scraped: 2026-02-21T21:16:56.102087
+scraped: 2026-02-23T21:31:14.249080
 ---
 
 # Stream logs to Dynatrace with Fluent Bit

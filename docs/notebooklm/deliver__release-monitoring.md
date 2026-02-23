@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/release-monitoring
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Issue-tracking integration
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
-scraped: 2026-02-22T21:23:20.461782
+scraped: 2026-02-23T21:27:15.637913
 ---
 
 # Issue-tracking integration
@@ -99,7 +99,7 @@ The following is a solution to a problem some people had with [Automated release
 ---
 title: Monitor releases with Dynatrace
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/monitor-releases-with-dynatrace
-scraped: 2026-02-22T21:29:34.150814
+scraped: 2026-02-23T21:28:02.170509
 ---
 
 # Monitor releases with Dynatrace
@@ -203,7 +203,7 @@ In addition, a graph displays the latest 20 release validation results:
 ---
 title: Version detection strategies for deep-monitored processes
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/version-detection-strategies
-scraped: 2026-02-21T21:26:01.715072
+scraped: 2026-02-23T21:38:23.917180
 ---
 
 # Version detection strategies for deep-monitored processes
@@ -405,7 +405,7 @@ As a result, releases defined via OpenTelemetry resource attributes won't appear
 ---
 title: Release monitoring Classic
 source: https://www.dynatrace.com/docs/deliver/release-monitoring
-scraped: 2026-02-21T21:23:55.851650
+scraped: 2026-02-23T21:35:34.686023
 ---
 
 # Release monitoring Classic

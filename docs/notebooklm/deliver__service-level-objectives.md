@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/service-level-objectives
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 7
 ---
 
@@ -144,7 +144,7 @@ For the SLO details view
 ---
 title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-02-19T21:27:44.615085
+scraped: 2026-02-23T21:36:35.331467
 ---
 
 # Add a service-level objective (SLO) tile to a dashboard
@@ -227,7 +227,7 @@ Due to the intersection, the result contains only the evaluations related to S-2
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-02-19T21:24:08.741305
+scraped: 2026-02-23T21:29:53.367567
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard
@@ -338,7 +338,7 @@ To copy and paste multiple tiles simultaneously
 ---
 title: View the details of a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-view
-scraped: 2026-02-20T21:16:21.145376
+scraped: 2026-02-23T21:26:39.575621
 ---
 
 # View the details of a service-level objective (SLO) tile in a dashboard
@@ -616,7 +616,7 @@ For further optimization and guidance, contact your Dynatrace support team to ma
 ---
 title: Service-Level Objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives
-scraped: 2026-02-20T21:13:59.050061
+scraped: 2026-02-23T21:38:29.243883
 ---
 
 # Service-Level Objectives

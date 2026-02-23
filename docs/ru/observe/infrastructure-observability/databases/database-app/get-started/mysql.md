@@ -1,7 +1,7 @@
 ---
 title: Monitor MySQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mysql
-scraped: 2026-02-21T21:27:27.203208
+scraped: 2026-02-23T21:33:42.008002
 ---
 
 # Monitor MySQL database

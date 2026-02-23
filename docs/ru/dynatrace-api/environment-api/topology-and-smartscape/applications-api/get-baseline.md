@@ -1,7 +1,7 @@
 ---
 title: Applications API - GET baseline
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-baseline
-scraped: 2026-02-22T21:15:53.981760
+scraped: 2026-02-23T21:21:57.221191
 ---
 
 # Applications API - GET baseline

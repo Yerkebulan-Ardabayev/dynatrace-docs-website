@@ -1,7 +1,7 @@
 ---
 title: Apdex ratings
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings
-scraped: 2026-02-22T21:17:13.168394
+scraped: 2026-02-23T21:22:25.483103
 ---
 
 # Apdex ratings

@@ -1,7 +1,7 @@
 ---
 title: Log ingestion warnings (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting/lmc-ingest-warnings
-scraped: 2026-02-20T21:24:05.381799
+scraped: 2026-02-23T21:28:01.079008
 ---
 
 # Log ingestion warnings (Logs Classic)

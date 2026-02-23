@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 11
 ---
 
@@ -48,7 +48,7 @@ Any ACR posted below, or anywhere else on the Dynatrace website, or otherwise pu
 ---
 title: Data visualizations
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
-scraped: 2026-02-22T21:28:41.439883
+scraped: 2026-02-23T21:27:46.890359
 ---
 
 # Data visualizations
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-22T21:08:51.287979
+scraped: 2026-02-23T21:20:03.231784
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-22T21:12:34.921322
+scraped: 2026-02-23T21:27:56.002038
 ---
 
 # Filter field
@@ -869,7 +869,7 @@ Use bracket notation for subkeys with special characters (spaces, dashes, etc.) 
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-22T21:29:09.767876
+scraped: 2026-02-23T21:34:52.173120
 ---
 
 # Navigate the Dynatrace platform
@@ -1059,7 +1059,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-22T21:09:26.594243
+scraped: 2026-02-23T21:19:10.671279
 ---
 
 # What is a monitoring environment?
@@ -1854,7 +1854,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-22T21:07:47.903120
+scraped: 2026-02-23T21:18:43.999314
 ---
 
 # Get started with Dynatrace

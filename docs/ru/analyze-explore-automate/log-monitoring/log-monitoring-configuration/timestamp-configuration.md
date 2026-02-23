@@ -1,7 +1,7 @@
 ---
 title: Timestamp/splitting configuration (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration
-scraped: 2026-02-20T21:12:07.052863
+scraped: 2026-02-23T21:29:23.738511
 ---
 
 # Timestamp/splitting configuration (Logs Classic)

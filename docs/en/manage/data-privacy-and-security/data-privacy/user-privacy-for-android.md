@@ -1,7 +1,7 @@
 ---
 title: Data safety guidance for Android
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-android
-scraped: 2026-02-21T21:26:38.749899
+scraped: 2026-02-23T21:32:17.384486
 ---
 
 # Data safety guidance for Android

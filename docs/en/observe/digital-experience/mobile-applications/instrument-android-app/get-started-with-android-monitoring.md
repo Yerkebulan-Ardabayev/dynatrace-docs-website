@@ -1,7 +1,7 @@
 ---
 title: Get started with Android monitoring
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring
-scraped: 2026-02-20T21:27:12.067065
+scraped: 2026-02-23T21:39:56.148060
 ---
 
 # Get started with Android monitoring

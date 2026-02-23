@@ -1,7 +1,7 @@
 ---
 title: Create remote/multi-environment Dynatrace dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment
-scraped: 2026-02-22T21:17:42.552270
+scraped: 2026-02-23T21:24:01.136459
 ---
 
 # Create remote/multi-environment Dynatrace dashboards

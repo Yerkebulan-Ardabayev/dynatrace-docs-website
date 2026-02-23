@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-02-22
+Сгенерировано: 2026-02-23
 Файлов в разделе: 17
 ---
 
@@ -905,7 +905,7 @@ The following details apply to metric data points:
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability
-scraped: 2026-02-22T21:27:18.520388
+scraped: 2026-02-23T21:29:54.726079
 ---
 
 # Application & Infrastructure Observability overview (DPS)
@@ -982,7 +982,7 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-02-21T21:17:27.097817
+scraped: 2026-02-23T21:31:22.692602
 ---
 
 # Application Security overview (DPS)
@@ -1039,7 +1039,7 @@ This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/
 ---
 title: Automation Workflow capability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/automation
-scraped: 2026-02-20T21:23:23.232116
+scraped: 2026-02-23T21:39:33.277366
 ---
 
 # Automation Workflow capability overview (DPS)
@@ -1174,7 +1174,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Digital Experience Monitoring (DEM) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/digital-experience-monitoring
-scraped: 2026-02-22T21:24:13.924602
+scraped: 2026-02-23T21:34:50.834207
 ---
 
 # Digital Experience Monitoring (DEM) overview (DPS)
@@ -1470,7 +1470,7 @@ Use DQL to analyze event data in context with relevant data on the Dynatrace pla
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-22T21:09:49.832982
+scraped: 2026-02-23T21:20:08.142033
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1724,7 +1724,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-22T21:20:41.683278
+scraped: 2026-02-23T21:30:48.755466
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1808,7 +1808,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Platform extensions overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
-scraped: 2026-02-22T21:24:41.371341
+scraped: 2026-02-23T21:34:34.128077
 ---
 
 # Platform extensions overview (DPS)
