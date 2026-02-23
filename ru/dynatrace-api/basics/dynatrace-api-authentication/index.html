@@ -25477,10 +25477,10 @@
 <h1 id="dynatrace-api-">Dynatrace API - Токены и аутентификация<a class="headerlink" href="#dynatrace-api-" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-api-_1">Dynatrace API - Токены и аутентификация<a class="headerlink" href="#dynatrace-api-_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Ссылка</li>
-<li>Опубликовано 23 августа 2018 года</li>
+<li>Справочник</li>
+<li>Опубликовано 23 августа 2018 г.</li>
 </ul>
-<p>Чтобы быть аутентифицированным для использования Dynatrace API, вам нужен действительный <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens" title="Изучите концепцию токена доступа и его области.">токен доступа</a> или действительный <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token" title="Изучите концепцию личного токена доступа и его области.">личный токен доступа</a>. Доступ к API является тонко-зернистым, то есть вам также нужны соответствующие области, назначенные токену. См. описание каждого запроса, чтобы узнать, какие области необходимы для его использования.</p>
+<p>Чтобы быть аутентифицированным для использования Dynatrace API, вам нужен действительный <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens" title="Изучите концепцию токена доступа и его области.">токен доступа</a> или действительный <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token" title="Изучите концепцию личного токена доступа и его области.">личный токен доступа</a>. Доступ к API является детализированным, то есть вам также нужны соответствующие области, назначенные токену. См. описание каждого запроса, чтобы узнать, какие области необходимы для его использования.</p>
 <p>Для получения подробной информации об OAuth-клиентах см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управляйте аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
 <h2 id="_1">Формат токена<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Dynatrace использует уникальный формат токена, состоящий из трех компонентов, разделенных точками (<code>.</code>).</p>
@@ -25497,14 +25497,14 @@
 <p><strong>Публичная часть</strong> токена - это 24-символьный публичный идентификатор.</p>
 <p>В нашем примере: <code>ST2EY72KQINMH574WMNVI7YN</code></p>
 <p>token identifier</p>
-<p><strong>Идентификатор токена</strong> - это сочетание <strong>префикса</strong> и <strong>публичной части</strong>. Идентификатор токена можно безопасно отображать в интерфейсе пользователя и использовать для целей ведения журнала.</p>
+<p><strong>Идентификатор токена</strong> - это комбинация <strong>префикса</strong> и <strong>публичной части</strong>. Идентификатор токена можно безопасно отображать в интерфейсе пользователя и использовать для целей ведения журнала.</p>
 <p>В нашем примере: <code>&lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;</code></p>
 <p>secret portion</p>
-<p><strong>Секретная часть</strong> токена - это 64-символьная строка, которая должна быть behandelt как пароль:</p>
+<p><strong>Секретная часть</strong> токена - это 64-символьная строка, которую следует рассматривать как пароль:</p>
 <ul>
 <li>Не отображайте ее</li>
-<li>Не храните ее в файлах журнала</li>
-<li>Немедленно замените ее, если она была скомпрометирована</li>
+<li>Не храните в файлах журнала</li>
+<li>Немедленно ротируйте ее, если она была скомпрометирована</li>
 </ul>
 <p>В нашем примере: <code>G3DFPBEJYMODIDAEX454M7YWBUVEFOWKPRVMWFASS64NFH52PX6BNDVFFM572RZM</code></p>
 <h3 id="_4">Префиксы токена<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
@@ -25515,8 +25515,8 @@
 <ul>
 <li>Он генерируется один раз.</li>
 <li>Не раскрывайте секретную часть токена <code>dt0s01</code>.</li>
-<li>Публичная часть используется для идентификации в веб-интерфейсе, но вы обычно не должны раскрывать ее (или любую часть этого токена).</li>
-<li>Этот токен остается в силе до тех пор, пока не будет отменен клиентом, поэтому вы должны немедленно заменить его, если он был скомпрометирован.</li>
+<li>Публичная часть используется для идентификации в веб-интерфейсе, но обычно не следует раскрывать ее (или любую часть этого токена).</li>
+<li>Этот токен остается в силе до тех пор, пока не будет отменен клиентом, поэтому его необходимо немедленно ротировать, если он был скомпрометирован.</li>
 </ul>
 <p><code>dt0s02</code></p>
 <p>OAuth2-клиенты, созданные пользователями через Управление учетной записью для использования с приложениями Dynatrace и API Управления учетной записью.</p>
@@ -25525,7 +25525,7 @@
 <p><code>dt0s04</code></p>
 <p>Связывание чата и идентификации.</p>
 <p><code>dt0s06</code></p>
-<p>Это OAuth2-токен обновления, который используется для получения нового токена доступа и обычно часто меняется (обычно каждые 5-15 минут).</p>
+<p>Это токен обновления OAuth2, который используется для получения нового токена доступа и обычно часто меняется (обычно каждые 5-15 минут).</p>
 <p><code>dt0s08</code></p>
 <p>OAuth2-клиенты для внутренних и внешних сервисов и интеграций.</p>
 <p><code>dt0s09</code></p>
@@ -25540,53 +25540,53 @@
 <li>Перейдите к <img alt="Токены доступа" src="https://dt-cdn.net/images/access-tokens-512-a766b810b8.png" title="Токены доступа" /> <strong>Токены доступа</strong>.</li>
 <li>Выберите <strong>Сгенерировать новый токен</strong>.</li>
 <li>Введите имя для вашего токена.<br />
-   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставляете осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять токенами и, возможно, удалять их, когда они больше не нужны.</li>
+   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставили осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять токенами и, возможно, удалять их, когда они больше не нужны.</li>
 <li>Выберите необходимые области для токена.</li>
 <li>Выберите <strong>Сгенерировать токен</strong>.</li>
 <li>Скопируйте сгенерированный токен в буфер обмена. Храните токен в менеджере паролей для будущего использования.</li>
 </ol>
-<p>Вы можете получить доступ к вашему токену только один раз при его создании. Вы не сможете получить доступ к нему позже.</p>
+<p>Вы можете получить доступ к вашему токену только один раз при его создании. Вы не сможете получить к нему доступ позже.</p>
 <p>Чтобы сгенерировать личный токен доступа</p>
 <ol>
-<li>Перейдите к <strong>Личным токенам доступа</strong> (доступно через <a href="/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace" title="Навигация по последней версии Dynatrace">меню пользователя</a> в предыдущей версии Dynatrace).</li>
+<li>Перейдите к <strong>Личным токенам доступа</strong> (доступно через <a href="/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace" title="Навигация по последнему Dynatrace">меню пользователя</a> в предыдущем Dynatrace).</li>
 <li>Выберите <strong>Сгенерировать новый токен</strong>.</li>
 <li>Введите имя для вашего токена.<br />
-   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставляете осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять токенами и, возможно, удалять их, когда они больше не нужны.</li>
+   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставили осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять токенами и, возможно, удалять их, когда они больше не нужны.</li>
 <li>Выберите необходимые области для токена.</li>
 <li>Выберите <strong>Сгенерировать токен</strong>.</li>
 <li>Скопируйте сгенерированный токен в буфер обмена. Храните токен в менеджере паролей для будущего использования.</li>
 </ol>
-<p>Вы можете получить доступ к вашему токену только один раз при его создании. Вы не сможете получить доступ к нему позже.</p>
-<p>Вы можете назначить несколько областей одному токену или сгенерировать несколько токенов, каждый с разными уровнями доступа, и использовать их соответствующим образом - проверьте политику безопасности вашей организации для получения лучших практик.</p>
-<p>Чтобы изменить область существующего токена, используйте вызов <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token" title="Обновите токен доступа через Dynatrace API.">PUT-токена</a> API токенов доступа. Обратите внимание, что вам необходимо передать существующие области, если вы хотите сохранить их. Любая существующая область, отсутствующая в полезной нагрузке, удаляется.</p>
-<p>Альтернативно вы можете использовать вызов <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token" title="Создайте токен доступа через Dynatrace API.">POST-токена</a> для генерации токена.</p>
+<p>Вы можете получить доступ к вашему токену только один раз при его создании. Вы не сможете получить к нему доступ позже.</p>
+<p>Вы можете назначить несколько областей одному токену или сгенерировать несколько токенов, каждый с разными уровнями доступа, и использовать их соответствующим образом - проверьте политику безопасности вашей организации для получения лучшей практики.</p>
+<p>Чтобы изменить область существующего токена, используйте вызов <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token" title="Обновите токен доступа через Dynatrace API.">PUT токена</a> API токенов доступа. Обратите внимание, что вам необходимо отправить существующие области, если вы хотите сохранить их. Любая существующая область, отсутствующая в полезной нагрузке, удаляется.</p>
+<p>Альтернативно вы можете использовать вызов <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token" title="Создайте токен доступа через Dynatrace API.">POST токена</a> для генерации токена.</p>
 <h2 id="_6">Области токена<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>Токен доступа</p>
 <p>Личный токен доступа</p>
 <h3 id="openpipeline">OpenPipeline<a class="headerlink" href="#openpipeline" title="Permanent link">&para;</a></h3>
 <p>Имя</p>
-<p>API-значение</p>
+<p>API значение</p>
 <p>Описание</p>
-<p>OpenPipeline - Ингестируемые события</p>
+<p>OpenPipeline - Ингест событий</p>
 <p><code>openpipeline.events</code></p>
-<p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-builtin" title="Ингестируйте общие события из встроенных конечных точек через OpenPipeline Ingest API.">POST Встроенные общие события</a> API OpenPipeline Ingest.</p>
-<p>OpenPipeline - Ингестируемые события, Жизненный цикл разработки программного обеспечения</p>
+<p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-builtin" title="Ингест общие события из встроенных конечных точек через OpenPipeline Ingest API.">POST Встроенные общие события</a> API OpenPipeline Ingest.</p>
+<p>OpenPipeline - Ингест событий, Жизненный цикл разработки программного обеспечения</p>
 <p><code>openpipeline.events_sdlc</code></p>
-<p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-builtin" title="Ингестируйте события Жизненного цикла разработки программного обеспечения из встроенных конечных точек через OpenPipeline Ingest API.">POST Встроенные события Жизненного цикла разработки программного обеспечения</a> API OpenPipeline Ingest.</p>
-<p>OpenPipeline - Ингестируемые события, Жизненный цикл разработки программного обеспечения (Пользовательский)</p>
+<p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-builtin" title="Ингест события ЖЦРО из встроенных конечных точек через OpenPipeline Ingest API.">POST Встроенные события ЖЦРО</a> API OpenPipeline Ingest.</p>
+<p>OpenPipeline - Ингест событий, Жизненный цикл разработки программного обеспечения (Пользовательский)</p>
 <p><code>openpipeline.events_sdlc.custom</code></p>
-<p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-custom-endpoint" title="Настройте пользовательскую конечную точку события Жизненного цикла разработки программного обеспечения через OpenPipeline Ingest API.">POST Пользовательские события Жизненного цикла разработки программного обеспечения</a> API OpenPipeline Ingest.</p>
-<p>OpenPipeline - Ингестируемые события безопасности (Встроенные)</p>
+<p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-custom-endpoint" title="Настройте пользовательскую конечную точку события ЖЦРО через OpenPipeline Ingest API.">POST Пользовательские события ЖЦРО</a> API OpenPipeline Ingest.</p>
+<p>OpenPipeline - Ингест событий безопасности (Встроенные)</p>
 <p><code>openpipeline.events_security</code></p>
-<p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-builtin" title="Ингестируйте события безопасности из встроенных конечных точек через OpenPipeline Ingest API.">POST Встроенные события безопасности</a> API OpenPipeline Ingest.</p>
-<p>OpenPipeline - Ингестируемые события безопасности (Пользовательские)</p>
+<p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-builtin" title="Ингест события безопасности из встроенных конечных точек через OpenPipeline Ingest API.">POST Встроенные события безопасности</a> API OpenPipeline Ingest.</p>
+<p>OpenPipeline - Ингест событий безопасности (Пользовательский)</p>
 <p><code>openpipeline.events_security.custom</code></p>
 <p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-custom-endpoint" title="Настройте пользовательскую конечную точку события безопасности через OpenPipeline Ingest API.">POST Пользовательские события безопасности</a> API OpenPipeline Ingest.</p>
-<p>OpenPipeline - Ингестируемые события (Пользовательские)</p>
+<p>OpenPipeline - Ингест событий (Пользовательский)</p>
 <p><code>openpipeline.events.custom</code></p>
 <p>Предоставляет доступ к запросу <a href="/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-custom-endpoint" title="Настройте пользовательскую конечную точку общего события через OpenPipeline Ingest API.">POST Пользовательская конечная точка общего события</a> API OpenPipeline Ingest.</p>
 <h3 id="api-v2">API v2<a class="headerlink" href="#api-v2" title="Permanent link">&para;</a></h3>
-<p>Название</p>
+<p>Name</p>
 <p>API значение</p>
 <p>Описание</p>
 <p>Чтение ActiveGate</p>
@@ -25606,10 +25606,10 @@
 <p>Предоставляет доступ к POST- и DELETE-запросам токенов ActiveGate API.</p>
 <p>Чтение токенов API</p>
 <p><code>apiTokens.read</code></p>
-<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управляйте Dynatrace API аутентификационными токенами.">Access токенов API</a>.</p>
+<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управляйте Dynatrace API аутентификационными токенами.">Токенов доступа API</a>.</p>
 <p>Запись токенов API</p>
 <p><code>apiTokens.write</code></p>
-<p>Предоставляет доступ к POST-, PUT- и DELETE-запросам <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управляйте Dynatrace API аутентификационными токенами.">Access токенов API</a>.</p>
+<p>Предоставляет доступ к POST-, PUT- и DELETE-запросам <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управляйте Dynatrace API аутентификационными токенами.">Токенов доступа API</a>.</p>
 <p>Чтение атак</p>
 <p><code>attacks.read</code></p>
 <p>Предоставляет доступ к GET-запросам Атак API и <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a> для Application Protection (<code>builtin:appsec.attack-protection-settings</code>, <code>builtin:appsec.attack-protection-advanced-config</code> и <code>builtin:appsec.attack-protection-allowlist-config schemas</code>).</p>
@@ -25633,10 +25633,10 @@
 <p>Предоставляет доступ к POST-, PUT- и DELETE-запросам <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте об Dynatrace Отслеживаемых сущностях API.">Отслеживаемых сущностей</a> и <a href="/docs/dynatrace-api/environment-api/custom-tags" title="Управляйте пользовательскими тегами отслеживаемых сущностей через Dynatrace API.">Пользовательских тегов</a> API.</p>
 <p>Ввод событий</p>
 <p><code>events.ingest</code></p>
-<p>Предоставляет доступ к POST-запросу <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что можно сделать с помощью Dynatrace Событий API v2.">Событий API v2</a>.</p>
+<p>Предоставляет доступ к POST-запросу <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что вы можете сделать с помощью Dynatrace Событий API v2.">Событий API v2</a>.</p>
 <p>Чтение событий</p>
 <p><code>events.read</code></p>
-<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что можно сделать с помощью Dynatrace Событий API v2.">Событий API v2</a>.</p>
+<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что вы можете сделать с помощью Dynatrace Событий API v2.">Событий API v2</a>.</p>
 <p>Чтение конфигурации мониторинга расширений</p>
 <p><code>extensionConfigurations.read</code></p>
 <p>Предоставляет доступ к GET-запросам из раздела <strong>Конфигурация мониторинга Extensions</strong> <a href="/docs/dynatrace-api/environment-api/extensions-20" title="Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</p>
@@ -25673,19 +25673,19 @@
 <p><code>javaScriptMappingFiles.write</code></p>
 <p>Ввод журналов</p>
 <p><code>logs.ingest</code></p>
-<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs" title="Отправьте пользовательские журналы в Dynatrace через Log Monitoring API v2.">POST запросу на ввод журналов</a> запросу Log Monitoring API v2, а также к <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Узнайте об OTLP API конечных точках, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.">OpenTelemetry журналу ввода API</a>.</p>
+<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs" title="Отправьте пользовательские журналы в Dynatrace через интерфейс API мониторинга журналов v2.">POST-запросу на ввод журналов</a> интерфейса API мониторинга журналов v2, а также к <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Узнайте об конечных точках OTLP, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.">конечной точке ввода журналов OpenTelemetry</a>.</p>
 <p>Чтение журналов</p>
 <p><code>logs.read</code></p>
-<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/log-monitoring-v2" title="Узнайте, что можно сделать с помощью Log Monitoring API v2.">Log Monitoring API v2</a>.</p>
+<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/log-monitoring-v2" title="Узнайте, что вы можете сделать с помощью интерфейса API мониторинга журналов v2.">Интерфейса API мониторинга журналов v2</a>.</p>
 <p>Ввод метрик</p>
 <p><code>metrics.ingest</code></p>
-<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Ввод пользовательских метрик в Dynatrace через Metrics v2 API.">POST запросу на ввод данных</a> запросу Metrics v2 API, а также к <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Узнайте об OTLP API конечных точках, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.">OpenTelemetry метрикам ввода API</a>.</p>
+<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Ввод пользовательских метрик в Dynatrace через интерфейс API метрик v2.">POST-запросу на ввод данных</a> интерфейса API метрик v2, а также к <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Узнайте об конечных точках OTLP, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.">конечной точке ввода метрик OpenTelemetry</a>.</p>
 <p>Чтение метрик</p>
 <p><code>metrics.read</code></p>
-<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/metric-v2" title="Получите информацию о метриках через Metrics v2 API.">Metrics API v2</a>.</p>
+<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/metric-v2" title="Получите информацию о метриках через интерфейс API метрик v2.">Интерфейса API метрик v2</a>.</p>
 <p>Запись метрик</p>
 <p><code>metrics.write</code></p>
-<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/metric-v2/delete-metric" title="Удалите метрику, введенную через Metrics v2 API.">DELETE запросу на удаление пользовательской метрики</a> запросу Metrics API v2.</p>
+<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/metric-v2/delete-metric" title="Удалите метрику, введенную через интерфейс API метрик v2.">DELETE-запросу на удаление пользовательской метрики</a> интерфейса API метрик v2.</p>
 <p>Чтение сетевых зон</p>
 <p><code>networkZones.read</code></p>
 <p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/network-zones" title="Управляйте сетевыми зонами через Dynatrace API.">Сетевых зон API</a>.</p>
@@ -25712,22 +25712,22 @@
 <p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/releaseapi" title="Узнайте, что предлагает Dynatrace Релизы API.">Релизам API</a>.</p>
 <p>Чтение проблем безопасности</p>
 <p><code>securityProblems.read</code></p>
-<p>Предоставляет доступ к запросам GET <a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities" title="Узнайте, что предлагает уязвимость API.">Проблем безопасности API</a>.</p>
+<p>Предоставляет доступ к запросам GET <a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities" title="Узнайте, что предлагают уязвимости API.">Проблем безопасности API</a>.</p>
 <p>Запись проблем безопасности</p>
 <p><code>securityProblems.write</code></p>
-<p>Предоставляет доступ к запросам POST <a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities" title="Узнайте, что предлагает уязвимость API.">Проблем безопасности API</a>.</p>
+<p>Предоставляет доступ к запросам POST <a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities" title="Узнайте, что предлагают уязвимости API.">Проблем безопасности API</a>.</p>
 <p>Чтение настроек</p>
 <p><code>settings.read</code></p>
-<p>Предоставляет доступ к запросам GET <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a>.</p>
+<p>Предоставляет доступ к запросам GET <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагают настройки Dynatrace API.">Настройки API</a>.</p>
 <p>Запись настроек</p>
 <p><code>settings.write</code></p>
-<p>Предоставляет доступ к запросам POST и DELETE <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a>.</p>
+<p>Предоставляет доступ к запросам POST и DELETE <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагают настройки Dynatrace API.">Настройки API</a>.</p>
 <p>Чтение SLO</p>
 <p><code>slo.read</code></p>
-<p>Предоставляет доступ к запросам GET <a href="/docs/dynatrace-api/environment-api/service-level-objectives-classic" title="Узнайте, что предлагает Dynatrace SLO API classic.">Цели обслуживания API</a>.</p>
+<p>Предоставляет доступ к запросам GET <a href="/docs/dynatrace-api/environment-api/service-level-objectives-classic" title="Узнайте, что предлагают классические SLO Dynatrace API.">Цели сервисного уровня API</a>.</p>
 <p>Запись SLO</p>
 <p><code>slo.write</code></p>
-<p>Предоставляет доступ к запросам POST, PUT и DELETE <a href="/docs/dynatrace-api/environment-api/service-level-objectives-classic" title="Узнайте, что предлагает Dynatrace SLO API classic.">Цели обслуживания API</a>.</p>
+<p>Предоставляет доступ к запросам POST, PUT и DELETE <a href="/docs/dynatrace-api/environment-api/service-level-objectives-classic" title="Узнайте, что предлагают классические SLO Dynatrace API.">Цели сервисного уровня API</a>.</p>
 <p>Чтение результатов выполнения синтетического мониторинга</p>
 <p><code>syntheticExecutions.read</code></p>
 <p>Предоставляет доступ к запросам GET <code>/synthetic/executions</code> API.</p>
@@ -25743,19 +25743,19 @@
 <p>Ротация токенов арендатора</p>
 <p><code>tenantTokenRotation.write</code></p>
 <p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/tokens-v2/tenant-tokens" title="Поворот Dynatrace токенов арендатора.">Токенам арендатора API</a>.</p>
-<p>Поиск одного трейса</p>
+<p>Поиск отдельного трейса</p>
 <p><code>traces.lookup</code></p>
 <p>Проверяет наличие трейса в межсредовой трассировке.</p>
 <p>Чтение объединенной аналитики</p>
 <p><code>unifiedAnalysis.read</code></p>
-<p>Предоставляет доступ к схеме объединенной аналитики в <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a></p>
+<p>Предоставляет доступ к схеме объединенной аналитики в <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагают настройки Dynatrace API.">Настройки API</a></p>
 <h3 id="api-v1">API v1<a class="headerlink" href="#api-v1" title="Permanent link">&para;</a></h3>
 <p>Название</p>
 <p>API значение</p>
 <p>Описание</p>
-<p>Доступ к проблемам и ленте событий, метрикам и топологии</p>
+<p>Проблемы доступа и лента событий, метрики и топология</p>
 <p><code>DataExport</code></p>
-<p>Предоставляет доступ к различным вызовам <a href="/docs/dynatrace-api/environment-api" title="Узнайте, что вам нужно использовать для раздела среды Dynatrace API.">Environment API</a>.</p>
+<p>Предоставляет доступ к различным вызовам <a href="/docs/dynatrace-api/environment-api" title="Узнайте, что вам нужно использовать, чтобы использовать раздел среды Dynatrace API.">Environment API</a>.</p>
 <p>Создание и чтение синтетических мониторов, местоположений и узлов</p>
 <p><code>ExternalSyntheticIntegration</code></p>
 <p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/synthetic" title="Узнайте, что предлагает Dynatrace Синтетический v1 API.">Синтетическому API</a>.</p>
@@ -25764,55 +25764,55 @@
 <p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/synthetic" title="Узнайте, что предлагает Dynatrace Синтетический v1 API.">Синтетического API</a>.</p>
 <p>Чтение конфигурации</p>
 <p><code>ReadConfig</code></p>
-<p>Предоставляет доступ к GET-вызовам <a href="/docs/dynatrace-api/configuration-api" title="Узнайте, что вам нужно использовать для раздела конфигурации Dynatrace API.">Конфигурации API</a>.</p>
+<p>Предоставляет доступ к GET-вызовам <a href="/docs/dynatrace-api/configuration-api" title="Узнайте, что вам нужно использовать, чтобы использовать раздел конфигурации Dynatrace API.">Конфигурации API</a>.</p>
 <p>Запись конфигурации</p>
 <p><code>WriteConfig</code></p>
-<p>Предоставляет доступ к POST-, PUT- и DELETE-вызовам <a href="/docs/dynatrace-api/configuration-api" title="Узнайте, что вам нужно использовать для раздела конфигурации Dynatrace API.">Конфигурации API</a>.</p>
+<p>Предоставляет доступ к POST-, PUT- и DELETE-вызовам <a href="/docs/dynatrace-api/configuration-api" title="Узнайте, что вам нужно использовать, чтобы использовать раздел конфигурации Dynatrace API.">Конфигурации API</a>.</p>
 <p>Изменение настроек конфиденциальности данных</p>
 <p><code>DataPrivacy</code></p>
-<p>Предоставляет доступ к <a href="/docs/dynatrace-api/configuration-api/data-privacy-api" title="Узнайте, что предлагает Dynatrace конфигурация конфиденциальности данных API.">Настройкам конфиденциальности данных API</a> и вызовам конфиденциальности данных <a href="/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api" title="Узнайте, что предлагает Dynatrace конфигурация веб-приложения API.">Конфигурации веб-приложения API</a>.</p>
-<p>Сеансы пользователей</p>
+<p>Предоставляет доступ к <a href="/docs/dynatrace-api/configuration-api/data-privacy-api" title="Узнайте, что предлагает Dynatrace конфигурация конфиденциальности данных API.">Конфиденциальности данных API</a> и вызовам конфиденциальности данных <a href="/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api" title="Узнайте, что предлагает Dynatrace конфигурация веб-приложения API.">Конфигурации веб-приложения API</a>.</p>
+<p>Сессии пользователей</p>
 <p><code>DTAQLAccess</code></p>
-<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/rum/user-sessions" title="Узнайте, что предлагает Dynatrace язык запросов сеансов пользователей API.">Сеансам пользователей API</a>.</p>
-<p>Анонимизация сеансов пользователей по причинам конфиденциальности данных</p>
+<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/rum/user-sessions" title="Узнайте, что предлагает Dynatrace язык запросов сессий пользователей API.">Сессиям пользователей API</a>.</p>
+<p>Анонимизация сессий пользователей по причинам конфиденциальности данных</p>
 <p><code>UserSessionAnonymization</code></p>
-<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/anonymization" title="Узнайте, как выполнить требования GDPR, используя Dynatrace API для удаления данных пользователей.">Анонимизации API</a>.</p>
+<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/anonymization" title="Узнайте, как выполнить требования GDPR, используя Dynatrace API, чтобы удалить данные пользователей.">Анонимизации API</a>.</p>
 <p>Управление файлами символов мобильных устройств</p>
 <p><code>DssFileManagement</code></p>
 <p>Предоставляет доступ к <a href="/docs/dynatrace-api/configuration-api/mobile-symbolication-api" title="Управляйте файлами символов мобильных устройств через Dynatrace API.">Символизации мобильных устройств API</a>.</p>
-<p>Real User Monitoring управление тегом JavaScript</p>
+<p>Real User Monitoring управление тегами JavaScript</p>
 <p><code>RumJavaScriptTagManagement</code></p>
-<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code" title="Узнайте, как использовать Dynatrace API для настройки и поддержки ваших приложений с ручной инъекцией, используя Real User Monitoring тег JavaScript API.">Real User Monitoring тегу JavaScript API</a>.</p>
+<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code" title="Узнайте, как использовать Dynatrace API, чтобы настроить и поддерживать ваши вручную внедренные приложения с помощью тегов JavaScript API.">Тегам JavaScript API</a>.</p>
 <p>ActiveGate управление сертификатами</p>
 <p><code>ActiveGateCertManagement</code></p>
-<p>Предоставляет разрешение на <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate" title="Узнайте, как настроить SSL-сертификат на вашем ActiveGate.">настройку сертификата</a> на частных ActiveGate.</p>
+<p>Предоставляет разрешение на <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate" title="Узнайте, как настроить сертификат SSL на вашем ActiveGate.">настройку сертификата</a> на частных ActiveGate.</p>
 <p>Получение данных из удаленной среды</p>
 <p><code>RestRequestForwarding</code></p>
-<p>Предоставляет разрешение на получение данных из <a href="/docs/dynatrace-api/configuration-api/remote-environments" title="Управляйте конфигурациями удаленных сред Dynatrace через Dynatrace конфигурацию API.">удаленных сред Dynatrace</a> для панелей инструментов нескольких сред.</p>
+<p>Предоставляет разрешение на получение данных из <a href="/docs/dynatrace-api/configuration-api/remote-environments" title="Управляйте конфигурациями удаленных сред Dynatrace через Dynatrace конфигурацию API.">удаленных сред Dynatrace</a> для панелей мониторинга нескольких сред.</p>
 <p>Получение данных запроса</p>
 <p><code>CaptureRequestData</code></p>
 <p>Предоставляет доступ к <a href="/docs/dynatrace-api/configuration-api/service-api/request-attributes-api" title="Узнайте, что предлагает Dynatrace конфигурация атрибутов запроса API.">Атрибутам запроса API</a>.</p>
 <p>Чтение содержимого журнала</p>
 <p><code>LogExport</code></p>
-<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/log-monitoring-v2" title="Узнайте, что можно сделать с помощью Мониторинга журналов API v2.">Мониторингу журналов API</a>.</p>
+<p>Предоставляет доступ к <a href="/docs/dynatrace-api/environment-api/log-monitoring-v2" title="Узнайте, что вы можете сделать с помощью Мониторинга журнала API v2.">Мониторингу журнала API</a>.</p>
 <h3 id="paas">PaaS<a class="headerlink" href="#paas" title="Permanent link">&para;</a></h3>
 <p>Название</p>
 <p>API значение</p>
 <p>Описание</p>
-<p>Загрузка установщиков OneAgent и ActiveGate</p>
+<p>Скачивание установщиков OneAgent и ActiveGate</p>
 <p><code>InstallerDownload</code></p>
-<p>Позволяет загрузить установщики через <a href="/docs/dynatrace-api/environment-api/deployment" title="Загрузите установщики OneAgent и ActiveGate через Dynatrace API.">Раздел развертывания API</a>.</p>
+<p>Позволяет скачивать установщики через <a href="/docs/dynatrace-api/environment-api/deployment" title="Скачайте установщики OneAgent и ActiveGate через Dynatrace API.">Раздел развертывания API</a>.</p>
 <p>Создание оповещений поддержки</p>
 <p><code>SupportAlert</code></p>
-<p>Позволяет создавать <a href="/docs/observe/application-observability/profiling-and-optimization/crash-analysis#support-alert" title="Узнайте, как Dynatrace может помочь вам получить представление о сбоях процесса.">оповещения поддержки</a> для анализа сбоев.</p>
+<p>Позволяет создавать <a href="/docs/observe/application-observability/profiling-and-optimization/crash-analysis#support-alert" title="Узнайте, как Dynatrace может помочь вам получить информацию о сбоях процессов.">оповещения поддержки</a> для анализа сбоев.</p>
 <h3 id="_7">Другое<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>Название</p>
 <p>API значение</p>
 <p>Описание</p>
 <p>Загрузка плагинов через командную строку</p>
 <p><code>PluginUpload</code></p>
-<p>Предоставляет разрешение на загрузку расширений OneAgent через <a href="/docs/ingest-from/extensions/develop-your-extensions" title="Разработайте свои собственные Extensions в Dynatrace.">Раздел расширений SDK</a>.</p>
-<p>Dynatrace предоставляет следующие разрешения для личных токенов доступа. Вы можете установить их в веб-интерфейсе, как описано выше, или через <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управляйте токенами аутентификации Dynatrace API."><strong>Токены доступа</strong> API</a>.</p>
+<p>Предоставляет разрешение на загрузку расширений OneAgent через <a href="/docs/ingest-from/extensions/develop-your-extensions" title="Разработайте свои собственные расширения Extensions в Dynatrace.">Раздел расширений SDK</a>.</p>
+<p>Dynatrace предоставляет следующие разрешения для личных токенов доступа. Вы можете настроить их в веб-интерфейсе, как описано выше, или через <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управляйте токенами аутентификации Dynatrace API."><strong>Токены доступа</strong> API</a>.</p>
 <p>Название</p>
 <p>API значение</p>
 <p>Описание</p>
@@ -25824,16 +25824,16 @@
 <p>Предоставляет доступ к POST-, PUT- и DELETE-запросам <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управляйте токенами аутентификации Dynatrace API.">Токенов доступа API</a>.</p>
 <p>Чтение сущностей</p>
 <p><code>entities.read</code></p>
-<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о Dynatrace Отслеживаемых сущностях API.">Отслеживаемых сущностей</a> и <a href="/docs/dynatrace-api/environment-api/custom-tags" title="Управляйте пользовательскими тегами отслеживаемых сущностей через Dynatrace API.">Пользовательских тегов</a> API.</p>
+<p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о сущностях Dynatrace API.">Отслеживаемых сущностей</a> и <a href="/docs/dynatrace-api/environment-api/custom-tags" title="Управляйте пользовательскими тегами отслеживаемых сущностей через Dynatrace API.">Пользовательских тегов</a> API.</p>
 <p>Запись сущностей</p>
 <p><code>entities.write</code></p>
-<p>Предоставляет доступ к POST-, PUT- и DELETE-запросам <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о Dynatrace Отслеживаемых сущностях API.">Отслеживаемых сущностей</a> и <a href="/docs/dynatrace-api/environment-api/custom-tags" title="Управляйте пользовательскими тегами отслеживаемых сущностей через Dynatrace API.">Пользовательских тегов</a> API.</p>
+<p>Предоставляет доступ к POST-, PUT- и DELETE-запросам <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о сущностях Dynatrace API.">Отслеживаемых сущностей</a> и <a href="/docs/dynatrace-api/environment-api/custom-tags" title="Управляйте пользовательскими тегами отслеживаемых сущностей через Dynatrace API.">Пользовательских тегов</a> API.</p>
 <p>Чтение метрик</p>
 <p><code>metrics.read</code></p>
 <p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/metric-v2" title="Получите информацию о метриках через Метрики v2 API.">Метрик API v2</a>.</p>
 <p>Запись метрик</p>
 <p><code>metrics.write</code></p>
-<p>Предоставляет доступ к DELETE-запросу <a href="/docs/dynatrace-api/environment-api/metric-v2" title="Получите информацию о метриках через Метрики v2 API.">Метрик API v2</a>.</p>
+<p>Предоставляет доступ к DELETE-запросу <a href="/docs/dynatrace-api/environment-api/metric-v2" title="Удалите метрику, полученную через Метрики v2 API.">Метрик API v2</a>.</p>
 <p>Чтение сетевых зон</p>
 <p><code>networkZones.read</code></p>
 <p>Предоставляет доступ к GET-запросам <a href="/docs/dynatrace-api/environment-api/network-zones" title="Управляйте сетевыми зонами через Dynatrace API.">Сетевых зон API</a>.</p>
@@ -25869,23 +25869,29 @@
 <p>Предоставляет доступ к POST-, PUT- и DELETE-запросам <a href="/docs/dynatrace-api/environment-api/service-level-objectives-classic" title="Узнайте, что предлагает Dynatrace SLO API классический.">Целей обслуживания API</a>.</p>
 <h2 id="_8">Аутентификация<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>У вас есть два варианта передачи токена API: в заголовке HTTP <strong>Authorization</strong> или в параметре запроса <strong>api-token</strong>.</p>
-<p>Мы рекомендуем использовать заголовок <strong>Authorization</strong>, поскольку URL-адреса (вместе с переданными в них токенами) могут быть записаны в различных местах. Пользователи также могут добавить в закладки URL-адреса или поделиться ими в открытом тексте. Следовательно, размещение токенов аутентификации в URL-адресе увеличивает риск их перехвата злоумышленником.</p>
+<p>Мы рекомендуем использовать заголовок <strong>Authorization</strong>, поскольку URL-адреса (вместе с переданными в них токенами) могут быть записаны в различных местах. Пользователи также могут добавить закладку на URL-адреса или поделиться ими в открытом тексте. Поэтому размещение токенов аутентификации в URL-адресе увеличивает риск того, что они будут перехвачены злоумышленником.</p>
 <p>Заголовок HTTP</p>
 <p>Параметр запроса</p>
-<p>Вы можете аутентифицироваться, присоединив токен к заголовку HTTP <strong>Authorization</strong> перед областью <strong>Api-Token</strong>.</p>
+<p>Вы можете аутентифицироваться, прикрепив токен к заголовку HTTP <strong>Authorization</strong> перед областью <strong>Api-Token</strong>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>--header &#39;Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890&#39;
 </code></pre></div>
 <p>Следующий пример показывает аутентификацию через заголовок HTTP.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl --request GET \
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--url https://mySampleEnv.live.dynatrace.com/api/v1/config/clusterversion \
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>--header &#39;Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890&#39;
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>--url https://mySampleEnv.live.dynatrace.com/api/v1/config/clusterversion \
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>--header &#39;Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890&#39;
 </code></pre></div>
 <p>Вы можете аутентифицироваться, добавив токен в качестве значения параметра запроса <strong>api-token</strong>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl --request GET \
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>--url &#39;https://mySampleEnv.live.dynatrace.com/api/v1/config/clusterversion?api-token=abcdefjhij1234567890&#39; \
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>--url &#39;https://mySampleEnv.live.dynatrace.com/api/v1/config/clusterversion?api-token=abcdefjhij1234567890&#39; \
 </code></pre></div>
 <h3 id="api-explorer">Аутентификация в API Explorer<a class="headerlink" href="#api-explorer" title="Permanent link">&para;</a></h3>
 <p>Выберите значок замка <img alt="Lock" src="https://dt-cdn.net/images/blue-lock-icon-77090b9928.svg" title="Lock" /> рядом с любой конечной точкой, чтобы отобразить информацию об OAuth 2.0-токенах, которые защищают эту конечную точку. Каждая конечная точка требует определенного типа токена.</p>

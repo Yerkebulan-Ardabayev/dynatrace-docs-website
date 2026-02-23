@@ -25,7 +25,7 @@
     
     
       
-        <title>Dynatrace Platform Subscription API - manage cost allocation - Dynatrace Managed - Документация</title>
+        <title>Dynatrace Платформа Подписки API - управление распределением затрат - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynatrace-platform-subscription-api-manage-cost-allocation" class="md-skip">
+        <a href="#dynatrace-api-" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dynatrace Platform Subscription API - manage cost allocation
+              Dynatrace Платформа Подписки API - управление распределением затрат
             
           </span>
         </div>
@@ -25474,136 +25474,136 @@
 
 
 
-<h1 id="dynatrace-platform-subscription-api-manage-cost-allocation">Dynatrace Platform Subscription API - manage cost allocation<a class="headerlink" href="#dynatrace-platform-subscription-api-manage-cost-allocation" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-platform-subscription-api-manage-cost-allocation_1">Dynatrace Platform Subscription API - manage cost allocation<a class="headerlink" href="#dynatrace-platform-subscription-api-manage-cost-allocation_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-api-">Dynatrace Платформа Подписки API - управление распределением затрат<a class="headerlink" href="#dynatrace-api-" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-api-_1">Dynatrace Платформа Подписки API - управление распределением затрат<a class="headerlink" href="#dynatrace-api-_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Latest Dynatrace</li>
-<li>Reference</li>
-<li>Published Oct 18, 2024</li>
+<li>Последнее Dynatrace</li>
+<li>Справка</li>
+<li>Опубликовано 18 октября 2024 г.</li>
 </ul>
-<p>The Dynatrace Cost Allocation feature incorporates two fields for cost centers and products. You can use either or both fields. These fields reflect your company's cost allocation structure, enabling you to develop two distinct perspectives: one based on your cost centers (for example, departments) and another based on your products or services (for example, Applicationname or ApplicationID). Of course, you can customize the use of these fields to fit your company's organizational framework.</p>
-<p>Use Dynatrace Platform Subscription API to manage your products and cost centers at scale.</p>
-<h2 id="get-cost-centers">GET cost centers<a class="headerlink" href="#get-cost-centers" title="Permanent link">&para;</a></h2>
-<p>Lists all the defined cost centers.</p>
-<p>The request produces an <code>application/json</code> payload.</p>
+<p>Функция распределения затрат Dynatrace включает два поля для центров затрат и продуктов. Вы можете использовать одно или оба поля. Эти поля отражают структуру распределения затрат вашей компании, что позволяет вам развивать две разные перспективы: одну на основе ваших центров затрат (например, отделов) и другую на основе ваших продуктов или услуг (например, Applicationname или ApplicationID). Конечно, вы можете настроить использование этих полей в соответствии с организационной структурой вашей компании.</p>
+<p>Используйте Dynatrace Платформу Подписки API, чтобы управлять вашими продуктами и центрами затрат в большом масштабе.</p>
+<h2 id="get">GET центры затрат<a class="headerlink" href="#get" title="Permanent link">&para;</a></h2>
+<p>Отображает все определенные центры затрат.</p>
+<p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
 <p>GET</p>
 <p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters</code></p>
-<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
-<p>To execute this request, you need the <strong>Allow read access for usage and consumption resources</strong> (<code>account-uac-read</code>) scope assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<h3 id="_1">Аутентификация<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить область <strong>Разрешить чтение для ресурсов использования и потребления</strong> (<code>account-uac-read</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<h3 id="_2">Параметры<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>string</td>
-<td>The ID of the required account.  You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</td>
-<td>path</td>
-<td>Required</td>
+<td>строка</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
+<td>путь</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>page</td>
-<td>number</td>
-<td>The number of the requested page. Can be increased as long as <strong>hasNextPage</strong> is true in the response.</td>
-<td>query</td>
-<td>Optional</td>
+<td>число</td>
+<td>Номер запрошенной страницы. Можно увеличивать, пока <strong>hasNextPage</strong> равен true в ответе.</td>
+<td>запрос</td>
+<td>Необязательный</td>
 </tr>
 <tr>
 <td>page-size</td>
-<td>number</td>
-<td>Defines the requested number of entries for the next page.</td>
-<td>query</td>
-<td>Optional</td>
+<td>число</td>
+<td>Определяет количество запрошенных записей для следующей страницы.</td>
+<td>запрос</td>
+<td>Необязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
-<h3 id="response-codes">Response codes<a class="headerlink" href="#response-codes" title="Permanent link">&para;</a></h3>
+<h3 id="_3">Ответ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">Код ответа<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Type</th>
-<th>Description</th>
+<th>Код</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>200</strong></td>
 <td><a href="#openapi-definition-PaginatedFieldValueDto">PaginatedFieldValueDto</a></td>
-<td>Success. The response contains a page of allowed cost-allocation values for the costcenter field.</td>
+<td>Успех. Ответ содержит страницу разрешенных значений распределения затрат для поля costcenter.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
 <td>-</td>
-<td>The request was unacceptable, often due to missing a required parameter</td>
+<td>Запрос был неприемлемым, часто из-за отсутствия обязательного параметра</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
 <td>-</td>
-<td>No valid session provided</td>
+<td>Нет действительной сессии</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
 <td>-</td>
-<td>Access denied</td>
+<td>Доступ запрещен</td>
 </tr>
 <tr>
 <td><strong>500</strong></td>
 <td>-</td>
-<td>Something went wrong on Account Management's end</td>
+<td>Что-то пошло не так на стороне Управления учетной записью</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response-body-objects">Response body objects<a class="headerlink" href="#response-body-objects" title="Permanent link">&para;</a></h3>
-<h4 id="the-paginatedfieldvaluedto-object">The <code>PaginatedFieldValueDto</code> object<a class="headerlink" href="#the-paginatedfieldvaluedto-object" title="Permanent link">&para;</a></h4>
+<h3 id="_5">Объекты тела ответа<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="paginatedfieldvaluedto">Объект <code>PaginatedFieldValueDto</code><a class="headerlink" href="#paginatedfieldvaluedto" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>records</td>
 <td><a href="#openapi-definition-FieldValueDto">FieldValueDto[]</a></td>
-<td>The records on the current page.</td>
+<td>Записи на текущей странице.</td>
 </tr>
 <tr>
 <td>hasNextPage</td>
-<td>boolean</td>
-<td>Indicates if there is another page to load.</td>
+<td>логический</td>
+<td>Указывает, есть ли другая страница для загрузки.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-fieldvaluedto-object">The <code>FieldValueDto</code> object<a class="headerlink" href="#the-fieldvaluedto-object" title="Permanent link">&para;</a></h4>
+<h4 id="fieldvaluedto">Объект <code>FieldValueDto</code><a class="headerlink" href="#fieldvaluedto" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>key</td>
-<td>string</td>
-<td>The key of this value.</td>
+<td>строка</td>
+<td>Ключ этого значения.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response-body-json-models">Response body JSON models<a class="headerlink" href="#response-body-json-models" title="Permanent link">&para;</a></h3>
+<h3 id="json">Тело ответа JSON модели<a class="headerlink" href="#json" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -25616,7 +25616,7 @@
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;key&quot;: &quot;string&quot;
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;key&quot;: &quot;строка&quot;
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
@@ -25634,82 +25634,82 @@
 <a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>}
 </code></pre></div>
-<h2 id="post-cost-centers">POST cost centers<a class="headerlink" href="#post-cost-centers" title="Permanent link">&para;</a></h2>
-<p>Add the provided value to the cost center field.</p>
-<p>The request produces an <code>application/json</code> payload.</p>
+<h2 id="post">POST центры затрат<a class="headerlink" href="#post" title="Permanent link">&para;</a></h2>
+<p>Добавьте предоставленное значение в поле центра затрат.</p>
+<p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
 <p>POST</p>
 <p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters</code></p>
-<h2 id="authentication_1">Authentication<a class="headerlink" href="#authentication_1" title="Permanent link">&para;</a></h2>
-<p>To execute this request, you need the <strong>Allow write access for usage and consumption resources</strong> (<code>account-uac-write</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<h2 id="_6">Аутентификация<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<h3 id="_7">Параметры<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>string</td>
-<td>The ID of the required account.  You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</td>
-<td>path</td>
-<td>Required</td>
+<td>строка</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
+<td>путь</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>body</td>
 <td><a href="#openapi-definition-FieldValuesRequestDto">FieldValuesRequestDto</a></td>
 <td>-</td>
-<td>body</td>
-<td>Required</td>
+<td>тело</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-objects">Request body objects<a class="headerlink" href="#request-body-objects" title="Permanent link">&para;</a></h3>
-<h4 id="the-fieldvaluesrequestdto-object">The <code>FieldValuesRequestDto</code> object<a class="headerlink" href="#the-fieldvaluesrequestdto-object" title="Permanent link">&para;</a></h4>
+<h3 id="_8">Объекты тела запроса<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h4 id="fieldvaluesrequestdto">Объект <code>FieldValuesRequestDto</code><a class="headerlink" href="#fieldvaluesrequestdto" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>values</td>
 <td><a href="#openapi-definition-FieldValueDto">FieldValueDto[]</a></td>
-<td>The requested values.</td>
-<td>Required</td>
+<td>Запрошенные значения.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-fieldvaluedto-object_1">The <code>FieldValueDto</code> object<a class="headerlink" href="#the-fieldvaluedto-object_1" title="Permanent link">&para;</a></h4>
+<h4 id="fieldvaluedto_1">Объект <code>FieldValueDto</code><a class="headerlink" href="#fieldvaluedto_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>key</td>
-<td>string</td>
-<td>The key of this value.</td>
-<td>Required</td>
+<td>строка</td>
+<td>Ключ этого значения.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-json-model">Request body JSON model<a class="headerlink" href="#request-body-json-model" title="Permanent link">&para;</a></h3>
-<p>This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.</p>
+<h3 id="json_1">Тело запроса JSON модель<a class="headerlink" href="#json_1" title="Permanent link">&para;</a></h3>
+<p>Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -25722,7 +25722,7 @@
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&quot;key&quot;: &quot;string&quot;
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&quot;key&quot;: &quot;строка&quot;
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
@@ -25736,114 +25736,114 @@
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
 <a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>}
 </code></pre></div>
-<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
-<h3 id="response-codes_1">Response codes<a class="headerlink" href="#response-codes_1" title="Permanent link">&para;</a></h3>
+<h3 id="_9">Ответ<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_10">Код ответа<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Description</th>
+<th>Код</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>The response doesn't have a body. The values were added to the field.</td>
+<td>Ответ не имеет тела. Значения были добавлены в поле.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>The existing and provided values combined should not contain duplicate keys.</td>
+<td>Существующие и предоставленные значения в совокупности не должны содержать дубликаты ключей.</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
-<td>No valid session provided</td>
+<td>Нет действительной сессии</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
-<td>Access denied</td>
+<td>Доступ запрещен</td>
 </tr>
 <tr>
 <td><strong>500</strong></td>
-<td>Something went wrong on Account Management's end</td>
+<td>Что-то пошло не так на стороне Управления учетной записью</td>
 </tr>
 </tbody>
 </table>
-<h2 id="put-cost-centers">PUT cost centers<a class="headerlink" href="#put-cost-centers" title="Permanent link">&para;</a></h2>
-<p>Replace the current values to the cost center field.</p>
-<p>The request produces an <code>application/json</code> payload.</p>
+<h2 id="put">PUT центры затрат<a class="headerlink" href="#put" title="Permanent link">&para;</a></h2>
+<p>Замените текущие значения поля центра затрат.</p>
+<p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
 <p>PUT</p>
 <p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters</code></p>
-<h2 id="authentication_2">Authentication<a class="headerlink" href="#authentication_2" title="Permanent link">&para;</a></h2>
-<p>To execute this request, you need the <strong>Allow write access for usage and consumption resources</strong> (<code>account-uac-write</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<h2 id="_11">Аутентификация<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<h3 id="_12">Параметры<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>string</td>
-<td>The ID of the required account.  You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</td>
-<td>path</td>
-<td>Required</td>
+<td>строка</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
+<td>путь</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>body</td>
 <td><a href="#openapi-definition-FieldValuesRequestDto">FieldValuesRequestDto</a></td>
 <td>-</td>
-<td>body</td>
-<td>Required</td>
+<td>тело</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-objects_1">Request body objects<a class="headerlink" href="#request-body-objects_1" title="Permanent link">&para;</a></h3>
-<h4 id="the-fieldvaluesrequestdto-object_1">The <code>FieldValuesRequestDto</code> object<a class="headerlink" href="#the-fieldvaluesrequestdto-object_1" title="Permanent link">&para;</a></h4>
+<h3 id="_13">Объекты тела запроса<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h4 id="fieldvaluesrequestdto_1">Объект <code>FieldValuesRequestDto</code><a class="headerlink" href="#fieldvaluesrequestdto_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>values</td>
 <td><a href="#openapi-definition-FieldValueDto">FieldValueDto[]</a></td>
-<td>The requested values.</td>
-<td>Required</td>
+<td>Запрошенные значения.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-fieldvaluedto-object_2">The <code>FieldValueDto</code> object<a class="headerlink" href="#the-fieldvaluedto-object_2" title="Permanent link">&para;</a></h4>
+<h4 id="fieldvaluedto_2">Объект <code>FieldValueDto</code><a class="headerlink" href="#fieldvaluedto_2" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>key</td>
-<td>string</td>
-<td>The key of this value.</td>
-<td>Required</td>
+<td>строка</td>
+<td>Ключ этого значения.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-json-model_1">Request body JSON model<a class="headerlink" href="#request-body-json-model_1" title="Permanent link">&para;</a></h3>
-<p>This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.</p>
+<h3 id="json_2">Тело запроса JSON модель<a class="headerlink" href="#json_2" title="Permanent link">&para;</a></h3>
+<p>Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
@@ -25856,7 +25856,7 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&quot;key&quot;: &quot;string&quot;
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&quot;key&quot;: &quot;строка&quot;
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
@@ -25870,226 +25870,226 @@
 <a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
 <a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>}
 </code></pre></div>
-<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
-<h3 id="response-codes_2">Response codes<a class="headerlink" href="#response-codes_2" title="Permanent link">&para;</a></h3>
+<h3 id="_14">Ответ<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h3 id="_15">Код ответа<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Description</th>
+<th>Код</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>The response doesn't have a body. The values of the field were replaced.</td>
+<td>Ответ не имеет тела. Значения поля были заменены.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>The provided values should not contain duplicate keys.</td>
+<td>Предоставленные значения не должны содержать дубликаты ключей.</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
-<td>No valid session provided</td>
+<td>Нет действительной сессии</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
-<td>Access denied</td>
+<td>Доступ запрещен</td>
 </tr>
 <tr>
 <td><strong>500</strong></td>
-<td>Something went wrong on Account Management's end</td>
+<td>Что-то пошло не так на стороне Управления учетной записью</td>
 </tr>
 </tbody>
 </table>
-<h2 id="delete-cost-centers">DELETE cost centers<a class="headerlink" href="#delete-cost-centers" title="Permanent link">&para;</a></h2>
-<p>Delete a value by key on the cost center field.</p>
-<p>The request produces an <code>application/json</code> payload.</p>
+<h2 id="delete">DELETE центры затрат<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
+<p>Удалите значение по ключу в поле центра затрат.</p>
+<p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
 <p>DELETE</p>
 <p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters/{key}</code></p>
-<h2 id="authentication_3">Authentication<a class="headerlink" href="#authentication_3" title="Permanent link">&para;</a></h2>
-<p>To execute this request, you need the <strong>Allow write access for usage and consumption resources</strong> (<code>account-uac-write</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<h2 id="_16">Аутентификация<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<h3 id="_17">Параметры<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>string</td>
-<td>The ID of the required account.  You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</td>
-<td>path</td>
-<td>Required</td>
+<td>строка</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
+<td>путь</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>key</td>
-<td>string</td>
-<td>The key for the field value.</td>
-<td>path</td>
-<td>Required</td>
+<td>строка</td>
+<td>Ключ значения поля.</td>
+<td>путь</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h3>
-<h3 id="response-codes_3">Response codes<a class="headerlink" href="#response-codes_3" title="Permanent link">&para;</a></h3>
+<h3 id="_18">Ответ<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h3 id="_19">Код ответа<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Description</th>
+<th>Код</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>The given value on the costcenter field was deleted.</td>
+<td>Указанное значение в поле costcenter было удалено.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>The request was unacceptable, often due to missing a required parameter</td>
+<td>Запрос был неприемлемым, часто из-за отсутствия обязательного параметра</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
-<td>No valid session provided</td>
+<td>Нет действительной сессии</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
-<td>Access denied</td>
+<td>Доступ запрещен</td>
 </tr>
 <tr>
 <td><strong>500</strong></td>
-<td>Something went wrong on Account Management's end</td>
+<td>Что-то пошло не так на стороне Управления учетной записью</td>
 </tr>
 </tbody>
 </table>
-<h2 id="get-products">GET products<a class="headerlink" href="#get-products" title="Permanent link">&para;</a></h2>
-<p>Lists all the defined products.</p>
-<p>The request produces an <code>application/json</code> payload.</p>
+<h2 id="get_1">GET продукты<a class="headerlink" href="#get_1" title="Permanent link">&para;</a></h2>
+<p>Отображает все определенные продукты.</p>
+<p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
 <p>GET</p>
 <p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products</code></p>
-<h3 id="authentication_4">Authentication<a class="headerlink" href="#authentication_4" title="Permanent link">&para;</a></h3>
-<p>To execute this request, you need the <strong>Allow read access for usage and consumption resources</strong> (<code>account-uac-read</code>) scope assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
+<h3 id="_20">Аутентификация<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить область <strong>Разрешить чтение для ресурсов использования и потребления</strong> (<code>account-uac-read</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<h3 id="_21">Параметры<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>string</td>
-<td>The ID of the required account.  You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</td>
-<td>path</td>
-<td>Required</td>
+<td>строка</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
+<td>путь</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>page</td>
-<td>number</td>
-<td>The number of the requested page. Can be increased as long as <strong>hasNextPage</strong> is true in the response.</td>
-<td>query</td>
-<td>Optional</td>
+<td>число</td>
+<td>Номер запрошенной страницы. Можно увеличивать, пока <strong>hasNextPage</strong> равен true в ответе.</td>
+<td>запрос</td>
+<td>Необязательный</td>
 </tr>
 <tr>
 <td>page-size</td>
-<td>number</td>
-<td>Defines the requested number of entries for the next page.</td>
-<td>query</td>
-<td>Optional</td>
+<td>число</td>
+<td>Определяет количество запрошенных записей для следующей страницы.</td>
+<td>запрос</td>
+<td>Необязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">&para;</a></h3>
-<h3 id="response-codes_4">Response codes<a class="headerlink" href="#response-codes_4" title="Permanent link">&para;</a></h3>
+<h3 id="_22">Ответ<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<h3 id="_23">Код ответа<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Type</th>
-<th>Description</th>
+<th>Код</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>200</strong></td>
 <td><a href="#openapi-definition-PaginatedFieldValueDto">PaginatedFieldValueDto</a></td>
-<td>Success. The response contains a page of allowed cost-allocation values for the product field.</td>
+<td>Успех. Ответ содержит страницу разрешенных значений распределения затрат для поля продукта.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
 <td>-</td>
-<td>The request was unacceptable, often due to missing a required parameter</td>
+<td>Запрос был недопустим, часто из-за отсутствия обязательного параметра</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
 <td>-</td>
-<td>No valid session provided</td>
+<td>Не предоставлена действительная сессия</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
 <td>-</td>
-<td>Access denied</td>
+<td>Доступ запрещен</td>
 </tr>
 <tr>
 <td><strong>500</strong></td>
 <td>-</td>
-<td>Something went wrong on Account Management's end</td>
+<td>Что-то пошло не так на стороне управления учетной записью</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response-body-objects_1">Response body objects<a class="headerlink" href="#response-body-objects_1" title="Permanent link">&para;</a></h3>
-<h4 id="the-paginatedfieldvaluedto-object_1">The <code>PaginatedFieldValueDto</code> object<a class="headerlink" href="#the-paginatedfieldvaluedto-object_1" title="Permanent link">&para;</a></h4>
+<h3 id="_24">Объекты тела ответа<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<h4 id="paginatedfieldvaluedto_1">Объект <code>PaginatedFieldValueDto</code><a class="headerlink" href="#paginatedfieldvaluedto_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>records</td>
 <td><a href="#openapi-definition-FieldValueDto">FieldValueDto[]</a></td>
-<td>The records on the current page.</td>
+<td>Записи на текущей странице.</td>
 </tr>
 <tr>
 <td>hasNextPage</td>
 <td>boolean</td>
-<td>Indicates if there is another page to load.</td>
+<td>Указывает, есть ли еще страница для загрузки.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-fieldvaluedto-object_3">The <code>FieldValueDto</code> object<a class="headerlink" href="#the-fieldvaluedto-object_3" title="Permanent link">&para;</a></h4>
+<h4 id="fieldvaluedto_3">Объект <code>FieldValueDto</code><a class="headerlink" href="#fieldvaluedto_3" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>key</td>
 <td>string</td>
-<td>The key of this value.</td>
+<td>Ключ этого значения.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response-body-json-models_1">Response body JSON models<a class="headerlink" href="#response-body-json-models_1" title="Permanent link">&para;</a></h3>
+<h3 id="json_3">Модели тела ответа JSON<a class="headerlink" href="#json_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -26120,82 +26120,82 @@
 <a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
 <a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>}
 </code></pre></div>
-<h2 id="post-products">POST products<a class="headerlink" href="#post-products" title="Permanent link">&para;</a></h2>
-<p>Add the provided value to the product field.</p>
-<p>The request produces an <code>application/json</code> payload.</p>
+<h2 id="post_1">POST продукты<a class="headerlink" href="#post_1" title="Permanent link">&para;</a></h2>
+<p>Добавьте предоставленное значение в поле продукта.</p>
+<p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
 <p>POST</p>
 <p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products</code></p>
-<h2 id="authentication_5">Authentication<a class="headerlink" href="#authentication_5" title="Permanent link">&para;</a></h2>
-<p>To execute this request, you need the <strong>Allow write access for usage and consumption resources</strong> (<code>account-uac-write</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h3 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h3>
+<h2 id="_25">Аутентификация<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<p>Чтобы выполнить этот запрос, вам необходимо разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<h3 id="_26">Параметры<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountUuid</td>
 <td>string</td>
-<td>The ID of the required account.  You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Управление идентификацией и доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
 <td>path</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>body</td>
 <td><a href="#openapi-definition-FieldValuesRequestDto">FieldValuesRequestDto</a></td>
 <td>-</td>
 <td>body</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-objects_2">Request body objects<a class="headerlink" href="#request-body-objects_2" title="Permanent link">&para;</a></h3>
-<h4 id="the-fieldvaluesrequestdto-object_2">The <code>FieldValuesRequestDto</code> object<a class="headerlink" href="#the-fieldvaluesrequestdto-object_2" title="Permanent link">&para;</a></h4>
+<h3 id="_27">Объекты тела запроса<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<h4 id="fieldvaluesrequestdto_2">Объект <code>FieldValuesRequestDto</code><a class="headerlink" href="#fieldvaluesrequestdto_2" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>values</td>
 <td><a href="#openapi-definition-FieldValueDto">FieldValueDto[]</a></td>
-<td>The requested values.</td>
-<td>Required</td>
+<td>Запрошенные значения.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-fieldvaluedto-object_4">The <code>FieldValueDto</code> object<a class="headerlink" href="#the-fieldvaluedto-object_4" title="Permanent link">&para;</a></h4>
+<h4 id="fieldvaluedto_4">Объект <code>FieldValueDto</code><a class="headerlink" href="#fieldvaluedto_4" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>key</td>
 <td>string</td>
-<td>The key of this value.</td>
-<td>Required</td>
+<td>Ключ этого значения.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-json-model_2">Request body JSON model<a class="headerlink" href="#request-body-json-model_2" title="Permanent link">&para;</a></h3>
-<p>This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.</p>
+<h3 id="json_4">Модель тела запроса JSON<a class="headerlink" href="#json_4" title="Permanent link">&para;</a></h3>
+<p>Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -26222,114 +26222,114 @@
 <a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
 <a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>}
 </code></pre></div>
-<h3 id="response_5">Response<a class="headerlink" href="#response_5" title="Permanent link">&para;</a></h3>
-<h3 id="response-codes_5">Response codes<a class="headerlink" href="#response-codes_5" title="Permanent link">&para;</a></h3>
+<h3 id="_28">Ответ<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<h3 id="_29">Код ответа<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Description</th>
+<th>Код</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>The response doesn't have a body. The values were added to the field.</td>
+<td>Ответ не имеет тела. Значения были добавлены в поле.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>The existing and provided values combined should not contain duplicate keys.</td>
+<td>Существующие и предоставленные значения, объединенные, не должны содержать дублирующиеся ключи.</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
-<td>No valid session provided</td>
+<td>Не предоставлена действительная сессия</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
-<td>Access denied</td>
+<td>Доступ запрещен</td>
 </tr>
 <tr>
 <td><strong>500</strong></td>
-<td>Something went wrong on Account Management's end</td>
+<td>Что-то пошло не так на стороне управления учетной записью</td>
 </tr>
 </tbody>
 </table>
-<h2 id="put-products">PUT products<a class="headerlink" href="#put-products" title="Permanent link">&para;</a></h2>
-<p>Replace the current values to the product field.</p>
-<p>The request produces an <code>application/json</code> payload.</p>
+<h2 id="put_1">PUT продукты<a class="headerlink" href="#put_1" title="Permanent link">&para;</a></h2>
+<p>Замените текущие значения поля продукта.</p>
+<p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
 <p>PUT</p>
 <p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products</code></p>
-<h2 id="authentication_6">Authentication<a class="headerlink" href="#authentication_6" title="Permanent link">&para;</a></h2>
-<p>To execute this request, you need the <strong>Allow write access for usage and consumption resources</strong> (<code>account-uac-write</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h3 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h3>
+<h2 id="_30">Аутентификация<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<p>Чтобы выполнить этот запрос, вам необходимо разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<h3 id="_31">Параметры<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountUuid</td>
 <td>string</td>
-<td>The ID of the required account.  You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Управление идентификацией и доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
 <td>path</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>body</td>
 <td><a href="#openapi-definition-FieldValuesRequestDto">FieldValuesRequestDto</a></td>
 <td>-</td>
 <td>body</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-objects_3">Request body objects<a class="headerlink" href="#request-body-objects_3" title="Permanent link">&para;</a></h3>
-<h4 id="the-fieldvaluesrequestdto-object_3">The <code>FieldValuesRequestDto</code> object<a class="headerlink" href="#the-fieldvaluesrequestdto-object_3" title="Permanent link">&para;</a></h4>
+<h3 id="_32">Объекты тела запроса<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<h4 id="fieldvaluesrequestdto_3">Объект <code>FieldValuesRequestDto</code><a class="headerlink" href="#fieldvaluesrequestdto_3" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>values</td>
 <td><a href="#openapi-definition-FieldValueDto">FieldValueDto[]</a></td>
-<td>The requested values.</td>
-<td>Required</td>
+<td>Запрошенные значения.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h4 id="the-fieldvaluedto-object_5">The <code>FieldValueDto</code> object<a class="headerlink" href="#the-fieldvaluedto-object_5" title="Permanent link">&para;</a></h4>
+<h4 id="fieldvaluedto_5">Объект <code>FieldValueDto</code><a class="headerlink" href="#fieldvaluedto_5" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Element</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>key</td>
 <td>string</td>
-<td>The key of this value.</td>
-<td>Required</td>
+<td>Ключ этого значения.</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-body-json-model_3">Request body JSON model<a class="headerlink" href="#request-body-json-model_3" title="Permanent link">&para;</a></h3>
-<p>This is a model of the request body, showing the possible elements. It has to be adjusted for usage in an actual request.</p>
+<h3 id="json_5">Модель тела запроса JSON<a class="headerlink" href="#json_5" title="Permanent link">&para;</a></h3>
+<p>Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
@@ -26356,108 +26356,108 @@
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
 <a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>}
 </code></pre></div>
-<h3 id="response_6">Response<a class="headerlink" href="#response_6" title="Permanent link">&para;</a></h3>
-<h3 id="response-codes_6">Response codes<a class="headerlink" href="#response-codes_6" title="Permanent link">&para;</a></h3>
+<h3 id="_33">Ответ<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<h3 id="_34">Код ответа<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Description</th>
+<th>Код</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>The response doesn't have a body. The values of the field were replaced.</td>
+<td>Ответ не имеет тела. Значения поля были заменены.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>The provided values should not contain duplicate keys.</td>
+<td>Предоставленные значения не должны содержать дублирующиеся ключи.</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
-<td>No valid session provided</td>
+<td>Не предоставлена действительная сессия</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
-<td>Access denied</td>
+<td>Доступ запрещен</td>
 </tr>
 <tr>
 <td><strong>500</strong></td>
-<td>Something went wrong on Account Management's end</td>
+<td>Что-то пошло не так на стороне управления учетной записью</td>
 </tr>
 </tbody>
 </table>
-<h2 id="delete-products">DELETE products<a class="headerlink" href="#delete-products" title="Permanent link">&para;</a></h2>
-<p>Delete a value by key on the cost center field.</p>
-<p>The request produces an <code>application/json</code> payload.</p>
+<h2 id="delete_1">DELETE продукты<a class="headerlink" href="#delete_1" title="Permanent link">&para;</a></h2>
+<p>Удалите значение по ключу в поле продукта.</p>
+<p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
 <p>DELETE</p>
 <p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products/{key}</code></p>
-<h2 id="authentication_7">Authentication<a class="headerlink" href="#authentication_7" title="Permanent link">&para;</a></h2>
-<p>To execute this request, you need the <strong>Allow write access for usage and consumption resources</strong> (<code>account-uac-write</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
-<h3 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h3>
+<h2 id="_35">Аутентификация<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
+<p>Чтобы выполнить этот запрос, вам необходимо разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<h3 id="_36">Параметры<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>In</th>
-<th>Required</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>В</th>
+<th>Обязательный</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>accountUuid</td>
 <td>string</td>
-<td>The ID of the required account.  You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Управление идентификацией и доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
 <td>path</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 <tr>
 <td>key</td>
 <td>string</td>
-<td>The key for the field value.</td>
+<td>Ключ для значения поля.</td>
 <td>path</td>
-<td>Required</td>
+<td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response_7">Response<a class="headerlink" href="#response_7" title="Permanent link">&para;</a></h3>
-<h3 id="response-codes_7">Response codes<a class="headerlink" href="#response-codes_7" title="Permanent link">&para;</a></h3>
+<h3 id="_37">Ответ<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<h3 id="_38">Код ответа<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Description</th>
+<th>Код</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>The given value on the product field was deleted.</td>
+<td>Значение в поле продукта было удалено.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>The request was unacceptable, often due to missing a required parameter</td>
+<td>Запрос был недопустим, часто из-за отсутствия обязательного параметра</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
-<td>No valid session provided</td>
+<td>Не предоставлена действительная сессия</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
-<td>Access denied</td>
+<td>Доступ запрещен</td>
 </tr>
 <tr>
 <td><strong>500</strong></td>
-<td>Something went wrong on Account Management's end</td>
+<td>Что-то пошло не так на стороне управления учетной записью</td>
 </tr>
 </tbody>
 </table>
-<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<h2 id="_39">Связанные темы<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/license/cost-allocation" title="Learn how to allocate costs to cost centers and products.">Allocate your DPS costs</a></li>
+<li><a href="/docs/license/cost-allocation" title="Узнайте, как распределить затраты на центры затрат и продукты.">Распределите затраты DPS</a></li>
 </ul>
 
 

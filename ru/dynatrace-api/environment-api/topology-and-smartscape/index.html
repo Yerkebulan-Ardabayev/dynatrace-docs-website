@@ -25,7 +25,7 @@
     
     
       
-        <title>Топология и Smartscape API - Dynatrace Managed - Документация</title>
+        <title>Topology and Smartscape API - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#smartscape-api" class="md-skip">
+        <a href="#topology-and-smartscape-api" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Топология и Smartscape API
+              Topology and Smartscape API
             
           </span>
         </div>
@@ -25474,54 +25474,54 @@
 
 
 
-<h1 id="smartscape-api">Топология и Smartscape API<a class="headerlink" href="#smartscape-api" title="Permanent link">&para;</a></h1>
-<h1 id="smartscape-api_1">Топология и Smartscape API<a class="headerlink" href="#smartscape-api_1" title="Permanent link">&para;</a></h1>
+<h1 id="topology-and-smartscape-api">Topology and Smartscape API<a class="headerlink" href="#topology-and-smartscape-api" title="Permanent link">&para;</a></h1>
+<h1 id="topology-and-smartscape-api_1">Topology and Smartscape API<a class="headerlink" href="#topology-and-smartscape-api_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Ссылка</li>
-<li>Обновлено 22 марта 2023 г.</li>
-<li>Устарело</li>
+<li>Reference</li>
+<li>Updated on Mar 22, 2023</li>
+<li>Deprecated</li>
 </ul>
-<p>Этот API устарел. Вместо этого используйте <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Узнайте о сущностях мониторинга Dynatrace API.">Сущности мониторинга API</a> . Более подробную информацию о переходе на новый API можно найти в <a href="/docs/dynatrace-api/basics/deprecation-migration-guides/topology-v1-to-entity-v2" title="Перенесите свою автоматизацию на сущности мониторинга API.">руководстве по миграции</a>.</p>
-<p><strong>Топология и Smartscape</strong> API предоставляет подробную информацию о приложениях, сервисах, группах процессов и сущностях инфраструктуры, которые Dynatrace автоматически обнаруживает и отслеживает в заданной среде.</p>
-<p>Возвращаемая информация содержит важные атрибуты о отслеживаемых сущностях, а также исходящие и входящие отношения. Эта семья конечных точек организована по пяти основным слоям среды: приложения, хосты, процессы, группы процессов и сервисы.</p>
-<h3 id="_1">Приложения<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>This API is deprecated. Use the <a href="/docs/dynatrace-api/environment-api/entity-v2" title="Learn about the Dynatrace Monitored entities API.">Monitored entities API</a> instead. You can find more information about switching to the new API in the <a href="/docs/dynatrace-api/basics/deprecation-migration-guides/topology-v1-to-entity-v2" title="Migrate your automation to the Monitored entities API.">migration guide</a>.</p>
+<p>The <strong>Topology and Smartscape</strong> API delivers details about applications, services, process groups, and infrastructure entities that Dynatrace automatically detects and monitors within a given environment.</p>
+<p>The returned information contains important attributes about the monitored entities as well as outgoing and incoming relationships. This family of endpoints is organized along the five major environment layers: applications, hosts, processes, process groups, and services.</p>
+<h3 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-all" title="Список всех отслеживаемых приложений через Dynatrace API.">Получить список</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-an-app" title="Просмотр отслеживаемого приложения через Dynatrace API.">Получить подробную информацию</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/post-tags" title="Назначить теги отслеживаемому приложению через Dynatrace API.">Назначить теги</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-baseline" title="Просмотр базовых данных отслеживаемого приложения через Dynatrace API.">Получить базовые данные</a> </li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-all" title="List all monitored applications via Dynatrace API.">Fetch the list</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-an-app" title="View a monitored application via Dynatrace API.">Get details</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/post-tags" title="Assign tags to a monitored application via Dynatrace API.">Assign tags</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-baseline" title="View the baseline data of a monitored application via Dynatrace API.">Get baseline data</a></li>
 </ul>
-<h3 id="_2">Хосты<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="hosts">Hosts<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-all" title="Список всех отслеживаемых хостов через Dynatrace API.">Получить список</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-a-host" title="Просмотр отслеживаемого хоста через Dynatrace API.">Получить подробную информацию</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/post-tags" title="Назначить теги отслеживаемому хосту через Dynatrace API.">Назначить теги</a> </li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-all" title="List all monitored hosts via Dynatrace API.">Fetch the list</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-a-host" title="View a monitored host via Dynatrace API.">Get details</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/post-tags" title="Assign tags to a monitored host via Dynatrace API.">Assign tags</a></li>
 </ul>
-<h3 id="_3">Процессы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="processes">Processes<a class="headerlink" href="#processes" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-all" title="Список всех отслеживаемых процессов через Dynatrace API.">Получить список</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-a-process" title="Просмотр отслеживаемого процесса через Dynatrace API.">Получить подробную информацию</a> </li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-all" title="List all monitored processes via Dynatrace API.">Fetch the list</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-a-process" title="View a monitored process via Dynatrace API.">Get details</a></li>
 </ul>
-<h3 id="_4">Группы процессов<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="process-groups">Process groups<a class="headerlink" href="#process-groups" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-all" title="Список всех отслеживаемых групп процессов через Dynatrace API.">Получить список</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-a-process-group" title="Просмотр отслеживаемой группы процессов через Dynatrace API.">Получить подробную информацию</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/post-tags" title="Назначить теги отслеживаемой группе процессов через Dynatrace API.">Назначить теги</a> </li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-all" title="List all monitored process groups via Dynatrace API.">Fetch the list</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-a-process-group" title="View a monitored process group via Dynatrace API.">Get details</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/post-tags" title="Assign tags to a monitored process group via Dynatrace API.">Assign tags</a></li>
 </ul>
-<h3 id="_5">Сервисы<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-all" title="Список всех отслеживаемых сервисов через Dynatrace API.">Получить список</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-a-service" title="Просмотр отслеживаемого сервиса через Dynatrace API.">Получить подробную информацию</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/post-tags" title="Назначить теги сервису через Dynatrace API.">Назначить теги</a> </li>
-<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-baseline" title="Просмотр базовых данных отслеживаемого сервиса через Dynatrace API.">Получить базовые данные</a> </li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-all" title="Lists all monitored services via Dynatrace API.">Fetch the list</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-a-service" title="View a monitored service via Dynatrace API.">Get details</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/post-tags" title="Assign tags to a service via Dynatrace API.">Assign tags</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-baseline" title="View the baseline data of a monitored service via Dynatrace API.">Get baseline data</a></li>
 </ul>
-<h3 id="_6">Создание пользовательского устройства<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/create-custom-device-via-dynatrace-api" title="Узнайте, как использовать Dynatrace API, чтобы создать пользовательское устройство.">Создать пользовательское устройство</a> с точными параметрами, которые вам нужны.</p>
-<h3 id="_7">Отправка данных на пользовательское устройство<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/report-custom-device-metric-via-rest-api" title="Узнайте, как использовать Dynatrace API, чтобы отправить пользовательскую метрику на пользовательское устройство.">Отчет о метрике пользовательского устройства</a>.</p>
-<h2 id="_8">Связанные темы<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="create-a-custom-device">Create a custom device<a class="headerlink" href="#create-a-custom-device" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/create-custom-device-via-dynatrace-api" title="Learn how you can use the Dynatrace API to create a custom device.">Create a custom device</a> with the exact parameters you need.</p>
+<h3 id="send-data-to-a-custom-device">Send data to a custom device<a class="headerlink" href="#send-data-to-a-custom-device" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/report-custom-device-metric-via-rest-api" title="Learn how you can use the Dynatrace API to send a custom metric data point to a custom device.">Report custom device metric</a>.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/analyze-explore-automate/smartscape-classic" title="Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде.">Визуализация вашей среды через Smartscape Classic</a></li>
+<li><a href="/docs/analyze-explore-automate/smartscape-classic" title="Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.">Visualize your environment through Smartscape Classic</a></li>
 </ul>
 
 

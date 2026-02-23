@@ -25,7 +25,7 @@
     
     
       
-        <title>Перейти с Events API v1 на Events API v2 - Dynatrace Managed - Документация</title>
+        <title>Мигрировать из Events API v1 в Events API v2 - Dynatrace Managed - Документация</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Перейти с Events API v1 на Events API v2
+              Мигрировать из Events API v1 в Events API v2
             
           </span>
         </div>
@@ -25474,31 +25474,31 @@
 
 
 
-<h1 id="events-api-v1-events-api-v2">Перейти с Events API v1 на Events API v2<a class="headerlink" href="#events-api-v1-events-api-v2" title="Permanent link">&para;</a></h1>
-<h1 id="events-api-v1-events-api-v2_1">Перейти с Events API v1 на Events API v2<a class="headerlink" href="#events-api-v1-events-api-v2_1" title="Permanent link">&para;</a></h1>
+<h1 id="events-api-v1-events-api-v2">Мигрировать из Events API v1 в Events API v2<a class="headerlink" href="#events-api-v1-events-api-v2" title="Permanent link">&para;</a></h1>
+<h1 id="events-api-v1-events-api-v2_1">Мигрировать из Events API v1 в Events API v2<a class="headerlink" href="#events-api-v1-events-api-v2_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Справочник</li>
-<li>Опубликовано 25 ноября 2022 г.</li>
+<li>Справка</li>
+<li>Опубликовано 25 нояб. 2022 г.</li>
 </ul>
-<p><a href="/docs/dynatrace-api/environment-api/events-v1" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API.">Events API v1</a> был заменен <a href="/docs/whats-new/dynatrace-api/sprint-243" title="Журнал изменений для Dynatrace API версии 1.243">Dynatrace версией 1.243</a>. Его заменой является <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API v2.">Events API v2</a>. Мы рекомендуем перейти на новую API как можно скорее.</p>
-<p>Миграция затрагивает URL-адреса конечных точек, параметры запроса и параметры тела запроса/ответа, а также объем токена для аутентификации запросов.</p>
+<p><a href="/docs/dynatrace-api/environment-api/events-v1" title="Узнайте, что можно сделать с помощью Dynatrace Events API.">Events API v1</a> был заменен <a href="/docs/whats-new/dynatrace-api/sprint-243" title="Журнал изменений для Dynatrace API версии 1.243">Dynatrace версией 1.243</a>. Его заменой является <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что можно сделать с помощью Dynatrace Events API v2.">Events API v2</a>. Мы рекомендуем вам перейти на новую API как можно скорее.</p>
+<p>Миграция затрагивает URL-адреса конечных точек, параметры запроса и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.</p>
 <h2 id="_1">Новые функции<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Events API v2 предлагает следующие новые функции:</p>
+<p>Events API v2 предлагает вам следующие новые функции:</p>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Настройте селектор сущностей для Environment API конечных точек.">Селектор сущностей</a> помогает вам фильтровать события в запросах на чтение и ингестировать события, которые влияют на несколько сущностей.</li>
+<li><a href="/docs/dynatrace-api/environment-api/entity-v2/entity-selector" title="Настройте селектор сущностей для Environment API конечных точек.">Селектор сущностей</a> помогает вам фильтровать события в запросах на чтение и передавать события, которые влияют на несколько сущностей.</li>
 <li>Улучшенная фильтрация событий через селектор событий.</li>
 <li>Унифицированный селектор временного интервала.</li>
 <li>Конечные точки свойств событий.</li>
 <li>Конечные точки типов событий.</li>
 </ul>
 <h2 id="_2">Лицензирование<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><a href="/docs/dynatrace-api/environment-api/events-v2/post-event" title="Ингестирует событие через Dynatrace API.">Ингестия</a> пользовательских событий потребляет <a href="/docs/license/monitoring-consumption-classic/davis-data-units" title="Поймите, как потребление мониторинга Dynatrace рассчитывается на основе единиц данных Davis (DDU).">Единицы данных Davis (DDU)</a> из пула событий.</p>
+<p><a href="/docs/dynatrace-api/environment-api/events-v2/post-event" title="Передает событие через Dynatrace API.">Передача</a> пользовательских событий потребляет <a href="/docs/license/monitoring-consumption-classic/davis-data-units" title="Поймите, как потребление мониторинга Dynatrace рассчитывается на основе единиц данных Davis (DDU).">Единицы данных Davis (DDU)</a> из пула событий.</p>
 <h2 id="url">Базовый URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>новый Events v2</th>
-<th>старый Events v1</th>
+<th>новое Events v2</th>
+<th>старое Events v1</th>
 </tr>
 </thead>
 <tbody>
@@ -25512,22 +25512,22 @@
 <table>
 <thead>
 <tr>
-<th>новый Events v2</th>
-<th>старый Events v1</th>
+<th>новое Events v2</th>
+<th>старое Events v1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Чтение событий</strong> (<code>events.read</code>) <strong>Ингестия событий</strong> (<code>events.ingest</code>)</td>
+<td><strong>Чтение событий</strong> (<code>events.read</code>) <strong>Передача событий</strong> (<code>events.ingest</code>)</td>
 <td><strong>Доступ к ленте проблем и событий, метрикам и топологии</strong> (<code>DataExport</code>)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="_4">Параметры<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API v2.">Events API v2</a>.</p>
+<p>Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в <a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что можно сделать с помощью Dynatrace Events API v2.">Events API v2</a>.</p>
 <h2 id="_5">Примеры<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>Вот некоторые примеры различий в использовании API.</p>
-<h3 id="_6">Список событий в течение временного интервала<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_6">Список событий в временном интервале<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>В этом примере мы запрашиваем список открытых событий доступности на хостах, которые произошли в течение последних двух часов.</p>
 <p>Events v2</p>
 <p>Events v1</p>
@@ -25735,7 +25735,7 @@
 <a id="__codelineno-1-198" name="__codelineno-1-198" href="#__codelineno-1-198"></a>
 <a id="__codelineno-1-199" name="__codelineno-1-199" href="#__codelineno-1-199"></a>
 <a id="__codelineno-1-200" name="__codelineno-1-200" href="#__codelineno-1-200"></a>
-<a id="__codelineno-1-201" name="__codelineno-1-201" href="#__codelineno-1-201"></a>}
+<a id="__codelineno-1-201" name="__codelineno-1-201" href="#__codelineno-1-201"></a>)
 <a id="__codelineno-1-202" name="__codelineno-1-202" href="#__codelineno-1-202"></a>
 <a id="__codelineno-1-203" name="__codelineno-1-203" href="#__codelineno-1-203"></a>
 <a id="__codelineno-1-204" name="__codelineno-1-204" href="#__codelineno-1-204"></a>
@@ -25795,7 +25795,7 @@
 <a id="__codelineno-1-258" name="__codelineno-1-258" href="#__codelineno-1-258"></a>
 <a id="__codelineno-1-259" name="__codelineno-1-259" href="#__codelineno-1-259"></a>
 <a id="__codelineno-1-260" name="__codelineno-1-260" href="#__codelineno-1-260"></a>
-<a id="__codelineno-1-261" name="__codelineno-1-261" href="#__codelineno-1-261"></a>}
+<a id="__codelineno-1-261" name="__codelineno-1-261" href="#__codelineno-1-261"></a>)
 <a id="__codelineno-1-262" name="__codelineno-1-262" href="#__codelineno-1-262"></a>
 <a id="__codelineno-1-263" name="__codelineno-1-263" href="#__codelineno-1-263"></a>
 <a id="__codelineno-1-264" name="__codelineno-1-264" href="#__codelineno-1-264"></a>
@@ -25855,7 +25855,7 @@
 <a id="__codelineno-1-318" name="__codelineno-1-318" href="#__codelineno-1-318"></a>
 <a id="__codelineno-1-319" name="__codelineno-1-319" href="#__codelineno-1-319"></a>
 <a id="__codelineno-1-320" name="__codelineno-1-320" href="#__codelineno-1-320"></a>
-<a id="__codelineno-1-321" name="__codelineno-1-321" href="#__codelineno-1-321"></a>},
+<a id="__codelineno-1-321" name="__codelineno-1-321" href="#__codelineno-1-321"></a>],
 <a id="__codelineno-1-322" name="__codelineno-1-322" href="#__codelineno-1-322"></a>
 <a id="__codelineno-1-323" name="__codelineno-1-323" href="#__codelineno-1-323"></a>
 <a id="__codelineno-1-324" name="__codelineno-1-324" href="#__codelineno-1-324"></a>
@@ -26129,7 +26129,7 @@
 <a id="__codelineno-1-592" name="__codelineno-1-592" href="#__codelineno-1-592"></a>
 <a id="__codelineno-1-593" name="__codelineno-1-593" href="#__codelineno-1-593"></a>}
 </code></pre></div>
-<p>В Events API v1 невозможно фильтровать ленту событий по статусу события. Кроме того, невозможно выбрать несколько сущностей через селектор сущностей. Вы можете указать только конкретные сущности. Для иллюстрации примера полезная нагрузка показывает одни и те же события, но вы должны найти их в полезной нагрузке с помощью внешних средств.</p>
+<p>В Events API v1 невозможно фильтровать ленту событий по статусу события. Кроме того, невозможно выбрать несколько сущностей через селектор сущностей. Вы можете указать только конкретные сущности. Для иллюстрации примера полезная нагрузка показывает одни и те же события, но вам придется найти их в полезной нагрузке с помощью внешних средств.</p>
 <h4 id="url-_1">URL-адрес запроса<a class="headerlink" href="#url-_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GET https://mySampleEnv.live.dynatrace.com/api/v1/events?relativeTime=2hours?eventType=AVAILABILITY_EVENT
 </code></pre></div>
@@ -26376,8 +26376,8 @@
 <a id="__codelineno-3-240" name="__codelineno-3-240" href="#__codelineno-3-240"></a>
 <a id="__codelineno-3-241" name="__codelineno-3-241" href="#__codelineno-3-241"></a>}
 </code></pre></div>
-<h3 id="_9">Ингестирование события третьей стороны<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>В этом примере мы ингестируем пользовательское событие информационного типа, которое влияет на все хосты, имя которых начинается с <code>prod</code>.</p>
+<h3 id="_9">Передача события третьей стороны<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>В этом примере мы передаем пользовательское событие информационного типа, которое влияет на все хосты, имя которых начинается с <code>prod</code>.</p>
 <p>Events v2</p>
 <p>Events v1</p>
 <h4 id="url-_2">URL-адрес запроса<a class="headerlink" href="#url-_2" title="Permanent link">&para;</a></h4>
@@ -26422,7 +26422,7 @@
 <a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
 <a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>}
 </code></pre></div>
-<p>В Events API v1 невозможно выбрать несколько сущностей через селектор сущностей. Вы должны указать каждую сущность или полагаться на теги.</p>
+<p>В Events API v1 невозможно выбрать несколько сущностей через селектор сущностей. Вам необходимо указать каждую сущность или полагаться на теги.</p>
 <h4 id="url-_3">URL-адрес запроса<a class="headerlink" href="#url-_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>POST https://mySampleEnv.live.dynatrace.com/api/v1/events
 </code></pre></div>
@@ -26515,8 +26515,8 @@
 </code></pre></div>
 <h2 id="_12">Связанные темы<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API v2.">Events API v2</a></li>
-<li><a href="/docs/dynatrace-api/environment-api/events-v1" title="Узнайте, что вы можете сделать с помощью Dynatrace Events API.">Events API v1</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/events-v2" title="Узнайте, что можно сделать с помощью Dynatrace Events API v2.">Events API v2</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/events-v1" title="Узнайте, что можно сделать с помощью Dynatrace Events API.">Events API v1</a></li>
 </ul>
 
 
